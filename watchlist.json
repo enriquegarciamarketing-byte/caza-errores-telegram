@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "id": "switch2-zelda-40",
+      "enabled": true,
+      "title": "Nintendo Switch 2 Edición Zelda 40º Aniversario",
+      "brand": "Nintendo",
+      "store": "carrefour",
+      "url": "",
+      "image": "",
+      "price": null,
+      "kind": "preorder",
+      "match": ["switch 2", "zelda"],
+      "past_query": "nintendo switch zelda edicion",
+      "justification": "Edición limitada de aniversario. Si la tienda la tiene en reserva y aún no hay anuncios de esta consola, se publica como reserva coleccionista y, si existen, se citan ediciones Zelda anteriores."
+    }
+  ]
+}
