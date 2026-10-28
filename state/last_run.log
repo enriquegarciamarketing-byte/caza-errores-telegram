@@ -1,2 +1,13 @@
-Telegram no dejó editar el post 5: Bad Request: message media can't be edited
 Bot: @cazaerroresAmazon_bot · enlace de vinculación: https://t.me/cazaerroresAmazon_bot?start=CAZA5CC44DFF
+Traceback (most recent call last):
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 642, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 615, in main
+    return edit_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.edit_message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 505, in edit_manual
+    tg.call("editMessageCaption", {"chat_id": channel, "message_id": message_id,
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 173, in call
+    raise RuntimeError(f"Telegram {method}: {result.get('description')}")
+RuntimeError: Telegram editMessageCaption: Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
