@@ -1028,6 +1028,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "carrefour|lego super mario game boy, 72046 40% regalo en cupon (24 euros)|carrefour 72046 lego": {
+   "t": 1793225889.5079496,
+   "query": "carrefour 72046 lego",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {},
@@ -1040,7 +1050,8 @@
   "wallapop:cm-2047674": 1793223137.2067282,
   "wallapop:cm-2047774": 1793223258.4428408,
   "wallapop:cm-2047784": 1793223638.6421187,
-  "wallapop:cm-2047796": 1793224871.5461402
+  "wallapop:cm-2047796": 1793224871.5461402,
+  "wallapop:cm-2047769": 1793225889.905894
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
