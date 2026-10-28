@@ -679,6 +679,11 @@
    "price": 32.99,
    "t": 1793224109,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "R4jrD5X": {
+   "price": 139.99,
+   "t": 1793225329,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -813,7 +818,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 119,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
