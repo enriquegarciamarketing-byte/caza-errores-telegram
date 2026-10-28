@@ -248,6 +248,17 @@ def card_title(cand: dict) -> str:
     return re.sub(r"\s+", " ", name).strip(" ,-")[:160]
 
 
+SIZE_RE = re.compile(
+    r"(,|\btalla)\s*(XXS|XS|S|M|L|XL|XXL|XXXL|[2-6]XL|\d{2}(?:[.,]5)?(?:\s*(?:EU|EUR))?|\d{2}\s*-\s*\d{2}|\d+\s*años)\s*$",
+    re.I,
+)
+
+
+def has_size_variant(name: str) -> bool:
+    """Productos con tallas: Jimmyleaks a veces mezcla la media de una talla con el precio de otra."""
+    return bool(SIZE_RE.search((name or "").strip()))
+
+
 def affiliate_link(cfg: dict, gtin: str) -> str:
     return f"https://www.amazon.es/s?k={urllib.parse.quote(gtin)}&tag={cfg['affiliate_tag']}"
 
@@ -404,7 +415,8 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     }
     card = create_price_card(offer)
     gtin = cand.get("gtin") if re.fullmatch(r"\d{8,14}", cand.get("gtin") or "") else None
-    url = link_override or (affiliate_link(cfg, gtin) if gtin else None)
+    variant = has_size_variant(cand.get("name") or cand.get("title") or "") and not link_override
+    url = link_override or (affiliate_link(cfg, gtin) if gtin and not variant else None)
     summary = (f"{cand['category']} · {card_title(cand)[:90]}\n"
                f"{euro(cand['price'])} (media 90 días {euro(cand['avg90'])}, -{cand['discount']:.0f}%)")
     if dry:
@@ -427,12 +439,17 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         if url:
             text = (f"{icon} Publicado {summary}\n\nSi quieres tu enlace corto en este post, "
                     "respóndeme a este mensaje con él y lo cambio.")
+        elif variant:
+            text = (f"{icon} {summary}\n\nTiene tallas y Jimmyleaks a veces mezcla precios entre ellas, "
+                    "así que no lo he publicado. Comprueba en Amazon que esa talla está a ese precio y, "
+                    "si es bueno, respóndeme con tu enlace corto y saldrá en el canal.")
         else:
             text = (f"{icon} {summary}\n\nNo tiene EAN, así que no lo he publicado. "
                     "Respóndeme con tu enlace corto y saldrá en el canal.")
         buttons = [[{"text": "Ver histórico", "url": f"{BASE}/es/dp/{cand['id']}/"}]]
-        if url:
-            buttons[0].insert(0, {"text": "Abrir en Amazon", "url": url})
+        amazon_url = url or (affiliate_link(cfg, gtin) if gtin else None)
+        if amazon_url:
+            buttons[0].insert(0, {"text": "Abrir en Amazon", "url": amazon_url})
         alert = tg.send_photo(admin, card, html.escape(text), {"reply_markup": {"inline_keyboard": buttons},
                                                                "disable_notification": cand["category"] != "ERROR DE PRECIO"})
         record["alert_id"] = alert["message_id"]
