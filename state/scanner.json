@@ -349,6 +349,21 @@
    "price": 45.0,
    "t": 1793211699,
    "result": "solo -16% bajo la media"
+  },
+  "7gmG0Vl": {
+   "price": 9.15,
+   "t": 1793211818,
+   "result": "importe demasiado bajo para ganga"
+  },
+  "1vommGM": {
+   "price": 209.99,
+   "t": 1793211818,
+   "result": "sin EAN para enlazar al producto exacto"
+  },
+  "1qGlv3d": {
+   "price": 35.99,
+   "t": 1793211818,
+   "result": "solo -36% bajo la media"
   }
  },
  "posts": [
