@@ -116,9 +116,9 @@
    "result": "solo -23% bajo la media"
   },
   "M52BOEw": {
-   "price": 25.5,
-   "t": 1793159777,
-   "result": "solo -24% bajo la media"
+   "price": 21.66,
+   "t": 1793218021,
+   "result": "solo -35% bajo la media"
   },
   "RrQDxG7": {
    "price": 12.32,
@@ -619,6 +619,21 @@
    "price": 99.88,
    "t": 1793217773,
    "result": "solo -17% bajo la media"
+  },
+  "1Erlp8M": {
+   "price": 18.46,
+   "t": 1793218021,
+   "result": "solo -34% bajo la media"
+  },
+  "M6rn3Vq": {
+   "price": 5.6,
+   "t": 1793218021,
+   "result": "solo -36% bajo la media"
+  },
+  "M5j66zl": {
+   "price": 24.6,
+   "t": 1793218021,
+   "result": "solo -16% bajo la media"
   }
  },
  "posts": [
