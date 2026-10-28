@@ -1,38 +1,25 @@
-# Cazadores de Errores de Precio — Telegram
+# Caza Errores — ofertas en Telegram
 
-Publicador de ofertas revisadas para `@caza_errores`. GitHub Actions genera una tarjeta de precio con la foto que se aporte, conserva el enlace corto de afiliado y publica la imagen con su pie en Telegram. Solo procesa ofertas con `status: "approved"`, referencia histórica de 90 días y descuento verificado de al menos el 70 %.
+El publicador crea una tarjeta minimalista con foto del producto, etiqueta de clasificación, precio actual y descuento. Usa una paleta propia inspirada en naranja y azul oscuro; no incorpora el logotipo de Amazon. El canal recibe la imagen, el enlace corto de afiliado y la información de la oferta.
 
-## Qué queda automatizado
+## Clasificación de publicaciones
 
-- Crea la tarjeta en el formato de referencia: precio normal, precio actual, ahorro y porcentaje.
-- Exige al menos tres anuncios comparables revisados de Wallapop, calcula la media de sus precios anunciados y estima ROI después de las comisiones y el envío que se indiquen.
-- Envía foto y pie con el enlace afiliado corto (`link.amazon` o `amzn.to`), el aviso de afiliación y que precio/stock pueden cambiar.
-- Publica automáticamente las ofertas aprobadas solo si el precio actual supone una rebaja de al menos el 70 % frente a la referencia histórica de 90 días; omite descuentos menores.
-- Rechaza precios con más de 20 minutos, anuncios comparables sin enlaces Wallapop válidos, ofertas duplicadas o imágenes que falten.
+- **ERROR DE PRECIO**: descuento verificado de 70 % o más frente al precio medio de los últimos 90 días.
+- **GANGA**: descuento verificado de 40 % a 69,9 %.
+- **MÍNIMO HISTÓRICO**: precio identificado manualmente como mínimo histórico por la fuente indicada. Puede publicarse aunque el descuento sea inferior al 40 %.
+- Una oferta de 70 % o más puede incluir además una estimación de reventa si se aportan al menos tres comparables revisados de Wallapop, junto con comisiones y envío. Si no se aportan comparables, conserva la etiqueta principal **ERROR DE PRECIO** y la tarjeta no inventa ROI.
 
-## Qué requiere revisión manual
+Toda oferta debe estar aprobada en `offers.json`, tener una comprobación reciente del precio (máximo 20 minutos), enlace afiliado, imagen y una referencia histórica de 90 días. Los precios se revisan manualmente; este flujo gratuito no rastrea Amazon ni Wallapop por su cuenta. No uses el precio tachado como sustituto del historial.
 
-Este modo gratuito **no rastrea Amazon ni busca anuncios en Wallapop**. Usa PrecioReal o Keepa en web/app para localizar y comprobar cada candidato manualmente; pega los datos verificados en `offers.json`. Al guardar esa oferta aprobada, GitHub Actions la publica sin intervención adicional solo si supera el 70 % calculado contra el histórico de 90 días. No confundas ese histórico con el precio de lista tachado. Wallapop indica en sus términos que no se pueden usar robots ni extraer datos sistemáticamente sin autorización expresa por escrito, y que las herramientas externas tipo bot requieren autorización. Por eso, hasta tener un acceso oficial autorizado, añade manualmente los comparables y sus precios a `offers.json`; el bot promedia esos datos y no inicia sesión ni raspa el sitio.
+## Preparación y aprobación
 
-Los anuncios de Wallapop muestran precios pedidos, no importes de ventas cerradas. Usa productos exactos siempre que puedas. Si introduces productos parecidos, el post y la tarjeta los identificarán como similares. El ROI es una estimación bruta antes de impuestos basada en la media y en las comisiones/envío indicados; no garantiza que se venda a ese precio.
+1. Añade una foto que tengas permiso para utilizar en `images/`.
+2. Usa una fuente histórica que hayas revisado y registra su URL y fecha.
+3. Marca `historical_low: true` solo cuando la fuente confirme el mínimo.
+4. Cambia `status` de `draft` a `approved` solo tras comprobar producto, variante, stock y precio.
+5. Al guardar `offers.json`, GitHub Actions publica las ofertas aprobadas que cumplen la regla de clasificación.
 
-La detección automática de todo el catálogo de Amazon necesita una API histórica autorizada; Keepa ofrece API, pero requiere una suscripción. Sin ese gasto, la búsqueda del candidato y la verificación histórica se hacen manualmente en las interfaces gratuitas. El proyecto no consulta ni extrae las páginas de Amazon. Verifica además que tu canal está aprobado por Amazon Afiliados y que el contenido y uso del enlace cumplen las condiciones de tu cuenta. Amazon restringe ciertos usos de enlaces especiales para compras destinadas a reventa.
-
-## Configuración
-
-1. El bot de Telegram debe ser administrador de `@caza_errores` con permiso para publicar mensajes. Activa las notificaciones del canal en tu móvil para recibir el aviso al publicarse una oferta.
-2. En GitHub, abre **Settings → Secrets and variables → Actions** y añade:
-   - `TELEGRAM_BOT_TOKEN`: token de BotFather de este bot.
-   - `TELEGRAM_CHAT_ID`: `@caza_errores`.
-3. En **Settings → Actions → General**, permite que los workflows escriban en el repositorio para registrar los IDs publicados.
-4. Usa **Actions → Publicar ofertas aprobadas → Run workflow** para lanzarlo manualmente. También se inicia al cambiar `offers.json`.
-
-No pongas el token en `offers.json`, en el código ni en un commit. Guárdalo solo como secreto de GitHub.
-
-## Preparar una publicación
-
-1. Coloca una foto de producto con licencia/permiso de uso en `images/`, por ejemplo `images/ram-ddr4.jpg`. No descargues fotos de Amazon para republicarlas sin permiso.
-2. Añade un elemento a `offers.json` siguiendo este ejemplo. Los precios de Wallapop se recopilan y comprueban manualmente; reemplaza los datos ficticios y cambia `draft` a `approved` solo tras verificar producto, variante, estado, vendedor, precio y comparables. Sin tres anuncios comparables revisados, el bot no publica.
+Ejemplo de ganga:
 
 ```json
 [
@@ -42,31 +29,32 @@ No pongas el token en `offers.json`, en el código ni en un commit. Guárdalo so
     "asin": "B0XXXXXXXX",
     "title": "Nombre exacto del producto y variante",
     "affiliate_url": "https://link.amazon/TU-ENLACE-CORTO",
-    "image_path": "ram-ddr4.jpg",
-    "current_price_eur": 64.20,
-    "reference_price_eur": 173.51,
+    "image_path": "producto.jpg",
+    "current_price_eur": 59.99,
+    "reference_price_eur": 99.99,
     "reference_period_days": 90,
-    "reference_source": "Proveedor histórico autorizado",
+    "reference_source": "PrecioReal o Keepa (revisado manualmente)",
     "reference_source_url": "https://proveedor.example/producto",
     "checked_at": "2026-10-28T12:00:00+02:00",
     "approved_by": "tu nombre",
-    "wallapop_comparables": [
-      {"title": "Anuncio del mismo producto, capacidad y estado", "match": "exacto", "price_eur": 129.00, "url": "https://es.wallapop.com/item/anuncio-1"},
-      {"title": "Anuncio del mismo producto, capacidad y estado", "match": "exacto", "price_eur": 139.00, "url": "https://es.wallapop.com/item/anuncio-2"},
-      {"title": "Anuncio de producto comparable", "match": "similar", "price_eur": 149.00, "url": "https://es.wallapop.com/item/anuncio-3"}
-    ],
-    "resale_fees_eur": 10.00,
-    "resale_shipping_eur": 0.00
+    "historical_low": false
   }
 ]
 ```
 
-`asin` debe ser el ASIN real de 10 caracteres; en `affiliate_url` pega exactamente el enlace corto que genera tu cuenta. Confirma que abre la ficha de la variante correcta y conserva tu etiqueta de afiliado. La imagen debe estar en `images/`; `image_path` lleva solo su nombre.
+Para marcar mínimo histórico, cambia `historical_low` a `true` tras confirmarlo en la fuente. Para añadir estimación de reventa, incluye al menos tres anuncios Wallapop con `title`, `match` (`exacto` o `similar`), `price_eur` y URL, y añade `resale_fees_eur` y `resale_shipping_eur`. El ROI es orientativo: los anuncios reflejan precios pedidos, no ventas cerradas.
 
-Incluye al menos tres anuncios Wallapop. `match` acepta `exacto` o `similar`; si uno o más son similares, el resultado se etiquetará como media de anuncios similares. El ROI usa: `(media Wallapop − precio Amazon − comisiones − envío) / precio Amazon × 100`. Introduce `0` si una comisión/envío no aplica.
+## Configuración
+
+En **Settings → Secrets and variables → Actions** define:
+
+- `TELEGRAM_BOT_TOKEN`: token del bot, guardado solo como secreto.
+- `TELEGRAM_CHAT_ID`: `@caza_errores`.
+
+El bot necesita permiso para publicar en el canal. GitHub Actions registra los IDs publicados para evitar duplicados. Las notificaciones en el móvil dependen de que Telegram tenga activadas las notificaciones del canal.
 
 ## Coste y límites
 
-Telegram Bot API y GitHub Actions pueden funcionar sin coste dentro de las cuotas de GitHub. La acción solo publica ofertas aprobadas; no hay una fuente gratuita autorizada configurada para descubrir errores de precio. Un feed automático requerirá una API/proveedor compatible y permiso para publicar sus datos.
+Telegram Bot API y GitHub Actions pueden funcionar dentro de las cuotas gratuitas. El flujo actual publica ofertas aprobadas; la búsqueda y verificación de precios son manuales. No automatiza la extracción de Amazon ni de Wallapop. Cumple las condiciones de tu cuenta de Afiliados de Amazon y usa imágenes con permiso. Los posts incluyen el aviso de afiliación.
 
-Referencias: [Términos de Wallapop](https://about.wallapop.com/condiciones-de-uso/), [políticas de Amazon Afiliados España](https://afiliados.amazon.es/help/operating/policies), [licencia de uso de contenido y API de Amazon](https://afiliados.amazon.es/help/operating/license), [Telegram Bot API](https://core.telegram.org/bots/api).
+Referencias: [políticas de Amazon Afiliados España](https://afiliados.amazon.es/help/operating/policies), [términos de Wallapop](https://about.wallapop.com/condiciones-de-uso/), [Telegram Bot API](https://core.telegram.org/bots/api).
