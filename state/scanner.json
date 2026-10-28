@@ -549,6 +549,11 @@
    "price": 9.99,
    "t": 1793215085,
    "result": "solo -29% bajo la media"
+  },
+  "RYXE5ZJ": {
+   "price": 6.6,
+   "t": 1793215338,
+   "result": "solo -33% bajo la media"
   }
  },
  "posts": [
@@ -660,7 +665,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 55,
+ "last_listing_count": 56,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
