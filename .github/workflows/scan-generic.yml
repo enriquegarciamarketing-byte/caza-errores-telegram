@@ -38,6 +38,12 @@ jobs:
       - name: Instalar dependencias
         run: python -m pip install -r requirements.txt
 
+      - name: Cache del modelo de ampliación
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/caza-chollos/models
+          key: fsrcnn-x4-v1
+
       - name: Buscar y publicar en el canal normal
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
