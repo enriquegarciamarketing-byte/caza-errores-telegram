@@ -1,4 +1,4 @@
-name: Actualizar enlace afiliado de Telegram
+name: Actualizar imagen y estimaciones del post de Telegram
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ permissions:
   contents: read
 
 jobs:
-  edit-caption:
+  edit-card:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repositorio
@@ -16,7 +16,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Actualizar el pie del post #11
+      - name: Instalar Pillow
+        run: python -m pip install Pillow
+      - name: Actualizar la imagen y el pie del post #11
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: python telegram_edit_caption.py
+        run: python telegram_edit_media.py
