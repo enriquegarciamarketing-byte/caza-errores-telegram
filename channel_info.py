@@ -42,9 +42,13 @@ def main() -> int:
         else:
             print(f"No se pudo editar el fijado ({exc}); publico uno nuevo")
             msg = tg.call("sendMessage", {**params, "disable_notification": True})
-            tg.call("pinChatMessage", {"chat_id": channel, "message_id": msg["message_id"],
-                                       "disable_notification": True})
-            print(f"Nuevo fijado publicado y fijado: mensaje {msg['message_id']}")
+            try:
+                tg.call("pinChatMessage", {"chat_id": channel, "message_id": msg["message_id"],
+                                           "disable_notification": True})
+                print(f"Nuevo fijado publicado y fijado: mensaje {msg['message_id']}")
+            except RuntimeError as pin_exc:
+                print(f"Publicado como mensaje {msg['message_id']}, pero no se pudo fijar ({pin_exc})")
+                status = 1
             info["pinned_message_id"] = msg["message_id"]
             (ROOT / "channel_info.json").write_text(json.dumps(info, ensure_ascii=False, indent=1) + "\n",
                                                     encoding="utf-8")
