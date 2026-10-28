@@ -26,7 +26,8 @@ PUBLISHED_PATH = ROOT / "state" / "published.json"
 IMAGE_DIR = ROOT / "images"
 OUTPUT_DIR = ROOT / "output"
 MAX_PRICE_AGE = timedelta(minutes=20)
-MIN_AUTO_PUBLISH_DISCOUNT_PERCENT = 70
+MIN_BARGAIN_DISCOUNT_PERCENT = 40
+MIN_ERROR_DISCOUNT_PERCENT = 70
 ASIN_PATH = re.compile(r"/dp/([A-Z0-9]{10})(?:/|$)", re.IGNORECASE)
 ASIN_PATTERN = re.compile(r"^[A-Z0-9]{10}$", re.IGNORECASE)
 SAFE_ID = re.compile(r"^[A-Z0-9_-]{1,80}$", re.IGNORECASE)
@@ -84,8 +85,7 @@ def validate_offer(offer: object, now: datetime) -> dict:
     required = (
         "id", "asin", "title", "affiliate_url", "image_path", "current_price_eur",
         "reference_price_eur", "reference_period_days", "reference_source",
-        "reference_source_url", "checked_at", "approved_by", "wallapop_comparables",
-        "resale_fees_eur", "resale_shipping_eur",
+        "reference_source_url", "checked_at", "approved_by",
     )
     missing = [name for name in required if not offer.get(name)]
     if missing:
@@ -152,42 +152,59 @@ def validate_offer(offer: object, now: datetime) -> dict:
     if image_path.stat().st_size > 10 * 1024 * 1024:
         raise OfferError("la imagen del producto supera 10 MB")
 
+    savings_pct = (reference - current) / reference * 100
+    historical_low = offer.get("historical_low", False)
+    if not isinstance(historical_low, bool):
+        raise OfferError("historical_low debe ser true o false")
+    if savings_pct + 1e-9 < MIN_BARGAIN_DISCOUNT_PERCENT and not historical_low:
+        raise OfferError("se requiere un descuento verificado de al menos el 40 % o marcar un mínimo histórico revisado")
+
     resale_data = None
-    comparables = offer["wallapop_comparables"]
+    comparables = offer.get("wallapop_comparables", [])
+    if comparables is None:
+        comparables = []
     if not isinstance(comparables, list):
         raise OfferError("wallapop_comparables debe ser una lista de anuncios revisados")
-    if len(comparables) < 3:
-        raise OfferError("incluye al menos 3 anuncios comparables de Wallapop para estimar la media")
+    if comparables and len(comparables) < 3:
+        raise OfferError("si incluyes comparables, añade al menos 3 anuncios revisados de Wallapop")
     if len(comparables) > 20:
         raise OfferError("usa como máximo 20 anuncios comparables de Wallapop")
-    prices = []
-    kinds = set()
-    for index, item in enumerate(comparables, start=1):
-        if not isinstance(item, dict):
-            raise OfferError(f"wallapop_comparables[{index}] debe ser un objeto")
-        item_title = item.get("title")
-        item_kind = item.get("match")
-        listing_url = item.get("url")
-        if not isinstance(item_title, str) or not item_title.strip():
-            raise OfferError(f"falta el título del anuncio Wallapop {index}")
-        if item_kind not in {"exacto", "similar"}:
-            raise OfferError(f"wallapop_comparables[{index}].match debe ser exacto o similar")
-        parsed_listing = urllib.parse.urlparse(listing_url if isinstance(listing_url, str) else "")
-        if parsed_listing.scheme != "https" or parsed_listing.hostname not in WALLAPOP_HOSTS:
-            raise OfferError(f"wallapop_comparables[{index}].url debe ser un enlace HTTPS de Wallapop")
-        prices.append(money(item.get("price_eur"), f"precio Wallapop {index}"))
-        kinds.add(item_kind)
-    fees = nonnegative_money(offer.get("resale_fees_eur"), "resale_fees_eur")
-    shipping = nonnegative_money(offer.get("resale_shipping_eur"), "resale_shipping_eur")
-    average = sum(prices) / len(prices)
-    net = average - current - fees - shipping
-    resale_data = {
-        "price": average,
-        "count": len(prices),
-        "match": "similar" if "similar" in kinds else "exacto",
-        "net": net,
-        "roi": (net / current) * 100,
-    }
+    if comparables:
+        prices = []
+        kinds = set()
+        for index, item in enumerate(comparables, start=1):
+            if not isinstance(item, dict):
+                raise OfferError(f"wallapop_comparables[{index}] debe ser un objeto")
+            item_title = item.get("title")
+            item_kind = item.get("match")
+            listing_url = item.get("url")
+            if not isinstance(item_title, str) or not item_title.strip():
+                raise OfferError(f"falta el título del anuncio Wallapop {index}")
+            if item_kind not in {"exacto", "similar"}:
+                raise OfferError(f"wallapop_comparables[{index}].match debe ser exacto o similar")
+            parsed_listing = urllib.parse.urlparse(listing_url if isinstance(listing_url, str) else "")
+            if parsed_listing.scheme != "https" or parsed_listing.hostname not in WALLAPOP_HOSTS:
+                raise OfferError(f"wallapop_comparables[{index}].url debe ser un enlace HTTPS de Wallapop")
+            prices.append(money(item.get("price_eur"), f"precio Wallapop {index}"))
+            kinds.add(item_kind)
+        fees = nonnegative_money(offer.get("resale_fees_eur", 0), "resale_fees_eur")
+        shipping = nonnegative_money(offer.get("resale_shipping_eur", 0), "resale_shipping_eur")
+        average = sum(prices) / len(prices)
+        net = average - current - fees - shipping
+        resale_data = {
+            "price": average,
+            "count": len(prices),
+            "match": "similar" if "similar" in kinds else "exacto",
+            "net": net,
+            "roi": (net / current) * 100,
+        }
+
+    if savings_pct + 1e-9 >= MIN_ERROR_DISCOUNT_PERCENT:
+        category = "ERROR DE PRECIO"
+    elif historical_low:
+        category = "MÍNIMO HISTÓRICO"
+    else:
+        category = "GANGA"
 
     return {
         "id": offer_id.strip(),
@@ -200,6 +217,9 @@ def validate_offer(offer: object, now: datetime) -> dict:
         "days": days,
         "source": offer["reference_source"].strip(),
         "checked_at": checked_at,
+        "discount_pct": savings_pct,
+        "historical_low": historical_low,
+        "category": category,
         "resale": resale_data,
     }
 
@@ -252,80 +272,122 @@ def euro(amount: float) -> str:
 
 
 def create_price_card(offer: dict) -> Path:
-    width, height = 1244, 1080
-    canvas = Image.new("RGB", (width, height), "#f7f7f7")
+    width, height = 1080, 1080
+    ink = "#131921"
+    orange = "#FF9900"
+    muted = "#697078"
+    paper = "#F4F5F5"
+    canvas = Image.new("RGB", (width, height), paper)
     draw = ImageDraw.Draw(canvas)
 
-    # Mismo formato apaisado, panel de producto y escala tipográfica de la referencia.
-    draw.rounded_rectangle((34, 28, 674, 1052), radius=34, fill="#ffffff", outline="#eceeef", width=2)
+    # Diseño original con una paleta inspirada en Amazon; no usa su logotipo.
+    draw.rounded_rectangle((24, 24, 1056, 1056), radius=34, fill="#FFFFFF", outline="#E7E9EB", width=2)
+    draw.text((58, 48), "CAZA ERRORES", font=_font(26, bold=True), fill=ink)
+    draw.text((58, 81), "OFERTAS REVISADAS", font=_font(15, bold=True), fill=muted)
+
+    category = offer["category"]
+    category_font = _font(22, bold=True)
+    category_box = draw.textbbox((0, 0), category, font=category_font)
+    badge_w = category_box[2] + 48
+    badge_x = 1020 - badge_w
+    draw.rounded_rectangle((badge_x, 44, 1020, 101), radius=22, fill=orange)
+    draw.text((badge_x + 24, 57), category, font=category_font, fill=ink)
+
+    # La foto ocupa el protagonismo visual; se contiene completa sin recortarla.
+    photo_box = (48, 128, 1032, 718)
+    draw.rounded_rectangle(photo_box, radius=28, fill="#FAFAFA", outline="#ECEEEF", width=2)
     with Image.open(offer["image_path"]) as source:
-        product = ImageOps.contain(source.convert("RGB"), (590, 940), method=Image.Resampling.LANCZOS)
-    canvas.paste(product, (58 + (590 - product.width) // 2, 70 + (940 - product.height) // 2))
+        product = ImageOps.contain(source.convert("RGB"), (920, 540), method=Image.Resampling.LANCZOS)
+    canvas.paste(
+        product,
+        (photo_box[0] + (photo_box[2] - photo_box[0] - product.width) // 2,
+         photo_box[1] + (photo_box[3] - photo_box[1] - product.height) // 2),
+    )
     draw = ImageDraw.Draw(canvas)
 
-    x = 744
-    label_font = _font(29)
-    label_color = "#64696f"
+    def fit(value: str, size: int, max_width: int, color: str, bold: bool = True):
+        font = _font(size, bold=bold)
+        box = draw.textbbox((0, 0), value, font=font)
+        while box[2] - box[0] > max_width and size > 20:
+            size -= 2
+            font = _font(size, bold=bold)
+            box = draw.textbbox((0, 0), value, font=font)
+        draw.text((0, 0), value, font=font, fill=color)
+        return font
 
-    def draw_fit(value: str, y: int, size: int, max_width: int, color: str, bold: bool = True):
-        chosen = _font(size, bold=bold)
-        box = draw.textbbox((0, 0), value, font=chosen)
-        while box[2] > max_width and chosen.size > 34:
-            chosen = _font(chosen.size - 2, bold=bold)
-            box = draw.textbbox((0, 0), value, font=chosen)
-        draw.text((x, y), value, font=chosen, fill=color)
-        return box
+    # Mantener el nombre del producto legible, limitado a dos líneas.
+    title_words = offer["title"].split()
+    title_lines = []
+    line = ""
+    title_font = _font(28, bold=True)
+    for word in title_words:
+        candidate = f"{line} {word}".strip()
+        if line and draw.textbbox((0, 0), candidate, font=title_font)[2] > 950:
+            title_lines.append(line)
+            line = word
+        else:
+            line = candidate
+    if line:
+        title_lines.append(line)
+    if len(title_lines) > 2:
+        title_lines = title_lines[:2]
+        last = title_lines[1]
+        while last and draw.textbbox((0, 0), last + "…", font=title_font)[2] > 950:
+            last = last.rsplit(" ", 1)[0] if " " in last else last[:-1]
+        title_lines[1] = last.rstrip(" .,") + "…"
+    draw.text((58, 748), title_lines[0] if title_lines else "", font=title_font, fill=ink)
+    if len(title_lines) > 1:
+        draw.text((58, 783), title_lines[1], font=title_font, fill=ink)
 
     savings = offer["reference"] - offer["current"]
     savings_pct = savings / offer["reference"] * 100
-    resale = offer["resale"]
+    price_font = _font(76, bold=True)
+    price_text = euro(offer["current"])
+    while draw.textbbox((0, 0), price_text, font=price_font)[2] > 590 and price_font.size > 48:
+        price_font = _font(price_font.size - 2, bold=True)
+    draw.text((58, 836), price_text, font=price_font, fill=orange)
 
-    boxes = [
-        (700, 28, 1218, 213),
-        (700, 231, 1218, 443),
-        (700, 461, 1218, 646),
-        (700, 664, 1218, 847),
-        (700, 865, 1218, 1052),
-    ]
-    fills = ["#ffffff", "#fff2e9", "#ffffff", "#ffffff", "#ffffff"]
-    for box, fill in zip(boxes, fills):
-        draw.rounded_rectangle(box, radius=28, fill=fill, outline="#eceeef", width=1)
+    normal_label = f"Antes {euro(offer['reference'])} · media de {offer['days']} días"
+    normal_font = _font(24)
+    draw.text((62, 933), normal_label, font=normal_font, fill=muted)
+    normal_box = draw.textbbox((62, 933), normal_label, font=normal_font)
+    draw.line((normal_box[0], 946, normal_box[2], 946), fill=muted, width=2)
 
-    draw.text((x, 58), "Precio normal", font=label_font, fill=label_color)
-    normal_value = euro(offer["reference"])
-    normal_box = draw_fit(normal_value, 96, 76, 442, "#101114")
-    draw.line((x - 2, 151, x + normal_box[2] + 5, 121), fill="#60646a", width=5)
+    # Una sola cifra de descuento, dentro de un bloque de alto contraste.
+    discount_box = (748, 828, 1018, 1000)
+    draw.rounded_rectangle(discount_box, radius=26, fill=ink)
+    discount_text = f"-{savings_pct:.0f}%"
+    discount_font = _font(68, bold=True)
+    discount_bounds = draw.textbbox((0, 0), discount_text, font=discount_font)
+    while discount_bounds[2] > 230 and discount_font.size > 42:
+        discount_font = _font(discount_font.size - 2, bold=True)
+        discount_bounds = draw.textbbox((0, 0), discount_text, font=discount_font)
+    draw.text((discount_box[0] + (discount_box[2] - discount_bounds[2]) // 2, 846),
+              discount_text, font=discount_font, fill=orange)
+    saving_label = f"AHORRO {euro(savings)}"
+    saving_font = _font(21, bold=True)
+    saving_bounds = draw.textbbox((0, 0), saving_label, font=saving_font)
+    while saving_bounds[2] > 244 and saving_font.size > 16:
+        saving_font = _font(saving_font.size - 1, bold=True)
+        saving_bounds = draw.textbbox((0, 0), saving_label, font=saving_font)
+    draw.text((discount_box[0] + (discount_box[2] - saving_bounds[2]) // 2, 939),
+              saving_label, font=saving_font, fill="#FFFFFF")
 
-    draw.text((x, 258), "Precio actual", font=label_font, fill=label_color)
-    draw_fit(euro(offer["current"]), 293, 84, 442, "#e8471d")
-
-    draw.text((x, 486), "Ahorras", font=label_font, fill=label_color)
-    saving_text = euro(savings)
-    pill = (1052, 510, 1190, 602)
-    draw.rounded_rectangle(pill, radius=20, fill="#e4f6e9")
-    saving_max_width = pill[0] - x - 24
-    draw_fit(saving_text, 521, 66, saving_max_width, "#087a3a")
-    pct_text = f"-{savings_pct:.0f} %"
-    pct_size = 48
-    pct_font = _font(pct_size, bold=True)
-    pct_box = draw.textbbox((0, 0), pct_text, font=pct_font)
-    while pct_box[2] > pill[2] - pill[0] - 12 and pct_size > 34:
-        pct_size -= 2
-        pct_font = _font(pct_size, bold=True)
-        pct_box = draw.textbbox((0, 0), pct_text, font=pct_font)
-    pct_x = pill[0] + (pill[2] - pill[0] - pct_box[2]) // 2
-    pct_y = pill[1] + (pill[3] - pill[1] - (pct_box[3] - pct_box[1])) // 2 - pct_box[1]
-    draw.text((pct_x, pct_y), pct_text, font=pct_font, fill="#087a3a")
-
-    draw.text((x, 689), "Reventa potencial", font=label_font, fill=label_color)
-    draw_fit("~" + euro(resale["price"]), 724, 76, 442, "#101114")
-
-    draw.text((x, 890), "ROI estimado", font=label_font, fill=label_color)
-    draw_fit(f"~{resale['roi']:.0f} %", 925, 80, 442, "#087a3a")
+    if offer["historical_low"] and category == "ERROR DE PRECIO":
+        draw.text((62, 984), "MÍNIMO HISTÓRICO VERIFICADO", font=_font(17, bold=True), fill=ink)
+    elif offer["resale"]:
+        resale = offer["resale"]
+        resale_line = f"Wallapop: ~{euro(resale['price'])} · ROI ~{resale['roi']:.0f}%"
+        resale_font = _font(18, bold=True)
+        while draw.textbbox((0, 0), resale_line, font=resale_font)[2] > 650 and resale_font.size > 14:
+            resale_font = _font(resale_font.size - 1, bold=True)
+        draw.text((62, 984), resale_line, font=resale_font, fill=ink)
+    elif category == "MÍNIMO HISTÓRICO":
+        draw.text((62, 984), "MÍNIMO HISTÓRICO VERIFICADO", font=_font(17, bold=True), fill=ink)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output = OUTPUT_DIR / f"{offer['id']}.jpg"
-    canvas.save(output, format="JPEG", quality=90, optimize=True)
+    canvas.save(output, format="JPEG", quality=91, optimize=True)
     return output
 
 
@@ -392,10 +454,7 @@ def main() -> int:
         published_set = set(published)
         for raw in approved:
             offer = validate_offer(raw, now)
-            discount_pct = (offer["reference"] - offer["current"]) / offer["reference"] * 100
-            if discount_pct + 1e-9 < MIN_AUTO_PUBLISH_DISCOUNT_PERCENT:
-                print(f"{offer['id']}: descuento {discount_pct:.1f}%, inferior al 70%; se omite.")
-                continue
+            discount_pct = offer["discount_pct"]
             if offer["id"] in published_set:
                 print(f"{offer['id']}: ya publicado; se omite.")
                 continue
@@ -407,7 +466,7 @@ def main() -> int:
                 json.dumps(sorted(published_set), ensure_ascii=False, indent=2) + "\n",
                 encoding="utf-8",
             )
-            print(f"{offer['id']}: publicado correctamente.")
+            print(f"{offer['id']}: publicado como {offer['category']} ({discount_pct:.1f %}).")
             time.sleep(1)
         return 0
     except OfferError as exc:
