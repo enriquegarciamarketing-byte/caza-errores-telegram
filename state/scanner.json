@@ -788,7 +788,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 121,
+ "last_listing_count": 119,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -859,5 +859,136 @@
    "brother hll2400dwe, impresora laser monocromo (b/n) | 30 ppm, impresion a 2 caras, wifi, usb, bandeja de papel de 250 hojas",
    "joiot 32gb memoria usb 3.0 pendrive 2 en 1 usb tipo c y usb 3.0, alta velocidad memoria usb 32 gb compatible con pc/ordenador"
   ]
+ },
+ "resale_cache": {},
+ "wallapop_cache": {
+  "aliexpress|juego resident evil requiem para playstation 5 | ps5 | pal eu - nuevo original precintado|aliexpress ps5 juego": {
+   "t": 1793220209.8554032,
+   "query": "aliexpress ps5 juego",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "carrefour|lego copa mundial de la fifa +12 anos - 43020 (-40% en cupon carrefour)|carrefour 12 lego": {
+   "t": 1793220211.8859723,
+   "query": "carrefour 12",
+   "prices": [
+    70.0,
+    60.0,
+    44.0,
+    4.0,
+    4.0,
+    2.0,
+    6.0,
+    8.0,
+    5.0,
+    5.0,
+    37.99
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 96350,
+   "raw_count": 38
+  },
+  "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
+   "t": 1793220213.886626,
+   "query": "puma 39 zapatillas",
+   "prices": [
+    25.0,
+    17.0,
+    35.0,
+    15.0,
+    22.0,
+    50.0,
+    26.0,
+    35.0,
+    18.0,
+    10.0,
+    28.0,
+    30.0,
+    19.0,
+    15.0,
+    10.0,
+    27.0,
+    19.0,
+    28.0,
+    20.0,
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 130745,
+   "raw_count": 40
+  },
+  "decathlon|ciclocomputador gps garmin edge 550 (pantalla color, navegacion avanzada, metricas de rendimiento, bateria de larga duracion, decathlon)|decathlon 550 ciclocomputador": {
+   "t": 1793220215.909353,
+   "query": "decathlon 550",
+   "prices": [
+    550.0,
+    3.0,
+    50.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 122935,
+   "raw_count": 37
+  }
+ },
+ "milanuncios_cache": {},
+ "admin_alerts": {
+  "wallapop:cm-2047349": 1793220210.575943,
+  "wallapop:cm-2047688": 1793220212.4438262,
+  "wallapop:cm-2047744": 1793220214.5371382,
+  "wallapop:cm-2047040": 1793220216.6755087
+ },
+ "vinted_cache": {
+  "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
+   "t": 1793220213.6209202,
+   "prices": [
+    85.0,
+    30.0,
+    55.0,
+    29.0,
+    49.0,
+    26.0,
+    24.5,
+    32.0,
+    10.0,
+    7.0,
+    15.0,
+    42.0,
+    39.5,
+    10.0,
+    45.0,
+    25.0,
+    12.0,
+    25.0,
+    29.5,
+    50.0,
+    60.0,
+    10.0,
+    13.0,
+    22.0,
+    12.0,
+    5.0,
+    25.0,
+    50.0,
+    20.0,
+    40.0,
+    5.0,
+    20.0,
+    13.5
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~26 € (25 anuncios): ROI -35 % y -14 €, por debajo del mínimo (30 % y 25 €)"
+  }
  }
 }
