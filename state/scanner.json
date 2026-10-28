@@ -449,6 +449,21 @@
    "price": 1195.0,
    "t": 1793213295,
    "result": "solo -8% bajo la media"
+  },
+  "MzQaX0d": {
+   "price": 5.5,
+   "t": 1793213540,
+   "result": "importe demasiado bajo para ganga"
+  },
+  "Mj0lOBl": {
+   "price": 21.18,
+   "t": 1793213540,
+   "result": "solo -17% bajo la media"
+  },
+  "1Evb4p9": {
+   "price": 189.99,
+   "t": 1793213540,
+   "result": "sin media de 90 días por encima del precio"
   }
  },
  "posts": [
