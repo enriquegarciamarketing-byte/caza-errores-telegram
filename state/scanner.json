@@ -179,6 +179,21 @@
    "price": 74.49,
    "t": 1793168062,
    "result": "solo -24% bajo la media"
+  },
+  "1Dvvp37": {
+   "price": 13.45,
+   "t": 1793172556,
+   "result": "valoraciones flojas (4.3 / 19)"
+  },
+  "1wmXrp7": {
+   "price": 13.15,
+   "t": 1793172556,
+   "result": "MÍNIMO HISTÓRICO"
+  },
+  "MW39YZ5": {
+   "price": 10.79,
+   "t": 1793172556,
+   "result": "solo -33% bajo la media"
   }
  },
  "posts": [
@@ -245,6 +260,28 @@
    "category": "ERROR DE PRECIO",
    "t": 1793156559,
    "gtin": null
+  },
+  {
+   "id": "1wmXrp7",
+   "gtin": "8414800064513",
+   "price": 13.15,
+   "category": "MÍNIMO HISTÓRICO",
+   "t": 1793172604,
+   "title": "TITANLUX Tn.una Capa Azul Suave 4l",
+   "cap": {
+    "category": "MÍNIMO HISTÓRICO",
+    "title": "TITANLUX Tn.una Capa Azul Suave 4l",
+    "brand": "TITANLUX",
+    "current": 13.15,
+    "reference": 31.52,
+    "historical_low": true,
+    "rating": 4.4,
+    "reviews": 500,
+    "sizes": null
+   },
+   "message_id": 24,
+   "url": "https://www.amazon.es/s?k=8414800064513&tag=cazadores_errores-21",
+   "alert_id": 6
   }
  ],
  "tg_offset": 334822051,
