@@ -1,6 +1,8 @@
 name: Canal normal @cazachollos_com
 
 on:
+  schedule:
+    - cron: "*/15 7-23 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
