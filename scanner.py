@@ -207,6 +207,10 @@ def caption_data(cand: dict) -> dict:
             "reviews": cand.get("reviews")}
 
 
+def buttons_for(url: str) -> dict:
+    return {"inline_keyboard": [[{"text": "🛒 Ver en Amazon", "url": url}]]}
+
+
 def caption_for(url: str, cap: dict | None = None) -> str:
     if not cap:
         return f'🔗 <b><a href="{html.escape(url, quote=True)}">Ver en Amazon</a></b>'
@@ -286,7 +290,8 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
                 continue
             try:
                 tg.call("editMessageCaption", {"chat_id": channel, "message_id": post["message_id"],
-                                               "caption": caption_for(url, post.get("cap")), "parse_mode": "HTML"})
+                                               "caption": caption_for(url, post.get("cap")), "parse_mode": "HTML",
+                                               "reply_markup": buttons_for(url)})
                 post["url"] = url
                 tg.call("sendMessage", {"chat_id": admin, "reply_to_message_id": msg["message_id"],
                                         "text": "✅ Enlace cambiado en el canal."})
@@ -409,7 +414,8 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
               "t": int(now_utc().timestamp()), "title": card_title(cand)[:120], "cap": caption_data(cand)}
     if url:
         silent = cand["category"] != "ERROR DE PRECIO" and now_utc().astimezone(MADRID).hour < 9
-        msg = tg.send_photo(channel, card, caption_for(url, caption_data(cand)), {"disable_notification": silent})
+        msg = tg.send_photo(channel, card, caption_for(url, caption_data(cand)),
+                            {"disable_notification": silent, "reply_markup": buttons_for(url)})
         record.update(message_id=msg["message_id"], url=url)
         print(f"  Publicado en el canal (mensaje {msg['message_id']}): {summary.splitlines()[0]}")
     elif not admin:
@@ -452,7 +458,8 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
             card = create_price_card({"id": f"scan-{post['id']}", "title": data["title"], "image_path": src,
                                       "category": data["category"], "current": data["current"],
                                       "reference": data["reference"], "days": 90})
-            msg = tg.send_photo(channel, card, caption_for(post["url"], post.get("cap")))
+            msg = tg.send_photo(channel, card, caption_for(post["url"], post.get("cap")),
+                                {"reply_markup": buttons_for(post["url"])})
         except (RuntimeError, urllib.error.URLError, TimeoutError) as exc:
             print(f"No se pudo publicar el pendiente {post['id']}: {exc}")
             continue
@@ -496,12 +503,72 @@ def edit_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: str,
     cand["category"] = category or "GANGA"
     cap = caption_data(cand)
     tg.call("editMessageCaption", {"chat_id": channel, "message_id": message_id,
-                                   "caption": caption_for(link, cap), "parse_mode": "HTML"})
+                                   "caption": caption_for(link, cap), "parse_mode": "HTML",
+                                   "reply_markup": buttons_for(link)})
     for post in state.get("posts", []):
         if post.get("message_id") == message_id:
             post.update(cap=cap, url=link)
     save_state(state)
     print(f"Texto del post {message_id} actualizado ({cand['category']}, {reason})")
+    return 0
+
+
+def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
+    """Crea o rehace un post con datos dados a mano (foto, precios, enlace).
+
+    Si spec trae message_id, sustituye imagen, texto y botón de ese post."""
+    for key in ("title", "current", "reference", "category", "image", "link"):
+        if not spec.get(key):
+            print(f"Falta {key}", file=sys.stderr)
+            return 2
+    if not LINK_RE.fullmatch(spec["link"]):
+        print("Enlace no válido", file=sys.stderr)
+        return 2
+    pid = re.sub(r"[^A-Za-z0-9]", "", spec.get("id") or "custom")[:30] or "custom"
+    src = OUTPUT_DIR / "src" / f"{pid}.jpg"
+    src.parent.mkdir(parents=True, exist_ok=True)
+    src.write_bytes(fetch(spec["image"], binary=True))
+    offer = {"id": f"custom-{pid}", "title": card_title({"name": spec["title"], "brand": spec.get("brand", "")}),
+             "image_path": src, "category": spec["category"], "current": float(spec["current"]),
+             "reference": float(spec["reference"]), "days": 90, "ref_label": spec.get("ref_label")}
+    card = create_price_card(offer)
+    cap = {"category": spec["category"], "title": spec["title"], "brand": spec.get("brand", ""),
+           "current": float(spec["current"]), "reference": float(spec["reference"]),
+           "historical_low": bool(spec.get("historical_low")), "rating": spec.get("rating"),
+           "reviews": spec.get("reviews")}
+    if spec.get("ref_text"):
+        cap["ref_text"] = spec["ref_text"]
+    caption = caption_for(spec["link"], cap)
+    if spec.get("message_id"):
+        mid = int(spec["message_id"])
+        boundary = "----caza" + uuid.uuid4().hex
+        media = {"type": "photo", "media": "attach://photo", "caption": caption, "parse_mode": "HTML"}
+        fields = {"chat_id": channel, "message_id": str(mid), "media": json.dumps(media, ensure_ascii=False),
+                  "reply_markup": json.dumps(buttons_for(spec["link"]))}
+        parts = [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
+                 for k, v in fields.items()]
+        parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"card.jpg\"\r\n"
+                     "Content-Type: image/jpeg\r\n\r\n".encode("utf-8") + card.read_bytes() + b"\r\n")
+        parts.append(f"--{boundary}--\r\n".encode("ascii"))
+        req = urllib.request.Request(tg.base + "editMessageMedia", data=b"".join(parts),
+                                     headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                result = json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            result = json.loads(exc.read().decode("utf-8") or "{}")
+        if not result.get("ok"):
+            print(f"Telegram no dejó editar el post {mid}: {result.get('description')}", file=sys.stderr)
+            return 1
+        print(f"Post {mid} rehecho con la tarjeta nueva")
+    else:
+        msg = tg.send_photo(channel, card, caption, {"reply_markup": buttons_for(spec["link"])})
+        mid = msg["message_id"]
+        print(f"Publicado como mensaje {mid}")
+    state.setdefault("posts", []).append({"id": pid, "message_id": mid, "url": spec["link"], "cap": cap,
+                                          "price": float(spec["current"]), "category": spec["category"],
+                                          "t": int(now_utc().timestamp()), "gtin": None})
+    save_state(state)
     return 0
 
 
@@ -512,6 +579,7 @@ def main() -> int:
     parser.add_argument("--manual-id", default="", help="ID de Jimmyleaks a publicar a mano")
     parser.add_argument("--manual-link", default="", help="Enlace corto de afiliado para --manual-id")
     parser.add_argument("--edit-message", type=int, default=0, help="Reescribe el texto de un post ya publicado")
+    parser.add_argument("--custom", default="", help="JSON con un post hecho a mano (ver custom_post)")
     args = parser.parse_args()
 
     cfg = load_json(CONFIG_PATH, {})
@@ -534,6 +602,8 @@ def main() -> int:
             publish_pending_from_reply(tg, state, channel)
 
     now = now_utc()
+    if args.custom:
+        return custom_post(tg, state, channel, json.loads(args.custom))
     if args.manual_id and args.edit_message:
         return edit_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.edit_message)
     if args.manual_id:

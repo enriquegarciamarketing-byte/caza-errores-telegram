@@ -253,7 +253,7 @@ def short_title(title: str, brand: str = "", limit: int = 85) -> str:
 
 def build_caption(*, url: str, category: str, title: str, current: float, reference: float,
                   brand: str = "", historical_low: bool = False, rating: float | None = None,
-                  reviews: int | None = None) -> str:
+                  reviews: int | None = None, ref_text: str = "frente a su precio medio de 90 días") -> str:
     """Copy del canal: categoría, marca en negrita, precio, precio tachado y descuento."""
     e = html.escape
     brand = nice_brand(brand)
@@ -263,7 +263,7 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
     lines.append(f"<b>{e(brand)}</b> {product}" if brand else f"<b>{product}</b>")
     lines.append("")
     lines.append(f"💰 <b>{e(euro(current))}</b>   <s>{e(euro(reference))}</s>")
-    lines.append(f"🏷️ <b>-{pct}%</b> frente a su precio medio de 90 días")
+    lines.append(f"🏷️ <b>-{pct}%</b> {e(ref_text)}")
     if historical_low:
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
     if rating and rating >= 4.0 and reviews:
@@ -379,7 +379,7 @@ def create_price_card(offer: dict) -> Path:
     savings_pct = savings / offer["reference"] * 100
     old_box = (info_x, 390, 1028, 540)
     draw.rounded_rectangle(old_box, radius=24, fill="#F5F6F6", outline="#E7E9EB", width=2)
-    old_label = f"ANTES · MEDIA {offer['days']} DÍAS"
+    old_label = offer.get("ref_label") or f"ANTES · MEDIA {offer['days']} DÍAS"
     draw.text((info_x + 24, 408), old_label, font=_font(22, bold=True), fill=muted)
     old_price = euro(offer["reference"])
     old_font = _font(38, bold=True)
