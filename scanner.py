@@ -109,6 +109,7 @@ def parse_listing(page: str) -> list[dict]:
             "rating": parse_eur(grab(r'class="tk-rating".*?<span>(.*?)</span>')),
             "reviews": reviews,
             "price": parse_eur(grab(r'<span class="now[^"]*">(.*?)</span>')),
+            "listing_price": parse_eur(grab(r'<span class="now[^"]*">(.*?)</span>')),
             "was": parse_eur(grab(r'<span class="was">(.*?)</span>')),
             "verdict": grab(r'<span class="verdict[^"]*">(.*?)</span>') or "",
             "ts": int(ts.group(1)) if ts else 0,
@@ -357,6 +358,8 @@ def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
         cand = {**item, **{k: v for k, v in detail.items() if v not in (None, "")}}
         cand["price"] = detail.get("price") or item["price"]
         category, reason = classify(cfg, cand)
+        if category:
+            category, reason = quality_checks(cand, now, category, reason)
         seen[item["id"]] = {"price": cand["price"], "t": int(now.timestamp()), "result": category or reason}
         if category and not detail["in_stock"]:
             category, reason = None, "sin stock"
@@ -370,6 +373,33 @@ def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
     cutoff = now.timestamp() - 14 * 86400
     state["seen"] = {k: v for k, v in seen.items() if v.get("t", 0) >= cutoff}
     return qualified
+
+
+def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tuple[str | None, str]:
+    """Controles automáticos para publicar sin revisión humana."""
+    name = cand.get("name") or cand.get("title") or ""
+    if has_size_variant(name):
+        return None, "tiene tallas: Jimmyleaks puede mezclar precios entre tallas"
+    listed, detail_price = cand.get("listing_price"), cand.get("price")
+    if listed and detail_price and abs(listed - detail_price) > 0.01:
+        return None, f"precio del listado ({listed} €) y de la ficha ({detail_price} €) no coinciden"
+    was, avg = cand.get("was"), cand.get("avg90")
+    if was and avg and avg > was * 1.10:
+        return None, "media de 90 días por encima del PVP: datos incoherentes"
+    if cand.get("discount", 0) > 92:
+        return None, "descuento superior al 92 %: probable error de datos"
+    modified = cand.get("modified")
+    if modified:
+        try:
+            ts = datetime.fromisoformat(modified)
+            ts = ts if ts.tzinfo else ts.replace(tzinfo=timezone.utc)
+            if now - ts > timedelta(hours=3):
+                return None, "datos de la ficha con más de 3 horas"
+        except ValueError:
+            pass
+    if not re.fullmatch(r"\d{8,14}", cand.get("gtin") or ""):
+        return None, "sin EAN para enlazar al producto exacto"
+    return category, reason + " · controles OK"
 
 
 def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime) -> tuple[bool, str]:
