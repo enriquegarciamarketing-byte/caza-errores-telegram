@@ -313,6 +313,34 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
     return "\n".join(lines)
 
 
+def build_deal_caption(*, url: str, title: str, current: float, store: str,
+                      previous: float | None = None, temperature: int | None = None) -> str:
+    """Post del canal normal: precio en formato español, sin reventa ni ROI."""
+    shop = (store or "la tienda").strip()
+    product = html.escape(short_title(title, "", limit=140))
+    lines = ["🔥 <b>Se ha colado un precio</b>", "", f"<b>{product}</b>", ""]
+    reliable = previous is not None and previous > current * 1.02
+    if reliable:
+        saved = previous - current
+        pct = round(saved / previous * 100)
+        lines.append(f"❌ PVP {html.escape(shop)}: <s>{html.escape(euro(previous))}</s>")
+        lines.append(f"💰 AHORA: {html.escape(euro(current))}")
+        lines.append(f"📉 −{pct} % sobre PVP")
+        lines.append(f"🤑 Te ahorras: {html.escape(euro(saved))}")
+    else:
+        lines.append(f"💰 AHORA: {html.escape(euro(current))}")
+    lines.append("")
+    if temperature and temperature >= 200:
+        lines.append(f"🔥 {temperature}º. Esto no aguanta mucho a este precio.")
+    elif temperature and temperature >= 80:
+        lines.append(f"👀 Ya va por {temperature}º. Conviene mirarlo ahora.")
+    else:
+        lines.append("🛒 Bajada recién vista. El precio puede volver cuando quieran.")
+    lines.append("")
+    lines.append(f'🔗 <b><a href="{html.escape(url, quote=True)}">Ver en {html.escape(shop)}</a></b>')
+    return "\n".join(lines)
+
+
 def build_message(offer: dict) -> str:
     return build_caption(
         url=offer["url"], category=offer.get("category", "GANGA"), title=offer.get("title", ""),
