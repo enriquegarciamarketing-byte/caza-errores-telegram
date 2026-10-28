@@ -1,25 +1,26 @@
 # Cazadores de Errores de Precio — Telegram
 
-Publicador de ofertas revisadas para `@caza_errores`. GitHub Actions genera una tarjeta de precio con la foto que se aporte, conserva el enlace corto de afiliado y publica la imagen con su pie en Telegram. Solo procesa ofertas con `status: "approved"`.
+Publicador de ofertas revisadas para `@caza_errores`. GitHub Actions genera una tarjeta de precio con la foto que se aporte, conserva el enlace corto de afiliado y publica la imagen con su pie en Telegram. Solo procesa ofertas con `status: "approved"`, referencia histórica de 90 días y descuento verificado de al menos el 70 %.
 
 ## Qué queda automatizado
 
 - Crea la tarjeta en el formato de referencia: precio normal, precio actual, ahorro y porcentaje.
 - Exige al menos tres anuncios comparables revisados de Wallapop, calcula la media de sus precios anunciados y estima ROI después de las comisiones y el envío que se indiquen.
 - Envía foto y pie con el enlace afiliado corto (`link.amazon` o `amzn.to`), el aviso de afiliación y que precio/stock pueden cambiar.
-- Rechaza datos sin revisar, precios con más de 20 minutos, anuncios comparables sin enlaces Wallapop válidos, ofertas duplicadas o imágenes que falten.
+- Publica automáticamente las ofertas aprobadas solo si el precio actual supone una rebaja de al menos el 70 % frente a la referencia histórica de 90 días; omite descuentos menores.
+- Rechaza precios con más de 20 minutos, anuncios comparables sin enlaces Wallapop válidos, ofertas duplicadas o imágenes que falten.
 
 ## Qué requiere revisión manual
 
-Este repositorio **no rastrea Amazon ni busca anuncios en Wallapop**. Wallapop indica en sus términos que no se pueden usar robots ni extraer datos sistemáticamente sin autorización expresa por escrito, y que las herramientas externas tipo bot requieren autorización. Por eso, hasta tener un acceso oficial autorizado, añade manualmente los comparables y sus precios a `offers.json`; el bot promedia esos datos y no inicia sesión ni raspa el sitio.
+Este modo gratuito **no rastrea Amazon ni busca anuncios en Wallapop**. Usa PrecioReal o Keepa en web/app para localizar y comprobar cada candidato manualmente; pega los datos verificados en `offers.json`. Al guardar esa oferta aprobada, GitHub Actions la publica sin intervención adicional solo si supera el 70 % calculado contra el histórico de 90 días. No confundas ese histórico con el precio de lista tachado. Wallapop indica en sus términos que no se pueden usar robots ni extraer datos sistemáticamente sin autorización expresa por escrito, y que las herramientas externas tipo bot requieren autorización. Por eso, hasta tener un acceso oficial autorizado, añade manualmente los comparables y sus precios a `offers.json`; el bot promedia esos datos y no inicia sesión ni raspa el sitio.
 
 Los anuncios de Wallapop muestran precios pedidos, no importes de ventas cerradas. Usa productos exactos siempre que puedas. Si introduces productos parecidos, el post y la tarjeta los identificarán como similares. El ROI es una estimación bruta antes de impuestos basada en la media y en las comisiones/envío indicados; no garantiza que se venda a ese precio.
 
-La detección de errores de precio en Amazon también necesita una fuente histórica cuyo uso y publicación estén autorizados. El proyecto no consulta ni extrae las páginas de Amazon. Verifica además que tu canal está aprobado por Amazon Afiliados y que el contenido y uso del enlace cumplen las condiciones de tu cuenta. Amazon restringe ciertos usos de enlaces especiales para compras destinadas a reventa.
+La detección automática de todo el catálogo de Amazon necesita una API histórica autorizada; Keepa ofrece API, pero requiere una suscripción. Sin ese gasto, la búsqueda del candidato y la verificación histórica se hacen manualmente en las interfaces gratuitas. El proyecto no consulta ni extrae las páginas de Amazon. Verifica además que tu canal está aprobado por Amazon Afiliados y que el contenido y uso del enlace cumplen las condiciones de tu cuenta. Amazon restringe ciertos usos de enlaces especiales para compras destinadas a reventa.
 
 ## Configuración
 
-1. El bot de Telegram debe ser administrador de `@caza_errores` con permiso para publicar mensajes.
+1. El bot de Telegram debe ser administrador de `@caza_errores` con permiso para publicar mensajes. Activa las notificaciones del canal en tu móvil para recibir el aviso al publicarse una oferta.
 2. En GitHub, abre **Settings → Secrets and variables → Actions** y añade:
    - `TELEGRAM_BOT_TOKEN`: token de BotFather de este bot.
    - `TELEGRAM_CHAT_ID`: `@caza_errores`.
