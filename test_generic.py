@@ -41,6 +41,9 @@ class FormatTest(unittest.TestCase):
         self.assertIn("Ver en Amazon", text)
         self.assertNotIn("ROI", text)
         self.assertNotIn("Wallapop", text)
+        self.assertNotIn("º", text)
+        self.assertNotIn("357", text)
+        self.assertNotIn("Chollometro", text)
         self.assertEqual(euro(925.79), "925,79 €")
 
     def test_sin_pvp_solo_ahora(self):
@@ -49,6 +52,97 @@ class FormatTest(unittest.TestCase):
         self.assertIn("💰 AHORA: 49,90 €", text)
         self.assertNotIn("PVP", text)
         self.assertNotIn("Te ahorras", text)
+        self.assertNotIn("º", text)
+        self.assertNotIn("90", text.split("49,90")[-1])
+
+
+class CardTest(unittest.TestCase):
+    def test_viaje_sin_foto_y_chollo_con_pvp(self):
+        from publisher import create_deal_card
+        with mock.patch("destinations.destination_image", return_value=None):
+            trip = create_deal_card({
+                "id": "test-viaje",
+                "title": "Viaje a Egipto 8 días con vuelos",
+                "current": 468,
+                "previous": 900,
+                "store": "Carrefour",
+            })
+        solo = create_deal_card({
+            "id": "test-solo-ahora",
+            "title": "Auriculares sin PVP",
+            "current": 49.9,
+            "previous": None,
+            "store": "Fnac",
+            "image_path": ROOT / "images" / "taurus-radiador-hq.jpg",
+        })
+        self.assertTrue(trip.exists() and solo.exists())
+        self.assertGreater(trip.stat().st_size, 8000)
+        viaje = {"title": "Viaje a Egipto 8 días", "price": 468, "temperature": 200,
+                 "link": "https://www.chollometro.com/ofertas/egipto-2047741", "published": ""}
+        self.assertEqual(generic.reject_feed(viaje, CFG["generic"], at_madrid(12), set()), "")
+
+
+class DestinationTest(unittest.TestCase):
+    def test_detecta_egipto_paris_y_roma_y_no_un_trozo_de_palabra(self):
+        import destinations
+        self.assertEqual(destinations.match_destination("Viaje a Egipto 8 días")["wiki"], "Pirámides de Guiza")
+        self.assertEqual(destinations.match_destination("Fin de semana en París")["file"], "Tour_Eiffel_Wikimedia_Commons.jpg")
+        self.assertIn("Colosseum", destinations.match_destination("Roma en 4 días")["file"])
+        self.assertIsNone(destinations.match_destination("Viaje del aroma"))
+        self.assertIsNone(destinations.match_destination("Escapada sorpresa"))
+        # La ciudad gana al país.
+        self.assertIn("Colosseum", destinations.match_destination("Roma, Italia")["file"])
+
+    def test_cache_y_wikipedia_si_commons_falla(self):
+        import io
+        import destinations
+        from PIL import Image
+        buffer = io.BytesIO()
+        Image.new("RGB", (400, 300), (30, 90, 160)).save(buffer, format="JPEG", quality=85)
+        blob = buffer.getvalue()
+        self.assertGreater(len(blob), 2000)
+        calls = []
+
+        def fake_get(url, timeout=25):
+            calls.append(url)
+            if "Special:FilePath" in url:
+                return None
+            return blob
+
+        summary = json.dumps({"thumbnail": {"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a/320px-X.jpg"}}).encode()
+
+        class Resp:
+            headers = {"content-type": "application/json"}
+            def read(self):
+                return summary
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            with mock.patch.object(destinations, "_get", side_effect=fake_get), \
+                 mock.patch.object(destinations.urllib.request, "urlopen", return_value=Resp()):
+                first = destinations.destination_image("Viaje a Egipto", folder)
+                second = destinations.destination_image("Egipto en 8 días", folder)
+            self.assertIsNotNone(first)
+            self.assertEqual(first, second)
+            self.assertTrue(any("1600px-" in url for url in calls))
+            self.assertEqual(sum("Special:FilePath" in url for url in calls), 1)
+
+
+class ProductPhotoTest(unittest.TestCase):
+    def test_recorta_el_margen_blanco_y_agranda_el_producto(self):
+        from PIL import Image, ImageDraw
+        from publisher import _trim_margins
+        canvas = Image.new("RGB", (400, 300), (255, 255, 255))
+        ImageDraw.Draw(canvas).rectangle((140, 80, 260, 220), fill=(30, 30, 30))
+        trimmed = _trim_margins(canvas)
+        self.assertLess(trimmed.width, 160)
+        self.assertLess(trimmed.height, 180)
+        self.assertGreater(trimmed.width, 100)
 
 
 class LinkTest(unittest.TestCase):
@@ -144,8 +238,9 @@ class FilterTest(unittest.TestCase):
                     return {"message_id": 77}
                 raise AssertionError(method)
 
-            def send_photo(self, *args, **kwargs):
-                raise AssertionError("sin foto en esta prueba")
+            def send_photo(self, chat_id, image, caption, extra=None):
+                sent.append(("sendPhoto", {"chat_id": chat_id, "caption": caption, "image": str(image)}))
+                return {"message_id": 77}
 
         args = generic.argparse.Namespace(dry_run=False, test_private=True)
         with mock.patch.object(feeds, "resolve_deal_url", return_value="https://www.mediamarkt.es/es/product/123"), \
@@ -153,10 +248,12 @@ class FilterTest(unittest.TestCase):
             code = generic.run(args, CFG, state, self.now, tg=TG(), fetch=fetch)
         self.assertEqual(code, 0)
         self.assertEqual(state["posts"], [])
-        self.assertEqual(sent[-1][0], "sendMessage")
+        self.assertEqual(sent[-1][0], "sendPhoto")
         self.assertEqual(sent[-1][1]["chat_id"], 1880159117)
-        self.assertIn("PVP MediaMarkt", sent[-1][1]["text"])
-        self.assertIn("1.149,50 €", sent[-1][1]["text"])
+        self.assertIn("PVP MediaMarkt", sent[-1][1]["caption"])
+        self.assertIn("1.149,50 €", sent[-1][1]["caption"])
+        self.assertNotIn("º", sent[-1][1]["caption"])
+        self.assertTrue(Path(sent[-1][1]["image"]).exists())
 
 
 class WorkflowTest(unittest.TestCase):

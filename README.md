@@ -2,11 +2,11 @@
 
 ## Canal normal (`scan-generic.yml`)
 
-Workflow **Canal normal @cazachollos_com**. Publica en [@cazachollos_com](https://t.me/cazachollos_com) (`generic.chat_id` en `config.json`) con el mismo bot que el premium. No usa la tarjeta de reventa ni el ROI.
+Workflow **Canal normal @cazachollos_com**. Publica en [@cazachollos_com](https://t.me/cazachollos_com) (`generic.chat_id` en `config.json`) con el mismo bot que el premium. Cada post lleva una tarjeta generada con el mismo diseño que el canal antiguo (logo de Caza Chollos, PVP tachado, precio actual y descuento). No muestra reventa, ROI ni la temperatura del listado.
 
 Un bucle externo lo dispara con `workflow_dispatch` (no lleva cron). Cadencia recomendada: **cada 15 minutos entre las 08:00 y la 01:00** (Europe/Madrid). El propio script corta de 01:00 a 08:00, a 4 posts por hora y a 40 al día; cada pasada manda como máximo 1. Así el ritmo se queda en unos 3–4 posts por hora sin ráfagas.
 
-Fuentes: RSS caliente y nuevo de Chollometro (se ordenan por temperatura) y las listas de Amazon ya usadas en Jimmyleaks. Se saltan caducados, sin precio, duplicados y temperatura por debajo de `generic.min_temperature` (80º). La bajada mínima frente al PVP, si hay PVP fiable, es el 20 %. Memoria propia en `state/generic.json`.
+Fuentes: RSS caliente y nuevo de Chollometro (se ordenan por temperatura, que no sale en el post) y las listas de Amazon ya usadas en Jimmyleaks. Entran todas las categorías, viajes incluidos. Se saltan caducados, sin precio, duplicados y los que no llegan a `generic.min_temperature` (80). La bajada mínima frente al PVP, si hay PVP fiable, es el 20 %. Si no hay PVP fiable, la tarjeta enseña solo el precio actual. En los viajes, el panel izquierdo usa una foto del destino (Wikimedia Commons o, si falla, la imagen principal de Wikipedia) y, si no hay destino reconocible, el logo. Memoria propia en `state/generic.json`.
 
 `test_private` manda 2 o 3 ejemplos solo al chat del administrador y no guarda memoria. `dry_run` solo escribe el texto.
 
