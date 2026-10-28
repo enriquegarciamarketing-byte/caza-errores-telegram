@@ -229,13 +229,9 @@ def validate_offer(offer: object, now: datetime) -> dict:
 
 
 def build_message(offer: dict) -> str:
-    pct = (offer["reference"] - offer["current"]) / offer["reference"] * 100
-    safe_url = html.escape(offer["url"], quote=True)
-    return "\n".join([
-        f"🔥 <b>{html.escape(offer['category'])}</b> · <b>{euro(offer['current'])} (−{pct:.0f} %)</b>",
-        f"Media {offer['days']} d: {euro(offer['reference'])}",
-        f"🔗 <a href=\"{safe_url}\">Ver oferta en Amazon</a>",
-    ])
+    url = offer["url"]
+    safe_url = html.escape(url, quote=True)
+    return f'<a href="{safe_url}">{html.escape(url)}</a>'
 
 
 def _font(size: int, bold: bool = False):
