@@ -654,6 +654,11 @@
    "price": 49.95,
    "t": 1793219609,
    "result": "solo -21% bajo la referencia"
+  },
+  "MKY0opR": {
+   "price": 84.99,
+   "t": 1793220448,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -788,7 +793,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 119,
+ "last_listing_count": 120,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
