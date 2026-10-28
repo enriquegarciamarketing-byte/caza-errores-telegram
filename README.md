@@ -1,5 +1,77 @@
 # Caza Errores — ofertas en Telegram
 
+Hay dos automatizaciones separadas. El canal premium (reventa) sigue en `scan-deals.yml` y no cambia de reglas. El canal público normal es otra: `Canal normal @cazachollos_com`.
+
+## Canal normal (@cazachollos_com)
+
+Workflow: `.github/workflows/scan-generic.yml`. Visible en Actions como **Canal normal @cazachollos_com**. Grupo de concurrencia `telegram-generic` (el premium sigue en `telegram-scanner`). Memoria propia en `state/generic.json`. No usa el secreto `TELEGRAM_CHAT_ID`: el destino está en `config.json`, clave `generic.chat_id` (`@cazachollos_com`). El bot es el mismo (`TELEGRAM_BOT_TOKEN`).
+
+Cada pasada comprueba con `getChatMember` que el bot puede publicar. Si no puede, lo dice en el log (`NO PUEDE PUBLICAR: …`) y termina sin tumbar la ejecución. La prueba `test_private` sigue pudiendo mandar ejemplos al administrador.
+
+**Cadencia recomendada: cada 15 minutos.** El workflow ya lleva un cron a los minutos 07, 22, 37 y 52. Un bucle externo puede dispararlo por la API con la misma cadencia; tiene que mandar `dry_run: false` porque el valor por defecto del disparo manual es la simulación:
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer $GITHUB_TOKEN" \
+  -H "Accept: application/vnd.github+json" \
+  https://api.github.com/repos/enriquegarciamarketing-byte/caza-errores-telegram/actions/workflows/scan-generic.yml/dispatches \
+  -d '{"ref":"main","inputs":{"dry_run":false}}'
+```
+
+Si el cron y el bucle coinciden, el cupo impide el segundo post. Para dejar solo el bucle, quita el bloque `schedule` del workflow.
+
+Qué publica: chollos variados de todas las categorías y tiendas (el RSS caliente de Chollometro primero, luego los nuevos, y las listas de Amazon que ya usa el repo). No es el canal de reventa: no hay ROI ni tarjeta de Wallapop. Se descartan caducados, sin precio, duplicados, temperatura baja y enlaces que no se puedan dejar limpios.
+
+Ritmo, en `config.json` → `generic`:
+
+| Ajuste | Valor |
+| --- | --- |
+| Temperatura mínima | 80° |
+| Precio mínimo | 3 € |
+| Descuento mínimo en las listas de Amazon | 20 % (y no se fía de un descuento mayor del 95 %) |
+| Máximo por hora | 4 |
+| Máximo al día | 40 |
+| Máximo por pasada | 1 |
+| Separación mínima | 15 minutos |
+| Silencio | 01:00–08:00 Europe/Madrid |
+| No repetir el mismo chollo | 14 días |
+| Fichas abiertas por pasada | 8 |
+
+Amazon sale siempre con `tag=cazadores_errores-21` (enlaces cortos resueltos, tags ajenos fuera, ASIN comprobado). El resto de tiendas lleva a la ficha directa, sin parámetros de afiliado ajenos. Si `store_affiliates` tiene una plantilla con `{url}` para esa tienda, se aplica encima del enlace ya limpio. Si el enlace no se puede limpiar, el chollo no se publica.
+
+El texto sigue el estilo del canal (gancho, título, tienda, botón «Ver en …») con este bloque de precio. El PVP va tachado. Si no hay un precio anterior fiable, solo se muestra AHORA.
+
+Con PVP:
+
+```
+🔥 <b>BAJÓN DE PRECIO</b>
+
+<b>LG OLED 55 pulgadas</b>
+📂 Electrónica
+
+❌ PVP MediaMarkt: <s>1.149,50 €</s>
+💰 AHORA: 223,71 €
+📉 −81 % sobre PVP
+🤑 Te ahorras: 925,79 €
+
+🔗 <b><a href="https://www.mediamarkt.es/es/product/lg-oled-55">Ver en MediaMarkt</a></b>
+```
+
+Sin PVP fiable:
+
+```
+🔥 <b>CHOLLO CALIENTE</b>
+
+<b>ASUS TUF Gaming M4 Air</b>
+📂 Electrónica
+
+💰 AHORA: 34,03 €
+
+🔗 <b><a href="https://www.amazon.es/dp/B0TEST1234?tag=cazadores_errores-21">Ver en Amazon</a></b>
+```
+
+Entradas manuales: `dry_run` (no publica; es el valor por defecto) y `test_private` (2 o 3 ejemplos solo al chat del administrador, sin guardar memoria). Para que `test_private` envíe de verdad, desmarca `dry_run`.
+
 ## Escáner automático (scan-deals.yml)
 
 Cada 10 minutos, las 24 horas, `scanner.py`:
@@ -67,8 +139,8 @@ Para marcar mínimo histórico, cambia `historical_low` a `true` tras confirmarl
 
 En **Settings → Secrets and variables → Actions** define:
 
-- `TELEGRAM_BOT_TOKEN`: token del bot, guardado solo como secreto.
-- `TELEGRAM_CHAT_ID`: `@caza_errores`.
+- `TELEGRAM_BOT_TOKEN`: token del bot, guardado solo como secreto. Lo usan los dos canales.
+- `TELEGRAM_CHAT_ID`: `@caza_errores`. Solo el canal premium. El canal normal publica en `@cazachollos_com`, definido en `config.json`.
 
 El bot necesita permiso para publicar en el canal. GitHub Actions registra los IDs publicados para evitar duplicados. Las notificaciones en el móvil dependen de que Telegram tenga activadas las notificaciones del canal.
 

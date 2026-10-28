@@ -165,6 +165,29 @@
       "bundle_keywords": ["pc gaming", "ordenador", "torre gaming", "portatil gaming"]
     }
   },
+  "generic": {
+    "chat_id": "@cazachollos_com",
+    "feeds": [
+      "https://www.chollometro.com/rss/hot",
+      "https://www.chollometro.com/rss/nuevos"
+    ],
+    "use_amazon_sources": true,
+    "min_temperature": 80,
+    "min_price_eur": 3,
+    "min_discount_pct": 20,
+    "max_discount_pct": 95,
+    "min_reliable_discount_pct": 5,
+    "max_posts_per_hour": 4,
+    "max_posts_per_day": 40,
+    "max_posts_per_run": 1,
+    "test_private_posts": 3,
+    "min_minutes_between_posts": 15,
+    "quiet_hours": [1, 8],
+    "repost_after_days": 14,
+    "max_deal_age_hours": 36,
+    "max_amazon_age_minutes": 120,
+    "max_opens_per_run": 8
+  },
   "store_affiliates": {
     "carrefour": {"template": ""},
     "lidl": {"template": ""},

@@ -66,6 +66,7 @@ def parse_rss(xml: str) -> list[dict]:
         image = re.search(r'<media:content[^>]*url="([^"]+)"', block)
         link = _cdata(block, "link")
         category = _cdata(block, "category")
+        published = _cdata(block, "pubDate")
         clean = re.sub(r"^\d+\s*°\s*-\s*", "", title).strip()
         price = parse_price(merchant.group(2) if merchant else "")
         items.append({
@@ -76,6 +77,7 @@ def parse_rss(xml: str) -> list[dict]:
             "image": image.group(1) if image else "",
             "link": link,
             "category": category,
+            "published": published,
         })
     return items
 

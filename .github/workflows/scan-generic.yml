@@ -1,0 +1,86 @@
+name: Canal normal @cazachollos_com
+
+# Cadencia recomendada del bucle externo: cada 15 minutos.
+# Este horario es la red de seguridad si el bucle no dispara; el ritmo real
+# (máximo 4/hora, 40/día, silencio 01:00–08:00) lo aplica generic.py.
+on:
+  schedule:
+    - cron: "7-59/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Prueba: no publica nada, solo muestra lo que haría"
+        required: false
+        type: boolean
+        default: true
+      test_private:
+        description: "Envía 2-3 posts de ejemplo SOLO al chat privado del admin, no al canal. Quita dry_run para enviarla. No guarda memoria."
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-generic
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+
+      - name: Buscar y publicar en el canal normal
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
+          set -o pipefail
+          python generic.py "${ARGS[@]}" 2>&1 | tee state/generic_last_run.log
+
+      # La prueba privada no debe dejar memoria en el repositorio.
+      - name: Guardar memoria del canal normal
+        if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          files=()
+          if [ -f state/generic.json ]; then files+=(state/generic.json); fi
+          if [ -f state/generic_last_run.log ]; then files+=(state/generic_last_run.log); fi
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "Sin archivos de memoria."
+            exit 0
+          fi
+          git add -- "${files[@]}"
+          if git diff --cached --quiet; then
+            echo "Sin cambios de memoria."
+            exit 0
+          fi
+          git commit -m "Actualizar memoria del canal normal [skip ci]"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash && git push; then
+              exit 0
+            fi
+            git rebase --abort >/dev/null 2>&1 || true
+            echo "El push ha chocado con otro commit; reintento $i" >&2
+            sleep $((i * 4))
+          done
+          echo "No se pudo guardar la memoria del canal normal tras varios reintentos." >&2
+          exit 1
