@@ -16,6 +16,11 @@ on:
         required: false
         type: boolean
         default: false
+      test_private:
+        description: "Prueba privada al chat del admin, no al canal. Quita dry_run para enviarla. No guarda memoria."
+        required: false
+        type: boolean
+        default: false
       manual_id:
         description: "Publicar a mano: ID de Jimmyleaks"
         required: false
@@ -72,20 +77,27 @@ jobs:
           EDIT_MESSAGE: ${{ inputs.edit_message }}
           CUSTOM: ${{ inputs.custom }}
         run: |
-          ARGS=""
-          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          if [ "${{ inputs.ignore_limits }}" = "true" ]; then ARGS="$ARGS --ignore-limits"; fi
-          if [ -n "$MANUAL_ID" ]; then ARGS="$ARGS --manual-id $MANUAL_ID --manual-link $MANUAL_LINK"; fi
-          if [ -n "$EDIT_MESSAGE" ]; then ARGS="$ARGS --edit-message $EDIT_MESSAGE"; fi
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ "${{ inputs.ignore_limits }}" = "true" ]; then ARGS+=(--ignore-limits); fi
+          if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
+          if [ -n "$MANUAL_ID" ]; then ARGS+=(--manual-id "$MANUAL_ID"); fi
+          if [ -n "$MANUAL_LINK" ]; then ARGS+=(--manual-link "$MANUAL_LINK"); fi
+          if [ -n "$EDIT_MESSAGE" ]; then ARGS+=(--edit-message "$EDIT_MESSAGE"); fi
           set -o pipefail
           if [ -n "$CUSTOM" ]; then
+            if [ "${{ inputs.test_private }}" = "true" ]; then
+              echo "La prueba privada no admite un post custom: iría al canal." >&2
+              exit 2
+            fi
             python scanner.py --custom "$CUSTOM" 2>&1 | tee state/last_run.log
           else
-            python scanner.py $ARGS 2>&1 | tee state/last_run.log
+            python scanner.py "${ARGS[@]}" 2>&1 | tee state/last_run.log
           fi
 
+      # La prueba privada no debe dejar memoria en el repositorio.
       - name: Guardar memoria del escáner
-        if: always()
+        if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

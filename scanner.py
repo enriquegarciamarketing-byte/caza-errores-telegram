@@ -5,8 +5,12 @@ Cada ejecución:
 1. Lee las respuestas privadas del administrador al bot (vinculación y enlaces cortos).
 2. Revisa las listas públicas de Jimmyleaks (mínimos de hoy, actualizados y mayor bajada).
 3. Para cada candidato nuevo abre su ficha, que da la media real de 90 días y el EAN.
-4. Clasifica: ERROR DE PRECIO (>=70 % bajo la media), MÍNIMO HISTÓRICO o GANGA (>=40 %).
+4. Clasifica: ERROR DE PRECIO (>=70 % bajo la media), MÍNIMO HISTÓRICO o GANGA (>=40 %),
+   y exige las reglas de reventa de config.json (marca, categoría, precio y margen), también en los errores de precio.
 5. Publica la tarjeta en el canal con el enlace de afiliado y avisa al administrador.
+
+Con --test-private la tarjeta va solo al chat del administrador, etiquetada como prueba,
+sin guardar memoria ni leer sus mensajes.
 
 Solo usa páginas que el robots.txt de Jimmyleaks permite (no /p/, /products ni ?search=).
 """
@@ -14,12 +18,14 @@ Solo usa páginas que el robots.txt de Jimmyleaks permite (no /p/, /products ni 
 from __future__ import annotations
 
 import argparse
+import copy
 import html
 import json
 import os
 import re
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -243,14 +249,21 @@ def classify(cfg: dict, cand: dict) -> tuple[str | None, str]:
     if disc >= cfg["error_min_discount"]:
         if price < cfg["error_min_price_eur"]:
             return None, f"error de precio pero importe demasiado bajo ({price} €)"
-        return "ERROR DE PRECIO", f"-{disc:.0f}% bajo la media"
-    if disc < cfg["bargain_min_discount"]:
+        category, reason = "ERROR DE PRECIO", f"-{disc:.0f}% bajo la media"
+    elif disc < cfg["bargain_min_discount"]:
         return None, f"solo -{disc:.0f}% bajo la media"
-    if price < cfg["bargain_min_price_eur"]:
+    elif price < cfg["bargain_min_price_eur"]:
         return None, "importe demasiado bajo para ganga"
-    if (cand.get("rating") or 0) < cfg["bargain_min_rating"] or cand.get("reviews", 0) < cfg["bargain_min_reviews"]:
+    elif (cand.get("rating") or 0) < cfg["bargain_min_rating"] or cand.get("reviews", 0) < cfg["bargain_min_reviews"]:
         return None, f"valoraciones flojas ({cand.get('rating')} / {cand.get('reviews')})"
-    return ("MÍNIMO HISTÓRICO" if is_low else "GANGA"), f"-{disc:.0f}% bajo la media"
+    else:
+        category, reason = ("MÍNIMO HISTÓRICO" if is_low else "GANGA"), f"-{disc:.0f}% bajo la media"
+    ok, why = resale_check(cfg, cand)
+    if not ok:
+        return None, why
+    if resale_rules(cfg):
+        reason += " · reventa OK"
+    return category, reason
 
 
 def card_title(cand: dict) -> str:
@@ -270,6 +283,134 @@ SIZE_RE = re.compile(
 def has_size_variant(name: str) -> bool:
     """Productos con tallas: Jimmyleaks a veces mezcla la media de una talla con el precio de otra."""
     return bool(SIZE_RE.search((name or "").strip()))
+
+
+def fold_text(value: str) -> str:
+    decomposed = unicodedata.normalize("NFD", value or "")
+    stripped = "".join(ch for ch in decomposed if unicodedata.category(ch) != "Mn")
+    return stripped.lower()
+
+
+def keyword_in(text: str, keyword: str) -> bool:
+    """Coincidencia por palabra o frase, sin acentos y sin pillar trozos de otra palabra."""
+    haystack = fold_text(text)
+    needle = fold_text(keyword).strip()
+    if not needle or not haystack:
+        return False
+    return re.search(rf"(?<![a-z0-9]){re.escape(needle)}(?![a-z0-9])", haystack) is not None
+
+
+def resale_rules(cfg: dict) -> dict | None:
+    rules = cfg.get("resale")
+    if not isinstance(rules, dict) or not rules.get("enabled", True):
+        return None
+    return rules
+
+
+def product_text(cand: dict) -> str:
+    return fold_text(" ".join([
+        cand.get("brand") or "",
+        cand.get("name") or "",
+        cand.get("title") or "",
+    ]))
+
+
+def is_generic_brand(field: str, generic: list) -> bool:
+    folded = fold_text(field).strip()
+    if not folded:
+        return True
+    return any(folded == fold_text(item) for item in generic)
+
+
+def match_brand(cand: dict, rules: dict) -> str | None:
+    """Marca conocida en el campo de marca, o en el título si la marca viene vacía o es un marketplace."""
+    brands = rules.get("brands") or []
+    generic = rules.get("generic_brands") or ["amazon", "sin marca", "generico", "marca blanca"]
+    field = cand.get("brand") or ""
+    if field and not is_generic_brand(field, generic):
+        folded = fold_text(field)
+        for brand in brands:
+            if keyword_in(folded, brand):
+                return brand
+        return None
+    text = fold_text(f"{cand.get('name') or ''} {cand.get('title') or ''}")
+    for brand in brands:
+        if keyword_in(text, brand):
+            return brand
+    return None
+
+
+def title_leads_with(title: str, keyword: str) -> bool:
+    folded = fold_text(title)
+    needle = fold_text(keyword).strip()
+    if not needle or not folded:
+        return False
+    return folded == needle or folded.startswith(needle + " ") or folded.startswith(needle + ",") or folded.startswith(needle + "-")
+
+
+def block_keyword(cand: dict, rules: dict, text: str) -> str | None:
+    """Primera palabra bloqueada. Los accesorios no tumban un portátil que solo los menciona."""
+    waivable = {fold_text(item) for item in rules.get("accessory_keywords") or []}
+    bookish = {fold_text(item) for item in rules.get("reader_block_keywords") or []}
+    exceptions = rules.get("reader_exceptions") or []
+    device = any(keyword_in(text, item) for item in rules.get("category_keywords") or [])
+    title = cand.get("name") or cand.get("title") or ""
+    for keyword in rules.get("block_keywords") or []:
+        if not keyword_in(text, keyword):
+            continue
+        folded = fold_text(keyword)
+        if folded in bookish and any(keyword_in(text, item) for item in exceptions):
+            continue
+        if folded in waivable and device and not title_leads_with(title, keyword):
+            continue
+        # «sin cable» es un taladro o una aspiradora, no un cable suelto.
+        ignored_map = rules.get("ignore_block_if_present") or {}
+        ignored = ignored_map.get(keyword) or ignored_map.get(folded) or []
+        if ignored and any(keyword_in(text, item) for item in ignored) and not title_leads_with(title, keyword):
+            continue
+        return keyword
+    return None
+
+
+def resale_check(cfg: dict, cand: dict) -> tuple[bool, str]:
+    """Filtro de reventa para todas las categorías, incluido ERROR DE PRECIO.
+
+    Con las reglas desactivadas o ausentes no cambia la clasificación anterior.
+    """
+    rules = resale_rules(cfg)
+    if rules is None:
+        return True, ""
+    name = cand.get("name") or cand.get("title") or ""
+    if has_size_variant(name) or has_size_variant(cand.get("title") or ""):
+        return False, "tiene tallas (ropa o calzado): no es reventa"
+    text = product_text(cand)
+    blocked = block_keyword(cand, rules, text)
+    if blocked:
+        return False, f"bloqueado para reventa («{blocked}»)"
+    price = float(cand.get("price") or 0)
+    avg = float(cand.get("avg90") or 0)
+    min_price = float(rules.get("min_price_eur", 40))
+    if price + 1e-9 < min_price:
+        return False, f"precio {euro(price)} por debajo del mínimo de reventa ({euro(min_price)})"
+    if avg <= price:
+        return False, "sin media de 90 días para estimar la reventa"
+    saving = avg - price
+    min_saving = float(rules.get("min_saving_eur", 30))
+    if saving + 1e-9 < min_saving:
+        return False, f"ahorro de {euro(saving)} inferior al mínimo de reventa ({euro(min_saving)})"
+    factor = float(rules.get("resale_factor", 0.85))
+    min_margin = float(rules.get("min_margin", 0.25))
+    margin = (avg * factor - price) / price
+    if margin + 1e-9 < min_margin:
+        return False, f"margen de reventa estimado {margin * 100:.0f} % inferior al {min_margin * 100:.0f} %"
+    matched = match_brand(cand, rules)
+    if not matched:
+        return False, "marca genérica o desconocida: no es reventa"
+    if any(keyword_in(text, item) for item in rules.get("category_keywords") or []):
+        return True, ""
+    if any(fold_text(matched) == fold_text(brand) for brand in rules.get("brands_allow_other_categories") or []):
+        return True, ""
+    return False, "categoría no apta para reventa"
 
 
 def affiliate_link(cfg: dict, gtin: str) -> str:
@@ -327,7 +468,7 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
                     "Para cambiar el enlace de un post, responde directamente a mi aviso de ese chollo."})
 
 
-def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
+def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> list[dict]:
     seen = state.setdefault("seen", {})
     listings: dict[str, dict] = {}
     for url in cfg["sources"]:
@@ -339,6 +480,8 @@ def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
         time.sleep(1)
     print(f"Listados: {len(listings)} productos únicos")
     state["last_listing_count"] = len(listings)
+    if extras is not None:
+        extras["listings"] = list(listings.values())
 
     max_age = cfg["max_listing_age_minutes"] * 60
     fresh = []
@@ -384,6 +527,8 @@ def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
         if category:
             cand["category"] = category
             qualified.append(cand)
+        if extras is not None:
+            extras.setdefault("pool", []).append({**cand, "reject": None if category else reason})
     # Limpia memoria antigua (más de 14 días)
     cutoff = now.timestamp() - 14 * 86400
     state["seen"] = {k: v for k, v in seen.items() if v.get("t", 0) >= cutoff}
@@ -491,7 +636,7 @@ def verify_live(cand: dict, category: str, reason: str, variant: bool) -> tuple[
     return category, reason + f" · verificado en Amazon · tallas {', '.join(sizes) or '?'}"
 
 
-def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime) -> tuple[bool, str]:
+def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime, ignore_schedule: bool = False) -> tuple[bool, str]:
     posts = state.get("posts", [])
     for p in posts:
         same = p["id"] == cand["id"] or (cand.get("gtin") and p.get("gtin") == cand.get("gtin"))
@@ -499,6 +644,8 @@ def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime) -> tuple[
             if cand["price"] > p["price"] * (1 - cfg["repost_min_extra_drop_pct"] / 100):
                 return False, "ya publicado recientemente"
     if cand["category"] == "ERROR DE PRECIO":
+        return True, ""
+    if ignore_schedule:
         return True, ""
     local = now.astimezone(MADRID)
     start, end = cfg["bargain_quiet_hours"]
@@ -513,8 +660,20 @@ def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime) -> tuple[
     return True, ""
 
 
+def private_caption(url: str, cand: dict, preview: bool) -> str:
+    """Texto del canal con la marca de prueba delante, para el chat del administrador."""
+    body = caption_for(url, caption_data(cand))
+    if not preview:
+        return "🧪 PRUEBA\n" + body
+    lines = ["🧪 PRUEBA · vista previa"]
+    reject = (cand.get("reject") or "").strip()
+    if reject:
+        lines.append(f"<i>{html.escape(reject)}</i>")
+    return "\n".join(lines) + "\n" + body
+
+
 def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: str, dry: bool,
-            link_override: str | None = None) -> bool:
+            link_override: str | None = None, test_private: bool = False, preview: bool = False) -> bool:
     img_dir = OUTPUT_DIR / "src"
     img_dir.mkdir(parents=True, exist_ok=True)
     src = img_dir / f"{cand['id']}.jpg"
@@ -541,6 +700,22 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     url = link_override or cand.get("direct_url") or (affiliate_link(cfg, gtin) if gtin and not variant else None)
     summary = (f"{cand['category']} · {card_title(cand)[:90]}\n"
                f"{euro(cand['price'])} (media 90 días {euro(cand['avg90'])}, -{cand['discount']:.0f}%)")
+    if test_private:
+        admin = state.get("admin_chat_id")
+        if not admin:
+            print("  Prueba privada: no hay admin_chat_id; no se envía.")
+            return False
+        if not url:
+            query = gtin or card_title(cand)
+            url = f"https://www.amazon.es/s?k={urllib.parse.quote(str(query))}&tag={cfg['affiliate_tag']}"
+        caption = private_caption(url, cand, preview)
+        line = summary.replace("\n", " · ")
+        if dry or tg is None:
+            print(f"  [prueba privada] admin {admin}: {line} · enlace {url}")
+            return True
+        msg = tg.send_photo(admin, card, caption, {"reply_markup": buttons_for(url)})
+        print(f"  Prueba enviada al administrador (mensaje {msg['message_id']}): {summary.splitlines()[0]}")
+        return True
     if dry:
         print(f"  [prueba] publicaría: {summary.replace(chr(10), ' · ')} · enlace {url or 'pendiente de tu enlace corto'}")
         return True
@@ -617,7 +792,8 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
             tg.call("sendMessage", {"chat_id": state["admin_chat_id"], "text": "✅ Publicado en el canal con tu enlace."})
 
 
-def publish_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: str, dry: bool) -> int:
+def publish_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: str, dry: bool,
+                   test_private: bool = False) -> int:
     """Publica un producto concreto con el enlace corto de SiteStripe sacado a mano."""
     if not re.fullmatch(r"[A-Za-z0-9]{4,20}", jl_id) or not LINK_RE.fullmatch(link):
         print("ID o enlace no válidos", file=sys.stderr)
@@ -630,8 +806,8 @@ def publish_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: s
         print("No cumple para publicarse (descuento, stock o imagen).", file=sys.stderr)
         return 1
     cand["category"] = category
-    ok = publish(tg, cfg, state, cand, channel, dry, link_override=link)
-    if ok and not dry:
+    ok = publish(tg, cfg, state, cand, channel, dry, link_override=link, test_private=test_private)
+    if ok and not dry and not test_private:
         save_state(state)
     return 0 if ok else 1
 
@@ -732,15 +908,27 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
     return 0
 
 
-def main() -> int:
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="No publica nada; solo muestra qué haría")
     parser.add_argument("--ignore-limits", action="store_true", help="Ignora cupos y horario (pruebas)")
+    parser.add_argument("--test-private", action="store_true",
+                        help="Envía al chat del administrador lo que iría al canal, sin guardar memoria ni consumir mensajes")
     parser.add_argument("--manual-id", default="", help="ID de Jimmyleaks a publicar a mano")
     parser.add_argument("--manual-link", default="", help="Enlace corto de afiliado para --manual-id")
     parser.add_argument("--edit-message", type=int, default=0, help="Reescribe el texto de un post ya publicado")
     parser.add_argument("--custom", default="", help="JSON con un post hecho a mano (ver custom_post)")
-    args = parser.parse_args()
+    return parser
+
+
+def main() -> int:
+    args = build_parser().parse_args()
+    if args.test_private and args.custom:
+        print("La prueba privada no admite --custom.", file=sys.stderr)
+        return 2
+    if args.test_private and args.manual_id and args.edit_message:
+        print("La prueba privada no reescribe mensajes del canal.", file=sys.stderr)
+        return 2
 
     cfg = load_json(CONFIG_PATH, {})
     state = load_json(STATE_PATH, {"seen": {}, "posts": [], "tg_offset": 0})
@@ -753,6 +941,9 @@ def main() -> int:
     if not tg and not args.dry_run:
         print("Falta TELEGRAM_BOT_TOKEN", file=sys.stderr)
         return 2
+    if args.test_private and not args.dry_run and not state.get("admin_chat_id"):
+        print("Prueba privada: falta admin_chat_id en state/scanner.json", file=sys.stderr)
+        return 2
 
     if tg:
         try:
@@ -760,23 +951,27 @@ def main() -> int:
             print(f"Bot: @{me['username']}" + ("" if state.get("admin_chat_id") else " · administrador sin vincular"))
         except RuntimeError as exc:
             print(f"Aviso: {exc}")
-        handle_updates(tg, cfg, state, channel, args.dry_run)
-        if not args.dry_run:
-            publish_pending_from_reply(tg, state, channel)
+        if args.test_private:
+            print("Prueba privada: no se leen mensajes del administrador ni se avanza el offset.")
+        else:
+            handle_updates(tg, cfg, state, channel, args.dry_run)
+            if not args.dry_run:
+                publish_pending_from_reply(tg, state, channel)
 
     now = now_utc()
     if not (args.custom or args.manual_id):
         try:
             return run_scan(tg, cfg, state, channel, args, now)
         finally:
-            if not args.dry_run:
+            if not args.dry_run and not args.test_private:
                 save_state(state)
     if args.custom:
         return custom_post(tg, state, channel, json.loads(args.custom))
     if args.manual_id and args.edit_message:
         return edit_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.edit_message)
     if args.manual_id:
-        return publish_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.dry_run)
+        return publish_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(),
+                              args.dry_run, args.test_private)
     return run_scan(tg, cfg, state, channel, args, now)
 
 
@@ -793,7 +988,143 @@ def health_alert(tg, state: dict, key: str, text: str, every_hours: int = 6) -> 
         pass
 
 
+PREVIEW_LIMIT = 3
+
+
+def listing_drop(item: dict) -> float:
+    was, price = item.get("was"), item.get("price")
+    if was and price and was > price:
+        return (was - price) / was
+    return 0.0
+
+
+def preview_reference(cand: dict) -> float | None:
+    price = cand.get("price") or 0
+    avg = cand.get("avg90")
+    if avg and price and avg > price:
+        return float(avg)
+    was = cand.get("was")
+    if was and price and was > price:
+        return float(was)
+    return None
+
+
+def select_previews(pool: list[dict], limit: int = PREVIEW_LIMIT) -> list[dict]:
+    """Los mejores productos actuales que se pueden pintar como una tarjeta, como máximo `limit`."""
+    ranked = []
+    seen: set[str] = set()
+    for cand in pool:
+        ident = cand.get("id")
+        if not ident or ident in seen or not cand.get("image"):
+            continue
+        ref = preview_reference(cand)
+        if not ref:
+            continue
+        seen.add(ident)
+        price = float(cand["price"])
+        ranked.append(((ref - price) / ref, ref - price, cand))
+    ranked.sort(key=lambda row: (row[0], row[1]), reverse=True)
+    return [row[2] for row in ranked[:limit]]
+
+
+def prepare_preview(cand: dict, cfg: dict) -> dict:
+    prepared = dict(cand)
+    price = float(prepared.get("price") or 0)
+    ref = preview_reference(prepared)
+    if not prepared.get("avg90") or float(prepared.get("avg90") or 0) <= price:
+        prepared["avg90"] = ref
+        prepared.setdefault("ref_text", "frente al precio tachado del listado")
+    avg = float(prepared["avg90"])
+    prepared["discount"] = (avg - price) / avg * 100
+    if not prepared.get("category"):
+        if prepared["discount"] >= cfg.get("error_min_discount", 70):
+            prepared["category"] = "ERROR DE PRECIO"
+        elif prepared.get("historical_low"):
+            prepared["category"] = "MÍNIMO HISTÓRICO"
+        else:
+            prepared["category"] = "GANGA"
+    return prepared
+
+
+def preview_details_from_listings(listings: list[dict], skip_ids: set[str],
+                                  limit: int = PREVIEW_LIMIT) -> list[dict]:
+    """Abre fichas solo para la vista previa. No marca nada como visto ni publicado."""
+    ranked = sorted(
+        (item for item in listings if item.get("price") and item.get("id") not in skip_ids),
+        key=listing_drop,
+        reverse=True,
+    )
+    found = []
+    for item in ranked[: max(limit * 2, limit)]:
+        if len(found) >= limit:
+            break
+        try:
+            detail = parse_detail(fetch(f"{BASE}/es/dp/{item['id']}/"))
+        except Exception as exc:
+            print(f"Aviso: ficha {item['id']} no disponible para la vista previa ({exc})")
+            continue
+        time.sleep(1)
+        cand = {**item, **{k: v for k, v in detail.items() if v not in (None, "")}}
+        cand["price"] = detail.get("price") or item.get("price")
+        if not cand.get("image") or not preview_reference(cand):
+            continue
+        cand["reject"] = "no cumple los filtros de publicación"
+        found.append(cand)
+    return found
+
+
+def run_private_test(tg, cfg, state, channel, args, now) -> int:
+    """Manda al administrador lo que iría al canal, trabajando sobre una copia de la memoria."""
+    state = copy.deepcopy(state)
+    extras: dict = {"pool": [], "listings": []}
+    try:
+        candidates = scan(cfg, state, now, extras)
+    except Exception as exc:
+        print(f"Error inesperado en el escaneo: {exc!r}", file=sys.stderr)
+        return 1
+    order = {"ERROR DE PRECIO": 0, "MÍNIMO HISTÓRICO": 1, "GANGA": 2}
+    candidates.sort(key=lambda c: (order[c["category"]], -c["discount"]))
+    posted = 0
+    for cand in candidates:
+        if posted >= cfg["max_posts_per_run"] and cand["category"] != "ERROR DE PRECIO":
+            break
+        if not args.ignore_limits:
+            ok, why = allowed_to_post(cfg, state, cand, now, ignore_schedule=True)
+            if not ok:
+                print(f"  {cand['id']}: no se publica ({why})")
+                continue
+        try:
+            if publish(tg, cfg, state, cand, channel, args.dry_run, test_private=True):
+                posted += 1
+                if not args.dry_run:
+                    time.sleep(2)
+        except RuntimeError as exc:
+            print(f"  Error publicando {cand['id']}: {exc}")
+    if posted:
+        print(f"Prueba privada enviada al administrador: {posted}")
+        return 0
+    previews = select_previews(extras.get("pool") or [], PREVIEW_LIMIT)
+    if not previews:
+        skip = {item.get("id") for item in extras.get("pool") or []}
+        previews = preview_details_from_listings(extras.get("listings") or [], skip, PREVIEW_LIMIT)
+    if not previews:
+        print("Prueba privada: no hay ningún producto con foto y precio para enseñar una vista previa.")
+        return 0
+    print(f"Prueba privada: ningún candidato cumple los filtros; envío {len(previews)} vista(s) previa(s).")
+    for cand in previews:
+        prepared = prepare_preview(cand, cfg)
+        try:
+            publish(tg, cfg, state, prepared, channel, args.dry_run, test_private=True, preview=True)
+            if not args.dry_run:
+                time.sleep(2)
+        except RuntimeError as exc:
+            print(f"  Error enviando la vista previa {prepared.get('id')}: {exc}")
+    return 0
+
+
 def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime) -> int:
+    if getattr(args, "test_private", False):
+        return run_private_test(tg, cfg, state, channel, args, now)
     try:
         candidates = scan(cfg, state, now)
     except Exception as exc:

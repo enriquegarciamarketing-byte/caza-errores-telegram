@@ -21,5 +21,69 @@
     8
   ],
   "repost_after_days": 7,
-  "repost_min_extra_drop_pct": 10
+  "repost_min_extra_drop_pct": 10,
+  "resale": {
+    "enabled": true,
+    "min_price_eur": 40,
+    "min_saving_eur": 30,
+    "resale_factor": 0.85,
+    "min_margin": 0.25,
+    "category_keywords": [
+      "iphone", "smartphone", "telefono movil", "movil", "redmi", "pixel",
+      "ipad", "tablet",
+      "portatil", "laptop", "macbook", "notebook", "chromebook", "imac", "mac mini",
+      "consola", "playstation", "ps5", "ps4", "xbox", "nintendo switch", "switch oled", "switch lite", "steam deck", "videojuego",
+      "tarjeta grafica", "gpu", "rtx", "gtx", "radeon", "geforce", "procesador", "ryzen", "intel core",
+      "ssd", "nvme", "disco duro",
+      "monitor",
+      "televisor", "smart tv", "oled", "amoled", "qled",
+      "auriculares", "airpods", "earbuds", "cascos", "galaxy buds", "barra de sonido", "soundbar",
+      "smartwatch", "reloj inteligente", "apple watch", "galaxy watch", "garmin",
+      "camara", "objetivo", "mirrorless", "reflex", "sin espejo", "gopro",
+      "dron", "drone", "dji",
+      "robot aspirador", "roomba", "echo dot", "amazon echo", "echo show", "google nest",
+      "enchufe inteligente", "bombilla inteligente", "altavoz inteligente", "hogar inteligente",
+      "paperwhite", "kindle oasis", "kindle scribe", "kindle colorsoft", "e-reader", "ereader", "libro electronico", "kobo",
+      "proyector", "projector",
+      "taladro", "atornillador", "amoladora", "lijadora", "herramienta electrica", "sierra de calar", "radial",
+      "lego"
+    ],
+    "brands": [
+      "Apple", "iPhone", "iPad", "MacBook", "AirPods", "Samsung", "Galaxy", "Sony", "PlayStation",
+      "Nintendo", "Microsoft", "Xbox", "Xiaomi", "Redmi", "Google", "Pixel", "Garmin", "DJI",
+      "Logitech", "Bose", "JBL", "Sennheiser", "Beats", "Sonos", "LG", "Dyson", "Lenovo", "ThinkPad",
+      "ASUS", "MSI", "Gigabyte", "Crucial", "Western Digital", "WD", "SanDisk", "Seagate", "Kingston",
+      "Corsair", "HyperX", "SteelSeries", "Intel", "AMD", "Nvidia", "HP", "Dell", "Acer", "Razer",
+      "Canon", "Nikon", "Fujifilm", "GoPro", "Epson", "Huawei", "OnePlus", "Honor", "Nothing",
+      "Kindle", "Kobo", "iRobot", "Roborock", "Bosch", "Makita", "DeWalt", "Milwaukee", "Black+Decker",
+      "LEGO", "TP-Link", "Zotac", "Sapphire", "PNY"
+    ],
+    "brands_allow_other_categories": [
+      "Dyson", "LEGO", "Bosch", "Makita", "DeWalt", "Milwaukee", "Black+Decker", "iRobot", "Roborock"
+    ],
+    "generic_brands": ["amazon", "amzn", "sin marca", "generico", "marca blanca", "unbranded", "desconocida"],
+    "block_keywords": [
+      "zapatilla", "zapatillas", "zapato", "zapatos", "calzado", "camiseta", "pantalon", "pantalones",
+      "vestido", "sudadera", "chaqueta", "calcetin", "calcetines", "sujetador", "banador", "bikini",
+      "sandalia", "sandalias", "bota", "botas", "chancla", "legging", "leggins", "vaquero", "vaqueros",
+      "abrigo", "falda", "pijama", "ropa", "talla",
+      "perfume", "colonia", "maquillaje", "cosmetica", "champu", "serum", "labial",
+      "alimento", "comida", "chocolate", "gominola", "suplemento", "vitamina", "proteina", "colageno",
+      "capsula", "recambio", "tinta", "toner", "cartucho", "panal", "detergente",
+      "cable", "cables", "funda", "fundas", "carcasa", "cristal templado", "protector de pantalla",
+      "cargador", "adaptador", "soporte", "correa", "pegatina",
+      "libro", "libros", "novela", "comic", "manga",
+      "generico", "sin marca", "imitacion", "no original", "marca blanca"
+    ],
+    "accessory_keywords": [
+      "cable", "cables", "funda", "fundas", "carcasa", "cristal templado", "protector de pantalla",
+      "cargador", "adaptador", "soporte", "correa", "pegatina", "capsula", "recambio", "tinta", "toner", "cartucho"
+    ],
+    "reader_block_keywords": ["libro", "libros", "novela", "comic", "manga"],
+    "reader_exceptions": ["paperwhite", "kindle oasis", "kindle scribe", "e-reader", "ereader", "libro electronico", "kobo"],
+    "ignore_block_if_present": {
+      "cable": ["sin cable"],
+      "cables": ["sin cable"]
+    }
+  }
 }
