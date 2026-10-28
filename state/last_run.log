@@ -1,15 +1,10 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
 Listados: 116 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 457040 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 478893 bytes, 30 ASIN, 33 títulos
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
-Candidatos nuevos tras el filtro rápido: 2
-  MQ5gdPM · 1295.0 € · media 1666.5 · ref 1395.00 → descartado (solo -7% bajo la referencia) · Samsung Galaxy Z Fold7 256GB - Galaxy AI, Ligero y Plegable,
-  RO8bk21 · 103.95 € · media 147.42 · ref 126.90 → descartado (solo -18% bajo la referencia) · HOKA Clifton 11 Zapatillas para Correr
+Candidatos nuevos tras el filtro rápido: 0
   Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36622 bytes, 30 chollos
   Chollometro «Juego Resident Evil Requiem Para Playstation 5 | PS5 | PAL EU - Nuevo »: Es 55.17 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73585 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 82262 bytes, 30 chollos
   cm-2047349 · Es 55.17 € → candidato externo · Juego Resident Evil Requiem Para Playstation 5 | PS5 | PAL E
   cm-2047349: no se publica (esperando separación entre gangas)
 Publicados en esta ejecución: 0
