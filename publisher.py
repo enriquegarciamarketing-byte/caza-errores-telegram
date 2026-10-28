@@ -231,7 +231,7 @@ def validate_offer(offer: object, now: datetime) -> dict:
 def build_message(offer: dict) -> str:
     url = offer["url"]
     safe_url = html.escape(url, quote=True)
-    return f'<a href="{safe_url}">{html.escape(url)}</a>'
+    return f'🔗 <a href="{safe_url}">Ver en Amazon</a>'
 
 
 def _font(size: int, bold: bool = False):
