@@ -634,6 +634,9 @@ def main() -> int:
         ok, why = (True, "") if args.ignore_limits else allowed_to_post(cfg, state, cand, now)
         if not ok:
             print(f"  {cand['id']}: no se publica ({why})")
+            if "recientemente" not in why:
+                # Aplazado por horario o cupo: se vuelve a evaluar en la próxima pasada.
+                state.get("seen", {}).pop(cand["id"], None)
             continue
         try:
             if publish(tg, cfg, state, cand, channel, args.dry_run):
