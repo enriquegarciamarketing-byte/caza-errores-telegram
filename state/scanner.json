@@ -679,6 +679,11 @@
    "price": 32.99,
    "t": 1793224109,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "R4jrD5X": {
+   "price": 139.99,
+   "t": 1793225329,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -813,7 +818,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 118,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1013,6 +1018,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "deporvillage|columbia zapatillas de montana peakfreak venture lt (color verde oscuro) (talla 40 al 43)|deporvillage 40 columbia": {
+   "t": 1793224871.171076,
+   "query": "deporvillage 40 columbia",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {},
@@ -1024,7 +1039,8 @@
   "wallapop:cm-2047371": 1793223133.9753094,
   "wallapop:cm-2047674": 1793223137.2067282,
   "wallapop:cm-2047774": 1793223258.4428408,
-  "wallapop:cm-2047784": 1793223638.6421187
+  "wallapop:cm-2047784": 1793223638.6421187,
+  "wallapop:cm-2047796": 1793224871.5461402
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1071,6 +1087,14 @@
   },
   "primeriti|nike zapatillas casual de hombre nike charge suede|primeriti nike": {
    "t": 1793223638.0518446,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "deporvillage|columbia zapatillas de montana peakfreak venture lt (color verde oscuro) (talla 40 al 43)|deporvillage 40 columbia": {
+   "t": 1793224870.0176878,
    "prices": [],
    "reserved": 0,
    "demand_known": false,
