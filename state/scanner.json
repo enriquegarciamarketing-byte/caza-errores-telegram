@@ -659,6 +659,16 @@
    "price": 84.99,
    "t": 1793220448,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "R3wXYpR": {
+   "price": 279.99,
+   "t": 1793221649,
+   "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "MKJly6p": {
+   "price": 67.99,
+   "t": 1793221649,
+   "result": "solo -13% bajo la referencia"
   }
  },
  "posts": [
@@ -793,7 +803,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 118,
+ "last_listing_count": 117,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
