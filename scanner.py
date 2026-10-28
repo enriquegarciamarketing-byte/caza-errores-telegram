@@ -138,6 +138,13 @@ def parse_detail(page: str) -> dict:
     images = product.get("image") or []
     brand = product.get("brand") or {}
     low_text = stats.get("mínimo histórico", "")
+    series = []
+    raw_series = re.search(r'<script[^>]*id="priceSeries"[^>]*>(.*?)</script>', page, re.S)
+    if raw_series:
+        try:
+            series = json.loads(raw_series.group(1))
+        except json.JSONDecodeError:
+            series = []
     rating = re.search(r"</h1>\s*<p[^>]*>(.*?)</p>", page, re.S)
     rating_m = re.search(r"([\d.]+)\s*\(([\d.,]+)\+?\)", strip_tags(rating.group(1))) if rating else None
     return {
@@ -150,6 +157,7 @@ def parse_detail(page: str) -> dict:
         "avg90": parse_eur(stats.get("media 90 días")),
         "low": parse_eur(low_text.split("€")[0] + "€") if low_text else None,
         "modified": product.get("_modified"),
+        "series": series,
         "rating": float(rating_m.group(1)) if rating_m else None,
         "reviews": int(re.sub(r"\D", "", rating_m.group(2))) if rating_m else None,
     }
@@ -407,12 +415,51 @@ def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tup
             pass
     if not re.fullmatch(r"\d{8,14}", cand.get("gtin") or ""):
         return None, "sin EAN para enlazar al producto exacto"
+    problem = history_problem(cand, now)
+    if problem:
+        return None, problem
     if API is not None:
         try:
             return verify_live(cand, category, reason, variant)
         except (ApiError, KeyError, TypeError, ValueError) as exc:
             return None, f"no se pudo verificar en Amazon ({exc})"
     return category, reason + " · controles OK"
+
+
+def history_problem(cand: dict, now: datetime) -> str | None:
+    """Lee el gráfico de Jimmyleaks: descarta precios que no son una bajada nueva o con media inflada."""
+    series = cand.get("series") or []
+    price = cand.get("price") or 0
+    es = next((x for x in series if "ES" in str(x.get("label", "")).upper()), None)
+    if es and es.get("points"):
+        pts = sorted((p for p in es["points"] if isinstance(p, list) and len(p) == 2), key=lambda p: p[0])
+        start = None
+        for day, value in reversed(pts):
+            if abs(float(value) - price) <= max(0.5, price * 0.02):
+                start = day
+            else:
+                break
+        if start:
+            try:
+                held = (now.date() - datetime.fromisoformat(start).date()).days
+            except ValueError:
+                held = 0
+            if held > 7:
+                return f"lleva {held} días a este precio: no es una bajada nueva"
+    if cand.get("discount", 0) >= 50:
+        for other in series:
+            label = str(other.get("label", ""))
+            if "ES" in label.upper() or not other.get("points"):
+                continue
+            last = sorted(other["points"], key=lambda p: p[0])[-1]
+            try:
+                last_day = datetime.fromisoformat(last[0]).date()
+                last_price = float(last[1])
+            except (ValueError, TypeError, IndexError):
+                continue
+            if (now.date() - last_day).days <= 30 and last_price <= price * 1.10:
+                return f"en {label} cuesta {last_price} €: la media de 90 días está inflada"
+    return None
 
 
 def verify_live(cand: dict, category: str, reason: str, variant: bool) -> tuple[str | None, str]:
