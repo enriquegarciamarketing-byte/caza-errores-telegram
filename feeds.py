@@ -76,8 +76,26 @@ def parse_rss(xml: str) -> list[dict]:
             "image": image.group(1) if image else "",
             "link": link,
             "category": category,
+            "published": _cdata(block, "pubDate"),
         })
     return items
+
+
+def deal_signals(page: str) -> dict:
+    """Precio anterior y caducidad que Chollometro deja en el HTML de la ficha."""
+    text = page or ""
+    expired = bool(re.search(r'"isExpired"\s*:\s*true', text))
+    previous = None
+    match = re.search(r'"nextBestPrice"\s*:\s*(\d+(?:\.\d+)?)', text)
+    if match:
+        previous = float(match.group(1))
+        if previous <= 0:
+            previous = None
+    temperature = None
+    match = re.search(r'"temperature"\s*:\s*(\d+(?:\.\d+)?)', text)
+    if match:
+        temperature = int(float(match.group(1)))
+    return {"expired": expired, "previous": previous, "temperature": temperature}
 
 
 def page_status(html: str) -> str:

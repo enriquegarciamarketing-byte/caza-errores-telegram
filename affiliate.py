@@ -103,6 +103,81 @@ def resolve_redirects(url: str, limit: int = 8) -> str:
     return current
 
 
+# Envoltorios de afiliado. Si tras desenvolver seguimos en uno de estos hosts, el enlace no se publica.
+TRACKER_HOSTS = (
+    "awin1.com", "tradedoubler.com", "tradetracker.net", "anrdoezrs.net",
+    "shareasale.com", "skimresources.com", "chollometro.com", "pepper.com",
+    "prf.hn", "linksynergy.com", "go2cloud.org",
+)
+# Parámetros que identifican a otro afiliado o a una campaña. No se dejan en el enlace limpio.
+AFFILIATE_QUERY_KEYS = {
+    "tag", "ascsubtag", "linkcode", "linkcode".lower(), "awc", "awaid",
+    "irclickid", "irgwc", "clickid", "clickref", "mkcid", "mkevt", "campid",
+    "creative", "toolid", "pubref", "aff", "affiliate", "partner", "sscid",
+    "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "utm_id",
+}
+EMBEDDED_URL_KEYS = ("url", "ued", "destination", "dest", "redirect", "r")
+
+
+def is_tracker(url: str) -> bool:
+    host = _host(url)
+    return any(host == suffix or host.endswith("." + suffix) for suffix in TRACKER_HOSTS)
+
+
+def _drop_affiliate_query(url: str) -> str:
+    parts = urllib.parse.urlsplit(url)
+    query = [(key, value) for key, value in urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
+             if key.lower() not in AFFILIATE_QUERY_KEYS and not key.lower().startswith("utm_")]
+    return urllib.parse.urlunsplit((parts.scheme or "https", parts.netloc, parts.path,
+                                    urllib.parse.urlencode(query), parts.fragment))
+
+
+def _embedded_target(url: str) -> str | None:
+    query = urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)
+    for key in EMBEDDED_URL_KEYS:
+        values = query.get(key) or []
+        if values and values[0].startswith("http"):
+            return urllib.parse.unquote(values[0])
+    return None
+
+
+def clean_store_url(url: str | None, cfg: dict | None = None, *, expected_asin: str | None = None,
+                    resolve=None) -> str | None:
+    """Enlace publicable. Amazon lleva tag del canal. Otras tiendas salen sin afiliado ajeno.
+
+    Si no se puede quitar el envoltorio, devuelve None y el chollo no se publica.
+    `store_affiliates` se aplica solo después, cuando la plantilla tiene `{url}`.
+    """
+    import premium
+
+    current = (url or "").strip()
+    if not current.startswith("http"):
+        return None
+    for _ in range(4):
+        if not is_tracker(current):
+            break
+        inner = _embedded_target(current)
+        if not inner:
+            return None
+        current = inner
+    if is_tracker(current):
+        return None
+    current = _drop_affiliate_query(current)
+    tag = ((cfg or {}).get("affiliate_tag") or "").strip()
+    if is_amazon_es(current) or is_short_link(current):
+        if not tag:
+            return None
+        final, _warnings = prepare_amazon_link(current, tag, asin=expected_asin, resolve=resolve)
+        if not final or tag not in tag_values(final):
+            return None
+        if expected_asin and re.fullmatch(r"[A-Z0-9]{10}", expected_asin.upper()):
+            got = extract_asin(final)
+            if got != expected_asin.upper():
+                return None
+        return final
+    return premium.apply_store_template(current, cfg or {})
+
+
 def prepare_amazon_link(url: str | None, tag: str, *, asin: str | None = None, gtin: str | None = None,
                         resolve=None) -> tuple[str | None, list[str]]:
     """Devuelve un enlace publicable con la etiqueta del canal, y avisos para el administrador.
