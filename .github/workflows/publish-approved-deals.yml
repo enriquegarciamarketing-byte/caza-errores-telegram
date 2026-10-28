@@ -5,6 +5,12 @@ on:
     paths:
       - offers.json
   workflow_dispatch:
+    inputs:
+      test_mode:
+        description: "Enviar un mensaje de prueba al canal, sin oferta"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -28,7 +34,15 @@ jobs:
       - name: Instalar dependencias
         run: python -m pip install -r requirements.txt
 
+      - name: Enviar mensaje de prueba al canal
+        if: ${{ inputs.test_mode }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python telegram_test.py
+
       - name: Publicar ofertas aprobadas
+        if: ${{ !inputs.test_mode }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
