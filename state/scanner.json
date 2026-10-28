@@ -649,6 +649,11 @@
    "price": 103.95,
    "t": 1793218386,
    "result": "solo -18% bajo la referencia"
+  },
+  "RX34Gy7": {
+   "price": 49.95,
+   "t": 1793219609,
+   "result": "solo -21% bajo la referencia"
   }
  },
  "posts": [
@@ -783,7 +788,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 119,
+ "last_listing_count": 120,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
