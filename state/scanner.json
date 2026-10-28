@@ -599,6 +599,16 @@
    "price": 13.53,
    "t": 1793216918,
    "result": "solo -21% bajo la media"
+  },
+  "Rob0g47": {
+   "price": 39.08,
+   "t": 1793217410,
+   "result": "solo -34% bajo la media"
+  },
+  "MKJWN3p": {
+   "price": 50.0,
+   "t": 1793217410,
+   "result": "solo -24% bajo la media"
   }
  },
  "posts": [
@@ -710,7 +720,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 56,
+ "last_listing_count": 55,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
