@@ -26,9 +26,9 @@
    "result": "importe demasiado bajo para ganga"
   },
   "R3Non5G": {
-   "price": 14.24,
-   "t": 1793157221,
-   "result": "solo -30% bajo la media"
+   "price": 13.41,
+   "t": 1793187929,
+   "result": "solo -34% bajo la media"
   },
   "1L0G5K1": {
    "price": 15.0,
@@ -244,6 +244,31 @@
    "price": 12.0,
    "t": 1793185228,
    "result": "solo -40% bajo la media"
+  },
+  "RYPZOv7": {
+   "price": 13.12,
+   "t": 1793187929,
+   "result": "valoraciones flojas (None / 0)"
+  },
+  "RrxaBgO": {
+   "price": 13.12,
+   "t": 1793187929,
+   "result": "solo -36% bajo la media"
+  },
+  "7kAJZm1": {
+   "price": 12.48,
+   "t": 1793187929,
+   "result": "solo -18% bajo la media"
+  },
+  "RaDQZx7": {
+   "price": 165.45,
+   "t": 1793187929,
+   "result": "solo -25% bajo la media"
+  },
+  "RNEKNZ7": {
+   "price": 60.0,
+   "t": 1793187929,
+   "result": "solo -33% bajo la media"
   }
  },
  "posts": [
@@ -336,5 +361,5 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 46
+ "last_listing_count": 56
 }
