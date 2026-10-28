@@ -251,66 +251,76 @@ def euro(amount: float) -> str:
 
 
 def create_price_card(offer: dict) -> Path:
-    width, height = 1200, 1100
-    canvas = Image.new("RGB", (width, height), "#f5f5f5")
+    width, height = 1244, 1080
+    canvas = Image.new("RGB", (width, height), "#f7f7f7")
     draw = ImageDraw.Draw(canvas)
-    panel = "#ffffff"
-    draw.rounded_rectangle((28, 28, 670, 1072), radius=36, fill=panel)
 
+    # Mismo formato apaisado, panel de producto y escala tipográfica de la referencia.
+    draw.rounded_rectangle((34, 28, 674, 1052), radius=34, fill="#ffffff", outline="#eceeef", width=2)
     with Image.open(offer["image_path"]) as source:
-        product = ImageOps.contain(source.convert("RGB"), (590, 865), method=Image.Resampling.LANCZOS)
-    canvas.paste(product, (50 + (598 - product.width) // 2, 125 + (865 - product.height) // 2))
+        product = ImageOps.contain(source.convert("RGB"), (590, 940), method=Image.Resampling.LANCZOS)
+    canvas.paste(product, (58 + (590 - product.width) // 2, 70 + (940 - product.height) // 2))
     draw = ImageDraw.Draw(canvas)
-    title = offer["title"].strip()
-    title_font = _font(30, bold=True)
-    title_display = title
-    while draw.textbbox((0, 0), title_display, font=title_font)[2] > 555 and len(title_display) > 16:
-        title_display = title_display[:-2].rstrip()
-    if title_display != title:
-        title_display = title_display.rstrip(" .…") + "…"
-    draw.text((54, 52), title_display, font=title_font, fill="#30343b")
+
+    x = 744
+    label_font = _font(29)
+    label_color = "#64696f"
+
+    def draw_fit(value: str, y: int, size: int, max_width: int, color: str, bold: bool = True):
+        chosen = _font(size, bold=bold)
+        box = draw.textbbox((0, 0), value, font=chosen)
+        while box[2] > max_width and chosen.size > 34:
+            chosen = _font(chosen.size - 2, bold=bold)
+            box = draw.textbbox((0, 0), value, font=chosen)
+        draw.text((x, y), value, font=chosen, fill=color)
+        return box
 
     savings = offer["reference"] - offer["current"]
     savings_pct = savings / offer["reference"] * 100
-    cards = [
-        ("Precio normal", euro(offer["reference"]), "normal"),
-        ("Precio actual", euro(offer["current"]), "current"),
-        ("Ahorras", f"{euro(savings)}   -{savings_pct:.0f} %", "saving"),
+    resale = offer["resale"]
+
+    boxes = [
+        (700, 28, 1218, 213),
+        (700, 231, 1218, 443),
+        (700, 461, 1218, 646),
+        (700, 664, 1218, 847),
+        (700, 865, 1218, 1052),
     ]
-    resale = offer.get("resale")
-    if resale:
-        type_text = "Media de anuncios similares" if resale["match"] == "similar" else "Media del producto exacto"
-        cards.extend([
-            ("Reventa potencial", "~" + euro(resale["price"]), "resale"),
-            (f"ROI estimado · {resale['count']} anuncios", f"~{resale['roi']:.0f} %", "roi"),
-        ])
-    x1, x2 = 700, 1172
-    y = 28
-    heights = [170, 190, 175, 165, 165]
-    for index, (label, value, kind) in enumerate(cards):
-        card_height = heights[index]
-        if kind == "current":
-            fill, value_color = "#fff3e8", "#ec4c19"
-        elif kind in {"saving", "roi"}:
-            fill, value_color = "#ffffff", "#087a3a"
-        else:
-            fill, value_color = "#ffffff", "#202124"
-        draw.rounded_rectangle((x1, y, x2, y + card_height), radius=30, fill=fill)
-        draw.text((x1 + 38, y + 22), label, font=_font(28), fill="#5b6068")
-        value_font = _font(54 if len(value) < 19 else 42, bold=True)
-        value_box = draw.textbbox((0, 0), value, font=value_font)
-        while value_box[2] > (x2 - x1 - 76) and value_font.size > 30:
-            value_font = _font(value_font.size - 2, bold=True)
-            value_box = draw.textbbox((0, 0), value, font=value_font)
-        draw.text((x1 + 38, y + 70), value, font=value_font, fill=value_color)
-        if kind == "normal":
-            value_width = min(value_box[2], x2 - x1 - 76)
-            draw.line((x1 + 38, y + 100, x1 + 38 + value_width, y + 112), fill="#5c6066", width=5)
-        if kind == "roi":
-            draw.text((x1 + 38, y + card_height - 40), "Antes de impuestos", font=_font(19), fill="#6a7078")
-        if kind == "resale":
-            draw.text((x1 + 38, y + card_height - 40), type_text, font=_font(19), fill="#6a7078")
-        y += card_height + 18
+    fills = ["#ffffff", "#fff2e9", "#ffffff", "#ffffff", "#ffffff"]
+    for box, fill in zip(boxes, fills):
+        draw.rounded_rectangle(box, radius=28, fill=fill, outline="#eceeef", width=1)
+
+    draw.text((x, 58), "Precio normal", font=label_font, fill=label_color)
+    normal_value = euro(offer["reference"])
+    normal_box = draw_fit(normal_value, 96, 76, 442, "#101114")
+    draw.line((x - 2, 151, x + normal_box[2] + 5, 121), fill="#60646a", width=5)
+
+    draw.text((x, 258), "Precio actual", font=label_font, fill=label_color)
+    draw_fit(euro(offer["current"]), 293, 84, 442, "#e8471d")
+
+    draw.text((x, 486), "Ahorras", font=label_font, fill=label_color)
+    saving_text = euro(savings)
+    pill = (1052, 510, 1190, 602)
+    draw.rounded_rectangle(pill, radius=20, fill="#e4f6e9")
+    saving_max_width = pill[0] - x - 24
+    draw_fit(saving_text, 521, 66, saving_max_width, "#087a3a")
+    pct_text = f"-{savings_pct:.0f} %"
+    pct_size = 48
+    pct_font = _font(pct_size, bold=True)
+    pct_box = draw.textbbox((0, 0), pct_text, font=pct_font)
+    while pct_box[2] > pill[2] - pill[0] - 12 and pct_size > 34:
+        pct_size -= 2
+        pct_font = _font(pct_size, bold=True)
+        pct_box = draw.textbbox((0, 0), pct_text, font=pct_font)
+    pct_x = pill[0] + (pill[2] - pill[0] - pct_box[2]) // 2
+    pct_y = pill[1] + (pill[3] - pill[1] - (pct_box[3] - pct_box[1])) // 2 - pct_box[1]
+    draw.text((pct_x, pct_y), pct_text, font=pct_font, fill="#087a3a")
+
+    draw.text((x, 689), "Reventa potencial", font=label_font, fill=label_color)
+    draw_fit("~" + euro(resale["price"]), 724, 76, 442, "#101114")
+
+    draw.text((x, 890), "ROI estimado", font=label_font, fill=label_color)
+    draw_fit(f"~{resale['roi']:.0f} %", 925, 80, 442, "#087a3a")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output = OUTPUT_DIR / f"{offer['id']}.jpg"
