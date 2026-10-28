@@ -59,13 +59,14 @@ class FormatTest(unittest.TestCase):
 class CardTest(unittest.TestCase):
     def test_viaje_sin_foto_y_chollo_con_pvp(self):
         from publisher import create_deal_card
-        trip = create_deal_card({
-            "id": "test-viaje",
-            "title": "Viaje a Egipto 8 días con vuelos",
-            "current": 468,
-            "previous": 900,
-            "store": "Carrefour",
-        })
+        with mock.patch("destinations.destination_image", return_value=None):
+            trip = create_deal_card({
+                "id": "test-viaje",
+                "title": "Viaje a Egipto 8 días con vuelos",
+                "current": 468,
+                "previous": 900,
+                "store": "Carrefour",
+            })
         solo = create_deal_card({
             "id": "test-solo-ahora",
             "title": "Auriculares sin PVP",
@@ -79,6 +80,57 @@ class CardTest(unittest.TestCase):
         viaje = {"title": "Viaje a Egipto 8 días", "price": 468, "temperature": 200,
                  "link": "https://www.chollometro.com/ofertas/egipto-2047741", "published": ""}
         self.assertEqual(generic.reject_feed(viaje, CFG["generic"], at_madrid(12), set()), "")
+
+
+class DestinationTest(unittest.TestCase):
+    def test_detecta_egipto_paris_y_roma_y_no_un_trozo_de_palabra(self):
+        import destinations
+        self.assertEqual(destinations.match_destination("Viaje a Egipto 8 días")["wiki"], "Pirámides de Guiza")
+        self.assertEqual(destinations.match_destination("Fin de semana en París")["file"], "Tour_Eiffel_Wikimedia_Commons.jpg")
+        self.assertIn("Colosseum", destinations.match_destination("Roma en 4 días")["file"])
+        self.assertIsNone(destinations.match_destination("Viaje del aroma"))
+        self.assertIsNone(destinations.match_destination("Escapada sorpresa"))
+        # La ciudad gana al país.
+        self.assertIn("Colosseum", destinations.match_destination("Roma, Italia")["file"])
+
+    def test_cache_y_wikipedia_si_commons_falla(self):
+        import io
+        import destinations
+        from PIL import Image
+        buffer = io.BytesIO()
+        Image.new("RGB", (400, 300), (30, 90, 160)).save(buffer, format="JPEG", quality=85)
+        blob = buffer.getvalue()
+        self.assertGreater(len(blob), 2000)
+        calls = []
+
+        def fake_get(url, timeout=25):
+            calls.append(url)
+            if "Special:FilePath" in url:
+                return None
+            return blob
+
+        summary = json.dumps({"thumbnail": {"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a/320px-X.jpg"}}).encode()
+
+        class Resp:
+            headers = {"content-type": "application/json"}
+            def read(self):
+                return summary
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            with mock.patch.object(destinations, "_get", side_effect=fake_get), \
+                 mock.patch.object(destinations.urllib.request, "urlopen", return_value=Resp()):
+                first = destinations.destination_image("Viaje a Egipto", folder)
+                second = destinations.destination_image("Egipto en 8 días", folder)
+            self.assertIsNotNone(first)
+            self.assertEqual(first, second)
+            self.assertTrue(any("1600px-" in url for url in calls))
+            self.assertEqual(sum("Special:FilePath" in url for url in calls), 1)
 
 
 class LinkTest(unittest.TestCase):

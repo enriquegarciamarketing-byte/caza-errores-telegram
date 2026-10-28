@@ -488,6 +488,23 @@ def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, mu
     _centered(draw, box, box[3] - 50, note, note_font, "#AEB6BF")
 
 
+def _paste_cover(canvas, box, image, radius: int = 26, inset: int = 3) -> None:
+    """Llena el panel (cover) y recorta las esquinas como el marco redondeado."""
+    inner = (box[0] + inset, box[1] + inset, box[2] - inset, box[3] - inset)
+    width = inner[2] - inner[0]
+    height = inner[3] - inner[1]
+    rgb = image.convert("RGB")
+    scale = max(width / rgb.width, height / rgb.height)
+    resized = rgb.resize((max(width, int(rgb.width * scale + 0.5)), max(height, int(rgb.height * scale + 0.5))),
+                         Image.Resampling.LANCZOS)
+    left = max(0, (resized.width - width) // 2)
+    top = max(0, (resized.height - height) // 2)
+    cropped = resized.crop((left, top, left + width, top + height))
+    mask = Image.new("L", (width, height), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, width - 1, height - 1), radius=radius, fill=255)
+    canvas.paste(cropped, (inner[0], inner[1]), mask)
+
+
 def _place_product(canvas, photo_box, offer: dict) -> None:
     """Foto del producto, o el logo del canal si no hay una imagen usable."""
     path = offer.get("image_path")
@@ -495,13 +512,16 @@ def _place_product(canvas, photo_box, offer: dict) -> None:
         try:
             with Image.open(path) as source:
                 if min(source.size) >= 48:
-                    product = ImageOps.contain(
-                        source.convert("RGB"), (480, 780), method=Image.Resampling.LANCZOS,
-                    )
-                    canvas.paste(product, (
-                        photo_box[0] + (photo_box[2] - photo_box[0] - product.width) // 2,
-                        photo_box[1] + (photo_box[3] - photo_box[1] - product.height) // 2,
-                    ))
+                    if offer.get("cover"):
+                        _paste_cover(canvas, photo_box, source)
+                    else:
+                        product = ImageOps.contain(
+                            source.convert("RGB"), (480, 780), method=Image.Resampling.LANCZOS,
+                        )
+                        canvas.paste(product, (
+                            photo_box[0] + (photo_box[2] - photo_box[0] - product.width) // 2,
+                            photo_box[1] + (photo_box[3] - photo_box[1] - product.height) // 2,
+                        ))
                     return
         except (OSError, ValueError):
             pass
@@ -538,10 +558,21 @@ def create_deal_card(offer: dict) -> Path:
     previous = offer.get("previous")
     reliable = previous is not None and float(previous) > current * 1.02
     title = offer.get("title") or ""
+    image_path = offer.get("image_path")
+    cover = False
+    if _is_trip(title) and not offer.get("skip_destination"):
+        import destinations
+        found = destinations.destination_image(title, offer.get("destination_cache"))
+        if found:
+            image_path = found
+            cover = True
+        else:
+            image_path = None
     return create_price_card({
         "id": offer.get("id") or "chollo",
         "title": title,
-        "image_path": offer.get("image_path"),
+        "image_path": image_path,
+        "cover": cover,
         "category": offer.get("category") or deal_badge(title, current, float(previous) if reliable else None),
         "current": current,
         "reference": float(previous) if reliable else current,
