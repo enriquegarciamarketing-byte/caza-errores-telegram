@@ -3,14 +3,18 @@
   "sources": [
     "https://jimmyleaks.com/es/minimos-de-hoy/",
     "https://jimmyleaks.com/es/?order=-modified",
-    "https://jimmyleaks.com/es/?order=-discount"
+    "https://jimmyleaks.com/es/?order=-discount",
+    "https://jimmyleaks.com/es/c/electronica/?order=-modified",
+    "https://jimmyleaks.com/es/c/informatica/?order=-modified",
+    "https://jimmyleaks.com/es/c/videojuegos/?order=-modified",
+    "https://jimmyleaks.com/es/c/bricolaje-y-herramientas/?order=-modified"
   ],
   "max_listing_age_minutes": 90,
-  "max_detail_fetches_per_run": 15,
+  "max_detail_fetches_per_run": 25,
   "error_min_discount": 70,
-  "bargain_min_discount": 40,
+  "bargain_min_discount": 30,
   "bargain_min_rating": 4.0,
-  "bargain_min_reviews": 30,
+  "bargain_min_reviews": 20,
   "bargain_min_price_eur": 12,
   "error_min_price_eur": 5,
   "max_bargains_per_day": 8,
@@ -26,8 +30,10 @@
     "enabled": true,
     "min_price_eur": 40,
     "min_saving_eur": 30,
-    "resale_factor": 0.85,
-    "min_margin": 0.25,
+    "min_spain_points": 15,
+    "max_pvp_vs_avg": 1.5,
+    "min_reviews_known_brand": 20,
+    "min_reviews_other": 30,
     "category_keywords": [
       "iphone", "smartphone", "telefono movil", "movil", "redmi", "pixel",
       "ipad", "tablet",
@@ -35,14 +41,22 @@
       "consola", "playstation", "ps5", "ps4", "xbox", "nintendo switch", "switch oled", "switch lite", "steam deck", "videojuego",
       "tarjeta grafica", "gpu", "rtx", "gtx", "radeon", "geforce", "procesador", "ryzen", "intel core",
       "ssd", "nvme", "disco duro",
+      "caja de pc", "semitorre", "placa base", "placa madre", "fuente de alimentacion", "memoria ram", "ddr4", "ddr5", "tarjeta de red",
       "monitor",
       "televisor", "smart tv", "oled", "amoled", "qled",
       "auriculares", "airpods", "earbuds", "cascos", "galaxy buds", "barra de sonido", "soundbar",
       "smartwatch", "reloj inteligente", "apple watch", "galaxy watch", "garmin",
       "camara", "objetivo", "mirrorless", "reflex", "sin espejo", "gopro",
       "dron", "drone", "dji",
-      "robot aspirador", "roomba", "echo dot", "amazon echo", "echo show", "google nest",
+      "robot aspirador", "roomba", "aspiradora", "friegasuelos", "fregasuelos", "aspirador escoba",
+      "echo dot", "echo show", "echo pop", "amazon echo", "fire tv", "firetv", "google nest",
+      "router", "mesh", "malla wifi", "wifi mesh", "wifi 6", "wifi 7", "wi-fi 6", "wi-fi 7", "sistema wifi", "punto de acceso",
+      "videoportero", "videotimbre", "doorbell", "timbre", "camara de seguridad", "camara de vigilancia", "camara ip",
+      "patinete", "patinete electrico",
+      "gimbal", "estabilizador", "osmo", "meta quest", "oculus", "realidad virtual",
+      "microfono",
       "enchufe inteligente", "bombilla inteligente", "altavoz inteligente", "hogar inteligente",
+      "cafetera",
       "paperwhite", "kindle oasis", "kindle scribe", "kindle colorsoft", "e-reader", "ereader", "libro electronico", "kobo",
       "proyector", "projector",
       "taladro", "atornillador", "amoladora", "lijadora", "herramienta electrica", "sierra de calar", "radial",
@@ -55,24 +69,28 @@
       "ASUS", "MSI", "Gigabyte", "Crucial", "Western Digital", "WD", "SanDisk", "Seagate", "Kingston",
       "Corsair", "HyperX", "SteelSeries", "Intel", "AMD", "Nvidia", "HP", "Dell", "Acer", "Razer",
       "Canon", "Nikon", "Fujifilm", "GoPro", "Epson", "Huawei", "OnePlus", "Honor", "Nothing",
-      "Kindle", "Kobo", "iRobot", "Roborock", "Bosch", "Makita", "DeWalt", "Milwaukee", "Black+Decker",
-      "LEGO", "TP-Link", "Zotac", "Sapphire", "PNY"
+      "Kindle", "Kobo", "Echo", "Fire TV", "Amazon", "iRobot", "Roborock", "Tineco", "Ecovacs", "Dreame",
+      "Bosch", "Makita", "DeWalt", "Milwaukee", "Black+Decker", "Ryobi", "Einhell",
+      "LEGO", "TP-Link", "Zotac", "Sapphire", "PNY",
+      "Philips", "Ninja", "Ring", "Hisense", "TCL", "AOC", "Anker", "Soundcore", "Insta360",
+      "De'Longhi", "Delonghi", "Segway", "Ninebot"
     ],
     "brands_allow_other_categories": [
-      "Dyson", "LEGO", "Bosch", "Makita", "DeWalt", "Milwaukee", "Black+Decker", "iRobot", "Roborock"
+      "Dyson", "LEGO", "Bosch", "Makita", "DeWalt", "Milwaukee", "Black+Decker", "Ryobi", "Einhell", "iRobot", "Roborock"
     ],
-    "generic_brands": ["amazon", "amzn", "sin marca", "generico", "marca blanca", "unbranded", "desconocida"],
+    "generic_brands": ["amzn", "sin marca", "generico", "marca blanca", "unbranded", "desconocida"],
     "block_keywords": [
       "zapatilla", "zapatillas", "zapato", "zapatos", "calzado", "camiseta", "pantalon", "pantalones",
       "vestido", "sudadera", "chaqueta", "calcetin", "calcetines", "sujetador", "banador", "bikini",
       "sandalia", "sandalias", "bota", "botas", "chancla", "legging", "leggins", "vaquero", "vaqueros",
       "abrigo", "falda", "pijama", "ropa", "talla",
       "perfume", "colonia", "maquillaje", "cosmetica", "champu", "serum", "labial",
-      "alimento", "comida", "chocolate", "gominola", "suplemento", "vitamina", "proteina", "colageno",
+      "alimento", "comida", "cafe", "chocolate", "gominola", "suplemento", "vitamina", "proteina", "colageno",
       "capsula", "recambio", "tinta", "toner", "cartucho", "panal", "detergente",
+      "escritorio", "mesa",
       "cable", "cables", "funda", "fundas", "carcasa", "cristal templado", "protector de pantalla",
       "cargador", "adaptador", "soporte", "correa", "pegatina",
-      "libro", "libros", "novela", "comic", "manga",
+      "libro", "libros", "novela", "comic", "manga", "version kindle", "edicion kindle", "ebook",
       "generico", "sin marca", "imitacion", "no original", "marca blanca"
     ],
     "accessory_keywords": [
@@ -84,6 +102,24 @@
     "ignore_block_if_present": {
       "cable": ["sin cable"],
       "cables": ["sin cable"]
+    },
+    "block_ok_if_known_brand": ["capsula", "adaptador"],
+    "desk_block_keywords": ["escritorio", "mesa"],
+    "desk_exceptions": ["disco duro", "ssd", "nvme", "ordenador", "portatil", "pc de escritorio", "torre"],
+    "wallapop": {
+      "min_listings": 5,
+      "min_roi": 0.25,
+      "min_profit_eur": 15,
+      "price_stat": "median",
+      "latitude": 40.4168,
+      "longitude": -3.7038,
+      "cache_hours": 12,
+      "min_seconds_between_requests": 1.2,
+      "outlier_low_ratio": 0.45,
+      "outlier_high_ratio": 2.2,
+      "max_keywords": 6,
+      "accessory_keywords": ["funda", "cable", "cargador", "protector", "caja vacia", "solo caja"],
+      "bundle_keywords": ["pc gaming", "ordenador", "torre gaming", "portatil gaming"]
     }
   }
 }

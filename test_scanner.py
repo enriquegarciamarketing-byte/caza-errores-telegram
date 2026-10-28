@@ -10,12 +10,13 @@ import os
 import subprocess
 import sys
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest import mock
 from zoneinfo import ZoneInfo
 
 import scanner
+import wallapop
 
 
 ROOT = Path(__file__).resolve().parent
@@ -53,6 +54,11 @@ def cli(**kwargs) -> argparse.Namespace:
     return argparse.Namespace(**base)
 
 
+def fake_wallapop(tg, cfg, state, cand, dry):
+    cand["wallapop"] = {"ok": True, "price": 90.0, "count": 18, "roi": 0.40, "profit": 25.8}
+    return True
+
+
 class FakeTG:
     def __init__(self):
         self.photos = []
@@ -78,8 +84,25 @@ class ResaleRulesTest(unittest.TestCase):
         self.assertTrue(rules["enabled"])
         self.assertEqual(rules["min_price_eur"], 40)
         self.assertEqual(rules["min_saving_eur"], 30)
-        self.assertEqual(rules["resale_factor"], 0.85)
-        self.assertEqual(rules["min_margin"], 0.25)
+        self.assertEqual(rules["wallapop"]["min_listings"], 5)
+        self.assertEqual(rules["wallapop"]["min_roi"], 0.25)
+        self.assertEqual(rules["wallapop"]["min_profit_eur"], 15)
+        self.assertEqual(rules["min_spain_points"], 15)
+        self.assertEqual(rules["max_pvp_vs_avg"], 1.5)
+        self.assertEqual(self.cfg["bargain_min_discount"], 30)
+        self.assertEqual(self.cfg["bargain_min_reviews"], 20)
+        self.assertEqual(self.cfg["error_min_discount"], 70)
+        self.assertEqual(self.cfg["max_detail_fetches_per_run"], 25)
+        self.assertTrue(any("/es/c/electronica/" in url for url in self.cfg["sources"]))
+        self.assertTrue(any("/es/c/informatica/" in url for url in self.cfg["sources"]))
+        self.assertIn("Amazon", rules["brands"])
+        self.assertIn("Philips", rules["brands"])
+        self.assertIn("Tineco", rules["brands"])
+        self.assertNotIn("amazon", [item.lower() for item in rules["generic_brands"]])
+        for banned in ("Lefant", "Cecotec", "Acclafit", "UJJ", "BVATE", "Haoyuyan", "Qecnato"):
+            self.assertNotIn(banned, rules["brands"])
+        self.assertIn("escritorio", rules["block_keywords"])
+        self.assertIn("mesa", rules["block_keywords"])
         for word in ("iphone", "auriculares", "lego", "taladro", "ssd"):
             self.assertIn(word, rules["category_keywords"])
         for brand in ("Apple", "Samsung", "Dyson", "LEGO", "DeWalt"):
@@ -117,22 +140,20 @@ class ResaleRulesTest(unittest.TestCase):
         cand = deal(name="Auriculares Bluetooth 5.3", title="Auriculares Bluetooth 5.3", brand="",
                     price=50, avg90=120)
         category, reason = scanner.classify(self.cfg, cand)
-        self.assertIsNone(category)
-        self.assertIn("marca", reason)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
 
-    def test_marca_mencionada_no_vale_si_el_producto_es_otro(self):
-        cand = deal(name="Google TV Proyector Portatil", title="LYNCAST Google TV Proyector Portatil",
-                    brand="LYNCAST", price=209.99, avg90=400.58, rating=4.4, reviews=80)
-        category, reason = scanner.classify(self.cfg, cand)
-        self.assertIsNone(category)
-        self.assertIn("marca", reason)
-
-    def test_frigorifico_de_marca_tecnologica_no_pasa(self):
-        cand = deal(name="Frigorífico Samsung RB38", title="Frigorífico Samsung RB38", brand="Samsung",
-                    price=400, avg90=800)
-        category, reason = scanner.classify(self.cfg, cand)
-        self.assertIsNone(category)
-        self.assertIn("categoría", reason)
+    def test_sin_lista_de_categorias_un_proyector_o_un_frigorifico_pueden_seguir(self):
+        projector = deal(name="Google TV Proyector Portatil", title="LYNCAST Google TV Proyector Portatil",
+                         brand="LYNCAST", price=209.99, avg90=400.58, rating=4.4, reviews=80)
+        category, reason = scanner.classify(self.cfg, projector)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+        fridge = deal(name="Frigorífico Samsung RB38", title="Frigorífico Samsung RB38", brand="Samsung",
+                      price=400, avg90=800)
+        category, reason = scanner.classify(self.cfg, fridge)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
 
     def test_dyson_fuera_de_tecnologia_si_pasa(self):
         cand = deal(name="Aspiradora sin cable V15", title="Aspiradora Dyson V15", brand="Dyson",
@@ -188,23 +209,8 @@ class ResaleRulesTest(unittest.TestCase):
         self.assertIsNone(category)
         self.assertIn("ahorro", reason)
 
-        cfg = copy.deepcopy(self.cfg)
-        cfg["resale"]["min_margin"] = 0.90
-        priced = deal(price=100, avg90=180)
-        category, reason = scanner.classify(cfg, priced)
-        self.assertIsNone(category)
-        self.assertIn("margen de reventa", reason)
-        # (180 * 0.85 - 100) / 100 = 0.53, por debajo del 90 % forzado arriba.
-        self.assertAlmostEqual((180 * 0.85 - 100) / 100, 0.53)
-
         passing = scanner.resale_check(self.cfg, deal(price=100, avg90=200))
         self.assertTrue(passing[0])
-        cfg["resale"]["min_margin"] = 0.70
-        at_floor = scanner.resale_check(cfg, deal(price=100, avg90=200))
-        self.assertTrue(at_floor[0])
-        cfg["resale"]["min_margin"] = 0.71
-        over = scanner.resale_check(cfg, deal(price=100, avg90=200))
-        self.assertFalse(over[0])
 
     def test_minimo_historico_sigue_siendo_la_etiqueta(self):
         cand = deal(price=200, avg90=400, low=200)
@@ -237,7 +243,6 @@ class ResaleRulesTest(unittest.TestCase):
     def test_controles_de_calidad_siguen_aplicados(self):
         cand = deal(name="Apple iPhone 13", title="Apple iPhone 13", brand="Apple", price=180, avg90=720, gtin="")
         cand["modified"] = datetime.now(timezone.utc).isoformat()
-        cand["series"] = []
         category, reason = scanner.classify(self.cfg, cand)
         self.assertEqual(category, "ERROR DE PRECIO")
         checked, why = scanner.quality_checks(cand, datetime.now(timezone.utc), category, reason)
@@ -246,12 +251,114 @@ class ResaleRulesTest(unittest.TestCase):
 
         absurd = deal(name="Apple iPhone 13", title="Apple iPhone 13", brand="Apple", price=40, avg90=800)
         absurd["modified"] = datetime.now(timezone.utc).isoformat()
-        absurd["series"] = []
         category, reason = scanner.classify(self.cfg, absurd)
         self.assertEqual(category, "ERROR DE PRECIO")
         checked, why = scanner.quality_checks(absurd, datetime.now(timezone.utc), category, reason)
         self.assertIsNone(checked)
         self.assertIn("92", why)
+
+
+def chart(spain, europe=None, step_days=1) -> list[dict]:
+    today = datetime.now(timezone.utc).date()
+
+    def points(values):
+        return [[(today - timedelta(days=index * step_days)).isoformat(), value] for index, value in enumerate(values)]
+
+    series = [{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png", "points": points(spain)}]
+    if europe:
+        series.append({"label": "Amazon FR", "flag": "/static/assets/flags/amazon.fr.png", "points": points(europe)})
+    return series
+
+
+class MarketReferenceTest(unittest.TestCase):
+    def setUp(self):
+        self.cfg = load_cfg()
+
+    def test_la_media_inflada_se_corrige_con_la_mediana_y_la_ue(self):
+        cand = deal(price=40, avg90=200, series=chart([80] * 20, [70, 90]))
+        category, reason = scanner.classify(self.cfg, cand)
+        self.assertEqual(cand["reference_price"], 70)
+        self.assertNotEqual(category, "ERROR DE PRECIO")
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+
+    def test_quince_puntos_y_pvp_hinchado(self):
+        short = deal(price=40, avg90=160, series=chart([160] * 5))
+        category, reason = scanner.classify(self.cfg, short)
+        self.assertIsNone(category)
+        self.assertIn("puntos de precio en España", reason)
+
+        pvp = deal(price=80, avg90=140, was=220, series=chart([140] * 20))
+        category, reason = scanner.classify(self.cfg, pvp)
+        self.assertIsNone(category)
+        self.assertIn("PVP", reason)
+
+    def test_el_descuento_del_30_entra_y_el_margen_sigue_cortando(self):
+        ganga = deal(price=65, avg90=100)
+        category, reason = scanner.classify(self.cfg, ganga)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+        tight = deal(price=70, avg90=100)
+        category, reason = scanner.classify(self.cfg, tight)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+
+    def test_veinte_opiniones_solo_si_la_marca_es_conocida(self):
+        known = deal(reviews=20, rating=4.0, price=70, avg90=120)
+        category, _reason = scanner.classify(self.cfg, known)
+        self.assertEqual(category, "GANGA")
+        few = deal(reviews=19, rating=4.2, price=70, avg90=120)
+        category, reason = scanner.classify(self.cfg, few)
+        self.assertIsNone(category)
+        self.assertIn("valoraciones flojas", reason)
+        unknown = deal(name="Auriculares Bluetooth", title="Auriculares Bluetooth", brand="MarcaInventada",
+                       reviews=20, rating=4.5, price=70, avg90=120)
+        category, reason = scanner.classify(self.cfg, unknown)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+
+    def test_escritorio_mesa_y_adaptador_de_marca(self):
+        desk = deal(name="Escritorio Corsair Platform 6 con soporte para monitor",
+                    title="Escritorio gaming", brand="Corsair", price=180, avg90=320)
+        category, reason = scanner.classify(self.cfg, desk)
+        self.assertIsNone(category)
+        self.assertIn("escritorio", reason)
+        drive = deal(name="SanDisk Disco Duro de Escritorio 4TB", title="Disco duro", brand="SanDisk",
+                     price=120, avg90=200)
+        category, reason = scanner.classify(self.cfg, drive)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+        wifi = deal(name="Adaptador ASUS WiFi 7 PCIe", title="Adaptador WiFi 7", brand="ASUS", price=70, avg90=120)
+        category, reason = scanner.classify(self.cfg, wifi)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+        coffee = deal(name="Cápsulas de café", title="Cápsulas de café", brand="Philips", price=40, avg90=80)
+        category, reason = scanner.classify(self.cfg, coffee)
+        self.assertIsNone(category)
+        self.assertIn("cafe", reason)
+        mic = deal(name="Cápsula de micrófono SteelSeries Alias", title="Micrófono", brand="SteelSeries",
+                   price=90, avg90=160)
+        category, reason = scanner.classify(self.cfg, mic)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+
+    def test_echo_de_amazon_si_el_patinete_generico_no(self):
+        echo = deal(name="Echo Dot (5.ª generación)", title="Echo Dot", brand="Amazon", price=49, avg90=90)
+        category, reason = scanner.classify(self.cfg, echo)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+        scooter = deal(name="Patinete eléctrico plegable", title="Patinete", brand="Acclafit", price=180, avg90=320)
+        category, reason = scanner.classify(self.cfg, scooter)
+        self.assertEqual(category, "GANGA")
+        self.assertIn("reventa OK", reason)
+
+    def test_otro_pais_barato_descarta_cualquier_descuento(self):
+        cand = deal(price=50, avg90=100, series=chart([100] * 20, [52, 90]))
+        now = datetime.now(timezone.utc)
+        problem = scanner.history_problem(cand, now)
+        self.assertIsNotNone(problem)
+        self.assertIn("Amazon FR", problem)
+        self.assertLess(cand["discount"] if cand.get("discount") else 0, 70)
 
 
 class ScheduleTest(unittest.TestCase):
@@ -315,8 +422,10 @@ class PrivateModeTest(unittest.TestCase):
         before = copy.deepcopy(state)
         cand = deal(category="GANGA", discount=43)
         tg = FakeTG()
+        offers = []
         with mock.patch.object(scanner, "fetch", return_value=b"img"), \
-             mock.patch.object(scanner, "create_price_card", return_value=Path("/tmp/card.jpg")):
+             mock.patch.object(scanner, "create_price_card", side_effect=lambda offer: offers.append(offer) or Path("/tmp/card.jpg")), \
+             mock.patch.object(scanner, "attach_wallapop", side_effect=fake_wallapop):
             ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False, test_private=True)
         self.assertTrue(ok)
         self.assertEqual(len(tg.photos), 1)
@@ -331,6 +440,11 @@ class PrivateModeTest(unittest.TestCase):
         self.assertNotIn("disable_notification", tg.photos[0]["extra"])
         self.assertEqual(state, before)
         self.assertEqual(tg.methods, [])
+        self.assertEqual(offers[0]["resale"]["price"], 90)
+        self.assertEqual(offers[0]["resale"]["count"], 18)
+        self.assertEqual(offers[0]["resale"]["roi"], 40)
+        self.assertEqual(offers[0]["ref_label"], "ANTES · PRECIO HABITUAL")
+        self.assertIn("Wallapop", tg.photos[0]["caption"])
 
     def test_sin_ean_el_boton_sigue_siendo_de_afiliado(self):
         cfg = load_cfg()
@@ -338,7 +452,8 @@ class PrivateModeTest(unittest.TestCase):
         cand = deal(category="GANGA", discount=40, gtin=None, direct_url=None)
         tg = FakeTG()
         with mock.patch.object(scanner, "fetch", return_value=b"img"), \
-             mock.patch.object(scanner, "create_price_card", return_value=Path("/tmp/card.jpg")):
+             mock.patch.object(scanner, "create_price_card", return_value=Path("/tmp/card.jpg")), \
+             mock.patch.object(scanner, "attach_wallapop", side_effect=fake_wallapop):
             ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False, test_private=True, preview=True)
         self.assertTrue(ok)
         url = tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"]
@@ -352,7 +467,8 @@ class PrivateModeTest(unittest.TestCase):
         cand = deal(category="ERROR DE PRECIO", discount=75)
         tg = FakeTG()
         with mock.patch.object(scanner, "fetch", return_value=b"img"), \
-             mock.patch.object(scanner, "create_price_card", return_value=Path("/tmp/card.jpg")):
+             mock.patch.object(scanner, "create_price_card", return_value=Path("/tmp/card.jpg")), \
+             mock.patch.object(scanner, "attach_wallapop", side_effect=fake_wallapop):
             ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
         self.assertTrue(ok)
         self.assertEqual(tg.photos[0]["chat_id"], "@caza_errores")
@@ -360,6 +476,7 @@ class PrivateModeTest(unittest.TestCase):
         self.assertEqual(tg.photos[1]["chat_id"], 1880159117)
         self.assertEqual(len(state["posts"]), 1)
         self.assertEqual(state["posts"][0]["id"], cand["id"])
+        self.assertIn("tag=cazadores_errores-21", tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"])
         self.assertEqual(state["seen"], {})
 
     def test_run_scan_normal_no_pasa_el_saco_de_previas(self):
@@ -547,6 +664,114 @@ build "abc" "https://amzn.eu/d/xyz"
         self.assertEqual(lines[1], "abc")
         self.assertNotIn("--manual-link", lines[:2])
         self.assertEqual(lines[3:], ["--manual-id", "abc", "--manual-link", "https://amzn.eu/d/xyz"])
+
+
+class WallapopTest(unittest.TestCase):
+    def setUp(self):
+        self.rules = load_cfg()["resale"]["wallapop"]
+        self.cand = {
+            "name": "CORSAIR Vengeance LPX DDR4 RAM 16GB (2x8GB) 3200MHz CL16",
+            "brand": "Corsair",
+            "title": "Memoria RAM",
+            "price": 64.2,
+        }
+
+    def listings(self):
+        def item(title, amount, reserved=False):
+            return {"title": title, "price": {"amount": amount, "currency": "EUR"}, "reserved": {"flag": reserved}}
+        return [
+            item("Memoria RAM Corsair Vengeance LPX 16GB DDR4", 90),
+            item("Memoria RAM Corsair Vengeance LPX 16GB (2x8GB)", 85),
+            item("Memoria RAM Corsair Vengeance LPX 16GB DDR4", 70),
+            item("PC Gaming Ryzen 5 5600 | RX 6600 8GB | 16GB RAM", 749),
+            item("Corsair Vengeance LPX 32GB DDR4 2400MHz RAM", 180),
+            item("Memoria RAM Corsair Vengeance 16GB DDR4 3600MHz", 90),
+            item("Memorias RAM Corsair Vengeance LPX 16GB DDR4", 120),
+            item("Memoria RAM Corsair Vengeance LPX 16GB DDR4", 85),
+            item("Funda Corsair Vengeance LPX 16GB DDR4", 15),
+            item("Memoria RAM Corsair Vengeance LPX 16GB DDR4 reservada", 40, reserved=True),
+        ]
+
+    def test_filtra_pcs_otra_capacidad_fundas_y_calcula_la_mediana(self):
+        prices = wallapop.matching_prices(self.cand, self.listings(), self.rules)
+        self.assertNotIn(749, prices)
+        self.assertNotIn(180, prices)
+        self.assertNotIn(15, prices)
+        self.assertNotIn(40, prices)
+        result = wallapop.evaluate(self.cand, prices, self.rules)
+        self.assertTrue(result["ok"])
+        self.assertGreaterEqual(result["count"], 5)
+        self.assertAlmostEqual(result["price"], 87.5)
+        self.assertGreaterEqual(result["roi"], 0.25)
+        self.assertGreaterEqual(result["profit"], 15)
+
+    def test_roi_insuficiente_no_publica(self):
+        result = wallapop.evaluate({**self.cand, "price": 80}, [90, 90, 90, 90, 90], self.rules)
+        self.assertFalse(result["ok"])
+        self.assertIn("ROI", result["reason"])
+        self.assertFalse(result["transient"])
+
+    def test_pocos_anuncios(self):
+        result = wallapop.evaluate(self.cand, [90, 90, 90], self.rules)
+        self.assertFalse(result["ok"])
+        self.assertIn("mínimo", result["reason"])
+
+    def test_la_cache_no_repite_la_peticion(self):
+        state = {}
+        calls = []
+
+        def fake_fetch(keywords, rules):
+            calls.append(keywords)
+            return self.listings()
+
+        rules = {**self.rules, "min_seconds_between_requests": 0}
+        with mock.patch.object(wallapop, "fetch_items", side_effect=fake_fetch):
+            first = wallapop.lookup(self.cand, rules, state)
+            second = wallapop.lookup(self.cand, rules, state)
+        self.assertTrue(first["ok"] and second["ok"])
+        self.assertEqual(len(calls), 1)
+        self.assertTrue(second.get("cached"))
+
+    def test_el_boton_cambia_una_etiqueta_ajena(self):
+        cfg = load_cfg()
+        state = {"admin_chat_id": 1, "posts": [], "seen": {}}
+        cand = deal(category="ERROR DE PRECIO", discount=63, price=64.2, avg90=173.51,
+                    direct_url="https://www.amazon.es/dp/B07X1KT6LD?tag=otro-21", gtin=None)
+        tg = FakeTG()
+        with mock.patch.object(scanner, "fetch", return_value=b"img"), \
+             mock.patch.object(scanner, "create_price_card", return_value=Path("/tmp/card.jpg")), \
+             mock.patch.object(scanner, "attach_wallapop", side_effect=fake_wallapop):
+            ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
+        self.assertTrue(ok)
+        url = tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"]
+        self.assertIn("tag=cazadores_errores-21", url)
+        self.assertNotIn("otro-21", url)
+        self.assertIn("/dp/B07X1KT6LD", url)
+        self.assertIn("Wallapop", tg.photos[0]["caption"])
+
+    def test_si_wallapop_falla_no_hay_tarjeta_y_se_avisa(self):
+        cfg = load_cfg()
+        state = {"admin_chat_id": 7, "posts": [], "seen": {"abc": {"price": 199, "t": 1, "result": "GANGA"}}}
+        cand = deal(category="GANGA", discount=43)
+        tg = FakeTG()
+        tg.call = lambda method, params=None: {"message_id": 1} if method == "sendMessage" else (_ for _ in ()).throw(AssertionError(method))
+        sent = []
+        original = tg.call
+
+        def record(method, params=None):
+            sent.append((method, params))
+            return original(method, params)
+
+        tg.call = record
+        with mock.patch.object(wallapop, "lookup", return_value={"ok": False, "transient": True, "reason": "no he podido consultar Wallapop (timeout)"}):
+            ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
+        self.assertFalse(ok)
+        self.assertEqual(state["posts"], [])
+        self.assertEqual(sent[0][0], "sendMessage")
+        self.assertIn("Wallapop", sent[0][1]["text"])
+        self.assertEqual(sent[0][1]["chat_id"], 7)
+        scanner.note_wallapop_skip(state, cand)
+        self.assertNotIn("abc", state["seen"])
 
 
 if __name__ == "__main__":

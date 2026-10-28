@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import html
+
+import affiliate
 import json
 import os
 import re
@@ -31,7 +33,10 @@ MIN_ERROR_DISCOUNT_PERCENT = 70
 ASIN_PATH = re.compile(r"/dp/([A-Z0-9]{10})(?:/|$)", re.IGNORECASE)
 ASIN_PATTERN = re.compile(r"^[A-Z0-9]{10}$", re.IGNORECASE)
 SAFE_ID = re.compile(r"^[A-Z0-9_-]{1,80}$", re.IGNORECASE)
-AMAZON_SHORT_HOSTS = {"link.amazon", "www.link.amazon", "amzn.to", "www.amzn.to"}
+AMAZON_SHORT_HOSTS = {
+    "link.amazon", "www.link.amazon", "amzn.to", "www.amzn.to",
+    "amzn.eu", "www.amzn.eu", "amzlinks.in", "www.amzlinks.in",
+}
 AMAZON_PRODUCT_HOSTS = {"amazon.es", "www.amazon.es"}
 WALLAPOP_HOSTS = {"wallapop.com", "www.wallapop.com", "es.wallapop.com"}
 MADRID = ZoneInfo("Europe/Madrid")
@@ -546,6 +551,38 @@ def send_photo(token: str, chat_id: str, image_path: Path, caption: str) -> None
         raise RuntimeError(f"Telegram rechazó el mensaje: {result.get('description', 'error sin detalle')}")
 
 
+def _affiliate_tag() -> str:
+    try:
+        config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ""
+    tag = config.get("affiliate_tag") if isinstance(config, dict) else ""
+    return tag.strip() if isinstance(tag, str) else ""
+
+
+def _alert_admin(token: str, text: str) -> None:
+    try:
+        state = json.loads((ROOT / "state" / "scanner.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        print(text)
+        return
+    admin = state.get("admin_chat_id") if isinstance(state, dict) else None
+    if not token or not admin:
+        print(text)
+        return
+    body = json.dumps({"chat_id": admin, "text": text}).encode("utf-8")
+    request = urllib.request.Request(
+        f"https://api.telegram.org/bot{token}/sendMessage",
+        data=body,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        urllib.request.urlopen(request, timeout=20).read()
+    except (urllib.error.URLError, TimeoutError):
+        print(text)
+
+
 def main() -> int:
     try:
         offers = read_json(OFFERS_PATH)
@@ -567,12 +604,21 @@ def main() -> int:
 
         now = datetime.now(timezone.utc)
         published_set = set(published)
+        tag = _affiliate_tag()
         for raw in approved:
             offer = validate_offer(raw, now)
             discount_pct = offer["discount_pct"]
             if offer["id"] in published_set:
                 print(f"{offer['id']}: ya publicado; se omite.")
                 continue
+            link, warnings = affiliate.prepare_amazon_link(offer["url"], tag, asin=offer.get("asin"))
+            for warning in warnings:
+                print(f"{offer['id']}: {warning}")
+                _alert_admin(token, "⚠️ " + warning)
+            if not link:
+                print(f"{offer['id']}: el enlace no lleva la etiqueta de afiliado; no se publica.", file=sys.stderr)
+                continue
+            offer["url"] = link
             card_path = create_price_card(offer)
             send_photo(token, chat_id, card_path, build_message(offer))
             published_set.add(offer["id"])

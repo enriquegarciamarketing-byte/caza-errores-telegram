@@ -5,7 +5,7 @@ Cada ejecución:
 1. Lee las respuestas privadas del administrador al bot (vinculación y enlaces cortos).
 2. Revisa las listas públicas de Jimmyleaks (mínimos de hoy, actualizados y mayor bajada).
 3. Para cada candidato nuevo abre su ficha, que da la media real de 90 días y el EAN.
-4. Clasifica: ERROR DE PRECIO (>=70 % bajo la media), MÍNIMO HISTÓRICO o GANGA (>=40 %),
+4. Clasifica: ERROR DE PRECIO (>=70 % bajo la referencia), MÍNIMO HISTÓRICO o GANGA (>=30 %),
    y exige las reglas de reventa de config.json (marca, categoría, precio y margen), también en los errores de precio.
 5. Publica la tarjeta en el canal con el enlace de afiliado y avisa al administrador.
 
@@ -23,6 +23,7 @@ import html
 import json
 import os
 import re
+import statistics
 import sys
 import time
 import unicodedata
@@ -34,8 +35,10 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import affiliate
 from amazon_api import ApiError, CreatorsAPI, color_of, size_of
 from publisher import OUTPUT_DIR, build_caption, create_price_card, euro
+import wallapop
 
 API: CreatorsAPI | None = None  # se activa con los secretos de la Creators API
 
@@ -45,7 +48,10 @@ STATE_PATH = ROOT / "state" / "scanner.json"
 MADRID = ZoneInfo("Europe/Madrid")
 USER_AGENT = "CazaErroresBot/1.0 (+https://t.me/caza_errores)"
 BASE = "https://jimmyleaks.com"
-LINK_RE = re.compile(r"https://(?:link\.amazon|amzn\.to|amzn\.eu|www\.amazon\.es)/\S+", re.I)
+LINK_RE = re.compile(
+    r"https://(?:link\.amazon|amzn\.to|amzn\.eu|amzlinks\.in|www\.amazon\.es)/\S+",
+    re.I,
+)
 
 
 # ---------------------------------------------------------------- utilidades
@@ -218,12 +224,19 @@ class Telegram:
         return result["result"]
 
 
+def deal_reference(cand: dict) -> float:
+    """Precio de referencia ya corregido, o la media de 90 días si no hay gráfico."""
+    return float(cand.get("reference_price") or cand.get("avg90") or 0)
+
+
 def caption_data(cand: dict) -> dict:
     return {"category": cand["category"], "title": cand.get("name") or cand.get("title") or "",
-            "brand": cand.get("brand") or "", "current": cand["price"], "reference": cand["avg90"],
+            "brand": cand.get("brand") or "", "current": cand["price"], "reference": deal_reference(cand),
             "historical_low": bool(cand.get("historical_low")), "rating": cand.get("rating"),
             "reviews": cand.get("reviews"), "sizes": cand.get("sizes") or None,
-            **({"ref_text": cand["ref_text"]} if cand.get("ref_text") else {})}
+            **({"ref_text": cand["ref_text"]} if cand.get("ref_text") else {}),
+            **({"resale_price": cand["wallapop"]["price"], "resale_count": cand["wallapop"]["count"]}
+               if (cand.get("wallapop") or {}).get("ok") else {})}
 
 
 def buttons_for(url: str) -> dict:
@@ -238,26 +251,106 @@ def caption_for(url: str, cap: dict | None = None) -> str:
 
 # ---------------------------------------------------------------- lógica
 
+def is_spain_series(entry: dict) -> bool:
+    flag = str(entry.get("flag") or "").lower()
+    label = str(entry.get("label") or "")
+    upper = label.upper()
+    return "amazon.es" in flag or upper.endswith(" ES") or "ESPAÑA" in upper or "SPAIN" in upper
+
+
+def series_points(entry: dict) -> list[tuple]:
+    points = []
+    for raw in entry.get("points") or []:
+        if not isinstance(raw, (list, tuple)) or len(raw) < 2:
+            continue
+        try:
+            day = datetime.fromisoformat(str(raw[0])).date()
+            points.append((day, float(raw[1])))
+        except (TypeError, ValueError):
+            continue
+    return points
+
+
+def spain_point_count(cand: dict) -> int:
+    total = 0
+    for entry in cand.get("series") or []:
+        if is_spain_series(entry):
+            total += len(series_points(entry))
+    return total
+
+
+def market_reference(cand: dict, now: datetime | None = None) -> float | None:
+    """min(media 90 días, mediana España 30 días, precio más bajo reciente en otra Amazon UE).
+
+    La mediana exige al menos dos puntos en la ventana: un único punto de hoy es la
+    propia bajada y no describe el mes.
+    """
+    now = now or now_utc()
+    cutoff = now.date() - timedelta(days=30)
+    avg = cand.get("avg90")
+    values = []
+    if avg:
+        values.append(float(avg))
+    series = cand.get("series")
+    if series is not None:
+        spain: list[tuple] = []
+        europe: list[tuple] = []
+        for entry in series:
+            parsed = series_points(entry)
+            if is_spain_series(entry):
+                spain.extend(parsed)
+            else:
+                europe.extend(parsed)
+        cand["spain_points"] = len(spain)
+        # La mediana describe el mes anterior a esta bajada: los puntos ya al precio
+        # actual no cuentan, si no la referencia se aplasta contra la oferta.
+        tolerance = max(0.5, float(cand.get("price") or 0) * 0.02)
+        recent = [value for day, value in spain if day >= cutoff and abs(value - float(cand.get("price") or 0)) > tolerance]
+        if len(recent) >= 2:
+            med = float(statistics.median(recent))
+            cand["median30"] = med
+            values.append(med)
+        eu_recent = [value for day, value in europe if day >= cutoff]
+        if eu_recent:
+            cheapest = float(min(eu_recent))
+            cand["eu_min30"] = cheapest
+            values.append(cheapest)
+    if not values:
+        return None
+    ref = min(values)
+    cand["reference_price"] = ref
+    if avg and abs(ref - float(avg)) > max(0.5, float(avg) * 0.02) and not cand.get("ref_text"):
+        cand["ref_text"] = "frente a la referencia de mercado (media de 90 días, mediana de 30 días en España o precio en la UE)"
+    return ref
+
+
 def classify(cfg: dict, cand: dict) -> tuple[str | None, str]:
-    price, avg = cand["price"], cand["avg90"]
-    if not price or not avg or avg <= price:
+    market_reference(cand)
+    price = cand.get("price")
+    raw = cand.get("avg90")
+    ref = cand.get("reference_price")
+    if ref is None:
+        ref = raw
+    if not price or not ref or ref <= price:
+        if raw and price and raw > price and ref is not None and ref <= price:
+            return None, "la referencia corregida no supera el precio (media inflada)"
         return None, "sin media de 90 días por encima del precio"
-    disc = (avg - price) / avg * 100
+    disc = (ref - price) / ref * 100
     cand["discount"] = disc
     is_low = bool(cand.get("low")) and price <= cand["low"] + 0.01
     cand["historical_low"] = is_low
     if disc >= cfg["error_min_discount"]:
         if price < cfg["error_min_price_eur"]:
             return None, f"error de precio pero importe demasiado bajo ({price} €)"
-        category, reason = "ERROR DE PRECIO", f"-{disc:.0f}% bajo la media"
+        category, reason = "ERROR DE PRECIO", f"-{disc:.0f}% bajo la referencia"
     elif disc < cfg["bargain_min_discount"]:
-        return None, f"solo -{disc:.0f}% bajo la media"
+        return None, f"solo -{disc:.0f}% bajo la referencia"
     elif price < cfg["bargain_min_price_eur"]:
         return None, "importe demasiado bajo para ganga"
-    elif (cand.get("rating") or 0) < cfg["bargain_min_rating"] or cand.get("reviews", 0) < cfg["bargain_min_reviews"]:
-        return None, f"valoraciones flojas ({cand.get('rating')} / {cand.get('reviews')})"
     else:
-        category, reason = ("MÍNIMO HISTÓRICO" if is_low else "GANGA"), f"-{disc:.0f}% bajo la media"
+        if (cand.get("rating") or 0) < cfg["bargain_min_rating"] or cand.get("reviews", 0) < cfg["bargain_min_reviews"]:
+            return None, f"valoraciones flojas ({cand.get('rating')} / {cand.get('reviews')})"
+        category, reason = ("MÍNIMO HISTÓRICO" if is_low else "GANGA"), f"-{disc:.0f}% bajo la referencia"
     ok, why = resale_check(cfg, cand)
     if not ok:
         return None, why
@@ -363,6 +456,11 @@ def block_keyword(cand: dict, rules: dict, text: str) -> str | None:
             continue
         if folded in waivable and device and not title_leads_with(title, keyword):
             continue
+        if folded in {fold_text(item) for item in rules.get("block_ok_if_known_brand") or []} and match_brand(cand, rules):
+            continue
+        desk = {fold_text(item) for item in rules.get("desk_block_keywords") or []}
+        if folded in desk and any(keyword_in(text, item) for item in rules.get("desk_exceptions") or []):
+            continue
         # «sin cable» es un taladro o una aspiradora, no un cable suelto.
         ignored_map = rules.get("ignore_block_if_present") or {}
         ignored = ignored_map.get(keyword) or ignored_map.get(folded) or []
@@ -387,34 +485,50 @@ def resale_check(cfg: dict, cand: dict) -> tuple[bool, str]:
     blocked = block_keyword(cand, rules, text)
     if blocked:
         return False, f"bloqueado para reventa («{blocked}»)"
+    if cand.get("series") is not None:
+        points = int(cand["spain_points"]) if cand.get("spain_points") is not None else spain_point_count(cand)
+        minimum = int(rules.get("min_spain_points", 15))
+        if points < minimum:
+            return False, f"solo {points} puntos de precio en España (mínimo {minimum})"
+        was, raw_avg = cand.get("was"), cand.get("avg90")
+        pvp_ratio = float(rules.get("max_pvp_vs_avg", 1.5))
+        if was and raw_avg and float(was) > float(raw_avg) * pvp_ratio + 1e-9:
+            return False, f"el PVP ({euro(float(was))}) supera {pvp_ratio:g}× la media de 90 días ({euro(float(raw_avg))})"
     price = float(cand.get("price") or 0)
-    avg = float(cand.get("avg90") or 0)
+    ref = float(cand.get("reference_price") or cand.get("avg90") or 0)
     min_price = float(rules.get("min_price_eur", 40))
     if price + 1e-9 < min_price:
         return False, f"precio {euro(price)} por debajo del mínimo de reventa ({euro(min_price)})"
-    if avg <= price:
-        return False, "sin media de 90 días para estimar la reventa"
-    saving = avg - price
+    if ref <= price:
+        return False, "sin referencia de mercado por encima del precio"
+    saving = ref - price
     min_saving = float(rules.get("min_saving_eur", 30))
     if saving + 1e-9 < min_saving:
         return False, f"ahorro de {euro(saving)} inferior al mínimo de reventa ({euro(min_saving)})"
-    factor = float(rules.get("resale_factor", 0.85))
-    min_margin = float(rules.get("min_margin", 0.25))
-    margin = (avg * factor - price) / price
-    if margin + 1e-9 < min_margin:
-        return False, f"margen de reventa estimado {margin * 100:.0f} % inferior al {min_margin * 100:.0f} %"
-    matched = match_brand(cand, rules)
-    if not matched:
-        return False, "marca genérica o desconocida: no es reventa"
-    if any(keyword_in(text, item) for item in rules.get("category_keywords") or []):
-        return True, ""
-    if any(fold_text(matched) == fold_text(brand) for brand in rules.get("brands_allow_other_categories") or []):
-        return True, ""
-    return False, "categoría no apta para reventa"
+    # El canal es premium: cualquier categoría que no esté bloqueada puede seguir.
+    # El margen real se decide luego con los anuncios de Wallapop, no con un factor sobre la media.
+    return True, ""
 
 
 def affiliate_link(cfg: dict, gtin: str) -> str:
-    return f"https://www.amazon.es/s?k={urllib.parse.quote(gtin)}&tag={cfg['affiliate_tag']}"
+    return affiliate.fallback_link(cfg["affiliate_tag"], gtin=gtin)
+
+
+def use_amazon_link(url: str | None, cfg: dict, state: dict, tg, *, asin: str | None = None,
+                    gtin: str | None = None, dry: bool = False) -> str | None:
+    """Normaliza el enlace y avisa si un corto no lleva la etiqueta o apunta a otro producto."""
+    prepared, warnings = affiliate.prepare_amazon_link(url, (cfg or {}).get("affiliate_tag") or "",
+                                                      asin=asin, gtin=gtin)
+    admin = (state or {}).get("admin_chat_id")
+    for warning in warnings:
+        print(f"  ⚠️ {warning}")
+        if dry or tg is None or not admin:
+            continue
+        try:
+            tg.call("sendMessage", {"chat_id": admin, "text": "⚠️ " + warning})
+        except RuntimeError as exc:
+            print(f"  No pude avisar del enlace ({exc})")
+    return prepared
 
 
 def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool) -> None:
@@ -448,6 +562,13 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
         post = next((p for p in state.get("posts", []) if p.get("alert_id") == reply_to), None)
         if link and post:
             url = link.group(0).rstrip(").,")
+            url = use_amazon_link(url, cfg, state, None if dry else tg,
+                                  asin=affiliate.extract_asin(post.get("url") or ""),
+                                  gtin=post.get("gtin"), dry=dry)
+            if not url:
+                if not dry:
+                    tg.call("sendMessage", {"chat_id": admin, "text": "No he podido usar ese enlace con tu etiqueta."})
+                continue
             if dry:
                 print(f"[prueba] usaría {url} para el post de {post['id']}")
                 continue
@@ -523,7 +644,11 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
             category, reason = None, "sin stock"
         if category and not detail.get("image"):
             category, reason = None, "sin imagen"
-        print(f"  {item['id']} · {cand['price']} € · media {cand.get('avg90')} → {category or 'descartado'} ({reason}) · {card_title(cand)[:60]}")
+        ref = cand.get("reference_price")
+        ref_bit = ""
+        if ref and cand.get("avg90") and abs(float(ref) - float(cand["avg90"])) > 0.5:
+            ref_bit = f" · ref {float(ref):.2f}"
+        print(f"  {item['id']} · {cand['price']} € · media {cand.get('avg90')}{ref_bit} → {category or 'descartado'} ({reason}) · {card_title(cand)[:60]}")
         if category:
             cand["category"] = category
             qualified.append(cand)
@@ -575,7 +700,7 @@ def history_problem(cand: dict, now: datetime) -> str | None:
     """Lee el gráfico de Jimmyleaks: descarta precios que no son una bajada nueva o con media inflada."""
     series = cand.get("series") or []
     price = cand.get("price") or 0
-    es = next((x for x in series if "ES" in str(x.get("label", "")).upper()), None)
+    es = next((x for x in series if is_spain_series(x)), None)
     if es and es.get("points"):
         pts = sorted((p for p in es["points"] if isinstance(p, list) and len(p) == 2), key=lambda p: p[0])
         start = None
@@ -591,19 +716,16 @@ def history_problem(cand: dict, now: datetime) -> str | None:
                 held = 0
             if held > 7:
                 return f"lleva {held} días a este precio: no es una bajada nueva"
-    if cand.get("discount", 0) >= 50:
-        for other in series:
-            label = str(other.get("label", ""))
-            if "ES" in label.upper() or not other.get("points"):
-                continue
-            last = sorted(other["points"], key=lambda p: p[0])[-1]
-            try:
-                last_day = datetime.fromisoformat(last[0]).date()
-                last_price = float(last[1])
-            except (ValueError, TypeError, IndexError):
-                continue
-            if (now.date() - last_day).days <= 30 and last_price <= price * 1.10:
-                return f"en {label} cuesta {last_price} €: la media de 90 días está inflada"
+    cutoff = now.date() - timedelta(days=30)
+    for other in series:
+        if is_spain_series(other) or not other.get("points"):
+            continue
+        recent = [value for day, value in series_points(other) if day >= cutoff]
+        if not recent:
+            continue
+        cheapest = min(recent)
+        if cheapest <= price * 1.10:
+            return f"en {other.get('label')} cuesta {cheapest:g} €: la media de España está inflada"
     return None
 
 
@@ -616,7 +738,7 @@ def verify_live(cand: dict, category: str, reason: str, variant: bool) -> tuple[
             return None, "sin stock o sin precio en Amazon"
         if abs(item["price"] - cand["price"]) > max(0.5, cand["price"] * 0.03):
             return None, f"Amazon marca {item['price']} € y no {cand['price']} €"
-        cand["direct_url"] = f"https://www.amazon.es/dp/{item['asin']}?tag={tag}"
+        cand["direct_url"] = affiliate.force_tag(f"https://www.amazon.es/dp/{item['asin']}", tag)
         return category, reason + " · precio verificado en Amazon"
 
     # Solo vale si la talla que sigue Jimmyleaks (la del EAN, con su media de 90 días) está a ese precio.
@@ -632,7 +754,7 @@ def verify_live(cand: dict, category: str, reason: str, variant: bool) -> tuple[
     if not sizes and me:
         sizes = [x for x in [size_of(me["attrs"])] if x]
     cand.update(sizes=sizes, name=SIZE_RE.sub("", cand.get("name") or "").strip(" ,-"),
-                direct_url=f"https://www.amazon.es/dp/{item['asin']}?tag={tag}")
+                direct_url=affiliate.force_tag(f"https://www.amazon.es/dp/{item['asin']}", tag))
     return category, reason + f" · verificado en Amazon · tallas {', '.join(sizes) or '?'}"
 
 
@@ -672,8 +794,47 @@ def private_caption(url: str, cand: dict, preview: bool) -> str:
     return "\n".join(lines) + "\n" + body
 
 
+def note_wallapop_skip(state: dict, cand: dict) -> None:
+    """Un fallo de red no debe marcar el producto como visto: se reintenta."""
+    if cand.get("wallapop_transient"):
+        state.get("seen", {}).pop(cand.get("id"), None)
+
+
+def alert_no_wallapop(tg, state: dict, cand: dict, reason: str, dry: bool) -> None:
+    title = card_title(cand)[:90] or cand.get("id")
+    text = f"⚠️ No publico «{title}»: {reason}"
+    print(f"  {text}")
+    admin = (state or {}).get("admin_chat_id")
+    if dry or tg is None or not admin:
+        return
+    alerts = state.setdefault("admin_alerts", {})
+    key = f"wallapop:{cand.get('id')}"
+    if time.time() - float(alerts.get(key) or 0) < 12 * 3600:
+        return
+    try:
+        tg.call("sendMessage", {"chat_id": admin, "text": text})
+        alerts[key] = time.time()
+    except RuntimeError as exc:
+        print(f"  No pude avisar al administrador ({exc})")
+
+
+def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool) -> bool:
+    """Rellena cand['wallapop'] o avisa y deja el producto fuera del canal."""
+    rules = (resale_rules(cfg) or {}).get("wallapop") or {}
+    result = wallapop.lookup(cand, rules, state)
+    if not result.get("ok"):
+        cand["wallapop_transient"] = bool(result.get("transient"))
+        alert_no_wallapop(tg, state, cand, result.get("reason") or "sin datos de Wallapop", dry)
+        return False
+    cand["wallapop"] = result
+    cand["wallapop_transient"] = False
+    return True
+
+
 def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: str, dry: bool,
             link_override: str | None = None, test_private: bool = False, preview: bool = False) -> bool:
+    if not attach_wallapop(tg, cfg, state, cand, dry):
+        return False
     img_dir = OUTPUT_DIR / "src"
     img_dir.mkdir(parents=True, exist_ok=True)
     src = img_dir / f"{cand['id']}.jpg"
@@ -688,26 +849,37 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         "image_path": src,
         "category": cand["category"],
         "current": cand["price"],
-        "reference": cand["avg90"],
+        "reference": deal_reference(cand),
         "days": 90,
-        "ref_label": cand.get("ref_label"),
+        "ref_label": cand.get("ref_label") or "ANTES · PRECIO HABITUAL",
     }
+    deal = cand.get("wallapop") or {}
+    if deal.get("ok"):
+        offer["resale"] = {"price": deal["price"], "count": deal["count"], "roi": deal["roi"] * 100}
     if cand.get("sizes"):
         offer["title"] = f"{offer['title']} · Tallas {', '.join(cand['sizes'])}"
     card = create_price_card(offer)
     gtin = cand.get("gtin") if re.fullmatch(r"\d{8,14}", cand.get("gtin") or "") else None
     variant = has_size_variant(cand.get("name") or cand.get("title") or "") and not link_override
     url = link_override or cand.get("direct_url") or (affiliate_link(cfg, gtin) if gtin and not variant else None)
+    if test_private and not url:
+        query = gtin or card_title(cand)
+        url = f"https://www.amazon.es/s?k={urllib.parse.quote(str(query))}&tag={cfg['affiliate_tag']}"
+    expected_asin = cand.get("asin") or affiliate.extract_asin(cand.get("direct_url") or "")
+    if url:
+        url = use_amazon_link(url, cfg, state, tg, asin=expected_asin, gtin=gtin, dry=dry)
+    shown = deal_reference(cand)
+    ref_label = "media 90 días" if abs(shown - float(cand.get("avg90") or shown)) < 0.05 else "referencia"
     summary = (f"{cand['category']} · {card_title(cand)[:90]}\n"
-               f"{euro(cand['price'])} (media 90 días {euro(cand['avg90'])}, -{cand['discount']:.0f}%)")
+               f"{euro(cand['price'])} ({ref_label} {euro(shown)}, -{cand['discount']:.0f}%)")
     if test_private:
         admin = state.get("admin_chat_id")
         if not admin:
             print("  Prueba privada: no hay admin_chat_id; no se envía.")
             return False
         if not url:
-            query = gtin or card_title(cand)
-            url = f"https://www.amazon.es/s?k={urllib.parse.quote(str(query))}&tag={cfg['affiliate_tag']}"
+            print("  Prueba privada: no hay enlace de Amazon con tu etiqueta.")
+            return False
         caption = private_caption(url, cand, preview)
         line = summary.replace("\n", " · ")
         if dry or tg is None:
@@ -747,6 +919,8 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         buttons = [[{"text": "Ver histórico", "url": f"{BASE}/es/dp/{cand['id']}/"}]]
         amazon_url = url or (affiliate_link(cfg, gtin) if gtin else None)
         if amazon_url:
+            amazon_url = use_amazon_link(amazon_url, cfg, state, tg, asin=expected_asin, gtin=gtin, dry=dry)
+        if amazon_url:
             buttons[0].insert(0, {"text": "Abrir en Amazon", "url": amazon_url})
         try:
             alert = tg.send_photo(admin, card, html.escape(text), {"reply_markup": {"inline_keyboard": buttons},
@@ -758,7 +932,8 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         record["pending"] = True
         record["card_data"] = {"title": offer["title"], "category": offer["category"],
                                "current": offer["current"], "reference": offer["reference"],
-                               "image": cand["image"]}
+                               "image": cand["image"],
+                               **({"resale": offer["resale"]} if offer.get("resale") else {})}
     if record not in state.setdefault("posts", []):
         state["posts"].append(record)
     state["posts"] = state["posts"][-300:]
@@ -777,9 +952,17 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
             src.write_bytes(fetch(data["image"], binary=True))
             card = create_price_card({"id": f"scan-{post['id']}", "title": data["title"], "image_path": src,
                                       "category": data["category"], "current": data["current"],
-                                      "reference": data["reference"], "days": 90})
-            msg = tg.send_photo(channel, card, caption_for(post["url"], post.get("cap")),
-                                {"reply_markup": buttons_for(post["url"])})
+                                      "reference": data["reference"], "days": 90,
+                                      "ref_label": "ANTES · PRECIO HABITUAL",
+                                      **({"resale": data["resale"]} if data.get("resale") else {})})
+            link = use_amazon_link(post["url"], load_json(CONFIG_PATH, {}), state, tg,
+                                   asin=affiliate.extract_asin(post.get("url") or ""), gtin=post.get("gtin"))
+            if not link:
+                print(f"No publico el pendiente {post['id']}: el enlace no lleva tu etiqueta.")
+                continue
+            post["url"] = link
+            msg = tg.send_photo(channel, card, caption_for(link, post.get("cap")),
+                                {"reply_markup": buttons_for(link)})
         except (RuntimeError, urllib.error.URLError, TimeoutError) as exc:
             print(f"No se pudo publicar el pendiente {post['id']}: {exc}")
             continue
@@ -823,6 +1006,10 @@ def edit_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: str,
                                  "bargain_min_price_eur": 0}, cand)
     cand["category"] = category or "GANGA"
     cap = caption_data(cand)
+    link = use_amazon_link(link, cfg, state, tg, gtin=cand.get("gtin"))
+    if not link:
+        print("El enlace no lleva tu etiqueta y no hay alternativa.", file=sys.stderr)
+        return 1
     try:
         tg.call("editMessageCaption", {"chat_id": channel, "message_id": message_id,
                                        "caption": caption_for(link, cap), "parse_mode": "HTML",
@@ -850,6 +1037,11 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
     if not LINK_RE.fullmatch(spec["link"]):
         print("Enlace no válido", file=sys.stderr)
         return 2
+    spec = dict(spec)
+    spec["link"] = use_amazon_link(spec["link"], load_json(CONFIG_PATH, {}), state, tg, asin=spec.get("asin"))
+    if not spec["link"]:
+        print("El enlace no lleva tu etiqueta y no hay alternativa.", file=sys.stderr)
+        return 1
     pid = re.sub(r"[^A-Za-z0-9]", "", spec.get("id") or "custom")[:30] or "custom"
     src = OUTPUT_DIR / "src" / f"{pid}.jpg"
     src.parent.mkdir(parents=True, exist_ok=True)
@@ -1098,6 +1290,8 @@ def run_private_test(tg, cfg, state, channel, args, now) -> int:
                 posted += 1
                 if not args.dry_run:
                     time.sleep(2)
+            else:
+                note_wallapop_skip(state, cand)
         except RuntimeError as exc:
             print(f"  Error publicando {cand['id']}: {exc}")
     if posted:
@@ -1114,9 +1308,11 @@ def run_private_test(tg, cfg, state, channel, args, now) -> int:
     for cand in previews:
         prepared = prepare_preview(cand, cfg)
         try:
-            publish(tg, cfg, state, prepared, channel, args.dry_run, test_private=True, preview=True)
-            if not args.dry_run:
-                time.sleep(2)
+            if publish(tg, cfg, state, prepared, channel, args.dry_run, test_private=True, preview=True):
+                if not args.dry_run:
+                    time.sleep(2)
+            else:
+                note_wallapop_skip(state, prepared)
         except RuntimeError as exc:
             print(f"  Error enviando la vista previa {prepared.get('id')}: {exc}")
     return 0
@@ -1152,6 +1348,8 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime) -> i
             if publish(tg, cfg, state, cand, channel, args.dry_run):
                 posted += 1
                 time.sleep(2)
+            else:
+                note_wallapop_skip(state, cand)
         except RuntimeError as exc:
             print(f"  Error publicando {cand['id']}: {exc}")
     print(f"Publicados en esta ejecución: {posted}")
