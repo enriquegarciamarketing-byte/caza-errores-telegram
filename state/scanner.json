@@ -154,6 +154,16 @@
    "price": 14.19,
    "t": 1793162709,
    "result": "solo -28% bajo la media"
+  },
+  "7krEJbM": {
+   "price": 38.49,
+   "t": 1793165272,
+   "result": "solo -29% bajo la media"
+  },
+  "RNqP49z": {
+   "price": 115.59,
+   "t": 1793165272,
+   "result": "lleva 9 días a este precio: no es una bajada nueva"
   }
  },
  "posts": [
@@ -224,5 +234,5 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 56
+ "last_listing_count": 55
 }
