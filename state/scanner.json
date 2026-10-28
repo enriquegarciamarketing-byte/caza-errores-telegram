@@ -519,6 +519,11 @@
    "price": 8.63,
    "t": 1793214763,
    "result": "importe demasiado bajo para ganga"
+  },
+  "1LN6L2Z": {
+   "price": 19.99,
+   "t": 1793214963,
+   "result": "solo -28% bajo la media"
   }
  },
  "posts": [
