@@ -229,32 +229,13 @@ def validate_offer(offer: object, now: datetime) -> dict:
 
 
 def build_message(offer: dict) -> str:
-    savings = offer["reference"] - offer["current"]
-    pct = savings / offer["reference"] * 100
-    checked = offer["checked_at"].astimezone(MADRID).strftime("%d/%m/%Y %H:%M %Z")
-    title = offer["title"]
-    if len(title) > 100:
-        title = title[:97].rstrip() + "…"
-    lines = [
-        f"<b>{html.escape(title)}</b>",
-        f"Precio normal ({offer['days']} d): <s>{offer['reference']:.2f} €</s>",
-        f"Precio actual: <b>{offer['current']:.2f} €</b>",
-        f"Ahorras: <b>{savings:.2f} € · -{pct:.0f} %</b>",
-    ]
-    if offer["resale"]:
-        resale = offer["resale"]
-        lines.extend([
-            f"Reventa potencial: ~{resale['price']:.2f} € (media de {resale['count']} anuncios Wallapop)",
-            f"ROI estimado: ~{resale['roi']:.0f} % antes de impuestos",
-            "Precios anunciados; pueden no ser precios de venta.",
-        ])
+    pct = (offer["reference"] - offer["current"]) / offer["reference"] * 100
     safe_url = html.escape(offer["url"], quote=True)
-    lines.extend([
-        f"🔗 <a href=\"{safe_url}\">COMPRAR EN AMAZON</a>",
-        f"Comprobado: {html.escape(checked)} · precio y stock sujetos a cambios.",
-        "En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.",
+    return "\n".join([
+        f"🔥 <b>{html.escape(offer['category'])}</b> · <b>{euro(offer['current'])} (−{pct:.0f} %)</b>",
+        f"Media {offer['days']} d: {euro(offer['reference'])}",
+        f"🔗 <a href=\"{safe_url}\">Ver oferta en Amazon</a>",
     ])
-    return "\n".join(lines)
 
 
 def _font(size: int, bold: bool = False):
@@ -284,10 +265,19 @@ def create_price_card(offer: dict) -> Path:
     canvas = Image.new("RGB", (width, height), paper)
     draw = ImageDraw.Draw(canvas)
 
-    # Diseño original con una paleta inspirada en Amazon; no usa su logotipo.
+    # Marca propia: nombre del canal y una sonrisa naranja dibujada sin la "a" de Amazon.
     draw.rounded_rectangle((24, 24, 1056, 1056), radius=34, fill="#FFFFFF", outline="#E7E9EB", width=2)
-    draw.text((58, 48), "CAZA ERRORES", font=_font(26, bold=True), fill=ink)
-    draw.text((58, 81), "OFERTAS REVISADAS", font=_font(15, bold=True), fill=muted)
+    brand = "Cazadores de errores"
+    brand_font = _font(26, bold=True)
+    draw.text((58, 43), brand, font=brand_font, fill=ink)
+    # Curva propia a modo de sonrisa; queda debajo del nombre y no reproduce la flecha de Amazon.
+    smile_points = []
+    for step in range(41):
+        t = step / 40
+        x = 60 + 270 * t
+        y = (1 - t) ** 2 * 77 + 2 * (1 - t) * t * 112 + t ** 2 * 77
+        smile_points.append((round(x), round(y)))
+    draw.line(smile_points, fill=orange, width=6, joint="curve")
 
     category = offer["category"]
     category_font = _font(22, bold=True)
