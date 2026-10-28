@@ -389,6 +389,21 @@
    "price": 26.99,
    "t": 1793212186,
    "result": "solo -36% bajo la media"
+  },
+  "MK2xeb1": {
+   "price": 22.41,
+   "t": 1793212310,
+   "result": "GANGA"
+  },
+  "R48NgPR": {
+   "price": 12.99,
+   "t": 1793212310,
+   "result": "valoraciones flojas (4.7 / 12)"
+  },
+  "1BX6grZ": {
+   "price": 39.0,
+   "t": 1793212310,
+   "result": "valoraciones flojas (5.0 / 5)"
   }
  },
  "posts": [
@@ -481,7 +496,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 55,
+ "last_listing_count": 56,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
