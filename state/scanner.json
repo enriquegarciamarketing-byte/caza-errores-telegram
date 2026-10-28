@@ -998,6 +998,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "primeriti|nike zapatillas casual de hombre nike charge suede|primeriti nike": {
+   "t": 1793223638.2638597,
+   "query": "primeriti nike",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {},
@@ -1008,7 +1018,8 @@
   "wallapop:cm-2047040": 1793220216.6755087,
   "wallapop:cm-2047371": 1793223133.9753094,
   "wallapop:cm-2047674": 1793223137.2067282,
-  "wallapop:cm-2047774": 1793223258.4428408
+  "wallapop:cm-2047774": 1793223258.4428408,
+  "wallapop:cm-2047784": 1793223638.6421187
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1052,6 +1063,14 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~26 € (25 anuncios): ROI -35 % y -14 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "primeriti|nike zapatillas casual de hombre nike charge suede|primeriti nike": {
+   "t": 1793223638.0518446,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
  }
 }
