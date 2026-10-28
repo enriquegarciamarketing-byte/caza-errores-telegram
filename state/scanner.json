@@ -524,6 +524,31 @@
    "price": 19.99,
    "t": 1793214963,
    "result": "solo -28% bajo la media"
+  },
+  "7nZmVP7": {
+   "price": 19.63,
+   "t": 1793215085,
+   "result": "valoraciones flojas (4.3 / 7)"
+  },
+  "7AbGD60": {
+   "price": 30.0,
+   "t": 1793215085,
+   "result": "solo -11% bajo la media"
+  },
+  "RVgZqBr": {
+   "price": 11.99,
+   "t": 1793215085,
+   "result": "solo -20% bajo la media"
+  },
+  "MKN4qp1": {
+   "price": 23.14,
+   "t": 1793215085,
+   "result": "solo -23% bajo la media"
+  },
+  "RXrAK2K": {
+   "price": 9.99,
+   "t": 1793215085,
+   "result": "solo -29% bajo la media"
   }
  },
  "posts": [
@@ -635,7 +660,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 56,
+ "last_listing_count": 55,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
