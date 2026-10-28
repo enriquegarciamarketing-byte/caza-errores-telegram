@@ -229,6 +229,16 @@
    "price": 61.0,
    "t": 1793179102,
    "result": "solo -23% bajo la media"
+  },
+  "RXr9EnK": {
+   "price": 10.0,
+   "t": 1793182300,
+   "result": "importe demasiado bajo para ganga"
+  },
+  "1bax9Qo": {
+   "price": 3.73,
+   "t": 1793182300,
+   "result": "importe demasiado bajo para ganga"
   }
  },
  "posts": [
