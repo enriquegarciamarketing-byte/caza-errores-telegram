@@ -28,7 +28,10 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from amazon_api import ApiError, CreatorsAPI, color_of, size_of
 from publisher import OUTPUT_DIR, build_caption, create_price_card, euro
+
+API: CreatorsAPI | None = None  # se activa con los secretos de la Creators API
 
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
@@ -205,7 +208,8 @@ def caption_data(cand: dict) -> dict:
     return {"category": cand["category"], "title": cand.get("name") or cand.get("title") or "",
             "brand": cand.get("brand") or "", "current": cand["price"], "reference": cand["avg90"],
             "historical_low": bool(cand.get("historical_low")), "rating": cand.get("rating"),
-            "reviews": cand.get("reviews")}
+            "reviews": cand.get("reviews"), "sizes": cand.get("sizes") or None,
+            **({"ref_text": cand["ref_text"]} if cand.get("ref_text") else {})}
 
 
 def buttons_for(url: str) -> dict:
@@ -378,8 +382,9 @@ def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
 def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tuple[str | None, str]:
     """Controles automáticos para publicar sin revisión humana."""
     name = cand.get("name") or cand.get("title") or ""
-    if has_size_variant(name):
-        return None, "tiene tallas: Jimmyleaks puede mezclar precios entre tallas"
+    variant = has_size_variant(name)
+    if variant and API is None:
+        return None, "tiene tallas y sin Creators API no se puede comprobar cada talla"
     listed, detail_price = cand.get("listing_price"), cand.get("price")
     if listed and detail_price and abs(listed - detail_price) > 0.01:
         return None, f"precio del listado ({listed} €) y de la ficha ({detail_price} €) no coinciden"
@@ -399,7 +404,41 @@ def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tup
             pass
     if not re.fullmatch(r"\d{8,14}", cand.get("gtin") or ""):
         return None, "sin EAN para enlazar al producto exacto"
+    if API is not None:
+        try:
+            return verify_live(cand, category, reason, variant)
+        except (ApiError, KeyError, TypeError, ValueError) as exc:
+            return None, f"no se pudo verificar en Amazon ({exc})"
     return category, reason + " · controles OK"
+
+
+def verify_live(cand: dict, category: str, reason: str, variant: bool) -> tuple[str | None, str]:
+    """Comprueba en vivo con la API oficial y, si hay tallas, detecta cuáles están rebajadas."""
+    tag = load_json(CONFIG_PATH, {}).get("affiliate_tag", "")
+    item = API.find_by_ean(cand["gtin"])
+    if not variant:
+        if not item["in_stock"] or not item["price"]:
+            return None, "sin stock o sin precio en Amazon"
+        if abs(item["price"] - cand["price"]) > max(0.5, cand["price"] * 0.03):
+            return None, f"Amazon marca {item['price']} € y no {cand['price']} €"
+        cand["direct_url"] = f"https://www.amazon.es/dp/{item['asin']}?tag={tag}"
+        return category, reason + " · precio verificado en Amazon"
+
+    # Solo vale si la talla que sigue Jimmyleaks (la del EAN, con su media de 90 días) está a ese precio.
+    if not item["in_stock"] or not item["price"] or abs(item["price"] - cand["price"]) > max(0.5, cand["price"] * 0.03):
+        return None, f"la talla con historial está a {item['price']} €: la rebaja es de otra talla sin historial"
+    variants = API.variations(item["parent"] or item["asin"])
+    me = next((v for v in variants if v["asin"] == item["asin"]), None)
+    color = color_of(me["attrs"]) if me else None
+    same = [v for v in variants if color is None or color_of(v["attrs"]) == color]
+    deals = sorted((v for v in same if v["in_stock"] and v["price"] and v["price"] <= cand["price"] * 1.02),
+                   key=lambda v: (v["price"], v["asin"] != item["asin"]))
+    sizes = [x for x in (size_of(v["attrs"]) for v in deals) if x]
+    if not sizes and me:
+        sizes = [x for x in [size_of(me["attrs"])] if x]
+    cand.update(sizes=sizes, name=SIZE_RE.sub("", cand.get("name") or "").strip(" ,-"),
+                direct_url=f"https://www.amazon.es/dp/{item['asin']}?tag={tag}")
+    return category, reason + f" · verificado en Amazon · tallas {', '.join(sizes) or '?'}"
 
 
 def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime) -> tuple[bool, str]:
@@ -442,11 +481,14 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         "current": cand["price"],
         "reference": cand["avg90"],
         "days": 90,
+        "ref_label": cand.get("ref_label"),
     }
+    if cand.get("sizes"):
+        offer["title"] = f"{offer['title']} · Tallas {', '.join(cand['sizes'])}"
     card = create_price_card(offer)
     gtin = cand.get("gtin") if re.fullmatch(r"\d{8,14}", cand.get("gtin") or "") else None
     variant = has_size_variant(cand.get("name") or cand.get("title") or "") and not link_override
-    url = link_override or (affiliate_link(cfg, gtin) if gtin and not variant else None)
+    url = link_override or cand.get("direct_url") or (affiliate_link(cfg, gtin) if gtin and not variant else None)
     summary = (f"{cand['category']} · {card_title(cand)[:90]}\n"
                f"{euro(cand['price'])} (media 90 días {euro(cand['avg90'])}, -{cand['discount']:.0f}%)")
     if dry:
@@ -650,6 +692,9 @@ def main() -> int:
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     channel = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     tg = Telegram(token) if token else None
+    global API
+    API = CreatorsAPI.from_env(cfg.get("affiliate_tag", ""))
+    print("Creators API: " + ("activa, se verifica cada producto en vivo" if API else "sin claves (productos con tallas descartados)"))
     if not tg and not args.dry_run:
         print("Falta TELEGRAM_BOT_TOKEN", file=sys.stderr)
         return 2

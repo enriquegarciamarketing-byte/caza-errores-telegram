@@ -65,6 +65,8 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          AMAZON_CREATORS_CLIENT_ID: ${{ secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_CLIENT_SECRET: ${{ secrets.AMAZON_CREATORS_CLIENT_SECRET }}
           MANUAL_ID: ${{ inputs.manual_id }}
           MANUAL_LINK: ${{ inputs.manual_link }}
           EDIT_MESSAGE: ${{ inputs.edit_message }}

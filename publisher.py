@@ -255,7 +255,7 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
                   brand: str = "", historical_low: bool = False, rating: float | None = None,
                   reviews: int | None = None, ref_text: str = "frente a su precio medio de 90 días",
                   resale_price: float | None = None, resale_count: int | None = None,
-                  sold_out: bool = False) -> str:
+                  sold_out: bool = False, sizes: list | None = None) -> str:
     """Copy del canal: categoría, marca en negrita, precio, precio tachado y descuento."""
     e = html.escape
     brand = nice_brand(brand)
@@ -267,6 +267,8 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
     lines.append("")
     lines.append(f"<b>{e(brand)}</b> {product}" if brand else f"<b>{product}</b>")
     lines.append("")
+    if sizes:
+        lines.append(f"📏 Tallas a este precio: <b>{e(', '.join(sizes))}</b>")
     lines.append(f"💰 <b>{e(euro(current))}</b>   <s>{e(euro(reference))}</s>")
     lines.append(f"🏷️ <b>-{pct}%</b> {e(ref_text)}")
     if historical_low:
