@@ -19,7 +19,17 @@
    "title": "Tommy Jeans Cortavientos Hombre Chicago con capucha, Azul (Dark Night Navy), XL",
    "message_id": 20,
    "url": "https://link.amazon/B00Opwxue",
-   "alert_id": 4
+   "alert_id": 4,
+   "cap": {
+    "category": "MÍNIMO HISTÓRICO",
+    "title": "Tommy Jeans Cortavientos Hombre Chicago con capucha, Azul (Dark Night Navy), XL",
+    "brand": "Tommy Jeans",
+    "current": 49.19,
+    "reference": 85.49,
+    "historical_low": true,
+    "rating": 4.4,
+    "reviews": 49
+   }
   }
  ],
  "tg_offset": 334822050,
