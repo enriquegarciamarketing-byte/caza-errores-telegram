@@ -1,3 +1,14 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": "cm-2047804",
+      "key": "p:skyscanner venezuela vuelos ida vuelta solo",
+      "price": 461.0,
+      "t": 1793229032,
+      "url": "https://www.skyscanner.es/transporte/vuelos/madr/ccsa/270409/270423/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&rtn=1&priceSourceId=&priceTrace=%7Bbl%7D%3A202610280430%2AI%2AMAD%2ACCS%2A20270409%2At_00%2A%7C202610280430%2AI%2ACCS%2AMAD%2A20270423%2At_00%2A&qp_prevCurrency=EUR&qp_prevPrice=461&qp_prevProvider=ins_month",
+      "message_id": 3,
+      "title": "¡VENEZUELA! Vuelos de IDA y VUELTA por solo 461€ (feb - jun) - Salidas desde Madrid",
+      "store": "Skyscanner"
+    }
+  ]
 }
