@@ -983,6 +983,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "carrefour|lego disney pixar wall-e y eve 43279 regalo en cupon del 40% (28 euros)|carrefour 43279 lego": {
+   "t": 1793223258.0129433,
+   "query": "carrefour 43279 lego",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {},
@@ -992,7 +1002,8 @@
   "wallapop:cm-2047744": 1793220214.5371382,
   "wallapop:cm-2047040": 1793220216.6755087,
   "wallapop:cm-2047371": 1793223133.9753094,
-  "wallapop:cm-2047674": 1793223137.2067282
+  "wallapop:cm-2047674": 1793223137.2067282,
+  "wallapop:cm-2047774": 1793223258.4428408
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {

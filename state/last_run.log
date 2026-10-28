@@ -2,19 +2,24 @@ Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
 Listados: 120 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36534 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36501 bytes, 30 chollos
+  Chollometro «LEGO Disney Pixar Wall-E y Eve 43279 regalo en cupón del 40% (28 euros»: Carrefour 69.99 €
   Chollometro «Garmin fēnix 8 Pro 47 mm AMOLED, LTE y satélite inReach, mapas TopoAct»: Electroprecio 784.0 €
   Chollometro «LEGO One Piece - Barco de la Marina de GARP (75646) con 8 Minifiguras»: Amazon 135.99 €
   Chollometro «LEGO Copa Mundial de la FIFA +12 años - 43020 (-40% en Cupón Carrefour»: Carrefour 179.99 €
   Chollometro «Ciclocomputador GPS Garmin Edge 550 (Pantalla color, navegación avanza»: Decathlon 355.49 €
-  Chollometro «Zapatillas Hombre Puma Axelion Refresh (Tallas 39 a 48.5 en 4 Colores)»: Eu 40.0 €
   Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73394 bytes, 30 chollos
+  cm-2047774 · Carrefour 69.99 € → candidato externo · LEGO Disney Pixar Wall-E y Eve 43279 regalo en cupón del 40%
   cm-2047674 · Electroprecio 784.0 € → candidato externo · Garmin fēnix 8 Pro 47 mm AMOLED, LTE y satélite inReach, map
   cm-2047371 · Amazon 135.99 € → candidato externo · LEGO One Piece - Barco de la Marina de GARP (75646) con 8 Mi
   cm-2047688 · Carrefour 179.99 € → candidato externo · LEGO Copa Mundial de la FIFA +12 años - 43020 (-40% en Cupón
   cm-2047040 · Decathlon 355.49 € → candidato externo · Ciclocomputador GPS Garmin Edge 550 (Pantalla color, navegac
-  cm-2047744 · Eu 40.0 € → candidato externo · Zapatillas Hombre Puma Axelion Refresh (Tallas 39 a 48.5 en 
-  Wallapop «lego 75646 one»: 200 / 31668 bytes, 11 anuncios, 9 parecidos, 0 reservas
+  Wallapop «carrefour 43279 lego»: 200 / 1272 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «carrefour 43279»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «carrefour 43279 lego»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Carrefour LEGO Disney Pixar Wall-E y Eve 43279 regalo en cupón del 40% (28 euros)»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
   Milanuncios «lego 75646 one»: HTTP 403, 95511 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
   Reventa WALLAPOP: 9 anuncios, ~145 €, no publica
@@ -23,12 +28,6 @@ Candidatos nuevos tras el filtro rápido: 0
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
   Reventa WALLAPOP: 6 anuncios, ~0 €, no publica
   ⚠️ No publico «Carrefour LEGO Copa Mundial de la FIFA +12 años - 43020 (-40% en Cupón Carrefour)»: WALLAPOP solo tiene 6 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Milanuncios «puma 39 zapatillas»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa VINTED+WALLAPOP: 43 anuncios, ~25 €, no publica
-  ⚠️ No publico «Puma Zapatillas Hombre Puma Axelion Refresh (Tallas 39 a 48.5 en 4 Colores)»: reventa en VINTED+WALLAPOP ~25 € (43 anuncios): ROI -38 % y -15 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «electroprecio 47 garmin»: 200 / 1279 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «electroprecio 47»: 200 / 391 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
   Milanuncios «electroprecio 47 garmin»: HTTP 403, 95511 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
