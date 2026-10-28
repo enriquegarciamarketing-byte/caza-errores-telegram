@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "B0FY362Y68-20261028-0305",
+    "status": "approved",
+    "asin": "B0FY362Y68",
+    "title": "TAURUS Radiador de Aceite 2000W con Humidificador y 3 Potencias",
+    "affiliate_url": "https://link.amazon/B06HSXRm5",
+    "image_path": "taurus-radiador.png",
+    "current_price_eur": 59.99,
+    "reference_price_eur": 149.21,
+    "reference_period_days": 90,
+    "reference_source": "Jimmyleaks: precio medio de 90 días y mínimo histórico",
+    "reference_source_url": "https://jimmyleaks.com/es/dp/1bZgGQy/",
+    "checked_at": "2026-10-28T03:05:13+01:00",
+    "approved_by": "Enrique",
+    "historical_low": true
+  }
+]
