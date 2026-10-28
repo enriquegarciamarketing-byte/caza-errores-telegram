@@ -123,8 +123,8 @@ def validate_offer(offer: object, now: datetime) -> dict:
         raise OfferError("reference_price_eur debe ser superior al precio actual")
 
     days = offer["reference_period_days"]
-    if isinstance(days, bool) or not isinstance(days, int) or not 1 <= days <= 3650:
-        raise OfferError("reference_period_days debe estar entre 1 y 3650")
+    if isinstance(days, bool) or not isinstance(days, int) or days != 90:
+        raise OfferError("reference_period_days debe ser 90 para comparar el histórico normalizado")
     if not isinstance(offer["reference_source"], str) or not offer["reference_source"].strip():
         raise OfferError("reference_source debe identificar la fuente de la referencia")
 
