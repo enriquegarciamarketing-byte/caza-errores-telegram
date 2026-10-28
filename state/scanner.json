@@ -269,6 +269,26 @@
    "price": 60.0,
    "t": 1793187929,
    "result": "solo -33% bajo la media"
+  },
+  "7eeElB7": {
+   "price": 11.4,
+   "t": 1793198065,
+   "result": "importe demasiado bajo para ganga"
+  },
+  "MQxxDwv": {
+   "price": 49.99,
+   "t": 1793198065,
+   "result": "solo -21% bajo la media"
+  },
+  "RNwlZq1": {
+   "price": 37.95,
+   "t": 1793198065,
+   "result": "solo -21% bajo la media"
+  },
+  "1mxkn0o": {
+   "price": 111.24,
+   "t": 1793198065,
+   "result": "solo -37% bajo la media"
   }
  },
  "posts": [
@@ -361,7 +381,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 55,
+ "last_listing_count": 56,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
