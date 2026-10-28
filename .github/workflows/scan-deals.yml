@@ -2,9 +2,8 @@ name: Escanear chollos automáticamente
 
 on:
   schedule:
-    # Cada 20 minutos de 8:00 a 0:59 (hora de Madrid en invierno, UTC+1) y cada hora de madrugada.
-    - cron: "5,25,45 7-23 * * *"
-    - cron: "15 0-6 * * *"
+    # Cada 10 minutos, las 24 horas (las gangas respetan el horario nocturno del config).
+    - cron: "3-59/10 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:

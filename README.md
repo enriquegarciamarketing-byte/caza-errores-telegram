@@ -2,7 +2,7 @@
 
 ## Escáner automático (scan-deals.yml)
 
-Cada 20 minutos (de 8:00 a 1:00) y cada hora de madrugada, `scanner.py`:
+Cada 10 minutos, las 24 horas, `scanner.py`:
 
 1. Lee las listas públicas de Jimmyleaks (mínimos de hoy, actualizados, mayor bajada).
 2. Abre la ficha de cada candidato nuevo y toma la media real de 90 días, el mínimo histórico y el EAN. La bajada frente al PVP no cuenta; solo cuenta frente a la media.

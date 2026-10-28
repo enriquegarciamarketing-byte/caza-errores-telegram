@@ -267,7 +267,8 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
         text = (msg.get("text") or "").strip()
         if chat.get("type") != "private":
             continue
-        if cfg["admin_claim_code"] in text:
+        claim = os.environ.get("ADMIN_CLAIM_CODE", "").strip() or cfg.get("admin_claim_code", "")
+        if claim and claim in text and not admin:
             state["admin_chat_id"] = admin = chat["id"]
             print(f"Administrador vinculado: chat {chat['id']}")
             if not dry:
@@ -609,7 +610,7 @@ def main() -> int:
     if tg:
         try:
             me = tg.call("getMe")
-            print(f"Bot: @{me['username']} · enlace de vinculación: https://t.me/{me['username']}?start={cfg['admin_claim_code']}")
+            print(f"Bot: @{me['username']}" + ("" if state.get("admin_chat_id") else " · administrador sin vincular"))
         except RuntimeError as exc:
             print(f"Aviso: {exc}")
         handle_updates(tg, cfg, state, channel, args.dry_run)

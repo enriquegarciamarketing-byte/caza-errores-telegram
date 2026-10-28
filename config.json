@@ -1,6 +1,5 @@
 {
   "affiliate_tag": "cazadores_errores-21",
-  "admin_claim_code": "CAZA5CC44DFF",
   "sources": [
     "https://jimmyleaks.com/es/minimos-de-hoy/",
     "https://jimmyleaks.com/es/?order=-modified",
@@ -17,7 +16,10 @@
   "max_bargains_per_day": 8,
   "min_minutes_between_bargains": 40,
   "max_posts_per_run": 3,
-  "bargain_quiet_hours": [0, 8],
+  "bargain_quiet_hours": [
+    0,
+    8
+  ],
   "repost_after_days": 7,
   "repost_min_extra_drop_pct": 10
 }
