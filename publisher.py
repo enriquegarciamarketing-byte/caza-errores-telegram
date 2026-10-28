@@ -208,8 +208,8 @@ def build_message(offer: dict) -> str:
     pct = savings / offer["reference"] * 100
     checked = offer["checked_at"].astimezone(MADRID).strftime("%d/%m/%Y %H:%M %Z")
     title = offer["title"]
-    if len(title) > 180:
-        title = title[:177].rstrip() + "…"
+    if len(title) > 100:
+        title = title[:97].rstrip() + "…"
     lines = [
         f"<b>{html.escape(title)}</b>",
         f"Precio normal ({offer['days']} d): <s>{offer['reference']:.2f} €</s>",
@@ -405,3 +405,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
