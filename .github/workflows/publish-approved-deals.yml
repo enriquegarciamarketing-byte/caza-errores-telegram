@@ -11,6 +11,11 @@ on:
         required: false
         type: boolean
         default: false
+      demo_mode:
+        description: "Publicar una tarjeta demostrativa, sin presentarla como chollo"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -41,15 +46,22 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python telegram_test.py
 
+      - name: Publicar tarjeta de demostración
+        if: ${{ inputs.demo_mode && !inputs.test_mode }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python telegram_demo.py
+
       - name: Publicar ofertas aprobadas
-        if: ${{ !inputs.test_mode }}
+        if: ${{ !inputs.test_mode && !inputs.demo_mode }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python publisher.py
 
       - name: Guardar el registro de publicaciones
-        if: always()
+        if: always() && !inputs.test_mode && !inputs.demo_mode
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
