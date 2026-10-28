@@ -502,9 +502,14 @@ def edit_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: str,
                                  "bargain_min_price_eur": 0}, cand)
     cand["category"] = category or "GANGA"
     cap = caption_data(cand)
-    tg.call("editMessageCaption", {"chat_id": channel, "message_id": message_id,
-                                   "caption": caption_for(link, cap), "parse_mode": "HTML",
-                                   "reply_markup": buttons_for(link)})
+    try:
+        tg.call("editMessageCaption", {"chat_id": channel, "message_id": message_id,
+                                       "caption": caption_for(link, cap), "parse_mode": "HTML",
+                                       "reply_markup": buttons_for(link)})
+    except RuntimeError as exc:
+        if "not modified" not in str(exc):
+            raise
+        print(f"El post {message_id} ya estaba al día")
     for post in state.get("posts", []):
         if post.get("message_id") == message_id:
             post.update(cap=cap, url=link)
