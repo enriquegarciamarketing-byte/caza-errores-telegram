@@ -1,0 +1,67 @@
+name: Escanear chollos automáticamente
+
+on:
+  schedule:
+    # Cada 20 minutos de 8:00 a 0:59 (hora de Madrid en invierno, UTC+1) y cada hora de madrugada.
+    - cron: "5,25,45 7-23 * * *"
+    - cron: "15 0-6 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Prueba: no publica nada, solo muestra lo que haría"
+        required: false
+        type: boolean
+        default: true
+      ignore_limits:
+        description: "Ignorar cupos y horario nocturno (solo pruebas)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-scanner
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+
+      - name: Buscar y publicar chollos
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ "${{ inputs.ignore_limits }}" = "true" ]; then ARGS="$ARGS --ignore-limits"; fi
+          python scanner.py $ARGS
+
+      - name: Guardar memoria del escáner
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/scanner.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar memoria del escáner [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase --autostash && git push && break
+              sleep 3
+            done
+          fi
