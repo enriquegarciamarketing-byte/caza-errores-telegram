@@ -803,7 +803,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 120,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -953,6 +953,36 @@
    "http_status": 200,
    "bytes": 122935,
    "raw_count": 37
+  },
+  "amazon|lego one piece - barco de la marina de garp (75646) con 8 minifiguras|lego 75646 one": {
+   "t": 1793223133.6242225,
+   "query": "lego 75646 one",
+   "prices": [
+    129.95,
+    139.9,
+    144.95,
+    148.0,
+    139.95,
+    159.9,
+    139.95,
+    144.95,
+    170.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 31668,
+   "raw_count": 11
+  },
+  "electroprecio|garmin fenix 8 pro 47 mm amoled, lte y satelite inreach, mapas topoactive, linterna led, zafiro y titanio, hasta 15 dias de bateria|electroprecio 47 garmin": {
+   "t": 1793223136.776678,
+   "query": "electroprecio 47 garmin",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {},
@@ -960,7 +990,9 @@
   "wallapop:cm-2047349": 1793220210.575943,
   "wallapop:cm-2047688": 1793220212.4438262,
   "wallapop:cm-2047744": 1793220214.5371382,
-  "wallapop:cm-2047040": 1793220216.6755087
+  "wallapop:cm-2047040": 1793220216.6755087,
+  "wallapop:cm-2047371": 1793223133.9753094,
+  "wallapop:cm-2047674": 1793223137.2067282
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
