@@ -466,7 +466,7 @@ def main() -> int:
                 json.dumps(sorted(published_set), ensure_ascii=False, indent=2) + "\n",
                 encoding="utf-8",
             )
-            print(f"{offer['id']}: publicado como {offer['category']} ({discount_pct:.1f %}).")
+            print(f"{offer['id']}: publicado como {offer['category']} ({discount_pct:.1f}%).")
             time.sleep(1)
         return 0
     except OfferError as exc:
