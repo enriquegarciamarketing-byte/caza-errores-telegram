@@ -133,6 +133,18 @@ class DestinationTest(unittest.TestCase):
             self.assertEqual(sum("Special:FilePath" in url for url in calls), 1)
 
 
+class ProductPhotoTest(unittest.TestCase):
+    def test_recorta_el_margen_blanco_y_agranda_el_producto(self):
+        from PIL import Image, ImageDraw
+        from publisher import _trim_margins
+        canvas = Image.new("RGB", (400, 300), (255, 255, 255))
+        ImageDraw.Draw(canvas).rectangle((140, 80, 260, 220), fill=(30, 30, 30))
+        trimmed = _trim_margins(canvas)
+        self.assertLess(trimmed.width, 160)
+        self.assertLess(trimmed.height, 180)
+        self.assertGreater(trimmed.width, 100)
+
+
 class LinkTest(unittest.TestCase):
     def test_amazon_sustituye_el_tag_ajeno_y_comprueba_el_asin(self):
         url = affiliate.clean_store_url(

@@ -19,7 +19,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
 
 
 ROOT = Path(__file__).resolve().parent
@@ -505,6 +505,26 @@ def _paste_cover(canvas, box, image, radius: int = 26, inset: int = 3) -> None:
     canvas.paste(cropped, (inner[0], inner[1]), mask)
 
 
+def _trim_margins(image: Image.Image, tolerance: int = 18) -> Image.Image:
+    """Quita el marco blanco o transparente y deja el producto con un par de píxeles de aire."""
+    rgba = image.convert("RGBA")
+    flat = Image.alpha_composite(Image.new("RGBA", rgba.size, (255, 255, 255, 255)), rgba).convert("RGB")
+    diff = ImageChops.difference(flat, Image.new("RGB", flat.size, (255, 255, 255)))
+    mask = diff.convert("L").point(lambda pixel: 255 if pixel > tolerance else 0)
+    bbox = mask.getbbox()
+    if not bbox:
+        return flat
+    left, top, right, bottom = bbox
+    pad = 4
+    left = max(0, left - pad)
+    top = max(0, top - pad)
+    right = min(flat.width, right + pad)
+    bottom = min(flat.height, bottom + pad)
+    if right - left < flat.width * 0.12 or bottom - top < flat.height * 0.12:
+        return flat
+    return flat.crop((left, top, right, bottom))
+
+
 def _place_product(canvas, photo_box, offer: dict) -> None:
     """Foto del producto, o el logo del canal si no hay una imagen usable."""
     path = offer.get("image_path")
@@ -515,9 +535,10 @@ def _place_product(canvas, photo_box, offer: dict) -> None:
                     if offer.get("cover"):
                         _paste_cover(canvas, photo_box, source)
                     else:
-                        product = ImageOps.contain(
-                            source.convert("RGB"), (480, 780), method=Image.Resampling.LANCZOS,
-                        )
+                        product = _trim_margins(source)
+                        panel_w = (photo_box[2] - photo_box[0]) - 16
+                        panel_h = (photo_box[3] - photo_box[1]) - 16
+                        product = ImageOps.contain(product, (panel_w, panel_h), method=Image.Resampling.LANCZOS)
                         canvas.paste(product, (
                             photo_box[0] + (photo_box[2] - photo_box[0] - product.width) // 2,
                             photo_box[1] + (photo_box[3] - photo_box[1] - product.height) // 2,
