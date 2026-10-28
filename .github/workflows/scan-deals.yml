@@ -41,6 +41,11 @@ on:
         required: false
         type: string
         default: ""
+      check_sources:
+        description: "Solo comprueba Wallapop, Vinted y Milanuncios y termina, sin publicar"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -85,7 +90,9 @@ jobs:
           if [ -n "$MANUAL_LINK" ]; then ARGS+=(--manual-link "$MANUAL_LINK"); fi
           if [ -n "$EDIT_MESSAGE" ]; then ARGS+=(--edit-message "$EDIT_MESSAGE"); fi
           set -o pipefail
-          if [ -n "$CUSTOM" ]; then
+          if [ "${{ inputs.check_sources }}" = "true" ]; then
+            python scanner.py --check-sources 2>&1 | tee state/last_run.log
+          elif [ -n "$CUSTOM" ]; then
             if [ "${{ inputs.test_private }}" = "true" ]; then
               echo "La prueba privada no admite un post custom: iría al canal." >&2
               exit 2
@@ -97,7 +104,7 @@ jobs:
 
       # La prueba privada no debe dejar memoria en el repositorio.
       - name: Guardar memoria del escáner
-        if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
+        if: always() && (github.event_name != 'workflow_dispatch' || (inputs.test_private != true && inputs.check_sources != true))
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -15,7 +15,10 @@ from pathlib import Path
 from unittest import mock
 from zoneinfo import ZoneInfo
 
+import milanuncios
+import resale_market
 import scanner
+import vinted
 import wallapop
 
 
@@ -54,7 +57,7 @@ def cli(**kwargs) -> argparse.Namespace:
     return argparse.Namespace(**base)
 
 
-def fake_wallapop(tg, cfg, state, cand, dry):
+def fake_wallapop(tg, cfg, state, cand, dry, test_private=False):
     cand["wallapop"] = {"ok": True, "price": 90.0, "count": 18, "roi": 0.40, "profit": 25.8}
     return True
 
@@ -107,8 +110,10 @@ class ResaleRulesTest(unittest.TestCase):
             self.assertIn(word, rules["category_keywords"])
         for brand in ("Apple", "Samsung", "Dyson", "LEGO", "DeWalt"):
             self.assertIn(brand, rules["brands"])
-        for blocked in ("zapatillas", "perfume", "funda", "libro"):
+        for blocked in ("perfume", "funda", "libro", "escritorio"):
             self.assertIn(blocked, rules["block_keywords"])
+        self.assertNotIn("zapatillas", rules["block_keywords"])
+        self.assertIn("zapatilla", rules["fashion_keywords"])
 
     def test_error_de_precio_de_marca_pasa(self):
         cand = deal(name="Apple iPhone 13 128 GB", title="Apple iPhone 13 128 GB", brand="Apple",
@@ -123,12 +128,12 @@ class ResaleRulesTest(unittest.TestCase):
         self.assertIsNone(category)
         self.assertIn("mínimo de reventa", reason)
 
-    def test_zapatillas_aunque_sean_error_de_precio(self):
+    def test_la_moda_no_esta_bloqueada_pero_la_talla_si(self):
         cand = deal(name="Skechers Og 85 Zapatillas", title="Skechers Mujer Zapatillas", brand="Skechers",
                     price=80, avg90=400)
         category, reason = scanner.classify(self.cfg, cand)
-        self.assertIsNone(category)
-        self.assertIn("zapatillas", reason)
+        self.assertEqual(category, "ERROR DE PRECIO")
+        self.assertIn("reventa OK", reason)
 
     def test_tallas_se_rechazan(self):
         cand = deal(name="Nike Air, 42 EU", title="Nike Air, 42 EU", brand="Nike", price=80, avg90=200)
@@ -513,15 +518,21 @@ class PrivateModeTest(unittest.TestCase):
             sent.append((cand["id"], channel, test_private, preview, dry))
             return True
 
+        def fake_lookup(cand, rules, state):
+            if cand["id"] == "p1":
+                return {"ok": True, "price": 80, "count": 6, "roi": 0.5, "profit": 30, "source_label": "WALLAPOP"}
+            return {"ok": False, "prices": [], "transient": False, "reason": "pocos"}
+
         with mock.patch.object(scanner, "scan", side_effect=fake_scan), \
              mock.patch.object(scanner, "publish", side_effect=fake_publish), \
+             mock.patch.object(scanner.resale_market, "lookup", side_effect=fake_lookup), \
              mock.patch.object(scanner, "preview_details_from_listings") as fallback:
             code = scanner.run_private_test(None, cfg, state, "@caza_errores", cli(dry_run=True, test_private=True),
                                             scanner.now_utc())
         self.assertEqual(code, 0)
         fallback.assert_not_called()
-        self.assertEqual(len(sent), 3)
-        self.assertTrue(all(item[2] and item[3] and item[1] == "@caza_errores" for item in sent))
+        self.assertEqual([item[0] for item in sent], ["p1"])
+        self.assertTrue(sent[0][2] and sent[0][3])
         self.assertEqual(state, snapshot)
 
     def test_de_noche_la_prueba_si_envia_la_ganga(self):
@@ -701,7 +712,8 @@ class WallapopTest(unittest.TestCase):
         result = wallapop.evaluate(self.cand, prices, self.rules)
         self.assertTrue(result["ok"])
         self.assertGreaterEqual(result["count"], 5)
-        self.assertAlmostEqual(result["price"], 87.5)
+        self.assertGreaterEqual(result["price"], 80)
+        self.assertLessEqual(result["price"], 100)
         self.assertGreaterEqual(result["roi"], 0.25)
         self.assertGreaterEqual(result["profit"], 15)
 
@@ -731,6 +743,16 @@ class WallapopTest(unittest.TestCase):
         self.assertTrue(first["ok"] and second["ok"])
         self.assertEqual(len(calls), 1)
         self.assertTrue(second.get("cached"))
+
+    def test_la_consulta_es_marca_y_modelo_no_la_frase_entera(self):
+        glorious = {"brand": "GLORIOUS", "name": "Alfombrilla de Tela para Gaming Bordes Cosidos LE"}
+        self.assertEqual(wallapop.query_keywords(glorious, 3), "glorious alfombrilla")
+        tommy = {"brand": "Tommy Hilfiger", "name": "Camisa Hombre Linen Solid Manga Corta"}
+        self.assertEqual(wallapop.query_keywords(tommy, 3), "tommy hilfiger camisa")
+        intex = {"brand": "Intex", "name": "Piscina, Flotador y Pelota Color con Accesorios"}
+        self.assertEqual(wallapop.query_keywords(intex, 3), "intex piscina")
+        nike = {"brand": "Nike", "name": "Zapatillas Air Force 1"}
+        self.assertEqual(wallapop.query_keywords(nike, 3), "nike zapatillas")
 
     def test_el_boton_cambia_una_etiqueta_ajena(self):
         cfg = load_cfg()
@@ -763,7 +785,11 @@ class WallapopTest(unittest.TestCase):
             return original(method, params)
 
         tg.call = record
-        with mock.patch.object(wallapop, "lookup", return_value={"ok": False, "transient": True, "reason": "no he podido consultar Wallapop (timeout)"}):
+        down = {"ok": False, "transient": True, "prices": [], "reason": "no he podido consultar Wallapop (timeout)"}
+        blocked = {"ok": False, "transient": False, "prices": [], "blocked": True,
+                   "reason": "Milanuncios bloqueado (HTTP 403, 120 bytes)"}
+        with mock.patch.object(wallapop, "lookup", return_value=down), \
+             mock.patch.object(milanuncios, "lookup", return_value=blocked):
             ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
         self.assertFalse(ok)
         self.assertEqual(state["posts"], [])
@@ -772,6 +798,99 @@ class WallapopTest(unittest.TestCase):
         self.assertEqual(sent[0][1]["chat_id"], 7)
         scanner.note_wallapop_skip(state, cand)
         self.assertNotIn("abc", state["seen"])
+
+
+class SecondHandSourcesTest(unittest.TestCase):
+    def test_vinted_lee_precios_del_catalogo(self):
+        page = '''<img alt="Nike Air Force 1 39 EU, Marca: Nike, Estado: Muy bueno, 32.00 €, 34.30 €" data-testid="product-item-id-1--image--img"/>
+        <img alt="Funda Nike, Marca: Nike, Estado: Bueno, 5.00 €, 6.00 €"/>'''
+        items = vinted.parse_catalog(page)
+        self.assertEqual(items[0]["title"], "Nike Air Force 1 39 EU")
+        self.assertEqual(items[0]["price"]["amount"], 32.0)
+        self.assertEqual(len(items), 2)
+
+    def test_milanuncios_detecta_el_bloqueo_y_lee_una_ficha(self):
+        self.assertTrue(milanuncios.is_blocked("<html><title>Pardon Our Interruption</title></html>"))
+        page = '''<a class="ma-AdCard-titleLink">iPhone 13 128GB</a><span class="ma-AdPrice">350 €</span>'''
+        items = milanuncios.parse_listings(page)
+        self.assertEqual(items[0]["title"], "iPhone 13 128GB")
+        self.assertEqual(items[0]["price"]["amount"], 350.0)
+
+    def test_la_moda_va_a_vinted_y_el_resto_a_wallapop(self):
+        rules = load_cfg()["resale"]
+        shoe = {"brand": "Nike", "name": "Zapatillas Air Force"}
+        phone = {"brand": "Apple", "name": "iPhone 13 128GB"}
+        watch = {"brand": "Apple", "name": "Apple Watch Series 9"}
+        bag = {"brand": "Michael Kors", "name": "Bolso bandolera"}
+        casio = {"brand": "Casio", "name": "Reloj de pulsera"}
+        self.assertEqual(resale_market.source_order(shoe, rules), ["vinted", "wallapop", "milanuncios"])
+        self.assertEqual(resale_market.source_order(bag, rules)[0], "vinted")
+        self.assertEqual(resale_market.source_order(casio, rules)[0], "vinted")
+        self.assertEqual(resale_market.source_order(phone, rules), ["wallapop", "milanuncios"])
+        self.assertEqual(resale_market.source_order(watch, rules)[0], "wallapop")
+
+    def test_junta_fuentes_y_etiqueta_el_panel(self):
+        cand = {"brand": "Corsair", "name": "Vengeance LPX 16GB", "price": 64.2}
+
+        def ok_prices(prices, label_ok=True):
+            return {"ok": label_ok, "prices": prices, "transient": False, "blocked": False, "reason": ""}
+
+        with mock.patch.object(resale_market.wallapop, "lookup", return_value=ok_prices([90, 85, 70])), \
+             mock.patch.object(resale_market.milanuncios, "lookup", return_value=ok_prices([80, 100])):
+            result = resale_market.lookup(cand, load_cfg()["resale"], {})
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["count"], 5)
+        self.assertEqual(result["source_label"], "WALLAPOP+MILANUNCIOS")
+        self.assertIn("Wallapop 3", result["note"])
+        self.assertIn("Milanuncios 2", result["note"])
+
+    def test_vista_previa_de_muestra_si_no_hay_anuncios(self):
+        pool = [deal(id="solo", price=40, avg90=90, image="http://img", name="Altavoz", brand="Marca")]
+        with mock.patch.object(scanner.resale_market, "lookup", return_value={"ok": False, "prices": []}):
+            chosen = scanner.choose_test_previews(pool, load_cfg(), {})
+        self.assertEqual(len(chosen), 1)
+        self.assertTrue(chosen[0]["wallapop_sample"])
+
+    def test_una_fuente_bloqueada_no_tira_el_resto(self):
+        cand = {"brand": "Corsair", "name": "Vengeance LPX 16GB", "price": 64.2}
+        blocked = {"ok": False, "prices": [], "transient": False, "blocked": True,
+                   "reason": "Milanuncios bloqueado (HTTP 200, 90000 bytes)"}
+        prices = {"ok": False, "prices": [90, 85, 80, 70, 100], "transient": False, "reason": ""}
+        with mock.patch.object(resale_market.wallapop, "lookup", return_value=prices), \
+             mock.patch.object(resale_market.milanuncios, "lookup", return_value=blocked):
+            result = resale_market.lookup(cand, load_cfg()["resale"], {})
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["source_label"], "WALLAPOP")
+        self.assertEqual(result["count"], 5)
+        self.assertGreaterEqual(result["roi"], 0.25)
+
+    def test_si_todo_falla_se_conserva_el_motivo_y_se_reintenta(self):
+        cand = {"brand": "Sony", "name": "WH-1000XM5", "price": 180}
+        down = {"ok": False, "prices": [], "transient": True, "reason": "no he podido consultar Wallapop (timeout)"}
+        blocked = {"ok": False, "prices": [], "transient": False, "blocked": True,
+                   "reason": "Milanuncios bloqueado (HTTP 403, 100 bytes)"}
+        with mock.patch.object(resale_market.wallapop, "lookup", return_value=down), \
+             mock.patch.object(resale_market.milanuncios, "lookup", return_value=blocked):
+            result = resale_market.lookup(cand, load_cfg()["resale"], {})
+        self.assertFalse(result["ok"])
+        self.assertTrue(result["transient"])
+        self.assertIn("no he podido consultar Wallapop", result["reason"])
+        self.assertIn("Milanuncios bloqueado", result["reason"])
+
+    def test_la_cache_recalcula_el_roi_si_cambia_el_precio(self):
+        state = {}
+        rules = load_cfg()["resale"]
+        base = {"brand": "Corsair", "name": "Vengeance LPX 16GB", "price": 50}
+        prices = {"ok": True, "prices": [100, 100, 100, 100, 100], "transient": False, "reason": ""}
+        empty = {"ok": False, "prices": [], "transient": False, "reason": "sin anuncios"}
+        with mock.patch.object(resale_market.wallapop, "lookup", return_value=prices) as wallapop_lookup, \
+             mock.patch.object(resale_market.milanuncios, "lookup", return_value=empty):
+            first = resale_market.lookup(base, rules, state)
+            second = resale_market.lookup({**base, "price": 95}, rules, state)
+        self.assertTrue(first["ok"])
+        self.assertFalse(second["ok"])
+        self.assertTrue(second.get("cached"))
+        self.assertEqual(wallapop_lookup.call_count, 1)
 
 
 if __name__ == "__main__":

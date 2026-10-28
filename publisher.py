@@ -360,15 +360,31 @@ def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, mu
     left, right = (box[0], box[1], mid, box[3]), (mid, box[1], box[2], box[3])
     small = _font(19, bold=True)
     _centered(draw, left, box[1] + 34, "REVENTA", small, "#AEB6BF")
-    _centered(draw, left, box[1] + 58, "WALLAPOP", small, "#AEB6BF")
+    source = str(resale.get("source_label") or "WALLAPOP")
+    source_font = small
+    max_w = (left[2] - left[0]) - 12
+    while getattr(source_font, "size", 19) > 11 and draw.textbbox((0, 0), source, font=source_font)[2] > max_w:
+        source_font = _font(source_font.size - 1, bold=True)
+    _centered(draw, left, box[1] + 58, source, source_font, "#AEB6BF")
     _centered(draw, right, box[1] + 34, "ROI", small, "#AEB6BF")
     _centered(draw, right, box[1] + 58, "ESTIMADO", small, "#AEB6BF")
     big = _font(56, bold=True)
     _centered(draw, left, box[1] + 104, f"~{resale['price']:.0f} €", big, "#FFFFFF")
     roi = resale["roi"]
     _centered(draw, right, box[1] + 104, f"{'+' if roi >= 0 else ''}{roi:.0f}%", big, green if roi >= 0 else "#FF6B6B")
-    note = f"Media de {resale['count']} anuncios" if resale.get("count") else "Media de anuncios"
-    _centered(draw, box, box[3] - 50, note, _font(19), "#AEB6BF")
+    if resale.get("sample"):
+        note = "EJEMPLO · no son anuncios reales"
+    elif resale.get("note"):
+        note = str(resale["note"])
+    else:
+        note = f"Media de {resale['count']} anuncios" if resale.get("count") else "Media de anuncios"
+    note_font = _font(19)
+    max_note = (box[2] - box[0]) - 28
+    while getattr(note_font, "size", 19) > 12 and draw.textbbox((0, 0), note, font=note_font)[2] > max_note:
+        note_font = _font(note_font.size - 1)
+    if draw.textbbox((0, 0), note, font=note_font)[2] > max_note and resale.get("count"):
+        note = f"Media de {resale['count']} anuncios"
+    _centered(draw, box, box[3] - 50, note, note_font, "#AEB6BF")
 
 
 def create_price_card(offer: dict) -> Path:

@@ -80,10 +80,6 @@
     ],
     "generic_brands": ["amzn", "sin marca", "generico", "marca blanca", "unbranded", "desconocida"],
     "block_keywords": [
-      "zapatilla", "zapatillas", "zapato", "zapatos", "calzado", "camiseta", "pantalon", "pantalones",
-      "vestido", "sudadera", "chaqueta", "calcetin", "calcetines", "sujetador", "banador", "bikini",
-      "sandalia", "sandalias", "bota", "botas", "chancla", "legging", "leggins", "vaquero", "vaqueros",
-      "abrigo", "falda", "pijama", "ropa", "talla",
       "perfume", "colonia", "maquillaje", "cosmetica", "champu", "serum", "labial",
       "alimento", "comida", "cafe", "chocolate", "gominola", "suplemento", "vitamina", "proteina", "colageno",
       "capsula", "recambio", "tinta", "toner", "cartucho", "panal", "detergente",
@@ -106,18 +102,25 @@
     "block_ok_if_known_brand": ["capsula", "adaptador"],
     "desk_block_keywords": ["escritorio", "mesa"],
     "desk_exceptions": ["disco duro", "ssd", "nvme", "ordenador", "portatil", "pc de escritorio", "torre"],
+    "fashion_keywords": [
+      "camiseta", "camisa", "pantalon", "vaquero", "vestido", "falda", "sudadera", "chaqueta", "abrigo",
+      "zapatilla", "zapatillas", "zapato", "calzado", "bota", "sandalia", "sneaker",
+      "bolso", "mochila", "bandolera", "cartera", "cinturon", "reloj", "gafas de sol", "bufanda"
+    ],
+    "fashion_exceptions": ["smartwatch", "reloj inteligente", "apple watch", "galaxy watch"],
     "wallapop": {
       "min_listings": 5,
       "min_roi": 0.25,
       "min_profit_eur": 15,
       "price_stat": "median",
+      "order_by": "most_relevance",
       "latitude": 40.4168,
       "longitude": -3.7038,
       "cache_hours": 12,
-      "min_seconds_between_requests": 1.2,
+      "min_seconds_between_requests": 1.0,
       "outlier_low_ratio": 0.45,
       "outlier_high_ratio": 2.2,
-      "max_keywords": 6,
+      "max_keywords": 3,
       "accessory_keywords": ["funda", "cable", "cargador", "protector", "caja vacia", "solo caja"],
       "bundle_keywords": ["pc gaming", "ordenador", "torre gaming", "portatil gaming"]
     }

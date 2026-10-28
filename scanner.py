@@ -38,6 +38,7 @@ from zoneinfo import ZoneInfo
 import affiliate
 from amazon_api import ApiError, CreatorsAPI, color_of, size_of
 from publisher import OUTPUT_DIR, build_caption, create_price_card, euro
+import resale_market
 import wallapop
 
 API: CreatorsAPI | None = None  # se activa con los secretos de la Creators API
@@ -785,6 +786,9 @@ def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime, ignore_sc
 def private_caption(url: str, cand: dict, preview: bool) -> str:
     """Texto del canal con la marca de prueba delante, para el chat del administrador."""
     body = caption_for(url, caption_data(cand))
+    if (cand.get("wallapop") or {}).get("sample") or cand.get("wallapop_sample"):
+        return ("🧪 PRUEBA · MUESTRA\n"
+                "<i>Cifras de reventa de ejemplo. No hay anuncios reales.</i>\n" + body)
     if not preview:
         return "🧪 PRUEBA\n" + body
     lines = ["🧪 PRUEBA · vista previa"]
@@ -818,10 +822,18 @@ def alert_no_wallapop(tg, state: dict, cand: dict, reason: str, dry: bool) -> No
         print(f"  No pude avisar al administrador ({exc})")
 
 
-def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool) -> bool:
+def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool, test_private: bool = False) -> bool:
     """Rellena cand['wallapop'] o avisa y deja el producto fuera del canal."""
-    rules = (resale_rules(cfg) or {}).get("wallapop") or {}
-    result = wallapop.lookup(cand, rules, state)
+    if test_private and cand.get("wallapop_sample"):
+        buy = float(cand.get("price") or 40)
+        resale = round(buy * 1.4, 2)
+        cand["wallapop"] = {"ok": True, "price": resale, "count": 8, "roi": (resale - buy) / buy,
+                            "profit": resale - buy, "sample": True, "source_label": "MUESTRA",
+                            "note": "EJEMPLO · no son anuncios reales"}
+        cand["wallapop_transient"] = False
+        return True
+    rules = resale_rules(cfg) or {}
+    result = resale_market.lookup(cand, rules, state)
     if not result.get("ok"):
         cand["wallapop_transient"] = bool(result.get("transient"))
         alert_no_wallapop(tg, state, cand, result.get("reason") or "sin datos de Wallapop", dry)
@@ -833,7 +845,7 @@ def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool) -> bool:
 
 def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: str, dry: bool,
             link_override: str | None = None, test_private: bool = False, preview: bool = False) -> bool:
-    if not attach_wallapop(tg, cfg, state, cand, dry):
+    if not attach_wallapop(tg, cfg, state, cand, dry, test_private=test_private):
         return False
     img_dir = OUTPUT_DIR / "src"
     img_dir.mkdir(parents=True, exist_ok=True)
@@ -855,7 +867,9 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     }
     deal = cand.get("wallapop") or {}
     if deal.get("ok"):
-        offer["resale"] = {"price": deal["price"], "count": deal["count"], "roi": deal["roi"] * 100}
+        offer["resale"] = {"price": deal["price"], "count": deal["count"], "roi": deal["roi"] * 100,
+                           "source_label": deal.get("source_label") or "WALLAPOP",
+                           "note": deal.get("note"), "sample": bool(deal.get("sample"))}
     if cand.get("sizes"):
         offer["title"] = f"{offer['title']} · Tallas {', '.join(cand['sizes'])}"
     card = create_price_card(offer)
@@ -1110,11 +1124,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--manual-link", default="", help="Enlace corto de afiliado para --manual-id")
     parser.add_argument("--edit-message", type=int, default=0, help="Reescribe el texto de un post ya publicado")
     parser.add_argument("--custom", default="", help="JSON con un post hecho a mano (ver custom_post)")
+    parser.add_argument("--check-sources", action="store_true",
+                        help="Comprueba Wallapop, Vinted y Milanuncios y termina, sin publicar")
     return parser
 
 
 def main() -> int:
     args = build_parser().parse_args()
+    if args.check_sources:
+        cfg = load_json(CONFIG_PATH, {})
+        return resale_market.probe((cfg.get("resale") or {}))
     if args.test_private and args.custom:
         print("La prueba privada no admite --custom.", file=sys.stderr)
         return 2
@@ -1265,6 +1284,27 @@ def preview_details_from_listings(listings: list[dict], skip_ids: set[str],
     return found
 
 
+def choose_test_previews(pool: list[dict], cfg: dict, state: dict, limit: int = PREVIEW_LIMIT) -> list[dict]:
+    """En la prueba privada, primero los que sí tienen anuncios de segunda mano."""
+    ranked = select_previews(pool, max(8, limit * 3))
+    rules = resale_rules(cfg) or {}
+    ready = []
+    for cand in ranked:
+        result = resale_market.lookup(cand, rules, state)
+        if result.get("ok") and not result.get("sample"):
+            ready.append(cand)
+        if len(ready) >= limit:
+            break
+    if ready:
+        return ready
+    if not ranked:
+        return []
+    sample = dict(ranked[0])
+    sample["wallapop_sample"] = True
+    sample["reject"] = (sample.get("reject") or "sin anuncios de segunda mano comparables")
+    return [sample]
+
+
 def run_private_test(tg, cfg, state, channel, args, now) -> int:
     """Manda al administrador lo que iría al canal, trabajando sobre una copia de la memoria."""
     state = copy.deepcopy(state)
@@ -1297,14 +1337,18 @@ def run_private_test(tg, cfg, state, channel, args, now) -> int:
     if posted:
         print(f"Prueba privada enviada al administrador: {posted}")
         return 0
-    previews = select_previews(extras.get("pool") or [], PREVIEW_LIMIT)
-    if not previews:
-        skip = {item.get("id") for item in extras.get("pool") or []}
-        previews = preview_details_from_listings(extras.get("listings") or [], skip, PREVIEW_LIMIT)
+    pool = list(extras.get("pool") or [])
+    if not select_previews(pool, 1):
+        skip = {item.get("id") for item in pool}
+        pool.extend(preview_details_from_listings(extras.get("listings") or [], skip, PREVIEW_LIMIT))
+    previews = choose_test_previews(pool, cfg, state, PREVIEW_LIMIT)
     if not previews:
         print("Prueba privada: no hay ningún producto con foto y precio para enseñar una vista previa.")
         return 0
-    print(f"Prueba privada: ningún candidato cumple los filtros; envío {len(previews)} vista(s) previa(s).")
+    if previews[0].get("wallapop_sample"):
+        print("Prueba privada: ninguna vista previa tiene anuncios de segunda mano; envío 1 tarjeta de muestra.")
+    else:
+        print(f"Prueba privada: ningún candidato cumple los filtros; envío {len(previews)} vista(s) previa(s) con reventa.")
     for cand in previews:
         prepared = prepare_preview(cand, cfg)
         try:
