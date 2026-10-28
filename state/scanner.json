@@ -474,6 +474,21 @@
    "price": 21.0,
    "t": 1793213909,
    "result": "solo -38% bajo la media"
+  },
+  "7PB8n91": {
+   "price": 2.99,
+   "t": 1793214034,
+   "result": "importe demasiado bajo para ganga"
+  },
+  "R43k2k7": {
+   "price": 24.99,
+   "t": 1793214034,
+   "result": "valoraciones flojas (3.9 / 500)"
+  },
+  "Ro6zwd6": {
+   "price": 26.99,
+   "t": 1793214034,
+   "result": "solo -39% bajo la media"
   }
  },
  "posts": [
@@ -566,7 +581,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 56,
+ "last_listing_count": 55,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
