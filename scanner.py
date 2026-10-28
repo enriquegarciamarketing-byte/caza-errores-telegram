@@ -326,10 +326,11 @@ def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
         try:
             for item in parse_listing(fetch(url)):
                 listings.setdefault(item["id"], item)
-        except (urllib.error.URLError, TimeoutError) as exc:
+        except Exception as exc:  # red, HTTP o HTML inesperado: se sigue con las demás fuentes
             print(f"Aviso: no se pudo leer {url} ({exc})")
         time.sleep(1)
     print(f"Listados: {len(listings)} productos únicos")
+    state["last_listing_count"] = len(listings)
 
     max_age = cfg["max_listing_age_minutes"] * 60
     fresh = []
@@ -355,7 +356,7 @@ def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
     for item in fresh[: cfg["max_detail_fetches_per_run"]]:
         try:
             detail = parse_detail(fetch(f"{BASE}/es/dp/{item['id']}/"))
-        except (urllib.error.URLError, TimeoutError) as exc:
+        except Exception as exc:
             print(f"Aviso: ficha {item['id']} no disponible ({exc})")
             continue
         time.sleep(1)
@@ -364,7 +365,9 @@ def scan(cfg: dict, state: dict, now: datetime) -> list[dict]:
         category, reason = classify(cfg, cand)
         if category:
             category, reason = quality_checks(cand, now, category, reason)
-        seen[item["id"]] = {"price": cand["price"], "t": int(now.timestamp()), "result": category or reason}
+        transient = any(w in (reason or "") for w in ("más de 3 horas", "no se pudo verificar", "no coinciden"))
+        if not transient:
+            seen[item["id"]] = {"price": cand["price"], "t": int(now.timestamp()), "result": category or reason}
         if category and not detail["in_stock"]:
             category, reason = None, "sin stock"
         if category and not detail.get("image"):
@@ -502,6 +505,7 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         msg = tg.send_photo(channel, card, caption_for(url, caption_data(cand)),
                             {"disable_notification": silent, "reply_markup": buttons_for(url)})
         record.update(message_id=msg["message_id"], url=url)
+        state.setdefault("posts", []).append(record)
         print(f"  Publicado en el canal (mensaje {msg['message_id']}): {summary.splitlines()[0]}")
     elif not admin:
         print("  Sin EAN ni administrador vinculado: no se puede publicar.")
@@ -522,15 +526,19 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         amazon_url = url or (affiliate_link(cfg, gtin) if gtin else None)
         if amazon_url:
             buttons[0].insert(0, {"text": "Abrir en Amazon", "url": amazon_url})
-        alert = tg.send_photo(admin, card, html.escape(text), {"reply_markup": {"inline_keyboard": buttons},
-                                                               "disable_notification": cand["category"] != "ERROR DE PRECIO"})
-        record["alert_id"] = alert["message_id"]
+        try:
+            alert = tg.send_photo(admin, card, html.escape(text), {"reply_markup": {"inline_keyboard": buttons},
+                                                                   "disable_notification": cand["category"] != "ERROR DE PRECIO"})
+            record["alert_id"] = alert["message_id"]
+        except RuntimeError as exc:
+            print(f"  Aviso privado no enviado ({exc}); el post del canal queda registrado igualmente")
     if not url:
         record["pending"] = True
         record["card_data"] = {"title": offer["title"], "category": offer["category"],
                                "current": offer["current"], "reference": offer["reference"],
                                "image": cand["image"]}
-    state.setdefault("posts", []).append(record)
+    if record not in state.setdefault("posts", []):
+        state["posts"].append(record)
     state["posts"] = state["posts"][-300:]
     return True
 
@@ -710,13 +718,45 @@ def main() -> int:
             publish_pending_from_reply(tg, state, channel)
 
     now = now_utc()
+    if not (args.custom or args.manual_id):
+        try:
+            return run_scan(tg, cfg, state, channel, args, now)
+        finally:
+            if not args.dry_run:
+                save_state(state)
     if args.custom:
         return custom_post(tg, state, channel, json.loads(args.custom))
     if args.manual_id and args.edit_message:
         return edit_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.edit_message)
     if args.manual_id:
         return publish_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.dry_run)
-    candidates = scan(cfg, state, now)
+    return run_scan(tg, cfg, state, channel, args, now)
+
+
+def health_alert(tg, state: dict, key: str, text: str, every_hours: int = 6) -> None:
+    """Avisa al administrador de un problema, como mucho una vez cada X horas por tipo."""
+    admin = state.get("admin_chat_id")
+    alerts = state.setdefault("health_alerts", {})
+    if not (tg and admin) or time.time() - alerts.get(key, 0) < every_hours * 3600:
+        return
+    try:
+        tg.call("sendMessage", {"chat_id": admin, "text": "⚠️ Caza Errores: " + text})
+        alerts[key] = time.time()
+    except RuntimeError:
+        pass
+
+
+def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime) -> int:
+    try:
+        candidates = scan(cfg, state, now)
+    except Exception as exc:
+        print(f"Error inesperado en el escaneo: {exc!r}", file=sys.stderr)
+        if not args.dry_run:
+            health_alert(tg, state, "scan_error", f"el escaneo ha fallado ({exc!r}). Reviso en la próxima pasada.")
+        return 1
+    if state.get("last_listing_count", 0) == 0 and not args.dry_run:
+        health_alert(tg, state, "no_listings", "no he podido leer ningún producto de Jimmyleaks. "
+                     "Puede que hayan cambiado la web o bloqueado al bot.")
     order = {"ERROR DE PRECIO": 0, "MÍNIMO HISTÓRICO": 1, "GANGA": 2}
     candidates.sort(key=lambda c: (order[c["category"]], -c["discount"]))
     posted = 0
@@ -737,8 +777,6 @@ def main() -> int:
         except RuntimeError as exc:
             print(f"  Error publicando {cand['id']}: {exc}")
     print(f"Publicados en esta ejecución: {posted}")
-    if not args.dry_run:
-        save_state(state)
     return 0
 
 

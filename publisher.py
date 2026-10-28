@@ -514,6 +514,9 @@ def send_photo(token: str, chat_id: str, image_path: Path, caption: str) -> None
     field("chat_id", chat_id)
     field("caption", caption)
     field("parse_mode", "HTML")
+    link = re.search(r'href="([^"]+)"', caption)
+    if link:
+        field("reply_markup", json.dumps({"inline_keyboard": [[{"text": "🛒 Ver en Amazon", "url": html.unescape(link.group(1))}]]}))
     mime = "image/png" if image_path.suffix.lower() == ".png" else "image/jpeg"
     data = image_path.read_bytes()
     parts.append(
