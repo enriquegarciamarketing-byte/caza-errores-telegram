@@ -26,6 +26,7 @@ PUBLISHED_PATH = ROOT / "state" / "published.json"
 IMAGE_DIR = ROOT / "images"
 OUTPUT_DIR = ROOT / "output"
 MAX_PRICE_AGE = timedelta(minutes=20)
+MIN_AUTO_PUBLISH_DISCOUNT_PERCENT = 70
 ASIN_PATH = re.compile(r"/dp/([A-Z0-9]{10})(?:/|$)", re.IGNORECASE)
 ASIN_PATTERN = re.compile(r"^[A-Z0-9]{10}$", re.IGNORECASE)
 SAFE_ID = re.compile(r"^[A-Z0-9_-]{1,80}$", re.IGNORECASE)
@@ -391,6 +392,10 @@ def main() -> int:
         published_set = set(published)
         for raw in approved:
             offer = validate_offer(raw, now)
+            discount_pct = (offer["reference"] - offer["current"]) / offer["reference"] * 100
+            if discount_pct + 1e-9 < MIN_AUTO_PUBLISH_DISCOUNT_PERCENT:
+                print(f"{offer['id']}: descuento {discount_pct:.1f}%, inferior al 70%; se omite.")
+                continue
             if offer["id"] in published_set:
                 print(f"{offer['id']}: ya publicado; se omite.")
                 continue
