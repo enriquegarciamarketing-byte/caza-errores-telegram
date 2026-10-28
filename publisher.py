@@ -533,11 +533,17 @@ def _place_product(canvas, photo_box, offer: dict) -> None:
             with Image.open(path) as source:
                 if min(source.size) >= 48:
                     if offer.get("cover"):
-                        _paste_cover(canvas, photo_box, source)
+                        import photos
+                        inner_w = (photo_box[2] - photo_box[0]) - 6
+                        inner_h = (photo_box[3] - photo_box[1]) - 6
+                        prepared = photos.fit_for_panel(source.convert("RGB"), inner_w, inner_h, cover=True)
+                        _paste_cover(canvas, photo_box, prepared)
                     else:
+                        import photos
                         product = _trim_margins(source)
                         panel_w = (photo_box[2] - photo_box[0]) - 16
                         panel_h = (photo_box[3] - photo_box[1]) - 16
+                        product = photos.fit_for_panel(product, panel_w, panel_h, cover=False)
                         product = ImageOps.contain(product, (panel_w, panel_h), method=Image.Resampling.LANCZOS)
                         canvas.paste(product, (
                             photo_box[0] + (photo_box[2] - photo_box[0] - product.width) // 2,
@@ -603,6 +609,7 @@ def create_deal_card(offer: dict) -> Path:
         "fallback_label": offer.get("fallback_label") or ("VIAJE" if _is_trip(title) else ""),
         "store": offer.get("store") or "",
         "days": 0,
+        "jpeg_quality": 95,
     })
 
 
@@ -697,10 +704,7 @@ def create_price_card(offer: dict) -> Path:
 
     if offer.get("hide_reference"):
         _price_only_panel(draw, offer, info_x, info_width, orange, muted)
-        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-        output = OUTPUT_DIR / f"{offer['id']}.jpg"
-        canvas.save(output, format="JPEG", quality=91, optimize=True)
-        return output
+        return _save_card(canvas, offer)
 
     savings = offer["reference"] - offer["current"]
     savings_pct = savings / offer["reference"] * 100
@@ -749,9 +753,18 @@ def create_price_card(offer: dict) -> Path:
         draw.text((label_x, 921), discount_label, font=label_font, fill="#FFFFFF")
 
 
+    return _save_card(canvas, offer)
+
+
+def _save_card(canvas, offer: dict) -> Path:
+    """JPEG de alta calidad. 4:4:4 a partir de 95 para que Telegram no parta de un archivo ya borroso."""
+    quality = int(offer.get("jpeg_quality") or 91)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output = OUTPUT_DIR / f"{offer['id']}.jpg"
-    canvas.save(output, format="JPEG", quality=91, optimize=True)
+    options = {"quality": quality, "optimize": True}
+    if quality >= 95:
+        options["subsampling"] = 0
+    canvas.save(output, format="JPEG", **options)
     return output
 
 

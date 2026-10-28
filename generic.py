@@ -370,10 +370,8 @@ def _image(cand: dict) -> Path | None:
     url = cand.get("image") or ""
     if not url.startswith("http"):
         return None
-    try:
-        _status, raw = feeds._get(url, timeout=20)
-    except (urllib.error.URLError, TimeoutError):
-        return None
+    import photos
+    raw = photos.fetch_best(url)
     if not raw:
         return None
     OUTPUT.mkdir(parents=True, exist_ok=True)

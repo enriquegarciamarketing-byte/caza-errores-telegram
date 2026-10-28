@@ -133,6 +133,27 @@ class DestinationTest(unittest.TestCase):
             self.assertEqual(sum("Special:FilePath" in url for url in calls), 1)
 
 
+class PhotoSourceTest(unittest.TestCase):
+    def test_pide_la_imagen_grande(self):
+        import photos
+        amazon = photos.source_candidates("https://m.media-amazon.com/images/I/71abc._AC_SX300_SY300_.jpg")
+        self.assertEqual(amazon[0], "https://m.media-amazon.com/images/I/71abc.jpg")
+        chollo = photos.source_candidates(
+            "https://static.chollometro.com/threads/raw/zFfzq/2047812_1/re/150x150/qt/55/2047812_1.jpg")
+        self.assertEqual(chollo[0], "https://static.chollometro.com/threads/raw/zFfzq/2047812_1/2047812_1.jpg")
+        wiki = photos.source_candidates("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a/320px-X.jpg")
+        self.assertIn("1600px-", wiki[0])
+
+    def test_amplia_con_lanczos_si_no_hay_modelo(self):
+        import photos
+        from PIL import Image
+        small = Image.new("RGB", (80, 60), (20, 80, 140))
+        with mock.patch.object(photos, "_neural", return_value=None):
+            bigger = photos.upscale(small, 3)
+        self.assertGreaterEqual(bigger.width, 230)
+        self.assertGreaterEqual(bigger.height, 170)
+
+
 class ProductPhotoTest(unittest.TestCase):
     def test_recorta_el_margen_blanco_y_agranda_el_producto(self):
         from PIL import Image, ImageDraw
