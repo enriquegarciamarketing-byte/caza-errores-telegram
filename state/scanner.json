@@ -71,9 +71,9 @@
    "result": "importe demasiado bajo para ganga"
   },
   "1E8VXxR": {
-   "price": 714.82,
-   "t": 1793157221,
-   "result": "solo -35% bajo la media"
+   "price": 676.41,
+   "t": 1793194488,
+   "result": "solo -39% bajo la media"
   },
   "1BXOBjk": {
    "price": 32.5,
@@ -361,7 +361,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 0,
+ "last_listing_count": 55,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
