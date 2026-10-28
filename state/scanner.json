@@ -674,6 +674,11 @@
    "price": 27.96,
    "t": 1793223498,
    "result": "solo -15% bajo la referencia"
+  },
+  "R90nw57": {
+   "price": 32.99,
+   "t": 1793224109,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
