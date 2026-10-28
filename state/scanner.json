@@ -597,6 +597,25 @@
    "message_id": 24,
    "url": "https://www.amazon.es/s?k=8414800064513&tag=cazadores_errores-21",
    "alert_id": 6
+  },
+  {
+   "id": "7yQyzp7",
+   "message_id": 25,
+   "url": "https://link.amazon/B0aPdCPhq",
+   "cap": {
+    "category": "MÍNIMO HISTÓRICO",
+    "title": "Philips 241E1SCA Monitor curvo 24\" FHD 75Hz VA FreeSync",
+    "brand": "PHILIPS",
+    "current": 74.99,
+    "reference": 121.11,
+    "historical_low": true,
+    "rating": 4.5,
+    "reviews": 500
+   },
+   "price": 74.99,
+   "category": "MÍNIMO HISTÓRICO",
+   "t": 1793214380,
+   "gtin": null
   }
  ],
  "tg_offset": 334822051,
