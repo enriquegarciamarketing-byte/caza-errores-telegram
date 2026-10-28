@@ -249,7 +249,7 @@ def card_title(cand: dict) -> str:
 
 
 SIZE_RE = re.compile(
-    r"(,|\btalla)\s*(XXS|XS|S|M|L|XL|XXL|XXXL|[2-6]XL|\d{2}(?:[.,]5)?(?:\s*(?:EU|EUR))?|\d{2}\s*-\s*\d{2}|\d+\s*años)\s*$",
+    r"(,|\s-|\btalla)\s*(XXS|XS|S|M|L|XL|XXL|XXXL|[2-6]XL|\d{2}(?:[.,]5)?(?:\s*(?:EU|EUR))?|\d{2}\s*-\s*\d{2}|\d+\s*años)\s*$",
     re.I,
 )
 
