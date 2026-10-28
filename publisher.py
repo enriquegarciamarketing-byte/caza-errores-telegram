@@ -187,8 +187,10 @@ def validate_offer(offer: object, now: datetime) -> dict:
                 raise OfferError(f"wallapop_comparables[{index}].url debe ser un enlace HTTPS de Wallapop")
             prices.append(money(item.get("price_eur"), f"precio Wallapop {index}"))
             kinds.add(item_kind)
-        fees = nonnegative_money(offer.get("resale_fees_eur", 0), "resale_fees_eur")
-        shipping = nonnegative_money(offer.get("resale_shipping_eur", 0), "resale_shipping_eur")
+        if "resale_fees_eur" not in offer or "resale_shipping_eur" not in offer:
+            raise OfferError("indica resale_fees_eur y resale_shipping_eur para calcular un ROI útil")
+        fees = nonnegative_money(offer["resale_fees_eur"], "resale_fees_eur")
+        shipping = nonnegative_money(offer["resale_shipping_eur"], "resale_shipping_eur")
         average = sum(prices) / len(prices)
         net = average - current - fees - shipping
         resale_data = {
@@ -203,6 +205,8 @@ def validate_offer(offer: object, now: datetime) -> dict:
         category = "ERROR DE PRECIO"
     elif historical_low:
         category = "MÍNIMO HISTÓRICO"
+    elif resale_data and resale_data["roi"] > 0:
+        category = "OPORTUNIDAD DE REVENTA"
     else:
         category = "GANGA"
 
