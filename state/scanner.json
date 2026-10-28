@@ -684,6 +684,16 @@
    "price": 139.99,
    "t": 1793225329,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "1ZD36x9": {
+   "price": 42.14,
+   "t": 1793226600,
+   "result": "solo -26% bajo la referencia"
+  },
+  "1mxbk6K": {
+   "price": 219.98,
+   "t": 1793226600,
+   "result": "solo -4% bajo la referencia"
   }
  },
  "posts": [
