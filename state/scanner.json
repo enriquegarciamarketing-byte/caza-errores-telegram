@@ -164,6 +164,21 @@
    "price": 115.59,
    "t": 1793165272,
    "result": "lleva 9 días a este precio: no es una bajada nueva"
+  },
+  "1b9pm6R": {
+   "price": 38.25,
+   "t": 1793168062,
+   "result": "solo -26% bajo la media"
+  },
+  "1G6gv5O": {
+   "price": 142.76,
+   "t": 1793168062,
+   "result": "solo -37% bajo la media"
+  },
+  "MK5ZomR": {
+   "price": 74.49,
+   "t": 1793168062,
+   "result": "solo -24% bajo la media"
   }
  },
  "posts": [
@@ -234,5 +249,5 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 55
+ "last_listing_count": 56
 }
