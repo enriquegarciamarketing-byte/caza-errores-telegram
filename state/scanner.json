@@ -144,6 +144,16 @@
    "price": 34.99,
    "t": 1793159777,
    "result": "solo -18% bajo la media"
+  },
+  "MlxQgp5": {
+   "price": 5.65,
+   "t": 1793162709,
+   "result": "importe demasiado bajo para ganga"
+  },
+  "RXxlJAn": {
+   "price": 14.19,
+   "t": 1793162709,
+   "result": "solo -28% bajo la media"
   }
  },
  "posts": [
@@ -214,5 +224,5 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 55
+ "last_listing_count": 56
 }
