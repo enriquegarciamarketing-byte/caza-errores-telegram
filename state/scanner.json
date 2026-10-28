@@ -574,6 +574,11 @@
    "price": 10.4,
    "t": 1793215941,
    "result": "importe demasiado bajo para ganga"
+  },
+  "Ro0Kdl1": {
+   "price": 6.06,
+   "t": 1793216308,
+   "result": "importe demasiado bajo para ganga"
   }
  },
  "posts": [
@@ -685,7 +690,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 55,
+ "last_listing_count": 56,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
