@@ -554,6 +554,16 @@
    "price": 6.6,
    "t": 1793215338,
    "result": "solo -33% bajo la media"
+  },
+  "ROAgQeM": {
+   "price": 141.19,
+   "t": 1793215824,
+   "result": "solo -19% bajo la media"
+  },
+  "M6jL8VM": {
+   "price": 29.99,
+   "t": 1793215824,
+   "result": "en Amazon FR cuesta 24.19 €: la media de 90 días está inflada"
   }
  },
  "posts": [
@@ -665,7 +675,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 55,
+ "last_listing_count": 56,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
