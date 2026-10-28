@@ -313,9 +313,45 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
     return "\n".join(lines)
 
 
+DEAL_CLOSERS = (
+    "Si te encaja, no lo dejes escapar: estos precios duran poco.",
+    "Hoy está así. Mañana puede que ya no.",
+    "De los que conviene mirar antes de que lo corrijan.",
+    "Un precio que no se ve todos los días.",
+    "Entra, comprueba que es el modelo que buscas y decide.",
+)
+TRIP_CLOSERS = (
+    "Si esas fechas te valen, míralo antes de que suba.",
+    "Maleta lista: un precio así no suele aguantar.",
+    "Un viaje a este precio merece que le eches un ojo hoy.",
+)
+TRIP_WORDS = ("viaje", "vuelo", "crucero", "hotel", "vacaciones")
+DEAL_LOGO = ROOT / "images" / "logo-caza-chollos.png"
+
+
+def _is_trip(title: str) -> bool:
+    folded = (title or "").lower()
+    return any(word in folded for word in TRIP_WORDS)
+
+
+def deal_closer(title: str) -> str:
+    """Remate distinto según el título. Nunca cita grados ni la fuente del listado."""
+    pool = TRIP_CLOSERS if _is_trip(title) else DEAL_CLOSERS
+    return pool[sum((title or "").encode()) % len(pool)]
+
+
+def deal_badge(title: str, current: float, previous: float | None) -> str:
+    if _is_trip(title):
+        return "VIAJE"
+    if previous is not None and previous > current * 1.02 and (previous - current) / previous * 100 >= 50:
+        return "CHOLLAZO"
+    return "CHOLLO"
+
+
 def build_deal_caption(*, url: str, title: str, current: float, store: str,
                       previous: float | None = None, temperature: int | None = None) -> str:
-    """Post del canal normal: precio en formato español, sin reventa ni ROI."""
+    """Post del canal normal: precio en formato español, sin reventa, sin ROI y sin grados."""
+    del temperature  # solo sirve para ordenar; no se enseña
     shop = (store or "la tienda").strip()
     product = html.escape(short_title(title, "", limit=140))
     lines = ["🔥 <b>Se ha colado un precio</b>", "", f"<b>{product}</b>", ""]
@@ -330,12 +366,7 @@ def build_deal_caption(*, url: str, title: str, current: float, store: str,
     else:
         lines.append(f"💰 AHORA: {html.escape(euro(current))}")
     lines.append("")
-    if temperature and temperature >= 200:
-        lines.append(f"🔥 {temperature}º. Esto no aguanta mucho a este precio.")
-    elif temperature and temperature >= 80:
-        lines.append(f"👀 Ya va por {temperature}º. Conviene mirarlo ahora.")
-    else:
-        lines.append("🛒 Bajada recién vista. El precio puede volver cuando quieran.")
+    lines.append(deal_closer(title))
     lines.append("")
     lines.append(f'🔗 <b><a href="{html.escape(url, quote=True)}">Ver en {html.escape(shop)}</a></b>')
     return "\n".join(lines)
@@ -457,6 +488,72 @@ def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, mu
     _centered(draw, box, box[3] - 50, note, note_font, "#AEB6BF")
 
 
+def _place_product(canvas, photo_box, offer: dict) -> None:
+    """Foto del producto, o el logo del canal si no hay una imagen usable."""
+    path = offer.get("image_path")
+    if path:
+        try:
+            with Image.open(path) as source:
+                if min(source.size) >= 48:
+                    product = ImageOps.contain(
+                        source.convert("RGB"), (480, 780), method=Image.Resampling.LANCZOS,
+                    )
+                    canvas.paste(product, (
+                        photo_box[0] + (photo_box[2] - photo_box[0] - product.width) // 2,
+                        photo_box[1] + (photo_box[3] - photo_box[1] - product.height) // 2,
+                    ))
+                    return
+        except (OSError, ValueError):
+            pass
+    logo_file = Path(offer["logo_path"]) if offer.get("logo_path") else ROOT / "images" / "logo-caza-errores.png"
+    with Image.open(logo_file) as logo_source:
+        mark = ImageOps.contain(logo_source.convert("RGB"), (300, 300), method=Image.Resampling.LANCZOS)
+    x = photo_box[0] + (photo_box[2] - photo_box[0] - mark.width) // 2
+    y = photo_box[1] + (photo_box[3] - photo_box[1] - mark.height) // 2 - 36
+    canvas.paste(mark, (x, y))
+    label = str(offer.get("fallback_label") or "").strip()
+    if label:
+        draw = ImageDraw.Draw(canvas)
+        _centered(draw, photo_box, y + mark.height + 18, label.upper(), _font(28, bold=True), "#131921")
+
+
+def _price_only_panel(draw, offer: dict, info_x: int, info_width: int, orange: str, muted: str) -> None:
+    """Sin PVP fiable: una sola caja de precio, del mismo alto que el bloque completo."""
+    box = (info_x, 420, 1028, 980)
+    draw.rounded_rectangle(box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
+    draw.text((info_x + 24, 470), "PRECIO ACTUAL", font=_font(23, bold=True), fill=muted)
+    price_font = _font(76, bold=True)
+    price_text = euro(offer["current"])
+    while draw.textbbox((0, 0), price_text, font=price_font)[2] > info_width - 48 and price_font.size > 48:
+        price_font = _font(price_font.size - 2, bold=True)
+    draw.text((info_x + 24, 560), price_text, font=price_font, fill=orange)
+    shop = str(offer.get("store") or "").strip()
+    if shop:
+        draw.text((info_x + 24, 900), shop.upper(), font=_font(22, bold=True), fill=muted)
+
+
+def create_deal_card(offer: dict) -> Path:
+    """Tarjeta del canal normal: el mismo lienzo que el canal antiguo, con el logo de Caza Chollos."""
+    current = float(offer["current"])
+    previous = offer.get("previous")
+    reliable = previous is not None and float(previous) > current * 1.02
+    title = offer.get("title") or ""
+    return create_price_card({
+        "id": offer.get("id") or "chollo",
+        "title": title,
+        "image_path": offer.get("image_path"),
+        "category": offer.get("category") or deal_badge(title, current, float(previous) if reliable else None),
+        "current": current,
+        "reference": float(previous) if reliable else current,
+        "ref_label": offer.get("ref_label") or "ANTES · PVP",
+        "hide_reference": not reliable,
+        "logo_path": offer.get("logo_path") or DEAL_LOGO,
+        "fallback_label": offer.get("fallback_label") or ("VIAJE" if _is_trip(title) else ""),
+        "store": offer.get("store") or "",
+        "days": 0,
+    })
+
+
 def create_price_card(offer: dict) -> Path:
     width, height = 1080, 1080
     ink = "#131921"
@@ -469,7 +566,8 @@ def create_price_card(offer: dict) -> Path:
 
     # Use the supplied channel emblem as the only brand mark in the card.
     logo_box = (48, 36, 184, 172)
-    with Image.open(ROOT / "images" / "logo-caza-errores.png") as logo_source:
+    logo_file = Path(offer["logo_path"]) if offer.get("logo_path") else ROOT / "images" / "logo-caza-errores.png"
+    with Image.open(logo_file) as logo_source:
         logo = ImageOps.contain(
             logo_source.convert("RGB"),
             (logo_box[2] - logo_box[0], logo_box[3] - logo_box[1]),
@@ -514,13 +612,7 @@ def create_price_card(offer: dict) -> Path:
     # Portrait photo on the left; an aligned information column keeps the offer easy to scan.
     photo_box = (48, 192, 568, 1032)
     draw.rounded_rectangle(photo_box, radius=28, fill="#FAFAFA", outline="#ECEEEF", width=2)
-    with Image.open(offer["image_path"]) as source:
-        product = ImageOps.contain(source.convert("RGB"), (480, 780), method=Image.Resampling.LANCZOS)
-    canvas.paste(
-        product,
-        (photo_box[0] + (photo_box[2] - photo_box[0] - product.width) // 2,
-         photo_box[1] + (photo_box[3] - photo_box[1] - product.height) // 2),
-    )
+    _place_product(canvas, photo_box, offer)
     draw = ImageDraw.Draw(canvas)
 
     info_x = 610
@@ -550,6 +642,13 @@ def create_price_card(offer: dict) -> Path:
         title_lines[-1] = last.rstrip(" .,") + "…"
     for index, title_line in enumerate(title_lines):
         draw.text((info_x, 198 + index * 38), title_line, font=title_font, fill=ink)
+
+    if offer.get("hide_reference"):
+        _price_only_panel(draw, offer, info_x, info_width, orange, muted)
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        output = OUTPUT_DIR / f"{offer['id']}.jpg"
+        canvas.save(output, format="JPEG", quality=91, optimize=True)
+        return output
 
     savings = offer["reference"] - offer["current"]
     savings_pct = savings / offer["reference"] * 100

@@ -41,6 +41,9 @@ class FormatTest(unittest.TestCase):
         self.assertIn("Ver en Amazon", text)
         self.assertNotIn("ROI", text)
         self.assertNotIn("Wallapop", text)
+        self.assertNotIn("º", text)
+        self.assertNotIn("357", text)
+        self.assertNotIn("Chollometro", text)
         self.assertEqual(euro(925.79), "925,79 €")
 
     def test_sin_pvp_solo_ahora(self):
@@ -49,6 +52,33 @@ class FormatTest(unittest.TestCase):
         self.assertIn("💰 AHORA: 49,90 €", text)
         self.assertNotIn("PVP", text)
         self.assertNotIn("Te ahorras", text)
+        self.assertNotIn("º", text)
+        self.assertNotIn("90", text.split("49,90")[-1])
+
+
+class CardTest(unittest.TestCase):
+    def test_viaje_sin_foto_y_chollo_con_pvp(self):
+        from publisher import create_deal_card
+        trip = create_deal_card({
+            "id": "test-viaje",
+            "title": "Viaje a Egipto 8 días con vuelos",
+            "current": 468,
+            "previous": 900,
+            "store": "Carrefour",
+        })
+        solo = create_deal_card({
+            "id": "test-solo-ahora",
+            "title": "Auriculares sin PVP",
+            "current": 49.9,
+            "previous": None,
+            "store": "Fnac",
+            "image_path": ROOT / "images" / "taurus-radiador-hq.jpg",
+        })
+        self.assertTrue(trip.exists() and solo.exists())
+        self.assertGreater(trip.stat().st_size, 8000)
+        viaje = {"title": "Viaje a Egipto 8 días", "price": 468, "temperature": 200,
+                 "link": "https://www.chollometro.com/ofertas/egipto-2047741", "published": ""}
+        self.assertEqual(generic.reject_feed(viaje, CFG["generic"], at_madrid(12), set()), "")
 
 
 class LinkTest(unittest.TestCase):
@@ -144,8 +174,9 @@ class FilterTest(unittest.TestCase):
                     return {"message_id": 77}
                 raise AssertionError(method)
 
-            def send_photo(self, *args, **kwargs):
-                raise AssertionError("sin foto en esta prueba")
+            def send_photo(self, chat_id, image, caption, extra=None):
+                sent.append(("sendPhoto", {"chat_id": chat_id, "caption": caption, "image": str(image)}))
+                return {"message_id": 77}
 
         args = generic.argparse.Namespace(dry_run=False, test_private=True)
         with mock.patch.object(feeds, "resolve_deal_url", return_value="https://www.mediamarkt.es/es/product/123"), \
@@ -153,10 +184,12 @@ class FilterTest(unittest.TestCase):
             code = generic.run(args, CFG, state, self.now, tg=TG(), fetch=fetch)
         self.assertEqual(code, 0)
         self.assertEqual(state["posts"], [])
-        self.assertEqual(sent[-1][0], "sendMessage")
+        self.assertEqual(sent[-1][0], "sendPhoto")
         self.assertEqual(sent[-1][1]["chat_id"], 1880159117)
-        self.assertIn("PVP MediaMarkt", sent[-1][1]["text"])
-        self.assertIn("1.149,50 €", sent[-1][1]["text"])
+        self.assertIn("PVP MediaMarkt", sent[-1][1]["caption"])
+        self.assertIn("1.149,50 €", sent[-1][1]["caption"])
+        self.assertNotIn("º", sent[-1][1]["caption"])
+        self.assertTrue(Path(sent[-1][1]["image"]).exists())
 
 
 class WorkflowTest(unittest.TestCase):

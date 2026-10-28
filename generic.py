@@ -20,7 +20,7 @@ from pathlib import Path
 import affiliate
 import feeds
 import premium
-from publisher import build_deal_caption
+from publisher import build_deal_caption, create_deal_card
 import scanner
 
 ROOT = Path(__file__).resolve().parent
@@ -343,19 +343,25 @@ def choose(candidates: list[dict], state: dict, now: datetime, rules: dict, limi
 
 def deliver(tg, chat, cand: dict, dry: bool) -> int | None:
     caption = build_deal_caption(url=cand["url"], title=cand["title"], current=cand["price"],
-                                 store=cand["store"], previous=cand.get("previous"),
-                                 temperature=cand.get("temperature") or None)
+                                 store=cand["store"], previous=cand.get("previous"))
     buttons = scanner.buttons_for(cand["url"])
     if dry or tg is None:
         print(f"  [prueba] {cand['store']} · {cand['price']} € · {cand['title'][:80]}")
         print(caption)
         return None
-    image = _image(cand)
-    if image:
-        message = tg.send_photo(chat, image, caption, {"reply_markup": buttons})
-    else:
-        message = tg.call("sendMessage", {"chat_id": chat, "text": caption, "parse_mode": "HTML",
-                                           "reply_markup": buttons})
+    try:
+        card = create_deal_card({
+            "id": cand["id"],
+            "title": cand["title"],
+            "current": cand["price"],
+            "previous": cand.get("previous"),
+            "image_path": _image(cand),
+            "store": cand.get("store") or "",
+        })
+    except (OSError, ValueError) as exc:
+        print(f"  No pude crear la tarjeta de {cand.get('id')} ({exc})")
+        return None
+    message = tg.send_photo(chat, card, caption, {"reply_markup": buttons})
     print(f"  Publicado en {chat} (mensaje {message['message_id']}): {cand['title'][:80]}")
     return int(message["message_id"])
 
