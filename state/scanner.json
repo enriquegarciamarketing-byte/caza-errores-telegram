@@ -464,6 +464,16 @@
    "price": 189.99,
    "t": 1793213540,
    "result": "sin media de 90 días por encima del precio"
+  },
+  "7gkJaYl": {
+   "price": 11.99,
+   "t": 1793213909,
+   "result": "solo -9% bajo la media"
+  },
+  "R95j4dR": {
+   "price": 21.0,
+   "t": 1793213909,
+   "result": "solo -38% bajo la media"
   }
  },
  "posts": [
