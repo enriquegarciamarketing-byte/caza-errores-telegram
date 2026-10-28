@@ -114,6 +114,36 @@
    "price": 149.99,
    "t": 1793158506,
    "result": "solo -23% bajo la media"
+  },
+  "M52BOEw": {
+   "price": 25.5,
+   "t": 1793159777,
+   "result": "solo -24% bajo la media"
+  },
+  "RrQDxG7": {
+   "price": 12.32,
+   "t": 1793159777,
+   "result": "solo -25% bajo la media"
+  },
+  "RoWlqoR": {
+   "price": 3.99,
+   "t": 1793159777,
+   "result": "solo -31% bajo la media"
+  },
+  "1ZKNx9M": {
+   "price": 47.5,
+   "t": 1793159777,
+   "result": "solo -26% bajo la media"
+  },
+  "7PkWmY9": {
+   "price": 7.5,
+   "t": 1793159777,
+   "result": "solo -37% bajo la media"
+  },
+  "MlxQ0A8": {
+   "price": 34.99,
+   "t": 1793159777,
+   "result": "solo -18% bajo la media"
   }
  },
  "posts": [
@@ -182,7 +212,7 @@
    "gtin": null
   }
  ],
- "tg_offset": 334822050,
+ "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 56
+ "last_listing_count": 55
 }
