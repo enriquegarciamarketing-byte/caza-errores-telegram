@@ -299,6 +299,26 @@
    "price": 32.5,
    "t": 1793201621,
    "result": "solo -19% bajo la media"
+  },
+  "7AG9W61": {
+   "price": 32.33,
+   "t": 1793208391,
+   "result": "solo -38% bajo la media"
+  },
+  "Ro63PWV": {
+   "price": 23.2,
+   "t": 1793208391,
+   "result": "solo -29% bajo la media"
+  },
+  "1L2lrZ7": {
+   "price": 31.99,
+   "t": 1793208391,
+   "result": "solo -34% bajo la media"
+  },
+  "RVgGjJr": {
+   "price": 9.99,
+   "t": 1793208391,
+   "result": "solo -39% bajo la media"
   }
  },
  "posts": [
@@ -391,7 +411,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 56,
+ "last_listing_count": 55,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
