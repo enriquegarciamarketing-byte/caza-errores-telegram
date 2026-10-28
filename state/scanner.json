@@ -890,7 +890,88 @@
    "joiot 32gb memoria usb 3.0 pendrive 2 en 1 usb tipo c y usb 3.0, alta velocidad memoria usb 32 gb compatible con pc/ordenador"
   ]
  },
- "resale_cache": {},
+ "resale_cache": {
+  "carrefour|lego ideas cohete lunar de tintin, juguete de construccion +18 anos - 21367 (-40% en cupon) - precio final 83.99|wallapop+milanuncios:carrefour 18 lego": {
+   "t": 1793226386.3735738,
+   "prices": [
+    15.0,
+    20.0,
+    12.0,
+    14.0,
+    20.0,
+    3.5,
+    10.0,
+    6.0,
+    1.0,
+    4.0,
+    10.0,
+    1.3,
+    10.0
+   ],
+   "parts": [
+    [
+     "Wallapop",
+     13
+    ]
+   ],
+   "failures": [
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": false
+  },
+  "carrefour|lego super mario game boy, 72046 40% regalo en cupon (24 euros)|wallapop+milanuncios:carrefour 72046 lego": {
+   "t": 1793226387.340398,
+   "prices": [],
+   "parts": [],
+   "failures": [
+    "Wallapop solo tiene 0 anuncios parecidos (mínimo 8)",
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": false
+  },
+  "carrefour|lego disney pixar wall-e y eve 43279 regalo en cupon del 40% (28 euros)|wallapop+milanuncios:carrefour 43279 lego": {
+   "t": 1793226388.3412597,
+   "prices": [],
+   "parts": [],
+   "failures": [
+    "Wallapop solo tiene 0 anuncios parecidos (mínimo 8)",
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": false
+  },
+  "deporvillage|columbia zapatillas de montana peakfreak venture lt (color verde oscuro) (talla 40 al 43)|vinted+wallapop+milanuncios:deporvillage 40 columbia": {
+   "t": 1793226389.3152885,
+   "prices": [],
+   "parts": [],
+   "failures": [
+    "Vinted solo tiene 0 anuncios parecidos (mínimo 8)",
+    "Wallapop solo tiene 0 anuncios parecidos (mínimo 8)",
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": false
+  },
+  "primeriti|nike zapatillas casual de hombre nike charge suede|vinted+wallapop+milanuncios:primeriti nike": {
+   "t": 1793226390.3778534,
+   "prices": [],
+   "parts": [],
+   "failures": [
+    "Vinted solo tiene 0 anuncios parecidos (mínimo 8)",
+    "Wallapop solo tiene 0 anuncios parecidos (mínimo 8)",
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": false
+  }
+ },
  "wallapop_cache": {
   "aliexpress|juego resident evil requiem para playstation 5 | ps5 | pal eu - nuevo original precintado|aliexpress ps5 juego": {
    "t": 1793220209.8554032,
@@ -1064,7 +1145,48 @@
    "raw_count": 40
   }
  },
- "milanuncios_cache": {},
+ "milanuncios_cache": {
+  "carrefour|lego ideas cohete lunar de tintin, juguete de construccion +18 anos - 21367 (-40% en cupon) - precio final 83.99|carrefour 18 lego": {
+   "t": 1793226386.3734446,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  },
+  "carrefour|lego super mario game boy, 72046 40% regalo en cupon (24 euros)|carrefour 72046 lego": {
+   "t": 1793226387.3403172,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  },
+  "carrefour|lego disney pixar wall-e y eve 43279 regalo en cupon del 40% (28 euros)|carrefour 43279 lego": {
+   "t": 1793226388.3412297,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  },
+  "deporvillage|columbia zapatillas de montana peakfreak venture lt (color verde oscuro) (talla 40 al 43)|deporvillage 40 columbia": {
+   "t": 1793226389.3152592,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  },
+  "primeriti|nike zapatillas casual de hombre nike charge suede|primeriti nike": {
+   "t": 1793226390.377824,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  }
+ },
  "admin_alerts": {
   "wallapop:cm-2047349": 1793220210.575943,
   "wallapop:cm-2047688": 1793220212.4438262,
