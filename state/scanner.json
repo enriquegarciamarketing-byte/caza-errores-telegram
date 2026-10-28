@@ -239,6 +239,11 @@
    "price": 3.73,
    "t": 1793182300,
    "result": "importe demasiado bajo para ganga"
+  },
+  "R0pAj4R": {
+   "price": 12.0,
+   "t": 1793185228,
+   "result": "solo -40% bajo la media"
   }
  },
  "posts": [
@@ -331,5 +336,5 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 55
+ "last_listing_count": 46
 }
