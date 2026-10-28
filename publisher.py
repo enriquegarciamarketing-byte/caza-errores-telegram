@@ -238,6 +238,7 @@ CATEGORY_HEADERS = {
     "MÍNIMO HISTÓRICO": "📉 <b>MÍNIMO HISTÓRICO</b>",
     "GANGA": "🔥 <b>GANGA</b>",
     "OPORTUNIDAD DE REVENTA": "💸 <b>OPORTUNIDAD DE REVENTA</b>",
+    "RESERVA COLECCIONISTA": "🎴 <b>RESERVA COLECCIONISTA</b>",
 }
 
 
@@ -256,16 +257,24 @@ def short_title(title: str, brand: str = "", limit: int = 85) -> str:
     return title
 
 
+def store_label(url: str) -> str:
+    import premium
+    return premium.store_of(url)[1]
+
+
 def build_caption(*, url: str, category: str, title: str, current: float, reference: float,
                   brand: str = "", historical_low: bool = False, rating: float | None = None,
                   reviews: int | None = None, ref_text: str = "frente a su precio medio de 90 días",
                   resale_price: float | None = None, resale_count: int | None = None,
-                  sold_out: bool = False, sizes: list | None = None) -> str:
-    """Copy del canal: categoría, marca en negrita, precio, precio tachado y descuento."""
+                  sold_out: bool = False, sizes: list | None = None, note: str = "",
+                  hold: bool = False, demand: str = "", profit: float | None = None,
+                  source_label: str = "", store: str = "") -> str:
+    """Copy del canal: categoría, marca en negrita, precio, beneficio y enlace de la tienda."""
     e = html.escape
     brand = nice_brand(brand)
-    pct = round((reference - current) / reference * 100)
+    pct = round((reference - current) / reference * 100) if reference else 0
     product = e(short_title(title, brand))
+    shop = store or store_label(url)
     lines = [CATEGORY_HEADERS.get(category, f"🔥 <b>{e(category)}</b>")]
     if sold_out:
         lines.append("⛔ <b>AGOTADO</b> · ejemplo de lo que cazamos")
@@ -274,20 +283,33 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
     lines.append("")
     if sizes:
         lines.append(f"📏 Tallas a este precio: <b>{e(', '.join(sizes))}</b>")
-    lines.append(f"💰 <b>{e(euro(current))}</b>   <s>{e(euro(reference))}</s>")
-    lines.append(f"🏷️ <b>-{pct}%</b> {e(ref_text)}")
+    if reference and reference > current:
+        lines.append(f"💰 <b>{e(euro(current))}</b>   <s>{e(euro(reference))}</s>")
+        lines.append(f"🏷️ <b>-{pct}%</b> {e(ref_text)}")
+    else:
+        lines.append(f"💰 <b>{e(euro(current))}</b> en {e(shop)}")
     if historical_low:
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
+    if hold:
+        lines.append("🏷️ <b>Producto de colección / hold</b>")
     if resale_price:
-        gain = resale_price - current
-        roi = gain / current * 100
+        gain = profit if profit is not None else resale_price - current
+        roi = gain / current * 100 if current else 0
+        where = source_label or "Wallapop"
         lines.append("")
-        lines.append(f"♻️ En Wallapop se vende a <b>~{resale_price:.0f} €</b> de media")
-        lines.append(f"📈 ROI estimado <b>{'+' if roi >= 0 else ''}{roi:.0f}%</b> (unos <b>{'+' if gain >= 0 else ''}{gain:.0f} €</b> por unidad)")
+        lines.append(f"♻️ Reventa en {e(where)} <b>~{resale_price:.0f} €</b>")
+        lines.append(f"📈 Beneficio estimado <b>{gain:+.0f} €</b> · ROI <b>{roi:+.0f}%</b>")
+    if demand:
+        lines.append(f"🔥 Demanda: <b>{e(demand)}</b>")
     if rating and rating >= 4.0 and reviews:
         lines.append(f"⭐ {str(round(rating, 1)).replace('.', ',')} ({reviews} opiniones)")
+    if note:
+        lines.append("")
+        for line in str(note).splitlines():
+            if line.strip():
+                lines.append(e(line.strip()))
     lines.append("")
-    lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en Amazon</a></b>')
+    lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en {e(shop)}</a></b>')
     return "\n".join(lines)
 
 
@@ -315,6 +337,16 @@ def _font(size: int, bold: bool = False):
 
 def euro(amount: float) -> str:
     return f"{amount:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") + " €"
+
+
+def _fit_font(draw, text: str, max_width: int, start: int, minimum: int, bold: bool = True):
+    """Baja el cuerpo hasta que el texto cabe en su columna."""
+    size = start
+    font = _font(size, bold=bold)
+    while size > minimum and draw.textbbox((0, 0), text, font=font)[2] > max_width:
+        size -= 2
+        font = _font(size, bold=bold)
+    return font
 
 
 def _centered(draw, box, y, text, font, fill):
@@ -359,31 +391,41 @@ def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, mu
     draw.line((mid, box[1] + 36, mid, box[3] - 64), fill="#2B3440", width=2)
     left, right = (box[0], box[1], mid, box[3]), (mid, box[1], box[2], box[3])
     small = _font(19, bold=True)
-    _centered(draw, left, box[1] + 34, "REVENTA", small, "#AEB6BF")
+    col_w = (mid - box[0]) - 20
+    _centered(draw, left, box[1] + 28, "REVENTA", small, "#AEB6BF")
     source = str(resale.get("source_label") or "WALLAPOP")
-    source_font = small
-    max_w = (left[2] - left[0]) - 12
-    while getattr(source_font, "size", 19) > 11 and draw.textbbox((0, 0), source, font=source_font)[2] > max_w:
-        source_font = _font(source_font.size - 1, bold=True)
-    _centered(draw, left, box[1] + 58, source, source_font, "#AEB6BF")
-    _centered(draw, right, box[1] + 34, "ROI", small, "#AEB6BF")
-    _centered(draw, right, box[1] + 58, "ESTIMADO", small, "#AEB6BF")
-    big = _font(56, bold=True)
-    _centered(draw, left, box[1] + 104, f"~{resale['price']:.0f} €", big, "#FFFFFF")
-    roi = resale["roi"]
-    _centered(draw, right, box[1] + 104, f"{'+' if roi >= 0 else ''}{roi:.0f}%", big, green if roi >= 0 else "#FF6B6B")
+    source_font = _fit_font(draw, source, col_w, 19, 11, bold=True)
+    _centered(draw, left, box[1] + 50, source, source_font, "#AEB6BF")
+    context = bool(resale.get("context_only"))
+    _centered(draw, right, box[1] + 28, "REFERENCIA" if context else "BENEFICIO", small, "#AEB6BF")
+    _centered(draw, right, box[1] + 50, "PREVIA" if context else "ESTIMADO", small, "#AEB6BF")
+    price_text = f"~{resale['price']:.0f} €"
+    if context:
+        gain_text = f"{int(resale.get('count') or 0)} an."
+    else:
+        gain = resale["profit"] if resale.get("profit") is not None else resale["price"] - offer["current"]
+        gain_text = f"{gain:+.0f} €"
+    price_font = _fit_font(draw, price_text, col_w, 52, 26, bold=True)
+    gain_font = _fit_font(draw, gain_text, col_w, 52, 26, bold=True)
+    _centered(draw, left, box[1] + 86, price_text, price_font, "#FFFFFF")
+    _centered(draw, right, box[1] + 86, gain_text, gain_font, "#FFFFFF" if context else (green if gain_text.startswith("+") or gain_text.startswith("~") else "#FF6B6B"))
+    roi = resale.get("roi")
+    if roi is not None and not context:
+        roi_text = f"ROI {roi:+.0f}%"
+        roi_font = _fit_font(draw, roi_text, col_w, 22, 12, bold=True)
+        _centered(draw, right, box[1] + 148, roi_text, roi_font, green if roi >= 0 else "#FF6B6B")
     if resale.get("sample"):
         note = "EJEMPLO · no son anuncios reales"
     elif resale.get("note"):
         note = str(resale["note"])
     else:
-        note = f"Media de {resale['count']} anuncios" if resale.get("count") else "Media de anuncios"
+        note = f"Mediana de {resale['count']} anuncios" if resale.get("count") else "Mediana de anuncios"
     note_font = _font(19)
     max_note = (box[2] - box[0]) - 28
     while getattr(note_font, "size", 19) > 12 and draw.textbbox((0, 0), note, font=note_font)[2] > max_note:
         note_font = _font(note_font.size - 1)
     if draw.textbbox((0, 0), note, font=note_font)[2] > max_note and resale.get("count"):
-        note = f"Media de {resale['count']} anuncios"
+        note = f"Mediana de {resale['count']} anuncios"
     _centered(draw, box, box[3] - 50, note, note_font, "#AEB6BF")
 
 
@@ -432,6 +474,14 @@ def create_price_card(offer: dict) -> Path:
         draw.rounded_rectangle(so_badge, radius=22, fill="#D93025")
         draw.text((so_badge[0] + 20, so_badge[1] + (so_badge[3] - so_badge[1] - (so_bounds[3] - so_bounds[1])) // 2 - so_bounds[1]),
                   so_text, font=category_font, fill="#FFFFFF")
+    if offer.get("hold"):
+        hold_text = "COLECCIÓN / HOLD"
+        hold_font = _font(16, bold=True)
+        hold_bounds = draw.textbbox((0, 0), hold_text, font=hold_font)
+        hold_w = hold_bounds[2] - hold_bounds[0] + 28
+        hold_badge = (1028 - hold_w, 146, 1028, 186)
+        draw.rounded_rectangle(hold_badge, radius=16, fill=ink)
+        draw.text((hold_badge[0] + 14, hold_badge[1] + 8), hold_text, font=hold_font, fill=orange)
 
     # Portrait photo on the left; an aligned information column keeps the offer easy to scan.
     photo_box = (48, 192, 568, 1032)
@@ -447,6 +497,8 @@ def create_price_card(offer: dict) -> Path:
 
     info_x = 610
     info_width = 418
+    if offer.get("store_label"):
+        draw.text((info_x, 168), str(offer["store_label"]).upper(), font=_font(18, bold=True), fill=orange)
     # The title uses a controlled line length to preserve a clean right column.
     title_words = offer["title"].split()
     title_lines: list[str] = []
@@ -537,7 +589,8 @@ def send_photo(token: str, chat_id: str, image_path: Path, caption: str) -> None
     field("parse_mode", "HTML")
     link = re.search(r'href="([^"]+)"', caption)
     if link:
-        field("reply_markup", json.dumps({"inline_keyboard": [[{"text": "🛒 Ver en Amazon", "url": html.unescape(link.group(1))}]]}))
+        shop = store_label(html.unescape(link.group(1)))
+        field("reply_markup", json.dumps({"inline_keyboard": [[{"text": f"🛒 Ver en {shop}", "url": html.unescape(link.group(1))}]]}))
     mime = "image/png" if image_path.suffix.lower() == ".png" else "image/jpeg"
     data = image_path.read_bytes()
     parts.append(

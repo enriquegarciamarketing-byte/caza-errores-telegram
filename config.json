@@ -7,6 +7,9 @@
     "https://jimmyleaks.com/es/c/electronica/?order=-modified",
     "https://jimmyleaks.com/es/c/informatica/?order=-modified",
     "https://jimmyleaks.com/es/c/videojuegos/?order=-modified",
+    "https://jimmyleaks.com/es/c/juguetes-y-juegos/?order=-modified",
+    "https://jimmyleaks.com/es/c/moda/?order=-modified",
+    "https://jimmyleaks.com/es/c/deportes-y-aire-libre/?order=-modified",
     "https://jimmyleaks.com/es/c/bricolaje-y-herramientas/?order=-modified"
   ],
   "max_listing_age_minutes": 90,
@@ -28,7 +31,8 @@
   "repost_min_extra_drop_pct": 10,
   "resale": {
     "enabled": true,
-    "min_price_eur": 40,
+    "min_price_eur": 25,
+    "require_priority": true,
     "min_saving_eur": 30,
     "min_spain_points": 15,
     "max_pvp_vs_avg": 1.5,
@@ -108,10 +112,46 @@
       "bolso", "mochila", "bandolera", "cartera", "cinturon", "reloj", "gafas de sol", "bufanda"
     ],
     "fashion_exceptions": ["smartwatch", "reloj inteligente", "apple watch", "galaxy watch"],
+    "commodity_keywords": [
+      "piscina", "flotador", "hinchable", "colchoneta", "pelota de playa",
+      "alfombrilla", "mousepad", "mouse pad",
+      "camiseta", "camisa", "pantalon", "vaquero", "vestido", "falda", "sudadera", "pijama", "calcetin",
+      "dock", "grip", "peluche"
+    ],
+    "commodity_exceptions": [
+      "zapatilla", "zapatillas", "sneaker", "jordan", "yeezy", "dunk", "air force", "air max"
+    ],
+    "priority": [
+      {"id": "coleccion", "label": "Colección", "score": 110, "hold": true, "keywords": ["edicion coleccionista", "collector", "edicion limitada", "40 aniversario", "40º aniversario"]},
+      {"id": "consolas", "label": "Consolas", "score": 100, "keywords": ["ps5", "playstation 5", "switch 2", "nintendo switch", "xbox series", "xbox"]},
+      {"id": "apple", "label": "Apple", "score": 95, "keywords": ["iphone", "ipad", "airpods", "macbook", "imac", "mac mini", "mac studio", "apple watch"]},
+      {"id": "tcg", "label": "TCG", "score": 95, "hold": true, "keywords": ["elite trainer", "booster box", "booster", "etb", "pokemon tcg", "pokemon tin", "pokemon blister"]},
+      {"id": "componentes", "label": "Componentes", "score": 90, "keywords": ["tarjeta grafica", "rtx", "radeon", "geforce", "ryzen", "intel core", "ddr4", "ddr5", "memoria ram", "nvme", "ssd"]},
+      {"id": "lego", "label": "LEGO", "score": 88, "hold": true, "keywords": ["lego"]},
+      {"id": "foto", "label": "Foto", "score": 85, "keywords": ["dji", "gopro", "mirrorless", "drone", "dron", "camara"]},
+      {"id": "dyson", "label": "Dyson", "score": 84, "keywords": ["dyson"]},
+      {"id": "audio", "label": "Audio", "score": 80, "brands": ["sony", "bose"], "keywords": ["wh-1000", "wh1000", "1000xm", "quietcomfort", "auriculares", "cascos", "soundbar", "barra de sonido"]},
+      {"id": "sneakers", "label": "Sneakers", "score": 78, "keywords": ["zapatilla", "zapatillas", "sneaker", "jordan", "yeezy", "dunk", "air force", "air max"]},
+      {"id": "robots", "label": "Robots", "score": 76, "keywords": ["robot aspirador", "roomba", "roborock", "dreame", "ecovacs"]},
+      {"id": "relojes", "label": "Relojes", "score": 74, "keywords": ["garmin", "g-shock", "gshock"]}
+    ],
+    "chollometro_feeds": [
+      "https://www.chollometro.com/rss/hot",
+      "https://www.chollometro.com/rss/nuevos"
+    ],
+    "chollometro_min_temperature": 80,
+    "max_feed_items_per_run": 5,
+    "discovery_pages": [
+      "https://www.amazon.es/gp/bestsellers/videogames",
+      "https://www.amazon.es/gp/bestsellers/computers",
+      "https://www.amazon.es/gp/movers-and-shakers/videogames"
+    ],
     "wallapop": {
-      "min_listings": 5,
+      "min_listings": 8,
       "min_roi": 0.25,
-      "min_profit_eur": 15,
+      "min_roi_below_eur": 60,
+      "min_roi_below": 0.30,
+      "min_profit_eur": 25,
       "price_stat": "median",
       "order_by": "most_relevance",
       "latitude": 40.4168,
@@ -124,5 +164,17 @@
       "accessory_keywords": ["funda", "cable", "cargador", "protector", "caja vacia", "solo caja"],
       "bundle_keywords": ["pc gaming", "ordenador", "torre gaming", "portatil gaming"]
     }
+  },
+  "store_affiliates": {
+    "carrefour": {"template": ""},
+    "lidl": {"template": ""},
+    "game": {"template": ""},
+    "mediamarkt": {"template": ""},
+    "elcorteingles": {"template": ""},
+    "fnac": {"template": ""},
+    "pccomponentes": {"template": ""},
+    "toysrus": {"template": ""},
+    "pokemoncenter": {"template": ""},
+    "nintendo": {"template": ""}
   }
 }

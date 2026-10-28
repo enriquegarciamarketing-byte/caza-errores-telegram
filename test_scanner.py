@@ -15,7 +15,9 @@ from pathlib import Path
 from unittest import mock
 from zoneinfo import ZoneInfo
 
+import feeds
 import milanuncios
+import premium
 import resale_market
 import scanner
 import vinted
@@ -85,11 +87,15 @@ class ResaleRulesTest(unittest.TestCase):
     def test_config_has_editable_resale_rules(self):
         rules = self.cfg["resale"]
         self.assertTrue(rules["enabled"])
-        self.assertEqual(rules["min_price_eur"], 40)
+        self.assertEqual(rules["min_price_eur"], 25)
         self.assertEqual(rules["min_saving_eur"], 30)
-        self.assertEqual(rules["wallapop"]["min_listings"], 5)
+        self.assertEqual(rules["wallapop"]["min_listings"], 8)
         self.assertEqual(rules["wallapop"]["min_roi"], 0.25)
-        self.assertEqual(rules["wallapop"]["min_profit_eur"], 15)
+        self.assertEqual(rules["wallapop"]["min_roi_below"], 0.30)
+        self.assertEqual(rules["wallapop"]["min_profit_eur"], 25)
+        self.assertTrue(rules["require_priority"])
+        self.assertIn("alfombrilla", rules["commodity_keywords"])
+        self.assertIn("ps5", rules["priority"][1]["keywords"])
         self.assertEqual(rules["min_spain_points"], 15)
         self.assertEqual(rules["max_pvp_vs_avg"], 1.5)
         self.assertEqual(self.cfg["bargain_min_discount"], 30)
@@ -123,7 +129,7 @@ class ResaleRulesTest(unittest.TestCase):
         self.assertIn("reventa OK", reason)
 
     def test_error_barato_no_se_cuela(self):
-        cand = deal(name="Apple iPhone SE", title="Apple iPhone SE", brand="Apple", price=35, avg90=200)
+        cand = deal(name="Apple iPhone SE", title="Apple iPhone SE", brand="Apple", price=19, avg90=200)
         category, reason = scanner.classify(self.cfg, cand)
         self.assertIsNone(category)
         self.assertIn("mínimo de reventa", reason)
@@ -145,20 +151,20 @@ class ResaleRulesTest(unittest.TestCase):
         cand = deal(name="Auriculares Bluetooth 5.3", title="Auriculares Bluetooth 5.3", brand="",
                     price=50, avg90=120)
         category, reason = scanner.classify(self.cfg, cand)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
 
     def test_sin_lista_de_categorias_un_proyector_o_un_frigorifico_pueden_seguir(self):
         projector = deal(name="Google TV Proyector Portatil", title="LYNCAST Google TV Proyector Portatil",
                          brand="LYNCAST", price=209.99, avg90=400.58, rating=4.4, reviews=80)
         category, reason = scanner.classify(self.cfg, projector)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
         fridge = deal(name="Frigorífico Samsung RB38", title="Frigorífico Samsung RB38", brand="Samsung",
                       price=400, avg90=800)
         category, reason = scanner.classify(self.cfg, fridge)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
 
     def test_dyson_fuera_de_tecnologia_si_pasa(self):
         cand = deal(name="Aspiradora sin cable V15", title="Aspiradora Dyson V15", brand="Dyson",
@@ -168,8 +174,8 @@ class ResaleRulesTest(unittest.TestCase):
         self.assertIn("reventa OK", reason)
 
     def test_portatil_que_menciona_el_cable_si_pasa(self):
-        cand = deal(name="Portátil Lenovo IdeaPad 15 con cable USB", title="Portátil Lenovo IdeaPad 15",
-                    brand="Lenovo", price=450, avg90=800)
+        cand = deal(name="MacBook Pro 14 con cable USB", title="MacBook Pro",
+                    brand="Apple", price=450, avg90=800)
         category, reason = scanner.classify(self.cfg, cand)
         self.assertEqual(category, "GANGA")
         self.assertIn("reventa OK", reason)
@@ -197,8 +203,8 @@ class ResaleRulesTest(unittest.TestCase):
         device = deal(name="Kindle Paperwhite 16 GB", title="Kindle Paperwhite 16 GB", brand="Amazon",
                       price=89, avg90=149)
         category, reason = scanner.classify(self.cfg, device)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
         ebook = deal(name="Harry Potter versión Kindle", title="Harry Potter versión Kindle", brand="Amazon",
                      price=49, avg90=90)
         category, reason = scanner.classify(self.cfg, ebook)
@@ -319,8 +325,8 @@ class MarketReferenceTest(unittest.TestCase):
         unknown = deal(name="Auriculares Bluetooth", title="Auriculares Bluetooth", brand="MarcaInventada",
                        reviews=20, rating=4.5, price=70, avg90=120)
         category, reason = scanner.classify(self.cfg, unknown)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
 
     def test_escritorio_mesa_y_adaptador_de_marca(self):
         desk = deal(name="Escritorio Corsair Platform 6 con soporte para monitor",
@@ -328,15 +334,16 @@ class MarketReferenceTest(unittest.TestCase):
         category, reason = scanner.classify(self.cfg, desk)
         self.assertIsNone(category)
         self.assertIn("escritorio", reason)
-        drive = deal(name="SanDisk Disco Duro de Escritorio 4TB", title="Disco duro", brand="SanDisk",
+        drive = deal(name="SanDisk SSD Disco Duro de Escritorio 4TB", title="Disco duro", brand="SanDisk",
                      price=120, avg90=200)
         category, reason = scanner.classify(self.cfg, drive)
         self.assertEqual(category, "GANGA")
         self.assertIn("reventa OK", reason)
         wifi = deal(name="Adaptador ASUS WiFi 7 PCIe", title="Adaptador WiFi 7", brand="ASUS", price=70, avg90=120)
         category, reason = scanner.classify(self.cfg, wifi)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
+        self.assertNotIn("adaptador", reason)
         coffee = deal(name="Cápsulas de café", title="Cápsulas de café", brand="Philips", price=40, avg90=80)
         category, reason = scanner.classify(self.cfg, coffee)
         self.assertIsNone(category)
@@ -344,18 +351,18 @@ class MarketReferenceTest(unittest.TestCase):
         mic = deal(name="Cápsula de micrófono SteelSeries Alias", title="Micrófono", brand="SteelSeries",
                    price=90, avg90=160)
         category, reason = scanner.classify(self.cfg, mic)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
 
     def test_echo_de_amazon_si_el_patinete_generico_no(self):
         echo = deal(name="Echo Dot (5.ª generación)", title="Echo Dot", brand="Amazon", price=49, avg90=90)
         category, reason = scanner.classify(self.cfg, echo)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
         scooter = deal(name="Patinete eléctrico plegable", title="Patinete", brand="Acclafit", price=180, avg90=320)
         category, reason = scanner.classify(self.cfg, scooter)
-        self.assertEqual(category, "GANGA")
-        self.assertIn("reventa OK", reason)
+        self.assertIsNone(category)
+        self.assertIn("premium", reason)
 
     def test_otro_pais_barato_descarta_cualquier_descuento(self):
         cand = deal(price=50, avg90=100, series=chart([100] * 20, [52, 90]))
@@ -699,6 +706,9 @@ class WallapopTest(unittest.TestCase):
             item("Memoria RAM Corsair Vengeance 16GB DDR4 3600MHz", 90),
             item("Memorias RAM Corsair Vengeance LPX 16GB DDR4", 120),
             item("Memoria RAM Corsair Vengeance LPX 16GB DDR4", 85),
+            item("Corsair Vengeance LPX 16GB DDR4 3200", 95),
+            item("Memoria RAM Corsair Vengeance LPX DDR4 16GB", 100),
+            item("Memoria RAM Corsair Vengeance 16GB DDR4", 100),
             item("Funda Corsair Vengeance LPX 16GB DDR4", 15),
             item("Memoria RAM Corsair Vengeance LPX 16GB DDR4 reservada", 40, reserved=True),
         ]
@@ -718,7 +728,7 @@ class WallapopTest(unittest.TestCase):
         self.assertGreaterEqual(result["profit"], 15)
 
     def test_roi_insuficiente_no_publica(self):
-        result = wallapop.evaluate({**self.cand, "price": 80}, [90, 90, 90, 90, 90], self.rules)
+        result = wallapop.evaluate({**self.cand, "price": 80}, [90] * 8, self.rules)
         self.assertFalse(result["ok"])
         self.assertIn("ROI", result["reason"])
         self.assertFalse(result["transient"])
@@ -835,33 +845,42 @@ class SecondHandSourcesTest(unittest.TestCase):
         def ok_prices(prices, label_ok=True):
             return {"ok": label_ok, "prices": prices, "transient": False, "blocked": False, "reason": ""}
 
-        with mock.patch.object(resale_market.wallapop, "lookup", return_value=ok_prices([90, 85, 70])), \
-             mock.patch.object(resale_market.milanuncios, "lookup", return_value=ok_prices([80, 100])):
+        with mock.patch.object(resale_market.wallapop, "lookup", return_value=ok_prices([100, 100, 90, 110, 95])), \
+             mock.patch.object(resale_market.milanuncios, "lookup", return_value=ok_prices([100, 105, 98])):
             result = resale_market.lookup(cand, load_cfg()["resale"], {})
         self.assertTrue(result["ok"])
-        self.assertEqual(result["count"], 5)
+        self.assertEqual(result["count"], 8)
+        self.assertGreaterEqual(result["profit"], 25)
         self.assertEqual(result["source_label"], "WALLAPOP+MILANUNCIOS")
-        self.assertIn("Wallapop 3", result["note"])
-        self.assertIn("Milanuncios 2", result["note"])
+        self.assertIn("Mediana de 8", result["note"])
+        self.assertIn("Wallapop 5", result["note"])
+        self.assertIn("Milanuncios 3", result["note"])
 
     def test_vista_previa_de_muestra_si_no_hay_anuncios(self):
-        pool = [deal(id="solo", price=40, avg90=90, image="http://img", name="Altavoz", brand="Marca")]
-        with mock.patch.object(scanner.resale_market, "lookup", return_value={"ok": False, "prices": []}):
+        pool = [
+            deal(id="pool", price=2.99, avg90=20, image="http://img", name="Intex Piscina flotador", brand="Intex"),
+            deal(id="pad", price=12, avg90=30, image="http://img", name="Alfombrilla Glorious", brand="Glorious"),
+            deal(id="ps5", price=450, avg90=549, image="http://img", name="PlayStation 5 Slim", brand="Sony",
+                 reject="solo -10% bajo la media"),
+        ]
+        with mock.patch.object(scanner.resale_market, "lookup", return_value={"ok": False, "prices": [], "reason": "solo tiene 2 anuncios parecidos"}):
             chosen = scanner.choose_test_previews(pool, load_cfg(), {})
-        self.assertEqual(len(chosen), 1)
-        self.assertTrue(chosen[0]["wallapop_sample"])
+        self.assertEqual([item["id"] for item in chosen], ["ps5"])
+        self.assertFalse(chosen[0].get("wallapop_sample"))
+        self.assertIn("anuncios", chosen[0]["reject"])
 
     def test_una_fuente_bloqueada_no_tira_el_resto(self):
         cand = {"brand": "Corsair", "name": "Vengeance LPX 16GB", "price": 64.2}
         blocked = {"ok": False, "prices": [], "transient": False, "blocked": True,
                    "reason": "Milanuncios bloqueado (HTTP 200, 90000 bytes)"}
-        prices = {"ok": False, "prices": [90, 85, 80, 70, 100], "transient": False, "reason": ""}
+        prices = {"ok": False, "prices": [100, 100, 100, 110, 90, 95, 105, 100], "transient": False, "reason": ""}
         with mock.patch.object(resale_market.wallapop, "lookup", return_value=prices), \
              mock.patch.object(resale_market.milanuncios, "lookup", return_value=blocked):
             result = resale_market.lookup(cand, load_cfg()["resale"], {})
         self.assertTrue(result["ok"])
         self.assertEqual(result["source_label"], "WALLAPOP")
-        self.assertEqual(result["count"], 5)
+        self.assertEqual(result["count"], 8)
+        self.assertGreaterEqual(result["profit"], 25)
         self.assertGreaterEqual(result["roi"], 0.25)
 
     def test_si_todo_falla_se_conserva_el_motivo_y_se_reintenta(self):
@@ -881,7 +900,7 @@ class SecondHandSourcesTest(unittest.TestCase):
         state = {}
         rules = load_cfg()["resale"]
         base = {"brand": "Corsair", "name": "Vengeance LPX 16GB", "price": 50}
-        prices = {"ok": True, "prices": [100, 100, 100, 100, 100], "transient": False, "reason": ""}
+        prices = {"ok": True, "prices": [100] * 8, "transient": False, "reason": ""}
         empty = {"ok": False, "prices": [], "transient": False, "reason": "sin anuncios"}
         with mock.patch.object(resale_market.wallapop, "lookup", return_value=prices) as wallapop_lookup, \
              mock.patch.object(resale_market.milanuncios, "lookup", return_value=empty):
@@ -891,6 +910,85 @@ class SecondHandSourcesTest(unittest.TestCase):
         self.assertFalse(second["ok"])
         self.assertTrue(second.get("cached"))
         self.assertEqual(wallapop_lookup.call_count, 1)
+
+
+class PremiumChannelTest(unittest.TestCase):
+    def test_la_piscina_y_la_alfombrilla_no_pasan_y_la_ps5_si(self):
+        cfg = load_cfg()
+        pool = deal(name="Intex Piscina, Flotador y Pelota", brand="Intex", price=30, avg90=80)
+        category, reason = scanner.classify(cfg, pool)
+        self.assertIsNone(category)
+        self.assertIn("poco valor", reason)
+        pad = deal(name="Alfombrilla Glorious", brand="Glorious", price=40, avg90=90)
+        category, reason = scanner.classify(cfg, pad)
+        self.assertIsNone(category)
+        shirt = deal(name="Camisa Tommy Hilfiger", brand="Tommy Hilfiger", price=40, avg90=90)
+        category, reason = scanner.classify(cfg, shirt)
+        self.assertIsNone(category)
+        ps5 = deal(name="PlayStation 5 Slim", brand="Sony", price=400, avg90=800, title="PS5")
+        category, reason = scanner.classify(cfg, ps5)
+        self.assertEqual(category, "GANGA")
+        laptop = deal(name="ASUS TUF Gaming A16 RTX 5070", title="Portátil RTX", brand="ASUS", price=1200, avg90=1800)
+        category, _reason = scanner.classify(cfg, laptop)
+        self.assertIsNone(category)
+
+    def test_roi_del_30_por_ciento_bajo_60(self):
+        rules = {**load_cfg()["resale"]["wallapop"], "min_profit_eur": 10, "min_listings": 8}
+        cheap = wallapop.evaluate({"price": 50}, [64] * 8, rules)
+        self.assertFalse(cheap["ok"])
+        self.assertIn("30", cheap["reason"])
+        richer = wallapop.evaluate({"price": 80}, [110] * 8, rules)
+        self.assertTrue(richer["ok"])
+
+    def test_sin_reservas_ni_volumen_no_hay_demanda(self):
+        rules = load_cfg()["resale"]["wallapop"]
+        quiet = wallapop.evaluate({"price": 40}, [80] * 8, rules, reserved=0, demand_known=True)
+        self.assertFalse(quiet["ok"])
+        self.assertIn("demanda", quiet["reason"])
+        busy = wallapop.evaluate({"price": 40}, [80] * 8, rules, reserved=2, demand_known=True)
+        self.assertTrue(busy["ok"])
+        self.assertEqual(busy["demand"], "Reservas recientes")
+
+    def test_nota_escapada_y_boton_de_la_tienda(self):
+        from publisher import build_caption
+        text = build_caption(url="https://www.carrefour.es/p/switch", category="RESERVA COLECCIONISTA",
+                             title="Switch 2 Zelda", current=499, reference=499, brand="Nintendo",
+                             note="Edición <limitada>\nsegunda línea", hold=True)
+        self.assertIn("Ver en Carrefour", text)
+        self.assertIn("Edición &lt;limitada&gt;", text)
+        self.assertIn("segunda línea", text)
+        self.assertIn("Producto de colección / hold", text)
+        self.assertLess(text.find("Edición"), text.find("Ver en Carrefour"))
+        button = scanner.buttons_for("https://www.mediamarkt.es/es/product/1")["inline_keyboard"][0][0]["text"]
+        self.assertEqual(button, "🛒 Ver en MediaMarkt")
+        plain = premium.apply_store_template("https://www.fnac.es/a", {"store_affiliates": {"fnac": {"template": ""}}})
+        self.assertEqual(plain, "https://www.fnac.es/a")
+        wrapped = premium.apply_store_template("https://www.fnac.es/a", {"store_affiliates": {"fnac": {"template": "https://awin.example/?ued={url}"}}})
+        self.assertTrue(wrapped.startswith("https://awin.example/?ued="))
+        self.assertIn("fnac.es", wrapped)
+
+    def test_rss_watchlist_y_dedupe(self):
+        xml = '''<item><title><![CDATA[210° - Nintendo Switch 2 Edición Zelda]]></title>
+        <link>https://www.chollometro.com/ofertas/switch-2-zelda-2047001</link>
+        <category><![CDATA[Gaming]]></category>
+        <pepper:merchant name="Carrefour" price="499,00€"/>
+        <media:content url="https://img.example/z.jpg" medium="image"/></item>'''
+        parsed = feeds.parse_rss(xml)
+        self.assertEqual(parsed[0]["temperature"], 210)
+        self.assertEqual(parsed[0]["price"], 499.0)
+        self.assertEqual(parsed[0]["merchant"], "Carrefour")
+        self.assertEqual(feeds.page_status("<button>Ya en reserva</button>"), "preorder")
+        self.assertEqual(feeds.page_status("<button>Añadir a la cesta</button>"), "in_stock")
+        self.assertEqual(feeds.page_status("Pardon Our Interruption"), "blocked")
+        self.assertEqual(feeds.page_status("<p>Agotado</p>"), "out")
+        page = 'linkCloakedItemMainButton":"https:\\/\\/www.chollometro.com\\/visit\\/threadmain\\/9"'
+        with mock.patch.object(feeds, "_unwrap_visit", return_value="https://www.carrefour.es/p/switch"):
+            self.assertEqual(feeds.resolve_deal_url(page), "https://www.carrefour.es/p/switch")
+        a = {"brand": "Nintendo", "name": "Switch 2 Zelda", "watch_id": "switch2-zelda-40"}
+        b = {"brand": "Nintendo", "name": "Switch 2 Zelda", "watch_id": "switch2-zelda-40"}
+        self.assertEqual(premium.product_key(a), premium.product_key(b))
+        self.assertTrue(premium.reserva_allowed({"collector": True, "justification": "Edición limitada de aniversario"}))
+        self.assertFalse(premium.reserva_allowed({"collector": False, "justification": "Edición limitada de aniversario"}))
 
 
 if __name__ == "__main__":

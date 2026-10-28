@@ -100,8 +100,11 @@ def lookup(cand: dict, rules: dict, state: dict | None = None) -> dict:
         stored = hit.get("prices")
         if stored is None and isinstance(hit.get("result"), dict):
             stored = hit["result"].get("prices") or []
-        result = wallapop.evaluate(cand, list(stored or []), rules)
-        result.update(prices=list(stored or []), query=query, cached=True)
+        result = wallapop.evaluate(cand, list(stored or []), rules, label="Milanuncios",
+                                   reserved=int(hit.get("reserved") or 0),
+                                   demand_known=bool(hit.get("demand_known")))
+        result.update(prices=list(stored or []), query=query, cached=True,
+                      reserved=int(hit.get("reserved") or 0), demand_known=bool(hit.get("demand_known")))
         return result
     try:
         items, info = fetch_items(query, rules)
@@ -113,12 +116,15 @@ def lookup(cand: dict, rules: dict, state: dict | None = None) -> dict:
                   "http_status": info["status"], "bytes": info["bytes"],
                   "reason": f"Milanuncios bloqueado (HTTP {info['status']}, {info['bytes']} bytes)"}
     else:
-        prices = wallapop.matching_prices(cand, items, rules)
+        stats = wallapop.matching_stats(cand, items, rules)
+        prices = stats["prices"]
         print(f"  Milanuncios «{query}»: {len(prices)} parecidos de {info['raw']}")
-        result = wallapop.evaluate(cand, prices, rules)
+        result = wallapop.evaluate(cand, prices, rules, label="Milanuncios", reserved=stats["reserved"],
+                                   demand_known=stats["demand_known"])
         result.update(prices=prices, query=query, http_status=info["status"], bytes=info["bytes"],
-                      raw_count=info["raw"])
+                      raw_count=info["raw"], reserved=stats["reserved"], demand_known=stats["demand_known"])
     if state is not None and not result.get("transient"):
         cache[key] = {"t": time.time(), "prices": list(result.get("prices") or []),
+                      "reserved": int(result.get("reserved") or 0), "demand_known": bool(result.get("demand_known")),
                       "blocked": bool(result.get("blocked")), "reason": result.get("reason") or ""}
     return result

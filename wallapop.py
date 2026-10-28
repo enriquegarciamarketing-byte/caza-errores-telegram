@@ -142,21 +142,41 @@ def _amount(price) -> float | None:
         return None
 
 
-def matching_prices(cand: dict, items: list[dict], rules: dict) -> list[float]:
+def matching_stats(cand: dict, items: list[dict], rules: dict) -> dict:
+    """Precios comparables y cuántos estaban reservados. La reserva es señal de demanda, no entra en la mediana."""
     prices = []
+    reserved = 0
+    demand_known = False
     for item in items:
         if not isinstance(item, dict):
             continue
-        reserved = item.get("reserved")
-        if reserved is True or (isinstance(reserved, dict) and reserved.get("flag")):
-            continue
+        if "reserved" in item:
+            demand_known = True
+        flag = item.get("reserved")
+        is_reserved = flag is True or (isinstance(flag, dict) and flag.get("flag"))
         title = str(item.get("title") or "")
         if not listing_matches(cand, title, rules):
+            continue
+        if is_reserved:
+            reserved += 1
             continue
         amount = _amount(item.get("price"))
         if amount and amount > 0:
             prices.append(amount)
-    return prices
+    return {"prices": prices, "reserved": reserved, "demand_known": demand_known}
+
+
+def matching_prices(cand: dict, items: list[dict], rules: dict) -> list[float]:
+    return matching_stats(cand, items, rules)["prices"]
+
+
+def roi_floor(buy: float, rules: dict) -> float:
+    """25 % en general y 30 % si el precio de compra no llega a 60 €."""
+    floor = float(rules.get("min_roi", 0.25))
+    cutoff = rules.get("min_roi_below_eur")
+    if cutoff is not None and buy + 1e-9 < float(cutoff):
+        floor = max(floor, float(rules.get("min_roi_below", floor)))
+    return floor
 
 
 def _without_outliers(prices: list[float], rules: dict) -> list[float]:
@@ -169,27 +189,35 @@ def _without_outliers(prices: list[float], rules: dict) -> list[float]:
     return kept or prices
 
 
-def evaluate(cand: dict, prices: list[float], rules: dict, label: str = "Wallapop") -> dict:
+def evaluate(cand: dict, prices: list[float], rules: dict, label: str = "Wallapop",
+             reserved: int = 0, demand_known: bool = False) -> dict:
     """ROI = (reventa - precio) / precio. Hace falta un mínimo de anuncios, de ROI y de euros."""
     buy = float(cand.get("price") or 0)
     minimum = int(rules.get("min_listings", 5))
     kept = _without_outliers(prices, rules)
+    many = int(rules.get("demand_many_listings", 12))
     if len(kept) < minimum:
-        return {"ok": False, "transient": False, "count": len(kept),
+        return {"ok": False, "transient": False, "count": len(kept), "reserved": reserved,
                 "reason": f"{label} solo tiene {len(kept)} anuncios parecidos (mínimo {minimum})"}
+    if demand_known and reserved < int(rules.get("min_reserved", 1)) and len(kept) < many:
+        return {"ok": False, "transient": False, "count": len(kept), "reserved": reserved,
+                "reason": (f"sin señal de demanda en {label}: {reserved} reservas y {len(kept)} anuncios "
+                           f"(hace falta una reserva o al menos {many})")}
     stat = (rules.get("price_stat") or "median").lower()
     resale = float(statistics.mean(kept) if stat == "mean" else statistics.median(kept))
     profit = resale - buy
     roi = profit / buy if buy else -1
-    min_roi = float(rules.get("min_roi", 0.25))
+    min_roi = roi_floor(buy, rules)
     min_profit = float(rules.get("min_profit_eur", 15))
+    demand = "Reservas recientes" if reserved else ("Muchos anuncios" if len(kept) >= many else "")
     if roi + 1e-9 < min_roi or profit + 1e-9 < min_profit:
         return {"ok": False, "transient": False, "price": resale, "count": len(kept), "roi": roi, "profit": profit,
+                "reserved": reserved, "demand": demand,
                 "reason": (f"reventa en {label} ~{resale:.0f} € ({len(kept)} anuncios): "
                            f"ROI {roi * 100:.0f} % y {profit:.0f} €, por debajo del mínimo "
                            f"({min_roi * 100:.0f} % y {min_profit:.0f} €)")}
     return {"ok": True, "transient": False, "price": resale, "count": len(kept), "roi": roi, "profit": profit,
-            "reason": ""}
+            "reserved": reserved, "demand": demand, "reason": ""}
 
 
 def _request(url: str) -> tuple[int, int, dict]:
@@ -248,7 +276,8 @@ def lookup(cand: dict, rules: dict, state: dict | None = None) -> dict:
         stored = hit.get("prices")
         if stored is None and isinstance(hit.get("result"), dict):
             stored = hit["result"].get("prices") or []
-        result = evaluate(cand, list(stored or []), rules)
+        result = evaluate(cand, list(stored or []), rules, reserved=int(hit.get("reserved") or 0),
+                          demand_known=bool(hit.get("demand_known")))
         result.update(query=hit.get("query") or query, prices=list(stored or []), cached=True,
                       http_status=hit.get("http_status"), bytes=hit.get("bytes"), raw_count=hit.get("raw_count"))
         return result
@@ -258,6 +287,8 @@ def lookup(cand: dict, rules: dict, state: dict | None = None) -> dict:
         queries.append(short)
     best_prices: list[float] = []
     best_info: dict = {}
+    best_reserved = 0
+    best_demand = False
     used = query
     last_error = ""
     transient = False
@@ -273,21 +304,27 @@ def lookup(cand: dict, rules: dict, state: dict | None = None) -> dict:
             print(f"  Wallapop «{attempt}»: {exc}")
             continue
         items, info = fetched if isinstance(fetched, tuple) else (fetched, {"status": 200, "bytes": 0, "raw": len(fetched), "query": attempt})
-        prices = matching_prices(cand, items, rules)
+        if items and not isinstance(items[0], dict):
+            stats = {"prices": [float(price) for price in items], "reserved": 0, "demand_known": False}
+        else:
+            stats = matching_stats(cand, items, rules)
+        prices = stats["prices"]
         print(f"  Wallapop «{attempt}»: {info.get('status')} / {info.get('bytes')} bytes, "
-              f"{info.get('raw')} anuncios, {len(prices)} parecidos")
+              f"{info.get('raw')} anuncios, {len(prices)} parecidos, {stats['reserved']} reservas")
         if len(prices) > len(best_prices):
             best_prices, best_info, used = prices, info, attempt
+            best_reserved, best_demand = stats["reserved"], stats["demand_known"]
         if len(prices) >= int(rules.get("min_listings", 5)):
             break
     if last_error and not best_prices and not best_info:
         return {"ok": False, "transient": transient, "count": 0, "prices": [], "query": used,
                 "reason": f"no he podido consultar Wallapop ({last_error})"}
-    result = evaluate(cand, best_prices, rules)
+    result = evaluate(cand, best_prices, rules, reserved=best_reserved, demand_known=best_demand)
     result.update(query=used, prices=best_prices, http_status=best_info.get("status"),
                   bytes=best_info.get("bytes"), raw_count=best_info.get("raw"))
     if state is not None:
         cache[key] = {"t": time.time(), "query": used, "prices": best_prices,
+                      "reserved": best_reserved, "demand_known": best_demand,
                       "http_status": best_info.get("status"), "bytes": best_info.get("bytes"),
                       "raw_count": best_info.get("raw")}
         if len(cache) > 200:

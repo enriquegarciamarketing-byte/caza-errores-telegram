@@ -36,10 +36,11 @@ def _label(parts: list[tuple[str, int]]) -> str:
 
 
 def _assemble(cand: dict, market: dict, route: list[str], prices: list[float],
-              parts: list[tuple[str, int]], failures: list[str], any_transient: bool, query: str) -> dict:
+              parts: list[tuple[str, int]], failures: list[str], any_transient: bool, query: str,
+              reserved: int = 0, demand_known: bool = False) -> dict:
     tried = " + ".join(NAMES[source] for source in route)
     label = _label(parts) if parts else tried
-    combined = wallapop.evaluate(cand, prices, market, label=label)
+    combined = wallapop.evaluate(cand, prices, market, label=label, reserved=reserved, demand_known=demand_known)
     used = int(combined.get("count") or 0)
     note = ""
     if parts:
@@ -48,7 +49,9 @@ def _assemble(cand: dict, market: dict, route: list[str], prices: list[float],
             detail = ", ".join(f"{name} {count}" for name, count in parts)
         else:
             detail = " + ".join(name for name, _count in parts)
-        note = f"Media de {used} anuncios · {detail}"
+        note = f"Mediana de {used} anuncios · {detail}"
+        if combined.get("demand"):
+            note = f"{note} · {combined['demand']}"
     # Un bloqueo solo explica la ficha cuando no llegamos al mínimo de anuncios.
     # Si ya hay mediana, el motivo es el ROI o el beneficio, y el bloqueo queda en el log.
     minimum = int(market.get("min_listings", 5))
@@ -74,13 +77,16 @@ def lookup(cand: dict, rules: dict, state: dict | None = None) -> dict:
     hit = cache.get(identity)
     if isinstance(hit, dict) and time.time() - hit.get("t", 0) < ttl and "prices" in hit:
         combined = _assemble(cand, market, route, list(hit["prices"]), list(hit.get("parts") or []),
-                             list(hit.get("failures") or []), bool(hit.get("transient")), query)
+                             list(hit.get("failures") or []), bool(hit.get("transient")), query,
+                             reserved=int(hit.get("reserved") or 0), demand_known=bool(hit.get("demand_known")))
         combined["cached"] = True
         return combined
     prices: list[float] = []
     parts: list[tuple[str, int]] = []
     failures: list[str] = []
     any_transient = False
+    reserved_total = 0
+    demand_known = False
     for source in route:
         name = NAMES[source]
         try:
@@ -96,17 +102,21 @@ def lookup(cand: dict, rules: dict, state: dict | None = None) -> dict:
             if result.get("reason"):
                 failures.append(str(result["reason"]))
             print(f"  {name} no aporta datos: {result.get('reason')}")
+        reserved_total += int(result.get("reserved") or 0)
+        demand_known = demand_known or bool(result.get("demand_known"))
         if got:
             prices.extend(got)
             parts.append((name, len(got)))
-    combined = _assemble(cand, market, route, prices, parts, failures, any_transient, query)
+    combined = _assemble(cand, market, route, prices, parts, failures, any_transient, query,
+                         reserved=reserved_total, demand_known=demand_known)
     if parts:
         status = "publica" if combined.get("ok") else "no publica"
         print(f"  Reventa {combined.get('source_label')}: {combined.get('count')} anuncios, "
               f"~{float(combined.get('price') or 0):.0f} €, {status}")
     if state is not None and not any_transient:
         cache[identity] = {"t": time.time(), "prices": prices, "parts": parts,
-                           "failures": failures, "transient": False}
+                           "failures": failures, "transient": False,
+                           "reserved": reserved_total, "demand_known": demand_known}
         if len(cache) > 200:
             oldest = sorted(cache, key=lambda item: cache[item].get("t") or 0)[: len(cache) - 200]
             for item in oldest:

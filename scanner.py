@@ -37,6 +37,8 @@ from zoneinfo import ZoneInfo
 
 import affiliate
 from amazon_api import ApiError, CreatorsAPI, color_of, size_of
+import feeds
+import premium
 from publisher import OUTPUT_DIR, build_caption, create_price_card, euro
 import resale_market
 import wallapop
@@ -231,22 +233,35 @@ def deal_reference(cand: dict) -> float:
 
 
 def caption_data(cand: dict) -> dict:
-    return {"category": cand["category"], "title": cand.get("name") or cand.get("title") or "",
+    deal = cand.get("wallapop") or {}
+    data = {"category": cand["category"], "title": cand.get("name") or cand.get("title") or "",
             "brand": cand.get("brand") or "", "current": cand["price"], "reference": deal_reference(cand),
             "historical_low": bool(cand.get("historical_low")), "rating": cand.get("rating"),
             "reviews": cand.get("reviews"), "sizes": cand.get("sizes") or None,
-            **({"ref_text": cand["ref_text"]} if cand.get("ref_text") else {}),
-            **({"resale_price": cand["wallapop"]["price"], "resale_count": cand["wallapop"]["count"]}
-               if (cand.get("wallapop") or {}).get("ok") else {})}
+            "hold": bool(cand.get("hold")), "store": cand.get("store_label") or "",
+            "note": cand.get("note") or ""}
+    if cand.get("ref_text"):
+        data["ref_text"] = cand["ref_text"]
+    if deal.get("ok") and deal.get("price") and not deal.get("reserva"):
+        data.update(resale_price=deal["price"], resale_count=deal.get("count"),
+                    profit=deal.get("profit"), demand=deal.get("demand") or "",
+                    source_label=deal.get("source_label") or "")
+    elif deal.get("reserva") and deal.get("past_price"):
+        extra = (f"Ediciones anteriores en Wallapop ~{float(deal['past_price']):.0f} € "
+                 f"({int(deal.get('past_count') or 0)} anuncios).")
+        data["note"] = (data["note"] + "\n" + extra).strip()
+    return data
 
 
 def buttons_for(url: str) -> dict:
-    return {"inline_keyboard": [[{"text": "🛒 Ver en Amazon", "url": url}]]}
+    shop = premium.store_of(url)[1]
+    return {"inline_keyboard": [[{"text": f"🛒 Ver en {shop}", "url": url}]]}
 
 
 def caption_for(url: str, cap: dict | None = None) -> str:
     if not cap:
-        return f'🔗 <b><a href="{html.escape(url, quote=True)}">Ver en Amazon</a></b>'
+        shop = html.escape(premium.store_of(url)[1])
+        return f'🔗 <b><a href="{html.escape(url, quote=True)}">Ver en {shop}</a></b>'
     return build_caption(url=url, **cap)
 
 
@@ -486,6 +501,14 @@ def resale_check(cfg: dict, cand: dict) -> tuple[bool, str]:
     blocked = block_keyword(cand, rules, text)
     if blocked:
         return False, f"bloqueado para reventa («{blocked}»)"
+    cheap = premium.commodity_hit(cand, rules)
+    if cheap:
+        return False, f"producto de poco valor («{cheap}»)"
+    info = premium.priority_info(cand, rules)
+    cand["hold"] = bool(info["hold"])
+    cand["priority"] = info["id"]
+    if rules.get("require_priority", True) and info["score"] <= 0 and not cand.get("collector"):
+        return False, "fuera de las categorías premium de reventa"
     if cand.get("series") is not None:
         points = int(cand["spain_points"]) if cand.get("spain_points") is not None else spain_point_count(cand)
         minimum = int(rules.get("min_spain_points", 15))
@@ -497,7 +520,7 @@ def resale_check(cfg: dict, cand: dict) -> tuple[bool, str]:
             return False, f"el PVP ({euro(float(was))}) supera {pvp_ratio:g}× la media de 90 días ({euro(float(raw_avg))})"
     price = float(cand.get("price") or 0)
     ref = float(cand.get("reference_price") or cand.get("avg90") or 0)
-    min_price = float(rules.get("min_price_eur", 40))
+    min_price = float(rules.get("min_price_eur", 25))
     if price + 1e-9 < min_price:
         return False, f"precio {euro(price)} por debajo del mínimo de reventa ({euro(min_price)})"
     if ref <= price:
@@ -606,9 +629,17 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
         extras["listings"] = list(listings.values())
 
     max_age = cfg["max_listing_age_minutes"] * 60
+    rules = resale_rules(cfg) or {}
+    price_floor = float(rules.get("min_price_eur") or 0)
     fresh = []
     for item in listings.values():
         if not item["price"] or now.timestamp() - item["ts"] > max_age:
+            continue
+        if price_floor and item["price"] + 1e-9 < price_floor:
+            continue
+        if premium.commodity_hit(item, rules):
+            continue
+        if rules.get("require_priority", True) and premium.priority_info(item, rules)["score"] <= 0:
             continue
         verdict = item["verdict"].lower()
         if "encima" in verdict or "habitual" in verdict:
@@ -622,7 +653,19 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
         if prev and abs(prev.get("price", 0) - item["price"]) < 0.01:
             continue
         fresh.append(item)
-    fresh.sort(key=lambda i: (i["was"] - i["price"]) / i["was"] if i["was"] else 0, reverse=True)
+    hot_titles = []
+    try:
+        hot_titles = feeds.amazon_hot_titles(cfg, state)
+    except Exception as exc:
+        print(f"Aviso: no se pudieron leer los más vendidos ({exc})")
+
+    def rank(item: dict) -> tuple:
+        score = premium.priority_info(item, rules)["score"]
+        if premium.overlaps_hot(item, hot_titles):
+            score += 20
+        return (score, listing_drop(item))
+
+    fresh.sort(key=rank, reverse=True)
     print(f"Candidatos nuevos tras el filtro rápido: {len(fresh)}")
 
     qualified = []
@@ -655,6 +698,34 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
             qualified.append(cand)
         if extras is not None:
             extras.setdefault("pool", []).append({**cand, "reject": None if category else reason})
+    try:
+        external = feeds.external_candidates(cfg, state)
+    except Exception as exc:
+        print(f"Aviso: fuentes externas no disponibles ({exc})")
+        external = []
+    seen_keys = {premium.product_key(cand) for cand in qualified}
+    for cand in external:
+        key = premium.product_key(cand)
+        if not key or key in seen_keys or cand.get("id") in seen:
+            continue
+        ok, why = feeds.external_precheck(cfg, cand)
+        if not ok:
+            print(f"  {cand.get('id')} · {cand.get('store_label')} → descartado ({why}) · {(cand.get('title') or '')[:60]}")
+            continue
+        if cand.get("was") and cand["was"] > cand["price"]:
+            cand["reference_price"] = cand["was"]
+            cand["avg90"] = cand["was"]
+            cand["discount"] = (cand["was"] - cand["price"]) / cand["was"] * 100
+        else:
+            cand["reference_price"] = cand["price"]
+            cand["avg90"] = cand["price"]
+            cand["discount"] = cand.get("discount") or 0
+        cand.setdefault("category", "OPORTUNIDAD DE REVENTA")
+        print(f"  {cand['id']} · {cand.get('store_label')} {cand['price']} € → candidato externo · {(cand.get('title') or '')[:60]}")
+        qualified.append(cand)
+        seen_keys.add(key)
+        if extras is not None:
+            extras.setdefault("pool", []).append(cand)
     # Limpia memoria antigua (más de 14 días)
     cutoff = now.timestamp() - 14 * 86400
     state["seen"] = {k: v for k, v in seen.items() if v.get("t", 0) >= cutoff}
@@ -834,9 +905,23 @@ def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool, test_priv
         return True
     rules = resale_rules(cfg) or {}
     result = resale_market.lookup(cand, rules, state)
+    if cand.get("past_query") and not result.get("ok") and not result.get("transient"):
+        past_cand = {**cand, "name": cand["past_query"], "title": cand["past_query"]}
+        past = resale_market.lookup(past_cand, rules, state)
+        if past.get("price") and int(past.get("count") or 0) >= 3:
+            result["past_price"] = past["price"]
+            result["past_count"] = past["count"]
     if not result.get("ok"):
         cand["wallapop_transient"] = bool(result.get("transient"))
-        alert_no_wallapop(tg, state, cand, result.get("reason") or "sin datos de Wallapop", dry)
+        if (not result.get("transient") and premium.reserva_allowed(cand)):
+            cand["category"] = "RESERVA COLECCIONISTA"
+            cand["note"] = cand.get("justification") or ""
+            cand["hold"] = True
+            result = {**result, "ok": True, "reserva": True}
+            cand["wallapop"] = result
+            cand["wallapop_transient"] = False
+            return True
+        alert_no_wallapop(tg, state, cand, result.get("reason") or "sin datos de reventa", dry)
         return False
     cand["wallapop"] = result
     cand["wallapop_transient"] = False
@@ -866,10 +951,14 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         "ref_label": cand.get("ref_label") or "ANTES · PRECIO HABITUAL",
     }
     deal = cand.get("wallapop") or {}
-    if deal.get("ok"):
+    offer["hold"] = bool(cand.get("hold"))
+    offer["store_label"] = cand.get("store_label") or premium.store_of(cand.get("direct_url") or link_override or "")[1]
+    if deal.get("ok") and deal.get("price") and not deal.get("reserva"):
         offer["resale"] = {"price": deal["price"], "count": deal["count"], "roi": deal["roi"] * 100,
+                           "profit": deal.get("profit"),
                            "source_label": deal.get("source_label") or "WALLAPOP",
-                           "note": deal.get("note"), "sample": bool(deal.get("sample"))}
+                           "note": deal.get("note"), "sample": bool(deal.get("sample")),
+                           "demand": deal.get("demand") or ""}
     if cand.get("sizes"):
         offer["title"] = f"{offer['title']} · Tallas {', '.join(cand['sizes'])}"
     card = create_price_card(offer)
@@ -1063,7 +1152,8 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
     offer = {"id": f"custom-{pid}", "title": card_title({"name": spec["title"], "brand": spec.get("brand", "")}),
              "image_path": src, "category": spec["category"], "current": float(spec["current"]),
              "reference": float(spec["reference"]), "days": 90, "ref_label": spec.get("ref_label"),
-             "sold_out": bool(spec.get("sold_out"))}
+             "sold_out": bool(spec.get("sold_out")), "hold": bool(spec.get("hold")),
+             "store_label": premium.store_of(spec["link"])[1]}
     if spec.get("resale_price"):
         rp = float(spec["resale_price"])
         offer["resale"] = {"price": rp, "count": spec.get("resale_count"),
@@ -1080,6 +1170,12 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
     if spec.get("resale_price"):
         cap["resale_price"] = float(spec["resale_price"])
         cap["resale_count"] = spec.get("resale_count")
+        if spec.get("profit") is not None:
+            cap["profit"] = float(spec["profit"])
+    if spec.get("note"):
+        cap["note"] = str(spec["note"])
+    if spec.get("hold"):
+        cap["hold"] = True
     caption = caption_for(spec["link"], cap)
     if spec.get("message_id"):
         mid = int(spec["message_id"])
@@ -1258,13 +1354,15 @@ def prepare_preview(cand: dict, cfg: dict) -> dict:
 
 
 def preview_details_from_listings(listings: list[dict], skip_ids: set[str],
-                                  limit: int = PREVIEW_LIMIT) -> list[dict]:
+                                  limit: int = PREVIEW_LIMIT, cfg: dict | None = None) -> list[dict]:
     """Abre fichas solo para la vista previa. No marca nada como visto ni publicado."""
     ranked = sorted(
         (item for item in listings if item.get("price") and item.get("id") not in skip_ids),
         key=listing_drop,
         reverse=True,
     )
+    if cfg is not None:
+        ranked = [item for item in ranked if _premium_preview(item, cfg)]
     found = []
     for item in ranked[: max(limit * 2, limit)]:
         if len(found) >= limit:
@@ -1284,25 +1382,39 @@ def preview_details_from_listings(listings: list[dict], skip_ids: set[str],
     return found
 
 
-def choose_test_previews(pool: list[dict], cfg: dict, state: dict, limit: int = PREVIEW_LIMIT) -> list[dict]:
-    """En la prueba privada, primero los que sí tienen anuncios de segunda mano."""
-    ranked = select_previews(pool, max(8, limit * 3))
+def _premium_preview(cand: dict, cfg: dict) -> bool:
     rules = resale_rules(cfg) or {}
+    price = float(cand.get("price") or 0)
+    if price + 1e-9 < float(rules.get("min_price_eur", 25)):
+        return False
+    if premium.commodity_hit(cand, rules):
+        return False
+    if rules.get("require_priority", True) and premium.priority_info(cand, rules)["score"] <= 0 and not cand.get("collector"):
+        return False
+    return True
+
+
+def choose_test_previews(pool: list[dict], cfg: dict, state: dict, limit: int = PREVIEW_LIMIT) -> list[dict]:
+    """Solo productos premium. Si ninguno pasa la reventa, los casi-aciertos con el filtro que falló."""
+    rules = resale_rules(cfg) or {}
+    ranked = [cand for cand in select_previews(pool, max(12, limit * 4)) if _premium_preview(cand, cfg)]
+    ranked.sort(key=lambda cand: premium.priority_info(cand, rules)["score"], reverse=True)
     ready = []
+    missed = []
     for cand in ranked:
         result = resale_market.lookup(cand, rules, state)
         if result.get("ok") and not result.get("sample"):
             ready.append(cand)
+        else:
+            near = dict(cand)
+            near["reject"] = result.get("reason") or near.get("reject") or "no llega al mínimo de reventa"
+            near["wallapop_sample"] = False
+            missed.append(near)
         if len(ready) >= limit:
             break
     if ready:
         return ready
-    if not ranked:
-        return []
-    sample = dict(ranked[0])
-    sample["wallapop_sample"] = True
-    sample["reject"] = (sample.get("reject") or "sin anuncios de segunda mano comparables")
-    return [sample]
+    return missed[:limit]
 
 
 def run_private_test(tg, cfg, state, channel, args, now) -> int:
@@ -1314,8 +1426,11 @@ def run_private_test(tg, cfg, state, channel, args, now) -> int:
     except Exception as exc:
         print(f"Error inesperado en el escaneo: {exc!r}", file=sys.stderr)
         return 1
-    order = {"ERROR DE PRECIO": 0, "MÍNIMO HISTÓRICO": 1, "GANGA": 2}
-    candidates.sort(key=lambda c: (order[c["category"]], -c["discount"]))
+    order = {"ERROR DE PRECIO": 0, "RESERVA COLECCIONISTA": 1, "MÍNIMO HISTÓRICO": 2, "GANGA": 3,
+             "OPORTUNIDAD DE REVENTA": 4}
+    rules = resale_rules(cfg) or {}
+    candidates.sort(key=lambda c: (order.get(c["category"], 9), -float(c.get("discount") or 0),
+                                   -premium.priority_info(c, rules)["score"]))
     posted = 0
     for cand in candidates:
         if posted >= cfg["max_posts_per_run"] and cand["category"] != "ERROR DE PRECIO":
@@ -1340,15 +1455,16 @@ def run_private_test(tg, cfg, state, channel, args, now) -> int:
     pool = list(extras.get("pool") or [])
     if not select_previews(pool, 1):
         skip = {item.get("id") for item in pool}
-        pool.extend(preview_details_from_listings(extras.get("listings") or [], skip, PREVIEW_LIMIT))
+        pool.extend(preview_details_from_listings(extras.get("listings") or [], skip, PREVIEW_LIMIT, cfg))
     previews = choose_test_previews(pool, cfg, state, PREVIEW_LIMIT)
     if not previews:
-        print("Prueba privada: no hay ningún producto con foto y precio para enseñar una vista previa.")
+        print("Prueba privada: ningún producto premium supera los filtros. No envío chollos baratos ni vistas de ejemplo.")
         return 0
-    if previews[0].get("wallapop_sample"):
-        print("Prueba privada: ninguna vista previa tiene anuncios de segunda mano; envío 1 tarjeta de muestra.")
-    else:
-        print(f"Prueba privada: ningún candidato cumple los filtros; envío {len(previews)} vista(s) previa(s) con reventa.")
+    print(f"Prueba privada: ningún candidato cumple los filtros; envío {len(previews)} casi-acierto(s) premium.")
+    for cand in previews:
+        gate = (cand.get("reject") or "").strip()
+        if gate:
+            print(f"  Casi-acierto {cand.get('id')}: {gate}")
     for cand in previews:
         prepared = prepare_preview(cand, cfg)
         try:
@@ -1375,8 +1491,11 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime) -> i
     if state.get("last_listing_count", 0) == 0 and not args.dry_run:
         health_alert(tg, state, "no_listings", "no he podido leer ningún producto de Jimmyleaks. "
                      "Puede que hayan cambiado la web o bloqueado al bot.")
-    order = {"ERROR DE PRECIO": 0, "MÍNIMO HISTÓRICO": 1, "GANGA": 2}
-    candidates.sort(key=lambda c: (order[c["category"]], -c["discount"]))
+    order = {"ERROR DE PRECIO": 0, "RESERVA COLECCIONISTA": 1, "MÍNIMO HISTÓRICO": 2, "GANGA": 3,
+             "OPORTUNIDAD DE REVENTA": 4}
+    rules = resale_rules(cfg) or {}
+    candidates.sort(key=lambda c: (order.get(c["category"], 9), -float(c.get("discount") or 0),
+                                   -premium.priority_info(c, rules)["score"]))
     posted = 0
     for cand in candidates:
         if posted >= cfg["max_posts_per_run"] and cand["category"] != "ERROR DE PRECIO":
