@@ -41,6 +41,29 @@
     "rating": 4.4,
     "reviews": 49
    }
+  },
+  {
+   "id": "B0143UM4TC",
+   "message_id": 21,
+   "url": "https://link.amazon/B04i6EMJJ",
+   "cap": {
+    "category": "ERROR DE PRECIO",
+    "title": "CORSAIR Vengeance LPX DDR4 RAM 16GB (2x8GB) 3200MHz CL16",
+    "brand": "Corsair",
+    "current": 64.2,
+    "reference": 173.51,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "ref_text": "frente a su precio habitual",
+    "sold_out": true,
+    "resale_price": 90.0,
+    "resale_count": 18
+   },
+   "price": 64.2,
+   "category": "ERROR DE PRECIO",
+   "t": 1793156559,
+   "gtin": null
   }
  ],
  "tg_offset": 334822050,
