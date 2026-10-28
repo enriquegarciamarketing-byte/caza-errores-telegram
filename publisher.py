@@ -253,7 +253,8 @@ def short_title(title: str, brand: str = "", limit: int = 85) -> str:
 
 def build_caption(*, url: str, category: str, title: str, current: float, reference: float,
                   brand: str = "", historical_low: bool = False, rating: float | None = None,
-                  reviews: int | None = None, ref_text: str = "frente a su precio medio de 90 días") -> str:
+                  reviews: int | None = None, ref_text: str = "frente a su precio medio de 90 días",
+                  resale_price: float | None = None, resale_count: int | None = None) -> str:
     """Copy del canal: categoría, marca en negrita, precio, precio tachado y descuento."""
     e = html.escape
     brand = nice_brand(brand)
@@ -266,6 +267,12 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
     lines.append(f"🏷️ <b>-{pct}%</b> {e(ref_text)}")
     if historical_low:
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
+    if resale_price:
+        gain = resale_price - current
+        roi = gain / current * 100
+        lines.append("")
+        lines.append(f"♻️ En Wallapop se vende a <b>~{resale_price:.0f} €</b> de media")
+        lines.append(f"📈 ROI estimado <b>{'+' if roi >= 0 else ''}{roi:.0f}%</b> (unos <b>{'+' if gain >= 0 else ''}{gain:.0f} €</b> por unidad)")
     if rating and rating >= 4.0 and reviews:
         lines.append(f"⭐ {str(round(rating, 1)).replace('.', ',')} ({reviews} opiniones)")
     lines.append("")
@@ -297,6 +304,60 @@ def _font(size: int, bold: bool = False):
 
 def euro(amount: float) -> str:
     return f"{amount:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") + " €"
+
+
+def _centered(draw, box, y, text, font, fill):
+    b = draw.textbbox((0, 0), text, font=font)
+    x = box[0] + (box[2] - box[0] - (b[2] - b[0])) // 2 - b[0]
+    draw.text((x, y), text, font=font, fill=fill)
+
+
+def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, muted):
+    """Variante de reventa: precio anterior con descuento, precio actual y bloque Wallapop + ROI."""
+    resale = offer["resale"]
+    green = "#3DDC84"
+    old_box = (info_x, 390, 1028, 510)
+    draw.rounded_rectangle(old_box, radius=24, fill="#F5F6F6", outline="#E7E9EB", width=2)
+    draw.text((info_x + 24, 404), offer.get("ref_label") or "ANTES", font=_font(20, bold=True), fill=muted)
+    old_font = _font(36, bold=True)
+    old_pos = (info_x + 24, 440)
+    old_price = euro(offer["reference"])
+    draw.text(old_pos, old_price, font=old_font, fill=muted)
+    ob = draw.textbbox(old_pos, old_price, font=old_font)
+    sy = old_pos[1] + (ob[3] - ob[1]) // 2 + 2
+    draw.line((ob[0] - 2, sy, ob[2] + 2, sy), fill=muted, width=3)
+    pill_text = f"-{savings_pct:.0f}%"
+    pill_font = _font(30, bold=True)
+    pb = draw.textbbox((0, 0), pill_text, font=pill_font)
+    pill = (1028 - 24 - (pb[2] - pb[0]) - 32, 430, 1028 - 24, 486)
+    draw.rounded_rectangle(pill, radius=18, fill=ink)
+    draw.text((pill[0] + 16, pill[1] + (pill[3] - pill[1] - (pb[3] - pb[1])) // 2 - pb[1]), pill_text, font=pill_font, fill=orange)
+
+    cur_box = (info_x, 528, 1028, 708)
+    draw.rounded_rectangle(cur_box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
+    draw.text((info_x + 24, 546), "PRECIO ACTUAL", font=_font(22, bold=True), fill=muted)
+    price_font = _font(72, bold=True)
+    price_text = euro(offer["current"])
+    while draw.textbbox((0, 0), price_text, font=price_font)[2] > info_width - 48 and price_font.size > 44:
+        price_font = _font(price_font.size - 2, bold=True)
+    draw.text((info_x + 24, 588), price_text, font=price_font, fill=orange)
+
+    box = (info_x, 726, 1028, 1000)
+    draw.rounded_rectangle(box, radius=26, fill=ink)
+    mid = (box[0] + box[2]) // 2
+    draw.line((mid, box[1] + 36, mid, box[3] - 64), fill="#2B3440", width=2)
+    left, right = (box[0], box[1], mid, box[3]), (mid, box[1], box[2], box[3])
+    small = _font(19, bold=True)
+    _centered(draw, left, box[1] + 34, "REVENTA", small, "#AEB6BF")
+    _centered(draw, left, box[1] + 58, "WALLAPOP", small, "#AEB6BF")
+    _centered(draw, right, box[1] + 34, "ROI", small, "#AEB6BF")
+    _centered(draw, right, box[1] + 58, "ESTIMADO", small, "#AEB6BF")
+    big = _font(56, bold=True)
+    _centered(draw, left, box[1] + 104, f"~{resale['price']:.0f} €", big, "#FFFFFF")
+    roi = resale["roi"]
+    _centered(draw, right, box[1] + 104, f"{'+' if roi >= 0 else ''}{roi:.0f}%", big, green if roi >= 0 else "#FF6B6B")
+    note = f"Media de {resale['count']} anuncios" if resale.get("count") else "Media de anuncios"
+    _centered(draw, box, box[3] - 50, note, _font(19), "#AEB6BF")
 
 
 def create_price_card(offer: dict) -> Path:
@@ -377,45 +438,50 @@ def create_price_card(offer: dict) -> Path:
 
     savings = offer["reference"] - offer["current"]
     savings_pct = savings / offer["reference"] * 100
-    old_box = (info_x, 390, 1028, 540)
-    draw.rounded_rectangle(old_box, radius=24, fill="#F5F6F6", outline="#E7E9EB", width=2)
-    old_label = offer.get("ref_label") or f"ANTES · MEDIA {offer['days']} DÍAS"
-    draw.text((info_x + 24, 408), old_label, font=_font(22, bold=True), fill=muted)
-    old_price = euro(offer["reference"])
-    old_font = _font(38, bold=True)
-    old_pos = (info_x + 24, 447)
-    draw.text(old_pos, old_price, font=old_font, fill=muted)
-    old_bounds = draw.textbbox(old_pos, old_price, font=old_font)
-    strike_y = old_pos[1] + (old_bounds[3] - old_bounds[1]) // 2 + 2
-    draw.line((old_bounds[0] - 2, strike_y, old_bounds[2] + 2, strike_y), fill=muted, width=3)
+    resale = offer.get("resale")
+    if resale:
+        _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, muted)
+    else:
+        old_box = (info_x, 390, 1028, 540)
+        draw.rounded_rectangle(old_box, radius=24, fill="#F5F6F6", outline="#E7E9EB", width=2)
+        old_label = offer.get("ref_label") or f"ANTES · MEDIA {offer['days']} DÍAS"
+        draw.text((info_x + 24, 408), old_label, font=_font(22, bold=True), fill=muted)
+        old_price = euro(offer["reference"])
+        old_font = _font(38, bold=True)
+        old_pos = (info_x + 24, 447)
+        draw.text(old_pos, old_price, font=old_font, fill=muted)
+        old_bounds = draw.textbbox(old_pos, old_price, font=old_font)
+        strike_y = old_pos[1] + (old_bounds[3] - old_bounds[1]) // 2 + 2
+        draw.line((old_bounds[0] - 2, strike_y, old_bounds[2] + 2, strike_y), fill=muted, width=3)
 
-    current_box = (info_x, 560, 1028, 770)
-    draw.rounded_rectangle(current_box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
-    draw.text((info_x + 24, 580), "PRECIO ACTUAL", font=_font(23, bold=True), fill=muted)
-    price_font = _font(76, bold=True)
-    price_text = euro(offer["current"])
-    while draw.textbbox((0, 0), price_text, font=price_font)[2] - draw.textbbox((0, 0), price_text, font=price_font)[0] > info_width - 48 and price_font.size > 48:
-        price_font = _font(price_font.size - 2, bold=True)
-    draw.text((info_x + 24, 625), price_text, font=price_font, fill=orange)
+        current_box = (info_x, 560, 1028, 770)
+        draw.rounded_rectangle(current_box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
+        draw.text((info_x + 24, 580), "PRECIO ACTUAL", font=_font(23, bold=True), fill=muted)
+        price_font = _font(76, bold=True)
+        price_text = euro(offer["current"])
+        while draw.textbbox((0, 0), price_text, font=price_font)[2] - draw.textbbox((0, 0), price_text, font=price_font)[0] > info_width - 48 and price_font.size > 48:
+            price_font = _font(price_font.size - 2, bold=True)
+        draw.text((info_x + 24, 625), price_text, font=price_font, fill=orange)
 
-    # One high-contrast discount panel avoids competing secondary figures.
-    discount_box = (info_x, 790, 1028, 1000)
-    draw.rounded_rectangle(discount_box, radius=26, fill=ink)
-    discount_text = f"-{savings_pct:.0f}%"
-    discount_font = _font(86, bold=True)
-    discount_bounds = draw.textbbox((0, 0), discount_text, font=discount_font)
-    while discount_bounds[2] - discount_bounds[0] > info_width - 48 and discount_font.size > 48:
-        discount_font = _font(discount_font.size - 2, bold=True)
+        # One high-contrast discount panel avoids competing secondary figures.
+        discount_box = (info_x, 790, 1028, 1000)
+        draw.rounded_rectangle(discount_box, radius=26, fill=ink)
+        discount_text = f"-{savings_pct:.0f}%"
+        discount_font = _font(86, bold=True)
         discount_bounds = draw.textbbox((0, 0), discount_text, font=discount_font)
-    discount_text_width = discount_bounds[2] - discount_bounds[0]
-    discount_text_x = discount_box[0] + (discount_box[2] - discount_box[0] - discount_text_width) // 2 - discount_bounds[0]
-    draw.text((discount_text_x, 815), discount_text, font=discount_font, fill=orange)
-    discount_label = "DESCUENTO"
-    label_font = _font(24, bold=True)
-    label_bounds = draw.textbbox((0, 0), discount_label, font=label_font)
-    label_width = label_bounds[2] - label_bounds[0]
-    label_x = discount_box[0] + (discount_box[2] - discount_box[0] - label_width) // 2 - label_bounds[0]
-    draw.text((label_x, 921), discount_label, font=label_font, fill="#FFFFFF")
+        while discount_bounds[2] - discount_bounds[0] > info_width - 48 and discount_font.size > 48:
+            discount_font = _font(discount_font.size - 2, bold=True)
+            discount_bounds = draw.textbbox((0, 0), discount_text, font=discount_font)
+        discount_text_width = discount_bounds[2] - discount_bounds[0]
+        discount_text_x = discount_box[0] + (discount_box[2] - discount_box[0] - discount_text_width) // 2 - discount_bounds[0]
+        draw.text((discount_text_x, 815), discount_text, font=discount_font, fill=orange)
+        discount_label = "DESCUENTO"
+        label_font = _font(24, bold=True)
+        label_bounds = draw.textbbox((0, 0), discount_label, font=label_font)
+        label_width = label_bounds[2] - label_bounds[0]
+        label_x = discount_box[0] + (discount_box[2] - discount_box[0] - label_width) // 2 - label_bounds[0]
+        draw.text((label_x, 921), discount_label, font=label_font, fill="#FFFFFF")
+
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output = OUTPUT_DIR / f"{offer['id']}.jpg"

@@ -531,6 +531,10 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
     offer = {"id": f"custom-{pid}", "title": card_title({"name": spec["title"], "brand": spec.get("brand", "")}),
              "image_path": src, "category": spec["category"], "current": float(spec["current"]),
              "reference": float(spec["reference"]), "days": 90, "ref_label": spec.get("ref_label")}
+    if spec.get("resale_price"):
+        rp = float(spec["resale_price"])
+        offer["resale"] = {"price": rp, "count": spec.get("resale_count"),
+                           "roi": (rp - offer["current"]) / offer["current"] * 100}
     card = create_price_card(offer)
     cap = {"category": spec["category"], "title": spec["title"], "brand": spec.get("brand", ""),
            "current": float(spec["current"]), "reference": float(spec["reference"]),
@@ -538,6 +542,9 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
            "reviews": spec.get("reviews")}
     if spec.get("ref_text"):
         cap["ref_text"] = spec["ref_text"]
+    if spec.get("resale_price"):
+        cap["resale_price"] = float(spec["resale_price"])
+        cap["resale_count"] = spec.get("resale_count")
     caption = caption_for(spec["link"], cap)
     if spec.get("message_id"):
         mid = int(spec["message_id"])
