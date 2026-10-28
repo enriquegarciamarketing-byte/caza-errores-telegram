@@ -564,6 +564,16 @@
    "price": 29.99,
    "t": 1793215824,
    "result": "en Amazon FR cuesta 24.19 €: la media de 90 días está inflada"
+  },
+  "EMQGbJR": {
+   "price": 21.76,
+   "t": 1793215941,
+   "result": "tiene tallas y sin Creators API no se puede comprobar cada talla"
+  },
+  "Ra5LYyR": {
+   "price": 10.4,
+   "t": 1793215941,
+   "result": "importe demasiado bajo para ganga"
   }
  },
  "posts": [
@@ -675,7 +685,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 56,
+ "last_listing_count": 55,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
