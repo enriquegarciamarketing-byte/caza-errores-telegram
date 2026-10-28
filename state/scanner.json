@@ -1153,6 +1153,16 @@
    "http_status": 200,
    "bytes": 90840,
    "raw_count": 40
+  },
+  "carrefour|lego pokemon pikachu y poke ball, 72152 25% descuento y regalo 60 euros!!!!|carrefour 72152 lego": {
+   "t": 1793226873.6733983,
+   "query": "carrefour 72152 lego",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -1208,7 +1218,8 @@
   "wallapop:cm-2047784": 1793223638.6421187,
   "wallapop:cm-2047796": 1793224871.5461402,
   "wallapop:cm-2047769": 1793225889.905894,
-  "wallapop:cm-2047810": 1793226266.2948828
+  "wallapop:cm-2047810": 1793226266.2948828,
+  "wallapop:cm-2047820": 1793226874.2993596
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
