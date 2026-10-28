@@ -27,6 +27,11 @@ on:
         required: false
         type: string
         default: ""
+      edit_message:
+        description: "Rehacer el texto de un post ya publicado (número de mensaje)"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -58,11 +63,13 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           MANUAL_ID: ${{ inputs.manual_id }}
           MANUAL_LINK: ${{ inputs.manual_link }}
+          EDIT_MESSAGE: ${{ inputs.edit_message }}
         run: |
           ARGS=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           if [ "${{ inputs.ignore_limits }}" = "true" ]; then ARGS="$ARGS --ignore-limits"; fi
           if [ -n "$MANUAL_ID" ]; then ARGS="$ARGS --manual-id $MANUAL_ID --manual-link $MANUAL_LINK"; fi
+          if [ -n "$EDIT_MESSAGE" ]; then ARGS="$ARGS --edit-message $EDIT_MESSAGE"; fi
           set -o pipefail
           python scanner.py $ARGS 2>&1 | tee state/last_run.log
 

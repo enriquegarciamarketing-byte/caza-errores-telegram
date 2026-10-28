@@ -228,10 +228,57 @@ def validate_offer(offer: object, now: datetime) -> dict:
     }
 
 
+CATEGORY_HEADERS = {
+    "ERROR DE PRECIO": "🚨 <b>ERROR DE PRECIO</b> 🚨",
+    "MÍNIMO HISTÓRICO": "📉 <b>MÍNIMO HISTÓRICO</b>",
+    "GANGA": "🔥 <b>GANGA</b>",
+    "OPORTUNIDAD DE REVENTA": "💸 <b>OPORTUNIDAD DE REVENTA</b>",
+}
+
+
+def nice_brand(brand: str) -> str:
+    brand = (brand or "").strip()
+    return brand.title() if brand.isupper() and len(brand) > 3 else brand
+
+
+def short_title(title: str, brand: str = "", limit: int = 85) -> str:
+    """Quita la marca del inicio y recorta el título sin partir palabras."""
+    title = re.sub(r"\s+", " ", title or "").strip(" ,-")
+    if brand and title.lower().startswith(brand.lower()):
+        title = title[len(brand):].strip(" ,-")
+    if len(title) > limit:
+        title = title[:limit].rsplit(" ", 1)[0].rstrip(" ,-(") + "…"
+    return title
+
+
+def build_caption(*, url: str, category: str, title: str, current: float, reference: float,
+                  brand: str = "", historical_low: bool = False, rating: float | None = None,
+                  reviews: int | None = None) -> str:
+    """Copy del canal: categoría, marca en negrita, precio, precio tachado y descuento."""
+    e = html.escape
+    brand = nice_brand(brand)
+    pct = round((reference - current) / reference * 100)
+    product = e(short_title(title, brand))
+    lines = [CATEGORY_HEADERS.get(category, f"🔥 <b>{e(category)}</b>"), ""]
+    lines.append(f"<b>{e(brand)}</b> {product}" if brand else f"<b>{product}</b>")
+    lines.append("")
+    lines.append(f"💰 <b>{e(euro(current))}</b>   <s>{e(euro(reference))}</s>")
+    lines.append(f"🏷️ <b>-{pct}%</b> frente a su precio medio de 90 días")
+    if historical_low:
+        lines.append("🏆 <b>Precio más bajo de su historia</b>")
+    if rating and rating >= 4.0 and reviews:
+        lines.append(f"⭐ {str(round(rating, 1)).replace('.', ',')} ({reviews} opiniones)")
+    lines.append("")
+    lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en Amazon</a></b>')
+    return "\n".join(lines)
+
+
 def build_message(offer: dict) -> str:
-    url = offer["url"]
-    safe_url = html.escape(url, quote=True)
-    return f'🔗 <a href="{safe_url}">Ver en Amazon</a>'
+    return build_caption(
+        url=offer["url"], category=offer.get("category", "GANGA"), title=offer.get("title", ""),
+        current=offer["current"], reference=offer["reference"], brand=offer.get("brand", ""),
+        historical_low=bool(offer.get("historical_low")),
+    )
 
 
 def _font(size: int, bold: bool = False):

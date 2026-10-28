@@ -28,7 +28,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from publisher import OUTPUT_DIR, create_price_card, euro
+from publisher import OUTPUT_DIR, build_caption, create_price_card, euro
 
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
@@ -134,6 +134,8 @@ def parse_detail(page: str) -> dict:
     images = product.get("image") or []
     brand = product.get("brand") or {}
     low_text = stats.get("mínimo histórico", "")
+    rating = re.search(r"</h1>\s*<p[^>]*>(.*?)</p>", page, re.S)
+    rating_m = re.search(r"([\d.]+)\s*\(([\d.,]+)\+?\)", strip_tags(rating.group(1))) if rating else None
     return {
         "name": product.get("name", ""),
         "brand": brand.get("name", "") if isinstance(brand, dict) else str(brand),
@@ -144,6 +146,8 @@ def parse_detail(page: str) -> dict:
         "avg90": parse_eur(stats.get("media 90 días")),
         "low": parse_eur(low_text.split("€")[0] + "€") if low_text else None,
         "modified": product.get("_modified"),
+        "rating": float(rating_m.group(1)) if rating_m else None,
+        "reviews": int(re.sub(r"\D", "", rating_m.group(2))) if rating_m else None,
     }
 
 
@@ -196,8 +200,17 @@ class Telegram:
         return result["result"]
 
 
-def caption_for(url: str) -> str:
-    return f'🔗 <a href="{html.escape(url, quote=True)}">Ver en Amazon</a>'
+def caption_data(cand: dict) -> dict:
+    return {"category": cand["category"], "title": cand.get("name") or cand.get("title") or "",
+            "brand": cand.get("brand") or "", "current": cand["price"], "reference": cand["avg90"],
+            "historical_low": bool(cand.get("historical_low")), "rating": cand.get("rating"),
+            "reviews": cand.get("reviews")}
+
+
+def caption_for(url: str, cap: dict | None = None) -> str:
+    if not cap:
+        return f'🔗 <b><a href="{html.escape(url, quote=True)}">Ver en Amazon</a></b>'
+    return build_caption(url=url, **cap)
 
 
 # ---------------------------------------------------------------- lógica
@@ -273,7 +286,7 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
                 continue
             try:
                 tg.call("editMessageCaption", {"chat_id": channel, "message_id": post["message_id"],
-                                               "caption": caption_for(url), "parse_mode": "HTML"})
+                                               "caption": caption_for(url, post.get("cap")), "parse_mode": "HTML"})
                 post["url"] = url
                 tg.call("sendMessage", {"chat_id": admin, "reply_to_message_id": msg["message_id"],
                                         "text": "✅ Enlace cambiado en el canal."})
@@ -393,10 +406,10 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         return True
     admin = state.get("admin_chat_id")
     record = {"id": cand["id"], "gtin": gtin, "price": cand["price"], "category": cand["category"],
-              "t": int(now_utc().timestamp()), "title": card_title(cand)[:120]}
+              "t": int(now_utc().timestamp()), "title": card_title(cand)[:120], "cap": caption_data(cand)}
     if url:
         silent = cand["category"] != "ERROR DE PRECIO" and now_utc().astimezone(MADRID).hour < 9
-        msg = tg.send_photo(channel, card, caption_for(url), {"disable_notification": silent})
+        msg = tg.send_photo(channel, card, caption_for(url, caption_data(cand)), {"disable_notification": silent})
         record.update(message_id=msg["message_id"], url=url)
         print(f"  Publicado en el canal (mensaje {msg['message_id']}): {summary.splitlines()[0]}")
     elif not admin:
@@ -439,7 +452,7 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
             card = create_price_card({"id": f"scan-{post['id']}", "title": data["title"], "image_path": src,
                                       "category": data["category"], "current": data["current"],
                                       "reference": data["reference"], "days": 90})
-            msg = tg.send_photo(channel, card, caption_for(post["url"]))
+            msg = tg.send_photo(channel, card, caption_for(post["url"], post.get("cap")))
         except (RuntimeError, urllib.error.URLError, TimeoutError) as exc:
             print(f"No se pudo publicar el pendiente {post['id']}: {exc}")
             continue
@@ -458,7 +471,7 @@ def publish_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: s
         print("ID o enlace no válidos", file=sys.stderr)
         return 2
     detail = parse_detail(fetch(f"{BASE}/es/dp/{jl_id}/"))
-    cand = {"id": jl_id, **detail, "reviews": 999, "rating": 5}
+    cand = {"id": jl_id, **detail}
     category, reason = classify({**cfg, "bargain_min_rating": 0, "bargain_min_reviews": 0}, cand)
     print(f"{jl_id}: {detail.get('price')} € · media {detail.get('avg90')} → {category or 'descartado'} ({reason})")
     if not category or not detail["in_stock"] or not detail.get("image"):
@@ -471,12 +484,34 @@ def publish_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: s
     return 0 if ok else 1
 
 
+def edit_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: str, message_id: int) -> int:
+    """Rehace el texto de un post publicado con el formato actual."""
+    if not re.fullmatch(r"[A-Za-z0-9]{4,20}", jl_id) or not LINK_RE.fullmatch(link):
+        print("ID o enlace no válidos", file=sys.stderr)
+        return 2
+    detail = parse_detail(fetch(f"{BASE}/es/dp/{jl_id}/"))
+    cand = {"id": jl_id, **detail}
+    category, reason = classify({**cfg, "bargain_min_rating": 0, "bargain_min_reviews": 0,
+                                 "bargain_min_price_eur": 0}, cand)
+    cand["category"] = category or "GANGA"
+    cap = caption_data(cand)
+    tg.call("editMessageCaption", {"chat_id": channel, "message_id": message_id,
+                                   "caption": caption_for(link, cap), "parse_mode": "HTML"})
+    for post in state.get("posts", []):
+        if post.get("message_id") == message_id:
+            post.update(cap=cap, url=link)
+    save_state(state)
+    print(f"Texto del post {message_id} actualizado ({cand['category']}, {reason})")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="No publica nada; solo muestra qué haría")
     parser.add_argument("--ignore-limits", action="store_true", help="Ignora cupos y horario (pruebas)")
     parser.add_argument("--manual-id", default="", help="ID de Jimmyleaks a publicar a mano")
     parser.add_argument("--manual-link", default="", help="Enlace corto de afiliado para --manual-id")
+    parser.add_argument("--edit-message", type=int, default=0, help="Reescribe el texto de un post ya publicado")
     args = parser.parse_args()
 
     cfg = load_json(CONFIG_PATH, {})
@@ -499,6 +534,8 @@ def main() -> int:
             publish_pending_from_reply(tg, state, channel)
 
     now = now_utc()
+    if args.manual_id and args.edit_message:
+        return edit_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.edit_message)
     if args.manual_id:
         return publish_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.dry_run)
     candidates = scan(cfg, state, now)
