@@ -41,49 +41,59 @@ def fetch_product_image() -> Image.Image:
 
 
 def make_card() -> bytes:
-    width, height = 1200, 1200
+    # Proporción apaisada y jerarquía tipográfica de la imagen de referencia.
+    width, height = 1244, 1080
     image = Image.new("RGB", (width, height), "#f7f7f7")
     draw = ImageDraw.Draw(image)
 
-    draw.rounded_rectangle((24, 20, width - 24, 104), 28, fill="#ffffff", outline="#e7e9eb", width=2)
-    draw.text((48, 42), "Contour Unimouse · inalámbrico para zurdos", font=font(30, True), fill="#287b27")
+    draw.rounded_rectangle((34, 28, 674, 1052), 34, fill="#ffffff", outline="#eceeef", width=2)
+    photo = ImageOps.contain(fetch_product_image(), (590, 940), method=Image.Resampling.LANCZOS)
+    image.paste(photo, (58 + (590 - photo.width) // 2, 70 + (940 - photo.height) // 2))
 
-    # Product photo on the left.
-    draw.rounded_rectangle((24, 124, 552, 1176), 30, fill="#ffffff", outline="#e6e8ea", width=2)
-    photo = fetch_product_image()
-    photo.thumbnail((468, 870), Image.Resampling.LANCZOS)
-    px = 288 - photo.width // 2
-    py = 640 - photo.height // 2
-    image.paste(photo, (px, py))
-
-    # Five populated metrics on the right.
     boxes = [
-        (576, 124, 1176, 322),
-        (576, 336, 1176, 534),
-        (576, 548, 1176, 746),
-        (576, 760, 1176, 958),
-        (576, 972, 1176, 1176),
+        (700, 28, 1218, 213),
+        (700, 231, 1218, 443),
+        (700, 461, 1218, 646),
+        (700, 664, 1218, 847),
+        (700, 865, 1218, 1052),
     ]
-    for index, box in enumerate(boxes):
-        fill = "#fff2e9" if index == 1 else ("#eef9f0" if index == 2 else "#ffffff")
-        draw.rounded_rectangle(box, 26, fill=fill, outline="#eceeef", width=1)
+    fills = ["#ffffff", "#fff2e9", "#ffffff", "#ffffff", "#ffffff"]
+    for box, fill in zip(boxes, fills):
+        draw.rounded_rectangle(box, 28, fill=fill, outline="#eceeef", width=1)
 
-    def metric(index: int, label: str, value: str, color: str = "#17191c", size: int = 49, note: str = ""):
-        left, top, right, bottom = boxes[index]
-        draw.text((left + 38, top + 22), label, font=font(25), fill="#62686e")
-        value_y = top + 64
-        draw.text((left + 38, value_y), value, font=font(size, True), fill=color)
-        if note:
-            draw.text((left + 38, top + 142), note, font=font(18), fill="#747a80")
-        return (left + 38, value_y, draw.textbbox((left + 38, value_y), value, font=font(size, True)))
+    label_font = font(29)
+    label_color = "#64696f"
+    value_color = "#101114"
+    x = 744
 
-    _, normal_y, normal_bbox = metric(0, "Precio normal", NORMAL_PRICE, size=52, note="Referencia de tienda nueva · aprox.")
-    draw.line((normal_bbox[0], normal_y + 32, normal_bbox[2], normal_y + 32), fill="#55585b", width=5)
+    # Precio normal de referencia: valor aproximado y tachado.
+    draw.text((x, 58), "Precio normal", font=label_font, fill=label_color)
+    normal_font = font(76, True)
+    normal_y = 96
+    draw.text((x, normal_y), NORMAL_PRICE, font=normal_font, fill=value_color)
+    normal_box = draw.textbbox((x, normal_y), NORMAL_PRICE, font=normal_font)
+    draw.line((normal_box[0] - 2, normal_y + 55, normal_box[2] + 3, normal_y + 25), fill="#60646a", width=5)
 
-    metric(1, "Precio actual", CURRENT_PRICE, color="#e4481d", size=58, note="Amazon · precio observado")
-    metric(2, "Ahorras", SAVINGS, color="#187543", size=52, note=f"Frente a {NORMAL_PRICE} · {SAVINGS_PERCENT}")
-    metric(3, "Reventa potencial", RESALE, size=52, note="Estimación con ratones ergonómicos usados")
-    metric(4, "ROI estimado", ROI, color="#187543", size=56, note="Al revender por el valor estimado")
+    # Precio actual en naranja.
+    draw.text((x, 258), "Precio actual", font=label_font, fill=label_color)
+    draw.text((x, 293), CURRENT_PRICE, font=font(84, True), fill="#e8471d")
+
+    # Ahorro y porcentaje en verde, como en la referencia.
+    draw.text((x, 486), "Ahorras", font=label_font, fill=label_color)
+    draw.text((x, 521), SAVINGS, font=font(66, True), fill="#087a3a")
+    pill = (1052, 510, 1190, 602)
+    draw.rounded_rectangle(pill, 20, fill="#e4f6e9")
+    pct_font = font(48, True)
+    pct_box = draw.textbbox((0, 0), SAVINGS_PERCENT, font=pct_font)
+    pct_x = pill[0] + (pill[2] - pill[0] - pct_box[2]) // 2
+    pct_y = pill[1] + (pill[3] - pill[1] - (pct_box[3] - pct_box[1])) // 2 - pct_box[1]
+    draw.text((pct_x, pct_y), SAVINGS_PERCENT, font=pct_font, fill="#087a3a")
+
+    # Reventa y ROI llevan tilde de aproximación; no se presentan como precio garantizado.
+    draw.text((x, 689), "Reventa potencial", font=label_font, fill=label_color)
+    draw.text((x, 724), RESALE, font=font(76, True), fill=value_color)
+    draw.text((x, 890), "ROI estimado", font=label_font, fill=label_color)
+    draw.text((x, 925), ROI, font=font(80, True), fill="#087a3a")
 
     output = BytesIO()
     image.save(output, format="PNG", optimize=True)
