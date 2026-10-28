@@ -254,13 +254,17 @@ def short_title(title: str, brand: str = "", limit: int = 85) -> str:
 def build_caption(*, url: str, category: str, title: str, current: float, reference: float,
                   brand: str = "", historical_low: bool = False, rating: float | None = None,
                   reviews: int | None = None, ref_text: str = "frente a su precio medio de 90 días",
-                  resale_price: float | None = None, resale_count: int | None = None) -> str:
+                  resale_price: float | None = None, resale_count: int | None = None,
+                  sold_out: bool = False) -> str:
     """Copy del canal: categoría, marca en negrita, precio, precio tachado y descuento."""
     e = html.escape
     brand = nice_brand(brand)
     pct = round((reference - current) / reference * 100)
     product = e(short_title(title, brand))
-    lines = [CATEGORY_HEADERS.get(category, f"🔥 <b>{e(category)}</b>"), ""]
+    lines = [CATEGORY_HEADERS.get(category, f"🔥 <b>{e(category)}</b>")]
+    if sold_out:
+        lines.append("⛔ <b>AGOTADO</b> · ejemplo de lo que cazamos")
+    lines.append("")
     lines.append(f"<b>{e(brand)}</b> {product}" if brand else f"<b>{product}</b>")
     lines.append("")
     lines.append(f"💰 <b>{e(euro(current))}</b>   <s>{e(euro(reference))}</s>")
@@ -335,7 +339,7 @@ def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, mu
 
     cur_box = (info_x, 528, 1028, 708)
     draw.rounded_rectangle(cur_box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
-    draw.text((info_x + 24, 546), "PRECIO ACTUAL", font=_font(22, bold=True), fill=muted)
+    draw.text((info_x + 24, 546), ("PRECIO DEL ERROR" if offer.get("sold_out") else "PRECIO ACTUAL"), font=_font(22, bold=True), fill=muted)
     price_font = _font(72, bold=True)
     price_text = euro(offer["current"])
     while draw.textbbox((0, 0), price_text, font=price_font)[2] > info_width - 48 and price_font.size > 44:
@@ -397,6 +401,14 @@ def create_price_card(offer: dict) -> Path:
         font=category_font,
         fill=ink,
     )
+    if offer.get("sold_out"):
+        so_text = "AGOTADO"
+        so_bounds = draw.textbbox((0, 0), so_text, font=category_font)
+        so_w = so_bounds[2] - so_bounds[0] + 40
+        so_badge = (badge[0] - 14 - so_w, badge[1], badge[0] - 14, badge[3])
+        draw.rounded_rectangle(so_badge, radius=22, fill="#D93025")
+        draw.text((so_badge[0] + 20, so_badge[1] + (so_badge[3] - so_badge[1] - (so_bounds[3] - so_bounds[1])) // 2 - so_bounds[1]),
+                  so_text, font=category_font, fill="#FFFFFF")
 
     # Portrait photo on the left; an aligned information column keeps the offer easy to scan.
     photo_box = (48, 192, 568, 1032)
@@ -456,7 +468,7 @@ def create_price_card(offer: dict) -> Path:
 
         current_box = (info_x, 560, 1028, 770)
         draw.rounded_rectangle(current_box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
-        draw.text((info_x + 24, 580), "PRECIO ACTUAL", font=_font(23, bold=True), fill=muted)
+        draw.text((info_x + 24, 580), ("PRECIO DEL ERROR" if offer.get("sold_out") else "PRECIO ACTUAL"), font=_font(23, bold=True), fill=muted)
         price_font = _font(76, bold=True)
         price_text = euro(offer["current"])
         while draw.textbbox((0, 0), price_text, font=price_font)[2] - draw.textbbox((0, 0), price_text, font=price_font)[0] > info_width - 48 and price_font.size > 48:

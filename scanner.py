@@ -535,7 +535,8 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
     src.write_bytes(fetch(spec["image"], binary=True))
     offer = {"id": f"custom-{pid}", "title": card_title({"name": spec["title"], "brand": spec.get("brand", "")}),
              "image_path": src, "category": spec["category"], "current": float(spec["current"]),
-             "reference": float(spec["reference"]), "days": 90, "ref_label": spec.get("ref_label")}
+             "reference": float(spec["reference"]), "days": 90, "ref_label": spec.get("ref_label"),
+             "sold_out": bool(spec.get("sold_out"))}
     if spec.get("resale_price"):
         rp = float(spec["resale_price"])
         offer["resale"] = {"price": rp, "count": spec.get("resale_count"),
@@ -547,6 +548,8 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
            "reviews": spec.get("reviews")}
     if spec.get("ref_text"):
         cap["ref_text"] = spec["ref_text"]
+    if spec.get("sold_out"):
+        cap["sold_out"] = True
     if spec.get("resale_price"):
         cap["resale_price"] = float(spec["resale_price"])
         cap["resale_count"] = spec.get("resale_count")
