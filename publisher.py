@@ -366,7 +366,9 @@ def create_price_card(offer: dict) -> Path:
     while discount_bounds[2] > 230 and discount_font.size > 42:
         discount_font = _font(discount_font.size - 2, bold=True)
         discount_bounds = draw.textbbox((0, 0), discount_text, font=discount_font)
-    draw.text((discount_box[0] + (discount_box[2] - discount_bounds[2]) // 2, 846),
+    discount_text_width = discount_bounds[2] - discount_bounds[0]
+    discount_text_x = discount_box[0] + ((discount_box[2] - discount_box[0] - discount_text_width) // 2) - discount_bounds[0]
+    draw.text((discount_text_x, 846),
               discount_text, font=discount_font, fill=orange)
     saving_label = f"AHORRO {euro(savings)}"
     saving_font = _font(21, bold=True)
@@ -374,7 +376,9 @@ def create_price_card(offer: dict) -> Path:
     while saving_bounds[2] > 244 and saving_font.size > 16:
         saving_font = _font(saving_font.size - 1, bold=True)
         saving_bounds = draw.textbbox((0, 0), saving_label, font=saving_font)
-    draw.text((discount_box[0] + (discount_box[2] - saving_bounds[2]) // 2, 939),
+    saving_text_width = saving_bounds[2] - saving_bounds[0]
+    saving_text_x = discount_box[0] + ((discount_box[2] - discount_box[0] - saving_text_width) // 2) - saving_bounds[0]
+    draw.text((saving_text_x, 939),
               saving_label, font=saving_font, fill="#FFFFFF")
 
     if offer["historical_low"] and category == "ERROR DE PRECIO":
