@@ -7,7 +7,8 @@ El publicador crea una tarjeta minimalista con foto del producto, etiqueta de cl
 - **ERROR DE PRECIO**: descuento verificado de 70 % o más frente al precio medio de los últimos 90 días.
 - **GANGA**: descuento verificado de 40 % a 69,9 %.
 - **MÍNIMO HISTÓRICO**: precio identificado manualmente como mínimo histórico por la fuente indicada. Puede publicarse aunque el descuento sea inferior al 40 %.
-- Una oferta de 70 % o más puede incluir además una estimación de reventa si se aportan al menos tres comparables revisados de Wallapop, junto con comisiones y envío. Si no se aportan comparables, conserva la etiqueta principal **ERROR DE PRECIO** y la tarjeta no inventa ROI.
+- **OPORTUNIDAD DE REVENTA**: oferta desde el 40 % con ROI positivo estimado a partir de al menos tres comparables revisados de Wallapop y costes explícitos.
+- Una oferta de 70 % o más conserva siempre la etiqueta principal **ERROR DE PRECIO**; si hay comparables, la tarjeta añade la estimación de reventa. Si faltan, no inventa ROI.
 
 Toda oferta debe estar aprobada en `offers.json`, tener una comprobación reciente del precio (máximo 20 minutos), enlace afiliado, imagen y una referencia histórica de 90 días. Los precios se revisan manualmente; este flujo gratuito no rastrea Amazon ni Wallapop por su cuenta. No uses el precio tachado como sustituto del historial.
 
