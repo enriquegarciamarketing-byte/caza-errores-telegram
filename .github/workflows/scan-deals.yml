@@ -17,6 +17,16 @@ on:
         required: false
         type: boolean
         default: false
+      manual_id:
+        description: "Publicar a mano: ID de Jimmyleaks"
+        required: false
+        type: string
+        default: ""
+      manual_link:
+        description: "Publicar a mano: enlace corto de afiliado"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -46,10 +56,13 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MANUAL_ID: ${{ inputs.manual_id }}
+          MANUAL_LINK: ${{ inputs.manual_link }}
         run: |
           ARGS=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           if [ "${{ inputs.ignore_limits }}" = "true" ]; then ARGS="$ARGS --ignore-limits"; fi
+          if [ -n "$MANUAL_ID" ]; then ARGS="$ARGS --manual-id $MANUAL_ID --manual-link $MANUAL_LINK"; fi
           set -o pipefail
           python scanner.py $ARGS 2>&1 | tee state/last_run.log
 

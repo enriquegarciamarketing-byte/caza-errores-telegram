@@ -364,7 +364,8 @@ def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime) -> tuple[
     return True, ""
 
 
-def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: str, dry: bool) -> bool:
+def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: str, dry: bool,
+            link_override: str | None = None) -> bool:
     img_dir = OUTPUT_DIR / "src"
     img_dir.mkdir(parents=True, exist_ok=True)
     src = img_dir / f"{cand['id']}.jpg"
@@ -384,7 +385,7 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     }
     card = create_price_card(offer)
     gtin = cand.get("gtin") if re.fullmatch(r"\d{8,14}", cand.get("gtin") or "") else None
-    url = affiliate_link(cfg, gtin) if gtin else None
+    url = link_override or (affiliate_link(cfg, gtin) if gtin else None)
     summary = (f"{cand['category']} · {card_title(cand)[:90]}\n"
                f"{euro(cand['price'])} (media 90 días {euro(cand['avg90'])}, -{cand['discount']:.0f}%)")
     if dry:
@@ -451,10 +452,31 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
             tg.call("sendMessage", {"chat_id": state["admin_chat_id"], "text": "✅ Publicado en el canal con tu enlace."})
 
 
+def publish_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: str, dry: bool) -> int:
+    """Publica un producto concreto con el enlace corto de SiteStripe sacado a mano."""
+    if not re.fullmatch(r"[A-Za-z0-9]{4,20}", jl_id) or not LINK_RE.fullmatch(link):
+        print("ID o enlace no válidos", file=sys.stderr)
+        return 2
+    detail = parse_detail(fetch(f"{BASE}/es/dp/{jl_id}/"))
+    cand = {"id": jl_id, **detail, "reviews": 999, "rating": 5}
+    category, reason = classify({**cfg, "bargain_min_rating": 0, "bargain_min_reviews": 0}, cand)
+    print(f"{jl_id}: {detail.get('price')} € · media {detail.get('avg90')} → {category or 'descartado'} ({reason})")
+    if not category or not detail["in_stock"] or not detail.get("image"):
+        print("No cumple para publicarse (descuento, stock o imagen).", file=sys.stderr)
+        return 1
+    cand["category"] = category
+    ok = publish(tg, cfg, state, cand, channel, dry, link_override=link)
+    if ok and not dry:
+        save_state(state)
+    return 0 if ok else 1
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="No publica nada; solo muestra qué haría")
     parser.add_argument("--ignore-limits", action="store_true", help="Ignora cupos y horario (pruebas)")
+    parser.add_argument("--manual-id", default="", help="ID de Jimmyleaks a publicar a mano")
+    parser.add_argument("--manual-link", default="", help="Enlace corto de afiliado para --manual-id")
     args = parser.parse_args()
 
     cfg = load_json(CONFIG_PATH, {})
@@ -477,6 +499,8 @@ def main() -> int:
             publish_pending_from_reply(tg, state, channel)
 
     now = now_utc()
+    if args.manual_id:
+        return publish_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(), args.dry_run)
     candidates = scan(cfg, state, now)
     order = {"ERROR DE PRECIO": 0, "MÍNIMO HISTÓRICO": 1, "GANGA": 2}
     candidates.sort(key=lambda c: (order[c["category"]], -c["discount"]))
