@@ -66,8 +66,8 @@
    "result": "importe demasiado bajo para ganga"
   },
   "7yrqbdw": {
-   "price": 8.87,
-   "t": 1793157221,
+   "price": 9.03,
+   "t": 1793212061,
    "result": "importe demasiado bajo para ganga"
   },
   "1E8VXxR": {
@@ -456,7 +456,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 56,
+ "last_listing_count": 55,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  }
