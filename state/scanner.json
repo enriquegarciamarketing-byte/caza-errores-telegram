@@ -579,6 +579,11 @@
    "price": 6.06,
    "t": 1793216308,
    "result": "importe demasiado bajo para ganga"
+  },
+  "1ZD6bwX": {
+   "price": 21.62,
+   "t": 1793216560,
+   "result": "solo -22% bajo la media"
   }
  },
  "posts": [
