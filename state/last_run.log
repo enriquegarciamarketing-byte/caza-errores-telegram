@@ -1,22 +1,48 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
+Listados: 115 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35077 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36200 bytes, 30 chollos
+  Chollometro «Robot Aspirador Roborock Qrevo 2 Pro (25.000 Pa, Base Multifuncional, »: Es 349.0 €
+  Chollometro «PUMA Zapatillas de baloncesto -»: Showroomprive 29.9 €
+  Chollometro «Zapatillas Under Armour ST COURT (Tallas 35.5 a 40)»: Zalando-prive 26.9 €
   Chollometro «LEGO Star Wars Halcón Milenario - 75375 40% acumulable en cupón ya onl»: Carrefour 84.99 €
   Chollometro «LEGO City Tren de Vapor Retro 60511: 575 piezas, estación, 5 minifigur»: Amazon 60.17 €
-  Chollometro «Munich Focus 04, Zapatillas Hombre (tallas 41, 43 y 44)»: Amazon 32.5 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68852 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71004 bytes, 30 chollos
+  cm-2048071 · Es 349.0 € → candidato externo · Robot Aspirador Roborock Qrevo 2 Pro (25.000 Pa, Base Multif
+  cm-2047976 · Showroomprive 29.9 € → candidato externo · PUMA Zapatillas de baloncesto -
+  cm-2047975 · Zalando-prive 26.9 € → candidato externo · Zapatillas Under Armour ST COURT (Tallas 35.5 a 40)
   cm-2047766 · Carrefour 84.99 € → candidato externo · LEGO Star Wars Halcón Milenario - 75375 40% acumulable en cu
   cm-2047605 · Amazon 60.17 € → candidato externo · LEGO City Tren de Vapor Retro 60511: 575 piezas, estación, 5
-  cm-2047990 · Amazon 32.5 € → candidato externo · Munich Focus 04, Zapatillas Hombre (tallas 41, 43 y 44)
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «carrefour 75375 lego»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Carrefour LEGO Star Wars Halcón Milenario - 75375 40% acumulable en cupón ya online (34 eu»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Milanuncios «lego 60511 city»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «carrefour 75375 lego»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  ⚠️ No publico «Carrefour LEGO Star Wars Halcón Milenario - 75375 40% acumulable en cupón ya online (34 eu»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Milanuncios «lego 60511 city»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
   Reventa WALLAPOP: 1 anuncios, ~0 €, no publica
-  ⚠️ No publico «Amazon.Fr LEGO City Tren de Vapor Retro 60511: 575 piezas, estación, 5 minifiguras y opció»: WALLAPOP solo tiene 1 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Amazon Munich Focus 04, Zapatillas Hombre (tallas 41, 43 y 44)»: reventa en WALLAPOP ~50 € (15 anuncios): ROI 54 % y 18 €, por debajo del mínimo (30 % y 25 €)
+  ⚠️ No publico «Amazon.Fr LEGO City Tren de Vapor Retro 60511: 575 piezas, estación, 5 minifiguras y opció»: WALLAPOP solo tiene 1 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Vinted «showroomprive puma»: HTTP 200, 2791059 bytes, 1 anuncios
+  Vinted «showroomprive puma»: 0 parecidos de 1
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Wallapop «showroomprive puma»: 200 / 393 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «showroomprive puma»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  ⚠️ No publico «Showroomprivé PUMA Zapatillas de baloncesto»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Vinted «prive zalando 35»: HTTP 200, 2890594 bytes, 12 anuncios
+  Vinted «prive zalando 35»: 0 parecidos de 12
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Wallapop «prive zalando 35»: 200 / 1263 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «prive zalando»: 200 / 76641 bytes, 22 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «prive zalando 35»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  ⚠️ No publico «Privé By Zalando Zapatillas Under Armour ST COURT (Tallas 35.5 a 40)»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Wallapop «roborock 25 robot»: 200 / 46317 bytes, 14 anuncios, 0 parecidos, 0 reservas
+  Wallapop «roborock 25»: 200 / 121573 bytes, 28 anuncios, 1 parecidos, 0 reservas
+  Milanuncios «roborock 25 robot»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 1 anuncios, ~0 €, no publica
+  ⚠️ No publico «Roborock Robot Aspirador Roborock Qrevo 2 Pro (25.000 Pa, Base Multifuncional, FlexiArm) o»: WALLAPOP solo tiene 1 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95509 bytes))
 Publicados en esta ejecución: 0

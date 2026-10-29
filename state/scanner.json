@@ -863,7 +863,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 115,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1266,6 +1266,38 @@
    "http_status": 200,
    "bytes": 3062,
    "raw_count": 1
+  },
+  "showroomprive|puma zapatillas de baloncesto -|showroomprive puma": {
+   "t": 1793267482.6706789,
+   "query": "showroomprive puma",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "prive by zalando|zapatillas under armour st court (tallas 35.5 a 40)|prive zalando 35": {
+   "t": 1793267485.193305,
+   "query": "prive zalando 35",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "roborock|robot aspirador roborock qrevo 2 pro (25.000 pa, base multifuncional, flexiarm) o 314,10 con descuento del 10%|roborock 25 robot": {
+   "t": 1793267487.2207718,
+   "query": "roborock 25",
+   "prices": [
+    0.05
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 121573,
+   "raw_count": 28
   }
  },
  "milanuncios_cache": {
@@ -1334,7 +1366,10 @@
   "wallapop:cm-2047874": 1793257567.2960806,
   "wallapop:cm-2047990": 1793260586.952905,
   "wallapop:cm-2047766": 1793263514.3342533,
-  "wallapop:cm-2047605": 1793263516.3285172
+  "wallapop:cm-2047605": 1793263516.3285172,
+  "wallapop:cm-2047976": 1793267483.40942,
+  "wallapop:cm-2047975": 1793267485.6808815,
+  "wallapop:cm-2048071": 1793267488.5849364
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1408,6 +1443,22 @@
    "prices": [],
    "reserved": 0,
    "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "showroomprive|puma zapatillas de baloncesto -|showroomprive puma": {
+   "t": 1793267482.4976597,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "prive by zalando|zapatillas under armour st court (tallas 35.5 a 40)|prive zalando 35": {
+   "t": 1793267483.9457436,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
