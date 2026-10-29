@@ -641,8 +641,8 @@
    "result": "OPORTUNIDAD DE REVENTA"
   },
   "MQ5gdPM": {
-   "price": 1295.0,
-   "t": 1793218386,
+   "price": 1279.0,
+   "t": 1793278284,
    "result": "solo -7% bajo la referencia"
   },
   "RO8bk21": {
@@ -868,7 +868,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 114,
+ "last_listing_count": 117,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1394,6 +1394,16 @@
    "http_status": 200,
    "bytes": 133455,
    "raw_count": 38
+  },
+  "veepee|la sportiva levante mujer zapatillas trail running|veepee sportiva": {
+   "t": 1793278316.0796077,
+   "query": "veepee sportiva",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -1470,7 +1480,8 @@
   "wallapop:cm-2047982": 1793270246.5008156,
   "wallapop:cm-2048355": 1793276162.819627,
   "wallapop:cm-2031690": 1793276164.5837314,
-  "wallapop:cm-2047991": 1793276167.28966
+  "wallapop:cm-2047991": 1793276167.28966,
+  "wallapop:cm-2048343": 1793278316.6694105
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1573,6 +1584,14 @@
   },
   "deporte-outlet|zapatillas puma ca pro lux iii unisex|deporte outlet zapatillas": {
    "t": 1793276165.4665864,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "veepee|la sportiva levante mujer zapatillas trail running|veepee sportiva": {
+   "t": 1793278315.9299223,
    "prices": [],
    "reserved": 0,
    "demand_known": true,

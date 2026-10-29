@@ -1,41 +1,44 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 114 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36002 bytes, 30 chollos
+Listados: 117 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  MQ5gdPM · 1279.0 € · media 1663.37 · ref 1379.00 → descartado (solo -7% bajo la referencia) · Samsung Galaxy Z Fold7 256GB - Galaxy AI, Ligero y Plegable,
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36175 bytes, 30 chollos
+  Chollometro «La Sportiva Levante Mujer Zapatillas Trail Running»: Veepee 85.0 €
   Chollometro «LEGO Harry Potter Tiendas Callejón Knockturn 76471 | + CUPÓN 32€»: Carrefour 79.99 €
   Chollometro «Zapatillas PUMA CA Pro Lux III Unisex»: Deporte-outlet 39.99 €
   Chollometro «Nioh 3 Launch Edition PS5»: GAME 34.99 €
   Chollometro «PUMA Zapatillas»: Showroomprive 35.9 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73536 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67903 bytes, 30 chollos
+  cm-2048343 · Veepee 85.0 € → candidato externo · La Sportiva Levante Mujer Zapatillas Trail Running
   cm-2031690 · Carrefour 79.99 € → candidato externo · LEGO Harry Potter Tiendas Callejón Knockturn 76471 | + CUPÓN
   cm-2047991 · Deporte-outlet 39.99 € → candidato externo · Zapatillas PUMA CA Pro Lux III Unisex
   cm-2048355 · GAME 34.99 € → candidato externo · Nioh 3 Launch Edition PS5
   cm-2047982 · Showroomprive 35.9 € → candidato externo · PUMA Zapatillas
-  Wallapop «game ps5 nioh»: 200 / 92855 bytes, 34 anuncios, 0 parecidos, 0 reservas
-  Wallapop «game ps5»: 200 / 82414 bytes, 40 anuncios, 3 parecidos, 0 reservas
-  Milanuncios «game ps5 nioh»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «game ps5 nioh»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
   Reventa WALLAPOP: 3 anuncios, ~0 €, no publica
-  ⚠️ No publico «Game Nioh 3 Launch Edition PS5»: WALLAPOP solo tiene 3 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Wallapop «carrefour 76471 lego»: 200 / 1272 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «carrefour 76471»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  ⚠️ No publico «Game Nioh 3 Launch Edition PS5»: WALLAPOP solo tiene 3 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95511 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «carrefour 76471 lego»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Carrefour LEGO Harry Potter Tiendas Callejón Knockturn 76471 | + CUPÓN 32€»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted «deporte outlet zapatillas»: HTTP 200, 3657482 bytes, 96 anuncios
-  Vinted «deporte outlet zapatillas»: 0 parecidos de 96
+  Milanuncios «carrefour 76471 lego»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Carrefour LEGO Harry Potter Tiendas Callejón Knockturn 76471 | + CUPÓN 32€»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Vinted «veepee sportiva»: HTTP 200, 2807207 bytes, 3 anuncios
+  Vinted «veepee sportiva»: 0 parecidos de 3
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «deporte outlet zapatillas»: 200 / 90623 bytes, 22 anuncios, 1 parecidos, 0 reservas
-  Wallapop «deporte outlet»: 200 / 133455 bytes, 38 anuncios, 2 parecidos, 0 reservas
-  Milanuncios «deporte outlet zapatillas»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop «veepee sportiva»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «veepee sportiva»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Veepee La Sportiva Levante Mujer Zapatillas Trail Running»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «deporte outlet zapatillas»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
   Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
-  ⚠️ No publico «Deporte-Outlet Zapatillas PUMA CA Pro Lux III Unisex»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 8) · Vinted solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Deporte-Outlet Zapatillas PUMA CA Pro Lux III Unisex»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 8) · Vinted solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «showroomprive puma»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Showroomprivé PUMA Zapatillas»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «showroomprive puma»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Showroomprivé PUMA Zapatillas»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
 Publicados en esta ejecución: 0
