@@ -1,22 +1,16 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
+Listados: 116 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36488 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36582 bytes, 30 chollos
+  Chollometro «Saucony - zapatillas de running Hurricane 25 - running- Tallas- 42, 44»: Es 64.99 €
   Chollometro «LEGO Architecture Ciudad de Nueva York: La Gran Manzana | + CUPÓN 44.8»: Carrefour 111.99 €
   Chollometro «Robot Aspirador Cecotec Conga M50 X-Treme (Navegación LÁSER, 5000 Pa, »: Amazon 84.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68209 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 100547 bytes, 30 chollos
+  cm-2049064 · Es 64.99 € → candidato externo · Saucony - zapatillas de running Hurricane 25 - running- Tall
   cm-2048324 · Carrefour 111.99 € → candidato externo · LEGO Architecture Ciudad de Nueva York: La Gran Manzana | + 
   cm-2048777 · Amazon 84.99 € → candidato externo · Robot Aspirador Cecotec Conga M50 X-Treme (Navegación LÁSER,
-  Wallapop «carrefour 44 lego»: 200 / 6307 bytes, 1 anuncios, 0 parecidos, 0 reservas
-  Wallapop «carrefour 44»: 200 / 87969 bytes, 37 anuncios, 4 parecidos, 0 reservas
-  Milanuncios «carrefour 44 lego»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 3 anuncios, ~0 €, no publica
-  ⚠️ No publico «Carrefour LEGO Architecture Ciudad de Nueva York: La Gran Manzana | + CUPÓN 44.80€»: WALLAPOP solo tiene 3 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Wallapop «robot m50 aspirador»: 200 / 90221 bytes, 32 anuncios, 26 parecidos, 0 reservas
-  Milanuncios «robot m50 aspirador»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 26 anuncios, ~80 €, no publica
-  ⚠️ No publico «Amazon Robot Aspirador Cecotec Conga M50 X-Treme (Navegación LÁSER, 5000 Pa, Mapeo)»: reventa en WALLAPOP ~80 € (26 anuncios): ROI -6 % y -5 €, por debajo del mínimo (25 % y 25 €)
+  cm-2048324: no se publica (horario nocturno: las gangas esperan al día)
+  cm-2049064: no se publica (horario nocturno: las gangas esperan al día)
+  cm-2048777: no se publica (horario nocturno: las gangas esperan al día)
 Publicados en esta ejecución: 0
