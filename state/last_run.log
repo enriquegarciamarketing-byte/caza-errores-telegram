@@ -1,30 +1,45 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 118 productos únicos
+Listados: 117 productos únicos
   Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 341880 bytes, 0 ASIN, 0 títulos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36330 bytes, 30 chollos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 485237 bytes, 30 ASIN, 32 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+Candidatos nuevos tras el filtro rápido: 1
+  1EvWxBO · 369.99 € · media 520.78 · ref 383.16 → descartado (solo -3% bajo la referencia) · roborock Qrevo S Pro Set Robot Aspirador (Versión Mejorada d
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35895 bytes, 30 chollos
+  Chollometro «Nike Performance METCON 10 - Zapatillas de entrenamiento - Tallas- 35.»: Zalando-prive 68.9 €
+  Chollometro «Skechers Bobs Squad Waves Current Look Zapatillas Mujer»: Amazon 31.5 €
+  Chollometro «LEGO Architecture Londres 21034 468 piezas 12+ años»: Powerplanetonline 26.95 €
   Chollometro «Reanimal PS5»: Amazon 27.99 €
-  Chollometro «Dyson Aspirador de escoba recargable Dyson V16 Piston Animal»: El Corte Inglés 679.0 €
-  Chollometro «La Sportiva Levante Mujer Zapatillas Trail Running»: Veepee 85.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 62985 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 81090 bytes, 30 chollos
+  cm-2048589 · Zalando-prive 68.9 € → candidato externo · Nike Performance METCON 10 - Zapatillas de entrenamiento - T
+  cm-2048215 · Amazon 31.5 € → candidato externo · Skechers Bobs Squad Waves Current Look Zapatillas Mujer
+  cm-2048538 · Powerplanetonline 26.95 € → candidato externo · LEGO Architecture Londres 21034 468 piezas 12+ años
   cm-2048493 · Amazon 27.99 € → candidato externo · Reanimal PS5
-  cm-2046748 · El Corte Inglés 679.0 € → candidato externo · Dyson Aspirador de escoba recargable Dyson V16 Piston Animal
-  cm-2048343 · Veepee 85.0 € → candidato externo · La Sportiva Levante Mujer Zapatillas Trail Running
-  Wallapop «reanimal ps5»: 200 / 50860 bytes, 22 anuncios, 21 parecidos, 0 reservas
-  Milanuncios «reanimal ps5»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «reanimal ps5»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
   Reventa WALLAPOP: 18 anuncios, ~31 €, no publica
   ⚠️ No publico «Amazon Reanimal PS5»: reventa en WALLAPOP ~31 € (18 anuncios): ROI 11 % y 3 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «powerplanetonline 21034 lego»: 200 / 1291 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «powerplanetonline 21034»: 200 / 398 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «corte ingles v16»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «El Corte Inglés Dyson Aspirador de escoba recargable Dyson V16 Piston Animal»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «powerplanetonline 21034 lego»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  ⚠️ No publico «Powerplanetonline LEGO Architecture Londres 21034 468 piezas 12+ años»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Vinted «prive zalando 10»: HTTP 200, 3653860 bytes, 96 anuncios
+  Vinted «prive zalando 10»: 1 parecidos de 96
+  Wallapop «prive zalando 10»: 200 / 1263 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «prive zalando»: 200 / 76641 bytes, 22 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «veepee sportiva»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Veepee La Sportiva Levante Mujer Zapatillas Trail Running»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «prive zalando 10»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Reventa VINTED: 1 anuncios, ~0 €, no publica
+  ⚠️ No publico «Privé By Zalando Nike Performance METCON 10 - Zapatillas de entrenamiento - Tallas- 35.5, »: VINTED solo tiene 1 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Vinted «skechers bobs»: HTTP 200, 3662451 bytes, 96 anuncios
+  Vinted «skechers bobs»: 71 parecidos de 96
+  Wallapop «skechers bobs»: 200 / 133948 bytes, 40 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «skechers bobs»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Reventa VINTED+WALLAPOP: 99 anuncios, ~30 €, no publica
+  ⚠️ No publico «Amazon Skechers Bobs Squad Waves Current Look Zapatillas Mujer»: reventa en VINTED+WALLAPOP ~30 € (99 anuncios): ROI -5 % y -2 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
