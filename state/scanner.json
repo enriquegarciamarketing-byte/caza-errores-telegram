@@ -868,7 +868,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 114,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1357,6 +1357,43 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "game|nioh 3 launch edition ps5|game ps5 nioh": {
+   "t": 1793276162.2773788,
+   "query": "game ps5",
+   "prices": [
+    60.0,
+    45.0,
+    45.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 82414,
+   "raw_count": 40
+  },
+  "carrefour|lego harry potter tiendas callejon knockturn 76471 | + cupon 32€|carrefour 76471 lego": {
+   "t": 1793276164.0803835,
+   "query": "carrefour 76471 lego",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "deporte-outlet|zapatillas puma ca pro lux iii unisex|deporte outlet zapatillas": {
+   "t": 1793276166.7165213,
+   "query": "deporte outlet",
+   "prices": [
+    86.0,
+    4.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 133455,
+   "raw_count": 38
   }
  },
  "milanuncios_cache": {
@@ -1430,7 +1467,10 @@
   "wallapop:cm-2047975": 1793267485.6808815,
   "wallapop:cm-2048071": 1793267488.5849364,
   "wallapop:cm-2048213": 1793270245.0673375,
-  "wallapop:cm-2047982": 1793270246.5008156
+  "wallapop:cm-2047982": 1793270246.5008156,
+  "wallapop:cm-2048355": 1793276162.819627,
+  "wallapop:cm-2031690": 1793276164.5837314,
+  "wallapop:cm-2047991": 1793276167.28966
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1525,6 +1565,14 @@
   },
   "showroomprive|puma zapatillas|showroomprive puma": {
    "t": 1793270245.7293146,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "deporte-outlet|zapatillas puma ca pro lux iii unisex|deporte outlet zapatillas": {
+   "t": 1793276165.4665864,
    "prices": [],
    "reserved": 0,
    "demand_known": true,
