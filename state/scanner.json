@@ -724,6 +724,11 @@
    "price": 31.99,
    "t": 1793233347,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "1bZGGZy": {
+   "price": 32.99,
+   "t": 1793256804,
+   "result": "tiene tallas (ropa o calzado): no es reventa"
   }
  },
  "posts": [
