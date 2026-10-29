@@ -159,6 +159,16 @@
       "message_id": 18,
       "title": "Hoka Zapatillas de deporte Rincon 4 - running- Tallas- 38, 39 1/3, 40",
       "store": "Es"
+    },
+    {
+      "id": "cm-2048963",
+      "key": "p:skyscanner islandia vuelos directos ida vuelta",
+      "price": 128.0,
+      "t": 1793308360,
+      "url": "https://www.skyscanner.no/transporte/vuelos/barc/reyk/270225/270228/",
+      "message_id": 19,
+      "title": "¡ISLANDIA! Vuelos DIRECTOS de IDA y VUELTA por solo 128€ (feb - mar) - Salidas desde BCN",
+      "store": "Skyscanner"
     }
   ]
 }
