@@ -873,7 +873,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 116,
+ "last_listing_count": 118,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1572,6 +1572,69 @@
    "http_status": 200,
    "bytes": 132632,
    "raw_count": 38
+  },
+  "mediamarkt|auriculares inalambricos - sony playstation pulse, 30h autonomia, para: ps5|mediamarkt 30h auriculares": {
+   "t": 1793297966.2916255,
+   "query": "mediamarkt 30h auriculares",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "privalia|hoka zapatillas de deporte rincon 4 - running- tallas- 38, 39 1/3, 40|privalia 38 hoka": {
+   "t": 1793297968.699841,
+   "query": "privalia 38 hoka",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "amazon|roborock qrevo 2 pro robot aspirador|roborock qrevo": {
+   "t": 1793297971.2243836,
+   "query": "roborock qrevo",
+   "prices": [
+    299.0,
+    369.0,
+    400.0,
+    700.0,
+    600.0,
+    450.0,
+    349.0,
+    280.0,
+    9.99,
+    500.0,
+    649.0,
+    350.0,
+    220.0,
+    390.0,
+    449.0,
+    490.0,
+    5.0,
+    340.0,
+    599.0,
+    15.0,
+    450.0,
+    6.99,
+    420.0,
+    5.0,
+    300.0,
+    499.0,
+    450.0,
+    2.95,
+    349.99,
+    550.0,
+    5.0,
+    370.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 124608,
+   "raw_count": 35
   }
  },
  "milanuncios_cache": {
@@ -1657,7 +1720,10 @@
   "wallapop:cm-2048215": 1793287616.388232,
   "wallapop:cm-2047986": 1793291249.758527,
   "wallapop:cm-2038312": 1793291252.804314,
-  "wallapop:cm-2048498": 1793294737.3428204
+  "wallapop:cm-2048498": 1793294737.3428204,
+  "wallapop:cm-2048731": 1793297966.912618,
+  "wallapop:cm-2048767": 1793297969.303834,
+  "wallapop:cm-2048317": 1793297972.270432
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1883,6 +1949,14 @@
    "demand_known": true,
    "blocked": false,
    "reason": "Vinted solo tiene 1 anuncios parecidos (mínimo 8)"
+  },
+  "privalia|hoka zapatillas de deporte rincon 4 - running- tallas- 38, 39 1/3, 40|privalia 38 hoka": {
+   "t": 1793297967.4952793,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
  }
 }

@@ -1,23 +1,34 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
+Listados: 118 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35592 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35779 bytes, 30 chollos
+  Chollometro «Auriculares inalámbricos - Sony PlayStation PULSE, 30h Autonomía, Para»: MediaMarkt 79.99 €
+  Chollometro «roborock Qrevo 2 Pro Robot Aspirador»: Amazon 349.0 €
+  Chollometro «Hoka Zapatillas de deporte Rincon 4 - running- Tallas- 38, 39 1/3, 40»: Es 54.99 €
   Chollometro «PUMA Transport Hombre Zapatillas de running»: Deporte-outlet 29.99 €
   Chollometro «Zapatillas Nike Air Jordan 1 Retro Low OG (Tallas 36 a 40)»: Es 64.99 €
-  Chollometro «Pack LEGO Botanical: Orquídea (10311) + Bonsái (10281) por 66,26 € en »: Amazon 66.26 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71898 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 85178 bytes, 30 chollos
+  cm-2048731 · MediaMarkt 79.99 € → candidato externo · Auriculares inalámbricos - Sony PlayStation PULSE, 30h Auton
+  cm-2048317 · Amazon 349.0 € → candidato externo · roborock Qrevo 2 Pro Robot Aspirador
+  cm-2048767 · Es 54.99 € → candidato externo · Hoka Zapatillas de deporte Rincon 4 - running- Tallas- 38, 3
   cm-2048498 · Deporte-outlet 29.99 € → candidato externo · PUMA Transport Hombre Zapatillas de running
   cm-2038312 · Es 64.99 € → candidato externo · Zapatillas Nike Air Jordan 1 Retro Low OG (Tallas 36 a 40)
-  cm-2047986 · Amazon 66.26 € → candidato externo · Pack LEGO Botanical: Orquídea (10311) + Bonsái (10281) por 6
-  Milanuncios «lego 10311 botanical»: HTTP 403, 95510 bytes
+  Wallapop «mediamarkt 30h auriculares»: 200 / 9856 bytes, 2 anuncios, 0 parecidos, 0 reservas
+  Wallapop «mediamarkt 30h»: 200 / 52462 bytes, 13 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «mediamarkt 30h auriculares»: HTTP 403, 95510 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 15 anuncios, ~40 €, no publica
-  ⚠️ No publico «Amazon.De Pack LEGO Botanical: Orquídea (10311) + Bonsái (10281) por 66,26 € en Amazon Ale»: reventa en WALLAPOP ~40 € (15 anuncios): ROI -40 % y -26 €, por debajo del mínimo (25 % y 25 €)
-  Vinted «deporte outlet puma»: HTTP 200, 3212084 bytes, 47 anuncios
-  Vinted «deporte outlet puma»: 1 parecidos de 47
-  Wallapop «deporte outlet puma»: 200 / 7635 bytes, 2 anuncios, 0 parecidos, 0 reservas
-  Wallapop «deporte outlet»: 200 / 132632 bytes, 38 anuncios, 1 parecidos, 0 reservas
+  ⚠️ No publico «Mediamarkt Auriculares inalámbricos - Sony PlayStation PULSE, 30h Autonomía, Para: PS5»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Vinted «privalia 38 hoka»: HTTP 200, 2784371 bytes, 0 anuncios
+  Vinted «privalia 38 hoka»: 0 parecidos de 0
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Wallapop «privalia 38 hoka»: 200 / 1263 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «privalia 38»: 200 / 47859 bytes, 15 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «privalia 38 hoka»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Privalia Hoka Zapatillas de deporte Rincon 4 - running- Tallas- 38, 39 1/3, 40»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Milanuncios «deporte outlet puma»: HTTP 403, 95510 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   Reventa VINTED+WALLAPOP: 2 anuncios, ~0 €, no publica
@@ -27,4 +38,9 @@ Candidatos nuevos tras el filtro rápido: 0
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   Reventa VINTED: 1 anuncios, ~0 €, no publica
   ⚠️ No publico «Privalia Zapatillas Nike Air Jordan 1 Retro Low OG (Tallas 36 a 40)»: VINTED solo tiene 1 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop «roborock qrevo»: 200 / 124608 bytes, 35 anuncios, 32 parecidos, 0 reservas
+  Milanuncios «roborock qrevo»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 25 anuncios, ~420 €, no publica
+  ⚠️ No publico «Amazon roborock Qrevo 2 Pro Robot Aspirador»: reventa en WALLAPOP ~420 € (25 anuncios): ROI 20 % y 71 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
