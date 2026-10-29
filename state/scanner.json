@@ -873,7 +873,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 121,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1522,6 +1522,44 @@
    "http_status": 200,
    "bytes": 133948,
    "raw_count": 40
+  },
+  "amazon.de|pack lego botanical: orquidea (10311) + bonsai (10281) por 66,26 € en amazon alemania|lego 10311 botanical": {
+   "t": 1793291249.1815867,
+   "query": "lego 10311 botanical",
+   "prices": [
+    30.0,
+    40.0,
+    35.0,
+    5.0,
+    45.0,
+    40.0,
+    39.0,
+    35.0,
+    30.0,
+    49.99,
+    55.0,
+    40.0,
+    40.0,
+    45.0,
+    45.0,
+    5.0,
+    35.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 54457,
+   "raw_count": 22
+  },
+  "privalia|zapatillas nike air jordan 1 retro low og (tallas 36 a 40)|privalia 36 zapatillas": {
+   "t": 1793291252.180632,
+   "query": "privalia 36 zapatillas",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -1604,7 +1642,9 @@
   "wallapop:cm-2048493": 1793284074.213469,
   "wallapop:cm-2048538": 1793287612.1507368,
   "wallapop:cm-2048589": 1793287614.7862022,
-  "wallapop:cm-2048215": 1793287616.388232
+  "wallapop:cm-2048215": 1793287616.388232,
+  "wallapop:cm-2047986": 1793291249.758527,
+  "wallapop:cm-2038312": 1793291252.804314
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1810,6 +1850,16 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~35 € (65 anuncios): ROI 11 % y 4 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "privalia|zapatillas nike air jordan 1 retro low og (tallas 36 a 40)|privalia 36 zapatillas": {
+   "t": 1793291250.880492,
+   "prices": [
+    12.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 1 anuncios parecidos (mínimo 8)"
   }
  }
 }
