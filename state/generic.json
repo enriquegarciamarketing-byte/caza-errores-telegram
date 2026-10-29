@@ -179,6 +179,16 @@
       "message_id": 20,
       "title": "Psychonauts 2, 1 (STEAM)",
       "store": "Difmark"
+    },
+    {
+      "id": "cm-2049044",
+      "key": "p:skyscanner edimburgo vuelos directos escocia solo",
+      "price": 14.0,
+      "t": 1793313179,
+      "url": "https://www.skyscanner.es/transporte/vuelos/mala/edi/261221/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=true&rtn=0&priceSourceId=&priceTrace=%7Bbl%7D%3A202610291841%2AD%2AAGP%2AEDI%2A20261221%2Aryan%2AFR&qp_prevCurrency=EUR&qp_prevPrice=15&qp_prevProvider=ins_month",
+      "message_id": 21,
+      "title": "¡EDIMBURGO! Vuelos DIRECTOS a ESCOCIA por solo 14€ Trayecto (diciembre) - Salidas desde Madrid, Sevilla, Málaga y Fuerteventura",
+      "store": "Skyscanner"
     }
   ]
 }
