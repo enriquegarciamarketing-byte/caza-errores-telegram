@@ -873,7 +873,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 118,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1635,6 +1635,38 @@
    "http_status": 200,
    "bytes": 124608,
    "raw_count": 35
+  },
+  "privalia|saucony - zapatillas de running hurricane 25 - running|privalia 25 saucony": {
+   "t": 1793301727.550883,
+   "query": "privalia 25 saucony",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "privalia|hoka zapatillas de deporte mach x 3 - running- tallas- 41 1/3, 43 1/3, 44, 44 2/3, 45 1/3|privalia 41 hoka": {
+   "t": 1793301729.9250405,
+   "query": "privalia 41",
+   "prices": [
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 17172,
+   "raw_count": 5
+  },
+  "el corte ingles|radar de vision trasera varia ertl615 garmin negro|corte ingles ertl615": {
+   "t": 1793301732.6251385,
+   "query": "corte ingles ertl615",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -1723,7 +1755,10 @@
   "wallapop:cm-2048498": 1793294737.3428204,
   "wallapop:cm-2048731": 1793297966.912618,
   "wallapop:cm-2048767": 1793297969.303834,
-  "wallapop:cm-2048317": 1793297972.270432
+  "wallapop:cm-2048317": 1793297972.270432,
+  "wallapop:cm-2048872": 1793301728.2399542,
+  "wallapop:cm-2048844": 1793301730.4336371,
+  "wallapop:cm-2018481": 1793301733.158338
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1952,6 +1987,22 @@
   },
   "privalia|hoka zapatillas de deporte rincon 4 - running- tallas- 38, 39 1/3, 40|privalia 38 hoka": {
    "t": 1793297967.4952793,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "privalia|saucony - zapatillas de running hurricane 25 - running|privalia 25 saucony": {
+   "t": 1793301726.3018868,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "privalia|hoka zapatillas de deporte mach x 3 - running- tallas- 41 1/3, 43 1/3, 44, 44 2/3, 45 1/3|privalia 41 hoka": {
+   "t": 1793301728.7072773,
    "prices": [],
    "reserved": 0,
    "demand_known": false,
