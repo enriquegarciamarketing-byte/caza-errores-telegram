@@ -719,6 +719,11 @@
    "price": 56.0,
    "t": 1793230521,
    "result": "solo -10% bajo la referencia"
+  },
+  "1mNAdKM": {
+   "price": 31.99,
+   "t": 1793233347,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -853,7 +858,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 115,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
