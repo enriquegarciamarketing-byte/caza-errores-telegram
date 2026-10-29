@@ -868,7 +868,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 116,
+ "last_listing_count": 118,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1414,6 +1414,38 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "amazon|reanimal ps5|reanimal ps5": {
+   "t": 1793284073.556227,
+   "query": "reanimal ps5",
+   "prices": [
+    25.0,
+    25.0,
+    29.0,
+    29.9,
+    28.0,
+    28.99,
+    35.0,
+    39.95,
+    32.0,
+    30.0,
+    30.0,
+    29.0,
+    39.99,
+    40.0,
+    40.0,
+    39.9,
+    100.0,
+    36.99,
+    290.0,
+    270.0,
+    45.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 50860,
+   "raw_count": 22
   }
  },
  "milanuncios_cache": {
@@ -1492,7 +1524,8 @@
   "wallapop:cm-2031690": 1793276164.5837314,
   "wallapop:cm-2047991": 1793276167.28966,
   "wallapop:cm-2048343": 1793278316.6694105,
-  "wallapop:cm-2046748": 1793278585.5002897
+  "wallapop:cm-2046748": 1793278585.5002897,
+  "wallapop:cm-2048493": 1793284074.213469
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
