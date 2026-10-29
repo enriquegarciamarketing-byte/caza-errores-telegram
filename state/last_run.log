@@ -1,31 +1,22 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 118 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 483211 bytes, 30 ASIN, 32 títulos
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+Listados: 117 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36393 bytes, 30 chollos
-  Chollometro «Saucony - zapatillas de running Hurricane 25 - Tallas- 38, 38.5, 39»: Es 64.99 €
-  Chollometro «ASICS SONICBLAST Zapatillas de running de hombre con placa.»: Sivasdescalzo 88.8 €
-  Chollometro «Zapatillas Reebok FloatZig X1 (Tallas 38.5, 39, 40, 41 y 42.5 - Color »: Deporvillage 50.95 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 65489 bytes, 30 chollos
-  cm-2048938 · Es 64.99 € → candidato externo · Saucony - zapatillas de running Hurricane 25 - Tallas- 38, 3
-  cm-2048918 · Sivasdescalzo 88.8 € → candidato externo · ASICS SONICBLAST Zapatillas de running de hombre con placa.
-  cm-2048901 · Deporvillage 50.95 € → candidato externo · Zapatillas Reebok FloatZig X1 (Tallas 38.5, 39, 40, 41 y 42.
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «privalia 25 saucony»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  ⚠️ No publico «Privalia Saucony - zapatillas de running Hurricane 25 - Tallas- 38, 38.5, 39»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «sivasdescalzo asics»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa VINTED: 3 anuncios, ~0 €, no publica
-  ⚠️ No publico «Sivasdescalzo ASICS SONICBLAST Zapatillas de running de hombre con placa.»: VINTED solo tiene 3 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «deporvillage x1 zapatillas»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  ⚠️ No publico «Deporvillage Zapatillas Reebok FloatZig X1 (Tallas 38.5, 39, 40, 41 y 42.5 - Color naranja»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36488 bytes, 30 chollos
+  Chollometro «LEGO Architecture Ciudad de Nueva York: La Gran Manzana | + CUPÓN 44.8»: Carrefour 111.99 €
+  Chollometro «Robot Aspirador Cecotec Conga M50 X-Treme (Navegación LÁSER, 5000 Pa, »: Amazon 84.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68209 bytes, 30 chollos
+  cm-2048324 · Carrefour 111.99 € → candidato externo · LEGO Architecture Ciudad de Nueva York: La Gran Manzana | + 
+  cm-2048777 · Amazon 84.99 € → candidato externo · Robot Aspirador Cecotec Conga M50 X-Treme (Navegación LÁSER,
+  Wallapop «carrefour 44 lego»: 200 / 6307 bytes, 1 anuncios, 0 parecidos, 0 reservas
+  Wallapop «carrefour 44»: 200 / 87969 bytes, 37 anuncios, 4 parecidos, 0 reservas
+  Milanuncios «carrefour 44 lego»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 3 anuncios, ~0 €, no publica
+  ⚠️ No publico «Carrefour LEGO Architecture Ciudad de Nueva York: La Gran Manzana | + CUPÓN 44.80€»: WALLAPOP solo tiene 3 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Wallapop «robot m50 aspirador»: 200 / 90221 bytes, 32 anuncios, 26 parecidos, 0 reservas
+  Milanuncios «robot m50 aspirador»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 26 anuncios, ~80 €, no publica
+  ⚠️ No publico «Amazon Robot Aspirador Cecotec Conga M50 X-Treme (Navegación LÁSER, 5000 Pa, Mapeo)»: reventa en WALLAPOP ~80 € (26 anuncios): ROI -6 % y -5 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0

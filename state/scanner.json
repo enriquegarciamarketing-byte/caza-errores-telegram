@@ -878,7 +878,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 118,
+ "last_listing_count": 117,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1702,6 +1702,58 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "carrefour|lego architecture ciudad de nueva york: la gran manzana | + cupon 44.80€|carrefour 44 lego": {
+   "t": 1793312836.2809868,
+   "query": "carrefour 44",
+   "prices": [
+    4.0,
+    6.0,
+    5.0,
+    2.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 87969,
+   "raw_count": 37
+  },
+  "amazon|robot aspirador cecotec conga m50 x-treme (navegacion laser, 5000 pa, mapeo)|robot m50 aspirador": {
+   "t": 1793312837.2246182,
+   "query": "robot m50 aspirador",
+   "prices": [
+    99.9,
+    65.0,
+    55.0,
+    82.0,
+    65.0,
+    71.1,
+    70.0,
+    82.0,
+    79.0,
+    100.0,
+    75.0,
+    75.0,
+    50.0,
+    54.99,
+    90.0,
+    109.0,
+    90.0,
+    70.0,
+    80.0,
+    90.0,
+    100.0,
+    90.0,
+    65.0,
+    90.0,
+    70.0,
+    109.9
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 90221,
+   "raw_count": 32
   }
  },
  "milanuncios_cache": {
@@ -1796,7 +1848,9 @@
   "wallapop:cm-2018481": 1793301733.158338,
   "wallapop:cm-2048918": 1793304713.6435812,
   "wallapop:cm-2048901": 1793304715.63325,
-  "wallapop:cm-2048938": 1793307637.3198047
+  "wallapop:cm-2048938": 1793307637.3198047,
+  "wallapop:cm-2048324": 1793312836.894638,
+  "wallapop:cm-2048777": 1793312837.8364027
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
