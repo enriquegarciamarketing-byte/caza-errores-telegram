@@ -1,8 +1,11 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 118 productos únicos
+Listados: 117 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 454273 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 479146 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 343513 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36009 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35623 bytes, 30 chollos
   Chollometro «LEGO Pokémon Pikachu y Poké Ball, 72152 25% descuento y regalo 60 euro»: Carrefour 149.99 €
   Chollometro «LEGO Ideas Cohete Lunar de Tintin, Juguete de construcción +18 años - »: Carrefour 139.99 €
   Chollometro «LEGO Super Mario Game Boy, 72046 40% regalo en cupón (24 euros)»: Carrefour 59.99 €
