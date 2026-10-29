@@ -863,7 +863,7 @@
  ],
  "tg_offset": 334822051,
  "admin_chat_id": 1880159117,
- "last_listing_count": 116,
+ "last_listing_count": 118,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1198,6 +1198,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "showroomprive|adidas supernova rise atr zapatillas running|showroomprive adidas": {
+   "t": 1793257566.8295074,
+   "query": "showroomprive adidas",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -1254,7 +1264,8 @@
   "wallapop:cm-2047796": 1793224871.5461402,
   "wallapop:cm-2047769": 1793225889.905894,
   "wallapop:cm-2047810": 1793226266.2948828,
-  "wallapop:cm-2047820": 1793226874.2993596
+  "wallapop:cm-2047820": 1793226874.2993596,
+  "wallapop:cm-2047874": 1793257567.2960806
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1312,6 +1323,14 @@
    "prices": [],
    "reserved": 0,
    "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "showroomprive|adidas supernova rise atr zapatillas running|showroomprive adidas": {
+   "t": 1793257566.694152,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
