@@ -1244,6 +1244,28 @@
    "http_status": 200,
    "bytes": 135327,
    "raw_count": 40
+  },
+  "carrefour|lego star wars halcon milenario - 75375 40% acumulable en cupon ya online (34 euros)|carrefour 75375 lego": {
+   "t": 1793263513.7896657,
+   "query": "carrefour 75375 lego",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "amazon.fr|lego city tren de vapor retro 60511: 575 piezas, estacion, 5 minifiguras y opcion de motorizacion|lego 60511 city": {
+   "t": 1793263515.8778481,
+   "query": "lego 60511 city",
+   "prices": [
+    79.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 3062,
+   "raw_count": 1
   }
  },
  "milanuncios_cache": {
@@ -1310,7 +1332,9 @@
   "wallapop:cm-2047810": 1793226266.2948828,
   "wallapop:cm-2047820": 1793226874.2993596,
   "wallapop:cm-2047874": 1793257567.2960806,
-  "wallapop:cm-2047990": 1793260586.952905
+  "wallapop:cm-2047990": 1793260586.952905,
+  "wallapop:cm-2047766": 1793263514.3342533,
+  "wallapop:cm-2047605": 1793263516.3285172
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
