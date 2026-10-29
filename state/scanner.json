@@ -873,7 +873,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 121,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1560,6 +1560,18 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "deporte-outlet|puma transport hombre zapatillas de running|deporte outlet puma": {
+   "t": 1793294736.732809,
+   "query": "deporte outlet",
+   "prices": [
+    86.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 132632,
+   "raw_count": 38
   }
  },
  "milanuncios_cache": {
@@ -1644,7 +1656,8 @@
   "wallapop:cm-2048589": 1793287614.7862022,
   "wallapop:cm-2048215": 1793287616.388232,
   "wallapop:cm-2047986": 1793291249.758527,
-  "wallapop:cm-2038312": 1793291252.804314
+  "wallapop:cm-2038312": 1793291252.804314,
+  "wallapop:cm-2048498": 1793294737.3428204
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1855,6 +1868,16 @@
    "t": 1793291250.880492,
    "prices": [
     12.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 1 anuncios parecidos (mínimo 8)"
+  },
+  "deporte-outlet|puma transport hombre zapatillas de running|deporte outlet puma": {
+   "t": 1793294735.243898,
+   "prices": [
+    30.0
    ],
    "reserved": 0,
    "demand_known": true,

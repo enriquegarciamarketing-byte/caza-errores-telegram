@@ -1,44 +1,30 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 121 productos únicos
+Listados: 116 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35340 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35592 bytes, 30 chollos
+  Chollometro «PUMA Transport Hombre Zapatillas de running»: Deporte-outlet 29.99 €
   Chollometro «Zapatillas Nike Air Jordan 1 Retro Low OG (Tallas 36 a 40)»: Es 64.99 €
   Chollometro «Pack LEGO Botanical: Orquídea (10311) + Bonsái (10281) por 66,26 € en »: Amazon 66.26 €
-  Chollometro «Nike Performance METCON 10 - Zapatillas de entrenamiento - Tallas- 35.»: Zalando-prive 68.9 €
-  Chollometro «Skechers Bobs Squad Waves Current Look Zapatillas Mujer»: Amazon 31.5 €
-  Chollometro «LEGO Architecture Londres 21034 468 piezas 12+ años»: Powerplanetonline 26.95 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68923 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71898 bytes, 30 chollos
+  cm-2048498 · Deporte-outlet 29.99 € → candidato externo · PUMA Transport Hombre Zapatillas de running
   cm-2038312 · Es 64.99 € → candidato externo · Zapatillas Nike Air Jordan 1 Retro Low OG (Tallas 36 a 40)
   cm-2047986 · Amazon 66.26 € → candidato externo · Pack LEGO Botanical: Orquídea (10311) + Bonsái (10281) por 6
-  cm-2048589 · Zalando-prive 68.9 € → candidato externo · Nike Performance METCON 10 - Zapatillas de entrenamiento - T
-  cm-2048215 · Amazon 31.5 € → candidato externo · Skechers Bobs Squad Waves Current Look Zapatillas Mujer
-  cm-2048538 · Powerplanetonline 26.95 € → candidato externo · LEGO Architecture Londres 21034 468 piezas 12+ años
-  Wallapop «lego 10311 botanical»: 200 / 54457 bytes, 22 anuncios, 17 parecidos, 0 reservas
-  Milanuncios «lego 10311 botanical»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Milanuncios «lego 10311 botanical»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   Reventa WALLAPOP: 15 anuncios, ~40 €, no publica
   ⚠️ No publico «Amazon.De Pack LEGO Botanical: Orquídea (10311) + Bonsái (10281) por 66,26 € en Amazon Ale»: reventa en WALLAPOP ~40 € (15 anuncios): ROI -40 % y -26 €, por debajo del mínimo (25 % y 25 €)
+  Vinted «deporte outlet puma»: HTTP 200, 3212084 bytes, 47 anuncios
+  Vinted «deporte outlet puma»: 1 parecidos de 47
+  Wallapop «deporte outlet puma»: 200 / 7635 bytes, 2 anuncios, 0 parecidos, 0 reservas
+  Wallapop «deporte outlet»: 200 / 132632 bytes, 38 anuncios, 1 parecidos, 0 reservas
+  Milanuncios «deporte outlet puma»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 2 anuncios, ~0 €, no publica
+  ⚠️ No publico «Deporte-Outlet PUMA Transport Hombre Zapatillas de running»: VINTED+WALLAPOP solo tiene 2 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95510 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «powerplanetonline 21034 lego»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  ⚠️ No publico «Powerplanetonline LEGO Architecture Londres 21034 468 piezas 12+ años»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Vinted «privalia 36 zapatillas»: HTTP 200, 2857466 bytes, 8 anuncios
-  Vinted «privalia 36 zapatillas»: 1 parecidos de 8
-  Wallapop «privalia 36 zapatillas»: 200 / 9966 bytes, 2 anuncios, 0 parecidos, 0 reservas
-  Wallapop «privalia 36»: 200 / 28257 bytes, 8 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «privalia 36 zapatillas»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Milanuncios «privalia 36 zapatillas»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   Reventa VINTED: 1 anuncios, ~0 €, no publica
-  ⚠️ No publico «Privalia Zapatillas Nike Air Jordan 1 Retro Low OG (Tallas 36 a 40)»: VINTED solo tiene 1 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «prive zalando 10»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa VINTED: 1 anuncios, ~0 €, no publica
-  ⚠️ No publico «Privé By Zalando Nike Performance METCON 10 - Zapatillas de entrenamiento - Tallas- 35.5, »: VINTED solo tiene 1 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Milanuncios «skechers bobs»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa VINTED+WALLAPOP: 99 anuncios, ~30 €, no publica
-  ⚠️ No publico «Amazon Skechers Bobs Squad Waves Current Look Zapatillas Mujer»: reventa en VINTED+WALLAPOP ~30 € (99 anuncios): ROI -5 % y -2 €, por debajo del mínimo (30 % y 25 €)
+  ⚠️ No publico «Privalia Zapatillas Nike Air Jordan 1 Retro Low OG (Tallas 36 a 40)»: VINTED solo tiene 1 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0
