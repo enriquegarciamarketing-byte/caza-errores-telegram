@@ -49,6 +49,16 @@
       "message_id": 7,
       "title": "Pistachos a 8,75 €/Kg. - 3x400 gr.",
       "store": "Carrefour"
+    },
+    {
+      "id": "cm-2048096",
+      "key": "p:zalando prive puma vikky star zapatillas",
+      "price": 24.9,
+      "t": 1793269694,
+      "url": "https://www.zalando-prive.es/campaigns/ZZO4NDG/articles/ZZO3FL80L-A01",
+      "message_id": 8,
+      "title": "Puma VIKKY STAR - Zapatillas",
+      "store": "Zalando-prive"
     }
   ]
 }
