@@ -2,10 +2,54 @@ El bot @cazaerroresAmazon_bot puede publicar en @cazachollos_com.
   Chollometro https://www.chollometro.com/rss/hot: 30 chollos
   Chollometro https://www.chollometro.com/rss/nuevos: 30 chollos
   Poca bajada: Tablet Xiaomi Pad 8 (11.2" 3.2K 144Hz, 8GB RAM, 128GB, Snapdragon 8s G
-  Caducado: Bouquet de flores Worldbrands: Girasol
-  Caducado: Cojín Peluche 3D Uzumaki Naruto Shippuden 35cm
   Amazon https://jimmyleaks.com/es/minimos-de-hoy/: 36 productos
   Amazon https://jimmyleaks.com/es/?order=-discount: 10 productos
-  Sin enlace de Amazon etiquetado: Reloj Inteligente Mujer, 1.83" Smartwatch Mujer Pulgadas con Llamadas,
-  Sin enlace de Amazon etiquetado: 6 pares calcetines deporte hombre cortos algodón quarter calcetines (B
-  Publicado en @cazachollos_com (mensaje 18): Hoka Zapatillas de deporte Rincon 4 - running- Tallas- 38, 39 1/3, 40
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 603, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 561, in _read_next_chunk_size
+    return int(line, 16)
+           ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 621, in _read_chunked
+    while (chunk_left := self._get_chunk_left()) is not None:
+                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 605, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/generic.py", line 448, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/generic.py", line 441, in main
+    code = run(args, cfg, state, now, tg=tg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/generic.py", line 406, in run
+    candidates = gather(cfg, state, now, fetch=fetch)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/generic.py", line 257, in gather
+    found.extend(amazon_candidates(cfg, rules, now, seen, fetch))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/generic.py", line 296, in amazon_candidates
+    _status, raw = fetch(f"{scanner.BASE}/es/dp/{item['id']}/")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/generic.py", line 326, in _fetch
+    return feeds._get(url)
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/feeds.py", line 38, in _get
+    return int(response.status), response.read()
+                                 ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 488, in read
+    return self._read_chunked(amt)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 633, in _read_chunked
+    raise IncompleteRead(b''.join(value)) from exc
+http.client.IncompleteRead: IncompleteRead(20272 bytes read)
