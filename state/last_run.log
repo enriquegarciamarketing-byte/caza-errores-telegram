@@ -1,48 +1,40 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 119 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35862 bytes, 30 chollos
+Listados: 116 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  MKJEQV4 · 52.23 € · media 73.46 · ref 54.52 → descartado (solo -4% bajo la referencia) · ASICS Japan S Zapatillas
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36123 bytes, 30 chollos
+  Chollometro «Saucony - zapatillas de running Hurricane 25 - Tallas- 38, 38.5, 39»: Es 64.99 €
   Chollometro «ASICS SONICBLAST Zapatillas de running de hombre con placa.»: Sivasdescalzo 88.8 €
   Chollometro «Zapatillas Reebok FloatZig X1 (Tallas 38.5, 39, 40, 41 y 42.5 - Color »: Deporvillage 50.95 €
   Chollometro «Saucony - zapatillas de running Hurricane 25 - running»: Es 64.99 €
-  Chollometro «Radar de visión trasera Varia eRTL615 Garmin Negro»: El Corte Inglés 169.99 €
-  Chollometro «Hoka Zapatillas de deporte Mach X 3 - running- Tallas- 41 1/3, 43 1/3,»: Es 74.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 65847 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75990 bytes, 30 chollos
+  cm-2048938 · Es 64.99 € → candidato externo · Saucony - zapatillas de running Hurricane 25 - Tallas- 38, 3
   cm-2048918 · Sivasdescalzo 88.8 € → candidato externo · ASICS SONICBLAST Zapatillas de running de hombre con placa.
   cm-2048901 · Deporvillage 50.95 € → candidato externo · Zapatillas Reebok FloatZig X1 (Tallas 38.5, 39, 40, 41 y 42.
   cm-2048872 · Es 64.99 € → candidato externo · Saucony - zapatillas de running Hurricane 25 - running
-  cm-2018481 · El Corte Inglés 169.99 € → candidato externo · Radar de visión trasera Varia eRTL615 Garmin Negro
-  cm-2048844 · Es 74.99 € → candidato externo · Hoka Zapatillas de deporte Mach X 3 - running- Tallas- 41 1/
-  Vinted «sivasdescalzo asics»: HTTP 200, 2893832 bytes, 12 anuncios
-  Vinted «sivasdescalzo asics»: 4 parecidos de 12
-  Wallapop «sivasdescalzo asics»: 200 / 4286 bytes, 1 anuncios, 0 parecidos, 0 reservas
+  Vinted «privalia 25 saucony»: HTTP 200, 2784612 bytes, 0 anuncios
+  Vinted «privalia 25 saucony»: 0 parecidos de 0
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Wallapop «privalia 25 saucony»: 200 / 1270 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «privalia 25»: 200 / 9022 bytes, 2 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «sivasdescalzo asics»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «privalia 25 saucony»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Privalia Saucony - zapatillas de running Hurricane 25 - Tallas- 38, 38.5, 39»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «sivasdescalzo asics»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
   Reventa VINTED: 3 anuncios, ~0 €, no publica
-  ⚠️ No publico «Sivasdescalzo ASICS SONICBLAST Zapatillas de running de hombre con placa.»: VINTED solo tiene 3 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted «deporvillage x1 zapatillas»: HTTP 200, 2785177 bytes, 0 anuncios
-  Vinted «deporvillage x1 zapatillas»: 0 parecidos de 0
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «deporvillage x1 zapatillas»: 200 / 1286 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «deporvillage x1»: 200 / 10722 bytes, 2 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «deporvillage x1 zapatillas»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Deporvillage Zapatillas Reebok FloatZig X1 (Tallas 38.5, 39, 40, 41 y 42.5 - Color naranja»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Sivasdescalzo ASICS SONICBLAST Zapatillas de running de hombre con placa.»: VINTED solo tiene 3 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «privalia 25 saucony»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Privalia Saucony - zapatillas de running Hurricane 25 - running»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «deporvillage x1 zapatillas»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Deporvillage Zapatillas Reebok FloatZig X1 (Tallas 38.5, 39, 40, 41 y 42.5 - Color naranja»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «privalia 41 hoka»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 1 anuncios, ~0 €, no publica
-  ⚠️ No publico «Privalia Hoka Zapatillas de deporte Mach X 3 - running- Tallas- 41 1/3, 43 1/3, 44, 44 2/3»: WALLAPOP solo tiene 1 anuncios parecidos (mínimo 8) · Vinted solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «corte ingles ertl615»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «El Corte Inglés Radar de visión trasera Varia eRTL615 Garmin Negro»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «privalia 25 saucony»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Privalia Saucony - zapatillas de running Hurricane 25 - running»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
 Publicados en esta ejecución: 0

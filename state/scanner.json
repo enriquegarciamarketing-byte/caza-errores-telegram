@@ -739,6 +739,11 @@
    "price": 369.99,
    "t": 1793287578,
    "result": "solo -3% bajo la referencia"
+  },
+  "MKJEQV4": {
+   "price": 52.23,
+   "t": 1793307606,
+   "result": "solo -4% bajo la referencia"
   }
  },
  "posts": [
@@ -873,7 +878,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 119,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1687,6 +1692,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "privalia|saucony - zapatillas de running hurricane 25 - tallas- 38, 38.5, 39|privalia 25 saucony": {
+   "t": 1793307636.863242,
+   "query": "privalia 25 saucony",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -1780,7 +1795,8 @@
   "wallapop:cm-2048844": 1793301730.4336371,
   "wallapop:cm-2018481": 1793301733.158338,
   "wallapop:cm-2048918": 1793304713.6435812,
-  "wallapop:cm-2048901": 1793304715.63325
+  "wallapop:cm-2048901": 1793304715.63325,
+  "wallapop:cm-2048938": 1793307637.3198047
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -2046,6 +2062,14 @@
   },
   "deporvillage|zapatillas reebok floatzig x1 (tallas 38.5, 39, 40, 41 y 42.5 - color naranja por 52,95€)|deporvillage x1 zapatillas": {
    "t": 1793304714.038269,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "privalia|saucony - zapatillas de running hurricane 25 - tallas- 38, 38.5, 39|privalia 25 saucony": {
+   "t": 1793307635.7348504,
    "prices": [],
    "reserved": 0,
    "demand_known": false,
