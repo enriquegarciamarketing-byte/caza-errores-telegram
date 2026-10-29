@@ -1208,6 +1208,37 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "amazon|munich focus 04, zapatillas hombre (tallas 41, 43 y 44)|munich 04 focus": {
+   "t": 1793260586.4019682,
+   "query": "munich 04",
+   "prices": [
+    19.99,
+    40.0,
+    70.0,
+    40.0,
+    9.0,
+    10.0,
+    50.0,
+    40.0,
+    55.0,
+    50.0,
+    20.0,
+    45.0,
+    49.0,
+    55.0,
+    64.99,
+    49.95,
+    52.0,
+    30.0,
+    60.0,
+    18.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 135327,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -1265,7 +1296,8 @@
   "wallapop:cm-2047769": 1793225889.905894,
   "wallapop:cm-2047810": 1793226266.2948828,
   "wallapop:cm-2047820": 1793226874.2993596,
-  "wallapop:cm-2047874": 1793257567.2960806
+  "wallapop:cm-2047874": 1793257567.2960806,
+  "wallapop:cm-2047990": 1793260586.952905
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -1331,6 +1363,14 @@
    "prices": [],
    "reserved": 0,
    "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "amazon|munich focus 04, zapatillas hombre (tallas 41, 43 y 44)|munich 04 focus": {
+   "t": 1793260585.023689,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
