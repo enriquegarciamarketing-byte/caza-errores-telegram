@@ -1015,6 +1015,44 @@
    "transient": false,
    "reserved": 0,
    "demand_known": false
+  },
+  "amazon|munich focus 04, zapatillas hombre (tallas 41, 43 y 44)|vinted+wallapop+milanuncios:munich 04 focus": {
+   "t": 1793261182.9625528,
+   "prices": [
+    19.99,
+    40.0,
+    70.0,
+    40.0,
+    9.0,
+    10.0,
+    50.0,
+    40.0,
+    55.0,
+    50.0,
+    20.0,
+    45.0,
+    49.0,
+    55.0,
+    64.99,
+    49.95,
+    52.0,
+    30.0,
+    60.0,
+    18.0
+   ],
+   "parts": [
+    [
+     "Wallapop",
+     20
+    ]
+   ],
+   "failures": [
+    "Vinted solo tiene 0 anuncios parecidos (mínimo 8)",
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": false
   }
  },
  "wallapop_cache": {
@@ -1276,6 +1314,14 @@
   },
   "primeriti|nike zapatillas casual de hombre nike charge suede|primeriti nike": {
    "t": 1793226390.377824,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  },
+  "amazon|munich focus 04, zapatillas hombre (tallas 41, 43 y 44)|munich 04 focus": {
+   "t": 1793261182.9624693,
    "prices": [],
    "reserved": 0,
    "demand_known": false,
