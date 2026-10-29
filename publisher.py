@@ -313,20 +313,56 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
     return "\n".join(lines)
 
 
-DEAL_CLOSERS = (
-    "Si te encaja, no lo dejes escapar: estos precios duran poco.",
-    "Hoy está así. Mañana puede que ya no.",
-    "De los que conviene mirar antes de que lo corrijan.",
-    "Un precio que no se ve todos los días.",
-    "Entra, comprueba que es el modelo que buscas y decide.",
-)
-TRIP_CLOSERS = (
-    "Si esas fechas te valen, míralo antes de que suba.",
-    "Maleta lista: un precio así no suele aguantar.",
-    "Un viaje a este precio merece que le eches un ojo hoy.",
+_ERROR_TITLE = re.compile(
+    r"error(?:es)? de precio|precio err[oó]neo|precio incorrecto|fallo de precio|"
+    r"se ha(?:n)? colado|precio mal puesto",
+    re.I,
 )
 TRIP_WORDS = ("viaje", "vuelo", "crucero", "hotel", "vacaciones")
 DEAL_LOGO = ROOT / "images" / "logo-caza-chollos.png"
+_CLOSERS = {
+    "error": (
+        "Si sigue así, no durará: confirma que es el modelo y el vendedor.",
+        "Estos fallos se corrigen enseguida. Entra y revísalo ahora.",
+        "Un descuadre así no suele aguantar. Míralo antes de que lo ajusten.",
+    ),
+    "viaje": (
+        "Si esas fechas te valen, míralo antes de que suba.",
+        "Maleta lista: un precio así no suele aguantar.",
+        "Un viaje a este precio merece que le eches un ojo hoy.",
+    ),
+    "minimo": (
+        "Está en uno de sus precios más bajos. Si lo buscabas, este es el momento.",
+        "Hacía tiempo que no se veía tan barato. Comprueba el envío y decide.",
+        "Mínimo reciente: si te encaja el modelo, no esperes a que rebote.",
+    ),
+    "chollazo": (
+        "Una bajada así no se ve cada semana. Entra y confirma el modelo.",
+        "Hoy está muy por debajo de lo habitual. Merece un vistazo.",
+        "Si lo tenías fichado, este es de los que conviene mirar ya.",
+    ),
+    "chollo": (
+        "Hoy está así. Mañana puede que ya no.",
+        "Un precio que no se ve todos los días.",
+        "Entra, comprueba que es el modelo que buscas y decide.",
+        "Si te encaja, míralo antes de que vuelva a subir.",
+        "Buen momento para pillarlo si lo tenías en la lista.",
+    ),
+}
+_HEADLINES = {
+    "error": "🚨 <b>Se ha colado un precio</b>",
+    "viaje": "✈️ <b>Chollo de viaje</b>",
+    "minimo": "📉 <b>Precio mínimo</b>",
+    "chollazo": "🔥 <b>Chollazo</b>",
+    "chollo": "🔥 <b>Chollo</b>",
+}
+_BADGES = {
+    "error": "ERROR DE PRECIO",
+    "viaje": "VIAJE",
+    "minimo": "PRECIO MÍNIMO",
+    "chollazo": "CHOLLAZO",
+    "chollo": "CHOLLO",
+}
 
 
 def _is_trip(title: str) -> bool:
@@ -334,27 +370,52 @@ def _is_trip(title: str) -> bool:
     return any(word in folded for word in TRIP_WORDS)
 
 
-def deal_closer(title: str) -> str:
-    """Remate distinto según el título. Nunca cita grados ni la fuente del listado."""
-    pool = TRIP_CLOSERS if _is_trip(title) else DEAL_CLOSERS
+def _reliable_discount(current: float, previous: float | None) -> float:
+    if previous is None or previous <= current * 1.02:
+        return 0.0
+    return (previous - current) / previous * 100
+
+
+def deal_kind(title: str, current: float, previous: float | None = None, origin: str = "") -> str:
+    """error, viaje, minimo, chollazo o chollo. El error de precio gana al resto."""
+    discount = _reliable_discount(current, previous)
+    if discount + 1e-9 >= 70 or _ERROR_TITLE.search(title or ""):
+        return "error"
+    if _is_trip(title):
+        return "viaje"
+    if (origin or "") in {"minimos", "minimo"}:
+        return "minimo"
+    if discount + 1e-9 >= 40:
+        return "chollazo"
+    return "chollo"
+
+
+def deal_closer(title: str, kind: str | None = None, current: float | None = None,
+                previous: float | None = None, origin: str = "") -> str:
+    """Remate distinto según el tipo de chollo. No repite la misma frase en todas las categorías."""
+    if kind is None:
+        kind = deal_kind(title, float(current or 0), previous, origin)
+    pool = _CLOSERS.get(kind) or _CLOSERS["chollo"]
     return pool[sum((title or "").encode()) % len(pool)]
 
 
-def deal_badge(title: str, current: float, previous: float | None) -> str:
-    if _is_trip(title):
-        return "VIAJE"
-    if previous is not None and previous > current * 1.02 and (previous - current) / previous * 100 >= 50:
-        return "CHOLLAZO"
-    return "CHOLLO"
+def deal_badge(title: str, current: float, previous: float | None = None, origin: str = "") -> str:
+    return _BADGES[deal_kind(title, current, previous, origin)]
+
+
+def deal_headline(title: str, current: float, previous: float | None = None, origin: str = "") -> str:
+    return _HEADLINES[deal_kind(title, current, previous, origin)]
 
 
 def build_deal_caption(*, url: str, title: str, current: float, store: str,
-                      previous: float | None = None, temperature: int | None = None) -> str:
+                      previous: float | None = None, temperature: int | None = None,
+                      origin: str = "") -> str:
     """Post del canal normal: precio en formato español, sin reventa, sin ROI y sin grados."""
     del temperature  # solo sirve para ordenar; no se enseña
     shop = (store or "la tienda").strip()
     product = html.escape(short_title(title, "", limit=140))
-    lines = ["🔥 <b>Se ha colado un precio</b>", "", f"<b>{product}</b>", ""]
+    kind = deal_kind(title, current, previous, origin)
+    lines = [deal_headline(title, current, previous, origin), "", f"<b>{product}</b>", ""]
     reliable = previous is not None and previous > current * 1.02
     if reliable:
         saved = previous - current
@@ -366,7 +427,7 @@ def build_deal_caption(*, url: str, title: str, current: float, store: str,
     else:
         lines.append(f"💰 AHORA: {html.escape(euro(current))}")
     lines.append("")
-    lines.append(deal_closer(title))
+    lines.append(deal_closer(title, kind))
     lines.append("")
     lines.append(f'🔗 <b><a href="{html.escape(url, quote=True)}">Ver en {html.escape(shop)}</a></b>')
     return "\n".join(lines)
@@ -525,6 +586,36 @@ def _trim_margins(image: Image.Image, tolerance: int = 18) -> Image.Image:
     return flat.crop((left, top, right, bottom))
 
 
+def _fit_product_panel(image: Image.Image, panel_w: int, panel_h: int) -> Image.Image:
+    """Recorta el blanco y agranda el producto hasta llenar el panel.
+
+    Si cubrir el hueco recortara más de un 22 % del producto, se escala al máximo
+    que cabe. El sobrante es el color del panel, no el marco blanco del archivo.
+    """
+    product = _trim_margins(image.convert("RGB"))
+    if product.width < 1 or product.height < 1 or panel_w < 1 or panel_h < 1:
+        return product
+    contain = min(panel_w / product.width, panel_h / product.height)
+    cover = max(panel_w / product.width, panel_h / product.height)
+    crop = 1 - (contain / cover) if cover else 1
+    factor = cover if crop <= 0.22 else contain
+    if factor > 1.08:
+        import photos
+        product = photos.upscale(product, factor)
+    elif abs(factor - 1) > 0.01:
+        product = product.resize(
+            (max(1, int(round(product.width * factor))), max(1, int(round(product.height * factor)))),
+            Image.Resampling.LANCZOS,
+        )
+    if product.width >= panel_w and product.height >= panel_h:
+        left = max(0, (product.width - panel_w) // 2)
+        top = max(0, (product.height - panel_h) // 2)
+        return product.crop((left, top, left + panel_w, top + panel_h))
+    sheet = Image.new("RGB", (panel_w, panel_h), (250, 250, 250))
+    sheet.paste(product, ((panel_w - product.width) // 2, (panel_h - product.height) // 2))
+    return sheet
+
+
 def _place_product(canvas, photo_box, offer: dict) -> None:
     """Foto del producto, o el logo del canal si no hay una imagen usable."""
     path = offer.get("image_path")
@@ -532,7 +623,13 @@ def _place_product(canvas, photo_box, offer: dict) -> None:
         try:
             with Image.open(path) as source:
                 if min(source.size) >= 48:
-                    if offer.get("cover"):
+                    if offer.get("fill"):
+                        inset = 8
+                        inner_w = (photo_box[2] - photo_box[0]) - inset * 2
+                        inner_h = (photo_box[3] - photo_box[1]) - inset * 2
+                        prepared = _fit_product_panel(source, inner_w, inner_h)
+                        _paste_cover(canvas, photo_box, prepared, inset=inset)
+                    elif offer.get("cover"):
                         import photos
                         inner_w = (photo_box[2] - photo_box[0]) - 6
                         inner_h = (photo_box[3] - photo_box[1]) - 6
@@ -585,6 +682,7 @@ def create_deal_card(offer: dict) -> Path:
     previous = offer.get("previous")
     reliable = previous is not None and float(previous) > current * 1.02
     title = offer.get("title") or ""
+    origin = offer.get("origin") or ""
     image_path = offer.get("image_path")
     cover = False
     if _is_trip(title) and not offer.get("skip_destination"):
@@ -595,12 +693,14 @@ def create_deal_card(offer: dict) -> Path:
             cover = True
         else:
             image_path = None
+    badge_previous = float(previous) if reliable else None
     return create_price_card({
         "id": offer.get("id") or "chollo",
         "title": title,
         "image_path": image_path,
         "cover": cover,
-        "category": offer.get("category") or deal_badge(title, current, float(previous) if reliable else None),
+        "fill": not cover and bool(image_path),
+        "category": offer.get("category") or deal_badge(title, current, badge_previous, origin),
         "current": current,
         "reference": float(previous) if reliable else current,
         "ref_label": offer.get("ref_label") or "ANTES · PVP",

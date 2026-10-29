@@ -106,7 +106,8 @@ def posts_today(posts: list[dict], now: datetime) -> list[dict]:
 
 def posts_last_hour(posts: list[dict], now: datetime) -> list[dict]:
     cutoff = now.timestamp() - 3600
-    return [post for post in posts if (post.get("t") or 0) >= cutoff]
+    # Un envío manual no consume el cupo de la hora.
+    return [post for post in posts if not post.get("manual") and (post.get("t") or 0) >= cutoff]
 
 
 def quota_reason(state: dict, now: datetime, rules: dict, already: int = 0) -> str:
@@ -219,7 +220,8 @@ def gather(cfg: dict, state: dict, now: datetime, fetch=None) -> list[dict]:
         except (urllib.error.URLError, TimeoutError, ValueError) as exc:
             print(f"  Ficha Chollometro: {exc}")
             continue
-        signals = feeds.deal_signals(page)
+        current = float(entry["price"])
+        signals = feeds.deal_signals(page, current=current)
         if signals.get("expired"):
             print(f"  Caducado: {entry['title'][:70]}")
             continue
@@ -230,13 +232,10 @@ def gather(cfg: dict, state: dict, now: datetime, fetch=None) -> list[dict]:
             print(f"  Enlace no publicable: {entry['title'][:70]}")
             continue
         _store_id, store = premium.store_of(url)
-        current = float(entry["price"])
         previous = reliable_previous(current, signals.get("previous"), rules)
-        if previous is None and signals.get("previous"):
-            # Hay PVP pero no es fiable: se publica solo con AHORA si la temperatura aguanta.
-            pass
-        elif previous is not None and discount_of(current, previous) + 1e-9 < float(rules.get("min_discount_pct", 20)):
-            print(f"  Poca bajada: {entry['title'][:70]}")
+        minimum = float(rules.get("min_discount_pct", 20))
+        if previous is None or discount_of(current, previous) + 1e-9 < minimum:
+            print(f"  Sin PVP fiable o bajada menor del {minimum:.0f} %: {entry['title'][:70]}")
             continue
         temperature = max(int(entry.get("temperature") or 0), int(signals.get("temperature") or 0))
         ident = thread_id(entry.get("link") or "") or deal_key(entry["title"], store)
@@ -248,6 +247,7 @@ def gather(cfg: dict, state: dict, now: datetime, fetch=None) -> list[dict]:
             "previous": previous,
             "temperature": temperature,
             "image": entry.get("image") or "",
+            "images": _merchant_images(url, fetch),
             "url": url,
             "store": store,
             "origin": "chollometro",
@@ -262,8 +262,10 @@ def gather(cfg: dict, state: dict, now: datetime, fetch=None) -> list[dict]:
 
 def amazon_candidates(cfg: dict, rules: dict, now: datetime, seen: set[str], fetch) -> list[dict]:
     tagged = (cfg or {}).get("affiliate_tag") or ""
+    minimum = float(rules.get("min_discount_pct", 20))
     ranked = []
     for url in rules.get("amazon_sources") or []:
+        origin = "minimos" if "minimos" in url else "amazon"
         try:
             _status, raw = fetch(url)
             page = raw.decode("utf-8", "replace") if isinstance(raw, bytes) else raw
@@ -283,15 +285,15 @@ def amazon_candidates(cfg: dict, rules: dict, now: datetime, seen: set[str], fet
             previous = reliable_previous(float(price), item.get("was"), rules)
             if previous is None:
                 continue
-            if discount_of(float(price), previous) + 1e-9 < float(rules.get("min_discount_pct", 20)):
+            if discount_of(float(price), previous) + 1e-9 < minimum:
                 continue
             ident = f"jl-{item['id']}"
             if ident in seen or deal_key(item.get("title") or "", "Amazon") in seen:
                 continue
-            ranked.append((discount_of(float(price), previous), item, previous, ident))
+            ranked.append((discount_of(float(price), previous), item, previous, ident, origin))
     ranked.sort(key=lambda row: row[0], reverse=True)
     found = []
-    for _discount, item, previous, ident in ranked[: int(rules.get("max_amazon_details", 6))]:
+    for _discount, item, previous, ident, origin in ranked[: int(rules.get("max_amazon_details", 6))]:
         try:
             _status, raw = fetch(f"{scanner.BASE}/es/dp/{item['id']}/")
             page = raw.decode("utf-8", "replace") if isinstance(raw, bytes) else raw
@@ -299,27 +301,57 @@ def amazon_candidates(cfg: dict, rules: dict, now: datetime, seen: set[str], fet
         except (urllib.error.URLError, TimeoutError, ValueError) as exc:
             print(f"  Ficha Amazon {item['id']}: {exc}")
             continue
+        price = float(detail.get("price") or item["price"])
+        checked = reliable_previous(price, previous, rules)
+        if checked is None or discount_of(price, checked) + 1e-9 < minimum:
+            print(f"  Sin PVP fiable en la ficha: {item.get('title', '')[:70]}")
+            continue
         gtin = detail.get("gtin") if re.fullmatch(r"\d{8,14}", detail.get("gtin") or "") else None
         link = affiliate.fallback_link(tagged, gtin=gtin)
         link = affiliate.clean_store_url(link, cfg)
         if not link:
             print(f"  Sin enlace de Amazon etiquetado: {item.get('title', '')[:70]}")
             continue
+        # El canal normal enlaza siempre /dp/ASIN con la etiqueta propia, sin otros parámetros.
+        asin = item.get("id") or ""
+        if re.fullmatch(r"[A-Z0-9]{10}", str(asin).upper()):
+            link = amazon_deal_url(str(asin), cfg) or link
         title = detail.get("name") or item.get("title") or ""
+        images = feeds.merchant_image_urls(page)
         found.append({
             "id": ident,
             "key": deal_key(title, "Amazon"),
             "title": title,
-            "price": float(detail.get("price") or item["price"]),
-            "previous": previous,
+            "price": price,
+            "previous": checked,
             "temperature": 0,
             "image": detail.get("image") or "",
+            "images": images,
             "url": link,
             "store": "Amazon",
-            "origin": "amazon",
+            "origin": origin,
         })
         seen.add(ident)
     return found
+
+
+def amazon_deal_url(asin: str, cfg: dict) -> str | None:
+    """https://www.amazon.es/dp/<ASIN>?tag=… sin más parámetros ni etiquetas ajenas."""
+    code = (asin or "").upper()
+    tag = ((cfg or {}).get("affiliate_tag") or "").strip()
+    if not tag or not re.fullmatch(r"[A-Z0-9]{10}", code):
+        return None
+    return affiliate.fallback_link(tag, asin=code)
+
+
+def _merchant_images(url: str, fetch) -> list[str]:
+    try:
+        _status, raw = fetch(url)
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        print(f"  Foto de la tienda: {exc}")
+        return []
+    page = raw.decode("utf-8", "replace") if isinstance(raw, bytes) else raw
+    return feeds.merchant_image_urls(page)
 
 
 def _fetch(url: str):
@@ -342,21 +374,28 @@ def choose(candidates: list[dict], state: dict, now: datetime, rules: dict, limi
 
 
 def deliver(tg, chat, cand: dict, dry: bool) -> int | None:
+    """Publica un chollo. None si no hay foto válida. 0 en dry-run. El id del mensaje si sale."""
+    image = _image(cand)
+    if image is None:
+        print(f"  Sin foto válida, salto al siguiente: {cand['title'][:70]}")
+        return None
+    origin = cand.get("origin") or ""
     caption = build_deal_caption(url=cand["url"], title=cand["title"], current=cand["price"],
-                                 store=cand["store"], previous=cand.get("previous"))
+                                 store=cand["store"], previous=cand.get("previous"), origin=origin)
     buttons = scanner.buttons_for(cand["url"])
     if dry or tg is None:
         print(f"  [prueba] {cand['store']} · {cand['price']} € · {cand['title'][:80]}")
         print(caption)
-        return None
+        return 0
     try:
         card = create_deal_card({
             "id": cand["id"],
             "title": cand["title"],
             "current": cand["price"],
             "previous": cand.get("previous"),
-            "image_path": _image(cand),
+            "image_path": image,
             "store": cand.get("store") or "",
+            "origin": origin,
         })
     except (OSError, ValueError) as exc:
         print(f"  No pude crear la tarjeta de {cand.get('id')} ({exc})")
@@ -367,17 +406,89 @@ def deliver(tg, chat, cand: dict, dry: bool) -> int | None:
 
 
 def _image(cand: dict) -> Path | None:
-    url = cand.get("image") or ""
-    if not url.startswith("http"):
-        return None
     import photos
-    raw = photos.fetch_best(url)
+    urls: list[str] = []
+    for item in cand.get("images") or []:
+        if item and item not in urls:
+            urls.append(item)
+    extra = cand.get("image") or ""
+    if extra.startswith("http") and extra not in urls:
+        urls.append(extra)
+    raw = photos.fetch_clean(urls) if urls else None
     if not raw:
         return None
     OUTPUT.mkdir(parents=True, exist_ok=True)
     path = OUTPUT / f"{re.sub(r'[^A-Za-z0-9_-]', '', cand['id'])[:40] or 'chollo'}.jpg"
     path.write_bytes(raw)
     return path
+
+
+def manual_candidate(url: str, cfg: dict, price_raw: str, pvp_raw: str, fetch) -> dict | None:
+    """Un solo chollo a partir de una URL. Los precios escritos a mano mandan sobre la página."""
+    rules = channel_rules(cfg)
+    manual_price = feeds.parse_price(price_raw) if (price_raw or "").strip() else None
+    manual_pvp = feeds.parse_price(pvp_raw) if (pvp_raw or "").strip() else None
+    fetched = ""
+    try:
+        _status, raw = fetch(url)
+        fetched = raw.decode("utf-8", "replace") if isinstance(raw, bytes) else raw
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        print(f"  No he podido abrir la ficha ({exc}). Sigo con los precios manuales si vienen.")
+    asin = affiliate.extract_asin(url) or affiliate.extract_asin(fetched)
+    if asin or affiliate.is_amazon_es(url):
+        if not asin:
+            print("  Amazon sin ASIN: no publico.")
+            return None
+        store_url = amazon_deal_url(asin, cfg)
+        if not store_url:
+            print("  Falta la etiqueta de afiliado: no publico el enlace de Amazon.")
+            return None
+        box = feeds.amazon_buybox(fetched) if fetched else {}
+        title = (box.get("title") or "").strip() or f"Amazon {asin}"
+        current = box.get("price")
+        previous = box.get("previous")
+        images = list(box.get("images") or [])
+        store = "Amazon"
+    else:
+        store_url = affiliate.clean_store_url(url, cfg)
+        if not store_url:
+            print("  Enlace no publicable.")
+            return None
+        _store_id, store = premium.store_of(store_url)
+        titled = re.search(r"<title>(.*?)</title>", fetched or "", re.S)
+        title = feeds.html_unescape(re.sub(r"\s+", " ", titled.group(1))).strip() if titled else store
+        current = None
+        previous = None
+        images = feeds.merchant_image_urls(fetched)
+    if manual_price is not None:
+        current = manual_price
+    if manual_pvp is not None:
+        previous = manual_pvp
+    if not title:
+        print("  Sin título.")
+        return None
+    if not current or current <= 0:
+        print("  Sin precio actual. Pasa manual_price.")
+        return None
+    previous = reliable_previous(float(current), previous, rules)
+    minimum = float(rules.get("min_discount_pct", 20))
+    if previous is None or discount_of(float(current), previous) + 1e-9 < minimum:
+        print(f"  Modo manual: sin PVP fiable o bajada menor del {minimum:.0f} %. No publico.")
+        return None
+    ident = f"manual-{asin or deal_key(title, store)[:24]}"
+    return {
+        "id": ident,
+        "key": ident,
+        "title": title,
+        "price": float(current),
+        "previous": previous,
+        "temperature": 0,
+        "image": "",
+        "images": images,
+        "url": store_url,
+        "store": store,
+        "origin": "manual",
+    }
 
 
 def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None) -> int:
@@ -389,6 +500,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None) -> int
     can_post = True
     if tg is not None:
         can_post = check_channel(tg, chat)
+    manual_url = (getattr(args, "manual_url", "") or "").strip()
     if args.test_private:
         admin = admin_chat_id(state)
         if not admin:
@@ -400,27 +512,54 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None) -> int
         target = chat
         if not can_post and not args.dry_run:
             return 0
-        if in_quiet_hours(now, rules):
+        if not manual_url and in_quiet_hours(now, rules):
             print("Canal normal en silencio (01:00–08:00 Madrid). No publico.")
             return 0
-    candidates = gather(cfg, state, now, fetch=fetch)
-    limit = int(rules.get("test_private_posts", 3) if args.test_private else rules.get("max_per_run", 1))
-    chosen = choose(candidates, state, now, rules, limit, ignore_quota=bool(args.test_private))
-    if not chosen:
-        print("Canal normal: nada nuevo que publicar.")
-        return 0
-    for cand in chosen:
+    fetch = fetch or _fetch
+    if manual_url:
+        print(f"Modo manual: {manual_url}")
+        cand = manual_candidate(
+            manual_url, cfg,
+            getattr(args, "manual_price", "") or "",
+            getattr(args, "manual_pvp", "") or "",
+            fetch,
+        )
+        candidates = [cand] if cand else []
+        limit = 1
+        ignore_quota = True
+    else:
+        candidates = gather(cfg, state, now, fetch=fetch)
+        limit = int(rules.get("test_private_posts", 3) if args.test_private else rules.get("max_per_run", 1))
+        ignore_quota = bool(args.test_private)
+    posted = 0
+    for cand in candidates:
+        if posted >= limit:
+            break
+        if not ignore_quota:
+            why = quota_reason(state, now, rules, already=posted)
+            if why:
+                print(f"  Paro: {why}")
+                break
         if not args.test_private and not args.dry_run and not can_post:
             break
         message_id = deliver(tg, target, cand, args.dry_run or tg is None)
-        if args.test_private or args.dry_run or message_id is None:
+        if message_id is None:
+            continue
+        posted += 1
+        if args.test_private or args.dry_run or not message_id:
             continue
         state.setdefault("posts", []).append({
             "id": cand["id"], "key": cand["key"], "price": cand["price"],
             "t": int(now.timestamp()), "url": cand["url"], "message_id": message_id,
             "title": cand["title"][:140], "store": cand["store"],
+            "manual": bool(manual_url),
         })
         time.sleep(2)
+    if posted == 0:
+        if manual_url:
+            print("Modo manual: no se ha publicado.")
+        else:
+            print("Canal normal: nada nuevo que publicar.")
     return 0
 
 
@@ -429,6 +568,12 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="No publica; muestra el texto")
     parser.add_argument("--test-private", action="store_true",
                         help="Envía 2 o 3 ejemplos solo al administrador y no guarda memoria")
+    parser.add_argument("--manual-url", default="",
+                        help="Publica solo esta URL y no escanea fuentes. Ignora silencio y cupo horario.")
+    parser.add_argument("--manual-price", default="",
+                        help="Precio actual. Si viene, manda sobre el extraído de la página.")
+    parser.add_argument("--manual-pvp", default="",
+                        help="PVP o precio recomendado. Si viene, manda sobre el extraído de la página.")
     args = parser.parse_args()
     cfg = load_json(CONFIG_PATH, {})
     state = load_json(STATE_PATH, {"posts": []})

@@ -81,21 +81,164 @@ def parse_rss(xml: str) -> list[dict]:
     return items
 
 
-def deal_signals(page: str) -> dict:
-    """Precio anterior y caducidad que Chollometro deja en el HTML de la ficha."""
+def deal_signals(page: str, current: float | None = None) -> dict:
+    """Precio anterior y caducidad de la ficha de Chollometro.
+
+    El PVP es el nextBestPrice ligado al precio de este chollo. El primer
+    nextBestPrice de la página suele ser un widget del lateral y no vale.
+    """
     text = page or ""
     expired = bool(re.search(r'"isExpired"\s*:\s*true', text))
-    previous = None
-    match = re.search(r'"nextBestPrice"\s*:\s*(\d+(?:\.\d+)?)', text)
-    if match:
-        previous = float(match.group(1))
-        if previous <= 0:
-            previous = None
     temperature = None
     match = re.search(r'"temperature"\s*:\s*(\d+(?:\.\d+)?)', text)
     if match:
         temperature = int(float(match.group(1)))
-    return {"expired": expired, "previous": previous, "temperature": temperature}
+    return {"expired": expired, "previous": _paired_previous(text, current), "temperature": temperature}
+
+
+def _paired_previous(text: str, current: float | None) -> float | None:
+    hits: list[tuple[float, list[float]]] = []
+    for match in re.finditer(r'"nextBestPrice"\s*:\s*(\d+(?:\.\d+)?)', text or ""):
+        nxt = float(match.group(1))
+        if nxt <= 0:
+            continue
+        window = text[max(0, match.start() - 480):min(len(text), match.end() + 480)]
+        prices = [float(raw) for raw in re.findall(r'"price"\s*:\s*(\d+(?:\.\d+)?)', window)]
+        hits.append((nxt, prices))
+    if not hits:
+        return None
+    if current is None:
+        return hits[0][0]
+    tolerance = max(0.5, abs(current) * 0.015)
+
+    def matches(prices: list[float]) -> bool:
+        return any(abs(price - current) <= tolerance for price in prices)
+
+    paired = [nxt for nxt, prices in hits if matches(prices) and nxt > current * 1.02]
+    if paired:
+        return paired[0]
+    # Ficha simple, sin precios repetidos: el único nextBestPrice por encima del actual.
+    if all(not prices for _nxt, prices in hits):
+        above = [nxt for nxt, _prices in hits if nxt > current * 1.02]
+        return above[0] if above else None
+    return None
+
+
+def og_image(html: str) -> str:
+    """Imagen principal que la tienda declara en la página."""
+    text = html or ""
+    patterns = (
+        r'<meta[^>]+property=["\']og:image(?::url)?["\'][^>]+content=["\']([^"\']+)',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image(?::url)?["\']',
+        r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)',
+    )
+    for pattern in patterns:
+        match = re.search(pattern, text, re.I)
+        if match:
+            return html_unescape(match.group(1)).replace("\\/", "/").strip()
+    return ""
+
+
+def amazon_hires(html: str) -> list[str]:
+    """Fotos grandes del producto en el JSON de Amazon, en el orden de la ficha."""
+    found: list[str] = []
+    for raw in re.findall(r'"hiRes"\s*:\s*"(https:[^"]+)"', html or ""):
+        url = raw.replace("\\u0026", "&").replace("\\/", "/")
+        if url and "sprite" not in url and url not in found:
+            found.append(url)
+    return found
+
+
+def merchant_image_urls(html: str) -> list[str]:
+    """hiRes de Amazon primero y, si no, la og:image de la tienda."""
+    urls = amazon_hires(html)
+    og = og_image(html)
+    if og and og not in urls:
+        urls.append(og)
+    return urls
+
+
+def _feature_slice(html: str, element_id: str, span: int = 14000) -> str:
+    match = re.search(rf'id=["\']{re.escape(element_id)}["\']', html or "")
+    if not match:
+        return ""
+    return html[match.start():match.start() + span]
+
+
+def _money(raw: str) -> float | None:
+    text = html_unescape(raw or "").replace("\xa0", " ").replace("€", "")
+    return parse_price(text)
+
+
+def amazon_buybox(html: str) -> dict:
+    """Título, precio del buybox principal e imágenes de una ficha de Amazon.
+
+    El precio sale de #corePrice o #apex_desktop. El primer a-offscreen de la
+    página puede ser otra variante u otro vendedor y no se usa.
+    """
+    text = html or ""
+    title = ""
+    titled = re.search(r'id=["\']productTitle["\'][^>]*>(.*?)</span>', text, re.S)
+    if titled:
+        title = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", titled.group(1))).strip()
+    if not title:
+        og_title = re.search(r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)', text, re.I)
+        if not og_title:
+            og_title = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:title["\']', text, re.I)
+        if og_title:
+            title = html_unescape(og_title.group(1)).strip()
+    box = ""
+    for element_id in ("corePriceDisplay_desktop_feature_div", "corePrice_feature_div", "apex_desktop"):
+        chunk = _feature_slice(text, element_id)
+        if chunk and "a-offscreen" in chunk:
+            box = chunk
+            break
+    current, previous = _buybox_prices(box)
+    return {
+        "title": title,
+        "price": current,
+        "previous": previous,
+        "images": merchant_image_urls(text),
+    }
+
+
+def _buybox_prices(box: str) -> tuple[float | None, float | None]:
+    if not box:
+        return None, None
+    current = None
+    paying = re.search(
+        r'class="[^"]*priceToPay[^"]*"[^>]*>.*?class="a-offscreen">\s*([^<]+)',
+        box,
+        re.S,
+    )
+    if paying:
+        current = _money(paying.group(1))
+    if current is None:
+        for match in re.finditer(
+            r'class="([^"]*\ba-price\b[^"]*)"[^>]*>.*?class="a-offscreen">\s*([^<]+)',
+            box,
+            re.S,
+        ):
+            if "a-text-price" in match.group(1):
+                continue
+            current = _money(match.group(2))
+            if current:
+                break
+    previous = None
+    recommended = re.search(
+        r'(?:Precio recomendado|Precio anterior|List Price|\bPVP\b).{0,500}?class="a-offscreen">\s*([^<]+)',
+        box,
+        re.S | re.I,
+    )
+    if not recommended:
+        recommended = re.search(
+            r'class="[^"]*\ba-text-price\b[^"]*"[^>]*>.*?class="a-offscreen">\s*([^<]+)',
+            box,
+            re.S,
+        )
+    if recommended:
+        previous = _money(recommended.group(1))
+    return current, previous
 
 
 def page_status(html: str) -> str:

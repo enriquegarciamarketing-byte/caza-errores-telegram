@@ -15,6 +15,21 @@ on:
         required: false
         type: boolean
         default: false
+      manual_url:
+        description: "Publica solo esta URL y no escanea fuentes. Vacío = escaneo normal. Ignora el silencio nocturno y no cuenta para el cupo de la hora."
+        required: false
+        type: string
+        default: ""
+      manual_price:
+        description: "Precio actual opcional (ej. 139,00). Si viene, manda sobre el de la página."
+        required: false
+        type: string
+        default: ""
+      manual_pvp:
+        description: "PVP o precio recomendado opcional (ej. 229,00). Si viene, manda sobre el de la página."
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -49,10 +64,16 @@ jobs:
       - name: Buscar y publicar en el canal normal
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          MANUAL_URL: ${{ inputs.manual_url }}
+          MANUAL_PRICE: ${{ inputs.manual_price }}
+          MANUAL_PVP: ${{ inputs.manual_pvp }}
         run: |
           ARGS=()
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
+          if [ -n "$MANUAL_URL" ]; then ARGS+=(--manual-url "$MANUAL_URL"); fi
+          if [ -n "$MANUAL_PRICE" ]; then ARGS+=(--manual-price "$MANUAL_PRICE"); fi
+          if [ -n "$MANUAL_PVP" ]; then ARGS+=(--manual-pvp "$MANUAL_PVP"); fi
           set -o pipefail
           python generic.py "${ARGS[@]}" 2>&1 | tee state/generic_last_run.log
 
