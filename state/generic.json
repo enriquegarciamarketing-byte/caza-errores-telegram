@@ -209,6 +209,16 @@
       "message_id": 23,
       "title": "COSTCO - Magnifica Evo, Plata y negro ECAM292.33.SB",
       "store": "Costco"
+    },
+    {
+      "id": "cm-2049180",
+      "key": "p:xbox microsoft flight simulator",
+      "price": 13.0,
+      "t": 1793349883,
+      "url": "https://www.xbox.com/es-ES/games/store/microsoft-flight-simulator-2020-standard-40th-anniversary-edition/9pmqdm08snk9",
+      "message_id": 24,
+      "title": "Microsoft Flight Simulator",
+      "store": "Xbox"
     }
   ]
 }
