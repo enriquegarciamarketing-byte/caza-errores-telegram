@@ -1,44 +1,37 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 113 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 456716 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 482112 bytes, 30 ASIN, 33 títulos
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36363 bytes, 30 chollos
+Listados: 117 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  M52bv6L · 39.89 € · media 56.54 · ref 52.98 → descartado (solo -25% bajo la referencia) · Eigotrav Arrancador de Baterias de Coche 6000A, Compresor de
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36653 bytes, 30 chollos
+  Chollometro «Reloj Casio G-SHOCK bisel octogonal cuerpo negro mate con acentos azul»: Amazon 64.0 €
+  Chollometro «Cyberpunk 2077: Ultimate Edition + Phantom Liberty (Nintendo Switch 2)»: Cdiscount 29.99 €
   Chollometro «ASRock Radeon RX 9070 XT Challenger 16GB GDDR6»: Pcbox 784.25 €
   Chollometro «Sony WH-1000XM6 - Auriculares diadema, inalambricos, cancelación de Ru»: Amazon 314.0 €
-  Chollometro «Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]»: S 470.85 €
-  Chollometro «ASRock Radeon RX 9070 XT»: Pcbox 722.73 €
-  Chollometro «ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46»: Showroomprive 38.9 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69145 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67895 bytes, 30 chollos
+  cm-2049612 · Amazon 64.0 € → candidato externo · Reloj Casio G-SHOCK bisel octogonal cuerpo negro mate con ac
+  cm-2049606 · Cdiscount 29.99 € → candidato externo · Cyberpunk 2077: Ultimate Edition + Phantom Liberty (Nintendo
   cm-2049454 · Pcbox 784.25 € → candidato externo · ASRock Radeon RX 9070 XT Challenger 16GB GDDR6
   cm-2048817 · Amazon 314.0 € → candidato externo · Sony WH-1000XM6 - Auriculares diadema, inalambricos, cancela
-  cm-2048827 · S 470.85 € → candidato externo · Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]
-  cm-2049448 · Pcbox 722.73 € → candidato externo · ASRock Radeon RX 9070 XT
-  cm-2049257 · Showroomprive 38.9 € → candidato externo · ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46
+  Wallapop «cdiscount 2077 cyberpunk»: 200 / 1282 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «cdiscount 2077»: 200 / 389 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress ps5 consola»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Aliexpress Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Wallapop «pcbox 9070 asrock»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «pcbox 9070»: 200 / 385 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Milanuncios «cdiscount 2077 cyberpunk»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Cdiscount Cyberpunk 2077: Ultimate Edition + Phantom Liberty (Nintendo Switch 2)»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «pcbox 9070 asrock»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Pcbox ASRock Radeon RX 9070 XT Challenger 16GB GDDR6»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «pcbox 9070 asrock»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Pcbox ASRock Radeon RX 9070 XT»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Wallapop «sony 1000xm6 auriculares»: 200 / 104773 bytes, 36 anuncios, 32 parecidos, 0 reservas
-  Milanuncios «sony 1000xm6 auriculares»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Milanuncios «pcbox 9070 asrock»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Pcbox ASRock Radeon RX 9070 XT Challenger 16GB GDDR6»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «sony 1000xm6 auriculares»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   Reventa WALLAPOP: 32 anuncios, ~250 €, no publica
   ⚠️ No publico «Amazon Sony WH-1000XM6 - Auriculares diadema, inalambricos, cancelación de Ruido, Hi-Res, »: reventa en WALLAPOP ~250 € (32 anuncios): ROI -20 % y -64 €, por debajo del mínimo (25 % y 25 €)
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «showroomprive 40 adidas»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Showroomprivé ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Vinted «reloj casio»: HTTP 200, 3665630 bytes, 96 anuncios
+  Vinted «reloj casio»: 53 parecidos de 96
+  Wallapop «reloj casio»: 200 / 117656 bytes, 40 anuncios, 40 parecidos, 0 reservas
+  Milanuncios «reloj casio»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 75 anuncios, ~28 €, no publica
+  ⚠️ No publico «Amazon.Fr Reloj Casio G-SHOCK bisel octogonal cuerpo negro mate con acentos azul neón»: reventa en VINTED+WALLAPOP ~28 € (75 anuncios): ROI -56 % y -36 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
