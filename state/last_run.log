@@ -1,35 +1,46 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35874 bytes, 30 chollos
+Listados: 116 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  R0ZG4Bv · 379.98 € · media 1031.23 · ref 406.71 → descartado (solo -7% bajo la referencia) · Lefant M5 Pro Robot Aspirador y Fregasuelos con Base de Auto
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35867 bytes, 30 chollos
+  Chollometro «DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]»: Es 179.25 €
+  Chollometro «AMD Ryzen 7 7800X3D [Promo 11.11] [Empieza 1-11]»: Es 179.45 €
+  Chollometro «Set LEGO Icons Telescopio Espacial Hubble 11382 (+18 anos, maqueta par»: Carrefour 103.99 €
+  Chollometro «Tarjeta Gráfica Palit Infinity 2 OC GeForce RTX 5060 8GB GDDR7 Reflex »: PcComponentes 249.0 €
   Chollometro «Mini Pc Intel Core i3-4030U 8GB DDR3 RAM 128GB SSD Wi-Fi 5 BT 4.2»: Es 92.85 €
-  Chollometro «Mini PC Chuwi Ubox, AMD Ryzen 5 6600H, 16 GB - 512 GB, [Promo 11.11] [»: Es 254.3 €
-  Chollometro «Reloj Casio G-SHOCK bisel octogonal cuerpo negro mate con acentos azul»: Amazon 64.0 €
-  Chollometro «Cyberpunk 2077: Ultimate Edition + Phantom Liberty (Nintendo Switch 2)»: Cdiscount 29.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 87101 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67892 bytes, 30 chollos
+  cm-2049731 · Es 179.25 € → candidato externo · DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]
+  cm-2049729 · Es 179.45 € → candidato externo · AMD Ryzen 7 7800X3D [Promo 11.11] [Empieza 1-11]
+  cm-2049480 · Carrefour 103.99 € → candidato externo · Set LEGO Icons Telescopio Espacial Hubble 11382 (+18 anos, m
+  cm-2049711 · PcComponentes 249.0 € → candidato externo · Tarjeta Gráfica Palit Infinity 2 OC GeForce RTX 5060 8GB GDD
   cm-2049439 · Es 92.85 € → candidato externo · Mini Pc Intel Core i3-4030U 8GB DDR3 RAM 128GB SSD Wi-Fi 5 B
-  cm-2049645 · Es 254.3 € → candidato externo · Mini PC Chuwi Ubox, AMD Ryzen 5 6600H, 16 GB - 512 GB, [Prom
-  cm-2049612 · Amazon 64.0 € → candidato externo · Reloj Casio G-SHOCK bisel octogonal cuerpo negro mate con ac
-  cm-2049606 · Cdiscount 29.99 € → candidato externo · Cyberpunk 2077: Ultimate Edition + Phantom Liberty (Nintendo
+  Wallapop «aliexpress 7800x3d amd»: 200 / 1277 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «aliexpress 7800x3d»: 200 / 393 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «cdiscount 2077 cyberpunk»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  ⚠️ No publico «Cdiscount Cyberpunk 2077: Ultimate Edition + Phantom Liberty (Nintendo Switch 2)»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Wallapop «aliexpress i3 mini»: 200 / 1268 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress i3»: 200 / 56061 bytes, 20 anuncios, 0 parecidos, 0 reservas
+  Milanuncios «aliexpress 7800x3d amd»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Aliexpress AMD Ryzen 7 7800X3D [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop «pccomponentes 5060 tarjeta»: 200 / 33969 bytes, 10 anuncios, 0 parecidos, 0 reservas
+  Wallapop «pccomponentes 5060»: 200 / 86155 bytes, 24 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress i3 mini»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  ⚠️ No publico «Aliexpress Mini Pc Intel Core i3-4030U 8GB DDR3 RAM 128GB SSD Wi-Fi 5 BT 4.2»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Wallapop «aliexpress 6600h mini»: 200 / 1275 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 6600h»: 200 / 391 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Milanuncios «pccomponentes 5060 tarjeta»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Pccomponentes Tarjeta Gráfica Palit Infinity 2 OC GeForce RTX 5060 8GB GDDR7 Reflex 2 RTX »: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 6600h mini»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  ⚠️ No publico «Aliexpress Mini PC Chuwi Ubox, AMD Ryzen 5 6600H, 16 GB - 512 GB, [Promo 11.11] [Empieza 1»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Milanuncios «reloj casio»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa VINTED+WALLAPOP: 75 anuncios, ~28 €, no publica
-  ⚠️ No publico «Amazon.Fr Reloj Casio G-SHOCK bisel octogonal cuerpo negro mate con acentos azul neón»: reventa en VINTED+WALLAPOP ~28 € (75 anuncios): ROI -56 % y -36 €, por debajo del mínimo (25 % y 25 €)
+  Milanuncios «aliexpress i3 mini»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Aliexpress Mini Pc Intel Core i3-4030U 8GB DDR3 RAM 128GB SSD Wi-Fi 5 BT 4.2»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop «carrefour 11382 lego»: 200 / 1272 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «carrefour 11382»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «carrefour 11382 lego»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Carrefour Set LEGO Icons Telescopio Espacial Hubble 11382 (+18 anos, maqueta para adultos,»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop «aliexpress 11 dji»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «aliexpress 11»: 200 / 96198 bytes, 36 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «aliexpress 11 dji»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Aliexpress DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0

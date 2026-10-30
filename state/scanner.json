@@ -764,6 +764,11 @@
    "price": 39.89,
    "t": 1793361175,
    "result": "solo -25% bajo la referencia"
+  },
+  "R0ZG4Bv": {
+   "price": 379.98,
+   "t": 1793367844,
+   "result": "solo -7% bajo la referencia"
   }
  },
  "posts": [
@@ -898,7 +903,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2085,6 +2090,46 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "aliexpress|amd ryzen 7 7800x3d [promo 11.11] [empieza 1-11]|aliexpress 7800x3d amd": {
+   "t": 1793367874.5868468,
+   "query": "aliexpress 7800x3d amd",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "pccomponentes|tarjeta grafica palit infinity 2 oc geforce rtx 5060 8gb gddr7 reflex 2 rtx ai dlss4 reacondicionado|pccomponentes 5060 tarjeta": {
+   "t": 1793367876.687984,
+   "query": "pccomponentes 5060 tarjeta",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "carrefour|set lego icons telescopio espacial hubble 11382 (+18 anos, maqueta para adultos, cupon 40% devuelto = 41,60e, oferta carrefour online)|carrefour 11382 lego": {
+   "t": 1793367879.1058574,
+   "query": "carrefour 11382 lego",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "aliexpress|dji osmo action 5 pro [promo 11.11] [empieza 1-11]|aliexpress 11 dji": {
+   "t": 1793367881.0839202,
+   "query": "aliexpress 11 dji",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2197,7 +2242,11 @@
   "wallapop:cm-2049606": 1793361201.6774673,
   "wallapop:cm-2049612": 1793361205.0703802,
   "wallapop:cm-2049439": 1793364082.3157983,
-  "wallapop:cm-2049645": 1793364084.363185
+  "wallapop:cm-2049645": 1793364084.363185,
+  "wallapop:cm-2049729": 1793367875.1242027,
+  "wallapop:cm-2049711": 1793367877.183433,
+  "wallapop:cm-2049480": 1793367879.7000322,
+  "wallapop:cm-2049731": 1793367881.6228874
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
