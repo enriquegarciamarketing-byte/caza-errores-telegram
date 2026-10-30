@@ -749,6 +749,11 @@
    "price": 349.0,
    "t": 1793318067,
    "result": "solo 3 puntos de precio en España (mínimo 15)"
+  },
+  "RNqzzyq": {
+   "price": 314.0,
+   "t": 1793331007,
+   "result": "solo -9% bajo la referencia"
   }
  },
  "posts": [
@@ -883,7 +888,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 118,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
