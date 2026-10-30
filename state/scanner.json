@@ -2419,6 +2419,16 @@
    "http_status": 200,
    "bytes": 118927,
    "raw_count": 34
+  },
+  "aliexpress|nintendo switch 2, version renovada con bateria extraible [promo 11.11] [empieza 1-11]|aliexpress 11 nintendo": {
+   "t": 1793399133.1309278,
+   "query": "aliexpress 11 nintendo",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2549,7 +2559,8 @@
   "wallapop:cm-2049604": 1793391566.5934823,
   "wallapop:cm-2048878": 1793391568.321713,
   "wallapop:cm-2042343": 1793391570.4906898,
-  "wallapop:cm-2049332": 1793394254.1455774
+  "wallapop:cm-2049332": 1793394254.1455774,
+  "wallapop:cm-2050134": 1793399133.516018
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
