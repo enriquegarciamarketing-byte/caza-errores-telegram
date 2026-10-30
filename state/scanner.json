@@ -893,7 +893,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 116,
+ "last_listing_count": 114,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1916,6 +1916,36 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "aliexpress|consola ps5 slim 1 tb con lector (blanca) [1 nov 00:00]|aliexpress ps5 consola": {
+   "t": 1793355281.384889,
+   "query": "aliexpress ps5 consola",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "pcbox|asrock radeon rx 9070 xt|pcbox 9070 asrock": {
+   "t": 1793355283.637805,
+   "query": "pcbox 9070 asrock",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "showroomprive|adidas zapatilla adistar control 3. tallas 40 a 46|showroomprive 40 adidas": {
+   "t": 1793355286.3203156,
+   "query": "showroomprive 40 adidas",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2019,7 +2049,10 @@
   "wallapop:cm-2049102": 1793348091.620404,
   "wallapop:cm-2048812": 1793351774.4774613,
   "wallapop:cm-2048860": 1793351776.3490922,
-  "wallapop:cm-2049248": 1793351779.1762302
+  "wallapop:cm-2049248": 1793351779.1762302,
+  "wallapop:cm-2048827": 1793355281.7932565,
+  "wallapop:cm-2049448": 1793355284.1047878,
+  "wallapop:cm-2049257": 1793355286.7066348
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -2361,6 +2394,14 @@
   },
   "prive by zalando|zapatillas nike sb chron 2 (tallas 36 a 40)|prive zalando 36": {
    "t": 1793351777.1999652,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "showroomprive|adidas zapatilla adistar control 3. tallas 40 a 46|showroomprive 40 adidas": {
+   "t": 1793355285.1957066,
    "prices": [],
    "reserved": 0,
    "demand_known": true,

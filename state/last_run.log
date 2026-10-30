@@ -1,47 +1,46 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
+Listados: 114 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35464 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35702 bytes, 30 chollos
+  Chollometro «Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]»: S 470.85 €
+  Chollometro «ASRock Radeon RX 9070 XT»: Pcbox 722.73 €
+  Chollometro «ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46»: Showroomprive 38.9 €
   Chollometro «Consola Nintendo Switch 2 [1 Nov 00:00]»: S 300.47 €
   Chollometro «Sony WH-1000XM6 Auriculares Bluetooth [Promo 11.11] [Empieza 1-11]»: S 246.11 €
-  Chollometro «Zapatillas Nike SB CHRON 2 (Tallas 36 a 40)»: Zalando-prive 25.9 €
-  Chollometro «Zapatillas Nike Sportswear (Amortiguación Max Air / Cushlon) - Varios »: Zalando 64.95 €
-  Chollometro «Adidad Boston 13. Zapatillas running hombre. Tallas 39 a 46»: Showroomprive 70.9 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 261600 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73780 bytes, 30 chollos
+  cm-2048827 · S 470.85 € → candidato externo · Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]
+  cm-2049448 · Pcbox 722.73 € → candidato externo · ASRock Radeon RX 9070 XT
+  cm-2049257 · Showroomprive 38.9 € → candidato externo · ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46
   cm-2048812 · S 300.47 € → candidato externo · Consola Nintendo Switch 2 [1 Nov 00:00]
   cm-2048860 · S 246.11 € → candidato externo · Sony WH-1000XM6 Auriculares Bluetooth [Promo 11.11] [Empieza
-  cm-2049248 · Zalando-prive 25.9 € → candidato externo · Zapatillas Nike SB CHRON 2 (Tallas 36 a 40)
-  cm-2043635 · Zalando 64.95 € → candidato externo · Zapatillas Nike Sportswear (Amortiguación Max Air / Cushlon)
-  cm-2049242 · Showroomprive 70.9 € → candidato externo · Adidad Boston 13. Zapatillas running hombre. Tallas 39 a 46
-  Wallapop «aliexpress 00 consola»: 200 / 1275 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 00»: 200 / 30091 bytes, 9 anuncios, 0 parecidos, 0 reservas
+  Wallapop «aliexpress ps5 consola»: 200 / 15779 bytes, 4 anuncios, 0 parecidos, 0 reservas
+  Wallapop «aliexpress ps5»: 200 / 63320 bytes, 19 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «aliexpress ps5 consola»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Aliexpress Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
   Milanuncios «aliexpress 00 consola»: HTTP 403, 95510 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   ⚠️ No publico «Aliexpress Consola Nintendo Switch 2 [1 Nov 00:00]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Wallapop «aliexpress 1000xm6 sony»: 200 / 1279 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 1000xm6»: 200 / 393 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «pcbox 9070 asrock»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «pcbox 9070»: 200 / 385 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «pcbox 9070 asrock»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Pcbox ASRock Radeon RX 9070 XT»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
   Milanuncios «aliexpress 1000xm6 sony»: HTTP 403, 95510 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   ⚠️ No publico «Aliexpress Sony WH-1000XM6 Auriculares Bluetooth [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted «prive zalando 36»: HTTP 200, 3653085 bytes, 96 anuncios
-  Vinted «prive zalando 36»: 0 parecidos de 96
+  Vinted «showroomprive 40 adidas»: HTTP 200, 2794914 bytes, 1 anuncios
+  Vinted «showroomprive 40 adidas»: 0 parecidos de 1
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «prive zalando 36»: 200 / 6465 bytes, 2 anuncios, 0 parecidos, 0 reservas
-  Wallapop «prive zalando»: 200 / 76641 bytes, 22 anuncios, 0 parecidos, 0 reservas
+  Wallapop «showroomprive 40 adidas»: 200 / 1279 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «showroomprive 40»: 200 / 391 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «prive zalando 36»: HTTP 403, 95510 bytes
+  Milanuncios «showroomprive 40 adidas»: HTTP 403, 95510 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Privé By Zalando Zapatillas Nike SB CHRON 2 (Tallas 36 a 40)»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Milanuncios «zalando zapatillas»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 5 anuncios, ~0 €, no publica
-  ⚠️ No publico «Zalando Zapatillas Nike Sportswear (Amortiguación Max Air / Cushlon) - Varios colores y ta»: VINTED+WALLAPOP solo tiene 5 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «showroomprive 13 adidad»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Showroomprivé Adidad Boston 13. Zapatillas running hombre. Tallas 39 a 46»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Showroomprivé ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0
