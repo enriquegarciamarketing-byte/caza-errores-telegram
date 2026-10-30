@@ -2065,6 +2065,26 @@
    "http_status": 200,
    "bytes": 117656,
    "raw_count": 40
+  },
+  "aliexpress|mini pc intel core i3-4030u 8gb ddr3 ram 128gb ssd wi-fi 5 bt 4.2|aliexpress i3 mini": {
+   "t": 1793364081.7767127,
+   "query": "aliexpress i3 mini",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "aliexpress|mini pc chuwi ubox, amd ryzen 5 6600h, 16 gb - 512 gb, [promo 11.11] [empieza 1-11]|aliexpress 6600h mini": {
+   "t": 1793364083.8341117,
+   "query": "aliexpress 6600h mini",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2175,7 +2195,9 @@
   "wallapop:cm-2049454": 1793358345.127424,
   "wallapop:cm-2048817": 1793358347.1262615,
   "wallapop:cm-2049606": 1793361201.6774673,
-  "wallapop:cm-2049612": 1793361205.0703802
+  "wallapop:cm-2049612": 1793361205.0703802,
+  "wallapop:cm-2049439": 1793364082.3157983,
+  "wallapop:cm-2049645": 1793364084.363185
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
