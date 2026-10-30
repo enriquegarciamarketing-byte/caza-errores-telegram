@@ -903,7 +903,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 116,
+ "last_listing_count": 119,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2223,6 +2223,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "aliexpress|chuwi minibook x | intel u300 - 16gb ram - 512gb ssd [promo 11.11] [empieza 1-11]|aliexpress u300 chuwi": {
+   "t": 1793377821.2232199,
+   "query": "aliexpress u300 chuwi",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2344,7 +2354,8 @@
   "wallapop:cm-2049761": 1793371407.7876456,
   "wallapop:cm-2049773": 1793371410.616738,
   "wallapop:cm-2049702": 1793371413.3519561,
-  "wallapop:cm-2049779": 1793374566.9964898
+  "wallapop:cm-2049779": 1793374566.9964898,
+  "wallapop:cm-2049648": 1793377821.9258702
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
