@@ -2298,6 +2298,16 @@
    "http_status": 200,
    "bytes": 107043,
    "raw_count": 40
+  },
+  "carrefour|lego star wars at-at 75440 con 40% en cupon regalo (26 euros)|carrefour 75440 lego": {
+   "t": 1793386226.770362,
+   "query": "carrefour 75440 lego",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2422,7 +2432,8 @@
   "wallapop:cm-2049779": 1793374566.9964898,
   "wallapop:cm-2049648": 1793377821.9258702,
   "wallapop:cm-2049869": 1793380879.1360502,
-  "wallapop:cm-2049889": 1793383415.9933672
+  "wallapop:cm-2049889": 1793383415.9933672,
+  "wallapop:cm-2047776": 1793386227.3089085
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
