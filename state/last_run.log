@@ -1,36 +1,24 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 119 productos únicos
+Listados: 116 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 348744 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36672 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36721 bytes, 30 chollos
+  Chollometro «Apple AirPods 4 con Cancelación Activa de Ruido (2024 4ª gen), Inalámb»: MediaMarkt 119.0 €
   Chollometro «CHUWI MiniBook X | Intel U300 - 16GB RAM - 512GB SSD [Promo 11.11] [Em»: Es 267.0 €
-  Chollometro «Saucony - zapatillas de running Hurricane 25»: Es 64.99 €
-  Chollometro «Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5»: Es 49.99 €
-  Chollometro «Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running asfalto -»: Zalando 76.95 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 83666 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 84261 bytes, 30 chollos
+  cm-2049869 · MediaMarkt 119.0 € → candidato externo · Apple AirPods 4 con Cancelación Activa de Ruido (2024 4ª gen
   cm-2049648 · Es 267.0 € → candidato externo · CHUWI MiniBook X | Intel U300 - 16GB RAM - 512GB SSD [Promo 
-  cm-2049779 · Es 64.99 € → candidato externo · Saucony - zapatillas de running Hurricane 25
-  cm-2049773 · Es 49.99 € → candidato externo · Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5
-  cm-2049702 · Zalando 76.95 € → candidato externo · Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running as
-  Wallapop «aliexpress u300 chuwi»: 200 / 1275 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress u300»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «mediamarkt 2024 apple»: 200 / 56687 bytes, 14 anuncios, 0 parecidos, 0 reservas
+  Wallapop «mediamarkt 2024»: 200 / 127703 bytes, 35 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress u300 chuwi»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «Aliexpress CHUWI MiniBook X | Intel U300 - 16GB RAM - 512GB SSD [Promo 11.11] [Empieza 1-1»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «mediamarkt 2024 apple»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Mediamarkt Apple AirPods 4 con Cancelación Activa de Ruido (2024 4ª gen), Inalámbricos, Bl»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «privalia 25 saucony»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «Privalia Saucony - zapatillas de running Hurricane 25»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «privalia 38 merrell»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «Privalia Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «zalando 42 nike»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
-  ⚠️ No publico «Zalando Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running asfalto»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 8) · Vinted solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Milanuncios «aliexpress u300 chuwi»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Aliexpress CHUWI MiniBook X | Intel U300 - 16GB RAM - 512GB SSD [Promo 11.11] [Empieza 1-1»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
 Publicados en esta ejecución: 0

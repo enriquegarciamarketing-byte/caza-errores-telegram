@@ -903,7 +903,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 119,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2233,6 +2233,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "mediamarkt|apple airpods 4 con cancelacion activa de ruido (2024 4ª gen), inalambricos, bluetooth, estuche de carga usb-c con altavoz, chip h2, siri|mediamarkt 2024 apple": {
+   "t": 1793380878.456608,
+   "query": "mediamarkt 2024 apple",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2355,7 +2365,8 @@
   "wallapop:cm-2049773": 1793371410.616738,
   "wallapop:cm-2049702": 1793371413.3519561,
   "wallapop:cm-2049779": 1793374566.9964898,
-  "wallapop:cm-2049648": 1793377821.9258702
+  "wallapop:cm-2049648": 1793377821.9258702,
+  "wallapop:cm-2049869": 1793380879.1360502
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
