@@ -893,7 +893,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1886,6 +1886,36 @@
    "http_status": 200,
    "bytes": 120532,
    "raw_count": 40
+  },
+  "aliexpress|consola nintendo switch 2 [1 nov 00:00]|aliexpress 00 consola": {
+   "t": 1793351773.9259865,
+   "query": "aliexpress 00 consola",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "aliexpress|sony wh-1000xm6 auriculares bluetooth [promo 11.11] [empieza 1-11]|aliexpress 1000xm6 sony": {
+   "t": 1793351775.7555814,
+   "query": "aliexpress 1000xm6 sony",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "prive by zalando|zapatillas nike sb chron 2 (tallas 36 a 40)|prive zalando 36": {
+   "t": 1793351778.565928,
+   "query": "prive zalando 36",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -1986,7 +2016,10 @@
   "wallapop:cm-2048418": 1793344254.2706845,
   "wallapop:cm-2043635": 1793348087.1623814,
   "wallapop:cm-2049242": 1793348089.383316,
-  "wallapop:cm-2049102": 1793348091.620404
+  "wallapop:cm-2049102": 1793348091.620404,
+  "wallapop:cm-2048812": 1793351774.4774613,
+  "wallapop:cm-2048860": 1793351776.3490922,
+  "wallapop:cm-2049248": 1793351779.1762302
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -2325,6 +2358,14 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~25 € (20 anuncios): ROI -37 % y -15 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "prive by zalando|zapatillas nike sb chron 2 (tallas 36 a 40)|prive zalando 36": {
+   "t": 1793351777.1999652,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
  }
 }
