@@ -903,7 +903,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2213,6 +2213,16 @@
    "http_status": 200,
    "bytes": 121359,
    "raw_count": 39
+  },
+  "privalia|saucony - zapatillas de running hurricane 25|privalia 25 saucony": {
+   "t": 1793374566.621886,
+   "query": "privalia 25 saucony",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2333,7 +2343,8 @@
   "wallapop:cm-2049673": 1793371405.9971647,
   "wallapop:cm-2049761": 1793371407.7876456,
   "wallapop:cm-2049773": 1793371410.616738,
-  "wallapop:cm-2049702": 1793371413.3519561
+  "wallapop:cm-2049702": 1793371413.3519561,
+  "wallapop:cm-2049779": 1793374566.9964898
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -2764,6 +2775,14 @@
    "prices": [],
    "reserved": 0,
    "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "privalia|saucony - zapatillas de running hurricane 25|privalia 25 saucony": {
+   "t": 1793374565.4693346,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }

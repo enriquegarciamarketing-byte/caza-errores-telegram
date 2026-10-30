@@ -1,50 +1,44 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
+Listados: 116 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35996 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36310 bytes, 30 chollos
+  Chollometro «Saucony - zapatillas de running Hurricane 25»: Es 64.99 €
   Chollometro «Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5»: Es 49.99 €
   Chollometro «Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running asfalto -»: Zalando 76.95 €
   Chollometro «Alan Wake 2 Deluxe Edition - PS5»: Amazon 25.95 €
   Chollometro «AMD Ryzen 5 9600X [Promo 11.11] [Empieza 1-11]»: Es 108.48 €
-  Chollometro «DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]»: Es 179.25 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 85979 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 76600 bytes, 30 chollos
+  cm-2049779 · Es 64.99 € → candidato externo · Saucony - zapatillas de running Hurricane 25
   cm-2049773 · Es 49.99 € → candidato externo · Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5
   cm-2049702 · Zalando 76.95 € → candidato externo · Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running as
   cm-2049673 · Amazon 25.95 € → candidato externo · Alan Wake 2 Deluxe Edition - PS5
   cm-2049761 · Es 108.48 € → candidato externo · AMD Ryzen 5 9600X [Promo 11.11] [Empieza 1-11]
-  cm-2049731 · Es 179.25 € → candidato externo · DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]
-  Wallapop «alan ps5 wake»: 200 / 90168 bytes, 40 anuncios, 39 parecidos, 0 reservas
-  Milanuncios «alan ps5 wake»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «alan ps5 wake»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
   Reventa WALLAPOP: 33 anuncios, ~25 €, no publica
   ⚠️ No publico «Amazon Alan Wake 2 Deluxe Edition - PS5»: reventa en WALLAPOP ~25 € (33 anuncios): ROI -4 % y -1 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «aliexpress 9600x amd»: 200 / 1272 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 9600x»: 200 / 4277 bytes, 1 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 9600x amd»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Aliexpress AMD Ryzen 5 9600X [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 11 dji»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Aliexpress DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted «privalia 38 merrell»: HTTP 200, 2789683 bytes, 0 anuncios
-  Vinted «privalia 38 merrell»: 0 parecidos de 0
+  Milanuncios «aliexpress 9600x amd»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Aliexpress AMD Ryzen 5 9600X [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Vinted «privalia 25 saucony»: HTTP 200, 2789726 bytes, 0 anuncios
+  Vinted «privalia 25 saucony»: 0 parecidos de 0
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «privalia 38 merrell»: 200 / 1270 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «privalia 38»: 200 / 45331 bytes, 14 anuncios, 0 parecidos, 0 reservas
+  Wallapop «privalia 25 saucony»: 200 / 1270 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «privalia 25»: 200 / 9022 bytes, 2 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «privalia 38 merrell»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Privalia Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted «zalando 42 nike»: HTTP 200, 3658792 bytes, 96 anuncios
-  Vinted «zalando 42 nike»: 0 parecidos de 96
+  Milanuncios «privalia 25 saucony»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Privalia Saucony - zapatillas de running Hurricane 25»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «zalando 42 nike»: 200 / 47124 bytes, 13 anuncios, 0 parecidos, 0 reservas
-  Wallapop «zalando 42»: 200 / 121359 bytes, 39 anuncios, 2 parecidos, 0 reservas
-  Milanuncios «zalando 42 nike»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «privalia 38 merrell»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Privalia Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «zalando 42 nike»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
   Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
-  ⚠️ No publico «Zalando Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running asfalto»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 8) · Vinted solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Zalando Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running asfalto»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 8) · Vinted solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
 Publicados en esta ejecución: 0
