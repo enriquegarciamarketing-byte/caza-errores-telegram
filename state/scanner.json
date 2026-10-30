@@ -888,7 +888,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 116,
+ "last_listing_count": 115,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1795,6 +1795,16 @@
    "http_status": 200,
    "bytes": 90221,
    "raw_count": 32
+  },
+  "privalia|la sportiva akasha ii hombre zapatillas trail running|privalia sportiva": {
+   "t": 1793344253.7573087,
+   "query": "privalia sportiva",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -1891,7 +1901,8 @@
   "wallapop:cm-2048901": 1793304715.63325,
   "wallapop:cm-2048938": 1793307637.3198047,
   "wallapop:cm-2048324": 1793312836.894638,
-  "wallapop:cm-2048777": 1793312837.8364027
+  "wallapop:cm-2048777": 1793312837.8364027,
+  "wallapop:cm-2048418": 1793344254.2706845
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -2168,6 +2179,14 @@
    "prices": [],
    "reserved": 0,
    "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "privalia|la sportiva akasha ii hombre zapatillas trail running|privalia sportiva": {
+   "t": 1793344253.5574574,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
