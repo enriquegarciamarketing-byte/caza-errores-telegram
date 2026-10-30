@@ -1,27 +1,34 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
+Listados: 115 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35279 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35688 bytes, 30 chollos
+  Chollometro «Zapatillas Salomon Speedcross Peak (tallas de 41 a 46)»: Atmosferasport 71.5 €
+  Chollometro «DJI Osmo Pocket 4P [Promo 11.11] [Empieza 1-11]»: S 463.0 €
+  Chollometro «Super Meat Boy 3D Special Edition para PS5 – Edición física especial»: Amazon 39.05 €
   Chollometro «DJI Osmo Pocket 4 [Promo 11.11] [Empieza 1-11]»: S 331.0 €
-  Chollometro «LEGO Star Wars AT-AT 75440 con 40% en cupón regalo (26 euros)»: Carrefour 64.99 €
-  Chollometro «Apple AirPods 5 de Apple con cancelación activa de ruido, audio espaci»: Amazon 137.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 82714 bytes, 30 chollos
-  cm-2048889 · S 331.0 € → candidato externo · DJI Osmo Pocket 4 [Promo 11.11] [Empieza 1-11]
-  cm-2047776 · Carrefour 64.99 € → candidato externo · LEGO Star Wars AT-AT 75440 con 40% en cupón regalo (26 euros
-  cm-2049889 · Amazon 137.0 € → candidato externo · Apple AirPods 5 de Apple con cancelación activa de ruido, au
-  Milanuncios «apple airpods»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa WALLAPOP: 33 anuncios, ~70 €, no publica
-  ⚠️ No publico «Amazon Apple AirPods 5 de Apple con cancelación activa de ruido, audio espacial. Traducció»: reventa en WALLAPOP ~70 € (33 anuncios): ROI -49 % y -67 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 92617 bytes, 30 chollos
+  cm-2042343 · Atmosferasport 71.5 € → candidato externo · Zapatillas Salomon Speedcross Peak (tallas de 41 a 46)
+  cm-2048878 · S 463.0 € → candidato externo · DJI Osmo Pocket 4P [Promo 11.11] [Empieza 1-11]
+  cm-2049604 · Amazon 39.05 € → candidato externo · Super Meat Boy 3D Special Edition para PS5 – Edición física 
+  Wallapop «super 3d meat»: 200 / 81685 bytes, 33 anuncios, 29 parecidos, 0 reservas
+  Milanuncios «super 3d meat»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 29 anuncios, ~39 €, no publica
+  ⚠️ No publico «Amazon Super Meat Boy 3D Special Edition para PS5 – Edición física especial»: reventa en WALLAPOP ~39 € (29 anuncios): ROI -0 % y -0 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «aliexpress 4p dji»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «aliexpress 4p»: 200 / 88051 bytes, 23 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «carrefour 75440 lego»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Carrefour LEGO Star Wars AT-AT 75440 con 40% en cupón regalo (26 euros)»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Wallapop «aliexpress 11 dji»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 11»: 200 / 95375 bytes, 36 anuncios, 0 parecidos, 0 reservas
+  Milanuncios «aliexpress 4p dji»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Aliexpress DJI Osmo Pocket 4P [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Vinted «atmosfera sport 41»: HTTP 200, 2825291 bytes, 4 anuncios
+  Vinted «atmosfera sport 41»: 0 parecidos de 4
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Wallapop «atmosfera sport 41»: 200 / 1268 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «atmosfera sport»: 200 / 75858 bytes, 16 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 11 dji»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Aliexpress DJI Osmo Pocket 4 [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Milanuncios «atmosfera sport 41»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Atmósfera Sport Zapatillas Salomon Speedcross Peak (tallas de 41 a 46)»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0
