@@ -774,6 +774,11 @@
    "price": 329.98,
    "t": 1793383386,
    "result": "solo 7 puntos de precio en España (mínimo 15)"
+  },
+  "R0NAxWM": {
+   "price": 29.29,
+   "t": 1793394222,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -908,7 +913,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 115,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2378,6 +2383,37 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "amazon|arrancador de baterias de coche 6000a, compresor de aire 150 psi, 7-en-1 booster bateria 12v (para 10 l gasolina o 8.5 l diesel)|arrancador 6000a baterias": {
+   "t": 1793394252.9455833,
+   "query": "arrancador 6000a baterias",
+   "prices": [
+    30.0,
+    20.0,
+    35.0,
+    38.46,
+    40.38,
+    40.0,
+    38.0,
+    40.0,
+    30.0,
+    38.0,
+    45.0,
+    50.0,
+    50.0,
+    80.0,
+    70.0,
+    40.0,
+    39.0,
+    75.0,
+    119.0,
+    119.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 118927,
+   "raw_count": 34
   }
  },
  "milanuncios_cache": {
@@ -2507,7 +2543,8 @@
   "wallapop:cm-2048889": 1793389060.0611324,
   "wallapop:cm-2049604": 1793391566.5934823,
   "wallapop:cm-2048878": 1793391568.321713,
-  "wallapop:cm-2042343": 1793391570.4906898
+  "wallapop:cm-2042343": 1793391570.4906898,
+  "wallapop:cm-2049332": 1793394254.1455774
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
