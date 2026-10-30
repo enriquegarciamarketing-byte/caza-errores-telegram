@@ -279,6 +279,16 @@
       "message_id": 30,
       "title": "6 botes tomate de 350g",
       "store": "Amazon"
+    },
+    {
+      "id": "cm-2049721",
+      "key": "p:poco pro 8gb 256gb promo empieza",
+      "price": 200.0,
+      "t": 1793371145,
+      "url": "https://es.aliexpress.com/item/1005012105324220.html",
+      "message_id": 31,
+      "title": "POCO X8 Pro 5G 8GB 256GB [Promo 11.11] [Empieza 1-11]",
+      "store": "Es"
     }
   ]
 }
