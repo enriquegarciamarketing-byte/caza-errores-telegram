@@ -779,6 +779,11 @@
    "price": 29.29,
    "t": 1793394222,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "1q0x6OR": {
+   "price": 369.99,
+   "t": 1793396981,
+   "result": "solo -9% bajo la referencia"
   }
  },
  "posts": [
