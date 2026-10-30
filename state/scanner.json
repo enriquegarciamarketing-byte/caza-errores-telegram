@@ -908,7 +908,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2308,6 +2308,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "aliexpress|dji osmo pocket 4 [promo 11.11] [empieza 1-11]|aliexpress 11 dji": {
+   "t": 1793389059.591716,
+   "query": "aliexpress 11 dji",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2433,7 +2443,8 @@
   "wallapop:cm-2049648": 1793377821.9258702,
   "wallapop:cm-2049869": 1793380879.1360502,
   "wallapop:cm-2049889": 1793383415.9933672,
-  "wallapop:cm-2047776": 1793386227.3089085
+  "wallapop:cm-2047776": 1793386227.3089085,
+  "wallapop:cm-2048889": 1793389060.0611324
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {

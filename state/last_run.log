@@ -1,27 +1,27 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
+Listados: 116 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36016 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35279 bytes, 30 chollos
+  Chollometro «DJI Osmo Pocket 4 [Promo 11.11] [Empieza 1-11]»: S 331.0 €
   Chollometro «LEGO Star Wars AT-AT 75440 con 40% en cupón regalo (26 euros)»: Carrefour 64.99 €
   Chollometro «Apple AirPods 5 de Apple con cancelación activa de ruido, audio espaci»: Amazon 137.0 €
-  Chollometro «Apple AirPods 4 con Cancelación Activa de Ruido (2024 4ª gen), Inalámb»: MediaMarkt 119.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 86283 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 82714 bytes, 30 chollos
+  cm-2048889 · S 331.0 € → candidato externo · DJI Osmo Pocket 4 [Promo 11.11] [Empieza 1-11]
   cm-2047776 · Carrefour 64.99 € → candidato externo · LEGO Star Wars AT-AT 75440 con 40% en cupón regalo (26 euros
   cm-2049889 · Amazon 137.0 € → candidato externo · Apple AirPods 5 de Apple con cancelación activa de ruido, au
-  cm-2049869 · MediaMarkt 119.0 € → candidato externo · Apple AirPods 4 con Cancelación Activa de Ruido (2024 4ª gen
-  Milanuncios «apple airpods»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
+  Milanuncios «apple airpods»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
   Reventa WALLAPOP: 33 anuncios, ~70 €, no publica
   ⚠️ No publico «Amazon Apple AirPods 5 de Apple con cancelación activa de ruido, audio espacial. Traducció»: reventa en WALLAPOP ~70 € (33 anuncios): ROI -49 % y -67 €, por debajo del mínimo (25 % y 25 €)
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «mediamarkt 2024 apple»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
-  ⚠️ No publico «Mediamarkt Apple AirPods 4 con Cancelación Activa de Ruido (2024 4ª gen), Inalámbricos, Bl»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95508 bytes))
-  Wallapop «carrefour 75440 lego»: 200 / 1272 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «carrefour 75440»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Milanuncios «carrefour 75440 lego»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Carrefour LEGO Star Wars AT-AT 75440 con 40% en cupón regalo (26 euros)»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop «aliexpress 11 dji»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «aliexpress 11»: 200 / 95375 bytes, 36 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «carrefour 75440 lego»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
-  ⚠️ No publico «Carrefour LEGO Star Wars AT-AT 75440 con 40% en cupón regalo (26 euros)»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95508 bytes))
+  Milanuncios «aliexpress 11 dji»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Aliexpress DJI Osmo Pocket 4 [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
 Publicados en esta ejecución: 0
