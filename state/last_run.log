@@ -1,9 +1,11 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
 Listados: 116 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  RNqzzyq · 314.0 € · media 383.13 · ref 346.14 → descartado (solo -9% bajo la referencia) · Sony WH-1000XM6 Auriculares de Lujo inalambricos con cancela
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35815 bytes, 30 chollos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 455293 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 491801 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35657 bytes, 30 chollos
   Chollometro «LEGO Shrek - Shrek, Asno y Gato con Botas»: Toys R Us 95.99 €
   Chollometro «Saucony - zapatillas de running Hurricane 25 - running- Tallas- 42, 44»: Es 64.99 €
   Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 65779 bytes, 30 chollos
