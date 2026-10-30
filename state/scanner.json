@@ -754,6 +754,11 @@
    "price": 314.0,
    "t": 1793331007,
    "result": "solo -9% bajo la referencia"
+  },
+  "R0Zg5Zv": {
+   "price": 37.99,
+   "t": 1793348056,
+   "result": "solo -1% bajo la referencia"
   }
  },
  "posts": [
@@ -888,7 +893,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 115,
+ "last_listing_count": 117,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1805,6 +1810,82 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "zalando|zapatillas nike sportswear (amortiguacion max air / cushlon) - varios colores y tallas|zalando zapatillas": {
+   "t": 1793348086.5418968,
+   "query": "zalando zapatillas",
+   "prices": [
+    10.0,
+    15.0,
+    24.0,
+    9.9
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 129114,
+   "raw_count": 39
+  },
+  "showroomprive|adidad boston 13. zapatillas running hombre. tallas 39 a 46|showroomprive 13 adidad": {
+   "t": 1793348088.8568504,
+   "query": "showroomprive 13 adidad",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "amazon|puma zapatillas de running hombre axelion varios colores (vendedor externo)|puma zapatillas": {
+   "t": 1793348091.0421107,
+   "query": "puma zapatillas",
+   "prices": [
+    22.85,
+    30.0,
+    22.0,
+    15.0,
+    12.0,
+    30.0,
+    35.0,
+    12.0,
+    10.0,
+    10.0,
+    30.0,
+    25.0,
+    55.0,
+    12.0,
+    49.0,
+    28.0,
+    25.0,
+    35.0,
+    10.0,
+    20.0,
+    40.0,
+    30.0,
+    30.0,
+    15.0,
+    18.0,
+    15.0,
+    50.0,
+    12.0,
+    25.0,
+    40.0,
+    20.0,
+    35.0,
+    20.0,
+    8.0,
+    30.0,
+    27.0,
+    25.0,
+    10.0,
+    30.0,
+    45.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 120532,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -1902,7 +1983,10 @@
   "wallapop:cm-2048938": 1793307637.3198047,
   "wallapop:cm-2048324": 1793312836.894638,
   "wallapop:cm-2048777": 1793312837.8364027,
-  "wallapop:cm-2048418": 1793344254.2706845
+  "wallapop:cm-2048418": 1793344254.2706845,
+  "wallapop:cm-2043635": 1793348087.1623814,
+  "wallapop:cm-2049242": 1793348089.383316,
+  "wallapop:cm-2049102": 1793348091.620404
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -2189,6 +2273,58 @@
    "demand_known": true,
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "zalando|zapatillas nike sportswear (amortiguacion max air / cushlon) - varios colores y tallas|zalando zapatillas": {
+   "t": 1793348086.304453,
+   "prices": [
+    24.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 1 anuncios parecidos (mínimo 8)"
+  },
+  "showroomprive|adidad boston 13. zapatillas running hombre. tallas 39 a 46|showroomprive 13 adidad": {
+   "t": 1793348087.6600683,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "amazon|puma zapatillas de running hombre axelion varios colores (vendedor externo)|puma zapatillas": {
+   "t": 1793348090.3794231,
+   "prices": [
+    19.0,
+    18.0,
+    12.0,
+    30.0,
+    19.0,
+    5.0,
+    29.0,
+    27.0,
+    15.0,
+    18.0,
+    24.99,
+    10.0,
+    35.0,
+    38.0,
+    35.0,
+    35.0,
+    25.5,
+    7.0,
+    25.0,
+    25.0,
+    4.0,
+    49.99,
+    28.0,
+    18.0,
+    7.55
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~25 € (20 anuncios): ROI -37 % y -15 €, por debajo del mínimo (30 % y 25 €)"
   }
  }
 }
