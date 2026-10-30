@@ -903,7 +903,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 116,
+ "last_listing_count": 117,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2130,6 +2130,89 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "amazon|alan wake 2 deluxe edition - ps5|alan ps5 wake": {
+   "t": 1793371405.39784,
+   "query": "alan ps5 wake",
+   "prices": [
+    25.0,
+    60.0,
+    23.0,
+    25.0,
+    28.0,
+    25.0,
+    22.0,
+    20.0,
+    25.0,
+    25.0,
+    87.0,
+    25.0,
+    24.0,
+    24.0,
+    27.0,
+    24.0,
+    24.95,
+    25.0,
+    30.0,
+    9.99,
+    30.0,
+    25.0,
+    25.0,
+    5.0,
+    27.0,
+    70.0,
+    35.0,
+    30.0,
+    25.0,
+    20.0,
+    25.0,
+    29.0,
+    29.99,
+    29.99,
+    25.0,
+    25.0,
+    30.0,
+    60.0,
+    29.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 90168,
+   "raw_count": 40
+  },
+  "aliexpress|amd ryzen 5 9600x [promo 11.11] [empieza 1-11]|aliexpress 9600x amd": {
+   "t": 1793371407.213273,
+   "query": "aliexpress 9600x amd",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "privalia|merrell zapatillas de running promorph- tallas- 38, 40, 40.5|privalia 38 merrell": {
+   "t": 1793371410.0796537,
+   "query": "privalia 38 merrell",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "zalando|nike performance air zoom pegasus 42 - zapatillas running asfalto -|zalando 42 nike": {
+   "t": 1793371412.7792249,
+   "query": "zalando 42",
+   "prices": [
+    12.0,
+    7.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 121359,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -2246,7 +2329,11 @@
   "wallapop:cm-2049729": 1793367875.1242027,
   "wallapop:cm-2049711": 1793367877.183433,
   "wallapop:cm-2049480": 1793367879.7000322,
-  "wallapop:cm-2049731": 1793367881.6228874
+  "wallapop:cm-2049731": 1793367881.6228874,
+  "wallapop:cm-2049673": 1793371405.9971647,
+  "wallapop:cm-2049761": 1793371407.7876456,
+  "wallapop:cm-2049773": 1793371410.616738,
+  "wallapop:cm-2049702": 1793371413.3519561
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -2663,6 +2750,22 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~25 € (51 anuncios): ROI -61 % y -39 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "privalia|merrell zapatillas de running promorph- tallas- 38, 40, 40.5|privalia 38 merrell": {
+   "t": 1793371408.8719394,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "zalando|nike performance air zoom pegasus 42 - zapatillas running asfalto -|zalando 42 nike": {
+   "t": 1793371411.4625113,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
  }
 }

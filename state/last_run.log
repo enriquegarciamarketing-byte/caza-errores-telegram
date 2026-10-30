@@ -1,46 +1,50 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  R0ZG4Bv · 379.98 € · media 1031.23 · ref 406.71 → descartado (solo -7% bajo la referencia) · Lefant M5 Pro Robot Aspirador y Fregasuelos con Base de Auto
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35867 bytes, 30 chollos
+Listados: 117 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35996 bytes, 30 chollos
+  Chollometro «Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5»: Es 49.99 €
+  Chollometro «Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running asfalto -»: Zalando 76.95 €
+  Chollometro «Alan Wake 2 Deluxe Edition - PS5»: Amazon 25.95 €
+  Chollometro «AMD Ryzen 5 9600X [Promo 11.11] [Empieza 1-11]»: Es 108.48 €
   Chollometro «DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]»: Es 179.25 €
-  Chollometro «AMD Ryzen 7 7800X3D [Promo 11.11] [Empieza 1-11]»: Es 179.45 €
-  Chollometro «Set LEGO Icons Telescopio Espacial Hubble 11382 (+18 anos, maqueta par»: Carrefour 103.99 €
-  Chollometro «Tarjeta Gráfica Palit Infinity 2 OC GeForce RTX 5060 8GB GDDR7 Reflex »: PcComponentes 249.0 €
-  Chollometro «Mini Pc Intel Core i3-4030U 8GB DDR3 RAM 128GB SSD Wi-Fi 5 BT 4.2»: Es 92.85 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67892 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 85979 bytes, 30 chollos
+  cm-2049773 · Es 49.99 € → candidato externo · Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5
+  cm-2049702 · Zalando 76.95 € → candidato externo · Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running as
+  cm-2049673 · Amazon 25.95 € → candidato externo · Alan Wake 2 Deluxe Edition - PS5
+  cm-2049761 · Es 108.48 € → candidato externo · AMD Ryzen 5 9600X [Promo 11.11] [Empieza 1-11]
   cm-2049731 · Es 179.25 € → candidato externo · DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]
-  cm-2049729 · Es 179.45 € → candidato externo · AMD Ryzen 7 7800X3D [Promo 11.11] [Empieza 1-11]
-  cm-2049480 · Carrefour 103.99 € → candidato externo · Set LEGO Icons Telescopio Espacial Hubble 11382 (+18 anos, m
-  cm-2049711 · PcComponentes 249.0 € → candidato externo · Tarjeta Gráfica Palit Infinity 2 OC GeForce RTX 5060 8GB GDD
-  cm-2049439 · Es 92.85 € → candidato externo · Mini Pc Intel Core i3-4030U 8GB DDR3 RAM 128GB SSD Wi-Fi 5 B
-  Wallapop «aliexpress 7800x3d amd»: 200 / 1277 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 7800x3d»: 200 / 393 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 7800x3d amd»: HTTP 403, 95510 bytes
+  Wallapop «alan ps5 wake»: 200 / 90168 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «alan ps5 wake»: HTTP 403, 95510 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Aliexpress AMD Ryzen 7 7800X3D [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Wallapop «pccomponentes 5060 tarjeta»: 200 / 33969 bytes, 10 anuncios, 0 parecidos, 0 reservas
-  Wallapop «pccomponentes 5060»: 200 / 86155 bytes, 24 anuncios, 0 parecidos, 0 reservas
+  Reventa WALLAPOP: 33 anuncios, ~25 €, no publica
+  ⚠️ No publico «Amazon Alan Wake 2 Deluxe Edition - PS5»: reventa en WALLAPOP ~25 € (33 anuncios): ROI -4 % y -1 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «aliexpress 9600x amd»: 200 / 1272 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «aliexpress 9600x»: 200 / 4277 bytes, 1 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «pccomponentes 5060 tarjeta»: HTTP 403, 95510 bytes
+  Milanuncios «aliexpress 9600x amd»: HTTP 403, 95510 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Pccomponentes Tarjeta Gráfica Palit Infinity 2 OC GeForce RTX 5060 8GB GDDR7 Reflex 2 RTX »: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress i3 mini»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Aliexpress Mini Pc Intel Core i3-4030U 8GB DDR3 RAM 128GB SSD Wi-Fi 5 BT 4.2»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Wallapop «carrefour 11382 lego»: 200 / 1272 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «carrefour 11382»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «carrefour 11382 lego»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Carrefour Set LEGO Icons Telescopio Espacial Hubble 11382 (+18 anos, maqueta para adultos,»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Wallapop «aliexpress 11 dji»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 11»: 200 / 96198 bytes, 36 anuncios, 0 parecidos, 0 reservas
+  ⚠️ No publico «Aliexpress AMD Ryzen 5 9600X [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
   Milanuncios «aliexpress 11 dji»: HTTP 403, 95510 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   ⚠️ No publico «Aliexpress DJI OSMO Action 5 Pro [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Vinted «privalia 38 merrell»: HTTP 200, 2789683 bytes, 0 anuncios
+  Vinted «privalia 38 merrell»: 0 parecidos de 0
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Wallapop «privalia 38 merrell»: 200 / 1270 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «privalia 38»: 200 / 45331 bytes, 14 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «privalia 38 merrell»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Privalia Merrell Zapatillas de running Promorph- Tallas- 38, 40, 40.5»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Vinted «zalando 42 nike»: HTTP 200, 3658792 bytes, 96 anuncios
+  Vinted «zalando 42 nike»: 0 parecidos de 96
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
+  Wallapop «zalando 42 nike»: 200 / 47124 bytes, 13 anuncios, 0 parecidos, 0 reservas
+  Wallapop «zalando 42»: 200 / 121359 bytes, 39 anuncios, 2 parecidos, 0 reservas
+  Milanuncios «zalando 42 nike»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
+  ⚠️ No publico «Zalando Nike Performance AIR ZOOM PEGASUS 42 - Zapatillas running asfalto»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 8) · Vinted solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0
