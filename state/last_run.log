@@ -1,18 +1,24 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 348744 bytes, 0 ASIN, 0 títulos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36721 bytes, 30 chollos
+Listados: 117 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 457668 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 483330 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 352005 bytes, 0 ASIN, 0 títulos
+Candidatos nuevos tras el filtro rápido: 1
+  RVryqPW · 329.98 € · media 883.15 · ref 793.43 → descartado (solo 7 puntos de precio en España (mínimo 15)) · Lefant Robot Aspirador y Friegasuelos con Base 4 en 1 de Aut
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36126 bytes, 30 chollos
+  Chollometro «Apple AirPods 5 de Apple con cancelación activa de ruido, audio espaci»: Amazon 137.0 €
   Chollometro «Apple AirPods 4 con Cancelación Activa de Ruido (2024 4ª gen), Inalámb»: MediaMarkt 119.0 €
   Chollometro «CHUWI MiniBook X | Intel U300 - 16GB RAM - 512GB SSD [Promo 11.11] [Em»: Es 267.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 84261 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 78430 bytes, 30 chollos
+  cm-2049889 · Amazon 137.0 € → candidato externo · Apple AirPods 5 de Apple con cancelación activa de ruido, au
   cm-2049869 · MediaMarkt 119.0 € → candidato externo · Apple AirPods 4 con Cancelación Activa de Ruido (2024 4ª gen
   cm-2049648 · Es 267.0 € → candidato externo · CHUWI MiniBook X | Intel U300 - 16GB RAM - 512GB SSD [Promo 
-  Wallapop «mediamarkt 2024 apple»: 200 / 56687 bytes, 14 anuncios, 0 parecidos, 0 reservas
-  Wallapop «mediamarkt 2024»: 200 / 127703 bytes, 35 anuncios, 0 parecidos, 0 reservas
+  Wallapop «apple airpods»: 200 / 107043 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «apple airpods»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 33 anuncios, ~70 €, no publica
+  ⚠️ No publico «Amazon Apple AirPods 5 de Apple con cancelación activa de ruido, audio espacial. Traducció»: reventa en WALLAPOP ~70 € (33 anuncios): ROI -49 % y -67 €, por debajo del mínimo (25 % y 25 €)
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
   Milanuncios «mediamarkt 2024 apple»: HTTP 403, 95511 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
