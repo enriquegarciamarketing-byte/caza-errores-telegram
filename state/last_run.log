@@ -1,46 +1,44 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 114 productos únicos
+Listados: 113 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 456716 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 482112 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35702 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36363 bytes, 30 chollos
+  Chollometro «ASRock Radeon RX 9070 XT Challenger 16GB GDDR6»: Pcbox 784.25 €
+  Chollometro «Sony WH-1000XM6 - Auriculares diadema, inalambricos, cancelación de Ru»: Amazon 314.0 €
   Chollometro «Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]»: S 470.85 €
   Chollometro «ASRock Radeon RX 9070 XT»: Pcbox 722.73 €
   Chollometro «ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46»: Showroomprive 38.9 €
-  Chollometro «Consola Nintendo Switch 2 [1 Nov 00:00]»: S 300.47 €
-  Chollometro «Sony WH-1000XM6 Auriculares Bluetooth [Promo 11.11] [Empieza 1-11]»: S 246.11 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73780 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69145 bytes, 30 chollos
+  cm-2049454 · Pcbox 784.25 € → candidato externo · ASRock Radeon RX 9070 XT Challenger 16GB GDDR6
+  cm-2048817 · Amazon 314.0 € → candidato externo · Sony WH-1000XM6 - Auriculares diadema, inalambricos, cancela
   cm-2048827 · S 470.85 € → candidato externo · Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]
   cm-2049448 · Pcbox 722.73 € → candidato externo · ASRock Radeon RX 9070 XT
   cm-2049257 · Showroomprive 38.9 € → candidato externo · ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46
-  cm-2048812 · S 300.47 € → candidato externo · Consola Nintendo Switch 2 [1 Nov 00:00]
-  cm-2048860 · S 246.11 € → candidato externo · Sony WH-1000XM6 Auriculares Bluetooth [Promo 11.11] [Empieza
-  Wallapop «aliexpress ps5 consola»: 200 / 15779 bytes, 4 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress ps5»: 200 / 63320 bytes, 19 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress ps5 consola»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Aliexpress Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 00 consola»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Aliexpress Consola Nintendo Switch 2 [1 Nov 00:00]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «aliexpress ps5 consola»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Aliexpress Consola PS5 Slim 1 TB con lector (blanca) [1 Nov 00:00]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
   Wallapop «pcbox 9070 asrock»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop «pcbox 9070»: 200 / 385 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «pcbox 9070 asrock»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Pcbox ASRock Radeon RX 9070 XT»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «pcbox 9070 asrock»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Pcbox ASRock Radeon RX 9070 XT Challenger 16GB GDDR6»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 1000xm6 sony»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Aliexpress Sony WH-1000XM6 Auriculares Bluetooth [Promo 11.11] [Empieza 1-11]»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted «showroomprive 40 adidas»: HTTP 200, 2794914 bytes, 1 anuncios
-  Vinted «showroomprive 40 adidas»: 0 parecidos de 1
+  Milanuncios «pcbox 9070 asrock»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Pcbox ASRock Radeon RX 9070 XT»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop «sony 1000xm6 auriculares»: 200 / 104773 bytes, 36 anuncios, 32 parecidos, 0 reservas
+  Milanuncios «sony 1000xm6 auriculares»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 32 anuncios, ~250 €, no publica
+  ⚠️ No publico «Amazon Sony WH-1000XM6 - Auriculares diadema, inalambricos, cancelación de Ruido, Hi-Res, »: reventa en WALLAPOP ~250 € (32 anuncios): ROI -20 % y -64 €, por debajo del mínimo (25 % y 25 €)
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «showroomprive 40 adidas»: 200 / 1279 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «showroomprive 40»: 200 / 391 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «showroomprive 40 adidas»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Showroomprivé ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Milanuncios «showroomprive 40 adidas»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Showroomprivé ADIDAS ZAPATILLA ADISTAR CONTROL 3. Tallas 40 a 46»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
 Publicados en esta ejecución: 0
