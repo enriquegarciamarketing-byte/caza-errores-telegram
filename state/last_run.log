@@ -1,28 +1,19 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
+Listados: 118 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36750 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36874 bytes, 30 chollos
+  Chollometro «Rhythm Paradise Groove para Nintendo Switch»: Tradeinn 32.99 €
   Chollometro «Nintendo Switch 2, versión renovada con batería extraíble [Promo 11.11»: S 298.0 €
   Chollometro «Arrancador de Baterias de Coche 6000A, Compresor de Aire 150 PSI, 7-en»: Amazon 39.89 €
   Chollometro «Zapatillas Salomon Speedcross Peak (tallas de 41 a 46)»: Atmosferasport 71.5 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 78647 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 82303 bytes, 30 chollos
+  cm-2050073 · Tradeinn 32.99 € → candidato externo · Rhythm Paradise Groove para Nintendo Switch
   cm-2050134 · S 298.0 € → candidato externo · Nintendo Switch 2, versión renovada con batería extraíble [P
   cm-2049332 · Amazon 39.89 € → candidato externo · Arrancador de Baterias de Coche 6000A, Compresor de Aire 150
   cm-2042343 · Atmosferasport 71.5 € → candidato externo · Zapatillas Salomon Speedcross Peak (tallas de 41 a 46)
-  Wallapop «aliexpress 11 nintendo»: 200 / 1277 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 11»: 200 / 96549 bytes, 36 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 11 nintendo»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «Aliexpress Nintendo Switch 2, versión renovada con batería extraíble [Promo 11.11] [Empiez»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Milanuncios «arrancador 6000a baterias»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 18 anuncios, ~40 €, no publica
-  ⚠️ No publico «Amazon Arrancador de Baterias de Coche 6000A, Compresor de Aire 150 PSI, 7-en-1 Booster Ba»: reventa en WALLAPOP ~40 € (18 anuncios): ROI 0 % y 0 €, por debajo del mínimo (30 % y 25 €)
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «atmosfera sport 41»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «Atmósfera Sport Zapatillas Salomon Speedcross Peak (tallas de 41 a 46)»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
+  cm-2050073: no se publica (horario nocturno: las gangas esperan al día)
+  cm-2050134: no se publica (horario nocturno: las gangas esperan al día)
+  cm-2049332: no se publica (horario nocturno: las gangas esperan al día)
+  cm-2042343: no se publica (horario nocturno: las gangas esperan al día)
 Publicados en esta ejecución: 0
