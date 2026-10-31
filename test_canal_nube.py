@@ -89,6 +89,28 @@ class Texto(unittest.TestCase):
         self.assertNotIn("jimmylks", text)
 
 
+class Administrador(unittest.TestCase):
+    def test_busca_tu_chat_por_usuario_sin_marcar_mensajes(self):
+        calls = []
+
+        class TG:
+            def call(self, method, params):
+                calls.append((method, params))
+                return [{"update_id": 5, "message": {"chat": {"id": 42, "type": "private", "username": "Darkness_gg"}}},
+                        {"update_id": 6, "message": {"chat": {"id": 7, "type": "private", "username": "otro"}}}]
+        state = {}
+        rules = dict(RULES, admin_username="@Darkness_gg")
+        self.assertEqual(cn.admin_chat_id(state, rules, TG()), 42)
+        self.assertNotIn("offset", calls[0][1], "no debe confirmar los mensajes del escáner")
+        self.assertEqual(state["private_chats"]["darkness_gg"], 42)
+
+    def test_sin_mensaje_tuyo_no_usa_otro_chat(self):
+        class TG:
+            def call(self, method, params):
+                return []
+        self.assertIsNone(cn.admin_chat_id({}, dict(RULES, admin_username="nadie_xyz"), TG()))
+
+
 class Pasada(unittest.TestCase):
     def pages(self, detail_pages=None):
         detail_pages = detail_pages or {}

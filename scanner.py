@@ -579,6 +579,9 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
                         "✅ Listo. A partir de ahora te aviso aquí de cada chollo que publique.\n\n"
                         "Si quieres tu enlace corto en un post, responde a mi aviso con el enlace y lo cambio en el canal."})
             continue
+        if chat.get("username"):
+            # Para que el canal normal encuentre tu chat por tu @usuario (admin_username en config.json).
+            state.setdefault("private_chats", {})[str(chat["username"]).lower()] = chat["id"]
         if chat.get("id") != admin:
             continue
         link = LINK_RE.search(text)

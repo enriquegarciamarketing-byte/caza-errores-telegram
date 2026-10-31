@@ -93,9 +93,28 @@ def save_state(state: dict) -> None:
     STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
-def admin_chat_id(state: dict) -> int | None:
-    admin = state.get("admin_chat_id") or load_json(PREMIUM_STATE, {}).get("admin_chat_id")
-    return int(admin) if admin else None
+def admin_chat_id(state: dict, rules: dict | None = None, tg=None, log=print) -> int | None:
+    """Tu chat privado con el bot. Con admin_username en config.json se busca por tu @usuario:
+    en la memoria de esta pasada, en la del escáner premium o en los mensajes pendientes del bot.
+    Leer los mensajes pendientes sin offset no los marca como leídos, así que no molesta al escáner."""
+    username = str((rules or {}).get("admin_username") or "").lstrip("@").lower()
+    if not username:
+        admin = state.get("admin_chat_id") or load_json(PREMIUM_STATE, {}).get("admin_chat_id")
+        return int(admin) if admin else None
+    known = (state.get("private_chats") or {}).get(username) or \
+        (load_json(PREMIUM_STATE, {}).get("private_chats") or {}).get(username)
+    if not known and tg is not None:
+        try:
+            for upd in tg.call("getUpdates", {"timeout": 0, "allowed_updates": ["message"]}):
+                chat = (upd.get("message") or {}).get("chat") or {}
+                if chat.get("type") == "private" and str(chat.get("username") or "").lower() == username:
+                    known = chat["id"]
+        except RuntimeError as exc:
+            log(f"  No he podido leer los mensajes del bot ({exc})")
+    if known:
+        state.setdefault("private_chats", {})[username] = int(known)
+        return int(known)
+    return None
 
 
 def euro(amount: float) -> str:
@@ -424,9 +443,11 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         return 2
     target = rules["chat_id"]
     if args.test_private:
-        target = admin_chat_id(state)
+        target = admin_chat_id(state, rules, tg, log)
         if not target:
-            log("Prueba privada: no encuentro tu chat de administrador.")
+            who = rules.get("admin_username") or "tu cuenta"
+            log(f"Prueba privada: no encuentro el chat de @{str(who).lstrip('@')}. "
+                f"Escribe /start a @cazaerroresAmazon_bot desde esa cuenta y repite la prueba.")
             return 2
         log(f"Prueba privada: envío solo a tu chat ({target}), nunca al canal.")
     dry = bool(args.dry_run or tg is None)
