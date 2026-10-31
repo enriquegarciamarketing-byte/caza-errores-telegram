@@ -1,16 +1,22 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
+Listados: 117 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 459417 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 484189 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 344251 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36838 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36549 bytes, 30 chollos
+  Chollometro «The Blood of Dawnwalker Edición Coleccionista PS5/Xbox»: Xtralife 139.99 €
+  Chollometro «Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Double Pack -»: Amazon 49.69 €
   Chollometro «Rhythm Paradise Groove para Nintendo Switch»: Tradeinn 32.99 €
   Chollometro «Nintendo Switch 2, versión renovada con batería extraíble [Promo 11.11»: S 298.0 €
-  Chollometro «Arrancador de Baterias de Coche 6000A, Compresor de Aire 150 PSI, 7-en»: Amazon 39.89 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 78952 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77823 bytes, 30 chollos
+  cm-2050123 · Xtralife 139.99 € → candidato externo · The Blood of Dawnwalker Edición Coleccionista PS5/Xbox
+  cm-2042238 · Amazon 49.69 € → candidato externo · Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Dou
   cm-2050073 · Tradeinn 32.99 € → candidato externo · Rhythm Paradise Groove para Nintendo Switch
   cm-2050134 · S 298.0 € → candidato externo · Nintendo Switch 2, versión renovada con batería extraíble [P
-  cm-2049332 · Amazon 39.89 € → candidato externo · Arrancador de Baterias de Coche 6000A, Compresor de Aire 150
+  cm-2050123: no se publica (horario nocturno: las gangas esperan al día)
+  cm-2042238: no se publica (horario nocturno: las gangas esperan al día)
   cm-2050073: no se publica (horario nocturno: las gangas esperan al día)
   cm-2050134: no se publica (horario nocturno: las gangas esperan al día)
-  cm-2049332: no se publica (horario nocturno: las gangas esperan al día)
 Publicados en esta ejecución: 0
