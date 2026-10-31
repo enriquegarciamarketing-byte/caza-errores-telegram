@@ -824,6 +824,11 @@
    "price": 199.0,
    "t": 1793478314,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "RJXoXxy": {
+   "price": 96.01,
+   "t": 1793483142,
+   "result": "solo -9% bajo la referencia"
   }
  },
  "posts": [
@@ -958,7 +963,7 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 114,
+ "last_listing_count": 117,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
