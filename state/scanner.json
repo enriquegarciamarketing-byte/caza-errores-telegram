@@ -511,9 +511,9 @@
    "result": "solo -18% bajo la media"
   },
   "M5jj5E9": {
-   "price": 30.57,
-   "t": 1793214522,
-   "result": "solo -34% bajo la media"
+   "price": 35.95,
+   "t": 1793476307,
+   "result": "solo -9% bajo la referencia"
   },
   "7yrmZOq": {
    "price": 8.63,
@@ -953,7 +953,7 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 114,
+ "last_listing_count": 118,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
