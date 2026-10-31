@@ -1,28 +1,33 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 119 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36265 bytes, 30 chollos
+Listados: 116 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  RNXKLPO · 73.95 € · media 94.07 · ref 85.99 → descartado (solo -14% bajo la referencia) · ASICS Noosa Tri 16 Sneaker
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36117 bytes, 30 chollos
+  Chollometro «ADIDAS TERREX AGRAVIC SPEED 2 - Zapatillas de trail. Tallas 38 a 50. D»: Zalando-prive 69.21 €
+  Chollometro «Apple iPhone Air de 1 TB, Azul Cielo: Pantalla de 6,5 Pulgadas con Pro»: Amazon 1065.77 €
   Chollometro «Casio G-Shock GW-M5610-1ER (radiocontrolado y solar).»: Amazon 84.98 €
-  Chollometro «Forza Horizon 6 - PC & XBOX Series X|S»: Instant-gaming 42.99 €
-  Chollometro «NIKE FLEX TRAIN - Zapatillas para gimnasio- Tallas- 38.5, 40, 47, 49.5»: Zalando-prive 37.9 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 74239 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 80469 bytes, 30 chollos
+  cm-2050487 · Zalando-prive 69.21 € → candidato externo · ADIDAS TERREX AGRAVIC SPEED 2 - Zapatillas de trail. Tallas 
+  cm-2050569 · Amazon 1065.77 € → candidato externo · Apple iPhone Air de 1 TB, Azul Cielo: Pantalla de 6,5 Pulgad
   cm-2050637 · Amazon 84.98 € → candidato externo · Casio G-Shock GW-M5610-1ER (radiocontrolado y solar).
-  cm-2050277 · Instant-gaming 42.99 € → candidato externo · Forza Horizon 6 - PC & XBOX Series X|S
-  cm-2050528 · Zalando-prive 37.9 € → candidato externo · NIKE FLEX TRAIN - Zapatillas para gimnasio- Tallas- 38.5, 40
+  Wallapop «apple 120 iphone»: 200 / 136512 bytes, 39 anuncios, 0 parecidos, 0 reservas
+  Wallapop «apple 120»: 200 / 137299 bytes, 40 anuncios, 4 parecidos, 0 reservas
+  Milanuncios «apple 120 iphone»: HTTP 403, 95508 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
+  Reventa WALLAPOP: 3 anuncios, ~0 €, no publica
+  ⚠️ No publico «Amazon Apple iPhone Air de 1 TB, Azul Cielo: Pantalla de 6,5 Pulgadas con Promotion hasta »: WALLAPOP solo tiene 3 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95508 bytes))
+  Vinted «prive zalando 38»: HTTP 200, 3657717 bytes, 96 anuncios
+  Vinted «prive zalando 38»: 2 parecidos de 96
+  Wallapop «prive zalando 38»: 200 / 18392 bytes, 6 anuncios, 0 parecidos, 0 reservas
+  Wallapop «prive zalando»: 200 / 76641 bytes, 22 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «instant gaming forza»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «Instant Gaming Forza Horizon 6 - PC & XBOX Series X|S»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «prive zalando 38»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Milanuncios «prive zalando 38»: HTTP 403, 95508 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
   Reventa VINTED: 2 anuncios, ~0 €, no publica
-  ⚠️ No publico «Privé By Zalando NIKE FLEX TRAIN - Zapatillas para gimnasio- Tallas- 38.5, 40, 47, 49.5»: VINTED solo tiene 2 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Wallapop «casio m5610 shock»: 200 / 79881 bytes, 22 anuncios, 4 parecidos, 0 reservas
-  Wallapop «casio m5610»: 200 / 86904 bytes, 24 anuncios, 4 parecidos, 0 reservas
-  Milanuncios «casio m5610 shock»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  ⚠️ No publico «Privé By Zalando ADIDAS TERREX AGRAVIC SPEED 2 - Zapatillas de trail. Tallas 38 a 50. Desc»: VINTED solo tiene 2 anuncios parecidos (mínimo 8) · Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95508 bytes))
+  Milanuncios «casio m5610 shock»: HTTP 403, 95508 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
   Reventa WALLAPOP: 4 anuncios, ~0 €, no publica
-  ⚠️ No publico «Amazon.Fr Casio G-Shock GW-M5610-1ER (radiocontrolado y solar).»: WALLAPOP solo tiene 4 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95509 bytes))
+  ⚠️ No publico «Amazon.Fr Casio G-Shock GW-M5610-1ER (radiocontrolado y solar).»: WALLAPOP solo tiene 4 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95508 bytes))
 Publicados en esta ejecución: 0

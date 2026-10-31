@@ -814,6 +814,11 @@
    "price": 35.0,
    "t": 1793453125,
    "result": "solo -1% bajo la referencia"
+  },
+  "RNXKLPO": {
+   "price": 73.95,
+   "t": 1793458643,
+   "result": "solo -14% bajo la referencia"
   }
  },
  "posts": [
@@ -946,9 +951,9 @@
    "gtin": null
   }
  ],
- "tg_offset": 334822052,
+ "tg_offset": 334822054,
  "admin_chat_id": 1880159117,
- "last_listing_count": 119,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2725,6 +2730,31 @@
    "http_status": 200,
    "bytes": 79881,
    "raw_count": 22
+  },
+  "amazon|apple iphone air de 1 tb, azul cielo: pantalla de 6,5 pulgadas con promotion hasta 120 hz, chip a19 pro, el iphone mas fino jamas creado|apple 120 iphone": {
+   "t": 1793458672.0886362,
+   "query": "apple 120",
+   "prices": [
+    100.0,
+    145.0,
+    45.0,
+    114.9
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 137299,
+   "raw_count": 40
+  },
+  "prive by zalando|adidas terrex agravic speed 2 - zapatillas de trail. tallas 38 a 50. descuento aplicable a miembros plus|prive zalando 38": {
+   "t": 1793458674.6383011,
+   "query": "prive zalando 38",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2872,7 +2902,9 @@
   "wallapop:cm-2049627": 1793442369.3641999,
   "wallapop:cm-2050277": 1793453156.8523343,
   "wallapop:cm-2050528": 1793453159.6958683,
-  "wallapop:cm-2050637": 1793456073.038935
+  "wallapop:cm-2050637": 1793456073.038935,
+  "wallapop:cm-2050569": 1793458672.7161646,
+  "wallapop:cm-2050487": 1793458675.2257648
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -3417,6 +3449,17 @@
   },
   "prive by zalando|nike flex train - zapatillas para gimnasio- tallas- 38.5, 40, 47, 49.5|prive zalando 38": {
    "t": 1793453157.7409956,
+   "prices": [
+    25.0,
+    10.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 2 anuncios parecidos (mínimo 8)"
+  },
+  "prive by zalando|adidas terrex agravic speed 2 - zapatillas de trail. tallas 38 a 50. descuento aplicable a miembros plus|prive zalando 38": {
+   "t": 1793458673.3811154,
    "prices": [
     25.0,
     10.0
