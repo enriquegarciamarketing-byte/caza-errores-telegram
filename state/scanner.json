@@ -951,9 +951,9 @@
    "gtin": null
   }
  ],
- "tg_offset": 334822054,
+ "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 116,
+ "last_listing_count": 114,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2778,6 +2778,26 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "privalia|munich zapatillas de deporte nexa 11- tallas- 39, 41, 42, 44, 45|privalia 11 munich": {
+   "t": 1793465976.4956217,
+   "query": "privalia 11 munich",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "private sport shop|adidas zapatillas de running 4dfwd 4 mujer|private sport 4dfwd": {
+   "t": 1793465978.8648841,
+   "query": "private sport 4dfwd",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2929,7 +2949,9 @@
   "wallapop:cm-2050569": 1793458672.7161646,
   "wallapop:cm-2050487": 1793458675.2257648,
   "wallapop:cm-2050273": 1793461006.4327378,
-  "wallapop:cm-2050673": 1793461009.193538
+  "wallapop:cm-2050673": 1793461009.193538,
+  "wallapop:cm-2049530": 1793465977.126253,
+  "wallapop:cm-2050712": 1793465979.5190501
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -3499,6 +3521,22 @@
    "prices": [],
    "reserved": 0,
    "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "privalia|munich zapatillas de deporte nexa 11- tallas- 39, 41, 42, 44, 45|privalia 11 munich": {
+   "t": 1793465975.2800078,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
+  },
+  "private sport shop|adidas zapatillas de running 4dfwd 4 mujer|private sport 4dfwd": {
+   "t": 1793465977.6205482,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
