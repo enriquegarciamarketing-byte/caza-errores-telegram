@@ -1,8 +1,7 @@
 name: Canal normal @cazachollos_com
 
 on:
-  schedule:
-    - cron: "*/15 7-23 * * *"
+  # PAUSADO: el canal pasa a solo Amazon con precio verificado. No se reactiva hasta validar las pruebas.
   workflow_dispatch:
     inputs:
       dry_run:
