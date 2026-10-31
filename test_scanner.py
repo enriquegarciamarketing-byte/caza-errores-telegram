@@ -256,9 +256,13 @@ class ResaleRulesTest(unittest.TestCase):
         cand["modified"] = datetime.now(timezone.utc).isoformat()
         category, reason = scanner.classify(self.cfg, cand)
         self.assertEqual(category, "ERROR DE PRECIO")
-        checked, why = scanner.quality_checks(cand, datetime.now(timezone.utc), category, reason)
+        with mock.patch.object(scanner, "resolve_asin", return_value=None):
+            checked, why = scanner.quality_checks(cand, datetime.now(timezone.utc), category, reason)
         self.assertIsNone(checked)
-        self.assertIn("EAN", why)
+        self.assertIn("ASIN", why)
+        with mock.patch.object(scanner, "resolve_asin", return_value="B0TEST1234"):
+            checked, why = scanner.quality_checks(dict(cand), datetime.now(timezone.utc), category, reason)
+        self.assertEqual(checked, "ERROR DE PRECIO")
 
         absurd = deal(name="Apple iPhone 13", title="Apple iPhone 13", brand="Apple", price=40, avg90=800)
         absurd["modified"] = datetime.now(timezone.utc).isoformat()
@@ -267,6 +271,25 @@ class ResaleRulesTest(unittest.TestCase):
         checked, why = scanner.quality_checks(absurd, datetime.now(timezone.utc), category, reason)
         self.assertIsNone(checked)
         self.assertIn("92", why)
+
+
+class HonestReferenceTest(unittest.TestCase):
+    def test_con_grafico_usa_el_minimo_de_los_30_dias_previos_y_no_la_media(self):
+        today = datetime.now(timezone.utc).date()
+        days = lambda n: (today - timedelta(days=n)).isoformat()
+        # Media inflada por picos de 1.999 €, pero hace 20 días estuvo a 799,99 €.
+        series = [{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png",
+                   "points": [[days(80), 1999.99], [days(50), 1299.99], [days(20), 799.99], [days(1), 379.98]]}]
+        cand = deal(price=379.98, avg90=1019.76, series=series)
+        self.assertEqual(scanner.market_reference(cand), 799.99)
+        self.assertEqual(cand["ref_label"], "MÍNIMO 30 DÍAS ANTES")
+        self.assertIn("30 días anteriores", cand["ref_text"])
+
+    def test_sin_historial_no_hay_referencia_ni_publicacion(self):
+        cand = deal(price=100, avg90=300, series=[])
+        category, why = scanner.classify(load_cfg(), cand)
+        self.assertIsNone(category)
+        self.assertIn("30 días", why)
 
 
 def chart(spain, europe=None, step_days=1) -> list[dict]:
@@ -476,7 +499,8 @@ class PrivateModeTest(unittest.TestCase):
     def test_publicacion_normal_sigue_yendo_al_canal_y_se_recuerda(self):
         cfg = load_cfg()
         state = {"admin_chat_id": 1880159117, "posts": [], "seen": {}}
-        cand = deal(category="ERROR DE PRECIO", discount=75)
+        cand = deal(category="ERROR DE PRECIO", discount=75,
+                    direct_url="https://www.amazon.es/dp/B0TEST1234?tag=cazadores_errores-21")
         tg = FakeTG()
         with mock.patch.object(scanner, "fetch", return_value=b"img"), \
              mock.patch.object(scanner, "create_price_card", return_value=Path("/tmp/card.jpg")), \
@@ -484,12 +508,38 @@ class PrivateModeTest(unittest.TestCase):
             ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
         self.assertTrue(ok)
         self.assertEqual(tg.photos[0]["chat_id"], "@caza_errores")
+        self.assertIn("/dp/B0TEST1234", tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"])
         self.assertFalse(tg.photos[0]["caption"].startswith("🧪"))
         self.assertEqual(tg.photos[1]["chat_id"], 1880159117)
         self.assertEqual(len(state["posts"]), 1)
         self.assertEqual(state["posts"][0]["id"], cand["id"])
         self.assertIn("tag=cazadores_errores-21", tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"])
         self.assertEqual(state["seen"], {})
+
+    def test_sin_producto_exacto_no_sale_al_canal_con_busqueda_por_ean(self):
+        cfg = load_cfg()
+        state = {"admin_chat_id": 1880159117, "posts": [], "seen": {}}
+        cand = deal(category="ERROR DE PRECIO", discount=75)  # tiene EAN pero no ASIN
+        tg = FakeTG()
+        with mock.patch.object(scanner, "fetch", return_value=b"img"), \
+             mock.patch.object(scanner, "create_price_card", return_value=Path("/tmp/card.jpg")), \
+             mock.patch.object(scanner, "attach_wallapop", side_effect=fake_wallapop):
+            scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
+        self.assertTrue(all(photo["chat_id"] != "@caza_errores" for photo in tg.photos))
+        self.assertTrue(state["posts"][0].get("pending"))
+
+    def test_segunda_lectura_con_otro_precio_no_publica(self):
+        cfg = load_cfg()
+        state = {"admin_chat_id": 7, "posts": [], "seen": {}}
+        cand = deal(category="GANGA", discount=50, series=[],
+                    direct_url="https://www.amazon.es/dp/B0TEST1234?tag=cazadores_errores-21")
+        tg = FakeTG()
+        with mock.patch.object(scanner, "fetch", return_value="html"), \
+             mock.patch.object(scanner, "parse_detail", return_value={"price": 229.0, "in_stock": True}), \
+             mock.patch.object(scanner, "attach_wallapop", side_effect=fake_wallapop):
+            ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
+        self.assertFalse(ok)
+        self.assertEqual(tg.photos, [])
 
     def test_run_scan_normal_no_pasa_el_saco_de_previas(self):
         calls = []

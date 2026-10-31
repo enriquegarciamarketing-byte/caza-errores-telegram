@@ -19,6 +19,21 @@ STORES = (
     ("toysrus.", "toysrus", "Toys R Us"),
     ("pokemoncenter.", "pokemoncenter", "Pokémon Center"),
     ("nintendo.", "nintendo", "Nintendo"),
+    ("aliexpress.", "aliexpress", "AliExpress"),
+    ("privalia.", "privalia", "Privalia"),
+    ("zalando-prive.", "zalandoprive", "Zalando Privé"),
+    ("zalando.", "zalando", "Zalando"),
+    ("miravia.", "miravia", "Miravia"),
+    ("decathlon.", "decathlon", "Decathlon"),
+    ("primor.", "primor", "Primor"),
+    ("druni.", "druni", "Druni"),
+    ("worten.", "worten", "Worten"),
+    ("ikea.", "ikea", "IKEA"),
+    ("leroymerlin.", "leroymerlin", "Leroy Merlin"),
+    ("aldi.", "aldi", "Aldi"),
+    ("costco.", "costco", "Costco"),
+    ("xbox.com", "xbox", "Xbox"),
+    ("playstation.com", "playstation", "PlayStation Store"),
 )
 
 
@@ -30,8 +45,24 @@ def store_of(url: str) -> tuple[str, str]:
             return store_id, label
     if not host:
         return "amazon", "Amazon"
-    short = host.removeprefix("www.").split(".")[0]
-    return "tienda", short[:1].upper() + short[1:]
+    return "tienda", store_name(host)
+
+
+SUBDOMAINS = {"www", "es", "m", "s", "shop", "tienda", "store", "click", "go", "web", "app"}
+SECOND_LEVEL = {"co", "com", "org", "net"}
+
+
+def store_name(host: str) -> str:
+    """es.aliexpress.com → Aliexpress, shop.atleticodemadrid.com → Atleticodemadrid, x.co.uk → X."""
+    parts = [part for part in (host or "").lower().split(".") if part]
+    if len(parts) >= 3 and parts[-2] in SECOND_LEVEL:
+        parts = parts[:-2]
+    elif len(parts) >= 2:
+        parts = parts[:-1]
+    while len(parts) > 1 and parts[0] in SUBDOMAINS:
+        parts = parts[1:]
+    name = parts[-1] if parts else "la tienda"
+    return name[:1].upper() + name[1:]
 
 
 def apply_store_template(url: str, cfg: dict) -> str:

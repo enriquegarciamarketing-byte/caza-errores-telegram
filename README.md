@@ -17,6 +17,8 @@ Pruebas desde Actions → «Canal normal @cazachollos_com» → Run workflow: `d
 
 ## Escáner automático (scan-deals.yml)
 
+**Fiabilidad (31/10/2026).** Amazon: el descuento se calcula frente al precio más bajo de los 30 días anteriores a la bajada (o la Amazon UE más barata), nunca frente a la media de 90 días ni el PVP; el enlace va al producto exacto (`/dp/ASIN` sacado del botón de compra de Jimmyleaks), nunca a una búsqueda por EAN; el precio se ve hace menos de 60 minutos y se relee justo antes de publicar. Otras tiendas: el enlace sale sin afiliados ajenos (si no se puede limpiar, no se publica) y el precio tiene que aparecer en la propia página de la tienda (`resale.external_require_verified`). Los posts de las últimas 48 h se revisan y, si suben o se agotan, se marcan «⛔ YA NO ESTÁ A ESTE PRECIO».
+
 Cada 10 minutos, las 24 horas, `scanner.py`:
 
 1. Lee las listas públicas de Jimmyleaks (mínimos de hoy, actualizados, mayor bajada).

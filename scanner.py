@@ -296,6 +296,50 @@ def spain_point_count(cand: dict) -> int:
 
 
 def market_reference(cand: dict, now: datetime | None = None) -> float | None:
+    """Referencia honesta: el precio más bajo de los 30 días anteriores a la bajada en Amazon.es,
+    o el de otra Amazon de la UE si es más barato. Es el criterio de la ley europea y no se deja
+    inflar por picos de precio ni por PVP. Sin historial suficiente no hay referencia y no se publica.
+
+    Solo si no llega el gráfico (series ausente) se usa la regla antigua."""
+    now = now or now_utc()
+    series = cand.get("series")
+    if series is None:
+        return legacy_reference(cand, now)
+    import canal_nube
+    price = float(cand.get("price") or 0)
+    cutoff = now.date() - timedelta(days=30)
+    values = []
+    spain_points = 0
+    eu_recent = []
+    for entry in series:
+        parsed = series_points(entry)
+        if is_spain_series(entry):
+            spain_points += len(parsed)
+            if price:
+                hist = canal_nube.history_reference(entry.get("points") or [], price, now.astimezone(MADRID).date())
+                if hist.get("ok") and hist.get("min_30"):
+                    cand["min30_before"] = float(hist["min_30"])
+                    values.append(float(hist["min_30"]))
+        else:
+            eu_recent.extend(value for day, value in parsed if day >= cutoff)
+    cand["spain_points"] = spain_points
+    if eu_recent:
+        cand["eu_min30"] = float(min(eu_recent))
+        values.append(cand["eu_min30"])
+    cand.pop("reference_price", None)
+    if not values:
+        return None
+    ref = min(values)
+    cand["reference_price"] = ref
+    cand["ref_label"] = "MÍNIMO 30 DÍAS ANTES"
+    if cand.get("eu_min30") is not None and ref == cand["eu_min30"] and ref != cand.get("min30_before"):
+        cand["ref_text"] = "frente al precio más bajo de los últimos 30 días en Amazon UE"
+    else:
+        cand["ref_text"] = "frente a su precio más bajo de los 30 días anteriores"
+    return ref
+
+
+def legacy_reference(cand: dict, now: datetime | None = None) -> float | None:
     """min(media 90 días, mediana España 30 días, precio más bajo reciente en otra Amazon UE).
 
     La mediana exige al menos dos puntos en la ventana: un único punto de hoy es la
@@ -346,6 +390,8 @@ def classify(cfg: dict, cand: dict) -> tuple[str | None, str]:
     raw = cand.get("avg90")
     ref = cand.get("reference_price")
     if ref is None:
+        if cand.get("series") is not None:
+            return None, "sin precios de los 30 días anteriores para comparar"
         ref = raw
     if not price or not ref or ref <= price:
         if raw and price and raw > price and ref is not None and ref <= price:
@@ -712,6 +758,15 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
         if not key or key in seen_keys or cand.get("id") in seen:
             continue
         ok, why = feeds.external_precheck(cfg, cand)
+        if ok and cand.get("price"):
+            status, found = feeds.store_price_check(cand["direct_url"], float(cand["price"]))
+            if status == "mismatch":
+                ok, why = False, f"la tienda marca {found} € y no {cand['price']} €"
+            elif status == "unknown" and (cfg.get("resale") or {}).get("external_require_verified", True):
+                ok, why = False, "no he podido comprobar el precio en la página de la tienda"
+            elif status == "ok":
+                stamp = now.astimezone(MADRID).strftime("%H:%M")
+                cand["note"] = f"🕒 Precio comprobado en {cand.get('store_label') or 'la tienda'} a las {stamp}."
         if not ok:
             print(f"  {cand.get('id')} · {cand.get('store_label')} → descartado ({why}) · {(cand.get('title') or '')[:60]}")
             continue
@@ -758,8 +813,13 @@ def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tup
                 return None, "datos de la ficha con más de 3 horas"
         except ValueError:
             pass
-    if not re.fullmatch(r"\d{8,14}", cand.get("gtin") or ""):
-        return None, "sin EAN para enlazar al producto exacto"
+    if not cand.get("direct_url"):
+        asin = resolve_asin(str(cand.get("id") or ""))
+        if not asin:
+            return None, "no he podido sacar el producto exacto de Amazon (ASIN)"
+        cand["asin"] = asin
+        cand["direct_url"] = affiliate.force_tag(f"https://www.amazon.es/dp/{asin}",
+                                                 load_json(CONFIG_PATH, {}).get("affiliate_tag", ""))
     problem = history_problem(cand, now)
     if problem:
         return None, problem
@@ -769,6 +829,29 @@ def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tup
         except (ApiError, KeyError, TypeError, ValueError) as exc:
             return None, f"no se pudo verificar en Amazon ({exc})"
     return category, reason + " · controles OK"
+
+
+def resolve_asin(jl_id: str) -> str | None:
+    """ASIN al que lleva el botón de compra de Jimmyleaks (/p/ID/ → amazon.es/dp/ASIN), sin ir a Amazon."""
+    if not re.fullmatch(r"[A-Za-z0-9]{4,12}", jl_id or ""):
+        return None
+    import canal_nube
+    return canal_nube.asin_from_jl(jl_id)
+
+
+def recheck_listing(cand: dict) -> str:
+    """Segunda lectura de la ficha justo antes de publicar. Devuelve el motivo para no publicar, o ''."""
+    if cand.get("origin") in ("chollometro", "watchlist") or cand.get("series") is None:
+        return ""
+    try:
+        again = parse_detail(fetch(f"{BASE}/es/dp/{cand['id']}/"))
+    except Exception as exc:
+        return f"no he podido releer la ficha ({exc})"
+    if not again.get("in_stock"):
+        return "se ha agotado"
+    if again.get("price") is None or abs(float(again["price"]) - float(cand["price"])) > 0.009:
+        return f"el precio ha cambiado ({cand['price']} → {again.get('price')})"
+    return ""
 
 
 def history_problem(cand: dict, now: datetime) -> str | None:
@@ -935,6 +1018,11 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
             link_override: str | None = None, test_private: bool = False, preview: bool = False) -> bool:
     if not attach_wallapop(tg, cfg, state, cand, dry, test_private=test_private):
         return False
+    if not dry and not link_override:
+        why = recheck_listing(cand)
+        if why:
+            print(f"  No publico {cand.get('id')}: {why}")
+            return False
     img_dir = OUTPUT_DIR / "src"
     img_dir.mkdir(parents=True, exist_ok=True)
     src = img_dir / f"{cand['id']}.jpg"
@@ -967,7 +1055,9 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     card = create_price_card(offer)
     gtin = cand.get("gtin") if re.fullmatch(r"\d{8,14}", cand.get("gtin") or "") else None
     variant = has_size_variant(cand.get("name") or cand.get("title") or "") and not link_override
-    url = link_override or cand.get("direct_url") or (affiliate_link(cfg, gtin) if gtin and not variant else None)
+    # Solo el producto exacto: enlace corto del administrador o /dp/ASIN. Una búsqueda por EAN puede
+    # enseñar otro vendedor u otro precio, así que nunca sale al canal.
+    url = link_override or cand.get("direct_url")
     if test_private and not url:
         query = gtin or card_title(cand)
         url = f"https://www.amazon.es/s?k={urllib.parse.quote(str(query))}&tag={cfg['affiliate_tag']}"
@@ -1481,9 +1571,51 @@ def run_private_test(tg, cfg, state, channel, args, now) -> int:
     return 0
 
 
+ENDED_NOTE = "⛔ <b>YA NO ESTÁ A ESTE PRECIO</b> (comprobado a las {hour})"
+
+
+def track_posts(tg, state: dict, channel: str, now: datetime, dry: bool, limit: int = 4, hours: int = 48) -> None:
+    """Vuelve a mirar los posts del canal de las últimas horas. Si el precio sube o se agota, lo marca."""
+    horizon = now.timestamp() - hours * 3600
+    live = [p for p in state.get("posts") or []
+            if (p.get("t") or 0) >= horizon and p.get("message_id") and p.get("url") and not p.get("ended")]
+    live.sort(key=lambda p: p.get("checked") or p.get("t") or 0)
+    for post in live[:limit]:
+        post["checked"] = int(now.timestamp())
+        pid = str(post.get("id") or "")
+        try:
+            if pid.startswith(("cm-", "watch-")):
+                status, found = feeds.store_price_check(post["url"], float(post["price"]))
+                if status != "mismatch":
+                    continue  # sin poder leer la tienda no se marca nada
+                gone, now_price = (found or 0) > float(post["price"]) + 0.009, found
+            else:
+                detail = parse_detail(fetch(f"{BASE}/es/dp/{pid}/"))
+                now_price = detail.get("price")
+                gone = not detail.get("in_stock") or now_price is None or now_price > float(post["price"]) + 0.009
+        except Exception as exc:
+            print(f"  Seguimiento {pid}: {exc}")
+            continue
+        if not gone:
+            continue
+        print(f"  Seguimiento {pid}: ya no está a {post['price']} € (ahora {now_price})")
+        if dry or tg is None:
+            continue
+        caption = ENDED_NOTE.format(hour=now.astimezone(MADRID).strftime("%H:%M")) + "\n\n" + \
+            caption_for(post["url"], post.get("cap"))
+        try:
+            tg.call("editMessageCaption", {"chat_id": channel, "message_id": post["message_id"],
+                                           "caption": caption[:1024], "parse_mode": "HTML",
+                                           "reply_markup": buttons_for(post["url"])})
+            post["ended"] = int(now.timestamp())
+        except RuntimeError as exc:
+            print(f"  No he podido marcar el post {post['message_id']}: {exc}")
+
+
 def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime) -> int:
     if getattr(args, "test_private", False):
         return run_private_test(tg, cfg, state, channel, args, now)
+    track_posts(tg, state, channel, now, bool(args.dry_run))
     try:
         candidates = scan(cfg, state, now)
     except Exception as exc:

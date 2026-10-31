@@ -108,6 +108,8 @@ TRACKER_HOSTS = (
     "awin1.com", "tradedoubler.com", "tradetracker.net", "anrdoezrs.net",
     "shareasale.com", "skimresources.com", "chollometro.com", "pepper.com",
     "prf.hn", "linksynergy.com", "go2cloud.org",
+    "s.click.aliexpress.com", "click.aliexpress.com", "s.click.taobao.com",
+    "tidd.ly", "bit.ly", "clk.tradedoubler.com", "pjtra.com", "pjatr.com",
 )
 # Parámetros que identifican a otro afiliado o a una campaña. No se dejan en el enlace limpio.
 AFFILIATE_QUERY_KEYS = {
@@ -116,7 +118,7 @@ AFFILIATE_QUERY_KEYS = {
     "creative", "toolid", "pubref", "aff", "affiliate", "partner", "sscid",
     "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "utm_id",
 }
-EMBEDDED_URL_KEYS = ("url", "ued", "destination", "dest", "redirect", "r")
+EMBEDDED_URL_KEYS = ("url", "ued", "destination", "dest", "redirect", "r", "dl_target_url", "murl", "u")
 
 
 def is_tracker(url: str) -> bool:
@@ -127,7 +129,8 @@ def is_tracker(url: str) -> bool:
 def _drop_affiliate_query(url: str) -> str:
     parts = urllib.parse.urlsplit(url)
     query = [(key, value) for key, value in urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
-             if key.lower() not in AFFILIATE_QUERY_KEYS and not key.lower().startswith("utm_")]
+             if key.lower() not in AFFILIATE_QUERY_KEYS and not key.lower().startswith(("utm_", "aff_"))
+             and key.lower() not in {"sk", "terminal_id", "afsmartredirect", "gatewayadapt", "spm", "scm"}]
     return urllib.parse.urlunsplit((parts.scheme or "https", parts.netloc, parts.path,
                                     urllib.parse.urlencode(query), parts.fragment))
 

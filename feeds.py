@@ -180,12 +180,17 @@ def _store_link(url: str, cfg: dict) -> str:
 
 
 def _from_feed(entry: dict, cfg: dict, watch: list[dict], page: str) -> dict | None:
+    if deal_signals(page).get("expired"):
+        return None
     store_url = resolve_deal_url(page)
     if not store_url or "chollometro.com" in store_url:
         return None
     if store_url.rstrip("/").count("/") < 3:
         return None
-    store_url = _store_link(store_url, cfg)
+    # Sin afiliados ajenos: si el enlace no se puede limpiar, el chollo no sale.
+    store_url = affiliate.clean_store_url(store_url, cfg, expected_asin=affiliate.extract_asin(store_url))
+    if not store_url:
+        return None
     _store_id, label = premium.store_of(store_url)
     thread = re.search(r"(\d{5,})/?$", entry.get("link") or "")
     cand = {
@@ -363,3 +368,44 @@ def external_candidates(cfg: dict, state: dict | None = None) -> list[dict]:
                 found.append(cand)
             time.sleep(0.4)
     return found
+
+
+PRICE_PATTERNS = (
+    re.compile(r'"(?:price|lowPrice)"\s*:\s*"?(\d+(?:[.,]\d{1,2})?)"?'),
+    re.compile(r'<meta[^>]+(?:property|name|itemprop)="(?:product:price:amount|og:price:amount|price)"[^>]+content="(\d+(?:[.,]\d{1,2})?)"'),
+    re.compile(r'itemprop="price"[^>]*content="(\d+(?:[.,]\d{1,2})?)"'),
+)
+
+
+def page_prices(html_text: str) -> list[float]:
+    """Precios que la tienda declara en su ficha (JSON-LD, metadatos de producto o microdatos)."""
+    found = []
+    for pattern in PRICE_PATTERNS:
+        for raw in pattern.findall(html_text or ""):
+            try:
+                value = float(raw.replace(",", "."))
+            except ValueError:
+                continue
+            if value > 0 and value not in found:
+                found.append(value)
+    return found
+
+
+def store_price_check(url: str, expected: float, fetch=None) -> tuple[str, float | None]:
+    """('ok', precio) si la ficha de la tienda declara ese precio; ('mismatch', precio) si declara otro;
+    ('unknown', None) si no se puede leer. Solo cuenta lo que la tienda publica en su propia página."""
+    try:
+        _status, raw = (fetch or _get)(url)
+        page = raw.decode("utf-8", "replace") if isinstance(raw, bytes) else raw
+    except (urllib.error.URLError, TimeoutError, ValueError):
+        return "unknown", None
+    if page_status(page) == "blocked":
+        return "unknown", None
+    prices = page_prices(page)
+    if not prices:
+        return "unknown", None
+    tolerance = max(0.01, float(expected) * 0.005)
+    for value in prices:
+        if abs(value - float(expected)) <= tolerance:
+            return "ok", value
+    return "mismatch", prices[0]
