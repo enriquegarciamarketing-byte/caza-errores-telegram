@@ -8,10 +8,10 @@ Amazon devuelve captcha a las lecturas desde GitHub, así que los datos salen de
 
 - **Producto exacto**: el ASIN sale del botón de compra de Jimmyleaks (`/p/ID/` redirige a `amazon.es/dp/ASIN`) y se publica `https://www.amazon.es/dp/ASIN?tag=cazadores_errores-21`. Nunca una búsqueda por EAN, que era lo que hacía que el precio no cuadrara.
 - **Precio reciente**: visto en Amazon hace menos de 60 minutos, igual en el listado y en la ficha, y releído justo antes de enviar. Si cambia, no sale. El post dice a qué hora se vio.
-- **Descuento honesto**: frente al precio más bajo de los 30 días anteriores a la bajada (el criterio de la ley europea). Nunca el PVP tachado. Mínimo 40 %.
-- **Calidad**: con stock, 8 € o más, 4,0 estrellas y 20 opiniones, al menos 45 días de historial y bajada de menos de 7 días.
+- **Descuento honesto**: frente al precio más bajo de los 30 días anteriores a la bajada (el criterio de la ley europea). Nunca el PVP tachado. Mínimo 25 %.
+- **Calidad**: con stock, 5 € o más, 4,0 estrellas y 10 opiniones, al menos 30 días de historial y bajada de menos de 14 días. 23 listados de Jimmyleaks (3 fijos y 20 categorías por turnos).
 - **Seguimiento**: los posts de las últimas 48 h se revisan; si sube el precio o se agota, el post se marca «⛔ YA NO ESTÁ A ESTE PRECIO».
-- Máximo 3 posts por hora y 30 al día; silencio de 01:00 a 08:00. Ajustes en `config.json` → `amazon_channel`. Memoria en `state/canal_nube.json`.
+- Hasta 6 posts por hora y 70 al día, revisando cada 5 minutos; silencio de 01:00 a 08:00. A las 23:30, resumen con los 10 mejores del día que siguen activos. Ajustes en `config.json` → `amazon_channel`. Memoria en `state/canal_nube.json`.
 
 Pruebas desde Actions → «Canal normal @cazachollos_com» → Run workflow: `dry_run` (no envía nada) o `test_private` sin `dry_run` (hasta 3 ejemplos a tu chat, nunca al canal).
 

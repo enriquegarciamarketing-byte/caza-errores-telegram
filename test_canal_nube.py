@@ -118,6 +118,20 @@ class Administrador(unittest.TestCase):
         self.assertIsNone(cn.admin_chat_id({}, dict(RULES, admin_username="nadie_xyz"), TG()))
 
 
+class Fuentes(unittest.TestCase):
+    def test_rota_las_categorias_y_mantiene_las_principales(self):
+        rules = dict(RULES, sources=["a", "b", "c"] + [f"cat{i}" for i in range(20)], core_sources=3,
+                     max_sources_per_run=10)
+        seen = set()
+        for step in range(4):
+            now = datetime.fromtimestamp(1793462400 + step * 300, timezone.utc)
+            picked = cn.sources_for_run(rules, now)
+            self.assertEqual(picked[:3], ["a", "b", "c"])
+            self.assertEqual(len(picked), 10)
+            seen.update(picked[3:])
+        self.assertEqual(len(seen), 20, "en cuatro pasadas se recorren todas las categorías")
+
+
 class Resumen(unittest.TestCase):
     def state(self, now):
         base = int(now.timestamp()) - 3600

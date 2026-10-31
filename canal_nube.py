@@ -500,13 +500,28 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
     return 0
 
 
+def sources_for_run(rules: dict, now: datetime) -> list[str]:
+    """Las fuentes principales en cada pasada y el resto por turnos, para no cargar la web de golpe."""
+    sources = list(rules.get("sources") or [])
+    limit = int(rules.get("max_sources_per_run") or 0)
+    core = int(rules.get("core_sources") or 0)
+    if not limit or len(sources) <= limit:
+        return sources
+    fixed, rest = sources[:core], sources[core:]
+    take = max(0, limit - len(fixed))
+    if not rest or not take:
+        return fixed
+    start = (int(now.timestamp()) // 300 * take) % len(rest)
+    return fixed + [rest[(start + i) % len(rest)] for i in range(min(take, len(rest)))]
+
+
 def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log, remember: bool = True) -> list:
     """Busca en los listados y devuelve [(item, deal)] que cumplen todas las reglas, mejor descuento primero."""
     seen = state.setdefault("seen", {})
     recheck = float(rules["recheck_rejected_hours"]) * 3600
     max_age = float(rules["max_price_age_minutes"]) * 60
     pool: dict[str, dict] = {}
-    for url in rules.get("sources") or []:
+    for url in sources_for_run(rules, now):
         try:
             items = scanner.parse_listing(fetch(url))
         except Exception as exc:
