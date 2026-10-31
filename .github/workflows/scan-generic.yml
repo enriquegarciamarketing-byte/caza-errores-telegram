@@ -1,9 +1,9 @@
 name: Canal normal @cazachollos_com
 
 on:
-  # PAUSADO hasta que Enrique dé el visto bueno a las pruebas privadas. Para activar, descomenta:
-  # schedule:
-  #   - cron: "*/15 6-23 * * *"
+  # Cada 15 minutos. El script respeta el silencio de 01:00 a 08:00 (Madrid) y los cupos.
+  schedule:
+    - cron: "*/15 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:
