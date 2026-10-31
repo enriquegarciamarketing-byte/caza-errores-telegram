@@ -990,7 +990,9 @@ def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool, test_priv
         cand["wallapop_transient"] = False
         return True
     rules = resale_rules(cfg) or {}
-    result = resale_market.lookup(cand, rules, state)
+    result = resale_market.with_estimate(cand, rules, resale_market.lookup(cand, rules, state))
+    if result.get("estimated"):
+        print(f"  Reventa estimada ~{float(result['price']):.0f} € ({result.get('note')})")
     if cand.get("past_query") and not result.get("ok") and not result.get("transient"):
         past_cand = {**cand, "name": cand["past_query"], "title": cand["past_query"]}
         past = resale_market.lookup(past_cand, rules, state)

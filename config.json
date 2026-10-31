@@ -147,8 +147,17 @@
       "https://www.amazon.es/gp/bestsellers/computers",
       "https://www.amazon.es/gp/movers-and-shakers/videogames"
     ],
+    "estimate": {
+      "_nota": "Si hay menos de min_listings anuncios: reventa = precio más bajo de los 30 días anteriores × factor de su categoría. Con 1-2 anuncios se usa lo más prudente.",
+      "enabled": true,
+      "default_factor": 0.6,
+      "factors": {"coleccion": 0.9, "tcg": 0.9, "consolas": 0.85, "apple": 0.85, "lego": 0.85,
+                  "componentes": 0.75, "foto": 0.75, "dyson": 0.75, "sneakers": 0.75,
+                  "audio": 0.7, "relojes": 0.7, "robots": 0.65}
+    },
     "wallapop": {
-      "min_listings": 8,
+      "min_listings": 3,
+      "demand_many_listings": 3,
       "min_roi": 0.25,
       "min_roi_below_eur": 60,
       "min_roi_below": 0.30,

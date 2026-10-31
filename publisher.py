@@ -297,7 +297,10 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
         roi = gain / current * 100 if current else 0
         where = source_label or "Wallapop"
         lines.append("")
-        lines.append(f"♻️ Reventa en {e(where)} <b>~{resale_price:.0f} €</b>")
+        if where.upper().startswith("ESTIMACI"):
+            lines.append(f"♻️ Reventa estimada <b>~{resale_price:.0f} €</b>")
+        else:
+            lines.append(f"♻️ Reventa en {e(where)} <b>~{resale_price:.0f} €</b>")
         lines.append(f"📈 Beneficio estimado <b>{gain:+.0f} €</b> · ROI <b>{roi:+.0f}%</b>")
     if demand:
         lines.append(f"🔥 Demanda: <b>{e(demand)}</b>")

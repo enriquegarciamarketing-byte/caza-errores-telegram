@@ -89,7 +89,8 @@ class ResaleRulesTest(unittest.TestCase):
         self.assertTrue(rules["enabled"])
         self.assertEqual(rules["min_price_eur"], 25)
         self.assertEqual(rules["min_saving_eur"], 30)
-        self.assertEqual(rules["wallapop"]["min_listings"], 8)
+        self.assertEqual(rules["wallapop"]["min_listings"], 3)
+        self.assertTrue(rules["estimate"]["enabled"])
         self.assertEqual(rules["wallapop"]["min_roi"], 0.25)
         self.assertEqual(rules["wallapop"]["min_roi_below"], 0.30)
         self.assertEqual(rules["wallapop"]["min_profit_eur"], 25)
@@ -784,7 +785,7 @@ class WallapopTest(unittest.TestCase):
         self.assertFalse(result["transient"])
 
     def test_pocos_anuncios(self):
-        result = wallapop.evaluate(self.cand, [90, 90, 90], self.rules)
+        result = wallapop.evaluate(self.cand, [90, 90], self.rules)
         self.assertFalse(result["ok"])
         self.assertIn("mínimo", result["reason"])
 
@@ -991,7 +992,7 @@ class PremiumChannelTest(unittest.TestCase):
         self.assertTrue(richer["ok"])
 
     def test_sin_reservas_ni_volumen_no_hay_demanda(self):
-        rules = load_cfg()["resale"]["wallapop"]
+        rules = {**load_cfg()["resale"]["wallapop"], "demand_many_listings": 12}  # la regla, con volumen exigido
         quiet = wallapop.evaluate({"price": 40}, [80] * 8, rules, reserved=0, demand_known=True)
         self.assertFalse(quiet["ok"])
         self.assertIn("demanda", quiet["reason"])

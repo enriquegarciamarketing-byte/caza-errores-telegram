@@ -50,6 +50,50 @@ class PrecioEnTienda(unittest.TestCase):
         self.assertEqual(feeds.store_price_check("https://t.test", 10, fetch=lambda u: (200, blocked))[0], "unknown")
 
 
+class Estimacion(unittest.TestCase):
+    RULES = None
+
+    def rules(self):
+        import json
+        return json.loads(scanner.CONFIG_PATH.read_text(encoding="utf-8"))["resale"]
+
+    def test_sin_anuncios_estima_con_el_precio_normal(self):
+        import resale_market
+        cand = {"name": "Robot aspirador Lefant M5 Pro", "title": "Robot aspirador Lefant M5 Pro", "brand": "Lefant",
+                "price": 379.98, "min30_before": 799.99}
+        result = resale_market.with_estimate(cand, self.rules(), {"ok": False, "count": 0, "prices": []})
+        self.assertTrue(result["ok"])
+        self.assertTrue(result["estimated"])
+        self.assertEqual(result["source_label"], "ESTIMACIÓN")
+        self.assertAlmostEqual(result["price"], round(799.99 * 0.65, 2))
+        self.assertTrue(result["note"].startswith("Estimación: 65 % de 800 €"))
+
+    def test_con_pocos_anuncios_usa_lo_mas_prudente(self):
+        import resale_market
+        cand = {"name": "Robot aspirador Lefant", "title": "Robot aspirador Lefant", "price": 300, "min30_before": 800}
+        result = resale_market.with_estimate(cand, self.rules(), {"ok": False, "count": 2, "prices": [450, 470]})
+        self.assertEqual(result["price"], 460)  # la mediana de los anuncios es menor que 800 × 0,65 = 520
+
+    def test_si_el_mercado_dice_que_no_la_estimacion_no_lo_salva(self):
+        import resale_market
+        cand = {"name": "Robot aspirador Lefant", "price": 300, "min30_before": 800}
+        verdict = {"ok": False, "count": 6, "prices": [310] * 6, "reason": "ROI bajo"}
+        self.assertIs(resale_market.with_estimate(cand, self.rules(), verdict), verdict)
+
+    def test_sin_precio_normal_no_se_inventa_nada(self):
+        import resale_market
+        verdict = {"ok": False, "count": 0, "prices": []}
+        self.assertIs(resale_market.with_estimate({"name": "X", "price": 50}, self.rules(), verdict), verdict)
+
+    def test_texto_dice_estimada(self):
+        from publisher import build_caption
+        text = build_caption(url="https://www.amazon.es/dp/B0TEST1234?tag=x", category="GANGA", title="Robot",
+                             current=379.98, reference=799.99, resale_price=520, profit=140,
+                             source_label="ESTIMACIÓN", store="Amazon")
+        self.assertIn("Reventa estimada", text)
+        self.assertNotIn("Reventa en", text)
+
+
 class Seguimiento(unittest.TestCase):
     def test_marca_el_post_si_sube_el_precio(self):
         now = datetime(2026, 10, 31, 17, 0, tzinfo=timezone.utc)

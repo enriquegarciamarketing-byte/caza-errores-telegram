@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import statistics
 import time
 
 import milanuncios
+import premium
 import vinted
 import wallapop
 
@@ -122,6 +124,51 @@ def lookup(cand: dict, rules: dict, state: dict | None = None) -> dict:
             for item in oldest:
                 cache.pop(item, None)
     return combined
+
+
+def estimate(cand: dict, rules: dict) -> dict | None:
+    """Reventa estimada: su precio más bajo de los 30 días anteriores × el factor de su categoría.
+
+    Solo con un precio normal fiable (el del historial de Amazon); sin él no se estima nada."""
+    conf = (rules or {}).get("estimate") or {}
+    if not conf.get("enabled", True):
+        return None
+    normal = cand.get("min30_before")
+    if not normal or float(normal) <= 0:
+        return None
+    category = premium.priority_info(cand, rules)["id"] or ""
+    factor = float((conf.get("factors") or {}).get(category, conf.get("default_factor", 0.6)))
+    return {"price": round(float(normal) * factor, 2), "normal": float(normal), "factor": factor,
+            "category": category}
+
+
+def with_estimate(cand: dict, rules: dict, result: dict) -> dict:
+    """Si faltan anuncios, completa con la estimación (lo más prudente entre ambas). Si hay anuncios
+    suficientes manda el mercado: una estimación nunca salva un chollo que los anuncios descartan."""
+    market = rules.get("wallapop") or rules
+    minimum = int(market.get("min_listings", 5))
+    count = int(result.get("count") or 0)
+    if result.get("ok") or count >= minimum:
+        return result
+    est = estimate(cand, rules)
+    if not est:
+        return result
+    prices = [float(p) for p in result.get("prices") or [] if p]
+    resale = est["price"] if not prices else min(est["price"], float(statistics.median(prices)))
+    buy = float(cand.get("price") or 0)
+    profit = resale - buy
+    roi = profit / buy if buy else -1
+    floor = wallapop.roi_floor(buy, market)
+    min_profit = float(market.get("min_profit_eur", 15))
+    pct = round(est["factor"] * 100)
+    seen = f" · {len(prices)} anuncio{'s' if len(prices) != 1 else ''}" if prices else ""
+    note = f"Estimación: {pct} % de {est['normal']:.0f} €{seen}"
+    if roi + 1e-9 < floor or profit + 1e-9 < min_profit:
+        return {**result, "ok": False, "transient": False, "price": resale, "roi": roi, "profit": profit,
+                "reason": (f"reventa estimada ~{resale:.0f} € ({pct} % de {est['normal']:.0f} €): ROI {roi * 100:.0f} % "
+                           f"y {profit:.0f} €, por debajo del mínimo ({floor * 100:.0f} % y {min_profit:.0f} €)")}
+    return {**result, "ok": True, "transient": False, "price": resale, "count": len(prices), "roi": roi,
+            "profit": profit, "estimated": True, "source_label": "ESTIMACIÓN", "note": note, "reason": ""}
 
 
 def probe(rules: dict) -> int:
