@@ -90,6 +90,13 @@ class Texto(unittest.TestCase):
 
 
 class Administrador(unittest.TestCase):
+    def setUp(self):
+        self._premium = cn.PREMIUM_STATE
+        cn.PREMIUM_STATE = FIX / "no_existe.json"  # sin depender del estado real del escáner
+
+    def tearDown(self):
+        cn.PREMIUM_STATE = self._premium
+
     def test_busca_tu_chat_por_usuario_sin_marcar_mensajes(self):
         calls = []
 
