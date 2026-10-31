@@ -1,16 +1,22 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
+Listados: 117 productos únicos
   Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
   Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 351222 bytes, 0 ASIN, 0 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 343316 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36417 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37131 bytes, 30 chollos
+  Chollometro «Thrustmaster Ferrari 458 Spider Volante con Pedales para Xbox Series X»: Outlet-pc 49.99 €
   Chollometro «Zapatillas New Balance FuelCell Rebel Trail (Tallas 40 a 47.5)[Para mi»: Zalando Privé 74.65 €
   Chollometro «Robot Aspirador Dreame L50 Ultra AE (28.000 Pa Vormax, mopa autolimpia»: El Corte Inglés 429.0 €
-  Chollometro «SALOMON EXAMOTION - Zapatillas de senderismo - Hombre»: Zalando Privé 59.9 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 113990 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 116813 bytes, 30 chollos
+  cm-2020936 · Outlet-pc 49.99 € → candidato externo · Thrustmaster Ferrari 458 Spider Volante con Pedales para Xbo
   cm-2050905 · Zalando Privé → descartado (no he podido comprobar el precio en la página de la tienda) · Zapatillas New Balance FuelCell Rebel Trail (Tallas 40 a 47.
   cm-2049234 · El Corte Inglés → descartado (no he podido comprobar el precio en la página de la tienda) · Robot Aspirador Dreame L50 Ultra AE (28.000 Pa Vormax, mopa 
-  cm-2050238 · Zalando Privé → descartado (no he podido comprobar el precio en la página de la tienda) · SALOMON EXAMOTION - Zapatillas de senderismo - Hombre
+  Wallapop «outlet 458 thrustmaster»: 200 / 1279 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «outlet 458»: 200 / 6937 bytes, 2 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «outlet 458 thrustmaster»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Outlet Pc Thrustmaster Ferrari 458 Spider Volante con Pedales para Xbox Series X|S y Xbox »: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95511 bytes))
 Publicados en esta ejecución: 0
