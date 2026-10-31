@@ -492,7 +492,8 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
                 deal["asin"] = asin
                 if recently_posted(state, asin, deal["price"], now, rules):
                     why = "ya publicado hace poco y no ha bajado más"
-        if not args.test_private:
+        if why and not args.test_private:
+            # Solo se aparta lo descartado. Lo aprobado que no cabe en esta pasada sale en la siguiente.
             seen[item["id"]] = {"t": int(now.timestamp()), "why": why}
         label = clean_title(detail.get("name") or item.get("title") or "", 60)
         if why:
