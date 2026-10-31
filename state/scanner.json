@@ -819,6 +819,11 @@
    "price": 73.95,
    "t": 1793458643,
    "result": "solo -14% bajo la referencia"
+  },
+  "RavY3AN": {
+   "price": 199.0,
+   "t": 1793478314,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
