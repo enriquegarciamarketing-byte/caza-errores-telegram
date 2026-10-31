@@ -469,13 +469,34 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, session=None, log=
     return 0
 
 
+def run_diagnose(asins: list[str]) -> int:
+    """No envía nada: lee unas fichas y enseña lo que el lector saca de cada una."""
+    rules = rules_from(load_json(CONFIG_PATH, {}))
+    session = amz.Session(min_gap=float(rules["request_gap_seconds"]))
+    try:
+        if not asins:
+            for url in (rules.get("discovery_urls") or [])[:2]:
+                items = amz.parse_listing(session.get(url))
+                asins += [i["asin"] for i in sorted(items, key=amz.listing_drop, reverse=True)[:3]]
+        for asin in asins[:6]:
+            page = session.get(f"{amz.BASE}/dp/{asin}?th=1&psc=1")
+            print(amz.diagnose(page, asin), flush=True)
+    except amz.Blocked as exc:
+        print(f"Amazon ha pedido captcha ({exc}). Prueba de nuevo dentro de un rato.")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Canal @cazachollos_com: solo Amazon con precio verificado")
     parser.add_argument("--dry-run", action="store_true", help="Lo revisa todo pero no envía nada")
     parser.add_argument("--test-private", action="store_true",
                         help="Envía hasta 3 ejemplos a tu chat privado, nunca al canal")
     parser.add_argument("--ignore-limits", action="store_true", help="Salta cupos y horario (pruebas)")
+    parser.add_argument("--diagnose", nargs="*", metavar="ASIN",
+                        help="Lee estas fichas (o las primeras de los listados) y enseña qué ve el lector")
     args = parser.parse_args()
+    if args.diagnose is not None:
+        return run_diagnose(args.diagnose)
     load_env()
     cfg = load_json(CONFIG_PATH, {})
     state = load_json(STATE_PATH, {"posts": [], "seen": {}})

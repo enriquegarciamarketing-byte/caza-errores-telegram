@@ -18,12 +18,8 @@ import urllib.request
 import zlib
 
 BASE = "https://www.amazon.es"
-USER_AGENTS = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/131.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) "
-    "Version/18.1 Safari/605.1.15",
-)
+USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) "
+              "Chrome/131.0.0.0 Safari/537.36")
 ASIN_RE = re.compile(r"^[A-Z0-9]{10}$")
 BLOCK_MARKERS = (
     "api-services-support@amazon.com",
@@ -47,7 +43,7 @@ class Session:
     def __init__(self, min_gap: float = 3.0, timeout: int = 25):
         self.jar = http.cookiejar.CookieJar()
         self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.jar))
-        self.ua = random.choice(USER_AGENTS)
+        self.ua = USER_AGENT
         self.min_gap = min_gap
         self.timeout = timeout
         self._last = 0.0
@@ -104,7 +100,7 @@ def text_of(fragment: str | None) -> str:
 
 def parse_eur(raw: str | None) -> float | None:
     """'1.234,56 €' -> 1234.56. Devuelve None si no es un importe claro."""
-    text = (raw or "").replace("\xa0", " ").strip()
+    text = html.unescape(raw or "").replace("\xa0", " ").replace("\u202f", " ").strip()
     match = re.search(r"(\d{1,3}(?:\.\d{3})*|\d+)(?:,(\d{1,2}))?\s*€", text)
     if not match:
         return None
@@ -126,9 +122,24 @@ def _block(page: str, element_id: str, length: int = 12000) -> str:
     return page[start: match.start() + length]
 
 
+NEXT_FEATURE_RE = re.compile(r'<div id="[A-Za-z0-9_]+_feature_div"')
+
+
+def _feature(page: str, element_id: str, cap: int = 80000) -> str:
+    """El bloque completo de una sección de la ficha, hasta que empieza la siguiente."""
+    match = re.search(rf'id="{re.escape(element_id)}"', page)
+    if not match:
+        return ""
+    start = page.rfind("<", 0, match.start())
+    start = start if start >= 0 and match.start() - start < 400 else match.start()
+    nxt = NEXT_FEATURE_RE.search(page, match.end())
+    end = nxt.start() if nxt else len(page)
+    return page[start: min(end, start + cap)]
+
+
 def _offscreen_prices(fragment: str) -> list[float]:
     found = []
-    for raw in re.findall(r'<span class="a-offscreen">\s*([^<]{1,40}?)\s*</span>', fragment):
+    for raw in re.findall(r'<span class="a-offscreen">\s*([^<]{1,60}?)\s*</span>', fragment):
         value = parse_eur(raw)
         if value is not None:
             found.append(value)
@@ -159,7 +170,7 @@ CORE_PRICE_IDS = (
 def _pay_price(page: str) -> float | None:
     """Precio a pagar del bloque principal (el que ve el comprador junto al botón)."""
     for element_id in CORE_PRICE_IDS:
-        block = _block(page, element_id, 9000)
+        block = _feature(page, element_id)
         if not block:
             continue
         pay = re.search(r'class="[^"]*\bpriceToPay\b[^"]*"[^>]*>.*?<span class="a-offscreen">\s*([^<]+?)\s*</span>',
@@ -174,6 +185,33 @@ def _pay_price(page: str) -> float | None:
         if prices:
             return prices[0]
     return None
+
+
+LOWEST_LABELS = ("precio más bajo reciente", "precio mas bajo reciente", "precio más bajo en los últimos 30 días",
+                 "precio anterior")
+LIST_LABELS = ("precio recomendado", "pvpr", "precio de venta recomendado")
+
+
+def reference_prices(core: str) -> dict:
+    """Precios tachados del bloque de precio, según su etiqueta.
+
+    Amazon los pinta en spans con clase basisPrice: "Precio más bajo reciente: 39,99 €" (mínimo de 30 días,
+    obligatorio en la UE) o "Precio recomendado: 49,99 €" (PVPR). Solo el primero vale como referencia.
+    """
+    found = {"lowest_30": None, "list_price": None, "labels": []}
+    for match in re.finditer(r'class="[^"]*\bbasisPrice\b[^"]*"', core):
+        open_tag = core.rfind("<", 0, match.start())
+        window = core[open_tag if open_tag >= 0 else match.start(): match.start() + 2500]
+        label = text_of(window)[:70].lower()
+        prices = _offscreen_prices(window)
+        found["labels"].append(label)
+        if not prices:
+            continue
+        if any(word in label for word in LOWEST_LABELS) and found["lowest_30"] is None:
+            found["lowest_30"] = prices[0]
+        elif any(word in label for word in LIST_LABELS) and found["list_price"] is None:
+            found["list_price"] = prices[0]
+    return found
 
 
 def _labelled_price(page: str, labels: tuple[str, ...]) -> float | None:
@@ -235,9 +273,21 @@ def parse_product(page: str, asin: str) -> dict:
     rating_match = re.search(r'id="acrPopover"[^>]*title="([\d,]+) de 5', page)
     reviews_match = re.search(r'id="acrCustomerReviewText"[^>]*>\s*([\d.]+)', page)
     seller, shipper = _seller_and_shipper(page)
-    core = "".join(_block(page, element_id, 9000) for element_id in CORE_PRICE_IDS)
-    lowest_30 = _labelled_price(core or page, ("Precio más bajo reciente", "Precio más bajo en los últimos 30 días"))
-    list_price = _labelled_price(core or page, ("Precio recomendado", "PVPR", "Precio de venta recomendado"))
+    core = ""
+    for element_id in CORE_PRICE_IDS:
+        core = _feature(page, element_id)
+        if core and _offscreen_prices(core):
+            break
+    refs = reference_prices(core)
+    lowest_30 = refs["lowest_30"]
+    list_price = refs["list_price"]
+    if lowest_30 is None and not refs["labels"]:
+        # Ficha sin clase basisPrice: etiqueta seguida de su importe, solo dentro del bloque de precio.
+        lowest_30 = _labelled_price(core, ("Precio más bajo reciente", "Precio más bajo en los últimos 30 días"))
+        list_price = list_price or _labelled_price(core, ("Precio recomendado", "PVPR"))
+    pay = _pay_price(page)
+    if lowest_30 is not None and pay is not None and abs(lowest_30 - pay) < 0.005:
+        lowest_30 = None  # si coincide con el precio actual se ha leído el precio, no la referencia
     stock_text = availability.lower()
     in_stock = bool(re.search(r"\ben stock\b|quedan solo|disponible", stock_text)) and not re.search(
         r"no disponible|agotado|actualmente no", stock_text)
@@ -246,7 +296,7 @@ def parse_product(page: str, asin: str) -> dict:
     return {
         "asin": asin,
         "title": title,
-        "price": _pay_price(page),
+        "price": pay,
         "lowest_30": lowest_30,
         "list_price": list_price,
         "in_stock": in_stock,
@@ -259,6 +309,7 @@ def parse_product(page: str, asin: str) -> dict:
         "reviews": int(reviews_match.group(1).replace(".", "")) if reviews_match else None,
         "image": hires_image(image),
         "variant_page": bool(re.search(r'id="twister', page)),
+        "reference_labels": refs["labels"],
     }
 
 
@@ -311,3 +362,18 @@ def listing_drop(item: dict) -> float:
     if price and was and was > price:
         return (was - price) / was * 100
     return 0.0
+
+
+def diagnose(page: str, asin: str) -> str:
+    """Resumen corto del bloque de precio de una ficha, para ajustar el lector con fichas reales."""
+    data = parse_product(page, asin)
+    lines = [f"--- {asin} ---"]
+    for key in ("title", "price", "lowest_30", "list_price", "in_stock", "availability", "seller", "shipper",
+                "rating", "reviews", "prime_only", "reference_labels"):
+        lines.append(f"{key}: {str(data.get(key))[:90]}")
+    for element_id in CORE_PRICE_IDS:
+        block = _feature(page, element_id)
+        lines.append(f"[{element_id}] {len(block)} car.: {text_of(block)[:420]}")
+    for match in list(re.finditer(r"(?i)precio m[aá]s bajo|precio recomendado|precio anterior|pvpr", page))[:6]:
+        lines.append("· " + text_of(page[max(0, match.start() - 300): match.start() + 300])[-260:])
+    return "\n".join(lines)

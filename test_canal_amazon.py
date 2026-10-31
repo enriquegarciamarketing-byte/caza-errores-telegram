@@ -10,28 +10,37 @@ PAD = "<!-- relleno -->" * 700  # las fichas reales pesan cientos de KB
 
 def ficha(price="23,99 €", lowest="59,99 €", stock="En stock", seller="Amazon", shipper="Amazon",
           rating="4,5", reviews="1.234", prime=False, coupon=False, title="Auriculares Inalámbricos Marca X Pro, "
-          "Cancelación de Ruido, 40 h de Batería - Negro"):
-    lowest_html = (f'<span class="a-size-small aok-offscreen">Precio más bajo reciente:</span>'
-                   f'<span class="a-price a-text-price"><span class="a-offscreen">{lowest}</span>'
-                   f'<span aria-hidden="true">{lowest}</span></span>') if lowest else ""
+          "Cancelación de Ruido, 40 h de Batería - Negro", recommended=None):
+    # Como en Amazon.es: importes con &nbsp;, scripts largos dentro del bloque de precio y el tachado
+    # en un span basisPrice muy por debajo del inicio del bloque.
+    nb = lambda v: v.replace(" €", "&nbsp;€")
+    def basis(label, value):
+        return (f'<span class="a-size-small a-color-secondary aok-align-center basisPrice">{label} '
+                f'<span class="a-price a-text-price" data-a-strike="true"><span class="a-offscreen">{nb(value)}</span>'
+                f'<span aria-hidden="true">{nb(value)}</span></span></span>')
+    refs = (basis("Precio más bajo reciente:", lowest) if lowest else "") + (
+        basis("Precio recomendado:", recommended) if recommended else "")
     prime_html = '<span>Precio exclusivo para Prime</span>' if prime else ""
     coupon_html = '<div id="couponBadgeRegularVpc">Aplicar cupón de 5 €</div>' if coupon else ""
+    script = "<script>P.when('A').execute(function(){ /* " + "x" * 15000 + " */ });</script>"
+    whole, frac = price.replace(" €", "").split(",")
     return f"""<html><head><title>Amazon.es</title></head><body>{PAD}
-<span id="productTitle" class="a-size-large product-title-word-break">   {title}   </span>
-<a id="acrPopover" class="a-popover-trigger" title="{rating} de 5 estrellas"></a>
-<span id="acrCustomerReviewText" class="a-size-base">{reviews} valoraciones</span>
-<div id="corePriceDisplay_desktop_feature_div">
+<div id="title_feature_div"><span id="productTitle" class="a-size-large product-title-word-break">   {title}   </span></div>
+<div id="averageCustomerReviews_feature_div"><a id="acrPopover" class="a-popover-trigger" title="{rating} de 5 estrellas"></a>
+<span id="acrCustomerReviewText" class="a-size-base">{reviews} valoraciones</span></div>
+<div id="corePriceDisplay_desktop_feature_div" class="celwidget">{script}
  <span class="a-price aok-align-center reinventPricePriceToPayMargin priceToPay" data-a-size="xl">
-  <span class="a-offscreen">{price}</span><span aria-hidden="true"><span class="a-price-whole">23<span class="a-price-decimal">,</span></span><span class="a-price-fraction">99</span></span>
+  <span class="a-offscreen">{nb(price)}</span><span aria-hidden="true"><span class="a-price-whole">{whole}<span class="a-price-decimal">,</span></span><span class="a-price-fraction">{frac}</span></span>
  </span>
- <span class="savingsPercentage">-60 %</span>
- {lowest_html}{prime_html}{coupon_html}
+ <span class="savingsPercentage">-60 %</span>{script}
+ {refs}{prime_html}{coupon_html}
 </div>
-<div id="availability" class="a-section"><span class="a-size-medium a-color-success">{stock}</span></div>
+<div id="availability_feature_div"><div id="availability" class="a-section"><span class="a-size-medium a-color-success">{stock}</span></div></div>
 <div id="offerDisplayFeatures_desktop"><div>Enviado por</div><div><span>{shipper}</span></div>
 <div>Vendido por</div><div><span>{seller}</span></div><div>Devoluciones</div></div>
-<img id="landingImage" data-old-hires="https://m.media-amazon.com/images/I/71abcDEF._AC_SL1500_.jpg" src="x.jpg">
+<div id="imageBlock_feature_div"><img id="landingImage" data-old-hires="https://m.media-amazon.com/images/I/71abcDEF._AC_SL1500_.jpg" src="x.jpg"></div>
 <input id="add-to-cart-button" type="submit">
+<div id="similarities_feature_div">{basis("Precio más bajo reciente:", "999,00 €")}</div>
 {PAD}</body></html>"""
 
 
@@ -64,6 +73,27 @@ class LecturaFicha(unittest.TestCase):
         p = amz.parse_product(ficha(lowest=None), "B0TEST1234")
         self.assertIsNone(p["lowest_30"])
         self.assertIn("no muestra precio más bajo", ca.evaluate(p, RULES))
+
+    def test_pvpr_no_cuenta_como_referencia(self):
+        p = amz.parse_product(ficha(lowest=None, recommended="79,99 €"), "B0TEST1234")
+        self.assertIsNone(p["lowest_30"])
+        self.assertEqual(p["list_price"], 79.99)
+        p = amz.parse_product(ficha(recommended="79,99 €"), "B0TEST1234")
+        self.assertEqual((p["lowest_30"], p["list_price"]), (59.99, 79.99))
+
+    def test_no_lee_tachados_de_otros_productos(self):
+        # El 999,00 € del carrusel de abajo no debe usarse nunca.
+        p = amz.parse_product(ficha(lowest=None), "B0TEST1234")
+        self.assertIsNone(p["lowest_30"])
+
+    def test_referencia_igual_al_precio_se_descarta(self):
+        p = amz.parse_product(ficha(price="23,99 €", lowest="23,99 €"), "B0TEST1234")
+        self.assertIsNone(p["lowest_30"])
+
+    def test_diagnostico(self):
+        text = amz.diagnose(ficha(), "B0TEST1234")
+        self.assertIn("lowest_30: 59.99", text)
+        self.assertIn("price: 23.99", text)
 
     def test_detecta_captcha(self):
         page = "<html><!-- To discuss automated access to Amazon data please contact api-services-support@amazon.com --></html>"
