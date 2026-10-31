@@ -1,7 +1,9 @@
 name: Canal normal @cazachollos_com
 
 on:
-  # PAUSADO: el canal pasa a solo Amazon con precio verificado. No se reactiva hasta validar las pruebas.
+  # PAUSADO hasta que Enrique dé el visto bueno a las pruebas privadas. Para activar, descomenta:
+  # schedule:
+  #   - cron: "*/15 6-23 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -10,7 +12,7 @@ on:
         type: boolean
         default: true
       test_private:
-        description: "2-3 ejemplos solo al chat del admin, no al canal. Quita dry_run para enviarlos. No guarda memoria."
+        description: "Hasta 3 ejemplos solo a tu chat privado, nunca al canal. Quita dry_run para enviarlos."
         required: false
         type: boolean
         default: false
@@ -45,6 +47,7 @@ jobs:
           path: ~/.cache/caza-chollos/models
           key: fsrcnn-x4-v1
 
+      # Solo Amazon.es, con enlace al producto exacto y precio visto hace menos de una hora.
       - name: Buscar y publicar en el canal normal
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -53,14 +56,14 @@ jobs:
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
           set -o pipefail
-          python generic.py "${ARGS[@]}" 2>&1 | tee state/generic_last_run.log
+          python canal_nube.py "${ARGS[@]}" 2>&1 | tee state/canal_nube_last_run.log
 
       - name: Guardar memoria del canal normal
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state/generic.json state/generic_last_run.log 2>/dev/null || true
+          git add state/canal_nube.json state/canal_nube_last_run.log 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "Actualizar memoria del canal normal [skip ci]"
             for i in 1 2 3 4; do

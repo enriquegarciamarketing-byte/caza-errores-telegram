@@ -1,28 +1,19 @@
 # Caza Errores — ofertas en Telegram
 
-## Canal normal @cazachollos_com (solo Amazon, `canal_amazon.py`)
+## Canal normal @cazachollos_com (solo Amazon, `canal_nube.py`)
 
-Desde el 31/10/2026 el canal publica **solo Amazon.es** y lo ejecuta el Mac de Enrique, porque Amazon devuelve captcha a las lecturas desde los servidores de GitHub. El workflow antiguo (`scan-generic.yml`, Chollometro y otras tiendas) está pausado.
+Corre en GitHub Actions (`scan-generic.yml`), sin depender de ningún ordenador. Solo publica Amazon.es; Chollometro y el resto de tiendas ya no entran.
 
-Reglas que no se saltan:
+Amazon devuelve captcha a las lecturas desde GitHub, así que los datos salen de Jimmyleaks, que sigue el precio de Amazon.es producto a producto. Reglas:
 
-- Los chollos se buscan en la propia Amazon (listados con filtro de descuento de `amazon_channel.discovery_urls`).
-- El precio publicado es el de la ficha del producto, leído **dos veces**: al elegirlo y justo antes de enviarlo. Si cambia, no sale.
-- El descuento se calcula frente al **"Precio más bajo reciente"** que muestra Amazon (mínimo de los 30 días anteriores, obligatorio en la UE). Sin ese dato no hay rebaja verificable y no se publica. Nunca se usa el PVP.
-- Mínimo 40 % de descuento, precio de 8 € o más, vendido o enviado por Amazon, 4,0 estrellas y 30 opiniones, con stock y sin precio exclusivo Prime. Se ajusta en `config.json` → `amazon_channel`.
-- Enlace directo al producto: `https://www.amazon.es/dp/ASIN?tag=cazadores_errores-21`.
-- Cada pasada vuelve a mirar los posts de las últimas 48 h y, si el precio sube o se agota, añade al post «⛔ YA NO ESTÁ A ESTE PRECIO».
-- Máximo 3 posts por hora y 30 al día, en silencio de 01:00 a 08:00. Si Amazon pide captcha, la pasada se para sin publicar.
+- **Producto exacto**: el ASIN sale del botón de compra de Jimmyleaks (`/p/ID/` redirige a `amazon.es/dp/ASIN`) y se publica `https://www.amazon.es/dp/ASIN?tag=cazadores_errores-21`. Nunca una búsqueda por EAN, que era lo que hacía que el precio no cuadrara.
+- **Precio reciente**: visto en Amazon hace menos de 60 minutos, igual en el listado y en la ficha, y releído justo antes de enviar. Si cambia, no sale. El post dice a qué hora se vio.
+- **Descuento honesto**: frente al precio más bajo de los 30 días anteriores a la bajada (el criterio de la ley europea). Nunca el PVP tachado. Mínimo 40 %.
+- **Calidad**: con stock, 8 € o más, 4,0 estrellas y 20 opiniones, al menos 45 días de historial y bajada de menos de 7 días.
+- **Seguimiento**: los posts de las últimas 48 h se revisan; si sube el precio o se agota, el post se marca «⛔ YA NO ESTÁ A ESTE PRECIO».
+- Máximo 3 posts por hora y 30 al día; silencio de 01:00 a 08:00. Ajustes en `config.json` → `amazon_channel`. Memoria en `state/canal_nube.json`.
 
-En el Mac:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/enriquegarciamarketing-byte/caza-errores-telegram/main/mac/instalar.sh | bash
-```
-
-Instala en `~/CazaChollos`, pide el token del bot (se guarda en `.env`, fuera de git), hace una prueba sin enviar y otra que manda hasta 3 chollos solo a tu chat privado. No publica en el canal hasta ejecutar `bash ~/CazaChollos/mac/activar.sh`. Para parar: `bash ~/CazaChollos/mac/pausar.sh`. Registro en `~/CazaChollos/state/canal_amazon.log`.
-
-Pruebas a mano: `--dry-run` (no envía nada), `--test-private` (solo a tu chat), `--ignore-limits` (salta cupos y horario).
+Pruebas desde Actions → «Canal normal @cazachollos_com» → Run workflow: `dry_run` (no envía nada) o `test_private` sin `dry_run` (hasta 3 ejemplos a tu chat, nunca al canal).
 
 ## Escáner automático (scan-deals.yml)
 
