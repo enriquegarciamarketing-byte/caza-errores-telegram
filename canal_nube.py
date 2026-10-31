@@ -405,6 +405,14 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
             log(f"  No he podido marcar el post {post['message_id']}: {exc}")
 
 
+def listing_priority(item: dict) -> tuple:
+    """Qué fichas abrir antes: mínimos históricos y grandes bajadas en el listado, y luego las más recientes."""
+    verdict = fold(item.get("verdict") or "")
+    price, was = item.get("price") or 0, item.get("was") or 0
+    drop = (was - price) / was if was and was > price else 0
+    return ("minimo historico" in verdict, round(drop, 2), item.get("ts") or 0)
+
+
 # ------------------------------------------------------------------ pasada
 
 def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolve_asin=None, log=print) -> int:
@@ -445,7 +453,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             if now.timestamp() - ((seen.get(item["id"]) or {}).get("t") or 0) < recheck:
                 continue
             pool.setdefault(item["id"], item)
-    ordered = sorted(pool.values(), key=lambda i: i.get("ts") or 0, reverse=True)
+    ordered = sorted(pool.values(), key=listing_priority, reverse=True)
     log(f"Candidatos a revisar: {len(ordered)}")
     approved = []
     for item in ordered[: int(rules["max_details_per_run"])]:

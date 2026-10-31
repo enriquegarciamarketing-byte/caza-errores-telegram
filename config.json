@@ -222,7 +222,7 @@
       1,
       8
     ],
-    "max_details_per_run": 15,
+    "max_details_per_run": 25,
     "max_tracking_checks_per_run": 4,
     "recheck_rejected_hours": 6,
     "repost_after_days": 14,
