@@ -1,21 +1,47 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
-Candidatos nuevos tras el filtro rápido: 2
-  1qJ0koM · 649.0 € · media 913.4 · ref 654.41 → descartado (solo -1% bajo la referencia) · dreame Aqua10 Ultra Roller Complete, Robot Aspirador con Mop
-  1G6Oz0m · 33.0 € · media 38.48 · ref 32.73 → descartado (la referencia corregida no supera el precio (media inflada)) · PUMA Unisex Adults Club II ERA Sneaker, PUMA Black-PUMA Whit
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36656 bytes, 30 chollos
+Listados: 119 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 342039 bytes, 0 ASIN, 0 títulos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35998 bytes, 30 chollos
+  Chollometro «Vans Zapatillas Mujer Range BRZ (Varias Tallas)»: Amazon 39.98 €
   Chollometro «The Blood of Dawnwalker Edición Coleccionista PS5/Xbox»: Xtralife 139.99 €
   Chollometro «Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Double Pack -»: Amazon 49.69 €
   Chollometro «Rhythm Paradise Groove para Nintendo Switch»: Tradeinn 32.99 €
   Chollometro «Nintendo Switch 2, versión renovada con batería extraíble [Promo 11.11»: S 298.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 80825 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69472 bytes, 30 chollos
+  cm-2050200 · Amazon 39.98 € → candidato externo · Vans Zapatillas Mujer Range BRZ (Varias Tallas)
   cm-2050123 · Xtralife 139.99 € → candidato externo · The Blood of Dawnwalker Edición Coleccionista PS5/Xbox
   cm-2042238 · Amazon 49.69 € → candidato externo · Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Dou
   cm-2050073 · Tradeinn 32.99 € → candidato externo · Rhythm Paradise Groove para Nintendo Switch
   cm-2050134 · S 298.0 € → candidato externo · Nintendo Switch 2, versión renovada con batería extraíble [P
-  cm-2050123: no se publica (horario nocturno: las gangas esperan al día)
-  cm-2042238: no se publica (horario nocturno: las gangas esperan al día)
-  cm-2050073: no se publica (horario nocturno: las gangas esperan al día)
-  cm-2050134: no se publica (horario nocturno: las gangas esperan al día)
+  Wallapop «xtralife ps5 blood»: 200 / 1268 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «xtralife ps5»: 200 / 7297 bytes, 2 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «xtralife ps5 blood»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Xtralife The Blood of Dawnwalker Edición Coleccionista PS5/Xbox»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop «toy story»: 200 / 96522 bytes, 40 anuncios, 40 parecidos, 0 reservas
+  Milanuncios «toy story»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 30 anuncios, ~20 €, no publica
+  ⚠️ No publico «Amazon Toy Story: Retro Roundup! + Toy Story 3 Complete Edition Double Pack - Switch 2»: reventa en WALLAPOP ~20 € (30 anuncios): ROI -60 % y -30 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «tradeinn rhythm»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «tradeinn rhythm»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Tradeinn Rhythm Paradise Groove para Nintendo Switch»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «aliexpress 11 nintendo»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Aliexpress Nintendo Switch 2, versión renovada con batería extraíble [Promo 11.11] [Empiez»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Vinted «vans zapatillas»: HTTP 200, 3663911 bytes, 96 anuncios
+  Vinted «vans zapatillas»: 20 parecidos de 96
+  Wallapop «vans zapatillas»: 200 / 126633 bytes, 40 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «vans zapatillas»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 39 anuncios, ~20 €, no publica
+  ⚠️ No publico «Amazon Vans Zapatillas Mujer Range BRZ (Varias Tallas)»: reventa en VINTED+WALLAPOP ~20 € (39 anuncios): ROI -50 % y -20 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
