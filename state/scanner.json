@@ -953,7 +953,7 @@
  ],
  "tg_offset": 334822054,
  "admin_chat_id": 1880159117,
- "last_listing_count": 116,
+ "last_listing_count": 120,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2755,6 +2755,26 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "eneba|tarjeta regalo xbox live 100 eur xbox live key europe|eneba 100 tarjeta": {
+   "t": 1793461005.9707036,
+   "query": "eneba 100 tarjeta",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "private sport shop|adidas zapatillas de running ultraboost 5x mujer- tallas- 36, 37 1/3, 42 2/3|private sport 5x": {
+   "t": 1793461008.8239388,
+   "query": "private sport 5x",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2904,7 +2924,9 @@
   "wallapop:cm-2050528": 1793453159.6958683,
   "wallapop:cm-2050637": 1793456073.038935,
   "wallapop:cm-2050569": 1793458672.7161646,
-  "wallapop:cm-2050487": 1793458675.2257648
+  "wallapop:cm-2050487": 1793458675.2257648,
+  "wallapop:cm-2050273": 1793461006.4327378,
+  "wallapop:cm-2050673": 1793461009.193538
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -3468,6 +3490,14 @@
    "demand_known": true,
    "blocked": false,
    "reason": "Vinted solo tiene 2 anuncios parecidos (mínimo 8)"
+  },
+  "private sport shop|adidas zapatillas de running ultraboost 5x mujer- tallas- 36, 37 1/3, 42 2/3|private sport 5x": {
+   "t": 1793461007.6822774,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
  }
 }
