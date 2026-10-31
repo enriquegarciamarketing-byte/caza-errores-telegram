@@ -952,7 +952,7 @@
   }
  ],
  "tg_offset": 334822054,
- "admin_chat_id": 1880159117,
+ "admin_chat_id": 9188393228,
  "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
@@ -3502,5 +3502,8 @@
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 8)"
   }
+ },
+ "private_chats": {
+  "darkness_gg": 9188393228
  }
 }
