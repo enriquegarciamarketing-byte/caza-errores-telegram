@@ -799,6 +799,11 @@
    "price": 33.0,
    "t": 1793427726,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "7y0zYQM": {
+   "price": 31.58,
+   "t": 1793444899,
+   "result": "solo -8% bajo la referencia"
   }
  },
  "posts": [
@@ -933,7 +938,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 114,
+ "last_listing_count": 119,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
