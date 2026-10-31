@@ -1,36 +1,15 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 114 productos únicos
+Listados: 120 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35346 bytes, 30 chollos
-  Chollometro «MUNICH Zapatillas de deporte Nexa 11- Tallas- 39, 41, 42, 44, 45»: Es 32.99 €
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35868 bytes, 30 chollos
+  Chollometro «MUNICH Zapatillas de deporte Nexa 11- Tallas- 39, 41, 42, 44, 45»: Privalia 32.99 €
   Chollometro «Adidas Zapatillas de running 4DFWD 4 Mujer»: Privatesportshop 82.99 €
   Chollometro «Tarjeta Regalo Xbox Live 100 EUR Xbox Live Key EUROPE»: Eneba 87.38 €
   Chollometro «Adidas Zapatillas de running Ultraboost 5X Mujer- Tallas- 36, 37 1/3, »: Privatesportshop 62.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71814 bytes, 30 chollos
-  cm-2049530 · Es 32.99 € → candidato externo · MUNICH Zapatillas de deporte Nexa 11- Tallas- 39, 41, 42, 44
-  cm-2050712 · Privatesportshop 82.99 € → candidato externo · Adidas Zapatillas de running 4DFWD 4 Mujer
-  cm-2050273 · Eneba 87.38 € → candidato externo · Tarjeta Regalo Xbox Live 100 EUR Xbox Live Key EUROPE
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «eneba 100 tarjeta»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Eneba Tarjeta Regalo Xbox Live 100 EUR Xbox Live Key EUROPE»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted «privalia 11 munich»: HTTP 200, 2789649 bytes, 0 anuncios
-  Vinted «privalia 11 munich»: 0 parecidos de 0
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «privalia 11 munich»: 200 / 1268 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «privalia 11»: 200 / 386 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «privalia 11 munich»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Privalia MUNICH Zapatillas de deporte Nexa 11- Tallas- 39, 41, 42, 44, 45»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Vinted «private sport 4dfwd»: HTTP 200, 2789733 bytes, 0 anuncios
-  Vinted «private sport 4dfwd»: 0 parecidos de 0
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «private sport 4dfwd»: 200 / 1270 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «private sport»: 200 / 29157 bytes, 7 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «private sport 4dfwd»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  ⚠️ No publico «Private Sport Shop Adidas Zapatillas de running 4DFWD 4 Mujer»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67840 bytes, 30 chollos
+  cm-2049530 · Privalia → descartado (no he podido comprobar el precio en la página de la tienda) · MUNICH Zapatillas de deporte Nexa 11- Tallas- 39, 41, 42, 44
+  cm-2050712 · Privatesportshop → descartado (no he podido comprobar el precio en la página de la tienda) · Adidas Zapatillas de running 4DFWD 4 Mujer
+  cm-2050273 · Eneba → descartado (la tienda marca 97.82 € y no 87.38 €) · Tarjeta Regalo Xbox Live 100 EUR Xbox Live Key EUROPE
+  cm-2050673 · Privatesportshop → descartado (no he podido comprobar el precio en la página de la tienda) · Adidas Zapatillas de running Ultraboost 5X Mujer- Tallas- 36
 Publicados en esta ejecución: 0
