@@ -51,7 +51,7 @@ def _assemble(cand: dict, market: dict, route: list[str], prices: list[float],
             detail = ", ".join(f"{name} {count}" for name, count in parts)
         else:
             detail = " + ".join(name for name, _count in parts)
-        note = f"Mediana de {used} anuncios · {detail}"
+        note = f"{used} anuncios de referencia · {detail}"
         if combined.get("demand"):
             note = f"{note} · {combined['demand']}"
     # Un bloqueo solo explica la ficha cuando no llegamos al mínimo de anuncios.

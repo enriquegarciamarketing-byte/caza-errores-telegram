@@ -481,13 +481,13 @@ def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, mu
     elif resale.get("note"):
         note = str(resale["note"])
     else:
-        note = f"Mediana de {resale['count']} anuncios" if resale.get("count") else "Mediana de anuncios"
+        note = f"{resale['count']} anuncios de referencia" if resale.get("count") else "Anuncios de referencia"
     note_font = _font(19)
     max_note = (box[2] - box[0]) - 28
     while getattr(note_font, "size", 19) > 12 and draw.textbbox((0, 0), note, font=note_font)[2] > max_note:
         note_font = _font(note_font.size - 1)
     if draw.textbbox((0, 0), note, font=note_font)[2] > max_note and resale.get("count"):
-        note = f"Mediana de {resale['count']} anuncios"
+        note = f"{resale['count']} anuncios de referencia"
     _centered(draw, box, box[3] - 50, note, note_font, "#AEB6BF")
 
 

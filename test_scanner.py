@@ -903,7 +903,7 @@ class SecondHandSourcesTest(unittest.TestCase):
         self.assertEqual(result["count"], 8)
         self.assertGreaterEqual(result["profit"], 25)
         self.assertEqual(result["source_label"], "WALLAPOP+MILANUNCIOS")
-        self.assertIn("Mediana de 8", result["note"])
+        self.assertIn("8 anuncios de referencia", result["note"])
         self.assertIn("Wallapop 5", result["note"])
         self.assertIn("Milanuncios 3", result["note"])
 
