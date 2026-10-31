@@ -933,7 +933,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 117,
+ "last_listing_count": 114,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2626,6 +2626,55 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "amazon|assassin's creed shadows (switch 2)|assassin creed": {
+   "t": 1793442368.7393584,
+   "query": "assassin creed",
+   "prices": [
+    13.0,
+    30.0,
+    20.0,
+    3.0,
+    10.0,
+    50.0,
+    26.0,
+    35.0,
+    12.0,
+    13.0,
+    25.0,
+    25.0,
+    22.0,
+    9.0,
+    12.99,
+    22.0,
+    20.0,
+    15.0,
+    19.0,
+    8.0,
+    20.0,
+    35.0,
+    35.0,
+    28.0,
+    14.0,
+    10.0,
+    5.0,
+    30.0,
+    230.0,
+    5.0,
+    16.0,
+    30.0,
+    13.0,
+    35.0,
+    7.0,
+    35.0,
+    14.9,
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 99628,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -2769,7 +2818,8 @@
   "wallapop:cm-2050304": 1793440289.8561664,
   "wallapop:cm-2050307": 1793440290.901944,
   "wallapop:cm-2049575": 1793440292.956418,
-  "wallapop:cm-2048858": 1793440294.8545098
+  "wallapop:cm-2048858": 1793440294.8545098,
+  "wallapop:cm-2049627": 1793442369.3641999
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {

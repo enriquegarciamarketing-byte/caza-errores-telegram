@@ -1,58 +1,41 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 465402 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+Listados: 114 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36735 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37308 bytes, 30 chollos
+  Chollometro «Assassin's Creed Shadows (Switch 2)»: Amazon 32.95 €
   Chollometro «Puma R78 Lightwind Zapatillas Unisex Adulto muchas tallas»: Amazon 32.0 €
   Chollometro «Reloj Garmin Forerunner 265 (GPS, AMOLED) [1 Nov 00:00]»: S 182.97 €
   Chollometro «HOFF Zapatillas de piel Eretria. Varios modelos.»: Showroomprive 35.99 €
   Chollometro «HOFF Zapatillas de nobuk Viena Man. Un montón de modelos.»: Showroomprive 39.9 €
-  Chollometro «Robot Aspirador Dreame Matrix10 Ultra (Cambio Mopas Automático, ProLea»: Es 649.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75082 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 82072 bytes, 30 chollos
+  cm-2049627 · Amazon 32.95 € → candidato externo · Assassin's Creed Shadows (Switch 2)
   cm-2050099 · Amazon 32.0 € → candidato externo · Puma R78 Lightwind Zapatillas Unisex Adulto muchas tallas
   cm-2048858 · S 182.97 € → candidato externo · Reloj Garmin Forerunner 265 (GPS, AMOLED) [1 Nov 00:00]
   cm-2050304 · Showroomprive 35.99 € → candidato externo · HOFF Zapatillas de piel Eretria. Varios modelos.
   cm-2050307 · Showroomprive 39.9 € → candidato externo · HOFF Zapatillas de nobuk Viena Man. Un montón de modelos.
-  cm-2049575 · Es 649.0 € → candidato externo · Robot Aspirador Dreame Matrix10 Ultra (Cambio Mopas Automáti
-  Vinted «puma r78 lightwind»: HTTP 200, 3156443 bytes, 41 anuncios
-  Vinted «puma r78 lightwind»: 31 parecidos de 41
-  Wallapop «puma r78 lightwind»: 200 / 39967 bytes, 11 anuncios, 10 parecidos, 0 reservas
-  Milanuncios «puma r78 lightwind»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop «assassin creed»: 200 / 99628 bytes, 40 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «assassin creed»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 31 anuncios, ~20 €, no publica
+  ⚠️ No publico «Amazon Assassin's Creed Shadows (Switch 2)»: reventa en WALLAPOP ~20 € (31 anuncios): ROI -39 % y -13 €, por debajo del mínimo (30 % y 25 €)
+  Milanuncios «puma r78 lightwind»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
   Reventa VINTED+WALLAPOP: 37 anuncios, ~34 €, no publica
   ⚠️ No publico «Amazon Puma R78 Lightwind Zapatillas Unisex Adulto muchas tallas»: reventa en VINTED+WALLAPOP ~34 € (37 anuncios): ROI 6 % y 2 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «showroomprive hoff»: HTTP 200, 2783489 bytes, 0 anuncios
-  Vinted «showroomprive hoff»: 0 parecidos de 0
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «showroomprive hoff»: 200 / 393 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «showroomprive hoff»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Showroomprivé HOFF Zapatillas de piel Eretria. Varios modelos.»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Vinted «showroomprive hoff»: HTTP 200, 2783496 bytes, 0 anuncios
-  Vinted «showroomprive hoff»: 0 parecidos de 0
+  Milanuncios «showroomprive hoff»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Showroomprivé HOFF Zapatillas de piel Eretria. Varios modelos.»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «showroomprive hoff»: 200 / 393 bytes, 0 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «showroomprive hoff»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Showroomprivé HOFF Zapatillas de nobuk Viena Man. Un montón de modelos.»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Wallapop «dreametech matrix10 robot»: 200 / 1284 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «dreametech matrix10»: 200 / 394 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «dreametech matrix10 robot»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Dreametech Robot Aspirador Dreame Matrix10 Ultra (Cambio Mopas Automático, ProLeap 8cm) - »: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Vinted «aliexpress 265 reloj»: HTTP 200, 2783790 bytes, 0 anuncios
-  Vinted «aliexpress 265 reloj»: 0 parecidos de 0
+  Milanuncios «showroomprive hoff»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Showroomprivé HOFF Zapatillas de nobuk Viena Man. Un montón de modelos.»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
   Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 8)
-  Wallapop «aliexpress 265 reloj»: 200 / 1272 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «aliexpress 265»: 200 / 7713 bytes, 3 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
-  Milanuncios «aliexpress 265 reloj»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  ⚠️ No publico «Aliexpress Reloj Garmin Forerunner 265 (GPS, AMOLED) [1 Nov 00:00]»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Milanuncios «aliexpress 265 reloj»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Aliexpress Reloj Garmin Forerunner 265 (GPS, AMOLED) [1 Nov 00:00]»: Vinted solo tiene 0 anuncios parecidos (mínimo 8); Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0
