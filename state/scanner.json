@@ -789,6 +789,16 @@
    "price": 32.5,
    "t": 1793422504,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "1qJ0koM": {
+   "price": 649.0,
+   "t": 1793427726,
+   "result": "solo -1% bajo la referencia"
+  },
+  "1G6Oz0m": {
+   "price": 33.0,
+   "t": 1793427726,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -923,7 +933,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 115,
+ "last_listing_count": 117,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
