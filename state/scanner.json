@@ -933,7 +933,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 114,
+ "last_listing_count": 118,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2578,6 +2578,26 @@
    "http_status": 200,
    "bytes": 7972,
    "raw_count": 3
+  },
+  "shopdutyfree.es|macbook neo 512gb color citrico|shopdutyfree 512gb macbook": {
+   "t": 1793437605.2721472,
+   "query": "shopdutyfree 512gb macbook",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "aliexpress|dron dji neo 2 con camara 4k estabilizada, 151 g y protectores de helices (c0) [1 nov 00:00]|aliexpress 4k dron": {
+   "t": 1793437607.6235707,
+   "query": "aliexpress 4k dron",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -2714,7 +2734,9 @@
   "wallapop:cm-2042238": 1793431636.0676978,
   "wallapop:cm-2050073": 1793431636.9820561,
   "wallapop:cm-2050200": 1793431639.2615197,
-  "wallapop:cm-2050188": 1793434834.2185385
+  "wallapop:cm-2050188": 1793434834.2185385,
+  "wallapop:cm-2050041": 1793437605.8513412,
+  "wallapop:cm-2048864": 1793437608.1750238
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {

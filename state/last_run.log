@@ -1,24 +1,32 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 114 productos únicos
+Listados: 118 productos únicos
   Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
   Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
   Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36063 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35781 bytes, 30 chollos
+  Chollometro «Macbook Neo 512GB color cítrico»: Shopdutyfree 749.12 €
+  Chollometro «Dron DJI Neo 2 con cámara 4K estabilizada, 151 g y protectores de héli»: S 139.31 €
   Chollometro «LEGO Pokémon Rayquaza 72168, figura articulada de 1083 piezas con mini»: Amazon 103.99 €
-  Chollometro «Vans Zapatillas Mujer Range BRZ (Varias Tallas)»: Amazon 39.98 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72804 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 115028 bytes, 30 chollos
+  cm-2050041 · Shopdutyfree 749.12 € → candidato externo · Macbook Neo 512GB color cítrico
+  cm-2048864 · S 139.31 € → candidato externo · Dron DJI Neo 2 con cámara 4K estabilizada, 151 g y protector
   cm-2050188 · Amazon 103.99 € → candidato externo · LEGO Pokémon Rayquaza 72168, figura articulada de 1083 pieza
-  cm-2050200 · Amazon 39.98 € → candidato externo · Vans Zapatillas Mujer Range BRZ (Varias Tallas)
-  Wallapop «lego 72168 pokemon»: 200 / 7972 bytes, 3 anuncios, 3 parecidos, 0 reservas
-  Wallapop «lego 72168»: 200 / 7097 bytes, 3 anuncios, 3 parecidos, 0 reservas
+  Wallapop «shopdutyfree 512gb macbook»: 200 / 1286 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «shopdutyfree 512gb»: 200 / 393 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «shopdutyfree 512gb macbook»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  ⚠️ No publico «Shopdutyfree.Es Macbook Neo 512GB color cítrico»: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
   Milanuncios «lego 72168 pokemon»: HTTP 403, 95512 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
   Reventa WALLAPOP: 3 anuncios, ~0 €, no publica
   ⚠️ No publico «Amazon LEGO Pokémon Rayquaza 72168, figura articulada de 1083 piezas con minifigura de Tri»: WALLAPOP solo tiene 3 anuncios parecidos (mínimo 8) · Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Milanuncios «vans zapatillas»: HTTP 403, 95512 bytes
+  Wallapop «aliexpress 4k dron»: 200 / 4174 bytes, 1 anuncios, 0 parecidos, 0 reservas
+  Wallapop «aliexpress 4k»: 200 / 95961 bytes, 26 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 8)
+  Milanuncios «aliexpress 4k dron»: HTTP 403, 95512 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa VINTED+WALLAPOP: 39 anuncios, ~20 €, no publica
-  ⚠️ No publico «Amazon Vans Zapatillas Mujer Range BRZ (Varias Tallas)»: reventa en VINTED+WALLAPOP ~20 € (39 anuncios): ROI -50 % y -20 €, por debajo del mínimo (30 % y 25 €)
+  ⚠️ No publico «Aliexpress Dron DJI Neo 2 con cámara 4K estabilizada, 151 g y protectores de hélices (C0) »: Wallapop solo tiene 0 anuncios parecidos (mínimo 8); Milanuncios no disponible (HTTP 403 (95512 bytes))
 Publicados en esta ejecución: 0
