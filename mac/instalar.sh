@@ -12,16 +12,24 @@ fi
 if [ -d "$DIR/.git" ]; then
   git -C "$DIR" pull --ff-only
 else
-  git clone --depth 20 "$REPO" "$DIR"
+  TMP="$(mktemp -d)"
+  git clone --depth 20 "$REPO" "$TMP/repo"
+  mkdir -p "$DIR"
+  cp -R "$TMP/repo/." "$DIR/"
+  rm -rf "$TMP"
 fi
 cd "$DIR"
 python3 -m venv .venv
 .venv/bin/pip install -q --upgrade pip
 .venv/bin/pip install -q "Pillow>=10.0,<12"
 
+if [ -n "${TELEGRAM_BOT_TOKEN:-}" ]; then
+  printf 'TELEGRAM_BOT_TOKEN=%s\n' "$TELEGRAM_BOT_TOKEN" > .env
+  chmod 600 .env
+fi
 if [ ! -s .env ] || ! grep -q '^TELEGRAM_BOT_TOKEN=.\+' .env; then
   echo
-  echo "Pega el token del bot @cazaerroresAmazon_bot (el de BotFather; no se verá al escribir) y pulsa Enter:"
+  echo "Pega el token del bot con Cmd+V (no se verá nada al pegarlo, es normal) y pulsa Enter:"
   read -rs TOKEN </dev/tty
   echo
   [ -n "$TOKEN" ] || { echo "Token vacío, cancelo."; exit 1; }
