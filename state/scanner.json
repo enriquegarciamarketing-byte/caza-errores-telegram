@@ -948,7 +948,7 @@
  ],
  "tg_offset": 334822052,
  "admin_chat_id": 1880159117,
- "last_listing_count": 122,
+ "last_listing_count": 119,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2710,6 +2710,21 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "amazon.fr|casio g-shock gw-m5610-1er (radiocontrolado y solar).|casio m5610 shock": {
+   "t": 1793456072.5260105,
+   "query": "casio m5610 shock",
+   "prices": [
+    75.0,
+    79.95,
+    110.0,
+    135.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 79881,
+   "raw_count": 22
   }
  },
  "milanuncios_cache": {
@@ -2856,7 +2871,8 @@
   "wallapop:cm-2048858": 1793440294.8545098,
   "wallapop:cm-2049627": 1793442369.3641999,
   "wallapop:cm-2050277": 1793453156.8523343,
-  "wallapop:cm-2050528": 1793453159.6958683
+  "wallapop:cm-2050528": 1793453159.6958683,
+  "wallapop:cm-2050637": 1793456073.038935
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
