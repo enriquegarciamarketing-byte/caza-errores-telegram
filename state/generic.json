@@ -459,6 +459,16 @@
       "message_id": 48,
       "title": "Móvil Xiaomi REDMI Note 17 Pro 5G NFC 6.83\" AMOLED 1.5K 120Hz 50MP OIS 8340mAh - 256 GB + 6 GB RAM y 512GB+8 GB RAM Versión ES",
       "store": "Miravia"
+    },
+    {
+      "id": "cm-2050365",
+      "key": "p:skyscanner tenerife vuelos directos solo trayecto",
+      "price": 29.0,
+      "t": 1793444786,
+      "url": "https://www.skyscanner.es/transporte/vuelos/sanc/tene/261122/261130/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=true&rtn=1&priceSourceId=&priceTrace=%7Bbl%7D%3A202610310608%2AD%2ASCQ%2ATFS%2A20261122%2Aryan%2AFR%7C202610310727%2AD%2ATFS%2ASCQ%2A20261130%2Aryan%2AFR&qp_prevCurrency=EUR&qp_prevPrice=30&qp_prevProvider=ins_month",
+      "message_id": 49,
+      "title": "¡TENERIFE! Vuelos DIRECTOS por solo 14€ Trayecto - 29€ Ida y Vuelta (noviembre) - Salidas desde Santiago",
+      "store": "Skyscanner"
     }
   ]
 }
