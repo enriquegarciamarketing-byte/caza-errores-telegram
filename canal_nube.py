@@ -458,49 +458,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             if why:
                 log(f"No publico: {why}.")
                 return 0
-    seen = state.setdefault("seen", {})
-    recheck = float(rules["recheck_rejected_hours"]) * 3600
-    max_age = float(rules["max_price_age_minutes"]) * 60
-    pool: dict[str, dict] = {}
-    for url in rules.get("sources") or []:
-        try:
-            items = scanner.parse_listing(fetch(url))
-        except Exception as exc:
-            log(f"  Listado {url}: {exc}")
-            continue
-        fresh = [i for i in items if i.get("ts") and now.timestamp() - i["ts"] <= max_age and i.get("price")]
-        log(f"  Listado {url}: {len(items)} productos, {len(fresh)} vistos en la última hora")
-        for item in fresh:
-            if now.timestamp() - ((seen.get(item["id"]) or {}).get("t") or 0) < recheck:
-                continue
-            pool.setdefault(item["id"], item)
-    ordered = sorted(pool.values(), key=listing_priority, reverse=True)
-    log(f"Candidatos a revisar: {len(ordered)}")
-    approved = []
-    for item in ordered[: int(rules["max_details_per_run"])]:
-        try:
-            detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{item['id']}/"))
-        except Exception as exc:
-            log(f"  Ficha {item['id']}: {exc}")
-            continue
-        why, deal = evaluate(item, detail, rules, now)
-        if not why:
-            asin = resolve_asin(item["id"])
-            if not asin or not ASIN_RE.fullmatch(asin):
-                why = "no he podido sacar el producto exacto de Amazon (ASIN)"
-            else:
-                deal["asin"] = asin
-                if recently_posted(state, asin, deal["price"], now, rules):
-                    why = "ya publicado hace poco y no ha bajado más"
-        if why and not args.test_private:
-            # Solo se aparta lo descartado. Lo aprobado que no cabe en esta pasada sale en la siguiente.
-            seen[item["id"]] = {"t": int(now.timestamp()), "why": why}
-        label = clean_title(detail.get("name") or item.get("title") or "", 60)
-        if why:
-            log(f"  ✗ {item['id']} {label}: {why}")
-            continue
-        log(f"  ✓ {deal['asin']} {label}: {euro(deal['price'])} (-{deal['discount']:.0f}% vs {euro(deal['reference'])})")
-        approved.append((item, deal))
+    approved = find_deals(rules, state, now, fetch, resolve_asin, log, remember=not args.test_private)
     approved.sort(key=lambda pair: pair[1]["discount"], reverse=True)
     limit = int(rules["test_private_posts"] if args.test_private else rules["max_per_run"])
     sent = 0
@@ -542,11 +500,154 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
     return 0
 
 
+def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log, remember: bool = True) -> list:
+    """Busca en los listados y devuelve [(item, deal)] que cumplen todas las reglas, mejor descuento primero."""
+    seen = state.setdefault("seen", {})
+    recheck = float(rules["recheck_rejected_hours"]) * 3600
+    max_age = float(rules["max_price_age_minutes"]) * 60
+    pool: dict[str, dict] = {}
+    for url in rules.get("sources") or []:
+        try:
+            items = scanner.parse_listing(fetch(url))
+        except Exception as exc:
+            log(f"  Listado {url}: {exc}")
+            continue
+        fresh = [i for i in items if i.get("ts") and now.timestamp() - i["ts"] <= max_age and i.get("price")]
+        log(f"  Listado {url}: {len(items)} productos, {len(fresh)} vistos en la última hora")
+        for item in fresh:
+            last = seen.get(item["id"]) or {}
+            same_price = last.get("price") is not None and abs(float(last["price"]) - float(item["price"])) < 0.01
+            if same_price and now.timestamp() - (last.get("t") or 0) < recheck:
+                continue  # ya descartado a este mismo precio; si baja más, se vuelve a mirar
+            pool.setdefault(item["id"], item)
+    ordered = sorted(pool.values(), key=listing_priority, reverse=True)
+    log(f"Candidatos a revisar: {len(ordered)}")
+    approved = []
+    for item in ordered[: int(rules["max_details_per_run"])]:
+        try:
+            detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{item['id']}/"))
+        except Exception as exc:
+            log(f"  Ficha {item['id']}: {exc}")
+            continue
+        why, deal = evaluate(item, detail, rules, now)
+        if not why:
+            asin = resolve_asin(item["id"])
+            if not asin or not ASIN_RE.fullmatch(asin):
+                why = "no he podido sacar el producto exacto de Amazon (ASIN)"
+            else:
+                deal["asin"] = asin
+                if recently_posted(state, asin, deal["price"], now, rules):
+                    why = "ya publicado hace poco y no ha bajado más"
+        if why and remember:
+            # Solo se aparta lo descartado. Lo aprobado que no cabe en esta pasada sale en la siguiente.
+            seen[item["id"]] = {"t": int(now.timestamp()), "why": why, "price": item.get("price")}
+        label = clean_title(detail.get("name") or item.get("title") or "", 60)
+        if why:
+            log(f"  ✗ {item['id']} {label}: {why}")
+            continue
+        log(f"  ✓ {deal['asin']} {label}: {euro(deal['price'])} (-{deal['discount']:.0f}% vs {euro(deal['reference'])})")
+        approved.append((item, deal))
+    approved.sort(key=lambda pair: pair[1]["discount"], reverse=True)
+    return approved
+
+
+# ------------------------------------------------------------------ resumen de la noche
+
+def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: int = 10) -> list[dict]:
+    """Los posts de hoy que siguen activos (vuelve a mirar el precio), mejor descuento primero."""
+    today = now.astimezone(MADRID).date()
+    items = []
+    for post in state.get("posts") or []:
+        if post.get("ended") or not post.get("jl_id"):
+            continue
+        if datetime.fromtimestamp(post.get("t") or 0, timezone.utc).astimezone(MADRID).date() != today:
+            continue
+        try:
+            detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{post['jl_id']}/"))
+        except Exception as exc:
+            log(f"  Resumen: no he podido releer {post['asin']} ({exc}); lo dejo fuera")
+            continue
+        price = detail.get("price")
+        if not detail.get("in_stock") or price is None or price > float(post["price"]) + 0.009:
+            log(f"  Resumen: {post['asin']} ya no está a {post['price']} €; fuera")
+            continue
+        items.append({"asin": post["asin"], "title": post.get("title") or "", "price": float(price),
+                      "reference": float(post["reference"]), "url": post["url"],
+                      "discount": discount_pct(float(price), float(post["reference"]))})
+    items.sort(key=lambda item: item["discount"], reverse=True)
+    return items[:limit]
+
+
+NUMBERS = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
+
+
+def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
+    e = html.escape
+    hour = now.astimezone(MADRID).strftime("%H:%M")
+    lines = []
+    if test:
+        lines += ["🧪 <b>PRUEBA</b> · así saldría el resumen de la noche", ""]
+    lines += ["🌙 <b>LO MEJOR DEL DÍA EN AMAZON</b>", "",
+              f"Los {len(items)} chollos más bestias de hoy que siguen activos ahora mismo 👇", ""]
+    for index, item in enumerate(items):
+        lines.append(f"{NUMBERS[index]} <b>{e(clean_title(item['title'], 70))}</b>")
+        lines.append(f"💰 <b>{e(euro(item['price']))}</b>  <s>{e(euro(item['reference']))}</s>  "
+                     f"📉 <b>-{round(item['discount'])} %</b>")
+        lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
+        lines.append("")
+    lines.append(f"🕒 Precios comprobados a las {hour}. Pueden cambiar en cualquier momento.")
+    lines.append("🔔 Activa las notificaciones para no perderte los de mañana.")
+    return "\n".join(lines)
+
+
+def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolve_asin=None, log=print) -> int:
+    rules = rules_from(cfg)
+    fetch = fetch or http_get
+    local = now.astimezone(MADRID)
+    hour, minute = (int(x) for x in str(rules.get("summary_time") or "23:30").split(":"))
+    if not args.ignore_limits:
+        if local.hour != hour:
+            log(f"Resumen: no es la hora ({local:%H:%M}); se manda a las {hour:02d}:{minute:02d}.")
+            return 0
+        if state.get("summary_sent") == local.date().isoformat():
+            log("Resumen: ya enviado hoy.")
+            return 0
+    items = summary_items(state, now, rules, fetch, log, int(rules.get("summary_size") or 10))
+    if args.test_private and len(items) < 5:
+        # En la prueba, si hoy aún hay pocos posts, se completa con chollos que cumplen las reglas ahora.
+        for item, deal in find_deals(rules, state, now, fetch, resolve_asin or asin_from_jl, log, remember=False):
+            if len(items) >= 8 or any(x["asin"] == deal["asin"] for x in items):
+                continue
+            items.append({"asin": deal["asin"], "title": deal["title"], "price": deal["price"],
+                          "reference": deal["reference"], "discount": deal["discount"],
+                          "url": f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['tag']}"})
+        items.sort(key=lambda item: item["discount"], reverse=True)
+    if len(items) < int(rules.get("summary_min_items") or 3) and not args.test_private:
+        log(f"Resumen: solo {len(items)} chollos activos hoy; no mando lista.")
+        state["summary_sent"] = local.date().isoformat()
+        return 0
+    if not items:
+        log("Resumen: nada que listar.")
+        return 0
+    text = build_summary(items, now, test=bool(args.test_private))
+    target = admin_chat_id(state, rules, tg, log) if args.test_private else rules["chat_id"]
+    if args.dry_run or tg is None:
+        log("[prueba, no se envía]\n" + text)
+        return 0
+    message = tg.call("sendMessage", {"chat_id": target, "text": text, "parse_mode": "HTML",
+                                      "disable_web_page_preview": True})
+    log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos.")
+    if not args.test_private:
+        state["summary_sent"] = local.date().isoformat()
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Canal @cazachollos_com: solo Amazon, precio verificado")
     parser.add_argument("--dry-run", action="store_true", help="Lo revisa todo pero no envía nada")
     parser.add_argument("--test-private", action="store_true", help="Hasta 3 ejemplos a tu chat, nunca al canal")
     parser.add_argument("--ignore-limits", action="store_true", help="Salta cupos y horario (pruebas)")
+    parser.add_argument("--resumen", action="store_true", help="Manda el resumen de la noche (a las 23:30)")
     args = parser.parse_args()
     cfg = load_json(CONFIG_PATH, {})
     state = load_json(STATE_PATH, {"posts": [], "seen": {}})
@@ -557,7 +658,7 @@ def main() -> int:
     tg = scanner.Telegram(token) if token else None
     now = datetime.now(timezone.utc)
     print(f"== {now.astimezone(MADRID):%Y-%m-%d %H:%M} ==")
-    code = run(args, cfg, state, now, tg=tg)
+    code = (run_summary if args.resumen else run)(args, cfg, state, now, tg=tg)
     if not args.dry_run and not args.test_private:
         save_state(state)
     return code

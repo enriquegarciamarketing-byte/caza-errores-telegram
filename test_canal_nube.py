@@ -118,6 +118,42 @@ class Administrador(unittest.TestCase):
         self.assertIsNone(cn.admin_chat_id({}, dict(RULES, admin_username="nadie_xyz"), TG()))
 
 
+class Resumen(unittest.TestCase):
+    def state(self, now):
+        base = int(now.timestamp()) - 3600
+        return {"posts": [
+            {"asin": "B0G7YP6MXV", "jl_id": "R0ZG4Bv", "price": 379.98, "reference": 799.99, "t": base,
+             "url": "https://www.amazon.es/dp/B0G7YP6MXV?tag=cazadores_errores-21", "title": "Lefant M5 Pro Robot"},
+            {"asin": "B0FDQD4L48", "jl_id": "OTRO", "price": 39.98, "reference": 132.99, "t": base,
+             "url": "https://www.amazon.es/dp/B0FDQD4L48?tag=cazadores_errores-21", "title": "Plancha Faszin", "ended": 1},
+        ]}
+
+    def test_lista_solo_los_que_siguen_activos_y_ordenados(self):
+        now = datetime(2026, 10, 31, 22, 30, tzinfo=timezone.utc)  # 23:30 en Madrid
+        items = cn.summary_items(self.state(now), now, RULES, lambda url: LEFANT, lambda *_: None)
+        self.assertEqual([i["asin"] for i in items], ["B0G7YP6MXV"])  # el terminado no sale
+        text = cn.build_summary(items, now)
+        self.assertIn("LO MEJOR DEL DÍA", text)
+        self.assertIn("1️⃣", text)
+        self.assertIn("379,98 €", text)
+        self.assertIn("a las 23:30", text)
+        self.assertIn("tag=cazadores_errores-21", text)
+
+    def test_si_ha_subido_no_sale(self):
+        now = datetime(2026, 10, 31, 22, 30, tzinfo=timezone.utc)
+        dearer = LEFANT.replace('"price": "379.98"', '"price": "449.00"')
+        self.assertEqual(cn.summary_items(self.state(now), now, RULES, lambda url: dearer, lambda *_: None), [])
+
+    def test_solo_a_su_hora_y_una_vez(self):
+        out = []
+        args = SimpleNamespace(dry_run=True, test_private=False, ignore_limits=False)
+        cn.run_summary(args, CFG, {"posts": []}, datetime(2026, 10, 31, 15, 0, tzinfo=timezone.utc), log=out.append)
+        self.assertIn("no es la hora", out[-1])
+        state = {"posts": [], "summary_sent": "2026-10-31"}
+        cn.run_summary(args, CFG, state, datetime(2026, 10, 31, 22, 31, tzinfo=timezone.utc), log=out.append)
+        self.assertIn("ya enviado", out[-1])
+
+
 class Pasada(unittest.TestCase):
     def pages(self, detail_pages=None):
         detail_pages = detail_pages or {}
