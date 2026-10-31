@@ -541,8 +541,8 @@ def _place_product(canvas, photo_box, offer: dict) -> None:
                     else:
                         import photos
                         product = _trim_margins(source)
-                        panel_w = (photo_box[2] - photo_box[0]) - 16
-                        panel_h = (photo_box[3] - photo_box[1]) - 16
+                        panel_w = (photo_box[2] - photo_box[0]) - 56
+                        panel_h = (photo_box[3] - photo_box[1]) - 56
                         product = photos.fit_for_panel(product, panel_w, panel_h, cover=False)
                         product = ImageOps.contain(product, (panel_w, panel_h), method=Image.Resampling.LANCZOS)
                         canvas.paste(product, (
@@ -670,7 +670,7 @@ def create_price_card(offer: dict) -> Path:
 
     # Portrait photo on the left; an aligned information column keeps the offer easy to scan.
     photo_box = (48, 192, 568, 1032)
-    draw.rounded_rectangle(photo_box, radius=28, fill="#FAFAFA", outline="#ECEEEF", width=2)
+    draw.rounded_rectangle(photo_box, radius=28, fill="#FFFFFF", outline="#ECEEEF", width=2)
     _place_product(canvas, photo_box, offer)
     draw = ImageDraw.Draw(canvas)
 

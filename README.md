@@ -1,16 +1,28 @@
 # Caza Errores — ofertas en Telegram
 
-## Canal normal (`scan-generic.yml`)
+## Canal normal @cazachollos_com (solo Amazon, `canal_amazon.py`)
 
-Workflow **Canal normal @cazachollos_com**. Publica en [@cazachollos_com](https://t.me/cazachollos_com) (`generic.chat_id` en `config.json`) con el mismo bot que el premium. Cada post lleva una tarjeta generada con el mismo diseño que el canal antiguo (logo de Caza Chollos, PVP tachado, precio actual y descuento). No muestra reventa, ROI ni la temperatura del listado.
+Desde el 31/10/2026 el canal publica **solo Amazon.es** y lo ejecuta el Mac de Enrique, porque Amazon devuelve captcha a las lecturas desde los servidores de GitHub. El workflow antiguo (`scan-generic.yml`, Chollometro y otras tiendas) está pausado.
 
-Un bucle externo lo dispara con `workflow_dispatch` (no lleva cron). Cadencia recomendada: **cada 15 minutos entre las 08:00 y la 01:00** (Europe/Madrid). El propio script corta de 01:00 a 08:00, a 4 posts por hora y a 40 al día; cada pasada manda como máximo 1. Así el ritmo se queda en unos 3–4 posts por hora sin ráfagas.
+Reglas que no se saltan:
 
-Fuentes: RSS caliente y nuevo de Chollometro (se ordenan por temperatura, que no sale en el post) y las listas de Amazon ya usadas en Jimmyleaks. Entran todas las categorías, viajes incluidos. Se saltan caducados, sin precio, duplicados y los que no llegan a `generic.min_temperature` (80). La bajada mínima frente al PVP, si hay PVP fiable, es el 20 %. Si no hay PVP fiable, la tarjeta enseña solo el precio actual. En los viajes, el panel izquierdo usa una foto del destino (Wikimedia Commons a unos 1600 px o, si falla, la imagen principal de Wikipedia) y, si no hay destino reconocible, el logo. Las fotos de producto piden la versión grande (Amazon sin el sufijo de miniatura, Chollometro sin `/re/150x150/`). Si aun así no llena el panel, se amplía en CPU con FSRCNN y un enfoque suave; si el modelo no está, Lanczos. La tarjeta se guarda en JPEG de calidad 95. Memoria propia en `state/generic.json`.
+- Los chollos se buscan en la propia Amazon (listados con filtro de descuento de `amazon_channel.discovery_urls`).
+- El precio publicado es el de la ficha del producto, leído **dos veces**: al elegirlo y justo antes de enviarlo. Si cambia, no sale.
+- El descuento se calcula frente al **"Precio más bajo reciente"** que muestra Amazon (mínimo de los 30 días anteriores, obligatorio en la UE). Sin ese dato no hay rebaja verificable y no se publica. Nunca se usa el PVP.
+- Mínimo 40 % de descuento, precio de 8 € o más, vendido o enviado por Amazon, 4,0 estrellas y 30 opiniones, con stock y sin precio exclusivo Prime. Se ajusta en `config.json` → `amazon_channel`.
+- Enlace directo al producto: `https://www.amazon.es/dp/ASIN?tag=cazadores_errores-21`.
+- Cada pasada vuelve a mirar los posts de las últimas 48 h y, si el precio sube o se agota, añade al post «⛔ YA NO ESTÁ A ESTE PRECIO».
+- Máximo 3 posts por hora y 30 al día, en silencio de 01:00 a 08:00. Si Amazon pide captcha, la pasada se para sin publicar.
 
-`test_private` manda 2 o 3 ejemplos solo al chat del administrador y no guarda memoria. `dry_run` solo escribe el texto.
+En el Mac:
 
-Amazon sale siempre con `tag=cazadores_errores-21`. El resto de tiendas sale con el enlace directo, sin parámetros de afiliado ajenos. Si no se puede limpiar, no se publica. `store_affiliates` sigue disponible para una plantilla futura.
+```bash
+curl -fsSL https://raw.githubusercontent.com/enriquegarciamarketing-byte/caza-errores-telegram/main/mac/instalar.sh | bash
+```
+
+Instala en `~/CazaChollos`, pide el token del bot (se guarda en `.env`, fuera de git), hace una prueba sin enviar y otra que manda hasta 3 chollos solo a tu chat privado. No publica en el canal hasta ejecutar `bash ~/CazaChollos/mac/activar.sh`. Para parar: `bash ~/CazaChollos/mac/pausar.sh`. Registro en `~/CazaChollos/state/canal_amazon.log`.
+
+Pruebas a mano: `--dry-run` (no envía nada), `--test-private` (solo a tu chat), `--ignore-limits` (salta cupos y horario).
 
 ## Escáner automático (scan-deals.yml)
 
