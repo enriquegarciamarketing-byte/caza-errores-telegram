@@ -136,10 +136,20 @@ def estimate(cand: dict, rules: dict) -> dict | None:
     normal = cand.get("min30_before")
     if not normal or float(normal) <= 0:
         return None
+    if not known_brand(cand, rules):
+        return None  # una marca desconocida no tiene reventa que se pueda estimar
     category = premium.priority_info(cand, rules)["id"] or ""
     factor = float((conf.get("factors") or {}).get(category, conf.get("default_factor", 0.6)))
     return {"price": round(float(normal) * factor, 2), "normal": float(normal), "factor": factor,
             "category": category}
+
+
+def known_brand(cand: dict, rules: dict) -> bool:
+    text = wallapop.fold_text(f"{cand.get('brand') or ''} {cand.get('name') or ''} {cand.get('title') or ''}")
+    generic = [wallapop.fold_text(word) for word in rules.get("generic_brands") or []]
+    if any(word and word in wallapop.fold_text(cand.get("brand") or "") for word in generic):
+        return False
+    return any(wallapop.keyword_in(text, wallapop.fold_text(brand)) for brand in rules.get("brands") or [])
 
 
 def with_estimate(cand: dict, rules: dict, result: dict) -> dict:
@@ -154,9 +164,9 @@ def with_estimate(cand: dict, rules: dict, result: dict) -> dict:
     if not est:
         return result
     prices = [float(p) for p in result.get("prices") or [] if p]
-    resale = est["price"] if not prices else min(est["price"], float(statistics.median(prices)))
+    resale = est["price"] if not prices else min(est["price"], wallapop.market_quote(prices, market))
     buy = float(cand.get("price") or 0)
-    profit = resale - buy
+    profit = wallapop.net_resale(resale, cand, market) - buy
     roi = profit / buy if buy else -1
     floor = wallapop.roi_floor(buy, market)
     min_profit = float(market.get("min_profit_eur", 15))

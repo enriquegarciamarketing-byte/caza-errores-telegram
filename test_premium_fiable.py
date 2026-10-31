@@ -59,24 +59,44 @@ class Estimacion(unittest.TestCase):
 
     def test_sin_anuncios_estima_con_el_precio_normal(self):
         import resale_market
-        cand = {"name": "Robot aspirador Lefant M5 Pro", "title": "Robot aspirador Lefant M5 Pro", "brand": "Lefant",
-                "price": 379.98, "min30_before": 799.99}
+        cand = {"name": "Roborock Q7 Max robot aspirador", "title": "Roborock Q7 Max robot aspirador",
+                "brand": "Roborock", "price": 300.0, "min30_before": 800.0}
         result = resale_market.with_estimate(cand, self.rules(), {"ok": False, "count": 0, "prices": []})
         self.assertTrue(result["ok"])
         self.assertTrue(result["estimated"])
         self.assertEqual(result["source_label"], "ESTIMACIÓN")
-        self.assertAlmostEqual(result["price"], round(799.99 * 0.65, 2))
+        self.assertAlmostEqual(result["price"], 520.0)
+        # 520 € menos 5 % de regateo, 2 € de embalaje y 6 € por voluminoso = 486 €; beneficio 186 €.
+        self.assertAlmostEqual(result["profit"], 186.0)
         self.assertTrue(result["note"].startswith("Estimación: 65 % de 800 €"))
 
     def test_con_pocos_anuncios_usa_lo_mas_prudente(self):
         import resale_market
-        cand = {"name": "Robot aspirador Lefant", "title": "Robot aspirador Lefant", "price": 300, "min30_before": 800}
+        cand = {"name": "Roborock robot aspirador", "title": "Roborock robot aspirador", "brand": "Roborock",
+                "price": 300, "min30_before": 800}
         result = resale_market.with_estimate(cand, self.rules(), {"ok": False, "count": 2, "prices": [450, 470]})
-        self.assertEqual(result["price"], 460)  # la mediana de los anuncios es menor que 800 × 0,65 = 520
+        self.assertAlmostEqual(result["price"], 458.0)  # percentil 40 de los anuncios, menor que 800 × 0,65 = 520
+
+    def test_marca_desconocida_no_se_estima(self):
+        import resale_market
+        cand = {"name": "Robot aspirador XYZ", "title": "Robot aspirador XYZ", "brand": "XYZ", "price": 50,
+                "min30_before": 200}
+        verdict = {"ok": False, "count": 0, "prices": []}
+        self.assertIs(resale_market.with_estimate(cand, self.rules(), verdict), verdict)
+
+    def test_como_un_revendedor(self):
+        import wallapop
+        rules = self.rules()["wallapop"]
+        cand = {"name": "Corsair Vengeance 16GB", "price": 50}
+        result = wallapop.evaluate(cand, [80, 90, 100, 110, 200], rules)
+        self.assertAlmostEqual(result["price"], 96.0)  # percentil 40, no la media inflada por el de 200 €
+        self.assertAlmostEqual(result["profit"], 96 * 0.95 - 2 - 50)
+        bulky = wallapop.evaluate({"name": "Patinete eléctrico Xiaomi", "price": 50}, [80, 90, 100, 110], rules)
+        self.assertAlmostEqual(bulky["profit"], wallapop.percentile([80, 90, 100, 110], 0.4) * 0.95 - 8 - 50)
 
     def test_si_el_mercado_dice_que_no_la_estimacion_no_lo_salva(self):
         import resale_market
-        cand = {"name": "Robot aspirador Lefant", "price": 300, "min30_before": 800}
+        cand = {"name": "Roborock robot aspirador", "brand": "Roborock", "price": 300, "min30_before": 800}
         verdict = {"ok": False, "count": 6, "prices": [310] * 6, "reason": "ROI bajo"}
         self.assertIs(resale_market.with_estimate(cand, self.rules(), verdict), verdict)
 

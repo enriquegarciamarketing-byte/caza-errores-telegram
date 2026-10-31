@@ -189,6 +189,43 @@ def _without_outliers(prices: list[float], rules: dict) -> list[float]:
     return kept or prices
 
 
+def percentile(values: list[float], q: float) -> float:
+    ordered = sorted(values)
+    if not ordered:
+        return 0.0
+    pos = (len(ordered) - 1) * max(0.0, min(1.0, q))
+    low = int(pos)
+    high = min(low + 1, len(ordered) - 1)
+    return ordered[low] + (ordered[high] - ordered[low]) * (pos - low)
+
+
+def market_quote(prices: list[float], rules: dict) -> float:
+    """Precio al que pondría el anuncio un revendedor para venderlo en pocos días.
+
+    Los anuncios son precios pedidos, no ventas: con price_stat 'p40' se toma el percentil 40,
+    un poco por debajo de la mitad del mercado. 'median' y 'mean' siguen disponibles."""
+    stat = (rules.get("price_stat") or "median").lower()
+    if stat == "mean":
+        return float(statistics.mean(prices))
+    if stat.startswith("p") and stat[1:].isdigit():
+        return float(percentile(prices, int(stat[1:]) / 100))
+    return float(statistics.median(prices))
+
+
+def is_bulky(cand: dict, rules: dict) -> bool:
+    text = fold_text(f"{cand.get('name') or ''} {cand.get('title') or ''}")
+    return any(keyword_in(text, word) for word in rules.get("bulky_keywords") or [])
+
+
+def net_resale(quote: float, cand: dict, rules: dict) -> float:
+    """Lo que queda en el bolsillo: menos el regateo, el embalaje y el extra de lo voluminoso."""
+    haggle = float(rules.get("haggle_pct", 0) or 0)
+    fixed = float(rules.get("fixed_cost_eur", 0) or 0)
+    if is_bulky(cand, rules):
+        fixed += float(rules.get("bulky_cost_eur", 0) or 0)
+    return quote * (1 - haggle) - fixed
+
+
 def evaluate(cand: dict, prices: list[float], rules: dict, label: str = "Wallapop",
              reserved: int = 0, demand_known: bool = False) -> dict:
     """ROI = (reventa - precio) / precio. Hace falta un mínimo de anuncios, de ROI y de euros."""
@@ -203,9 +240,8 @@ def evaluate(cand: dict, prices: list[float], rules: dict, label: str = "Wallapo
         return {"ok": False, "transient": False, "count": len(kept), "reserved": reserved,
                 "reason": (f"sin señal de demanda en {label}: {reserved} reservas y {len(kept)} anuncios "
                            f"(hace falta una reserva o al menos {many})")}
-    stat = (rules.get("price_stat") or "median").lower()
-    resale = float(statistics.mean(kept) if stat == "mean" else statistics.median(kept))
-    profit = resale - buy
+    resale = market_quote(kept, rules)
+    profit = net_resale(resale, cand, rules) - buy
     roi = profit / buy if buy else -1
     min_roi = roi_floor(buy, rules)
     min_profit = float(rules.get("min_profit_eur", 15))

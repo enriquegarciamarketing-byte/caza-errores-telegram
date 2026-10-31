@@ -742,7 +742,7 @@ class WallapopTest(unittest.TestCase):
             "name": "CORSAIR Vengeance LPX DDR4 RAM 16GB (2x8GB) 3200MHz CL16",
             "brand": "Corsair",
             "title": "Memoria RAM",
-            "price": 64.2,
+            "price": 55.0,  # con regateo y embalaje, a 64,20 € el beneficio no llegaría a 25 €
         }
 
     def listings(self):
