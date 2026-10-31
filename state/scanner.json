@@ -784,6 +784,11 @@
    "price": 369.99,
    "t": 1793396981,
    "result": "solo -9% bajo la referencia"
+  },
+  "7xg5keO": {
+   "price": 32.5,
+   "t": 1793422504,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
