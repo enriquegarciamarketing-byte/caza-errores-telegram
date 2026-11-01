@@ -978,7 +978,7 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 121,
+ "last_listing_count": 118,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2873,6 +2873,30 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "|macbook air 13 m5 24gb 1tb azul cielo|macbook m5 air": {
+   "t": 1793528726.3423471,
+   "query": "macbook m5 air",
+   "prices": [
+    1285.0,
+    1200.0,
+    1450.0,
+    1300.0,
+    1080.0,
+    1075.0,
+    1700.0,
+    1350.0,
+    1600.0,
+    950.0,
+    15.0,
+    1199.0,
+    950.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 128203,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
