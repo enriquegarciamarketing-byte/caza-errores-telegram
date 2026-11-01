@@ -844,6 +844,16 @@
    "price": 32.99,
    "t": 1793526326,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "ROoY8De": {
+   "price": 109.0,
+   "t": 1793542481,
+   "result": "solo -8% bajo la referencia"
+  },
+  "72Yyj2G": {
+   "price": 29.94,
+   "t": 1793542481,
+   "result": "solo -0% bajo la referencia"
   }
  },
  "posts": [
@@ -978,12 +988,12 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 114,
+ "last_listing_count": 117,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
  "discovery_cache": {
-  "t": 1793520670.1046047,
+  "t": 1793542502.9023595,
   "titles": [
    "tarjeta regalo digital de roblox - 800 robux [incluye un objeto virtual exclusivo] [codigo de juego online]",
    "10€ playstation store tarjeta regalo | cuenta espanola [codigo por correo]",

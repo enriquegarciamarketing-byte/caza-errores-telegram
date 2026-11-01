@@ -1,17 +1,18 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 114 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36345 bytes, 30 chollos
+Listados: 117 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 458641 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 478043 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+Candidatos nuevos tras el filtro rápido: 2
+  ROoY8De · 109.0 € · media 129.98 · ref 118.97 → descartado (solo -8% bajo la referencia) · DJI Estabilizador para smartphones DJI Osmo Mobile 8, estabi
+  72Yyj2G · 29.94 € · media 39.24 · ref 30.01 → descartado (solo -0% bajo la referencia) · PUMA Zapatillas Club Light Unisex 39, Black White Gum Beige
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37747 bytes, 30 chollos
+  Chollometro «2 Mandos inalámbricos DATA FROG S80 Pro compatibles con Switch 2, Swit»: AliExpress 35.19 €
   Chollometro «Set LEGO Animal Crossing Un dia divertido con Tendo y Nendo 77059 (513»: Amazon 47.99 €
   Chollometro «adidas Men's Zapatilla VL Court 3.0 Zapatillas de Skateboard»: Amazon 29.12 €
-  Chollometro «Xiaomi Redmi Note 17 - 6/128GB, Pantalla AMOLED 6.99" 120Hz, Snapdrago»: AliExpress 147.1 €
-  Chollometro «DJI OSMO Pocket 3 [Envío desde España]»: AliExpress 221.43 €
-  Chollometro «Stellar blade Switch 2»: Miravia 46.89 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75038 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 59990 bytes, 30 chollos
+  cm-2051283 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · 2 Mandos inalámbricos DATA FROG S80 Pro compatibles con Swit
   cm-2050276 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Set LEGO Animal Crossing Un dia divertido con Tendo y Nendo 
   cm-2050786 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · adidas Men's Zapatilla VL Court 3.0 Zapatillas de Skateboard
-  cm-2051656 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Xiaomi Redmi Note 17 - 6/128GB, Pantalla AMOLED 6.99" 120Hz,
-  cm-2050825 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · DJI OSMO Pocket 3 [Envío desde España]
-  cm-2051364 · Miravia → descartado (no he podido comprobar el precio en la página de la tienda) · Stellar blade Switch 2
 Publicados en esta ejecución: 0
