@@ -246,6 +246,14 @@ class Manual(unittest.TestCase):
         with self.assertRaises(ValueError):
             cn.manual_deal(dict(self.SPEC, asin="XYZ"), RULES)
 
+    def test_enlace_corto(self):
+        spec = dict(self.SPEC, asin="", url="https://link.amazon/B0b6EnJWF")
+        final = "https://www.amazon.es/dp/B0HC84XR1P/ref=x?tag=cazadores_errores-21"
+        self.assertEqual(cn.manual_deal(spec, RULES, resolve=lambda u: final)["asin"], "B0HC84XR1P")
+        wrong = dict(self.SPEC, url="https://link.amazon/otro")
+        with self.assertRaises(ValueError):
+            cn.manual_deal(wrong, RULES, resolve=lambda u: "https://www.amazon.es/dp/B0OTROPROD")
+
     def test_imagen_del_repositorio(self):
         deal = cn.manual_deal(self.SPEC, RULES)
         card = cn.make_card(deal, RULES)

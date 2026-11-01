@@ -727,12 +727,22 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     return 0
 
 
-def manual_deal(spec: dict, rules: dict) -> dict:
-    """Chollo escrito a mano a partir de la ficha (captura). Comprueba que los datos tienen sentido."""
+def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
+    """Chollo escrito a mano a partir de la ficha (captura). Comprueba que los datos tienen sentido.
+
+    Acepta el ASIN, una URL amazon.es/dp/… o un enlace corto (link.amazon, amzn.eu, amzn.to), que se
+    resuelve aquí mismo; si el enlace corto lleva a otro producto que el ASIN indicado, no se publica."""
+    import affiliate
     asin = str(spec.get("asin") or "").strip().upper()
-    if not asin and spec.get("url"):
-        import affiliate
-        asin = affiliate.extract_asin(str(spec["url"])) or ""
+    url = str(spec.get("url") or "").strip()
+    if url:
+        final = url
+        if affiliate.is_short_link(url):
+            final = (resolve or affiliate.resolve_redirects)(url)
+        got = affiliate.extract_asin(final) or ""
+        if asin and got and got != asin:
+            raise ValueError(f"el enlace lleva al producto {got} y no a {asin}")
+        asin = asin or got
     if not ASIN_RE.fullmatch(asin):
         raise ValueError("falta un ASIN válido (10 caracteres) o una URL amazon.es/dp/…")
     title = str(spec.get("title") or "").strip()

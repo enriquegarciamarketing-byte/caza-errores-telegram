@@ -16,6 +16,10 @@ Amazon devuelve captcha a las lecturas desde GitHub, así que los datos salen de
 
 Pruebas desde Actions → «Canal normal @cazachollos_com» → Run workflow: `dry_run` (no envía nada) o `test_private` sin `dry_run` (hasta 3 ejemplos a tu chat, nunca al canal).
 
+### Post manual (`publicar-manual.yml`)
+
+Para publicar a mano un chollo concreto en @cazachollos_com: Actions → «Post manual @cazachollos_com» → Run workflow, con `datos` en JSON y `privado` marcado para probar en tu chat (desmárcalo para el canal). Campos: `url` (amazon.es/dp/…, link.amazon, amzn.eu) o `asin`, `title`, `price`, `reference` (el «precio más bajo de los últimos 30 días» que muestra Amazon), `image` (ruta en `images/manual/` o URL), `seen_at` (hora vista, HH:MM), `lines` (líneas extra) y opcionales `habitual`, `rating`, `reviews`, `historical_low`. Si el precio de referencia no es mayor que el actual o el enlace no es del producto, no se publica.
+
 ## Escáner automático (scan-deals.yml)
 
 **Fiabilidad (31/10/2026).** Amazon: el descuento se calcula frente al precio más bajo de los 30 días anteriores a la bajada (o la Amazon UE más barata), nunca frente a la media de 90 días ni el PVP; el enlace va al producto exacto (`/dp/ASIN` sacado del botón de compra de Jimmyleaks), nunca a una búsqueda por EAN; el precio se ve hace menos de 60 minutos y se relee justo antes de publicar. Otras tiendas: el enlace sale sin afiliados ajenos (si no se puede limpiar, no se publica) y el precio tiene que aparecer en la propia página de la tienda (`resale.external_require_verified`). Los posts de las últimas 48 h se revisan y, si suben o se agotan, se marcan «⛔ YA NO ESTÁ A ESTE PRECIO».
