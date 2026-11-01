@@ -60,7 +60,7 @@ jobs:
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
           set -o pipefail
           if [ "${{ github.event_name }}" = "schedule" ]; then ARGS+=(--minutes 35 --every 120 --busy-every 60); fi
-          python canal_nube.py "${ARGS[@]}" 2>&1 | tee state/canal_nube_last_run.log
+          python -u canal_nube.py "${ARGS[@]}" 2>&1 | tee state/canal_nube_last_run.log
 
       - name: Guardar memoria del canal normal
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)

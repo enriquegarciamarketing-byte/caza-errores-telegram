@@ -41,7 +41,7 @@ jobs:
           ARGS=(--resumen)
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private --ignore-limits); fi
           set -o pipefail
-          python canal_nube.py "${ARGS[@]}" 2>&1 | tee state/resumen_last_run.log
+          python -u canal_nube.py "${ARGS[@]}" 2>&1 | tee state/resumen_last_run.log
       - name: Guardar memoria
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
         run: tools/guardar_memoria.sh "Resumen de la noche" state/canal_nube.json state/resumen_last_run.log

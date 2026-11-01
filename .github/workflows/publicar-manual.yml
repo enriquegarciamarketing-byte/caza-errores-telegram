@@ -41,7 +41,7 @@ jobs:
           ARGS=(--manual "$DATOS")
           if [ "${{ inputs.privado }}" = "true" ]; then ARGS+=(--test-private); fi
           set -o pipefail
-          python canal_nube.py "${ARGS[@]}" 2>&1 | tee state/manual_last_run.log
+          python -u canal_nube.py "${ARGS[@]}" 2>&1 | tee state/manual_last_run.log
       - name: Guardar memoria
         if: always() && inputs.privado != true
         run: tools/guardar_memoria.sh "Post manual" state/canal_nube.json state/manual_last_run.log
