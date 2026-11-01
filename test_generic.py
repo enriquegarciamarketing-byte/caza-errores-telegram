@@ -287,7 +287,7 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn("name: Canal normal @cazachollos_com", normal)
         self.assertIn("group: telegram-canal-normal", normal)
         self.assertNotIn("telegram-scanner", normal)
-        self.assertIn("python canal_nube.py", normal)
+        self.assertIn("python -u canal_nube.py", normal)
         self.assertIn("state/canal_nube.json", normal)
         self.assertIn('inputs.test_private != true', normal)
         self.assertIn("tools/guardar_memoria.sh", normal)  # junta la memoria en vez de pisarla
