@@ -266,6 +266,51 @@ class MismoProducto(unittest.TestCase):
         self.assertFalse(cn.same_product("Philips OneBlade Intimate", "Philips OneBlade Pro 360"))
 
 
+class ManualDesdeJimmyleaks(unittest.TestCase):
+    def detail(self, points, price=249.0, low=249.0, modified="2026-10-31T15:30:00"):
+        return {"name": "MSI MAG 346CQDF E20 Monitor Gaming Curvo 34", "price": price, "in_stock": True,
+                "image": "https://img/x.jpg", "low": low, "avg90": 372.4, "modified": modified,
+                "rating": None, "reviews": None,
+                "series": [{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png", "points": points}]}
+
+    def run_spec(self, detail, spec=None):
+        import scanner as sc
+        old = sc.parse_detail
+        sc.parse_detail = lambda page: detail
+        try:
+            return cn.spec_from_jl(dict({"jl_id": "ROo6W62"}, **(spec or {})), REAL, NOW,
+                                   fetch=lambda url: "", resolve_asin=lambda jl: "B0TESTASIN", log=lambda *_: None)
+        finally:
+            sc.parse_detail = old
+
+    def test_sin_rebaja_frente_al_minimo_usa_la_media_90_bien_rotulada(self):
+        today = NOW.astimezone(cn.MADRID).date()
+        points = [[(today - timedelta(days=d)).isoformat(), 260.0 if d == 20 else 393.55] for d in range(90, 3, -1)]
+        points += [[today.isoformat(), 249.0]]  # hace 20 días estuvo a 260 €: frente al mínimo solo -4 %
+        spec = self.run_spec(self.detail(sorted(points)))
+        self.assertEqual(spec["ref_kind"], "media90")
+        deal = cn.manual_deal(spec, REAL)
+        caption = cn.build_caption(deal, "https://www.amazon.es/dp/B0TESTASIN?tag=x", REAL)
+        self.assertIn("frente a su precio medio de los últimos 90 días", caption)
+        self.assertIn("Su precio más bajo de los 30 días anteriores fue 260,00", caption)
+        self.assertEqual(spec["seen_at"], "16:30")
+
+    def test_con_rebaja_real_frente_al_minimo_usa_el_minimo(self):
+        today = NOW.astimezone(cn.MADRID).date()
+        points = [[(today - timedelta(days=d)).isoformat(), 393.55] for d in range(90, 0, -1)] + [[today.isoformat(), 249.0]]
+        spec = self.run_spec(self.detail(points))
+        self.assertNotIn("ref_kind", spec)
+        self.assertEqual(spec["reference"], 393.55)
+
+    def test_precio_cambiado_o_viejo_no_se_publica(self):
+        today = NOW.astimezone(cn.MADRID).date()
+        points = [[(today - timedelta(days=40)).isoformat(), 393.55], [today.isoformat(), 249.0]]
+        with self.assertRaises(ValueError):
+            self.run_spec(self.detail(points), {"price": 239.0})
+        with self.assertRaises(ValueError):
+            self.run_spec(self.detail(points, modified="2026-10-31T11:00:00"))
+
+
 class Resumen(unittest.TestCase):
     def state(self, now):
         base = int(now.timestamp()) - 3600

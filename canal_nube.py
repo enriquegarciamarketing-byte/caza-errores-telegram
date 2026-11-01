@@ -483,9 +483,12 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     seen = datetime.fromtimestamp(deal["seen_ts"], timezone.utc).astimezone(MADRID)
     lines = [HEADERS[badge_for(pct, rules)], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", ""]
     lines.append(f"💰 <b>{e(euro(deal['price']))}</b>   <s>{e(euro(deal['reference']))}</s>")
-    lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio más bajo de los 30 días anteriores")
+    if deal.get("ref_kind") == "media90":
+        lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio medio de los últimos 90 días")
+    else:
+        lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio más bajo de los 30 días anteriores")
     habitual = float(deal.get("median_90") or 0)
-    if habitual > float(deal["reference"]) * 1.10:
+    if deal.get("ref_kind") != "media90" and habitual > float(deal["reference"]) * 1.10:
         lines.append(f"🔻 <b>-{round(discount_pct(deal['price'], habitual))} %</b> frente a su precio habitual "
                      f"de los últimos 90 días ({e(euro(habitual))})")
     lines.append(f"🤑 Te ahorras <b>{e(euro(deal['reference'] - deal['price']))}</b>")
@@ -526,7 +529,7 @@ def make_card(deal: dict, rules: dict) -> Path:
         "category": badge_for(deal["discount"], rules),
         "current": deal["price"],
         "reference": deal["reference"],
-        "ref_label": "MÍNIMO 30 DÍAS ANTES",
+        "ref_label": "MEDIA 90 DÍAS" if deal.get("ref_kind") == "media90" else "MÍNIMO 30 DÍAS ANTES",
         "logo_path": DEAL_LOGO,
         "store": "Amazon",
         "days": 90,
@@ -867,8 +870,59 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
         "historical_low": bool(spec.get("historical_low")), "rating": spec.get("rating"),
         "reviews": spec.get("reviews"), "image": spec.get("image") or "", "seen_ts": int(time.time()),
         "seen_hhmm": spec.get("seen_at") or "", "extra_lines": list(spec.get("lines") or []),
-        "interest": 0, "interest_label": "",
+        "interest": 0, "interest_label": "", "ref_kind": spec.get("ref_kind") or "",
     }
+
+
+def spec_from_jl(spec: dict, rules: dict, now: datetime, fetch=None, resolve_asin=None, log=print) -> dict:
+    """Completa un post manual con la ficha de Jimmyleaks: precio y stock de ahora, ASIN, foto, opiniones e historial.
+
+    La referencia es el mínimo de los 30 días anteriores a la bajada si da una rebaja de al menos un 10 %;
+    si no, el precio medio de los 90 días, y el post lo dice así. Si el precio ya no es el indicado, no se publica."""
+    fetch = fetch or http_get
+    jl_id = str(spec["jl_id"]).strip()
+    detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{jl_id}/"))
+    price = detail.get("price")
+    if price is None or not detail.get("in_stock"):
+        raise ValueError("sin precio o sin stock en la ficha ahora mismo")
+    if spec.get("price") is not None and abs(float(spec["price"]) - float(price)) > 0.009:
+        raise ValueError(f"el precio ha cambiado ({spec['price']} → {price})")
+    asin = spec.get("asin") or (resolve_asin or asin_from_jl)(jl_id)
+    if not asin:
+        raise ValueError("no he podido sacar el ASIN de Amazon")
+    hist = history_reference(amazon_series(detail.get("series")), float(price), now.astimezone(MADRID).date())
+    min30 = hist.get("min_30") if hist.get("ok") else None
+    avg90 = (hist.get("reference") if hist.get("ok") else None) or detail.get("avg90")
+    out = dict(spec, asin=asin, price=float(price), image=spec.get("image") or detail.get("image") or "",
+               title=spec.get("title") or detail.get("name") or "")
+    if min30 and discount_pct(float(price), min30) >= 10:
+        out.update(reference=float(min30), habitual=float(avg90 or 0))
+    elif avg90 and float(avg90) > float(price):
+        out.update(reference=float(avg90), ref_kind="media90")
+        if min30:  # transparencia: si hace poco estuvo cerca de este precio, se dice
+            out["lines"] = [f"ℹ️ Su precio más bajo de los 30 días anteriores fue {euro(float(min30))}"] + \
+                list(out.get("lines") or [])[:2]
+    else:
+        raise ValueError(f"sin rebaja real (mínimo 30 días {min30}, media 90 días {avg90})")
+    low = detail.get("low")
+    out.setdefault("historical_low", bool(low and float(price) <= float(low) + 0.009))
+    out.setdefault("rating", detail.get("rating"))
+    out.setdefault("reviews", detail.get("reviews"))
+    checked = None
+    try:
+        checked = datetime.fromisoformat(str(detail.get("modified")).replace("Z", "+00:00"))
+        checked = checked if checked.tzinfo else checked.replace(tzinfo=timezone.utc)
+    except ValueError:
+        pass
+    if checked is None:
+        raise ValueError("la ficha no dice cuándo se comprobó el precio")
+    age = (now - checked).total_seconds() / 60
+    if age > float(rules.get("manual_max_price_age_minutes") or 180):
+        raise ValueError(f"precio comprobado hace {age:.0f} min: demasiado viejo para publicarlo")
+    if not out.get("seen_at"):
+        out["seen_at"] = f"{checked.astimezone(MADRID):%H:%M}"
+    log(f"Ficha {jl_id}: {price} € · mínimo 30 días {min30} · media 90 días {avg90} · ASIN {asin}")
+    return out
 
 
 def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) -> int:
@@ -878,8 +932,10 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
         return 2
     try:
         spec = json.loads(args.manual)
+        if spec.get("jl_id"):
+            spec = spec_from_jl(spec, rules, now, log=log)
         deal = manual_deal(spec, rules)
-    except (ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+    except (ValueError, KeyError, TypeError, json.JSONDecodeError, OSError) as exc:
         log(f"Post manual: datos no válidos ({exc}).")
         return 2
     url = f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['tag']}"
