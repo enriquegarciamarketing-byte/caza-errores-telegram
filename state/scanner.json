@@ -864,6 +864,11 @@
    "price": 32.99,
    "t": 1793554506,
    "result": "solo -8% bajo la referencia"
+  },
+  "MKydv04": {
+   "price": 549.0,
+   "t": 1793569777,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -998,7 +1003,7 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 113,
+ "last_listing_count": 115,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
