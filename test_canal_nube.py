@@ -142,6 +142,15 @@ class Interes(unittest.TestCase):
         self.assertEqual(cn.interest("Samsung televisor smart tv 55", REAL)["min_discount"], 20)
         self.assertIsNone(cn.interest("Rowenta Intense Comfort calefactor", REAL).get("min_discount"))
 
+    def test_la_categoria_la_marca_el_arranque_del_titulo(self):
+        wmf = cn.interest("WMF Atria - Cubertería 60 piezas 12 comensales acero Cromargan, apto para lavavajillas", REAL)
+        self.assertLess(wmf["score"], 90, "una cubertería no es un electrodoméstico")
+        self.assertIsNone(wmf.get("min_discount"))
+        coche = cn.interest("ISAMUTO Arrancador de Coche 3000A con Compresor, Power Bank para cargar el móvil", REAL)
+        self.assertLess(coche["score"], 90)
+        self.assertEqual(cn.interest("Cecotec, Robot Aspirador Conga 2290 Ultra, láser", REAL)["score"], 100)
+        self.assertEqual(cn.interest("GTPLAYER Silla de Gaming, Silla de Oficina con Cojín", REAL)["score"], 95)
+
     def test_cafe_soluble_no_es_una_cafetera(self):
         self.assertTrue(cn.interest("Nescafé Classic café soluble 20 bolsitas", REAL)["blocked"])
 
@@ -238,6 +247,23 @@ class JuntarMemoria(unittest.TestCase):
         self.assertEqual(merged["summary_sent"], "2026-10-31")
         self.assertEqual(merged["admin_chat"], 1)
         self.assertTrue(cn.recently_posted(merged, "B0DY1HFV3W", 118.71, datetime.fromtimestamp(1000, timezone.utc), REAL))
+
+
+class MismoProducto(unittest.TestCase):
+    def test_otro_color_del_mismo_robot_no_se_repite(self):
+        posted = {"asin": "B0GHMV8ML5", "price": 369.99, "t": int(NOW.timestamp()) - 86400,
+                  "title": "roborock Qrevo S Pro Set Robot Aspirador (Versión Mejorada del QV 35A) Succión de 18500 Pa"}
+        state = {"posts": [posted]}
+        title = "roborock Qrevo S Pro Set Robot Aspirador (Versión Mejorada del QV)"
+        self.assertTrue(cn.recently_posted(state, "B0GHN3V6BP", 369.99, NOW, REAL, title))
+        self.assertFalse(cn.recently_posted(state, "B0GHN3V6BP", 320.0, NOW, REAL, title), "si baja un 10 % más, sí")
+
+    def test_modelos_distintos_de_la_misma_marca_si_salen(self):
+        state = {"posts": [{"asin": "B0G81F3HSR", "price": 329.98, "t": int(NOW.timestamp()) - 3600,
+                            "title": "Lefant Robot Aspirador y Friegasuelos con Base 4 en 1 de Autovaciado M3 MAX"}]}
+        self.assertFalse(cn.recently_posted(state, "B0G7YP6MXV", 379.98, NOW, REAL,
+                                            "Lefant M5 Pro Robot Aspirador y Fregasuelos con Base de Autovaciado"))
+        self.assertFalse(cn.same_product("Philips OneBlade Intimate", "Philips OneBlade Pro 360"))
 
 
 class Resumen(unittest.TestCase):

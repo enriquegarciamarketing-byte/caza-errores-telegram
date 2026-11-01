@@ -16,6 +16,7 @@ el precio de Amazon.es producto a producto. Reglas que no se saltan:
 from __future__ import annotations
 
 import argparse
+import difflib
 import html
 import json
 import os
@@ -266,23 +267,51 @@ def discount_pct(price: float, reference: float | None) -> float:
     return (reference - price) / reference * 100
 
 
+def title_head(title: str) -> str:
+    """Marca, modelo y tipo de producto: el título hasta la primera coma (o barra) tras 25 caracteres."""
+    cut = len(title)
+    for mark in (",", " | ", " – ", " — "):
+        at = title.find(mark, 25)
+        if at != -1:
+            cut = min(cut, at)
+    return title[:min(cut, 90)]
+
+
 def interest(title: str, rules: dict) -> dict:
     """Interés del producto para el público general: {'score', 'label', 'blocked'}.
 
     Lo bloqueado (consumibles, tornillería, papelería, ropa interior…) nunca sale. Lo que más se compra
-    online (móviles, aspiradoras, cafeteras, electrodomésticos, muebles…) puntúa más y sale antes."""
+    online (móviles, aspiradoras, cafeteras, electrodomésticos, muebles…) puntúa más y sale antes.
+    La categoría se decide por el arranque del título (qué es el producto). Si la palabra clave solo
+    aparece en la descripción ('apto para lavavajillas', 'carga tu móvil'), cuenta como categoría normal
+    y nunca como estrella: así una cubertería no sale con los cortes de un electrodoméstico."""
     conf = rules.get("interest") or {}
-    folded = fold(title)
-    has = lambda word: re.search(rf"\b{re.escape(fold(word))}\b", folded) is not None
+
+    def matcher(text: str):
+        folded = fold(text)
+        return lambda word: re.search(rf"\b{re.escape(fold(word))}\b", folded) is not None
+
+    has = matcher(title)
     for word in list(conf.get("block") or []) + list(rules.get("block_keywords") or []):
         if has(word):
             return {"score": 0, "label": "", "blocked": word}
-    best = {"score": 0, "label": "", "blocked": ""}
-    for tier in conf.get("tiers") or []:
-        if tier.get("score", 0) > best["score"] and any(has(word) for word in tier.get("keywords") or []):
-            best = {"score": int(tier["score"]), "label": tier.get("label") or "", "blocked": "",
-                    "min_discount": tier.get("min_discount")}
-    return best
+
+    def best_in(check) -> dict:
+        best = {"score": 0, "label": "", "blocked": ""}
+        for tier in conf.get("tiers") or []:
+            if tier.get("score", 0) > best["score"] and any(check(word) for word in tier.get("keywords") or []):
+                best = {"score": int(tier["score"]), "label": tier.get("label") or "", "blocked": "",
+                        "min_discount": tier.get("min_discount")}
+        return best
+
+    head = best_in(matcher(title_head(title)))
+    if head["score"]:
+        return head
+    full = best_in(has)
+    if full["score"]:
+        full["score"] = min(full["score"], int(conf.get("description_max_score", 85)))
+        full["min_discount"] = None
+    return full
 
 
 def deal_rank(deal: dict) -> float:
@@ -398,13 +427,25 @@ def quota_reason(state: dict, now: datetime, rules: dict, already: int = 0) -> s
     return ""
 
 
-def recently_posted(state: dict, asin: str, price: float, now: datetime, rules: dict) -> bool:
+def same_product(title_a: str, title_b: str) -> bool:
+    """Misma ficha con otro ASIN (otro color, pack o vendedor): el principio del título casi idéntico.
+
+    Se compara el arranque del título, que es donde Amazon pone marca y modelo; así 'Lefant M3 MAX' y
+    'Lefant M5 Pro' siguen siendo productos distintos y 'Qrevo S Pro Set (QV 35A)' en dos colores no."""
+    a, b = fold(title_a)[:60], fold(title_b)[:60]
+    if len(a) < 20 or len(b) < 20:
+        return False
+    return difflib.SequenceMatcher(None, a, b).ratio() >= 0.93
+
+
+def recently_posted(state: dict, asin: str, price: float, now: datetime, rules: dict, title: str = "") -> bool:
+    """Ya salió hace poco (mismo ASIN, o el mismo producto con otra ficha) y no ha bajado lo bastante más."""
     window = float(rules["repost_after_days"]) * 86400
     for post in reversed(state.get("posts") or []):
-        if post.get("asin") != asin:
-            continue
         if now.timestamp() - (post.get("t") or 0) > window:
-            return False
+            break
+        if post.get("asin") != asin and not (title and same_product(title, post.get("title") or "")):
+            continue
         before = float(post.get("price") or 0)
         return ((before - price) / before * 100 if before else 0) < float(rules["repost_min_extra_drop_pct"])
     return False
@@ -676,7 +717,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                 why = "no he podido sacar el producto exacto de Amazon (ASIN)"
             else:
                 deal["asin"] = asin
-                if recently_posted(state, asin, deal["price"], now, rules):
+                if recently_posted(state, asin, deal["price"], now, rules, deal["title"]):
                     why = "ya publicado hace poco y no ha bajado más"
         if why and remember:
             # Solo se aparta lo descartado. Lo aprobado que no cabe en esta pasada sale en la siguiente.

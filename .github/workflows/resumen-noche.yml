@@ -18,7 +18,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: telegram-canal-normal
+  # Grupo propio: así una ejecución larga del canal (o una en cola) nunca retrasa ni cancela el resumen.
+  # La memoria se junta al guardar, y el canal ya no publica desde las 23:50.
+  group: telegram-resumen-noche
   cancel-in-progress: false
 
 jobs:
