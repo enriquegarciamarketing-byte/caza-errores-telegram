@@ -1,20 +1,20 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
+Listados: 117 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 456116 bytes, 30 ASIN, 30 títulos
   Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 341354 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36232 bytes, 30 chollos
-  Chollometro «DJI Neo2 Drone Fly Camera Drone 4K»: AliExpress 129.18 €
-  Chollometro «Control resonant ps5»: AliExpress 41.82 €
-  Chollometro «Xiaomi POCO X8 - 12/256GB, 6.83" AMOLED 120Hz, Snapdragon 6s Gen 4, Cá»: AliExpress 182.0 €
-  Chollometro «Mini PC Ryzen 7 255H -780M - 24GB RAM DDR5 - 512GB SSD»: AliExpress 305.28 €
-  Chollometro «Lies of P: Complete Edition - Switch 2 Version - Version España»: AliExpress 44.26 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 61221 bytes, 30 chollos
-  cm-2051036 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · DJI Neo2 Drone Fly Camera Drone 4K
-  cm-2051096 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Control resonant ps5
-  cm-2051145 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Xiaomi POCO X8 - 12/256GB, 6.83" AMOLED 120Hz, Snapdragon 6s
-  cm-2051059 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Mini PC Ryzen 7 255H -780M - 24GB RAM DDR5 - 512GB SSD
-  cm-2051028 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Lies of P: Complete Edition - Switch 2 Version - Version Esp
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 34726 bytes, 30 chollos
+  Chollometro «Garmin Forerunner 255 de 46 mm»: AliExpress 106.0 €
+  Chollometro «Ciclocomputador Garmin Edge 540»: AliExpress 118.88 €
+  Chollometro «Nintendo Switch 2 + Pokémon Pokopia ( Versión EU)»: AliExpress 382.19 €
+  Chollometro «DJI Osmo Pocket 3 CMOS (Envio desde España)»: AliExpress 215.75 €
+  Chollometro «SSD GE8700 4TB NVMe M.2 PCIe 4.0 (hasta 7300 MB/s) por 204,81€ con cup»: AliExpress 204.81 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 62330 bytes, 30 chollos
+  cm-2049754 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Garmin Forerunner 255 de 46 mm
+  cm-2051029 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Ciclocomputador Garmin Edge 540
+  cm-2051081 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Nintendo Switch 2 + Pokémon Pokopia ( Versión EU)
+  cm-2051206 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · DJI Osmo Pocket 3 CMOS (Envio desde España)
+  cm-2051218 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · SSD GE8700 4TB NVMe M.2 PCIe 4.0 (hasta 7300 MB/s) por 204,8
 Publicados en esta ejecución: 0
