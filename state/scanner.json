@@ -834,6 +834,11 @@
    "price": 33.59,
    "t": 1793489804,
    "result": "valoraciones flojas (3.6 / 3)"
+  },
+  "1GNqvdm": {
+   "price": 36.4,
+   "t": 1793503336,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -968,7 +973,7 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 113,
+ "last_listing_count": 114,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
