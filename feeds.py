@@ -197,7 +197,9 @@ def _from_feed(entry: dict, cfg: dict, watch: list[dict], page: str) -> dict | N
         "id": f"cm-{thread.group(1) if thread else wallapop.product_cache_key(entry, entry.get('title') or '')[:24]}",
         "name": entry["title"],
         "title": entry["title"],
-        "brand": entry.get("merchant") or "",
+        # La tienda no es la marca: si se mezcla, la búsqueda en Wallapop sale vacía y el título del post sale mal.
+        "brand": "",
+        "merchant": entry.get("merchant") or "",
         "price": entry.get("price"),
         "image": entry.get("image") or "",
         "store_url": store_url,

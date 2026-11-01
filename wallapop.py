@@ -89,6 +89,8 @@ def query_keywords(cand: dict, limit: int = 3) -> str:
     digits = [token for token in name if any(ch.isdigit() for ch in token)]
     # Un «1» suelto (Air Force 1) no identifica el modelo y tira anuncios que no lo llevan.
     strong = [token for token in digits if len(token) >= 2]
+    # Primero los códigos de modelo con letras y números (m5, s24, rtx5050) y luego los números sueltos (13).
+    strong.sort(key=lambda token: not any(ch.isalpha() for ch in token))
     words = [token for token in name if token not in digits]
     picked = list(brand[:2])
     for token in (strong[:1] + words[:1]):

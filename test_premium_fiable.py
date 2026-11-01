@@ -114,6 +114,25 @@ class Estimacion(unittest.TestCase):
         self.assertNotIn("Reventa en", text)
 
 
+class BusquedaReventa(unittest.TestCase):
+    def test_la_tienda_no_entra_en_la_busqueda_y_el_modelo_si(self):
+        import wallapop
+        cand = {"brand": "", "name": "MacBook Air 13 M5 24GB 1TB Azul cielo", "title": "MacBook Air 13 M5 24GB 1TB Azul cielo"}
+        query = wallapop.query_keywords(cand, 3)
+        self.assertIn("m5", query.split())
+        self.assertIn("macbook", query.split())
+        self.assertNotIn("shopdutyfree", query)
+
+    def test_chollometro_no_usa_la_tienda_como_marca(self):
+        page = ('{"linkCloakedItemMainButton":"https:\\/\\/www.chollometro.com\\/visit\\/thread\\/1"}')
+        entry = {"title": "MacBook Air 13 M5 24GB 1TB", "merchant": "Shopdutyfree.Es", "price": 1526.9,
+                 "link": "https://www.chollometro.com/ofertas/macbook-2051470", "image": "x", "temperature": 200}
+        with mock.patch.object(feeds, "resolve_deal_url", return_value="https://www.shopdutyfree.es/producto/macbook-air-m5"):
+            cand = feeds._from_feed(entry, CFG, [], page)
+        self.assertEqual(cand["brand"], "")
+        self.assertEqual(cand["merchant"], "Shopdutyfree.Es")
+
+
 class Seguimiento(unittest.TestCase):
     def test_marca_el_post_si_sube_el_precio(self):
         now = datetime(2026, 10, 31, 17, 0, tzinfo=timezone.utc)
