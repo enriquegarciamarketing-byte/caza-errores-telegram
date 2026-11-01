@@ -1,0 +1,83 @@
+{
+ "link": "https://link.amazon/B0b6EnJWF",
+ "final": "https://www.amazon.es/dp/B0HC84XR1P/ref=cm_sw_r_as_gl_api_gl_i_dl_9SECMMHCKRD4NV45SBM9?linkCode=ml1&tag=cazadores_errores-21&linkId=62a07e909e5f8aa10c0d4a5d3b5bac84&gaOptInStatus=true&ascsubtag=srctok-4c83645855846493&btn_type=ss&btn_ref=srctok-4c83645855846493",
+ "asin": "B0HC84XR1P",
+ "tags": [
+  "cazadores_errores-21"
+ ],
+ "amazon_status": 200,
+ "amazon_captcha": true,
+ "amazon_title": null,
+ "jl_candidates": [
+  {
+   "jl": "7nAewQv",
+   "asin": "B0DGGB67QG",
+   "title": "Suave y Liso Mascarilla de Keratina para Pelo Encrespado, 3x300ml",
+   "price": 9.99,
+   "ts": 1793520016
+  },
+  {
+   "jl": "1bZkLoo",
+   "asin": "B07GB8JPL7",
+   "title": "Prima Latte II Espresso | Latte and Cappuccino | Bomba profesional de 15 bares y",
+   "price": 102.87,
+   "ts": 1793520016
+  },
+  {
+   "jl": "1DNrW27",
+   "asin": "B0CL2TTWZM",
+   "title": "Hombre VL COURT 3.0 Shoes, Legend Ink / Cloud White / Cloud White, 37 1/3 EU",
+   "price": 29.12,
+   "ts": 1793519116
+  },
+  {
+   "jl": "72DpGG1",
+   "asin": "B001AMKVRO",
+   "title": "- Puzzle 100 Piezas de Madera | El Maravilloso Mundo Disney | Princesas y Person",
+   "price": 6.99,
+   "ts": 1793518217
+  },
+  {
+   "jl": "7gmNada",
+   "asin": "B0F1X5T495",
+   "title": "Mujer Grand Court Lo Shoes, FTWR White/Core Black/Gum 3, 38 EU",
+   "price": 30.07,
+   "ts": 1793518216
+  },
+  {
+   "jl": "RNXKKBL",
+   "asin": "B0DL9C1SJ8",
+   "title": ", Minix Collectible Figurines, Juego de fútbol Real Madrid, Juego con 5 Jugadore",
+   "price": 19.99,
+   "ts": 1793515085
+  },
+  {
+   "jl": "RNmDY67",
+   "asin": "B0FY77BHSP",
+   "title": "Gilpin - Gafas de sol, color negro",
+   "price": 14.39,
+   "ts": 1793515085
+  },
+  {
+   "jl": "1BKBE0g",
+   "asin": "B0F4CZ4WDK",
+   "title": "TJM Slim - Camiseta para Hombre, 2 Unidades, diseño de Bandera ESS EXTDM0DM22143",
+   "price": 28.54,
+   "ts": 1793517185
+  },
+  {
+   "jl": "MWkldmM",
+   "asin": "B0F1XFPMHY",
+   "title": "Unisex niños Advantage Base 2.0 Children Shoes, FTWR White/FTWR White/Lucid Ray ",
+   "price": 40.0,
+   "ts": 1793516286
+  },
+  {
+   "jl": "1vrEPDG",
+   "asin": "B0FBY3NP47",
+   "title": "Nano Gym, Zapatillas de Deporte Hombre, Digital Lime Black, 42 EU",
+   "price": 66.0,
+   "ts": 1793518376
+  }
+ ]
+}
