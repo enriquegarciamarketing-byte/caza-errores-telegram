@@ -859,6 +859,11 @@
    "price": 84.99,
    "t": 1793547392,
    "result": "solo -15% bajo la referencia"
+  },
+  "1pDd8G1": {
+   "price": 32.99,
+   "t": 1793554506,
+   "result": "solo -8% bajo la referencia"
   }
  },
  "posts": [
@@ -993,7 +998,7 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 113,
+ "last_listing_count": 114,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
