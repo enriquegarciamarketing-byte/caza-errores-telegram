@@ -228,6 +228,30 @@ def discount_pct(price: float, reference: float | None) -> float:
     return (reference - price) / reference * 100
 
 
+def interest(title: str, rules: dict) -> dict:
+    """Interés del producto para el público general: {'score', 'label', 'blocked'}.
+
+    Lo bloqueado (consumibles, tornillería, papelería, ropa interior…) nunca sale. Lo que más se compra
+    online (móviles, aspiradoras, cafeteras, electrodomésticos, muebles…) puntúa más y sale antes."""
+    conf = rules.get("interest") or {}
+    folded = fold(title)
+    has = lambda word: re.search(rf"\b{re.escape(fold(word))}\b", folded) is not None
+    for word in list(conf.get("block") or []) + list(rules.get("block_keywords") or []):
+        if has(word):
+            return {"score": 0, "label": "", "blocked": word}
+    best = {"score": 0, "label": "", "blocked": ""}
+    for tier in conf.get("tiers") or []:
+        if tier.get("score", 0) > best["score"] and any(has(word) for word in tier.get("keywords") or []):
+            best = {"score": int(tier["score"]), "label": tier.get("label") or "", "blocked": ""}
+    return best
+
+
+def deal_rank(deal: dict) -> float:
+    """Orden de publicación: interés, descuento y euros ahorrados (con tope, para no premiar solo lo caro)."""
+    saved = max(0.0, float(deal.get("reference") or 0) - float(deal.get("price") or 0))
+    return float(deal.get("interest") or 0) + float(deal.get("discount") or 0) + min(saved, 200.0) / 4
+
+
 def evaluate(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str, dict]:
     """Motivo de descarte (o '') y los datos del chollo ya calculados."""
     title = detail.get("name") or item.get("title") or ""
@@ -267,10 +291,16 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str,
         return f"valoración baja ({rating})", {}
     if reviews < int(rules["min_reviews"]):
         return f"pocas opiniones ({reviews})", {}
-    folded = fold(title)
-    for word in rules.get("block_keywords") or []:
-        if re.search(rf"\b{re.escape(fold(word))}\b", folded):
-            return f"categoría excluida («{word}»)", {}
+    taste = interest(title, rules)
+    if taste["blocked"]:
+        return f"poco interés («{taste['blocked']}»)", {}
+    conf = rules.get("interest") or {}
+    if taste["score"] <= 0 and conf.get("tiers"):
+        any_pct = float(conf.get("any_category_min_discount", 101))
+        any_price = float(conf.get("any_category_min_price_eur", 0))
+        if pct + 1e-9 < any_pct or price < any_price:
+            return (f"categoría de poco interés (fuera de las top solo sale con -{any_pct:.0f}% "
+                    f"y desde {any_price:.0f} €)"), {}
     if not detail.get("image"):
         return "sin foto", {}
     low = detail.get("low")
@@ -279,6 +309,7 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str,
         "median_90": hist["reference"],
         "discount": pct, "historical_low": bool(low and price <= low + 0.009), "rating": rating,
         "reviews": reviews, "image": detail["image"], "seen_ts": int(item["ts"]), "brand": item.get("brand") or "",
+        "interest": taste["score"], "interest_label": taste["label"],
     }
 
 
@@ -424,12 +455,14 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
             log(f"  No he podido marcar el post {post['message_id']}: {exc}")
 
 
-def listing_priority(item: dict) -> tuple:
-    """Qué fichas abrir antes: mínimos históricos y grandes bajadas en el listado, y luego las más recientes."""
+def listing_priority(item: dict, rules: dict | None = None) -> tuple:
+    """Qué fichas abrir antes: lo que más interesa, luego mínimos históricos y grandes bajadas, luego lo reciente."""
     verdict = fold(item.get("verdict") or "")
     price, was = item.get("price") or 0, item.get("was") or 0
     drop = (was - price) / was if was and was > price else 0
-    return ("minimo historico" in verdict, round(drop, 2), item.get("ts") or 0)
+    taste = interest(f"{item.get('brand') or ''} {item.get('title') or ''}", rules or {})
+    score = -1 if taste["blocked"] else taste["score"]
+    return (score, "minimo historico" in verdict, round(drop, 2), item.get("ts") or 0)
 
 
 # ------------------------------------------------------------------ pasada
@@ -535,7 +568,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
             if same_price and now.timestamp() - (last.get("t") or 0) < recheck:
                 continue  # ya descartado a este mismo precio; si baja más, se vuelve a mirar
             pool.setdefault(item["id"], item)
-    ordered = sorted(pool.values(), key=listing_priority, reverse=True)
+    ordered = sorted(pool.values(), key=lambda item: listing_priority(item, rules), reverse=True)
+    ordered = [item for item in ordered if listing_priority(item, rules)[0] >= 0]
     log(f"Candidatos a revisar: {len(ordered)}")
     approved = []
     for item in ordered[: int(rules["max_details_per_run"])]:
@@ -562,7 +596,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
             continue
         log(f"  ✓ {deal['asin']} {label}: {euro(deal['price'])} (-{deal['discount']:.0f}% vs {euro(deal['reference'])})")
         approved.append((item, deal))
-    approved.sort(key=lambda pair: pair[1]["discount"], reverse=True)
+    approved.sort(key=lambda pair: deal_rank(pair[1]), reverse=True)
     return approved
 
 
@@ -621,7 +655,9 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     local = now.astimezone(MADRID)
     hour, minute = (int(x) for x in str(rules.get("summary_time") or "23:30").split(":"))
     if not args.ignore_limits:
-        if local.hour != hour:
+        minutes = local.hour * 60 + local.minute
+        target_min = hour * 60 + minute
+        if not (target_min <= minutes < target_min + 60):
             log(f"Resumen: no es la hora ({local:%H:%M}); se manda a las {hour:02d}:{minute:02d}.")
             return 0
         if state.get("summary_sent") == local.date().isoformat():

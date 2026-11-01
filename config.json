@@ -213,33 +213,26 @@
       "https://jimmyleaks.com/es/?order=-modified",
       "https://jimmyleaks.com/es/?order=-discount",
       "https://jimmyleaks.com/es/c/electronica/?order=-modified",
+      "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified",
+      "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-modified",
       "https://jimmyleaks.com/es/c/informatica/?order=-modified",
       "https://jimmyleaks.com/es/c/videojuegos/?order=-modified",
-      "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified",
+      "https://jimmyleaks.com/es/c/belleza/?order=-modified",
+      "https://jimmyleaks.com/es/c/salud-y-cuidado-personal/?order=-modified",
       "https://jimmyleaks.com/es/c/bricolaje-y-herramientas/?order=-modified",
       "https://jimmyleaks.com/es/c/deportes-y-aire-libre/?order=-modified",
       "https://jimmyleaks.com/es/c/juguetes-y-juegos/?order=-modified",
       "https://jimmyleaks.com/es/c/moda/?order=-modified",
-      "https://jimmyleaks.com/es/c/belleza/?order=-modified",
-      "https://jimmyleaks.com/es/c/salud-y-cuidado-personal/?order=-modified",
-      "https://jimmyleaks.com/es/c/bebe/?order=-modified",
-      "https://jimmyleaks.com/es/c/productos-para-mascotas/?order=-modified",
-      "https://jimmyleaks.com/es/c/oficina-y-papeleria/?order=-modified",
-      "https://jimmyleaks.com/es/c/coche-y-moto/?order=-modified",
       "https://jimmyleaks.com/es/c/jardin/?order=-modified",
-      "https://jimmyleaks.com/es/c/alimentacion-y-bebidas/?order=-modified",
-      "https://jimmyleaks.com/es/c/iluminacion/?order=-modified",
-      "https://jimmyleaks.com/es/c/instrumentos-musicales/?order=-modified",
-      "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-modified",
-      "https://jimmyleaks.com/es/c/industria-empresas-y-ciencia/?order=-modified"
+      "https://jimmyleaks.com/es/c/bebe/?order=-modified"
     ],
     "core_sources": 3,
-    "max_sources_per_run": 10,
+    "max_sources_per_run": 12,
     "max_price_age_minutes": 60,
-    "min_discount_pct": 25,
+    "min_discount_pct": 35,
     "error_discount_pct": 70,
     "max_discount_pct": 92,
-    "min_price_eur": 5,
+    "min_price_eur": 10,
     "max_price_eur": 3000,
     "min_rating": 4.0,
     "min_reviews": 10,
@@ -253,7 +246,7 @@
       1,
       8
     ],
-    "max_details_per_run": 40,
+    "max_details_per_run": 45,
     "max_tracking_checks_per_run": 4,
     "recheck_rejected_hours": 6,
     "repost_after_days": 14,
@@ -277,7 +270,431 @@
       "version kindle",
       "audiolibro",
       "tarjeta regalo"
-    ]
+    ],
+    "interest": {
+      "_nota": "Lo que más compra la gente online. Fuera de estas categorías solo sale un error de precio (-65 % y desde 20 €). 'block' nunca sale.",
+      "any_category_min_discount": 65,
+      "any_category_min_price_eur": 20,
+      "tiers": [
+        {
+          "label": "Móviles y tablets",
+          "score": 100,
+          "keywords": [
+            "iphone",
+            "smartphone",
+            "movil",
+            "telefono movil",
+            "samsung galaxy",
+            "galaxy s",
+            "galaxy a",
+            "xiaomi",
+            "redmi",
+            "poco x",
+            "poco f",
+            "google pixel",
+            "oneplus",
+            "motorola moto",
+            "ipad",
+            "tablet"
+          ]
+        },
+        {
+          "label": "Aspiradoras",
+          "score": 100,
+          "keywords": [
+            "aspirador",
+            "aspiradora",
+            "robot aspirador",
+            "friegasuelos",
+            "fregasuelos",
+            "fregona electrica",
+            "roomba",
+            "roborock",
+            "dreame",
+            "conga",
+            "dyson",
+            "rowenta",
+            "aspirador escoba"
+          ]
+        },
+        {
+          "label": "Cafeteras",
+          "score": 100,
+          "keywords": [
+            "cafetera",
+            "nespresso",
+            "dolce gusto",
+            "espresso",
+            "superautomatica",
+            "molinillo de cafe",
+            "de'longhi",
+            "delonghi"
+          ]
+        },
+        {
+          "label": "Electrodomésticos",
+          "score": 100,
+          "keywords": [
+            "frigorifico",
+            "nevera",
+            "congelador",
+            "lavadora",
+            "secadora",
+            "lavavajillas",
+            "horno",
+            "microondas",
+            "placa de induccion",
+            "vitroceramica",
+            "campana extractora",
+            "aire acondicionado",
+            "freidora de aire",
+            "freidora sin aceite",
+            "freidora",
+            "air fryer",
+            "cosori",
+            "robot de cocina",
+            "thermomix",
+            "mambo",
+            "termo electrico"
+          ]
+        },
+        {
+          "label": "Muebles y descanso",
+          "score": 95,
+          "keywords": [
+            "sofa",
+            "sofa cama",
+            "sillon",
+            "colchon",
+            "canape",
+            "somier",
+            "cabecero",
+            "silla de oficina",
+            "silla gaming",
+            "silla ergonomica",
+            "escritorio",
+            "estanteria",
+            "armario",
+            "comoda",
+            "mesita de noche",
+            "mesa de comedor",
+            "mesa de centro",
+            "zapatero",
+            "mueble tv",
+            "aparador",
+            "almohada",
+            "topper"
+          ]
+        },
+        {
+          "label": "TV y sonido",
+          "score": 95,
+          "keywords": [
+            "televisor",
+            "smart tv",
+            "tv 4k",
+            "oled",
+            "qled",
+            "barra de sonido",
+            "proyector",
+            "altavoz",
+            "auriculares",
+            "airpods",
+            "cascos",
+            "earbuds",
+            "galaxy buds",
+            "jbl",
+            "bose",
+            "sony wh",
+            "sonos"
+          ]
+        },
+        {
+          "label": "Informática",
+          "score": 90,
+          "keywords": [
+            "portatil",
+            "macbook",
+            "ordenador",
+            "monitor",
+            "ssd",
+            "disco duro",
+            "router",
+            "mesh",
+            "impresora",
+            "teclado",
+            "raton",
+            "webcam",
+            "tarjeta grafica"
+          ]
+        },
+        {
+          "label": "Consolas",
+          "score": 90,
+          "keywords": [
+            "ps5",
+            "playstation",
+            "nintendo switch",
+            "switch 2",
+            "xbox",
+            "steam deck",
+            "mando dualsense"
+          ]
+        },
+        {
+          "label": "Relojes inteligentes",
+          "score": 85,
+          "keywords": [
+            "smartwatch",
+            "apple watch",
+            "reloj inteligente",
+            "galaxy watch",
+            "pulsera de actividad",
+            "garmin",
+            "amazfit",
+            "huawei watch"
+          ]
+        },
+        {
+          "label": "Cocina",
+          "score": 80,
+          "keywords": [
+            "batidora",
+            "licuadora",
+            "amasadora",
+            "tostadora",
+            "sandwichera",
+            "hervidor",
+            "olla",
+            "olla rapida",
+            "sarten",
+            "sartenes",
+            "bateria de cocina",
+            "cuchillos",
+            "vaporera",
+            "envasadora",
+            "yogurtera",
+            "exprimidor"
+          ]
+        },
+        {
+          "label": "Cuidado personal",
+          "score": 80,
+          "keywords": [
+            "secador",
+            "plancha de pelo",
+            "rizador",
+            "moldeador",
+            "cepillo de dientes electrico",
+            "oral-b",
+            "afeitadora",
+            "depiladora",
+            "recortadora",
+            "cortapelos",
+            "ipl"
+          ]
+        },
+        {
+          "label": "Hogar inteligente",
+          "score": 80,
+          "keywords": [
+            "echo dot",
+            "echo show",
+            "alexa",
+            "fire tv",
+            "chromecast",
+            "kindle",
+            "camara de vigilancia",
+            "videotimbre",
+            "bombilla inteligente",
+            "enchufe inteligente",
+            "robot cortacesped"
+          ]
+        },
+        {
+          "label": "Clima",
+          "score": 75,
+          "keywords": [
+            "radiador",
+            "calefactor",
+            "estufa",
+            "ventilador",
+            "deshumidificador",
+            "purificador",
+            "humidificador",
+            "manta electrica",
+            "brasero"
+          ]
+        },
+        {
+          "label": "Movilidad y fitness",
+          "score": 75,
+          "keywords": [
+            "patinete electrico",
+            "patinete",
+            "bicicleta electrica",
+            "bicicleta estatica",
+            "cinta de correr",
+            "eliptica",
+            "banco de pesas",
+            "mancuernas"
+          ]
+        },
+        {
+          "label": "Herramientas",
+          "score": 70,
+          "keywords": [
+            "taladro",
+            "atornillador",
+            "amoladora",
+            "sierra",
+            "hidrolimpiadora",
+            "karcher",
+            "bosch",
+            "makita",
+            "dewalt",
+            "black+decker",
+            "einhell",
+            "ryobi"
+          ]
+        },
+        {
+          "label": "Cámaras y drones",
+          "score": 70,
+          "keywords": [
+            "camara",
+            "gopro",
+            "dron",
+            "dji",
+            "insta360",
+            "objetivo"
+          ]
+        },
+        {
+          "label": "LEGO y juguetes top",
+          "score": 65,
+          "keywords": [
+            "lego",
+            "playmobil",
+            "barbie",
+            "hot wheels",
+            "nerf"
+          ]
+        },
+        {
+          "label": "Moda de marca",
+          "score": 60,
+          "keywords": [
+            "nike",
+            "adidas",
+            "new balance",
+            "puma",
+            "converse",
+            "vans",
+            "levi's",
+            "tommy hilfiger",
+            "calvin klein",
+            "the north face",
+            "ray-ban",
+            "casio",
+            "maleta",
+            "samsonite"
+          ]
+        },
+        {
+          "label": "Perfumes",
+          "score": 60,
+          "keywords": [
+            "perfume",
+            "eau de parfum",
+            "eau de toilette",
+            "colonia"
+          ]
+        },
+        {
+          "label": "Textil hogar",
+          "score": 55,
+          "keywords": [
+            "edredon",
+            "nordico",
+            "sabanas",
+            "toallas",
+            "manta",
+            "cortinas",
+            "alfombra"
+          ]
+        }
+      ],
+      "block": [
+        "tornillo",
+        "tornillos",
+        "taco",
+        "tacos",
+        "tuerca",
+        "arandela",
+        "destornillador",
+        "llave allen",
+        "filtro de combustible",
+        "filtro de aceite",
+        "filtro de aire",
+        "bombilla para coche",
+        "bombillas para coche",
+        "cinta de embalaje",
+        "cinta adhesiva",
+        "libreta",
+        "libretas",
+        "cuaderno",
+        "agenda",
+        "boligrafo",
+        "boligrafos",
+        "rotulador",
+        "material escolar",
+        "recambio",
+        "recambios",
+        "cartucho",
+        "toner",
+        "pila",
+        "pilas",
+        "cable",
+        "adaptador",
+        "funda",
+        "protector de pantalla",
+        "calcetines",
+        "calzoncillos",
+        "boxer",
+        "bragas",
+        "pegatina",
+        "vinilo",
+        "planta artificial",
+        "plantas artificiales",
+        "comedero",
+        "acuario",
+        "peces",
+        "puzzle",
+        "funko",
+        "figura",
+        "regleta",
+        "cafe soluble",
+        "capsulas",
+        "suplemento",
+        "vitaminas",
+        "detergente",
+        "papel higienico",
+        "bolsas de basura",
+        "alimento",
+        "pienso",
+        "manguera",
+        "pintura",
+        "pincel",
+        "lija",
+        "silicona",
+        "junta",
+        "juntas",
+        "grabadora laser",
+        "reposamunecas",
+        "alfombrilla"
+      ]
+    }
   },
   "store_affiliates": {
     "carrefour": {"template": ""},

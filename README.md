@@ -8,8 +8,9 @@ Amazon devuelve captcha a las lecturas desde GitHub, así que los datos salen de
 
 - **Producto exacto**: el ASIN sale del botón de compra de Jimmyleaks (`/p/ID/` redirige a `amazon.es/dp/ASIN`) y se publica `https://www.amazon.es/dp/ASIN?tag=cazadores_errores-21`. Nunca una búsqueda por EAN, que era lo que hacía que el precio no cuadrara.
 - **Precio reciente**: visto en Amazon hace menos de 60 minutos, igual en el listado y en la ficha, y releído justo antes de enviar. Si cambia, no sale. El post dice a qué hora se vio.
-- **Descuento honesto**: frente al precio más bajo de los 30 días anteriores a la bajada (el criterio de la ley europea). Nunca el PVP tachado. Mínimo 25 %.
-- **Calidad**: con stock, 5 € o más, 4,0 estrellas y 10 opiniones, al menos 30 días de historial y bajada de menos de 14 días. 23 listados de Jimmyleaks (3 fijos y 20 categorías por turnos).
+- **Descuento honesto**: frente al precio más bajo de los 30 días anteriores a la bajada (el criterio de la ley europea). Nunca el PVP tachado. Mínimo 35 %.
+- **Lo que interesa**: prioriza lo que más compra la gente online (móviles, aspiradoras, cafeteras, electrodomésticos, muebles, TV y sonido, informática, consolas…) según `amazon_channel.interest`. Lo de poco interés (tornillería, papelería, consumibles, ropa interior, fundas…) nunca sale; el resto solo si es un error de precio (-65 % y desde 20 €). Se publica primero lo de más interés, descuento y ahorro.
+- **Calidad**: con stock, 10 € o más, 4,0 estrellas y 10 opiniones, al menos 30 días de historial y bajada de menos de 14 días. 16 listados de Jimmyleaks (3 fijos y 13 categorías por turnos).
 - **Seguimiento**: los posts de las últimas 48 h se revisan; si sube el precio o se agota, el post se marca «⛔ YA NO ESTÁ A ESTE PRECIO».
 - Hasta 6 posts por hora y 70 al día, revisando cada 5 minutos; silencio de 01:00 a 08:00. A las 23:30, resumen con los 10 mejores del día que siguen activos. Ajustes en `config.json` → `amazon_channel`. Memoria en `state/canal_nube.json`.
 

@@ -1,5 +1,6 @@
 """Pruebas del canal en la nube con páginas reales de Jimmyleaks (31/10/2026)."""
 
+import json
 import unittest
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -116,6 +117,32 @@ class Administrador(unittest.TestCase):
             def call(self, method, params):
                 return []
         self.assertIsNone(cn.admin_chat_id({}, dict(RULES, admin_username="nadie_xyz"), TG()))
+
+
+REAL = cn.rules_from(json.loads((Path(__file__).resolve().parent / "config.json").read_text(encoding="utf-8")))
+
+
+class Interes(unittest.TestCase):
+    def test_lo_que_mas_se_compra_puntua_alto(self):
+        for title in ["Roborock Qrevo S Pro Robot Aspirador", "De'Longhi Cafetera superautomática",
+                      "Samsung Galaxy A56 smartphone 256GB", "Frigorífico combi No Frost", "Sofá cama 3 plazas",
+                      "Cosori Freidora de aire 5,5 L"]:
+            self.assertGreaterEqual(cn.interest(title, REAL)["score"], 90, title)
+
+    def test_lo_de_poco_interes_queda_fuera(self):
+        for title in ["Amazon Basics Cinta de Embalaje de 7,2 CM", "fischer DUOPOWER 8 x 65 caja de tacos",
+                      "MANN-FILTER P 917/2 x Filtro de combustible", "Oxford Classic Pack de 10 libretas",
+                      "Funda para iPhone 15 de silicona", "Der Rose Plantas Artificiales Grandes",
+                      "FILA Calzoncillos Hombre Boxer Pack de 4"]:
+            self.assertTrue(cn.interest(title, REAL)["blocked"], title)
+
+    def test_cafe_soluble_no_es_una_cafetera(self):
+        self.assertTrue(cn.interest("Nescafé Classic café soluble 20 bolsitas", REAL)["blocked"])
+
+    def test_orden_prioriza_interes_y_descuento(self):
+        robot = {"interest": 100, "discount": 45, "price": 330, "reference": 600}
+        tape = {"interest": 0, "discount": 52, "price": 9.4, "reference": 19.59}
+        self.assertGreater(cn.deal_rank(robot), cn.deal_rank(tape))
 
 
 class Fuentes(unittest.TestCase):
