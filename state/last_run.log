@@ -1,20 +1,17 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 118 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 465774 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 479699 bytes, 30 ASIN, 33 títulos
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 345120 bytes, 0 ASIN, 0 títulos
+Listados: 113 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35967 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35661 bytes, 30 chollos
+  Chollometro «Saucony - zapatillas de running Triumph 23 - running- Tallas- 37, 40, »: Privalia 69.99 €
+  Chollometro «Casio G-Shock Mudmaster GG-1000-1A3ER | Twin Sensor, Mud Resist | 20 B»: Timestore 225.81 €
+  Chollometro «Guess Vinsa4 – Zapatillas deportivas de mujer 36,38,39,41»: Amazon 53.12 €
+  Chollometro «Secador de pelo Dyson Supersonic – Liso+Ondulado Secado rápido. Sin ca»: Veepee 269.0 €
   Chollometro «Auriculares Inalámbricos Apple AirPods 4»: AliExpress 95.79 €
-  Chollometro «Nba 2k27 ed estandar ps5 - Precio con Ventajas: 36,99»: AliExpress 41.99 €
-  Chollometro «Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2 - PS5»: Amazon 29.9 €
-  Chollometro «Procesador AMD Ryzen 7 9800X3D»: AliExpress 262.43 €
-  Chollometro «PS5 - Mando inalámbrico DualSense Rhythm Blue - Remix Green -Techno Re»: AliExpress 52.34 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 79128 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 62426 bytes, 30 chollos
+  cm-2052137 · Privalia → descartado (no he podido comprobar el precio en la página de la tienda) · Saucony - zapatillas de running Triumph 23 - running- Tallas
+  cm-2051999 · Timestore → descartado (la tienda marca 250.9 € y no 225.81 €) · Casio G-Shock Mudmaster GG-1000-1A3ER | Twin Sensor, Mud Res
+  cm-2051940 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Guess Vinsa4 – Zapatillas deportivas de mujer 36,38,39,41
+  cm-2051751 · Veepee → descartado (no he podido comprobar el precio en la página de la tienda) · Secador de pelo Dyson Supersonic – Liso+Ondulado Secado rápi
   cm-2052057 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Auriculares Inalámbricos Apple AirPods 4
-  cm-2051119 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Nba 2k27 ed estandar ps5 - Precio con Ventajas: 36,99
-  cm-2052047 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2 - 
-  cm-2051020 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Procesador AMD Ryzen 7 9800X3D
-  cm-2051992 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · PS5 - Mando inalámbrico DualSense Rhythm Blue - Remix Green 
 Publicados en esta ejecución: 0
