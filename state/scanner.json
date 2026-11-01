@@ -854,6 +854,11 @@
    "price": 29.94,
    "t": 1793542481,
    "result": "solo -0% bajo la referencia"
+  },
+  "M6Bp40M": {
+   "price": 84.99,
+   "t": 1793547392,
+   "result": "solo -15% bajo la referencia"
   }
  },
  "posts": [
@@ -988,7 +993,7 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 114,
+ "last_listing_count": 116,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
