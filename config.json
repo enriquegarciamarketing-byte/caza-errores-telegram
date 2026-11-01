@@ -304,7 +304,7 @@
       "tarjeta regalo"
     ],
     "interest": {
-      "_nota": "Lo que más compra la gente online. Fuera de estas categorías solo sale un error de precio (-65 % y desde 20 €). 'block' nunca sale.",
+      "_nota": "Lo que más compra la gente online. Las categorías de 90 o más puntos salen desde -25 % (frente al mínimo de 30 días); el resto de categorías top desde -35 %; fuera de ellas solo errores de precio (-65 % y desde 20 €). 'block' nunca sale.",
       "any_category_min_discount": 65,
       "any_category_min_price_eur": 20,
       "tiers": [
@@ -319,7 +319,6 @@
             "samsung galaxy",
             "galaxy s",
             "galaxy a",
-            "xiaomi",
             "redmi",
             "poco x",
             "poco f",
@@ -328,7 +327,8 @@
             "motorola moto",
             "ipad",
             "tablet"
-          ]
+          ],
+          "min_discount": 25
         },
         {
           "label": "Aspiradoras",
@@ -344,10 +344,14 @@
             "roborock",
             "dreame",
             "conga",
-            "dyson",
-            "rowenta",
-            "aspirador escoba"
-          ]
+            "aspirador escoba",
+            "dyson v",
+            "dyson gen5",
+            "dyson v15",
+            "dyson v12",
+            "dyson v8"
+          ],
+          "min_discount": 25
         },
         {
           "label": "Cafeteras",
@@ -358,10 +362,9 @@
             "dolce gusto",
             "espresso",
             "superautomatica",
-            "molinillo de cafe",
-            "de'longhi",
-            "delonghi"
-          ]
+            "molinillo de cafe"
+          ],
+          "min_discount": 25
         },
         {
           "label": "Electrodomésticos",
@@ -388,7 +391,8 @@
             "thermomix",
             "mambo",
             "termo electrico"
-          ]
+          ],
+          "min_discount": 25
         },
         {
           "label": "Muebles y descanso",
@@ -416,7 +420,8 @@
             "aparador",
             "almohada",
             "topper"
-          ]
+          ],
+          "min_discount": 25
         },
         {
           "label": "TV y sonido",
@@ -439,7 +444,8 @@
             "bose",
             "sony wh",
             "sonos"
-          ]
+          ],
+          "min_discount": 25
         },
         {
           "label": "Informática",
@@ -458,7 +464,8 @@
             "raton",
             "webcam",
             "tarjeta grafica"
-          ]
+          ],
+          "min_discount": 25
         },
         {
           "label": "Consolas",
@@ -471,7 +478,8 @@
             "xbox",
             "steam deck",
             "mando dualsense"
-          ]
+          ],
+          "min_discount": 25
         },
         {
           "label": "Relojes inteligentes",
@@ -523,7 +531,12 @@
             "depiladora",
             "recortadora",
             "cortapelos",
-            "ipl"
+            "ipl",
+            "oneblade",
+            "bascula",
+            "bascula inteligente",
+            "masajeador",
+            "pistola de masaje"
           ]
         },
         {

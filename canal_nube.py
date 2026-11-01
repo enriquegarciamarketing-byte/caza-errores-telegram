@@ -242,7 +242,8 @@ def interest(title: str, rules: dict) -> dict:
     best = {"score": 0, "label": "", "blocked": ""}
     for tier in conf.get("tiers") or []:
         if tier.get("score", 0) > best["score"] and any(has(word) for word in tier.get("keywords") or []):
-            best = {"score": int(tier["score"]), "label": tier.get("label") or "", "blocked": ""}
+            best = {"score": int(tier["score"]), "label": tier.get("label") or "", "blocked": "",
+                    "min_discount": tier.get("min_discount")}
     return best
 
 
@@ -278,7 +279,11 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str,
     if not reference:
         return "sin precios de los 30 días anteriores", {}
     pct = discount_pct(float(price), reference)
-    if pct + 1e-9 < float(rules["min_discount_pct"]):
+    taste = interest(title, rules)
+    if taste["blocked"]:
+        return f"poco interés («{taste['blocked']}»)", {}
+    needed = float(taste.get("min_discount") or rules["min_discount_pct"])
+    if pct + 1e-9 < needed:
         return f"solo -{pct:.0f}% frente a su mínimo de los 30 días anteriores ({euro(reference)})", {}
     if pct > float(rules["max_discount_pct"]):
         return f"descuento sospechoso (-{pct:.0f}%)", {}
@@ -291,9 +296,6 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str,
         return f"valoración baja ({rating})", {}
     if reviews < int(rules["min_reviews"]):
         return f"pocas opiniones ({reviews})", {}
-    taste = interest(title, rules)
-    if taste["blocked"]:
-        return f"poco interés («{taste['blocked']}»)", {}
     conf = rules.get("interest") or {}
     if taste["score"] <= 0 and conf.get("tiers"):
         any_pct = float(conf.get("any_category_min_discount", 101))

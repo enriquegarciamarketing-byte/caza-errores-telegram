@@ -136,6 +136,10 @@ class Interes(unittest.TestCase):
                       "FILA Calzoncillos Hombre Boxer Pack de 4"]:
             self.assertTrue(cn.interest(title, REAL)["blocked"], title)
 
+    def test_las_categorias_estrella_salen_desde_el_25(self):
+        self.assertEqual(cn.interest("Cecotec Robot Aspirador Conga", REAL)["min_discount"], 25)
+        self.assertIsNone(cn.interest("Rowenta Intense Comfort calefactor", REAL).get("min_discount"))
+
     def test_cafe_soluble_no_es_una_cafetera(self):
         self.assertTrue(cn.interest("Nescafé Classic café soluble 20 bolsitas", REAL)["blocked"])
 
