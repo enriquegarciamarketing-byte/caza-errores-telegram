@@ -259,7 +259,7 @@
       "https://jimmyleaks.com/es/marca/realme/?order=-modified"
     ],
     "core_sources": 2,
-    "max_sources_per_run": 20,
+    "max_sources_per_run": 12,
     "max_price_age_minutes": 60,
     "min_discount_pct": 30,
     "error_discount_pct": 70,
@@ -270,7 +270,7 @@
     "min_reviews": 10,
     "min_history_days": 30,
     "max_drop_age_days": 14,
-    "max_per_hour": 8,
+    "max_per_hour": 10,
     "max_per_day": 70,
     "max_per_run": 3,
     "test_private_posts": 3,

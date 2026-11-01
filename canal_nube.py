@@ -40,6 +40,7 @@ MADRID = ZoneInfo("Europe/Madrid")
 JL = "https://jimmyleaks.com"
 USER_AGENT = "CazaChollosBot/2.0 (+https://t.me/cazachollos_com)"
 ASIN_RE = re.compile(r"^[A-Z0-9]{10}$")
+BACKLOG = 0  # chollos aprobados en la última pasada que no cupieron: la siguiente se adelanta
 
 DEFAULTS = {
     "chat_id": "@cazachollos_com",
@@ -571,12 +572,14 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
                 "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140],
             })
         time.sleep(2)
+    global BACKLOG
+    BACKLOG = max(0, len(approved) - sent) if sent >= limit else 0
     if not sent:
         log("Nada que cumpla todas las reglas en esta pasada.")
     return 0
 
 
-def sources_for_run(rules: dict, now: datetime) -> list[str]:
+def sources_for_run(rules: dict, now: datetime, state: dict | None = None) -> list[str]:
     """Las fuentes principales en cada pasada y el resto por turnos, para no cargar la web de golpe."""
     sources = list(rules.get("sources") or [])
     limit = int(rules.get("max_sources_per_run") or 0)
@@ -587,7 +590,13 @@ def sources_for_run(rules: dict, now: datetime) -> list[str]:
     take = max(0, limit - len(fixed))
     if not rest or not take:
         return fixed
-    start = (int(now.timestamp()) // 300 * take) % len(rest)
+    if state is not None:
+        # Con pasadas cada pocos minutos se avanza por turno, no por reloj, para no repetir listados.
+        turn = int(state.get("rotation") or 0)
+        state["rotation"] = turn + 1
+        start = (turn * take) % len(rest)
+    else:
+        start = (int(now.timestamp()) // 300 * take) % len(rest)
     return fixed + [rest[(start + i) % len(rest)] for i in range(min(take, len(rest)))]
 
 
@@ -598,7 +607,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
     recheck = float(rules["recheck_rejected_hours"]) * 3600
     max_age = float(rules["max_price_age_minutes"]) * 60
     pool: dict[str, dict] = {}
-    for url in sources_for_run(rules, now):
+    for url in sources_for_run(rules, now, state if remember else None):
         try:
             items = scanner.parse_listing(fetch(url))
         except Exception as exc:
@@ -826,6 +835,10 @@ def main() -> int:
     parser.add_argument("--manual", default="", help="Post hecho a mano (JSON con asin, title, price, reference…)")
     parser.add_argument("--loop", type=int, default=1, help="Pasadas seguidas en esta ejecución")
     parser.add_argument("--every", type=int, default=300, help="Segundos entre pasadas con --loop")
+    parser.add_argument("--busy-every", type=int, default=0,
+                        help="Segundos hasta la siguiente pasada si quedaron chollos aprobados sin publicar")
+    parser.add_argument("--minutes", type=float, default=0,
+                        help="Repite pasadas durante estos minutos (en lugar de un número fijo con --loop)")
     args = parser.parse_args()
     cfg = load_json(CONFIG_PATH, {})
     state = load_json(STATE_PATH, {"posts": [], "seen": {}})
@@ -841,21 +854,31 @@ def main() -> int:
     elif args.resumen:
         code = run_summary(args, cfg, state, now, tg=tg)
     else:
-        # GitHub retrasa mucho las tareas cada 5 minutos: cada ejecución hace varias pasadas seguidas.
+        # GitHub retrasa mucho las tareas frecuentes: cada ejecución hace pasadas seguidas durante un rato.
+        # Si quedan chollos aprobados sin publicar, la siguiente pasada se adelanta (--busy-every).
         rules = rules_from(cfg)
         code = 0
-        for index in range(max(1, args.loop)):
+        deadline = time.time() + args.minutes * 60 if args.minutes else None
+        index = 0
+        while True:
             started = time.time()
             now = datetime.now(timezone.utc)
             if index:
                 print(f"== pasada {index + 1} · {now.astimezone(MADRID):%H:%M} ==")
             code = run(args, cfg, state, now, tg=tg)
+            index += 1
             if not args.dry_run and not args.test_private:
                 save_state(state)
             why = quota_reason(state, now, rules)
-            if index + 1 >= args.loop or "silencio" in why or "cerrado" in why:
+            if "silencio" in why or "cerrado" in why or args.test_private:
                 break
-            time.sleep(max(0, args.every - (time.time() - started)))
+            if deadline is None and index >= args.loop:
+                break
+            wait = args.busy_every if (BACKLOG and args.busy_every) else args.every
+            pause = max(0, wait - (time.time() - started))
+            if deadline is not None and time.time() + pause >= deadline:
+                break
+            time.sleep(pause)
     if not args.dry_run and not args.test_private:
         save_state(state)
     return code

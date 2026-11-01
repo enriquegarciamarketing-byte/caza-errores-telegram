@@ -205,6 +205,19 @@ class Fuentes(unittest.TestCase):
         self.assertEqual(len(seen), 20, "en cuatro pasadas se recorren todas las categorías")
 
 
+class Turnos(unittest.TestCase):
+    def test_con_pasadas_seguidas_no_repite_listados(self):
+        rules = dict(RULES, sources=["a", "b"] + [f"cat{i}" for i in range(30)], core_sources=2,
+                     max_sources_per_run=12)
+        state, seen = {}, set()
+        for _ in range(3):  # tres pasadas en el mismo minuto
+            picked = cn.sources_for_run(rules, NOW, state)
+            self.assertEqual(picked[:2], ["a", "b"])
+            seen.update(picked[2:])
+        self.assertEqual(len(seen), 30)
+        self.assertEqual(state["rotation"], 3)
+
+
 class Resumen(unittest.TestCase):
     def state(self, now):
         base = int(now.timestamp()) - 3600

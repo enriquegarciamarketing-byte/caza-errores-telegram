@@ -1,7 +1,7 @@
 name: Canal normal @cazachollos_com
 
 on:
-  # GitHub retrasa mucho las tareas muy frecuentes, así que cada ejecución hace 7 pasadas (una cada 5 min, ~35 min) para no dejar huecos.
+  # GitHub retrasa mucho las tareas muy frecuentes, así que cada ejecución busca durante ~35 min: una pasada cada 2 min, o al minuto si quedaron chollos por publicar.
   # El script respeta el horario (08:00-23:50 Madrid) y los cupos, y para en cuanto el día se cierra.
   schedule:
     - cron: "*/10 * * * *"
@@ -57,7 +57,7 @@ jobs:
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
           set -o pipefail
-          if [ "${{ github.event_name }}" = "schedule" ]; then ARGS+=(--loop 7 --every 300); fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then ARGS+=(--minutes 35 --every 120 --busy-every 60); fi
           python canal_nube.py "${ARGS[@]}" 2>&1 | tee state/canal_nube_last_run.log
 
       - name: Guardar memoria del canal normal
