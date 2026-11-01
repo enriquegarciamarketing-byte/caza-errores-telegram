@@ -211,11 +211,6 @@
     "sources": [
       "https://jimmyleaks.com/es/minimos-de-hoy/",
       "https://jimmyleaks.com/es/?order=-modified",
-      "https://jimmyleaks.com/es/?order=-discount",
-      "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-discount",
-      "https://jimmyleaks.com/es/c/electronica/?order=-discount",
-      "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-discount",
-      "https://jimmyleaks.com/es/c/informatica/?order=-discount",
       "https://jimmyleaks.com/es/c/electronica/?order=-modified",
       "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified",
       "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-modified",
@@ -263,7 +258,7 @@
       "https://jimmyleaks.com/es/marca/oppo/?order=-modified",
       "https://jimmyleaks.com/es/marca/realme/?order=-modified"
     ],
-    "core_sources": 3,
+    "core_sources": 2,
     "max_sources_per_run": 20,
     "max_price_age_minutes": 60,
     "min_discount_pct": 30,
