@@ -1,17 +1,24 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 118 productos únicos
+Listados: 116 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36197 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35593 bytes, 30 chollos
+  Chollometro «Stellar blade Switch 2»: Miravia 46.89 €
+  Chollometro «Zapatillas de running Nike ACG Pegasus Trail»: Footlocker 70.0 €
+  Chollometro «SKECHERS - Zapatillas deportivas Dazzling Smile - running - mujer»: Privalia 29.99 €
   Chollometro «Mando Pro Resident Evil Requiem Edition - Switch 2 VERSION»: AliExpress 71.6 €
   Chollometro «PUMA Zapatillas Club Light Unisex Varias tallas»: Amazon 30.95 €
-  Chollometro «Call of Duty: Modern Warfare 4 - PlayStation 5 | Disco»: AliExpress 47.02 €
-  Chollometro «PS5 - Marvel Lobezno»: AliExpress 53.5 €
-  Chollometro «Consola nintendo switch 2 + juego descargable mario kart world + suscr»: AliExpress 398.15 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72260 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 76996 bytes, 30 chollos
+  cm-2051364 · Miravia → descartado (la tienda marca 53.83 € y no 46.89 €) · Stellar blade Switch 2
+  cm-2051488 · Footlocker 70.0 € → candidato externo · Zapatillas de running Nike ACG Pegasus Trail
+  cm-2051497 · Privalia → descartado (no he podido comprobar el precio en la página de la tienda) · SKECHERS - Zapatillas deportivas Dazzling Smile - running - 
   cm-2051585 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Mando Pro Resident Evil Requiem Edition - Switch 2 VERSION
   cm-2051611 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · PUMA Zapatillas Club Light Unisex Varias tallas
-  cm-2051582 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Call of Duty: Modern Warfare 4 - PlayStation 5 | Disco
-  cm-2051049 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · PS5 - Marvel Lobezno
-  cm-2051592 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Consola nintendo switch 2 + juego descargable mario kart wor
+  Vinted «zapatillas running»: HTTP 200, 3665734 bytes, 96 anuncios
+  Vinted «zapatillas running»: 15 parecidos de 96
+  Wallapop «zapatillas running»: 200 / 145548 bytes, 40 anuncios, 32 parecidos, 0 reservas
+  Milanuncios «zapatillas running»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 32 anuncios, ~30 €, no publica
+  ⚠️ No publico «Zapatillas de running Nike ACG Pegasus Trail»: reventa en VINTED+WALLAPOP ~30 € (32 anuncios): ROI -62 % y -44 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
