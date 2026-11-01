@@ -84,6 +84,7 @@ class Texto(unittest.TestCase):
         self.assertIn("379,98 €", text)
         self.assertIn("precio más bajo de los 30 días anteriores", text)
         self.assertIn("<s>799,99 €</s>", text)
+        self.assertIn("-71 %</b> frente a su precio habitual de los últimos 90 días (1.299,99 €)", text)
         self.assertIn("a las 16:52", text)
         self.assertIn("dp/B0G7YP6MXV?tag=cazadores_errores-21", text)
         self.assertNotIn("PVP", text)
@@ -178,10 +179,10 @@ class Resumen(unittest.TestCase):
         items = cn.summary_items(self.state(now), now, RULES, lambda url: LEFANT, lambda *_: None)
         self.assertEqual([i["asin"] for i in items], ["B0G7YP6MXV"])  # el terminado no sale
         text = cn.build_summary(items, now)
-        self.assertIn("LO MEJOR DEL DÍA", text)
+        self.assertIn("CERRAMOS EL DÍA", text)
         self.assertIn("1️⃣", text)
         self.assertIn("379,98 €", text)
-        self.assertIn("a las 23:30", text)
+        self.assertIn("a las 23:30", text)  # hora de la comprobación
         self.assertIn("tag=cazadores_errores-21", text)
 
     def test_si_ha_subido_no_sale(self):
@@ -194,9 +195,33 @@ class Resumen(unittest.TestCase):
         args = SimpleNamespace(dry_run=True, test_private=False, ignore_limits=False)
         cn.run_summary(args, CFG, {"posts": []}, datetime(2026, 10, 31, 15, 0, tzinfo=timezone.utc), log=out.append)
         self.assertIn("no es la hora", out[-1])
+        cn.run_summary(args, CFG, {"posts": []}, datetime(2026, 10, 31, 22, 31, tzinfo=timezone.utc), log=out.append)
+        self.assertIn("no es la hora", out[-1])  # 23:31: aún no
         state = {"posts": [], "summary_sent": "2026-10-31"}
-        cn.run_summary(args, CFG, state, datetime(2026, 10, 31, 22, 31, tzinfo=timezone.utc), log=out.append)
+        cn.run_summary(args, CFG, state, datetime(2026, 10, 31, 22, 59, tzinfo=timezone.utc), log=out.append)
         self.assertIn("ya enviado", out[-1])
+
+    def test_si_github_se_retrasa_cierra_el_dia_anterior(self):
+        late = datetime(2026, 10, 31, 23, 20, tzinfo=timezone.utc)  # 00:20 del 1 de noviembre en Madrid
+        self.assertEqual(cn.closing_day(late, RULES).isoformat(), "2026-10-31")
+        out = []
+        state = {"posts": [], "summary_sent": "2026-10-31"}
+        cn.run_summary(SimpleNamespace(dry_run=True, test_private=False, ignore_limits=False), CFG, state, late,
+                       log=out.append)
+        self.assertIn("ya enviado", out[-1])
+
+    def test_tras_el_resumen_no_salen_mas_productos(self):
+        rules = dict(RULES, close_time="23:50", quiet_hours=[0, 8])
+        evening = datetime(2026, 10, 31, 21, 0, tzinfo=timezone.utc)  # 22:00 en Madrid
+        self.assertEqual(cn.quota_reason({"posts": []}, evening, rules), "")
+        self.assertEqual(cn.quota_reason({"posts": [], "summary_sent": "2026-10-31"}, evening, rules),
+                         "día cerrado con el resumen")
+        self.assertEqual(cn.quota_reason({"posts": []}, datetime(2026, 10, 31, 22, 52, tzinfo=timezone.utc), rules),
+                         "día cerrado con el resumen")
+        self.assertEqual(cn.quota_reason({"posts": []}, datetime(2026, 10, 31, 23, 30, tzinfo=timezone.utc), rules),
+                         "horario de silencio")
+        morning = datetime(2026, 11, 1, 7, 5, tzinfo=timezone.utc)  # 08:05 en Madrid
+        self.assertEqual(cn.quota_reason({"posts": [], "summary_sent": "2026-10-31"}, morning, rules), "")
 
 
 class Pasada(unittest.TestCase):

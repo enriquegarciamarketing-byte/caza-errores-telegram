@@ -275,7 +275,7 @@
     "max_per_run": 2,
     "test_private_posts": 3,
     "quiet_hours": [
-      1,
+      0,
       8
     ],
     "max_details_per_run": 45,
@@ -284,7 +284,7 @@
     "repost_after_days": 14,
     "repost_min_extra_drop_pct": 10,
     "track_hours": 48,
-    "summary_time": "23:30",
+    "summary_time": "23:59",
     "summary_size": 10,
     "summary_min_items": 3,
     "block_keywords": [
@@ -739,7 +739,9 @@
         "reposamunecas",
         "alfombrilla"
       ]
-    }
+    },
+    "close_time": "23:50",
+    "summary_window_minutes": 100
   },
   "store_affiliates": {
     "carrefour": {"template": ""},

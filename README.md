@@ -12,7 +12,7 @@ Amazon devuelve captcha a las lecturas desde GitHub, así que los datos salen de
 - **Lo que interesa**: prioriza lo que más compra la gente online (móviles, aspiradoras, cafeteras, electrodomésticos, muebles, TV y sonido, informática, consolas…) según `amazon_channel.interest`. Lo de poco interés (tornillería, papelería, consumibles, ropa interior, fundas…) nunca sale; el resto solo si es un error de precio (-65 % y desde 20 €). Se publica primero lo de más interés, descuento y ahorro.
 - **Calidad**: con stock, 10 € o más, 4,0 estrellas y 10 opiniones, al menos 30 días de historial y bajada de menos de 14 días. 48 listados de Jimmyleaks: 2 fijos y, por turnos, 13 categorías y 33 marcas que la gente busca (Roborock, Cecotec, DeLonghi, Xiaomi, Samsung, Apple, Philips…).
 - **Seguimiento**: los posts de las últimas 48 h se revisan; si sube el precio o se agota, el post se marca «⛔ YA NO ESTÁ A ESTE PRECIO».
-- Hasta 6 posts por hora y 70 al día, revisando cada 5 minutos; silencio de 01:00 a 08:00. A las 23:30, resumen con los 10 mejores del día que siguen activos. Ajustes en `config.json` → `amazon_channel`. Memoria en `state/canal_nube.json`.
+- Hasta 6 posts por hora y 70 al día, revisando cada 5 minutos, de 08:00 a 23:50. A las 23:59 se cierra el día con el resumen de los 10 mejores que siguen activos; después no sale nada hasta las 08:00. Cada post enseña además el descuento frente a su precio habitual de 90 días cuando es bastante mayor. Ajustes en `config.json` → `amazon_channel`. Memoria en `state/canal_nube.json`.
 
 Pruebas desde Actions → «Canal normal @cazachollos_com» → Run workflow: `dry_run` (no envía nada) o `test_private` sin `dry_run` (hasta 3 ejemplos a tu chat, nunca al canal).
 

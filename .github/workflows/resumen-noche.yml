@@ -2,9 +2,10 @@ name: Resumen de la noche @cazachollos_com
 
 on:
   schedule:
-    # Desde las 23:30 de Madrid (22:30 UTC en invierno, 21:30 en verano). El script solo envía entre
-    # las 23:30 y las 00:30 y una vez al día, aunque GitHub retrase alguna pasada.
-    - cron: "30,40,50 21,22 * * *"
+    # A las 23:59 de Madrid (22:59 UTC en invierno, 21:59 en verano) y pasadas de respaldo por si GitHub
+    # se retrasa. El script solo envía entre las 23:59 y la 01:39, una vez por día.
+    - cron: "59 21,22 * * *"
+    - cron: "15,35 22,23 * * *"
   workflow_dispatch:
     inputs:
       test_private:

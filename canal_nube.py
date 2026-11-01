@@ -322,9 +322,24 @@ def in_quiet_hours(now: datetime, rules: dict) -> bool:
     return start <= now.astimezone(MADRID).hour < end
 
 
+def day_closed(state: dict, now: datetime, rules: dict) -> bool:
+    """El día se cierra con el resumen: desde close_time, o en cuanto se ha enviado, no salen más productos."""
+    local = now.astimezone(MADRID)
+    if state.get("summary_sent") == local.date().isoformat():
+        return True
+    close = str(rules.get("close_time") or "")
+    if close:
+        hour, minute = (int(x) for x in close.split(":"))
+        if (local.hour, local.minute) >= (hour, minute):
+            return True
+    return False
+
+
 def quota_reason(state: dict, now: datetime, rules: dict, already: int = 0) -> str:
     if in_quiet_hours(now, rules):
         return "horario de silencio"
+    if day_closed(state, now, rules):
+        return "día cerrado con el resumen"
     posts = state.get("posts") or []
     last_hour = [p for p in posts if (p.get("t") or 0) >= now.timestamp() - 3600]
     today = now.astimezone(MADRID).date()
@@ -382,6 +397,10 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     lines = [HEADERS[badge_for(pct, rules)], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", ""]
     lines.append(f"💰 <b>{e(euro(deal['price']))}</b>   <s>{e(euro(deal['reference']))}</s>")
     lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio más bajo de los 30 días anteriores")
+    habitual = float(deal.get("median_90") or 0)
+    if habitual > float(deal["reference"]) * 1.10:
+        lines.append(f"🔻 <b>-{round(discount_pct(deal['price'], habitual))} %</b> frente a su precio habitual "
+                     f"de los últimos 90 días ({e(euro(habitual))})")
     lines.append(f"🤑 Te ahorras <b>{e(euro(deal['reference'] - deal['price']))}</b>")
     if deal.get("historical_low"):
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
@@ -604,9 +623,16 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
 
 # ------------------------------------------------------------------ resumen de la noche
 
+def closing_day(now: datetime, rules: dict):
+    """El día que cierra el resumen: el de hoy, o el de ayer si GitHub lo lanza ya de madrugada."""
+    local = now.astimezone(MADRID)
+    hour = int(str(rules.get("summary_time") or "23:59").split(":")[0])
+    return (local - timedelta(days=1)).date() if local.hour < 12 <= hour else local.date()
+
+
 def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: int = 10) -> list[dict]:
-    """Los posts de hoy que siguen activos (vuelve a mirar el precio), mejor descuento primero."""
-    today = now.astimezone(MADRID).date()
+    """Los posts del día que siguen activos (vuelve a mirar el precio), mejor descuento primero."""
+    today = closing_day(now, rules)
     items = []
     for post in state.get("posts") or []:
         if post.get("ended") or not post.get("jl_id"):
@@ -638,7 +664,7 @@ def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
     lines = []
     if test:
         lines += ["🧪 <b>PRUEBA</b> · así saldría el resumen de la noche", ""]
-    lines += ["🌙 <b>LO MEJOR DEL DÍA EN AMAZON</b>", "",
+    lines += ["🌙 <b>CERRAMOS EL DÍA · LO MEJOR DE HOY EN AMAZON</b>", "",
               f"Los {len(items)} chollos más bestias de hoy que siguen activos ahora mismo 👇", ""]
     for index, item in enumerate(items):
         lines.append(f"{NUMBERS[index]} <b>{e(clean_title(item['title'], 70))}</b>")
@@ -647,7 +673,7 @@ def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
         lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
         lines.append("")
     lines.append(f"🕒 Precios comprobados a las {hour}. Pueden cambiar en cualquier momento.")
-    lines.append("🔔 Activa las notificaciones para no perderte los de mañana.")
+    lines.append("😴 Mañana a las 8:00 volvemos con más chollos. Activa las notificaciones 🔔")
     return "\n".join(lines)
 
 
@@ -655,14 +681,15 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     rules = rules_from(cfg)
     fetch = fetch or http_get
     local = now.astimezone(MADRID)
-    hour, minute = (int(x) for x in str(rules.get("summary_time") or "23:30").split(":"))
+    hour, minute = (int(x) for x in str(rules.get("summary_time") or "23:59").split(":"))
+    day = closing_day(now, rules)
     if not args.ignore_limits:
-        minutes = local.hour * 60 + local.minute
-        target_min = hour * 60 + minute
-        if not (target_min <= minutes < target_min + 60):
+        target = datetime(day.year, day.month, day.day, hour, minute, tzinfo=MADRID)
+        window = timedelta(minutes=int(rules.get("summary_window_minutes") or 100))
+        if not (target <= local < target + window):
             log(f"Resumen: no es la hora ({local:%H:%M}); se manda a las {hour:02d}:{minute:02d}.")
             return 0
-        if state.get("summary_sent") == local.date().isoformat():
+        if state.get("summary_sent") == day.isoformat():
             log("Resumen: ya enviado hoy.")
             return 0
     items = summary_items(state, now, rules, fetch, log, int(rules.get("summary_size") or 10))
@@ -677,7 +704,7 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
         items.sort(key=lambda item: item["discount"], reverse=True)
     if len(items) < int(rules.get("summary_min_items") or 3) and not args.test_private:
         log(f"Resumen: solo {len(items)} chollos activos hoy; no mando lista.")
-        state["summary_sent"] = local.date().isoformat()
+        state["summary_sent"] = day.isoformat()
         return 0
     if not items:
         log("Resumen: nada que listar.")
@@ -691,7 +718,7 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
                                       "disable_web_page_preview": True})
     log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos.")
     if not args.test_private:
-        state["summary_sent"] = local.date().isoformat()
+        state["summary_sent"] = day.isoformat()
     return 0
 
 
