@@ -869,6 +869,11 @@
    "price": 549.0,
    "t": 1793569777,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "MKODNQM": {
+   "price": 53.12,
+   "t": 1793574520,
+   "result": "solo -15% bajo la referencia"
   }
  },
  "posts": [
@@ -1003,7 +1008,7 @@
  ],
  "tg_offset": 334822055,
  "admin_chat_id": 9188393228,
- "last_listing_count": 120,
+ "last_listing_count": 114,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
