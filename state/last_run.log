@@ -1,24 +1,17 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 116 productos únicos
+Listados: 114 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35593 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36345 bytes, 30 chollos
+  Chollometro «Set LEGO Animal Crossing Un dia divertido con Tendo y Nendo 77059 (513»: Amazon 47.99 €
+  Chollometro «adidas Men's Zapatilla VL Court 3.0 Zapatillas de Skateboard»: Amazon 29.12 €
+  Chollometro «Xiaomi Redmi Note 17 - 6/128GB, Pantalla AMOLED 6.99" 120Hz, Snapdrago»: AliExpress 147.1 €
+  Chollometro «DJI OSMO Pocket 3 [Envío desde España]»: AliExpress 221.43 €
   Chollometro «Stellar blade Switch 2»: Miravia 46.89 €
-  Chollometro «Zapatillas de running Nike ACG Pegasus Trail»: Footlocker 70.0 €
-  Chollometro «SKECHERS - Zapatillas deportivas Dazzling Smile - running - mujer»: Privalia 29.99 €
-  Chollometro «Mando Pro Resident Evil Requiem Edition - Switch 2 VERSION»: AliExpress 71.6 €
-  Chollometro «PUMA Zapatillas Club Light Unisex Varias tallas»: Amazon 30.95 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 76996 bytes, 30 chollos
-  cm-2051364 · Miravia → descartado (la tienda marca 53.83 € y no 46.89 €) · Stellar blade Switch 2
-  cm-2051488 · Footlocker 70.0 € → candidato externo · Zapatillas de running Nike ACG Pegasus Trail
-  cm-2051497 · Privalia → descartado (no he podido comprobar el precio en la página de la tienda) · SKECHERS - Zapatillas deportivas Dazzling Smile - running - 
-  cm-2051585 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Mando Pro Resident Evil Requiem Edition - Switch 2 VERSION
-  cm-2051611 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · PUMA Zapatillas Club Light Unisex Varias tallas
-  Vinted «zapatillas running»: HTTP 200, 3665734 bytes, 96 anuncios
-  Vinted «zapatillas running»: 15 parecidos de 96
-  Wallapop «zapatillas running»: 200 / 145548 bytes, 40 anuncios, 32 parecidos, 0 reservas
-  Milanuncios «zapatillas running»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 32 anuncios, ~30 €, no publica
-  ⚠️ No publico «Zapatillas de running Nike ACG Pegasus Trail»: reventa en VINTED+WALLAPOP ~30 € (32 anuncios): ROI -62 % y -44 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75038 bytes, 30 chollos
+  cm-2050276 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Set LEGO Animal Crossing Un dia divertido con Tendo y Nendo 
+  cm-2050786 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · adidas Men's Zapatilla VL Court 3.0 Zapatillas de Skateboard
+  cm-2051656 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Xiaomi Redmi Note 17 - 6/128GB, Pantalla AMOLED 6.99" 120Hz,
+  cm-2050825 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · DJI OSMO Pocket 3 [Envío desde España]
+  cm-2051364 · Miravia → descartado (no he podido comprobar el precio en la página de la tienda) · Stellar blade Switch 2
 Publicados en esta ejecución: 0
