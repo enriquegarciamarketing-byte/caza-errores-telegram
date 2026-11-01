@@ -1,20 +1,17 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 465706 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 480543 bytes, 30 ASIN, 33 títulos
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 341351 bytes, 0 ASIN, 0 títulos
+Listados: 114 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35050 bytes, 30 chollos
-  Chollometro «NIKE Air Force 1 LV8 Tech | 2 colores | Tallas de 38.5 a 49.5 en ambos»: Zalando Privé 59.9 €
-  Chollometro «Splatoon Raiders - Switch 2 pal españa»: AliExpress 41.72 €
-  Chollometro «Nintendo Switch Modelo OLED (Desde España)»: AliExpress 202.78 €
-  Chollometro «NIKE Air Force 1 en NOBUK | Tallas de 35.5 a 52.5»: Zalando Privé 58.9 €
-  Chollometro «Call of Duty: Modern Warfare 4 - PlayStation 5 | Disco»: AliExpress 52.02 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 74861 bytes, 30 chollos
-  cm-2051307 · Zalando Privé → descartado (no he podido comprobar el precio en la página de la tienda) · NIKE Air Force 1 LV8 Tech | 2 colores | Tallas de 38.5 a 49.
-  cm-2051130 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Splatoon Raiders - Switch 2 pal españa
-  cm-2051040 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Nintendo Switch Modelo OLED (Desde España)
-  cm-2051306 · Zalando Privé → descartado (no he podido comprobar el precio en la página de la tienda) · NIKE Air Force 1 en NOBUK | Tallas de 35.5 a 52.5
-  cm-2051056 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Call of Duty: Modern Warfare 4 - PlayStation 5 | Disco
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 34817 bytes, 30 chollos
+  Chollometro «Apple AirTag, Rastreador inteligente, Paquete de 4, Compatible con iPh»: AliExpress 64.5 €
+  Chollometro «CHUWI Aubox | AMD Ryzen 7 8745HS - NO RAM NO ROM [Promo 11.11]»: AliExpress 188.88 €
+  Chollometro «Apple AirPods Pro 3»: AliExpress 162.47 €
+  Chollometro «NIKE Air Force 1 | Tallas de 35.5 a 48.5 y 50»: Zalando Privé 57.9 €
+  Chollometro «Procesador AMD RYZEN 7 7800X3D 177,97€ con ventajas»: AliExpress 182.97 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 82291 bytes, 30 chollos
+  cm-2051255 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Apple AirTag, Rastreador inteligente, Paquete de 4, Compatib
+  cm-2049659 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · CHUWI Aubox | AMD Ryzen 7 8745HS - NO RAM NO ROM [Promo 11.1
+  cm-2051340 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Apple AirPods Pro 3
+  cm-2051308 · Zalando Privé → descartado (no he podido comprobar el precio en la página de la tienda) · NIKE Air Force 1 | Tallas de 35.5 a 48.5 y 50
+  cm-2051314 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Procesador AMD RYZEN 7 7800X3D 177,97€ con ventajas
 Publicados en esta ejecución: 0
