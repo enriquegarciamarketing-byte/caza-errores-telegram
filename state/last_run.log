@@ -1,18 +1,15 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 117 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 458641 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 478043 bytes, 30 ASIN, 33 títulos
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
-Candidatos nuevos tras el filtro rápido: 2
-  ROoY8De · 109.0 € · media 129.98 · ref 118.97 → descartado (solo -8% bajo la referencia) · DJI Estabilizador para smartphones DJI Osmo Mobile 8, estabi
-  72Yyj2G · 29.94 € · media 39.24 · ref 30.01 → descartado (solo -0% bajo la referencia) · PUMA Zapatillas Club Light Unisex 39, Black White Gum Beige
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37747 bytes, 30 chollos
+Listados: 114 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37906 bytes, 30 chollos
+  Chollometro «Mini PC FIREBAT F1P, AMD Ryzen 7 H 255, 16GB LPDDR5 5600MHz, 512GB SSD»: AliExpress 276.77 €
+  Chollometro «PROCESADOR AMD Ryzen 7 7800X3D R7 7800X3D 5,0 GHz 8-Core 16-Thread CPU»: AliExpress 219.03 €
   Chollometro «2 Mandos inalámbricos DATA FROG S80 Pro compatibles con Switch 2, Swit»: AliExpress 35.19 €
   Chollometro «Set LEGO Animal Crossing Un dia divertido con Tendo y Nendo 77059 (513»: Amazon 47.99 €
-  Chollometro «adidas Men's Zapatilla VL Court 3.0 Zapatillas de Skateboard»: Amazon 29.12 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 59990 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 112477 bytes, 30 chollos
+  cm-2051804 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Mini PC FIREBAT F1P, AMD Ryzen 7 H 255, 16GB LPDDR5 5600MHz,
+  cm-2051595 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · PROCESADOR AMD Ryzen 7 7800X3D R7 7800X3D 5,0 GHz 8-Core 16-
   cm-2051283 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · 2 Mandos inalámbricos DATA FROG S80 Pro compatibles con Swit
   cm-2050276 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Set LEGO Animal Crossing Un dia divertido con Tendo y Nendo 
-  cm-2050786 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · adidas Men's Zapatilla VL Court 3.0 Zapatillas de Skateboard
 Publicados en esta ejecución: 0
