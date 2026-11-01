@@ -218,6 +218,28 @@ class Turnos(unittest.TestCase):
         self.assertEqual(state["rotation"], 3)
 
 
+class JuntarMemoria(unittest.TestCase):
+    def test_dos_ejecuciones_solapadas_no_pierden_posts(self):
+        silla = {"asin": "B0DY1HFV3W", "chat": "@cazachollos_com", "message_id": 93, "t": 100, "price": 118.71}
+        remote = {"posts": [silla, {"asin": "A", "chat": "@cazachollos_com", "message_id": 94, "t": 200,
+                                    "ended": 300}],
+                  "seen": {"x": {"t": 50, "why": "viejo"}, "y": {"t": 400, "why": "nuevo en GitHub"}},
+                  "rotation": 9, "summary_sent": "2026-10-31"}
+        local = {"posts": [{"asin": "A", "chat": "@cazachollos_com", "message_id": 94, "t": 200},
+                           {"asin": "B", "chat": "@cazachollos_com", "message_id": 95, "t": 250}],
+                 "seen": {"x": {"t": 60, "why": "reciente"}, "y": {"t": 10, "why": "antiguo"}},
+                 "rotation": 4, "admin_chat": 1}
+        merged = cn.merge_states(local, remote)
+        self.assertEqual([p["message_id"] for p in merged["posts"]], [93, 94, 95])
+        self.assertEqual(merged["posts"][1]["ended"], 300, "si GitHub ya sabía que acabó, no se olvida")
+        self.assertEqual(merged["seen"]["x"]["why"], "reciente")
+        self.assertEqual(merged["seen"]["y"]["why"], "nuevo en GitHub")
+        self.assertEqual(merged["rotation"], 9)
+        self.assertEqual(merged["summary_sent"], "2026-10-31")
+        self.assertEqual(merged["admin_chat"], 1)
+        self.assertTrue(cn.recently_posted(merged, "B0DY1HFV3W", 118.71, datetime.fromtimestamp(1000, timezone.utc), REAL))
+
+
 class Resumen(unittest.TestCase):
     def state(self, now):
         base = int(now.timestamp()) - 3600

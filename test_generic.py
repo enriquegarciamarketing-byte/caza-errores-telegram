@@ -290,7 +290,7 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn("python canal_nube.py", normal)
         self.assertIn("state/canal_nube.json", normal)
         self.assertIn('inputs.test_private != true', normal)
-        self.assertIn("git pull --rebase --autostash && git push", normal)
+        self.assertIn("tools/guardar_memoria.sh", normal)  # junta la memoria en vez de pisarla
         self.assertEqual(CFG["generic"]["chat_id"], "@cazachollos_com")
         self.assertEqual(CFG["generic"]["max_per_hour"], 4)
         self.assertEqual(CFG["generic"]["max_per_day"], 40)

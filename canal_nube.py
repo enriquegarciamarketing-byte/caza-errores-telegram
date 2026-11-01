@@ -94,6 +94,43 @@ def save_state(state: dict) -> None:
     STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
+def merge_states(local: dict, remote: dict) -> dict:
+    """Junta la memoria de esta ejecución con la que ya hay en GitHub, sin perder posts de ninguna.
+
+    Si dos ejecuciones se solapan (o un post manual entra a la vez), cada una guarda lo suyo y aquí se suman:
+    así ningún producto se vuelve a publicar por no constar que ya salió."""
+    merged = dict(remote or {})
+    merged.update({k: v for k, v in (local or {}).items() if k not in ("posts", "seen", "rotation", "summary_sent")})
+
+    def key(post: dict):
+        return (str(post.get("chat")), post.get("message_id")) if post.get("message_id") else \
+            ("sin-mensaje", post.get("asin"), post.get("t"))
+
+    posts: dict = {}
+    for post in list((remote or {}).get("posts") or []) + list((local or {}).get("posts") or []):
+        old = posts.get(key(post))
+        if old is None:
+            posts[key(post)] = dict(post)
+            continue
+        combined = {**old, **post}
+        for field in ("ended", "checked"):  # lo que una de las dos ya sabe no se olvida
+            values = [x.get(field) for x in (old, post) if x.get(field)]
+            if values:
+                combined[field] = max(values)
+        posts[key(post)] = combined
+    merged["posts"] = sorted(posts.values(), key=lambda post: post.get("t") or 0)
+    seen = dict((remote or {}).get("seen") or {})
+    for item_id, entry in ((local or {}).get("seen") or {}).items():
+        if (entry.get("t") or 0) >= ((seen.get(item_id) or {}).get("t") or 0):
+            seen[item_id] = entry
+    merged["seen"] = seen
+    merged["rotation"] = max(int((local or {}).get("rotation") or 0), int((remote or {}).get("rotation") or 0))
+    sent = [x for x in ((local or {}).get("summary_sent"), (remote or {}).get("summary_sent")) if x]
+    if sent:
+        merged["summary_sent"] = max(sent)
+    return merged
+
+
 def admin_chat_id(state: dict, rules: dict | None = None, tg=None, log=print) -> int | None:
     """Tu chat privado con el bot. Con admin_username en config.json se busca por tu @usuario:
     en la memoria de esta pasada, en la del escáner premium o en los mensajes pendientes del bot.
@@ -833,6 +870,7 @@ def main() -> int:
     parser.add_argument("--ignore-limits", action="store_true", help="Salta cupos y horario (pruebas)")
     parser.add_argument("--resumen", action="store_true", help="Manda el resumen de la noche (a las 23:59)")
     parser.add_argument("--manual", default="", help="Post hecho a mano (JSON con asin, title, price, reference…)")
+    parser.add_argument("--merge-state", default="", help="Junta la memoria local con la de este fichero y sale")
     parser.add_argument("--loop", type=int, default=1, help="Pasadas seguidas en esta ejecución")
     parser.add_argument("--every", type=int, default=300, help="Segundos entre pasadas con --loop")
     parser.add_argument("--busy-every", type=int, default=0,
@@ -842,6 +880,13 @@ def main() -> int:
     args = parser.parse_args()
     cfg = load_json(CONFIG_PATH, {})
     state = load_json(STATE_PATH, {"posts": [], "seen": {}})
+    if args.merge_state:
+        remote = load_json(Path(args.merge_state), {})
+        merged = merge_states(state, remote)
+        save_state(merged)
+        print(f"Memoria juntada: {len(merged['posts'])} posts ({len(state.get('posts') or [])} locales, "
+              f"{len(remote.get('posts') or [])} en GitHub).")
+        return 0
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     if not token and not args.dry_run:
         print("Falta TELEGRAM_BOT_TOKEN", file=sys.stderr)

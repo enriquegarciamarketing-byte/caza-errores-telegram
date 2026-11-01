@@ -27,6 +27,8 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -42,14 +44,4 @@ jobs:
           python canal_nube.py "${ARGS[@]}" 2>&1 | tee state/resumen_last_run.log
       - name: Guardar memoria
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state/canal_nube.json state/resumen_last_run.log 2>/dev/null || true
-          if ! git diff --cached --quiet; then
-            git commit -m "Resumen de la noche [skip ci]"
-            for i in 1 2 3 4; do
-              git pull --rebase --autostash && git push && break
-              sleep $((2 ** i))
-            done
-          fi
+        run: tools/guardar_memoria.sh "Resumen de la noche" state/canal_nube.json state/resumen_last_run.log
