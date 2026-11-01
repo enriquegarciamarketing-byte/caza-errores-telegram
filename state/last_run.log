@@ -1,17 +1,20 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 111 productos únicos
+Listados: 117 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 465706 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 480543 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 341351 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35321 bytes, 30 chollos
-  Chollometro «Apple AirPods 4»: Miravia 87.98 €
-  Chollometro «Garmin Forerunner 255 de 46 mm (Desde España)»: AliExpress 106.15 €
-  Chollometro «Sony WH-1000XM5 Auriculares inalámbricos con cancelación de ruido (Des»: AliExpress 166.65 €
-  Chollometro «LEGO 72423 Shrek: Shrek, Asno y Gato con Botas – Kit de Construcción p»: Miravia 76.99 €
-  Chollometro «Nintendo Switch 2 Joy-Con 2 pares - Azul claro/Rojo claro Compatible c»: AliExpress 55.17 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67006 bytes, 30 chollos
-  cm-2050656 · Miravia → descartado (la tienda marca 115.99 € y no 87.98 €) · Apple AirPods 4
-  cm-2051019 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Garmin Forerunner 255 de 46 mm (Desde España)
-  cm-2051186 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Sony WH-1000XM5 Auriculares inalámbricos con cancelación de 
-  cm-2051026 · Miravia → descartado (la tienda marca 83.99 € y no 76.99 €) · LEGO 72423 Shrek: Shrek, Asno y Gato con Botas – Kit de Cons
-  cm-2051063 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Nintendo Switch 2 Joy-Con 2 pares - Azul claro/Rojo claro Co
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35050 bytes, 30 chollos
+  Chollometro «NIKE Air Force 1 LV8 Tech | 2 colores | Tallas de 38.5 a 49.5 en ambos»: Zalando Privé 59.9 €
+  Chollometro «Splatoon Raiders - Switch 2 pal españa»: AliExpress 41.72 €
+  Chollometro «Nintendo Switch Modelo OLED (Desde España)»: AliExpress 202.78 €
+  Chollometro «NIKE Air Force 1 en NOBUK | Tallas de 35.5 a 52.5»: Zalando Privé 58.9 €
+  Chollometro «Call of Duty: Modern Warfare 4 - PlayStation 5 | Disco»: AliExpress 52.02 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 74861 bytes, 30 chollos
+  cm-2051307 · Zalando Privé → descartado (no he podido comprobar el precio en la página de la tienda) · NIKE Air Force 1 LV8 Tech | 2 colores | Tallas de 38.5 a 49.
+  cm-2051130 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Splatoon Raiders - Switch 2 pal españa
+  cm-2051040 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Nintendo Switch Modelo OLED (Desde España)
+  cm-2051306 · Zalando Privé → descartado (no he podido comprobar el precio en la página de la tienda) · NIKE Air Force 1 en NOBUK | Tallas de 35.5 a 52.5
+  cm-2051056 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Call of Duty: Modern Warfare 4 - PlayStation 5 | Disco
 Publicados en esta ejecución: 0
