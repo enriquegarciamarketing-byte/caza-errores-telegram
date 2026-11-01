@@ -287,6 +287,11 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
         # Sin publicar desde hace rato: se admite la mejor rebaja real de las categorías top, algo menor.
         top = taste["score"] >= 90
         needed = min(needed, float(rules.get("fallback_min_discount_top" if top else "fallback_min_discount") or needed))
+    low = detail.get("low")
+    at_low = bool(low and float(price) <= float(low) + 0.009)
+    if at_low and taste["score"] >= 90 and rules.get("historical_low_min_discount"):
+        # En su precio más bajo de siempre y de lo que más se compra: vale con una rebaja real algo menor.
+        needed = min(needed, float(rules["historical_low_min_discount"]))
     if pct + 1e-9 < needed:
         return f"solo -{pct:.0f}% frente a su mínimo de los 30 días anteriores ({euro(reference)})", {}
     if pct > float(rules["max_discount_pct"]):
@@ -309,7 +314,6 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
                     f"y desde {any_price:.0f} €)"), {}
     if not detail.get("image"):
         return "sin foto", {}
-    low = detail.get("low")
     return "", {
         "jl_id": item["id"], "title": title, "price": float(price), "reference": reference,
         "median_90": hist["reference"],

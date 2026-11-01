@@ -137,8 +137,9 @@ class Interes(unittest.TestCase):
                       "FILA Calzoncillos Hombre Boxer Pack de 4"]:
             self.assertTrue(cn.interest(title, REAL)["blocked"], title)
 
-    def test_las_categorias_estrella_salen_desde_el_25(self):
-        self.assertEqual(cn.interest("Cecotec Robot Aspirador Conga", REAL)["min_discount"], 25)
+    def test_las_categorias_estrella_salen_desde_el_18(self):
+        self.assertEqual(cn.interest("Cecotec Robot Aspirador Conga", REAL)["min_discount"], 18)
+        self.assertEqual(cn.interest("Samsung televisor smart tv 55", REAL)["min_discount"], 20)
         self.assertIsNone(cn.interest("Rowenta Intense Comfort calefactor", REAL).get("min_discount"))
 
     def test_cafe_soluble_no_es_una_cafetera(self):
@@ -166,6 +167,19 @@ class SinSilencios(unittest.TestCase):
         detail["series"][0]["points"][-1][1] = 720.0
         why, _ = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
         self.assertIn("solo -10%", why)
+
+    def test_en_minimo_historico_basta_un_10(self):
+        today = NOW.astimezone(cn.MADRID).date()
+        points = [[(today - timedelta(days=100)).isoformat(), 800.0], [today.isoformat(), 710.0]]
+        detail = dict(scanner.parse_detail(LEFANT), price=710.0, low=710.0,
+                      series=[{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png", "points": points}])
+        item = dict(item_for("R0ZG4Bv"), price=710.0)  # robot aspirador a -11 % y en su mínimo de siempre
+        why, deal = cn.evaluate(item, detail, REAL, NOW)
+        self.assertEqual(why, "")
+        self.assertTrue(deal["historical_low"])
+        detail["low"] = 500.0  # mismo precio, pero ya estuvo más barato: no sale
+        why, _ = cn.evaluate(item, detail, REAL, NOW)
+        self.assertIn("solo -11%", why)
 
     def test_el_modo_se_activa_tras_40_minutos(self):
         out = []

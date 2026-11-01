@@ -211,6 +211,11 @@
     "sources": [
       "https://jimmyleaks.com/es/minimos-de-hoy/",
       "https://jimmyleaks.com/es/?order=-modified",
+      "https://jimmyleaks.com/es/?order=-discount",
+      "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-discount",
+      "https://jimmyleaks.com/es/c/electronica/?order=-discount",
+      "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-discount",
+      "https://jimmyleaks.com/es/c/informatica/?order=-discount",
       "https://jimmyleaks.com/es/c/electronica/?order=-modified",
       "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified",
       "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-modified",
@@ -258,10 +263,10 @@
       "https://jimmyleaks.com/es/marca/oppo/?order=-modified",
       "https://jimmyleaks.com/es/marca/realme/?order=-modified"
     ],
-    "core_sources": 2,
-    "max_sources_per_run": 14,
+    "core_sources": 3,
+    "max_sources_per_run": 20,
     "max_price_age_minutes": 60,
-    "min_discount_pct": 35,
+    "min_discount_pct": 30,
     "error_discount_pct": 70,
     "max_discount_pct": 92,
     "min_price_eur": 10,
@@ -270,15 +275,15 @@
     "min_reviews": 10,
     "min_history_days": 30,
     "max_drop_age_days": 14,
-    "max_per_hour": 6,
+    "max_per_hour": 8,
     "max_per_day": 70,
-    "max_per_run": 2,
+    "max_per_run": 3,
     "test_private_posts": 3,
     "quiet_hours": [
       0,
       8
     ],
-    "max_details_per_run": 45,
+    "max_details_per_run": 60,
     "max_tracking_checks_per_run": 4,
     "recheck_rejected_hours": 6,
     "repost_after_days": 14,
@@ -304,8 +309,8 @@
       "tarjeta regalo"
     ],
     "interest": {
-      "_nota": "Lo que más compra la gente online. Las categorías de 90 o más puntos salen desde -25 % (frente al mínimo de 30 días); el resto de categorías top desde -35 %; fuera de ellas solo errores de precio (-65 % y desde 20 €). 'block' nunca sale.",
-      "any_category_min_discount": 65,
+      "_nota": "Lo que más compra la gente online. Categorías de 100 puntos desde -18 % real (frente al mínimo de 30 días), resto de las top desde -20 %; en su mínimo histórico, desde -10 % en las de 90 o más. Tras 40 min sin publicar baja a -15/-18 %. Fuera de las top solo desde -55 % y 20 €. 'block' nunca sale.",
+      "any_category_min_discount": 55,
       "any_category_min_price_eur": 20,
       "tiers": [
         {
@@ -328,7 +333,7 @@
             "ipad",
             "tablet"
           ],
-          "min_discount": 25
+          "min_discount": 18
         },
         {
           "label": "Aspiradoras",
@@ -351,7 +356,7 @@
             "dyson v12",
             "dyson v8"
           ],
-          "min_discount": 25
+          "min_discount": 18
         },
         {
           "label": "Cafeteras",
@@ -364,7 +369,7 @@
             "superautomatica",
             "molinillo de cafe"
           ],
-          "min_discount": 25
+          "min_discount": 18
         },
         {
           "label": "Electrodomésticos",
@@ -392,7 +397,7 @@
             "mambo",
             "termo electrico"
           ],
-          "min_discount": 25
+          "min_discount": 18
         },
         {
           "label": "Muebles y descanso",
@@ -421,7 +426,7 @@
             "almohada",
             "topper"
           ],
-          "min_discount": 25
+          "min_discount": 20
         },
         {
           "label": "TV y sonido",
@@ -445,7 +450,7 @@
             "sony wh",
             "sonos"
           ],
-          "min_discount": 25
+          "min_discount": 20
         },
         {
           "label": "Informática",
@@ -465,7 +470,7 @@
             "webcam",
             "tarjeta grafica"
           ],
-          "min_discount": 25
+          "min_discount": 20
         },
         {
           "label": "Consolas",
@@ -479,7 +484,7 @@
             "steam deck",
             "mando dualsense"
           ],
-          "min_discount": 25
+          "min_discount": 20
         },
         {
           "label": "Relojes inteligentes",
@@ -744,7 +749,8 @@
     "summary_window_minutes": 100,
     "silence_minutes": 40,
     "fallback_min_discount_top": 15,
-    "fallback_min_discount": 20
+    "fallback_min_discount": 18,
+    "historical_low_min_discount": 10
   },
   "store_affiliates": {
     "carrefour": {"template": ""},
