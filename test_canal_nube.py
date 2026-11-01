@@ -2,7 +2,7 @@
 
 import json
 import unittest
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -148,6 +148,33 @@ class Interes(unittest.TestCase):
         robot = {"interest": 100, "discount": 45, "price": 330, "reference": 600}
         tape = {"interest": 0, "discount": 52, "price": 9.4, "reference": 19.59}
         self.assertGreater(cn.deal_rank(robot), cn.deal_rank(tape))
+
+
+class SinSilencios(unittest.TestCase):
+    def test_tras_un_rato_sin_publicar_admite_rebajas_algo_menores(self):
+        today = NOW.astimezone(cn.MADRID).date()
+        points = [[(today - timedelta(days=100)).isoformat(), 800.0], [today.isoformat(), 660.0]]
+        detail = dict(scanner.parse_detail(LEFANT), price=660.0,
+                      series=[{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png", "points": points}])
+        item = dict(item_for("R0ZG4Bv"), price=660.0)  # robot aspirador a -17,5 % de su mínimo de 30 días (800 €)
+        why, _ = cn.evaluate(item, detail, REAL, NOW)
+        self.assertIn("solo -18%", why)
+        why, deal = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
+        self.assertEqual(why, "")
+        self.assertEqual(round(deal["discount"]), 18)
+        detail["price"] = item["price"] = 720.0  # -10 %: ni en modo sin silencios
+        detail["series"][0]["points"][-1][1] = 720.0
+        why, _ = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
+        self.assertIn("solo -10%", why)
+
+    def test_el_modo_se_activa_tras_40_minutos(self):
+        out = []
+        state = {"posts": [{"t": int(NOW.timestamp()) - 45 * 60}], "seen": {}}
+        cfg = {"affiliate_tag": "cazadores_errores-21", "amazon_channel": {**{k: v for k, v in REAL.items() if k != "tag"},
+               "sources": []}}
+        cn.run(SimpleNamespace(dry_run=True, test_private=False, ignore_limits=True), cfg, state, NOW,
+               fetch=lambda url: LISTING, resolve_asin=lambda jl: None, log=out.append)
+        self.assertTrue(any("Modo sin silencios" in line for line in out))
 
 
 class Fuentes(unittest.TestCase):

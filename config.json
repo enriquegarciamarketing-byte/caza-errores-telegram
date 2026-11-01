@@ -741,7 +741,10 @@
       ]
     },
     "close_time": "23:50",
-    "summary_window_minutes": 100
+    "summary_window_minutes": 100,
+    "silence_minutes": 40,
+    "fallback_min_discount_top": 15,
+    "fallback_min_discount": 20
   },
   "store_affiliates": {
     "carrefour": {"template": ""},

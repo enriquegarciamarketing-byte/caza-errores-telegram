@@ -253,7 +253,7 @@ def deal_rank(deal: dict) -> float:
     return float(deal.get("interest") or 0) + float(deal.get("discount") or 0) + min(saved, 200.0) / 4
 
 
-def evaluate(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str, dict]:
+def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool = False) -> tuple[str, dict]:
     """Motivo de descarte (o '') y los datos del chollo ya calculados."""
     title = detail.get("name") or item.get("title") or ""
     price = detail.get("price")
@@ -283,6 +283,10 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str,
     if taste["blocked"]:
         return f"poco interés («{taste['blocked']}»)", {}
     needed = float(taste.get("min_discount") or rules["min_discount_pct"])
+    if relaxed and taste["score"] > 0:
+        # Sin publicar desde hace rato: se admite la mejor rebaja real de las categorías top, algo menor.
+        top = taste["score"] >= 90
+        needed = min(needed, float(rules.get("fallback_min_discount_top" if top else "fallback_min_discount") or needed))
     if pct + 1e-9 < needed:
         return f"solo -{pct:.0f}% frente a su mínimo de los 30 días anteriores ({euro(reference)})", {}
     if pct > float(rules["max_discount_pct"]):
@@ -517,8 +521,17 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             if why:
                 log(f"No publico: {why}.")
                 return 0
-    approved = find_deals(rules, state, now, fetch, resolve_asin, log, remember=not args.test_private)
-    approved.sort(key=lambda pair: pair[1]["discount"], reverse=True)
+    relaxed = False
+    silence = float(rules.get("silence_minutes") or 0) * 60
+    if silence and not args.test_private:
+        last = max([p.get("t") or 0 for p in state.get("posts") or []] or [0])
+        relaxed = now.timestamp() - last >= silence
+        if relaxed:
+            log(f"Modo sin silencios: {int((now.timestamp() - last) // 60)} min sin publicar; "
+                f"admito desde -{rules.get('fallback_min_discount_top')} % en categorías estrella "
+                f"y -{rules.get('fallback_min_discount')} % en el resto de las top.")
+    approved = find_deals(rules, state, now, fetch, resolve_asin, log, remember=not args.test_private,
+                          relaxed=relaxed)
     limit = int(rules["test_private_posts"] if args.test_private else rules["max_per_run"])
     sent = 0
     for item, deal in approved:
@@ -574,7 +587,8 @@ def sources_for_run(rules: dict, now: datetime) -> list[str]:
     return fixed + [rest[(start + i) % len(rest)] for i in range(min(take, len(rest)))]
 
 
-def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log, remember: bool = True) -> list:
+def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log, remember: bool = True,
+               relaxed: bool = False) -> list:
     """Busca en los listados y devuelve [(item, deal)] que cumplen todas las reglas, mejor descuento primero."""
     seen = state.setdefault("seen", {})
     recheck = float(rules["recheck_rejected_hours"]) * 3600
@@ -591,7 +605,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         for item in fresh:
             last = seen.get(item["id"]) or {}
             same_price = last.get("price") is not None and abs(float(last["price"]) - float(item["price"])) < 0.01
-            if same_price and now.timestamp() - (last.get("t") or 0) < recheck:
+            low_discount_only = str(last.get("why") or "").startswith("solo -")
+            if same_price and now.timestamp() - (last.get("t") or 0) < recheck and not (relaxed and low_discount_only):
                 continue  # ya descartado a este mismo precio; si baja más, se vuelve a mirar
             pool.setdefault(item["id"], item)
     ordered = sorted(pool.values(), key=lambda item: listing_priority(item, rules), reverse=True)
@@ -604,7 +619,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         except Exception as exc:
             log(f"  Ficha {item['id']}: {exc}")
             continue
-        why, deal = evaluate(item, detail, rules, now)
+        why, deal = evaluate(item, detail, rules, now, relaxed=relaxed)
         if not why:
             asin = resolve_asin(item["id"])
             if not asin or not ASIN_RE.fullmatch(asin):
@@ -805,6 +820,8 @@ def main() -> int:
     parser.add_argument("--ignore-limits", action="store_true", help="Salta cupos y horario (pruebas)")
     parser.add_argument("--resumen", action="store_true", help="Manda el resumen de la noche (a las 23:59)")
     parser.add_argument("--manual", default="", help="Post hecho a mano (JSON con asin, title, price, reference…)")
+    parser.add_argument("--loop", type=int, default=1, help="Pasadas seguidas en esta ejecución")
+    parser.add_argument("--every", type=int, default=300, help="Segundos entre pasadas con --loop")
     args = parser.parse_args()
     cfg = load_json(CONFIG_PATH, {})
     state = load_json(STATE_PATH, {"posts": [], "seen": {}})
@@ -817,8 +834,24 @@ def main() -> int:
     print(f"== {now.astimezone(MADRID):%Y-%m-%d %H:%M} ==")
     if args.manual:
         code = run_manual(args, cfg, state, now, tg=tg)
+    elif args.resumen:
+        code = run_summary(args, cfg, state, now, tg=tg)
     else:
-        code = (run_summary if args.resumen else run)(args, cfg, state, now, tg=tg)
+        # GitHub retrasa mucho las tareas cada 5 minutos: cada ejecución hace varias pasadas seguidas.
+        rules = rules_from(cfg)
+        code = 0
+        for index in range(max(1, args.loop)):
+            started = time.time()
+            now = datetime.now(timezone.utc)
+            if index:
+                print(f"== pasada {index + 1} · {now.astimezone(MADRID):%H:%M} ==")
+            code = run(args, cfg, state, now, tg=tg)
+            if not args.dry_run and not args.test_private:
+                save_state(state)
+            why = quota_reason(state, now, rules)
+            if index + 1 >= args.loop or "silencio" in why or "cerrado" in why:
+                break
+            time.sleep(max(0, args.every - (time.time() - started)))
     if not args.dry_run and not args.test_private:
         save_state(state)
     return code

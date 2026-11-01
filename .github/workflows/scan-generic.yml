@@ -1,9 +1,10 @@
 name: Canal normal @cazachollos_com
 
 on:
-  # Cada 5 minutos (el mínimo de GitHub). El script respeta el silencio de 01:00 a 08:00 (Madrid) y los cupos.
+  # GitHub retrasa mucho las tareas muy frecuentes, así que cada ejecución hace 4 pasadas (una cada 5 min).
+  # El script respeta el horario (08:00-23:50 Madrid) y los cupos, y para en cuanto el día se cierra.
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -27,7 +28,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 25
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
@@ -56,6 +57,7 @@ jobs:
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
           set -o pipefail
+          if [ "${{ github.event_name }}" = "schedule" ]; then ARGS+=(--loop 4 --every 300); fi
           python canal_nube.py "${ARGS[@]}" 2>&1 | tee state/canal_nube_last_run.log
 
       - name: Guardar memoria del canal normal
