@@ -1,0 +1,55 @@
+name: Post manual @cazachollos_com
+
+on:
+  workflow_dispatch:
+    inputs:
+      datos:
+        description: "JSON del chollo: asin, title, price, reference, image, lines, seen_at…"
+        required: true
+        type: string
+      privado:
+        description: "Mandarlo solo a tu chat privado (prueba). Desmárcalo para publicarlo en el canal."
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-canal-normal
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Publicar el post manual
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          DATOS: ${{ inputs.datos }}
+        run: |
+          ARGS=(--manual "$DATOS")
+          if [ "${{ inputs.privado }}" = "true" ]; then ARGS+=(--test-private); fi
+          set -o pipefail
+          python canal_nube.py "${ARGS[@]}" 2>&1 | tee state/manual_last_run.log
+      - name: Guardar memoria
+        if: always() && inputs.privado != true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/canal_nube.json state/manual_last_run.log 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Post manual [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase --autostash && git push && break
+              sleep $((2 ** i))
+            done
+          fi

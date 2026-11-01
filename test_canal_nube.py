@@ -224,6 +224,34 @@ class Resumen(unittest.TestCase):
         self.assertEqual(cn.quota_reason({"posts": [], "summary_sent": "2026-10-31"}, morning, rules), "")
 
 
+class Manual(unittest.TestCase):
+    SPEC = {"asin": "B0HC84XR1P", "title": "Lenovo LOQ Tower 26ADR10 Torre Gaming con Ryzen 7 y RTX 5050",
+            "price": 999.0, "reference": 1299.0, "image": "images/manual/B0HC84XR1P.png", "seen_at": "10:05",
+            "lines": ["⏰ Oferta flash: termina hoy a las 23:59"]}
+
+    def test_post_manual_con_datos_de_la_ficha(self):
+        deal = cn.manual_deal(self.SPEC, RULES)
+        url = "https://www.amazon.es/dp/B0HC84XR1P?tag=cazadores_errores-21"
+        text = cn.build_caption(deal, url, RULES)
+        self.assertIn("999,00 €", text)
+        self.assertIn("<s>1.299,00 €</s>", text)
+        self.assertIn("-23 %", text)
+        self.assertIn("Oferta flash", text)
+        self.assertIn("a las 10:05", text)
+        self.assertIn("dp/B0HC84XR1P?tag=cazadores_errores-21", text)
+
+    def test_datos_incoherentes_no_se_publican(self):
+        with self.assertRaises(ValueError):
+            cn.manual_deal(dict(self.SPEC, reference=900), RULES)
+        with self.assertRaises(ValueError):
+            cn.manual_deal(dict(self.SPEC, asin="XYZ"), RULES)
+
+    def test_imagen_del_repositorio(self):
+        deal = cn.manual_deal(self.SPEC, RULES)
+        card = cn.make_card(deal, RULES)
+        self.assertTrue(card.exists())
+
+
 class Pasada(unittest.TestCase):
     def pages(self, detail_pages=None):
         detail_pages = detail_pages or {}

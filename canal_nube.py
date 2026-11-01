@@ -406,8 +406,11 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
     if deal.get("rating") and deal.get("reviews"):
         lines.append(f"⭐ {str(round(deal['rating'], 1)).replace('.', ',')} ({deal['reviews']} opiniones)")
+    for extra in deal.get("extra_lines") or []:
+        lines.append(e(str(extra)))
     lines.append("")
-    lines.append(f"🕒 Precio visto en Amazon.es a las {seen:%H:%M}. Puede cambiar en cualquier momento.")
+    hour = deal.get("seen_hhmm") or f"{seen:%H:%M}"
+    lines.append(f"🕒 Precio visto en Amazon.es a las {hour}. Puede cambiar en cualquier momento.")
     lines.append("")
     lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en Amazon</a></b>')
     return "\n".join(lines)
@@ -421,7 +424,9 @@ def make_card(deal: dict, rules: dict) -> Path:
     import photos
     from publisher import DEAL_LOGO, create_price_card
 
-    raw = photos.fetch_best(deal["image"])
+    image = str(deal.get("image") or "")
+    local = ROOT / image if image and not image.startswith("http") else None
+    raw = local.read_bytes() if local and local.is_file() else (photos.fetch_best(image) if image else None)
     if not raw:
         raise ValueError("no he podido descargar la foto")
     OUTPUT.mkdir(parents=True, exist_ok=True)
@@ -722,12 +727,74 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     return 0
 
 
+def manual_deal(spec: dict, rules: dict) -> dict:
+    """Chollo escrito a mano a partir de la ficha (captura). Comprueba que los datos tienen sentido."""
+    asin = str(spec.get("asin") or "").strip().upper()
+    if not asin and spec.get("url"):
+        import affiliate
+        asin = affiliate.extract_asin(str(spec["url"])) or ""
+    if not ASIN_RE.fullmatch(asin):
+        raise ValueError("falta un ASIN válido (10 caracteres) o una URL amazon.es/dp/…")
+    title = str(spec.get("title") or "").strip()
+    price = float(spec["price"])
+    reference = float(spec["reference"])
+    if not title:
+        raise ValueError("falta el título")
+    if price <= 0 or reference <= price:
+        raise ValueError("el precio de referencia tiene que ser mayor que el precio actual")
+    pct = discount_pct(price, reference)
+    if pct > float(rules.get("max_discount_pct") or 95):
+        raise ValueError(f"descuento de -{pct:.0f} %: revisa los datos")
+    return {
+        "asin": asin, "jl_id": "", "title": title, "price": price, "reference": reference,
+        "median_90": float(spec.get("habitual") or 0), "discount": pct,
+        "historical_low": bool(spec.get("historical_low")), "rating": spec.get("rating"),
+        "reviews": spec.get("reviews"), "image": spec.get("image") or "", "seen_ts": int(time.time()),
+        "seen_hhmm": spec.get("seen_at") or "", "extra_lines": list(spec.get("lines") or []),
+        "interest": 0, "interest_label": "",
+    }
+
+
+def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) -> int:
+    rules = rules_from(cfg)
+    if not rules["tag"]:
+        log("Falta affiliate_tag en config.json.")
+        return 2
+    try:
+        spec = json.loads(args.manual)
+        deal = manual_deal(spec, rules)
+    except (ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        log(f"Post manual: datos no válidos ({exc}).")
+        return 2
+    url = f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['tag']}"
+    caption = build_caption(deal, url, rules)
+    target = admin_chat_id(state, rules, tg, log) if args.test_private else rules["chat_id"]
+    if not target:
+        log("Post manual: no encuentro tu chat privado. Escribe /start al bot y repite.")
+        return 2
+    if args.dry_run or tg is None:
+        log("[prueba, no se envía]\n" + caption)
+        return 0
+    card = make_card(deal, rules)
+    message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
+    where = "tu chat (prueba)" if args.test_private else target
+    log(f"Post manual enviado a {where} (mensaje {message['message_id']}): {clean_title(deal['title'], 70)}")
+    if not args.test_private:
+        state.setdefault("posts", []).append({
+            "asin": deal["asin"], "jl_id": "", "price": deal["price"], "reference": deal["reference"],
+            "t": int(now.timestamp()), "url": url, "chat": target, "message_id": int(message["message_id"]),
+            "caption": caption, "title": deal["title"][:140], "manual": True,
+        })
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Canal @cazachollos_com: solo Amazon, precio verificado")
     parser.add_argument("--dry-run", action="store_true", help="Lo revisa todo pero no envía nada")
     parser.add_argument("--test-private", action="store_true", help="Hasta 3 ejemplos a tu chat, nunca al canal")
     parser.add_argument("--ignore-limits", action="store_true", help="Salta cupos y horario (pruebas)")
-    parser.add_argument("--resumen", action="store_true", help="Manda el resumen de la noche (a las 23:30)")
+    parser.add_argument("--resumen", action="store_true", help="Manda el resumen de la noche (a las 23:59)")
+    parser.add_argument("--manual", default="", help="Post hecho a mano (JSON con asin, title, price, reference…)")
     args = parser.parse_args()
     cfg = load_json(CONFIG_PATH, {})
     state = load_json(STATE_PATH, {"posts": [], "seen": {}})
@@ -738,7 +805,10 @@ def main() -> int:
     tg = scanner.Telegram(token) if token else None
     now = datetime.now(timezone.utc)
     print(f"== {now.astimezone(MADRID):%Y-%m-%d %H:%M} ==")
-    code = (run_summary if args.resumen else run)(args, cfg, state, now, tg=tg)
+    if args.manual:
+        code = run_manual(args, cfg, state, now, tg=tg)
+    else:
+        code = (run_summary if args.resumen else run)(args, cfg, state, now, tg=tg)
     if not args.dry_run and not args.test_private:
         save_state(state)
     return code
