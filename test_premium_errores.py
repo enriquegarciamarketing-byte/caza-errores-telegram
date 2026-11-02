@@ -112,6 +112,27 @@ class AskAdminTest(unittest.TestCase):
         self.assertFalse(self.state["posts"][0].get("pending"))
         self.assertEqual(self.state["posts"][0]["message_id"], 4242)
 
+    def _loose(self, text):
+        sent = []
+        tg = FakeTG()
+        update = {"update_id": 1, "message": {"chat": {"type": "private", "id": 7}, "message_id": 99, "text": text}}
+        tg.call = lambda method, params=None: ([update] if method == "getUpdates" else sent.append(params) or {"message_id": 5})
+        scanner.handle_updates(tg, self.cfg, self.state, "@caza_errores", False)
+        return sent
+
+    def test_ok_suelto_vale_si_solo_hay_uno(self):
+        self._ask()
+        sent = self._loose("Ok")
+        self.assertTrue(self.state["posts"][0].get("approved"))
+        self.assertIn("Recibido", sent[0]["text"])
+
+    def test_ok_suelto_con_varios_pide_responder(self):
+        self._ask()
+        self.state["posts"].append({**self.state["posts"][0], "id": "cm-456", "alert_id": 5000})
+        sent = self._loose("ok")
+        self.assertFalse(any(p.get("approved") for p in self.state["posts"]))
+        self.assertIn("Responde OK directamente", sent[0]["text"])
+
     def test_sin_ok_no_se_publica(self):
         self._ask()
         self._reply("me lo pienso")

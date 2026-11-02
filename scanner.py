@@ -664,6 +664,19 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
         link = LINK_RE.search(text)
         reply_to = (msg.get("reply_to_message") or {}).get("message_id")
         post = next((p for p in state.get("posts", []) if p.get("alert_id") == reply_to), None)
+        if post is None and not link and OK_RE.match(text):
+            # Un OK suelto, sin responder a un mensaje: vale si solo hay un chollo esperando.
+            waiting = [p for p in state.get("posts", []) if p.get("needs_ok") and p.get("pending")
+                       and not p.get("approved") and not p.get("expired")]
+            if len(waiting) == 1:
+                post = waiting[0]
+            else:
+                if not dry:
+                    note = ("Ahora mismo no tengo nada esperando tu OK." if not waiting else
+                            f"Tengo {len(waiting)} chollos esperando tu OK. Responde OK directamente al mensaje "
+                            "del que quieras publicar (mantén pulsado el mensaje → Responder).")
+                    tg.call("sendMessage", {"chat_id": admin, "reply_to_message_id": msg["message_id"], "text": note})
+                continue
         if post and post.get("needs_ok") and not link:
             if not OK_RE.match(text):
                 continue
@@ -679,6 +692,8 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
                                         "text": "⌛ Este ya ha caducado: el precio puede haber cambiado. No lo publico."})
             else:
                 post["approved"] = True
+                tg.call("sendMessage", {"chat_id": admin, "reply_to_message_id": msg["message_id"],
+                                        "text": "👍 Recibido. Lo publico en el premium ahora mismo."})
             continue
         if link and post:
             url = link.group(0).rstrip(").,")
