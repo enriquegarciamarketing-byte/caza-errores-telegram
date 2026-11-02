@@ -954,6 +954,11 @@
    "price": 599.0,
    "t": 1793658756,
    "result": "solo -1% bajo la referencia"
+  },
+  "M6rE8j4": {
+   "price": 72.19,
+   "t": 1793662321,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1227,28 +1232,10 @@
    "url": "https://www.cdiscount.com/juniors/jeux-de-construction/lego-figurine-star-wars-a-construire-75455-bob/f-12083-lego75455.html#mpos=15|cd",
    "alert_id": 224,
    "alert_text_id": 225,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1793661805,
-   "card_data": {
-    "title": "LEGO Figuras Star Wars - 75455 - Boba Fett",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 91.33,
-    "reference": 91.33,
-    "image": "https://static.chollometro.com/threads/raw/2c6eM/2053354_1/re/150x150/qt/55/2053354_1.jpg",
-    "store_label": "Cdiscount",
-    "conditions": "Con cupón",
-    "resale": {
-     "price": 130.718,
-     "count": 3,
-     "roi": 33.78090441256978,
-     "profit": 30.85209999999998,
-     "source_label": "WALLAPOP",
-     "note": "3 anuncios de referencia · Wallapop 3 · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   },
   {
    "id": "cm-2053475",
@@ -1309,7 +1296,7 @@
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -6383,9 +6370,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 19,
+ "rotation_index": 15,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/sony-wh-ch520-auriculares-de-diadema-inalambricos-bluetooth-diseno-ligero-50-h-de-bateria-carga-rapida-ecualizador-llamadas-nitidas-2053099": 1793638507.2977524,
   "https://www.chollometro.com/ofertas/lego-harry-potter-rincon-entre-libros-expreso-de-hogwarts-76450-2052508": 1793642212.9165745,
   "https://www.chollometro.com/ofertas/robot-aspirador-dreame-l50-pro-ultra-2053166": 1793642820.1813724,
   "https://www.chollometro.com/ofertas/mando-ps5-dualsense-edge-2053239": 1793642820.1813724,
@@ -6412,7 +6398,8 @@
   "https://www.chollometro.com/ofertas/metal-gear-solid-master-collection-volumen-2-juego-ps5-version-espana-2053485": 1793655928.1907775,
   "https://www.chollometro.com/ofertas/zapatillas-nike-en-privalia-desde-2799eur-field-general-ld-1000-air-force-1-air-max-shox-y-mas-2053476": 1793657870.0880773,
   "https://www.chollometro.com/ofertas/asics-zapatillas-de-padel-solution-swift-ff-2-mujer-20-extra-con-codigo-2052944": 1793659669.0409653,
-  "https://www.chollometro.com/ofertas/reloj-deportivo-casio-g-shock-ga-2100-diferentes-colores-2053538": 1793659669.0409653
+  "https://www.chollometro.com/ofertas/reloj-deportivo-casio-g-shock-ga-2100-diferentes-colores-2053538": 1793659669.0409653,
+  "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2053553": 1793661136.1705737
  },
  "asked": {
   "cm-2052619": 1793613138,
