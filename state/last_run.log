@@ -1,13 +1,49 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 115 productos únicos
+Listados: 101 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 456170 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 481582 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 341247 bytes, 0 ASIN, 0 títulos
+Candidatos nuevos tras el filtro rápido: 1
+  MQvDVGP · 69.99 € · media 83.8 · ref 68.87 → descartado (la referencia corregida no supera el precio (media inflada)) · LEGO Harry Potter Rincón Entre Libros: Expreso de Hogwarts 7
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35845 bytes, 30 chollos
+  Chollometro «DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal»: AliExpress 199.75 €
+  Chollometro «8bitdo Ultimate 2 Mando Pc y Switch 2»: AliExpress 40.25 €
+  Chollometro «Aspiradora sin cable Dyson V8 Cyclone Modelo: Aspiradora sin cable Dys»: Privalia 279.0 €
+  Chollometro «Set LEGO Technic Aston Martin Valkyrie 42208 (707 piezas, motor V12, m»: Amazon 41.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 86453 bytes, 30 chollos
+  cm-2052619 · AliExpress 199.75 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas +
+  cm-2052461 · AliExpress 40.25 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · 8bitdo Ultimate 2 Mando Pc y Switch 2
+  cm-2052076 · Privalia 279.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Aspiradora sin cable Dyson V8 Cyclone Modelo: Aspiradora sin
+  cm-2052519 · Amazon 41.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Set LEGO Technic Aston Martin Valkyrie 42208 (707 piezas, mo
+  Wallapop «8bitdo ultimate»: 200 / 116452 bytes, 36 anuncios, 33 parecidos, 0 reservas
+  Milanuncios «8bitdo ultimate»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 29 anuncios, ~26 €, no publica
+  ⚠️ No publico «8bitdo Ultimate 2 Mando Pc y Switch 2»: reventa en WALLAPOP ~26 € (29 anuncios): ROI -44 % y -18 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «lego v12 technic»: 200 / 70713 bytes, 21 anuncios, 1 parecidos, 0 reservas
+  Wallapop «lego v12»: 200 / 87143 bytes, 34 anuncios, 14 parecidos, 0 reservas
+  Milanuncios «lego v12 technic»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 13 anuncios, ~23 €, no publica
+  ⚠️ No publico «Set LEGO Technic Aston Martin Valkyrie 42208 (707 piezas, motor V12, maqueta de coche de c»: reventa en WALLAPOP ~23 € (13 anuncios): ROI -52 % y -22 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «dji osmo»: 200 / 111843 bytes, 39 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «dji osmo»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 31 anuncios, ~270 €, publica
+  [prueba] te pediría OK por privado: OPORTUNIDAD DE REVENTA · DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal · 199,75 € (media 90 días 199,75 €, -0%) · https://es.aliexpress.com/item/1005012857606674.html
+  Wallapop «aspiradora v8 sin»: 200 / 128548 bytes, 40 anuncios, 30 parecidos, 0 reservas
+  Milanuncios «aspiradora v8 sin»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 8 anuncios, ~62 €, no publica
+  ⚠️ No publico «Aspiradora sin cable Dyson V8 Cyclone Modelo: Aspiradora sin cable Dyson V8 Cyclone»: reventa en WALLAPOP ~62 € (8 anuncios): ROI -82 % y -228 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 1
+== pasada 2 · 10:47 ==
+Listados: 86 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36139 bytes, 30 chollos
-  Chollometro «Apple Watch Ultra 3 GPS + Cellular 5G, titanio 49 mm, pantalla 3000 ni»: Amazon 642.52 €
-  Chollometro «Set LEGO Harry Potter Rincon Entre Libros Expreso de Hogwarts 76450 (8»: Amazon 69.99 €
-  Chollometro «Dji Mini 5 Pro»: AliExpress 628.54 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73032 bytes, 30 chollos
-  cm-2052489 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Apple Watch Ultra 3 GPS + Cellular 5G, titanio 49 mm, pantal
-  cm-2052435 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Set LEGO Harry Potter Rincon Entre Libros Expreso de Hogwart
-  cm-2051648 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Dji Mini 5 Pro
 Publicados en esta ejecución: 0
+== pasada 3 · 10:50 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Fin de la ejecución tras 3 pasadas.
