@@ -235,6 +235,13 @@ class ConditionalPriceTest(unittest.TestCase):
         self.assertIn("Cómo conseguir este precio", text)
         self.assertIn("Código promocional", text)
 
+    def test_titulo_limpio_sin_cupon_ni_paypal(self):
+        clean = scanner.feeds.clean_deal_title
+        self.assertEqual(clean("DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal"),
+                         "DJI Osmo Pocket 3 CMOS")
+        self.assertEqual(clean("Mario Luigi Brothership - 21,70 CON CUPÓN VENTAJAS"), "Mario Luigi Brothership - 21,70")
+        self.assertEqual(clean("POCO X8 Pro 5G 8GB 256GB"), "POCO X8 Pro 5G 8GB 256GB")
+
     def test_precio_normal_sigue(self):
         self.assertIsNone(scanner.feeds.conditional_price("DJI Osmo Pocket 3 Creator Combo"))
 
