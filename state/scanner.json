@@ -939,6 +939,16 @@
    "price": 499.0,
    "t": 1793644300,
    "result": "solo -16% bajo la referencia"
+  },
+  "7PNOQOd": {
+   "price": 318.99,
+   "t": 1793645695,
+   "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "ROo4bvn": {
+   "price": 37.5,
+   "t": 1793647045,
+   "result": "valoraciones flojas (5.0 / 3)"
   }
  },
  "posts": [
@@ -1142,11 +1152,66 @@
    "needs_ok": true,
    "ask_until": 1793625892,
    "expired": true
+  },
+  {
+   "id": "cm-2053299",
+   "gtin": null,
+   "price": 39.99,
+   "category": "OPORTUNIDAD DE REVENTA",
+   "t": 1793645724,
+   "title": "LEGO Fortnite 77073 Autobús de batalla | Set de construcción coleccionista con 9 minifiguras (precio nuevas cuentas, ant",
+   "cap": {
+    "category": "OPORTUNIDAD DE REVENTA",
+    "title": "LEGO Fortnite 77073 Autobús de batalla | Set de construcción coleccionista con 9 minifiguras (precio nuevas cuentas, antiguas 10 € más)",
+    "brand": "",
+    "current": 39.99,
+    "reference": 39.99,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "sizes": null,
+    "hold": true,
+    "store": "Cdiscount",
+    "note": "",
+    "coupons": [
+     "HELLO10"
+    ],
+    "resale_price": 79.18,
+    "resale_count": 19,
+    "profit": 33.231,
+    "demand": "Muchos anuncios",
+    "source_label": "WALLAPOP"
+   },
+   "url": "https://www.cdiscount.com/juniors/jeux-de-construction/lego-fortnite-77073-bus-de-combat-jeu-de-constru/f-12083-lego77073.html",
+   "alert_id": 214,
+   "alert_text_id": 215,
+   "pending": true,
+   "needs_ok": true,
+   "ask_until": 1793656524,
+   "card_data": {
+    "title": "LEGO Fortnite 77073 Autobús de batalla | Set de construcción coleccionista con 9 minifiguras (precio nuevas cuentas, antiguas 10 € más)",
+    "category": "OPORTUNIDAD DE REVENTA",
+    "current": 39.99,
+    "reference": 39.99,
+    "image": "https://static.chollometro.com/threads/raw/bYH4T/2053299_1/re/150x150/qt/55/2053299_1.jpg",
+    "store_label": "Cdiscount",
+    "conditions": "Con cupón",
+    "resale": {
+     "price": 79.18,
+     "count": 19,
+     "roi": 83.09827456864215,
+     "profit": 33.231,
+     "source_label": "WALLAPOP",
+     "note": "19 anuncios de referencia · Wallapop · Muchos anuncios",
+     "sample": false,
+     "demand": "Muchos anuncios"
+    }
+   }
   }
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 101,
+ "last_listing_count": 91,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -4160,6 +4225,150 @@
    "http_status": 200,
    "bytes": 146240,
    "raw_count": 40
+  },
+  "|garmin forerunner 165, reloj inteligente para correr con gps, negro|garmin 165 forerunner": {
+   "t": 1793645720.9655201,
+   "query": "garmin 165 forerunner",
+   "prices": [
+    155.0,
+    130.0,
+    149.0,
+    155.0,
+    150.0,
+    155.0,
+    149.99,
+    145.0,
+    145.0,
+    140.0,
+    160.0,
+    160.0,
+    160.0,
+    160.0,
+    144.99,
+    144.99,
+    145.0,
+    160.0,
+    185.0,
+    155.0,
+    175.0,
+    140.0,
+    165.0,
+    170.0,
+    165.0,
+    185.0,
+    199.0,
+    150.0,
+    180.0,
+    165.0,
+    120.0,
+    155.0,
+    160.0,
+    130.0,
+    149.95,
+    180.0,
+    160.0,
+    160.0,
+    160.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 108217,
+   "raw_count": 39
+  },
+  "|lego fortnite 77073 autobus de batalla | set de construccion coleccionista con 9 minifiguras (precio nuevas cuentas, antiguas 10 € mas)|lego 77073 fortnite": {
+   "t": 1793645721.8857195,
+   "query": "lego 77073 fortnite",
+   "prices": [
+    75.0,
+    65.0,
+    10.0,
+    70.0,
+    70.0,
+    5.0,
+    54.99,
+    75.0,
+    75.0,
+    120.0,
+    79.0,
+    95.0,
+    90.0,
+    80.0,
+    84.9,
+    79.9,
+    90.0,
+    80.0,
+    90.0,
+    10.0,
+    80.0,
+    80.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 68520,
+   "raw_count": 27
+  },
+  "|lego star wars 75379 r2-d2 | droide construible de 1050 piezas (precio nuevas cuentas, antiguas 10€ mas)|lego r2 star": {
+   "t": 1793645726.7760735,
+   "query": "lego r2 star",
+   "prices": [
+    59.9,
+    45.0,
+    6.5,
+    59.0,
+    160.0,
+    44.95,
+    60.0,
+    5.0,
+    3.0,
+    9.0,
+    2.0,
+    40.0,
+    8.0,
+    7.0,
+    50.0,
+    5.0,
+    48.0,
+    3.5,
+    150.0,
+    2.0,
+    9.95,
+    5.0,
+    6.75
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 96883,
+   "raw_count": 40
+  },
+  "|gafas dji goggles 3 fpv con pantallas micro-oled|gafas dji": {
+   "t": 1793647521.347099,
+   "query": "gafas dji",
+   "prices": [
+    200.0,
+    220.0,
+    220.0,
+    590.0,
+    350.0,
+    250.0,
+    230.0,
+    500.0,
+    200.0,
+    220.0,
+    210.0,
+    685.0,
+    150.0,
+    249.0,
+    380.0,
+    275.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 105693,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -4356,7 +4565,10 @@
   "wallapop:cm-2052508": 1793642215.9559765,
   "wallapop:cm-2053166": 1793642828.9166174,
   "wallapop:cm-2053239": 1793642829.8268406,
-  "wallapop:cm-2053263": 1793643441.8080199
+  "wallapop:cm-2053263": 1793643441.8080199,
+  "wallapop:cm-2052962": 1793645721.6534085,
+  "wallapop:cm-2053287": 1793645727.4381826,
+  "wallapop:cm-2052882": 1793647522.0413485
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -5279,13 +5491,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 14,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/insta360-x6-360-camara-de-accion-8k-promo-1111-empieza-1-11-2048868": 1793623037.9033787,
-  "https://www.chollometro.com/ofertas/huawei-pura-80-ultra-smartphone-16-gb512-gb-5170-mah-camara-hdr-con-ultrailuminacion-de-1-dual-sim-120hz-2052787": 1793623037.9033787,
-  "https://www.chollometro.com/ofertas/huawei-pura-80-pro-negro-12gb512gb-dual-sim-oled-68-120hz-5170mah-100w-camara-1-50mp-funda-magnetica-blanca-2052835": 1793623037.9033787,
-  "https://www.chollometro.com/ofertas/camara-evil-canon-eos-rp-con-objetivo-rf-24-105mm-f4-71-is-stm-2052857": 1793624238.2655692,
-  "https://www.chollometro.com/ofertas/huawei-pura-80-ultra-16gb512gb-kirin-9020-pantalla-68-120hz-camara-hdr-sensor-1-telefoto-dual-37x-94x-carga-rapida100w-2052821": 1793624838.1848392,
   "https://www.chollometro.com/ofertas/zapatillas-nike-v5-rnr-blancas-por-3499eur-en-privalia-2052524": 1793627580.1269624,
   "https://www.chollometro.com/ofertas/lego-one-piece-barco-pirata-going-merry-75639-2052834": 1793628180.539975,
   "https://www.chollometro.com/ofertas/the-north-face-zapatillas-de-trail-offtrail-tr-mujeres-tallas-36-365-37-38-20-descuento-con-codigo-2052918": 1793628180.539975,
@@ -5300,10 +5507,15 @@
   "https://www.chollometro.com/ofertas/lego-harry-potter-rincon-entre-libros-expreso-de-hogwarts-76450-2052508": 1793642212.9165745,
   "https://www.chollometro.com/ofertas/robot-aspirador-dreame-l50-pro-ultra-2053166": 1793642820.1813724,
   "https://www.chollometro.com/ofertas/mando-ps5-dualsense-edge-2053239": 1793642820.1813724,
-  "https://www.chollometro.com/ofertas/nike-air-force-1-07-lv8-tech-zapatillas-blanco-tallas-38-a-49-2053263": 1793643417.704888
+  "https://www.chollometro.com/ofertas/nike-air-force-1-07-lv8-tech-zapatillas-blanco-tallas-38-a-49-2053263": 1793643417.704888,
+  "https://www.chollometro.com/ofertas/lego-fortnite-77073-autobus-de-batalla-set-de-construccion-coleccionista-con-9-minifiguras-precio-nuevas-cuentas-antiguas-10-eur-mas-2053299": 1793645713.0311894,
+  "https://www.chollometro.com/ofertas/garmin-forerunner-165-reloj-inteligente-para-correr-con-gps-negro-2052962": 1793645713.0311894,
+  "https://www.chollometro.com/ofertas/lego-star-wars-75379-r2-d2-droide-construible-de-1050-piezas-precio-nuevas-cuentas-antiguas-10eur-mas-2053287": 1793645713.0311894,
+  "https://www.chollometro.com/ofertas/gafas-dji-goggles-3-fpv-con-pantallas-micro-oled-desde-espana-2052882": 1793647512.2707508
  },
  "asked": {
   "cm-2052619": 1793613138,
-  "cm-2052610": 1793615092
+  "cm-2052610": 1793615092,
+  "cm-2053299": 1793645724
  }
 }
