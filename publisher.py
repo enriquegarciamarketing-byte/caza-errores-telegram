@@ -452,6 +452,15 @@ def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, mu
     green = "#3DDC84"
     old_box = (info_x, 390, 1028, 510)
     draw.rounded_rectangle(old_box, radius=24, fill="#F5F6F6", outline="#E7E9EB", width=2)
+    if savings_pct is None:
+        # Sin precio anterior fiable no se inventa un «antes»: se cuenta cómo sale el precio.
+        conditions = str(offer.get("conditions") or "").strip()
+        label = "CÓMO SALE A ESTE PRECIO" if conditions else "PRECIO EN"
+        text = conditions or str(offer.get("store_label") or offer.get("store") or "la tienda")
+        draw.text((info_x + 24, 404), label, font=_font(20, bold=True), fill=muted)
+        text_font = _fit_font(draw, text, info_width - 48, 36, 20, bold=True)
+        draw.text((info_x + 24, 440), text, font=text_font, fill=ink)
+        return _resale_lower(draw, offer, resale, info_x, info_width, ink, orange, muted, green)
     draw.text((info_x + 24, 404), offer.get("ref_label") or "ANTES", font=_font(20, bold=True), fill=muted)
     old_font = _font(36, bold=True)
     old_pos = (info_x + 24, 440)
@@ -467,6 +476,11 @@ def _resale_panels(draw, offer, info_x, info_width, savings_pct, ink, orange, mu
     draw.rounded_rectangle(pill, radius=18, fill=ink)
     draw.text((pill[0] + 16, pill[1] + (pill[3] - pill[1] - (pb[3] - pb[1])) // 2 - pb[1]), pill_text, font=pill_font, fill=orange)
 
+    return _resale_lower(draw, offer, resale, info_x, info_width, ink, orange, muted, green)
+
+
+def _resale_lower(draw, offer, resale, info_x, info_width, ink, orange, muted, green):
+    """Precio actual y bloque de reventa (Wallapop + beneficio)."""
     cur_box = (info_x, 528, 1028, 708)
     draw.rounded_rectangle(cur_box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
     draw.text((info_x + 24, 546), ("PRECIO DEL ERROR" if offer.get("sold_out") else "PRECIO ACTUAL"), font=_font(22, bold=True), fill=muted)
@@ -734,7 +748,11 @@ def create_price_card(offer: dict) -> Path:
     for index, title_line in enumerate(title_lines):
         draw.text((info_x, 198 + index * 38), title_line, font=title_font, fill=ink)
 
-    if offer.get("hide_reference"):
+    no_previous = not offer.get("reference") or float(offer["reference"]) <= float(offer["current"]) + 0.009
+    if offer.get("resale") and no_previous:
+        _resale_panels(draw, offer, info_x, info_width, None, ink, orange, muted)
+        return _save_card(canvas, offer)
+    if offer.get("hide_reference") or no_previous:
         _price_only_panel(draw, offer, info_x, info_width, orange, muted)
         return _save_card(canvas, offer)
 
