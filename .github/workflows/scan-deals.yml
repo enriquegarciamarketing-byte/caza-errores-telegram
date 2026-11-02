@@ -2,7 +2,9 @@ name: Escanear chollos automáticamente
 
 on:
   schedule:
-    # Cada 10 minutos, las 24 horas (las gangas respetan el horario nocturno del config).
+    # GitHub retrasa mucho las tareas frecuentes y en la práctica arranca esta más o menos una vez por hora.
+    # Por eso cada ejecución programada busca durante ~40 min: una pasada cada 2,5 min, las 24 horas
+    # (los errores de precio salen a cualquier hora; las gangas respetan el horario nocturno del config).
     - cron: "3-59/10 * * * *"
   workflow_dispatch:
     inputs:
@@ -41,6 +43,11 @@ on:
         required: false
         type: string
         default: ""
+      minutes:
+        description: "Pasadas seguidas durante estos minutos (vacío: una sola pasada)"
+        required: false
+        type: string
+        default: ""
       check_sources:
         description: "Solo comprueba Wallapop, Vinted y Milanuncios y termina, sin publicar"
         required: false
@@ -51,13 +58,14 @@ permissions:
   contents: write
 
 concurrency:
-  group: telegram-scanner
+  # La prueba privada no guarda memoria: va por su carril y no espera a la búsqueda larga.
+  group: telegram-scanner${{ github.event_name == 'workflow_dispatch' && inputs.test_private && '-prueba' || '' }}
   cancel-in-progress: false
 
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 50
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
@@ -89,6 +97,8 @@ jobs:
           if [ -n "$MANUAL_ID" ]; then ARGS+=(--manual-id "$MANUAL_ID"); fi
           if [ -n "$MANUAL_LINK" ]; then ARGS+=(--manual-link "$MANUAL_LINK"); fi
           if [ -n "$EDIT_MESSAGE" ]; then ARGS+=(--edit-message "$EDIT_MESSAGE"); fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then ARGS+=(--minutes 40 --every 150); fi
+          if [ -n "${{ inputs.minutes }}" ]; then ARGS+=(--minutes "${{ inputs.minutes }}" --every 150); fi
           set -o pipefail
           if [ "${{ inputs.check_sources }}" = "true" ]; then
             python scanner.py --check-sources 2>&1 | tee state/last_run.log
@@ -99,7 +109,7 @@ jobs:
             fi
             python scanner.py --custom "$CUSTOM" 2>&1 | tee state/last_run.log
           else
-            python scanner.py "${ARGS[@]}" 2>&1 | tee state/last_run.log
+            python -u scanner.py "${ARGS[@]}" 2>&1 | tee state/last_run.log
           fi
 
       # La prueba privada no debe dejar memoria en el repositorio.

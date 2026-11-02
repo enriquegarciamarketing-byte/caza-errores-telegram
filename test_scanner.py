@@ -103,8 +103,9 @@ class ResaleRulesTest(unittest.TestCase):
         self.assertEqual(self.cfg["bargain_min_reviews"], 20)
         self.assertEqual(self.cfg["error_min_discount"], 70)
         self.assertEqual(self.cfg["max_detail_fetches_per_run"], 25)
-        self.assertTrue(any("/es/c/electronica/" in url for url in self.cfg["sources"]))
-        self.assertTrue(any("/es/c/informatica/" in url for url in self.cfg["sources"]))
+        self.assertTrue(any("/es/c/electronica/" in url for url in self.cfg["rotating_sources"]))
+        self.assertTrue(any("order=-drop" in url for url in self.cfg["sources"]))
+        self.assertTrue(any("/es/c/informatica/" in url for url in self.cfg["rotating_sources"]))
         self.assertIn("Amazon", rules["brands"])
         self.assertIn("Philips", rules["brands"])
         self.assertIn("Tineco", rules["brands"])
@@ -129,11 +130,44 @@ class ResaleRulesTest(unittest.TestCase):
         self.assertEqual(category, "ERROR DE PRECIO")
         self.assertIn("reventa OK", reason)
 
-    def test_error_barato_no_se_cuela(self):
-        cand = deal(name="Apple iPhone SE", title="Apple iPhone SE", brand="Apple", price=19, avg90=200)
+    def test_error_barato_sin_marca_no_se_cuela(self):
+        cand = deal(name="Robot aspirador", title="Robot aspirador", brand="", price=19, avg90=200)
         category, reason = scanner.classify(self.cfg, cand)
         self.assertIsNone(category)
-        self.assertIn("mínimo de reventa", reason)
+        self.assertIn("marca", reason)
+
+    def test_error_de_algo_que_vale_poco_no_se_cuela(self):
+        cand = deal(name="Philips cepillo", title="Philips cepillo", brand="Philips", price=9, avg90=45)
+        category, reason = scanner.classify(self.cfg, cand)
+        self.assertIsNone(category)
+        self.assertIn("vale", reason)
+
+    def test_error_con_pocas_opiniones_no_se_cuela(self):
+        cand = deal(name="Freidora de aire Cosori", title="Freidora de aire Cosori", brand="Cosori",
+                    price=24, avg90=150, reviews=3)
+        category, reason = scanner.classify(self.cfg, cand)
+        self.assertIsNone(category)
+        self.assertIn("opiniones", reason)
+
+    def test_conga_a_23_euros_es_error_de_precio(self):
+        # El caso real: una Conga a 23 € que vale 370 €. Antes la tiraba el mínimo de 25 €.
+        cand = deal(name="Cecotec Conga 11090 Spin Revolution", title="Robot aspirador Cecotec Conga 11090",
+                    brand="Cecotec", price=23, avg90=370)
+        category, reason = scanner.classify(self.cfg, cand)
+        self.assertEqual(category, "ERROR DE PRECIO")
+
+    def test_error_fuera_de_categorias_premium_entra_si_es_de_marca(self):
+        cand = deal(name="Philips Airfryer XXL HD9650", title="Freidora de aire Philips Airfryer XXL",
+                    brand="Philips", price=39, avg90=229)
+        category, reason = scanner.classify(self.cfg, cand)
+        self.assertEqual(category, "ERROR DE PRECIO")
+
+    def test_ganga_fuera_de_categorias_premium_sigue_fuera(self):
+        cand = deal(name="Philips Airfryer XXL HD9650", title="Freidora de aire Philips Airfryer XXL",
+                    brand="Philips", price=129, avg90=229)
+        category, reason = scanner.classify(self.cfg, cand)
+        self.assertIsNone(category)
+        self.assertIn("fuera de las categorías premium", reason)
 
     def test_la_moda_no_esta_bloqueada_pero_la_talla_si(self):
         cand = deal(name="Skechers Og 85 Zapatillas", title="Skechers Mujer Zapatillas", brand="Skechers",
@@ -269,9 +303,18 @@ class ResaleRulesTest(unittest.TestCase):
         absurd["modified"] = datetime.now(timezone.utc).isoformat()
         category, reason = scanner.classify(self.cfg, absurd)
         self.assertEqual(category, "ERROR DE PRECIO")
-        checked, why = scanner.quality_checks(absurd, datetime.now(timezone.utc), category, reason)
+        # -95 %: no se publica solo, se pide tu OK.
+        with mock.patch.object(scanner, "resolve_asin", return_value="B0TEST1234"):
+            checked, why = scanner.quality_checks(absurd, datetime.now(timezone.utc), category, reason)
+        self.assertEqual(checked, "ERROR DE PRECIO")
+        self.assertTrue(absurd.get("needs_ok"))
+
+        broken = deal(name="Apple iPhone 13", title="Apple iPhone 13", brand="Apple", price=5, avg90=800)
+        broken["modified"] = datetime.now(timezone.utc).isoformat()
+        category, reason = scanner.classify(self.cfg, broken)
+        checked, why = scanner.quality_checks(broken, datetime.now(timezone.utc), category, reason)
         self.assertIsNone(checked)
-        self.assertIn("92", why)
+        self.assertIn("98", why)
 
 
 class HonestReferenceTest(unittest.TestCase):
@@ -554,7 +597,7 @@ class PrivateModeTest(unittest.TestCase):
                                     cli(test_private=False), scanner.now_utc())
         self.assertEqual(code, 0)
         self.assertEqual(len(calls[0][0]), 3)
-        self.assertEqual(calls[0][1], {})
+        self.assertEqual(calls[0][1], {"with_external": True})
 
     def test_vista_previa_si_nadie_cumple_y_no_mancha_el_estado(self):
         cfg = load_cfg()

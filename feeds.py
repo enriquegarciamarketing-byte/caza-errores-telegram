@@ -254,8 +254,11 @@ def amazon_hot_titles(cfg: dict, state: dict | None = None) -> list[str]:
     rules = (cfg or {}).get("resale") or {}
     pages = list(rules.get("discovery_pages") or [])
     cache = None if state is None else state.setdefault("discovery_cache", {})
-    if isinstance(cache, dict) and time.time() - float(cache.get("t") or 0) < 6 * 3600 and cache.get("titles"):
-        return list(cache["titles"])
+    if isinstance(cache, dict):
+        # Con títulos se reutilizan 6 h; si Amazon cortó, se reintenta al cabo de 1 h, no en cada pasada.
+        ttl = 6 * 3600 if cache.get("titles") else 3600
+        if time.time() - float(cache.get("t") or 0) < ttl:
+            return list(cache.get("titles") or [])
     titles: list[str] = []
     for url in pages[:3]:
         try:
@@ -273,7 +276,7 @@ def amazon_hot_titles(cfg: dict, state: dict | None = None) -> list[str]:
             titles.extend(found[:40])
         time.sleep(0.5)
     titles = list(dict.fromkeys(titles))[:80]
-    if isinstance(cache, dict) and titles:
+    if isinstance(cache, dict):
         cache.clear()
         cache.update(t=time.time(), titles=titles)
     return titles
@@ -334,6 +337,12 @@ def external_candidates(cfg: dict, state: dict | None = None) -> list[dict]:
     minimum_temp = int(rules.get("chollometro_min_temperature", 80))
     budget = int(rules.get("max_feed_items_per_run", 5))
     opened = 0
+    # Los chollos calientes siguen horas en el feed: cada ficha se abre una vez cada 6 h,
+    # así el cupo de cada pasada se gasta en chollos nuevos.
+    recent = {} if state is None else state.setdefault("cm_opened", {})
+    now_ts = time.time()
+    for link in [k for k, t in recent.items() if now_ts - float(t or 0) > 6 * 3600]:
+        recent.pop(link, None)
     for feed in rules.get("chollometro_feeds") or []:
         try:
             status, raw = _get(feed, timeout=20)
@@ -355,9 +364,10 @@ def external_candidates(cfg: dict, state: dict | None = None) -> list[dict]:
                 continue
             if not entry.get("price") or entry["price"] < float(rules.get("min_price_eur", 25)):
                 continue
-            if not entry.get("link"):
+            if not entry.get("link") or entry["link"] in recent:
                 continue
             opened += 1
+            recent[entry["link"]] = now_ts
             try:
                 _status, body = _get(entry["link"], timeout=18)
                 page = body.decode("utf-8", "replace")

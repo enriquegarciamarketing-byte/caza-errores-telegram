@@ -413,7 +413,7 @@ def classify(cfg: dict, cand: dict) -> tuple[str | None, str]:
         if (cand.get("rating") or 0) < cfg["bargain_min_rating"] or cand.get("reviews", 0) < cfg["bargain_min_reviews"]:
             return None, f"valoraciones flojas ({cand.get('rating')} / {cand.get('reviews')})"
         category, reason = ("MÍNIMO HISTÓRICO" if is_low else "GANGA"), f"-{disc:.0f}% bajo la referencia"
-    ok, why = resale_check(cfg, cand)
+    ok, why = resale_check(cfg, cand, category)
     if not ok:
         return None, why
     if resale_rules(cfg):
@@ -532,14 +532,37 @@ def block_keyword(cand: dict, rules: dict, text: str) -> str | None:
     return None
 
 
-def resale_check(cfg: dict, cand: dict) -> tuple[bool, str]:
+def error_quality(cfg: dict, cand: dict, rules: dict) -> str | None:
+    """Un error de precio fuera de las categorías premium tiene que ser de marca, con opiniones
+    y de algo que valga de verdad. Devuelve el motivo para descartarlo, o None."""
+    ref = float(cand.get("reference_price") or cand.get("avg90") or 0)
+    floor = float(cfg.get("error_min_reference_eur") or 60)
+    if ref + 1e-9 < floor:
+        return f"error de precio de algo que vale {euro(ref)} (mínimo {euro(floor)} para reventa)"
+    if not (cand.get("brand") or "").strip() or is_generic_brand(cand.get("brand") or "", rules.get("generic_brands") or []):
+        return "error de precio sin marca reconocible"
+    reviews = int(cand.get("reviews") or 0)
+    if reviews < int(cfg.get("error_min_reviews") or 15):
+        return f"error de precio con pocas opiniones ({reviews})"
+    rating = cand.get("rating")
+    if rating is not None and float(rating) < float(cfg.get("error_min_rating") or 3.8):
+        return f"error de precio con valoración floja ({rating})"
+    return None
+
+
+def resale_check(cfg: dict, cand: dict, category: str | None = None) -> tuple[bool, str]:
     """Filtro de reventa para todas las categorías, incluido ERROR DE PRECIO.
+
+    Un ERROR DE PRECIO no necesita ser de una categoría premium ni llegar al mínimo de 25 €
+    (una Conga a 23 € que vale 370 € es justo lo que se busca), pero sí ser de marca, con
+    opiniones y de algo que normalmente cueste al menos error_min_reference_eur.
 
     Con las reglas desactivadas o ausentes no cambia la clasificación anterior.
     """
     rules = resale_rules(cfg)
     if rules is None:
         return True, ""
+    is_error = category == "ERROR DE PRECIO"
     name = cand.get("name") or cand.get("title") or ""
     if has_size_variant(name) or has_size_variant(cand.get("title") or ""):
         return False, "tiene tallas (ropa o calzado): no es reventa"
@@ -553,7 +576,11 @@ def resale_check(cfg: dict, cand: dict) -> tuple[bool, str]:
     info = premium.priority_info(cand, rules)
     cand["hold"] = bool(info["hold"])
     cand["priority"] = info["id"]
-    if rules.get("require_priority", True) and info["score"] <= 0 and not cand.get("collector"):
+    if is_error and info["score"] <= 0:
+        problem = error_quality(cfg, cand, rules)
+        if problem:
+            return False, problem
+    elif rules.get("require_priority", True) and info["score"] <= 0 and not cand.get("collector"):
         return False, "fuera de las categorías premium de reventa"
     if cand.get("series") is not None:
         points = int(cand["spain_points"]) if cand.get("spain_points") is not None else spain_point_count(cand)
@@ -568,7 +595,11 @@ def resale_check(cfg: dict, cand: dict) -> tuple[bool, str]:
     ref = float(cand.get("reference_price") or cand.get("avg90") or 0)
     min_price = float(rules.get("min_price_eur", 25))
     if price + 1e-9 < min_price:
-        return False, f"precio {euro(price)} por debajo del mínimo de reventa ({euro(min_price)})"
+        if not is_error:
+            return False, f"precio {euro(price)} por debajo del mínimo de reventa ({euro(min_price)})"
+        problem = error_quality(cfg, cand, rules)
+        if problem:
+            return False, problem
     if ref <= price:
         return False, "sin referencia de mercado por encima del precio"
     saving = ref - price
@@ -633,6 +664,22 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
         link = LINK_RE.search(text)
         reply_to = (msg.get("reply_to_message") or {}).get("message_id")
         post = next((p for p in state.get("posts", []) if p.get("alert_id") == reply_to), None)
+        if post and post.get("needs_ok") and not link:
+            if not OK_RE.match(text):
+                continue
+            late = post.get("expired") or time.time() > float(post.get("ask_until") or 0)
+            if dry:
+                print(f"[prueba] {'caducado' if late else 'OK'} para {post['id']}")
+                continue
+            if late:
+                post["pending"] = False
+                post["expired"] = True
+                post.pop("card_data", None)
+                tg.call("sendMessage", {"chat_id": admin, "reply_to_message_id": msg["message_id"],
+                                        "text": "⌛ Este ya ha caducado: el precio puede haber cambiado. No lo publico."})
+            else:
+                post["approved"] = True
+            continue
         if link and post:
             url = link.group(0).rstrip(").,")
             url = use_amazon_link(url, cfg, state, None if dry else tg,
@@ -662,10 +709,40 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
                     "Para cambiar el enlace de un post, responde directamente a mi aviso de ese chollo."})
 
 
-def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> list[dict]:
+def pass_sources(cfg: dict, state: dict) -> list[str]:
+    """Fuentes fijas en cada pasada y, por turnos, unas pocas de las rotativas."""
+    fixed = list(cfg.get("sources") or [])
+    rotating = list(cfg.get("rotating_sources") or [])
+    per_pass = int(cfg.get("rotating_sources_per_pass") or 0)
+    if not rotating or per_pass <= 0:
+        return fixed
+    start = int(state.get("rotation_index") or 0) % len(rotating)
+    chosen = [rotating[(start + i) % len(rotating)] for i in range(min(per_pass, len(rotating)))]
+    state["rotation_index"] = (start + len(chosen)) % len(rotating)
+    return fixed + [url for url in chosen if url not in fixed]
+
+
+def listing_error_lane(cfg: dict, item: dict) -> bool:
+    """Bajada de tipo error en el listado (-70 % o más) sobre algo que vale de verdad.
+
+    Es solo un filtro de entrada: el descuento honesto se calcula luego con el gráfico."""
+    threshold = float(cfg.get("error_min_discount") or 70)
+    price = float(item.get("price") or 0)
+    if not price or price + 1e-9 < float(cfg.get("error_min_price_eur") or 0):
+        return False
+    m = re.search(r"(\d+)% por debajo", (item.get("verdict") or "").lower())
+    if m and int(m.group(1)) >= threshold:
+        return price / (1 - int(m.group(1)) / 100) >= float(cfg.get("error_min_reference_eur") or 0)
+    was = float(item.get("was") or 0)
+    return (was > price and (was - price) / was * 100 >= threshold
+            and was >= float(cfg.get("error_min_reference_eur") or 0))
+
+
+def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
+         with_external: bool = True) -> list[dict]:
     seen = state.setdefault("seen", {})
     listings: dict[str, dict] = {}
-    for url in cfg["sources"]:
+    for url in pass_sources(cfg, state):
         try:
             for item in parse_listing(fetch(url)):
                 listings.setdefault(item["id"], item)
@@ -684,11 +761,16 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
     for item in listings.values():
         if not item["price"] or now.timestamp() - item["ts"] > max_age:
             continue
-        if price_floor and item["price"] + 1e-9 < price_floor:
+        # Un posible error de precio (Conga a 23 € que vale 370 €) entra aunque no llegue al mínimo
+        # de precio ni sea de una categoría premium: lo filtran luego el gráfico y la reventa.
+        lane = listing_error_lane(cfg, item)
+        item["error_lane"] = lane
+        if price_floor and item["price"] + 1e-9 < price_floor and not lane:
             continue
         if premium.commodity_hit(item, rules):
             continue
-        if rules.get("require_priority", True) and premium.priority_info(item, rules)["score"] <= 0:
+        if (rules.get("require_priority", True) and not lane
+                and premium.priority_info(item, rules)["score"] <= 0):
             continue
         verdict = item["verdict"].lower()
         if "encima" in verdict or "habitual" in verdict:
@@ -712,6 +794,8 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
         score = premium.priority_info(item, rules)["score"]
         if premium.overlaps_hot(item, hot_titles):
             score += 20
+        if item.get("error_lane"):
+            score += 200  # los errores duran minutos: se miran los primeros
         return (score, listing_drop(item))
 
     fresh.sort(key=rank, reverse=True)
@@ -747,11 +831,17 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
             qualified.append(cand)
         if extras is not None:
             extras.setdefault("pool", []).append({**cand, "reject": None if category else reason})
-    try:
-        external = feeds.external_candidates(cfg, state)
-    except Exception as exc:
-        print(f"Aviso: fuentes externas no disponibles ({exc})")
-        external = []
+    external = []
+    if with_external:
+        try:
+            external = feeds.external_candidates(cfg, state)
+        except Exception as exc:
+            print(f"Aviso: fuentes externas no disponibles ({exc})")
+    resale_cfg = cfg.get("resale") or {}
+    asked = state.setdefault("asked", {})
+    ask_hours = float(resale_cfg.get("external_ask_hours") or 3)
+    for key in [k for k, t in asked.items() if now.timestamp() - float(t or 0) > 24 * 3600]:
+        asked.pop(key, None)
     seen_keys = {premium.product_key(cand) for cand in qualified}
     for cand in external:
         key = premium.product_key(cand)
@@ -762,8 +852,17 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
             status, found = feeds.store_price_check(cand["direct_url"], float(cand["price"]))
             if status == "mismatch":
                 ok, why = False, f"la tienda marca {found} € y no {cand['price']} €"
-            elif status == "unknown" and (cfg.get("resale") or {}).get("external_require_verified", True):
-                ok, why = False, "no he podido comprobar el precio en la página de la tienda"
+            elif status == "unknown" and resale_cfg.get("external_require_verified", True):
+                if resale_cfg.get("external_ask_admin") and state.get("admin_chat_id"):
+                    # La tienda no deja leer su página desde GitHub: no sale solo al canal,
+                    # te llega por privado y solo se publica si respondes OK.
+                    if cand.get("id") in asked:
+                        ok, why = False, "ya te lo he pasado para que lo revises"
+                    else:
+                        cand["needs_ok"] = True
+                        cand["ask_hours"] = ask_hours
+                else:
+                    ok, why = False, "no he podido comprobar el precio en la página de la tienda"
             elif status == "ok":
                 stamp = now.astimezone(MADRID).strftime("%H:%M")
                 cand["note"] = f"🕒 Precio comprobado en {cand.get('store_label') or 'la tienda'} a las {stamp}."
@@ -779,7 +878,8 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None) -> l
             cand["avg90"] = cand["price"]
             cand["discount"] = cand.get("discount") or 0
         cand.setdefault("category", "OPORTUNIDAD DE REVENTA")
-        print(f"  {cand['id']} · {cand.get('store_label')} {cand['price']} € → candidato externo · {(cand.get('title') or '')[:60]}")
+        tail = " (la tienda no deja comprobar el precio: te lo paso para que des el OK)" if cand.get("needs_ok") else ""
+        print(f"  {cand['id']} · {cand.get('store_label')} {cand['price']} € → candidato externo{tail} · {(cand.get('title') or '')[:60]}")
         qualified.append(cand)
         seen_keys.add(key)
         if extras is not None:
@@ -802,8 +902,18 @@ def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tup
     was, avg = cand.get("was"), cand.get("avg90")
     if was and avg and avg > was * 1.10:
         return None, "media de 90 días por encima del PVP: datos incoherentes"
-    if cand.get("discount", 0) > 92:
-        return None, "descuento superior al 92 %: probable error de datos"
+    cfg = load_json(CONFIG_PATH, {})
+    hard_max = float(cfg.get("error_max_discount") or 98)
+    auto_max = float(cfg.get("error_auto_max_discount") or 92)
+    if cand.get("discount", 0) > hard_max:
+        return None, f"descuento superior al {hard_max:g} %: probable error de datos"
+    if cand.get("discount", 0) > auto_max:
+        # Una Conga a 23 € que vale 370 € es un -94 %: justo lo que se busca, pero también donde más
+        # fallan los datos. No se tira: te llega al momento y sale en cuanto respondes OK.
+        cand["needs_ok"] = True
+        cand["ask_hours"] = float(cfg.get("error_ask_hours") or 1)
+        cand["ask_reason"] = (f"Es un -{cand['discount']:.0f} %, más de lo que publico solo (-{auto_max:g} %). "
+                              "Mira que en Amazon esté a ese precio y lo vende Amazon o un vendedor fiable.")
     modified = cand.get("modified")
     if modified:
         try:
@@ -917,7 +1027,8 @@ def verify_live(cand: dict, category: str, reason: str, variant: bool) -> tuple[
 
 
 def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime, ignore_schedule: bool = False) -> tuple[bool, str]:
-    posts = state.get("posts", [])
+    # Lo que caducó sin tu OK no cuenta como publicado; lo que espera tu OK no gasta cupo.
+    posts = [p for p in state.get("posts", []) if not p.get("expired")]
     for p in posts:
         same = p["id"] == cand["id"] or (cand.get("gtin") and p.get("gtin") == cand.get("gtin"))
         if same and now.timestamp() - p["t"] < cfg["repost_after_days"] * 86400:
@@ -931,7 +1042,7 @@ def allowed_to_post(cfg: dict, state: dict, cand: dict, now: datetime, ignore_sc
     start, end = cfg["bargain_quiet_hours"]
     if start <= local.hour < end:
         return False, "horario nocturno: las gangas esperan al día"
-    today = [p for p in posts if p["category"] != "ERROR DE PRECIO"
+    today = [p for p in posts if p["category"] != "ERROR DE PRECIO" and not p.get("needs_ok")
              and datetime.fromtimestamp(p["t"], MADRID).date() == local.date()]
     if len(today) >= cfg["max_bargains_per_day"]:
         return False, "cupo diario de gangas cubierto"
@@ -1086,6 +1197,8 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         msg = tg.send_photo(admin, card, caption, {"reply_markup": buttons_for(url)})
         print(f"  Prueba enviada al administrador (mensaje {msg['message_id']}): {summary.splitlines()[0]}")
         return True
+    if cand.get("needs_ok"):
+        return ask_admin(tg, state, cand, card, url, summary, offer, dry)
     if dry:
         print(f"  [prueba] publicaría: {summary.replace(chr(10), ' · ')} · enlace {url or 'pendiente de tu enlace corto'}")
         return True
@@ -1138,12 +1251,79 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     return True
 
 
+OK_RE = re.compile(r"^\s*(ok|okay|vale|si|sí|publica|publicalo|publícalo|dale|👍|✅)\b", re.I)
+
+
+def ask_admin(tg, state: dict, cand: dict, card: Path, url: str | None, summary: str, offer: dict, dry: bool) -> bool:
+    """La tienda no deja comprobar el precio desde GitHub: te lo paso con la tarjeta tal cual saldría
+    y solo se publica si respondes OK a ese mensaje antes de que caduque."""
+    admin = state.get("admin_chat_id")
+    hours = float(cand.get("ask_hours") or 3)
+    store = cand.get("store_label") or "la tienda"
+    if not url or not admin:
+        print(f"  No pido OK para {cand.get('id')}: falta {'el enlace' if not url else 'tu chat'}")
+        return False
+    if dry or tg is None:
+        print(f"  [prueba] te pediría OK por privado: {summary.replace(chr(10), ' · ')} · {url}")
+        return True
+    reason = cand.get("ask_reason") or (f"{store} no deja que el bot lea su página, así que no he podido "
+                                         "comprobar el precio.")
+    icon = "🚨" if cand.get("category") == "ERROR DE PRECIO" else "🔎"
+    text = (f"{icon} Pendiente de tu OK · {summary}\n\n{reason} Si está a {euro(cand['price'])}, respóndeme OK "
+            f"a este mensaje y sale en el premium. Caduca en {hours:g} h.")
+    buttons = [[{"text": f"Abrir en {store}", "url": url}]]
+    if cand.get("series") is not None and cand.get("id") and not str(cand["id"]).startswith(("cm-", "watch-")):
+        buttons[0].append({"text": "Ver histórico", "url": f"{BASE}/es/dp/{cand['id']}/"})
+    msg = tg.send_photo(admin, card, html.escape(text), {"reply_markup": {"inline_keyboard": buttons}})
+    now_ts = int(now_utc().timestamp())
+    state.setdefault("asked", {})[cand["id"]] = now_ts
+    caption_cand = {**cand, "note": ""}
+    gtin = cand.get("gtin") if re.fullmatch(r"\d{8,14}", cand.get("gtin") or "") else None
+    record = {"id": cand["id"], "gtin": gtin, "price": cand["price"], "category": cand["category"],
+              "t": now_ts, "title": card_title(cand)[:120], "cap": caption_data(caption_cand),
+              "url": url, "alert_id": msg["message_id"], "pending": True, "needs_ok": True,
+              "ask_until": now_ts + int(hours * 3600),
+              "card_data": {"title": offer["title"], "category": offer["category"],
+                            "current": offer["current"], "reference": offer["reference"],
+                            "image": cand["image"], "store_label": offer.get("store_label"),
+                            **({"resale": offer["resale"]} if offer.get("resale") else {})}}
+    state.setdefault("posts", []).append(record)
+    state["posts"] = state["posts"][-300:]
+    print(f"  Te lo paso por privado para que des el OK (mensaje {msg['message_id']}): {summary.splitlines()[0]}")
+    return True
+
+
+def expire_asks(state: dict, now_ts: float | None = None) -> None:
+    """Lo que pediste revisar y no aprobaste a tiempo se da por perdido."""
+    now_ts = now_ts or time.time()
+    for post in state.get("posts", []):
+        if post.get("needs_ok") and post.get("pending") and not post.get("approved") \
+                and now_ts > float(post.get("ask_until") or 0):
+            post["pending"] = False
+            post["expired"] = True
+            post.pop("card_data", None)
+
+
 def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
     """Publica los chollos sin EAN cuando el administrador responde con su enlace."""
     for post in state.get("posts", []):
         data = post.get("card_data")
         if not (post.get("pending") and post.get("url") and data):
             continue
+        if post.get("needs_ok") and not post.get("approved"):
+            continue
+        if post.get("needs_ok") and not str(post.get("id") or "").startswith(("cm-", "watch-")):
+            # Amazon vía Jimmyleaks: se relee la ficha justo antes de publicar con tu OK.
+            why = recheck_listing({"id": post["id"], "price": post["price"], "series": []})
+            if why:
+                post["pending"] = False
+                post["expired"] = True
+                post.pop("card_data", None)
+                print(f"No publico el pendiente {post['id']}: {why}")
+                if state.get("admin_chat_id"):
+                    tg.call("sendMessage", {"chat_id": state["admin_chat_id"],
+                                            "text": f"⛔ No lo publico: {why}."})
+                continue
         try:
             src = OUTPUT_DIR / "src" / f"{post['id']}.jpg"
             src.parent.mkdir(parents=True, exist_ok=True)
@@ -1152,9 +1332,16 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
                                       "category": data["category"], "current": data["current"],
                                       "reference": data["reference"], "days": 90,
                                       "ref_label": "ANTES · PRECIO HABITUAL",
+                                      **({"store_label": data["store_label"]} if data.get("store_label") else {}),
                                       **({"resale": data["resale"]} if data.get("resale") else {})})
-            link = use_amazon_link(post["url"], load_json(CONFIG_PATH, {}), state, tg,
-                                   asin=affiliate.extract_asin(post.get("url") or ""), gtin=post.get("gtin"))
+            if post.get("needs_ok"):
+                link = post["url"]  # tienda externa: el enlace ya va limpio, sin afiliados ajenos
+                stamp = now_utc().astimezone(MADRID).strftime("%H:%M")
+                if isinstance(post.get("cap"), dict):
+                    post["cap"]["note"] = f"🕒 Precio comprobado a mano en {data.get('store_label') or 'la tienda'} a las {stamp}."
+            else:
+                link = use_amazon_link(post["url"], load_json(CONFIG_PATH, {}), state, tg,
+                                       asin=affiliate.extract_asin(post.get("url") or ""), gtin=post.get("gtin"))
             if not link:
                 print(f"No publico el pendiente {post['id']}: el enlace no lleva tu etiqueta.")
                 continue
@@ -1168,9 +1355,11 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
         post["t"] = int(now_utc().timestamp())
         post.pop("pending", None)
         post.pop("card_data", None)
-        print(f"Publicado el pendiente {post['id']} con tu enlace corto (mensaje {msg['message_id']})")
+        approved = post.pop("needs_ok", None)
+        print(f"Publicado el pendiente {post['id']} {'con tu OK' if approved else 'con tu enlace corto'} (mensaje {msg['message_id']})")
         if state.get("admin_chat_id"):
-            tg.call("sendMessage", {"chat_id": state["admin_chat_id"], "text": "✅ Publicado en el canal con tu enlace."})
+            tg.call("sendMessage", {"chat_id": state["admin_chat_id"],
+                                    "text": "✅ Publicado en el premium." if approved else "✅ Publicado en el canal con tu enlace."})
 
 
 def publish_manual(tg, cfg: dict, state: dict, channel: str, jl_id: str, link: str, dry: bool,
@@ -1317,6 +1506,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--custom", default="", help="JSON con un post hecho a mano (ver custom_post)")
     parser.add_argument("--check-sources", action="store_true",
                         help="Comprueba Wallapop, Vinted y Milanuncios y termina, sin publicar")
+    parser.add_argument("--minutes", type=float, default=0,
+                        help="Hace pasadas seguidas durante estos minutos (GitHub retrasa las tareas frecuentes)")
+    parser.add_argument("--every", type=int, default=150, help="Segundos entre pasadas con --minutes")
     return parser
 
 
@@ -1362,11 +1554,7 @@ def main() -> int:
 
     now = now_utc()
     if not (args.custom or args.manual_id):
-        try:
-            return run_scan(tg, cfg, state, channel, args, now)
-        finally:
-            if not args.dry_run and not args.test_private:
-                save_state(state)
+        return run_loop(tg, cfg, state, channel, args)
     if args.custom:
         return custom_post(tg, state, channel, json.loads(args.custom))
     if args.manual_id and args.edit_message:
@@ -1375,6 +1563,39 @@ def main() -> int:
         return publish_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(),
                               args.dry_run, args.test_private)
     return run_scan(tg, cfg, state, channel, args, now)
+
+
+def run_loop(tg, cfg: dict, state: dict, channel: str, args) -> int:
+    """Una pasada, o pasadas seguidas cada --every segundos durante --minutes.
+
+    GitHub arranca la tarea más o menos una vez por hora aunque esté programada cada 10 minutos,
+    y un error de precio dura minutos: por eso cada ejecución se queda buscando un rato."""
+    deadline = time.time() + args.minutes * 60 if args.minutes and not args.test_private else None
+    external_every = max(1, int(cfg.get("external_every_passes") or 1))
+    index, code = 0, 0
+    while True:
+        started = time.time()
+        if index:
+            print(f"== pasada {index + 1} · {now_utc().astimezone(MADRID):%H:%M} ==")
+            if tg and not args.test_private:
+                handle_updates(tg, cfg, state, channel, args.dry_run)
+                if not args.dry_run:
+                    publish_pending_from_reply(tg, state, channel)
+        expire_asks(state)
+        try:
+            code = run_scan(tg, cfg, state, channel, args, now_utc(),
+                            with_external=index % external_every == 0)
+        finally:
+            if not args.dry_run and not args.test_private:
+                save_state(state)
+        index += 1
+        if deadline is None:
+            return code
+        pause = max(0.0, args.every - (time.time() - started))
+        if time.time() + pause >= deadline:
+            print(f"Fin de la ejecución tras {index} pasadas.")
+            return code
+        time.sleep(pause)
 
 
 def health_alert(tg, state: dict, key: str, text: str, every_hours: int = 6) -> None:
@@ -1614,12 +1835,12 @@ def track_posts(tg, state: dict, channel: str, now: datetime, dry: bool, limit: 
             print(f"  No he podido marcar el post {post['message_id']}: {exc}")
 
 
-def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime) -> int:
+def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime, with_external: bool = True) -> int:
     if getattr(args, "test_private", False):
         return run_private_test(tg, cfg, state, channel, args, now)
     track_posts(tg, state, channel, now, bool(args.dry_run))
     try:
-        candidates = scan(cfg, state, now)
+        candidates = scan(cfg, state, now, with_external=with_external)
     except Exception as exc:
         print(f"Error inesperado en el escaneo: {exc!r}", file=sys.stderr)
         if not args.dry_run:
