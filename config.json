@@ -58,7 +58,7 @@
   "repost_min_extra_drop_pct": 10,
   "cascada": {
     "_nota": "Lo que el premium descarta por no dar para revender (sin margen en Wallapop, fuera de categorías de reventa, ahorro o importe pequeños) baja al canal normal, que lo revisa con todas sus reglas. Nunca baja lo publicado, lo que espera tu OK ni lo descartado por datos dudosos.",
-    "enabled": false,
+    "enabled": true,
     "branch": "cascada",
     "keep_minutes": 90,
     "max_per_pass": 60,
