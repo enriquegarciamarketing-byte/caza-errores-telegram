@@ -24,10 +24,9 @@ class TextoDelPost(unittest.TestCase):
         self.assertNotIn("⭐", text)
         self.assertNotIn("opiniones", text)
 
-    def test_hora_con_zona_y_exencion(self):
+    def test_hora_del_precio_y_aviso(self):
         text = cn.build_caption(deal_with_rating(), URL, RULES)
-        self.assertIn("(hora peninsular)", text)
-        self.assertIn("al comprar se aplica el que marque Amazon.es", text)
+        self.assertIn("🕒 Precio a las 16:52 · puede cambiar", text)
 
     def test_publicidad_primera_en_la_linea_de_hashtags(self):
         text = cn.build_caption(deal_with_rating(), URL, RULES)
@@ -98,7 +97,7 @@ class Resumen(unittest.TestCase):
     def test_resumen_con_aviso(self):
         items = [{"title": "Producto", "price": 10.0, "reference": 20.0, "discount": 50, "url": URL}]
         text = cn.build_summary(items, datetime(2026, 11, 2, 22, 59, tzinfo=timezone.utc))
-        self.assertIn("(hora peninsular)", text)
+        self.assertIn("pueden cambiar", text)
         self.assertEqual(text.rstrip().split("\n")[-1], "#Publicidad")
         self.assertNotIn("⭐", text)
 

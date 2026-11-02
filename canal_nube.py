@@ -518,9 +518,8 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     return "\n".join(lines)
 
 
-# Exención de precio y aviso de publicidad que piden Amazon Afiliados y la LSSI (art. 20).
-PRICE_NOTE = ("Precio visto en Amazon.es a las {hour} (hora peninsular). Puede cambiar en cualquier momento "
-              "y al comprar se aplica el que marque Amazon.es")
+# Hora del precio y aviso corto; la exención completa de Amazon va en el mensaje fijado del canal.
+PRICE_NOTE = "Precio a las {hour} · puede cambiar"
 PUBLI = "#Publicidad"
 TAGS = {"ERROR DE PRECIO": "#ErrorDePrecio", "CHOLLAZO": "#Chollazo", "CHOLLO": "#Chollo"}
 
@@ -826,8 +825,7 @@ def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
                      f"📉 <b>-{round(item['discount'])} %</b>")
         lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
         lines.append("")
-    lines.append(f"🕒 Precios comprobados en Amazon.es a las {hour} (hora peninsular). Pueden cambiar en cualquier "
-                 "momento y al comprar se aplica el que marque Amazon.es")
+    lines.append(f"🕒 Precios a las {hour} · pueden cambiar")
     lines.append("😴 Mañana a las 8:00 volvemos con más chollos. Activa las notificaciones 🔔")
     lines.append("")
     lines.append(PUBLI)
