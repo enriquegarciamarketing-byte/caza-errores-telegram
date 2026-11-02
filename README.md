@@ -20,6 +20,15 @@ Pruebas desde Actions → «Canal normal @cazachollos_com» → Run workflow: `d
 
 Para publicar a mano un chollo concreto en @cazachollos_com: Actions → «Post manual @cazachollos_com» → Run workflow, con `datos` en JSON y `privado` marcado para probar en tu chat (desmárcalo para el canal). Campos: `url` (amazon.es/dp/…, link.amazon, amzn.eu) o `asin`, `title`, `price`, `reference` (el «precio más bajo de los últimos 30 días» que muestra Amazon), `image` (ruta en `images/manual/` o URL), `seen_at` (hora vista, HH:MM), `lines` (líneas extra) y opcionales `habitual`, `rating`, `reviews`, `historical_low`. Si el precio de referencia no es mayor que el actual o el enlace no es del producto, no se publica.
 
+## Web escaparate (GitHub Pages, `docs/`)
+
+Web pública con los chollos del canal normal: https://enriquegarciamarketing-byte.github.io/caza-errores-telegram/
+
+- Cada vez que se guarda la memoria del canal (`tools/guardar_memoria.sh`), `web_export.py` rehace `docs/chollos.json` con lo publicado en las últimas 48 h (las que el bot vigila): título, precio, precio de referencia, hora y si ya no está a ese precio.
+- `docs/index.html` lee ese JSON directamente de GitHub (raw), así que se actualiza sola sin volver a desplegar Pages. Refresca cada 5 minutos.
+- Mismo enlace de afiliado que el canal, aviso de Afiliado de Amazon en el pie y sin fotos de Amazon (solo se podrán poner cuando los datos vengan de la Creators API).
+- Sirve como sitio web para registrar en Amazon Afiliados junto al canal de Telegram y X.
+
 ## Cascada premium → canal normal (02/11/2026)
 
 Lo que el premium descarta **porque no da para revender** (sin margen en Wallapop, fuera de las categorías de reventa, ahorro o importe pequeños, rebaja menor que la del premium) baja al canal normal, que lo revisa con **todas** sus reglas: relee la ficha, descuento real frente al mínimo de 30 días, interés, foto, precio visto hace menos de una hora y segunda lectura antes de enviar.

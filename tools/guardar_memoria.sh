@@ -12,9 +12,14 @@ for i in 1 2 3 4 5; do
     git show origin/main:state/canal_nube.json > "$RUNNER_TEMP/memoria_github.json"
     python canal_nube.py --merge-state "$RUNNER_TEMP/memoria_github.json"
   fi
+  # La web (GitHub Pages) lee docs/chollos.json: se rehace con la memoria ya juntada.
+  web=()
+  if [ -f web_export.py ] && printf '%s\n' "$@" | grep -qx "state/canal_nube.json"; then
+    python web_export.py && web=(docs/chollos.json) || echo "Web: no se ha podido exportar (la memoria se guarda igual)."
+  fi
   # El índice pasa a ser el de GitHub y solo se añaden estos ficheros: nunca se deshace código subido después.
   git reset -q --mixed origin/main
-  git add -- "$@" 2>/dev/null || true
+  git add -- "$@" "${web[@]}" 2>/dev/null || true
   if git diff --cached --quiet; then
     echo "Memoria: nada nuevo que guardar."
     exit 0

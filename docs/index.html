@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caza Chollos · Ofertas de Amazon con descuento real</title>
+<meta name="description" content="Las bajadas de precio de Amazon.es que publicamos en el canal de Telegram @cazachollos_com, comprobadas frente al precio más bajo de los últimos 30 días.">
+<meta property="og:title" content="Caza Chollos · Ofertas de Amazon con descuento real">
+<meta property="og:description" content="Bajadas de precio de Amazon.es comprobadas frente al mínimo de 30 días. Las mismas que salen en @cazachollos_com.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FF7A00">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M6 10h28l24 24-24 24L6 34z' fill='%23FF7A00'/%3E%3Ccircle cx='18' cy='22' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#000;
+  --paper:#fff;
+  --shelf:#ececec;
+  --muted:#5c5c5c;
+  --orange:#ff7a00;
+  --orange-ink:#b34f00;
+  --tag:#ffe14d;
+  --gone:#c8102e;
+  --line:#d6d6d6;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--shelf);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.45;font-variation-settings:"wdth" 100}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+
+/* Cabecera */
+.top{background:var(--paper);border-bottom:4px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{font-weight:900;font-size:26px;letter-spacing:-.01em;text-decoration:none;font-variation-settings:"wdth" 125;line-height:1}
+.brand span{color:var(--orange)}
+.join{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;font-size:15px;white-space:nowrap}
+.join:hover{background:var(--orange-ink)}
+.join svg{width:18px;height:18px}
+
+/* Portada: el chollo más gordo ahora */
+.hero{background:var(--paper);padding:28px 0 36px}
+.hero h1{margin:0 0 6px;font-size:clamp(28px,5vw,44px);line-height:1.05;font-weight:800;font-variation-settings:"wdth" 112;max-width:20ch}
+.hero p.lead{margin:0 0 24px;color:var(--muted);max-width:58ch}
+.best{display:grid;grid-template-columns:1fr auto;gap:0;border:3px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--paper)}
+.best .info{padding:20px 22px;display:flex;flex-direction:column;gap:10px;justify-content:center;min-width:0}
+.best .info .what{font-size:clamp(19px,2.6vw,24px);font-weight:700;line-height:1.2}
+.best .info .meta{color:var(--muted);font-size:15px}
+.best .label{background:var(--tag);border-left:3px solid var(--ink);padding:18px 26px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:4px;min-width:250px;position:relative}
+.best .label::before{content:"";position:absolute;left:14px;top:14px;width:12px;height:12px;border-radius:50%;background:var(--shelf);border:2px solid var(--ink)}
+.best .pct{font-weight:900;font-size:22px;color:var(--ink);background:var(--orange);padding:2px 10px;border-radius:4px;margin-left:24px}
+.best .price{font-weight:900;font-size:clamp(54px,9vw,88px);line-height:.95;font-variation-settings:"wdth" 125;letter-spacing:-.03em}
+.best .price small{font-size:.45em;letter-spacing:0}
+.best .was{color:var(--ink);font-size:17px}
+.best .was s{font-weight:600}
+.buy{display:inline-flex;align-items:center;justify-content:center;background:var(--orange);color:var(--ink);font-weight:800;text-decoration:none;border:2px solid var(--ink);border-radius:6px;padding:11px 18px;font-size:16px;align-self:flex-start}
+.buy:hover{background:var(--ink);color:var(--paper)}
+
+/* Controles */
+.controls{position:sticky;top:0;z-index:5;background:var(--shelf);padding:14px 0 10px;border-bottom:1px solid var(--line)}
+.controls .wrap{display:flex;flex-direction:column;gap:10px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;margin:0 -16px;padding-left:16px;padding-right:16px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:2px solid var(--ink);background:var(--paper);border-radius:999px;padding:6px 14px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip .n{opacity:.6;font-weight:500;margin-left:4px}
+.sortrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:15px}
+.sortrow label{color:var(--muted)}
+.sortrow select{font:inherit;font-weight:600;border:2px solid var(--ink);border-radius:6px;padding:5px 8px;background:var(--paper)}
+.status{color:var(--muted)}
+
+/* Estantería de etiquetas */
+.list{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:86px 1fr auto;align-items:stretch;background:var(--paper);border:2px solid var(--ink);border-radius:6px;overflow:hidden}
+.row .off{background:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;font-variation-settings:"wdth" 112;border-right:2px solid var(--ink)}
+.row .body{padding:12px 16px;min-width:0;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.row .t{font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.row .m{color:var(--muted);font-size:14px}
+.row .m .cat{color:var(--ink);font-weight:600}
+.row .tag{background:var(--tag);border-left:2px dashed var(--ink);padding:10px 16px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:6px;min-width:150px}
+.row .p{font-weight:900;font-size:28px;line-height:1;font-variation-settings:"wdth" 118;letter-spacing:-.02em;white-space:nowrap}
+.row .r{font-size:14px;white-space:nowrap}
+.row .go{font-weight:800;font-size:14px;text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:6px 10px;background:var(--paper);white-space:nowrap}
+.row .go:hover{background:var(--ink);color:var(--paper)}
+.row.hot .off{font-size:26px}
+
+.empty{background:var(--paper);border:2px dashed var(--ink);border-radius:6px;padding:28px 20px;margin-top:18px}
+.empty h2{margin:0 0 6px;font-size:20px}
+.empty p{margin:0 0 14px;color:var(--muted)}
+
+/* Ya no están */
+.gone{margin:32px 0 0}
+.gone summary{cursor:pointer;font-weight:700;font-size:17px;padding:8px 0}
+.gone ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.gone li{display:flex;justify-content:space-between;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 14px;font-size:15px;color:var(--muted)}
+.gone li .x{color:var(--gone);font-weight:700;white-space:nowrap}
+.gone li s{white-space:nowrap}
+
+/* Cómo elegimos */
+.how{background:var(--paper);margin-top:44px;padding:32px 0;border-top:4px solid var(--ink)}
+.how h2{margin:0 0 14px;font-size:24px;font-variation-settings:"wdth" 112}
+.how .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.how h3{margin:0 0 4px;font-size:17px}
+.how p{margin:0;color:var(--muted);font-size:15px;max-width:42ch}
+
+footer{padding:26px 0 40px;font-size:14px;color:var(--muted)}
+footer p{margin:0 0 8px;max-width:75ch}
+footer a{font-weight:600;color:var(--ink)}
+
+@media (max-width:720px){
+  body{font-size:16px}
+  .best{grid-template-columns:1fr}
+  .best .label{border-left:0;border-top:3px solid var(--ink);min-width:0}
+  .row{grid-template-columns:64px 1fr}
+  .row .off{grid-row:span 2;font-size:20px}
+  .row.hot .off{font-size:21px}
+  .row .tag{grid-column:2;display:grid;grid-template-columns:1fr auto;grid-template-areas:"p go" "r go";align-items:center;justify-items:start;gap:2px 10px;border-left:0;border-top:2px dashed var(--ink);min-width:0}
+  .row .tag .p{grid-area:p}.row .tag .r{grid-area:r}.row .tag .go{grid-area:go}
+  .row .p{font-size:24px}
+  .how .cols{grid-template-columns:1fr;gap:16px}
+  .join .long{display:none}
+  .brand{font-size:21px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .best .label{animation:drop .5s cubic-bezier(.2,.9,.3,1.2) both .1s}
+  @keyframes drop{from{transform:translateY(-14px) rotate(-2deg);opacity:0}to{transform:none;opacity:1}}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Caza Chollos, inicio">Caza<span>Chollos</span></a>
+    <a class="join" href="https://t.me/cazachollos_com" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.3 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.4 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>
+      <span><span class="long">Unirme al </span>canal</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Bajadas de precio de verdad en Amazon</h1>
+      <p class="lead">Comparamos cada oferta con el precio más bajo de los 30 días anteriores, no con el precio tachado. Son las mismas que salen en el canal de Telegram, y aquí ves cuáles siguen activas.</p>
+      <div id="best" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <div class="controls">
+    <div class="wrap">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría"></div>
+      <div class="sortrow">
+        <span class="status" id="status">Cargando chollos…</span>
+        <span><label for="sort">Ordenar por </label>
+        <select id="sort">
+          <option value="new">Más nuevos</option>
+          <option value="pct">Mayor descuento</option>
+          <option value="saving">Más ahorro en euros</option>
+          <option value="cheap">Más baratos</option>
+        </select></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="list" id="list"></ul>
+    <details class="gone" id="gone" hidden>
+      <summary id="goneTitle">Ya no están a este precio</summary>
+      <ul id="goneList"></ul>
+    </details>
+  </div>
+
+  <section class="how" aria-labelledby="howTitle">
+    <div class="wrap">
+      <h2 id="howTitle">Cómo elegimos los chollos</h2>
+      <div class="cols">
+        <div><h3>Descuento honesto</h3><p>El porcentaje se calcula frente al precio más bajo de los 30 días anteriores a la bajada, el mismo criterio que marca la ley europea.</p></div>
+        <div><h3>Precio reciente</h3><p>Cada oferta enseña la hora a la que vimos el precio. Si después sube o se agota, la marcamos aquí y en el canal.</p></div>
+        <div><h3>Lo que la gente compra</h3><p>Aspiradoras, cafeteras, móviles, electrodomésticos, muebles y compra del día a día. Nada de chollos de relleno.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</strong> Los enlaces a Amazon.es de esta web son enlaces de afiliado: a ti no te cuestan nada más.</p>
+    <p>Los precios y la disponibilidad son los que vimos a la hora indicada y pueden cambiar. El precio que se aplica a la compra es el que aparece en Amazon.es en ese momento.</p>
+    <p>Síguenos en <a href="https://t.me/cazachollos_com" rel="noopener">Telegram</a> y en <a href="https://x.com/AzvensLoL" rel="noopener">X</a>.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const SOURCES = [
+    "https://raw.githubusercontent.com/enriquegarciamarketing-byte/caza-errores-telegram/main/docs/chollos.json",
+    "chollos.json",
+  ];
+  const $ = (id) => document.getElementById(id);
+  const euro = new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" });
+  const hhmm = new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
+  const dayFmt = new Intl.DateTimeFormat("es-ES", { weekday: "long", timeZone: "Europe/Madrid" });
+  let deals = [], cat = "Todas", sort = "new";
+  try { sort = localStorage.getItem("cc-sort") || "new"; } catch (e) {}
+  $("sort").value = sort;
+
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const safeUrl = (u) => /^https:\/\/(www\.)?amazon\.es\//.test(u || "") ? u : "#";
+
+  function ago(ts) {
+    const min = Math.max(0, Math.round((Date.now() / 1000 - ts) / 60));
+    if (min < 1) return "ahora mismo";
+    if (min < 60) return `hace ${min} min`;
+    const h = Math.round(min / 60);
+    if (h < 24) return `hace ${h} h`;
+    return `el ${dayFmt.format(new Date(ts * 1000))}`;
+  }
+  const seenAt = (d) => {
+    const date = new Date(d.posted * 1000);
+    const today = new Date().toDateString() === date.toDateString();
+    return `precio a las ${hhmm.format(date)}${today ? "" : " del " + dayFmt.format(date)}`;
+  };
+
+  function renderBest(active) {
+    const box = $("best");
+    if (!active.length) { box.innerHTML = ""; return; }
+    const recent = active.filter((d) => Date.now() / 1000 - d.posted < 6 * 3600);
+    const pool = recent.length ? recent : active;
+    const d = pool.slice().sort((a, b) => b.pct - a.pct || b.saving - a.saving)[0];
+    const [ent, dec] = euro.format(d.price).replace(/\s?€/, "").split(",");
+    box.innerHTML = `
+      <article class="best">
+        <div class="info">
+          <div class="meta">El mayor descuento de las últimas horas · ${esc(d.category)}</div>
+          <div class="what">${esc(d.title)}</div>
+          <div class="meta">Publicado ${ago(d.posted)}, ${seenAt(d)}. Puede cambiar.</div>
+          <a class="buy" href="${esc(safeUrl(d.url))}" rel="sponsored noopener">Ver en Amazon</a>
+        </div>
+        <div class="label">
+          <span class="pct">-${d.pct} %</span>
+          <span class="price">${esc(ent)}<small>,${esc(dec || "00")} €</small></span>
+          <span class="was">Antes <s>${euro.format(d.reference)}</s> · ahorras ${euro.format(d.saving)}</span>
+        </div>
+      </article>`;
+  }
+
+  function renderChips(active) {
+    const counts = {};
+    active.forEach((d) => { counts[d.category] = (counts[d.category] || 0) + 1; });
+    const cats = Object.keys(counts).sort((a, b) => (a === "Otros") - (b === "Otros") || counts[b] - counts[a]);
+    if (cat !== "Todas" && !counts[cat]) cat = "Todas";
+    $("chips").innerHTML = [["Todas", active.length], ...cats.map((c) => [c, counts[c]])]
+      .map(([c, n]) => `<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c === cat}">${esc(c)}<span class="n">${n}</span></button>`)
+      .join("");
+  }
+
+  function renderList(active) {
+    const order = {
+      new: (a, b) => b.posted - a.posted,
+      pct: (a, b) => b.pct - a.pct,
+      saving: (a, b) => b.saving - a.saving,
+      cheap: (a, b) => a.price - b.price,
+    }[sort];
+    const shown = active.filter((d) => cat === "Todas" || d.category === cat).sort(order);
+    if (!shown.length) {
+      $("list").innerHTML = `<li class="empty"><h2>Ahora mismo no hay chollos activos aquí</h2>
+        <p>El bot publica de 08:00 a 23:50. Únete al canal y te llegan en cuanto salen.</p>
+        <a class="buy" href="https://t.me/cazachollos_com" rel="noopener">Unirme al canal de Telegram</a></li>`;
+      return;
+    }
+    $("list").innerHTML = shown.map((d) => `
+      <li class="row${d.pct >= 50 ? " hot" : ""}">
+        <div class="off" aria-label="${d.pct} por ciento de descuento">-${d.pct}%</div>
+        <div class="body">
+          <div class="t">${esc(d.title)}</div>
+          <div class="m"><span class="cat">${esc(d.category)}</span> · ${ago(d.posted)} · ${seenAt(d)}</div>
+        </div>
+        <div class="tag">
+          <span class="p">${euro.format(d.price)}</span>
+          <span class="r">antes <s>${euro.format(d.reference)}</s></span>
+          <a class="go" href="${esc(safeUrl(d.url))}" rel="sponsored noopener">Ver en Amazon</a>
+        </div>
+      </li>`).join("");
+  }
+
+  function renderGone(gone) {
+    $("gone").hidden = !gone.length;
+    $("goneTitle").textContent = `Ya no están a este precio (${gone.length})`;
+    $("goneList").innerHTML = gone.map((d) => `
+      <li><span>${esc(d.title)}</span>
+      <span><s>${euro.format(d.price)}</s> <span class="x">terminado ${ago(d.ended || d.checked)}</span></span></li>`).join("");
+  }
+
+  function render(data) {
+    deals = data.deals || [];
+    $("status").dataset.gen = data.generated;
+    const active = deals.filter((d) => d.active);
+    const gone = deals.filter((d) => !d.active).sort((a, b) => (b.ended || 0) - (a.ended || 0));
+    renderBest(active);
+    renderChips(active);
+    renderList(active);
+    renderGone(gone);
+    $("status").textContent = `${active.length} chollos activos · actualizado ${ago(data.generated)}`;
+  }
+
+  async function load() {
+    for (const src of SOURCES) {
+      try {
+        const res = await fetch(`${src}?t=${Math.floor(Date.now() / 60000)}`, { cache: "no-store" });
+        if (!res.ok) continue;
+        render(await res.json());
+        return;
+      } catch (e) { /* prueba la siguiente fuente */ }
+    }
+    if (!deals.length) {
+      $("status").textContent = "No se han podido cargar los chollos. Vuelve a cargar la página en un momento.";
+    }
+  }
+
+  $("chips").addEventListener("click", (e) => {
+    const b = e.target.closest(".chip");
+    if (!b) return;
+    cat = b.dataset.cat;
+    render({ deals, generated: Number($("status").dataset.gen) || Date.now() / 1000 });
+  });
+  $("sort").addEventListener("change", (e) => {
+    sort = e.target.value;
+    try { localStorage.setItem("cc-sort", sort); } catch (err) {}
+    renderList(deals.filter((d) => d.active));
+  });
+
+  load();
+  setInterval(load, 5 * 60 * 1000);
+})();
+</script>
+</body>
+</html>
