@@ -152,7 +152,33 @@ class Interes(unittest.TestCase):
         self.assertEqual(cn.interest("GTPLAYER Silla de Gaming, Silla de Oficina con Cojín", REAL)["score"], 95)
 
     def test_cafe_soluble_no_es_una_cafetera(self):
-        self.assertTrue(cn.interest("Nescafé Classic café soluble 20 bolsitas", REAL)["blocked"])
+        cafe = cn.interest("Nescafé Classic café soluble 20 bolsitas", REAL)
+        self.assertEqual(cafe["label"], "Súper y bebidas")
+        self.assertNotEqual(cafe["label"], "Cafeteras")
+
+    def test_compra_del_dia_a_dia_entra_en_las_top(self):
+        casos = {
+            "Aceite de Oliva Virgen Extra Hojiblanca 3 Litros": "Súper y bebidas",
+            "Mahou Cinco Estrellas Cerveza Dorada Lager, Pack de 24 latas x 33 cl": "Súper y bebidas",
+            "Monster Energy Ultra Zero Bebida Energética, pack 24 latas": "Súper y bebidas",
+            "Dodot Sensitive Pañales Talla 5, 11-16 kg, 42 unidades": "Bebé",
+            "Royal Canin Mini Adult Pienso para perros 8 kg": "Mascotas",
+            "VASAGLE Mesa de Centro Elevable con almacenaje": "Muebles y descanso",
+        }
+        for title, label in casos.items():
+            taste = cn.interest(title, REAL)
+            self.assertEqual(taste["label"], label, title)
+            self.assertEqual(taste["min_discount"], 20, title)
+
+    def test_el_detergente_no_es_un_electrodomestico(self):
+        for title in ["Ariel Todo en Uno Pods Detergente Lavadora en Cápsulas, 90 lavados",
+                      "Finish Ultimate Plus Pastillas Lavavajillas, 100 unidades"]:
+            self.assertEqual(cn.interest(title, REAL)["label"], "Droguería y limpieza", title)
+        self.assertEqual(cn.interest("Bosch Serie 4 Lavavajillas 60 cm", REAL)["label"], "Electrodomésticos")
+
+    def test_monster_hunter_no_es_una_bebida(self):
+        self.assertNotEqual(cn.interest("Monster Hunter Wilds PS5", REAL)["label"], "Súper y bebidas")
+        self.assertTrue(cn.interest("Filtro de aceite para coche Bosch", REAL)["blocked"])
 
     def test_orden_prioriza_interes_y_descuento(self):
         robot = {"interest": 100, "discount": 45, "price": 330, "reference": 600}

@@ -304,6 +304,9 @@ def interest(title: str, rules: dict) -> dict:
     def best_in(check) -> dict:
         best = {"score": 0, "label": "", "blocked": ""}
         for tier in conf.get("tiers") or []:
+            # 'not_if': palabras que sacan el producto de esa categoría (detergente para lavadora ≠ lavadora).
+            if any(check(word) for word in tier.get("not_if") or []):
+                continue
             if tier.get("score", 0) > best["score"] and any(check(word) for word in tier.get("keywords") or []):
                 best = {"score": int(tier["score"]), "label": tier.get("label") or "", "blocked": "",
                         "min_discount": tier.get("min_discount")}
