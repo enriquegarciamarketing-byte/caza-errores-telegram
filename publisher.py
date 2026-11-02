@@ -19,7 +19,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 
 ROOT = Path(__file__).resolve().parent
@@ -369,6 +369,16 @@ PREMIUM_TINT = "#FFF5E8"
 PREMIUM_TINT_LINE = "#F6E2C8"
 
 
+def _trim_white(image: Image.Image, pad: int = 6) -> Image.Image:
+    """Recorta el margen blanco de un logo dejando un borde mínimo."""
+    diff = ImageChops.difference(image, Image.new("RGB", image.size, (255, 255, 255))).convert("L")
+    box = diff.point(lambda v: 255 if v > 40 else 0).getbbox()
+    if not box:
+        return image
+    return image.crop((max(box[0] - pad, 0), max(box[1] - pad, 0),
+                       min(box[2] + pad, image.width), min(box[3] + pad, image.height)))
+
+
 def _card_palette(logo_path) -> tuple[str, str, str]:
     """Naranja y tonos suaves de la tarjeta según el canal: el logo de Caza Chollos marca la paleta free."""
     try:
@@ -690,14 +700,22 @@ def create_price_card(offer: dict) -> Path:
     draw.rounded_rectangle((24, 24, 1056, 1056), radius=34, fill="#FFFFFF", outline="#E7E9EB", width=2)
 
     # Use the supplied channel emblem as the only brand mark in the card.
-    logo_box = (48, 36, 184, 172)
     logo_file = Path(offer["logo_path"]) if offer.get("logo_path") else ROOT / "images" / "logo-caza-errores.png"
+    free_logo = orange == BRAND_ORANGE
+    # Caza Chollos: logo algo más grande, sin margen blanco y con enfoque fino para que se lea nítido.
+    logo_box = (42, 22, 194, 174) if free_logo else (48, 36, 184, 172)
     with Image.open(logo_file) as logo_source:
-        logo = ImageOps.contain(
-            logo_source.convert("RGB"),
-            (logo_box[2] - logo_box[0], logo_box[3] - logo_box[1]),
-            method=Image.Resampling.LANCZOS,
-        )
+        source = logo_source.convert("RGB")
+        if free_logo:
+            source = _trim_white(source)
+        box_size = (logo_box[2] - logo_box[0], logo_box[3] - logo_box[1])
+        if free_logo:
+            logo = source.copy()
+            logo.thumbnail(box_size, Image.Resampling.LANCZOS, reducing_gap=3.0)
+        else:
+            logo = ImageOps.contain(source, box_size, method=Image.Resampling.LANCZOS)
+        if free_logo:
+            logo = logo.filter(ImageFilter.UnsharpMask(radius=1.2, percent=70, threshold=2))
     canvas.paste(
         logo,
         (logo_box[0] + (logo_box[2] - logo.width) // 2,
