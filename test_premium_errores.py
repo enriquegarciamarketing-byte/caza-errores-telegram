@@ -195,6 +195,18 @@ class ExternalUnknownTest(unittest.TestCase):
         self.assertEqual(found, [])
 
 
+class ConditionalPriceTest(unittest.TestCase):
+    def test_precio_con_cupon_o_paypal_no_se_pide(self):
+        cand = {"title": "DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal", "price": 199.75,
+                "image": "https://x/i.jpg"}
+        ok, why = scanner.feeds.external_precheck(load_cfg(), cand)
+        self.assertFalse(ok)
+        self.assertIn("condiciones", why)
+
+    def test_precio_normal_sigue(self):
+        self.assertIsNone(scanner.feeds.conditional_price("DJI Osmo Pocket 3 Creator Combo"))
+
+
 class LoopTest(unittest.TestCase):
     def test_pasadas_hasta_el_limite_y_fuentes_externas_por_turnos(self):
         calls = []

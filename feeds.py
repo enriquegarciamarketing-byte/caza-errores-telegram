@@ -286,8 +286,21 @@ def html_unescape(value: str) -> str:
     return value.replace("&amp;", "&").replace("&quot;", '"').replace("&#39;", "'")
 
 
+CONDITIONAL_PRICE = ("cupon", "codigo", "paypal", "con app", "en la app", "primera compra", "nuevos usuarios",
+                     "nuevo usuario", "socios", "prime day", "con tarjeta", "coins", "monedas")
+
+
+def conditional_price(title: str) -> str | None:
+    """Precios que solo salen con cupón, PayPal, app o primera compra: en la tienda no se ven así."""
+    text = wallapop.fold_text(title or "")
+    return next((word for word in CONDITIONAL_PRICE if wallapop.keyword_in(text, word)), None)
+
+
 def external_precheck(cfg: dict, cand: dict) -> tuple[bool, str]:
     rules = (cfg or {}).get("resale") or {}
+    condition = conditional_price(cand.get("title") or cand.get("name") or "")
+    if condition:
+        return False, f"precio con condiciones («{condition}»): en la tienda no sale a ese precio"
     price = float(cand.get("price") or 0)
     minimum = float(rules.get("min_price_eur", 25))
     if price + 1e-9 < minimum:
