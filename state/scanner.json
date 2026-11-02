@@ -894,6 +894,21 @@
    "price": 79.0,
    "t": 1793614363,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "MW3Vyj5": {
+   "price": 349.0,
+   "t": 1793615671,
+   "result": "solo -12% bajo la referencia"
+  },
+  "RNVgVyR": {
+   "price": 41.99,
+   "t": 1793616421,
+   "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "7k6paob": {
+   "price": 24.34,
+   "t": 1793616571,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1058,11 +1073,68 @@
    "ask_until": 1793623938,
    "expired": true,
    "cancelled_by_admin": true
+  },
+  {
+   "id": "cm-2052610",
+   "gtin": null,
+   "price": 178.16,
+   "category": "OPORTUNIDAD DE REVENTA",
+   "t": 1793615092,
+   "title": "Garmin Forerunner 265",
+   "cap": {
+    "category": "OPORTUNIDAD DE REVENTA",
+    "title": "Garmin Forerunner 265",
+    "brand": "",
+    "current": 178.16,
+    "reference": 178.16,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "sizes": null,
+    "hold": false,
+    "store": "AliExpress",
+    "note": "",
+    "coupons": [
+     "ESD1139"
+    ],
+    "paypal": true,
+    "from_spain": true,
+    "resale_price": 258.2,
+    "resale_count": 33,
+    "profit": 65.12999999999997,
+    "demand": "Muchos anuncios",
+    "source_label": "WALLAPOP"
+   },
+   "url": "https://es.aliexpress.com/item/1005012262695857.html",
+   "alert_id": 174,
+   "alert_text_id": 175,
+   "pending": true,
+   "needs_ok": true,
+   "ask_until": 1793625892,
+   "card_data": {
+    "title": "Garmin Forerunner 265",
+    "category": "OPORTUNIDAD DE REVENTA",
+    "current": 178.16,
+    "reference": 178.16,
+    "image": "https://static.chollometro.com/threads/raw/AKkbe/2052610_1/re/150x150/qt/55/2052610_1.jpg",
+    "store_label": "AliExpress",
+    "conditions": "Con cupón + PayPal",
+    "resale": {
+     "price": 258.2,
+     "count": 33,
+     "roi": 36.557027391109095,
+     "profit": 65.12999999999997,
+     "source_label": "WALLAPOP",
+     "note": "33 anuncios de referencia · Wallapop · Muchos anuncios",
+     "sample": false,
+     "demand": "Muchos anuncios"
+    }
+   }
   }
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -3203,6 +3275,51 @@
    "http_status": 200,
    "bytes": 108680,
    "raw_count": 39
+  },
+  "|garmin forerunner 265|garmin 265 forerunner": {
+   "t": 1793615089.2696576,
+   "query": "garmin 265 forerunner",
+   "prices": [
+    240.0,
+    255.0,
+    95.0,
+    250.0,
+    255.0,
+    260.0,
+    275.0,
+    250.0,
+    270.0,
+    249.99,
+    250.0,
+    272.0,
+    259.0,
+    255.0,
+    235.0,
+    255.0,
+    288.0,
+    260.0,
+    295.0,
+    239.0,
+    250.0,
+    259.99,
+    250.0,
+    320.0,
+    280.0,
+    260.0,
+    300.0,
+    259.0,
+    275.99,
+    259.0,
+    300.0,
+    279.99,
+    290.0,
+    259.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 111318,
+   "raw_count": 36
   }
  },
  "milanuncios_cache": {
@@ -3989,7 +4106,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 3,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/dji-osmo-pocket-3-cmos-envio-desde-espana-cupon-ventajas-paypal-2052619": 1793613124.7292492,
   "https://www.chollometro.com/ofertas/mando-pc-y-switch-2-2052461": 1793613124.7292492,
@@ -3997,9 +4114,11 @@
   "https://www.chollometro.com/ofertas/skechers-tri-namics-sneaker-zapatillas-ninos-varias-tallas-disponibles-2052131": 1793613576.1873977,
   "https://www.chollometro.com/ofertas/garmin-fenix-8-47mm-zafiro-2052442": 1793613576.1873977,
   "https://www.chollometro.com/ofertas/hp-omen-gt16-ryzen-7-8700f-32gb-ram-rtx-5070i-16gb-1tb-ssd-2052479": 1793613576.1873977,
-  "https://www.chollometro.com/ofertas/aspirador-escoba-dyson-v12-detect-slim-absolute-150-aw-laser-de-deteccion-pantalla-lcd-60-min-autonomia-ligero-oferta-mediamarkt-2052539": 1793614078.212626
+  "https://www.chollometro.com/ofertas/aspirador-escoba-dyson-v12-detect-slim-absolute-150-aw-laser-de-deteccion-pantalla-lcd-60-min-autonomia-ligero-oferta-mediamarkt-2052539": 1793614078.212626,
+  "https://www.chollometro.com/ofertas/garmin-forerunner-265-envio-desde-espana-cupon-ventajas-paypal-2052610": 1793615084.3234198
  },
  "asked": {
-  "cm-2052619": 1793613138
+  "cm-2052619": 1793613138,
+  "cm-2052610": 1793615092
  }
 }
