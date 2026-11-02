@@ -75,6 +75,8 @@ class AskAdminTest(unittest.TestCase):
                     store_label="PcComponentes", direct_url="https://www.pccomponentes.com/rtx-5070",
                     needs_ok=True, ask_hours=3, series=None, discount=33.4, **extra)
         tg = FakeTG()
+        tg.texts = []
+        tg.call = lambda method, params=None: tg.texts.append(params) or {"message_id": 4343}
         with mock.patch.object(scanner, "fetch", return_value=b"img"), \
              mock.patch.object(scanner, "create_price_card", return_value="/tmp/card.jpg"), \
              mock.patch.object(scanner, "attach_wallapop", return_value=True):
@@ -85,7 +87,7 @@ class AskAdminTest(unittest.TestCase):
         ok, tg = self._ask()
         self.assertTrue(ok)
         self.assertEqual([p["chat_id"] for p in tg.photos], [7])
-        self.assertIn("respóndeme OK", tg.photos[0]["caption"])
+        self.assertIn("respóndeme OK", tg.texts[0]["text"])
         post = self.state["posts"][0]
         self.assertTrue(post["pending"] and post["needs_ok"])
         self.assertIn("cm-123", self.state["asked"])
@@ -195,13 +197,43 @@ class ExternalUnknownTest(unittest.TestCase):
         self.assertEqual(found, [])
 
 
+PAGE = ('{"price":211.59,"nextBestPrice":259.59,"temperature":300,"threadId":"2052700","title":"POCO X8 Pro",'
+        '"descriptionPurified":"Precio pagando con PayPal. Env\\u00edo desde Espa\\u00f1a",'
+        '"voucherCode":"ESD1139 \\/ AEES39 \\/ KODIES39","isIndexed":true}')
+
+
 class ConditionalPriceTest(unittest.TestCase):
-    def test_precio_con_cupon_o_paypal_no_se_pide(self):
-        cand = {"title": "DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal", "price": 199.75,
-                "image": "https://x/i.jpg"}
+    def test_precio_solo_en_la_app_no_se_pide(self):
+        cand = {"title": "Xiaomi Redmi Note 15 (precio en la app)", "price": 199.75, "image": "https://x/i.jpg"}
         ok, why = scanner.feeds.external_precheck(load_cfg(), cand)
         self.assertFalse(ok)
         self.assertIn("condiciones", why)
+
+    def test_cupones_paypal_y_envio_salen_de_la_ficha(self):
+        got = scanner.feeds.deal_conditions(PAGE, "2052700", "POCO X8 Pro 5G 8GB 256GB", 211.59)
+        self.assertEqual(got["coupons"], ["ESD1139", "AEES39", "KODIES39"])
+        self.assertTrue(got["paypal"])
+        self.assertTrue(got["from_spain"])
+        self.assertEqual(got["was"], 259.59)
+
+    def test_cupon_que_no_es_codigo_se_ensena_como_texto(self):
+        page = '{"threadId":"1","voucherCode":"+5\\u20ac Cupon ventajas"}'
+        got = scanner.feeds.deal_conditions(page, "1", "Pack Lindt", 8.66)
+        self.assertEqual(got["coupons"], [])
+        self.assertEqual(got["coupon_text"], "+5€ Cupon ventajas")
+
+    def test_el_post_explica_como_conseguir_el_precio(self):
+        cap = scanner.publisher_caption = scanner.caption_data({
+            "category": "OPORTUNIDAD DE REVENTA", "name": "POCO X8 Pro 5G 8GB 256GB", "brand": "Xiaomi",
+            "price": 211.59, "reference_price": 259.59, "store_label": "AliExpress",
+            "coupons": ["ESD1139", "AEES39"], "paypal": True, "from_spain": True})
+        text = scanner.caption_for("https://es.aliexpress.com/item/1.html", cap)
+        self.assertIn("<code>ESD1139</code>", text)
+        self.assertIn("<code>AEES39</code>", text)
+        self.assertIn("Envío desde España", text)
+        self.assertIn("PayPal", text)
+        self.assertIn("Cómo conseguir este precio", text)
+        self.assertIn("Código promocional", text)
 
     def test_precio_normal_sigue(self):
         self.assertIsNone(scanner.feeds.conditional_price("DJI Osmo Pocket 3 Creator Combo"))

@@ -240,6 +240,9 @@ def caption_data(cand: dict) -> dict:
             "reviews": cand.get("reviews"), "sizes": cand.get("sizes") or None,
             "hold": bool(cand.get("hold")), "store": cand.get("store_label") or "",
             "note": cand.get("note") or ""}
+    for key in ("coupons", "coupon_text", "paypal", "from_spain"):
+        if cand.get(key):
+            data[key] = cand[key]
     if cand.get("ref_text"):
         data["ref_text"] = cand["ref_text"]
     if deal.get("ok") and deal.get("price") and not deal.get("reserva"):
@@ -663,7 +666,8 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
             continue
         link = LINK_RE.search(text)
         reply_to = (msg.get("reply_to_message") or {}).get("message_id")
-        post = next((p for p in state.get("posts", []) if p.get("alert_id") == reply_to), None)
+        post = next((p for p in state.get("posts", []) if reply_to and
+                     reply_to in (p.get("alert_id"), p.get("alert_text_id"))), None)
         if post is None and not link and OK_RE.match(text):
             # Un OK suelto, sin responder a un mensaje: vale si solo hay un chollo esperando.
             waiting = [p for p in state.get("posts", []) if p.get("needs_ok") and p.get("pending")
@@ -865,6 +869,10 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
         ok, why = feeds.external_precheck(cfg, cand)
         if ok and cand.get("price"):
             status, found = feeds.store_price_check(cand["direct_url"], float(cand["price"]))
+            conditioned = bool(cand.get("coupons") or cand.get("coupon_text") or cand.get("paypal"))
+            if status == "mismatch" and conditioned and found and float(found) > float(cand["price"]):
+                # Con cupón o PayPal la ficha enseña el precio sin descontar: lo compruebas tú.
+                status = "unknown"
             if status == "mismatch":
                 ok, why = False, f"la tienda marca {found} € y no {cand['price']} €"
             elif status == "unknown" and resale_cfg.get("external_require_verified", True):
@@ -888,6 +896,7 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
             cand["reference_price"] = cand["was"]
             cand["avg90"] = cand["was"]
             cand["discount"] = (cand["was"] - cand["price"]) / cand["was"] * 100
+            cand["ref_text"] = "frente al precio anterior en la tienda"
         else:
             cand["reference_price"] = cand["price"]
             cand["avg90"] = cand["price"]
@@ -1284,19 +1293,27 @@ def ask_admin(tg, state: dict, cand: dict, card: Path, url: str | None, summary:
     reason = cand.get("ask_reason") or (f"{store} no deja que el bot lea su página, así que no he podido "
                                          "comprobar el precio.")
     icon = "🚨" if cand.get("category") == "ERROR DE PRECIO" else "🔎"
-    text = (f"{icon} Pendiente de tu OK · {summary}\n\n{reason} Si está a {euro(cand['price'])}, respóndeme OK "
-            f"a este mensaje y sale en el premium. Caduca en {hours:g} h.")
+    how = ""
+    if cand.get("coupons") or cand.get("coupon_text") or cand.get("paypal"):
+        how = " Pruébalo con los cupones y el pago que pone el post."
+    text = (f"{icon} Pendiente de tu OK · arriba tienes el post tal cual saldría.\n\n{reason}{how} Si sale a "
+            f"{euro(cand['price'])}, respóndeme OK a este mensaje (o a la foto) y se publica en el premium. "
+            f"Caduca en {hours:g} h.")
     buttons = [[{"text": f"Abrir en {store}", "url": url}]]
     if cand.get("series") is not None and cand.get("id") and not str(cand["id"]).startswith(("cm-", "watch-")):
         buttons[0].append({"text": "Ver histórico", "url": f"{BASE}/es/dp/{cand['id']}/"})
-    msg = tg.send_photo(admin, card, html.escape(text), {"reply_markup": {"inline_keyboard": buttons}})
+    caption_cand = {**cand, "note": ""}
+    preview = caption_for(url, caption_data(caption_cand))
+    msg = tg.send_photo(admin, card, preview[:1024] if len(preview) <= 1024 else html.escape(summary),
+                        {"reply_markup": {"inline_keyboard": buttons}})
+    note_msg = tg.call("sendMessage", {"chat_id": admin, "text": text, "reply_to_message_id": msg["message_id"]})
     now_ts = int(now_utc().timestamp())
     state.setdefault("asked", {})[cand["id"]] = now_ts
-    caption_cand = {**cand, "note": ""}
     gtin = cand.get("gtin") if re.fullmatch(r"\d{8,14}", cand.get("gtin") or "") else None
     record = {"id": cand["id"], "gtin": gtin, "price": cand["price"], "category": cand["category"],
               "t": now_ts, "title": card_title(cand)[:120], "cap": caption_data(caption_cand),
-              "url": url, "alert_id": msg["message_id"], "pending": True, "needs_ok": True,
+              "url": url, "alert_id": msg["message_id"], "alert_text_id": (note_msg or {}).get("message_id"),
+              "pending": True, "needs_ok": True,
               "ask_until": now_ts + int(hours * 3600),
               "card_data": {"title": offer["title"], "category": offer["category"],
                             "current": offer["current"], "reference": offer["reference"],
