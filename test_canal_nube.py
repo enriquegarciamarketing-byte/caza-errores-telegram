@@ -452,6 +452,16 @@ class Pasada(unittest.TestCase):
         night = datetime(2026, 10, 31, 2, 0, tzinfo=timezone.utc)
         self.assertEqual(cn.quota_reason({"posts": []}, night, RULES), "horario de silencio")
 
+    def test_segundos_hasta_las_8(self):
+        rules = dict(RULES, quiet_hours=[0, 8])
+        # 07:32 en Madrid (UTC+1 en noviembre): faltan 28 minutos.
+        self.assertEqual(cn.seconds_until_quiet_end(datetime(2026, 11, 2, 6, 32, tzinfo=timezone.utc), rules), 28 * 60)
+        # 08:05: ya no hay silencio.
+        self.assertEqual(cn.seconds_until_quiet_end(datetime(2026, 11, 2, 7, 5, tzinfo=timezone.utc), rules), 0)
+        # 03:00: faltan 5 horas, fuera de la ventana de espera.
+        self.assertGreater(cn.seconds_until_quiet_end(datetime(2026, 11, 2, 2, 0, tzinfo=timezone.utc), rules),
+                           cn.DEFAULTS["wake_before_minutes"] * 60)
+
 
 if __name__ == "__main__":
     unittest.main()

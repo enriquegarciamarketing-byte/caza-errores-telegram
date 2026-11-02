@@ -3,6 +3,7 @@ name: Canal normal @cazachollos_com
 on:
   # GitHub retrasa mucho las tareas muy frecuentes, así que cada ejecución busca durante ~35 min: una pasada cada 2 min, o al minuto si quedaron chollos por publicar.
   # El script respeta el horario (08:00-23:50 Madrid) y los cupos, y para en cuanto el día se cierra.
+  # Si arranca en la hora antes de las 08:00, espera y publica desde las 8 en punto (por eso el límite es de 100 min).
   schedule:
     - cron: "*/10 * * * *"
   workflow_dispatch:
@@ -28,7 +29,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 100
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4

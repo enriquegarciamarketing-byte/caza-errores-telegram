@@ -61,6 +61,7 @@ DEFAULTS = {
     "max_per_run": 1,
     "test_private_posts": 3,
     "quiet_hours": [1, 8],
+    "wake_before_minutes": 60,
     "max_details_per_run": 15,
     "max_tracking_checks_per_run": 4,
     "recheck_rejected_hours": 6,
@@ -395,6 +396,16 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
 def in_quiet_hours(now: datetime, rules: dict) -> bool:
     start, end = rules.get("quiet_hours") or [1, 8]
     return start <= now.astimezone(MADRID).hour < end
+
+
+def seconds_until_quiet_end(now: datetime, rules: dict) -> float:
+    """Segundos que faltan para que acabe el silencio de hoy (0 si no estamos en silencio)."""
+    if not in_quiet_hours(now, rules):
+        return 0.0
+    _, end = rules.get("quiet_hours") or [1, 8]
+    local = now.astimezone(MADRID)
+    wake = local.replace(hour=int(end), minute=0, second=0, microsecond=0)
+    return max(0.0, (wake - local).total_seconds())
 
 
 def day_closed(state: dict, now: datetime, rules: dict) -> bool:
@@ -1012,6 +1023,15 @@ def main() -> int:
             if not args.dry_run and not args.test_private:
                 save_state(state)
             why = quota_reason(state, now, rules)
+            if "silencio" in why and deadline is not None and not args.test_private:
+                # GitHub arranca el bot más o menos una vez por hora. Si toca poco antes de las 8,
+                # espera despierto y publica a las 8 en punto en vez de cerrarse hasta la siguiente.
+                left = seconds_until_quiet_end(datetime.now(timezone.utc), rules)
+                if 0 < left <= float(rules.get("wake_before_minutes") or 0) * 60:
+                    print(f"Silencio: espero {int(left // 60) + 1} min y publico desde las 08:00.")
+                    time.sleep(left + 5)
+                    deadline = time.time() + args.minutes * 60
+                    continue
             if "silencio" in why or "cerrado" in why or args.test_private:
                 break
             if deadline is None and index >= args.loop:
