@@ -1,30 +1,41 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  MQvDVGP · 69.99 € · media 83.8 · ref 68.87 → descartado (la referencia corregida no supera el precio (media inflada)) · LEGO Harry Potter Rincón Entre Libros: Expreso de Hogwarts 7
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36064 bytes, 30 chollos
-  Chollometro «DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal»: AliExpress 199.75 €
-  Chollometro «8bitdo Ultimate 2 Mando Pc y Switch 2»: AliExpress 40.25 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75887 bytes, 30 chollos
-  cm-2052619 · AliExpress 199.75 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas +
-  cm-2052461 · AliExpress 40.25 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · 8bitdo Ultimate 2 Mando Pc y Switch 2
-  Wallapop «8bitdo ultimate»: 200 / 116452 bytes, 36 anuncios, 33 parecidos, 0 reservas
-  Milanuncios «8bitdo ultimate»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
-  Reventa WALLAPOP: 29 anuncios, ~26 €, no publica
-  ⚠️ No publico «8bitdo Ultimate 2 Mando Pc y Switch 2»: reventa en WALLAPOP ~26 € (29 anuncios): ROI -44 % y -18 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «dji osmo»: 200 / 111787 bytes, 39 anuncios, 38 parecidos, 0 reservas
-  Milanuncios «dji osmo»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
-  Reventa WALLAPOP: 32 anuncios, ~270 €, publica
-  Te lo paso por privado para que des el OK (mensaje 164): OPORTUNIDAD DE REVENTA · DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal
-Publicados en esta ejecución: 1
-== pasada 2 · 10:54 ==
-Listados: 92 productos únicos
+Listados: 102 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36549 bytes, 30 chollos
+  Chollometro «Skechers Tri-namics Sneaker Zapatillas Niños - VARIAS TALLAS DISPONIBL»: Amazon 29.35 €
+  Chollometro «Garmin Fenix 8 47mm zafiro»: El Corte Inglés 699.99 €
+  Chollometro «HP OMEN GT16, Ryzen 7-8700F, 32GB RAM, RTX 5070i 16GB, 1TB SSD»: El Corte Inglés 1988.23 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77629 bytes, 30 chollos
+  cm-2052131 · Amazon 29.35 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Skechers Tri-namics Sneaker Zapatillas Niños - VARIAS TALLAS
+  cm-2052442 · El Corte Inglés 699.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Garmin Fenix 8 47mm zafiro
+  cm-2052479 · El Corte Inglés 1988.23 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · HP OMEN GT16, Ryzen 7-8700F, 32GB RAM, RTX 5070i 16GB, 1TB S
+  Wallapop «omen gt16 ryzen»: 200 / 13634 bytes, 3 anuncios, 1 parecidos, 0 reservas
+  Wallapop «omen gt16»: 200 / 70663 bytes, 20 anuncios, 2 parecidos, 0 reservas
+  Milanuncios «omen gt16 ryzen»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
+  ⚠️ No publico «HP OMEN GT16, Ryzen 7-8700F, 32GB RAM, RTX 5070i 16GB, 1TB SSD»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Vinted «skechers tri»: HTTP 200, 2915270 bytes, 14 anuncios
+  Vinted «skechers tri»: 0 parecidos de 14
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 3)
+  Wallapop «skechers tri»: 200 / 3457 bytes, 1 anuncios, 1 parecidos, 0 reservas
+  Milanuncios «skechers tri»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 1 anuncios, ~0 €, no publica
+  ⚠️ No publico «Skechers Tri-namics Sneaker Zapatillas Niños - VARIAS TALLAS DISPONIBLES»: WALLAPOP solo tiene 1 anuncios parecidos (mínimo 3) · Vinted solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop «garmin 47mm fenix»: 200 / 130464 bytes, 40 anuncios, 33 parecidos, 0 reservas
+  Milanuncios «garmin 47mm fenix»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 29 anuncios, ~551 €, no publica
+  ⚠️ No publico «Garmin Fenix 8 47mm zafiro»: reventa en WALLAPOP ~551 € (29 anuncios): ROI -26 % y -179 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-== pasada 3 · 10:56 ==
-Listados: 95 productos únicos
+== pasada 2 · 11:01 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  RozQXq7 · 239.0 € · media 313.2 · ref 232.85 → descartado (la referencia corregida no supera el precio (media inflada)) · dreame H14 Pro Aspirador en Seco y Húmedo, Alcance 180°, Aut
+Publicados en esta ejecución: 0
+== pasada 3 · 11:04 ==
+Listados: 94 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
