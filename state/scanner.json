@@ -889,6 +889,11 @@
    "price": 239.0,
    "t": 1793613712,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "MKy4j0m": {
+   "price": 79.0,
+   "t": 1793614363,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1057,7 +1062,7 @@
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -3181,6 +3186,23 @@
    "http_status": 200,
    "bytes": 130464,
    "raw_count": 40
+  },
+  "|aspirador escoba dyson v12 detect slim absolute (150 aw, laser de deteccion, pantalla lcd, 60 min autonomia, ligero, oferta mediamarkt)|aspirador v12 escoba": {
+   "t": 1793614082.8219445,
+   "query": "aspirador v12",
+   "prices": [
+    255.0,
+    60.0,
+    49.0,
+    150.0,
+    7.0,
+    375.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 108680,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -3341,7 +3363,8 @@
   "wallapop:cm-2052461": 1793613136.2607465,
   "wallapop:cm-2052479": 1793613584.3496299,
   "wallapop:cm-2052131": 1793613585.3652103,
-  "wallapop:cm-2052442": 1793613586.4853952
+  "wallapop:cm-2052442": 1793613586.4853952,
+  "wallapop:cm-2052539": 1793614083.4119222
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -3966,14 +3989,15 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 9,
+ "rotation_index": 3,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/dji-osmo-pocket-3-cmos-envio-desde-espana-cupon-ventajas-paypal-2052619": 1793613124.7292492,
   "https://www.chollometro.com/ofertas/mando-pc-y-switch-2-2052461": 1793613124.7292492,
   "https://www.chollometro.com/ofertas/consola-nintendo-switch-2-2052557": 1793613124.7292492,
   "https://www.chollometro.com/ofertas/skechers-tri-namics-sneaker-zapatillas-ninos-varias-tallas-disponibles-2052131": 1793613576.1873977,
   "https://www.chollometro.com/ofertas/garmin-fenix-8-47mm-zafiro-2052442": 1793613576.1873977,
-  "https://www.chollometro.com/ofertas/hp-omen-gt16-ryzen-7-8700f-32gb-ram-rtx-5070i-16gb-1tb-ssd-2052479": 1793613576.1873977
+  "https://www.chollometro.com/ofertas/hp-omen-gt16-ryzen-7-8700f-32gb-ram-rtx-5070i-16gb-1tb-ssd-2052479": 1793613576.1873977,
+  "https://www.chollometro.com/ofertas/aspirador-escoba-dyson-v12-detect-slim-absolute-150-aw-laser-de-deteccion-pantalla-lcd-60-min-autonomia-ligero-oferta-mediamarkt-2052539": 1793614078.212626
  },
  "asked": {
   "cm-2052619": 1793613138
