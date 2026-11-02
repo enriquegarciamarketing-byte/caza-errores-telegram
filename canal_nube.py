@@ -799,6 +799,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
     for item in cascade or []:
         if not item.get("ts") or now.timestamp() - item["ts"] > max_age or not item.get("price") or skip(item):
             continue
+        if not float(rules["min_price_eur"]) <= float(item["price"]) <= float(rules["max_price_eur"]):
+            continue  # ni se abre la ficha: no saldría por precio
         if item["id"] in pool:
             pool[item["id"]]["cascada"] = item["cascada"]
         else:
