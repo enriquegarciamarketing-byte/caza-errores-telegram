@@ -268,7 +268,8 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
                   resale_price: float | None = None, resale_count: int | None = None,
                   sold_out: bool = False, sizes: list | None = None, note: str = "",
                   hold: bool = False, demand: str = "", profit: float | None = None,
-                  source_label: str = "", store: str = "") -> str:
+                  source_label: str = "", store: str = "", coupons: list | None = None,
+                  coupon_text: str = "", paypal: bool = False, from_spain: bool = False) -> str:
     """Copy del canal: categoría, marca en negrita, precio, beneficio y enlace de la tienda."""
     e = html.escape
     brand = nice_brand(brand)
@@ -306,6 +307,7 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
         lines.append(f"🔥 Demanda: <b>{e(demand)}</b>")
     if rating and rating >= 4.0 and reviews:
         lines.append(f"⭐ {str(round(rating, 1)).replace('.', ',')} ({reviews} opiniones)")
+    lines.extend(conditions_block(coupons, coupon_text, paypal, from_spain, shop))
     if note:
         lines.append("")
         for line in str(note).splitlines():
@@ -314,6 +316,33 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
     lines.append("")
     lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en {e(shop)}</a></b>')
     return "\n".join(lines)
+
+
+def conditions_block(coupons: list | None, coupon_text: str, paypal: bool, from_spain: bool, shop: str) -> list[str]:
+    """Cupones (se copian tocándolos), PayPal, envío desde España y cómo conseguir el precio."""
+    e = html.escape
+    out: list[str] = []
+    if coupons:
+        out += ["", "🍀 <b>Cupones</b> (toca uno para copiarlo):"] + [f"<code>{e(code)}</code>" for code in coupons]
+    elif coupon_text:
+        out += ["", f"🍀 <b>Cupón:</b> {e(coupon_text)}"]
+    if from_spain:
+        out += ["", "🇪🇸 Envío desde España"]
+    if paypal:
+        out.append("💳 Precio pagando con <b>PayPal</b>")
+    steps = []
+    if coupons or coupon_text or paypal:
+        steps.append(f"añádelo a la cesta de {shop}")
+    if coupons:
+        steps.append("al pagar pega uno de los cupones en «Código promocional» (si uno falla, prueba el siguiente)")
+    elif coupon_text:
+        steps.append("al pagar elige ese cupón en la sección de cupones")
+    if paypal:
+        steps.append("elige PayPal como método de pago")
+    if len(steps) > 1:
+        steps[-1] = "y " + steps[-1]
+        out += ["", "👉 <b>Cómo conseguir este precio:</b> " + e(", ".join(steps[:-1]) + " " + steps[-1]) + "."]
+    return out
 
 
 DEAL_CLOSERS = (

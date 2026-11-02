@@ -210,6 +210,11 @@ def _from_feed(entry: dict, cfg: dict, watch: list[dict], page: str) -> dict | N
         "in_stock": True,
         "category": "OPORTUNIDAD DE REVENTA",
     }
+    extra = deal_conditions(page, thread.group(1) if thread else "", entry["title"], entry.get("price"))
+    cand.update(coupons=extra["coupons"], coupon_text=extra["coupon_text"], paypal=extra["paypal"],
+                from_spain=extra["from_spain"])
+    if extra["was"]:
+        cand["was"] = extra["was"]
     for item in watch:
         if _matches_watch(entry["title"], item):
             cand.update(collector=True, watch_id=item.get("id"), hold=True,
@@ -286,12 +291,55 @@ def html_unescape(value: str) -> str:
     return value.replace("&amp;", "&").replace("&quot;", '"').replace("&#39;", "'")
 
 
-CONDITIONAL_PRICE = ("cupon", "codigo", "paypal", "con app", "en la app", "primera compra", "nuevos usuarios",
-                     "nuevo usuario", "socios", "prime day", "con tarjeta", "coins", "monedas")
+# Cupones y PayPal sí valen (se explican en el post); esto no lo puede conseguir todo el mundo.
+CONDITIONAL_PRICE = ("con app", "en la app", "primera compra", "nuevos usuarios", "nuevo usuario",
+                     "socios", "con tarjeta", "coins", "monedas")
+CODE_RE = re.compile(r"\b(?=[A-Z0-9]*\d)[A-Z][A-Z0-9]{4,19}\b")
+
+
+def deal_conditions(page: str, thread_id: str, title: str = "", price: float | None = None) -> dict:
+    """Cupones, pago con PayPal, envío desde España y precio anterior del chollo, sacados de su ficha.
+
+    Los códigos salen tal cual los pone Chollometro (voucherCode). Si el cupón no es un código
+    («+5 € cupón ventajas»), se enseña como texto."""
+    out: dict = {"coupons": [], "coupon_text": "", "paypal": False, "from_spain": False, "was": None}
+    raw = re.search(r'"voucherCode":"((?:[^"\\]|\\.)*)"', page or "")
+    voucher = ""
+    if raw:
+        try:
+            voucher = json.loads('"' + raw.group(1) + '"').strip()
+        except json.JSONDecodeError:
+            voucher = raw.group(1).strip()
+    if voucher:
+        codes = list(dict.fromkeys(CODE_RE.findall(voucher)))
+        if codes:
+            out["coupons"] = codes[:5]
+        else:
+            out["coupon_text"] = voucher[:80]
+    summary_raw = re.search(r'"descriptionPurified":"((?:[^"\\]|\\.)*)"', page or "")
+    summary = ""
+    if summary_raw:
+        try:
+            summary = json.loads('"' + summary_raw.group(1) + '"')
+        except json.JSONDecodeError:
+            summary = summary_raw.group(1)
+    text = wallapop.fold_text(" ".join([title or "", voucher, summary]))
+    out["paypal"] = "paypal" in text
+    out["from_spain"] = bool(re.search(r"(desde|envio desde|almacen de|almacen en) espana", text))
+    anchor = (page or "").find(f'"threadId":"{thread_id}"') if thread_id else -1
+    if anchor >= 0 and price:
+        best = None
+        for m in re.finditer(r'"nextBestPrice":(\d+(?:\.\d+)?)', page[max(0, anchor - 6000):anchor + 6000]):
+            dist = abs(m.start() - min(anchor, 6000))
+            if best is None or dist < best[0]:
+                best = (dist, float(m.group(1)))
+        if best and best[1] > float(price) * 1.01:
+            out["was"] = best[1]
+    return out
 
 
 def conditional_price(title: str) -> str | None:
-    """Precios que solo salen con cupón, PayPal, app o primera compra: en la tienda no se ven así."""
+    """Precios que solo consigue una parte de la gente (app, primera compra, socios): no se publican."""
     text = wallapop.fold_text(title or "")
     return next((word for word in CONDITIONAL_PRICE if wallapop.keyword_in(text, word)), None)
 
