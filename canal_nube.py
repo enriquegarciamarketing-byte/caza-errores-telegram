@@ -505,16 +505,22 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     lines.append(f"🤑 Te ahorras <b>{e(euro(deal['reference'] - deal['price']))}</b>")
     if deal.get("historical_low"):
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
-    if deal.get("rating") and deal.get("reviews"):
-        lines.append(f"⭐ {str(round(deal['rating'], 1)).replace('.', ',')} ({deal['reviews']} opiniones)")
+    # Sin estrellas ni número de opiniones: Amazon solo deja mostrarlas si salen de su API oficial.
     for extra in deal.get("extra_lines") or []:
         lines.append(e(str(extra)))
     lines.append("")
     hour = deal.get("seen_hhmm") or f"{seen:%H:%M}"
-    lines.append(f"🕒 Precio visto en Amazon.es a las {hour}. Puede cambiar en cualquier momento.")
+    lines.append(f"🕒 {PRICE_NOTE.format(hour=hour)}")
     lines.append("")
     lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en Amazon</a></b>')
+    lines.append(PUBLI)
     return "\n".join(lines)
+
+
+# Exención de precio y aviso de publicidad que piden Amazon Afiliados y la LSSI (art. 20).
+PRICE_NOTE = ("Precio visto en Amazon.es a las {hour} (hora peninsular). Puede cambiar en cualquier momento "
+              "y al comprar se aplica el que marque Amazon.es")
+PUBLI = "📢 #publi · enlace de afiliado"
 
 
 def buttons(url: str) -> dict:
@@ -525,14 +531,18 @@ def make_card(deal: dict, rules: dict) -> Path:
     import photos
     from publisher import DEAL_LOGO, create_price_card
 
-    image = str(deal.get("image") or "")
-    local = ROOT / image if image and not image.startswith("http") else None
-    raw = local.read_bytes() if local and local.is_file() else (photos.fetch_best(image) if image else None)
-    if not raw:
-        raise ValueError("no he podido descargar la foto")
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    image_path = OUTPUT / f"{deal['asin']}.img"
-    image_path.write_bytes(raw)
+    image_path = None
+    # Por defecto la tarjeta lleva el logo del canal y no la foto de Amazon: las normas de afiliados
+    # no permiten guardar ni retocar sus imágenes. "amazon_photo": true en config solo cuando la foto venga de la API.
+    if rules.get("amazon_photo"):
+        image = str(deal.get("image") or "")
+        local = ROOT / image if image and not image.startswith("http") else None
+        raw = local.read_bytes() if local and local.is_file() else (photos.fetch_best(image) if image else None)
+        if not raw:
+            raise ValueError("no he podido descargar la foto")
+        image_path = OUTPUT / f"{deal['asin']}.img"
+        image_path.write_bytes(raw)
     return create_price_card({
         "id": f"amz-{deal['asin']}",
         "title": clean_title(deal["title"]),
@@ -551,6 +561,15 @@ def make_card(deal: dict, rules: dict) -> Path:
 # ------------------------------------------------------------------ seguimiento
 
 ENDED = "⛔ <b>YA NO ESTÁ A ESTE PRECIO</b> (comprobado a las {hour})"
+
+
+def ended_caption(caption: str) -> str:
+    """Texto del post terminado: sin enlace a Amazon ni estrellas (los posts antiguos aún las llevan)."""
+    kept = [line for line in caption.split("\n")
+            if not line.startswith("🔗") and not line.startswith("⭐")]
+    while kept and not kept[-1].strip():
+        kept.pop()
+    return "\n".join(kept)
 
 
 def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fetch) -> None:
@@ -572,11 +591,11 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
         log(f"  Seguimiento {post['asin']}: terminado (ahora {price}, stock {detail.get('in_stock')})")
         if dry or tg is None:
             continue
-        caption = ENDED.format(hour=f"{now.astimezone(MADRID):%H:%M}") + "\n\n" + post["caption"]
+        caption = ENDED.format(hour=f"{now.astimezone(MADRID):%H:%M}") + "\n\n" + ended_caption(post["caption"])
         try:
+            # Sin reply_markup Telegram quita el botón: un chollo terminado deja de enlazar a Amazon.
             tg.call("editMessageCaption", {"chat_id": post["chat"], "message_id": post["message_id"],
-                                           "caption": caption[:1024], "parse_mode": "HTML",
-                                           "reply_markup": buttons(post["url"])})
+                                           "caption": caption[:1024], "parse_mode": "HTML"})
             post["ended"] = int(now.timestamp())
         except RuntimeError as exc:
             log(f"  No he podido marcar el post {post['message_id']}: {exc}")
@@ -797,8 +816,10 @@ def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
                      f"📉 <b>-{round(item['discount'])} %</b>")
         lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
         lines.append("")
-    lines.append(f"🕒 Precios comprobados a las {hour}. Pueden cambiar en cualquier momento.")
+    lines.append(f"🕒 Precios comprobados en Amazon.es a las {hour} (hora peninsular). Pueden cambiar en cualquier "
+                 "momento y al comprar se aplica el que marque Amazon.es")
     lines.append("😴 Mañana a las 8:00 volvemos con más chollos. Activa las notificaciones 🔔")
+    lines.append("📢 #publi · enlaces de afiliado")
     return "\n".join(lines)
 
 
