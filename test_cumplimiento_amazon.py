@@ -43,7 +43,7 @@ class TextoDelPost(unittest.TestCase):
 
 
 class Tarjeta(unittest.TestCase):
-    def test_sin_foto_de_amazon_por_defecto(self):
+    def test_sin_foto_si_se_desactiva(self):
         deal = deal_with_rating()
         deal["image"] = "https://m.media-amazon.com/images/I/no-se-descarga.jpg"
         called = []
@@ -51,7 +51,7 @@ class Tarjeta(unittest.TestCase):
         original = photos.fetch_best
         photos.fetch_best = lambda url: called.append(url)
         try:
-            card = cn.make_card(deal, dict(RULES))
+            card = cn.make_card(deal, dict(RULES, amazon_photo=False))
         finally:
             photos.fetch_best = original
         self.assertTrue(card.exists())

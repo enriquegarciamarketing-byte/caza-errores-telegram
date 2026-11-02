@@ -236,6 +236,7 @@
   "amazon_channel": {
     "_nota": "Canal @cazachollos_com. Solo Amazon.es. Lo ejecuta canal_nube.py en GitHub Actions (scan-generic.yml).",
     "chat_id": "@cazachollos_com",
+    "amazon_photo": true,
     "admin_username": "Darkness_gg",
     "sources": [
       "https://jimmyleaks.com/es/minimos-de-hoy/",
