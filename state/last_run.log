@@ -1,16 +1,30 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 119 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 458428 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 481420 bytes, 30 ASIN, 33 títulos
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 349670 bytes, 0 ASIN, 0 títulos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35324 bytes, 30 chollos
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  MQvDVGP · 69.99 € · media 83.8 · ref 68.87 → descartado (la referencia corregida no supera el precio (media inflada)) · LEGO Harry Potter Rincón Entre Libros: Expreso de Hogwarts 7
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36064 bytes, 30 chollos
+  Chollometro «DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal»: AliExpress 199.75 €
   Chollometro «8bitdo Ultimate 2 Mando Pc y Switch 2»: AliExpress 40.25 €
-  Chollometro «Aspiradora sin cable Dyson V8 Cyclone Modelo: Aspiradora sin cable Dys»: Privalia 279.0 €
-  Chollometro «Set LEGO Technic Aston Martin Valkyrie 42208 (707 piezas, motor V12, m»: Amazon 41.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73977 bytes, 30 chollos
-  cm-2052461 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · 8bitdo Ultimate 2 Mando Pc y Switch 2
-  cm-2052076 · Privalia → descartado (no he podido comprobar el precio en la página de la tienda) · Aspiradora sin cable Dyson V8 Cyclone Modelo: Aspiradora sin
-  cm-2052519 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Set LEGO Technic Aston Martin Valkyrie 42208 (707 piezas, mo
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75887 bytes, 30 chollos
+  cm-2052619 · AliExpress 199.75 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas +
+  cm-2052461 · AliExpress 40.25 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · 8bitdo Ultimate 2 Mando Pc y Switch 2
+  Wallapop «8bitdo ultimate»: 200 / 116452 bytes, 36 anuncios, 33 parecidos, 0 reservas
+  Milanuncios «8bitdo ultimate»: HTTP 403, 95508 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
+  Reventa WALLAPOP: 29 anuncios, ~26 €, no publica
+  ⚠️ No publico «8bitdo Ultimate 2 Mando Pc y Switch 2»: reventa en WALLAPOP ~26 € (29 anuncios): ROI -44 % y -18 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «dji osmo»: 200 / 111787 bytes, 39 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «dji osmo»: HTTP 403, 95508 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
+  Reventa WALLAPOP: 32 anuncios, ~270 €, publica
+  Te lo paso por privado para que des el OK (mensaje 164): OPORTUNIDAD DE REVENTA · DJI Osmo Pocket 3 CMOS (Envio desde España) Cupon ventajas + Paypal
+Publicados en esta ejecución: 1
+== pasada 2 · 10:54 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+== pasada 3 · 10:56 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
