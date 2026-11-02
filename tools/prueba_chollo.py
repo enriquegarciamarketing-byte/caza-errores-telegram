@@ -28,8 +28,16 @@ def nearest(pattern):
 
 title = json.loads('"' + nearest(r'"title":"((?:[^"\\]|\\.)*)"') + '"')
 price = float(nearest(r'"price":(\d+(?:\.\d+)?)'))
-image = re.search(r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', page)
-entry = {"title": title, "price": price, "image": image.group(1) if image else "",
+image = (re.search(r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', page)
+         or re.search(r'<meta[^>]+content="([^"]+)"[^>]+property="og:image"', page))
+image = image.group(1) if image else ""
+if not image:
+    main = re.search(r'"mainImage":\{"path":"([^"]+)","name":"([^"]+)"', win)
+    if main:
+        path, name = main.group(1).replace("\\/", "/"), main.group(2)
+        image = f"https://static.chollometro.com/{path}/{name}/re/1024x1024/qt/60/{name}.jpg"
+print("Imagen:", image)
+entry = {"title": title, "price": price, "image": image,
          "link": f"https://www.chollometro.com/ofertas/{tid}", "temperature": 999}
 print("Chollo:", title, price)
 cand = feeds._from_feed(entry, cfg, [], page)
