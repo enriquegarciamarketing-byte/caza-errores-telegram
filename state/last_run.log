@@ -1,13 +1,16 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 115 productos únicos
+Listados: 119 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 458428 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 481420 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 349670 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36139 bytes, 30 chollos
-  Chollometro «Apple Watch Ultra 3 GPS + Cellular 5G, titanio 49 mm, pantalla 3000 ni»: Amazon 642.52 €
-  Chollometro «Set LEGO Harry Potter Rincon Entre Libros Expreso de Hogwarts 76450 (8»: Amazon 69.99 €
-  Chollometro «Dji Mini 5 Pro»: AliExpress 628.54 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73032 bytes, 30 chollos
-  cm-2052489 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Apple Watch Ultra 3 GPS + Cellular 5G, titanio 49 mm, pantal
-  cm-2052435 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Set LEGO Harry Potter Rincon Entre Libros Expreso de Hogwart
-  cm-2051648 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · Dji Mini 5 Pro
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35324 bytes, 30 chollos
+  Chollometro «8bitdo Ultimate 2 Mando Pc y Switch 2»: AliExpress 40.25 €
+  Chollometro «Aspiradora sin cable Dyson V8 Cyclone Modelo: Aspiradora sin cable Dys»: Privalia 279.0 €
+  Chollometro «Set LEGO Technic Aston Martin Valkyrie 42208 (707 piezas, motor V12, m»: Amazon 41.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73977 bytes, 30 chollos
+  cm-2052461 · AliExpress → descartado (no he podido comprobar el precio en la página de la tienda) · 8bitdo Ultimate 2 Mando Pc y Switch 2
+  cm-2052076 · Privalia → descartado (no he podido comprobar el precio en la página de la tienda) · Aspiradora sin cable Dyson V8 Cyclone Modelo: Aspiradora sin
+  cm-2052519 · Amazon → descartado (no he podido comprobar el precio en la página de la tienda) · Set LEGO Technic Aston Martin Valkyrie 42208 (707 piezas, mo
 Publicados en esta ejecución: 0
