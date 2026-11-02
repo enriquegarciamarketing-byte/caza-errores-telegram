@@ -195,8 +195,8 @@ def _from_feed(entry: dict, cfg: dict, watch: list[dict], page: str) -> dict | N
     thread = re.search(r"(\d{5,})/?$", entry.get("link") or "")
     cand = {
         "id": f"cm-{thread.group(1) if thread else wallapop.product_cache_key(entry, entry.get('title') or '')[:24]}",
-        "name": entry["title"],
-        "title": entry["title"],
+        "name": clean_deal_title(entry["title"]),
+        "title": clean_deal_title(entry["title"]),
         # La tienda no es la marca: si se mezcla, la búsqueda en Wallapop sale vacía y el título del post sale mal.
         "brand": "",
         "merchant": entry.get("merchant") or "",
@@ -336,6 +336,18 @@ def deal_conditions(page: str, thread_id: str, title: str = "", price: float | N
         if best and best[1] > float(price) * 1.01:
             out["was"] = best[1]
     return out
+
+
+_COND = r"(?:cup[oó]n|cupones|paypal|env[ií]o|desde espa[ñn]a|c[oó]digo|precio con)"
+
+
+def clean_deal_title(title: str) -> str:
+    """Quita del título lo que ya explica el post (cupón, PayPal, envío desde España)."""
+    text = re.sub(r"\s*[\(\[][^\)\]]*" + _COND + r"[^\)\]]*[\)\]]", "", title or "", flags=re.I)
+    for _ in range(3):
+        text = re.sub(r"\s*[-+|,]?\s*(?:con\s+)?(?:cup[oó]n(?:\s+\w+)?|paypal|c[oó]digo\s+\S+)\s*$", "", text,
+                      flags=re.I)
+    return re.sub(r"\s{2,}", " ", text).strip(" -+|,") or (title or "")
 
 
 def conditional_price(title: str) -> str | None:
