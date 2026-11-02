@@ -1,101 +1,122 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36965 bytes, 30 chollos
-  Chollometro «Sony WH-CH520, Auriculares de diadema inalámbricos Bluetooth, diseño l»: Amazon 25.49 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77435 bytes, 30 chollos
-  cm-2053099 · Amazon 25.49 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Sony WH-CH520, Auriculares de diadema inalámbricos Bluetooth
-  Wallapop «sony ch520 auriculares»: 200 / 115123 bytes, 40 anuncios, 39 parecidos, 0 reservas
-  Milanuncios «sony ch520 auriculares»: HTTP 200, 95999 bytes, bloqueado
-  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
-  Reventa WALLAPOP: 38 anuncios, ~20 €, no publica
-  ⚠️ No publico «Sony WH-CH520, Auriculares de diadema inalámbricos Bluetooth, diseño ligero, 50 h de bater»: reventa en WALLAPOP ~20 € (38 anuncios): ROI -34 % y -9 €, por debajo del mínimo (30 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 36 descartes nuevos, 74 en lista
-== pasada 2 · 17:57 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35865 bytes, 30 chollos
+  Chollometro «LEGO Harry Potter - Rincón entre Libros: Expreso de Hogwarts - 76450»: Toys R Us 69.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 60893 bytes, 30 chollos
+  cm-2052508 · Toys R Us 69.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Harry Potter - Rincón entre Libros: Expreso de Hogwarts
+  Wallapop «lego 76450 harry»: 200 / 27977 bytes, 12 anuncios, 12 parecidos, 0 reservas
+  Milanuncios «lego 76450 harry»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 12 anuncios, ~75 €, no publica
+  ⚠️ No publico «LEGO Harry Potter - Rincón entre Libros: Expreso de Hogwarts - 76450»: reventa en WALLAPOP ~75 € (12 anuncios): ROI -1 % y -1 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID AA5A:1A8F5:467756:5D05FD:6AE8C102        
-remote: Time 2026-11-02T16:57:38Z
-To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] d1744c06c03419b941452ecb9bac0a29ed4325ed -> cascada (Internal Server Error)
-== pasada 3 · 17:59 ==
-Listados: 103 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 4 · 18:02 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 5 · 18:04 ==
-Listados: 91 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37159 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 78657 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 18:07 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 18:09 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 18:12 ==
-Listados: 103 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 18:14 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36943 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75733 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 18:17 ==
-Listados: 87 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 18:19 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 18:22 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 18:24 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36943 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 64963 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 14 · 18:27 ==
+Cascada al canal normal: 40 descartes nuevos, 77 en lista
+== pasada 2 · 18:59 ==
 Listados: 90 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 18:29 ==
-Listados: 97 productos únicos
+== pasada 3 · 19:01 ==
+Listados: 95 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 16 · 18:32 ==
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 4 · 19:04 ==
 Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 5 · 19:06 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35466 bytes, 30 chollos
+  Chollometro «Robot aspirador Dreame L50 Pro Ultra»: Dreametech 499.0 €
+  Chollometro «Mando Ps5 dualsense edge»: AliExpress 145.96 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 60867 bytes, 30 chollos
+  cm-2053166 · Dreametech 499.0 € → candidato externo · Robot aspirador Dreame L50 Pro Ultra
+  cm-2053239 · AliExpress 145.96 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Mando Ps5 dualsense edge
+  Wallapop «robot l50 aspirador»: 200 / 82951 bytes, 23 anuncios, 3 parecidos, 0 reservas
+  Milanuncios «robot l50 aspirador»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 3 anuncios, ~460 €, no publica
+  ⚠️ No publico «Robot aspirador Dreame L50 Pro Ultra»: reventa en WALLAPOP ~460 € (3 anuncios): ROI -14 % y -70 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «mando ps5 dualsense»: 200 / 104661 bytes, 39 anuncios, 37 parecidos, 0 reservas
+  Milanuncios «mando ps5 dualsense»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 28 anuncios, ~45 €, no publica
+  ⚠️ No publico «Mando Ps5 dualsense edge»: reventa en WALLAPOP ~45 € (28 anuncios): ROI -72 % y -106 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 19:09 ==
+Listados: 91 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 7 · 19:11 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 19:14 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 9 · 19:16 ==
+Listados: 96 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  18dadn1 · 179.99 € · media 226.05 · ref 178.51 → descartado (la referencia corregida no supera el precio (media inflada)) · roborock Q7L5+ Robot Aspirador y Fregador Succión Extrema de
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35638 bytes, 30 chollos
+  Chollometro «NIKE AIR FORCE 1 07 LV8 TECH - Zapatillas - blanco. Tallas 38 a 49»: Zalando Privé 63.9 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 55496 bytes, 30 chollos
+  cm-2053263 · Zalando Privé 63.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · NIKE AIR FORCE 1 07 LV8 TECH - Zapatillas - blanco. Tallas 3
+  Vinted «nike lv8 air»: HTTP 200, 3670812 bytes, 96 anuncios
+  Vinted «nike lv8 air»: 84 parecidos de 96
+  Wallapop «nike lv8 air»: 200 / 146240 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «nike lv8 air»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 91 anuncios, ~70 €, no publica
+  ⚠️ No publico «NIKE AIR FORCE 1 07 LV8 TECH - Zapatillas - blanco. Tallas 38 a 49»: reventa en VINTED+WALLAPOP ~70 € (91 anuncios): ROI 1 % y 1 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 10 · 19:19 ==
+Listados: 91 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 19:21 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 19:24 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 19:26 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35946 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 60804 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 14 · 19:29 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 15 · 19:31 ==
+Listados: 85 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  72j8nYk · 499.0 € · media 789.91 · ref 594.09 → descartado (solo -16% bajo la referencia) · dreame L50 Pro Ultra Robot Aspirador y Fregasuelos, 19500 Pa
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 19:34 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
 Fin de la ejecución tras 16 pasadas.
