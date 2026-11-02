@@ -1136,12 +1136,12 @@
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 90,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
  "discovery_cache": {
-  "t": 1793612247.1935658,
+  "t": 1793634780.989062,
   "titles": [
    "10€ playstation store tarjeta regalo | cuenta espanola [codigo por correo]",
    "tarjeta regalo digital de roblox - 800 robux [incluye un objeto virtual exclusivo] [codigo de juego online]",
@@ -3859,6 +3859,56 @@
    "http_status": 200,
    "bytes": 127524,
    "raw_count": 38
+  },
+  "|mando inalambrico pdp afterglow deluxe nintendo switch (iluminacion prismatic led, bateria recargable, gris, oferta amazon espana)|mando inalambrico": {
+   "t": 1793634789.6380517,
+   "query": "mando inalambrico",
+   "prices": [
+    15.0,
+    9.0,
+    25.0,
+    50.0,
+    30.0,
+    19.99,
+    12.0,
+    20.0,
+    14.9,
+    15.0,
+    15.0,
+    34.99,
+    10.0,
+    12.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 109354,
+   "raw_count": 39
+  },
+  "|procesador amd ryzen 5 7500f, cpu r5 7500f, socket am5, ddr5, 5200 mhz, para pc de escritorio|procesador 7500f amd": {
+   "t": 1793634790.458998,
+   "query": "procesador 7500f amd",
+   "prices": [
+    70.0,
+    89.0,
+    95.0,
+    99.0,
+    85.0,
+    80.0,
+    75.0,
+    100.0,
+    90.0,
+    110.0,
+    115.0,
+    150.0,
+    163.0,
+    115.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 61145,
+   "raw_count": 25
   }
  },
  "milanuncios_cache": {
@@ -4040,7 +4090,9 @@
   "wallapop:cm-2052428": 1793629385.523791,
   "wallapop:cm-2052958": 1793631215.6863754,
   "wallapop:cm-2052937": 1793631217.3063796,
-  "wallapop:cm-2052795": 1793633588.078824
+  "wallapop:cm-2052795": 1793633588.078824,
+  "wallapop:cm-2052708": 1793634790.0979288,
+  "wallapop:cm-2051074": 1793634790.9888558
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -4870,15 +4922,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 9,
+ "rotation_index": 5,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/dji-osmo-pocket-3-cmos-envio-desde-espana-cupon-ventajas-paypal-2052619": 1793613124.7292492,
-  "https://www.chollometro.com/ofertas/mando-pc-y-switch-2-2052461": 1793613124.7292492,
-  "https://www.chollometro.com/ofertas/consola-nintendo-switch-2-2052557": 1793613124.7292492,
-  "https://www.chollometro.com/ofertas/skechers-tri-namics-sneaker-zapatillas-ninos-varias-tallas-disponibles-2052131": 1793613576.1873977,
-  "https://www.chollometro.com/ofertas/garmin-fenix-8-47mm-zafiro-2052442": 1793613576.1873977,
-  "https://www.chollometro.com/ofertas/hp-omen-gt16-ryzen-7-8700f-32gb-ram-rtx-5070i-16gb-1tb-ssd-2052479": 1793613576.1873977,
-  "https://www.chollometro.com/ofertas/aspirador-escoba-dyson-v12-detect-slim-absolute-150-aw-laser-de-deteccion-pantalla-lcd-60-min-autonomia-ligero-oferta-mediamarkt-2052539": 1793614078.212626,
   "https://www.chollometro.com/ofertas/garmin-forerunner-265-envio-desde-espana-cupon-ventajas-paypal-2052610": 1793615084.3234198,
   "https://www.chollometro.com/ofertas/lego-disney-princess-calendario-de-adviento-2026-2052509": 1793619290.1481998,
   "https://www.chollometro.com/ofertas/barra-de-sonido-sony-ht-s40r-51-canales-600w-subwoofer-altavoces-traseros-inalambricos-dolby-digital-hdmi-arc-2052739": 1793619290.1481998,
@@ -4900,7 +4945,9 @@
   "https://www.chollometro.com/ofertas/roborock-q10vf-roborock-robot-aspirador-fregasuelos-con-autovaciado-negro-2052428": 1793629380.4022462,
   "https://www.chollometro.com/ofertas/zapatillas-de-trail-cascadia-19-standard-mujer-tallas-355-36-42-445-20-descuento-con-codigo-2052937": 1793631204.7408166,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-echelon-10-running-tallas-405-43-46-2052958": 1793631204.7408166,
-  "https://www.chollometro.com/ofertas/adidas-performance-galaxy-8-m-zapatillas-running-asfalto-tallas-40-41-13-43-13-44-48-2052795": 1793633562.6161218
+  "https://www.chollometro.com/ofertas/adidas-performance-galaxy-8-m-zapatillas-running-asfalto-tallas-40-41-13-43-13-44-48-2052795": 1793633562.6161218,
+  "https://www.chollometro.com/ofertas/procesador-amd-ryzen-5-7500f-cpu-r5-7500f-socket-am5-ddr5-5200-mhz-para-pc-de-escritorio-2051074": 1793634780.9893293,
+  "https://www.chollometro.com/ofertas/mando-inalambrico-pdp-afterglow-deluxe-nintendo-switch-iluminacion-prismatic-led-bateria-recargable-gris-oferta-amazon-espana-2052708": 1793634780.9893293
  },
  "asked": {
   "cm-2052619": 1793613138,
