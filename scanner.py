@@ -256,6 +256,16 @@ def caption_data(cand: dict) -> dict:
     return data
 
 
+def conditions_label(cand: dict) -> str:
+    """«Con cupón + PayPal» para la tarjeta cuando el precio depende de eso."""
+    parts = []
+    if cand.get("coupons") or cand.get("coupon_text"):
+        parts.append("Con cupón")
+    if cand.get("paypal"):
+        parts.append("PayPal" if parts else "Pagando con PayPal")
+    return " + ".join(parts)
+
+
 def buttons_for(url: str) -> dict:
     shop = premium.store_of(url)[1]
     return {"inline_keyboard": [[{"text": f"🛒 Ver en {shop}", "url": url}]]}
@@ -1180,6 +1190,7 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     }
     deal = cand.get("wallapop") or {}
     offer["hold"] = bool(cand.get("hold"))
+    offer["conditions"] = conditions_label(cand)
     offer["store_label"] = cand.get("store_label") or premium.store_of(cand.get("direct_url") or link_override or "")[1]
     if deal.get("ok") and deal.get("price") and not deal.get("reserva"):
         offer["resale"] = {"price": deal["price"], "count": deal["count"], "roi": deal["roi"] * 100,
@@ -1318,6 +1329,7 @@ def ask_admin(tg, state: dict, cand: dict, card: Path, url: str | None, summary:
               "card_data": {"title": offer["title"], "category": offer["category"],
                             "current": offer["current"], "reference": offer["reference"],
                             "image": cand["image"], "store_label": offer.get("store_label"),
+                            "conditions": offer.get("conditions") or "",
                             **({"resale": offer["resale"]} if offer.get("resale") else {})}}
     state.setdefault("posts", []).append(record)
     state["posts"] = state["posts"][-300:]
@@ -1365,6 +1377,7 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
                                       "reference": data["reference"], "days": 90,
                                       "ref_label": "ANTES · PRECIO HABITUAL",
                                       **({"store_label": data["store_label"]} if data.get("store_label") else {}),
+                                      **({"conditions": data["conditions"]} if data.get("conditions") else {}),
                                       **({"resale": data["resale"]} if data.get("resale") else {})})
             if post.get("needs_ok"):
                 link = post["url"]  # tienda externa: el enlace ya va limpio, sin afiliados ajenos
