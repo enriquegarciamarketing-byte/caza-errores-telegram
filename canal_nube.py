@@ -30,6 +30,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import cascada
 import scanner
 
 ROOT = Path(__file__).resolve().parent
@@ -69,6 +70,9 @@ DEFAULTS = {
     "repost_min_extra_drop_pct": 10,
     "track_hours": 48,
     "block_keywords": [],
+    "cascade_enabled": True,          # revisar también lo que el premium descarta por no dar para revender
+    "cascade_max_age_minutes": 75,    # descartes del premium de hace más de esto ya no se miran
+    "cascade_max_details": 10,        # fichas extra por pasada solo para esos descartes
 }
 
 
@@ -622,7 +626,8 @@ def listing_priority(item: dict, rules: dict | None = None) -> tuple:
 
 # ------------------------------------------------------------------ pasada
 
-def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolve_asin=None, log=print) -> int:
+def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolve_asin=None, log=print,
+        cascade_loader=None) -> int:
     rules = rules_from(cfg)
     fetch = fetch or http_get
     resolve_asin = resolve_asin or asin_from_jl
@@ -655,8 +660,11 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             log(f"Modo sin silencios: {int((now.timestamp() - last) // 60)} min sin publicar; "
                 f"admito desde -{rules.get('fallback_min_discount_top')} % en categorías estrella "
                 f"y -{rules.get('fallback_min_discount')} % en el resto de las top.")
+    cascade = cascade_items(cfg, rules, now, log, cascade_loader, test=bool(args.dry_run or args.test_private))
     approved = find_deals(rules, state, now, fetch, resolve_asin, log, remember=not args.test_private,
-                          relaxed=relaxed)
+                          relaxed=relaxed, cascade=cascade)
+    if args.test_private:
+        approved.sort(key=lambda pair: not pair[0].get("cascada"))  # en la prueba, primero los del premium
     limit = int(rules["test_private_posts"] if args.test_private else rules["max_per_run"])
     sent = 0
     for item, deal in approved:
@@ -683,20 +691,58 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             log(f"  ✗ {deal['asin']} sin tarjeta: {exc}")
             continue
         message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
-        log(f"  Enviado a {target} (mensaje {message['message_id']}): {clean_title(deal['title'], 70)}")
+        origin = " (descarte del premium)" if item.get("cascada") else ""
+        log(f"  Enviado a {target} (mensaje {message['message_id']}){origin}: {clean_title(deal['title'], 70)}")
         sent += 1
         if not args.test_private:
-            state.setdefault("posts", []).append({
+            record = {
                 "asin": deal["asin"], "jl_id": deal["jl_id"], "price": deal["price"],
                 "reference": deal["reference"], "t": int(now.timestamp()), "url": url, "chat": target,
                 "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140],
-            })
+            }
+            if item.get("cascada"):
+                record["origen"] = "premium"  # para medir cuánto aporta la cascada
+            state.setdefault("posts", []).append(record)
         time.sleep(2)
     global BACKLOG
     BACKLOG = max(0, len(approved) - sent) if sent >= limit else 0
     if not sent:
         log("Nada que cumpla todas las reglas en esta pasada.")
     return 0
+
+
+def cascade_items(cfg: dict, rules: dict, now: datetime, log=print, loader=None, test: bool = False) -> list[dict]:
+    """Productos de Amazon que el premium descartó por no dar para revender, como items de listado.
+
+    Nunca lo que el premium ha publicado o tiene esperando tu OK."""
+    enabled = rules.get("cascade_enabled", True) and ((cfg or {}).get("cascada") or {}).get("enabled", True)
+    if not enabled and not test:
+        return []  # apagada: en el canal no entra nada; las pruebas sí la pueden ver
+    branch = ((cfg or {}).get("cascada") or {}).get("branch") or cascada.DEFAULT_BRANCH
+    if loader:
+        entries = loader(log)
+    else:
+        entries = cascada.load(branch, log)
+        if test:
+            # Las pruebas también ven lo que dejan las pruebas del premium (rama aparte, nunca el canal).
+            entries = entries + cascada.load(f"{branch}-prueba", log)
+    if not entries:
+        return []
+    premium_posts = {str(p.get("id")) for p in load_json(PREMIUM_STATE, {}).get("posts") or [] if p.get("id")}
+    max_age = float(rules.get("cascade_max_age_minutes") or 75) * 60
+    items = []
+    for entry in entries:
+        item = dict(entry.get("item") or {})
+        jl_id = str(item.get("id") or "")
+        if not re.fullmatch(r"[A-Za-z0-9]{4,12}", jl_id) or jl_id in premium_posts:
+            continue
+        if now.timestamp() - float(entry.get("t") or 0) > max_age or not cascada.reason_ok(entry.get("reason")):
+            continue
+        item["cascada"] = str(entry.get("reason") or "")
+        items.append(item)
+    if items:
+        log(f"Cascada del premium: {len(items)} descartes recientes por no dar para revender")
+    return items
 
 
 def sources_for_run(rules: dict, now: datetime, state: dict | None = None) -> list[str]:
@@ -721,12 +767,23 @@ def sources_for_run(rules: dict, now: datetime, state: dict | None = None) -> li
 
 
 def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log, remember: bool = True,
-               relaxed: bool = False) -> list:
-    """Busca en los listados y devuelve [(item, deal)] que cumplen todas las reglas, mejor descuento primero."""
+               relaxed: bool = False, cascade: list | None = None) -> list:
+    """Busca en los listados y devuelve [(item, deal)] que cumplen todas las reglas, mejor descuento primero.
+
+    `cascade` son productos que el premium descartó por no dar para revender: pasan exactamente
+    por las mismas reglas, con la ficha releída aquí."""
     seen = state.setdefault("seen", {})
     recheck = float(rules["recheck_rejected_hours"]) * 3600
     max_age = float(rules["max_price_age_minutes"]) * 60
     pool: dict[str, dict] = {}
+
+    def skip(item: dict) -> bool:
+        last = seen.get(item["id"]) or {}
+        same_price = last.get("price") is not None and abs(float(last["price"]) - float(item["price"])) < 0.01
+        low_discount_only = str(last.get("why") or "").startswith("solo -")
+        # ya descartado a este mismo precio; si baja más, se vuelve a mirar
+        return same_price and now.timestamp() - (last.get("t") or 0) < recheck and not (relaxed and low_discount_only)
+
     for url in sources_for_run(rules, now, state if remember else None):
         try:
             items = scanner.parse_listing(fetch(url))
@@ -736,23 +793,37 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         fresh = [i for i in items if i.get("ts") and now.timestamp() - i["ts"] <= max_age and i.get("price")]
         log(f"  Listado {url}: {len(items)} productos, {len(fresh)} vistos en la última hora")
         for item in fresh:
-            last = seen.get(item["id"]) or {}
-            same_price = last.get("price") is not None and abs(float(last["price"]) - float(item["price"])) < 0.01
-            low_discount_only = str(last.get("why") or "").startswith("solo -")
-            if same_price and now.timestamp() - (last.get("t") or 0) < recheck and not (relaxed and low_discount_only):
-                continue  # ya descartado a este mismo precio; si baja más, se vuelve a mirar
-            pool.setdefault(item["id"], item)
+            if not skip(item):
+                pool.setdefault(item["id"], item)
+    extra = 0
+    for item in cascade or []:
+        if not item.get("ts") or now.timestamp() - item["ts"] > max_age or not item.get("price") or skip(item):
+            continue
+        if item["id"] in pool:
+            pool[item["id"]]["cascada"] = item["cascada"]
+        else:
+            pool[item["id"]] = item
+            extra += 1
     ordered = sorted(pool.values(), key=lambda item: listing_priority(item, rules), reverse=True)
     ordered = [item for item in ordered if listing_priority(item, rules)[0] >= 0]
-    log(f"Candidatos a revisar: {len(ordered)}")
+    budget = int(rules["max_details_per_run"])
+    chosen = ordered[:budget]
+    # Los descartes del premium tienen fichas propias por pasada: no quitan sitio a los listados.
+    chosen += [item for item in ordered[budget:] if item.get("cascada")][: int(rules.get("cascade_max_details") or 0)]
+    from_premium = sum(1 for item in chosen if item.get("cascada"))
+    log(f"Candidatos a revisar: {len(ordered)}" + (f" ({from_premium} descartes del premium, {extra} que no salían en mis listados)"
+                                                   if from_premium else ""))
     approved = []
-    for item in ordered[: int(rules["max_details_per_run"])]:
+    for item in chosen:
         try:
             detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{item['id']}/"))
         except Exception as exc:
             log(f"  Ficha {item['id']}: {exc}")
             continue
         why, deal = evaluate(item, detail, rules, now, relaxed=relaxed)
+        if not why and item.get("cascada") and (scanner.has_size_variant(detail.get("name") or "")
+                                                 or scanner.has_size_variant(item.get("title") or "")):
+            why = "tiene tallas y no se puede comprobar el precio de cada una"
         if not why:
             asin = resolve_asin(item["id"])
             if not asin or not ASIN_RE.fullmatch(asin):
@@ -768,7 +839,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         if why:
             log(f"  ✗ {item['id']} {label}: {why}")
             continue
-        log(f"  ✓ {deal['asin']} {label}: {euro(deal['price'])} (-{deal['discount']:.0f}% vs {euro(deal['reference'])})")
+        tag = " · descarte del premium" if item.get("cascada") else ""
+        log(f"  ✓ {deal['asin']} {label}: {euro(deal['price'])} (-{deal['discount']:.0f}% vs {euro(deal['reference'])}){tag}")
         approved.append((item, deal))
     approved.sort(key=lambda pair: deal_rank(pair[1]), reverse=True)
     return approved

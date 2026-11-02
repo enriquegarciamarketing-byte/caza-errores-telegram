@@ -20,6 +20,18 @@ Pruebas desde Actions → «Canal normal @cazachollos_com» → Run workflow: `d
 
 Para publicar a mano un chollo concreto en @cazachollos_com: Actions → «Post manual @cazachollos_com» → Run workflow, con `datos` en JSON y `privado` marcado para probar en tu chat (desmárcalo para el canal). Campos: `url` (amazon.es/dp/…, link.amazon, amzn.eu) o `asin`, `title`, `price`, `reference` (el «precio más bajo de los últimos 30 días» que muestra Amazon), `image` (ruta en `images/manual/` o URL), `seen_at` (hora vista, HH:MM), `lines` (líneas extra) y opcionales `habitual`, `rating`, `reviews`, `historical_low`. Si el precio de referencia no es mayor que el actual o el enlace no es del producto, no se publica.
 
+## Cascada premium → canal normal (02/11/2026)
+
+Lo que el premium descarta **porque no da para revender** (sin margen en Wallapop, fuera de las categorías de reventa, ahorro o importe pequeños, rebaja menor que la del premium) baja al canal normal, que lo revisa con **todas** sus reglas: relee la ficha, descuento real frente al mínimo de 30 días, interés, foto, precio visto hace menos de una hora y segunda lectura antes de enviar.
+
+- Solo Amazon.es visto en Jimmyleaks. Nada de Chollometro ni de otras tiendas.
+- Nunca baja lo que el premium ha publicado ni lo que espera tu OK.
+- Nunca baja lo descartado por datos dudosos (precio que no cuadra, datos viejos, sin stock, tallas, descuento sospechoso, media inflada…): hay una lista blanca de motivos en `cascada.py`.
+- El premium sube la lista en cada pasada a la rama `cascada` (un solo commit que se sobrescribe; main no se ensucia). El canal normal la lee en cada pasada y tiene `cascade_max_details` fichas extra solo para eso, sin quitar sitio a sus listados.
+- Los posts que salen así quedan marcados en `state/canal_nube.json` con `"origen": "premium"`.
+- Pruebas: el premium en `dry_run` sube la lista a la rama `cascada-prueba`; el canal normal en `test_private` la lee y te manda primero esos ejemplos. El canal real solo lee `cascada`.
+- Interruptor: `config.json` → `cascada.enabled` (y `amazon_channel.cascade_enabled`).
+
 ## Escáner automático (scan-deals.yml)
 
 **Fiabilidad (31/10/2026).** Amazon: el descuento se calcula frente al precio más bajo de los 30 días anteriores a la bajada (o la Amazon UE más barata), nunca frente a la media de 90 días ni el PVP; el enlace va al producto exacto (`/dp/ASIN` sacado del botón de compra de Jimmyleaks), nunca a una búsqueda por EAN; el precio se ve hace menos de 60 minutos y se relee justo antes de publicar. Otras tiendas: el enlace sale sin afiliados ajenos (si no se puede limpiar, no se publica) y el precio tiene que aparecer en la propia página de la tienda (`resale.external_require_verified`). Los posts de las últimas 48 h se revisan y, si suben o se agotan, se marcan «⛔ YA NO ESTÁ A ESTE PRECIO».

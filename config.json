@@ -56,6 +56,14 @@
   ],
   "repost_after_days": 7,
   "repost_min_extra_drop_pct": 10,
+  "cascada": {
+    "_nota": "Lo que el premium descarta por no dar para revender (sin margen en Wallapop, fuera de categorías de reventa, ahorro o importe pequeños) baja al canal normal, que lo revisa con todas sus reglas. Nunca baja lo publicado, lo que espera tu OK ni lo descartado por datos dudosos.",
+    "enabled": false,
+    "branch": "cascada",
+    "keep_minutes": 90,
+    "max_per_pass": 60,
+    "listing_min_drop_pct": 15
+  },
   "resale": {
     "enabled": true,
     "min_price_eur": 25,
@@ -826,7 +834,10 @@
     "silence_minutes": 40,
     "fallback_min_discount_top": 15,
     "fallback_min_discount": 18,
-    "historical_low_min_discount": 10
+    "historical_low_min_discount": 10,
+    "cascade_enabled": true,
+    "cascade_max_age_minutes": 75,
+    "cascade_max_details": 10
   },
   "store_affiliates": {
     "carrefour": {"template": ""},

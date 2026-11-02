@@ -36,6 +36,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import affiliate
+import cascada
 from amazon_api import ApiError, CreatorsAPI, color_of, size_of
 import feeds
 import premium
@@ -44,6 +45,8 @@ import resale_market
 import wallapop
 
 API: CreatorsAPI | None = None  # se activa con los secretos de la Creators API
+CASCADA = cascada.Collector()  # descartes de reventa que pueden salir en el canal normal
+CASCADA_LOADED = False
 
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
@@ -794,20 +797,25 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
         # de precio ni sea de una categoría premium: lo filtran luego el gráfico y la reventa.
         lane = listing_error_lane(cfg, item)
         item["error_lane"] = lane
-        if price_floor and item["price"] + 1e-9 < price_floor and not lane:
-            continue
-        if premium.commodity_hit(item, rules):
-            continue
-        if (rules.get("require_priority", True) and not lane
-                and premium.priority_info(item, rules)["score"] <= 0):
-            continue
         verdict = item["verdict"].lower()
         if "encima" in verdict or "habitual" in verdict:
             continue
+        if price_floor and item["price"] + 1e-9 < price_floor and not lane:
+            cascade_listing(cfg, item, "listado: por debajo del mínimo de reventa", now)
+            continue
+        if premium.commodity_hit(item, rules):
+            cascade_listing(cfg, item, "listado: producto de poco valor para revender", now)
+            continue
+        if (rules.get("require_priority", True) and not lane
+                and premium.priority_info(item, rules)["score"] <= 0):
+            cascade_listing(cfg, item, "listado: fuera de las categorías premium", now)
+            continue
         m = re.search(r"(\d+)% por debajo", verdict)
         if m and int(m.group(1)) < cfg["bargain_min_discount"]:
+            cascade_listing(cfg, item, "listado: rebaja menor que la que pide el premium", now)
             continue
         if item["was"] and (item["was"] - item["price"]) / item["was"] * 100 < cfg["bargain_min_discount"]:
+            cascade_listing(cfg, item, "listado: rebaja menor que la que pide el premium", now)
             continue
         prev = seen.get(item["id"])
         if prev and abs(prev.get("price", 0) - item["price"]) < 0.01:
@@ -850,6 +858,9 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
             category, reason = None, "sin stock"
         if category and not detail.get("image"):
             category, reason = None, "sin imagen"
+        if not category and detail.get("in_stock"):
+            # Solo motivos de reventa (lista blanca de cascada.py): lo dudoso nunca baja al canal normal.
+            CASCADA.add({**cand, "listing_price": item.get("price")}, reason, now.timestamp())
         ref = cand.get("reference_price")
         ref_bit = ""
         if ref and cand.get("avg90") and abs(float(ref) - float(cand["avg90"])) > 0.5:
@@ -1155,6 +1166,9 @@ def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool, test_priv
             cand["wallapop_transient"] = False
             return True
         alert_no_wallapop(tg, state, cand, result.get("reason") or "sin datos de reventa", dry)
+        if not result.get("transient") and not test_private:
+            # No da para revender, pero puede ser un buen chollo para comprar y usar.
+            cand["cascade_reason"] = f"sin margen de reventa ({result.get('reason') or 'sin datos'})"
         return False
     cand["wallapop"] = result
     cand["wallapop_transient"] = False
@@ -1916,10 +1930,75 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime, with
                 time.sleep(2)
             else:
                 note_wallapop_skip(state, cand)
+                if cand.get("cascade_reason") and not cand.get("needs_ok"):
+                    CASCADA.add(cand, cand["cascade_reason"], now.timestamp())
         except RuntimeError as exc:
             print(f"  Error publicando {cand['id']}: {exc}")
     print(f"Publicados en esta ejecución: {posted}")
+    flush_cascade(cfg, state, now, dry=bool(args.dry_run))
     return 0
+
+
+# ---------------------------------------------------------------- cascada al canal normal
+
+def cascade_cfg(cfg: dict) -> dict:
+    conf = {"enabled": True, "branch": cascada.DEFAULT_BRANCH, "keep_minutes": 90,
+            "max_per_pass": 60, "listing_min_drop_pct": 15}
+    conf.update(cfg.get("cascada") or {})
+    return conf
+
+
+def cascade_listing(cfg: dict, item: dict, reason: str, now: datetime) -> None:
+    """Descarte del filtro rápido del premium: solo si el listado ya enseña una rebaja de verdad."""
+    conf = cascade_cfg(cfg)
+    m = re.search(r"(\d+)% por debajo", (item.get("verdict") or "").lower())
+    drop = int(m.group(1)) if m else listing_drop(item) * 100
+    if drop + 1e-9 >= float(conf["listing_min_drop_pct"]):
+        CASCADA.add(item, reason, now.timestamp())
+
+
+def premium_ids(state: dict) -> set[str]:
+    """Lo que el premium ha publicado o está esperando tu OK: eso nunca baja al canal normal."""
+    ids = {str(p.get("id")) for p in state.get("posts") or [] if p.get("id")}  # incluye los que esperan tu OK
+    ids |= {str(k) for k in (state.get("asked") or {})}
+    return ids
+
+
+def flush_cascade(cfg: dict, state: dict, now: datetime, dry: bool) -> None:
+    """Junta los descartes de esta pasada con los recientes y los deja al canal normal."""
+    global CASCADA
+    conf = cascade_cfg(cfg)
+    if not conf["enabled"] and not dry:
+        CASCADA = cascada.Collector()
+        return
+    new = len(CASCADA.entries)
+    if new > int(conf["max_per_pass"]):
+        # Con muchos, se quedan los de mayor rebaja en el listado.
+        def drop_of(entry: dict) -> float:
+            item = entry.get("item") or {}
+            m = re.search(r"(\d+)% por debajo", (item.get("verdict") or "").lower())
+            return int(m.group(1)) if m else listing_drop(item) * 100
+        best = sorted(CASCADA.entries.items(), key=lambda kv: drop_of(kv[1]), reverse=True)
+        CASCADA.entries = dict(best[: int(conf["max_per_pass"])])
+    global CASCADA_LOADED
+    if not CASCADA_LOADED and not dry:
+        # Primera pasada de la ejecución: conserva lo reciente que dejó la ejecución anterior.
+        CASCADA.merge(cascada.load(conf["branch"]), now.timestamp(), float(conf["keep_minutes"]))
+        CASCADA_LOADED = True
+    CASCADA.merge([], now.timestamp(), float(conf["keep_minutes"]))
+    CASCADA.drop(premium_ids(state))
+    total = len(CASCADA.entries)
+    if dry:
+        # En pruebas va a una rama aparte que el canal normal solo lee en sus propias pruebas.
+        pushed = cascada.push(CASCADA.as_list(), f"{conf['branch']}-prueba")
+        print(f"Cascada al canal normal: {min(new, total)} descartes nuevos, {total} en lista "
+              f"(prueba{', subida a la rama de pruebas' if pushed else ''})")
+        for entry in CASCADA.as_list()[:8]:
+            item = entry["item"]
+            print(f"  ↓ {item.get('id')} · {item.get('price')} € · {entry['reason'][:70]} · {(item.get('title') or '')[:50]}")
+        return
+    if cascada.push(CASCADA.as_list(), conf["branch"]):
+        print(f"Cascada al canal normal: {min(new, total)} descartes nuevos, {total} en lista")
 
 
 if __name__ == "__main__":
