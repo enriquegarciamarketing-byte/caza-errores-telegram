@@ -766,9 +766,9 @@
    "result": "solo -25% bajo la referencia"
   },
   "R0ZG4Bv": {
-   "price": 379.98,
-   "t": 1793367844,
-   "result": "solo -7% bajo la referencia"
+   "price": 349.98,
+   "t": 1793632086,
+   "result": "solo -8% bajo la referencia"
   },
   "RVryqPW": {
    "price": 329.98,
@@ -924,6 +924,11 @@
    "price": 159.0,
    "t": 1793629215,
    "result": "solo -7% bajo la referencia"
+  },
+  "723yjkR": {
+   "price": 99.99,
+   "t": 1793631186,
+   "result": "solo -8% bajo la referencia"
   }
  },
  "posts": [
@@ -1131,7 +1136,7 @@
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -3807,6 +3812,39 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "|saucony zapatillas de running echelon 10 - running- tallas- 40.5, 43, 46|saucony 10 zapatillas": {
+   "t": 1793631215.059518,
+   "query": "saucony 10 zapatillas",
+   "prices": [
+    50.0,
+    80.0,
+    25.0,
+    45.0,
+    58.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 124366,
+   "raw_count": 35
+  },
+  "|zapatillas de trail cascadia 19 - standard mujer- tallas- 35,5, 36, 42, 44.5- 20% descuento con codigo|zapatillas 19 trail": {
+   "t": 1793631216.7703588,
+   "query": "zapatillas 19 trail",
+   "prices": [
+    80.0,
+    70.0,
+    90.0,
+    100.0,
+    88.0,
+    95.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 55759,
+   "raw_count": 17
   }
  },
  "milanuncios_cache": {
@@ -3985,7 +4023,9 @@
   "wallapop:cm-2052918": 1793628188.0318878,
   "wallapop:cm-2052834": 1793628189.0643559,
   "wallapop:cm-2052888": 1793628788.839877,
-  "wallapop:cm-2052428": 1793629385.523791
+  "wallapop:cm-2052428": 1793629385.523791,
+  "wallapop:cm-2052958": 1793631215.6863754,
+  "wallapop:cm-2052937": 1793631217.3063796
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -4755,12 +4795,49 @@
    "demand_known": true,
    "blocked": false,
    "reason": "Vinted solo tiene 1 anuncios parecidos (mínimo 3)"
+  },
+  "|saucony zapatillas de running echelon 10 - running- tallas- 40.5, 43, 46|saucony 10 zapatillas": {
+   "t": 1793631214.3987837,
+   "prices": [
+    50.0,
+    29.0,
+    59.0,
+    55.0,
+    50.0,
+    35.0,
+    55.0,
+    40.0,
+    22.0,
+    25.0,
+    30.0,
+    50.0,
+    10.0,
+    80.0,
+    28.0,
+    20.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~33 € (15 anuncios): ROI -51 % y -31 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas de trail cascadia 19 - standard mujer- tallas- 35,5, 36, 42, 44.5- 20% descuento con codigo|zapatillas 19 trail": {
+   "t": 1793631216.4102728,
+   "prices": [
+    100.0,
+    19.0,
+    80.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 2 anuncios parecidos (mínimo 3)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 4,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/dji-osmo-pocket-3-cmos-envio-desde-espana-cupon-ventajas-paypal-2052619": 1793613124.7292492,
   "https://www.chollometro.com/ofertas/mando-pc-y-switch-2-2052461": 1793613124.7292492,
@@ -4787,7 +4864,9 @@
   "https://www.chollometro.com/ofertas/lego-one-piece-barco-pirata-going-merry-75639-2052834": 1793628180.539975,
   "https://www.chollometro.com/ofertas/the-north-face-zapatillas-de-trail-offtrail-tr-mujeres-tallas-36-365-37-38-20-descuento-con-codigo-2052918": 1793628180.539975,
   "https://www.chollometro.com/ofertas/dreame-matrix10-pro-robot-aspirador-30000-pa-base-cambio-de-mopas-2052888": 1793628783.3729312,
-  "https://www.chollometro.com/ofertas/roborock-q10vf-roborock-robot-aspirador-fregasuelos-con-autovaciado-negro-2052428": 1793629380.4022462
+  "https://www.chollometro.com/ofertas/roborock-q10vf-roborock-robot-aspirador-fregasuelos-con-autovaciado-negro-2052428": 1793629380.4022462,
+  "https://www.chollometro.com/ofertas/zapatillas-de-trail-cascadia-19-standard-mujer-tallas-355-36-42-445-20-descuento-con-codigo-2052937": 1793631204.7408166,
+  "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-echelon-10-running-tallas-405-43-46-2052958": 1793631204.7408166
  },
  "asked": {
   "cm-2052619": 1793613138,
