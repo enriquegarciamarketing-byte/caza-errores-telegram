@@ -29,10 +29,17 @@ class TextoDelPost(unittest.TestCase):
         self.assertIn("(hora peninsular)", text)
         self.assertIn("al comprar se aplica el que marque Amazon.es", text)
 
-    def test_aviso_de_publicidad_al_final(self):
+    def test_publicidad_abajo_del_todo(self):
         text = cn.build_caption(deal_with_rating(), URL, RULES)
-        self.assertTrue(text.rstrip().endswith(cn.PUBLI))
-        self.assertIn("#publi", text)
+        self.assertEqual(text.rstrip().split("\n")[-1], "#Publicidad")
+
+    def test_hashtag_segun_descuento(self):
+        deal = deal_with_rating()
+        for pct, tag in ((80, "#ErrorDePrecio"), (60, "#Chollazo"), (30, "#Chollo")):
+            deal["discount"] = pct
+            self.assertIn(tag, cn.build_caption(deal, URL, RULES))
+        deal["historical_low"] = True
+        self.assertIn("#MinimoHistorico", cn.build_caption(deal, URL, RULES))
 
     def test_enlace_directo_y_visible(self):
         text = cn.build_caption(deal_with_rating(), URL, RULES)
@@ -91,7 +98,7 @@ class Resumen(unittest.TestCase):
         items = [{"title": "Producto", "price": 10.0, "reference": 20.0, "discount": 50, "url": URL}]
         text = cn.build_summary(items, datetime(2026, 11, 2, 22, 59, tzinfo=timezone.utc))
         self.assertIn("(hora peninsular)", text)
-        self.assertIn("#publi", text)
+        self.assertEqual(text.rstrip().split("\n")[-1], "#Publicidad")
         self.assertNotIn("⭐", text)
 
 

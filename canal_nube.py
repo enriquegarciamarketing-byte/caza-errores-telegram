@@ -513,6 +513,8 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     lines.append(f"🕒 {PRICE_NOTE.format(hour=hour)}")
     lines.append("")
     lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en Amazon</a></b>')
+    lines.append("")
+    lines.append(hashtags(deal, rules))
     lines.append(PUBLI)
     return "\n".join(lines)
 
@@ -520,7 +522,16 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
 # Exención de precio y aviso de publicidad que piden Amazon Afiliados y la LSSI (art. 20).
 PRICE_NOTE = ("Precio visto en Amazon.es a las {hour} (hora peninsular). Puede cambiar en cualquier momento "
               "y al comprar se aplica el que marque Amazon.es")
-PUBLI = "📢 #publi · enlace de afiliado"
+PUBLI = "#Publicidad"
+TAGS = {"ERROR DE PRECIO": "#ErrorDePrecio", "CHOLLAZO": "#Chollazo", "CHOLLO": "#Chollo"}
+
+
+def hashtags(deal: dict, rules: dict) -> str:
+    """Etiqueta según el descuento, y #MinimoHistorico si lo es: sirven para buscar dentro del canal."""
+    tags = [TAGS[badge_for(deal["discount"], rules)]]
+    if deal.get("historical_low"):
+        tags.append("#MinimoHistorico")
+    return " ".join(tags)
 
 
 def buttons(url: str) -> dict:
@@ -819,7 +830,8 @@ def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
     lines.append(f"🕒 Precios comprobados en Amazon.es a las {hour} (hora peninsular). Pueden cambiar en cualquier "
                  "momento y al comprar se aplica el que marque Amazon.es")
     lines.append("😴 Mañana a las 8:00 volvemos con más chollos. Activa las notificaciones 🔔")
-    lines.append("📢 #publi · enlaces de afiliado")
+    lines.append("")
+    lines.append(PUBLI)
     return "\n".join(lines)
 
 
