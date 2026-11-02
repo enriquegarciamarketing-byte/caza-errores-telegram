@@ -24,7 +24,15 @@ Para publicar a mano un chollo concreto en @cazachollos_com: Actions → «Post 
 
 **Fiabilidad (31/10/2026).** Amazon: el descuento se calcula frente al precio más bajo de los 30 días anteriores a la bajada (o la Amazon UE más barata), nunca frente a la media de 90 días ni el PVP; el enlace va al producto exacto (`/dp/ASIN` sacado del botón de compra de Jimmyleaks), nunca a una búsqueda por EAN; el precio se ve hace menos de 60 minutos y se relee justo antes de publicar. Otras tiendas: el enlace sale sin afiliados ajenos (si no se puede limpiar, no se publica) y el precio tiene que aparecer en la propia página de la tienda (`resale.external_require_verified`). Los posts de las últimas 48 h se revisan y, si suben o se agotan, se marcan «⛔ YA NO ESTÁ A ESTE PRECIO».
 
-Cada 10 minutos, las 24 horas, `scanner.py`:
+**Errores de precio y frecuencia (02/11/2026).** GitHub arranca la tarea más o menos una vez por hora aunque esté programada cada 10 minutos, así que cada ejecución programada hace pasadas seguidas durante 40 minutos, una cada 2,5 minutos, las 24 horas. En cada pasada lee mínimos de hoy, actualizados y bajadas de la última hora (`?order=-drop`), y por turnos 5 de los 21 listados de `rotating_sources` (hogar, grandes electrodomésticos, salud, informática…). Chollometro se mira cada 4 pasadas y cada ficha se abre como mucho una vez cada 6 h.
+
+- Un **error de precio** (-70 % o más frente a la referencia honesta) entra aunque no sea de una categoría premium ni llegue a 25 € (una Conga a 23 € que vale 370 €), si es de marca, tiene al menos 15 opiniones y 3,8 estrellas y normalmente vale 60 € o más (`error_min_reference_eur`, `error_min_reviews`, `error_min_rating`).
+- Hasta -92 % sale solo. De -92 % a -98 % te llega por privado con la tarjeta y sale en cuanto respondes **OK** a ese mensaje (caduca en 1 h; justo antes de publicar se relee la ficha). Por encima de -98 % se descarta como dato roto (`error_auto_max_discount`, `error_max_discount`, `error_ask_hours`).
+- **Tiendas que no dejan leer su página** desde GitHub (AliExpress, Zalando, Privalia…): ya no se tiran ni salen solas. Te llegan por privado y salen con tu **OK** (caduca en 3 h, `resale.external_ask_admin`, `resale.external_ask_hours`). Lo que espera tu OK no gasta cupo de gangas.
+
+Pruebas: Actions → «Escanear chollos automáticamente» → Run workflow con `dry_run` y, si quieres ver varias pasadas, `minutes` (por ejemplo 6).
+
+Cada pasada, `scanner.py`:
 
 1. Lee las listas públicas de Jimmyleaks (mínimos de hoy, actualizados, mayor bajada).
 2. Abre la ficha de cada candidato nuevo y toma la media real de 90 días, el mínimo histórico y el EAN. La bajada frente al PVP no cuenta; solo cuenta frente a la media.
