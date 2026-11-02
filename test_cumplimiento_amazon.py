@@ -29,9 +29,10 @@ class TextoDelPost(unittest.TestCase):
         self.assertIn("(hora peninsular)", text)
         self.assertIn("al comprar se aplica el que marque Amazon.es", text)
 
-    def test_publicidad_abajo_del_todo(self):
+    def test_publicidad_primera_en_la_linea_de_hashtags(self):
         text = cn.build_caption(deal_with_rating(), URL, RULES)
-        self.assertEqual(text.rstrip().split("\n")[-1], "#Publicidad")
+        last = text.rstrip().split("\n")[-1]
+        self.assertTrue(last.startswith("#Publicidad #"), last)
 
     def test_hashtag_segun_descuento(self):
         deal = deal_with_rating()

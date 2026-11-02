@@ -514,8 +514,7 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     lines.append("")
     lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en Amazon</a></b>')
     lines.append("")
-    lines.append(hashtags(deal, rules))
-    lines.append(PUBLI)
+    lines.append(f"{PUBLI} {hashtags(deal, rules)}")
     return "\n".join(lines)
 
 
