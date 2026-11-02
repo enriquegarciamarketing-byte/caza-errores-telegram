@@ -8,188 +8,215 @@
 <meta property="og:title" content="Caza Chollos · Ofertas de Amazon con descuento real">
 <meta property="og:description" content="Bajadas de precio de Amazon.es comprobadas frente al mínimo de 30 días. Las mismas que salen en @cazachollos_com.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#FF7A00">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M6 10h28l24 24-24 24L6 34z' fill='%23FF7A00'/%3E%3Ccircle cx='18' cy='22' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#ff6a00">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6a00'/%3E%3Cpath d='M14 18h20l16 16-16 16-20-20z' fill='%23fff'/%3E%3Ccircle cx='22' cy='26' r='3.5' fill='%23ff6a00'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400..900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#000;
-  --paper:#fff;
-  --shelf:#ececec;
-  --muted:#5c5c5c;
-  --orange:#ff7a00;
-  --orange-ink:#b34f00;
-  --tag:#ffe14d;
-  --gone:#c8102e;
-  --line:#d6d6d6;
+  --bg:#f0f1f3;
+  --card:#fff;
+  --text:#1d1f23;
+  --muted:#6b7079;
+  --line:#e2e4e8;
+  --brand:#ff6a00;
+  --brand-dark:#d95700;
+  --brand-soft:#fff1e6;
+  --hot:#e8381b;
+  --ok:#1f9d55;
+  --head:#ffffff;
+  --radius:10px;
+  --shadow:0 1px 2px rgba(20,22,26,.06),0 2px 8px rgba(20,22,26,.05);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--shelf);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.45;font-variation-settings:"wdth" 100}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.45}
+a{color:inherit;text-decoration:none}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
 
 /* Cabecera */
-.top{background:var(--paper);border-bottom:4px solid var(--ink)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
-.brand{font-weight:900;font-size:26px;letter-spacing:-.01em;text-decoration:none;font-variation-settings:"wdth" 125;line-height:1}
-.brand span{color:var(--orange)}
-.join{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;font-size:15px;white-space:nowrap}
-.join:hover{background:var(--orange-ink)}
-.join svg{width:18px;height:18px}
+.head{background:var(--head);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.head .bar{display:flex;align-items:center;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:900;font-size:21px;letter-spacing:-.02em;white-space:nowrap}
+.brand .mark{width:30px;height:30px;border-radius:8px;background:var(--brand);display:grid;place-items:center}
+.brand .mark svg{width:18px;height:18px}
+.brand b{color:var(--brand)}
+.search{flex:1;max-width:520px;position:relative}
+.search input{width:100%;height:40px;border:1px solid var(--line);background:#f5f6f8;border-radius:999px;padding:0 16px 0 40px}
+.search input:focus{background:#fff;border-color:var(--brand);outline:none;box-shadow:0 0 0 3px var(--brand-soft)}
+.search svg{position:absolute;left:14px;top:11px;width:18px;height:18px;color:var(--muted)}
+.join{margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-weight:800;padding:9px 16px;border-radius:999px;white-space:nowrap}
+.join:hover{background:var(--brand-dark)}
+.join svg{width:17px;height:17px}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:0;background:none;padding:10px 14px 12px;font-weight:800;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tab:hover{color:var(--text)}
+.tab[aria-selected="true"]{color:var(--text);border-bottom-color:var(--brand)}
 
-/* Portada: el chollo más gordo ahora */
-.hero{background:var(--paper);padding:28px 0 36px}
-.hero h1{margin:0 0 6px;font-size:clamp(28px,5vw,44px);line-height:1.05;font-weight:800;font-variation-settings:"wdth" 112;max-width:20ch}
-.hero p.lead{margin:0 0 24px;color:var(--muted);max-width:58ch}
-.best{display:grid;grid-template-columns:1fr auto;gap:0;border:3px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--paper)}
-.best .info{padding:20px 22px;display:flex;flex-direction:column;gap:10px;justify-content:center;min-width:0}
-.best .info .what{font-size:clamp(19px,2.6vw,24px);font-weight:700;line-height:1.2}
-.best .info .meta{color:var(--muted);font-size:15px}
-.best .label{background:var(--tag);border-left:3px solid var(--ink);padding:18px 26px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:4px;min-width:250px;position:relative}
-.best .label::before{content:"";position:absolute;left:14px;top:14px;width:12px;height:12px;border-radius:50%;background:var(--shelf);border:2px solid var(--ink)}
-.best .pct{font-weight:900;font-size:22px;color:var(--ink);background:var(--orange);padding:2px 10px;border-radius:4px;margin-left:24px}
-.best .price{font-weight:900;font-size:clamp(54px,9vw,88px);line-height:.95;font-variation-settings:"wdth" 125;letter-spacing:-.03em}
-.best .price small{font-size:.45em;letter-spacing:0}
-.best .was{color:var(--ink);font-size:17px}
-.best .was s{font-weight:600}
-.buy{display:inline-flex;align-items:center;justify-content:center;background:var(--orange);color:var(--ink);font-weight:800;text-decoration:none;border:2px solid var(--ink);border-radius:6px;padding:11px 18px;font-size:16px;align-self:flex-start}
-.buy:hover{background:var(--ink);color:var(--paper)}
+/* Categorías */
+.cats{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:14px 0 4px}
+.cats::-webkit-scrollbar{display:none}
+.cat{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap}
+.cat:hover{border-color:#c9ccd2}
+.cat[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:#fff}
+.cat .n{color:var(--muted);font-weight:600;margin-left:4px}
+.cat[aria-pressed="true"] .n{color:#c9ccd2}
 
-/* Controles */
-.controls{position:sticky;top:0;z-index:5;background:var(--shelf);padding:14px 0 10px;border-bottom:1px solid var(--line)}
-.controls .wrap{display:flex;flex-direction:column;gap:10px}
-.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;margin:0 -16px;padding-left:16px;padding-right:16px}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex:none;border:2px solid var(--ink);background:var(--paper);border-radius:999px;padding:6px 14px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.chip .n{opacity:.6;font-weight:500;margin-left:4px}
-.sortrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:15px}
-.sortrow label{color:var(--muted)}
-.sortrow select{font:inherit;font-weight:600;border:2px solid var(--ink);border-radius:6px;padding:5px 8px;background:var(--paper)}
-.status{color:var(--muted)}
+/* Disposición */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:20px;padding:12px 0 40px;align-items:start}
+.feedhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:4px 2px 10px;color:var(--muted);font-size:14px}
+.feedhead strong{color:var(--text)}
 
-/* Estantería de etiquetas */
-.list{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
-.row{display:grid;grid-template-columns:86px 1fr auto;align-items:stretch;background:var(--paper);border:2px solid var(--ink);border-radius:6px;overflow:hidden}
-.row .off{background:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;font-variation-settings:"wdth" 112;border-right:2px solid var(--ink)}
-.row .body{padding:12px 16px;min-width:0;display:flex;flex-direction:column;gap:4px;justify-content:center}
-.row .t{font-weight:600;line-height:1.25;overflow-wrap:anywhere}
-.row .m{color:var(--muted);font-size:14px}
-.row .m .cat{color:var(--ink);font-weight:600}
-.row .tag{background:var(--tag);border-left:2px dashed var(--ink);padding:10px 16px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:6px;min-width:150px}
-.row .p{font-weight:900;font-size:28px;line-height:1;font-variation-settings:"wdth" 118;letter-spacing:-.02em;white-space:nowrap}
-.row .r{font-size:14px;white-space:nowrap}
-.row .go{font-weight:800;font-size:14px;text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:6px 10px;background:var(--paper);white-space:nowrap}
-.row .go:hover{background:var(--ink);color:var(--paper)}
-.row.hot .off{font-size:26px}
+/* Tarjeta de chollo */
+.feed{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.deal{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:14px}
+.thumb{aspect-ratio:1;border-radius:8px;background:#f6f7f9;border:1px solid var(--line);display:grid;place-items:center;font-size:52px;position:relative;overflow:hidden}
+.thumb .badge{position:absolute;top:8px;left:8px;background:var(--hot);color:#fff;font-weight:900;font-size:14px;padding:2px 8px;border-radius:6px}
+.dbody{display:flex;flex-direction:column;gap:6px;min-width:0}
+.dtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:5px;background:var(--brand-soft);color:var(--brand-dark);font-weight:800;padding:3px 10px;border-radius:999px;font-size:13px}
+.pill svg{width:13px;height:13px}
+.pill.cold{background:#eef1f5;color:var(--muted)}
+.dtop .when{margin-left:auto;white-space:nowrap}
+.dtitle{font-size:18px;font-weight:800;line-height:1.25;margin:2px 0 0;overflow-wrap:anywhere}
+.dtitle a:hover{color:var(--brand-dark)}
+.prices{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.now{font-size:24px;font-weight:900;color:var(--hot);letter-spacing:-.01em}
+.was{color:var(--muted);text-decoration:line-through;font-size:16px}
+.off{font-weight:800;font-size:15px;color:var(--text)}
+.ship{color:var(--muted);font-size:14px}
+.ship b{color:var(--text)}
+.dnote{color:var(--muted);font-size:14px;margin:0}
+.dfoot{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:6px;flex-wrap:wrap}
+.store{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted)}
+.store b{color:var(--text)}
+.dfoot .tg{font-size:14px;font-weight:700;color:var(--muted);padding:8px 10px;border-radius:999px}
+.dfoot .tg:hover{background:#f2f3f5;color:var(--text)}
+.go{margin-left:auto;display:inline-flex;align-items:center;gap:7px;background:var(--brand);color:#fff;font-weight:800;padding:10px 18px;border-radius:999px;white-space:nowrap}
+.go:hover{background:var(--brand-dark)}
+.go svg{width:15px;height:15px}
 
-.empty{background:var(--paper);border:2px dashed var(--ink);border-radius:6px;padding:28px 20px;margin-top:18px}
-.empty h2{margin:0 0 6px;font-size:20px}
-.empty p{margin:0 0 14px;color:var(--muted)}
+.deal.expired{opacity:.62}
+.deal.expired .now{color:var(--muted)}
+.deal.expired .go{background:#9aa0a8}
 
-/* Ya no están */
-.gone{margin:32px 0 0}
-.gone summary{cursor:pointer;font-weight:700;font-size:17px;padding:8px 0}
-.gone ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
-.gone li{display:flex;justify-content:space-between;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 14px;font-size:15px;color:var(--muted)}
-.gone li .x{color:var(--gone);font-weight:700;white-space:nowrap}
-.gone li s{white-space:nowrap}
+.empty{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 22px;text-align:center}
+.empty h2{margin:0 0 6px;font-size:19px}
+.empty p{margin:0 0 16px;color:var(--muted)}
 
-/* Cómo elegimos */
-.how{background:var(--paper);margin-top:44px;padding:32px 0;border-top:4px solid var(--ink)}
-.how h2{margin:0 0 14px;font-size:24px;font-variation-settings:"wdth" 112}
-.how .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.how h3{margin:0 0 4px;font-size:17px}
-.how p{margin:0;color:var(--muted);font-size:15px;max-width:42ch}
+/* Columna lateral */
+.side{display:flex;flex-direction:column;gap:16px;position:sticky;top:116px}
+.box{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.box h2{margin:0 0 12px;font-size:16px;font-weight:900;display:flex;align-items:center;gap:8px}
+.box h2 svg{width:18px;height:18px;color:var(--hot)}
+.top{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.top li+li{border-top:1px solid var(--line)}
+.top a{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;padding:10px 0;align-items:center}
+.top .ico{width:44px;height:44px;border-radius:8px;background:#f6f7f9;display:grid;place-items:center;font-size:24px}
+.top .tt{font-weight:700;font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.top .tp{font-size:14px;color:var(--muted)}
+.top .tp b{color:var(--hot)}
+.top a:hover .tt{color:var(--brand-dark)}
+.tgbox{background:linear-gradient(160deg,#ff7a1a,#ff5a00);color:#fff}
+.tgbox h2{color:#fff}
+.tgbox p{margin:0 0 14px;font-size:14px;opacity:.95}
+.tgbox a{display:block;text-align:center;background:#fff;color:var(--brand-dark);font-weight:900;padding:10px;border-radius:999px}
+.how p{margin:0 0 10px;font-size:14px;color:var(--muted)}
+.how p:last-child{margin:0}
+.how b{color:var(--text)}
 
-footer{padding:26px 0 40px;font-size:14px;color:var(--muted)}
-footer p{margin:0 0 8px;max-width:75ch}
-footer a{font-weight:600;color:var(--ink)}
+footer{border-top:1px solid var(--line);background:var(--card);padding:22px 0 34px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px;max-width:85ch}
+footer a{font-weight:700;color:var(--text)}
 
-@media (max-width:720px){
-  body{font-size:16px}
-  .best{grid-template-columns:1fr}
-  .best .label{border-left:0;border-top:3px solid var(--ink);min-width:0}
-  .row{grid-template-columns:64px 1fr}
-  .row .off{grid-row:span 2;font-size:20px}
-  .row.hot .off{font-size:21px}
-  .row .tag{grid-column:2;display:grid;grid-template-columns:1fr auto;grid-template-areas:"p go" "r go";align-items:center;justify-items:start;gap:2px 10px;border-left:0;border-top:2px dashed var(--ink);min-width:0}
-  .row .tag .p{grid-area:p}.row .tag .r{grid-area:r}.row .tag .go{grid-area:go}
-  .row .p{font-size:24px}
-  .how .cols{grid-template-columns:1fr;gap:16px}
-  .join .long{display:none}
-  .brand{font-size:21px}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}
+  .side{position:static}
+  .side .topbox{order:-1}
 }
-@media (prefers-reduced-motion:no-preference){
-  .best .label{animation:drop .5s cubic-bezier(.2,.9,.3,1.2) both .1s}
-  @keyframes drop{from{transform:translateY(-14px) rotate(-2deg);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:640px){
+  .search{display:none}
+  .join .long{display:none}
+  .deal{grid-template-columns:96px minmax(0,1fr);gap:12px;padding:12px}
+  .thumb{font-size:38px}
+  .thumb .badge{font-size:12px;top:5px;left:5px;padding:1px 6px}
+  .dtitle{font-size:16px}
+  .now{font-size:21px}
+  .dnote{font-size:13px}
+  .dfoot{flex-wrap:nowrap;gap:6px}
+  .dfoot .store{display:none}
+  .dfoot .tg{display:none}
+  .go{flex:1;justify-content:center;padding:9px 12px}
+  .dtop .when{margin-left:0}
 }
 </style>
 </head>
 <body>
-<header class="top">
+<header class="head">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="Caza Chollos, inicio">Caza<span>Chollos</span></a>
-    <a class="join" href="https://t.me/cazachollos_com" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.3 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.4 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>
-      <span><span class="long">Unirme al </span>canal</span>
-    </a>
+    <div class="bar">
+      <a class="brand" href="./" aria-label="Caza Chollos, inicio">
+        <span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M3 5h9l8 8-7 7-10-10zm4.5 3.5a1.5 1.5 0 1 0 0-.01z"/></svg></span>
+        <span>Caza<b>Chollos</b></span>
+      </a>
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15zM16 16l5 5"/></svg>
+        <input id="q" type="search" placeholder="Buscar chollos: aspiradora, cafetera, Samsung…" aria-label="Buscar chollos" autocomplete="off">
+      </label>
+      <a class="join" href="https://t.me/cazachollos_com" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.3 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.4 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>
+        <span><span class="long">Unirme al </span>Telegram</span>
+      </a>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Ordenar chollos">
+      <button class="tab" role="tab" data-sort="new" aria-selected="true">Nuevos</button>
+      <button class="tab" role="tab" data-sort="pct" aria-selected="false">Más descuento</button>
+      <button class="tab" role="tab" data-sort="saving" aria-selected="false">Más ahorro</button>
+      <button class="tab" role="tab" data-sort="cheap" aria-selected="false">Más baratos</button>
+      <button class="tab" role="tab" data-sort="gone" aria-selected="false">Terminados</button>
+    </nav>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <h1>Bajadas de precio de verdad en Amazon</h1>
-      <p class="lead">Comparamos cada oferta con el precio más bajo de los 30 días anteriores, no con el precio tachado. Son las mismas que salen en el canal de Telegram, y aquí ves cuáles siguen activas.</p>
-      <div id="best" aria-live="polite"></div>
-    </div>
-  </section>
-
-  <div class="controls">
-    <div class="wrap">
-      <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría"></div>
-      <div class="sortrow">
-        <span class="status" id="status">Cargando chollos…</span>
-        <span><label for="sort">Ordenar por </label>
-        <select id="sort">
-          <option value="new">Más nuevos</option>
-          <option value="pct">Mayor descuento</option>
-          <option value="saving">Más ahorro en euros</option>
-          <option value="cheap">Más baratos</option>
-        </select></span>
+<main class="wrap">
+  <div class="cats" id="cats" role="group" aria-label="Filtrar por categoría"></div>
+  <div class="layout">
+    <section aria-labelledby="feedTitle">
+      <div class="feedhead">
+        <span id="feedTitle"><strong id="count">Cargando chollos…</strong></span>
+        <span id="updated"></span>
       </div>
-    </div>
-  </div>
+      <ul class="feed" id="feed"></ul>
+    </section>
 
-  <div class="wrap">
-    <ul class="list" id="list"></ul>
-    <details class="gone" id="gone" hidden>
-      <summary id="goneTitle">Ya no están a este precio</summary>
-      <ul id="goneList"></ul>
-    </details>
-  </div>
-
-  <section class="how" aria-labelledby="howTitle">
-    <div class="wrap">
-      <h2 id="howTitle">Cómo elegimos los chollos</h2>
-      <div class="cols">
-        <div><h3>Descuento honesto</h3><p>El porcentaje se calcula frente al precio más bajo de los 30 días anteriores a la bajada, el mismo criterio que marca la ley europea.</p></div>
-        <div><h3>Precio reciente</h3><p>Cada oferta enseña la hora a la que vimos el precio. Si después sube o se agota, la marcamos aquí y en el canal.</p></div>
-        <div><h3>Lo que la gente compra</h3><p>Aspiradoras, cafeteras, móviles, electrodomésticos, muebles y compra del día a día. Nada de chollos de relleno.</p></div>
+    <aside class="side">
+      <div class="box topbox">
+        <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c1 4 5 5.5 5 10.5A5 5 0 0 1 7 12.5c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-9z"/></svg>Lo más gordo de hoy</h2>
+        <ul class="top" id="top"></ul>
       </div>
-    </div>
-  </section>
+      <div class="box tgbox">
+        <h2>Que no se te escape ninguno</h2>
+        <p>Los chollos salen primero en Telegram, de 08:00 a 23:50, y a las 23:59 el resumen con los mejores del día.</p>
+        <a href="https://t.me/cazachollos_com" rel="noopener">Unirme a @cazachollos_com</a>
+      </div>
+      <div class="box how">
+        <h2>Cómo elegimos los chollos</h2>
+        <p><b>Descuento honesto.</b> Frente al precio más bajo de los 30 días anteriores a la bajada, nunca frente al precio tachado.</p>
+        <p><b>Precio reciente.</b> Cada chollo dice a qué hora vimos el precio. Si sube o se agota, lo marcamos como terminado.</p>
+        <p><b>Lo que la gente compra.</b> Aspiradoras, cafeteras, móviles, electrodomésticos, muebles y compra del día a día.</p>
+      </div>
+    </aside>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <p><strong>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</strong> Los enlaces a Amazon.es de esta web son enlaces de afiliado: a ti no te cuestan nada más.</p>
-    <p>Los precios y la disponibilidad son los que vimos a la hora indicada y pueden cambiar. El precio que se aplica a la compra es el que aparece en Amazon.es en ese momento.</p>
+    <p><strong>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</strong> Los enlaces a Amazon.es de esta web son enlaces de afiliado y a ti no te cuestan nada más.</p>
+    <p>Los precios y la disponibilidad son los que vimos a la hora indicada y pueden cambiar. El precio que se aplica es el que aparece en Amazon.es en el momento de la compra.</p>
     <p>Síguenos en <a href="https://t.me/cazachollos_com" rel="noopener">Telegram</a> y en <a href="https://x.com/AzvensLoL" rel="noopener">X</a>.</p>
   </div>
 </footer>
@@ -200,16 +227,25 @@ footer a{font-weight:600;color:var(--ink)}
     "https://raw.githubusercontent.com/enriquegarciamarketing-byte/caza-errores-telegram/main/docs/chollos.json",
     "chollos.json",
   ];
+  const ICONS = {
+    "Móviles y tablets": "📱", "Aspiradoras": "🧹", "Cafeteras": "☕", "Electrodomésticos": "🔌",
+    "Muebles y descanso": "🛋️", "TV y sonido": "📺", "Informática": "💻", "Consolas": "🎮",
+    "Súper y bebidas": "🛒", "Bebé": "🍼", "Relojes inteligentes": "⌚", "Droguería y limpieza": "🧴",
+    "Cocina": "🍳", "Cuidado personal": "🪒", "Hogar inteligente": "💡", "Mascotas": "🐾",
+    "Clima": "🌡️", "Movilidad y fitness": "🚲", "Herramientas": "🛠️", "Cámaras y drones": "📷",
+    "LEGO y juguetes top": "🧸", "Moda de marca": "👟", "Perfumes": "🌸", "Textil hogar": "🛏️",
+  };
   const $ = (id) => document.getElementById(id);
   const euro = new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" });
   const hhmm = new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
   const dayFmt = new Intl.DateTimeFormat("es-ES", { weekday: "long", timeZone: "Europe/Madrid" });
-  let deals = [], cat = "Todas", sort = "new";
+  let data = { deals: [], generated: 0 }, cat = "Todas", sort = "new", query = "";
   try { sort = localStorage.getItem("cc-sort") || "new"; } catch (e) {}
-  $("sort").value = sort;
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const safeUrl = (u) => /^https:\/\/(www\.)?amazon\.es\//.test(u || "") ? u : "#";
+  const fold = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const icon = (d) => ICONS[d.category] || "🏷️";
 
   function ago(ts) {
     const min = Math.max(0, Math.round((Date.now() / 1000 - ts) / 60));
@@ -219,119 +255,126 @@ footer a{font-weight:600;color:var(--ink)}
     if (h < 24) return `hace ${h} h`;
     return `el ${dayFmt.format(new Date(ts * 1000))}`;
   }
-  const seenAt = (d) => {
-    const date = new Date(d.posted * 1000);
+  function seenAt(ts) {
+    const date = new Date(ts * 1000);
     const today = new Date().toDateString() === date.toDateString();
-    return `precio a las ${hhmm.format(date)}${today ? "" : " del " + dayFmt.format(date)}`;
-  };
-
-  function renderBest(active) {
-    const box = $("best");
-    if (!active.length) { box.innerHTML = ""; return; }
-    const recent = active.filter((d) => Date.now() / 1000 - d.posted < 6 * 3600);
-    const pool = recent.length ? recent : active;
-    const d = pool.slice().sort((a, b) => b.pct - a.pct || b.saving - a.saving)[0];
-    const [ent, dec] = euro.format(d.price).replace(/\s?€/, "").split(",");
-    box.innerHTML = `
-      <article class="best">
-        <div class="info">
-          <div class="meta">El mayor descuento de las últimas horas · ${esc(d.category)}</div>
-          <div class="what">${esc(d.title)}</div>
-          <div class="meta">Publicado ${ago(d.posted)}, ${seenAt(d)}. Puede cambiar.</div>
-          <a class="buy" href="${esc(safeUrl(d.url))}" rel="sponsored noopener">Ver en Amazon</a>
-        </div>
-        <div class="label">
-          <span class="pct">-${d.pct} %</span>
-          <span class="price">${esc(ent)}<small>,${esc(dec || "00")} €</small></span>
-          <span class="was">Antes <s>${euro.format(d.reference)}</s> · ahorras ${euro.format(d.saving)}</span>
-        </div>
-      </article>`;
+    return `${hhmm.format(date)}${today ? "" : " del " + dayFmt.format(date)}`;
   }
 
-  function renderChips(active) {
+  const EXT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
+  const FLAME = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c1 4 5 5.5 5 10.5A5 5 0 0 1 7 12.5c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-9z"/></svg>';
+
+  function dealCard(d) {
+    const url = esc(safeUrl(d.url));
+    const label = d.pct >= 60 ? "Error de precio" : d.pct >= 40 ? "Chollazo" : "Chollo";
+    const pill = d.active
+      ? `<span class="pill">${FLAME}${label}</span>`
+      : `<span class="pill cold">Terminado ${ago(d.ended || d.checked)}</span>`;
+    return `
+      <li class="deal${d.active ? "" : " expired"}">
+        <a class="thumb" href="${url}" rel="sponsored noopener" aria-hidden="true" tabindex="-1">
+          <span class="badge">-${d.pct}%</span>${icon(d)}
+        </a>
+        <div class="dbody">
+          <div class="dtop">${pill}<span>${esc(d.category)}</span><span class="when">${ago(d.posted)}</span></div>
+          <h3 class="dtitle"><a href="${url}" rel="sponsored noopener">${esc(d.title)}</a></h3>
+          <div class="prices">
+            <span class="now">${euro.format(d.price)}</span>
+            <span class="was">${euro.format(d.reference)}</span>
+            <span class="off">-${d.pct}%</span>
+          </div>
+          <p class="dnote">Ahorras ${euro.format(d.saving)} frente a su precio más bajo de los 30 días anteriores. Precio visto a las ${seenAt(d.posted)}, puede cambiar.</p>
+          <div class="dfoot">
+            <span class="store">Disponible en <b>Amazon.es</b></span>
+            ${d.telegram ? `<a class="tg" href="${esc(d.telegram)}" rel="noopener">Ver en Telegram</a>` : ""}
+            <a class="go" href="${url}" rel="sponsored noopener">${d.active ? "Ir al chollo" : "Ver en Amazon"}${EXT}</a>
+          </div>
+        </div>
+      </li>`;
+  }
+
+  function visible() {
+    const q = fold(query).trim();
+    const pool = data.deals.filter((d) => (sort === "gone" ? !d.active : d.active));
+    return pool.filter((d) => (cat === "Todas" || d.category === cat) && (!q || fold(d.title + " " + d.category).includes(q)));
+  }
+
+  function renderCats() {
+    const active = data.deals.filter((d) => (sort === "gone" ? !d.active : d.active));
     const counts = {};
     active.forEach((d) => { counts[d.category] = (counts[d.category] || 0) + 1; });
     const cats = Object.keys(counts).sort((a, b) => (a === "Otros") - (b === "Otros") || counts[b] - counts[a]);
     if (cat !== "Todas" && !counts[cat]) cat = "Todas";
-    $("chips").innerHTML = [["Todas", active.length], ...cats.map((c) => [c, counts[c]])]
-      .map(([c, n]) => `<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c === cat}">${esc(c)}<span class="n">${n}</span></button>`)
+    $("cats").innerHTML = [["Todas", active.length], ...cats.map((c) => [c, counts[c]])]
+      .map(([c, n]) => `<button class="cat" type="button" data-cat="${esc(c)}" aria-pressed="${c === cat}">${c === "Todas" ? "" : (ICONS[c] || "🏷️") + " "}${esc(c)}<span class="n">${n}</span></button>`)
       .join("");
   }
 
-  function renderList(active) {
+  function renderFeed() {
     const order = {
       new: (a, b) => b.posted - a.posted,
-      pct: (a, b) => b.pct - a.pct,
+      pct: (a, b) => b.pct - a.pct || b.saving - a.saving,
       saving: (a, b) => b.saving - a.saving,
       cheap: (a, b) => a.price - b.price,
+      gone: (a, b) => (b.ended || 0) - (a.ended || 0),
     }[sort];
-    const shown = active.filter((d) => cat === "Todas" || d.category === cat).sort(order);
+    const shown = visible().sort(order);
+    const word = sort === "gone" ? "terminados" : "chollos activos";
+    $("count").textContent = `${shown.length} ${word}${cat !== "Todas" ? " en " + cat : ""}`;
+    $("updated").textContent = data.generated ? `Actualizado ${ago(data.generated)}` : "";
+    document.querySelectorAll(".tab").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.sort === sort)));
     if (!shown.length) {
-      $("list").innerHTML = `<li class="empty"><h2>Ahora mismo no hay chollos activos aquí</h2>
-        <p>El bot publica de 08:00 a 23:50. Únete al canal y te llegan en cuanto salen.</p>
-        <a class="buy" href="https://t.me/cazachollos_com" rel="noopener">Unirme al canal de Telegram</a></li>`;
+      $("feed").innerHTML = query
+        ? `<li class="empty"><h2>No hay chollos que coincidan con «${esc(query)}»</h2><p>Prueba con otra palabra o quita el filtro de categoría.</p></li>`
+        : `<li class="empty"><h2>Ahora mismo no hay chollos aquí</h2><p>El bot publica de 08:00 a 23:50. Únete al canal y te llegan en cuanto salen.</p><a class="go" style="margin:0 auto" href="https://t.me/cazachollos_com" rel="noopener">Unirme a Telegram</a></li>`;
       return;
     }
-    $("list").innerHTML = shown.map((d) => `
-      <li class="row${d.pct >= 50 ? " hot" : ""}">
-        <div class="off" aria-label="${d.pct} por ciento de descuento">-${d.pct}%</div>
-        <div class="body">
-          <div class="t">${esc(d.title)}</div>
-          <div class="m"><span class="cat">${esc(d.category)}</span> · ${ago(d.posted)} · ${seenAt(d)}</div>
-        </div>
-        <div class="tag">
-          <span class="p">${euro.format(d.price)}</span>
-          <span class="r">antes <s>${euro.format(d.reference)}</s></span>
-          <a class="go" href="${esc(safeUrl(d.url))}" rel="sponsored noopener">Ver en Amazon</a>
-        </div>
-      </li>`).join("");
+    $("feed").innerHTML = shown.map(dealCard).join("");
   }
 
-  function renderGone(gone) {
-    $("gone").hidden = !gone.length;
-    $("goneTitle").textContent = `Ya no están a este precio (${gone.length})`;
-    $("goneList").innerHTML = gone.map((d) => `
-      <li><span>${esc(d.title)}</span>
-      <span><s>${euro.format(d.price)}</s> <span class="x">terminado ${ago(d.ended || d.checked)}</span></span></li>`).join("");
+  function renderTop() {
+    const now = Date.now() / 1000;
+    const active = data.deals.filter((d) => d.active);
+    const today = active.filter((d) => now - d.posted < 24 * 3600);
+    const top = (today.length >= 3 ? today : active).slice().sort((a, b) => b.pct - a.pct || b.saving - a.saving).slice(0, 5);
+    $("top").innerHTML = top.length
+      ? top.map((d) => `<li><a href="${esc(safeUrl(d.url))}" rel="sponsored noopener">
+          <span class="ico" aria-hidden="true">${icon(d)}</span>
+          <span><span class="tt">${esc(d.title)}</span><span class="tp"><b>${euro.format(d.price)}</b> · -${d.pct}%</span></span>
+        </a></li>`).join("")
+      : `<li class="tp" style="padding:6px 0;color:var(--muted)">Aún no hay chollos hoy.</li>`;
   }
 
-  function render(data) {
-    deals = data.deals || [];
-    $("status").dataset.gen = data.generated;
-    const active = deals.filter((d) => d.active);
-    const gone = deals.filter((d) => !d.active).sort((a, b) => (b.ended || 0) - (a.ended || 0));
-    renderBest(active);
-    renderChips(active);
-    renderList(active);
-    renderGone(gone);
-    $("status").textContent = `${active.length} chollos activos · actualizado ${ago(data.generated)}`;
-  }
+  function render() { renderCats(); renderFeed(); renderTop(); }
 
   async function load() {
     for (const src of SOURCES) {
       try {
         const res = await fetch(`${src}?t=${Math.floor(Date.now() / 60000)}`, { cache: "no-store" });
         if (!res.ok) continue;
-        render(await res.json());
+        data = await res.json();
+        data.deals = data.deals || [];
+        render();
         return;
       } catch (e) { /* prueba la siguiente fuente */ }
     }
-    if (!deals.length) {
-      $("status").textContent = "No se han podido cargar los chollos. Vuelve a cargar la página en un momento.";
-    }
+    if (!data.deals.length) $("count").textContent = "No se han podido cargar los chollos. Vuelve a cargar la página en un momento.";
   }
 
-  $("chips").addEventListener("click", (e) => {
-    const b = e.target.closest(".chip");
+  $("cats").addEventListener("click", (e) => {
+    const b = e.target.closest(".cat");
     if (!b) return;
     cat = b.dataset.cat;
-    render({ deals, generated: Number($("status").dataset.gen) || Date.now() / 1000 });
+    renderCats(); renderFeed();
   });
-  $("sort").addEventListener("change", (e) => {
-    sort = e.target.value;
-    try { localStorage.setItem("cc-sort", sort); } catch (err) {}
-    renderList(deals.filter((d) => d.active));
+  document.querySelector(".tabs").addEventListener("click", (e) => {
+    const t = e.target.closest(".tab");
+    if (!t) return;
+    sort = t.dataset.sort;
+    try { localStorage.setItem("cc-sort", sort === "gone" ? "new" : sort); } catch (err) {}
+    renderCats(); renderFeed();
   });
+  $("q").addEventListener("input", (e) => { query = e.target.value; renderFeed(); });
 
   load();
   setInterval(load, 5 * 60 * 1000);
