@@ -1,123 +1,131 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36917 bytes, 30 chollos
-  Chollometro «Insta360 X6 360 ° Cámara de Acción 8K [Promo 11.11]»: AliExpress 472.29 €
-  Chollometro «Huawei Pura 80 Ultra 16GB/512GB (Kirin 9020, Pantalla 6.8" 120Hz, Cáma»: Amazon 899.0 €
-  Chollometro «HUAWEI Pura 80 Pro Negro 12GB+512GB Dual SIM | OLED 6,8" 120Hz, 5170mA»: Huawei 539.1 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 74427 bytes, 30 chollos
-  cm-2048868 · AliExpress 472.29 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Insta360 X6 360 ° Cámara de Acción 8K [Promo 11.11]
-  cm-2052787 · Amazon 899.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Huawei Pura 80 Ultra 16GB/512GB (Kirin 9020, Pantalla 6.8" 1
-  cm-2052835 · Huawei 539.1 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · HUAWEI Pura 80 Pro Negro 12GB+512GB Dual SIM | OLED 6,8" 120
-  Wallapop «insta360 x6 camara»: 200 / 104476 bytes, 39 anuncios, 30 parecidos, 0 reservas
-  Milanuncios «insta360 x6 camara»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa WALLAPOP: 7 anuncios, ~43 €, no publica
-  ⚠️ No publico «Insta360 X6 360 ° Cámara de Acción 8K [Promo 11.11]»: reventa en WALLAPOP ~43 € (7 anuncios): ROI -92 % y -433 €, por debajo del mínimo (25 % y 25 €)
-  Wallapop «huawei 16gb pura»: 200 / 38677 bytes, 10 anuncios, 0 parecidos, 0 reservas
-  Wallapop «huawei 16gb»: 200 / 120016 bytes, 37 anuncios, 32 parecidos, 0 reservas
-  Milanuncios «huawei 16gb pura»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa WALLAPOP: 28 anuncios, ~20 €, no publica
-  ⚠️ No publico «Huawei Pura 80 Ultra 16GB/512GB (Kirin 9020, Pantalla 6.8" 120Hz, Cámara HDR, Sensor 1", T»: reventa en WALLAPOP ~20 € (28 anuncios): ROI -98 % y -882 €, por debajo del mínimo (25 % y 25 €)
-  Wallapop «huawei 12gb pura»: 200 / 43834 bytes, 11 anuncios, 0 parecidos, 0 reservas
-  Wallapop «huawei 12gb»: 200 / 137585 bytes, 39 anuncios, 2 parecidos, 0 reservas
-  Milanuncios «huawei 12gb pura»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
-  ⚠️ No publico «HUAWEI Pura 80 Pro Negro 12GB+512GB Dual SIM | OLED 6,8" 120Hz, 5170mAh, 100W | Cámara 1" »: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95511 bytes))
-Publicados en esta ejecución: 0
-Cascada al canal normal: 34 descartes nuevos, 34 en lista
-== pasada 2 · 13:39 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36572 bytes, 30 chollos
+  Chollometro «Zapatillas Nike V5 RNR blancas por 34,99€ en Privalia»: Privalia 34.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 63235 bytes, 30 chollos
+  cm-2052524 · Privalia 34.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Nike V5 RNR blancas por 34,99€ en Privalia
+  Vinted «zapatillas v5 nike»: HTTP 200, 3664768 bytes, 96 anuncios
+  Vinted «zapatillas v5 nike»: 93 parecidos de 96
+  Wallapop «zapatillas v5 nike»: 200 / 134232 bytes, 40 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «zapatillas v5 nike»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 124 anuncios, ~50 €, no publica
+  ⚠️ No publico «Zapatillas Nike V5 RNR blancas por 34,99€ en Privalia»: reventa en VINTED+WALLAPOP ~50 € (124 anuncios): ROI 30 % y 11 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 45 descartes nuevos, 45 en lista
-== pasada 3 · 13:42 ==
-Listados: 94 productos únicos
+Cascada al canal normal: 39 descartes nuevos, 89 en lista
+== pasada 2 · 14:55 ==
+Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 13:44 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 13:47 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36657 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73957 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 13:49 ==
+== pasada 3 · 14:57 ==
 Listados: 103 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 13:52 ==
-Listados: 94 productos únicos
+== pasada 4 · 15:00 ==
+Listados: 89 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 13:54 ==
-Listados: 97 productos únicos
+== pasada 5 · 15:02 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 13:57 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36816 bytes, 30 chollos
-  Chollometro «Cámara Evil Canon EOS RP con Objetivo RF 24-105mm F4-7,1 IS STM»: El Corte Inglés 799.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 79831 bytes, 30 chollos
-  cm-2052857 · El Corte Inglés 799.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Cámara Evil Canon EOS RP con Objetivo RF 24-105mm F4-7,1 IS 
-  Wallapop «camara 105mm evil»: 200 / 9113 bytes, 2 anuncios, 0 parecidos, 0 reservas
-  Wallapop «camara 105mm»: 200 / 151931 bytes, 40 anuncios, 17 parecidos, 0 reservas
-  Milanuncios «camara 105mm evil»: HTTP 403, 95511 bytes
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36770 bytes, 30 chollos
+  Chollometro «LEGO One Piece Barco Pirata Going Merry 75639»: Amazon 71.23 €
+  Chollometro «The North Face Zapatillas de trail Offtrail Tr Mujeres- Tallas- 36, 36»: Privatesportshop 55.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 65746 bytes, 30 chollos
+  cm-2052834 · Amazon 71.23 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO One Piece Barco Pirata Going Merry 75639
+  cm-2052918 · Privatesportshop 55.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · The North Face Zapatillas de trail Offtrail Tr Mujeres- Tall
+  Vinted «north 36 face»: HTTP 200, 3676035 bytes, 96 anuncios
+  Vinted «north 36 face»: 1 parecidos de 96
+  Wallapop «north 36 face»: 200 / 110467 bytes, 40 anuncios, 0 parecidos, 0 reservas
+  Wallapop «north 36»: 200 / 110560 bytes, 40 anuncios, 1 parecidos, 0 reservas
+  Milanuncios «north 36 face»: HTTP 403, 95511 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa WALLAPOP: 10 anuncios, ~200 €, no publica
-  ⚠️ No publico «Cámara Evil Canon EOS RP con Objetivo RF 24-105mm F4-7,1 IS STM»: reventa en WALLAPOP ~200 € (10 anuncios): ROI -76 % y -611 €, por debajo del mínimo (25 % y 25 €)
+  Reventa VINTED+WALLAPOP: 2 anuncios, ~0 €, no publica
+  ⚠️ No publico «The North Face Zapatillas de trail Offtrail Tr Mujeres- Tallas- 36, 36.5, 37, 38- 20% desc»: VINTED+WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop «lego 75639 one»: 200 / 67243 bytes, 28 anuncios, 27 parecidos, 0 reservas
+  Milanuncios «lego 75639 one»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 26 anuncios, ~100 €, no publica
+  ⚠️ No publico «LEGO One Piece Barco Pirata Going Merry 75639»: reventa en WALLAPOP ~100 € (26 anuncios): ROI 31 % y 22 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 13:59 ==
-Listados: 101 productos únicos
+== pasada 6 · 15:05 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 14:02 ==
-Listados: 101 productos únicos
+== pasada 7 · 15:07 ==
+Listados: 102 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 14:04 ==
+== pasada 8 · 15:10 ==
 Listados: 90 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 14:07 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36919 bytes, 30 chollos
-  Chollometro «Huawei Pura 80 Ultra 16GB/512GB (Kirin 9020, Pantalla 6.8" 120Hz, Cáma»: Huawei 809.1 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 85974 bytes, 30 chollos
-  cm-2052821 · Huawei → descartado (la tienda marca 699.0 € y no 809.1 €) · Huawei Pura 80 Ultra 16GB/512GB (Kirin 9020, Pantalla 6.8" 1
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 14:09 ==
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 9 · 15:12 ==
 Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36654 bytes, 30 chollos
+  Chollometro «Dreame Matrix10 Pro robot aspirador, 30.000 Pa, base cambio de mopas»: Amazon 569.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 65827 bytes, 30 chollos
+  cm-2052888 · Amazon 569.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Dreame Matrix10 Pro robot aspirador, 30.000 Pa, base cambio 
+  Wallapop «dreame matrix10 pro»: 200 / 7671 bytes, 4 anuncios, 1 parecidos, 0 reservas
+  Wallapop «dreame matrix10»: 200 / 18001 bytes, 7 anuncios, 4 parecidos, 0 reservas
+  Milanuncios «dreame matrix10 pro»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 3 anuncios, ~653 €, no publica
+  ⚠️ No publico «Dreame Matrix10 Pro robot aspirador, 30.000 Pa, base cambio de mopas»: reventa en WALLAPOP ~653 € (3 anuncios): ROI 8 % y 44 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 10 · 15:15 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 11 · 15:17 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 12 · 15:20 ==
+Listados: 94 productos únicos
 Candidatos nuevos tras el filtro rápido: 1
-  1bZDe2g · 129.0 € · media 165.62 · ref 139.00 → descartado (solo -7% bajo la referencia) · iRobot Roomba 115 Combo, Robot Aspirador y friegasuelos 2 en
+  MdDbXeL · 159.0 € · media 191.65 · ref 171.84 → descartado (solo -7% bajo la referencia) · Garmin Forerunner 165, Reloj Inteligente para Correr con GPS
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 14:12 ==
-Listados: 104 productos únicos
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 13 · 15:22 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36125 bytes, 30 chollos
+  Chollometro «Roborock Q10VF + Roborock Robot Aspirador Fregasuelos Con Autovaciado »: PcComponentes 159.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 79004 bytes, 30 chollos
+  cm-2052428 · PcComponentes 159.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Roborock Q10VF + Roborock Robot Aspirador Fregasuelos Con Au
+  Wallapop «roborock q10vf»: 200 / 2997 bytes, 1 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «roborock q10vf»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Roborock Q10VF + Roborock Robot Aspirador Fregasuelos Con Autovaciado Negro»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95511 bytes))
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 14 · 15:25 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 15 · 15:27 ==
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 14:14 ==
-Listados: 90 productos únicos
+== pasada 16 · 15:30 ==
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
