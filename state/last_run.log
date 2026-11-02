@@ -1,84 +1,137 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37114 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70225 bytes, 30 chollos
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  MW239x8 · 299.0 € · media 361.73 · ref 300.47 → descartado (solo -0% bajo la referencia) · dreame H15 Pro Aspirador en Seco y Húmedo, Brazo IA, Triple 
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37766 bytes, 30 chollos
+  Chollometro «LEGO Disney Princess Calendario de Adviento 2026»: Amazon 27.99 €
+  Chollometro «Barra de Sonido Sony HT-S40R 5.1 Canales 600W (Subwoofer, Altavoces Tr»: Coolmod 193.95 €
+  Chollometro «Auriculares Gaming Logitech G G325 LIGHTSPEED (Inalambricos, Bluetooth»: Amazon 54.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 61553 bytes, 30 chollos
+  cm-2052509 · Amazon 27.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Disney Princess Calendario de Adviento 2026
+  cm-2052739 · Coolmod 193.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Barra de Sonido Sony HT-S40R 5.1 Canales 600W (Subwoofer, Al
+  cm-2052647 · Amazon 54.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Auriculares Gaming Logitech G G325 LIGHTSPEED (Inalambricos,
+  Wallapop «auriculares g325 gaming»: 200 / 15395 bytes, 5 anuncios, 3 parecidos, 0 reservas
+  Milanuncios «auriculares g325 gaming»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 3 anuncios, ~47 €, no publica
+  ⚠️ No publico «Auriculares Gaming Logitech G G325 LIGHTSPEED (Inalambricos, Bluetooth, audio 24 bits, 24h»: reventa en WALLAPOP ~47 € (3 anuncios): ROI -22 % y -12 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «barra s40r sonido»: 200 / 70812 bytes, 18 anuncios, 9 parecidos, 0 reservas
+  Milanuncios «barra s40r sonido»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 8 anuncios, ~172 €, no publica
+  ⚠️ No publico «Barra de Sonido Sony HT-S40R 5.1 Canales 600W (Subwoofer, Altavoces Traseros Inalámbricos,»: reventa en WALLAPOP ~172 € (8 anuncios): ROI -20 % y -39 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 2026 disney»: 200 / 42378 bytes, 11 anuncios, 1 parecidos, 0 reservas
+  Wallapop «lego 2026»: 200 / 84265 bytes, 39 anuncios, 32 parecidos, 0 reservas
+  Milanuncios «lego 2026 disney»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 22 anuncios, ~5 €, no publica
+  ⚠️ No publico «LEGO Disney Princess Calendario de Adviento 2026»: reventa en WALLAPOP ~5 € (22 anuncios): ROI -90 % y -25 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-== pasada 2 · 11:17 ==
-Listados: 87 productos únicos
+== pasada 2 · 12:37 ==
+Listados: 92 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-== pasada 3 · 11:19 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-== pasada 4 · 11:22 ==
+== pasada 3 · 12:39 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-== pasada 5 · 11:24 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36898 bytes, 30 chollos
-  Chollometro «Garmin Forerunner 265 (Envio desde España) Cupon ventajas + paypal»: AliExpress 178.16 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 74786 bytes, 30 chollos
-  cm-2052610 · AliExpress 178.16 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Garmin Forerunner 265
-  Wallapop «garmin 265 forerunner»: 200 / 111318 bytes, 36 anuncios, 34 parecidos, 0 reservas
-  Milanuncios «garmin 265 forerunner»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 33 anuncios, ~258 €, publica
-  Te lo paso por privado para que des el OK (mensaje 174): OPORTUNIDAD DE REVENTA · Garmin Forerunner 265
-Publicados en esta ejecución: 1
-== pasada 6 · 11:27 ==
-Listados: 91 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-== pasada 7 · 11:29 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-== pasada 8 · 11:32 ==
+== pasada 4 · 12:42 ==
 Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-== pasada 9 · 11:34 ==
+== pasada 5 · 12:44 ==
 Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  MW3Vyj5 · 349.0 € · media 502.82 · ref 396.00 → descartado (solo -12% bajo la referencia) · Sony BRAVIA Theatre Sub 8 Subwoofer Inalámbrico 300 W para B
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37162 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72107 bytes, 30 chollos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37727 bytes, 30 chollos
+  Chollometro «Procesador de Escritorio AMD Ryzen 7 9800X3D 275,10€ con cupón ventaja»: AliExpress 280.1 €
+  Chollometro «Reloj Garmin Instinct 3 45mm (GPS, pantalla AMOLED, linterna LED, moni»: Amazon 249.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71363 bytes, 30 chollos
+  cm-2052680 · AliExpress 280.1 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Procesador de Escritorio AMD Ryzen 7 9800X3D 275,10€
+  cm-2052771 · Amazon 249.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Reloj Garmin Instinct 3 45mm (GPS, pantalla AMOLED, linterna
+  Vinted «reloj 45mm garmin»: HTTP 200, 3209776 bytes, 46 anuncios
+  Vinted «reloj 45mm garmin»: 10 parecidos de 46
+  Wallapop «reloj 45mm garmin»: 200 / 120989 bytes, 36 anuncios, 21 parecidos, 0 reservas
+  Milanuncios «reloj 45mm garmin»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 28 anuncios, ~246 €, no publica
+  ⚠️ No publico «Reloj Garmin Instinct 3 45mm (GPS, pantalla AMOLED, linterna LED, monitorizacion de salud,»: reventa en VINTED+WALLAPOP ~246 € (28 anuncios): ROI -7 % y -17 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «procesador 9800x3d escritorio»: 200 / 7484 bytes, 2 anuncios, 1 parecidos, 0 reservas
+  Wallapop «procesador 9800x3d»: 200 / 74526 bytes, 28 anuncios, 14 parecidos, 0 reservas
+  Milanuncios «procesador 9800x3d escritorio»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 14 anuncios, ~350 €, no publica
+  ⚠️ No publico «Procesador de Escritorio AMD Ryzen 7 9800X3D 275,10€»: reventa en WALLAPOP ~350 € (14 anuncios): ROI 18 % y 50 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-== pasada 10 · 11:37 ==
-Listados: 91 productos únicos
+== pasada 6 · 12:47 ==
+Listados: 95 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-== pasada 11 · 11:39 ==
-Listados: 94 productos únicos
+== pasada 7 · 12:49 ==
+Listados: 92 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-== pasada 12 · 11:42 ==
-Listados: 100 productos únicos
+== pasada 8 · 12:52 ==
+Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-== pasada 13 · 11:44 ==
-Listados: 102 productos únicos
+== pasada 9 · 12:54 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37134 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71936 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37713 bytes, 30 chollos
+  Chollometro «Robot aspirador y friegasuelos Roborock Qrevo Edge 2 Pro»: El Corte Inglés 499.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70732 bytes, 30 chollos
+  cm-2052325 · El Corte Inglés 499.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Robot aspirador y friegasuelos Roborock Qrevo Edge 2 Pro
+  Wallapop «robot aspirador»: 200 / 117510 bytes, 40 anuncios, 40 parecidos, 0 reservas
+  Milanuncios «robot aspirador»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 23 anuncios, ~50 €, no publica
+  ⚠️ No publico «Robot aspirador y friegasuelos Roborock Qrevo Edge 2 Pro»: reventa en WALLAPOP ~50 € (23 anuncios): ROI -92 % y -460 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-== pasada 14 · 11:47 ==
-Listados: 87 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  RNVgVyR · 41.99 € · media 55.85 · ref 31.75 → descartado (la referencia corregida no supera el precio (media inflada)) · LEGO Technic Aston Martin Valkyrie 42208
+== pasada 10 · 12:57 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-== pasada 15 · 11:49 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  7k6paob · 24.34 € · media 36.23 · ref 19.72 → descartado (la referencia corregida no supera el precio (media inflada)) · Levi's Mid Rise Boyfriend, Jeans para Mujer, Lapis Gem, 28W 
+== pasada 11 · 12:59 ==
+Listados: 88 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-== pasada 16 · 11:52 ==
-Listados: 101 productos únicos
+== pasada 12 · 13:02 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+== pasada 13 · 13:04 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37219 bytes, 30 chollos
+  Chollometro «Reloj Garmin Venu 4 45mm (GPS, llamadas, pantalla AMOLED, caja de acer»: Amazon 379.0 €
+  Chollometro «Procesador AMD Ryzen 7 9700X 5,5 GHz 8 núcleos 16 hilos 40 MB de caché»: AliExpress 163.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73548 bytes, 30 chollos
+  cm-2052769 · Amazon 379.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Reloj Garmin Venu 4 45mm (GPS, llamadas, pantalla AMOLED, ca
+  cm-2051054 · AliExpress 163.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Procesador AMD Ryzen 7 9700X 5,5 GHz 8 núcleos 16 hilos 40 M
+  Vinted «reloj 45mm garmin»: HTTP 200, 3209733 bytes, 46 anuncios
+  Vinted «reloj 45mm garmin»: 10 parecidos de 46
+  Wallapop «reloj 45mm garmin»: 200 / 120989 bytes, 36 anuncios, 21 parecidos, 0 reservas
+  Milanuncios «reloj 45mm garmin»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 28 anuncios, ~246 €, no publica
+  ⚠️ No publico «Reloj Garmin Venu 4 45mm (GPS, llamadas, pantalla AMOLED, caja de acero, linterna LED, sal»: reventa en VINTED+WALLAPOP ~246 € (28 anuncios): ROI -39 % y -147 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «procesador 9700x amd»: 200 / 77446 bytes, 30 anuncios, 13 parecidos, 0 reservas
+  Milanuncios «procesador 9700x amd»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 13 anuncios, ~200 €, no publica
+  ⚠️ No publico «Procesador AMD Ryzen 7 9700X 5,5 GHz 8 núcleos 16 hilos 40 MB de caché de juego 4NM TDP 65»: reventa en WALLAPOP ~200 € (13 anuncios): ROI 15 % y 25 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+== pasada 14 · 13:07 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+== pasada 15 · 13:09 ==
+Listados: 90 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+== pasada 16 · 13:12 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Fin de la ejecución tras 16 pasadas.
