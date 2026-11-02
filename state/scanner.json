@@ -914,6 +914,11 @@
    "price": 299.0,
    "t": 1793619271,
    "result": "solo -0% bajo la referencia"
+  },
+  "1bZDe2g": {
+   "price": 129.0,
+   "t": 1793624975,
+   "result": "solo -7% bajo la referencia"
   }
  },
  "posts": [
@@ -1139,7 +1144,7 @@
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 90,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -3566,6 +3571,131 @@
    "http_status": 200,
    "bytes": 77446,
    "raw_count": 30
+  },
+  "|insta360 x6 360 ° camara de accion 8k [promo 11.11]|insta360 x6 camara": {
+   "t": 1793623047.6850302,
+   "query": "insta360 x6 camara",
+   "prices": [
+    400.0,
+    750.0,
+    29.99,
+    545.0,
+    520.0,
+    50.0,
+    24.5,
+    530.0,
+    29.99,
+    26.99,
+    360.0,
+    39.0,
+    650.0,
+    25.0,
+    650.0,
+    735.27,
+    525.0,
+    30.0,
+    500.0,
+    36.99,
+    450.0,
+    599.0,
+    30.0,
+    39.0,
+    100.0,
+    60.0,
+    60.0,
+    5.99,
+    450.0,
+    29.99
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 104476,
+   "raw_count": 39
+  },
+  "|huawei pura 80 ultra 16gb/512gb (kirin 9020, pantalla 6.8\" 120hz, camara hdr, sensor 1\", telefoto dual 3.7x-9.4x, carga rapida100w|huawei 16gb pura": {
+   "t": 1793623049.5521119,
+   "query": "huawei 16gb",
+   "prices": [
+    40.0,
+    10.0,
+    20.0,
+    14.0,
+    25.0,
+    50.0,
+    26.0,
+    20.0,
+    30.0,
+    15.0,
+    20.0,
+    349.0,
+    24.0,
+    250.0,
+    25.0,
+    40.0,
+    35.0,
+    10.0,
+    25.0,
+    20.0,
+    40.0,
+    25.0,
+    20.0,
+    25.0,
+    18.0,
+    28.0,
+    18.0,
+    17.0,
+    40.0,
+    16.0,
+    13.0,
+    14.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 120016,
+   "raw_count": 37
+  },
+  "|huawei pura 80 pro negro 12gb+512gb dual sim | oled 6,8\" 120hz, 5170mah, 100w | camara 1\" 50mp | + funda magnetica blanca|huawei 12gb pura": {
+   "t": 1793623051.6520305,
+   "query": "huawei 12gb",
+   "prices": [
+    225.0,
+    800.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 137585,
+   "raw_count": 39
+  },
+  "|camara evil canon eos rp con objetivo rf 24-105mm f4-7,1 is stm|camara 105mm evil": {
+   "t": 1793624241.9850676,
+   "query": "camara 105mm",
+   "prices": [
+    80.0,
+    1450.0,
+    320.0,
+    390.0,
+    179.0,
+    200.0,
+    600.0,
+    220.0,
+    10.0,
+    230.0,
+    50.0,
+    200.0,
+    149.95,
+    75.0,
+    220.0,
+    1300.0,
+    180.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 151931,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -3735,7 +3865,11 @@
   "wallapop:cm-2052680": 1793619901.7292647,
   "wallapop:cm-2052325": 1793620492.1156428,
   "wallapop:cm-2052769": 1793621095.7505143,
-  "wallapop:cm-2051054": 1793621096.8018672
+  "wallapop:cm-2051054": 1793621096.8018672,
+  "wallapop:cm-2048868": 1793623048.0758905,
+  "wallapop:cm-2052787": 1793623049.9363286,
+  "wallapop:cm-2052835": 1793623052.133976,
+  "wallapop:cm-2052857": 1793624242.4166095
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -4398,7 +4532,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/dji-osmo-pocket-3-cmos-envio-desde-espana-cupon-ventajas-paypal-2052619": 1793613124.7292492,
   "https://www.chollometro.com/ofertas/mando-pc-y-switch-2-2052461": 1793613124.7292492,
@@ -4415,7 +4549,12 @@
   "https://www.chollometro.com/ofertas/reloj-garmin-instinct-3-45mm-gps-pantalla-amoled-linterna-led-monitorizacion-de-salud-18-dias-bateria-negro-oferta-amazon-2052771": 1793619887.6002672,
   "https://www.chollometro.com/ofertas/robot-aspirador-y-friegasuelos-roborock-qrevo-edge-2-pro-2052325": 1793620487.235308,
   "https://www.chollometro.com/ofertas/reloj-garmin-venu-4-45mm-gps-llamadas-pantalla-amoled-caja-de-acero-linterna-led-salud-avanzada-14-dias-bateria-negro-2052769": 1793621087.0239546,
-  "https://www.chollometro.com/ofertas/procesador-amd-ryzen-7-9700x-55-ghz-8-nucleos-16-hilos-40-mb-de-cache-de-juego-4nm-tdp-65w-socket-2051054": 1793621087.0239546
+  "https://www.chollometro.com/ofertas/procesador-amd-ryzen-7-9700x-55-ghz-8-nucleos-16-hilos-40-mb-de-cache-de-juego-4nm-tdp-65w-socket-2051054": 1793621087.0239546,
+  "https://www.chollometro.com/ofertas/insta360-x6-360-camara-de-accion-8k-promo-1111-empieza-1-11-2048868": 1793623037.9033787,
+  "https://www.chollometro.com/ofertas/huawei-pura-80-ultra-smartphone-16-gb512-gb-5170-mah-camara-hdr-con-ultrailuminacion-de-1-dual-sim-120hz-2052787": 1793623037.9033787,
+  "https://www.chollometro.com/ofertas/huawei-pura-80-pro-negro-12gb512gb-dual-sim-oled-68-120hz-5170mah-100w-camara-1-50mp-funda-magnetica-blanca-2052835": 1793623037.9033787,
+  "https://www.chollometro.com/ofertas/camara-evil-canon-eos-rp-con-objetivo-rf-24-105mm-f4-71-is-stm-2052857": 1793624238.2655692,
+  "https://www.chollometro.com/ofertas/huawei-pura-80-ultra-16gb512gb-kirin-9020-pantalla-68-120hz-camara-hdr-sensor-1-telefoto-dual-37x-94x-carga-rapida100w-2052821": 1793624838.1848392
  },
  "asked": {
   "cm-2052619": 1793613138,
