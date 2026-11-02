@@ -359,6 +359,25 @@ TRIP_CLOSERS = (
 )
 TRIP_WORDS = ("viaje", "vuelo", "crucero", "hotel", "vacaciones")
 DEAL_LOGO = ROOT / "images" / "logo-caza-chollos.png"
+# Paleta de Caza Chollos (canal free), sacada del naranja del logo de los cuchillos.
+BRAND_ORANGE = "#FE6A00"
+BRAND_TINT = "#FFF1E6"
+BRAND_TINT_LINE = "#FAD6BC"
+# Paleta del canal premium (Caza Errores), sin cambios.
+PREMIUM_ORANGE = "#FF9900"
+PREMIUM_TINT = "#FFF5E8"
+PREMIUM_TINT_LINE = "#F6E2C8"
+
+
+def _card_palette(logo_path) -> tuple[str, str, str]:
+    """Naranja y tonos suaves de la tarjeta según el canal: el logo de Caza Chollos marca la paleta free."""
+    try:
+        free = logo_path is not None and Path(logo_path).resolve() == DEAL_LOGO.resolve()
+    except OSError:
+        free = False
+    if free:
+        return BRAND_ORANGE, BRAND_TINT, BRAND_TINT_LINE
+    return PREMIUM_ORANGE, PREMIUM_TINT, PREMIUM_TINT_LINE
 
 
 def _is_trip(title: str) -> bool:
@@ -610,10 +629,11 @@ def _place_product(canvas, photo_box, offer: dict) -> None:
         _centered(draw, photo_box, y + mark.height + 18, label.upper(), _font(28, bold=True), "#131921")
 
 
-def _price_only_panel(draw, offer: dict, info_x: int, info_width: int, orange: str, muted: str) -> None:
+def _price_only_panel(draw, offer: dict, info_x: int, info_width: int, orange: str, muted: str,
+                      tint: str = "#FFF5E8", tint_line: str = "#F6E2C8") -> None:
     """Sin PVP fiable: una sola caja de precio, del mismo alto que el bloque completo."""
     box = (info_x, 420, 1028, 980)
-    draw.rounded_rectangle(box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
+    draw.rounded_rectangle(box, radius=24, fill=tint, outline=tint_line, width=2)
     draw.text((info_x + 24, 470), "PRECIO ACTUAL", font=_font(23, bold=True), fill=muted)
     price_font = _font(76, bold=True)
     price_text = euro(offer["current"])
@@ -662,7 +682,7 @@ def create_deal_card(offer: dict) -> Path:
 def create_price_card(offer: dict) -> Path:
     width, height = 1080, 1080
     ink = "#131921"
-    orange = "#FF9900"
+    orange, tint, tint_line = _card_palette(offer.get("logo_path"))
     muted = "#697078"
     paper = "#F4F5F5"
     canvas = Image.new("RGB", (width, height), paper)
@@ -753,7 +773,7 @@ def create_price_card(offer: dict) -> Path:
         _resale_panels(draw, offer, info_x, info_width, None, ink, orange, muted)
         return _save_card(canvas, offer)
     if offer.get("hide_reference") or no_previous:
-        _price_only_panel(draw, offer, info_x, info_width, orange, muted)
+        _price_only_panel(draw, offer, info_x, info_width, orange, muted, tint, tint_line)
         return _save_card(canvas, offer)
 
     savings = offer["reference"] - offer["current"]
@@ -775,7 +795,7 @@ def create_price_card(offer: dict) -> Path:
         draw.line((old_bounds[0] - 2, strike_y, old_bounds[2] + 2, strike_y), fill=muted, width=3)
 
         current_box = (info_x, 560, 1028, 770)
-        draw.rounded_rectangle(current_box, radius=24, fill="#FFF5E8", outline="#F6E2C8", width=2)
+        draw.rounded_rectangle(current_box, radius=24, fill=tint, outline=tint_line, width=2)
         draw.text((info_x + 24, 580), ("PRECIO DEL ERROR" if offer.get("sold_out") else "PRECIO ACTUAL"), font=_font(23, bold=True), fill=muted)
         price_font = _font(76, bold=True)
         price_text = euro(offer["current"])
