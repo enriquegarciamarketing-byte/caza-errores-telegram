@@ -1136,7 +1136,7 @@
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1321,6 +1321,62 @@
    ],
    "failures": [
     "Vinted solo tiene 0 anuncios parecidos (mínimo 8)",
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": false
+  },
+  "|sony wh-ch520, auriculares de diadema inalambricos bluetooth, diseno ligero, 50 h de bateria, carga rapida, ecualizador, llamadas nitidas|wallapop+milanuncios:sony ch520 auriculares": {
+   "t": 1793638510.0649724,
+   "prices": [
+    18.0,
+    20.0,
+    15.0,
+    20.0,
+    20.0,
+    19.0,
+    20.0,
+    20.0,
+    25.0,
+    12.0,
+    19.0,
+    17.0,
+    20.0,
+    19.0,
+    16.0,
+    23.5,
+    25.0,
+    17.0,
+    14.5,
+    29.9,
+    20.0,
+    25.0,
+    20.0,
+    25.0,
+    22.0,
+    25.0,
+    20.0,
+    17.0,
+    20.0,
+    45.0,
+    30.0,
+    25.0,
+    15.0,
+    35.0,
+    18.0,
+    19.0,
+    18.0,
+    35.0,
+    25.0
+   ],
+   "parts": [
+    [
+     "Wallapop",
+     39
+    ]
+   ],
+   "failures": [
     "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
    ],
    "transient": false,
@@ -3909,6 +3965,56 @@
    "http_status": 200,
    "bytes": 61145,
    "raw_count": 25
+  },
+  "|sony wh-ch520, auriculares de diadema inalambricos bluetooth, diseno ligero, 50 h de bateria, carga rapida, ecualizador, llamadas nitidas|sony ch520 auriculares": {
+   "t": 1793638509.9363823,
+   "query": "sony ch520 auriculares",
+   "prices": [
+    18.0,
+    20.0,
+    15.0,
+    20.0,
+    20.0,
+    19.0,
+    20.0,
+    20.0,
+    25.0,
+    12.0,
+    19.0,
+    17.0,
+    20.0,
+    19.0,
+    16.0,
+    23.5,
+    25.0,
+    17.0,
+    14.5,
+    29.9,
+    20.0,
+    25.0,
+    20.0,
+    25.0,
+    22.0,
+    25.0,
+    20.0,
+    17.0,
+    20.0,
+    45.0,
+    30.0,
+    25.0,
+    15.0,
+    35.0,
+    18.0,
+    19.0,
+    18.0,
+    35.0,
+    25.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 115123,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -3954,6 +4060,14 @@
   },
   "amazon|munich focus 04, zapatillas hombre (tallas 41, 43 y 44)|munich 04 focus": {
    "t": 1793261182.9624693,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  },
+  "|sony wh-ch520, auriculares de diadema inalambricos bluetooth, diseno ligero, 50 h de bateria, carga rapida, ecualizador, llamadas nitidas|sony ch520 auriculares": {
+   "t": 1793638510.0644407,
    "prices": [],
    "reserved": 0,
    "demand_known": false,
@@ -4092,7 +4206,8 @@
   "wallapop:cm-2052937": 1793631217.3063796,
   "wallapop:cm-2052795": 1793633588.078824,
   "wallapop:cm-2052708": 1793634790.0979288,
-  "wallapop:cm-2051074": 1793634790.9888558
+  "wallapop:cm-2051074": 1793634790.9888558,
+  "wallapop:cm-2053099": 1793638510.3649273
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -4922,9 +5037,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 5,
+ "rotation_index": 1,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/garmin-forerunner-265-envio-desde-espana-cupon-ventajas-paypal-2052610": 1793615084.3234198,
   "https://www.chollometro.com/ofertas/lego-disney-princess-calendario-de-adviento-2026-2052509": 1793619290.1481998,
   "https://www.chollometro.com/ofertas/barra-de-sonido-sony-ht-s40r-51-canales-600w-subwoofer-altavoces-traseros-inalambricos-dolby-digital-hdmi-arc-2052739": 1793619290.1481998,
   "https://www.chollometro.com/ofertas/auriculares-gaming-logitech-g-g325-lightspeed-inalambricos-bluetooth-audio-24-bits-24h-bateria-pc-ps5-switch-negro-oferta-amazon-2052647": 1793619290.1481998,
@@ -4947,7 +5061,8 @@
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-echelon-10-running-tallas-405-43-46-2052958": 1793631204.7408166,
   "https://www.chollometro.com/ofertas/adidas-performance-galaxy-8-m-zapatillas-running-asfalto-tallas-40-41-13-43-13-44-48-2052795": 1793633562.6161218,
   "https://www.chollometro.com/ofertas/procesador-amd-ryzen-5-7500f-cpu-r5-7500f-socket-am5-ddr5-5200-mhz-para-pc-de-escritorio-2051074": 1793634780.9893293,
-  "https://www.chollometro.com/ofertas/mando-inalambrico-pdp-afterglow-deluxe-nintendo-switch-iluminacion-prismatic-led-bateria-recargable-gris-oferta-amazon-espana-2052708": 1793634780.9893293
+  "https://www.chollometro.com/ofertas/mando-inalambrico-pdp-afterglow-deluxe-nintendo-switch-iluminacion-prismatic-led-bateria-recargable-gris-oferta-amazon-espana-2052708": 1793634780.9893293,
+  "https://www.chollometro.com/ofertas/sony-wh-ch520-auriculares-de-diadema-inalambricos-bluetooth-diseno-ligero-50-h-de-bateria-carga-rapida-ecualizador-llamadas-nitidas-2053099": 1793638507.2977524
  },
  "asked": {
   "cm-2052619": 1793613138,
