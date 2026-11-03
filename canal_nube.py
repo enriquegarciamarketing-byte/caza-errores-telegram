@@ -942,6 +942,7 @@ def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: in
             continue
         items.append({"asin": post["asin"], "title": post.get("title") or "", "price": float(price),
                       "reference": float(post["reference"]), "url": post["url"],
+                      "image": detail.get("image") or "",
                       "discount": discount_pct(float(price), float(post["reference"]))})
     items.sort(key=lambda item: item["discount"], reverse=True)
     return items[:limit]
@@ -971,6 +972,97 @@ def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
     return "\n".join(lines)
 
 
+def make_summary_collage(items: list[dict], download=None, max_products: int = 4) -> Path | None:
+    """Imagen de cierre del resumen: los mejores chollos con foto y precio en naranja y el logo del canal.
+
+    Devuelve None si no hay al menos 2 fotos que se puedan bajar (mejor sin imagen que una imagen pobre)."""
+    import io
+    import photos
+    from PIL import Image, ImageDraw
+    from publisher import BRAND_ORANGE, DEAL_LOGO, _font
+
+    download = download or photos.fetch_best
+    picked = []
+    for item in items:
+        if len(picked) >= max_products:
+            break
+        url = str(item.get("image") or "")
+        if not url:
+            continue
+        try:
+            raw = download(url)
+            photo = Image.open(io.BytesIO(raw)).convert("RGBA") if raw else None
+        except Exception:
+            photo = None
+        if photo is not None:
+            picked.append((item, photo))
+    if len(picked) < 2:
+        return None
+
+    width, height, margin = 2160, 1080, 50
+    canvas = Image.new("RGB", (width, height), "white")
+    draw = ImageDraw.Draw(canvas)
+    footer_top = 800
+    column = (width - 2 * margin) // len(picked)
+    tag_h = 110
+    for index, (item, photo) in enumerate(picked):
+        x0 = margin + index * column
+        # Precio en caja naranja, como las tarjetas de chollos
+        text = euro(item["price"]).replace(" €", "€")
+        size = 84
+        font = _font(size, bold=True)
+        while draw.textbbox((0, 0), text, font=font)[2] > column - 80 and size > 40:
+            size -= 4
+            font = _font(size, bold=True)
+        tb = draw.textbbox((0, 0), text, font=font)
+        tw, th = tb[2] - tb[0], tb[3] - tb[1]
+        box_w = tw + 56
+        bx = x0 + (column - box_w) // 2
+        by = margin
+        draw.rectangle([bx, by, bx + box_w, by + tag_h], fill=BRAND_ORANGE)
+        draw.text((bx + 28 - tb[0], by + (tag_h - th) // 2 - tb[1]), text, font=font, fill="white")
+        # Foto encajada debajo, centrada
+        area_top = by + tag_h + 30
+        area_w, area_h = column - 40, footer_top - area_top - 20
+        fitted = photo.copy()
+        fitted.thumbnail((area_w, area_h), Image.LANCZOS)
+        if fitted.width < area_w and fitted.height < area_h:
+            scale = min(area_w / fitted.width, area_h / fitted.height)
+            fitted = photo.resize((max(1, int(photo.width * scale)), max(1, int(photo.height * scale))), Image.LANCZOS)
+            fitted.thumbnail((area_w, area_h), Image.LANCZOS)
+        px = x0 + (column - fitted.width) // 2
+        py = area_top + (area_h - fitted.height) // 2
+        canvas.paste(fitted, (px, py), fitted)
+
+    # Pie: logo del canal y el nombre, a la derecha
+    logo_size = 250
+    logo = Image.open(DEAL_LOGO).convert("RGB").resize((logo_size, logo_size), Image.LANCZOS)
+    name_font = _font(110, bold=True)
+    sub_font = _font(46, bold=True)
+    name, sub = "Caza Chollos", "t.me/cazachollos_com"
+    nb = draw.textbbox((0, 0), name, font=name_font)
+    sb = draw.textbbox((0, 0), sub, font=sub_font)
+    text_w = max(nb[2] - nb[0], sb[2] - sb[0])
+    block_w = logo_size + 40 + text_w
+    lx = width - margin - block_w
+    ly = height - margin - logo_size
+    canvas.paste(logo, (lx, ly))
+    tx = lx + logo_size + 40
+    name_h, sub_h = nb[3] - nb[1], sb[3] - sb[1]
+    ty = ly + (logo_size - (name_h + 24 + sub_h)) // 2
+    draw.text((tx - nb[0], ty - nb[1]), name, font=name_font, fill="#1A1A1A")
+    draw.text((tx - sb[0], ty + name_h + 24 - sb[1]), sub, font=sub_font, fill=BRAND_ORANGE)
+    # A la izquierda del pie, el titular del cierre
+    head_font = _font(64, bold=True)
+    draw.text((margin, ly + 40), "LO MEJOR DE HOY", font=head_font, fill="#1A1A1A")
+    draw.text((margin, ly + 130), "EN AMAZON", font=head_font, fill=BRAND_ORANGE)
+
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    out = OUTPUT / "resumen.jpg"
+    canvas.save(out, "JPEG", quality=92)
+    return out
+
+
 def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolve_asin=None, log=print) -> int:
     rules = rules_from(cfg)
     fetch = fetch or http_get
@@ -994,6 +1086,7 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
                 continue
             items.append({"asin": deal["asin"], "title": deal["title"], "price": deal["price"],
                           "reference": deal["reference"], "discount": deal["discount"],
+                          "image": deal.get("image") or "",
                           "url": f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['tag']}"})
         items.sort(key=lambda item: item["discount"], reverse=True)
     if len(items) < int(rules.get("summary_min_items") or 3) and not args.test_private:
@@ -1011,6 +1104,16 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     message = tg.call("sendMessage", {"chat_id": target, "text": text, "parse_mode": "HTML",
                                       "disable_web_page_preview": True})
     log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos.")
+    # Al final del todo, la imagen con los mejores del día y el logo. Si falla, el resumen ya ha salido.
+    try:
+        collage = make_summary_collage(items)
+        if collage:
+            tg.send_photo(target, collage, "🔔 Mañana a las 8:00 más chollos en @cazachollos_com")
+            log("Resumen: imagen de cierre enviada.")
+        else:
+            log("Resumen: sin fotos suficientes para la imagen de cierre.")
+    except Exception as exc:
+        log(f"Resumen: no he podido mandar la imagen de cierre ({exc})")
     if not args.test_private:
         state["summary_sent"] = day.isoformat()
     return 0
