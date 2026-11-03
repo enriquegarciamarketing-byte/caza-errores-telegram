@@ -137,9 +137,9 @@ class Interes(unittest.TestCase):
                       "FILA Calzoncillos Hombre Boxer Pack de 4"]:
             self.assertTrue(cn.interest(title, REAL)["blocked"], title)
 
-    def test_las_categorias_estrella_salen_desde_el_30(self):
-        self.assertEqual(cn.interest("Cecotec Robot Aspirador Conga", REAL)["min_discount"], 30)
-        self.assertEqual(cn.interest("Samsung televisor smart tv 55", REAL)["min_discount"], 30)
+    def test_las_categorias_estrella_salen_desde_el_25(self):
+        self.assertEqual(cn.interest("Cecotec Robot Aspirador Conga", REAL)["min_discount"], 25)
+        self.assertEqual(cn.interest("Samsung televisor smart tv 55", REAL)["min_discount"], 25)
         self.assertIsNone(cn.interest("Rowenta Intense Comfort calefactor", REAL).get("min_discount"))
 
     def test_la_categoria_la_marca_el_arranque_del_titulo(self):
@@ -168,7 +168,7 @@ class Interes(unittest.TestCase):
         for title, label in casos.items():
             taste = cn.interest(title, REAL)
             self.assertEqual(taste["label"], label, title)
-            self.assertEqual(taste["min_discount"], 30, title)
+            self.assertEqual(taste["min_discount"], 25, title)
 
     def test_el_detergente_no_es_un_electrodomestico(self):
         for title in ["Ariel Todo en Uno Pods Detergente Lavadora en Cápsulas, 90 lavados",
@@ -189,15 +189,15 @@ class Interes(unittest.TestCase):
 class SinSilencios(unittest.TestCase):
     def test_tras_un_rato_sin_publicar_admite_rebajas_algo_menores(self):
         today = NOW.astimezone(cn.MADRID).date()
-        points = [[(today - timedelta(days=100)).isoformat(), 800.0], [today.isoformat(), 600.0]]
-        detail = dict(scanner.parse_detail(LEFANT), price=600.0,
+        points = [[(today - timedelta(days=100)).isoformat(), 800.0], [today.isoformat(), 640.0]]
+        detail = dict(scanner.parse_detail(LEFANT), price=640.0,
                       series=[{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png", "points": points}])
-        item = dict(item_for("R0ZG4Bv"), price=600.0)  # robot aspirador a -25 % de su mínimo de 30 días (800 €)
+        item = dict(item_for("R0ZG4Bv"), price=640.0)  # robot aspirador a -20 % de su mínimo de 30 días (800 €)
         why, _ = cn.evaluate(item, detail, REAL, NOW)
-        self.assertIn("solo -25%", why)
+        self.assertIn("solo -20%", why)
         why, deal = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
         self.assertEqual(why, "")
-        self.assertEqual(round(deal["discount"]), 25)
+        self.assertEqual(round(deal["discount"]), 20)
         detail["price"] = item["price"] = 720.0  # -10 %: ni en modo sin silencios
         detail["series"][0]["points"][-1][1] = 720.0
         why, _ = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
@@ -541,9 +541,9 @@ class MejorDescuentoReal(unittest.TestCase):
         self.assertEqual(cn.badge_for(deal["discount"], REAL, cn.real_drop(deal)), "ERROR DE PRECIO")
         self.assertEqual(cn.badge_for(75, REAL, cn.real_drop({"discount": 75})), "ERROR DE PRECIO")
 
-    def test_cualquier_categoria_desde_el_50(self):
-        self.assertEqual(REAL["interest"]["any_category_min_discount"], 50)
-        self.assertEqual(REAL["interest"]["any_category_min_price_eur"], 12)
+    def test_cualquier_categoria_desde_el_40(self):
+        self.assertEqual(REAL["interest"]["any_category_min_discount"], 40)
+        self.assertEqual(REAL["interest"]["any_category_min_price_eur"], 8)
 
     def test_deporte_tiene_categoria_propia(self):
         for title in ["Wilson Balón Baloncesto MVP Talla 7", "Bullpadel Pala de pádel Vertex",

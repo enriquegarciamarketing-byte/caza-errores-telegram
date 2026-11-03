@@ -278,10 +278,10 @@
     "core_sources": 8,
     "max_sources_per_run": 14,
     "max_price_age_minutes": 60,
-    "min_discount_pct": 40,
+    "min_discount_pct": 30,
     "error_discount_pct": 70,
     "max_discount_pct": 92,
-    "min_price_eur": 10,
+    "min_price_eur": 7,
     "max_price_eur": 3000,
     "min_rating": 4.0,
     "min_reviews": 10,
@@ -321,10 +321,10 @@
       "tarjeta regalo"
     ],
     "interest": {
-      "_nota": "Cuenta el mejor descuento real: frente al mínimo de los 30 días anteriores o frente a la media de los 90 días (y en ese caso tiene que haber bajado al menos un 10 % frente al mínimo de 30). Categorías top (las que llevan min_discount) desde -30 %, resto de categorías de la lista desde -40 %, cualquier otra categoría desde -50 % y 12 €. En su mínimo histórico, las top desde -15 %. Tras 40 min sin publicar baja a -22 % top, -30 % resto y -45 % cualquier categoría. Se publica primero lo de más descuento. block nunca sale.",
-      "any_category_min_discount": 50,
-      "any_category_fallback_min_discount": 45,
-      "any_category_min_price_eur": 12,
+      "_nota": "Cuenta el mejor descuento real: frente al mínimo de los 30 días anteriores o frente a la media de los 90 días (y en ese caso tiene que haber bajado al menos un 10 % frente al mínimo de 30). Categorías top (las que llevan min_discount) desde -25 %, resto de categorías de la lista desde -30 %, cualquier otra categoría desde -40 % y 8 €. En su mínimo histórico, las top desde -15 %. Tras 30 min sin publicar baja a -18 % top, -22 % resto y -30 % cualquier categoría. Se publica primero lo de más descuento. block nunca sale.",
+      "any_category_min_discount": 40,
+      "any_category_fallback_min_discount": 30,
+      "any_category_min_price_eur": 8,
       "tiers": [
         {
           "label": "Móviles y tablets",
@@ -346,7 +346,7 @@
             "ipad",
             "tablet"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Aspiradoras",
@@ -369,7 +369,7 @@
             "dyson v12",
             "dyson v8"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Cafeteras",
@@ -382,7 +382,7 @@
             "superautomatica",
             "molinillo de cafe"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Electrodomésticos",
@@ -410,7 +410,7 @@
             "mambo",
             "termo electrico"
           ],
-          "min_discount": 30,
+          "min_discount": 25,
           "not_if": [
             "detergente",
             "suavizante",
@@ -472,7 +472,7 @@
             "puf",
             "banco de almacenaje"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "TV y sonido",
@@ -496,7 +496,7 @@
             "sony wh",
             "sonos"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Informática",
@@ -516,7 +516,7 @@
             "webcam",
             "tarjeta grafica"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Consolas",
@@ -530,7 +530,7 @@
             "steam deck",
             "mando dualsense"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Súper y bebidas",
@@ -576,7 +576,7 @@
             "nutella",
             "nocilla"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Bebé",
@@ -599,7 +599,7 @@
             "vigilabebes",
             "bano de bebe"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Relojes inteligentes",
@@ -646,7 +646,7 @@
             "lejia",
             "friegasuelos concentrado"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Cocina",
@@ -728,7 +728,7 @@
             "friskies",
             "dentastix"
           ],
-          "min_discount": 30
+          "min_discount": 25
         },
         {
           "label": "Clima",
@@ -945,9 +945,9 @@
     },
     "close_time": "23:50",
     "summary_window_minutes": 100,
-    "silence_minutes": 40,
-    "fallback_min_discount_top": 22,
-    "fallback_min_discount": 30,
+    "silence_minutes": 30,
+    "fallback_min_discount_top": 18,
+    "fallback_min_discount": 22,
     "historical_low_min_discount": 15,
     "use_media90": true,
     "min_real_drop_pct": 10,
