@@ -1,111 +1,195 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 90 productos únicos
+Listados: 91 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36491 bytes, 30 chollos
-  Chollometro «Zapatilla Casual Unisex 530 New Balance Azul marino»: El Corte Inglés 65.0 €
-  Chollometro «Zapatillas Nike SB ZOOM JANOSKI OG+ (Tallas 36, 36.5, 37.5, 38 y 38.5)»: Zalando Privé 33.9 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 84931 bytes, 30 chollos
-  cm-2053698 · El Corte Inglés 65.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatilla Casual Unisex 530 New Balance Azul marino
-  cm-2054108 · Zalando Privé 33.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Nike SB ZOOM JANOSKI OG+ (Tallas 36, 36.5, 37.5, 
-  Vinted «zapatillas 36 nike»: HTTP 200, 3672308 bytes, 96 anuncios
-  Vinted «zapatillas 36 nike»: 28 parecidos de 96
-  Wallapop «zapatillas 36 nike»: 200 / 127665 bytes, 40 anuncios, 24 parecidos, 0 reservas
-  Milanuncios «zapatillas 36 nike»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa VINTED+WALLAPOP: 36 anuncios, ~20 €, no publica
-  ⚠️ No publico «Zapatillas Nike SB ZOOM JANOSKI OG+ (Tallas 36, 36.5, 37.5, 38 y 38.5)»: reventa en VINTED+WALLAPOP ~20 € (36 anuncios): ROI -50 % y -17 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «zapatilla 530 casual»: HTTP 200, 3685692 bytes, 96 anuncios
-  Vinted «zapatilla 530 casual»: 1 parecidos de 96
-  Wallapop «zapatilla 530 casual»: 200 / 61337 bytes, 19 anuncios, 0 parecidos, 0 reservas
-  Wallapop «zapatilla 530»: 200 / 125165 bytes, 40 anuncios, 0 parecidos, 0 reservas
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36450 bytes, 30 chollos
+  Chollometro «Móvil Xiaomi Redmi 15 5G 8GB+256GB, Snapdragon 6s Gen 3 5G, cámara dua»: Miravia 150.99 €
+  Chollometro «LEGO Technic Hypercar Koenigsegg Jesko Absolut Gris 42173 (801 piezas,»: Privalia 34.99 €
+  Chollometro «LEGO Star Wars Calendario de Adviento 2026»: Miravia 29.61 €
+  Chollometro «Figura construible LEGO One Piece Tony Tony Chopper (75643)»: Miravia 43.9 €
+  Chollometro «LEGO Technic El Planeta Tierra y la Luna en Orbita 42179 (526 piezas, »: Privalia 54.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 80592 bytes, 30 chollos
+  cm-2051121 · Miravia 150.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Móvil Xiaomi Redmi 15 5G 8GB+256GB, Snapdragon 6s Gen 3 5G, 
+  cm-2053893 · Privalia 34.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Technic Hypercar Koenigsegg Jesko Absolut Gris 42173 (8
+  cm-2054504 · Miravia 29.61 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Star Wars Calendario de Adviento 2026
+  cm-2054513 · Miravia 43.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Figura construible LEGO One Piece Tony Tony Chopper (75643)
+  cm-2053891 · Privalia 54.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Technic El Planeta Tierra y la Luna en Orbita 42179 (52
+  Wallapop «figura 75643 construible»: 200 / 1282 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «figura 75643»: 200 / 10990 bytes, 4 anuncios, 0 parecidos, 0 reservas
   Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
-  Milanuncios «zapatilla 530 casual»: HTTP 403, 95511 bytes
+  Milanuncios «figura 75643 construible»: HTTP 403, 95511 bytes
   Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa VINTED: 1 anuncios, ~0 €, no publica
-  ⚠️ No publico «Zapatilla Casual Unisex 530 New Balance Azul marino»: VINTED solo tiene 1 anuncios parecidos (mínimo 3) · Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Figura construible LEGO One Piece Tony Tony Chopper (75643)»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop «lego v8 technic»: 200 / 137965 bytes, 39 anuncios, 1 parecidos, 0 reservas
+  Wallapop «lego v8»: 200 / 105374 bytes, 38 anuncios, 12 parecidos, 0 reservas
+  Milanuncios «lego v8 technic»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 8 anuncios, ~32 €, no publica
+  ⚠️ No publico «LEGO Technic Hypercar Koenigsegg Jesko Absolut Gris 42173 (801 piezas, motor V8, puertas d»: reventa en WALLAPOP ~32 € (8 anuncios): ROI -18 % y -6 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «lego 42179 technic»: 200 / 8148 bytes, 3 anuncios, 3 parecidos, 0 reservas
+  Milanuncios «lego 42179 technic»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
+  ⚠️ No publico «LEGO Technic El Planeta Tierra y la Luna en Orbita 42179 (526 piezas, modelo astronomico, »: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop «movil 5g xiaomi»: 200 / 110839 bytes, 40 anuncios, 30 parecidos, 0 reservas
+  Milanuncios «movil 5g xiaomi»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 29 anuncios, ~121 €, no publica
+  ⚠️ No publico «Móvil Xiaomi Redmi 15 5G 8GB+256GB, Snapdragon 6s Gen 3 5G, cámara dual de 50MP»: reventa en WALLAPOP ~121 € (29 anuncios): ROI -25 % y -38 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 2026 star»: 200 / 101045 bytes, 36 anuncios, 8 parecidos, 0 reservas
+  Milanuncios «lego 2026 star»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 7 anuncios, ~27 €, no publica
+  ⚠️ No publico «LEGO Star Wars Calendario de Adviento 2026»: reventa en WALLAPOP ~27 € (7 anuncios): ROI -21 % y -6 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 27 descartes nuevos, 68 en lista
-== pasada 2 · 17:46 ==
-Listados: 96 productos únicos
+Cascada al canal normal: 39 descartes nuevos, 85 en lista
+== pasada 2 · 18:40 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 17:48 ==
-Listados: 97 productos únicos
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 3 · 18:43 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 17:51 ==
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 4 · 18:45 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  7PNOQOd · 318.99 € · media 370.73 · ref 307.46 → descartado (la referencia corregida no supera el precio (media inflada)) · Garmin Venu 3S, Smartwatch con GPS, Beige Gold
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 5 · 18:48 ==
 Listados: 102 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35706 bytes, 30 chollos
+  Chollometro «NBA 2K27 ED ESTANDAR PS5»: Miravia 34.99 €
+  Chollometro «LEGO 72154 Pokémon Poké Ball: Grandes Momentos del Entrenador»: Miravia 186.49 €
+  Chollometro «NBA 2K27 PlayStation 5»: El Corte Inglés 34.9 €
+  Chollometro «LEGO 72154 Pokémon Poké Ball: Grandes Momentos del Entrenador – Kit de»: Miravia 201.49 €
+  Chollometro «LEGO 72046 Super Mario: Game Boy»: Miravia 37.04 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 79800 bytes, 30 chollos
+  cm-2054507 · Miravia 34.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · NBA 2K27 ED ESTANDAR PS5
+  cm-2054536 · Miravia 186.49 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO 72154 Pokémon Poké Ball: Grandes Momentos del Entrenado
+  cm-2054493 · El Corte Inglés 34.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · NBA 2K27 PlayStation 5
+  cm-2054508 · Miravia 37.04 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO 72046 Super Mario: Game Boy
+  Wallapop «nba 2k27 estandar»: 200 / 1265 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «nba 2k27»: 200 / 62295 bytes, 34 anuncios, 34 parecidos, 0 reservas
+  Milanuncios «nba 2k27 estandar»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 34 anuncios, ~50 €, no publica
+  ⚠️ No publico «NBA 2K27 ED ESTANDAR PS5»: reventa en WALLAPOP ~50 € (34 anuncios): ROI 30 % y 11 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «nba 2k27 playstation»: 200 / 59177 bytes, 32 anuncios, 32 parecidos, 0 reservas
+  Milanuncios «nba 2k27 playstation»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 32 anuncios, ~50 €, no publica
+  ⚠️ No publico «NBA 2K27 PlayStation 5»: reventa en WALLAPOP ~50 € (32 anuncios): ROI 30 % y 11 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «lego 72154 pokemon»: 200 / 7134 bytes, 3 anuncios, 3 parecidos, 0 reservas
+  Milanuncios «lego 72154 pokemon»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 3 anuncios, ~150 €, no publica
+  ⚠️ No publico «LEGO 72154 Pokémon Poké Ball: Grandes Momentos del Entrenador»: reventa en WALLAPOP ~150 € (3 anuncios): ROI -25 % y -46 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 72046 super»: 200 / 23051 bytes, 8 anuncios, 8 parecidos, 0 reservas
+  Milanuncios «lego 72046 super»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 8 anuncios, ~48 €, no publica
+  ⚠️ No publico «LEGO 72046 Super Mario: Game Boy»: reventa en WALLAPOP ~48 € (8 anuncios): ROI 17 % y 6 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 17:53 ==
-Listados: 93 productos únicos
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 6 · 18:50 ==
+Listados: 91 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36745 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 86147 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 17:56 ==
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 7 · 18:53 ==
 Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 17:58 ==
-Listados: 99 productos únicos
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 8 · 18:55 ==
+Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 18:01 ==
-Listados: 103 productos únicos
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 9 · 18:58 ==
+Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35751 bytes, 30 chollos
+  Chollometro «Robot Aspirador y Fregasuelos iRobot 115 Combo + Autovaciado + Pack de»: PcComponentes 169.99 €
+  Chollometro «UNDER ARMOUR Zapatillas de baloncesto Spawn - Azul oscuro. Gris o Rojo»: Showroomprive 29.9 €
+  Chollometro «LEGO 72160 Pokémon Arcanine – Set de Construcción de Figura de Pokémon»: Miravia 62.69 €
+  Chollometro «LEGO 40806 Star Wars Caminante AT-AT de Pan de Jengibre de Juguete»: Miravia 39.47 €
+  Chollometro «Set de construcción LEGO Pokémon Rayquaza (72168) – 1083 piezas»: Miravia 91.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 85361 bytes, 30 chollos
+  cm-2054401 · PcComponentes 169.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Robot Aspirador y Fregasuelos iRobot 115 Combo + Autovaciado
+  cm-2054444 · Showroomprive 29.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · UNDER ARMOUR Zapatillas de baloncesto Spawn - Azul oscuro. G
+  cm-2020370 · Miravia 62.69 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO 72160 Pokémon Arcanine – Set de Construcción de Figura 
+  cm-2051144 · Miravia 39.47 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO 40806 Star Wars Caminante AT-AT de Pan de Jengibre de J
+  cm-2054411 · Miravia 91.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Set de construcción LEGO Pokémon Rayquaza (72168) – 1083 pie
+  Vinted «under 31 armour»: HTTP 200, 3677207 bytes, 96 anuncios
+  Vinted «under 31 armour»: 23 parecidos de 96
+  Wallapop «under 31 armour»: 200 / 131843 bytes, 36 anuncios, 8 parecidos, 0 reservas
+  Milanuncios «under 31 armour»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 24 anuncios, ~10 €, no publica
+  ⚠️ No publico «UNDER ARMOUR Zapatillas de baloncesto Spawn - Azul oscuro. Gris o Rojo a 31.99€»: reventa en VINTED+WALLAPOP ~10 € (24 anuncios): ROI -75 % y -22 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «robot 115 aspirador»: 200 / 79396 bytes, 26 anuncios, 12 parecidos, 0 reservas
+  Milanuncios «robot 115 aspirador»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 12 anuncios, ~117 €, no publica
+  ⚠️ No publico «Robot Aspirador y Fregasuelos iRobot 115 Combo + Autovaciado + Pack de 3 Bolsas»: reventa en WALLAPOP ~117 € (12 anuncios): ROI -39 % y -67 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 72160 pokemon»: 200 / 37396 bytes, 15 anuncios, 15 parecidos, 0 reservas
+  Milanuncios «lego 72160 pokemon»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 15 anuncios, ~74 €, no publica
+  ⚠️ No publico «LEGO 72160 Pokémon Arcanine – Set de Construcción de Figura de Pokémon – Personaje Articul»: reventa en WALLAPOP ~74 € (15 anuncios): ROI 9 % y 5 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 40806 star»: 200 / 72866 bytes, 29 anuncios, 28 parecidos, 0 reservas
+  Milanuncios «lego 40806 star»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 28 anuncios, ~60 €, no publica
+  ⚠️ No publico «LEGO 40806 Star Wars Caminante AT-AT de Pan de Jengibre de Juguete»: reventa en WALLAPOP ~60 € (28 anuncios): ROI 39 % y 15 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «construccion 72168 lego»: 200 / 7228 bytes, 3 anuncios, 3 parecidos, 0 reservas
+  Milanuncios «construccion 72168 lego»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 3 anuncios, ~90 €, no publica
+  ⚠️ No publico «Set de construcción LEGO Pokémon Rayquaza (72168) – 1083 piezas»: reventa en WALLAPOP ~90 € (3 anuncios): ROI -8 % y -8 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 18:03 ==
+== pasada 10 · 19:00 ==
 Listados: 90 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36958 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67036 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 18:06 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 18:08 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 18:11 ==
-Listados: 104 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 18:13 ==
-Listados: 88 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36960 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67529 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 18:16 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 18:18 ==
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 11 · 19:03 ==
 Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 18:21 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  MKydv04 · 462.99 € · media 767.17 · ref 533.41 → descartado (solo -13% bajo la referencia) · Bose Barra de Sonido Inteligente Smart Ultra Dolby Atmos, Co
+== pasada 12 · 19:05 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 19:08 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35751 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73141 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 19:10 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 19:13 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 19:15 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
 Fin de la ejecución tras 16 pasadas.
