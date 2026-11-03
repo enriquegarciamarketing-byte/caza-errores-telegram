@@ -1270,33 +1270,15 @@
    "url": "https://es.aliexpress.com/item/1005009840998691.html",
    "alert_id": 231,
    "alert_text_id": 232,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1793665536,
-   "card_data": {
-    "title": "Nintendo Switch 2 Joy-Con 2 pares - Azul claro/Rojo",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 50.17,
-    "reference": 79.9,
-    "image": "https://static.chollometro.com/threads/raw/4q3Im/2053475_1/re/150x150/qt/55/2053475_1.jpg",
-    "store_label": "AliExpress",
-    "conditions": "Con cupón",
-    "resale": {
-     "price": 129.998,
-     "count": 28,
-     "roi": 142.17281243771174,
-     "profit": 71.32809999999998,
-     "source_label": "WALLAPOP",
-     "note": "28 anuncios de referencia · Wallapop · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   }
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 91,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -6370,9 +6352,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 11,
+ "rotation_index": 7,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/nike-air-force-1-07-lv8-tech-zapatillas-blanco-tallas-38-a-49-2053263": 1793643417.704888,
   "https://www.chollometro.com/ofertas/lego-fortnite-77073-autobus-de-batalla-set-de-construccion-coleccionista-con-9-minifiguras-precio-nuevas-cuentas-antiguas-10-eur-mas-2053299": 1793645713.0311894,
   "https://www.chollometro.com/ofertas/garmin-forerunner-165-reloj-inteligente-para-correr-con-gps-negro-2052962": 1793645713.0311894,
   "https://www.chollometro.com/ofertas/lego-star-wars-75379-r2-d2-droide-construible-de-1050-piezas-precio-nuevas-cuentas-antiguas-10eur-mas-2053287": 1793645713.0311894,
