@@ -1333,12 +1333,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793704695
+   "checked": 1793708001
   }
  ],
  "tg_offset": 334822059,
  "admin_chat_id": 9188393228,
- "last_listing_count": 88,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -5539,6 +5539,16 @@
    "http_status": 200,
    "bytes": 77224,
    "raw_count": 24
+  },
+  "|western digital wds100t2xhe ssd 1000 gb m.2 7300 mb/s pci express 4.0 nvme|western wds100t2xhe digital": {
+   "t": 1793705772.0386033,
+   "query": "western wds100t2xhe digital",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -5766,7 +5776,8 @@
   "wallapop:cm-2053820": 1793700168.7846253,
   "wallapop:cm-2053848": 1793702471.4117513,
   "wallapop:cm-2053761": 1793702472.326438,
-  "wallapop:cm-2052344": 1793703667.0122917
+  "wallapop:cm-2052344": 1793703667.0122917,
+  "wallapop:cm-2054063": 1793705772.6734571
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -7266,10 +7277,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 9,
+ "rotation_index": 5,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2053553": 1793683685.134454,
-  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregador-ilife-v5s-ultra-5eur-menos-con-cupon-ventaja-2051700": 1793685487.6966248,
   "https://www.chollometro.com/ofertas/robot-aspirador-friegasuelos-ilife-a30-pro-2053600": 1793687339.491504,
   "https://www.chollometro.com/ofertas/silent-hill-townfall-ps5-juego-fisico-para-playstation-5-version-espanola-garantia-2053580": 1793687939.2966075,
   "https://www.chollometro.com/ofertas/new-balance-zapatilla-de-running-de-hombre-freshfoam-arishi-v4-tiralux-2053654": 1793692124.69103,
@@ -7287,7 +7296,8 @@
   "https://www.chollometro.com/ofertas/juego-lies-of-p-para-playstation-5-ps5-playstation-5-ps5-pal-eu-nuevo-original-precintado-2053820": 1793700160.797332,
   "https://www.chollometro.com/ofertas/barra-de-sonido-51-sony-ht-s40r-600w-altavoces-traseros-inalambricos-dolby-digital-hdmi-arc-bluetooth-2053761": 1793702464.1750464,
   "https://www.chollometro.com/ofertas/zapatillas-nike-streakfly-2-para-miembros-plus-2053848": 1793702464.1750464,
-  "https://www.chollometro.com/ofertas/roborock-q10-s5-set-robot-aspirador-y-fregasuelos-succion-de-10000-pa-2052344": 1793703661.6212094
+  "https://www.chollometro.com/ofertas/roborock-q10-s5-set-robot-aspirador-y-fregasuelos-succion-de-10000-pa-2052344": 1793703661.6212094,
+  "https://www.chollometro.com/ofertas/western-digital-wds100t2xhe-ssd-1000-gb-m2-7300-mbs-pci-express-40-nvme-2054063": 1793705766.9023056
  },
  "asked": {
   "cm-2053299": 1793645724,
