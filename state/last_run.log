@@ -1,106 +1,125 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 92 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  RJX29G5 · 41.77 € · media 82.31 · ref 36.86 → descartado (la referencia corregida no supera el precio (media inflada)) · Tommy Hilfiger Tote Bag Hombre Heritage de canvas, Marrón (W
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36646 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 89128 bytes, 30 chollos
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37243 bytes, 30 chollos
+  Chollometro «Roborock Q10VF+ Robot aspirador y fregasuelos con base de autovaciado,»: PcComponentes 159.0 €
+  Chollometro «Micrófono DJI Mic Mini 2TX 1RX (Desde España) (37,22€ con cupón ventaj»: AliExpress 42.22 €
+  Chollometro «Mando con cable Rematch Advanced - Purple Fade - Xbox Series X - PEGI »: Veepee 25.99 €
+  Chollometro «Zapatillas New Balance Flite-R (Tallas 41.5 a 45)»: Alssport 55.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 95676 bytes, 30 chollos
+  cm-2046681 · PcComponentes 159.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Roborock Q10VF+ Robot aspirador y fregasuelos con base de au
+  cm-2054067 · AliExpress 42.22 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Micrófono DJI Mic Mini 2TX 1RX (2 unidades por 57,60€)
+  cm-2054176 · Veepee 25.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Mando con cable Rematch Advanced - Purple Fade - Xbox Series
+  cm-2054039 · Alssport 55.0 € → candidato externo · Zapatillas New Balance Flite-R (Tallas 41.5 a 45)
+  Vinted «zapatillas 41 new»: HTTP 200, 3680011 bytes, 96 anuncios
+  Vinted «zapatillas 41 new»: 16 parecidos de 96
+  Wallapop «zapatillas 41 new»: 200 / 115269 bytes, 40 anuncios, 20 parecidos, 0 reservas
+  Milanuncios «zapatillas 41 new»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Reventa VINTED+WALLAPOP: 28 anuncios, ~24 €, no publica
+  ⚠️ No publico «Zapatillas New Balance Flite-R (Tallas 41.5 a 45)»: reventa en VINTED+WALLAPOP ~24 € (28 anuncios): ROI -61 % y -34 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «mando cable»: 200 / 108199 bytes, 40 anuncios, 15 parecidos, 0 reservas
+  Milanuncios «mando cable»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Reventa WALLAPOP: 12 anuncios, ~14 €, no publica
+  ⚠️ No publico «Mando con cable Rematch Advanced - Purple Fade - Xbox Series X - PEGI 7»: reventa en WALLAPOP ~14 € (12 anuncios): ROI -58 % y -15 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «microfono 2tx dji»: 200 / 97406 bytes, 27 anuncios, 2 parecidos, 0 reservas
+  Wallapop «microfono 2tx»: 200 / 103922 bytes, 31 anuncios, 6 parecidos, 0 reservas
+  Milanuncios «microfono 2tx dji»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Reventa WALLAPOP: 5 anuncios, ~65 €, no publica
+  ⚠️ No publico «Micrófono DJI Mic Mini 2TX 1RX (2 unidades por 57,60€)»: reventa en WALLAPOP ~65 € (5 anuncios): ROI 42 % y 18 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «roborock q10vf robot»: 200 / 3874 bytes, 1 anuncios, 0 parecidos, 0 reservas
+  Wallapop «roborock q10vf»: 200 / 2997 bytes, 1 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «roborock q10vf robot»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  ⚠️ No publico «Roborock Q10VF+ Robot aspirador y fregasuelos con base de autovaciado, 10.000 Pa, LiDAR, 1»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95512 bytes))
 Publicados en esta ejecución: 0
-Cascada al canal normal: 41 descartes nuevos, 82 en lista
-== pasada 2 · 13:38 ==
+Cascada al canal normal: 30 descartes nuevos, 66 en lista
+== pasada 2 · 14:56 ==
 Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 3 · 13:41 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 4 · 13:43 ==
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 3 · 14:58 ==
 Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 5 · 13:46 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36906 bytes, 30 chollos
-  Chollometro «Auriculares Apple AirPods 5 con Carga Inalambrica y ANC (traduccion ti»: MediaMarkt 155.0 €
-  Chollometro «Aspiradora Dyson V15 Detect Absolute + Kit Limpieza a Fondo (240AW, Il»: Dyson 557.67 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 94624 bytes, 30 chollos
-  cm-2054101 · MediaMarkt 155.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Auriculares Apple AirPods 5 con Carga Inalambrica y ANC (tra
-  cm-2054024 · Dyson 557.67 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Aspiradora Dyson V15 Detect Absolute + Kit Limpieza a Fondo 
-  Wallapop «aspiradora v15 dyson»: 200 / 123234 bytes, 40 anuncios, 32 parecidos, 0 reservas
-  Milanuncios «aspiradora v15 dyson»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa WALLAPOP: 17 anuncios, ~35 €, no publica
-  ⚠️ No publico «Aspiradora Dyson V15 Detect Absolute + Kit Limpieza a Fondo (240AW, Iluminacion Fluffy Opt»: reventa en WALLAPOP ~35 € (17 anuncios): ROI -95 % y -532 €, por debajo del mínimo (25 % y 25 €)
-  Wallapop «auriculares h2 apple»: 200 / 126182 bytes, 37 anuncios, 1 parecidos, 0 reservas
-  Wallapop «auriculares h2»: 200 / 134774 bytes, 40 anuncios, 5 parecidos, 0 reservas
-  Milanuncios «auriculares h2 apple»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa WALLAPOP: 4 anuncios, ~18 €, no publica
-  ⚠️ No publico «Auriculares Apple AirPods 5 con Carga Inalambrica y ANC (traduccion tiempo real, audio ada»: reventa en WALLAPOP ~18 € (4 anuncios): ROI -90 % y -140 €, por debajo del mínimo (25 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 6 · 13:48 ==
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 4 · 15:01 ==
 Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
+Candidatos nuevos tras el filtro rápido: 1
+  Mdg3gE8 · 63.0 € · media 79.2 · ref 62.48 → descartado (la referencia corregida no supera el precio (media inflada)) · Reebok NANOFLEX TR 3 - Zapatillas Deportivas para Hombre, Co
 Publicados en esta ejecución: 0
-Cascada al canal normal: 56 descartes nuevos, 56 en lista
-== pasada 7 · 13:51 ==
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 5 · 15:03 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37028 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 91372 bytes, 30 chollos
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 13:53 ==
-Listados: 100 productos únicos
+== pasada 6 · 15:06 ==
+Listados: 94 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 13:56 ==
-Listados: 105 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37167 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 94005 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 13:58 ==
-Listados: 89 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 14:01 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 14:03 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 14:06 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37168 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 95565 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 14:08 ==
-Listados: 90 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 14:11 ==
+== pasada 7 · 15:08 ==
 Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 16 · 14:13 ==
-Listados: 100 productos únicos
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 8 · 15:11 ==
+Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 9 · 15:13 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37206 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 84224 bytes, 30 chollos
+Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 10 · 15:16 ==
+Listados: 93 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 15:18 ==
+Listados: 96 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 12 · 15:21 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 15:23 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37449 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71798 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 15:26 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 15 · 15:28 ==
+Listados: 90 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 16 · 15:31 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 2
+  1D6o0dO · 32.57 € · media 100.33 · ref 87.71 → descartado (valoraciones flojas (3.7 / 446)) · OhO sunshine OHO Ultra‑Light Smart Glasses with Camera, 24MP
+  7kAGLV1 · 569.0 € · media 871.4 · ref 569.00 → descartado (la referencia corregida no supera el precio (media inflada)) · dreame Matrix10 Pro Robot Aspirador, 30.000 Pa, Base Cambio 
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
 Fin de la ejecución tras 16 pasadas.
