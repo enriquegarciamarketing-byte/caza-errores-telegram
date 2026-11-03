@@ -851,9 +851,9 @@
    "result": "solo -8% bajo la referencia"
   },
   "72Yyj2G": {
-   "price": 29.94,
-   "t": 1793542481,
-   "result": "solo -0% bajo la referencia"
+   "price": 30.05,
+   "t": 1793684270,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "M6Bp40M": {
    "price": 84.99,
@@ -1283,12 +1283,12 @@
  ],
  "tg_offset": 334822056,
  "admin_chat_id": 9188393228,
- "last_listing_count": 91,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
  "discovery_cache": {
-  "t": 1793681782.7328188,
+  "t": 1793685487.6964033,
   "titles": []
  },
  "resale_cache": {
@@ -6323,14 +6323,14 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 12,
+ "rotation_index": 8,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2053553": 1793661136.1705737,
-  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregador-ilife-v5s-ultra-5eur-menos-con-cupon-ventaja-2051700": 1793663479.2614028,
   "https://www.chollometro.com/ofertas/procesador-amd-ryzen-7-9800x3d-8-nucleos-16-hilos-2049748": 1793669573.151855,
   "https://www.chollometro.com/ofertas/bascula-digital-garmin-index-s2-2053339": 1793669573.151855,
   "https://www.chollometro.com/ofertas/reloj-casio-g-shock-g-steel-2052855": 1793669573.151855,
-  "https://www.chollometro.com/ofertas/asics-zapatillas-de-padel-solution-swift-ff-2-mujer-20-extra-con-codigo-2052944": 1793681330.1916976
+  "https://www.chollometro.com/ofertas/asics-zapatillas-de-padel-solution-swift-ff-2-mujer-20-extra-con-codigo-2052944": 1793681330.1916976,
+  "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2053553": 1793683685.134454,
+  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregador-ilife-v5s-ultra-5eur-menos-con-cupon-ventaja-2051700": 1793685487.6966248
  },
  "asked": {
   "cm-2052619": 1793613138,
