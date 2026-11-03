@@ -247,115 +247,38 @@
     "amazon_photo": true,
     "admin_username": "Darkness_gg",
     "sources": [
-      "https://jimmyleaks.com/es/minimos-de-hoy/",
       "https://jimmyleaks.com/es/?order=-modified",
-      "https://jimmyleaks.com/es/c/electronica/?order=-modified",
+      "https://jimmyleaks.com/es/?order=-modified&page=2",
+      "https://jimmyleaks.com/es/?order=-modified&page=3",
+      "https://jimmyleaks.com/es/?order=-modified&page=4",
+      "https://jimmyleaks.com/es/?order=-modified&page=5",
+      "https://jimmyleaks.com/es/?order=-modified&page=6",
+      "https://jimmyleaks.com/es/minimos-de-hoy/",
+      "https://jimmyleaks.com/es/minimos-de-hoy/?page=2",
       "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified",
-      "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-modified",
-      "https://jimmyleaks.com/es/c/informatica/?order=-modified",
-      "https://jimmyleaks.com/es/c/videojuegos/?order=-modified",
-      "https://jimmyleaks.com/es/c/belleza/?order=-modified",
-      "https://jimmyleaks.com/es/c/salud-y-cuidado-personal/?order=-modified",
-      "https://jimmyleaks.com/es/c/bricolaje-y-herramientas/?order=-modified",
+      "https://jimmyleaks.com/es/c/electronica/?order=-modified",
       "https://jimmyleaks.com/es/c/deportes-y-aire-libre/?order=-modified",
-      "https://jimmyleaks.com/es/c/juguetes-y-juegos/?order=-modified",
+      "https://jimmyleaks.com/es/c/belleza/?order=-modified",
+      "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-modified",
       "https://jimmyleaks.com/es/c/moda/?order=-modified",
-      "https://jimmyleaks.com/es/c/jardin/?order=-modified",
+      "https://jimmyleaks.com/es/c/informatica/?order=-modified",
+      "https://jimmyleaks.com/es/c/juguetes-y-juegos/?order=-modified",
+      "https://jimmyleaks.com/es/c/salud-y-cuidado-personal/?order=-modified",
       "https://jimmyleaks.com/es/c/bebe/?order=-modified",
       "https://jimmyleaks.com/es/c/alimentacion-y-bebidas/?order=-modified",
+      "https://jimmyleaks.com/es/c/videojuegos/?order=-modified",
+      "https://jimmyleaks.com/es/c/bricolaje-y-herramientas/?order=-modified",
       "https://jimmyleaks.com/es/c/productos-para-mascotas/?order=-modified",
-      "https://jimmyleaks.com/es/marca/coosur/?order=-modified",
-      "https://jimmyleaks.com/es/marca/nescafe/?order=-modified",
-      "https://jimmyleaks.com/es/marca/nescafe-dolce-gusto/?order=-modified",
-      "https://jimmyleaks.com/es/marca/roborock/?order=-modified",
-      "https://jimmyleaks.com/es/marca/dreame/?order=-modified",
-      "https://jimmyleaks.com/es/marca/cecotec/?order=-modified",
-      "https://jimmyleaks.com/es/marca/delonghi/?order=-modified",
-      "https://jimmyleaks.com/es/marca/xiaomi/?order=-modified",
-      "https://jimmyleaks.com/es/marca/samsung/?order=-modified",
-      "https://jimmyleaks.com/es/marca/apple/?order=-modified",
-      "https://jimmyleaks.com/es/marca/philips/?order=-modified",
-      "https://jimmyleaks.com/es/marca/lg/?order=-modified",
-      "https://jimmyleaks.com/es/marca/sony/?order=-modified",
-      "https://jimmyleaks.com/es/marca/dyson/?order=-modified",
-      "https://jimmyleaks.com/es/marca/cosori/?order=-modified",
-      "https://jimmyleaks.com/es/marca/rowenta/?order=-modified",
-      "https://jimmyleaks.com/es/marca/braun/?order=-modified",
-      "https://jimmyleaks.com/es/marca/bosch/?order=-modified",
-      "https://jimmyleaks.com/es/marca/lefant/?order=-modified",
-      "https://jimmyleaks.com/es/marca/ecovacs/?order=-modified",
-      "https://jimmyleaks.com/es/marca/irobot/?order=-modified",
-      "https://jimmyleaks.com/es/marca/krups/?order=-modified",
-      "https://jimmyleaks.com/es/marca/tefal/?order=-modified",
-      "https://jimmyleaks.com/es/marca/moulinex/?order=-modified",
-      "https://jimmyleaks.com/es/marca/jbl/?order=-modified",
-      "https://jimmyleaks.com/es/marca/lenovo/?order=-modified",
-      "https://jimmyleaks.com/es/marca/asus/?order=-modified",
-      "https://jimmyleaks.com/es/marca/hp/?order=-modified",
-      "https://jimmyleaks.com/es/marca/oral-b/?order=-modified",
-      "https://jimmyleaks.com/es/marca/taurus/?order=-modified",
-      "https://jimmyleaks.com/es/marca/ninja/?order=-modified",
-      "https://jimmyleaks.com/es/marca/hisense/?order=-modified",
-      "https://jimmyleaks.com/es/marca/tcl/?order=-modified",
-      "https://jimmyleaks.com/es/marca/huawei/?order=-modified",
-      "https://jimmyleaks.com/es/marca/oppo/?order=-modified",
-      "https://jimmyleaks.com/es/marca/realme/?order=-modified",
-      "https://jimmyleaks.com/es/marca/eufy/?order=-modified",
-      "https://jimmyleaks.com/es/marca/tineco/?order=-modified",
-      "https://jimmyleaks.com/es/marca/shark/?order=-modified",
-      "https://jimmyleaks.com/es/marca/bissell/?order=-modified",
-      "https://jimmyleaks.com/es/marca/proscenic/?order=-modified",
-      "https://jimmyleaks.com/es/marca/mova/?order=-modified",
-      "https://jimmyleaks.com/es/marca/karcher/?order=-modified",
-      "https://jimmyleaks.com/es/marca/polti/?order=-modified",
-      "https://jimmyleaks.com/es/marca/nespresso/?order=-modified",
-      "https://jimmyleaks.com/es/marca/melitta/?order=-modified",
-      "https://jimmyleaks.com/es/marca/siemens/?order=-modified",
-      "https://jimmyleaks.com/es/marca/balay/?order=-modified",
-      "https://jimmyleaks.com/es/marca/teka/?order=-modified",
-      "https://jimmyleaks.com/es/marca/haier/?order=-modified",
-      "https://jimmyleaks.com/es/marca/russell-hobbs/?order=-modified",
-      "https://jimmyleaks.com/es/marca/instant-pot/?order=-modified",
-      "https://jimmyleaks.com/es/marca/motorola/?order=-modified",
-      "https://jimmyleaks.com/es/marca/google/?order=-modified",
-      "https://jimmyleaks.com/es/marca/honor/?order=-modified",
-      "https://jimmyleaks.com/es/marca/nothing/?order=-modified",
-      "https://jimmyleaks.com/es/marca/nintendo/?order=-modified",
-      "https://jimmyleaks.com/es/marca/playstation/?order=-modified",
-      "https://jimmyleaks.com/es/marca/logitech/?order=-modified",
-      "https://jimmyleaks.com/es/marca/msi/?order=-modified",
-      "https://jimmyleaks.com/es/marca/acer/?order=-modified",
-      "https://jimmyleaks.com/es/marca/dell/?order=-modified",
-      "https://jimmyleaks.com/es/marca/garmin/?order=-modified",
-      "https://jimmyleaks.com/es/marca/amazfit/?order=-modified",
-      "https://jimmyleaks.com/es/marca/bose/?order=-modified",
-      "https://jimmyleaks.com/es/marca/sonos/?order=-modified",
-      "https://jimmyleaks.com/es/marca/soundcore/?order=-modified",
-      "https://jimmyleaks.com/es/marca/anker/?order=-modified",
-      "https://jimmyleaks.com/es/marca/ugreen/?order=-modified",
-      "https://jimmyleaks.com/es/marca/tp-link/?order=-modified",
-      "https://jimmyleaks.com/es/marca/sandisk/?order=-modified",
-      "https://jimmyleaks.com/es/marca/western-digital/?order=-modified",
-      "https://jimmyleaks.com/es/marca/seagate/?order=-modified",
-      "https://jimmyleaks.com/es/marca/benq/?order=-modified",
-      "https://jimmyleaks.com/es/marca/aoc/?order=-modified",
-      "https://jimmyleaks.com/es/marca/songmics/?order=-modified",
-      "https://jimmyleaks.com/es/marca/vasagle/?order=-modified",
-      "https://jimmyleaks.com/es/marca/flexispot/?order=-modified",
-      "https://jimmyleaks.com/es/marca/pikolin/?order=-modified",
-      "https://jimmyleaks.com/es/marca/lego/?order=-modified",
-      "https://jimmyleaks.com/es/marca/philips-hue/?order=-modified",
-      "https://jimmyleaks.com/es/marca/ring/?order=-modified",
-      "https://jimmyleaks.com/es/marca/blink/?order=-modified",
-      "https://jimmyleaks.com/es/marca/tapo/?order=-modified",
-      "https://jimmyleaks.com/es/marca/dji/?order=-modified",
-      "https://jimmyleaks.com/es/marca/gopro/?order=-modified",
-      "https://jimmyleaks.com/es/marca/fitbit/?order=-modified"
+      "https://jimmyleaks.com/es/c/jardin/?order=-modified",
+      "https://jimmyleaks.com/es/c/dispositivos-amazon-y-accesorios/?order=-modified",
+      "https://jimmyleaks.com/es/c/coche-y-moto/?order=-modified",
+      "https://jimmyleaks.com/es/c/iluminacion/?order=-modified",
+      "https://jimmyleaks.com/es/c/instrumentos-musicales/?order=-modified"
     ],
-    "core_sources": 2,
-    "max_sources_per_run": 16,
+    "core_sources": 8,
+    "max_sources_per_run": 14,
     "max_price_age_minutes": 60,
-    "min_discount_pct": 30,
+    "min_discount_pct": 40,
     "error_discount_pct": 70,
     "max_discount_pct": 92,
     "min_price_eur": 10,
@@ -398,9 +321,10 @@
       "tarjeta regalo"
     ],
     "interest": {
-      "_nota": "Lo que más compra la gente online. Categorías de 100 puntos desde -18 % real (frente al mínimo de 30 días), resto de las top desde -20 % (súper y bebidas, bebé, droguería, mascotas y muebles incluidos); en su mínimo histórico, desde -10 % en las de 90 o más. Tras 40 min sin publicar baja a -15/-18 %. Fuera de las top solo desde -55 % y 20 €. 'block' nunca sale.",
-      "any_category_min_discount": 55,
-      "any_category_min_price_eur": 20,
+      "_nota": "Cuenta el mejor descuento real: frente al mínimo de los 30 días anteriores o frente a la media de los 90 días (y en ese caso tiene que haber bajado al menos un 10 % frente al mínimo de 30). Categorías top (las que llevan min_discount) desde -30 %, resto de categorías de la lista desde -40 %, cualquier otra categoría desde -50 % y 12 €. En su mínimo histórico, las top desde -15 %. Tras 40 min sin publicar baja a -22 % top, -30 % resto y -45 % cualquier categoría. Se publica primero lo de más descuento. block nunca sale.",
+      "any_category_min_discount": 50,
+      "any_category_fallback_min_discount": 45,
+      "any_category_min_price_eur": 12,
       "tiers": [
         {
           "label": "Móviles y tablets",
@@ -422,7 +346,7 @@
             "ipad",
             "tablet"
           ],
-          "min_discount": 18
+          "min_discount": 30
         },
         {
           "label": "Aspiradoras",
@@ -445,7 +369,7 @@
             "dyson v12",
             "dyson v8"
           ],
-          "min_discount": 18
+          "min_discount": 30
         },
         {
           "label": "Cafeteras",
@@ -458,7 +382,7 @@
             "superautomatica",
             "molinillo de cafe"
           ],
-          "min_discount": 18
+          "min_discount": 30
         },
         {
           "label": "Electrodomésticos",
@@ -486,7 +410,7 @@
             "mambo",
             "termo electrico"
           ],
-          "min_discount": 18,
+          "min_discount": 30,
           "not_if": [
             "detergente",
             "suavizante",
@@ -548,7 +472,7 @@
             "puf",
             "banco de almacenaje"
           ],
-          "min_discount": 20
+          "min_discount": 30
         },
         {
           "label": "TV y sonido",
@@ -572,7 +496,7 @@
             "sony wh",
             "sonos"
           ],
-          "min_discount": 20
+          "min_discount": 30
         },
         {
           "label": "Informática",
@@ -592,7 +516,7 @@
             "webcam",
             "tarjeta grafica"
           ],
-          "min_discount": 20
+          "min_discount": 30
         },
         {
           "label": "Consolas",
@@ -606,7 +530,7 @@
             "steam deck",
             "mando dualsense"
           ],
-          "min_discount": 20
+          "min_discount": 30
         },
         {
           "label": "Súper y bebidas",
@@ -652,7 +576,7 @@
             "nutella",
             "nocilla"
           ],
-          "min_discount": 20
+          "min_discount": 30
         },
         {
           "label": "Bebé",
@@ -675,7 +599,7 @@
             "vigilabebes",
             "bano de bebe"
           ],
-          "min_discount": 20
+          "min_discount": 30
         },
         {
           "label": "Relojes inteligentes",
@@ -722,7 +646,7 @@
             "lejia",
             "friegasuelos concentrado"
           ],
-          "min_discount": 20
+          "min_discount": 30
         },
         {
           "label": "Cocina",
@@ -804,7 +728,7 @@
             "friskies",
             "dentastix"
           ],
-          "min_discount": 20
+          "min_discount": 30
         },
         {
           "label": "Clima",
@@ -833,6 +757,42 @@
             "eliptica",
             "banco de pesas",
             "mancuernas"
+          ]
+        },
+        {
+          "label": "Deporte",
+          "score": 80,
+          "keywords": [
+            "zapatillas de running",
+            "zapatillas deportivas",
+            "zapatillas de correr",
+            "balon",
+            "pala de padel",
+            "raqueta",
+            "pelotas de padel",
+            "pelotas de tenis",
+            "esterilla",
+            "kettlebell",
+            "bandas elasticas",
+            "comba",
+            "bicicleta",
+            "casco",
+            "mochila de hidratacion",
+            "reloj gps",
+            "forerunner",
+            "gafas de natacion",
+            "neopreno",
+            "tienda de campana",
+            "saco de dormir",
+            "botas de montana",
+            "bastones de trekking",
+            "chandal",
+            "mallas deportivas",
+            "camiseta deportiva",
+            "guantes de boxeo",
+            "rodillo de espuma",
+            "barra de dominadas",
+            "patines"
           ]
         },
         {
@@ -986,9 +946,12 @@
     "close_time": "23:50",
     "summary_window_minutes": 100,
     "silence_minutes": 40,
-    "fallback_min_discount_top": 15,
-    "fallback_min_discount": 18,
-    "historical_low_min_discount": 10,
+    "fallback_min_discount_top": 22,
+    "fallback_min_discount": 30,
+    "historical_low_min_discount": 15,
+    "use_media90": true,
+    "min_real_drop_pct": 10,
+    "media90_max_gap_pct": 15,
     "cascade_enabled": true,
     "cascade_max_age_minutes": 75,
     "cascade_max_details": 10

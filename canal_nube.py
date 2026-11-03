@@ -323,9 +323,9 @@ def interest(title: str, rules: dict) -> dict:
 
 
 def deal_rank(deal: dict) -> float:
-    """Orden de publicación: interés, descuento y euros ahorrados (con tope, para no premiar solo lo caro)."""
+    """Orden de publicación: sobre todo el descuento, luego el interés y los euros ahorrados (con tope)."""
     saved = max(0.0, float(deal.get("reference") or 0) - float(deal.get("price") or 0))
-    return float(deal.get("interest") or 0) + float(deal.get("discount") or 0) + min(saved, 200.0) / 4
+    return 0.25 * float(deal.get("interest") or 0) + 2 * float(deal.get("discount") or 0) + min(saved, 200.0) / 10
 
 
 def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool = False) -> tuple[str, dict]:
@@ -353,7 +353,20 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
     reference = hist.get("min_30")
     if not reference:
         return "sin precios de los 30 días anteriores", {}
-    pct = discount_pct(float(price), reference)
+    drop_30 = discount_pct(float(price), reference)
+    pct, ref_kind = drop_30, ""
+    median_90 = hist.get("reference")
+    if rules.get("use_media90") and median_90:
+        # El mejor descuento real: frente al mínimo de 30 días o frente a la media de 90 días. La media solo
+        # cuenta si además ha bajado de verdad ahora (min_real_drop_pct frente al mínimo de 30 días).
+        drop_90 = discount_pct(float(price), float(median_90))
+        # Y solo si en los 30 días anteriores estuvo cerca de esa media: si ya estuvo mucho más barato
+        # (como el Lefant a 799,99 € tras meses a 1.299,99 €), la media exageraría y se queda el mínimo de 30.
+        gap = discount_pct(float(reference), float(median_90))
+        if (drop_90 > drop_30 + 1e-9 and drop_30 + 1e-9 >= float(rules.get("min_real_drop_pct") or 0)
+                and gap <= float(rules.get("media90_max_gap_pct", 15)) + 1e-9):
+            pct, ref_kind, reference = drop_90, "media90", float(median_90)
+    ref_text = "su media de los 90 días" if ref_kind else "su mínimo de los 30 días anteriores"
     taste = interest(title, rules)
     if taste["blocked"]:
         return f"poco interés («{taste['blocked']}»)", {}
@@ -368,7 +381,7 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
         # En su precio más bajo de siempre y de lo que más se compra: vale con una rebaja real algo menor.
         needed = min(needed, float(rules["historical_low_min_discount"]))
     if pct + 1e-9 < needed:
-        return f"solo -{pct:.0f}% frente a su mínimo de los 30 días anteriores ({euro(reference)})", {}
+        return f"solo -{pct:.0f}% frente a {ref_text} ({euro(reference)})", {}
     if pct > float(rules["max_discount_pct"]):
         return f"descuento sospechoso (-{pct:.0f}%)", {}
     if hist["drop_age_days"] > int(rules["max_drop_age_days"]):
@@ -383,6 +396,8 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
     conf = rules.get("interest") or {}
     if taste["score"] <= 0 and conf.get("tiers"):
         any_pct = float(conf.get("any_category_min_discount", 101))
+        if relaxed and conf.get("any_category_fallback_min_discount") is not None:
+            any_pct = min(any_pct, float(conf["any_category_fallback_min_discount"]))
         any_price = float(conf.get("any_category_min_price_eur", 0))
         if pct + 1e-9 < any_pct or price < any_price:
             return (f"categoría de poco interés (fuera de las top solo sale con -{any_pct:.0f}% "
@@ -392,7 +407,7 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
     return "", {
         "jl_id": item["id"], "title": title, "price": float(price), "reference": reference,
         "median_90": hist["reference"],
-        "discount": pct, "historical_low": bool(low and price <= low + 0.009), "rating": rating,
+        "discount": pct, "ref_kind": ref_kind, "drop_30": drop_30, "historical_low": bool(low and price <= low + 0.009), "rating": rating,
         "reviews": reviews, "image": detail["image"], "seen_ts": int(item["ts"]), "brand": item.get("brand") or "",
         "interest": taste["score"], "interest_label": taste["label"],
     }
@@ -482,8 +497,15 @@ def clean_title(title: str, limit: int = 95) -> str:
     return text
 
 
-def badge_for(pct: float, rules: dict) -> str:
-    if pct + 1e-9 >= float(rules["error_discount_pct"]):
+def real_drop(deal: dict) -> float | None:
+    """Bajada frente al mínimo de 30 días cuando el porcentaje del post es contra la media de 90 días."""
+    return deal.get("drop_30") if deal.get("ref_kind") == "media90" else None
+
+
+def badge_for(pct: float, rules: dict, drop_30: float | None = None) -> str:
+    """ERROR DE PRECIO solo si la bajada frente al mínimo de 30 días lo es; contra la media de 90 días, como mucho CHOLLAZO."""
+    real = pct if drop_30 is None else drop_30
+    if real + 1e-9 >= float(rules["error_discount_pct"]):
         return "ERROR DE PRECIO"
     return "CHOLLAZO" if pct >= 55 else "CHOLLO"
 
@@ -499,7 +521,7 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     e = html.escape
     pct = deal["discount"]
     seen = datetime.fromtimestamp(deal["seen_ts"], timezone.utc).astimezone(MADRID)
-    lines = [HEADERS[badge_for(pct, rules)], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", ""]
+    lines = [HEADERS[badge_for(pct, rules, real_drop(deal))], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", ""]
     lines.append(f"💰 <b>{e(euro(deal['price']))}</b>   <s>{e(euro(deal['reference']))}</s>")
     if deal.get("ref_kind") == "media90":
         lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio medio de los últimos 90 días")
@@ -533,7 +555,7 @@ TAGS = {"ERROR DE PRECIO": "#ErrorDePrecio", "CHOLLAZO": "#Chollazo", "CHOLLO": 
 
 def hashtags(deal: dict, rules: dict) -> str:
     """Etiqueta según el descuento, y #MinimoHistorico si lo es: sirven para buscar dentro del canal."""
-    tags = [TAGS[badge_for(deal["discount"], rules)]]
+    tags = [TAGS[badge_for(deal["discount"], rules, real_drop(deal))]]
     if deal.get("historical_low"):
         tags.append("#MinimoHistorico")
     return " ".join(tags)
@@ -563,7 +585,7 @@ def make_card(deal: dict, rules: dict) -> Path:
         "id": f"amz-{deal['asin']}",
         "title": clean_title(deal["title"]),
         "image_path": image_path,
-        "category": badge_for(deal["discount"], rules),
+        "category": badge_for(deal["discount"], rules, real_drop(deal)),
         "current": deal["price"],
         "reference": deal["reference"],
         "ref_label": "MEDIA 90 DÍAS" if deal.get("ref_kind") == "media90" else "MÍNIMO 30 DÍAS ANTES",
@@ -597,6 +619,7 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
         try:
             detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{post['jl_id']}/"))
         except Exception as exc:
+            post["checked"] = int(now.timestamp())
             log(f"  Seguimiento {post['asin']}: {exc}")
             continue
         post["checked"] = int(now.timestamp())
@@ -618,13 +641,15 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
 
 
 def listing_priority(item: dict, rules: dict | None = None) -> tuple:
-    """Qué fichas abrir antes: lo que más interesa, luego mínimos históricos y grandes bajadas, luego lo reciente."""
+    """Qué fichas abrir antes: las grandes bajadas (por tramos de 10 %), luego lo que más interesa y los mínimos históricos."""
     verdict = fold(item.get("verdict") or "")
     price, was = item.get("price") or 0, item.get("was") or 0
     drop = (was - price) / was if was and was > price else 0
     taste = interest(f"{item.get('brand') or ''} {item.get('title') or ''}", rules or {})
     score = -1 if taste["blocked"] else taste["score"]
-    return (score, "minimo historico" in verdict, round(drop, 2), item.get("ts") or 0)
+    if score < 0:
+        return (-1, -1, False, 0)
+    return (int(drop * 10), score, "minimo historico" in verdict, item.get("ts") or 0)
 
 
 # ------------------------------------------------------------------ pasada
@@ -661,7 +686,8 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         relaxed = now.timestamp() - last >= silence
         if relaxed:
             log(f"Modo sin silencios: {int((now.timestamp() - last) // 60)} min sin publicar; "
-                f"admito desde -{rules.get('fallback_min_discount_top')} % en categorías estrella "
+                f"admito desde -{rules.get('fallback_min_discount_top')} % en categorías estrella, "
+                f"-{(rules.get('interest') or {}).get('any_category_fallback_min_discount', '—')} % en cualquier categoría "
                 f"y -{rules.get('fallback_min_discount')} % en el resto de las top.")
     cascade = cascade_items(cfg, rules, now, log, cascade_loader, test=bool(args.dry_run or args.test_private))
     approved = find_deals(rules, state, now, fetch, resolve_asin, log, remember=not args.test_private,
