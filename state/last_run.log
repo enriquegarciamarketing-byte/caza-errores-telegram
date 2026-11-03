@@ -1,129 +1,98 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35165 bytes, 30 chollos
-  Chollometro «DREAME L50 Pro Ultra Robot Aspirador y Fregasuelos»: Amazon 499.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 47612 bytes, 30 chollos
-  cm-2052365 · Amazon 499.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · DREAME L50 Pro Ultra Robot Aspirador y Fregasuelos
-  Wallapop «dreame l50 pro»: 200 / 52202 bytes, 14 anuncios, 1 parecidos, 0 reservas
-  Wallapop «dreame l50»: 200 / 65764 bytes, 19 anuncios, 3 parecidos, 0 reservas
-  Milanuncios «dreame l50 pro»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 3 anuncios, ~460 €, no publica
-  ⚠️ No publico «DREAME L50 Pro Ultra Robot Aspirador y Fregasuelos»: reventa en WALLAPOP ~460 € (3 anuncios): ROI -14 % y -70 €, por debajo del mínimo (25 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 45 descartes nuevos, 92 en lista
-== pasada 2 · 23:14 ==
 Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 34161 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 60679 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 23:17 ==
+Cascada al canal normal: 41 descartes nuevos, 86 en lista
+== pasada 2 · 00:04 ==
 Listados: 95 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 4 · 23:19 ==
-Listados: 101 productos únicos
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 3 · 00:07 ==
+Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 23:22 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 34039 bytes, 30 chollos
-  Chollometro «Zapatillas de running Adizero Boston 13 Mujer- Tallas- 36 2/3, 37 1/3,»: Privatesportshop 57.99 €
-  Chollometro «Zapatillas New Balance 237»: Newbalance 35.0 €
-  Chollometro «Sandisk WD-Black SN7100 SSD M.2»: AliExpress 141.2 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 47800 bytes, 30 chollos
-  cm-2054554 · Privatesportshop 57.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas de running Adizero Boston 13 Mujer- Tallas- 36 2/
-  cm-2054774 · Newbalance 35.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas New Balance 237
-  cm-2054580 · AliExpress 141.2 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Sandisk WD-Black SN7100 SSD M.2
-  Vinted «zapatillas 13 running»: HTTP 200, 3681418 bytes, 96 anuncios
-  Vinted «zapatillas 13 running»: 39 parecidos de 96
-  Wallapop «zapatillas 13 running»: 200 / 141700 bytes, 40 anuncios, 38 parecidos, 0 reservas
-  Milanuncios «zapatillas 13 running»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 60 anuncios, ~40 €, no publica
-  ⚠️ No publico «Zapatillas de running Adizero Boston 13 Mujer- Tallas- 36 2/3, 37 1/3, 38, 42»: reventa en VINTED+WALLAPOP ~40 € (60 anuncios): ROI -39 % y -22 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «zapatillas 237 new»: HTTP 200, 3673829 bytes, 96 anuncios
-  Vinted «zapatillas 237 new»: 79 parecidos de 96
-  Wallapop «zapatillas 237 new»: 200 / 134451 bytes, 40 anuncios, 38 parecidos, 0 reservas
-  Milanuncios «zapatillas 237 new»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 100 anuncios, ~22 €, no publica
-  ⚠️ No publico «Zapatillas New Balance 237»: reventa en VINTED+WALLAPOP ~22 € (100 anuncios): ROI -47 % y -16 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «sandisk sn7100 ssd»: 200 / 16171 bytes, 7 anuncios, 3 parecidos, 0 reservas
-  Milanuncios «sandisk sn7100 ssd»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 3 anuncios, ~160 €, no publica
-  ⚠️ No publico «Sandisk WD-Black SN7100 SSD M.2»: reventa en WALLAPOP ~160 € (3 anuncios): ROI 6 % y 9 €, por debajo del mínimo (25 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 23:24 ==
+== pasada 4 · 00:09 ==
 Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 5 · 00:12 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 34752 bytes, 30 chollos
+  Chollometro «Zapatillas ASICS SONICBLAST MUJER»: Alssport 76.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 62451 bytes, 30 chollos
+  cm-2054410 · Alssport 76.0 € → candidato externo · Zapatillas ASICS SONICBLAST MUJER
+  cm-2054410: no se publica (horario nocturno: las gangas esperan al día)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 55 descartes nuevos, 55 en lista
+== pasada 6 · 00:14 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 23:27 ==
+== pasada 7 · 00:17 ==
 Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 8 · 23:29 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 9 · 23:32 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 34113 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 54687 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 23:34 ==
-Listados: 91 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 11 · 23:37 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 23:39 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 23:42 ==
+== pasada 8 · 00:19 ==
 Listados: 102 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 34585 bytes, 30 chollos
-  Chollometro «LEGO 75456 Star Wars Calendario de Adviento 2026 – Juguete de Cuenta A»: Miravia 25.36 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 56155 bytes, 30 chollos
-  cm-2054581 · Miravia 25.36 € → candidato externo · LEGO 75456 Star Wars Calendario de Adviento 2026 – Juguete d
-  Wallapop «lego 75456 star»: 200 / 43756 bytes, 19 anuncios, 16 parecidos, 0 reservas
-  Milanuncios «lego 75456 star»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 10 anuncios, ~0 €, no publica
-  ⚠️ No publico «LEGO 75456 Star Wars Calendario de Adviento 2026 – Juguete de Cuenta Atrás de Navidad»: reventa en WALLAPOP ~0 € (10 anuncios): ROI -107 % y -27 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 23:44 ==
-Listados: 94 productos únicos
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 9 · 00:22 ==
+Listados: 103 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35123 bytes, 30 chollos
+  Chollometro «Garmin Venu 4 45 mm, Smartwatch con GPS»: Amazon 322.15 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 60817 bytes, 30 chollos
+  cm-2049876 · Amazon 322.15 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Garmin Venu 4 45 mm, Smartwatch con GPS
+  cm-2049876: no se publica (horario nocturno: las gangas esperan al día)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 10 · 00:24 ==
+Listados: 93 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 23:47 ==
-Listados: 98 productos únicos
+== pasada 11 · 00:27 ==
+Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 23:49 ==
-Listados: 105 productos únicos
+== pasada 12 · 00:29 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 13 · 00:32 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35627 bytes, 30 chollos
+  Chollometro «Saucony - zapatillas de running Hurricane 25 - running- Tallas- 40, 40»: Privalia 64.9 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 63591 bytes, 30 chollos
+  cm-2054730 · Privalia 64.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Saucony - zapatillas de running Hurricane 25 - running- Tall
+  cm-2054730: no se publica (horario nocturno: las gangas esperan al día)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 00:34 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 00:37 ==
+Listados: 87 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 00:39 ==
+Listados: 102 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista

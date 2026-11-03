@@ -1358,12 +1358,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793746193
+   "checked": 1793749187
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 105,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -8836,10 +8836,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 1,
+ "rotation_index": 18,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/zapatilla-casual-unisex-530-new-balance-azul-marino-2053698": 1793724252.5716944,
-  "https://www.chollometro.com/ofertas/zapatillas-nike-sb-zoom-janoski-og-tallas-36-365-375-38-y-385-2054108": 1793724252.5716944,
   "https://www.chollometro.com/ofertas/movil-xiaomi-redmi-15-5g-8gb256gb-snapdragon-6s-gen-3-5g-camara-dual-de-50mp-2051121": 1793727498.9343715,
   "https://www.chollometro.com/ofertas/lego-technic-hypercar-koenigsegg-jesko-absolut-gris-42173-801-piezas-motor-v8-puertas-diedricas-oferta-privalia-2053893": 1793727498.9343715,
   "https://www.chollometro.com/ofertas/lego-star-wars-calendario-de-adviento-2026-2054504": 1793727498.9343715,
@@ -8868,7 +8866,10 @@
   "https://www.chollometro.com/ofertas/zapatillas-de-running-adizero-boston-13-mujer-tallas-36-23-37-13-38-42-2054554": 1793744557.8429089,
   "https://www.chollometro.com/ofertas/zapatillas-new-balance-237-2054774": 1793744557.8429089,
   "https://www.chollometro.com/ofertas/sandisk-wd-black-sn7100-ssd-m2-2054580": 1793744557.8429089,
-  "https://www.chollometro.com/ofertas/lego-75456-star-wars-calendario-de-adviento-2026-juguete-de-cuenta-atras-de-navidad-2054581": 1793745758.216119
+  "https://www.chollometro.com/ofertas/lego-75456-star-wars-calendario-de-adviento-2026-juguete-de-cuenta-atras-de-navidad-2054581": 1793745758.216119,
+  "https://www.chollometro.com/ofertas/zapatillas-asics-sonicblast-mujer-2054410": 1793747552.157134,
+  "https://www.chollometro.com/ofertas/garmin-venu-4-45-mm-smartwatch-con-gps-2049876": 1793748152.512516,
+  "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-40-405-42-2054730": 1793748753.7760198
  },
  "asked": {
   "cm-2053666": 1793697314
