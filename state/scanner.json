@@ -866,9 +866,9 @@
    "result": "solo -8% bajo la referencia"
   },
   "MKydv04": {
-   "price": 549.0,
-   "t": 1793569777,
-   "result": "la referencia corregida no supera el precio (media inflada)"
+   "price": 462.99,
+   "t": 1793726489,
+   "result": "solo -13% bajo la referencia"
   },
   "MKODNQM": {
    "price": 53.12,
@@ -1348,12 +1348,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793723315
+   "checked": 1793726489
   }
  ],
  "tg_offset": 334822059,
  "admin_chat_id": 9188393228,
- "last_listing_count": 103,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -6032,6 +6032,51 @@
    "http_status": 200,
    "bytes": 96744,
    "raw_count": 40
+  },
+  "|zapatillas nike sb zoom janoski og+ (tallas 36, 36.5, 37.5, 38 y 38.5)|zapatillas 36 nike": {
+   "t": 1793724258.2460816,
+   "query": "zapatillas 36 nike",
+   "prices": [
+    7.0,
+    15.0,
+    20.0,
+    18.0,
+    10.0,
+    25.0,
+    50.0,
+    75.0,
+    25.0,
+    35.0,
+    6.0,
+    6.0,
+    7.99,
+    42.0,
+    15.0,
+    40.0,
+    15.0,
+    19.0,
+    19.0,
+    17.0,
+    12.0,
+    25.0,
+    45.0,
+    20.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 127665,
+   "raw_count": 40
+  },
+  "|zapatilla casual unisex 530 new balance azul marino|zapatilla 530 casual": {
+   "t": 1793724260.6388829,
+   "query": "zapatilla 530 casual",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -6281,7 +6326,9 @@
   "wallapop:cm-2054201": 1793721102.6688502,
   "wallapop:cm-2045955": 1793721104.686928,
   "wallapop:cm-2053672": 1793721106.390548,
-  "wallapop:cm-2054038": 1793721685.5883968
+  "wallapop:cm-2054038": 1793721685.5883968,
+  "wallapop:cm-2054108": 1793724258.679088,
+  "wallapop:cm-2053698": 1793724261.1758857
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -8062,16 +8109,60 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~42 € (60 anuncios): ROI -56 % y -48 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|zapatillas nike sb zoom janoski og+ (tallas 36, 36.5, 37.5, 38 y 38.5)|zapatillas 36 nike": {
+   "t": 1793724258.0113716,
+   "prices": [
+    11.0,
+    52.0,
+    55.0,
+    3.0,
+    30.0,
+    40.0,
+    13.0,
+    34.99,
+    16.1,
+    21.0,
+    7.0,
+    55.0,
+    35.0,
+    20.0,
+    40.0,
+    6.0,
+    54.99,
+    35.0,
+    21.0,
+    35.0,
+    7.5,
+    70.0,
+    22.0,
+    110.0,
+    35.0,
+    15.0,
+    20.0,
+    30.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~30 € (20 anuncios): ROI -22 % y -7 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatilla casual unisex 530 new balance azul marino|zapatilla 530 casual": {
+   "t": 1793724259.4619832,
+   "prices": [
+    70.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 1 anuncios parecidos (mínimo 3)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 4,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/barra-de-sonido-51-sony-ht-s40r-600w-altavoces-traseros-inalambricos-dolby-digital-hdmi-arc-bluetooth-2053761": 1793702464.1750464,
-  "https://www.chollometro.com/ofertas/zapatillas-nike-streakfly-2-para-miembros-plus-2053848": 1793702464.1750464,
-  "https://www.chollometro.com/ofertas/roborock-q10-s5-set-robot-aspirador-y-fregasuelos-succion-de-10000-pa-2052344": 1793703661.6212094,
   "https://www.chollometro.com/ofertas/western-digital-wds100t2xhe-ssd-1000-gb-m2-7300-mbs-pci-express-40-nvme-2054063": 1793705766.9023056,
   "https://www.chollometro.com/ofertas/auriculares-apple-airpods-5-con-carga-inalambrica-y-anc-traduccion-tiempo-real-audio-adaptativo-chip-h2-usb-c-blanco-mediamarkt-2054101": 1793709982.06704,
   "https://www.chollometro.com/ofertas/aspiradora-dyson-v15-detect-absolute-kit-limpieza-a-fondo-240aw-iluminacion-fluffy-optic-sensor-piezo-manguera-oferta-dyson-2054024": 1793709982.06704,
@@ -8085,7 +8176,9 @@
   "https://www.chollometro.com/ofertas/hoka-zapatillas-de-running-rincon-4-1155130-negro-2053746": 1793721083.1339478,
   "https://www.chollometro.com/ofertas/new-balance-zapatillas-casual-de-hombre-327-2054329": 1793721083.1339478,
   "https://www.chollometro.com/ofertas/airpods-5-con-estuche-de-carga-inalambrica-cancelacion-activa-de-ruido-audio-espacial-y-hasta-22-h-de-autonomia-2045955": 1793721083.1339478,
-  "https://www.chollometro.com/ofertas/ps5-mortal-shell-2-2054038": 1793721679.7808096
+  "https://www.chollometro.com/ofertas/ps5-mortal-shell-2-2054038": 1793721679.7808096,
+  "https://www.chollometro.com/ofertas/zapatilla-casual-unisex-530-new-balance-azul-marino-2053698": 1793724252.5716944,
+  "https://www.chollometro.com/ofertas/zapatillas-nike-sb-zoom-janoski-og-tallas-36-365-375-38-y-385-2054108": 1793724252.5716944
  },
  "asked": {
   "cm-2053299": 1793645724,
