@@ -1348,12 +1348,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793716283
+   "checked": 1793718096
   }
  ],
  "tg_offset": 334822059,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 87,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1598,6 +1598,92 @@
    "transient": false,
    "reserved": 0,
    "demand_known": false
+  },
+  "|saucony - zapatillas de running hurricane 25 - running- tallas- 37, 40, 42|vinted+wallapop+milanuncios:saucony 25 zapatillas": {
+   "t": 1793717818.5564127,
+   "prices": [
+    90.0,
+    70.0,
+    50.0,
+    125.0,
+    90.0,
+    79.0,
+    80.0,
+    60.0,
+    35.0,
+    40.0,
+    99.0,
+    75.0,
+    80.0,
+    95.0,
+    44.9,
+    60.0,
+    65.0,
+    75.0,
+    59.0,
+    74.0,
+    60.0,
+    75.0,
+    90.0,
+    30.0,
+    32.0,
+    70.0,
+    90.0,
+    85.99,
+    20.0,
+    100.0,
+    60.0,
+    35.0,
+    59.0,
+    120.0,
+    50.0,
+    100.0,
+    50.0,
+    95.0,
+    60.0,
+    60.0,
+    60.0,
+    95.0,
+    40.0,
+    99.0,
+    4.0,
+    25.0,
+    6.0,
+    99.0,
+    85.0,
+    25.0,
+    35.0,
+    100.0,
+    80.0,
+    85.0,
+    35.0,
+    75.0,
+    45.0,
+    90.0,
+    60.0,
+    80.0,
+    10.0,
+    125.0,
+    75.0,
+    8.0,
+    10.0
+   ],
+   "parts": [
+    [
+     "Vinted",
+     54
+    ],
+    [
+     "Wallapop",
+     11
+    ]
+   ],
+   "failures": [
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": true
   }
  },
  "wallapop_cache": {
@@ -5707,6 +5793,28 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "|saucony - zapatillas de running hurricane 25 - running- tallas- 37, 40, 42|saucony 25 zapatillas": {
+   "t": 1793717818.29819,
+   "query": "saucony 25 zapatillas",
+   "prices": [
+    35.0,
+    75.0,
+    45.0,
+    90.0,
+    60.0,
+    80.0,
+    10.0,
+    125.0,
+    75.0,
+    8.0,
+    10.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 84762,
+   "raw_count": 23
   }
  },
  "milanuncios_cache": {
@@ -5760,6 +5868,14 @@
   },
   "|sony wh-ch520, auriculares de diadema inalambricos bluetooth, diseno ligero, 50 h de bateria, carga rapida, ecualizador, llamadas nitidas|sony ch520 auriculares": {
    "t": 1793638510.0644407,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  },
+  "|saucony - zapatillas de running hurricane 25 - running- tallas- 37, 40, 42|saucony 25 zapatillas": {
+   "t": 1793717818.5559132,
    "prices": [],
    "reserved": 0,
    "demand_known": false,
@@ -5941,7 +6057,8 @@
   "wallapop:cm-2054039": 1793714063.5904202,
   "wallapop:cm-2054176": 1793714064.594589,
   "wallapop:cm-2054067": 1793714066.643912,
-  "wallapop:cm-2046681": 1793714068.4273317
+  "wallapop:cm-2046681": 1793714068.4273317,
+  "wallapop:cm-2054258": 1793717818.9871793
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -7461,16 +7578,76 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~22 € (13 anuncios): ROI -66 % y -36 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|saucony - zapatillas de running hurricane 25 - running- tallas- 37, 40, 42|saucony 25 zapatillas": {
+   "t": 1793717817.9144075,
+   "prices": [
+    90.0,
+    70.0,
+    50.0,
+    125.0,
+    90.0,
+    79.0,
+    80.0,
+    60.0,
+    35.0,
+    40.0,
+    99.0,
+    75.0,
+    80.0,
+    95.0,
+    44.9,
+    60.0,
+    65.0,
+    75.0,
+    59.0,
+    74.0,
+    60.0,
+    75.0,
+    90.0,
+    30.0,
+    32.0,
+    70.0,
+    90.0,
+    85.99,
+    20.0,
+    100.0,
+    60.0,
+    35.0,
+    59.0,
+    120.0,
+    50.0,
+    100.0,
+    50.0,
+    95.0,
+    60.0,
+    60.0,
+    60.0,
+    95.0,
+    40.0,
+    99.0,
+    4.0,
+    25.0,
+    6.0,
+    99.0,
+    85.0,
+    25.0,
+    35.0,
+    100.0,
+    80.0,
+    85.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~64 € (48 anuncios): ROI -10 % y -6 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 12,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/ini-pc-firebat-r3-con-ryzen-5-7430u-6-nucleos12-hilos-hasta-43-ghz-16-gb-de-lpddr4-y-ssd-de-512-gb-wifi-6bt-52-2052421": 1793695507.573969,
-  "https://www.chollometro.com/ofertas/zapatillas-running-new-balance-fresh-foam-x-evoz-v4-para-mujer-tallas-36-38-39-40-y-41-2053658": 1793695507.573969,
-  "https://www.chollometro.com/ofertas/insta360-x6-360-camara-de-accion-8k-promo-1111-empieza-1-11-2048868": 1793696107.805953,
   "https://www.chollometro.com/ofertas/dreame-l40s-pro-ultra-aspiradora-robot-2053211": 1793696707.924643,
   "https://www.chollometro.com/ofertas/zapatillas-de-running-nike-pegasus-41-ess-tallas-355-hasta-41-2053699": 1793696707.924643,
   "https://www.chollometro.com/ofertas/zapatillas-running-new-balance-fresh-foam-520-v9-para-hombre-tallas-405-a-465-2053666": 1793697307.8725471,
@@ -7487,7 +7664,8 @@
   "https://www.chollometro.com/ofertas/roborock-q10vf-roborock-robot-aspirador-fregasuelos-con-autovaciado-negro-2046681": 1793714048.4098318,
   "https://www.chollometro.com/ofertas/microfono-dji-mic-mini-2tx-1rx-desde-espana-3722eur-con-cupon-ventajas-2-unidades-por-5760eur-2054067": 1793714048.4098318,
   "https://www.chollometro.com/ofertas/mando-con-cable-rematch-advanced-purple-fade-xbox-series-x-pegi-7-2054176": 1793714048.4098318,
-  "https://www.chollometro.com/ofertas/zapatillas-new-balance-flite-r-tallas-415-a-45-2054039": 1793714048.4098318
+  "https://www.chollometro.com/ofertas/zapatillas-new-balance-flite-r-tallas-415-a-45-2054039": 1793714048.4098318,
+  "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-37-40-42-2054258": 1793717811.469357
  },
  "asked": {
   "cm-2053299": 1793645724,
