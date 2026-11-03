@@ -1044,7 +1044,12 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
     pct = discount_pct(price, reference)
     if pct > float(rules.get("max_discount_pct") or 95):
         raise ValueError(f"descuento de -{pct:.0f} %: revisa los datos")
+    ref_kind = spec.get("ref_kind") or ""
+    min_30 = float(spec["min_30"]) if spec.get("min_30") else None
+    # Contra el PVP nunca es ERROR DE PRECIO por sí solo: la cabecera la decide la bajada real frente al mínimo de 30 días.
+    drop_30 = discount_pct(price, min_30) if min_30 else (0.0 if ref_kind == "pvp" else None)
     return {
+        "min_30": min_30, "drop_30": drop_30,
         "asin": asin, "jl_id": "", "title": title, "price": price, "reference": reference,
         "median_90": float(spec.get("habitual") or 0), "discount": pct,
         "historical_low": bool(spec.get("historical_low")), "rating": spec.get("rating"),
