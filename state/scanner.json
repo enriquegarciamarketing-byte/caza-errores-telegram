@@ -1353,12 +1353,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793732727
+   "checked": 1793736425
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 96,
+ "last_listing_count": 90,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1692,26 +1692,6 @@
   }
  },
  "wallapop_cache": {
-  "electroprecio|garmin fenix 8 pro 47 mm amoled, lte y satelite inreach, mapas topoactive, linterna led, zafiro y titanio, hasta 15 dias de bateria|electroprecio 47 garmin": {
-   "t": 1793223136.776678,
-   "query": "electroprecio 47 garmin",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
-  "carrefour|lego disney pixar wall-e y eve 43279 regalo en cupon del 40% (28 euros)|carrefour 43279 lego": {
-   "t": 1793223258.0129433,
-   "query": "carrefour 43279 lego",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "primeriti|nike zapatillas casual de hombre nike charge suede|primeriti nike": {
    "t": 1793223638.2638597,
    "query": "primeriti nike",
@@ -6380,6 +6360,54 @@
    "http_status": 200,
    "bytes": 98912,
    "raw_count": 38
+  },
+  "|zapatillas skechers dynamight para hombre (41-42-43 y 44)|zapatillas 41 skechers": {
+   "t": 1793734201.174079,
+   "query": "zapatillas 41 skechers",
+   "prices": [
+    12.0,
+    40.0,
+    20.0,
+    22.0,
+    30.0,
+    40.0,
+    29.97,
+    40.0,
+    20.0,
+    35.0,
+    25.0,
+    22.5,
+    40.0,
+    48.0,
+    40.0,
+    30.0,
+    27.5,
+    18.0,
+    45.0,
+    28.8,
+    49.0,
+    25.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 120453,
+   "raw_count": 40
+  },
+  "|lego minifigura gigante de papa noel 40820|lego 40820 minifigura": {
+   "t": 1793734799.2747145,
+   "query": "lego 40820 minifigura",
+   "prices": [
+    47.99,
+    53.18,
+    58.0,
+    59.99
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 9221,
+   "raw_count": 4
   }
  },
  "milanuncios_cache": {
@@ -6646,7 +6674,9 @@
   "wallapop:cm-2020370": 1793728716.736966,
   "wallapop:cm-2051144": 1793728717.7178545,
   "wallapop:cm-2054411": 1793728718.6792185,
-  "wallapop:cm-2020376": 1793730500.4111476
+  "wallapop:cm-2020376": 1793730500.4111476,
+  "wallapop:cm-2054544": 1793734201.7231202,
+  "wallapop:cm-2054615": 1793734799.8488145
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -8506,17 +8536,50 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~10 € (19 anuncios): ROI -75 % y -22 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas skechers dynamight para hombre (41-42-43 y 44)|zapatillas 41 skechers": {
+   "t": 1793734200.5841823,
+   "prices": [
+    10.0,
+    49.0,
+    35.0,
+    39.0,
+    29.9,
+    20.0,
+    34.0,
+    36.0,
+    35.0,
+    17.0,
+    15.0,
+    15.0,
+    47.0,
+    40.0,
+    42.0,
+    40.0,
+    22.0,
+    30.0,
+    18.0,
+    18.0,
+    35.0,
+    35.0,
+    34.0,
+    54.0,
+    30.0,
+    40.0,
+    45.0,
+    36.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~35 € (25 anuncios): ROI -6 % y -2 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 17,
+ "rotation_index": 13,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/roborock-q10vf-roborock-robot-aspirador-fregasuelos-con-autovaciado-negro-2046681": 1793714048.4098318,
-  "https://www.chollometro.com/ofertas/microfono-dji-mic-mini-2tx-1rx-desde-espana-3722eur-con-cupon-ventajas-2-unidades-por-5760eur-2054067": 1793714048.4098318,
-  "https://www.chollometro.com/ofertas/mando-con-cable-rematch-advanced-purple-fade-xbox-series-x-pegi-7-2054176": 1793714048.4098318,
-  "https://www.chollometro.com/ofertas/zapatillas-new-balance-flite-r-tallas-415-a-45-2054039": 1793714048.4098318,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-37-40-42-2054258": 1793717811.469357,
   "https://www.chollometro.com/ofertas/iphone-18-pro-256gb-negro-o-azul-2054201": 1793721083.1339478,
   "https://www.chollometro.com/ofertas/zapatillas-hombre-new-balance-2002r-protection-pack-tallas-405-a-465-azul-gris-diseno-desconstruido-oferta-el-corte-ingles-2053672": 1793721083.1339478,
@@ -8541,7 +8604,10 @@
   "https://www.chollometro.com/ofertas/lego-72160-pokemon-arcanine-set-de-construccion-de-figura-de-pokemon-personaje-articulado-2020370": 1793728699.2091618,
   "https://www.chollometro.com/ofertas/lego-40806-star-wars-caminante-at-at-de-pan-de-jengibre-de-juguete-2051144": 1793728699.2091618,
   "https://www.chollometro.com/ofertas/set-de-construccion-lego-pokemon-rayquaza-72168-1083-piezas-2054411": 1793728699.2091618,
-  "https://www.chollometro.com/ofertas/lego-75440-star-wars-el-imperio-contraataca-at-at-maqueta-para-adultos-2020376": 1793730491.695904
+  "https://www.chollometro.com/ofertas/lego-75440-star-wars-el-imperio-contraataca-at-at-maqueta-para-adultos-2020376": 1793730491.695904,
+  "https://www.chollometro.com/ofertas/zapatillas-skechers-dynamight-para-hombre-41-42-43-y-44-2054544": 1793734192.315706,
+  "https://www.chollometro.com/ofertas/lego-minifigura-gigante-de-papa-noel-40820-2054615": 1793734790.7672627,
+  "https://www.chollometro.com/ofertas/lego-11373-icons-el-senor-de-los-anillos-casco-de-sauron-kit-de-construccion-y-decoracion-coleccionable-con-base-de-exposicion-2054590": 1793735390.4445224
  },
  "asked": {
   "cm-2053354": 1793651005,
