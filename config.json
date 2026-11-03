@@ -952,6 +952,19 @@
     "use_media90": true,
     "min_real_drop_pct": 10,
     "media90_max_gap_pct": 15,
+    "pvp": {
+      "_nota": "Titular frente al PVP recomendado (precio tachado de Amazon) cuando es coherente: no más de 2,5 veces la media de 90 días. Siempre con bajada real frente al mínimo de 30 días (10 %, o 5 % tras 30 min sin publicar). Top desde -40 % de PVP, resto de la lista -45 %, cualquier categoría -50 %; sin silencios -30/-35/-40. Sin PVP coherente se usa el descuento real de siempre.",
+      "enabled": true,
+      "max_ratio_median90": 2.5,
+      "min_real_drop": 10,
+      "min_real_drop_relaxed": 5,
+      "top": 40,
+      "tier": 45,
+      "any": 50,
+      "relaxed_top": 30,
+      "relaxed_tier": 35,
+      "relaxed_any": 40
+    },
     "cascade_enabled": true,
     "cascade_max_age_minutes": 75,
     "cascade_max_details": 10

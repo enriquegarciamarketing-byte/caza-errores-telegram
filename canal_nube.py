@@ -8,8 +8,9 @@ el precio de Amazon.es producto a producto. Reglas que no se saltan:
   y se publica como https://www.amazon.es/dp/ASIN?tag=<tu etiqueta>. Nunca una búsqueda por EAN.
 - El precio tiene que haberse visto en Amazon hace muy poco (max_price_age_minutes) y coincidir
   en el listado y en la ficha. Justo antes de enviar se vuelve a leer la ficha: si cambia, no sale.
-- El descuento se calcula frente al precio MÁS BAJO de los 30 días anteriores a la bajada, el mismo
-  criterio que la ley europea exige a las tiendas. Nada de PVP tachados ni medias infladas por picos.
+- Desde el 3/11/2026 el titular puede ser el PVP recomendado (precio tachado de Amazon), solo si es
+  coherente con la media de 90 días y siempre con una bajada real frente al mínimo de 30 días, que
+  también sale en el post. Sin PVP coherente, el descuento real de siempre (mínimo de 30 o media de 90).
 - Los posts de las últimas 48 h se vuelven a mirar; si sube el precio o se agota, se marca el post.
 """
 
@@ -370,20 +371,41 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
     taste = interest(title, rules)
     if taste["blocked"]:
         return f"poco interés («{taste['blocked']}»)", {}
-    needed = float(taste.get("min_discount") or rules["min_discount_pct"])
-    if relaxed and taste["score"] > 0:
-        # Sin publicar desde hace rato: se admite la mejor rebaja real de las categorías top, algo menor.
-        top = taste["score"] >= 90
-        needed = min(needed, float(rules.get("fallback_min_discount_top" if top else "fallback_min_discount") or needed))
     low = detail.get("low")
-    at_low = bool(low and float(price) <= float(low) + 0.009)
-    if at_low and taste["score"] >= 90 and rules.get("historical_low_min_discount"):
-        # En su precio más bajo de siempre y de lo que más se compra: vale con una rebaja real algo menor.
-        needed = min(needed, float(rules["historical_low_min_discount"]))
-    if pct + 1e-9 < needed:
-        return f"solo -{pct:.0f}% frente a {ref_text} ({euro(reference)})", {}
-    if pct > float(rules["max_discount_pct"]):
-        return f"descuento sospechoso (-{pct:.0f}%)", {}
+    pvp_conf = rules.get("pvp") or {}
+    pvp = float(item.get("was") or 0)
+    conf = rules.get("interest") or {}
+    # PVP recomendado (el precio tachado del listado) como titular, si es coherente con lo que se ha pagado
+    # de verdad (no más de max_ratio_median90 veces la media de 90 días) y si ahora hay una bajada real.
+    use_pvp = bool(pvp_conf.get("enabled") and pvp > float(price) + 0.009 and median_90
+                   and pvp <= float(pvp_conf.get("max_ratio_median90", 2.5)) * float(median_90) + 1e-9)
+    if use_pvp:
+        floor = float(pvp_conf.get("min_real_drop_relaxed" if relaxed else "min_real_drop", 10))
+        if drop_30 + 1e-9 < floor:
+            return (f"solo -{drop_30:.0f}% de bajada real frente a su mínimo de los 30 días anteriores "
+                    f"({euro(hist['min_30'])})"), {}
+        kind = "top" if taste["score"] > 0 and taste.get("min_discount") else ("tier" if taste["score"] > 0 else "any")
+        needed = float(pvp_conf.get(("relaxed_" if relaxed else "") + kind, 101))
+        pct, ref_kind, reference = discount_pct(float(price), pvp), "pvp", pvp
+        if pct + 1e-9 < needed:
+            return f"solo -{pct:.0f}% frente a su PVP recomendado ({euro(pvp)})", {}
+        any_price = float(conf.get("any_category_min_price_eur", 0))
+        if kind == "any" and price < any_price:
+            return f"categoría de poco interés (fuera de las top solo desde {any_price:.0f} €)", {}
+    else:
+        needed = float(taste.get("min_discount") or rules["min_discount_pct"])
+        if relaxed and taste["score"] > 0:
+            # Sin publicar desde hace rato: se admite la mejor rebaja real de las categorías top, algo menor.
+            top = taste["score"] >= 90
+            needed = min(needed, float(rules.get("fallback_min_discount_top" if top else "fallback_min_discount") or needed))
+        at_low = bool(low and float(price) <= float(low) + 0.009)
+        if at_low and taste["score"] >= 90 and rules.get("historical_low_min_discount"):
+            # En su precio más bajo de siempre y de lo que más se compra: vale con una rebaja real algo menor.
+            needed = min(needed, float(rules["historical_low_min_discount"]))
+        if pct + 1e-9 < needed:
+            return f"solo -{pct:.0f}% frente a {ref_text} ({euro(reference)})", {}
+    if (drop_30 if ref_kind == "pvp" else pct) > float(rules["max_discount_pct"]):
+        return f"descuento sospechoso (-{(drop_30 if ref_kind == 'pvp' else pct):.0f}%)", {}
     if hist["drop_age_days"] > int(rules["max_drop_age_days"]):
         return f"lleva {hist['drop_age_days']} días a este precio", {}
     rating, reviews = detail.get("rating"), detail.get("reviews")
@@ -393,8 +415,7 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
         return f"valoración baja ({rating})", {}
     if reviews < int(rules["min_reviews"]):
         return f"pocas opiniones ({reviews})", {}
-    conf = rules.get("interest") or {}
-    if taste["score"] <= 0 and conf.get("tiers"):
+    if taste["score"] <= 0 and conf.get("tiers") and ref_kind != "pvp":
         any_pct = float(conf.get("any_category_min_discount", 101))
         if relaxed and conf.get("any_category_fallback_min_discount") is not None:
             any_pct = min(any_pct, float(conf["any_category_fallback_min_discount"]))
@@ -407,7 +428,7 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
     return "", {
         "jl_id": item["id"], "title": title, "price": float(price), "reference": reference,
         "median_90": hist["reference"],
-        "discount": pct, "ref_kind": ref_kind, "drop_30": drop_30, "historical_low": bool(low and price <= low + 0.009), "rating": rating,
+        "discount": pct, "ref_kind": ref_kind, "drop_30": drop_30, "min_30": hist["min_30"], "historical_low": bool(low and price <= low + 0.009), "rating": rating,
         "reviews": reviews, "image": detail["image"], "seen_ts": int(item["ts"]), "brand": item.get("brand") or "",
         "interest": taste["score"], "interest_label": taste["label"],
     }
@@ -499,7 +520,7 @@ def clean_title(title: str, limit: int = 95) -> str:
 
 def real_drop(deal: dict) -> float | None:
     """Bajada frente al mínimo de 30 días cuando el porcentaje del post es contra la media de 90 días."""
-    return deal.get("drop_30") if deal.get("ref_kind") == "media90" else None
+    return deal.get("drop_30") if deal.get("ref_kind") in ("media90", "pvp") else None
 
 
 def badge_for(pct: float, rules: dict, drop_30: float | None = None) -> str:
@@ -523,15 +544,21 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     seen = datetime.fromtimestamp(deal["seen_ts"], timezone.utc).astimezone(MADRID)
     lines = [HEADERS[badge_for(pct, rules, real_drop(deal))], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", ""]
     lines.append(f"💰 <b>{e(euro(deal['price']))}</b>   <s>{e(euro(deal['reference']))}</s>")
-    if deal.get("ref_kind") == "media90":
+    if deal.get("ref_kind") == "pvp":
+        lines.append(f"📉 <b>-{round(pct)} %</b> frente a su PVP recomendado")
+        if deal.get("min_30") and float(deal.get("drop_30") or 0) >= 1:
+            lines.append(f"📊 <b>-{round(float(deal['drop_30']))} %</b> frente a su precio más bajo de los 30 días "
+                         f"anteriores ({e(euro(float(deal['min_30'])))})")
+    elif deal.get("ref_kind") == "media90":
         lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio medio de los últimos 90 días")
     else:
         lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio más bajo de los 30 días anteriores")
     habitual = float(deal.get("median_90") or 0)
-    if deal.get("ref_kind") != "media90" and habitual > float(deal["reference"]) * 1.10:
+    if not deal.get("ref_kind") and habitual > float(deal["reference"]) * 1.10:
         lines.append(f"🔻 <b>-{round(discount_pct(deal['price'], habitual))} %</b> frente a su precio habitual "
                      f"de los últimos 90 días ({e(euro(habitual))})")
-    lines.append(f"🤑 Te ahorras <b>{e(euro(deal['reference'] - deal['price']))}</b>")
+    vs = " frente al PVP" if deal.get("ref_kind") == "pvp" else ""
+    lines.append(f"🤑 Te ahorras <b>{e(euro(deal['reference'] - deal['price']))}</b>{vs}")
     if deal.get("historical_low"):
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
     # Sin estrellas ni número de opiniones: Amazon solo deja mostrarlas si salen de su API oficial.
@@ -588,7 +615,8 @@ def make_card(deal: dict, rules: dict) -> Path:
         "category": badge_for(deal["discount"], rules, real_drop(deal)),
         "current": deal["price"],
         "reference": deal["reference"],
-        "ref_label": "MEDIA 90 DÍAS" if deal.get("ref_kind") == "media90" else "MÍNIMO 30 DÍAS ANTES",
+        "ref_label": {"media90": "MEDIA 90 DÍAS", "pvp": "PVP RECOMENDADO"}.get(deal.get("ref_kind") or "",
+                                                                             "MÍNIMO 30 DÍAS ANTES"),
         "logo_path": DEAL_LOGO,
         "store": "Amazon",
         "days": 90,

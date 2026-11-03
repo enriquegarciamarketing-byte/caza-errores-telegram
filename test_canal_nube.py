@@ -192,7 +192,7 @@ class SinSilencios(unittest.TestCase):
         points = [[(today - timedelta(days=100)).isoformat(), 800.0], [today.isoformat(), 640.0]]
         detail = dict(scanner.parse_detail(LEFANT), price=640.0,
                       series=[{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png", "points": points}])
-        item = dict(item_for("R0ZG4Bv"), price=640.0)  # robot aspirador a -20 % de su mínimo de 30 días (800 €)
+        item = dict(item_for("R0ZG4Bv"), price=640.0, was=None)  # robot aspirador a -20 % de su mínimo de 30 días (800 €)
         why, _ = cn.evaluate(item, detail, REAL, NOW)
         self.assertIn("solo -20%", why)
         why, deal = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
@@ -208,7 +208,7 @@ class SinSilencios(unittest.TestCase):
         points = [[(today - timedelta(days=100)).isoformat(), 800.0], [today.isoformat(), 670.0]]
         detail = dict(scanner.parse_detail(LEFANT), price=670.0, low=670.0,
                       series=[{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png", "points": points}])
-        item = dict(item_for("R0ZG4Bv"), price=670.0)  # robot aspirador a -16 % y en su mínimo de siempre
+        item = dict(item_for("R0ZG4Bv"), price=670.0, was=None)  # robot aspirador a -16 % y en su mínimo de siempre
         why, deal = cn.evaluate(item, detail, REAL, NOW)
         self.assertEqual(why, "")
         self.assertTrue(deal["historical_low"])
@@ -498,7 +498,7 @@ def robot_with(points: list, price: float, low: float | None = None):
                   series=[{"label": "Amazon ES", "flag": "/static/assets/flags/amazon.es.png", "points": points}])
     if low is not None:
         detail["low"] = low
-    return dict(item_for("R0ZG4Bv"), price=price), detail
+    return dict(item_for("R0ZG4Bv"), price=price, was=None), detail
 
 
 class MejorDescuentoReal(unittest.TestCase):
@@ -521,7 +521,7 @@ class MejorDescuentoReal(unittest.TestCase):
         self.assertIn("precio medio de los últimos 90 días", cn.build_caption(dict(deal, asin="B0G7YP6MXV"), "u", REAL))
 
     def test_lefant_sigue_con_el_minimo_de_30_porque_estuvo_mucho_mas_barato(self):
-        why, deal = cn.evaluate(item_for("R0ZG4Bv"), scanner.parse_detail(LEFANT), REAL, NOW)
+        why, deal = cn.evaluate(dict(item_for("R0ZG4Bv"), was=None), scanner.parse_detail(LEFANT), REAL, NOW)
         self.assertEqual(why, "")
         self.assertEqual(deal["ref_kind"], "")
         self.assertEqual(deal["reference"], 799.99)
@@ -567,3 +567,55 @@ class MejorDescuentoReal(unittest.TestCase):
         self.assertIn("https://jimmyleaks.com/es/c/deportes-y-aire-libre/?order=-modified", sources)
         core = sources[: REAL["core_sources"]]
         self.assertIn("https://jimmyleaks.com/es/?order=-modified&page=6", core)
+
+
+class PrecioRecomendado(unittest.TestCase):
+    """3/11/2026: Enrique elige el PVP recomendado como titular para probar si se factura más."""
+
+    def setUp(self):
+        self.today = NOW.astimezone(cn.MADRID).date()
+
+    def test_lefant_titular_frente_al_pvp_y_linea_real(self):
+        why, deal = cn.evaluate(item_for("R0ZG4Bv"), scanner.parse_detail(LEFANT), REAL, NOW)
+        self.assertEqual(why, "")
+        self.assertEqual(deal["ref_kind"], "pvp")
+        self.assertEqual(deal["reference"], 1799.99)
+        self.assertEqual(round(deal["discount"]), 79)
+        text = cn.build_caption(dict(deal, asin="B0G7YP6MXV"), "u", REAL)
+        self.assertIn("-79 %</b> frente a su PVP recomendado", text)
+        self.assertIn("-53 %</b> frente a su precio más bajo de los 30 días anteriores (799,99 €)", text)
+        self.assertIn("<s>1.799,99 €</s>", text)
+        self.assertIn("frente al PVP", text)
+        self.assertNotIn("ERROR DE PRECIO", text, "el error de precio sale de la bajada real, no del PVP")
+
+    def test_sin_bajada_real_no_sale_aunque_el_pvp_sea_enorme(self):
+        points = [[(self.today - timedelta(days=100)).isoformat(), 40.0], [self.today.isoformat(), 39.0]]
+        _, detail = robot_with(points, 39.0)
+        item = dict(item_for("R0ZG4Bv"), price=39.0, was=99.0)
+        why, _ = cn.evaluate(item, detail, REAL, NOW)
+        self.assertIn("de bajada real", why)
+        self.assertTrue(why.startswith("solo -"))
+
+    def test_pvp_inflado_no_cuenta(self):
+        # PVP de 400 € para algo que se paga a 100: más de 2,5 veces la media, se usa el descuento real.
+        points = [[(self.today - timedelta(days=100)).isoformat(), 100.0], [self.today.isoformat(), 80.0]]
+        _, detail = robot_with(points, 80.0)
+        item = dict(item_for("R0ZG4Bv"), price=80.0, was=400.0)
+        why, deal = cn.evaluate(item, detail, REAL, NOW)
+        self.assertEqual(why, "")  # sale por su mínimo histórico, con el descuento real
+        self.assertEqual(deal["ref_kind"], "")
+        self.assertEqual(deal["reference"], 100.0)
+
+    def test_umbral_de_pvp_por_categoria(self):
+        points = [[(self.today - timedelta(days=100)).isoformat(), 100.0], [self.today.isoformat(), 85.0]]
+        _, detail = robot_with(points, 85.0)
+        item = dict(item_for("R0ZG4Bv"), price=85.0, was=135.0)  # aspirador: -37 % de PVP, -15 % real
+        why, _ = cn.evaluate(item, detail, REAL, NOW)
+        self.assertIn("frente a su PVP recomendado", why)
+        why, deal = cn.evaluate(item, detail, REAL, NOW, relaxed=True)  # sin silencios: top desde -30 %
+        self.assertEqual(why, "")
+        self.assertEqual(deal["ref_kind"], "pvp")
+
+    def test_tarjeta_dice_pvp_recomendado(self):
+        import inspect
+        self.assertIn("PVP RECOMENDADO", inspect.getsource(cn.make_card))
