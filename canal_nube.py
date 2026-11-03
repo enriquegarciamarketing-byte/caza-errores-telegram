@@ -763,6 +763,11 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         time.sleep(2)
     global BACKLOG
     BACKLOG = max(0, len(approved) - sent) if sent >= limit else 0
+    if not args.test_private:
+        # Lo aprobado que no cupo se guarda para la siguiente pasada: el feed general cambia tan rápido que
+        # ese producto ya no estaría en los listados. Se vuelve a evaluar entero y con segunda lectura.
+        posted = {p.get("jl_id") for p in state.get("posts") or []}
+        state["backlog"] = [item for item, _ in approved if item.get("id") not in posted][: int(rules.get("backlog_max", 20))]
     if not sent:
         log("Nada que cumpla todas las reglas en esta pasada.")
     return 0
@@ -852,6 +857,9 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         for item in fresh:
             if not skip(item):
                 pool.setdefault(item["id"], item)
+    for item in state.get("backlog") or []:
+        if item.get("id") and item.get("ts") and now.timestamp() - item["ts"] <= max_age and item.get("price"):
+            pool.setdefault(item["id"], dict(item))
     extra = 0
     for item in cascade or []:
         if not item.get("ts") or now.timestamp() - item["ts"] > max_age or not item.get("price") or skip(item):

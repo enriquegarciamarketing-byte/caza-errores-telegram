@@ -619,3 +619,36 @@ class PrecioRecomendado(unittest.TestCase):
     def test_tarjeta_dice_pvp_recomendado(self):
         import inspect
         self.assertIn("PVP RECOMENDADO", inspect.getsource(cn.make_card))
+
+
+class Pendientes(unittest.TestCase):
+    """Lo aprobado que no cabe en una pasada no se pierde: el 3/11 se aprobaron 9 y solo salieron 3."""
+
+    def test_lo_que_no_cabe_entra_en_la_siguiente_pasada(self):
+        item = dict(item_for("R0ZG4Bv"))
+        state = {"seen": {}, "backlog": [item]}
+        fetched = []
+
+        def fetch(url):
+            fetched.append(url)
+            return LEFANT if "/dp/" in url else "<html></html>"
+        approved = cn.find_deals(dict(REAL, sources=[]), state, NOW, fetch, lambda jl: "B0G7YP6MXV", lambda *a: None)
+        self.assertEqual([i["id"] for i, _ in approved], ["R0ZG4Bv"])
+
+    def test_pendiente_caducado_no_vuelve(self):
+        item = dict(item_for("R0ZG4Bv"))
+        later = datetime.fromtimestamp(item["ts"] + 2 * 3600, timezone.utc)
+        state = {"seen": {}, "backlog": [item]}
+        approved = cn.find_deals(dict(REAL, sources=[]), state, later, lambda url: "<html></html>",
+                                 lambda jl: "B0G7YP6MXV", lambda *a: None)
+        self.assertEqual(approved, [])
+
+    def test_run_guarda_lo_que_no_cupo(self):
+        item = dict(item_for("R0ZG4Bv"))
+        state = {"seen": {}, "posts": [], "backlog": [item]}
+        cfg = {"affiliate_tag": "cazadores_errores-21",
+               "amazon_channel": {**{k: v for k, v in REAL.items() if k != "tag"}, "sources": [], "max_per_run": 0}}
+        cn.run(SimpleNamespace(dry_run=True, test_private=False, ignore_limits=True), cfg, state, NOW,
+               fetch=lambda url: LEFANT if "/dp/" in url else "<html></html>",
+               resolve_asin=lambda jl: "B0G7YP6MXV", log=lambda *a: None, cascade_loader=lambda log: [])
+        self.assertEqual([i["id"] for i in state["backlog"]], ["R0ZG4Bv"])
