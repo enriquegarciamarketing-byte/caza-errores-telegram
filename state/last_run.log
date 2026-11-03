@@ -1,100 +1,121 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 91 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36103 bytes, 30 chollos
-  Chollometro «Robot Aspirador Friegasuelos ILIFE A30 Pro»: AliExpress 72.1 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68324 bytes, 30 chollos
-  cm-2053600 · AliExpress 72.1 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Robot Aspirador Friegasuelos ILIFE A30 Pro
-  cm-2053600: no se publica (horario nocturno: las gangas esperan al día)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 34 descartes nuevos, 75 en lista
-== pasada 2 · 07:31 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 3 · 07:33 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 4 · 07:36 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 55 descartes nuevos, 55 en lista
-== pasada 5 · 07:38 ==
-Listados: 88 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36124 bytes, 30 chollos
-  Chollometro «SILENT HILL TOWNFALL PS5 JUEGO FÍSICO PARA PLAYSTATION 5 VERSIÓN ESPAÑ»: AliExpress 36.95 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71930 bytes, 30 chollos
-  cm-2053580 · AliExpress 36.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · SILENT HILL TOWNFALL PS5 JUEGO FÍSICO PARA PLAYSTATION 5 VER
-  cm-2053580: no se publica (horario nocturno: las gangas esperan al día)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 07:41 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 07:43 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 07:46 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 07:48 ==
 Listados: 92 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36007 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72661 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35592 bytes, 30 chollos
+  Chollometro «New Balance Zapatilla de Running de Hombre FreshFoam Arishi v4 Tiralux»: El Corte Inglés 40.0 €
+  Chollometro «New Balance Zapatilla Casual Unisex 370, tallas 37 a 45, azul»: El Corte Inglés 48.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70840 bytes, 30 chollos
+  cm-2053654 · El Corte Inglés 40.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance Zapatilla de Running de Hombre FreshFoam Arishi 
+  cm-2053652 · El Corte Inglés 48.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance Zapatilla Casual Unisex 370, tallas 37 a 45, azu
+  Vinted «new v4 balance»: HTTP 200, 3669515 bytes, 96 anuncios
+  Vinted «new v4 balance»: 87 parecidos de 96
+  Wallapop «new v4 balance»: 200 / 144339 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «new v4 balance»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 112 anuncios, ~50 €, no publica
+  ⚠️ No publico «New Balance Zapatilla de Running de Hombre FreshFoam Arishi v4 Tiralux»: reventa en VINTED+WALLAPOP ~50 € (112 anuncios): ROI 14 % y 6 €, por debajo del mínimo (30 % y 25 €)
+  Vinted «new 370 balance»: HTTP 200, 3664035 bytes, 96 anuncios
+  Vinted «new 370 balance»: 86 parecidos de 96
+  Wallapop «new 370 balance»: 200 / 128091 bytes, 39 anuncios, 26 parecidos, 0 reservas
+  Milanuncios «new 370 balance»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 98 anuncios, ~46 €, no publica
+  ⚠️ No publico «New Balance Zapatilla Casual Unisex 370, tallas 37 a 45, azul»: reventa en VINTED+WALLAPOP ~46 € (98 anuncios): ROI -13 % y -6 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 07:51 ==
-Listados: 99 productos únicos
+Cascada al canal normal: 46 descartes nuevos, 80 en lista
+== pasada 2 · 08:51 ==
+Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 07:53 ==
-Listados: 101 productos únicos
+== pasada 3 · 08:53 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  7PNOQOd · 310.49 € · media 370.98 · ref 307.46 → descartado (la referencia corregida no supera el precio (media inflada)) · Garmin Venu 3S, Smartwatch con GPS, Beige Gold
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 4 · 08:56 ==
+Listados: 103 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 07:56 ==
-Listados: 102 productos únicos
+== pasada 5 · 08:58 ==
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36046 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71801 bytes, 30 chollos
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 07:58 ==
-Listados: 90 productos únicos
+== pasada 6 · 09:01 ==
+Listados: 86 productos únicos
   Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
   Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 343378 bytes, 0 ASIN, 0 títulos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35882 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77223 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 14 · 08:01 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 1
-  72YObNn · 40.7 € · media 54.76 · ref 36.95 → descartado (la referencia corregida no supera el precio (media inflada)) · Tommy Hilfiger Vulcanized Sneaker Hombre Core Low Summer Mes
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 08:03 ==
-Listados: 101 productos únicos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 343621 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 16 · 08:06 ==
+== pasada 7 · 09:03 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 8 · 09:06 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 9 · 09:08 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36343 bytes, 30 chollos
+  Chollometro «Zapatillas Adidas Galaxy 8»: Amazon 32.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 112768 bytes, 30 chollos
+  cm-2053556 · Amazon 32.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Adidas Galaxy 8
+  Vinted «zapatillas adidas»: HTTP 200, 3667793 bytes, 96 anuncios
+  Vinted «zapatillas adidas»: 31 parecidos de 96
+  Wallapop «zapatillas adidas»: 200 / 112202 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «zapatillas adidas»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 57 anuncios, ~20 €, no publica
+  ⚠️ No publico «Zapatillas Adidas Galaxy 8»: reventa en VINTED+WALLAPOP ~20 € (57 anuncios): ROI -48 % y -16 €, por debajo del mínimo (30 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 10 · 09:11 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 11 · 09:13 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 09:16 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 09:18 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36182 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 111180 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 09:21 ==
+Listados: 90 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 09:23 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 16 · 09:26 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
 Fin de la ejecución tras 16 pasadas.
