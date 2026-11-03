@@ -971,8 +971,8 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "RJX29G5": {
-   "price": 46.03,
-   "t": 1793702444,
+   "price": 41.77,
+   "t": 1793709366,
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "R3VQ0X7": {
@@ -1333,7 +1333,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793708001
+   "checked": 1793711617
   }
  ],
  "tg_offset": 334822059,
@@ -5549,6 +5549,65 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "|aspiradora dyson v15 detect absolute + kit limpieza a fondo (240aw, iluminacion fluffy optic, sensor piezo, manguera, oferta dyson)|aspiradora v15 dyson": {
+   "t": 1793709989.0111601,
+   "query": "aspiradora v15 dyson",
+   "prices": [
+    225.0,
+    200.0,
+    320.0,
+    85.0,
+    10.0,
+    30.0,
+    35.0,
+    350.0,
+    330.0,
+    625.0,
+    30.0,
+    30.0,
+    95.0,
+    35.0,
+    35.0,
+    35.0,
+    30.0,
+    60.0,
+    40.0,
+    12.5,
+    350.0,
+    280.0,
+    380.0,
+    349.0,
+    9.0,
+    13.0,
+    290.0,
+    25.0,
+    25.0,
+    50.0,
+    90.0,
+    50.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 123234,
+   "raw_count": 40
+  },
+  "|auriculares apple airpods 5 con carga inalambrica y anc (traduccion tiempo real, audio adaptativo, chip h2, usb-c, blanco, mediamarkt)|auriculares h2 apple": {
+   "t": 1793709991.3243933,
+   "query": "auriculares h2",
+   "prices": [
+    20.0,
+    15.0,
+    90.0,
+    18.0,
+    28.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 134774,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -5777,7 +5836,9 @@
   "wallapop:cm-2053848": 1793702471.4117513,
   "wallapop:cm-2053761": 1793702472.326438,
   "wallapop:cm-2052344": 1793703667.0122917,
-  "wallapop:cm-2054063": 1793705772.6734571
+  "wallapop:cm-2054063": 1793705772.6734571,
+  "wallapop:cm-2054024": 1793709989.598311,
+  "wallapop:cm-2054101": 1793709991.8916
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -7277,10 +7338,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 5,
+ "rotation_index": 1,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/robot-aspirador-friegasuelos-ilife-a30-pro-2053600": 1793687339.491504,
-  "https://www.chollometro.com/ofertas/silent-hill-townfall-ps5-juego-fisico-para-playstation-5-version-espanola-garantia-2053580": 1793687939.2966075,
   "https://www.chollometro.com/ofertas/new-balance-zapatilla-de-running-de-hombre-freshfoam-arishi-v4-tiralux-2053654": 1793692124.69103,
   "https://www.chollometro.com/ofertas/new-balance-zapatilla-casual-unisex-370-tallas-37-a-45-azul-o-gris-2053652": 1793692124.69103,
   "https://www.chollometro.com/ofertas/zapatillas-adidas-galaxy-8-2053556": 1793693324.9635012,
@@ -7297,7 +7356,9 @@
   "https://www.chollometro.com/ofertas/barra-de-sonido-51-sony-ht-s40r-600w-altavoces-traseros-inalambricos-dolby-digital-hdmi-arc-bluetooth-2053761": 1793702464.1750464,
   "https://www.chollometro.com/ofertas/zapatillas-nike-streakfly-2-para-miembros-plus-2053848": 1793702464.1750464,
   "https://www.chollometro.com/ofertas/roborock-q10-s5-set-robot-aspirador-y-fregasuelos-succion-de-10000-pa-2052344": 1793703661.6212094,
-  "https://www.chollometro.com/ofertas/western-digital-wds100t2xhe-ssd-1000-gb-m2-7300-mbs-pci-express-40-nvme-2054063": 1793705766.9023056
+  "https://www.chollometro.com/ofertas/western-digital-wds100t2xhe-ssd-1000-gb-m2-7300-mbs-pci-express-40-nvme-2054063": 1793705766.9023056,
+  "https://www.chollometro.com/ofertas/auriculares-apple-airpods-5-con-carga-inalambrica-y-anc-traduccion-tiempo-real-audio-adaptativo-chip-h2-usb-c-blanco-mediamarkt-2054101": 1793709982.06704,
+  "https://www.chollometro.com/ofertas/aspiradora-dyson-v15-detect-absolute-kit-limpieza-a-fondo-240aw-iluminacion-fluffy-optic-sensor-piezo-manguera-oferta-dyson-2054024": 1793709982.06704
  },
  "asked": {
   "cm-2053299": 1793645724,
