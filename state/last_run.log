@@ -1,110 +1,116 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36299 bytes, 30 chollos
-  Chollometro «Samsung 990 Pro M.2 MZ-V9P1T0BW SSD NVMe4.0 7450-6900MB/s 1TB»: AliExpress 157.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 115705 bytes, 30 chollos
-  cm-2053851 · AliExpress 157.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Samsung 990 Pro M.2 MZ-V9P1T0BW SSD NVMe4.0 7450-6900MB/s 1T
-  cm-2053851: no se publica (esperando separación entre gangas)
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 2
+  RJX29G5 · 46.03 € · media 82.33 · ref 36.86 → descartado (la referencia corregida no supera el precio (media inflada)) · Tommy Hilfiger Tote Bag Hombre Heritage de canvas, Marrón (W
+  R3VQ0X7 · 193.95 € · media 259.42 · ref 212.00 → descartado (solo -9% bajo la referencia) · Sony HT-S40R - Barra de Sonido 5.1 (Sistema de Cine en Casa,
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35976 bytes, 30 chollos
+  Chollometro «Barra de Sonido 5.1 Sony HT-S40R 600W (Altavoces Traseros Inalámbricos»: Amazon 193.95 €
+  Chollometro «Zapatillas Nike STREAKFLY 2 (Para miembros Plus)»: Zalando Privé 71.01 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 86848 bytes, 30 chollos
+  cm-2053761 · Amazon 193.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Barra de Sonido 5.1 Sony HT-S40R 600W (Altavoces Traseros In
+  cm-2053848 · Zalando Privé 71.01 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Nike STREAKFLY 2 (Para miembros Plus)
+  Vinted «zapatillas nike»: HTTP 200, 3671921 bytes, 96 anuncios
+  Vinted «zapatillas nike»: 28 parecidos de 96
+  Wallapop «zapatillas nike»: 200 / 108997 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «zapatillas nike»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 49 anuncios, ~15 €, no publica
+  ⚠️ No publico «Zapatillas Nike STREAKFLY 2 (Para miembros Plus)»: reventa en VINTED+WALLAPOP ~15 € (49 anuncios): ROI -83 % y -59 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «barra s40r sonido»: 200 / 73362 bytes, 19 anuncios, 10 parecidos, 0 reservas
+  Milanuncios «barra s40r sonido»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 9 anuncios, ~156 €, no publica
+  ⚠️ No publico «Barra de Sonido 5.1 Sony HT-S40R 600W (Altavoces Traseros Inalámbricos, Dolby Digital, HDM»: reventa en WALLAPOP ~156 € (9 anuncios): ROI -28 % y -54 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 26 descartes nuevos, 72 en lista
-== pasada 2 · 10:44 ==
-Listados: 99 productos únicos
+Cascada al canal normal: 43 descartes nuevos, 79 en lista
+== pasada 2 · 11:43 ==
+Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 3 · 10:47 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 10:49 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 10:52 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36000 bytes, 30 chollos
-  Chollometro «Zapatillas Unisex New Balance 370 Casual (Tallas 36 a 45, Gris, estilo»: El Corte Inglés 48.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 123450 bytes, 30 chollos
-  cm-2053671 · El Corte Inglés 48.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Unisex New Balance 370 Casual (Tallas 36 a 45, Gr
-  cm-2053671: no se publica (esperando separación entre gangas)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 10:54 ==
+== pasada 3 · 11:45 ==
 Listados: 103 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 7 · 10:57 ==
+== pasada 4 · 11:48 ==
+Listados: 90 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 5 · 11:50 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36133 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 86015 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 6 · 11:53 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 7 · 11:55 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 11:58 ==
 Listados: 93 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 10:59 ==
+== pasada 9 · 12:00 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  1qGdemB · 36.9 € · media 47.82 · ref 38.00 → descartado (solo -3% bajo la referencia) · Cecotec Aspirador de Cenizas de 20L Conga Ash 5000 Free. 120
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36395 bytes, 30 chollos
+  Chollometro «roborock Q10 S5 Set Robot Aspirador y Fregasuelos Succión de 10000 Pa»: Amazon 99.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 83498 bytes, 30 chollos
+  cm-2052344 · Amazon 99.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · roborock Q10 S5 Set Robot Aspirador y Fregasuelos Succión de
+  Wallapop «roborock q10 robot»: 200 / 77224 bytes, 24 anuncios, 16 parecidos, 0 reservas
+  Milanuncios «roborock q10 robot»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 14 anuncios, ~134 €, no publica
+  ⚠️ No publico «roborock Q10 S5 Set Robot Aspirador y Fregasuelos Succión de 10000 Pa»: reventa en WALLAPOP ~134 € (14 anuncios): ROI 19 % y 19 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 10 · 12:03 ==
 Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 11:02 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35813 bytes, 30 chollos
-  Chollometro «Nike Air Force 1 de piel- Gore-Tex- Tallas- 40, 40.5, 42»: Showroomprive 53.9 €
-  Chollometro «Juego Lies Of P para Playstation 5 | PS5 - Playstation 5 - PS5 - PAL E»: AliExpress 26.32 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 125383 bytes, 30 chollos
-  cm-2053791 · Showroomprive 53.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nike Air Force 1 de piel- Gore-Tex- Tallas- 40, 40.5, 42
-  cm-2053820 · AliExpress 26.32 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Juego Lies Of P para Playstation 5 | PS5 - Playstation 5 - P
-  Wallapop «nike 40 air»: 200 / 128947 bytes, 40 anuncios, 23 parecidos, 0 reservas
-  Milanuncios «nike 40 air»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
-  Reventa WALLAPOP: 17 anuncios, ~37 €, no publica
-  ⚠️ No publico «Nike Air Force 1 de piel- Gore-Tex- Tallas- 40, 40.5, 42»: reventa en WALLAPOP ~37 € (17 anuncios): ROI -38 % y -21 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «juego ps5 lies»: 200 / 91626 bytes, 36 anuncios, 9 parecidos, 0 reservas
-  Milanuncios «juego ps5 lies»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
-  Reventa WALLAPOP: 9 anuncios, ~30 €, no publica
-  ⚠️ No publico «Juego Lies Of P para Playstation 5 | PS5 - Playstation 5 - PS5 - PAL EU - Nuevo Original P»: reventa en WALLAPOP ~30 € (9 anuncios): ROI 1 % y 0 €, por debajo del mínimo (30 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 11:04 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 11:07 ==
-Listados: 92 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 11:09 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 11:12 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35996 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 139653 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 11:14 ==
+== pasada 11 · 12:05 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 11:17 ==
-Listados: 96 productos únicos
+== pasada 12 · 12:08 ==
+Listados: 90 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 16 · 11:19 ==
-Listados: 87 productos únicos
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 12:10 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36143 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 80090 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 12:13 ==
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 15 · 12:15 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 12:18 ==
+Listados: 88 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
 Fin de la ejecución tras 16 pasadas.

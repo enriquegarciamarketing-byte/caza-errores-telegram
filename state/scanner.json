@@ -969,6 +969,21 @@
    "price": 40.7,
    "t": 1793689276,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "RJX29G5": {
+   "price": 46.03,
+   "t": 1793702444,
+   "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "R3VQ0X7": {
+   "price": 193.95,
+   "t": 1793702444,
+   "result": "solo -9% bajo la referencia"
+  },
+  "1qGdemB": {
+   "price": 36.9,
+   "t": 1793703645,
+   "result": "solo -3% bajo la referencia"
   }
  },
  "posts": [
@@ -1318,12 +1333,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793701198
+   "checked": 1793704695
   }
  ],
  "tg_offset": 334822059,
  "admin_chat_id": 9188393228,
- "last_listing_count": 87,
+ "last_listing_count": 88,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -5426,6 +5441,104 @@
    "http_status": 200,
    "bytes": 91626,
    "raw_count": 36
+  },
+  "|zapatillas nike streakfly 2 (para miembros plus)|zapatillas nike": {
+   "t": 1793702470.7888474,
+   "query": "zapatillas nike",
+   "prices": [
+    45.0,
+    40.0,
+    20.0,
+    40.0,
+    30.0,
+    18.0,
+    20.0,
+    25.0,
+    10.0,
+    55.0,
+    10.0,
+    28.0,
+    30.0,
+    10.99,
+    52.0,
+    19.0,
+    15.0,
+    65.0,
+    69.0,
+    79.99,
+    35.0,
+    60.0,
+    15.0,
+    55.0,
+    52.0,
+    17.0,
+    60.0,
+    15.0,
+    10.0,
+    59.99,
+    45.0,
+    22.0,
+    20.0,
+    40.0,
+    60.0,
+    12.0,
+    10.0,
+    20.0,
+    20.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 108997,
+   "raw_count": 40
+  },
+  "|barra de sonido 5.1 sony ht-s40r 600w (altavoces traseros inalambricos, dolby digital, hdmi arc, bluetooth)|barra s40r sonido": {
+   "t": 1793702471.71803,
+   "query": "barra s40r sonido",
+   "prices": [
+    137.5,
+    150.0,
+    180.0,
+    100.0,
+    140.0,
+    195.0,
+    180.0,
+    40.0,
+    300.0,
+    209.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 73362,
+   "raw_count": 19
+  },
+  "|roborock q10 s5 set robot aspirador y fregasuelos succion de 10000 pa|roborock q10 robot": {
+   "t": 1793703666.4126227,
+   "query": "roborock q10 robot",
+   "prices": [
+    85.0,
+    130.0,
+    199.0,
+    200.0,
+    190.0,
+    40.0,
+    199.95,
+    125.0,
+    89.0,
+    120.0,
+    180.0,
+    270.0,
+    12.0,
+    100.0,
+    198.0,
+    150.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 77224,
+   "raw_count": 24
   }
  },
  "milanuncios_cache": {
@@ -5650,7 +5763,10 @@
   "wallapop:cm-2053699": 1793696714.9015026,
   "wallapop:cm-2053211": 1793696716.0831113,
   "wallapop:cm-2053791": 1793700167.7596974,
-  "wallapop:cm-2053820": 1793700168.7846253
+  "wallapop:cm-2053820": 1793700168.7846253,
+  "wallapop:cm-2053848": 1793702471.4117513,
+  "wallapop:cm-2053761": 1793702472.326438,
+  "wallapop:cm-2052344": 1793703667.0122917
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -7108,14 +7224,50 @@
    "demand_known": true,
    "blocked": false,
    "reason": ""
+  },
+  "|zapatillas nike streakfly 2 (para miembros plus)|zapatillas nike": {
+   "t": 1793702470.0977085,
+   "prices": [
+    55.0,
+    35.0,
+    11.0,
+    15.0,
+    10.0,
+    30.0,
+    9.0,
+    43.0,
+    30.15,
+    12.0,
+    18.0,
+    15.0,
+    10.0,
+    15.0,
+    10.0,
+    17.0,
+    6.0,
+    28.0,
+    75.0,
+    15.0,
+    11.0,
+    30.0,
+    27.0,
+    8.0,
+    64.9,
+    10.0,
+    10.0,
+    12.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~11 € (22 anuncios): ROI -88 % y -62 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 13,
+ "rotation_index": 9,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/asics-zapatillas-de-padel-solution-swift-ff-2-mujer-20-extra-con-codigo-2052944": 1793681330.1916976,
   "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2053553": 1793683685.134454,
   "https://www.chollometro.com/ofertas/robot-aspirador-y-fregador-ilife-v5s-ultra-5eur-menos-con-cupon-ventaja-2051700": 1793685487.6966248,
   "https://www.chollometro.com/ofertas/robot-aspirador-friegasuelos-ilife-a30-pro-2053600": 1793687339.491504,
@@ -7132,10 +7284,12 @@
   "https://www.chollometro.com/ofertas/samsung-990-pro-m2-mz-v9p1t0bw-ssd-nvme40-7450-6900mbs-1tb-2053851": 1793698960.6317115,
   "https://www.chollometro.com/ofertas/zapatillas-unisex-new-balance-370-casual-tallas-36-a-45-gris-estilo-retro-running-ante-y-malla-oferta-el-corte-ingles-2053671": 1793699560.8712254,
   "https://www.chollometro.com/ofertas/nike-air-force-1-de-piel-gore-tex-tallas-40-405-42-2053791": 1793700160.797332,
-  "https://www.chollometro.com/ofertas/juego-lies-of-p-para-playstation-5-ps5-playstation-5-ps5-pal-eu-nuevo-original-precintado-2053820": 1793700160.797332
+  "https://www.chollometro.com/ofertas/juego-lies-of-p-para-playstation-5-ps5-playstation-5-ps5-pal-eu-nuevo-original-precintado-2053820": 1793700160.797332,
+  "https://www.chollometro.com/ofertas/barra-de-sonido-51-sony-ht-s40r-600w-altavoces-traseros-inalambricos-dolby-digital-hdmi-arc-bluetooth-2053761": 1793702464.1750464,
+  "https://www.chollometro.com/ofertas/zapatillas-nike-streakfly-2-para-miembros-plus-2053848": 1793702464.1750464,
+  "https://www.chollometro.com/ofertas/roborock-q10-s5-set-robot-aspirador-y-fregasuelos-succion-de-10000-pa-2052344": 1793703661.6212094
  },
  "asked": {
-  "cm-2052610": 1793615092,
   "cm-2053299": 1793645724,
   "cm-2053354": 1793651005,
   "cm-2053475": 1793654736,
