@@ -999,6 +999,11 @@
    "price": 569.0,
    "t": 1793716283,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "1vVLwa1": {
+   "price": 27.9,
+   "t": 1793731525,
+   "result": "solo -1% bajo la referencia"
   }
  },
  "posts": [
@@ -1348,12 +1353,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793729734
+   "checked": 1793732727
   }
  ],
- "tg_offset": 334822059,
+ "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 96,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1687,26 +1692,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|lego one piece - barco de la marina de garp (75646) con 8 minifiguras|lego 75646 one": {
-   "t": 1793223133.6242225,
-   "query": "lego 75646 one",
-   "prices": [
-    129.95,
-    139.9,
-    144.95,
-    148.0,
-    139.95,
-    159.9,
-    139.95,
-    144.95,
-    170.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 31668,
-   "raw_count": 11
-  },
   "electroprecio|garmin fenix 8 pro 47 mm amoled, lte y satelite inreach, mapas topoactive, linterna led, zafiro y titanio, hasta 15 dias de bateria|electroprecio 47 garmin": {
    "t": 1793223136.776678,
    "query": "electroprecio 47 garmin",
@@ -6349,6 +6334,52 @@
    "http_status": 200,
    "bytes": 7228,
    "raw_count": 3
+  },
+  "|lego 75440 star wars: el imperio contraataca at-at maqueta para adultos|lego 75440 star": {
+   "t": 1793730499.7905142,
+   "query": "lego 75440 star",
+   "prices": [
+    49.99,
+    40.0,
+    38.0,
+    46.0,
+    49.9,
+    70.0,
+    55.0,
+    50.0,
+    46.0,
+    51.0,
+    52.5,
+    50.0,
+    60.9,
+    55.0,
+    50.0,
+    49.95,
+    55.0,
+    45.0,
+    54.0,
+    49.95,
+    49.95,
+    47.0,
+    50.0,
+    54.95,
+    50.0,
+    60.0,
+    50.0,
+    44.9,
+    54.99,
+    50.0,
+    52.0,
+    49.9,
+    45.0,
+    124.8,
+    54.95
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 98912,
+   "raw_count": 38
   }
  },
  "milanuncios_cache": {
@@ -6614,7 +6645,8 @@
   "wallapop:cm-2054401": 1793728715.627452,
   "wallapop:cm-2020370": 1793728716.736966,
   "wallapop:cm-2051144": 1793728717.7178545,
-  "wallapop:cm-2054411": 1793728718.6792185
+  "wallapop:cm-2054411": 1793728718.6792185,
+  "wallapop:cm-2020376": 1793730500.4111476
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -8479,10 +8511,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 0,
+ "rotation_index": 17,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/auriculares-apple-airpods-5-con-carga-inalambrica-y-anc-traduccion-tiempo-real-audio-adaptativo-chip-h2-usb-c-blanco-mediamarkt-2054101": 1793709982.06704,
-  "https://www.chollometro.com/ofertas/aspiradora-dyson-v15-detect-absolute-kit-limpieza-a-fondo-240aw-iluminacion-fluffy-optic-sensor-piezo-manguera-oferta-dyson-2054024": 1793709982.06704,
   "https://www.chollometro.com/ofertas/roborock-q10vf-roborock-robot-aspirador-fregasuelos-con-autovaciado-negro-2046681": 1793714048.4098318,
   "https://www.chollometro.com/ofertas/microfono-dji-mic-mini-2tx-1rx-desde-espana-3722eur-con-cupon-ventajas-2-unidades-por-5760eur-2054067": 1793714048.4098318,
   "https://www.chollometro.com/ofertas/mando-con-cable-rematch-advanced-purple-fade-xbox-series-x-pegi-7-2054176": 1793714048.4098318,
@@ -8510,10 +8540,10 @@
   "https://www.chollometro.com/ofertas/under-armour-zapatillas-de-baloncesto-spawn-azul-oscuro-2054444": 1793728699.2091618,
   "https://www.chollometro.com/ofertas/lego-72160-pokemon-arcanine-set-de-construccion-de-figura-de-pokemon-personaje-articulado-2020370": 1793728699.2091618,
   "https://www.chollometro.com/ofertas/lego-40806-star-wars-caminante-at-at-de-pan-de-jengibre-de-juguete-2051144": 1793728699.2091618,
-  "https://www.chollometro.com/ofertas/set-de-construccion-lego-pokemon-rayquaza-72168-1083-piezas-2054411": 1793728699.2091618
+  "https://www.chollometro.com/ofertas/set-de-construccion-lego-pokemon-rayquaza-72168-1083-piezas-2054411": 1793728699.2091618,
+  "https://www.chollometro.com/ofertas/lego-75440-star-wars-el-imperio-contraataca-at-at-maqueta-para-adultos-2020376": 1793730491.695904
  },
  "asked": {
-  "cm-2053299": 1793645724,
   "cm-2053354": 1793651005,
   "cm-2053475": 1793654736,
   "cm-2053666": 1793697314
