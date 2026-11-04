@@ -1009,6 +1009,11 @@
    "price": 29.5,
    "t": 1793741566,
    "result": "solo -5% bajo la referencia"
+  },
+  "RYXbakE": {
+   "price": 35.99,
+   "t": 1793759521,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1358,12 +1363,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793758662
+   "checked": 1793761621
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -8836,12 +8841,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 6,
+ "rotation_index": 2,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-21370-ideas-et-the-extra-terrestrial-2054588": 1793737516.5978823,
-  "https://www.chollometro.com/ofertas/ssd-nvme-ediloca-en870-1tb-pcie-40-hasta-74006300-mbs-m2-2280-compatible-con-ps5-2054677": 1793738119.6373158,
-  "https://www.chollometro.com/ofertas/robot-aspirador-roborock-qrevo-5ae-friegasuelos-base-autovaciado-y-autolavado-mopa-giratoria-negro-black-friday-2026-mediamarkt-2054267": 1793738716.384354,
-  "https://www.chollometro.com/ofertas/nike-air-max-90-verde-agua-2053683": 1793738716.384354,
   "https://www.chollometro.com/ofertas/lego-star-wars-halcon-milenario-75375-2053721": 1793741431.3416812,
   "https://www.chollometro.com/ofertas/dreame-l50-pro-ultra-robot-aspirador-y-fregasuelos-2052365": 1793743959.7118971,
   "https://www.chollometro.com/ofertas/zapatillas-de-running-adizero-boston-13-mujer-tallas-36-23-37-13-38-42-2054554": 1793744557.8429089,
