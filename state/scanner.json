@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793827128
+   "checked": 1793827789
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 88,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2030,53 +2030,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|robot aspirador cecotec conga m50 x-treme (navegacion laser, 5000 pa, mapeo)|robot m50 aspirador": {
-   "t": 1793312837.2246182,
-   "query": "robot m50 aspirador",
-   "prices": [
-    99.9,
-    65.0,
-    55.0,
-    82.0,
-    65.0,
-    71.1,
-    70.0,
-    82.0,
-    79.0,
-    100.0,
-    75.0,
-    75.0,
-    50.0,
-    54.99,
-    90.0,
-    109.0,
-    90.0,
-    70.0,
-    80.0,
-    90.0,
-    100.0,
-    90.0,
-    65.0,
-    90.0,
-    70.0,
-    109.9
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 90221,
-   "raw_count": 32
-  },
-  "privalia|la sportiva akasha ii hombre zapatillas trail running|privalia sportiva": {
-   "t": 1793344253.7573087,
-   "query": "privalia sportiva",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "zalando|zapatillas nike sportswear (amortiguacion max air / cushlon) - varios colores y tallas|zalando zapatillas": {
    "t": 1793348086.5418968,
    "query": "zalando zapatillas",
@@ -7210,6 +7163,86 @@
    "http_status": 200,
    "bytes": 122423,
    "raw_count": 40
+  },
+  "|dji lito x1|dji x1 lito": {
+   "t": 1793827814.2640195,
+   "query": "dji x1 lito",
+   "prices": [
+    260.0,
+    145.0,
+    235.0,
+    375.0,
+    600.0,
+    470.0,
+    148.99,
+    137.99,
+    234.99,
+    333.99,
+    265.0,
+    187.99,
+    14.0,
+    30.0,
+    510.0,
+    22.0,
+    33.0,
+    53.99,
+    500.0,
+    11.99,
+    670.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 97254,
+   "raw_count": 33
+  },
+  "|mando ps5 dualsense diferen colores|mando ps5 dualsense": {
+   "t": 1793827815.2293375,
+   "query": "mando ps5 dualsense",
+   "prices": [
+    40.0,
+    35.0,
+    45.0,
+    50.0,
+    40.0,
+    30.0,
+    40.0,
+    40.0,
+    20.0,
+    70.0,
+    55.0,
+    70.0,
+    59.0,
+    30.0,
+    105.0,
+    59.0,
+    40.0,
+    65.0,
+    40.0,
+    110.0,
+    50.0,
+    40.0,
+    130.0,
+    2.0,
+    75.0,
+    45.0,
+    105.0,
+    30.0,
+    45.0,
+    79.0,
+    125.0,
+    50.0,
+    40.0,
+    55.0,
+    35.0,
+    49.99,
+    65.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 101512,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -7538,7 +7571,9 @@
   "wallapop:cm-2051025": 1793820305.966481,
   "wallapop:cm-2053982": 1793820557.78967,
   "wallapop:cm-2055715": 1793822548.852803,
-  "wallapop:cm-2055741": 1793824264.5402803
+  "wallapop:cm-2055741": 1793824264.5402803,
+  "wallapop:cm-2054828": 1793827814.8920214,
+  "wallapop:cm-2055772": 1793827815.836461
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10040,7 +10075,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 13,
+ "rotation_index": 18,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/battlefield-6-phantom-edition-xbox-series-x-videojuegos-castellano-2047037": 1793806482.0513377,
   "https://www.chollometro.com/ofertas/motor-co-rc-strong-pioneer-rc-con-camara-y-luz-varios-modelos-2053911": 1793807082.2103424,
@@ -10051,7 +10086,9 @@
   "https://www.chollometro.com/ofertas/grand-theft-auto-vi-ps5-edicion-estandar-2053982": 1793820550.3670585,
   "https://www.chollometro.com/ofertas/lost-ember-wolf-pack-edition-playstation-5-2055715": 1793822545.4314148,
   "https://www.chollometro.com/ofertas/mizuno-zapatillas-deportivas-de-running-de-mujer-neo-zen-2-2055741": 1793824260.0375347,
-  "https://www.chollometro.com/ofertas/gta-vi-ps5-con-tarjeta-psn-80eur-2055773": 1793826376.3018773
+  "https://www.chollometro.com/ofertas/gta-vi-ps5-con-tarjeta-psn-80eur-2055773": 1793826376.3018773,
+  "https://www.chollometro.com/ofertas/mando-ps5-dualsense-diferen-colores-2055772": 1793827803.907433,
+  "https://www.chollometro.com/ofertas/dji-lito-x1-2054828": 1793827803.907433
  },
  "asked": {
   "cm-2051793": 1793783213
