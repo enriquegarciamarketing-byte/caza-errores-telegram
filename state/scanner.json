@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793816264
+   "checked": 1793816509
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 44,
+ "last_listing_count": 103,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -9874,9 +9874,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 3,
+ "rotation_index": 8,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-harry-potter-monstruoso-libro-de-los-monstruos-mordedor-76449-2055240": 1793794861.6477213,
   "https://www.chollometro.com/ofertas/airpods-5-con-estuche-de-carga-inhalambrica-2053297": 1793796061.7712085,
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-qv-35s-con-base-multifuncion-succion-10000-pa-y-mopa-elevable-blanco-o-negro-2053723": 1793798792.8866131,
   "https://www.chollometro.com/ofertas/barra-de-sonido-sony-ht-s40r-51-600-w-subwoofer-altavoces-traseros-inalambricos-hdmi-arc-optico-bluetooth-dolby-digital-negro-2055354": 1793799992.9991806,
