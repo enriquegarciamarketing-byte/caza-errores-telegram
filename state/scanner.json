@@ -1019,6 +1019,11 @@
    "price": 89.9,
    "t": 1793791840,
    "result": "solo -11% bajo la referencia"
+  },
+  "RNXZ6DZ": {
+   "price": 29.99,
+   "t": 1793830506,
+   "result": "solo -0% bajo la referencia"
   }
  },
  "posts": [
@@ -1368,7 +1373,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793830197
+   "checked": 1793830506
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1417,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 89,
+ "last_listing_count": 91,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1967,16 +1972,6 @@
   }
  },
  "wallapop_cache": {
-  "showroomprive|adidad boston 13. zapatillas running hombre. tallas 39 a 46|showroomprive 13 adidad": {
-   "t": 1793348088.8568504,
-   "query": "showroomprive 13 adidad",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "amazon|puma zapatillas de running hombre axelion varios colores (vendedor externo)|puma zapatillas": {
    "t": 1793348091.0421107,
    "query": "puma zapatillas",
@@ -7208,6 +7203,35 @@
    "http_status": 200,
    "bytes": 78100,
    "raw_count": 40
+  },
+  "|vans range brz - zapatillas- 38.5, 39, 40, 40.5, 41|vans 38 range": {
+   "t": 1793830670.014702,
+   "query": "vans 38",
+   "prices": [
+    6.0,
+    6.0,
+    12.0,
+    40.0,
+    25.0,
+    45.0,
+    30.0,
+    12.0,
+    15.0,
+    25.0,
+    20.0,
+    20.0,
+    30.0,
+    15.0,
+    29.0,
+    20.0,
+    15.0,
+    30.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 123149,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -7539,7 +7563,8 @@
   "wallapop:cm-2055741": 1793824264.5402803,
   "wallapop:cm-2054828": 1793827814.8920214,
   "wallapop:cm-2055772": 1793827815.836461,
-  "wallapop:cm-2053092": 1793828532.7680745
+  "wallapop:cm-2053092": 1793828532.7680745,
+  "wallapop:cm-2055385": 1793830670.7612467
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10036,12 +10061,33 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~27 € (5 anuncios): ROI -69 % y -52 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|vans range brz - zapatillas- 38.5, 39, 40, 40.5, 41|vans 38 range": {
+   "t": 1793830668.590304,
+   "prices": [
+    33.0,
+    50.0,
+    20.0,
+    30.0,
+    60.0,
+    30.0,
+    40.0,
+    80.0,
+    15.0,
+    60.0,
+    32.0,
+    89.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~33 € (10 anuncios): ROI 12 % y 3 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 14,
+ "rotation_index": 19,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-icons-cachorro-de-golden-retriever-11384-por-10499-eur-minimo-historico-2055153": 1793812876.0748527,
   "https://www.chollometro.com/ofertas/kingdom-hearts-collection-i-iii-importacion-uk-ps5-jugable-en-castellano-2055534": 1793814345.5465698,
@@ -10053,7 +10099,8 @@
   "https://www.chollometro.com/ofertas/gta-vi-ps5-con-tarjeta-psn-80eur-2055773": 1793826376.3018773,
   "https://www.chollometro.com/ofertas/mando-ps5-dualsense-diferen-colores-2055772": 1793827803.907433,
   "https://www.chollometro.com/ofertas/dji-lito-x1-2054828": 1793827803.907433,
-  "https://www.chollometro.com/ofertas/fc-27-edicion-estandar-para-ps5-y-nintendo-switch-juego-fisico-pal-4721eur-con-cupon-seleccion-5eureu-2053092": 1793828528.5737617
+  "https://www.chollometro.com/ofertas/fc-27-edicion-estandar-para-ps5-y-nintendo-switch-juego-fisico-pal-4721eur-con-cupon-seleccion-5eureu-2053092": 1793828528.5737617,
+  "https://www.chollometro.com/ofertas/vans-range-brz-zapatillas-385-39-40-405-41-2055385": 1793830664.2868412
  },
  "asked": {
   "cm-2051793": 1793783213
