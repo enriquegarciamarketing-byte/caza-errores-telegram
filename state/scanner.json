@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793808716
+   "checked": 1793812299
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 94,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -9826,11 +9826,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 17,
+ "rotation_index": 8,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/cthulhu-the-cosmic-abyss-ps5-y-xbox-x-s-2054599": 1793787658.5677712,
-  "https://www.chollometro.com/ofertas/columbia-zapatillas-de-senderismo-facet-75-outdry-mujeres-negro-2055029": 1793787658.5677712,
-  "https://www.chollometro.com/ofertas/fosmet-gafas-inteligentes-ia-con-camara-165-traduccion-smart-glasses-de-solo-45g-asistente-gptreconocimiento-de-objetosproteccion-uv-2054641": 1793788258.639489,
   "https://www.chollometro.com/ofertas/honor-400-8gb256gb-5g-smartphone-version-ue-telefono-sistema-de-camara-al-ultra-claro-de-200mp-de-imagen-a-video-con-ia-2055071": 1793790954.298415,
   "https://www.chollometro.com/ofertas/zapatillas-adidas-urban-court-ji1049-deportivas-2055035": 1793792754.4555364,
   "https://www.chollometro.com/ofertas/lego-72046-super-mario-game-boy-2054508": 1793794261.103343,
