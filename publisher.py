@@ -655,6 +655,39 @@ def _price_only_panel(draw, offer: dict, info_x: int, info_width: int, orange: s
         draw.text((info_x + 24, 900), shop.upper(), font=_font(22, bold=True), fill=muted)
 
 
+def _discount_only_panel(draw, offer: dict, info_x: int, info_width: int, ink: str, orange: str, muted: str,
+                         tint: str = "#FFF5E8", tint_line: str = "#F6E2C8") -> None:
+    """Modo revisión de Amazon Afiliados: sin precios ni nombre de tienda, solo el descuento y su referencia."""
+    box = (info_x, 420, 1028, 800)
+    draw.rounded_rectangle(box, radius=26, fill=ink)
+    pct_text = f"-{round(float(offer['discount']))}%"
+    font = _font(118, bold=True)
+    bounds = draw.textbbox((0, 0), pct_text, font=font)
+    while bounds[2] - bounds[0] > info_width - 48 and font.size > 56:
+        font = _font(font.size - 4, bold=True)
+        bounds = draw.textbbox((0, 0), pct_text, font=font)
+    x = box[0] + (box[2] - box[0] - (bounds[2] - bounds[0])) // 2 - bounds[0]
+    draw.text((x, 470), pct_text, font=font, fill=orange)
+    labels = str(offer.get("discount_label") or "DESCUENTO").split("\n")[:2]
+    label_font = _font(24, bold=True)
+    while max(draw.textbbox((0, 0), t, font=label_font)[2] for t in labels) > info_width - 56 and label_font.size > 14:
+        label_font = _font(label_font.size - 1, bold=True)
+    for index, label in enumerate(labels):
+        lb = draw.textbbox((0, 0), label, font=label_font)
+        lx = box[0] + (box[2] - box[0] - (lb[2] - lb[0])) // 2 - lb[0]
+        draw.text((lx, 680 + index * 34), label, font=label_font, fill="#FFFFFF")
+    chip = (info_x, 830, 1028, 940)
+    draw.rounded_rectangle(chip, radius=24, fill=tint, outline=tint_line, width=2)
+    chip_text = str(offer.get("chip") or "OFERTA POR TIEMPO LIMITADO")
+    chip_font = _font(25, bold=True)
+    cb = draw.textbbox((0, 0), chip_text, font=chip_font)
+    while cb[2] - cb[0] > info_width - 40 and chip_font.size > 16:
+        chip_font = _font(chip_font.size - 1, bold=True)
+        cb = draw.textbbox((0, 0), chip_text, font=chip_font)
+    draw.text((chip[0] + (chip[2] - chip[0] - (cb[2] - cb[0])) // 2 - cb[0],
+               chip[1] + (chip[3] - chip[1] - (cb[3] - cb[1])) // 2 - cb[1]), chip_text, font=chip_font, fill=orange)
+
+
 def create_deal_card(offer: dict) -> Path:
     """Tarjeta del canal normal: el mismo lienzo que el canal antiguo, con el logo de Caza Chollos."""
     current = float(offer["current"])
@@ -789,6 +822,9 @@ def create_price_card(offer: dict) -> Path:
     no_previous = not offer.get("reference") or float(offer["reference"]) <= float(offer["current"]) + 0.009
     if offer.get("resale") and no_previous:
         _resale_panels(draw, offer, info_x, info_width, None, ink, orange, muted)
+        return _save_card(canvas, offer)
+    if offer.get("discount_only"):
+        _discount_only_panel(draw, offer, info_x, info_width, ink, orange, muted, tint, tint_line)
         return _save_card(canvas, offer)
     if offer.get("hide_reference") or no_previous:
         _price_only_panel(draw, offer, info_x, info_width, orange, muted, tint, tint_line)

@@ -1,0 +1,24 @@
+name: Prueba modo revisión (solo tu chat)
+
+on:
+  push:
+    branches: [prueba-revision]
+
+permissions:
+  contents: read
+
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Mandar el ejemplo a tu chat privado
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python -u tools/preview_revision.py Rr8OyAY B0DWXVSX62 "Gillette Fusion5 Cuchillas de Afeitar Hombre, Pack de 12 + Colgante" 34.99 54.33

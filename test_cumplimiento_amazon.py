@@ -102,5 +102,47 @@ class Resumen(unittest.TestCase):
         self.assertNotIn("⭐", text)
 
 
+class ModoRevision(unittest.TestCase):
+    """Mientras Amazon revisa la cuenta: sin precios, sin 'Amazon' en la cabecera, descuento frente al mínimo de 30 días."""
+
+    def rules(self):
+        return dict(RULES, revision_mode=True)
+
+    def test_sin_precios_ni_amazon_en_cabecera(self):
+        deal = deal_with_rating()
+        text = cn.build_caption(deal, URL, self.rules())
+        self.assertNotIn("€", text)
+        self.assertNotIn("Te ahorras", text)
+        self.assertNotIn("EN AMAZON", text)
+        self.assertNotIn("historia", text)
+        self.assertNotIn("⭐", text)
+        self.assertIn("VER OFERTA", text)
+        self.assertIn("puede acabar en cualquier momento", text)
+        self.assertTrue(text.rstrip().split("\n")[-1].startswith("#Publicidad #"))
+
+    def test_descuento_frente_al_minimo_30_dias_no_al_pvp(self):
+        deal = deal_with_rating()
+        deal.update(ref_kind="pvp", discount=45, drop_30=21, min_30=deal["price"] / 0.79)
+        text = cn.build_caption(deal, URL, self.rules())
+        self.assertIn("-21 %", text)
+        self.assertNotIn("-45 %", text)
+        self.assertAlmostEqual(cn.stored_reference(deal, self.rules()), deal["min_30"])
+
+    def test_boton_sin_marca(self):
+        self.assertEqual(cn.buttons(URL, self.rules())["inline_keyboard"][0][0]["text"], "🛒 Ver oferta")
+
+    def test_tarjeta_solo_descuento(self):
+        deal = deal_with_rating()
+        card = cn.make_card(deal, dict(self.rules(), amazon_photo=False))
+        self.assertTrue(card.exists())
+
+    def test_resumen_sin_precios(self):
+        items = [{"title": "Producto", "price": 10.0, "reference": 20.0, "discount": 50, "url": URL}]
+        text = cn.build_summary(items, datetime(2026, 11, 2, 22, 59, tzinfo=timezone.utc), revision=True)
+        self.assertNotIn("€", text)
+        self.assertNotIn("AMAZON", text)
+        self.assertEqual(text.rstrip().split("\n")[-1], "#Publicidad")
+
+
 if __name__ == "__main__":
     unittest.main()

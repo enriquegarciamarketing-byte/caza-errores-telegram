@@ -538,7 +538,48 @@ HEADERS = {
 }
 
 
+def honest_pct(deal: dict) -> float:
+    """Descuento frente al precio más bajo de los 30 días anteriores (criterio de la ley europea), nunca el PVP."""
+    if deal.get("ref_kind") in ("pvp", "media90"):
+        return float(deal.get("drop_30") or 0)
+    return float(deal["discount"])
+
+
+REVISION_HEADERS = {
+    "ERROR DE PRECIO": "🚨 <b>ERROR DE PRECIO</b> 🚨",
+    "CHOLLAZO": "🔥 <b>CHOLLAZO</b>",
+    "CHOLLO": "💥 <b>CHOLLO DEL DÍA</b>",
+}
+REVISION_NOTE = "Descuento visto a las {hour} · la oferta puede acabar en cualquier momento"
+
+
+def build_revision_caption(deal: dict, url: str, rules: dict) -> str:
+    """Modo revisión de Amazon Afiliados: sin precios, sin 'Amazon' en la cabecera, sin mínimos que no se puedan probar.
+
+    El único dato es el descuento frente al precio más bajo de los 30 días anteriores, con la hora."""
+    e = html.escape
+    pct = honest_pct(deal)
+    badge = badge_for(pct, rules)
+    seen = datetime.fromtimestamp(deal["seen_ts"], timezone.utc).astimezone(MADRID)
+    hour = deal.get("seen_hhmm") or f"{seen:%H:%M}"
+    lines = [REVISION_HEADERS[badge], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", "",
+             f"📉 <b>-{round(pct)} %</b> frente a su precio más bajo de los últimos 30 días",
+             f"⏱️ {REVISION_NOTE.format(hour=hour)}", "",
+             f'👉 <b><a href="{e(url, quote=True)}">VER OFERTA</a></b>', "",
+             f"{PUBLI} {TAGS[badge]}"]
+    return "\n".join(lines)
+
+
+def stored_reference(deal: dict, rules: dict) -> float:
+    """En modo revisión el post guarda la referencia honesta (mínimo de 30 días), para que el resumen la use."""
+    if rules.get("revision_mode") and deal.get("ref_kind") in ("pvp", "media90") and deal.get("min_30"):
+        return float(deal["min_30"])
+    return float(deal["reference"])
+
+
 def build_caption(deal: dict, url: str, rules: dict) -> str:
+    if rules.get("revision_mode"):
+        return build_revision_caption(deal, url, rules)
     e = html.escape
     pct = deal["discount"]
     seen = datetime.fromtimestamp(deal["seen_ts"], timezone.utc).astimezone(MADRID)
@@ -588,8 +629,9 @@ def hashtags(deal: dict, rules: dict) -> str:
     return " ".join(tags)
 
 
-def buttons(url: str) -> dict:
-    return {"inline_keyboard": [[{"text": "🛒 Ver en Amazon", "url": url}]]}
+def buttons(url: str, rules: dict | None = None) -> dict:
+    text = "🛒 Ver oferta" if (rules or {}).get("revision_mode") else "🛒 Ver en Amazon"
+    return {"inline_keyboard": [[{"text": text, "url": url}]]}
 
 
 def make_card(deal: dict, rules: dict) -> Path:
@@ -608,6 +650,22 @@ def make_card(deal: dict, rules: dict) -> Path:
             raise ValueError("no he podido descargar la foto")
         image_path = OUTPUT / f"{deal['asin']}.img"
         image_path.write_bytes(raw)
+    if rules.get("revision_mode"):
+        return create_price_card({
+            "id": f"amz-{deal['asin']}",
+            "title": clean_title(deal["title"]),
+            "image_path": image_path,
+            "category": badge_for(honest_pct(deal), rules),
+            "current": deal["price"],
+            "reference": deal["reference"],
+            "discount_only": True,
+            "discount": honest_pct(deal),
+            "discount_label": "FRENTE A SU PRECIO MÁS BAJO\nDE LOS ÚLTIMOS 30 DÍAS",
+            "chip": "OFERTA POR TIEMPO LIMITADO",
+            "logo_path": DEAL_LOGO,
+            "days": 90,
+            "jpeg_quality": 95,
+        })
     return create_price_card({
         "id": f"amz-{deal['asin']}",
         "title": clean_title(deal["title"]),
@@ -736,6 +794,9 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         if again.get("price") is None or abs(float(again["price"]) - deal["price"]) > 0.009 or not again.get("in_stock"):
             log(f"  ✗ {deal['asin']} el precio ha cambiado ({deal['price']} → {again.get('price')})")
             continue
+        if rules.get("revision_mode") and honest_pct(deal) < float(rules.get("min_real_drop_pct") or 10):
+            log(f"  ✗ {deal['asin']} modo revisión: solo -{honest_pct(deal):.0f} % frente al mínimo de 30 días")
+            continue
         url = f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['tag']}"
         caption = build_caption(deal, url, rules)
         if dry:
@@ -747,14 +808,14 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         except (OSError, ValueError) as exc:
             log(f"  ✗ {deal['asin']} sin tarjeta: {exc}")
             continue
-        message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
+        message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules)})
         origin = " (descarte del premium)" if item.get("cascada") else ""
         log(f"  Enviado a {target} (mensaje {message['message_id']}){origin}: {clean_title(deal['title'], 70)}")
         sent += 1
         if not args.test_private:
             record = {
                 "asin": deal["asin"], "jl_id": deal["jl_id"], "price": deal["price"],
-                "reference": deal["reference"], "t": int(now.timestamp()), "url": url, "chat": target,
+                "reference": stored_reference(deal, rules), "t": int(now.timestamp()), "url": url, "chat": target,
                 "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140],
             }
             if item.get("cascada"):
@@ -951,28 +1012,33 @@ def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: in
 NUMBERS = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 
 
-def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
+def build_summary(items: list[dict], now: datetime, test: bool = False, revision: bool = False) -> str:
     e = html.escape
     hour = now.astimezone(MADRID).strftime("%H:%M")
     lines = []
     if test:
         lines += ["🧪 <b>PRUEBA</b> · así saldría el resumen de la noche", ""]
-    lines += ["🌙 <b>CERRAMOS EL DÍA · LO MEJOR DE HOY EN AMAZON</b>", "",
+    head = "LO MEJOR DE HOY" if revision else "LO MEJOR DE HOY EN AMAZON"
+    lines += [f"🌙 <b>CERRAMOS EL DÍA · {head}</b>", "",
               f"Los {len(items)} chollos más bestias de hoy que siguen activos ahora mismo 👇", ""]
     for index, item in enumerate(items):
         lines.append(f"{NUMBERS[index]} <b>{e(clean_title(item['title'], 70))}</b>")
-        lines.append(f"💰 <b>{e(euro(item['price']))}</b>  <s>{e(euro(item['reference']))}</s>  "
-                     f"📉 <b>-{round(item['discount'])} %</b>")
-        lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
+        if revision:
+            lines.append(f"📉 <b>-{round(item['discount'])} %</b>  ·  "
+                         f'👉 <a href="{e(item["url"], quote=True)}">Ver oferta</a>')
+        else:
+            lines.append(f"💰 <b>{e(euro(item['price']))}</b>  <s>{e(euro(item['reference']))}</s>  "
+                         f"📉 <b>-{round(item['discount'])} %</b>")
+            lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
         lines.append("")
-    lines.append(f"🕒 Precios a las {hour} · pueden cambiar")
+    lines.append(f"🕒 {'Descuentos' if revision else 'Precios'} a las {hour} · pueden cambiar")
     lines.append("😴 Mañana a las 8:00 volvemos con más chollos. Activa las notificaciones 🔔")
     lines.append("")
     lines.append(PUBLI)
     return "\n".join(lines)
 
 
-def make_summary_collage(items: list[dict], download=None, max_products: int = 4) -> Path | None:
+def make_summary_collage(items: list[dict], download=None, max_products: int = 4, revision: bool = False) -> Path | None:
     """Imagen de cierre del resumen: los mejores chollos con foto y precio en naranja y el logo del canal.
 
     Devuelve None si no hay al menos 2 fotos que se puedan bajar (mejor sin imagen que una imagen pobre)."""
@@ -1008,7 +1074,7 @@ def make_summary_collage(items: list[dict], download=None, max_products: int = 4
     for index, (item, photo) in enumerate(picked):
         x0 = margin + index * column
         # Precio en caja naranja, como las tarjetas de chollos
-        text = euro(item["price"]).replace(" €", "€")
+        text = f"-{round(item['discount'])}%" if revision else euro(item["price"]).replace(" €", "€")
         size = 84
         font = _font(size, bold=True)
         while draw.textbbox((0, 0), text, font=font)[2] > column - 80 and size > 40:
@@ -1055,7 +1121,7 @@ def make_summary_collage(items: list[dict], download=None, max_products: int = 4
     # A la izquierda del pie, el titular del cierre
     head_font = _font(64, bold=True)
     draw.text((margin, ly + 40), "LO MEJOR DE HOY", font=head_font, fill="#1A1A1A")
-    draw.text((margin, ly + 130), "EN AMAZON", font=head_font, fill=BRAND_ORANGE)
+    draw.text((margin, ly + 130), "EN CHOLLOS" if revision else "EN AMAZON", font=head_font, fill=BRAND_ORANGE)
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
     out = OUTPUT / "resumen.jpg"
@@ -1096,7 +1162,7 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     if not items:
         log("Resumen: nada que listar.")
         return 0
-    text = build_summary(items, now, test=bool(args.test_private))
+    text = build_summary(items, now, test=bool(args.test_private), revision=bool(rules.get("revision_mode")))
     target = admin_chat_id(state, rules, tg, log) if args.test_private else rules["chat_id"]
     if args.dry_run or tg is None:
         log("[prueba, no se envía]\n" + text)
@@ -1106,7 +1172,7 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos.")
     # Al final del todo, la imagen con los mejores del día y el logo. Si falla, el resumen ya ha salido.
     try:
-        collage = make_summary_collage(items)
+        collage = make_summary_collage(items, revision=bool(rules.get("revision_mode")))
         if collage:
             tg.send_photo(target, collage, "🔔 Mañana a las 8:00 más chollos en @cazachollos_com")
             log("Resumen: imagen de cierre enviada.")
@@ -1236,12 +1302,12 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
         log("[prueba, no se envía]\n" + caption)
         return 0
     card = make_card(deal, rules)
-    message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
+    message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules)})
     where = "tu chat (prueba)" if args.test_private else target
     log(f"Post manual enviado a {where} (mensaje {message['message_id']}): {clean_title(deal['title'], 70)}")
     if not args.test_private:
         state.setdefault("posts", []).append({
-            "asin": deal["asin"], "jl_id": "", "price": deal["price"], "reference": deal["reference"],
+            "asin": deal["asin"], "jl_id": "", "price": deal["price"], "reference": stored_reference(deal, rules),
             "t": int(now.timestamp()), "url": url, "chat": target, "message_id": int(message["message_id"]),
             "caption": caption, "title": deal["title"][:140], "manual": True,
         })
