@@ -1,5 +1,15 @@
 # Caza Errores — ofertas en Telegram
 
+## Modo revisión de Amazon Afiliados (04/11/2026)
+
+Amazon rechazó la cuenta aprobada temporalmente por uso de su marca (capturas de la ficha en X). Mientras se revisa, `config.json` → `amazon_channel.revision_mode` deja el canal, el resumen y la web en lo que permiten las normas sin la Creators API:
+
+- `"estricto"` (activo): sin precios, sin tachados, sin porcentajes, sin «mínimo histórico», sin estrellas y sin fotos de Amazon. Cabecera sin «Amazon» (CHOLLO DEL DÍA / CHOLLAZO / ERROR DE PRECIO), aviso de oferta limitada, enlace «VER OFERTA» y `#Publicidad`. Tarjeta con el logo del canal. Sin collage en el resumen. La web no publica cifras.
+- `"descuento"`: igual, pero con el % frente al precio más bajo de los últimos 30 días (nunca el PVP) y la foto.
+- `""`: formato normal, cuando la cuenta esté aprobada y haya Creators API.
+
+Limpieza del canal: Actions → «Limpiar posts antiguos @cazachollos_com» → escribe `LIMPIAR`. Cambia cada post antiguo del bot a «Oferta finalizada» (tarjeta neutra, sin precios, sin botón) y lo marca como terminado en la memoria.
+
 ## Canal normal @cazachollos_com (solo Amazon, `canal_nube.py`)
 
 Corre en GitHub Actions (`scan-generic.yml`), sin depender de ningún ordenador. Solo publica Amazon.es; Chollometro y el resto de tiendas ya no entran.

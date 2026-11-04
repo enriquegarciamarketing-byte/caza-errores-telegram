@@ -967,7 +967,9 @@
     },
     "cascade_enabled": true,
     "cascade_max_age_minutes": 75,
-    "cascade_max_details": 10
+    "cascade_max_details": 10,
+    "revision_mode": "estricto",
+    "_nota_revision": "Modo revisión de Amazon Afiliados (04/11/2026). estricto = sin precios, porcentajes ni fotos de Amazon en canal, resumen y web. descuento = solo el % frente al mínimo de 30 días. Vacío cuando la cuenta esté aprobada y haya Creators API."
   },
   "store_affiliates": {
     "carrefour": {"template": ""},

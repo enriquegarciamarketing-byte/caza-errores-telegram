@@ -660,8 +660,8 @@ def _discount_only_panel(draw, offer: dict, info_x: int, info_width: int, ink: s
     """Modo revisión de Amazon Afiliados: sin precios ni nombre de tienda, solo el descuento y su referencia."""
     box = (info_x, 420, 1028, 800)
     draw.rounded_rectangle(box, radius=26, fill=ink)
-    pct_text = f"-{round(float(offer['discount']))}%"
-    font = _font(118, bold=True)
+    pct_text = str(offer.get("headline") or f"-{round(float(offer['discount']))}%")
+    font = _font(118 if not offer.get("headline") else 84, bold=True)
     bounds = draw.textbbox((0, 0), pct_text, font=font)
     while bounds[2] - bounds[0] > info_width - 48 and font.size > 56:
         font = _font(font.size - 4, bold=True)

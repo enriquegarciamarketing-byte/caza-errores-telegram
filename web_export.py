@@ -42,6 +42,8 @@ def build(state: dict, rules: dict, now: float, days: float | None = None, limit
         if asin not in latest or t >= (latest[asin].get("t") or 0):
             latest[asin] = post
 
+    # Modo revisión estricto: la web no publica precios, tachados ni porcentajes (sin la API no se permiten).
+    strict = cn.strict(rules)
     deals = []
     for post in latest.values():
         try:
@@ -55,13 +57,14 @@ def build(state: dict, rules: dict, now: float, days: float | None = None, limit
             label = cn.interest(title, rules).get("label") or ""
         except Exception:  # la web nunca debe romper el guardado de la memoria
             label = ""
+        pct = round((ref - price) / ref * 100)
+        figures = {} if strict else {"price": round(price, 2), "reference": round(ref, 2), "pct": pct,
+                                     "saving": round(ref - price, 2)}
         deals.append({
             "asin": post["asin"],
             "title": cn.clean_title(title, 110),
-            "price": round(price, 2),
-            "reference": round(ref, 2),
-            "pct": round((ref - price) / ref * 100),
-            "saving": round(ref - price, 2),
+            **figures,
+            "level": cn.badge_for(pct, dict(cn.DEFAULTS, **rules)).capitalize(),
             "url": post.get("url") or f"https://www.amazon.es/dp/{post['asin']}",
             "category": label or "Otros",
             "posted": int(post.get("t") or 0),
@@ -72,7 +75,7 @@ def build(state: dict, rules: dict, now: float, days: float | None = None, limit
         })
 
     deals.sort(key=lambda d: d["posted"], reverse=True)
-    return {"generated": int(now), "channel": CHANNEL, "deals": deals[:limit]}
+    return {"generated": int(now), "channel": CHANNEL, "strict": strict, "deals": deals[:limit]}
 
 
 def main() -> int:

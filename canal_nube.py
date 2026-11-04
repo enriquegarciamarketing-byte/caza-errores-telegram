@@ -553,10 +553,28 @@ REVISION_HEADERS = {
 REVISION_NOTE = "Descuento visto a las {hour} · la oferta puede acabar en cualquier momento"
 
 
+def strict(rules: dict) -> bool:
+    """Modo revisión estricto: ni precio ni porcentaje ni fotos de Amazon (lo único 100 % seguro sin la API)."""
+    return str(rules.get("revision_mode") or "").lower() in ("estricto", "strict")
+
+
+STRICT_NOTE = "⚡ Oferta por tiempo limitado · las condiciones pueden cambiar en cualquier momento"
+
+
+def build_strict_caption(deal: dict, url: str, rules: dict) -> str:
+    e = html.escape
+    badge = badge_for(honest_pct(deal), rules)
+    return "\n".join([REVISION_HEADERS[badge], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", "",
+                      STRICT_NOTE, "", f'👉 <b><a href="{e(url, quote=True)}">VER OFERTA</a></b>', "",
+                      f"{PUBLI} {TAGS[badge]}"])
+
+
 def build_revision_caption(deal: dict, url: str, rules: dict) -> str:
     """Modo revisión de Amazon Afiliados: sin precios, sin 'Amazon' en la cabecera, sin mínimos que no se puedan probar.
 
     El único dato es el descuento frente al precio más bajo de los 30 días anteriores, con la hora."""
+    if strict(rules):
+        return build_strict_caption(deal, url, rules)
     e = html.escape
     pct = honest_pct(deal)
     badge = badge_for(pct, rules)
@@ -642,7 +660,7 @@ def make_card(deal: dict, rules: dict) -> Path:
     image_path = None
     # Por defecto la tarjeta lleva el logo del canal y no la foto de Amazon: las normas de afiliados
     # no permiten guardar ni retocar sus imágenes. "amazon_photo": true en config solo cuando la foto venga de la API.
-    if rules.get("amazon_photo"):
+    if rules.get("amazon_photo") and not strict(rules):
         image = str(deal.get("image") or "")
         local = ROOT / image if image and not image.startswith("http") else None
         raw = local.read_bytes() if local and local.is_file() else (photos.fetch_best(image) if image else None)
@@ -660,8 +678,10 @@ def make_card(deal: dict, rules: dict) -> Path:
             "reference": deal["reference"],
             "discount_only": True,
             "discount": honest_pct(deal),
-            "discount_label": "FRENTE A SU PRECIO MÁS BAJO\nDE LOS ÚLTIMOS 30 DÍAS",
-            "chip": "OFERTA POR TIEMPO LIMITADO",
+            "headline": badge_for(honest_pct(deal), rules) if strict(rules) else "",
+            "discount_label": ("OFERTA POR TIEMPO LIMITADO\nEN T.ME/CAZACHOLLOS_COM" if strict(rules)
+                               else "FRENTE A SU PRECIO MÁS BAJO\nDE LOS ÚLTIMOS 30 DÍAS"),
+            "chip": "ENLACE EN EL POST" if strict(rules) else "OFERTA POR TIEMPO LIMITADO",
             "logo_path": DEAL_LOGO,
             "days": 90,
             "jpeg_quality": 95,
@@ -690,7 +710,7 @@ ENDED = "⛔ <b>YA NO ESTÁ A ESTE PRECIO</b> (comprobado a las {hour})"
 def ended_caption(caption: str) -> str:
     """Texto del post terminado: sin enlace a Amazon ni estrellas (los posts antiguos aún las llevan)."""
     kept = [line for line in caption.split("\n")
-            if not line.startswith("🔗") and not line.startswith("⭐")]
+            if not line.startswith(("🔗", "⭐", "👉"))]
     while kept and not kept[-1].strip():
         kept.pop()
     return "\n".join(kept)
@@ -1023,7 +1043,9 @@ def build_summary(items: list[dict], now: datetime, test: bool = False, revision
               f"Los {len(items)} chollos más bestias de hoy que siguen activos ahora mismo 👇", ""]
     for index, item in enumerate(items):
         lines.append(f"{NUMBERS[index]} <b>{e(clean_title(item['title'], 70))}</b>")
-        if revision:
+        if revision == "estricto":
+            lines.append(f'👉 <a href="{e(item["url"], quote=True)}">Ver oferta</a>')
+        elif revision:
             lines.append(f"📉 <b>-{round(item['discount'])} %</b>  ·  "
                          f'👉 <a href="{e(item["url"], quote=True)}">Ver oferta</a>')
         else:
@@ -1031,7 +1053,10 @@ def build_summary(items: list[dict], now: datetime, test: bool = False, revision
                          f"📉 <b>-{round(item['discount'])} %</b>")
             lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
         lines.append("")
-    lines.append(f"🕒 {'Descuentos' if revision else 'Precios'} a las {hour} · pueden cambiar")
+    if revision == "estricto":
+        lines.append(f"🕒 Ofertas activas a las {hour} · pueden cambiar en cualquier momento")
+    else:
+        lines.append(f"🕒 {'Descuentos' if revision else 'Precios'} a las {hour} · pueden cambiar")
     lines.append("😴 Mañana a las 8:00 volvemos con más chollos. Activa las notificaciones 🔔")
     lines.append("")
     lines.append(PUBLI)
@@ -1162,7 +1187,7 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     if not items:
         log("Resumen: nada que listar.")
         return 0
-    text = build_summary(items, now, test=bool(args.test_private), revision=bool(rules.get("revision_mode")))
+    text = build_summary(items, now, test=bool(args.test_private), revision=("estricto" if strict(rules) else bool(rules.get("revision_mode"))))
     target = admin_chat_id(state, rules, tg, log) if args.test_private else rules["chat_id"]
     if args.dry_run or tg is None:
         log("[prueba, no se envía]\n" + text)
@@ -1172,7 +1197,8 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos.")
     # Al final del todo, la imagen con los mejores del día y el logo. Si falla, el resumen ya ha salido.
     try:
-        collage = make_summary_collage(items, revision=bool(rules.get("revision_mode")))
+        # En modo estricto no hay collage: llevaría fotos de Amazon.
+        collage = None if strict(rules) else make_summary_collage(items, revision=bool(rules.get("revision_mode")))
         if collage:
             tg.send_photo(target, collage, "🔔 Mañana a las 8:00 más chollos en @cazachollos_com")
             log("Resumen: imagen de cierre enviada.")

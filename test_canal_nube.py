@@ -120,7 +120,8 @@ class Administrador(unittest.TestCase):
         self.assertIsNone(cn.admin_chat_id({}, dict(RULES, admin_username="nadie_xyz"), TG()))
 
 
-REAL = cn.rules_from(json.loads((Path(__file__).resolve().parent / "config.json").read_text(encoding="utf-8")))
+REAL = dict(cn.rules_from(json.loads((Path(__file__).resolve().parent / "config.json").read_text(encoding="utf-8"))),
+            revision_mode="")  # formato normal; el modo revisión tiene sus propios tests
 
 
 class Interes(unittest.TestCase):

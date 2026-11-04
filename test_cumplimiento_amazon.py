@@ -144,5 +144,55 @@ class ModoRevision(unittest.TestCase):
         self.assertEqual(text.rstrip().split("\n")[-1], "#Publicidad")
 
 
+class ModoEstricto(unittest.TestCase):
+    """Lo más seguro mientras Amazon revisa: ni precio, ni porcentaje, ni fotos de Amazon, ni 'Amazon' en el post."""
+
+    def rules(self):
+        return dict(RULES, revision_mode="estricto")
+
+    def test_post_sin_cifras_ni_marca(self):
+        text = cn.build_caption(deal_with_rating(), URL, self.rules())
+        for banned in ("€", "%", "Amazon", "AMAZON", "⭐", "historia", "ahorras", "Te ahorras"):
+            self.assertNotIn(banned, text.replace(URL, ""))
+        self.assertIn("VER OFERTA", text)
+        self.assertTrue(text.rstrip().split("\n")[-1].startswith("#Publicidad #"))
+
+    def test_tarjeta_sin_foto_de_amazon(self):
+        import photos
+        called = []
+        original = photos.fetch_best
+        photos.fetch_best = lambda url: called.append(url)
+        try:
+            deal = deal_with_rating()
+            deal["image"] = "https://m.media-amazon.com/images/I/x.jpg"
+            card = cn.make_card(deal, dict(self.rules(), amazon_photo=True))
+        finally:
+            photos.fetch_best = original
+        self.assertTrue(card.exists())
+        self.assertEqual(called, [])
+
+    def test_resumen_sin_cifras(self):
+        items = [{"title": "Producto", "price": 10.0, "reference": 20.0, "discount": 50, "url": URL}]
+        text = cn.build_summary(items, datetime(2026, 11, 2, 22, 59, tzinfo=timezone.utc), revision="estricto")
+        self.assertNotIn("€", text)
+        self.assertNotIn("%", text)
+        self.assertNotIn("AMAZON", text)
+
+    def test_web_sin_precios(self):
+        import web_export
+        state = {"posts": [{"asin": "B0G7YP6MXV", "t": 1000, "price": 10.0, "reference": 20.0, "title": "Cafetera X",
+                            "chat": "@cazachollos_com", "message_id": 5, "url": URL}]}
+        data = web_export.build(state, {"revision_mode": "estricto"}, 2000, days=1)
+        deal = data["deals"][0]
+        self.assertTrue(data["strict"])
+        for key in ("price", "reference", "pct", "saving"):
+            self.assertNotIn(key, deal)
+        self.assertEqual(deal["level"], "Chollo")
+
+    def test_post_terminado_sin_enlace(self):
+        text = cn.ended_caption(cn.build_caption(deal_with_rating(), URL, self.rules()))
+        self.assertNotIn("VER OFERTA", text)
+
+
 if __name__ == "__main__":
     unittest.main()

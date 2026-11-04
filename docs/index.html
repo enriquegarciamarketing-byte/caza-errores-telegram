@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Caza Chollos · Ofertas de Amazon con descuento real</title>
-<meta name="description" content="Las bajadas de precio de Amazon.es que publicamos en el canal de Telegram @cazachollos_com, comprobadas frente al precio más bajo de los últimos 30 días.">
-<meta property="og:title" content="Caza Chollos · Ofertas de Amazon con descuento real">
-<meta property="og:description" content="Bajadas de precio de Amazon.es comprobadas frente al mínimo de 30 días. Las mismas que salen en @cazachollos_com.">
+<title>Caza Chollos · Los chollos del canal @cazachollos_com</title>
+<meta name="description" content="Los chollos que publicamos en el canal de Telegram @cazachollos_com, elegidos a mano por categorías que la gente compra de verdad.">
+<meta property="og:title" content="Caza Chollos · Los chollos del canal @cazachollos_com">
+<meta property="og:description" content="Los mismos chollos que salen en el canal de Telegram @cazachollos_com.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#fe6a00">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fe6a00'/%3E%3Cpath d='M14 18h20l16 16-16 16-20-20z' fill='%23fff'/%3E%3Ccircle cx='22' cy='26' r='3.5' fill='%23fe6a00'/%3E%3C/svg%3E">
@@ -205,8 +205,8 @@ footer a{font-weight:700;color:var(--text)}
       </div>
       <div class="box how">
         <h2>Cómo elegimos los chollos</h2>
-        <p><b>Descuento honesto.</b> Frente al precio más bajo de los 30 días anteriores a la bajada, nunca frente al precio tachado.</p>
-        <p><b>Precio reciente.</b> Cada chollo dice a qué hora vimos el precio. Si sube o se agota, lo marcamos como terminado.</p>
+        <p><b>Rebaja de verdad.</b> Solo entran ofertas que lo son frente a cómo ha estado el producto el último mes, nunca frente a un precio tachado inflado.</p>
+        <p><b>Al día.</b> Si una oferta se acaba o se agota, la marcamos como terminada.</p>
         <p><b>Lo que la gente compra.</b> Aspiradoras, cafeteras, móviles, electrodomésticos, muebles y compra del día a día.</p>
       </div>
     </aside>
@@ -215,8 +215,8 @@ footer a{font-weight:700;color:var(--text)}
 
 <footer>
   <div class="wrap">
-    <p><strong>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</strong> Los enlaces a Amazon.es de esta web son enlaces de afiliado y a ti no te cuestan nada más.</p>
-    <p>Los precios y la disponibilidad son los que vimos a la hora indicada y pueden cambiar. El precio que se aplica es el que aparece en Amazon.es en el momento de la compra.</p>
+    <p><strong>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</strong> Los enlaces de esta web son enlaces de afiliado y a ti no te cuestan nada más.</p>
+    <p>Las ofertas y la disponibilidad pueden cambiar en cualquier momento. Las condiciones que se aplican son las de la tienda en el momento de la compra.</p>
     <p>Síguenos en <a href="https://t.me/cazachollos_com" rel="noopener">Telegram</a> y en <a href="https://x.com/AzvensLoL" rel="noopener">X</a>.</p>
   </div>
 </footer>
@@ -266,28 +266,29 @@ footer a{font-weight:700;color:var(--text)}
 
   function dealCard(d) {
     const url = esc(safeUrl(d.url));
-    const label = d.pct >= 60 ? "Error de precio" : d.pct >= 40 ? "Chollazo" : "Chollo";
+    const label = d.level || (d.pct >= 60 ? "Error de precio" : d.pct >= 40 ? "Chollazo" : "Chollo");
+    const figures = d.price != null;
     const pill = d.active
       ? `<span class="pill">${FLAME}${label}</span>`
       : `<span class="pill cold">Terminado ${ago(d.ended || d.checked)}</span>`;
     return `
       <li class="deal${d.active ? "" : " expired"}">
         <a class="thumb" href="${url}" rel="sponsored noopener" aria-hidden="true" tabindex="-1">
-          <span class="badge">-${d.pct}%</span>${icon(d)}
+          ${figures ? `<span class="badge">-${d.pct}%</span>` : ""}${icon(d)}
         </a>
         <div class="dbody">
           <div class="dtop">${pill}<span>${esc(d.category)}</span><span class="when">${ago(d.posted)}</span></div>
           <h3 class="dtitle"><a href="${url}" rel="sponsored noopener">${esc(d.title)}</a></h3>
-          <div class="prices">
+          ${figures ? `<div class="prices">
             <span class="now">${euro.format(d.price)}</span>
             <span class="was">${euro.format(d.reference)}</span>
             <span class="off">-${d.pct}%</span>
           </div>
-          <p class="dnote">Ahorras ${euro.format(d.saving)} frente a su precio más bajo de los 30 días anteriores. Precio visto a las ${seenAt(d.posted)}, puede cambiar.</p>
+          <p class="dnote">Ahorras ${euro.format(d.saving)} frente a su precio más bajo de los 30 días anteriores. Precio visto a las ${seenAt(d.posted)}, puede cambiar.</p>` : `<p class="dnote">Publicado a las ${seenAt(d.posted)}. Oferta por tiempo limitado, puede cambiar en cualquier momento.</p>`}
           <div class="dfoot">
-            <span class="store">Disponible en <b>Amazon.es</b></span>
+            <span class="store">Enlace de afiliado</span>
             ${d.telegram ? `<a class="tg" href="${esc(d.telegram)}" rel="noopener">Ver en Telegram</a>` : ""}
-            <a class="go" href="${url}" rel="sponsored noopener">${d.active ? "Ir al chollo" : "Ver en Amazon"}${EXT}</a>
+            <a class="go" href="${url}" rel="sponsored noopener">${d.active ? "Ver oferta" : "Ver producto"}${EXT}</a>
           </div>
         </div>
       </li>`;
@@ -313,9 +314,9 @@ footer a{font-weight:700;color:var(--text)}
   function renderFeed() {
     const order = {
       new: (a, b) => b.posted - a.posted,
-      pct: (a, b) => b.pct - a.pct || b.saving - a.saving,
-      saving: (a, b) => b.saving - a.saving,
-      cheap: (a, b) => a.price - b.price,
+      pct: (a, b) => (b.pct || 0) - (a.pct || 0) || (b.saving || 0) - (a.saving || 0),
+      saving: (a, b) => (b.saving || 0) - (a.saving || 0),
+      cheap: (a, b) => (a.price || 0) - (b.price || 0),
       gone: (a, b) => (b.ended || 0) - (a.ended || 0),
     }[sort];
     const shown = visible().sort(order);
@@ -336,16 +337,23 @@ footer a{font-weight:700;color:var(--text)}
     const now = Date.now() / 1000;
     const active = data.deals.filter((d) => d.active);
     const today = active.filter((d) => now - d.posted < 24 * 3600);
-    const top = (today.length >= 3 ? today : active).slice().sort((a, b) => b.pct - a.pct || b.saving - a.saving).slice(0, 5);
+    const pool = (today.length >= 3 ? today : active).slice();
+    const top = (data.strict ? pool.sort((a, b) => b.posted - a.posted) : pool.sort((a, b) => b.pct - a.pct || b.saving - a.saving)).slice(0, 5);
     $("top").innerHTML = top.length
       ? top.map((d) => `<li><a href="${esc(safeUrl(d.url))}" rel="sponsored noopener">
           <span class="ico" aria-hidden="true">${icon(d)}</span>
-          <span><span class="tt">${esc(d.title)}</span><span class="tp"><b>${euro.format(d.price)}</b> · -${d.pct}%</span></span>
+          <span><span class="tt">${esc(d.title)}</span><span class="tp">${d.price != null ? `<b>${euro.format(d.price)}</b> · -${d.pct}%` : esc(d.level || "Chollo")}</span></span>
         </a></li>`).join("")
       : `<li class="tp" style="padding:6px 0;color:var(--muted)">Aún no hay chollos hoy.</li>`;
   }
 
-  function render() { renderCats(); renderFeed(); renderTop(); }
+  function render() {
+    if (data.strict) {
+      document.querySelectorAll('.tab[data-sort="pct"],.tab[data-sort="saving"],.tab[data-sort="cheap"]').forEach((t) => t.remove());
+      if (["pct", "saving", "cheap"].includes(sort)) sort = "new";
+    }
+    renderCats(); renderFeed(); renderTop();
+  }
 
   async function load() {
     for (const src of SOURCES) {

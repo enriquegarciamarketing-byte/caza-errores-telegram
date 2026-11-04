@@ -20,7 +20,8 @@ import scanner  # noqa: E402
 def main() -> int:
     jl_id, asin, title, price, reference = sys.argv[1:6]
     cfg = cn.load_json(cn.ROOT / "config.json", {})
-    rules = dict(cn.rules_from(cfg), revision_mode=True)
+    rules = dict(cn.rules_from(cfg))
+    rules["revision_mode"] = rules.get("revision_mode") or "estricto"
     state = cn.load_json(cn.STATE_PATH, {})
     detail = scanner.parse_detail(cn.http_get(f"{cn.JL}/es/dp/{jl_id}/"))
     now = cn.datetime.now(cn.timezone.utc)
@@ -31,7 +32,7 @@ def main() -> int:
         "seen_hhmm": f"{now.astimezone(cn.MADRID):%H:%M}",
     }
     url = f"https://www.amazon.es/dp/{asin}?tag={rules['tag']}"
-    caption = "🧪 <b>PRUEBA · MODO REVISIÓN</b> (no es un post real)\n\n" + cn.build_caption(deal, url, rules)
+    caption = "🧪 <b>PRUEBA · MODO REVISIÓN ESTRICTO</b> (no es un post real)\n\n" + cn.build_caption(deal, url, rules)
     print(caption)
     tg = scanner.Telegram(os.environ["TELEGRAM_BOT_TOKEN"].strip())
     target = cn.admin_chat_id(state, rules, tg, print)
