@@ -1014,6 +1014,11 @@
    "price": 35.99,
    "t": 1793759521,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "R4jK8v8": {
+   "price": 89.9,
+   "t": 1793791840,
+   "result": "solo -11% bajo la referencia"
   }
  },
  "posts": [
@@ -1363,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793788693
+   "checked": 1793793190
   },
   {
    "id": "cm-2051793",
@@ -1425,7 +1430,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 91,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1738,38 +1743,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|reanimal ps5|reanimal ps5": {
-   "t": 1793284073.556227,
-   "query": "reanimal ps5",
-   "prices": [
-    25.0,
-    25.0,
-    29.0,
-    29.9,
-    28.0,
-    28.99,
-    35.0,
-    39.95,
-    32.0,
-    30.0,
-    30.0,
-    29.0,
-    39.99,
-    40.0,
-    40.0,
-    39.9,
-    100.0,
-    36.99,
-    290.0,
-    270.0,
-    45.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 50860,
-   "raw_count": 22
-  },
   "powerplanetonline|lego architecture londres 21034 468 piezas 12+ anos|powerplanetonline 21034 lego": {
    "t": 1793287611.6725335,
    "query": "powerplanetonline 21034 lego",
@@ -6750,6 +6723,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "|zapatillas adidas urban court ji1049, deportivas|zapatillas ji1049 adidas": {
+   "t": 1793792758.533132,
+   "query": "zapatillas ji1049 adidas",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -7037,7 +7020,8 @@
   "wallapop:cm-2055008": 1793786470.9751143,
   "wallapop:cm-2054599": 1793787664.8768294,
   "wallapop:cm-2055029": 1793787666.1923113,
-  "wallapop:cm-2054641": 1793788262.8907232
+  "wallapop:cm-2054641": 1793788262.8907232,
+  "wallapop:cm-2055035": 1793792759.003207
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -9305,14 +9289,21 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~59 € (46 anuncios): ROI 6 % y 3 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas adidas urban court ji1049, deportivas|zapatillas ji1049 adidas": {
+   "t": 1793792757.3828068,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 3)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 12,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/riffmaster-wireless-guitar-controller-para-playstation-5-2054802": 1793770297.2809832,
   "https://www.chollometro.com/ofertas/puma-anzarun-lite-sneaker-unisex-adulto-2054307": 1793771497.3655984,
   "https://www.chollometro.com/ofertas/under-armour-rogue-6-zapatillas-running-asfalto-tallas-40-a-49-2052431": 1793774187.4828954,
   "https://www.chollometro.com/ofertas/dyson-v15-detect-absolute-2054499": 1793775386.5789118,
@@ -9328,7 +9319,9 @@
   "https://www.chollometro.com/ofertas/adidas-zapatillas-de-running-adizero-pacer-tallas-36-a-46-2055008": 1793786462.4540026,
   "https://www.chollometro.com/ofertas/cthulhu-the-cosmic-abyss-ps5-y-xbox-x-s-2054599": 1793787658.5677712,
   "https://www.chollometro.com/ofertas/columbia-zapatillas-de-senderismo-facet-75-outdry-mujeres-negro-2055029": 1793787658.5677712,
-  "https://www.chollometro.com/ofertas/fosmet-gafas-inteligentes-ia-con-camara-165-traduccion-smart-glasses-de-solo-45g-asistente-gptreconocimiento-de-objetosproteccion-uv-2054641": 1793788258.639489
+  "https://www.chollometro.com/ofertas/fosmet-gafas-inteligentes-ia-con-camara-165-traduccion-smart-glasses-de-solo-45g-asistente-gptreconocimiento-de-objetosproteccion-uv-2054641": 1793788258.639489,
+  "https://www.chollometro.com/ofertas/honor-400-8gb256gb-5g-smartphone-version-ue-telefono-sistema-de-camara-al-ultra-claro-de-200mp-de-imagen-a-video-con-ia-2055071": 1793790954.298415,
+  "https://www.chollometro.com/ofertas/zapatillas-adidas-urban-court-ji1049-deportivas-2055035": 1793792754.4555364
  },
  "asked": {
   "cm-2051793": 1793783213

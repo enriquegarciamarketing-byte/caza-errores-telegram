@@ -1,164 +1,109 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 102 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 457190 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37057 bytes, 30 chollos
-  Chollometro «Robot aspirador y friegasuelos Roborock Q7 TF+ base autovaciado 10000P»: El Corte Inglés 129.0 €
-  Chollometro «ADIDAS zapatillas de running Adizero Pacer. Tallas 36 a 46»: Asos 48.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 84174 bytes, 30 chollos
-  cm-2052320 · El Corte Inglés 129.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Robot aspirador y friegasuelos Roborock Q7 TF+ base autovaci
-  cm-2055008 · Asos 48.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · ADIDAS zapatillas de running Adizero Pacer. Tallas 36 a 46
-  Wallapop «robot q7 aspirador»: 200 / 108736 bytes, 39 anuncios, 33 parecidos, 0 reservas
-  Milanuncios «robot q7 aspirador»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 29 anuncios, ~118 €, no publica
-  ⚠️ No publico «Robot aspirador y friegasuelos Roborock Q7 TF+ base autovaciado 10000Pa»: reventa en WALLAPOP ~118 € (29 anuncios): ROI -19 % y -25 €, por debajo del mínimo (25 % y 25 €)
-  Vinted «adidas 36 zapatillas»: HTTP 200, 3682914 bytes, 96 anuncios
-  Vinted «adidas 36 zapatillas»: 36 parecidos de 96
-  Wallapop «adidas 36 zapatillas»: 200 / 128023 bytes, 40 anuncios, 23 parecidos, 0 reservas
-  Milanuncios «adidas 36 zapatillas»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 51 anuncios, ~30 €, no publica
-  ⚠️ No publico «ADIDAS zapatillas de running Adizero Pacer. Tallas 36 a 46»: reventa en VINTED+WALLAPOP ~30 € (51 anuncios): ROI -46 % y -22 €, por debajo del mínimo (30 % y 25 €)
-Publicados en esta ejecución: 0
-Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID 5C01:3D9DE:57B997:6A75BF:6AEB0267        
-remote: Time 2026-11-04T10:01:13Z
-To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] afdd0f4e232b1ba74a90c465f9ebe6df616148d4 -> cascada (Internal Server Error)
-== pasada 2 · 11:03 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID 5C00:387C12:58FA59:863A17:6AEB02F1        
-remote: Time 2026-11-04T10:03:29Z
-To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] b745c202615d1db819bcfecf82c20a3905964c5c -> cascada (Internal Server Erro)
-== pasada 3 · 11:05 ==
 Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36653 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 99003 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 41 descartes nuevos, 78 en lista
+== pasada 2 · 12:18 ==
+Listados: 96 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID 5C00:2174CD:5912BB:6BEA9A:6AEB0387        
-remote: Time 2026-11-04T10:05:59Z
+remote: Request ID 2808:255046:26D630D:3396FB5:6AEB1480        
+remote: Time 2026-11-04T11:18:24Z
 To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] e16600a7ca444a5305d500ec59e989e9583c7078 -> cascada (Internal Server Erro)
-== pasada 4 · 11:08 ==
+ ! [remote rejected] e051f6b01a467319dd53a9ad00691c9f7a656bfc -> cascada (Internal Server Er)
+== pasada 3 · 12:20 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 4 · 12:23 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 2808:3A12B:708574:A138DB:6AEB15AC        
+remote: Time 2026-11-04T11:23:24Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] 51ad59209cd59c19f0fcd7448f11d417a653e193 -> cascada (Internal Server Error)
+== pasada 5 · 12:25 ==
 Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36775 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 98579 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 12:28 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 7 · 12:30 ==
+Listados: 89 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  R4jK8v8 · 89.9 € · media 122.74 · ref 101.00 → descartado (solo -11% bajo la referencia) · Cecotec Placa de Inducción de 1 Zona Flex Bolero Squad I 210
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 12:33 ==
+Listados: 88 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 5 · 11:10 ==
-Listados: 102 productos únicos
+== pasada 9 · 12:35 ==
+Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36678 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 76521 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36450 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 87981 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID 5C00:2174CD:5990F0:6C8941:6AEB04B5        
-remote: Time 2026-11-04T10:11:01Z
-To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] 8507a3afe0788973e2767d10f4bc18f02ff125fa -> cascada (Internal Server Erro)
-== pasada 6 · 11:13 ==
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 10 · 12:38 ==
+Listados: 96 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 11 · 12:40 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 12 · 12:43 ==
+Listados: 89 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 13 · 12:45 ==
+Listados: 96 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36251 bytes, 30 chollos
+  Chollometro «Zapatillas Adidas Urban Court JI1049, Deportivas»: Amazon 25.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 79230 bytes, 30 chollos
+  cm-2055035 · Amazon 25.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Adidas Urban Court JI1049, Deportivas
+  Vinted «zapatillas ji1049 adidas»: HTTP 200, 2816142 bytes, 1 anuncios
+  Vinted «zapatillas ji1049 adidas»: 0 parecidos de 1
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 3)
+  Wallapop «zapatillas ji1049 adidas»: 200 / 1282 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «zapatillas ji1049»: 200 / 392 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «zapatillas ji1049 adidas»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Zapatillas Adidas Urban Court JI1049, Deportivas»: Vinted solo tiene 0 anuncios parecidos (mínimo 3); Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95511 bytes))
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 14 · 12:48 ==
+Listados: 96 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 15 · 12:50 ==
 Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 11:15 ==
-Listados: 88 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID 5C00:2174CD:5A0C7E:6D2437:6AEB05DF        
-remote: Time 2026-11-04T10:15:59Z
-To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] 0cffa71f367818fdf2645d8aa901dc058291d2e2 -> cascada (Internal Server Erro)
-== pasada 8 · 11:18 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 11:20 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36057 bytes, 30 chollos
-  Chollometro «Cthulhu: The Cosmic Abyss | PS5 y Xbox X / S |»: El Corte Inglés 29.9 €
-  Chollometro «COLUMBIA Zapatillas de senderismo Facet 75 Outdry Mujeres (Negro)»: Privatesportshop 50.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 79354 bytes, 30 chollos
-  cm-2054599 · El Corte Inglés 29.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Cthulhu: The Cosmic Abyss | PS5 y Xbox X / S
-  cm-2055029 · Privatesportshop 50.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · COLUMBIA Zapatillas de senderismo Facet 75 Outdry Mujeres (N
-  Wallapop «cthulhu ps5 cosmic»: 200 / 10330 bytes, 4 anuncios, 3 parecidos, 0 reservas
-  Milanuncios «cthulhu ps5 cosmic»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 3 anuncios, ~27 €, no publica
-  ⚠️ No publico «Cthulhu: The Cosmic Abyss | PS5 y Xbox X / S»: reventa en WALLAPOP ~27 € (3 anuncios): ROI -22 % y -7 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «columbia 75 zapatillas»: HTTP 200, 3685583 bytes, 96 anuncios
-  Vinted «columbia 75 zapatillas»: 49 parecidos de 96
-  Wallapop «columbia 75 zapatillas»: 200 / 41574 bytes, 9 anuncios, 4 parecidos, 0 reservas
-  Milanuncios «columbia 75 zapatillas»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 50 anuncios, ~60 €, no publica
-  ⚠️ No publico «COLUMBIA Zapatillas de senderismo Facet 75 Outdry Mujeres (Negro)»: reventa en VINTED+WALLAPOP ~60 € (50 anuncios): ROI 8 % y 4 €, por debajo del mínimo (30 % y 25 €)
-Publicados en esta ejecución: 0
-Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID 5C00:2174CD:5A8E5D:6DC708:6AEB0712        
-remote: Time 2026-11-04T10:21:06Z
-To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] aba047e7f9adef2749ae6f37e64c088cb0909b69 -> cascada (Internal Server Erro)
-== pasada 10 · 11:23 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 11:25 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID 5C00:2174CD:5B0846:6E5FE5:6AEB0837        
-remote: Time 2026-11-04T10:25:59Z
-To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] 9453f3cddfdf6b0212ebcf6c35fa6224bf8abf73 -> cascada (Internal Server Erro)
-== pasada 12 · 11:28 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 13 · 11:30 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36152 bytes, 30 chollos
-  Chollometro «FOSMET Gafas Inteligentes IA con Cámara, 165 Traducción Smart Glasses »: Amazon 94.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69952 bytes, 30 chollos
-  cm-2054641 · Amazon 94.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · FOSMET Gafas Inteligentes IA con Cámara, 165 Traducción Smar
-  Wallapop «fosmet 45g gafas»: 200 / 1263 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «fosmet 45g»: 200 / 385 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
-  Milanuncios «fosmet 45g gafas»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «FOSMET Gafas Inteligentes IA con Cámara, 165 Traducción Smart Glasses de Solo 45g, Asisten»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95509 bytes))
-Publicados en esta ejecución: 0
-Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
-remote: Request ID 5C00:2174CD:5B8459:6EFC53:6AEB0967        
-remote: Time 2026-11-04T10:31:03Z
-To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
- ! [remote rejected] e83478fca9672c516718c82add4322b74c539ead -> cascada (Internal Server Erro)
-== pasada 14 · 11:33 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 11:35 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 11:38 ==
-Listados: 94 productos únicos
+== pasada 16 · 12:53 ==
+Listados: 91 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
