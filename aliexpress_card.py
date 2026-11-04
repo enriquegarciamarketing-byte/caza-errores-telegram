@@ -276,7 +276,7 @@ def _trim_white(image: Image.Image, pad: int = 4) -> Image.Image:
 CARD = (8, 8, 888, 888)
 
 
-def _background(c: Card, kind: str):
+def _background(c: Card):
     card = c.mask_rr(CARD, 40)
     c.shadow(card, blur=9, dy=3, alpha=0.22)
     # Blanco con un viñeteado gris muy suave hacia los bordes.
@@ -298,17 +298,12 @@ def _background(c: Card, kind: str):
         layer = vgrad((DRAW, DRAW), [(0, RED_TOP), (0.5, RED), (1, RED_BOTTOM)])
         c.fill(m, layer, alpha)
 
-    if kind == "discount":
-        red([(586, 236), (640, 236), (888, 86), (888, 52)], 0.25, (255, 160, 150))
-        red([(650, 236), (742, 236), (888, 148), (888, 96)])
-        red([(760, 8), (888, 8), (888, 84)], color=RED_TOP)
-        red([(700, 888), (744, 888), (888, 746), (888, 706)], 0.5, PINK)
-        red([(758, 888), (888, 888), (888, 758)])
-    else:
-        red([(770, 8), (888, 8), (888, 120)], 0.45, PINK)
-        red([(806, 8), (888, 8), (888, 82)])
-        red([(640, 888), (690, 888), (888, 742), (888, 702)], 0.5, PINK)
-        red([(700, 888), (888, 888), (888, 762)])
+    # Arriba solo por encima del título (que va a todo el ancho); abajo, la esquina roja de la referencia.
+    red([(600, 196), (650, 196), (888, 40), (888, 8), (880, 8)], 0.25, (255, 160, 150))
+    red([(662, 196), (742, 196), (888, 100), (888, 48)])
+    red([(760, 8), (888, 8), (888, 84)], color=RED_TOP)
+    red([(700, 888), (744, 888), (888, 746), (888, 706)], 0.5, PINK)
+    red([(758, 888), (888, 888), (888, 758)])
 
 
 def _header(c: Card, badge: str, badge_top: float):
@@ -399,19 +394,24 @@ def _title(c: Card, title: str, x: float, first_baseline: float, max_w: float, s
     return first_baseline + (len(lines) - 1) * lh
 
 
-def _price_text(c: Card, x, cy, price: float, size: float, color, box, shadow=None, max_w=None):
-    """Precio con el símbolo del euro algo más pequeño, como en la referencia."""
+def _price_text(c: Card, x, cy, price: float, size: float, color, box, shadow=None, max_w=None, center=False):
+    """Precio en cursiva gruesa con el símbolo del euro algo más pequeño, como en la referencia."""
     num = euro(price)[:-2]
     tr = -1.2
 
     def fonts(sz):
         return font(900, sz, True), font(900, sz * 0.86, True)
 
-    f, fe = fonts(size)
+    def width(sz):
+        f, fe = fonts(sz)
+        return c.tw(num, f, tr) + sz * 0.12 + c.tw("€", fe)
+
     if max_w:
-        while c.tw(num, f, tr) + 6 + c.tw("€", fe) > max_w and size > 30:
+        while width(size) > max_w and size > 30:
             size -= 1
-            f, fe = fonts(size)
+    f, fe = fonts(size)
+    if center:
+        x = x - width(size) / 2
     if shadow:
         c.text((x + 1.5, cy + 2.5), num, f, shadow, box, anchor="lm", tracking=tr)
     b = c.text((x, cy), num, f, color, box, anchor="lm", tracking=tr)
@@ -422,54 +422,65 @@ def _price_text(c: Card, x, cy, price: float, size: float, color, box, shadow=No
     return size
 
 
-# ---------------------------------------------------------------- bloques
-def _old_card(c: Card, reference: float, label: str):
-    box = (42, 372, 400, 478)
-    m = c.mask_rr(box, 22)
+# ---------------------------------------------------------------- bloques (todo a medida de su caja)
+L, R = 42, 854          # márgenes de contenido
+
+
+def _old_card(c: Card, box, reference: float, label: str):
+    x0, y0, x1, y1 = box
+    m = c.mask_rr(box, 24)
     c.shadow(m, blur=6, dy=3, alpha=0.16)
     c.gradient_fill(m, box, [(0, (247, 247, 248)), (1, (233, 233, 236))])
-    c.outline_rr(box, 22, (255, 255, 255), 1.5)
-    c.text((70, 408), label, c.fit(820, label, 22.5, 310), GREY_TEXT, box)
-    f = c.fit(900, euro(reference), 56, 310, italic=True, tracking=-1)
-    b = c.text((66, 460), euro(reference), f, GREY_PRICE, box, tracking=-1)
-    c.draw.line([p(b[0] - 3), p(b[3] - 10), p(b[2] + 8), p(b[1] + 20)], fill=RED, width=p(3.2))
+    c.outline_rr(box, 24, (255, 255, 255), 1.5)
+    h = y1 - y0
+    lf = c.fit(820, label, 22.5, x1 - x0 - 50)
+    pf = c.fit(900, euro(reference), min(64, h * 0.36), x1 - x0 - 52, italic=True, tracking=-1)
+    block = 22 + 16 + pf.size / S * 0.72
+    top = y0 + (h - block) / 2
+    c.text((x0 + 26, top + 18), label, lf, GREY_TEXT, box)
+    b = c.text((x0 + 24, top + 38 + pf.size / S * 0.72), euro(reference), pf, GREY_PRICE, box, tracking=-1)
+    c.draw.line([p(b[0] - 3), p(b[3] - (b[3] - b[1]) * 0.25), p(b[2] + 8), p(b[1] + (b[3] - b[1]) * 0.42)],
+                fill=RED, width=p(3.4))
 
 
-def _red_panel(c: Card, price: float):
-    shape = [(42, 497), (266, 497), (288, 512), (452, 512), (458, 632), (42, 632)]
-    box = (42, 497, 458, 632)
+def _red_panel(c: Card, box, price: float):
+    x0, y0, x1, y1 = box
+    tab_w = 232
+    shape = [(x0, y0), (x0 + tab_w, y0), (x0 + tab_w + 22, y0 + 16), (x1, y0 + 16), (x1 + 4, y1), (x0, y1)]
     m = c.mask_poly(shape, 15)
-    c.shadow(m, blur=8, dy=6, alpha=0.35, color=(130, 0, 0))
-    c.gradient_fill(m, box, [(0, (255, 52, 40)), (0.45, (234, 22, 14)), (1, (188, 6, 2))])
-    c.gloss(m, (42, 497, 458, 560), 0.16, 0.6)
-    c.text((70, 530), "PRECIO ACTUAL", font(880, 23.5), WHITE, box)
-    _price_text(c, 72, 584, price, 98, WHITE, box, shadow=(150, 4, 0), max_w=372)
+    c.shadow(m, blur=9, dy=7, alpha=0.35, color=(130, 0, 0))
+    c.gradient_fill(m, box, [(0, (255, 52, 40)), (0.45, (234, 22, 14)), (1, (186, 6, 2))])
+    c.gloss(m, (x0, y0, x1, y0 + (y1 - y0) * 0.5), 0.16, 0.7)
+    c.text((x0 + 28, y0 + 34), "PRECIO ACTUAL", font(880, 24), WHITE, box)
+    h = y1 - y0
+    _price_text(c, x0 + 28, y0 + 34 + (h - 34) / 2 + 4, price, min(150, (h - 40) * 0.82), WHITE, box,
+                shadow=(150, 4, 0), max_w=x1 - x0 - 56)
 
 
-def _discount_bar(c: Card, pct: int):
-    box = (35, 655, 858, 766)
+def _discount_bar(c: Card, box, pct: int):
+    x0, y0, x1, y1 = box
     m = c.mask_rr(box, 26)
     c.shadow(m, blur=9, dy=6, alpha=0.35)
-    # Borde rojo fino, como en la referencia.
-    c.fill(c.mask_rr((33, 653, 860, 768), 27), (200, 20, 14), 0.85)
-    c.gradient_fill(c.mask_rr((35, 655, 857, 765), 26), box,
+    c.fill(c.mask_rr((x0 - 2, y0 - 2, x1 + 2, y1 + 2), 27), (200, 20, 14), 0.85)
+    c.gradient_fill(c.mask_rr((x0, y0, x1 - 1, y1 - 1), 26), box,
                     [(0, (46, 46, 52)), (0.5, (22, 22, 26)), (1, (8, 8, 10))])
-    c.gloss(c.mask_rr((37, 657, 855, 763), 25), box, 0.08, 0.42)
-    cy = 712
-    chevron(c, 84, cy, 40, (255, 34, 24))
-    b = c.text((136, cy + 2), f"-{pct} %", font(900, 86, True), WHITE, box, anchor="lm", tracking=-1.5)
-    sep = max(415, b[2] + 40)
-    c.draw.line([p(sep), p(cy - 32), p(sep), p(cy + 32)], fill=WHITE, width=p(2.2))
-    tx = sep + 38
-    f = c.fit(500, "frente a su precio más bajo", 28.5, 858 - tx - 24)
+    c.gloss(c.mask_rr((x0 + 2, y0 + 2, x1 - 3, y1 - 3), 25), box, 0.08, 0.42)
+    cy = (y0 + y1) / 2
+    chevron(c, x0 + 46, cy, 40, (255, 34, 24))
+    size = min(92, (y1 - y0) * 0.74)
+    b = c.text((x0 + 100, cy + 2), f"-{pct} %", font(900, size, True), WHITE, box, anchor="lm", tracking=-1.5)
+    sep = max(x0 + 380, b[2] + 40)
+    c.draw.line([p(sep), p(cy - 34), p(sep), p(cy + 34)], fill=WHITE, width=p(2.2))
+    tx = sep + 40
+    f = c.fit(500, "frente a su precio más bajo", 30, x1 - tx - 28)
     fb = font(800, f.size / S)
-    c.text((tx, cy - 16), "frente a su precio más bajo", f, WHITE, box, anchor="lm")
-    b1 = c.text((tx, cy + 18), "de los", f, WHITE, box, anchor="lm")
-    b2 = c.text((b1[2] + c.tw(" ", f), cy + 18), "30 días", fb, (255, 36, 26), box, anchor="lm")
-    c.text((b2[2] + c.tw(" ", f), cy + 18), "anteriores", f, WHITE, box, anchor="lm")
+    c.text((tx, cy - 17), "frente a su precio más bajo", f, WHITE, box, anchor="lm")
+    b1 = c.text((tx, cy + 19), "de los", f, WHITE, box, anchor="lm")
+    b2 = c.text((b1[2] + c.tw(" ", f), cy + 19), "30 días", fb, (255, 36, 26), box, anchor="lm")
+    c.text((b2[2] + c.tw(" ", f), cy + 19), "anteriores", f, WHITE, box, anchor="lm")
 
 
-def _chips(c: Card, deal: dict, price: float, top: float) -> bool:
+def _chip_list(deal: dict, price: float) -> list:
     chips = []
     app = deal.get("app_price")
     if app and float(app) < price - 0.25:
@@ -477,88 +488,83 @@ def _chips(c: Card, deal: dict, price: float, top: float) -> bool:
     coupon = deal.get("coupon") or {}
     if coupon.get("code"):
         chips.append(("cupon", "CUPÓN", str(coupon["code"])))
-    if not chips:
-        return False
-    f1, f2 = font(820, 25.5), font(900, 25.5)
-    widths = [76 + c.tw(a + " ", f1) + c.tw(b, f2) + 34 for _, a, b in chips]
-    gap = 24
+    return chips
+
+
+def _chips(c: Card, chips: list, top: float, height: float = 58):
+    f1, f2 = font(820, 26), font(900, 26)
+    widths = [80 + c.tw(a + " ", f1) + c.tw(b, f2) + 38 for _, a, b in chips]
+    gap = 26
+    if len(chips) == 1:
+        widths = [max(widths[0], 380)]
     x = (W - (sum(widths) + gap * (len(widths) - 1))) / 2
     for (kind, a, b), w in zip(chips, widths):
-        box = (x, top, x + w, top + 54)
-        m = c.mask_rr(box, 27)
+        box = (x, top, x + w, top + height)
+        m = c.mask_rr(box, height / 2)
         c.shadow(m, blur=5, dy=3, alpha=0.14)
         c.fill(m, WHITE)
-        c.outline_rr(box, 27, RED, 2.4)
-        cy = top + 27
+        c.outline_rr(box, height / 2, RED, 2.4)
+        cy = top + height / 2
+        inner = 80 + c.tw(a + " ", f1) + c.tw(b, f2) + 38
+        ox = x + (w - inner) / 2
         if kind == "app":
-            phone(c, x + 42, cy, 30)
+            phone(c, ox + 44, cy, 32)
         else:
-            ticket(c, x + 42, cy, 26)
-        tb = c.text((x + 76, cy + 1), a, f1, INK, box, anchor="lm")
+            ticket(c, ox + 44, cy, 27)
+        tb = c.text((ox + 80, cy + 1), a, f1, INK, box, anchor="lm")
         c.text((tb[2] + c.tw(" ", f1), cy + 1), b, f2, RED_TEXT, box, anchor="lm")
         x += w + gap
-    return True
 
 
 def _footer(c: Card, deal: dict, y: float):
     text = f"Precio a las {deal.get('seen_hhmm') or '--:--'} · puede cambiar · Enlace de afiliado"
-    f = c.fit(500, text, 21.5, 620)
+    f = c.fit(500, text, 22, 640)
     total = 32 + c.tw(text, f)
     x = (W - total) / 2 - 20
     clock(c, x + 12, y, 12, (92, 95, 102))
     c.text((x + 32, y + 1), text, f, (88, 91, 98), (x, y - 20, x + total + 10, y + 20), anchor="lm")
 
 
-def _top_layout(c: Card, deal: dict, price: float):
-    # Círculo rosa y destellos de la referencia (sin el producto).
-    disc = Image.new("L", c.img.size, 0)
-    ImageDraw.Draw(disc).ellipse([p(492), p(228), p(892), p(628)], fill=255)
-    disc = ImageChops.multiply(disc.filter(ImageFilter.GaussianBlur(p(3))), c.mask_rr(CARD, 40))
-    tint = Image.new("RGB", c.img.size, (251, 226, 226))
-    tint.paste(vgrad((DRAW, p(400)), [(0, (252, 232, 232)), (1, (248, 214, 214))]), (0, p(228)))
-    c.fill(disc, tint, 0.42)
-    for a, b in [((779, 213), (786, 175)), ((796, 222), (822, 191)), ((806, 236), (836, 220))]:
-        c.draw.line([p(a[0]), p(a[1]), p(b[0]), p(b[1])], fill=RED, width=p(8))
-        for q in (a, b):
-            c.draw.ellipse([p(q[0] - 4), p(q[1] - 4), p(q[0] + 4), p(q[1] + 4)], fill=RED)
-
-    panel = (55, 458, 492, 636)
-    m = c.mask_rr(panel, 20)
+def _price_box(c: Card, box, price: float):
+    """TOP VENTAS: pestaña PRECIO y panel blanco con borde rojo a todo el ancho, precio centrado."""
+    x0, y0, x1, y1 = box
+    panel = (x0, y0 + 30, x1, y1)
+    m = c.mask_rr(panel, 22)
     c.shadow(m, blur=8, dy=5, alpha=0.16)
-    c.gradient_fill(m, panel, [(0, WHITE), (1, (250, 247, 247))])
-    c.outline_rr(panel, 20, RED, 2.6)
-    tab_shape = [(55, 430), (238, 430), (272, 474), (55, 474)]
-    tm = c.mask_poly(tab_shape, 12)
+    c.gradient_fill(m, panel, [(0, WHITE), (1, (250, 246, 246))])
+    c.outline_rr(panel, 22, RED, 2.8)
+    tab = [(x0, y0), (x0 + 190, y0), (x0 + 226, y0 + 46), (x0, y0 + 46)]
+    tm = c.mask_poly(tab, 12)
     c.shadow(tm, blur=5, dy=3, alpha=0.25, color=(120, 0, 0))
-    c.gradient_fill(tm, (55, 430, 272, 474), [(0, (255, 52, 40)), (1, (200, 10, 4))])
-    c.gloss(tm, (55, 430, 272, 474), 0.16, 0.5)
-    c.text((90, 465), "PRECIO", font(850, 30), WHITE, (55, 430, 272, 474))
-    _price_text(c, 84, 556, price, 116, RED_TEXT, panel, shadow=(150, 6, 2), max_w=388)
+    c.gradient_fill(tm, (x0, y0, x0 + 226, y0 + 46), [(0, (255, 52, 40)), (1, (200, 10, 4))])
+    c.gloss(tm, (x0, y0, x0 + 226, y0 + 46), 0.16, 0.5)
+    c.text((x0 + 32, y0 + 36), "PRECIO", font(850, 30), WHITE, (x0, y0, x0 + 226, y0 + 46))
+    # Destellos rojos de la referencia, ahora junto a la esquina del precio.
+    sx, sy = x0 + 240, y0 + 18
+    for a, b in [((sx, sy - 6), (sx + 4, sy - 36)), ((sx + 14, sy), (sx + 34, sy - 24)),
+                 ((sx + 22, sy + 12), (sx + 50, sy + 2))]:
+        c.draw.line([p(a[0]), p(a[1]), p(b[0]), p(b[1])], fill=RED, width=p(7))
+        for q in (a, b):
+            c.draw.ellipse([p(q[0] - 3.5), p(q[1] - 3.5), p(q[0] + 3.5), p(q[1] + 3.5)], fill=RED)
+    h = y1 - y0 - 30
+    _price_text(c, (x0 + x1) / 2, y0 + 30 + h / 2 + 8, price, min(190, h * 0.7), RED_TEXT, panel,
+                shadow=(150, 6, 2), max_w=x1 - x0 - 90, center=True)
 
-    note = (105, 683, 820, 757)
-    nm = c.mask_rr(note, 22)
+
+def _note(c: Card, box):
+    x0, y0, x1, y1 = box
+    nm = c.mask_rr(box, 24)
     c.shadow(nm, blur=6, dy=3, alpha=0.14)
-    c.gradient_fill(nm, note, [(0, (251, 251, 252)), (1, (240, 240, 243))])
-    c.outline_rr(note, 22, (232, 232, 236), 1.2)
+    c.gradient_fill(nm, box, [(0, (251, 251, 252)), (1, (240, 240, 243))])
+    c.outline_rr(box, 24, (232, 232, 236), 1.2)
     t1, t2 = "De lo más vendido en", "AliExpress"
-    f = c.fit(850, t1 + " " + t2, 31, 560)
-    total = 70 + c.tw(t1 + " " + t2, f)
-    x = (note[0] + note[2] - total) / 2
-    medal(c, x + 22, 716, 50)
-    b = c.text((x + 70, 721), t1, f, INK, note, anchor="lm")
-    c.text((b[2] + c.tw(" ", f), 721), t2, f, RED_TEXT, note, anchor="lm")
-    if _chips(c, deal, price, 772):
-        _footer(c, deal, 852)
-    else:
-        _footer(c, deal, 807)
-
-
-def _discount_layout(c: Card, deal: dict, price: float, reference: float):
-    _old_card(c, reference, str(deal.get("ref_label") or "MÍNIMO 30 DÍAS ANTES"))
-    _red_panel(c, price)
-    _discount_bar(c, round((reference - price) / reference * 100))
-    if not _chips(c, deal, price, 788):
-        _footer(c, deal, 815)
+    f = c.fit(850, t1 + " " + t2, 33, x1 - x0 - 140)
+    total = 74 + c.tw(t1 + " " + t2, f)
+    x = (x0 + x1 - total) / 2
+    cy = (y0 + y1) / 2
+    medal(c, x + 24, cy - 4, 54)
+    b = c.text((x + 74, cy + 3), t1, f, INK, box, anchor="lm")
+    c.text((b[2] + c.tw(" ", f), cy + 3), t2, f, RED_TEXT, box, anchor="lm")
 
 
 def _has_reference(deal: dict) -> bool:
@@ -566,20 +572,54 @@ def _has_reference(deal: dict) -> bool:
     return bool(ref) and float(ref) > float(deal["price"]) + 0.009
 
 
+def _stack(start: float, end: float, items: list, flex: int, max_extra: float, gap_min=26, gap_max=48):
+    """Reparte la altura libre: primero crece el bloque principal (flex), luego los huecos por igual.
+    items: [(clave, altura base)] → {clave: (y0, y1)}"""
+    base = sum(h for _, h in items)
+    free = end - start - base - gap_min * (len(items) - 1)
+    extra = max(0.0, min(max_extra, free))
+    heights = [h + (extra if i == flex else 0) for i, (_, h) in enumerate(items)]
+    rest = end - start - sum(heights)
+    gap = min(gap_max, rest / max(len(items) - 1, 1))
+    top = start + (rest - gap * (len(items) - 1)) / 2
+    out = {}
+    for (key, _), h in zip(items, heights):
+        out[key] = (top, top + h)
+        top += h + gap
+    return out
+
+
 def create_card(deal: dict) -> Path:
     """deal: title, price, reference (o None), badge, ref_label, seen_hhmm, app_price, coupon, id."""
     c = Card()
     price = float(deal["price"])
     discount = _has_reference(deal)
-    _background(c, "discount" if discount else "top")
+    _background(c)
     badge = str(deal.get("badge") or ("CHOLLO" if discount else "TOP VENTAS"))
-    _header(c, badge, 42 if discount else 40)
+    _header(c, badge, 42)
+    title_bottom = _title(c, str(deal["title"]), L + 4, 262, R - L - 8, 46, 1.12) + 16
+    chips = _chip_list(deal, price)
+    footer_y = 852
+    end = footer_y - 40
     if discount:
-        _title(c, str(deal["title"]), 45, 250, 545, 40, 1.08)
-        _discount_layout(c, deal, price, float(deal["reference"]))
+        items = [("row", 170), ("bar", 124)] + ([("chips", 58)] if chips else [])
+        lay = _stack(title_bottom + 10, end, items, 0, 70)
+        y0, y1 = lay["row"]
+        _old_card(c, (L, y0 + 16, 340, y1), float(deal["reference"]),
+                  str(deal.get("ref_label") or "MÍNIMO 30 DÍAS ANTES"))
+        _red_panel(c, (362, y0, R, y1), price)
+        _discount_bar(c, (L - 7, lay["bar"][0], R + 4, lay["bar"][1]), round((float(deal["reference"]) - price)
+                                                                            / float(deal["reference"]) * 100))
+        if chips:
+            _chips(c, chips, lay["chips"][0])
     else:
-        _title(c, str(deal["title"]), 56, 274, 505, 45, 1.21)
-        _top_layout(c, deal, price)
+        items = [("price", 220), ("note", 80)] + ([("chips", 58)] if chips else [])
+        lay = _stack(title_bottom + 34, end, items, 0, 110)
+        _price_box(c, (L, lay["price"][0], R, lay["price"][1]), price)
+        _note(c, (L + 40, lay["note"][0], R - 40, lay["note"][1]))
+        if chips:
+            _chips(c, chips, lay["chips"][0])
+    _footer(c, deal, footer_y)
     c.validate()
     OUTPUT.mkdir(parents=True, exist_ok=True)
     out = OUTPUT / f"ae-{deal.get('id') or 'tarjeta'}.jpg"
