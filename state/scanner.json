@@ -1373,7 +1373,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793831077
+   "checked": 1793833454
   },
   {
    "id": "cm-2051793",
@@ -1417,13 +1417,47 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
  "discovery_cache": {
-  "t": 1793829829.040939,
-  "titles": []
+  "t": 1793833498.0949345,
+  "titles": [
+   "almacenamiento",
+   "dispositivos de red",
+   "impresora y tinta",
+   "sandisk ultra flair memoria flash usb 3.0 de 64 gb, con carcasa de metal duradera y elegante y hasta 150 mb/s de velocidad de",
+   "sandisk ultra dual drive go, memoria flash 128 gb (con conectores usb type-c y type-a reversibles, para android moviles, tabl",
+   "unionsine disco duro externo 500gb 2.5\" usb3.0 ultra slim portatil hdd | almacenamiento para pc, mac, macbook, chromebook, xb",
+   "tp-link re330 - repetidor wifi 5 ac1200 de doble banda, puerto ethernet | amplificador de senal wifi. compatible con easymesh",
+   "canon pixma ts3750i impresora multifuncion wi-fi de inyeccion de tinta | facil de usar; escanear y copiar, fotos sin bordes h",
+   "asus rog zephyrus g14 ga403uu-qs109x amd ryzen™ 9 8945hs portatil 35,6 cm (14\") 3k 32 gb lpddr5x-sdram 1",
+   "arctic mx-7 (8 g) - pasta termica de alto rendimiento para cpus | para consolas, procesadores, tarjetas graficas y portatiles",
+   "toshiba canvio partner 2tb - disco duro externo portatil de 2,5&#x27;&#x27;, usb 3.2, compatible con mac y windows. (hdtb520ek3ab)",
+   "philips 27e1n1100a monitor 27 pulgadas 120hz panel ips, 4ms gtg, altavoces, (1920x1080 hdmi 1x 1.4) negro",
+   "apple ipad de 11 pulgadas: chip a16, modelo de 11 pulgadas, pantalla liquid retina, 128 gb, wi fi 6, camaras frontal y traser",
+   "sandisk pendrive 64 gb ultra memoria flash usb 3.0 hasta 130 mb/s, (secureaccess software, proteccion de contrasenas) negro",
+   "sandisk 2tb extreme ssd portatil, usb-c, memoria de estado solido nvme externa, hasta 1050 mb/s, clasificacion ip65 de resist",
+   "intenso 3503480 lapiz usb 2.0 basic 32gb",
+   "hp deskjet 2920, impresora multifuncion de inyeccion de tinta a color | wi-fi de doble banda, panel lcd, hp smart app, impres",
+   "sandisk 64 gb cruzer blade usb 2.0 flash drive - black",
+   "tp-link ub500 - adaptador bluetooth usb para pc, plug & play, tamano mini | ideal para pc sin bluetooth. no necesita configur",
+   "lenovo idea tab – tablet 11\" 2.5k (mediatek dimensity 6300, 8 gb ram, 256 gb ufs, 90 hz, 4 altavoces, wi-fi 5, bluetooth 5.2,",
+   "tp-link tl-pa7017p kit - kit plc, adaptador powerline av1000, 1 puerto ge | amplia tu red a traves del cableado electrico. si",
+   "tp-link tl-wpa4220 kit - adaptador powerline av600, kit plc wifi 300 mbps | amplia tu red a traves del cableado electrico. si",
+   "tp-link ls1005g - switch gigabit 5 puertos, plug & play, carcasa plastico | plug & play, no necesita configuracion. diseno si",
+   "kingston datatraveler exodia s unidad flash usb - 128gb - usb 3.2 gen 1 - usb type a - negro/turquesa - dtxs/128gb",
+   "lg monitor gaming ultragear 24g411a-b - 24&#x27;&#x27;, ips, 144hz, 1 ms, morado | fhd (1920 x 1080), panel ips, 144 (o/c) hz, 5ms, hdr",
+   "syy pasta termica 4g con kit alto rendimiento cpu gpu consolas portatiles | base de carbono;no conductora;aplicacion uniforme",
+   "tp-link tl-mr110 - router 4g lte sim, wifi 4 300 mbps, 2 puertos ethernet | inserta una tarjeta sim para internet sin fibra e",
+   "sandisk 64 gb ultra fit, usb-a laufwerk, bis 400 mb/s lesen | usb 3.2, ideal para ordenador portatil o de sobremesa, consolas",
+   "yodoit monitor portatil pantalla portatil de 15,6 pulgadas ips 1080p fhd display usb type-c de computadora, juego hdr con hdm",
+   "lexar d40e  unidad flash dual usb tipo-c, usb-a/c, 128gb, champan plateado | usb 3.2 gen 1, type-c, carcasa de metal, diseno ",
+   "seagate portable drive 1tb, unidad de disco duro externo, usb 3.0 para pc, ordenador portatil y mac y servicios rescue, amazo",
+   "tp-link ls105g switch gigabit 5 puertos, plug & play, carcasa acero, impresoras, webcams",
+   "tp-link tl-sg105 - switch gigabit de 5 puertos, plug & play, carcasa acero | plug & play, no necesita configuracion. diseno s"
+  ]
  },
  "resale_cache": {
   "carrefour|lego ideas cohete lunar de tintin, juguete de construccion +18 anos - 21367 (-40% en cupon) - precio final 83.99|wallapop+milanuncios:carrefour 18 lego": {
@@ -1972,57 +2006,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|puma zapatillas de running hombre axelion varios colores (vendedor externo)|puma zapatillas": {
-   "t": 1793348091.0421107,
-   "query": "puma zapatillas",
-   "prices": [
-    22.85,
-    30.0,
-    22.0,
-    15.0,
-    12.0,
-    30.0,
-    35.0,
-    12.0,
-    10.0,
-    10.0,
-    30.0,
-    25.0,
-    55.0,
-    12.0,
-    49.0,
-    28.0,
-    25.0,
-    35.0,
-    10.0,
-    20.0,
-    40.0,
-    30.0,
-    30.0,
-    15.0,
-    18.0,
-    15.0,
-    50.0,
-    12.0,
-    25.0,
-    40.0,
-    20.0,
-    35.0,
-    20.0,
-    8.0,
-    30.0,
-    27.0,
-    25.0,
-    10.0,
-    30.0,
-    45.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 120532,
-   "raw_count": 40
-  },
   "aliexpress|consola nintendo switch 2 [1 nov 00:00]|aliexpress 00 consola": {
    "t": 1793351773.9259865,
    "query": "aliexpress 00 consola",
@@ -7232,6 +7215,42 @@
    "http_status": 200,
    "bytes": 123149,
    "raw_count": 40
+  },
+  "|grand theft auto vi | gta 6 (ps5) - clave psn - europa|grand ps5 theft": {
+   "t": 1793831865.489847,
+   "query": "grand ps5 theft",
+   "prices": [
+    77.0,
+    13.0,
+    15.0,
+    15.0,
+    10.0,
+    15.0,
+    15.0,
+    8.0,
+    17.0,
+    5.0,
+    11.95,
+    5.0,
+    14.0,
+    14.99,
+    18.0,
+    18.0,
+    20.0,
+    13.0,
+    10.0,
+    15.0,
+    15.0,
+    140.0,
+    15.0,
+    10.0,
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 85868,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -7564,7 +7583,8 @@
   "wallapop:cm-2054828": 1793827814.8920214,
   "wallapop:cm-2055772": 1793827815.836461,
   "wallapop:cm-2053092": 1793828532.7680745,
-  "wallapop:cm-2055385": 1793830670.7612467
+  "wallapop:cm-2055385": 1793830670.7612467,
+  "wallapop:cm-2055914": 1793831866.0904784
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10087,7 +10107,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 4,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-icons-cachorro-de-golden-retriever-11384-por-10499-eur-minimo-historico-2055153": 1793812876.0748527,
   "https://www.chollometro.com/ofertas/kingdom-hearts-collection-i-iii-importacion-uk-ps5-jugable-en-castellano-2055534": 1793814345.5465698,
@@ -10100,7 +10120,9 @@
   "https://www.chollometro.com/ofertas/mando-ps5-dualsense-diferen-colores-2055772": 1793827803.907433,
   "https://www.chollometro.com/ofertas/dji-lito-x1-2054828": 1793827803.907433,
   "https://www.chollometro.com/ofertas/fc-27-edicion-estandar-para-ps5-y-nintendo-switch-juego-fisico-pal-4721eur-con-cupon-seleccion-5eureu-2053092": 1793828528.5737617,
-  "https://www.chollometro.com/ofertas/vans-range-brz-zapatillas-385-39-40-405-41-2055385": 1793830664.2868412
+  "https://www.chollometro.com/ofertas/vans-range-brz-zapatillas-385-39-40-405-41-2055385": 1793830664.2868412,
+  "https://www.chollometro.com/ofertas/grand-theft-auto-vi-gta-6-ps5-clave-psn-europa-2055914": 1793831862.443297,
+  "https://www.chollometro.com/ofertas/garmin-forerunner-165-music-reloj-inteligente-2055924": 1793832551.5314069
  },
  "asked": {
   "cm-2051793": 1793783213
