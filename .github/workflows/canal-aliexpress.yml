@@ -18,6 +18,11 @@ on:
         required: false
         type: boolean
         default: false
+      manual:
+        description: "Post hecho a mano (JSON de un producto o una lista). Solo como prueba a tu chat privado."
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -58,8 +63,10 @@ jobs:
           ALIEXPRESS_APP_SECRET: ${{ secrets.ALIEXPRESS_APP_SECRET }}
           ALIEXPRESS_TRACKING_ID: ${{ secrets.ALIEXPRESS_TRACKING_ID }}
           ALIEXPRESS_TRACKING_ID_X: ${{ secrets.ALIEXPRESS_TRACKING_ID_X }}
+          MANUAL: ${{ inputs.manual }}
         run: |
           ARGS=()
+          if [ -n "$MANUAL" ]; then ARGS+=(--manual "$MANUAL"); fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
           if [ "${{ github.event_name }}" = "schedule" ]; then ARGS+=(--minutes 40 --every 600); fi
@@ -68,7 +75,7 @@ jobs:
 
       # Las pruebas (privada o sin envío) no guardan memoria.
       - name: Guardar memoria
-        if: always() && (github.event_name == 'schedule' || (inputs.test_private != true && inputs.dry_run != true))
+        if: always() && (github.event_name == 'schedule' || (inputs.test_private != true && inputs.dry_run != true && inputs.manual == ''))
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

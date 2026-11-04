@@ -343,6 +343,23 @@ def _header(c: Card, badge: str, badge_top: float):
         flame(c, ix, cy, 30, WHITE)
 
 
+def card_title(title: str, limit: int = 78) -> str:
+    """Los títulos de AliExpress son kilométricos: se quedan el primer trozo (qué es) y, por orden,
+    los trozos con datos técnicos (6500PA, 20000 mAh…) y luego el resto, mientras quepan."""
+    title = re.sub(r"\s+", " ", title or "").strip(" ,.")
+    if len(title) <= limit:
+        return title
+    parts = [x.strip() for x in title.split(",") if x.strip()]
+    order = [0] + [i for i in range(1, len(parts)) if SPEC.search(parts[i])] + \
+        [i for i in range(1, len(parts)) if not SPEC.search(parts[i])]
+    keep: list[int] = []
+    for i in order:
+        cand = ", ".join(parts[j] for j in sorted(keep + [i]))
+        if len(cand) <= limit:
+            keep.append(i)
+    return ", ".join(parts[j] for j in sorted(keep)) if keep else title[:limit].rsplit(" ", 1)[0]
+
+
 def _title(c: Card, title: str, x: float, first_baseline: float, max_w: float, size: float, lh_ratio: float,
            max_lines: int = 3) -> float:
     spans = [(m.start(), m.end()) for m in SPEC.finditer(title)]
@@ -597,7 +614,7 @@ def create_card(deal: dict) -> Path:
     _background(c)
     badge = str(deal.get("badge") or ("CHOLLO" if discount else "TOP VENTAS"))
     _header(c, badge, 42)
-    title_bottom = _title(c, str(deal["title"]), L + 4, 262, R - L - 8, 46, 1.12) + 16
+    title_bottom = _title(c, card_title(str(deal["title"])), L + 4, 262, R - L - 8, 46, 1.12) + 16
     chips = _chip_list(deal, price)
     footer_y = 852
     end = footer_y - 40

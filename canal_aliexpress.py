@@ -314,7 +314,8 @@ def coupon_text(coupon: dict) -> str:
 def build_caption(deal: dict, seen_hhmm: str) -> str:
     e = html.escape
     badge = deal["badge"]
-    lines = [HEADERS[badge], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", ""]
+    from aliexpress_card import card_title
+    lines = [HEADERS[badge], "", f"<b>{e(card_title(deal['title'], 120))}</b>", ""]
     price = deal["price"]
     if deal.get("reference"):
         ref = deal["reference"]
@@ -350,14 +351,15 @@ def build_x_text(deal: dict, link: str) -> str:
     if deal.get("reference"):
         price_line = f"💰 {euro(deal['price'])} (-{round(deal['discount'])} % frente a su mínimo de 30 días)"
     else:
-        price_line = f"💰 {euro(deal['price'])} · {TOP_NOTE.lower()}"
+        price_line = f"💰 {euro(deal['price'])} · de lo más vendido en AliExpress"
     coupon = deal.get("coupon") or {}
     if coupon.get("code"):
         price_line += f"\n🎟️ Cupón {coupon['code']} · {coupon_text(coupon)}"
     tail = f"👉 {link}\n\n#Publi {TAGS[badge]} #AliExpress"
     limit = 120
     while True:
-        text = f"{head}\n\n{clean_title(deal['title'], limit)}\n\n{price_line}\n\n{tail}"
+        from aliexpress_card import card_title
+        text = f"{head}\n\n{card_title(deal['title'], limit)}\n\n{price_line}\n\n{tail}"
         if x_length(text) <= 280 or limit <= 30:
             return text
         limit -= 10
@@ -643,6 +645,54 @@ class FixtureAPI:
         return {u: u + ("&" if "?" in u else "?") + f"aff_fcid=prueba-{tracking_id}" for u in urls}
 
 
+# ------------------------------------------------------------------ post manual (pruebas)
+def run_manual(spec, rules: dict, tg, args, now: datetime, log=print) -> int:
+    """Post hecho a mano a partir de un JSON (un producto o una lista). De momento solo como prueba privada.
+    Campos: title, price, image, link y opcionales reference (mínimo de 30 días), badge, app_price, rating,
+    coupon (código de la ficha) y url (ficha, para el enlace de X)."""
+    import aliexpress_card
+
+    items = spec if isinstance(spec, list) else [spec]
+    if not args.test_private:
+        log("El post manual solo va como prueba privada (--test-private).")
+        return 1
+    state = load_json(STATE_PATH, {})
+    admin = admin_chat_id(state, rules, tg, log) if tg else None
+    if not admin and not args.dry_run:
+        log("No encuentro tu chat privado con el bot: escríbele /start y vuelve a probar.")
+        return 1
+    seen = now.astimezone(MADRID).strftime("%H:%M")
+    sent = 0
+    for raw in items:
+        price = float(raw["price"])
+        reference = float(raw["reference"]) if raw.get("reference") else None
+        discount = pct(price, reference) if reference and reference > price else 0.0
+        badge = raw.get("badge") or (badge_for(discount, 30, rules) if discount else "TOP VENTAS")
+        deal = {"id": str(raw.get("id") or "manual"), "title": raw["title"], "price": price,
+                "reference": reference if discount else None, "discount": discount, "badge": badge,
+                "image": raw["image"], "link": raw["link"], "url": raw.get("url") or raw["link"],
+                "app_price": float(raw["app_price"]) if raw.get("app_price") else None,
+                "rating": float(raw["rating"]) if raw.get("rating") else None,
+                "coupon": {"code": raw["coupon"]} if raw.get("coupon") else None}
+        deal = with_coupon(deal, rules, now)
+        caption = build_caption(deal, raw.get("seen_at") or seen)
+        card = aliexpress_card.create_card({**deal, "seen_hhmm": raw.get("seen_at") or seen})
+        log(f"  {badge} {euro(price)} {deal['title'][:70]} → tarjeta {card.name}")
+        if args.dry_run:
+            print(caption)
+            print("---- X ----")
+            print(build_x_text(deal, deal["link"]))
+            continue
+        note = str(raw.get("note") or "")
+        head = "🧪 <b>PRUEBA</b> · solo te llega a ti" + (f" · {html.escape(note)}" if note else "") + "\n\n"
+        send_post(tg, admin, deal["image"], card, head + caption, log)
+        if rules.get("x_drafts"):
+            send_x_draft(tg, admin, deal["image"], build_x_text(deal, deal["link"]), test=True)
+        sent += 1
+    log(f"Enviadas {sent} pruebas a tu chat privado.")
+    return 0
+
+
 # ------------------------------------------------------------------ main
 def save_state(state: dict) -> None:
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -658,10 +708,17 @@ def main(argv=None) -> int:
     parser.add_argument("--minutes", type=float, default=0, help="pasadas seguidas durante estos minutos")
     parser.add_argument("--every", type=int, default=300, help="segundos entre pasadas")
     parser.add_argument("--fixture", help="productos de prueba en JSON en vez de la API")
+    parser.add_argument("--manual", help="post hecho a mano (JSON de un producto o una lista); solo prueba privada")
     args = parser.parse_args(argv)
 
     cfg = load_json(CONFIG_PATH, {})
     rules = rules_from(cfg)
+    if args.manual:
+        token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+        tg = Telegram(token) if token else None
+        if tg is None:
+            args.dry_run = True
+        return run_manual(json.loads(args.manual), rules, tg, args, datetime.now(timezone.utc))
     if args.fixture:
         api = FixtureAPI(args.fixture)
     else:
