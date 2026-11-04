@@ -1,119 +1,110 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 91 productos únicos
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36741 bytes, 30 chollos
-  Chollometro «GEOGRAPHICAL NORWAY Zapatillas de trekking Oclarc»: Showroomprive 32.9 €
-  Chollometro «Zapatillas ADIDAS TERREX AGRAVIC 4 MUJER- Tallas- 37 1/3, 38, 38 2/3, »: Alssport 69.97 €
-  Chollometro «Nike - zapatillas deportivas Zoomx Vaporfly Next 4 - running»: Privalia 89.99 €
-  Chollometro «LEGO 75446 Star Wars Grogu (Aprendiz de Mandaloriano) - Figura articul»: Miravia 80.1 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77324 bytes, 30 chollos
-  cm-2050752 · Showroomprive 32.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · GEOGRAPHICAL NORWAY Zapatillas de trekking Oclarc
-  cm-2054417 · Alssport 69.97 € → candidato externo · Zapatillas ADIDAS TERREX AGRAVIC 4 MUJER- Tallas- 37 1/3, 38
-  cm-2054914 · Privalia 89.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nike - zapatillas deportivas Zoomx Vaporfly Next 4 - running
-  cm-2054592 · Miravia → descartado (la tienda marca 100.6 € y no 80.1 €) · LEGO 75446 Star Wars Grogu (Aprendiz de Mandaloriano) - Figu
-  Vinted «geographical norway»: HTTP 200, 3689255 bytes, 96 anuncios
-  Vinted «geographical norway»: 54 parecidos de 96
-  Wallapop «geographical norway»: 200 / 127681 bytes, 40 anuncios, 37 parecidos, 0 reservas
-  Milanuncios «geographical norway»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 70 anuncios, ~22 €, no publica
-  ⚠️ No publico «GEOGRAPHICAL NORWAY Zapatillas de trekking Oclarc»: reventa en VINTED+WALLAPOP ~22 € (70 anuncios): ROI -42 % y -14 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «zapatillas 37 adidas»: HTTP 200, 3679748 bytes, 96 anuncios
-  Vinted «zapatillas 37 adidas»: 24 parecidos de 96
-  Wallapop «zapatillas 37 adidas»: 200 / 127143 bytes, 40 anuncios, 21 parecidos, 0 reservas
-  Milanuncios «zapatillas 37 adidas»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 37 anuncios, ~25 €, no publica
-  ⚠️ No publico «Zapatillas ADIDAS TERREX AGRAVIC 4 MUJER- Tallas- 37 1/3, 38, 38 2/3, 40 2/3»: reventa en VINTED+WALLAPOP ~25 € (37 anuncios): ROI -69 % y -48 €, por debajo del mínimo (25 % y 25 €)
-  Vinted «nike zapatillas»: HTTP 200, 3673539 bytes, 96 anuncios
-  Vinted «nike zapatillas»: 27 parecidos de 96
-  Wallapop «nike zapatillas»: 200 / 115268 bytes, 40 anuncios, 39 parecidos, 0 reservas
-  Milanuncios «nike zapatillas»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 44 anuncios, ~17 €, no publica
-  ⚠️ No publico «Nike - zapatillas deportivas Zoomx Vaporfly Next 4 - running»: reventa en VINTED+WALLAPOP ~17 € (44 anuncios): ROI -84 % y -76 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37229 bytes, 30 chollos
+  Chollometro «CARMEN SANDIEGO EDICIÓN 40ª ANIVERSARIO - PS5»: Amazon 26.98 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77531 bytes, 30 chollos
+  cm-2054911 · Amazon 26.98 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · CARMEN SANDIEGO EDICIÓN 40ª ANIVERSARIO - PS5
+  Wallapop «carmen ps5 sandiego»: 200 / 6336 bytes, 2 anuncios, 1 parecidos, 0 reservas
+  Wallapop «carmen ps5»: 200 / 44994 bytes, 13 anuncios, 1 parecidos, 0 reservas
+  Milanuncios «carmen ps5 sandiego»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 1 anuncios, ~0 €, no publica
+  ⚠️ No publico «CARMEN SANDIEGO EDICIÓN 40ª ANIVERSARIO - PS5»: WALLAPOP solo tiene 1 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0
-Cascada al canal normal: 39 descartes nuevos, 73 en lista
-== pasada 2 · 09:00 ==
-Listados: 95 productos únicos
+Cascada al canal normal: 40 descartes nuevos, 83 en lista
+== pasada 2 · 09:59 ==
+Listados: 94 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 09:03 ==
-Listados: 101 productos únicos
+== pasada 3 · 10:01 ==
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 09:05 ==
+== pasada 4 · 10:04 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 5 · 10:06 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37117 bytes, 30 chollos
+  Chollometro «Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7", Cámara de 50MP, Batería »: AliExpress 356.19 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 76912 bytes, 30 chollos
+  cm-2051793 · AliExpress 356.19 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7", Cámara de 50MP
+  Wallapop «samsung s25 galaxy»: 200 / 123351 bytes, 40 anuncios, 29 parecidos, 0 reservas
+  Milanuncios «samsung s25 galaxy»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 26 anuncios, ~490 €, publica
+  Te lo paso por privado para que des el OK (mensaje 313): OPORTUNIDAD DE REVENTA · Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7", Cámara de 50MP, Batería 4900 mAh, IP68
+Publicados en esta ejecución: 1
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 10:09 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 7 · 10:11 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 10:14 ==
 Listados: 102 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 09:08 ==
-Listados: 92 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36684 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 125370 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 09:10 ==
+== pasada 9 · 10:16 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37275 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 102611 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 7 · 09:13 ==
-Listados: 103 productos únicos
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 10 · 10:19 ==
+Listados: 94 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 09:15 ==
+== pasada 11 · 10:21 ==
 Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 10:24 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 10:26 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37045 bytes, 30 chollos
+  Chollometro «Lego E.T»: Miravia 82.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 103283 bytes, 30 chollos
+  cm-2054807 · Miravia 82.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Lego E.T
+  Wallapop no aporta datos: el título no da suficientes palabras para buscar en Wallapop
+  Milanuncios no aporta datos: título corto
+  ⚠️ No publico «Lego E.T»: el título no da suficientes palabras para buscar en Wallapop; título corto
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 10:29 ==
+Listados: 94 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 9 · 09:18 ==
-Listados: 91 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36684 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 122251 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 10 · 09:20 ==
-Listados: 100 productos únicos
+== pasada 15 · 10:31 ==
+Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 09:23 ==
-Listados: 101 productos únicos
+== pasada 16 · 10:34 ==
+Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 12 · 09:25 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 13 · 09:28 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36529 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 121645 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 14 · 09:30 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 09:33 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 09:35 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
 Fin de la ejecución tras 16 pasadas.

@@ -1363,12 +1363,69 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793781347
+   "checked": 1793784843
+  },
+  {
+   "id": "cm-2051793",
+   "gtin": null,
+   "price": 356.19,
+   "category": "OPORTUNIDAD DE REVENTA",
+   "t": 1793783213,
+   "title": "Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7\", Cámara de 50MP, Batería 4900 mAh, IP68",
+   "cap": {
+    "category": "OPORTUNIDAD DE REVENTA",
+    "title": "Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7\", Cámara de 50MP, Batería 4900 mAh, IP68",
+    "brand": "",
+    "current": 356.19,
+    "reference": 356.19,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "sizes": null,
+    "hold": false,
+    "store": "AliExpress",
+    "note": "",
+    "coupons": [
+     "ESD1175",
+     "AEES75"
+    ],
+    "paypal": true,
+    "resale_price": 490.0,
+    "resale_count": 26,
+    "profit": 107.31,
+    "demand": "Muchos anuncios",
+    "source_label": "WALLAPOP"
+   },
+   "url": "https://es.aliexpress.com/item/1005012297562999.html",
+   "alert_id": 313,
+   "alert_text_id": 314,
+   "pending": true,
+   "needs_ok": true,
+   "ask_until": 1793794013,
+   "card_data": {
+    "title": "Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7\", Cámara de 50MP, Batería 4900 mAh, IP68",
+    "category": "OPORTUNIDAD DE REVENTA",
+    "current": 356.19,
+    "reference": 356.19,
+    "image": "https://static.chollometro.com/threads/raw/QiF6b/2051793_1/re/150x150/qt/55/2051793_1.jpg",
+    "store_label": "AliExpress",
+    "conditions": "Con cupón + PayPal",
+    "resale": {
+     "price": 490.0,
+     "count": 26,
+     "roi": 30.127179314410853,
+     "profit": 107.31,
+     "source_label": "WALLAPOP",
+     "note": "26 anuncios de referencia · Wallapop · Muchos anuncios",
+     "sample": false,
+     "demand": "Muchos anuncios"
+    }
+   }
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 101,
+ "last_listing_count": 96,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1699,63 +1756,21 @@
    "transient": false,
    "reserved": 0,
    "demand_known": true
+  },
+  "|lego e.t|wallapop+milanuncios:lego": {
+   "t": 1793784413.0746868,
+   "prices": [],
+   "parts": [],
+   "failures": [
+    "el título no da suficientes palabras para buscar en Wallapop",
+    "título corto"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": false
   }
  },
  "wallapop_cache": {
-  "amazon|tarjeta sandisk micro sd express 256gb para nintendo switch 2|tarjeta 256gb sandisk": {
-   "t": 1793270244.5114353,
-   "query": "tarjeta 256gb sandisk",
-   "prices": [
-    40.0,
-    32.8,
-    26.5,
-    18.0,
-    34.99,
-    40.0,
-    29.95,
-    39.0,
-    35.0,
-    35.0,
-    40.0,
-    44.0,
-    29.9,
-    45.0,
-    45.0,
-    199.0,
-    36.9,
-    45.0,
-    35.0,
-    300.0,
-    39.99,
-    48.0,
-    90.0,
-    120.0,
-    49.99,
-    36.0,
-    36.99,
-    36.0,
-    40.0,
-    50.0,
-    48.0,
-    35.0,
-    38.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 95613,
-   "raw_count": 39
-  },
-  "showroomprive|puma zapatillas|showroomprive puma": {
-   "t": 1793270245.9049804,
-   "query": "showroomprive puma",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "game|nioh 3 launch edition ps5|game ps5 nioh": {
    "t": 1793276162.2773788,
    "query": "game ps5",
@@ -6656,6 +6671,58 @@
    "http_status": 200,
    "bytes": 115268,
    "raw_count": 40
+  },
+  "|carmen sandiego edicion 40ª aniversario - ps5|carmen ps5 sandiego": {
+   "t": 1793782614.1902869,
+   "query": "carmen ps5 sandiego",
+   "prices": [
+    44.99
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 6336,
+   "raw_count": 2
+  },
+  "|samsung galaxy s25 fe 8gb+256gb 5g nfc, 6.7\", camara de 50mp, bateria 4900 mah, ip68|samsung s25 galaxy": {
+   "t": 1793783210.7708054,
+   "query": "samsung s25 galaxy",
+   "prices": [
+    450.0,
+    680.0,
+    500.0,
+    375.0,
+    520.0,
+    1.0,
+    410.0,
+    450.0,
+    490.0,
+    490.0,
+    600.0,
+    550.0,
+    600.0,
+    480.0,
+    420.0,
+    7.0,
+    600.0,
+    400.0,
+    680.0,
+    725.0,
+    800.0,
+    450.0,
+    629.0,
+    7.0,
+    499.0,
+    390.0,
+    625.0,
+    450.0,
+    700.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 123351,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -6936,7 +7003,9 @@
   "wallapop:cm-2054581": 1793745766.4714499,
   "wallapop:cm-2050752": 1793779133.8349135,
   "wallapop:cm-2054417": 1793779136.0337458,
-  "wallapop:cm-2054914": 1793779137.9361339
+  "wallapop:cm-2054914": 1793779137.9361339,
+  "wallapop:cm-2054911": 1793782614.7376668,
+  "wallapop:cm-2054807": 1793784413.578887
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -9106,7 +9175,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 3,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/riffmaster-wireless-guitar-controller-para-playstation-5-2054802": 1793770297.2809832,
   "https://www.chollometro.com/ofertas/puma-anzarun-lite-sneaker-unisex-adulto-2054307": 1793771497.3655984,
@@ -9115,9 +9184,13 @@
   "https://www.chollometro.com/ofertas/geographical-norway-zapatillas-de-trekking-oclarc-2050752": 1793779113.5333378,
   "https://www.chollometro.com/ofertas/zapatillas-adidas-terrex-agravic-4-mujer-tallas-37-13-38-38-23-40-23-2054417": 1793779113.5333378,
   "https://www.chollometro.com/ofertas/nike-zapatillas-deportivas-zoomx-vaporfly-next-4-running-2054914": 1793779113.5333378,
-  "https://www.chollometro.com/ofertas/lego-75446-star-wars-grogu-aprendiz-de-mandaloriano-figura-articulada-2054592": 1793779113.5333378
+  "https://www.chollometro.com/ofertas/lego-75446-star-wars-grogu-aprendiz-de-mandaloriano-figura-articulada-2054592": 1793779113.5333378,
+  "https://www.chollometro.com/ofertas/carmen-sandiego-edicion-40a-aniversario-ps5-2054911": 1793782609.4935803,
+  "https://www.chollometro.com/ofertas/samsung-galaxy-s25-fe-8gb256gb-5g-nfc-67-camara-de-50mp-bateria-4900-mah-ip68-2051793": 1793783207.8369474,
+  "https://www.chollometro.com/ofertas/lego-et-2054807": 1793784408.75659,
+  "https://www.chollometro.com/ofertas/zapatillas-nike-pegasus-trail-para-miembros-plus-2051645": 1793784408.75659
  },
  "asked": {
-  "cm-2053666": 1793697314
+  "cm-2051793": 1793783213
  }
 }
