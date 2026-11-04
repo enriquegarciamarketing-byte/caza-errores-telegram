@@ -1,110 +1,165 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37229 bytes, 30 chollos
-  Chollometro «CARMEN SANDIEGO EDICIÓN 40ª ANIVERSARIO - PS5»: Amazon 26.98 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77531 bytes, 30 chollos
-  cm-2054911 · Amazon 26.98 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · CARMEN SANDIEGO EDICIÓN 40ª ANIVERSARIO - PS5
-  Wallapop «carmen ps5 sandiego»: 200 / 6336 bytes, 2 anuncios, 1 parecidos, 0 reservas
-  Wallapop «carmen ps5»: 200 / 44994 bytes, 13 anuncios, 1 parecidos, 0 reservas
-  Milanuncios «carmen ps5 sandiego»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 1 anuncios, ~0 €, no publica
-  ⚠️ No publico «CARMEN SANDIEGO EDICIÓN 40ª ANIVERSARIO - PS5»: WALLAPOP solo tiene 1 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95510 bytes))
-Publicados en esta ejecución: 0
-Cascada al canal normal: 40 descartes nuevos, 83 en lista
-== pasada 2 · 09:59 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 10:01 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 10:04 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 10:06 ==
 Listados: 102 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 457190 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37117 bytes, 30 chollos
-  Chollometro «Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7", Cámara de 50MP, Batería »: AliExpress 356.19 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 76912 bytes, 30 chollos
-  cm-2051793 · AliExpress 356.19 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7", Cámara de 50MP
-  Wallapop «samsung s25 galaxy»: 200 / 123351 bytes, 40 anuncios, 29 parecidos, 0 reservas
-  Milanuncios «samsung s25 galaxy»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 26 anuncios, ~490 €, publica
-  Te lo paso por privado para que des el OK (mensaje 313): OPORTUNIDAD DE REVENTA · Samsung Galaxy S25 FE 8Gb+256Gb 5G NFC, 6.7", Cámara de 50MP, Batería 4900 mAh, IP68
-Publicados en esta ejecución: 1
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 10:09 ==
-Listados: 94 productos únicos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37057 bytes, 30 chollos
+  Chollometro «Robot aspirador y friegasuelos Roborock Q7 TF+ base autovaciado 10000P»: El Corte Inglés 129.0 €
+  Chollometro «ADIDAS zapatillas de running Adizero Pacer. Tallas 36 a 46»: Asos 48.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 84174 bytes, 30 chollos
+  cm-2052320 · El Corte Inglés 129.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Robot aspirador y friegasuelos Roborock Q7 TF+ base autovaci
+  cm-2055008 · Asos 48.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · ADIDAS zapatillas de running Adizero Pacer. Tallas 36 a 46
+  Wallapop «robot q7 aspirador»: 200 / 108736 bytes, 39 anuncios, 33 parecidos, 0 reservas
+  Milanuncios «robot q7 aspirador»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 29 anuncios, ~118 €, no publica
+  ⚠️ No publico «Robot aspirador y friegasuelos Roborock Q7 TF+ base autovaciado 10000Pa»: reventa en WALLAPOP ~118 € (29 anuncios): ROI -19 % y -25 €, por debajo del mínimo (25 % y 25 €)
+  Vinted «adidas 36 zapatillas»: HTTP 200, 3682914 bytes, 96 anuncios
+  Vinted «adidas 36 zapatillas»: 36 parecidos de 96
+  Wallapop «adidas 36 zapatillas»: 200 / 128023 bytes, 40 anuncios, 23 parecidos, 0 reservas
+  Milanuncios «adidas 36 zapatillas»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 51 anuncios, ~30 €, no publica
+  ⚠️ No publico «ADIDAS zapatillas de running Adizero Pacer. Tallas 36 a 46»: reventa en VINTED+WALLAPOP ~30 € (51 anuncios): ROI -46 % y -22 €, por debajo del mínimo (30 % y 25 €)
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 5C01:3D9DE:57B997:6A75BF:6AEB0267        
+remote: Time 2026-11-04T10:01:13Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] afdd0f4e232b1ba74a90c465f9ebe6df616148d4 -> cascada (Internal Server Error)
+== pasada 2 · 11:03 ==
+Listados: 93 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 10:11 ==
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 5C00:387C12:58FA59:863A17:6AEB02F1        
+remote: Time 2026-11-04T10:03:29Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] b745c202615d1db819bcfecf82c20a3905964c5c -> cascada (Internal Server Erro)
+== pasada 3 · 11:05 ==
 Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 10:14 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 10:16 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37275 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 102611 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 10:19 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 10:21 ==
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 5C00:2174CD:5912BB:6BEA9A:6AEB0387        
+remote: Time 2026-11-04T10:05:59Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] e16600a7ca444a5305d500ec59e989e9583c7078 -> cascada (Internal Server Erro)
+== pasada 4 · 11:08 ==
 Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 10:24 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 10:26 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37045 bytes, 30 chollos
-  Chollometro «Lego E.T»: Miravia 82.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 103283 bytes, 30 chollos
-  cm-2054807 · Miravia 82.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Lego E.T
-  Wallapop no aporta datos: el título no da suficientes palabras para buscar en Wallapop
-  Milanuncios no aporta datos: título corto
-  ⚠️ No publico «Lego E.T»: el título no da suficientes palabras para buscar en Wallapop; título corto
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 10:29 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 15 · 10:31 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 10:34 ==
-Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 5 · 11:10 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36678 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 76521 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 5C00:2174CD:5990F0:6C8941:6AEB04B5        
+remote: Time 2026-11-04T10:11:01Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] 8507a3afe0788973e2767d10f4bc18f02ff125fa -> cascada (Internal Server Erro)
+== pasada 6 · 11:13 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 7 · 11:15 ==
+Listados: 88 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 5C00:2174CD:5A0C7E:6D2437:6AEB05DF        
+remote: Time 2026-11-04T10:15:59Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] 0cffa71f367818fdf2645d8aa901dc058291d2e2 -> cascada (Internal Server Erro)
+== pasada 8 · 11:18 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 9 · 11:20 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36057 bytes, 30 chollos
+  Chollometro «Cthulhu: The Cosmic Abyss | PS5 y Xbox X / S |»: El Corte Inglés 29.9 €
+  Chollometro «COLUMBIA Zapatillas de senderismo Facet 75 Outdry Mujeres (Negro)»: Privatesportshop 50.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 79354 bytes, 30 chollos
+  cm-2054599 · El Corte Inglés 29.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Cthulhu: The Cosmic Abyss | PS5 y Xbox X / S
+  cm-2055029 · Privatesportshop 50.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · COLUMBIA Zapatillas de senderismo Facet 75 Outdry Mujeres (N
+  Wallapop «cthulhu ps5 cosmic»: 200 / 10330 bytes, 4 anuncios, 3 parecidos, 0 reservas
+  Milanuncios «cthulhu ps5 cosmic»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 3 anuncios, ~27 €, no publica
+  ⚠️ No publico «Cthulhu: The Cosmic Abyss | PS5 y Xbox X / S»: reventa en WALLAPOP ~27 € (3 anuncios): ROI -22 % y -7 €, por debajo del mínimo (30 % y 25 €)
+  Vinted «columbia 75 zapatillas»: HTTP 200, 3685583 bytes, 96 anuncios
+  Vinted «columbia 75 zapatillas»: 49 parecidos de 96
+  Wallapop «columbia 75 zapatillas»: 200 / 41574 bytes, 9 anuncios, 4 parecidos, 0 reservas
+  Milanuncios «columbia 75 zapatillas»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 50 anuncios, ~60 €, no publica
+  ⚠️ No publico «COLUMBIA Zapatillas de senderismo Facet 75 Outdry Mujeres (Negro)»: reventa en VINTED+WALLAPOP ~60 € (50 anuncios): ROI 8 % y 4 €, por debajo del mínimo (30 % y 25 €)
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 5C00:2174CD:5A8E5D:6DC708:6AEB0712        
+remote: Time 2026-11-04T10:21:06Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] aba047e7f9adef2749ae6f37e64c088cb0909b69 -> cascada (Internal Server Erro)
+== pasada 10 · 11:23 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 11:25 ==
+Listados: 93 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 5C00:2174CD:5B0846:6E5FE5:6AEB0837        
+remote: Time 2026-11-04T10:25:59Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] 9453f3cddfdf6b0212ebcf6c35fa6224bf8abf73 -> cascada (Internal Server Erro)
+== pasada 12 · 11:28 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 13 · 11:30 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36152 bytes, 30 chollos
+  Chollometro «FOSMET Gafas Inteligentes IA con Cámara, 165 Traducción Smart Glasses »: Amazon 94.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69952 bytes, 30 chollos
+  cm-2054641 · Amazon 94.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · FOSMET Gafas Inteligentes IA con Cámara, 165 Traducción Smar
+  Wallapop «fosmet 45g gafas»: 200 / 1263 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «fosmet 45g»: 200 / 385 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «fosmet 45g gafas»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  ⚠️ No publico «FOSMET Gafas Inteligentes IA con Cámara, 165 Traducción Smart Glasses de Solo 45g, Asisten»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95509 bytes))
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 5C00:2174CD:5B8459:6EFC53:6AEB0967        
+remote: Time 2026-11-04T10:31:03Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] e83478fca9672c516718c82add4322b74c539ead -> cascada (Internal Server Erro)
+== pasada 14 · 11:33 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 11:35 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 11:38 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
 Fin de la ejecución tras 16 pasadas.
