@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793812732
+   "checked": 1793812856
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2030,16 +2030,6 @@
   }
  },
  "wallapop_cache": {
-  "privalia|saucony - zapatillas de running hurricane 25 - running|privalia 25 saucony": {
-   "t": 1793301727.550883,
-   "query": "privalia 25 saucony",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "privalia|hoka zapatillas de deporte mach x 3 - running- tallas- 41 1/3, 43 1/3, 44, 44 2/3, 45 1/3|privalia 41 hoka": {
    "t": 1793301729.9250405,
    "query": "privalia 41",
@@ -7057,6 +7047,56 @@
    "http_status": 200,
    "bytes": 107958,
    "raw_count": 37
+  },
+  "|lego icons cachorro de golden retriever|lego icons": {
+   "t": 1793812878.8644779,
+   "query": "lego icons",
+   "prices": [
+    99.0,
+    50.0,
+    130.0,
+    80.0,
+    350.0,
+    200.0,
+    85.0,
+    95.0,
+    50.0,
+    90.0,
+    105.0,
+    39.0,
+    50.0,
+    110.0,
+    100.0,
+    160.0,
+    110.0,
+    110.0,
+    79.0,
+    150.0,
+    350.0,
+    160.0,
+    54.95,
+    239.99,
+    30.0,
+    90.0,
+    20.0,
+    65.0,
+    145.0,
+    65.0,
+    230.0,
+    50.0,
+    169.99,
+    37.5,
+    60.0,
+    379.0,
+    65.0,
+    65.0,
+    160.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 91534,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -7378,7 +7418,8 @@
   "wallapop:cm-2053655": 1793804133.529535,
   "wallapop:cm-2055386": 1793804754.7086463,
   "wallapop:cm-2047037": 1793806486.1160214,
-  "wallapop:cm-2053911": 1793807086.6027792
+  "wallapop:cm-2053911": 1793807086.6027792,
+  "wallapop:cm-2055153": 1793812879.3906813
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -9826,7 +9867,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 2,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-adidas-urban-court-ji1049-deportivas-2055035": 1793792754.4555364,
   "https://www.chollometro.com/ofertas/lego-72046-super-mario-game-boy-2054508": 1793794261.103343,
@@ -9838,7 +9879,8 @@
   "https://www.chollometro.com/ofertas/new-balance-zapatilla-casual-de-mujer-370-tallas-36-a-42-excepto-395-2053655": 1793804128.9451191,
   "https://www.chollometro.com/ofertas/zapatillas-altas-vans-filmore-hi-tallas-385-39-40-y-405-2055386": 1793804729.289462,
   "https://www.chollometro.com/ofertas/battlefield-6-phantom-edition-xbox-series-x-videojuegos-castellano-2047037": 1793806482.0513377,
-  "https://www.chollometro.com/ofertas/motor-co-rc-strong-pioneer-rc-con-camara-y-luz-varios-modelos-2053911": 1793807082.2103424
+  "https://www.chollometro.com/ofertas/motor-co-rc-strong-pioneer-rc-con-camara-y-luz-varios-modelos-2053911": 1793807082.2103424,
+  "https://www.chollometro.com/ofertas/lego-icons-cachorro-de-golden-retriever-11384-por-10499-eur-minimo-historico-2055153": 1793812876.0748527
  },
  "asked": {
   "cm-2051793": 1793783213
