@@ -1,0 +1,85 @@
+name: Canal AliExpress @cazachollos_com
+
+on:
+  # Se activará cuando estén las llaves de la API de AliExpress en GitHub Secrets.
+  # Cada ejecución hace pasadas durante ~40 min (una cada 10 min). Con "live": false en config.json
+  # solo aprende precios; con "live": true publica en el canal.
+  # schedule:
+  #   - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      test_private:
+        description: "Hasta 3 ejemplos solo a tu chat privado (con el texto para X), nunca al canal"
+        required: false
+        type: boolean
+        default: true
+      dry_run:
+        description: "Prueba: no envía nada, solo muestra en el log lo que haría"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-aliexpress
+  cancel-in-progress: false
+
+jobs:
+  canal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install "Pillow>=10.0,<12"
+
+      # La memoria (historial de precios) vive en la rama estado-aliexpress, en un único commit que se
+      # sobrescribe: así main no se llena de commits ni de megas de precios.
+      - name: Recuperar memoria
+        run: |
+          mkdir -p state
+          if git fetch -q --depth 1 origin estado-aliexpress 2>/dev/null; then
+            git show FETCH_HEAD:aliexpress.json > state/aliexpress.json && echo "Memoria recuperada."
+          else
+            echo "Sin memoria todavía: empiezo de cero."
+          fi
+
+      - name: Buscar y publicar
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ALIEXPRESS_APP_KEY: ${{ secrets.ALIEXPRESS_APP_KEY }}
+          ALIEXPRESS_APP_SECRET: ${{ secrets.ALIEXPRESS_APP_SECRET }}
+          ALIEXPRESS_TRACKING_ID: ${{ secrets.ALIEXPRESS_TRACKING_ID }}
+          ALIEXPRESS_TRACKING_ID_X: ${{ secrets.ALIEXPRESS_TRACKING_ID_X }}
+        run: |
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then ARGS+=(--minutes 40 --every 600); fi
+          set -o pipefail
+          python -u canal_aliexpress.py "${ARGS[@]}" 2>&1 | tee state/aliexpress_last_run.log
+
+      # Las pruebas (privada o sin envío) no guardan memoria.
+      - name: Guardar memoria
+        if: always() && (github.event_name == 'schedule' || (inputs.test_private != true && inputs.dry_run != true))
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          [ -f state/aliexpress.json ] || { echo "Nada que guardar."; exit 0; }
+          tmp="$RUNNER_TEMP/memoria"
+          mkdir -p "$tmp" && cp state/aliexpress.json state/aliexpress_last_run.log "$tmp"/ 2>/dev/null || true
+          cd "$tmp"
+          git init -q
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add aliexpress.json aliexpress_last_run.log 2>/dev/null || git add aliexpress.json
+          git commit -qm "Memoria del canal AliExpress $(date -u +%FT%TZ)"
+          git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:estado-aliexpress
+          echo "Memoria guardada en la rama estado-aliexpress."

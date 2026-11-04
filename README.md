@@ -1,5 +1,21 @@
 # Caza Errores — ofertas en Telegram
 
+## Canal AliExpress @cazachollos_com (`canal_aliexpress.py`, 04/11/2026)
+
+Sustituye al canal de Amazon cuando esté probado. Corre en GitHub Actions (`canal-aliexpress.yml`) con la **API oficial de afiliados de AliExpress** (nada de scraping).
+
+- **Llaves** en GitHub → Settings → Secrets and variables → Actions: `ALIEXPRESS_APP_KEY`, `ALIEXPRESS_APP_SECRET`, `ALIEXPRESS_TRACKING_ID` (`cazachollos_tg`) y `ALIEXPRESS_TRACKING_ID_X` (`cazachollos_x`). Sin llaves, el bot no hace nada.
+- **Descuento honesto**: frente al precio más bajo que el propio bot ha visto en los 30 días anteriores, y solo si lo ha visto al menos 7 días (14 para ERROR DE PRECIO). Nunca el «precio original» de la ficha, que en AliExpress suele estar inflado. Sin historial suficiente, como mucho sale como **TOP VENTAS** (mucho vendido y muy bien valorado), sin tachado ni porcentaje.
+- **Antes de publicar** relee la ficha en vivo; si el precio ha cambiado, no sale. Los posts de las últimas 48 h se revisan y, si suben o desaparecen, se marcan «⛔ YA NO ESTÁ A ESTE PRECIO».
+- **Post doble**: la foto del producto tal cual la da AliExpress (sin recortar ni retocar) y la tarjeta roja de Caza Chollos (`aliexpress_card.py`), que no lleva el logo ni gráficos de AliExpress (cláusulas 8.2 a 8.4 del acuerdo de afiliados).
+- **Aviso**: cada post lleva «enlace de afiliado» y #Publicidad.
+- **X**: el bot te manda por privado la foto y el texto listo para pegar, con el enlace de la etiqueta de X. No usa la API de X (es de pago).
+- **Filtros**: 3 € a 1.500 €, valoración ≥ 90 %, ≥ 50 ventas, fuera accesorios de poco interés y marcas famosas que en AliExpress suelen ser imitaciones (`block_keywords`). 13 categorías y 20 búsquedas por turnos (`queries`, 6 por pasada). Hasta 4 posts por hora y 30 al día, de 08:00 a 24:00; TOP VENTAS como mucho 6 al día.
+- **`live`** en `config.json` → `aliexpress_channel`: con `false` solo aprende precios; con `true` publica en el canal.
+- **Memoria** (historial de precios) en la rama `estado-aliexpress`, un único commit que se sobrescribe.
+
+Pruebas: Actions → «Canal AliExpress @cazachollos_com» → Run workflow con `test_private` (hasta 3 ejemplos a tu chat, con el texto de X) o `dry_run` (solo log). En local: `python canal_aliexpress.py --fixture tests_fixtures/aliexpress_products.json --dry-run`.
+
 ## Canal normal @cazachollos_com (solo Amazon, `canal_nube.py`)
 
 Corre en GitHub Actions (`scan-generic.yml`), sin depender de ningún ordenador. Solo publica Amazon.es; Chollometro y el resto de tiendas ya no entran.

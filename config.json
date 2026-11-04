@@ -980,5 +980,261 @@
     "toysrus": {"template": ""},
     "pokemoncenter": {"template": ""},
     "nintendo": {"template": ""}
+  },
+  "aliexpress_channel": {
+    "_nota": "Canal @cazachollos_com con AliExpress (canal_aliexpress.py, workflow canal-aliexpress.yml). Con live false solo aprende precios y no publica en el canal. Las llaves van en GitHub Secrets: ALIEXPRESS_APP_KEY, ALIEXPRESS_APP_SECRET, ALIEXPRESS_TRACKING_ID (cazachollos_tg) y ALIEXPRESS_TRACKING_ID_X (cazachollos_x).",
+    "live": false,
+    "chat_id": "@cazachollos_com",
+    "admin_username": "Darkness_gg",
+    "x_drafts": true,
+    "queries": [
+      {
+        "kind": "hot",
+        "category_ids": "44",
+        "label": "Electrónica de consumo"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "7",
+        "label": "Informática y oficina"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "509",
+        "label": "Teléfonos y comunicación"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "6",
+        "label": "Electrodomésticos"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "15",
+        "label": "Hogar y jardín"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "13",
+        "label": "Mejoras para el hogar"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "1420",
+        "label": "Herramientas"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "18",
+        "label": "Deportes y ocio"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "34",
+        "label": "Coche y moto"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "26",
+        "label": "Juguetes y aficiones"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "66",
+        "label": "Belleza y salud"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "39",
+        "label": "Iluminación"
+      },
+      {
+        "kind": "hot",
+        "category_ids": "30",
+        "label": "Seguridad y protección"
+      },
+      {
+        "kind": "search",
+        "keywords": "robot vacuum",
+        "label": "robot vacuum"
+      },
+      {
+        "kind": "search",
+        "keywords": "xiaomi",
+        "label": "xiaomi"
+      },
+      {
+        "kind": "search",
+        "keywords": "smartwatch",
+        "label": "smartwatch"
+      },
+      {
+        "kind": "search",
+        "keywords": "wireless earbuds",
+        "label": "wireless earbuds"
+      },
+      {
+        "kind": "search",
+        "keywords": "power bank",
+        "label": "power bank"
+      },
+      {
+        "kind": "search",
+        "keywords": "projector",
+        "label": "projector"
+      },
+      {
+        "kind": "search",
+        "keywords": "electric scooter",
+        "label": "electric scooter"
+      },
+      {
+        "kind": "search",
+        "keywords": "3d printer",
+        "label": "3d printer"
+      },
+      {
+        "kind": "search",
+        "keywords": "mini pc",
+        "label": "mini pc"
+      },
+      {
+        "kind": "search",
+        "keywords": "action camera",
+        "label": "action camera"
+      },
+      {
+        "kind": "search",
+        "keywords": "drone",
+        "label": "drone"
+      },
+      {
+        "kind": "search",
+        "keywords": "mechanical keyboard",
+        "label": "mechanical keyboard"
+      },
+      {
+        "kind": "search",
+        "keywords": "gaming mouse",
+        "label": "gaming mouse"
+      },
+      {
+        "kind": "search",
+        "keywords": "ssd",
+        "label": "ssd"
+      },
+      {
+        "kind": "search",
+        "keywords": "led strip",
+        "label": "led strip"
+      },
+      {
+        "kind": "search",
+        "keywords": "air fryer",
+        "label": "air fryer"
+      },
+      {
+        "kind": "search",
+        "keywords": "dash cam",
+        "label": "dash cam"
+      },
+      {
+        "kind": "search",
+        "keywords": "electric screwdriver",
+        "label": "electric screwdriver"
+      },
+      {
+        "kind": "search",
+        "keywords": "bluetooth speaker",
+        "label": "bluetooth speaker"
+      },
+      {
+        "kind": "search",
+        "keywords": "security camera",
+        "label": "security camera"
+      }
+    ],
+    "queries_per_pass": 6,
+    "page_size": 50,
+    "min_price_eur": 3,
+    "max_price_eur": 1500,
+    "min_rating": 90,
+    "min_volume": 50,
+    "min_history_days": 7,
+    "error_min_history_days": 14,
+    "min_discount_pct": 25,
+    "chollazo_pct": 45,
+    "error_discount_pct": 70,
+    "max_discount_pct": 90,
+    "top_sales": {
+      "enabled": true,
+      "min_volume": 1000,
+      "min_rating": 94,
+      "max_per_day": 6,
+      "min_minutes_between": 90
+    },
+    "max_per_hour": 4,
+    "max_per_day": 30,
+    "max_per_run": 2,
+    "min_minutes_between_posts": 8,
+    "quiet_hours": [
+      0,
+      8
+    ],
+    "repost_after_days": 14,
+    "repost_min_extra_drop_pct": 10,
+    "track_hours": 48,
+    "max_tracking_checks_per_run": 20,
+    "history_days": 45,
+    "max_products": 5000,
+    "test_private_posts": 3,
+    "_nota_bloqueo": "Fuera accesorios de poco interés y marcas famosas que en AliExpress suelen ser imitaciones (riesgo de propiedad intelectual, cláusula 10.2 del acuerdo).",
+    "block_keywords": [
+      "funda",
+      "case",
+      "cover",
+      "protector de pantalla",
+      "screen protector",
+      "cristal templado",
+      "tempered glass",
+      "pegatina",
+      "sticker",
+      "replica",
+      "réplica",
+      "copy",
+      "imitation",
+      "1:1",
+      "compatible con",
+      "for iphone",
+      "for samsung",
+      "for apple watch",
+      "airpods",
+      "apple",
+      "iphone",
+      "nike",
+      "adidas",
+      "jordan",
+      "yeezy",
+      "rolex",
+      "louis vuitton",
+      "gucci",
+      "chanel",
+      "dior",
+      "prada",
+      "balenciaga",
+      "supreme",
+      "lego",
+      "pokemon",
+      "pokémon",
+      "disney",
+      "marvel",
+      "harry potter",
+      "barbie",
+      "nintendo",
+      "playstation",
+      "xbox",
+      "dyson",
+      "gopro"
+    ]
   }
 }

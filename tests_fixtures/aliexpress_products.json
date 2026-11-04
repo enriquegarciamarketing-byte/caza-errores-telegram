@@ -1,0 +1,57 @@
+[
+ {
+  "product_id": 1005001,
+  "product_title": "Robot aspirador con estación de vaciado automático y mopa giratoria 5000 Pa",
+  "product_main_image_url": "https://ae-pic-a1.aliexpress-media.com/kf/demo1.jpg",
+  "product_detail_url": "https://www.aliexpress.com/item/1005001.html",
+  "promotion_link": "https://s.click.aliexpress.com/e/_demo1",
+  "target_sale_price": "129.99",
+  "target_sale_price_currency": "EUR",
+  "target_original_price": "399.99",
+  "target_app_sale_price": "124.50",
+  "evaluate_rate": "96.8%",
+  "lastest_volume": 820,
+  "first_level_category_id": 6,
+  "first_level_category_name": "Home Appliances",
+  "promo_code_info": {
+   "promo_code": "ESAE08",
+   "code_value": "8 € de descuento",
+   "code_mini_spend": "60 €"
+  }
+ },
+ {
+  "product_id": 1005002,
+  "product_title": "Auriculares inalámbricos Bluetooth 5.4 con cancelación de ruido",
+  "product_main_image_url": "https://ae-pic-a1.aliexpress-media.com/kf/demo2.jpg",
+  "product_detail_url": "https://www.aliexpress.com/item/1005002.html",
+  "promotion_link": "https://s.click.aliexpress.com/e/_demo2",
+  "target_sale_price": "14.79",
+  "target_sale_price_currency": "EUR",
+  "target_original_price": "49.99",
+  "evaluate_rate": "97.1%",
+  "lastest_volume": 15000,
+  "first_level_category_id": 44
+ },
+ {
+  "product_id": 1005003,
+  "product_title": "AirPods Pro 2 replica 1:1 con cancelación",
+  "product_main_image_url": "https://ae-pic-a1.aliexpress-media.com/kf/demo3.jpg",
+  "product_detail_url": "https://www.aliexpress.com/item/1005003.html",
+  "promotion_link": "https://s.click.aliexpress.com/e/_demo3",
+  "target_sale_price": "9.99",
+  "target_sale_price_currency": "EUR",
+  "evaluate_rate": "95%",
+  "lastest_volume": 9000
+ },
+ {
+  "product_id": 1005004,
+  "product_title": "Lámpara LED de escritorio regulable",
+  "product_main_image_url": "https://ae-pic-a1.aliexpress-media.com/kf/demo4.jpg",
+  "product_detail_url": "https://www.aliexpress.com/item/1005004.html",
+  "promotion_link": "https://s.click.aliexpress.com/e/_demo4",
+  "target_sale_price": "11.20",
+  "target_sale_price_currency": "EUR",
+  "evaluate_rate": "82%",
+  "lastest_volume": 300
+ }
+]
