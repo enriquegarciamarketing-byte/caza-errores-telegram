@@ -976,8 +976,8 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "R3VQ0X7": {
-   "price": 193.95,
-   "t": 1793702444,
+   "price": 193.0,
+   "t": 1793821782,
    "result": "solo -9% bajo la referencia"
   },
   "1qGdemB": {
@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793821220
+   "checked": 1793823582
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 88,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2030,16 +2030,6 @@
   }
  },
  "wallapop_cache": {
-  "privalia|saucony - zapatillas de running hurricane 25 - tallas- 38, 38.5, 39|privalia 25 saucony": {
-   "t": 1793307636.863242,
-   "query": "privalia 25 saucony",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "carrefour|lego architecture ciudad de nueva york: la gran manzana | + cupon 44.80€|carrefour 44 lego": {
    "t": 1793312836.2809868,
    "query": "carrefour 44",
@@ -7172,6 +7162,18 @@
    "http_status": 200,
    "bytes": 86189,
    "raw_count": 40
+  },
+  "|lost ember: wolf pack edition - playstation 5|lost ember": {
+   "t": 1793822548.421266,
+   "query": "lost ember",
+   "prices": [
+    33.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 9344,
+   "raw_count": 3
   }
  },
  "milanuncios_cache": {
@@ -7498,7 +7500,8 @@
   "wallapop:cm-2055534": 1793814351.6144063,
   "wallapop:cm-2055667": 1793819873.0223036,
   "wallapop:cm-2051025": 1793820305.966481,
-  "wallapop:cm-2053982": 1793820557.78967
+  "wallapop:cm-2053982": 1793820557.78967,
+  "wallapop:cm-2055715": 1793822548.852803
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -9985,9 +9988,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 6,
+ "rotation_index": 2,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/barra-de-sonido-sony-ht-s40r-51-600-w-subwoofer-altavoces-traseros-inalambricos-hdmi-arc-optico-bluetooth-dolby-digital-negro-2055354": 1793799992.9991806,
   "https://www.chollometro.com/ofertas/zapatillas-mujer-puma-court-lally-tallas-36-a-41-2055363": 1793802928.0670304,
   "https://www.chollometro.com/ofertas/new-balance-zapatilla-casual-de-mujer-370-tallas-36-a-42-excepto-395-2053655": 1793804128.9451191,
   "https://www.chollometro.com/ofertas/zapatillas-altas-vans-filmore-hi-tallas-385-39-40-y-405-2055386": 1793804729.289462,
@@ -9997,7 +9999,8 @@
   "https://www.chollometro.com/ofertas/kingdom-hearts-collection-i-iii-importacion-uk-ps5-jugable-en-castellano-2055534": 1793814345.5465698,
   "https://www.chollometro.com/ofertas/adidas-unisex-runfalcon-5-zapatillas-de-running-en-asfalto-tallas-355-al-40-2055667": 1793819868.2595935,
   "https://www.chollometro.com/ofertas/mando-dualsense-ps5-original-con-boton-crear-sensor-de-movimiento-y-carga-usb-type-c-varios-colores-2051025": 1793820298.6623755,
-  "https://www.chollometro.com/ofertas/grand-theft-auto-vi-ps5-edicion-estandar-2053982": 1793820550.3670585
+  "https://www.chollometro.com/ofertas/grand-theft-auto-vi-ps5-edicion-estandar-2053982": 1793820550.3670585,
+  "https://www.chollometro.com/ofertas/lost-ember-wolf-pack-edition-playstation-5-2055715": 1793822545.4314148
  },
  "asked": {
   "cm-2051793": 1793783213
