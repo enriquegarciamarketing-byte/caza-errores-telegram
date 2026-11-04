@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793812856
+   "checked": 1793812986
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 82,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -9867,7 +9867,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-adidas-urban-court-ji1049-deportivas-2055035": 1793792754.4555364,
   "https://www.chollometro.com/ofertas/lego-72046-super-mario-game-boy-2054508": 1793794261.103343,
