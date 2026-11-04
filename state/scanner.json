@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793796498
+   "checked": 1793801030
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 92,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -1725,83 +1725,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|skechers bobs squad waves current look zapatillas mujer|skechers bobs": {
-   "t": 1793287615.805216,
-   "query": "skechers bobs",
-   "prices": [
-    20.0,
-    28.0,
-    15.0,
-    25.0,
-    25.0,
-    30.0,
-    21.0,
-    29.95,
-    50.0,
-    28.0,
-    42.0,
-    50.0,
-    3.0,
-    30.0,
-    42.0,
-    25.0,
-    5.0,
-    20.0,
-    30.0,
-    27.0,
-    25.0,
-    15.0,
-    20.0,
-    35.0,
-    50.0,
-    7.0,
-    40.0,
-    20.0,
-    17.0,
-    25.0,
-    35.0,
-    65.0,
-    36.0,
-    55.0,
-    45.0,
-    7.0,
-    35.0,
-    25.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 133948,
-   "raw_count": 40
-  },
-  "amazon.de|pack lego botanical: orquidea (10311) + bonsai (10281) por 66,26 € en amazon alemania|lego 10311 botanical": {
-   "t": 1793291249.1815867,
-   "query": "lego 10311 botanical",
-   "prices": [
-    30.0,
-    40.0,
-    35.0,
-    5.0,
-    45.0,
-    40.0,
-    39.0,
-    35.0,
-    30.0,
-    49.99,
-    55.0,
-    40.0,
-    40.0,
-    45.0,
-    45.0,
-    5.0,
-    35.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 54457,
-   "raw_count": 22
-  },
   "privalia|zapatillas nike air jordan 1 retro low og (tallas 36 a 40)|privalia 36 zapatillas": {
    "t": 1793291252.180632,
    "query": "privalia 36 zapatillas",
@@ -6741,6 +6664,41 @@
    "http_status": 200,
    "bytes": 109459,
    "raw_count": 40
+  },
+  "|robot aspirador roborock qv 35s con base multifuncion, succion 10000 pa y mopa elevable, blanco o negro|robot 35s aspirador": {
+   "t": 1793798796.4399145,
+   "query": "robot 35s aspirador",
+   "prices": [
+    650.0,
+    480.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 69897,
+   "raw_count": 23
+  },
+  "|barra de sonido sony ht-s40r 5.1 – 600 w, subwoofer, altavoces traseros inalambricos, hdmi arc, optico, bluetooth, dolby digital, negro|barra s40r sonido": {
+   "t": 1793799995.2129576,
+   "query": "barra s40r sonido",
+   "prices": [
+    159.0,
+    137.5,
+    150.0,
+    180.0,
+    100.0,
+    140.0,
+    195.0,
+    180.0,
+    40.0,
+    300.0,
+    209.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 77507,
+   "raw_count": 20
   }
  },
  "milanuncios_cache": {
@@ -7031,7 +6989,9 @@
   "wallapop:cm-2054641": 1793788262.8907232,
   "wallapop:cm-2055035": 1793792759.003207,
   "wallapop:cm-2055240": 1793794865.3683167,
-  "wallapop:cm-2053297": 1793796065.335601
+  "wallapop:cm-2053297": 1793796065.335601,
+  "wallapop:cm-2053723": 1793798796.8943412,
+  "wallapop:cm-2055354": 1793799995.6388063
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -9312,9 +9272,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 4,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/dyson-v15-detect-absolute-2054499": 1793775386.5789118,
   "https://www.chollometro.com/ofertas/geographical-norway-zapatillas-de-trekking-oclarc-2050752": 1793779113.5333378,
   "https://www.chollometro.com/ofertas/zapatillas-adidas-terrex-agravic-4-mujer-tallas-37-13-38-38-23-40-23-2054417": 1793779113.5333378,
   "https://www.chollometro.com/ofertas/nike-zapatillas-deportivas-zoomx-vaporfly-next-4-running-2054914": 1793779113.5333378,
@@ -9332,7 +9291,9 @@
   "https://www.chollometro.com/ofertas/zapatillas-adidas-urban-court-ji1049-deportivas-2055035": 1793792754.4555364,
   "https://www.chollometro.com/ofertas/lego-72046-super-mario-game-boy-2054508": 1793794261.103343,
   "https://www.chollometro.com/ofertas/lego-harry-potter-monstruoso-libro-de-los-monstruos-mordedor-76449-2055240": 1793794861.6477213,
-  "https://www.chollometro.com/ofertas/airpods-5-con-estuche-de-carga-inhalambrica-2053297": 1793796061.7712085
+  "https://www.chollometro.com/ofertas/airpods-5-con-estuche-de-carga-inhalambrica-2053297": 1793796061.7712085,
+  "https://www.chollometro.com/ofertas/robot-aspirador-roborock-qv-35s-con-base-multifuncion-succion-10000-pa-y-mopa-elevable-blanco-o-negro-2053723": 1793798792.8866131,
+  "https://www.chollometro.com/ofertas/barra-de-sonido-sony-ht-s40r-51-600-w-subwoofer-altavoces-traseros-inalambricos-hdmi-arc-optico-bluetooth-dolby-digital-negro-2055354": 1793799992.9991806
  },
  "asked": {
   "cm-2051793": 1793783213
