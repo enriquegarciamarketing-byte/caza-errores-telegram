@@ -1358,12 +1358,12 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793749187
+   "checked": 1793751647
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 97,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -8836,23 +8836,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 14,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/movil-xiaomi-redmi-15-5g-8gb256gb-snapdragon-6s-gen-3-5g-camara-dual-de-50mp-2051121": 1793727498.9343715,
-  "https://www.chollometro.com/ofertas/lego-technic-hypercar-koenigsegg-jesko-absolut-gris-42173-801-piezas-motor-v8-puertas-diedricas-oferta-privalia-2053893": 1793727498.9343715,
-  "https://www.chollometro.com/ofertas/lego-star-wars-calendario-de-adviento-2026-2054504": 1793727498.9343715,
-  "https://www.chollometro.com/ofertas/figura-construible-lego-one-piece-tony-tony-chopper-75643-2054513": 1793727498.9343715,
-  "https://www.chollometro.com/ofertas/lego-technic-el-planeta-tierra-y-la-luna-en-orbita-42179-526-piezas-modelo-astronomico-engranajes-oferta-privalia-2053891": 1793727498.9343715,
-  "https://www.chollometro.com/ofertas/nba-2k27-ed-estandar-ps5-2054507": 1793728099.0904398,
-  "https://www.chollometro.com/ofertas/lego-72154-pokemon-poke-ball-grandes-momentos-del-entrenador-2054536": 1793728099.0904398,
-  "https://www.chollometro.com/ofertas/nba-2k27-playstation-5-2054493": 1793728099.0904398,
-  "https://www.chollometro.com/ofertas/lego-72154-pokemon-poke-ball-grandes-momentos-del-entrenador-kit-de-maquetas-2054515": 1793728099.0904398,
-  "https://www.chollometro.com/ofertas/lego-72046-super-mario-game-boy-2054508": 1793728099.0904398,
-  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-irobot-115-combo-autovaciado-pack-de-3-bolsas-2054401": 1793728699.2091618,
-  "https://www.chollometro.com/ofertas/under-armour-zapatillas-de-baloncesto-spawn-azul-oscuro-2054444": 1793728699.2091618,
-  "https://www.chollometro.com/ofertas/lego-72160-pokemon-arcanine-set-de-construccion-de-figura-de-pokemon-personaje-articulado-2020370": 1793728699.2091618,
-  "https://www.chollometro.com/ofertas/lego-40806-star-wars-caminante-at-at-de-pan-de-jengibre-de-juguete-2051144": 1793728699.2091618,
-  "https://www.chollometro.com/ofertas/set-de-construccion-lego-pokemon-rayquaza-72168-1083-piezas-2054411": 1793728699.2091618,
   "https://www.chollometro.com/ofertas/lego-75440-star-wars-el-imperio-contraataca-at-at-maqueta-para-adultos-2020376": 1793730491.695904,
   "https://www.chollometro.com/ofertas/zapatillas-skechers-dynamight-para-hombre-41-42-43-y-44-2054544": 1793734192.315706,
   "https://www.chollometro.com/ofertas/lego-minifigura-gigante-de-papa-noel-40820-2054615": 1793734790.7672627,
@@ -8869,7 +8854,8 @@
   "https://www.chollometro.com/ofertas/lego-75456-star-wars-calendario-de-adviento-2026-juguete-de-cuenta-atras-de-navidad-2054581": 1793745758.216119,
   "https://www.chollometro.com/ofertas/zapatillas-asics-sonicblast-mujer-2054410": 1793747552.157134,
   "https://www.chollometro.com/ofertas/garmin-venu-4-45-mm-smartwatch-con-gps-2049876": 1793748152.512516,
-  "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-40-405-42-2054730": 1793748753.7760198
+  "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-40-405-42-2054730": 1793748753.7760198,
+  "https://www.chollometro.com/ofertas/zapatillas-nike-air-max-sndr-tallas-355-hasta-405-2054556": 1793749410.4257407
  },
  "asked": {
   "cm-2053666": 1793697314
