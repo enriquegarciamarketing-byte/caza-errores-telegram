@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793823582
+   "checked": 1793823821
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 88,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -9988,7 +9988,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-mujer-puma-court-lally-tallas-36-a-41-2055363": 1793802928.0670304,
   "https://www.chollometro.com/ofertas/new-balance-zapatilla-casual-de-mujer-370-tallas-36-a-42-excepto-395-2053655": 1793804128.9451191,
