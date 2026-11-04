@@ -1,106 +1,117 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 88 productos únicos
+Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36719 bytes, 30 chollos
-  Chollometro «Robot Aspirador Roborock QV 35S con base multifunción, succión 10000 P»: PcComponentes 299.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 86060 bytes, 30 chollos
-  cm-2053723 · PcComponentes 299.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Robot Aspirador Roborock QV 35S con base multifunción, succi
-  Wallapop «robot 35s aspirador»: 200 / 69897 bytes, 23 anuncios, 2 parecidos, 0 reservas
-  Wallapop «robot 35s»: 200 / 108904 bytes, 32 anuncios, 2 parecidos, 0 reservas
-  Milanuncios «robot 35s aspirador»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
-  ⚠️ No publico «Robot Aspirador Roborock QV 35S con base multifunción, succión 10000 Pa y mopa elevable, b»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37752 bytes, 30 chollos
+  Chollometro «Zapatillas Mujer PUMA Court Lally (Tallas 36 a 41)»: Amazon 26.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 86730 bytes, 30 chollos
+  cm-2055363 · Amazon 26.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Mujer PUMA Court Lally (Tallas 36 a 41)
+  Vinted «zapatillas 36 puma»: HTTP 200, 3681522 bytes, 96 anuncios
+  Vinted «zapatillas 36 puma»: 36 parecidos de 96
+  Wallapop «zapatillas 36 puma»: 200 / 114996 bytes, 40 anuncios, 28 parecidos, 0 reservas
+  Milanuncios «zapatillas 36 puma»: HTTP 200, 95999 bytes, bloqueado
+  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
+  Reventa VINTED+WALLAPOP: 49 anuncios, ~15 €, no publica
+  ⚠️ No publico «Zapatillas Mujer PUMA Court Lally (Tallas 36 a 41)»: reventa en VINTED+WALLAPOP ~15 € (49 anuncios): ROI -55 % y -15 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 30 descartes nuevos, 70 en lista
-== pasada 2 · 14:28 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 14:31 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 14:33 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 14:36 ==
-Listados: 91 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36785 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 82197 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 14:38 ==
+Cascada al canal normal: 47 descartes nuevos, 78 en lista
+== pasada 2 · 15:37 ==
 Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 14:41 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 14:43 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 9 · 14:46 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37191 bytes, 30 chollos
-  Chollometro «Barra de sonido Sony HT-S40R 5.1 – 600 W, subwoofer, altavoces trasero»: MediaMarkt 193.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 80466 bytes, 30 chollos
-  cm-2055354 · MediaMarkt 193.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Barra de sonido Sony HT-S40R 5.1 – 600 W, subwoofer, altavoc
-  Wallapop «barra s40r sonido»: 200 / 77507 bytes, 20 anuncios, 11 parecidos, 0 reservas
-  Milanuncios «barra s40r sonido»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa WALLAPOP: 10 anuncios, ~155 €, no publica
-  ⚠️ No publico «Barra de sonido Sony HT-S40R 5.1 – 600 W, subwoofer, altavoces traseros inalámbricos, HDMI»: reventa en WALLAPOP ~155 € (10 anuncios): ROI -28 % y -53 €, por debajo del mínimo (25 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 10 · 14:48 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 14:51 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 12 · 14:53 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 13 · 14:56 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37643 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 85289 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 14:58 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 15:01 ==
+== pasada 3 · 15:40 ==
 Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 16 · 15:03 ==
-Aviso: no se pudo leer https://jimmyleaks.com/es/?order=-drop (IncompleteRead(7112 bytes read))
-Listados: 92 productos únicos
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 4 · 15:42 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 5 · 15:45 ==
+Listados: 103 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37591 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 88448 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 15:47 ==
+Listados: 86 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 7 · 15:50 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 15:52 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 9 · 15:55 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37477 bytes, 30 chollos
+  Chollometro «New Balance Zapatilla Casual de Mujer 370, tallas 36 a 42 (excepto 39.»: El Corte Inglés 48.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 88638 bytes, 30 chollos
+  cm-2053655 · El Corte Inglés 48.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance Zapatilla Casual de Mujer 370, tallas 36 a 42 (e
+  Vinted «new 370 balance»: HTTP 200, 3682265 bytes, 96 anuncios
+  Vinted «new 370 balance»: 89 parecidos de 96
+  Wallapop «new 370 balance»: 200 / 128091 bytes, 39 anuncios, 26 parecidos, 0 reservas
+  Milanuncios «new 370 balance»: HTTP 200, 95999 bytes, bloqueado
+  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
+  Reventa VINTED+WALLAPOP: 102 anuncios, ~45 €, no publica
+  ⚠️ No publico «New Balance Zapatilla Casual de Mujer 370, tallas 36 a 42 (excepto 39.5)»: reventa en VINTED+WALLAPOP ~45 € (102 anuncios): ROI -15 % y -7 €, por debajo del mínimo (30 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 10 · 15:57 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 11 · 16:00 ==
+Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 12 · 16:02 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 13 · 16:05 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37130 bytes, 30 chollos
+  Chollometro «Zapatillas Altas Vans Filmore Hi (Tallas 38.5, 39, 40 y 40.5)»: Zalando Privé 28.9 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 88078 bytes, 30 chollos
+  cm-2055386 · Zalando Privé 28.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Altas Vans Filmore Hi (Tallas 38.5, 39, 40 y 40.5
+  Vinted «zapatillas 38 altas»: HTTP 200, 3685159 bytes, 96 anuncios
+  Vinted «zapatillas 38 altas»: 15 parecidos de 96
+  Wallapop «zapatillas 38 altas»: 200 / 121462 bytes, 40 anuncios, 15 parecidos, 0 reservas
+  Milanuncios «zapatillas 38 altas»: HTTP 200, 95999 bytes, bloqueado
+  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
+  Reventa VINTED+WALLAPOP: 18 anuncios, ~16 €, no publica
+  ⚠️ No publico «Zapatillas Altas Vans Filmore Hi (Tallas 38.5, 39, 40 y 40.5)»: reventa en VINTED+WALLAPOP ~16 € (18 anuncios): ROI -54 % y -16 €, por debajo del mínimo (30 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 16:07 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 16:10 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 16 · 16:12 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
 Fin de la ejecución tras 16 pasadas.
