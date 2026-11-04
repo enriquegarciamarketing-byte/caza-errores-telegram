@@ -961,9 +961,9 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "Rrlo5YM": {
-   "price": 39.97,
-   "t": 1793676326,
-   "result": "la referencia corregida no supera el precio (media inflada)"
+   "price": 37.99,
+   "t": 1793766566,
+   "result": "solo -3% bajo la referencia"
   },
   "72YObNn": {
    "price": 40.7,
@@ -1363,7 +1363,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793764951
+   "checked": 1793768816
   }
  ],
  "tg_offset": 334822060,
@@ -8873,13 +8873,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 19,
+ "rotation_index": 15,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/dreame-l50-pro-ultra-robot-aspirador-y-fregasuelos-2052365": 1793743959.7118971,
-  "https://www.chollometro.com/ofertas/zapatillas-de-running-adizero-boston-13-mujer-tallas-36-23-37-13-38-42-2054554": 1793744557.8429089,
-  "https://www.chollometro.com/ofertas/zapatillas-new-balance-237-2054774": 1793744557.8429089,
-  "https://www.chollometro.com/ofertas/sandisk-wd-black-sn7100-ssd-m2-2054580": 1793744557.8429089,
-  "https://www.chollometro.com/ofertas/lego-75456-star-wars-calendario-de-adviento-2026-juguete-de-cuenta-atras-de-navidad-2054581": 1793745758.216119,
   "https://www.chollometro.com/ofertas/zapatillas-asics-sonicblast-mujer-2054410": 1793747552.157134,
   "https://www.chollometro.com/ofertas/garmin-venu-4-45-mm-smartwatch-con-gps-2049876": 1793748152.512516,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-40-405-42-2054730": 1793748753.7760198,
