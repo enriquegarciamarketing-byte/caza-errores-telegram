@@ -1,98 +1,20 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 92 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36271 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73221 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 44 descartes nuevos, 157 en lista
-== pasada 2 · 19:37 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 19:39 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 4 · 19:42 ==
 Aviso: no se pudo leer https://jimmyleaks.com/es/minimos-de-hoy/ (The read operation timed out)
-Listados: 66 productos únicos
+Aviso: no se pudo leer https://jimmyleaks.com/es/?order=-modified (The read operation timed out)
+Aviso: no se pudo leer https://jimmyleaks.com/es/c/juguetes-y-juegos/?order=-modified (The read operation timed out)
+Listados: 50 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36175 bytes, 30 chollos
+  Chollometro «adidas Unisex RUNFALCON 5 Zapatillas de Running en Asfalto. Tallas 35'»: Amazon 26.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70516 bytes, 30 chollos
+  cm-2055667 · Amazon 26.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · adidas Unisex RUNFALCON 5 Zapatillas de Running en Asfalto. 
+  Vinted «adidas 35 runfalcon»: HTTP 200, 3528446 bytes, 80 anuncios
+  Vinted «adidas 35 runfalcon»: 30 parecidos de 80
+  Wallapop «adidas 35 runfalcon»: 200 / 38634 bytes, 12 anuncios, 4 parecidos, 0 reservas
+  Milanuncios «adidas 35 runfalcon»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 28 anuncios, ~15 €, no publica
+  ⚠️ No publico «adidas Unisex RUNFALCON 5 Zapatillas de Running en Asfalto. Tallas 35'5 al 40»: reventa en VINTED+WALLAPOP ~15 € (28 anuncios): ROI -55 % y -15 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 5 · 19:44 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36271 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73424 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 19:47 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 56 descartes nuevos, 56 en lista
-== pasada 7 · 19:49 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 19:52 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 19:54 ==
-Aviso: no se pudo leer https://jimmyleaks.com/es/c/salud-y-cuidado-personal/?order=-modified (The read operation timed out)
-Listados: 85 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36384 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71159 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 10 · 19:57 ==
-Aviso: no se pudo leer https://jimmyleaks.com/es/c/coche-y-moto/?order=-modified (The read operation timed out)
-Listados: 88 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 19:59 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 20:02 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 20:04 ==
-Aviso: no se pudo leer https://jimmyleaks.com/es/minimos-de-hoy/ (The read operation timed out)
-Aviso: no se pudo leer https://jimmyleaks.com/es/c/salud-y-cuidado-personal/?order=-modified (IncompleteRead(97952 bytes read))
-Listados: 51 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36554 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72825 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 20:07 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 15 · 20:09 ==
-Aviso: no se pudo leer https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-drop (The read operation timed out)
-Aviso: no se pudo leer https://jimmyleaks.com/es/c/informatica/?order=-drop (IncompleteRead(65536 bytes read))
-Listados: 84 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 20:12 ==
-Aviso: no se pudo leer https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-drop (The read operation timed out)
-Listados: 88 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-Fin de la ejecución tras 16 pasadas.
+Cascada al canal normal: 26 descartes nuevos, 84 en lista
