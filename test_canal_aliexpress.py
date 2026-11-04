@@ -143,9 +143,33 @@ class Texts(unittest.TestCase):
         aliexpress_card.create_card({"id": "t1", "title": long, "price": 1234.56, "reference": 9999.99,
                                      "badge": "ERROR DE PRECIO", "seen_hhmm": "12:00", "app_price": 1200,
                                      "coupon": {"code": "ESAE20AAAAA"}})
+        aliexpress_card.create_card({"id": "t3", "title": long, "price": 89, "reference": 329,
+                                     "badge": "ERROR DE PRECIO", "seen_hhmm": "12:00"})
         aliexpress_card.create_card({"id": "t2", "title": long, "price": 9.99, "badge": "TOP VENTAS",
                                      "note": ca.TOP_NOTE, "seen_hhmm": "12:00", "app_price": 8,
                                      "coupon": {"code": "X"}})
+
+
+class Codes(unittest.TestCase):
+    def test_best_valid_campaign_code(self):
+        r = rules()
+        when = datetime(2026, 11, 12, 10, tzinfo=timezone.utc)
+        self.assertIsNone(ca.campaign_code(10, r, when))
+        self.assertEqual(ca.campaign_code(50, r, when)["code"], "AEES08")
+        self.assertEqual(ca.campaign_code(500, r, when)["code"], "AEES75")
+        self.assertIsNone(ca.campaign_code(50, r, datetime(2026, 11, 19, tzinfo=timezone.utc)))
+
+    def test_product_coupon_wins_and_shows_in_texts(self):
+        r = rules()
+        when = datetime(2026, 11, 12, 10, tzinfo=timezone.utc)
+        own = ca.with_coupon(products()[0], r, when)
+        self.assertEqual(own["coupon"]["code"], "ESAE08")
+        _, deal = ca.evaluate(products()[1], {}, TODAY, r)
+        deal = ca.with_coupon({**deal, "price": 50.0}, r, when)
+        cap = ca.build_caption(deal, "12:00")
+        self.assertIn("AEES08", cap)
+        self.assertIn("hasta el 18/11", cap)
+        self.assertIn("AEES08", ca.build_x_text(deal, "https://s.click.aliexpress.com/e/_x"))
 
 
 class Quotas(unittest.TestCase):

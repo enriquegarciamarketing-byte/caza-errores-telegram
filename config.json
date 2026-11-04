@@ -1235,6 +1235,51 @@
       "xbox",
       "dyson",
       "gopro"
+    ],
+    "_nota_promo_codes": "Códigos de afiliado para España de la Guía de promoción de Portals (11.11). El bot pone en cada post el mayor descuento que encaje con el precio, solo mientras esté vigente. from es opcional.",
+    "promo_codes": [
+      {
+        "code": "AEES03",
+        "off": 3,
+        "min": 18,
+        "until": "2026-11-18T23:59:00+01:00"
+      },
+      {
+        "code": "AEES08",
+        "off": 8,
+        "min": 45,
+        "until": "2026-11-18T23:59:00+01:00"
+      },
+      {
+        "code": "AEES12",
+        "off": 12,
+        "min": 69,
+        "until": "2026-11-18T23:59:00+01:00"
+      },
+      {
+        "code": "AEES23",
+        "off": 23,
+        "min": 135,
+        "until": "2026-11-18T23:59:00+01:00"
+      },
+      {
+        "code": "AEES39",
+        "off": 39,
+        "min": 230,
+        "until": "2026-11-18T23:59:00+01:00"
+      },
+      {
+        "code": "AEES56",
+        "off": 58,
+        "min": 325,
+        "until": "2026-11-18T23:59:00+01:00"
+      },
+      {
+        "code": "AEES75",
+        "off": 75,
+        "min": 429,
+        "until": "2026-11-18T23:59:00+01:00"
+      }
     ]
   }
 }

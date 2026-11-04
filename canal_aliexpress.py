@@ -76,6 +76,7 @@ DEFAULTS = {
     "max_products": 5000,
     "test_private_posts": 3,
     "block_keywords": [],
+    "promo_codes": [],
 }
 
 HEADERS = {
@@ -271,6 +272,44 @@ def recently_posted(state: dict, deal: dict, now: datetime, rules: dict) -> bool
     return False
 
 
+# ------------------------------------------------------------------ códigos de afiliado
+def campaign_code(price: float, rules: dict, now: datetime) -> dict | None:
+    """El mejor código de la Guía de promoción (Portals) que se puede usar con este precio y sigue vigente."""
+    best = None
+    for code in rules.get("promo_codes") or []:
+        try:
+            until = datetime.fromisoformat(str(code["until"]))
+            starts = datetime.fromisoformat(str(code["from"])) if code.get("from") else None
+            off, minimum = float(code["off"]), float(code["min"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if now >= until or (starts and now < starts) or price < minimum:
+            continue
+        if best is None or off > best[0]:
+            best = (off, minimum, until, str(code["code"]))
+    if not best:
+        return None
+    off, minimum, until, code = best
+    fmt = lambda v: euro(v).replace(",00 €", " €")
+    return {"code": code, "value": f"-{fmt(off)}", "min_spend": f"desde {fmt(minimum)}",
+            "ends": f"hasta el {until.astimezone(MADRID):%d/%m}", "campaign": True}
+
+
+def with_coupon(deal: dict, rules: dict, now: datetime) -> dict:
+    """El cupón de la propia ficha manda; si no hay, el código de campaña de afiliado que encaje."""
+    if (deal.get("coupon") or {}).get("code"):
+        return deal
+    code = campaign_code(float(deal["price"]), rules, now)
+    return {**deal, "coupon": code} if code else deal
+
+
+def coupon_text(coupon: dict) -> str:
+    bits = [coupon.get("value"), coupon.get("min_spend"), coupon.get("ends")]
+    if coupon.get("min_spend") and not str(coupon["min_spend"]).startswith("desde"):
+        bits[1] = f"compra mínima {coupon['min_spend']}"
+    return " · ".join(str(b) for b in bits if b)
+
+
 # ------------------------------------------------------------------ textos
 def build_caption(deal: dict, seen_hhmm: str) -> str:
     e = html.escape
@@ -289,8 +328,7 @@ def build_caption(deal: dict, seen_hhmm: str) -> str:
         lines.append(f"📱 En la app de AliExpress <b>{e(euro(deal['app_price']))}</b>")
     coupon = deal.get("coupon") or {}
     if coupon.get("code"):
-        extra = " · ".join(x for x in [coupon.get("value"), (f"compra mínima {coupon['min_spend']}"
-                                                              if coupon.get("min_spend") else "")] if x)
+        extra = coupon_text(coupon)
         lines.append(f"🎟️ Cupón <code>{e(coupon['code'])}</code>" + (f" · {e(extra)}" if extra else ""))
     if deal.get("rating"):
         lines.append(f"⭐ {round(deal['rating'])} % de valoraciones positivas")
@@ -313,6 +351,9 @@ def build_x_text(deal: dict, link: str) -> str:
         price_line = f"💰 {euro(deal['price'])} (-{round(deal['discount'])} % frente a su mínimo de 30 días)"
     else:
         price_line = f"💰 {euro(deal['price'])} · {TOP_NOTE.lower()}"
+    coupon = deal.get("coupon") or {}
+    if coupon.get("code"):
+        price_line += f"\n🎟️ Cupón {coupon['code']} · {coupon_text(coupon)}"
     tail = f"👉 {link}\n\n#Publi {TAGS[badge]} #AliExpress"
     limit = 120
     while True:
@@ -541,6 +582,7 @@ def run_pass(args, rules: dict, state: dict, now: datetime, api, tg, log=print) 
         if not fresh or not fresh.get("price") or abs(fresh["price"] - deal["price"]) > max(0.01, deal["price"] * 0.01):
             log(f"  El precio ha cambiado al releer: {deal['title'][:60]}")
             continue
+        deal = with_coupon({**deal, **{k: fresh[k] for k in ("coupon", "app_price") if fresh.get(k)}}, rules, now)
         seen = now.astimezone(MADRID).strftime("%H:%M")
         caption = build_caption(deal, seen)
         log(f"  ✅ {deal['badge']} {euro(deal['price'])} "
