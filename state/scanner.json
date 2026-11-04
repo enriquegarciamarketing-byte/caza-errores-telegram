@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793824245
+   "checked": 1793826765
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 93,
+ "last_listing_count": 103,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -10040,11 +10040,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 12,
+ "rotation_index": 8,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/zapatillas-mujer-puma-court-lally-tallas-36-a-41-2055363": 1793802928.0670304,
-  "https://www.chollometro.com/ofertas/new-balance-zapatilla-casual-de-mujer-370-tallas-36-a-42-excepto-395-2053655": 1793804128.9451191,
-  "https://www.chollometro.com/ofertas/zapatillas-altas-vans-filmore-hi-tallas-385-39-40-y-405-2055386": 1793804729.289462,
   "https://www.chollometro.com/ofertas/battlefield-6-phantom-edition-xbox-series-x-videojuegos-castellano-2047037": 1793806482.0513377,
   "https://www.chollometro.com/ofertas/motor-co-rc-strong-pioneer-rc-con-camara-y-luz-varios-modelos-2053911": 1793807082.2103424,
   "https://www.chollometro.com/ofertas/lego-icons-cachorro-de-golden-retriever-11384-por-10499-eur-minimo-historico-2055153": 1793812876.0748527,
@@ -10053,7 +10050,8 @@
   "https://www.chollometro.com/ofertas/mando-dualsense-ps5-original-con-boton-crear-sensor-de-movimiento-y-carga-usb-type-c-varios-colores-2051025": 1793820298.6623755,
   "https://www.chollometro.com/ofertas/grand-theft-auto-vi-ps5-edicion-estandar-2053982": 1793820550.3670585,
   "https://www.chollometro.com/ofertas/lost-ember-wolf-pack-edition-playstation-5-2055715": 1793822545.4314148,
-  "https://www.chollometro.com/ofertas/mizuno-zapatillas-deportivas-de-running-de-mujer-neo-zen-2-2055741": 1793824260.0375347
+  "https://www.chollometro.com/ofertas/mizuno-zapatillas-deportivas-de-running-de-mujer-neo-zen-2-2055741": 1793824260.0375347,
+  "https://www.chollometro.com/ofertas/gta-vi-ps5-con-tarjeta-psn-80eur-2055773": 1793826376.3018773
  },
  "asked": {
   "cm-2051793": 1793783213
