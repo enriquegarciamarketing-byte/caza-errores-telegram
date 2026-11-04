@@ -1368,7 +1368,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793823821
+   "checked": 1793824245
   },
   {
    "id": "cm-2051793",
@@ -1412,7 +1412,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 101,
+ "last_listing_count": 93,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2030,21 +2030,6 @@
   }
  },
  "wallapop_cache": {
-  "carrefour|lego architecture ciudad de nueva york: la gran manzana | + cupon 44.80€|carrefour 44 lego": {
-   "t": 1793312836.2809868,
-   "query": "carrefour 44",
-   "prices": [
-    4.0,
-    6.0,
-    5.0,
-    2.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 87969,
-   "raw_count": 37
-  },
   "amazon|robot aspirador cecotec conga m50 x-treme (navegacion laser, 5000 pa, mapeo)|robot m50 aspirador": {
    "t": 1793312837.2246182,
    "query": "robot m50 aspirador",
@@ -7174,6 +7159,57 @@
    "http_status": 200,
    "bytes": 9344,
    "raw_count": 3
+  },
+  "|mizuno zapatillas deportivas de running de mujer neo zen 2|mizuno zapatillas": {
+   "t": 1793824263.9329371,
+   "query": "mizuno zapatillas",
+   "prices": [
+    90.0,
+    45.0,
+    75.0,
+    12.0,
+    19.0,
+    15.0,
+    18.0,
+    65.0,
+    30.0,
+    38.0,
+    145.0,
+    89.9,
+    28.0,
+    30.0,
+    89.95,
+    50.0,
+    45.0,
+    15.0,
+    30.0,
+    85.0,
+    25.0,
+    105.0,
+    20.0,
+    30.0,
+    25.0,
+    85.0,
+    10.0,
+    65.0,
+    28.0,
+    5.0,
+    35.0,
+    20.0,
+    90.0,
+    80.0,
+    50.0,
+    25.0,
+    35.0,
+    55.0,
+    8.0,
+    75.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 122423,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -7501,7 +7537,8 @@
   "wallapop:cm-2055667": 1793819873.0223036,
   "wallapop:cm-2051025": 1793820305.966481,
   "wallapop:cm-2053982": 1793820557.78967,
-  "wallapop:cm-2055715": 1793822548.852803
+  "wallapop:cm-2055715": 1793822548.852803,
+  "wallapop:cm-2055741": 1793824264.5402803
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -9983,12 +10020,27 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~15 € (25 anuncios): ROI -56 % y -15 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|mizuno zapatillas deportivas de running de mujer neo zen 2|mizuno zapatillas": {
+   "t": 1793824263.4975843,
+   "prices": [
+    15.0,
+    29.0,
+    30.0,
+    80.0,
+    28.0,
+    25.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~27 € (5 anuncios): ROI -69 % y -52 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 7,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-mujer-puma-court-lally-tallas-36-a-41-2055363": 1793802928.0670304,
   "https://www.chollometro.com/ofertas/new-balance-zapatilla-casual-de-mujer-370-tallas-36-a-42-excepto-395-2053655": 1793804128.9451191,
@@ -10000,7 +10052,8 @@
   "https://www.chollometro.com/ofertas/adidas-unisex-runfalcon-5-zapatillas-de-running-en-asfalto-tallas-355-al-40-2055667": 1793819868.2595935,
   "https://www.chollometro.com/ofertas/mando-dualsense-ps5-original-con-boton-crear-sensor-de-movimiento-y-carga-usb-type-c-varios-colores-2051025": 1793820298.6623755,
   "https://www.chollometro.com/ofertas/grand-theft-auto-vi-ps5-edicion-estandar-2053982": 1793820550.3670585,
-  "https://www.chollometro.com/ofertas/lost-ember-wolf-pack-edition-playstation-5-2055715": 1793822545.4314148
+  "https://www.chollometro.com/ofertas/lost-ember-wolf-pack-edition-playstation-5-2055715": 1793822545.4314148,
+  "https://www.chollometro.com/ofertas/mizuno-zapatillas-deportivas-de-running-de-mujer-neo-zen-2-2055741": 1793824260.0375347
  },
  "asked": {
   "cm-2051793": 1793783213

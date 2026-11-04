@@ -1,8 +1,17 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 101 productos únicos
+Listados: 93 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36191 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67181 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36172 bytes, 30 chollos
+  Chollometro «MIZUNO Zapatillas deportivas de Running de Mujer NEO ZEN 2»: Primeriti 75.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 56612 bytes, 30 chollos
+  cm-2055741 · Primeriti 75.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · MIZUNO Zapatillas deportivas de Running de Mujer NEO ZEN 2
+  Vinted «mizuno zapatillas»: HTTP 200, 3686494 bytes, 96 anuncios
+  Vinted «mizuno zapatillas»: 6 parecidos de 96
+  Wallapop «mizuno zapatillas»: 200 / 122423 bytes, 40 anuncios, 40 parecidos, 0 reservas
+  Milanuncios «mizuno zapatillas»: HTTP 403, 95508 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
+  Reventa VINTED+WALLAPOP: 30 anuncios, ~28 €, no publica
+  ⚠️ No publico «MIZUNO Zapatillas deportivas de Running de Mujer NEO ZEN 2»: reventa en VINTED+WALLAPOP ~28 € (30 anuncios): ROI -67 % y -50 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 43 descartes nuevos, 102 en lista
+Cascada al canal normal: 35 descartes nuevos, 109 en lista
