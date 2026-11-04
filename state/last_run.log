@@ -1,92 +1,118 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 99 productos únicos
+Listados: 91 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36397 bytes, 30 chollos
-  Chollometro «UNDER ARMOUR ROGUE 6 - Zapatillas running asfalto. Tallas 40 a 49»: Zalando Privé 38.9 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 135138 bytes, 30 chollos
-  cm-2052431 · Zalando Privé 38.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · UNDER ARMOUR ROGUE 6 - Zapatillas running asfalto. Tallas 40
-  cm-2052431: no se publica (horario nocturno: las gangas esperan al día)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36741 bytes, 30 chollos
+  Chollometro «GEOGRAPHICAL NORWAY Zapatillas de trekking Oclarc»: Showroomprive 32.9 €
+  Chollometro «Zapatillas ADIDAS TERREX AGRAVIC 4 MUJER- Tallas- 37 1/3, 38, 38 2/3, »: Alssport 69.97 €
+  Chollometro «Nike - zapatillas deportivas Zoomx Vaporfly Next 4 - running»: Privalia 89.99 €
+  Chollometro «LEGO 75446 Star Wars Grogu (Aprendiz de Mandaloriano) - Figura articul»: Miravia 80.1 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77324 bytes, 30 chollos
+  cm-2050752 · Showroomprive 32.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · GEOGRAPHICAL NORWAY Zapatillas de trekking Oclarc
+  cm-2054417 · Alssport 69.97 € → candidato externo · Zapatillas ADIDAS TERREX AGRAVIC 4 MUJER- Tallas- 37 1/3, 38
+  cm-2054914 · Privalia 89.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nike - zapatillas deportivas Zoomx Vaporfly Next 4 - running
+  cm-2054592 · Miravia → descartado (la tienda marca 100.6 € y no 80.1 €) · LEGO 75446 Star Wars Grogu (Aprendiz de Mandaloriano) - Figu
+  Vinted «geographical norway»: HTTP 200, 3689255 bytes, 96 anuncios
+  Vinted «geographical norway»: 54 parecidos de 96
+  Wallapop «geographical norway»: 200 / 127681 bytes, 40 anuncios, 37 parecidos, 0 reservas
+  Milanuncios «geographical norway»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 70 anuncios, ~22 €, no publica
+  ⚠️ No publico «GEOGRAPHICAL NORWAY Zapatillas de trekking Oclarc»: reventa en VINTED+WALLAPOP ~22 € (70 anuncios): ROI -42 % y -14 €, por debajo del mínimo (30 % y 25 €)
+  Vinted «zapatillas 37 adidas»: HTTP 200, 3679748 bytes, 96 anuncios
+  Vinted «zapatillas 37 adidas»: 24 parecidos de 96
+  Wallapop «zapatillas 37 adidas»: 200 / 127143 bytes, 40 anuncios, 21 parecidos, 0 reservas
+  Milanuncios «zapatillas 37 adidas»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 37 anuncios, ~25 €, no publica
+  ⚠️ No publico «Zapatillas ADIDAS TERREX AGRAVIC 4 MUJER- Tallas- 37 1/3, 38, 38 2/3, 40 2/3»: reventa en VINTED+WALLAPOP ~25 € (37 anuncios): ROI -69 % y -48 €, por debajo del mínimo (25 % y 25 €)
+  Vinted «nike zapatillas»: HTTP 200, 3673539 bytes, 96 anuncios
+  Vinted «nike zapatillas»: 27 parecidos de 96
+  Wallapop «nike zapatillas»: 200 / 115268 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «nike zapatillas»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 44 anuncios, ~17 €, no publica
+  ⚠️ No publico «Nike - zapatillas deportivas Zoomx Vaporfly Next 4 - running»: reventa en VINTED+WALLAPOP ~17 € (44 anuncios): ROI -84 % y -76 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 28 descartes nuevos, 69 en lista
-== pasada 2 · 07:38 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 56 descartes nuevos, 56 en lista
-== pasada 3 · 07:41 ==
+Cascada al canal normal: 39 descartes nuevos, 73 en lista
+== pasada 2 · 09:00 ==
 Listados: 95 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 07:43 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 07:46 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36370 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 136395 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 07:48 ==
+== pasada 3 · 09:03 ==
 Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 07:51 ==
-Listados: 101 productos únicos
+== pasada 4 · 09:05 ==
+Listados: 102 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 07:53 ==
+== pasada 5 · 09:08 ==
 Listados: 92 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36684 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 125370 bytes, 30 chollos
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 07:56 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36410 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 117189 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 07:58 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 08:01 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 08:03 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 13 · 08:06 ==
-Listados: 91 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36342 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69715 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 14 · 08:08 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 15 · 08:11 ==
+== pasada 6 · 09:10 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 16 · 08:13 ==
+== pasada 7 · 09:13 ==
 Listados: 103 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 09:15 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 9 · 09:18 ==
+Listados: 91 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36684 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 122251 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 10 · 09:20 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 09:23 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 12 · 09:25 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 13 · 09:28 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36529 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 121645 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 14 · 09:30 ==
+Listados: 93 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 09:33 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 09:35 ==
+Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
