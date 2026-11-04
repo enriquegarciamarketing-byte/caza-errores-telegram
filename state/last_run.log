@@ -1,20 +1,8 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Aviso: no se pudo leer https://jimmyleaks.com/es/minimos-de-hoy/ (The read operation timed out)
-Aviso: no se pudo leer https://jimmyleaks.com/es/?order=-modified (The read operation timed out)
-Aviso: no se pudo leer https://jimmyleaks.com/es/c/juguetes-y-juegos/?order=-modified (The read operation timed out)
-Listados: 50 productos únicos
+Listados: 93 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
   Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36175 bytes, 30 chollos
-  Chollometro «adidas Unisex RUNFALCON 5 Zapatillas de Running en Asfalto. Tallas 35'»: Amazon 26.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70516 bytes, 30 chollos
-  cm-2055667 · Amazon 26.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · adidas Unisex RUNFALCON 5 Zapatillas de Running en Asfalto. 
-  Vinted «adidas 35 runfalcon»: HTTP 200, 3528446 bytes, 80 anuncios
-  Vinted «adidas 35 runfalcon»: 30 parecidos de 80
-  Wallapop «adidas 35 runfalcon»: 200 / 38634 bytes, 12 anuncios, 4 parecidos, 0 reservas
-  Milanuncios «adidas 35 runfalcon»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 28 anuncios, ~15 €, no publica
-  ⚠️ No publico «adidas Unisex RUNFALCON 5 Zapatillas de Running en Asfalto. Tallas 35'5 al 40»: reventa en VINTED+WALLAPOP ~15 € (28 anuncios): ROI -55 % y -15 €, por debajo del mínimo (30 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69785 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 26 descartes nuevos, 84 en lista
+Cascada al canal normal: 39 descartes nuevos, 103 en lista
