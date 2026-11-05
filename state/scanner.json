@@ -1054,6 +1054,11 @@
    "price": 65.0,
    "t": 1793880219,
    "result": "valoraciones flojas (3.9 / 9)"
+  },
+  "7kGOyv7": {
+   "price": 179.0,
+   "t": 1793889172,
+   "result": "solo -6% bajo la referencia"
   }
  },
  "posts": [
@@ -1619,7 +1624,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 94,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -10713,7 +10718,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803,
   "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-dreame-d30-ultra-25000pa-230-min-autonomia-37db-ultra-silencioso-navegacion-laser-lidar-control-app-2056108": 1793871528.9389758,
