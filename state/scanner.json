@@ -1528,28 +1528,10 @@
    "url": "https://es.aliexpress.com/item/1005012221794446.html",
    "alert_id": 380,
    "alert_text_id": 381,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1793892335,
-   "card_data": {
-    "title": "Dron DJI Neo 2 con cámara 4K estabilizada, 151 g y protectores de hélices (C0) [1 Nov 00:00]",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 139.41,
-    "reference": 249.0,
-    "image": "https://static.chollometro.com/threads/raw/DKspZ/2048864_1/re/150x150/qt/55/2048864_1.jpg",
-    "store_label": "AliExpress",
-    "conditions": "Con cupón + PayPal",
-    "resale": {
-     "price": 204.00000000000003,
-     "count": 29,
-     "roi": 37.579800588193116,
-     "profit": 52.390000000000015,
-     "source_label": "WALLAPOP",
-     "note": "29 anuncios de referencia · Wallapop · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   },
   {
    "id": "cm-2049729",
@@ -1585,33 +1567,15 @@
    "url": "https://es.aliexpress.com/item/1005007941608036.html",
    "alert_id": 382,
    "alert_text_id": 383,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1793892339,
-   "card_data": {
-    "title": "AMD Ryzen 7 7800X3D [Promo 11.11]",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 179.45,
-    "reference": 299.0,
-    "image": "https://static.chollometro.com/threads/raw/Djd4S/2049729_1/re/150x150/qt/55/2049729_1.jpg",
-    "store_label": "AliExpress",
-    "conditions": "Con cupón + PayPal",
-    "resale": {
-     "price": 239.0,
-     "count": 35,
-     "roi": 25.410977988297574,
-     "profit": 45.599999999999994,
-     "source_label": "WALLAPOP",
-     "note": "35 anuncios de referencia · Wallapop 35 · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 89,
+ "last_listing_count": 95,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -10710,7 +10674,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 15,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-dreame-d30-ultra-25000pa-230-min-autonomia-37db-ultra-silencioso-navegacion-laser-lidar-control-app-2056108": 1793871528.9389758,
   "https://www.chollometro.com/ofertas/garmin-instinct-3-amoled-negro-45-mm-por-249-eur-y-50-mm-por-279-eur-reloj-gps-multibanda-10-atm-linterna-led-hasta-24-dias-de-bateria-2055098": 1793872799.1645906,
