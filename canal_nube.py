@@ -594,11 +594,14 @@ def buttons(url: str) -> dict:
 
 
 def x_text(deal: dict, url: str, rules: dict) -> str:
-    """Post para X con la voz de x_post.py: sin precio, sin % y sin la palabra Amazon."""
+    """Post para X con la voz de x_post.py: sin la palabra Amazon y, hasta tener la API, sin precio ni %."""
     from x_post import build_x_post
     badge = badge_for(deal["discount"], rules, real_drop(deal)) if deal.get("discount") is not None else "CHOLLO"
+    # Con la API de Amazon ("x_prices": true en config) ya se pueden poner precio y %.
     return build_x_post(deal.get("title") or "", deal.get("brand") or "", url, seed=deal.get("asin") or url,
-                        extra_handles=rules.get("x_brand_handles"), badge=badge)
+                        extra_handles=rules.get("x_brand_handles"), badge=badge, price=deal.get("price"),
+                        reference=deal.get("reference"), numbers=bool(rules.get("x_prices")),
+                        hour=datetime.now(MADRID).hour)
 
 
 def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, test: bool = False) -> None:

@@ -18,16 +18,18 @@ class XPost(unittest.TestCase):
         text = x_post.build_x_post("XIAOMI TV Pro 32 Pulgadas 2026, QLED Smart TV", "Xiaomi",
                                    "https://amzn.example/x", seed="a", badge="CHOLLAZO")
         lines = text.split("\n\n")
-        self.assertIn("esta tv de @XiaomiEspana (xiaomi tv pro 32 pulgadas 2026)", lines[0])
+        self.assertIn("esta tv de @XiaomiEspana (Xiaomi TV Pro 32 Pulgadas 2026)", lines[0])
+        self.assertTrue(all(l[0].isupper() or l[0] in "@h" for l in lines))
         self.assertEqual(lines[-2], "https://amzn.example/x")
-        self.assertEqual(lines[-1], "link afiliado.")
-        self.assertEqual(text, text.replace("Ú", "ú"))
+        self.assertEqual(lines[-1], "Link afiliado.")
         self.assertLessEqual(x_post.x_length(text), 280)
 
     def test_aliexpress_numbers(self):
         text = x_post.build_x_post("Auriculares Soundcore P40i", "Soundcore", "https://s.click.aliexpress.com/e/_x",
                                    badge="CHOLLAZO", price=24.5, reference=49.0, numbers=True)
-        self.assertIn("está a 24,50€ y lo normal es 49€, un 50% menos.", text)
+        self.assertIn("24,50€", text)
+        self.assertIn("49€", text)
+        self.assertIn("50%", text)
 
     def test_amazon_compliant(self):
         deal = {"title": "Gillette Fusion5 Cuchillas de Afeitar Hombre", "brand": "Gillette", "asin": "B04",
@@ -35,10 +37,10 @@ class XPost(unittest.TestCase):
         text = cn.x_text(deal, "https://www.amazon.es/dp/B04?tag=t-21", {})
         for banned in ("€", "%", "Amazon", "AMAZON", "⭐", "valoraciones"):
             self.assertNotIn(banned, text)
-        self.assertIn("esta afeitadora de gillette fusion5", text)
+        self.assertIn("esta afeitadora de Gillette Fusion5", text)
 
     def test_unknown_brand_not_tagged_and_amazon_brand_dropped(self):
-        self.assertEqual(x_post.brand_mention("Cecotec"), "cecotec")
+        self.assertEqual(x_post.brand_mention("CECOTEC"), "Cecotec")
         self.assertEqual(x_post.brand_mention("Amazon Basics"), "")
         self.assertEqual(x_post.brand_mention("Dreame", {"dreame": "DreameES"}), "@DreameES")
 
@@ -52,6 +54,14 @@ class XPost(unittest.TestCase):
         method, params = tg.sent[0]
         self.assertEqual(params["chat_id"], 42)
         self.assertIn("Paid partnership", params["text"])
+
+    def test_prices_only_with_api_flag(self):
+        deal = {"title": "Corsair Vengeance 16GB DDR4", "brand": "Corsair", "asin": "B1", "discount": 65,
+                "price": 19.9, "reference": 69.9}
+        without = cn.x_text(deal, "https://www.amazon.es/dp/B1?tag=t-21", cn.rules_from({}))
+        self.assertNotIn("€", without)
+        with_api = cn.x_text(deal, "https://www.amazon.es/dp/B1?tag=t-21", dict(cn.rules_from({}), x_prices=True))
+        self.assertIn("19,90€", with_api)
 
     def test_draft_can_be_turned_off(self):
         tg = FakeTG()

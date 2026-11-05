@@ -349,10 +349,11 @@ def build_x_text(deal: dict, link: str, handles: dict | None = None) -> str:
     """Voz de x_post.py; en AliExpress sí van precio y %, y el cupón si lo hay."""
     from x_post import build_x_post
     coupon = deal.get("coupon") or {}
-    extra = f"con el cupón {coupon['code']} sale aún mejor." if coupon.get("code") else ""
+    extra = f"Con el cupón {coupon['code']} sale aún mejor." if coupon.get("code") else ""
     return build_x_post(deal.get("title") or "", deal.get("brand") or "", link, seed=str(deal.get("id") or link),
                         extra_handles=handles, extra_line=extra, badge=deal.get("badge") or "CHOLLO",
-                        price=deal.get("price"), reference=deal.get("reference"), numbers=True)
+                        price=deal.get("price"), reference=deal.get("reference"), numbers=True,
+                        hour=datetime.now(MADRID).hour)
 
 
 def ended_caption(caption: str, hour: str) -> str:

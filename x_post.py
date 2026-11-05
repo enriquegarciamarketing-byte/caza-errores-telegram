@@ -1,15 +1,16 @@
-"""Texto para X (@AzvensLoL) con la voz de @kevincrestt: minúsculas, primera persona, cuenta lo que ha
-pillado el bot y por qué merece la pena, avisa de los riesgos sin vender humo y cierra con "link afiliado."
+"""Texto para X (@AzvensLoL) con la voz de @kevincrestt (pero con mayúscula al empezar cada frase): primera
+persona, saluda como él ("Buenos días chavales"), cuenta lo que ha pillado el bot y por qué merece la pena,
+avisa del riesgo sin vender humo y cierra con "Link afiliado."
 
-    el bot acaba de pillar esta tv de @XiaomiEspana (xiaomi tv pro 32 pulgadas 2026).
+    A correr chavales, acaba de saltar esta tv de @XiaomiEspana (Xiaomi TV Pro 32 Pulgadas 2026).
 
-    de los descuentos más fuertes que le he visto, así que la comparto a mano.
+    De los descuentos más fuertes que le he visto.
 
-    estas cosas suelen durar poco, si os interesa no lo dejéis mucho.
+    Ojo, que estas suelen durar poco.
 
     https://link...
 
-    link afiliado.
+    Link afiliado.
 
 Reglas para Amazon Afiliados:
 - Sin precio, sin % y sin valoraciones: Amazon solo deja mostrarlos si salen de su API. En AliExpress sí
@@ -66,30 +67,48 @@ KINDS = [
     (r"consola|playstation|nintendo switch|xbox", "esta consola"),
 ]
 
+# Aperturas como las de @kevincrestt. {hi} es el saludo según la hora ("Buenos días", "Buenas tardes"...).
 OPENERS = [
-    "el bot acaba de pillar {what}.",
-    "le acaba de saltar al bot {what}.",
-    "esto lo ha cazado el bot hace un momento: {what}.",
-    "acaba de entrar al bot {what}.",
+    "{hi} chavales, el bot acaba de cazar {what}.",
+    "{hi} jefes, os enseño lo que acaba de pillar el bot: {what}.",
+    "El bot acaba de pillar {what}.",
+    "Le acaba de saltar al bot {what}.",
 ]
-# Por qué merece la pena, sin cifras (Amazon).
+OPENERS_URGENT = [  # errores de precio y chollazos
+    "A correr chavales, acaba de saltar {what}.",
+    "{hi} gente, el bot acaba de cazar {what}.",
+    "El bot acaba de cazar {what}.",
+]
+# Por qué merece la pena, sin cifras (Amazon sin API).
 WHY = {
-    "ERROR DE PRECIO": ["huele a error de precio, muy por debajo de lo que suele costar.",
-                        "esto tiene pinta de error, no es un precio normal para este producto."],
-    "CHOLLAZO": ["de los descuentos más fuertes que le he visto, por eso lo comparto aquí también.",
-                 "está muy por debajo de su precio habitual, de esos que no duran."],
-    "CHOLLO": ["buen precio para lo que suele costar, si lo estabais esperando es el momento.",
-               "no es un error, pero está bastante mejor que de normal."],
+    "ERROR DE PRECIO": ["Error de precio de manual, nada que ver con lo que cuesta normalmente.",
+                        "Tiene toda la pinta de error, no es un precio normal para esto."],
+    "CHOLLAZO": ["De los descuentos más fuertes que le he visto.",
+                 "Muy por debajo de su precio habitual, de esos que no se ven cada día."],
+    "CHOLLO": ["No es error de precio, pero está bastante mejor que de normal.",
+               "Si lo estabais esperando, es buen momento."],
+}
+# Con cifras (AliExpress, y Amazon cuando haya API: "x_prices": true).
+WHY_NUMBERS = [
+    "Está a {price} cuando a precio normal ronda los {ref}, un {pct}% menos.",
+    "Ha bajado a {price} y su precio normal está en {ref} (un {pct}% menos).",
+]
+# Una línea de contexto como las suyas, solo para algunos productos.
+CONTEXT = {
+    "esta ram": "Ya sabéis que con lo de la IA las ram están disparadas.",
+    "este ssd": "Con lo que están subiendo los ssd por la IA, esto no va a durar.",
+    "este robot aspirador": "De lo que más se pide, así que no creo que aguante mucho.",
+    "esta freidora de aire": "De lo que más se pide, así que no creo que aguante mucho.",
 }
 # Riesgo o urgencia, contado tal cual.
 CAVEAT = {
-    "ERROR DE PRECIO": ["probad, a lo mejor cancelan, pero no cuesta nada.",
-                        "puede que lo cancelen, así que pedidlo y si cuela, cuela."],
-    "default": ["estas cosas suelen durar poco, si os interesa no lo dejéis mucho.",
-                "si se agota lo aviso en telegram, pero yo no lo dejaría pasar.",
-                "yo de vosotros no lo pensaría mucho, que estas vuelan."],
+    "ERROR DE PRECIO": ["Probad, a lo mejor cancelan, pero no cuesta nada.",
+                        "Aprovechad antes de que lo corten."],
+    "default": ["Ojo, que estas suelen durar poco.",
+                "Si se agota lo aviso en Telegram, pero yo no lo dejaría pasar.",
+                "Yo de vosotros no lo pensaría mucho, que estas vuelan."],
 }
-DISCLOSURE = "link afiliado."
+DISCLOSURE = "Link afiliado."
 X_LIMIT = 280
 
 
@@ -101,15 +120,20 @@ def product_kind(title: str) -> str:
     return ""
 
 
+def tidy(text: str) -> str:
+    """Quita los gritos: XIAOMI → Xiaomi, pero deja siglas cortas como TV, QLED o SSD."""
+    return " ".join(w.capitalize() if w.isupper() and len(w) > 4 and w.isalpha() else w for w in text.split())
+
+
 def short_name(title: str, words: int = 6) -> str:
-    """Nombre corto en minúsculas: lo que va antes de la primera coma o guion, recortado."""
+    """Nombre corto: lo que va antes de la primera coma o guion, recortado y sin mayúsculas gritonas."""
     head = re.split(r",| - | – |\(|\|", title or "")[0]
     head = re.sub(r"\s+", " ", head).strip()
-    return " ".join(head.split()[:words]).lower()
+    return tidy(" ".join(head.split()[:words]))
 
 
 def brand_mention(brand: str, extra: dict | None = None) -> str:
-    """@Cuenta oficial si la conocemos; si no, el nombre de la marca en minúsculas."""
+    """@Cuenta oficial si la conocemos; si no, el nombre de la marca."""
     brand = re.sub(r"\s+", " ", (brand or "")).strip()
     if not brand or brand.lower() in {"amazon", "amazon basics", "generico", "genérico", "sin marca"}:
         return ""
@@ -117,7 +141,7 @@ def brand_mention(brand: str, extra: dict | None = None) -> str:
     handle = handles.get(brand.lower())
     if handle:
         return handle if handle.startswith("@") else f"@{handle}"
-    return brand.lower()
+    return tidy(brand) if not brand.islower() else brand.capitalize()
 
 
 def x_length(text: str) -> int:
@@ -149,24 +173,31 @@ def _what(title: str, brand: str, extra_handles: dict | None) -> str:
     return name or "esto"
 
 
+def greeting(hour: int | None) -> str:
+    if hour is None or 6 <= hour < 13:
+        return "Buenos días"
+    return "Buenas tardes" if hour < 21 else "Buenas noches"
+
+
 def build_x_post(title: str, brand: str, link: str, seed: str = "", extra_handles: dict | None = None,
                  extra_line: str = "", badge: str = "CHOLLO", price: float | None = None,
-                 reference: float | None = None, numbers: bool = False) -> str:
+                 reference: float | None = None, numbers: bool = False, hour: int | None = None) -> str:
     seed = seed or link
     badge = badge if badge in WHY else ("CHOLLAZO" if badge == "TOP VENTAS" else "CHOLLO")
-    opener = _pick(OPENERS, seed, "open").format(what=_what(title, brand, extra_handles))
-    if numbers and price:
-        if reference and reference > price:
-            pct = round((reference - price) / reference * 100)
-            why = f"está a {_euro(price)} y lo normal es {_euro(reference)}, un {pct}% menos."
-        else:
-            why = f"está a {_euro(price)}, de lo más vendido ahora mismo."
+    kind = product_kind(title)
+    pool = OPENERS_URGENT if badge in ("ERROR DE PRECIO", "CHOLLAZO") else OPENERS
+    opener = _pick(pool, seed, "open").format(hi=greeting(hour), what=_what(title, brand, extra_handles))
+    if numbers and price and reference and reference > price:
+        pct = round((reference - price) / reference * 100)
+        why = _pick(WHY_NUMBERS, seed, "why").format(price=_euro(price), ref=_euro(reference), pct=pct)
+    elif numbers and price:
+        why = f"Está a {_euro(price)}, de lo más vendido ahora mismo."
     else:
         why = _pick(WHY[badge], seed, "why")
     caveat = _pick(CAVEAT.get(badge) or CAVEAT["default"], seed, "caveat")
-    middle = [why] + ([extra_line] if extra_line else []) + [caveat]
+    middle = [why] + ([CONTEXT[kind]] if kind in CONTEXT else []) + ([extra_line] if extra_line else []) + [caveat]
     while True:
         text = "\n\n".join([opener, *middle, link, DISCLOSURE])
         if x_length(text) <= X_LIMIT or len(middle) <= 1:
             return text
-        middle.pop()  # si no cabe, primero cae el aviso de urgencia
+        middle.pop()  # si no cabe, cae primero la urgencia: el contexto es lo que más suena a él
