@@ -49,7 +49,7 @@ class XPost(unittest.TestCase):
         state = {"private_chats": {"x": 42}}
         rules = {"admin_username": "x", "chat_id": "@cazachollos_com"}
         cn.send_x_draft(tg, state, rules, {"title": "Xiaomi TV", "brand": "Xiaomi", "asin": "B1"},
-                        "https://www.amazon.es/dp/B1?tag=t-21", log=lambda *_: None)
+                        "https://www.amazon.es/dp/B1?tag=t-21", log=lambda *_: None, manual=True)
         self.assertEqual(len(tg.sent), 1)
         method, params = tg.sent[0]
         self.assertEqual(params["chat_id"], 42)
@@ -106,3 +106,42 @@ class AlbumAmazon(unittest.TestCase):
         self.assertEqual(sent["media"][0]["media"], self.DEAL["image"])
         self.assertEqual(sent["media"][0]["caption"], "texto")
         self.assertEqual(list(sent["files"]), ["card"], "la foto de Amazon no se descarga ni se sube retocada")
+
+
+class FiltroX(unittest.TestCase):
+    from datetime import datetime, timezone
+    NOW = datetime(2026, 11, 5, 11, 0, tzinfo=timezone.utc)
+    BASE = {"title": "Roborock Qrevo S", "asin": "B1", "price": 199.0, "reference": 399.0, "discount": 50,
+            "interest": 100, "interest_label": "Aspiradoras"}
+
+    def rules(self):
+        return cn.rules_from(__import__("json").load(open("config.json")))
+
+    def test_top_and_strong_passes(self):
+        self.assertEqual(cn.x_worthy(dict(self.BASE), self.rules(), {}, self.NOW), "")
+
+    def test_low_interest_category_out(self):
+        why = cn.x_worthy(dict(self.BASE, interest=60, interest_label="Moda de marca"), self.rules(), {}, self.NOW)
+        self.assertIn("categoría", why)
+
+    def test_weak_discount_out(self):
+        self.assertIn("descuento", cn.x_worthy(dict(self.BASE, discount=26, price=295), self.rules(), {}, self.NOW))
+
+    def test_small_saving_out(self):
+        self.assertIn("ahorro", cn.x_worthy(dict(self.BASE, price=6.0, reference=12.0), self.rules(), {}, self.NOW))
+
+    def test_daily_cap_and_spacing(self):
+        t = self.NOW.timestamp()
+        self.assertIn("seguido", cn.x_worthy(dict(self.BASE), self.rules(), {"x_drafts": [t - 600]}, self.NOW))
+        full = {"x_drafts": [t - 3600 * h for h in range(1, 7)]}
+        self.assertIn("hoy", cn.x_worthy(dict(self.BASE), self.rules(), full, self.NOW))
+
+    def test_auto_skips_but_manual_sends(self):
+        tg = FakeTG()
+        state = {"private_chats": {"x": 42}}
+        rules = {**self.rules(), "admin_username": "x"}
+        weak = dict(self.BASE, interest=55, interest_label="Textil hogar")
+        cn.send_x_draft(tg, state, rules, weak, "u", log=lambda *_: None)
+        self.assertEqual(tg.sent, [])
+        cn.send_x_draft(tg, state, rules, weak, "u", log=lambda *_: None, manual=True)
+        self.assertEqual(len(tg.sent), 1)

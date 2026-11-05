@@ -109,6 +109,7 @@ def merge_states(local: dict, remote: dict) -> dict:
     así ningún producto se vuelve a publicar por no constar que ya salió."""
     merged = dict(remote or {})
     merged.update({k: v for k, v in (local or {}).items() if k not in ("posts", "seen", "rotation", "summary_sent")})
+    merged["x_drafts"] = sorted(set((remote or {}).get("x_drafts") or []) | set((local or {}).get("x_drafts") or []))[-50:]
 
     def key(post: dict):
         return (str(post.get("chat")), post.get("message_id")) if post.get("message_id") else \
@@ -604,11 +605,52 @@ def x_text(deal: dict, url: str, rules: dict) -> str:
                         hour=datetime.now(MADRID).hour)
 
 
-def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, test: bool = False) -> None:
+X_FILTER = {
+    "min_interest": 85,          # categorías top: móviles, aspiradoras, cafeteras, electrodomésticos, muebles,
+                                 # TV y sonido, informática, consolas, súper, bebé, relojes y droguería
+    "min_discount": 40,          # o bien CHOLLAZO / ERROR DE PRECIO
+    "historical_low_discount": 30,
+    "min_saving_eur": 15,        # nada de productos de 5 € aunque el % sea alto
+    "max_per_day": 6,
+    "min_minutes_between": 45,   # los errores de precio se saltan la espera, no el tope diario
+}
+
+
+def x_worthy(deal: dict, rules: dict, state: dict, now: datetime) -> str:
+    """Devuelve "" si el chollo merece post en X, o el motivo por el que no. X no es el canal: solo lo que
+    de verdad interesa a cualquiera (categoría top, descuento fuerte, ahorro que se note) y sin saturar."""
+    conf = {**X_FILTER, **(rules.get("x_filter") or {})}
+    pct = float(deal.get("discount") or 0)
+    badge = badge_for(pct, rules, real_drop(deal)) if deal.get("discount") is not None else "CHOLLO"
+    if float(deal.get("interest") or 0) < conf["min_interest"]:
+        return f"categoría poco interesante para X ({deal.get('interest_label') or 'sin categoría top'})"
+    strong = badge != "CHOLLO" or pct >= conf["min_discount"] or \
+        (deal.get("historical_low") and pct >= conf["historical_low_discount"])
+    if not strong:
+        return f"descuento flojo para X (-{pct:.0f} %)"
+    saving = float(deal.get("reference") or 0) - float(deal.get("price") or 0)
+    if saving < conf["min_saving_eur"]:
+        return f"ahorro pequeño para X ({saving:.0f} €)"
+    day = now.astimezone(MADRID).date()
+    sent = [t for t in state.get("x_drafts") or [] if datetime.fromtimestamp(t, MADRID).date() == day]
+    if len(sent) >= conf["max_per_day"]:
+        return f"ya van {len(sent)} posts de X hoy"
+    if badge != "ERROR DE PRECIO" and sent and now.timestamp() - max(sent) < conf["min_minutes_between"] * 60:
+        return "muy seguido del anterior post de X"
+    return ""
+
+
+def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, test: bool = False,
+                 manual: bool = False) -> None:
     """Te manda por privado el texto listo para pegar en X. La vista previa del enlace es la misma
     tarjeta que pondrá X al publicarlo. Nunca va al canal."""
     if rules.get("x_drafts") is False:
         return
+    if not manual:
+        why = x_worthy(deal, rules, state, datetime.now(timezone.utc))
+        if why:
+            log(f"  X: no te lo paso ({why})")
+            return
     admin = admin_chat_id(state, rules, tg, log)
     if not admin:
         return
@@ -618,6 +660,9 @@ def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, 
     try:
         tg.call("sendMessage", {"chat_id": admin, "text": text, "parse_mode": "HTML",
                                 "link_preview_options": {"url": url, "prefer_large_media": True}})
+        if not test:
+            state.setdefault("x_drafts", []).append(int(time.time()))
+            state["x_drafts"] = state["x_drafts"][-50:]
     except Exception as exc:  # el post del canal ya ha salido; esto nunca debe tumbar la pasada
         log(f"  No he podido mandarte el texto de X ({exc})")
 
@@ -1350,7 +1395,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
         log("[prueba, no se envía]\n" + caption)
         return 0
     message = publish(tg, target, deal, rules, caption, url, log)
-    send_x_draft(tg, state, rules, deal, url, log, test=bool(args.test_private))
+    send_x_draft(tg, state, rules, deal, url, log, test=bool(args.test_private), manual=True)
     where = "tu chat (prueba)" if args.test_private else target
     log(f"Post manual enviado a {where} (mensaje {message['message_id']}): {clean_title(deal['title'], 70)}")
     if not args.test_private:
