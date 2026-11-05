@@ -592,6 +592,31 @@ def buttons(url: str) -> dict:
     return {"inline_keyboard": [[{"text": "🛒 Ver en Amazon", "url": url}]]}
 
 
+def x_text(deal: dict, url: str, rules: dict) -> str:
+    """Post para X con el formato de la tele (x_post.py): sin precio, sin la palabra Amazon y con #ad."""
+    from x_post import build_x_post
+    return build_x_post(deal.get("title") or "", deal.get("brand") or "", url, seed=deal.get("asin") or url,
+                        extra_handles=rules.get("x_brand_handles"))
+
+
+def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, test: bool = False) -> None:
+    """Te manda por privado el texto listo para pegar en X. La vista previa del enlace es la misma
+    tarjeta que pondrá X al publicarlo. Nunca va al canal."""
+    if rules.get("x_drafts") is False:
+        return
+    admin = admin_chat_id(state, rules, tg, log)
+    if not admin:
+        return
+    head = "🧪 PRUEBA · " if test else ""
+    text = (f"{head}🐦 <b>Para X</b> · mantén pulsado el texto para copiarlo\n\n"
+            f"<pre>{html.escape(x_text(deal, url, rules))}</pre>")
+    try:
+        tg.call("sendMessage", {"chat_id": admin, "text": text, "parse_mode": "HTML",
+                                "link_preview_options": {"url": url, "prefer_large_media": True}})
+    except Exception as exc:  # el post del canal ya ha salido; esto nunca debe tumbar la pasada
+        log(f"  No he podido mandarte el texto de X ({exc})")
+
+
 def make_card(deal: dict, rules: dict) -> Path:
     import photos
     from publisher import DEAL_LOGO, create_price_card
@@ -751,6 +776,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         origin = " (descarte del premium)" if item.get("cascada") else ""
         log(f"  Enviado a {target} (mensaje {message['message_id']}){origin}: {clean_title(deal['title'], 70)}")
         sent += 1
+        send_x_draft(tg, state, rules, deal, url, log, test=bool(args.test_private))
         if not args.test_private:
             record = {
                 "asin": deal["asin"], "jl_id": deal["jl_id"], "price": deal["price"],

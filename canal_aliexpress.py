@@ -345,24 +345,13 @@ def x_length(text: str) -> int:
     return sum(2 if ord(ch) > 0x2000 else 1 for ch in text)
 
 
-def build_x_text(deal: dict, link: str) -> str:
-    badge = deal["badge"]
-    head = f"{X_EMOJI[badge]} {badge} EN ALIEXPRESS"
-    if deal.get("reference"):
-        price_line = f"💰 {euro(deal['price'])} (-{round(deal['discount'])} % frente a su mínimo de 30 días)"
-    else:
-        price_line = f"💰 {euro(deal['price'])} · de lo más vendido en AliExpress"
+def build_x_text(deal: dict, link: str, handles: dict | None = None) -> str:
+    """Formato fijo de X (ver x_post.py): sin precio ni %, marca etiquetada si la conocemos y #ad."""
+    from x_post import build_x_post
     coupon = deal.get("coupon") or {}
-    if coupon.get("code"):
-        price_line += f"\n🎟️ Cupón {coupon['code']} · {coupon_text(coupon)}"
-    tail = f"👉 {link}\n\n#Publi {TAGS[badge]} #AliExpress"
-    limit = 120
-    while True:
-        from aliexpress_card import card_title
-        text = f"{head}\n\n{card_title(deal['title'], limit)}\n\n{price_line}\n\n{tail}"
-        if x_length(text) <= 280 or limit <= 30:
-            return text
-        limit -= 10
+    extra = f"🎟️ Cupón {coupon['code']}" if coupon.get("code") else ""
+    return build_x_post(deal.get("title") or "", deal.get("brand") or "", link, seed=str(deal.get("id") or link),
+                        extra_handles=handles, extra_line=extra)
 
 
 def ended_caption(caption: str, hour: str) -> str:
@@ -616,7 +605,7 @@ def run_pass(args, rules: dict, state: dict, now: datetime, api, tg, log=print) 
                 except AliExpressError as exc:
                     log(f"  No he podido sacar el enlace de X ({exc}); uso el de Telegram")
             try:
-                send_x_draft(tg, admin, deal["image"], build_x_text(deal, link), test)
+                send_x_draft(tg, admin, deal["image"], build_x_text(deal, link, rules.get("x_brand_handles")), test)
             except RuntimeError as exc:
                 log(f"  No he podido mandarte el texto de X ({exc})")
     state["posts"] = [p for p in state.get("posts") or []
