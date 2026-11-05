@@ -1575,7 +1575,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 95,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2171,16 +2171,6 @@
   }
  },
  "wallapop_cache": {
-  "privalia|merrell zapatillas de running promorph- tallas- 38, 40, 40.5|privalia 38 merrell": {
-   "t": 1793371410.0796537,
-   "query": "privalia 38 merrell",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "zalando|nike performance air zoom pegasus 42 - zapatillas running asfalto -|zalando 42 nike": {
    "t": 1793371412.7792249,
    "query": "zalando 42",
@@ -7726,6 +7716,44 @@
    "http_status": 200,
    "bytes": 77621,
    "raw_count": 27
+  },
+  "|zapatillas converse run star trainer animals (tallas 35, 44, 44.5, 45, 46, 46.5 y 47.5)|zapatillas 35 converse": {
+   "t": 1793903198.5801184,
+   "query": "zapatillas 35 converse",
+   "prices": [
+    27.0,
+    37.0,
+    9.0,
+    10.0,
+    15.0,
+    20.0,
+    11.0,
+    28.0,
+    10.0,
+    10.0,
+    30.0,
+    15.0,
+    19.0,
+    15.0,
+    5.0,
+    3.0,
+    25.0,
+    15.0,
+    20.0,
+    26.0,
+    15.0,
+    35.0,
+    30.0,
+    15.0,
+    33.0,
+    13.0,
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 120743,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8081,7 +8109,8 @@
   "wallapop:cm-2056566": 1793889846.443189,
   "wallapop:cm-2056695": 1793899980.5514116,
   "wallapop:cm-2056514": 1793900262.7877886,
-  "wallapop:cm-2056542": 1793900263.850117
+  "wallapop:cm-2056542": 1793900263.850117,
+  "wallapop:cm-2056486": 1793903199.3459685
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10691,24 +10720,52 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~19 € (30 anuncios): ROI -40 % y -11 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas converse run star trainer animals (tallas 35, 44, 44.5, 45, 46, 46.5 y 47.5)|zapatillas 35 converse": {
+   "t": 1793903198.2593765,
+   "prices": [
+    38.0,
+    7.99,
+    20.0,
+    9.0,
+    45.0,
+    25.0,
+    12.0,
+    40.0,
+    8.0,
+    15.0,
+    30.0,
+    12.0,
+    11.0,
+    12.0,
+    25.0,
+    15.0,
+    15.0,
+    10.0,
+    27.0,
+    23.0,
+    10.0,
+    13.0,
+    4.9
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~12 € (19 anuncios): ROI -66 % y -18 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 19,
+ "rotation_index": 3,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/dron-dji-neo-2-con-camara-4k-estabilizada-151-g-y-protectores-de-helices-c0-1-nov-0000-2048864": 1793881511.4873745,
-  "https://www.chollometro.com/ofertas/robot-aspirador-y-friegasuelos-xiaomi-s40-10000-pa-laser-lds-5200-mah-180-min-antienredos-app-y-alexa-envio-desde-espana-2056238": 1793881511.4873745,
-  "https://www.chollometro.com/ofertas/millet-zapatillas-de-aproximacion-cimai-gtx-hombre-gris-oscuro-2056452": 1793881511.4873745,
-  "https://www.chollometro.com/ofertas/sony-wh-1000xm6-auriculares-bluetooth-promo-1111-empieza-1-11-2048860": 1793881511.4873745,
-  "https://www.chollometro.com/ofertas/amd-ryzen-7-7800x3d-promo-1111-empieza-1-11-2049729": 1793881511.4873745,
   "https://www.chollometro.com/ofertas/xbox-mando-inalambrico-storm-breaker-special-edition-series-xs-one-pc-y-dispositivos-habilitados-para-la-nube-2056364": 1793884045.5151572,
   "https://www.chollometro.com/ofertas/nba-2k27-edicion-estandar-ps5-2056295": 1793887938.8382938,
   "https://www.chollometro.com/ofertas/robot-aspirador-dyson-r1-nurovi-dry-21000pa-twin-capture-autovaciado-especial-pelo-de-mascotas-navegacion-inteligente-2056566": 1793889840.708232,
   "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-2056695": 1793899973.9088163,
   "https://www.chollometro.com/ofertas/zapatillas-puma-caven-iii-topcat-tallas-43-a-48-2056514": 1793900234.1793454,
-  "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793900234.1793454
+  "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793900234.1793454,
+  "https://www.chollometro.com/ofertas/zapatillas-converse-run-star-trainer-animals-tallas-35-44-445-45-46-465-y-475-2056486": 1793903194.1349604
  },
  "asked": {
   "cm-2051213": 1793880926,
