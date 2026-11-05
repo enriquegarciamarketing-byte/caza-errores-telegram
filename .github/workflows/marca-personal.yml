@@ -1,0 +1,50 @@
+name: Marca personal para X
+
+on:
+  schedule:
+    # Hacia las 9:37 y las 19:37 de Madrid en invierno (8:37 y 18:37 UTC); en verano, una hora más tarde.
+    - cron: "37 8,18 * * *"
+  workflow_dispatch:
+    inputs:
+      franja:
+        description: "manana (El bot por dentro) o tarde (ahorro, finanzas o día a día)"
+        required: false
+        type: choice
+        options: [auto, manana, tarde]
+        default: auto
+      prueba:
+        description: "Prueba: no gasta posts de la lista"
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: marca-personal
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Mandarte el post de marca personal
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          ARGS=(--slot "${{ inputs.franja || 'auto' }}")
+          if [ "${{ inputs.prueba }}" = "true" ]; then ARGS+=(--test); fi
+          python -u marca_personal.py "${ARGS[@]}"
+      - name: Guardar memoria
+        if: github.event_name != 'workflow_dispatch' || inputs.prueba != true
+        run: tools/guardar_memoria.sh "Marca personal" state/marca_personal.json
