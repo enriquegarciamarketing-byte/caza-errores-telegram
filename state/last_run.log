@@ -1,20 +1,90 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 97 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 343430 bytes, 0 ASIN, 0 títulos
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35802 bytes, 30 chollos
-  Chollometro «New Balance FuelCell SuperComp Trainer v3 - zapatillas de running neut»: Zalando Privé 119.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68905 bytes, 30 chollos
-  cm-2056808 · Zalando Privé 119.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance FuelCell SuperComp Trainer v3 - zapatillas de ru
-  Vinted «new v3 balance»: HTTP 200, 3689653 bytes, 96 anuncios
-  Vinted «new v3 balance»: 82 parecidos de 96
-  Wallapop «new v3 balance»: 200 / 142647 bytes, 40 anuncios, 38 parecidos, 0 reservas
-  Milanuncios «new v3 balance»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa VINTED+WALLAPOP: 94 anuncios, ~50 €, no publica
-  ⚠️ No publico «New Balance FuelCell SuperComp Trainer v3 - zapatillas de running neutras con placa de car»: reventa en VINTED+WALLAPOP ~50 € (94 anuncios): ROI -62 % y -74 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36020 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 86106 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 44 descartes nuevos, 147 en lista
+Cascada al canal normal: 47 descartes nuevos, 145 en lista
+== pasada 2 · 19:39 ==
+Listados: 90 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 3 · 19:41 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 4 · 19:44 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 5 · 19:46 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36020 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77790 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 19:49 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 7 · 19:51 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 19:54 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 9 · 19:56 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36221 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 85678 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 10 · 19:59 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 20:01 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 20:04 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 20:06 ==
+Listados: 103 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36361 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 74757 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 20:09 ==
+Listados: 93 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 15 · 20:11 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 20:14 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+Fin de la ejecución tras 16 pasadas.
