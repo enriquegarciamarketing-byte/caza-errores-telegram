@@ -145,3 +145,12 @@ class FiltroX(unittest.TestCase):
         self.assertEqual(tg.sent, [])
         cn.send_x_draft(tg, state, rules, weak, "u", log=lambda *_: None, manual=True)
         self.assertEqual(len(tg.sent), 1)
+
+
+class TagX(unittest.TestCase):
+    def test_x_uses_its_own_tag(self):
+        deal = {"title": "Xiaomi TV", "brand": "Xiaomi", "asin": "B0TV", "discount": 50}
+        rules = dict(cn.rules_from({}), x_affiliate_tag="nuevo-21")
+        text = cn.x_text(deal, "https://www.amazon.es/dp/B0TV?tag=cazadores_errores-21", rules)
+        self.assertIn("tag=nuevo-21", text)
+        self.assertNotIn("cazadores_errores-21", text)

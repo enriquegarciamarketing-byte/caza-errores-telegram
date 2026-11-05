@@ -597,6 +597,9 @@ def buttons(url: str) -> dict:
 def x_text(deal: dict, url: str, rules: dict) -> str:
     """Post para X con la voz de x_post.py: sin la palabra Amazon y, hasta tener la API, sin precio ni %."""
     from x_post import build_x_post
+    # El ID de la cuenta nueva de afiliados solo va en X (único sitio dado de alta); el canal sigue con el suyo.
+    if rules.get("x_affiliate_tag") and deal.get("asin"):
+        url = f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['x_affiliate_tag']}"
     badge = badge_for(deal["discount"], rules, real_drop(deal)) if deal.get("discount") is not None else "CHOLLO"
     # Con la API de Amazon ("x_prices": true en config) ya se pueden poner precio y %.
     return build_x_post(deal.get("title") or "", deal.get("brand") or "", url, seed=deal.get("asin") or url,
