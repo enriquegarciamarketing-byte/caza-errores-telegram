@@ -1,8 +1,98 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 93 productos únicos
+Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
   Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36677 bytes, 30 chollos
   Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71736 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 34 descartes nuevos, 136 en lista
+Cascada al canal normal: 43 descartes nuevos, 145 en lista
+== pasada 2 · 16:41 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 3 · 16:43 ==
+Listados: 96 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 4 · 16:46 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 5 · 16:48 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36874 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72127 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 16:51 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 7 · 16:53 ==
+Listados: 90 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 8 · 16:56 ==
+Listados: 96 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 9 · 16:58 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36567 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73771 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 10 · 17:01 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: Internal Server Error        
+remote: Request ID 7058:146FE7:9D1FF8:DE454C:6AECA86E        
+remote: Time 2026-11-05T16:01:50Z
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] f4c9f80501f0a60a56793fdbba6a68f137d9c2a4 -> cascada (Internal Server Erro)
+== pasada 11 · 17:03 ==
+Listados: 90 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Aviso: no he podido subir la cascada al canal normal (remote: fatal error in commit_refs_rules        
+To https://github.com/enriquegarciamarketing-byte/caza-errores-telegram
+ ! [remote rejected] 106e99acf03ccec03d04770d97077034c8a0ab66 -> cascada (fatal error in commit_refs_rules
+)
+error: failed to push some refs to 'https://github.com/enriquegarciama)
+== pasada 12 · 17:06 ==
+Listados: 93 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 17:08 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36567 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68295 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 14 · 17:11 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 17:13 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 16 · 17:16 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+Fin de la ejecución tras 16 pasadas.
