@@ -784,9 +784,17 @@ def listing_priority(item: dict, rules: dict | None = None) -> tuple:
 
 # ------------------------------------------------------------------ pasada
 
+def live_rules(rules: dict, test: bool) -> dict:
+    """Con "album_solo_pruebas": true el álbum nuevo solo sale en las pruebas privadas; el canal sigue igual
+    hasta que des el visto bueno y se quite esa línea de config.json."""
+    if rules.get("album_solo_pruebas") and not test:
+        return {**rules, "card_style": "clasica", "post_style": "tarjeta"}
+    return rules
+
+
 def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolve_asin=None, log=print,
         cascade_loader=None) -> int:
-    rules = rules_from(cfg)
+    rules = live_rules(rules_from(cfg), bool(args.test_private))
     fetch = fetch or http_get
     resolve_asin = resolve_asin or asin_from_jl
     if not rules["tag"]:
@@ -1316,7 +1324,7 @@ def spec_from_jl(spec: dict, rules: dict, now: datetime, fetch=None, resolve_asi
 
 
 def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) -> int:
-    rules = rules_from(cfg)
+    rules = live_rules(rules_from(cfg), bool(args.test_private))
     if not rules["tag"]:
         log("Falta affiliate_tag en config.json.")
         return 2
