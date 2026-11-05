@@ -1059,6 +1059,11 @@
    "price": 179.0,
    "t": 1793889172,
    "result": "solo -6% bajo la referencia"
+  },
+  "MQWYDPR": {
+   "price": 100.81,
+   "t": 1793890875,
+   "result": "solo -10% bajo la referencia"
   }
  },
  "posts": [
@@ -1624,7 +1629,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 93,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2284,16 +2289,6 @@
   }
  },
  "wallapop_cache": {
-  "carrefour|set lego icons telescopio espacial hubble 11382 (+18 anos, maqueta para adultos, cupon 40% devuelto = 41,60e, oferta carrefour online)|carrefour 11382 lego": {
-   "t": 1793367879.1058574,
-   "query": "carrefour 11382 lego",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "aliexpress|dji osmo action 5 pro [promo 11.11] [empieza 1-11]|aliexpress 11 dji": {
    "t": 1793367881.0839202,
    "query": "aliexpress 11 dji",
@@ -7795,6 +7790,20 @@
    "http_status": 200,
    "bytes": 68952,
    "raw_count": 35
+  },
+  "|robot aspirador dyson r1 nurovi dry (21000pa, twin-capture, autovaciado, especial pelo de mascotas, navegacion inteligente)|robot r1 aspirador": {
+   "t": 1793889845.760629,
+   "query": "robot r1",
+   "prices": [
+    9.0,
+    15.0,
+    30.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 136367,
+   "raw_count": 37
   }
  },
  "milanuncios_cache": {
@@ -8146,7 +8155,8 @@
   "wallapop:cm-2056452": 1793881532.4534118,
   "wallapop:cm-2056238": 1793881543.3062758,
   "wallapop:cm-2056364": 1793884049.9388895,
-  "wallapop:cm-2056295": 1793887947.294151
+  "wallapop:cm-2056295": 1793887947.294151,
+  "wallapop:cm-2056566": 1793889846.443189
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10718,7 +10728,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 20,
+ "rotation_index": 16,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803,
   "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-dreame-d30-ultra-25000pa-230-min-autonomia-37db-ultra-silencioso-navegacion-laser-lidar-control-app-2056108": 1793871528.9389758,
@@ -10732,7 +10742,8 @@
   "https://www.chollometro.com/ofertas/sony-wh-1000xm6-auriculares-bluetooth-promo-1111-empieza-1-11-2048860": 1793881511.4873745,
   "https://www.chollometro.com/ofertas/amd-ryzen-7-7800x3d-promo-1111-empieza-1-11-2049729": 1793881511.4873745,
   "https://www.chollometro.com/ofertas/xbox-mando-inalambrico-storm-breaker-special-edition-series-xs-one-pc-y-dispositivos-habilitados-para-la-nube-2056364": 1793884045.5151572,
-  "https://www.chollometro.com/ofertas/nba-2k27-edicion-estandar-ps5-2056295": 1793887938.8382938
+  "https://www.chollometro.com/ofertas/nba-2k27-edicion-estandar-ps5-2056295": 1793887938.8382938,
+  "https://www.chollometro.com/ofertas/robot-aspirador-dyson-r1-nurovi-dry-21000pa-twin-capture-autovaciado-especial-pelo-de-mascotas-navegacion-inteligente-2056566": 1793889840.708232
  },
  "asked": {
   "cm-2051213": 1793880926,
