@@ -1,8 +1,24 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 92 productos únicos
+Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35850 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 61189 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35893 bytes, 30 chollos
+  Chollometro «Zapatillas Puma Caven III Topcat (Tallas 43 a 48)»: Zalando Privé 26.9 €
+  Chollometro «Garmin Forerunner 170»: AliExpress 203.29 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 61453 bytes, 30 chollos
+  cm-2056514 · Zalando Privé 26.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Puma Caven III Topcat (Tallas 43 a 48)
+  cm-2056542 · AliExpress 203.29 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Garmin Forerunner 170
+  Vinted «zapatillas 43 puma»: HTTP 200, 3688095 bytes, 96 anuncios
+  Vinted «zapatillas 43 puma»: 34 parecidos de 96
+  Wallapop «zapatillas 43 puma»: 200 / 134600 bytes, 40 anuncios, 23 parecidos, 0 reservas
+  Milanuncios «zapatillas 43 puma»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 51 anuncios, ~20 €, no publica
+  ⚠️ No publico «Zapatillas Puma Caven III Topcat (Tallas 43 a 48)»: reventa en VINTED+WALLAPOP ~20 € (51 anuncios): ROI -37 % y -10 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «garmin 170 forerunner»: 200 / 77621 bytes, 27 anuncios, 20 parecidos, 0 reservas
+  Milanuncios «garmin 170 forerunner»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 16 anuncios, ~210 €, no publica
+  ⚠️ No publico «Garmin Forerunner 170»: reventa en WALLAPOP ~210 € (16 anuncios): ROI -3 % y -6 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 35 descartes nuevos, 92 en lista
+Cascada al canal normal: 41 descartes nuevos, 109 en lista
