@@ -1,8 +1,20 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 95 productos únicos
+Listados: 97 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 343430 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36002 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35802 bytes, 30 chollos
+  Chollometro «New Balance FuelCell SuperComp Trainer v3 - zapatillas de running neut»: Zalando Privé 119.0 €
   Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68905 bytes, 30 chollos
+  cm-2056808 · Zalando Privé 119.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance FuelCell SuperComp Trainer v3 - zapatillas de ru
+  Vinted «new v3 balance»: HTTP 200, 3689653 bytes, 96 anuncios
+  Vinted «new v3 balance»: 82 parecidos de 96
+  Wallapop «new v3 balance»: 200 / 142647 bytes, 40 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «new v3 balance»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 94 anuncios, ~50 €, no publica
+  ⚠️ No publico «New Balance FuelCell SuperComp Trainer v3 - zapatillas de running neutras con placa de car»: reventa en VINTED+WALLAPOP ~50 € (94 anuncios): ROI -62 % y -74 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 32 descartes nuevos, 137 en lista
+Cascada al canal normal: 44 descartes nuevos, 147 en lista
