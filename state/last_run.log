@@ -1,8 +1,31 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 98 productos únicos
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36864 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 63144 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 37043 bytes, 30 chollos
+  Chollometro «DESCUENTAZO 38% en Disney LEGO Stitch (de Lilo & Stitch). ¡¡Aprovecha »: Amazon 39.99 €
+  Chollometro «Garmin Fenix 8 47 mm Acero Negro 1,4 pulgadas AMOLED GPS NFC 10ATM Sma»: Powerplanetonline 599.0 €
+  Chollometro «Cámara Digital Pixpro FZ55 16MP Zoom Eptico 5X Azul»: Amazon 119.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72494 bytes, 30 chollos
+  cm-2056923 · Amazon 39.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · DESCUENTAZO 38% en Disney LEGO Stitch (de Lilo & Stitch). ¡¡
+  cm-2056336 · Powerplanetonline 599.0 € → candidato externo · Garmin Fenix 8 47 mm Acero Negro 1,4 pulgadas AMOLED GPS NFC
+  cm-2056797 · Amazon 119.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Cámara Digital Pixpro FZ55 16MP Zoom Eptico 5X Azul
+  Wallapop «descuentazo 38 disney»: 200 / 1275 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «descuentazo 38»: 200 / 6917 bytes, 2 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «descuentazo 38 disney»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «DESCUENTAZO 38% en Disney LEGO Stitch (de Lilo & Stitch). ¡¡Aprovecha y adelanta ese regal»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Wallapop «camara fz55 digital»: 200 / 66622 bytes, 19 anuncios, 11 parecidos, 0 reservas
+  Milanuncios «camara fz55 digital»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 11 anuncios, ~150 €, no publica
+  ⚠️ No publico «Cámara Digital Pixpro FZ55 16MP Zoom Eptico 5X Azul»: reventa en WALLAPOP ~150 € (11 anuncios): ROI 18 % y 21 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «garmin 10atm fenix»: 200 / 112360 bytes, 29 anuncios, 0 parecidos, 0 reservas
+  Wallapop «garmin 10atm»: 200 / 141986 bytes, 35 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «garmin 10atm fenix»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  ⚠️ No publico «Garmin Fenix 8 47 mm Acero Negro 1,4 pulgadas AMOLED GPS NFC 10ATM Smartwatch | En Acero B»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0
-Cascada al canal normal: 44 descartes nuevos, 156 en lista
+Cascada al canal normal: 39 descartes nuevos, 87 en lista

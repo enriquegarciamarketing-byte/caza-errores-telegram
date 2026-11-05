@@ -1580,7 +1580,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2210,36 +2210,6 @@
   }
  },
  "wallapop_cache": {
-  "privalia|saucony - zapatillas de running hurricane 25|privalia 25 saucony": {
-   "t": 1793374566.621886,
-   "query": "privalia 25 saucony",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
-  "aliexpress|chuwi minibook x | intel u300 - 16gb ram - 512gb ssd [promo 11.11] [empieza 1-11]|aliexpress u300 chuwi": {
-   "t": 1793377821.2232199,
-   "query": "aliexpress u300 chuwi",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
-  "mediamarkt|apple airpods 4 con cancelacion activa de ruido (2024 4ª gen), inalambricos, bluetooth, estuche de carga usb-c con altavoz, chip h2, siri|mediamarkt 2024 apple": {
-   "t": 1793380878.456608,
-   "query": "mediamarkt 2024 apple",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "amazon|apple airpods 5 de apple con cancelacion activa de ruido, audio espacial. traduccion en tiempo real, estuche de carga usb-c.tb pccomponentes|apple airpods": {
    "t": 1793383415.5725837,
    "query": "apple airpods",
@@ -7829,6 +7799,48 @@
    "http_status": 200,
    "bytes": 142647,
    "raw_count": 40
+  },
+  "|descuentazo 38% en disney lego stitch (de lilo & stitch). ¡¡aprovecha y adelanta ese regalo chulo de navidades!!|descuentazo 38 disney": {
+   "t": 1793909866.9382284,
+   "query": "descuentazo 38 disney",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "|camara digital pixpro fz55 16mp zoom eptico 5x azul|camara fz55 digital": {
+   "t": 1793909868.0052998,
+   "query": "camara fz55 digital",
+   "prices": [
+    120.0,
+    150.0,
+    149.9,
+    149.9,
+    149.9,
+    149.9,
+    130.0,
+    115.0,
+    169.9,
+    149.9,
+    170.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 66622,
+   "raw_count": 19
+  },
+  "|garmin fenix 8 47 mm acero negro 1,4 pulgadas amoled gps nfc 10atm smartwatch | en acero blanco 43mm tambien|garmin 10atm fenix": {
+   "t": 1793909869.9620523,
+   "query": "garmin 10atm fenix",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -8186,7 +8198,10 @@
   "wallapop:cm-2056514": 1793900262.7877886,
   "wallapop:cm-2056542": 1793900263.850117,
   "wallapop:cm-2056486": 1793903199.3459685,
-  "wallapop:cm-2056808": 1793903685.1513295
+  "wallapop:cm-2056808": 1793903685.1513295,
+  "wallapop:cm-2056923": 1793909867.3146844,
+  "wallapop:cm-2056797": 1793909868.4155896,
+  "wallapop:cm-2056336": 1793909870.436811
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10924,15 +10939,17 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/nba-2k27-edicion-estandar-ps5-2056295": 1793887938.8382938,
   "https://www.chollometro.com/ofertas/robot-aspirador-dyson-r1-nurovi-dry-21000pa-twin-capture-autovaciado-especial-pelo-de-mascotas-navegacion-inteligente-2056566": 1793889840.708232,
   "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-2056695": 1793899973.9088163,
   "https://www.chollometro.com/ofertas/zapatillas-puma-caven-iii-topcat-tallas-43-a-48-2056514": 1793900234.1793454,
   "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793900234.1793454,
   "https://www.chollometro.com/ofertas/zapatillas-converse-run-star-trainer-animals-tallas-35-44-445-45-46-465-y-475-2056486": 1793903194.1349604,
-  "https://www.chollometro.com/ofertas/new-balance-fuelcell-supercomp-trainer-v3-zapatillas-de-running-neutras-con-placa-de-carbono-2056808": 1793903680.0763147
+  "https://www.chollometro.com/ofertas/new-balance-fuelcell-supercomp-trainer-v3-zapatillas-de-running-neutras-con-placa-de-carbono-2056808": 1793903680.0763147,
+  "https://www.chollometro.com/ofertas/descuentazo-38-en-disney-lego-stitch-de-lilo-stitch-aprovecha-y-adelanta-ese-regalo-chulo-de-navidades-2056923": 1793909859.598922,
+  "https://www.chollometro.com/ofertas/garmin-fenix-8-47-mm-acero-negro-14-pulgadas-amoled-gps-nfc-10atm-smartwatch-en-acero-blanco-43mm-tambien-2056336": 1793909859.598922,
+  "https://www.chollometro.com/ofertas/camara-digital-pixpro-fz55-16mp-zoom-eptico-5x-azul-2056797": 1793909859.598922
  },
  "asked": {
   "cm-2051213": 1793880926,
