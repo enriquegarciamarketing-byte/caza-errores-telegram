@@ -594,10 +594,11 @@ def buttons(url: str) -> dict:
 
 
 def x_text(deal: dict, url: str, rules: dict) -> str:
-    """Post para X con el formato de la tele (x_post.py): sin precio, sin la palabra Amazon y con #ad."""
+    """Post para X con la voz de x_post.py: sin precio, sin % y sin la palabra Amazon."""
     from x_post import build_x_post
+    badge = badge_for(deal["discount"], rules, real_drop(deal)) if deal.get("discount") is not None else "CHOLLO"
     return build_x_post(deal.get("title") or "", deal.get("brand") or "", url, seed=deal.get("asin") or url,
-                        extra_handles=rules.get("x_brand_handles"))
+                        extra_handles=rules.get("x_brand_handles"), badge=badge)
 
 
 def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, test: bool = False) -> None:

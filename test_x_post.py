@@ -14,13 +14,20 @@ class FakeTG:
 
 
 class XPost(unittest.TestCase):
-    def test_tv_format(self):
-        text = x_post.build_x_post("Xiaomi TV Pro 32 Pulgadas QLED Smart TV", "Xiaomi", "https://amzn.example/x", seed="a")
+    def test_voice(self):
+        text = x_post.build_x_post("XIAOMI TV Pro 32 Pulgadas 2026, QLED Smart TV", "Xiaomi",
+                                   "https://amzn.example/x", seed="a", badge="CHOLLAZO")
         lines = text.split("\n\n")
-        self.assertIn(lines[0], x_post.HOOKS)
-        self.assertTrue(lines[1].startswith("TV de la marca @XiaomiEspana "))
-        self.assertEqual(lines[-1], "🔗 https://amzn.example/x")
-        self.assertNotIn("#ad", text)
+        self.assertIn("esta tv de @XiaomiEspana (xiaomi tv pro 32 pulgadas 2026)", lines[0])
+        self.assertEqual(lines[-2], "https://amzn.example/x")
+        self.assertEqual(lines[-1], "link afiliado.")
+        self.assertEqual(text, text.replace("Ú", "ú"))
+        self.assertLessEqual(x_post.x_length(text), 280)
+
+    def test_aliexpress_numbers(self):
+        text = x_post.build_x_post("Auriculares Soundcore P40i", "Soundcore", "https://s.click.aliexpress.com/e/_x",
+                                   badge="CHOLLAZO", price=24.5, reference=49.0, numbers=True)
+        self.assertIn("está a 24,50€ y lo normal es 49€, un 50% menos.", text)
 
     def test_amazon_compliant(self):
         deal = {"title": "Gillette Fusion5 Cuchillas de Afeitar Hombre", "brand": "Gillette", "asin": "B04",
@@ -28,10 +35,10 @@ class XPost(unittest.TestCase):
         text = cn.x_text(deal, "https://www.amazon.es/dp/B04?tag=t-21", {})
         for banned in ("€", "%", "Amazon", "AMAZON", "⭐", "valoraciones"):
             self.assertNotIn(banned, text)
-        self.assertIn("Afeitadora de la marca Gillette", text)
+        self.assertIn("esta afeitadora de gillette fusion5", text)
 
     def test_unknown_brand_not_tagged_and_amazon_brand_dropped(self):
-        self.assertEqual(x_post.brand_mention("Cecotec"), "Cecotec")
+        self.assertEqual(x_post.brand_mention("Cecotec"), "cecotec")
         self.assertEqual(x_post.brand_mention("Amazon Basics"), "")
         self.assertEqual(x_post.brand_mention("Dreame", {"dreame": "DreameES"}), "@DreameES")
 
