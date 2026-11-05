@@ -608,7 +608,7 @@ def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, 
     if not admin:
         return
     head = "🧪 PRUEBA · " if test else ""
-    text = (f"{head}🐦 <b>Para X</b> · mantén pulsado el texto para copiarlo\n\n"
+    text = (f"{head}🐦 <b>Para X</b> · mantén pulsado el texto para copiarlo y activa la bandera «Paid partnership» antes de publicar\n\n"
             f"<pre>{html.escape(x_text(deal, url, rules))}</pre>")
     try:
         tg.call("sendMessage", {"chat_id": admin, "text": text, "parse_mode": "HTML",

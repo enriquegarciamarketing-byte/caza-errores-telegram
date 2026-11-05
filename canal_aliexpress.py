@@ -426,7 +426,7 @@ def send_post(tg: Telegram, chat_id, photo_url: str, card: Path, caption: str, l
 
 def send_x_draft(tg: Telegram, admin: int, photo_url: str, text: str, test: bool = False) -> None:
     head = "🧪 PRUEBA · " if test else ""
-    caption = f"{head}🐦 <b>Para X</b> · mantén pulsado el texto para copiarlo\n\n<pre>{html.escape(text)}</pre>"
+    caption = f"{head}🐦 <b>Para X</b> · mantén pulsado el texto para copiarlo y activa la bandera «Paid partnership» antes de publicar\n\n<pre>{html.escape(text)}</pre>"
     try:
         tg.call("sendPhoto", {"chat_id": admin, "photo": photo_url, "caption": caption, "parse_mode": "HTML"})
     except RuntimeError:
