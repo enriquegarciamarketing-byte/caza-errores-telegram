@@ -6,12 +6,10 @@
 
     🔗 <enlace de afiliado>
 
-    #ad
-
 Reglas que lo hacen apto para Amazon Afiliados (y vale igual para AliExpress):
 - Sin precio, sin % y sin valoraciones: Amazon solo deja mostrarlos si salen de su API.
 - Sin la palabra Amazon ni capturas: la foto la pone la tarjeta automática del enlace.
-- #ad en cada post como aviso de publicidad.
+- Sin hashtag de publicidad: Enrique activa la etiqueta Paid partnership de X en cada post.
 - Solo se etiqueta a la marca si su cuenta oficial está en X_HANDLES o en config.json
   ("x_brand_handles"); si no, va el nombre en texto, para no etiquetar cuentas falsas.
 """
@@ -107,5 +105,5 @@ def build_x_post(title: str, brand: str, link: str, seed: str = "", extra_handle
     parts = [_pick(HOOKS, seed, "hook"), line]
     if extra_line:
         parts.append(extra_line)
-    parts += [f"🔗 {link}", "#ad"]
+    parts.append(f"🔗 {link}")  # sin #ad: el aviso es la etiqueta Paid partnership de X
     return "\n\n".join(parts)

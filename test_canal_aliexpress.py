@@ -127,7 +127,7 @@ class Texts(unittest.TestCase):
         self.assertNotIn("399", cap)
         x = ca.build_x_text({**deal, "title": "Producto " * 60}, "https://s.click.aliexpress.com/e/_x")
         self.assertLessEqual(ca.x_length(x), 280)
-        self.assertIn("#ad", x)
+        self.assertNotIn("#ad", x)
         self.assertNotIn("€", x)
         ended = ca.ended_caption(cap, "15:00")
         self.assertTrue(ended.startswith("⛔"))

@@ -19,8 +19,8 @@ class XPost(unittest.TestCase):
         lines = text.split("\n\n")
         self.assertIn(lines[0], x_post.HOOKS)
         self.assertTrue(lines[1].startswith("TV de la marca @XiaomiEspana "))
-        self.assertEqual(lines[-2], "🔗 https://amzn.example/x")
-        self.assertEqual(lines[-1], "#ad")
+        self.assertEqual(lines[-1], "🔗 https://amzn.example/x")
+        self.assertNotIn("#ad", text)
 
     def test_amazon_compliant(self):
         deal = {"title": "Gillette Fusion5 Cuchillas de Afeitar Hombre", "brand": "Gillette", "asin": "B04",
@@ -44,7 +44,7 @@ class XPost(unittest.TestCase):
         self.assertEqual(len(tg.sent), 1)
         method, params = tg.sent[0]
         self.assertEqual(params["chat_id"], 42)
-        self.assertIn("#ad", params["text"])
+        self.assertIn("Paid partnership", params["text"])
 
     def test_draft_can_be_turned_off(self):
         tg = FakeTG()
