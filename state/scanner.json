@@ -1489,28 +1489,10 @@
    "url": "https://es.aliexpress.com/item/1005012262695857.html",
    "alert_id": 377,
    "alert_text_id": 378,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1793891726,
-   "card_data": {
-    "title": "Garmin Forerunner 265 187,16€",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 183.0,
-    "reference": 183.0,
-    "image": "https://static.chollometro.com/threads/raw/273Ye/2051213_1/re/150x150/qt/55/2051213_1.jpg",
-    "store_label": "AliExpress",
-    "conditions": "Con cupón + PayPal",
-    "resale": {
-     "price": 249.792,
-     "count": 38,
-     "roi": 28.580546448087418,
-     "profit": 52.30239999999998,
-     "source_label": "WALLAPOP",
-     "note": "38 anuncios de referencia · Wallapop 38 · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   },
   {
    "id": "cm-2048864",
@@ -1629,7 +1611,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 93,
+ "last_listing_count": 94,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -10728,9 +10710,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 0,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803,
   "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-dreame-d30-ultra-25000pa-230-min-autonomia-37db-ultra-silencioso-navegacion-laser-lidar-control-app-2056108": 1793871528.9389758,
   "https://www.chollometro.com/ofertas/garmin-instinct-3-amoled-negro-45-mm-por-249-eur-y-50-mm-por-279-eur-reloj-gps-multibanda-10-atm-linterna-led-hasta-24-dias-de-bateria-2055098": 1793872799.1645906,
   "https://www.chollometro.com/ofertas/camara-mirrorless-canon-eos-r50-242-mp-18-45-mm-wi-fi-bluetooth-2055878": 1793877981.033984,
