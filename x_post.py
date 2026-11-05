@@ -1,6 +1,6 @@
 """Texto para X (@AzvensLoL) con la voz de @kevincrestt (pero con mayúscula al empezar cada frase): primera
 persona, saluda como él ("Buenos días chavales"), cuenta lo que ha pillado el bot y por qué merece la pena,
-avisa del riesgo sin vender humo y cierra con "Link afiliado."
+avisa del riesgo sin vender humo y acaba en el enlace.
 
     A correr chavales, acaba de saltar esta tv de @XiaomiEspana (Xiaomi TV Pro 32 Pulgadas 2026).
 
@@ -10,13 +10,11 @@ avisa del riesgo sin vender humo y cierra con "Link afiliado."
 
     https://link...
 
-    Link afiliado.
-
 Reglas para Amazon Afiliados:
 - Sin precio, sin % y sin valoraciones: Amazon solo deja mostrarlos si salen de su API. En AliExpress sí
   van (numbers=True), porque su programa lo permite.
 - Sin la palabra Amazon ni capturas: la foto la pone la tarjeta automática del enlace.
-- El aviso es la etiqueta Paid partnership de X más el "link afiliado." del final, como hace @kevincrestt.
+- El aviso es la etiqueta Paid partnership de X, que Enrique activa en cada post.
 - Solo se etiqueta a la marca si su cuenta oficial está en X_HANDLES o en config.json
   ("x_brand_handles"); si no, va el nombre en texto, para no etiquetar cuentas falsas.
 """
@@ -108,7 +106,6 @@ CAVEAT = {
                 "Si se agota lo aviso en Telegram, pero yo no lo dejaría pasar.",
                 "Yo de vosotros no lo pensaría mucho, que estas vuelan."],
 }
-DISCLOSURE = "Link afiliado."
 X_LIMIT = 280
 
 
@@ -197,7 +194,7 @@ def build_x_post(title: str, brand: str, link: str, seed: str = "", extra_handle
     caveat = _pick(CAVEAT.get(badge) or CAVEAT["default"], seed, "caveat")
     middle = [why] + ([CONTEXT[kind]] if kind in CONTEXT else []) + ([extra_line] if extra_line else []) + [caveat]
     while True:
-        text = "\n\n".join([opener, *middle, link, DISCLOSURE])
+        text = "\n\n".join([opener, *middle, link])
         if x_length(text) <= X_LIMIT or len(middle) <= 1:
             return text
         middle.pop()  # si no cabe, cae primero la urgencia: el contexto es lo que más suena a él

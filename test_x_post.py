@@ -20,8 +20,8 @@ class XPost(unittest.TestCase):
         lines = text.split("\n\n")
         self.assertIn("esta tv de @XiaomiEspana (Xiaomi TV Pro 32 Pulgadas 2026)", lines[0])
         self.assertTrue(all(l[0].isupper() or l[0] in "@h" for l in lines))
-        self.assertEqual(lines[-2], "https://amzn.example/x")
-        self.assertEqual(lines[-1], "Link afiliado.")
+        self.assertEqual(lines[-1], "https://amzn.example/x")
+        self.assertNotIn("afiliado", text)
         self.assertLessEqual(x_post.x_length(text), 280)
 
     def test_aliexpress_numbers(self):
