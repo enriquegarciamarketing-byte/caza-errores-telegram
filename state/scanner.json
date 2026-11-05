@@ -1039,6 +1039,11 @@
    "price": 34.92,
    "t": 1793871070,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "7koY6V7": {
+   "price": 30.95,
+   "t": 1793876595,
+   "result": "solo -3% bajo la referencia"
   }
  },
  "posts": [
@@ -1432,7 +1437,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 90,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -10199,7 +10204,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 13,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/mars-gaming-mc-lcdpro-atx-pantalla-lcd-ips-72-cristal-templado-curvado-frontal-y-lateralestructura-de-doble-camara-2036434": 1793864559.0181181,
   "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803,
