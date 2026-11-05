@@ -1383,7 +1383,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793864110
+   "checked": 1793864545
   },
   {
    "id": "cm-2051793",
@@ -1427,7 +1427,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2012,16 +2012,6 @@
   }
  },
  "wallapop_cache": {
-  "aliexpress|consola nintendo switch 2 [1 nov 00:00]|aliexpress 00 consola": {
-   "t": 1793351773.9259865,
-   "query": "aliexpress 00 consola",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "aliexpress|sony wh-1000xm6 auriculares bluetooth [promo 11.11] [empieza 1-11]|aliexpress 1000xm6 sony": {
    "t": 1793351775.7555814,
    "query": "aliexpress 1000xm6 sony",
@@ -7257,6 +7247,49 @@
    "http_status": 200,
    "bytes": 85868,
    "raw_count": 40
+  },
+  "|mars gaming mc-lcdpro, atx, pantalla lcd ips 7.2\" ,cristal templado curvado frontal y lateral,estructura de doble camara|mars gaming": {
+   "t": 1793864562.3767464,
+   "query": "mars gaming",
+   "prices": [
+    17.0,
+    15.0,
+    100.0,
+    30.0,
+    25.0,
+    17.0,
+    5.0,
+    80.0,
+    28.14,
+    10.0,
+    10.0,
+    12.0,
+    45.0,
+    35.0,
+    20.0,
+    10.0,
+    35.0,
+    20.0,
+    15.0,
+    10.0,
+    50.0,
+    18.0,
+    8.0,
+    25.0,
+    14.0,
+    45.0,
+    40.0,
+    25.0,
+    20.0,
+    15.0,
+    60.0,
+    19.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 113171,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -7590,7 +7623,8 @@
   "wallapop:cm-2055772": 1793827815.836461,
   "wallapop:cm-2053092": 1793828532.7680745,
   "wallapop:cm-2055385": 1793830670.7612467,
-  "wallapop:cm-2055914": 1793831866.0904784
+  "wallapop:cm-2055914": 1793831866.0904784,
+  "wallapop:cm-2036434": 1793864562.913543
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10113,10 +10147,11 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/grand-theft-auto-vi-gta-6-ps5-clave-psn-europa-2055914": 1793853695.7182562,
-  "https://www.chollometro.com/ofertas/garmin-forerunner-165-music-reloj-inteligente-2055924": 1793854295.5897796
+  "https://www.chollometro.com/ofertas/garmin-forerunner-165-music-reloj-inteligente-2055924": 1793854295.5897796,
+  "https://www.chollometro.com/ofertas/mars-gaming-mc-lcdpro-atx-pantalla-lcd-ips-72-cristal-templado-curvado-frontal-y-lateralestructura-de-doble-camara-2036434": 1793864559.0181181
  },
  "asked": {
   "cm-2051793": 1793783213
