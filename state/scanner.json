@@ -1580,7 +1580,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2210,16 +2210,6 @@
   }
  },
  "wallapop_cache": {
-  "aliexpress|dji osmo pocket 4 [promo 11.11] [empieza 1-11]|aliexpress 11 dji": {
-   "t": 1793389059.591716,
-   "query": "aliexpress 11 dji",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "amazon|super meat boy 3d special edition para ps5 – edicion fisica especial|super 3d meat": {
    "t": 1793391566.1183243,
    "query": "super 3d meat",
@@ -7812,6 +7802,35 @@
    "http_status": 200,
    "bytes": 53579,
    "raw_count": 18
+  },
+  "|zapatillas altas vans filmore hi vansguard (tallas 38.5 a 42)|zapatillas 38 altas": {
+   "t": 1793913520.3652403,
+   "query": "zapatillas 38 altas",
+   "prices": [
+    80.0,
+    30.0,
+    10.0,
+    30.0,
+    45.0,
+    15.0,
+    5.99,
+    40.0,
+    20.0,
+    10.0,
+    13.0,
+    89.99,
+    40.0,
+    50.0,
+    25.0,
+    29.0,
+    25.0,
+    8.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 126550,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8174,7 +8193,8 @@
   "wallapop:cm-2056797": 1793909868.4155896,
   "wallapop:cm-2056336": 1793909870.436811,
   "wallapop:cm-2056813": 1793911228.9858465,
-  "wallapop:cm-2056916": 1793911231.060901
+  "wallapop:cm-2056916": 1793911231.060901,
+  "wallapop:cm-2056938": 1793913520.8316872
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10933,12 +10953,41 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~12 € (13 anuncios): ROI -76 % y -29 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas altas vans filmore hi vansguard (tallas 38.5 a 42)|zapatillas 38 altas": {
+   "t": 1793913520.058933,
+   "prices": [
+    9.0,
+    24.0,
+    13.0,
+    10.0,
+    25.0,
+    3.0,
+    4.0,
+    18.0,
+    10.0,
+    20.0,
+    16.0,
+    9.0,
+    6.0,
+    21.99,
+    12.0,
+    25.0,
+    16.9,
+    7.0,
+    45.0,
+    2.8
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~12 € (16 anuncios): ROI -71 % y -24 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-2056695": 1793899973.9088163,
   "https://www.chollometro.com/ofertas/zapatillas-puma-caven-iii-topcat-tallas-43-a-48-2056514": 1793900234.1793454,
@@ -10949,7 +10998,8 @@
   "https://www.chollometro.com/ofertas/garmin-fenix-8-47-mm-acero-negro-14-pulgadas-amoled-gps-nfc-10atm-smartwatch-en-acero-blanco-43mm-tambien-2056336": 1793909859.598922,
   "https://www.chollometro.com/ofertas/camara-digital-pixpro-fz55-16mp-zoom-eptico-5x-azul-2056797": 1793909859.598922,
   "https://www.chollometro.com/ofertas/g-star-zapatillas-eo-xavi-04-marron-oscuro-2056813": 1793911219.5484343,
-  "https://www.chollometro.com/ofertas/anima-gate-of-memories-iii-remaster-ps5-collectors-edition-2056916": 1793911219.5484343
+  "https://www.chollometro.com/ofertas/anima-gate-of-memories-iii-remaster-ps5-collectors-edition-2056916": 1793911219.5484343,
+  "https://www.chollometro.com/ofertas/zapatillas-altas-vans-filmore-hi-vansguard-tallas-385-a-42-2056938": 1793913516.3623927
  },
  "asked": {
   "cm-2051213": 1793880926,
