@@ -1432,7 +1432,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 93,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2017,16 +2017,6 @@
   }
  },
  "wallapop_cache": {
-  "prive by zalando|zapatillas nike sb chron 2 (tallas 36 a 40)|prive zalando 36": {
-   "t": 1793351778.565928,
-   "query": "prive zalando 36",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "aliexpress|consola ps5 slim 1 tb con lector (blanca) [1 nov 00:00]|aliexpress ps5 consola": {
    "t": 1793355281.384889,
    "query": "aliexpress ps5 consola",
@@ -7300,6 +7290,16 @@
    "http_status": 200,
    "bytes": 15199,
    "raw_count": 5
+  },
+  "|robot aspirador y fregasuelos dreame d30 ultra (25000pa, 230 min autonomia, 37db ultra silencioso, navegacion laser lidar, control app)|robot d30 aspirador": {
+   "t": 1793871533.6361926,
+   "query": "robot d30 aspirador",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -7635,7 +7635,8 @@
   "wallapop:cm-2055385": 1793830670.7612467,
   "wallapop:cm-2055914": 1793831866.0904784,
   "wallapop:cm-2036434": 1793864562.913543,
-  "wallapop:cm-2056175": 1793870339.8774724
+  "wallapop:cm-2056175": 1793870339.8774724,
+  "wallapop:cm-2056108": 1793871534.3056726
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10158,12 +10159,13 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 15,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/grand-theft-auto-vi-gta-6-ps5-clave-psn-europa-2055914": 1793853695.7182562,
   "https://www.chollometro.com/ofertas/garmin-forerunner-165-music-reloj-inteligente-2055924": 1793854295.5897796,
   "https://www.chollometro.com/ofertas/mars-gaming-mc-lcdpro-atx-pantalla-lcd-ips-72-cristal-templado-curvado-frontal-y-lateralestructura-de-doble-camara-2036434": 1793864559.0181181,
-  "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803
+  "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803,
+  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-dreame-d30-ultra-25000pa-230-min-autonomia-37db-ultra-silencioso-navegacion-laser-lidar-control-app-2056108": 1793871528.9389758
  },
  "asked": {}
 }
