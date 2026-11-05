@@ -1034,6 +1034,11 @@
    "price": 185.52,
    "t": 1793861156,
    "result": "solo -30% bajo la referencia"
+  },
+  "1LZOdBK": {
+   "price": 34.92,
+   "t": 1793871070,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1383,7 +1388,7 @@
    "ask_until": 1793708114,
    "approved": true,
    "message_id": 59,
-   "checked": 1793869003
+   "checked": 1793870170
   },
   {
    "id": "cm-2051793",
@@ -1427,7 +1432,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 93,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2012,16 +2017,6 @@
   }
  },
  "wallapop_cache": {
-  "aliexpress|sony wh-1000xm6 auriculares bluetooth [promo 11.11] [empieza 1-11]|aliexpress 1000xm6 sony": {
-   "t": 1793351775.7555814,
-   "query": "aliexpress 1000xm6 sony",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "prive by zalando|zapatillas nike sb chron 2 (tallas 36 a 40)|prive zalando 36": {
    "t": 1793351778.565928,
    "query": "prive zalando 36",
@@ -7290,6 +7285,21 @@
    "http_status": 200,
    "bytes": 113171,
    "raw_count": 40
+  },
+  "|greedfall the dying world ps5 - playstation 5 - standard edition|greedfall ps5 dying": {
+   "t": 1793870339.168468,
+   "query": "greedfall ps5 dying",
+   "prices": [
+    50.0,
+    30.0,
+    39.0,
+    65.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 15199,
+   "raw_count": 5
   }
  },
  "milanuncios_cache": {
@@ -7624,7 +7634,8 @@
   "wallapop:cm-2053092": 1793828532.7680745,
   "wallapop:cm-2055385": 1793830670.7612467,
   "wallapop:cm-2055914": 1793831866.0904784,
-  "wallapop:cm-2036434": 1793864562.913543
+  "wallapop:cm-2036434": 1793864562.913543,
+  "wallapop:cm-2056175": 1793870339.8774724
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10147,13 +10158,12 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 14,
+ "rotation_index": 10,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/grand-theft-auto-vi-gta-6-ps5-clave-psn-europa-2055914": 1793853695.7182562,
   "https://www.chollometro.com/ofertas/garmin-forerunner-165-music-reloj-inteligente-2055924": 1793854295.5897796,
-  "https://www.chollometro.com/ofertas/mars-gaming-mc-lcdpro-atx-pantalla-lcd-ips-72-cristal-templado-curvado-frontal-y-lateralestructura-de-doble-camara-2036434": 1793864559.0181181
+  "https://www.chollometro.com/ofertas/mars-gaming-mc-lcdpro-atx-pantalla-lcd-ips-72-cristal-templado-curvado-frontal-y-lateralestructura-de-doble-camara-2036434": 1793864559.0181181,
+  "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803
  },
- "asked": {
-  "cm-2051793": 1793783213
- }
+ "asked": {}
 }
