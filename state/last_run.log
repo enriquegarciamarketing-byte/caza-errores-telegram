@@ -1,8 +1,17 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 100 productos únicos
+Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36112 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68062 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36288 bytes, 30 chollos
+  Chollometro «Garmin Instinct 3 AMOLED Negro: 45 mm por 249 € y 50 mm por 279 € – Re»: MediaMarkt 249.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 63205 bytes, 30 chollos
+  cm-2055098 · MediaMarkt 249.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Garmin Instinct 3 AMOLED Negro: 45 mm por 249 € y 50 mm por 
+  Vinted «garmin 45 instinct»: HTTP 200, 3587895 bytes, 85 anuncios
+  Vinted «garmin 45 instinct»: 23 parecidos de 85
+  Wallapop «garmin 45 instinct»: 200 / 102816 bytes, 33 anuncios, 6 parecidos, 0 reservas
+  Milanuncios «garmin 45 instinct»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 22 anuncios, ~200 €, no publica
+  ⚠️ No publico «Garmin Instinct 3 AMOLED Negro: 45 mm por 249 € y 50 mm por 279 € – Reloj GPS multibanda, »: reventa en VINTED+WALLAPOP ~200 € (22 anuncios): ROI -24 % y -61 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 39 descartes nuevos, 152 en lista
+Cascada al canal normal: 44 descartes nuevos, 172 en lista
