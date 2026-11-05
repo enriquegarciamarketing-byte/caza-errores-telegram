@@ -1619,7 +1619,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793190456.0502927
  },
@@ -2279,16 +2279,6 @@
   }
  },
  "wallapop_cache": {
-  "aliexpress|amd ryzen 7 7800x3d [promo 11.11] [empieza 1-11]|aliexpress 7800x3d amd": {
-   "t": 1793367874.5868468,
-   "query": "aliexpress 7800x3d amd",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "pccomponentes|tarjeta grafica palit infinity 2 oc geforce rtx 5060 8gb gddr7 reflex 2 rtx ai dlss4 reacondicionado|pccomponentes 5060 tarjeta": {
    "t": 1793367876.687984,
    "query": "pccomponentes 5060 tarjeta",
@@ -7727,6 +7717,45 @@
    "http_status": 200,
    "bytes": 119132,
    "raw_count": 37
+  },
+  "|xbox mando inalambrico storm breaker special edition series x|s, one, pc y dispositivos habilitados para la nube|xbox mando": {
+   "t": 1793884049.3516471,
+   "query": "xbox mando",
+   "prices": [
+    30.0,
+    10.0,
+    27.5,
+    35.0,
+    42.0,
+    10.0,
+    25.0,
+    75.0,
+    9.99,
+    80.0,
+    30.0,
+    12.0,
+    45.0,
+    30.0,
+    79.0,
+    70.0,
+    85.0,
+    60.0,
+    14.99,
+    70.0,
+    15.0,
+    30.0,
+    20.0,
+    40.0,
+    45.0,
+    55.0,
+    15.0,
+    35.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 118180,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8076,7 +8105,8 @@
   "wallapop:cm-2055878": 1793877984.775536,
   "wallapop:cm-2051804": 1793880923.3551373,
   "wallapop:cm-2056452": 1793881532.4534118,
-  "wallapop:cm-2056238": 1793881543.3062758
+  "wallapop:cm-2056238": 1793881543.3062758,
+  "wallapop:cm-2056364": 1793884049.9388895
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10648,7 +10678,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 2,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/mars-gaming-mc-lcdpro-atx-pantalla-lcd-ips-72-cristal-templado-curvado-frontal-y-lateralestructura-de-doble-camara-2036434": 1793864559.0181181,
   "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803,
@@ -10661,7 +10691,8 @@
   "https://www.chollometro.com/ofertas/robot-aspirador-y-friegasuelos-xiaomi-s40-10000-pa-laser-lds-5200-mah-180-min-antienredos-app-y-alexa-envio-desde-espana-2056238": 1793881511.4873745,
   "https://www.chollometro.com/ofertas/millet-zapatillas-de-aproximacion-cimai-gtx-hombre-gris-oscuro-2056452": 1793881511.4873745,
   "https://www.chollometro.com/ofertas/sony-wh-1000xm6-auriculares-bluetooth-promo-1111-empieza-1-11-2048860": 1793881511.4873745,
-  "https://www.chollometro.com/ofertas/amd-ryzen-7-7800x3d-promo-1111-empieza-1-11-2049729": 1793881511.4873745
+  "https://www.chollometro.com/ofertas/amd-ryzen-7-7800x3d-promo-1111-empieza-1-11-2049729": 1793881511.4873745,
+  "https://www.chollometro.com/ofertas/xbox-mando-inalambrico-storm-breaker-special-edition-series-xs-one-pc-y-dispositivos-habilitados-para-la-nube-2056364": 1793884045.5151572
  },
  "asked": {
   "cm-2051213": 1793880926,
