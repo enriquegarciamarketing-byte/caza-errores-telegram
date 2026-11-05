@@ -25,6 +25,7 @@ import re
 import statistics
 import sys
 import time
+import uuid
 import urllib.error
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
@@ -617,7 +618,83 @@ def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, 
         log(f"  No he podido mandarte el texto de X ({exc})")
 
 
+BAR_LINES = {
+    "pvp": ("frente a su", "", "PVP recomendado", ""),
+    "media90": ("frente a su precio medio", "de los", "90 días", "anteriores"),
+}
+
+
 def make_card(deal: dict, rules: dict) -> Path:
+    """Tarjeta del post. Por defecto la de estilo AliExpress con los colores de Amazon y sin la foto dentro:
+    la foto del producto va aparte y tal cual en el álbum (las normas no dejan retocar las imágenes de Amazon).
+    "card_style": "clasica" en config vuelve a la tarjeta naranja antigua."""
+    if rules.get("card_style", "amazon") != "amazon":
+        return make_card_clasica(deal, rules)
+    import aliexpress_card
+
+    seen = datetime.fromtimestamp(deal.get("seen_ts") or time.time(), timezone.utc).astimezone(MADRID)
+    return aliexpress_card.create_card({
+        "id": deal["asin"],
+        "title": clean_title(deal["title"], 140),
+        "price": deal["price"],
+        "reference": deal["reference"],
+        "badge": badge_for(deal["discount"], rules, real_drop(deal)),
+        "ref_label": {"media90": "MEDIA 90 DÍAS", "pvp": "PVP RECOMENDADO"}.get(deal.get("ref_kind") or "",
+                                                                             "MÍNIMO 30 DÍAS ANTES"),
+        "bar_lines": BAR_LINES.get(deal.get("ref_kind") or ""),
+        "seen_hhmm": deal.get("seen_hhmm") or f"{seen:%H:%M}",
+    }, theme="amazon")
+
+
+def _media_group(tg, chat_id, media: list, files: dict) -> list:
+    boundary = "----caza" + uuid.uuid4().hex
+    parts = [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
+             for k, v in (("chat_id", str(chat_id)), ("media", json.dumps(media, ensure_ascii=False)))]
+    for key, (name, data) in files.items():
+        parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"{key}\"; filename=\"{name}\"\r\n"
+                     "Content-Type: image/jpeg\r\n\r\n".encode("utf-8") + data + b"\r\n")
+    parts.append(f"--{boundary}--\r\n".encode("ascii"))
+    req = urllib.request.Request(tg.base + "sendMediaGroup", data=b"".join(parts),
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        try:
+            result = json.loads(exc.read().decode("utf-8") or "{}")
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            result = {"ok": False, "description": f"HTTP {exc.code}"}
+    if not result.get("ok"):
+        raise RuntimeError(f"Telegram sendMediaGroup: {result.get('description')}")
+    return result["result"]
+
+
+def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=print) -> dict:
+    """Post doble como el de AliExpress: foto del producto tal cual (Telegram la baja de Amazon por URL, sin
+    guardarla ni retocarla) y la tarjeta. El texto va en la primera foto; los álbumes no admiten botón, el
+    enlace va en el texto. Sin foto, o con "post_style": "tarjeta", sale solo la tarjeta con su botón."""
+    card = make_card(deal, rules)
+    image = str(deal.get("image") or "")
+    if rules.get("post_style", "album") == "album" and image:
+        cap = {"caption": caption, "parse_mode": "HTML"}
+        card_item = {"type": "photo", "media": "attach://card"}
+        files = {"card": (card.name, card.read_bytes())}
+        local = ROOT / image if not image.startswith("http") else None
+        try:
+            if local:
+                if not local.is_file():
+                    raise RuntimeError(f"no encuentro la foto {image}")
+                media = [{"type": "photo", "media": "attach://photo", **cap}, card_item]
+                sent = _media_group(tg, target, media, {"photo": (local.name, local.read_bytes()), **files})
+            else:
+                sent = _media_group(tg, target, [{"type": "photo", "media": image, **cap}, card_item], files)
+            return sent[0]
+        except (RuntimeError, OSError, urllib.error.URLError) as exc:
+            log(f"  No he podido mandar el álbum ({exc}); mando solo la tarjeta")
+    return tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
+
+
+def make_card_clasica(deal: dict, rules: dict) -> Path:
     import photos
     from publisher import DEAL_LOGO, create_price_card
 
@@ -768,11 +845,10 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             sent += 1
             continue
         try:
-            card = make_card(deal, rules)
+            message = publish(tg, target, deal, rules, caption, url, log)
         except (OSError, ValueError) as exc:
             log(f"  ✗ {deal['asin']} sin tarjeta: {exc}")
             continue
-        message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
         origin = " (descarte del premium)" if item.get("cascada") else ""
         log(f"  Enviado a {target} (mensaje {message['message_id']}){origin}: {clean_title(deal['title'], 70)}")
         sent += 1
@@ -1261,8 +1337,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
     if args.dry_run or tg is None:
         log("[prueba, no se envía]\n" + caption)
         return 0
-    card = make_card(deal, rules)
-    message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
+    message = publish(tg, target, deal, rules, caption, url, log)
     where = "tu chat (prueba)" if args.test_private else target
     log(f"Post manual enviado a {where} (mensaje {message['message_id']}): {clean_title(deal['title'], 70)}")
     if not args.test_private:

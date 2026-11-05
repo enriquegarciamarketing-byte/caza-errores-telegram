@@ -54,3 +54,38 @@ class XPost(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class AlbumAmazon(unittest.TestCase):
+    DEAL = {"asin": "B0TEST", "title": "XIAOMI TV Pro 32 Pulgadas 2026, QLED Smart TV", "price": 149.0,
+            "reference": 229.0, "discount": 34.9, "ref_kind": "pvp", "seen_ts": 1793872000,
+            "image": "https://m.media-amazon.com/images/I/test.jpg"}
+    RULES = {"bargain_min_discount": 20, "error_min_discount": 60, "chollazo_min_discount": 40}
+
+    def test_card_amazon_colors_without_brand(self):
+        import aliexpress_card as ac
+        rules = dict(cn.rules_from({}), **self.RULES)
+        card = cn.make_card(dict(self.DEAL), rules)
+        self.assertTrue(card.exists())
+        self.assertTrue(card.name.startswith("amz-"))
+        self.assertEqual(ac.HEADER, ("EN", "ALIEXPRESS"), "el tema de Amazon no debe quedarse puesto")
+        self.assertNotIn("AMAZON", " ".join(ac.THEMES["amazon"]["HEADER"]).upper())
+
+    def test_album_photo_by_url_untouched(self):
+        sent = {}
+
+        def fake_group(tg, chat, media, files):
+            sent.update(media=media, files=files)
+            return [{"message_id": 11}, {"message_id": 12}]
+
+        original = cn._media_group
+        cn._media_group = fake_group
+        try:
+            rules = dict(cn.rules_from({}), **self.RULES)
+            msg = cn.publish(object(), "@c", dict(self.DEAL), rules, "texto", "https://www.amazon.es/dp/B0TEST")
+        finally:
+            cn._media_group = original
+        self.assertEqual(msg["message_id"], 11)
+        self.assertEqual(sent["media"][0]["media"], self.DEAL["image"])
+        self.assertEqual(sent["media"][0]["caption"], "texto")
+        self.assertEqual(list(sent["files"]), ["card"], "la foto de Amazon no se descarga ni se sube retocada")
