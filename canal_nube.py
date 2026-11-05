@@ -1346,6 +1346,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
         log("[prueba, no se envía]\n" + caption)
         return 0
     message = publish(tg, target, deal, rules, caption, url, log)
+    send_x_draft(tg, state, rules, deal, url, log, test=bool(args.test_private))
     where = "tu chat (prueba)" if args.test_private else target
     log(f"Post manual enviado a {where} (mensaje {message['message_id']}): {clean_title(deal['title'], 70)}")
     if not args.test_private:
