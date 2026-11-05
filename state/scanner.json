@@ -1619,9 +1619,9 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 0,
  "health_alerts": {
-  "no_listings": 1793190456.0502927
+  "no_listings": 1793887946.189363
  },
  "discovery_cache": {
   "t": 1793876785.0521452,
@@ -2279,16 +2279,6 @@
   }
  },
  "wallapop_cache": {
-  "pccomponentes|tarjeta grafica palit infinity 2 oc geforce rtx 5060 8gb gddr7 reflex 2 rtx ai dlss4 reacondicionado|pccomponentes 5060 tarjeta": {
-   "t": 1793367876.687984,
-   "query": "pccomponentes 5060 tarjeta",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "carrefour|set lego icons telescopio espacial hubble 11382 (+18 anos, maqueta para adultos, cupon 40% devuelto = 41,60e, oferta carrefour online)|carrefour 11382 lego": {
    "t": 1793367879.1058574,
    "query": "carrefour 11382 lego",
@@ -7756,6 +7746,50 @@
    "http_status": 200,
    "bytes": 118180,
    "raw_count": 40
+  },
+  "|nba 2k27 – edicion estandar ps5|nba 2k27 edicion": {
+   "t": 1793887946.6938877,
+   "query": "nba 2k27 edicion",
+   "prices": [
+    39.99,
+    37.0,
+    48.0,
+    34.99,
+    50.0,
+    40.0,
+    40.0,
+    45.0,
+    45.0,
+    45.0,
+    49.0,
+    35.0,
+    45.99,
+    60.0,
+    70.0,
+    79.0,
+    50.0,
+    50.0,
+    60.0,
+    45.0,
+    60.0,
+    55.0,
+    60.0,
+    70.0,
+    55.0,
+    70.0,
+    50.0,
+    60.0,
+    60.0,
+    65.0,
+    60.0,
+    65.0,
+    50.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 68952,
+   "raw_count": 35
   }
  },
  "milanuncios_cache": {
@@ -8106,7 +8140,8 @@
   "wallapop:cm-2051804": 1793880923.3551373,
   "wallapop:cm-2056452": 1793881532.4534118,
   "wallapop:cm-2056238": 1793881543.3062758,
-  "wallapop:cm-2056364": 1793884049.9388895
+  "wallapop:cm-2056364": 1793884049.9388895,
+  "wallapop:cm-2056295": 1793887947.294151
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10678,9 +10713,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 0,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/mars-gaming-mc-lcdpro-atx-pantalla-lcd-ips-72-cristal-templado-curvado-frontal-y-lateralestructura-de-doble-camara-2036434": 1793864559.0181181,
   "https://www.chollometro.com/ofertas/greedfall-the-dying-world-ps5-playstation-5-standard-edition-2056175": 1793870334.5319803,
   "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-dreame-d30-ultra-25000pa-230-min-autonomia-37db-ultra-silencioso-navegacion-laser-lidar-control-app-2056108": 1793871528.9389758,
   "https://www.chollometro.com/ofertas/garmin-instinct-3-amoled-negro-45-mm-por-249-eur-y-50-mm-por-279-eur-reloj-gps-multibanda-10-atm-linterna-led-hasta-24-dias-de-bateria-2055098": 1793872799.1645906,
@@ -10692,7 +10726,8 @@
   "https://www.chollometro.com/ofertas/millet-zapatillas-de-aproximacion-cimai-gtx-hombre-gris-oscuro-2056452": 1793881511.4873745,
   "https://www.chollometro.com/ofertas/sony-wh-1000xm6-auriculares-bluetooth-promo-1111-empieza-1-11-2048860": 1793881511.4873745,
   "https://www.chollometro.com/ofertas/amd-ryzen-7-7800x3d-promo-1111-empieza-1-11-2049729": 1793881511.4873745,
-  "https://www.chollometro.com/ofertas/xbox-mando-inalambrico-storm-breaker-special-edition-series-xs-one-pc-y-dispositivos-habilitados-para-la-nube-2056364": 1793884045.5151572
+  "https://www.chollometro.com/ofertas/xbox-mando-inalambrico-storm-breaker-special-edition-series-xs-one-pc-y-dispositivos-habilitados-para-la-nube-2056364": 1793884045.5151572,
+  "https://www.chollometro.com/ofertas/nba-2k27-edicion-estandar-ps5-2056295": 1793887938.8382938
  },
  "asked": {
   "cm-2051213": 1793880926,
