@@ -670,6 +670,22 @@ def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, 
         log(f"  No he podido mandarte el texto de X ({exc})")
 
 
+def send_x_text(tg, cfg: dict, state: dict, text: str, url: str = "", log=print) -> int:
+    """Post de X escrito a mano (skill post-x-caza-chollos): solo a tu chat privado, nunca al canal."""
+    admin = admin_chat_id(state, rules_from(cfg), tg, log)
+    if not admin:
+        log("No encuentro tu chat privado con el bot: escríbele algo y vuelve a lanzarlo")
+        return 1
+    body = (f"🐦 <b>Para X</b> · mantén pulsado el texto para copiarlo y activa la bandera «Paid partnership» antes de publicar\n\n"
+            f"<pre>{html.escape(text.strip())}</pre>")
+    payload = {"chat_id": admin, "text": body, "parse_mode": "HTML"}
+    if url:
+        payload["link_preview_options"] = {"url": url, "prefer_large_media": True}
+    message = tg.call("sendMessage", payload)
+    log(f"Texto de X enviado a tu chat (mensaje {message.get('message_id')})")
+    return 0
+
+
 BAR_LINES = {
     "pvp": ("frente a su", "", "PVP recomendado", ""),
     "media90": ("frente a su precio medio", "de los", "90 días", "anteriores"),
@@ -1417,6 +1433,8 @@ def main() -> int:
     parser.add_argument("--ignore-limits", action="store_true", help="Salta cupos y horario (pruebas)")
     parser.add_argument("--resumen", action="store_true", help="Manda el resumen de la noche (a las 23:59)")
     parser.add_argument("--manual", default="", help="Post hecho a mano (JSON con asin, title, price, reference…)")
+    parser.add_argument("--x-texto", default="", help="Solo te manda por privado este texto listo para X")
+    parser.add_argument("--x-url", default="", help="Enlace para la vista previa del texto de X")
     parser.add_argument("--merge-state", default="", help="Junta la memoria local con la de este fichero y sale")
     parser.add_argument("--loop", type=int, default=1, help="Pasadas seguidas en esta ejecución")
     parser.add_argument("--every", type=int, default=300, help="Segundos entre pasadas con --loop")
@@ -1441,7 +1459,9 @@ def main() -> int:
     tg = scanner.Telegram(token) if token else None
     now = datetime.now(timezone.utc)
     print(f"== {now.astimezone(MADRID):%Y-%m-%d %H:%M} ==")
-    if args.manual:
+    if args.x_texto:
+        code = send_x_text(tg, cfg, state, args.x_texto, args.x_url)
+    elif args.manual:
         code = run_manual(args, cfg, state, now, tg=tg)
     elif args.resumen:
         code = run_summary(args, cfg, state, now, tg=tg)

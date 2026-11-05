@@ -1,0 +1,35 @@
+name: Post X caza chollos
+
+on:
+  workflow_dispatch:
+    inputs:
+      texto:
+        description: "Texto del post de X (te llega solo a tu chat privado con el bot)"
+        required: true
+        type: string
+      url:
+        description: "Enlace del producto para la vista previa"
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  enviar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Mandarte el texto de X
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TEXTO: ${{ inputs.texto }}
+          URL: ${{ inputs.url }}
+        run: python -u canal_nube.py --x-texto "$TEXTO" --x-url "$URL"
