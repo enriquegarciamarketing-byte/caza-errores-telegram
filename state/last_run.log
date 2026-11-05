@@ -1,11 +1,8 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 95 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 458039 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 343140 bytes, 0 ASIN, 0 títulos
+Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
   Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35437 bytes, 30 chollos
   Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 74206 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 47 descartes nuevos, 124 en lista
+Cascada al canal normal: 37 descartes nuevos, 131 en lista
