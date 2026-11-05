@@ -1069,6 +1069,21 @@
    "price": 34.6,
    "t": 1793906521,
    "result": "solo -15% bajo la referencia"
+  },
+  "7gKaBx7": {
+   "price": 41.7,
+   "t": 1793917052,
+   "result": "solo -27% bajo la referencia"
+  },
+  "MW35m8N": {
+   "price": 237.99,
+   "t": 1793917052,
+   "result": "solo -2% bajo la referencia"
+  },
+  "RNme967": {
+   "price": 105.0,
+   "t": 1793917052,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1580,7 +1595,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 96,
+ "last_listing_count": 93,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -10987,7 +11002,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 15,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-2056695": 1793899973.9088163,
   "https://www.chollometro.com/ofertas/zapatillas-puma-caven-iii-topcat-tallas-43-a-48-2056514": 1793900234.1793454,
