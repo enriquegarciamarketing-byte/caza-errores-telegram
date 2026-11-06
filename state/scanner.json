@@ -1031,9 +1031,9 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "Rr8Qx0m": {
-   "price": 185.52,
-   "t": 1793861156,
-   "result": "solo -30% bajo la referencia"
+   "price": 185.9,
+   "t": 1793935822,
+   "result": "solo -29% bajo la referencia"
   },
   "1LZOdBK": {
    "price": 34.92,
@@ -1600,7 +1600,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 93,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -11004,11 +11004,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 11,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/g-star-zapatillas-eo-xavi-04-marron-oscuro-2056813": 1793911219.5484343,
-  "https://www.chollometro.com/ofertas/anima-gate-of-memories-iii-remaster-ps5-collectors-edition-2056916": 1793911219.5484343,
-  "https://www.chollometro.com/ofertas/zapatillas-altas-vans-filmore-hi-vansguard-tallas-385-a-42-2056938": 1793913516.3623927,
   "https://www.chollometro.com/ofertas/tapo-c510w-camara-de-vigilancia-wifi-exterior-360o-2k-deteccion-ia-deteccion-movimientovision-nocturna-a-coloralarma-luz-y-sonido-2056376": 1793919709.8114896,
   "https://www.chollometro.com/ofertas/apple-airpods-4-con-cancelacion-de-ruido-auriculares-inalambricos-bluetooth-y-estuche-de-carga-blanco-129eur-exclusivo-app-2056591": 1793919709.8114896,
   "https://www.chollometro.com/ofertas/juego-fallout-4-anniversary-edition-nintendo-switch-2-ciab-incluye-6-dlcs-150-articulos-creation-club-pccomponentes-black-friday-2026-2056082": 1793919709.8114896,
