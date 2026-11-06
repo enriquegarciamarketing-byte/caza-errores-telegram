@@ -1687,12 +1687,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1793995351
+   "checked": 1793995513
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12266,7 +12266,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/new-balance-fuelcell-propel-v5-zapatillas-running-asfalto-tallas-36-365-37-375-2057620": 1793974716.1744974,
   "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755,
