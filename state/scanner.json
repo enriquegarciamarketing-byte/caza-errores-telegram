@@ -1600,7 +1600,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2260,20 +2260,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|lego pokemon rayquaza 72168, figura articulada de 1083 piezas con minifigura de tristana|lego 72168 pokemon": {
-   "t": 1793434833.6710224,
-   "query": "lego 72168 pokemon",
-   "prices": [
-    89.5,
-    90.0,
-    90.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 7972,
-   "raw_count": 3
-  },
   "shopdutyfree.es|macbook neo 512gb color citrico|shopdutyfree 512gb macbook": {
    "t": 1793437605.2721472,
    "query": "shopdutyfree 512gb macbook",
@@ -7865,6 +7851,39 @@
    "http_status": 200,
    "bytes": 3997,
    "raw_count": 1
+  },
+  "|halo: campaign evolved ps5|halo ps5 campaign": {
+   "t": 1793958765.7996612,
+   "query": "halo ps5 campaign",
+   "prices": [
+    35.0,
+    45.0,
+    40.0,
+    45.0,
+    40.0,
+    50.0,
+    40.0,
+    44.9,
+    45.0,
+    42.99,
+    45.0,
+    50.0,
+    49.9,
+    40.0,
+    54.99,
+    40.0,
+    65.0,
+    45.0,
+    45.0,
+    50.0,
+    45.0,
+    9.95
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 54570,
+   "raw_count": 24
   }
  },
  "milanuncios_cache": {
@@ -8237,7 +8256,8 @@
   "wallapop:cm-2057114": 1793953128.9308035,
   "wallapop:cm-2056308": 1793953707.9140446,
   "wallapop:cm-2057120": 1793955384.3165002,
-  "wallapop:cm-2057310": 1793957901.8226557
+  "wallapop:cm-2057310": 1793957901.8226557,
+  "wallapop:cm-2056897": 1793958766.5600948
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11133,7 +11153,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 3,
+ "rotation_index": 8,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/tapo-c510w-camara-de-vigilancia-wifi-exterior-360o-2k-deteccion-ia-deteccion-movimientovision-nocturna-a-coloralarma-luz-y-sonido-2056376": 1793941419.3013308,
   "https://www.chollometro.com/ofertas/salomon-alphaglide-zapatillas-de-senderismo-para-mujer-2056356": 1793943941.519753,
@@ -11146,7 +11166,8 @@
   "https://www.chollometro.com/ofertas/new-balance-u471-unisex-zapatillas-2057224": 1793953099.9624345,
   "https://www.chollometro.com/ofertas/zapatillas-park-lifestyle-ii-unisex-tallas-355-al-48-varios-colores-2056308": 1793953700.5268478,
   "https://www.chollometro.com/ofertas/macbook-neo-a18-pro-8gb-256gb-rosa-nube-2057120": 1793955379.7286956,
-  "https://www.chollometro.com/ofertas/maqueta-lego-architecture-fontana-di-trevi-21062-juego-de-construccion-18-anos-modelo-de-exposicion-roma-carrefour-2057310": 1793957898.055094
+  "https://www.chollometro.com/ofertas/maqueta-lego-architecture-fontana-di-trevi-21062-juego-de-construccion-18-anos-modelo-de-exposicion-roma-carrefour-2057310": 1793957898.055094,
+  "https://www.chollometro.com/ofertas/halo-campaign-evolved-ps5-2056897": 1793958762.6495
  },
  "asked": {
   "cm-2051213": 1793880926,
