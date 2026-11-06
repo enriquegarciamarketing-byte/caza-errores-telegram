@@ -1114,6 +1114,11 @@
    "price": 43.79,
    "t": 1793992291,
    "result": "solo -0% bajo la referencia"
+  },
+  "7AG8NNk": {
+   "price": 234.0,
+   "t": 1793999764,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1687,12 +1692,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1793998822
+   "checked": 1794001564
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 96,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2481,67 +2486,6 @@
   }
  },
  "wallapop_cache": {
-  "|garmin fenix 8 47mm zafiro|garmin 47mm fenix": {
-   "t": 1793613586.0695586,
-   "query": "garmin 47mm fenix",
-   "prices": [
-    635.0,
-    650.0,
-    590.0,
-    175.0,
-    225.0,
-    600.0,
-    380.0,
-    555.0,
-    490.0,
-    520.0,
-    590.0,
-    160.0,
-    450.0,
-    375.0,
-    630.0,
-    675.0,
-    600.0,
-    320.0,
-    550.0,
-    559.95,
-    110.0,
-    650.0,
-    650.0,
-    775.0,
-    959.9,
-    525.0,
-    675.0,
-    730.0,
-    280.0,
-    520.0,
-    420.0,
-    1050.0,
-    500.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 130464,
-   "raw_count": 40
-  },
-  "|aspirador escoba dyson v12 detect slim absolute (150 aw, laser de deteccion, pantalla lcd, 60 min autonomia, ligero, oferta mediamarkt)|aspirador v12 escoba": {
-   "t": 1793614082.8219445,
-   "query": "aspirador v12",
-   "prices": [
-    255.0,
-    60.0,
-    49.0,
-    150.0,
-    7.0,
-    375.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 108680,
-   "raw_count": 39
-  },
   "|garmin forerunner 265|garmin 265 forerunner": {
    "t": 1793615089.2696576,
    "query": "garmin 265 forerunner",
@@ -8438,6 +8382,73 @@
    "http_status": 200,
    "bytes": 131681,
    "raw_count": 40
+  },
+  "|warhammer 40.000 space marine ii ps5 + caja metalica|warhammer ps5 space": {
+   "t": 1794000534.2200835,
+   "query": "warhammer ps5 space",
+   "prices": [
+    25.0,
+    23.0,
+    30.0,
+    22.0,
+    25.0,
+    20.0,
+    32.99,
+    25.0,
+    24.0,
+    30.0,
+    25.0,
+    25.0,
+    80.0,
+    30.0,
+    25.0,
+    28.0,
+    24.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    25.0,
+    150.0,
+    40.0,
+    25.0,
+    25.0,
+    30.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 64780,
+   "raw_count": 31
+  },
+  "|zapatillas unisex reebok world 70|zapatillas 70 reebok": {
+   "t": 1794000536.62523,
+   "query": "zapatillas 70",
+   "prices": [
+    32.0,
+    10.0,
+    50.0,
+    50.0,
+    30.0,
+    40.0,
+    33.0,
+    50.0,
+    30.0,
+    15.0,
+    29.0,
+    45.0,
+    75.0,
+    75.0,
+    45.0,
+    60.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 149802,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8857,7 +8868,9 @@
   "wallapop:cm-2057766": 1793991822.6051295,
   "wallapop:cm-2058103": 1793994922.2232597,
   "wallapop:cm-2058048": 1793996429.9704115,
-  "wallapop:cm-2058098": 1793998858.7361789
+  "wallapop:cm-2058098": 1793998858.7361789,
+  "wallapop:cm-2057462": 1794000534.662475,
+  "wallapop:cm-2058143": 1794000537.0055344
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -12323,16 +12336,35 @@
    "demand_known": true,
    "blocked": false,
    "reason": ""
+  },
+  "|zapatillas unisex reebok world 70|zapatillas 70 reebok": {
+   "t": 1794000535.2740908,
+   "prices": [
+    30.0,
+    29.0,
+    38.0,
+    35.0,
+    35.0,
+    70.0,
+    49.0,
+    29.0,
+    60.0,
+    40.0,
+    25.0,
+    13.0,
+    11.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~35 € (11 anuncios): ROI 25 % y 6 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 11,
+ "rotation_index": 7,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/zapatillas-puma-carina-20-mujer-varias-tallas-y-colores-2057247": 1793977629.8237655,
-  "https://www.chollometro.com/ofertas/la-comarca-lego-2057830": 1793978140.8698835,
-  "https://www.chollometro.com/ofertas/orient-ra-ac0q17y30b-reloj-hombre-mako-automatico-40mm-20atm-edicion-limitada-2057372": 1793978621.0568142,
   "https://www.chollometro.com/ofertas/gamepad-pdp-realmz-500-234-stv-bioma-del-bosque-minecraft-multicolor-inalambricoalambrico-nintendo-switch-2052000": 1793981357.9789972,
   "https://www.chollometro.com/ofertas/tarjeta-regalo-xbox-live-50-por-41eur-80-por-64eur-100-por-82eur-150-por-120eur-eur-xbox-live-key-europe-2057813": 1793983575.2937927,
   "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-de-running-galaxy-8-2057905": 1793984694.2953718,
@@ -12346,7 +12378,9 @@
   "https://www.chollometro.com/ofertas/ecovacs-deebot-t30e-omni-por-20819eur-en-aliexpress-promo-1111-envio-de-con-cupon-esd1139-paypal-2057768": 1793991788.816065,
   "https://www.chollometro.com/ofertas/game-disco-duro-ssd-2tb-7400mbs-nvme-m2-con-disipador-para-ps5-2058103": 1793994916.909953,
   "https://www.chollometro.com/ofertas/lego-star-wars-75435-mtt-separatista-de-la-batalla-de-felucia-2058048": 1793996426.0044513,
-  "https://www.chollometro.com/ofertas/jordan-zion-4-low-country-beige-2058098": 1793998835.2465258
+  "https://www.chollometro.com/ofertas/jordan-zion-4-low-country-beige-2058098": 1793998835.2465258,
+  "https://www.chollometro.com/ofertas/warhammer-40000-space-marine-ii-ps5-caja-metalica-2057462": 1794000527.4864514,
+  "https://www.chollometro.com/ofertas/zapatillas-unisex-reebok-world-70-2058143": 1794000527.4864514
  },
  "asked": {
   "cm-2057830": 1793978147
