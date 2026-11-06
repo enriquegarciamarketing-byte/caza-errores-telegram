@@ -1119,6 +1119,11 @@
    "price": 234.0,
    "t": 1793999764,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "R4jrPwk": {
+   "price": 54.85,
+   "t": 1794002524,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1692,12 +1697,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794001863
+   "checked": 1794004174
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 96,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2486,51 +2491,6 @@
   }
  },
  "wallapop_cache": {
-  "|garmin forerunner 265|garmin 265 forerunner": {
-   "t": 1793615089.2696576,
-   "query": "garmin 265 forerunner",
-   "prices": [
-    240.0,
-    255.0,
-    95.0,
-    250.0,
-    255.0,
-    260.0,
-    275.0,
-    250.0,
-    270.0,
-    249.99,
-    250.0,
-    272.0,
-    259.0,
-    255.0,
-    235.0,
-    255.0,
-    288.0,
-    260.0,
-    295.0,
-    239.0,
-    250.0,
-    259.99,
-    250.0,
-    320.0,
-    280.0,
-    260.0,
-    300.0,
-    259.0,
-    275.99,
-    259.0,
-    300.0,
-    279.99,
-    290.0,
-    259.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 111318,
-   "raw_count": 36
-  },
   "|auriculares gaming logitech g g325 lightspeed (inalambricos, bluetooth, audio 24 bits, 24h bateria, pc, ps5, switch, negro, oferta amazon)|auriculares g325 gaming": {
    "t": 1793619297.3612263,
    "query": "auriculares g325 gaming",
@@ -8449,6 +8409,39 @@
    "http_status": 200,
    "bytes": 149802,
    "raw_count": 40
+  },
+  "|zapatillas trail new balance hierro v9|zapatillas v9 trail": {
+   "t": 1794003144.3445637,
+   "query": "zapatillas v9 trail",
+   "prices": [
+    70.0,
+    70.0,
+    90.0,
+    105.0,
+    87.0,
+    100.0,
+    90.0,
+    90.0,
+    80.0,
+    40.0,
+    75.0,
+    99.0,
+    136.0,
+    99.0,
+    80.0,
+    90.0,
+    95.0,
+    70.0,
+    99.0,
+    40.0,
+    79.9,
+    79.9
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 137802,
+   "raw_count": 35
   }
  },
  "milanuncios_cache": {
@@ -8870,7 +8863,8 @@
   "wallapop:cm-2058048": 1793996429.9704115,
   "wallapop:cm-2058098": 1793998858.7361789,
   "wallapop:cm-2057462": 1794000534.662475,
-  "wallapop:cm-2058143": 1794000537.0055344
+  "wallapop:cm-2058143": 1794000537.0055344,
+  "wallapop:cm-2058181": 1794003144.9250546
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -12358,14 +12352,38 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~35 € (11 anuncios): ROI 25 % y 6 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas trail new balance hierro v9|zapatillas v9 trail": {
+   "t": 1794003144.004287,
+   "prices": [
+    70.0,
+    89.9,
+    95.0,
+    110.0,
+    95.0,
+    80.0,
+    39.0,
+    105.0,
+    83.0,
+    115.0,
+    130.0,
+    95.0,
+    99.0,
+    125.0,
+    20.0,
+    130.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~95 € (14 anuncios): ROI 16 % y 12 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 12,
+ "rotation_index": 8,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/gamepad-pdp-realmz-500-234-stv-bioma-del-bosque-minecraft-multicolor-inalambricoalambrico-nintendo-switch-2052000": 1793981357.9789972,
   "https://www.chollometro.com/ofertas/tarjeta-regalo-xbox-live-50-por-41eur-80-por-64eur-100-por-82eur-150-por-120eur-eur-xbox-live-key-europe-2057813": 1793983575.2937927,
   "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-de-running-galaxy-8-2057905": 1793984694.2953718,
   "https://www.chollometro.com/ofertas/garmin-vivoactive-5-2057779": 1793984694.2953718,
@@ -12380,7 +12398,8 @@
   "https://www.chollometro.com/ofertas/lego-star-wars-75435-mtt-separatista-de-la-batalla-de-felucia-2058048": 1793996426.0044513,
   "https://www.chollometro.com/ofertas/jordan-zion-4-low-country-beige-2058098": 1793998835.2465258,
   "https://www.chollometro.com/ofertas/warhammer-40000-space-marine-ii-ps5-caja-metalica-2057462": 1794000527.4864514,
-  "https://www.chollometro.com/ofertas/zapatillas-unisex-reebok-world-70-2058143": 1794000527.4864514
+  "https://www.chollometro.com/ofertas/zapatillas-unisex-reebok-world-70-2058143": 1794000527.4864514,
+  "https://www.chollometro.com/ofertas/zapatillas-trail-new-balance-hierro-v9-2058181": 1794003139.7905724
  },
  "asked": {
   "cm-2057830": 1793978147
