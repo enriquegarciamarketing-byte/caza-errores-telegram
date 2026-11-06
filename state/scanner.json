@@ -1687,12 +1687,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1793996028
+   "checked": 1793996411
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2481,19 +2481,6 @@
   }
  },
  "wallapop_cache": {
-  "|hp omen gt16, ryzen 7-8700f, 32gb ram, rtx 5070i 16gb, 1tb ssd|omen gt16 ryzen": {
-   "t": 1793613583.8893433,
-   "query": "omen gt16",
-   "prices": [
-    1899.0,
-    949.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 70663,
-   "raw_count": 20
-  },
   "|skechers tri-namics sneaker zapatillas ninos - varias tallas disponibles|skechers tri": {
    "t": 1793613584.9405034,
    "query": "skechers tri",
@@ -8378,6 +8365,41 @@
    "http_status": 200,
    "bytes": 85442,
    "raw_count": 28
+  },
+  "|lego star wars 75435 mtt separatista de la batalla de felucia|lego 75435 star": {
+   "t": 1793996429.3760967,
+   "query": "lego 75435 star",
+   "prices": [
+    105.0,
+    80.0,
+    110.0,
+    119.9,
+    135.0,
+    47.99,
+    130.0,
+    150.0,
+    110.0,
+    100.0,
+    115.0,
+    120.0,
+    115.0,
+    2.5,
+    120.0,
+    120.36,
+    119.99,
+    150.0,
+    110.0,
+    135.0,
+    12.0,
+    135.0,
+    55.0,
+    115.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 84573,
+   "raw_count": 32
   }
  },
  "milanuncios_cache": {
@@ -8795,7 +8817,8 @@
   "wallapop:cm-2057666": 1793991819.6789055,
   "wallapop:cm-2057768": 1793991821.5614924,
   "wallapop:cm-2057766": 1793991822.6051295,
-  "wallapop:cm-2058103": 1793994922.2232597
+  "wallapop:cm-2058103": 1793994922.2232597,
+  "wallapop:cm-2058048": 1793996429.9704115
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -12266,9 +12289,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 1,
+ "rotation_index": 6,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/new-balance-fuelcell-propel-v5-zapatillas-running-asfalto-tallas-36-365-37-375-2057620": 1793974716.1744974,
   "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755,
   "https://www.chollometro.com/ofertas/mario-kart-world-nintendo-switch-2-cuentas-seleccionadas-2057793": 1793975642.3706646,
   "https://www.chollometro.com/ofertas/zapatillas-puma-carina-20-mujer-varias-tallas-y-colores-2057247": 1793977629.8237655,
@@ -12285,7 +12307,8 @@
   "https://www.chollometro.com/ofertas/new-balance-ellipse-v1-zapatillas-running-asfalto-2057666": 1793991788.816065,
   "https://www.chollometro.com/ofertas/aspiradora-sin-cable-dyson-v8-cyclone-150-aw-hasta-60-min-de-autonomia-filtracion-9999-cepillo-motorbar-2057766": 1793991788.816065,
   "https://www.chollometro.com/ofertas/ecovacs-deebot-t30e-omni-por-20819eur-en-aliexpress-promo-1111-envio-de-con-cupon-esd1139-paypal-2057768": 1793991788.816065,
-  "https://www.chollometro.com/ofertas/game-disco-duro-ssd-2tb-7400mbs-nvme-m2-con-disipador-para-ps5-2058103": 1793994916.909953
+  "https://www.chollometro.com/ofertas/game-disco-duro-ssd-2tb-7400mbs-nvme-m2-con-disipador-para-ps5-2058103": 1793994916.909953,
+  "https://www.chollometro.com/ofertas/lego-star-wars-75435-mtt-separatista-de-la-batalla-de-felucia-2058048": 1793996426.0044513
  },
  "asked": {
   "cm-2057830": 1793978147
