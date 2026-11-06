@@ -1,90 +1,32 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 98 productos únicos
+Listados: 89 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35552 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68340 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36173 bytes, 30 chollos
+  Chollometro «New Balance ELLIPSE V1 - Zapatillas running asfalto -»: Zalando Privé 73.0 €
+  Chollometro «Aspiradora sin cable Dyson V8 Cyclone - 150 AW, hasta 60 min de autono»: Dyson 265.0 €
+  Chollometro «ECOVACS DEEBOT T30e OMNI por 208,19€ en AliExpress [Promo 11.11] (Enví»: AliExpress 208.19 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 66050 bytes, 30 chollos
+  cm-2057666 · Zalando Privé 73.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance ELLIPSE V1 - Zapatillas running asfalto
+  cm-2057766 · Dyson 265.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Aspiradora sin cable Dyson V8 Cyclone - 150 AW, hasta 60 min
+  cm-2057768 · AliExpress 208.19 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · ECOVACS DEEBOT T30e OMNI por 208,19€ en AliExpress [Promo 11
+  Vinted «new v1 balance»: HTTP 200, 3691310 bytes, 96 anuncios
+  Vinted «new v1 balance»: 77 parecidos de 96
+  Wallapop «new v1 balance»: 200 / 130261 bytes, 38 anuncios, 22 parecidos, 0 reservas
+  Milanuncios «new v1 balance»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 77 anuncios, ~90 €, no publica
+  ⚠️ No publico «New Balance ELLIPSE V1 - Zapatillas running asfalto»: reventa en VINTED+WALLAPOP ~90 € (77 anuncios): ROI 14 % y 10 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «ecovacs t30e deebot»: 200 / 3095 bytes, 1 anuncios, 1 parecidos, 0 reservas
+  Wallapop «ecovacs t30e»: 200 / 2227 bytes, 1 anuncios, 1 parecidos, 0 reservas
+  Milanuncios «ecovacs t30e deebot»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 1 anuncios, ~0 €, no publica
+  ⚠️ No publico «ECOVACS DEEBOT T30e OMNI por 208,19€ en AliExpress [Promo 11.11]»: WALLAPOP solo tiene 1 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Wallapop «aspiradora v8 sin»: 200 / 134983 bytes, 40 anuncios, 31 parecidos, 0 reservas
+  Milanuncios «aspiradora v8 sin»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 11 anuncios, ~65 €, no publica
+  ⚠️ No publico «Aspiradora sin cable Dyson V8 Cyclone - 150 AW, hasta 60 min de autonomía, Filtración 99.9»: reventa en WALLAPOP ~65 € (11 anuncios): ROI -80 % y -211 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 47 descartes nuevos, 154 en lista
-== pasada 2 · 19:23 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 19:25 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 4 · 19:28 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 19:30 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35363 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67975 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 6 · 19:33 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 19:35 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 8 · 19:38 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 9 · 19:40 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35363 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 64076 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 19:43 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 19:45 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 19:48 ==
-Listados: 91 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 19:50 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35363 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 64390 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 14 · 19:53 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 19:55 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 19:58 ==
-Listados: 103 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-Fin de la ejecución tras 16 pasadas.
+Cascada al canal normal: 36 descartes nuevos, 80 en lista
