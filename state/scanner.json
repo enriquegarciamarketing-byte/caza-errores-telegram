@@ -1673,7 +1673,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2333,16 +2333,6 @@
   }
  },
  "wallapop_cache": {
-  "privalia|munich zapatillas de deporte nexa 11- tallas- 39, 41, 42, 44, 45|privalia 11 munich": {
-   "t": 1793465976.4956217,
-   "query": "privalia 11 munich",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "private sport shop|adidas zapatillas de running 4dfwd 4 mujer|private sport 4dfwd": {
    "t": 1793465978.8648841,
    "query": "private sport 4dfwd",
@@ -8220,6 +8210,16 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "|gamepad pdp realmz 500-234-stv bioma del bosque minecraft multicolor inalambrico/alambrico nintendo switch|gamepad 500 pdp": {
+   "t": 1793981362.669083,
+   "query": "gamepad 500 pdp",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -8606,7 +8606,8 @@
   "wallapop:cm-2057667": 1793975463.520407,
   "wallapop:cm-2057793": 1793975650.4613504,
   "wallapop:cm-2057247": 1793977636.6202614,
-  "wallapop:cm-2057372": 1793978626.8535984
+  "wallapop:cm-2057372": 1793978626.8535984,
+  "wallapop:cm-2052000": 1793981364.3951793
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11898,7 +11899,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 19,
+ "rotation_index": 3,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-11501-botanicals-ramo-de-tulipanes-centro-de-mesa-decorativo-para-salon-con-14-tulipanes-en-5-colores-2057302": 1793963220.4905753,
   "https://www.chollometro.com/ofertas/cupon-25-juego-de-construccion-barcaza-velera-de-jabba-lego-star-wars-75397-2057311": 1793963220.4905753,
@@ -11915,7 +11916,8 @@
   "https://www.chollometro.com/ofertas/mario-kart-world-nintendo-switch-2-cuentas-seleccionadas-2057793": 1793975642.3706646,
   "https://www.chollometro.com/ofertas/zapatillas-puma-carina-20-mujer-varias-tallas-y-colores-2057247": 1793977629.8237655,
   "https://www.chollometro.com/ofertas/la-comarca-lego-2057830": 1793978140.8698835,
-  "https://www.chollometro.com/ofertas/orient-ra-ac0q17y30b-reloj-hombre-mako-automatico-40mm-20atm-edicion-limitada-2057372": 1793978621.0568142
+  "https://www.chollometro.com/ofertas/orient-ra-ac0q17y30b-reloj-hombre-mako-automatico-40mm-20atm-edicion-limitada-2057372": 1793978621.0568142,
+  "https://www.chollometro.com/ofertas/gamepad-pdp-realmz-500-234-stv-bioma-del-bosque-minecraft-multicolor-inalambricoalambrico-nintendo-switch-2052000": 1793981357.9789972
  },
  "asked": {
   "cm-2057830": 1793978147
