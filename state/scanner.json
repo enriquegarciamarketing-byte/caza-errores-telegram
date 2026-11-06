@@ -1616,11 +1616,64 @@
    "needs_ok": true,
    "ask_until": 1793892339,
    "expired": true
+  },
+  {
+   "id": "cm-2057830",
+   "gtin": null,
+   "price": 161.25,
+   "category": "OPORTUNIDAD DE REVENTA",
+   "t": 1793978147,
+   "title": "La comarca Lego",
+   "cap": {
+    "category": "OPORTUNIDAD DE REVENTA",
+    "title": "La comarca Lego",
+    "brand": "",
+    "current": 161.25,
+    "reference": 269.99,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "sizes": null,
+    "hold": true,
+    "store": "El Corte Inglés",
+    "note": "",
+    "ref_text": "frente al precio anterior en la tienda",
+    "resale_price": 250.0,
+    "resale_count": 14,
+    "profit": 74.25,
+    "demand": "Muchos anuncios",
+    "source_label": "WALLAPOP"
+   },
+   "url": "https://www.elcorteingles.es/juguetes/A200044701-juego-de-construccion-el-senor-de-los-anillos-la-comarca-lego-icons-10354/&utm_medium=shared_referral&utm_campaign=shared_referral_icon_app&utm_source=social_media_app",
+   "alert_id": 447,
+   "alert_text_id": 448,
+   "pending": true,
+   "needs_ok": true,
+   "ask_until": 1793988947,
+   "card_data": {
+    "title": "La comarca Lego",
+    "category": "OPORTUNIDAD DE REVENTA",
+    "current": 161.25,
+    "reference": 269.99,
+    "image": "https://static.chollometro.com/threads/raw/JiJit/2057830_1/re/150x150/qt/55/2057830_1.jpg",
+    "store_label": "El Corte Inglés",
+    "conditions": "",
+    "resale": {
+     "price": 250.0,
+     "count": 14,
+     "roi": 46.04651162790698,
+     "profit": 74.25,
+     "source_label": "WALLAPOP",
+     "note": "14 anuncios de referencia · Wallapop · Muchos anuncios",
+     "sample": false,
+     "demand": "Muchos anuncios"
+    }
+   }
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 95,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2280,16 +2333,6 @@
   }
  },
  "wallapop_cache": {
-  "eneba|tarjeta regalo xbox live 100 eur xbox live key europe|eneba 100 tarjeta": {
-   "t": 1793461005.9707036,
-   "query": "eneba 100 tarjeta",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "private sport shop|adidas zapatillas de running ultraboost 5x mujer- tallas- 36, 37 1/3, 42 2/3|private sport 5x": {
    "t": 1793461008.8239388,
    "query": "private sport 5x",
@@ -8151,6 +8194,32 @@
    "http_status": 200,
    "bytes": 119160,
    "raw_count": 40
+  },
+  "|la comarca lego|comarca lego": {
+   "t": 1793978144.7860875,
+   "query": "comarca lego",
+   "prices": [
+    55.0,
+    235.0,
+    244.99,
+    243.0,
+    250.0,
+    250.0,
+    245.0,
+    269.0,
+    260.0,
+    250.0,
+    240.0,
+    260.0,
+    345.0,
+    330.0,
+    260.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 70557,
+   "raw_count": 31
   }
  },
  "milanuncios_cache": {
@@ -11820,7 +11889,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 19,
+ "rotation_index": 3,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/maqueta-lego-architecture-fontana-di-trevi-21062-juego-de-construccion-18-anos-modelo-de-exposicion-roma-carrefour-2057310": 1793957898.055094,
   "https://www.chollometro.com/ofertas/halo-campaign-evolved-ps5-2056897": 1793958762.6495,
@@ -11837,7 +11906,10 @@
   "https://www.chollometro.com/ofertas/new-balance-fuelcell-propel-v5-zapatillas-running-asfalto-tallas-36-365-37-375-2057620": 1793974716.1744974,
   "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755,
   "https://www.chollometro.com/ofertas/mario-kart-world-nintendo-switch-2-cuentas-seleccionadas-2057793": 1793975642.3706646,
-  "https://www.chollometro.com/ofertas/zapatillas-puma-carina-20-mujer-varias-tallas-y-colores-2057247": 1793977629.8237655
+  "https://www.chollometro.com/ofertas/zapatillas-puma-carina-20-mujer-varias-tallas-y-colores-2057247": 1793977629.8237655,
+  "https://www.chollometro.com/ofertas/la-comarca-lego-2057830": 1793978140.8698835
  },
- "asked": {}
+ "asked": {
+  "cm-2057830": 1793978147
+ }
 }
