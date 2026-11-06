@@ -1031,8 +1031,8 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "Rr8Qx0m": {
-   "price": 185.9,
-   "t": 1793935822,
+   "price": 186.28,
+   "t": 1793988828,
    "result": "solo -29% bajo la referencia"
   },
   "1LZOdBK": {
@@ -1700,12 +1700,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1793988703
+   "checked": 1793988828
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12200,7 +12200,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 2,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-dc-comics-logotipo-de-batman-super-heroes-2057396": 1793969614.975744,
   "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-ancho-especial-2057617": 1793970368.8196087,
@@ -12219,7 +12219,8 @@
   "https://www.chollometro.com/ofertas/garmin-vivoactive-5-2057779": 1793984694.2953718,
   "https://www.chollometro.com/ofertas/lego-shrek-asno-y-gato-con-botas-juego-de-construccion-18-anos-72423-2057599": 1793988594.1749086,
   "https://www.chollometro.com/ofertas/lego-disney-pixar-toy-story-sujetalibros-de-slinky-43301-1311-piezas-figura-articulada-y-libros-decorativos-con-sorpresas-2057942": 1793988594.1749086,
-  "https://www.chollometro.com/ofertas/zapatillas-hombre-converse-shai-001-tallas-40-a-475-2056050": 1793988594.1749086
+  "https://www.chollometro.com/ofertas/zapatillas-hombre-converse-shai-001-tallas-40-a-475-2056050": 1793988594.1749086,
+  "https://www.chollometro.com/ofertas/new-balance-1080-v15-zapatillas-running-asfalto-mujer-ancho-especial-2057841": 1793988844.4434214
  },
  "asked": {
   "cm-2057830": 1793978147
