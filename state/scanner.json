@@ -1687,12 +1687,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1793996411
+   "checked": 1793998822
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 96,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2481,18 +2481,6 @@
   }
  },
  "wallapop_cache": {
-  "|skechers tri-namics sneaker zapatillas ninos - varias tallas disponibles|skechers tri": {
-   "t": 1793613584.9405034,
-   "query": "skechers tri",
-   "prices": [
-    25.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 3457,
-   "raw_count": 1
-  },
   "|garmin fenix 8 47mm zafiro|garmin 47mm fenix": {
    "t": 1793613586.0695586,
    "query": "garmin 47mm fenix",
@@ -8400,6 +8388,56 @@
    "http_status": 200,
    "bytes": 84573,
    "raw_count": 32
+  },
+  "|jordan zion 4 \"low country\" beige|jordan zion": {
+   "t": 1793998858.2620401,
+   "query": "jordan zion",
+   "prices": [
+    45.0,
+    20.0,
+    25.0,
+    10.0,
+    10.0,
+    50.0,
+    65.0,
+    29.0,
+    23.0,
+    30.0,
+    35.0,
+    45.0,
+    19.0,
+    20.0,
+    40.0,
+    55.0,
+    79.95,
+    55.0,
+    15.0,
+    35.0,
+    60.0,
+    60.0,
+    45.0,
+    30.0,
+    8.0,
+    20.0,
+    65.0,
+    50.0,
+    20.0,
+    26.0,
+    50.0,
+    55.0,
+    95.0,
+    50.0,
+    35.0,
+    39.0,
+    60.0,
+    50.0,
+    20.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 131681,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8818,7 +8856,8 @@
   "wallapop:cm-2057768": 1793991821.5614924,
   "wallapop:cm-2057766": 1793991822.6051295,
   "wallapop:cm-2058103": 1793994922.2232597,
-  "wallapop:cm-2058048": 1793996429.9704115
+  "wallapop:cm-2058048": 1793996429.9704115,
+  "wallapop:cm-2058098": 1793998858.7361789
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -12289,10 +12328,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 6,
+ "rotation_index": 11,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755,
-  "https://www.chollometro.com/ofertas/mario-kart-world-nintendo-switch-2-cuentas-seleccionadas-2057793": 1793975642.3706646,
   "https://www.chollometro.com/ofertas/zapatillas-puma-carina-20-mujer-varias-tallas-y-colores-2057247": 1793977629.8237655,
   "https://www.chollometro.com/ofertas/la-comarca-lego-2057830": 1793978140.8698835,
   "https://www.chollometro.com/ofertas/orient-ra-ac0q17y30b-reloj-hombre-mako-automatico-40mm-20atm-edicion-limitada-2057372": 1793978621.0568142,
@@ -12308,7 +12345,8 @@
   "https://www.chollometro.com/ofertas/aspiradora-sin-cable-dyson-v8-cyclone-150-aw-hasta-60-min-de-autonomia-filtracion-9999-cepillo-motorbar-2057766": 1793991788.816065,
   "https://www.chollometro.com/ofertas/ecovacs-deebot-t30e-omni-por-20819eur-en-aliexpress-promo-1111-envio-de-con-cupon-esd1139-paypal-2057768": 1793991788.816065,
   "https://www.chollometro.com/ofertas/game-disco-duro-ssd-2tb-7400mbs-nvme-m2-con-disipador-para-ps5-2058103": 1793994916.909953,
-  "https://www.chollometro.com/ofertas/lego-star-wars-75435-mtt-separatista-de-la-batalla-de-felucia-2058048": 1793996426.0044513
+  "https://www.chollometro.com/ofertas/lego-star-wars-75435-mtt-separatista-de-la-batalla-de-felucia-2058048": 1793996426.0044513,
+  "https://www.chollometro.com/ofertas/jordan-zion-4-low-country-beige-2058098": 1793998835.2465258
  },
  "asked": {
   "cm-2057830": 1793978147
