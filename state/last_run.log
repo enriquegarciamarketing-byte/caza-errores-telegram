@@ -1,24 +1,8 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 94 productos únicos
+Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35724 bytes, 30 chollos
-  Chollometro «adidas Men's Zapatilla DE Running Galaxy 8»: Amazon 31.99 €
-  Chollometro «Garmin Vivoactive 5»: Amazon 168.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72869 bytes, 30 chollos
-  cm-2057905 · Amazon 31.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · adidas Men's Zapatilla DE Running Galaxy 8
-  cm-2057779 · Amazon 168.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Garmin Vivoactive 5
-  Vinted «adidas men»: HTTP 200, 3692526 bytes, 96 anuncios
-  Vinted «adidas men»: 15 parecidos de 96
-  Wallapop «adidas men»: 200 / 127547 bytes, 40 anuncios, 9 parecidos, 0 reservas
-  Milanuncios «adidas men»: HTTP 200, 95999 bytes, bloqueado
-  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
-  Reventa VINTED+WALLAPOP: 18 anuncios, ~25 €, no publica
-  ⚠️ No publico «adidas Men's Zapatilla DE Running Galaxy 8»: reventa en VINTED+WALLAPOP ~25 € (18 anuncios): ROI -32 % y -10 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «garmin vivoactive»: 200 / 113433 bytes, 40 anuncios, 37 parecidos, 0 reservas
-  Milanuncios «garmin vivoactive»: HTTP 200, 95999 bytes, bloqueado
-  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
-  Reventa WALLAPOP: 28 anuncios, ~68 €, no publica
-  ⚠️ No publico «Garmin Vivoactive 5»: reventa en WALLAPOP ~68 € (28 anuncios): ROI -63 % y -106 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35478 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70411 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 32 descartes nuevos, 79 en lista
+Cascada al canal normal: 37 descartes nuevos, 91 en lista
