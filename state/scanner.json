@@ -1089,6 +1089,11 @@
    "price": 79.99,
    "t": 1793919694,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "RXxX32b": {
+   "price": 39.95,
+   "t": 1793963203,
+   "result": "solo -22% bajo la referencia"
   }
  },
  "posts": [
@@ -1600,7 +1605,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2260,26 +2265,6 @@
   }
  },
  "wallapop_cache": {
-  "shopdutyfree.es|macbook neo 512gb color citrico|shopdutyfree 512gb macbook": {
-   "t": 1793437605.2721472,
-   "query": "shopdutyfree 512gb macbook",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
-  "aliexpress|dron dji neo 2 con camara 4k estabilizada, 151 g y protectores de helices (c0) [1 nov 00:00]|aliexpress 4k dron": {
-   "t": 1793437607.6235707,
-   "query": "aliexpress 4k dron",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "amazon|puma r78 lightwind zapatillas unisex adulto muchas tallas|puma r78 lightwind": {
    "t": 1793440288.3424442,
    "query": "puma r78 lightwind",
@@ -7884,6 +7869,34 @@
    "http_status": 200,
    "bytes": 54570,
    "raw_count": 24
+  },
+  "|juego de construccion barcaza velera de jabba lego star wars - 75397|juego 75397 construccion": {
+   "t": 1793963226.9495757,
+   "query": "juego 75397 construccion",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "|lego 11501 botanicals ramo de tulipanes - centro de mesa decorativo para salon con 14 tulipanes en 5 colores|lego 11501 botanicals": {
+   "t": 1793963227.9586535,
+   "query": "lego 11501 botanicals",
+   "prices": [
+    50.0,
+    44.9,
+    50.0,
+    45.0,
+    44.9,
+    57.5,
+    58.9
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 17886,
+   "raw_count": 8
   }
  },
  "milanuncios_cache": {
@@ -8257,7 +8270,9 @@
   "wallapop:cm-2056308": 1793953707.9140446,
   "wallapop:cm-2057120": 1793955384.3165002,
   "wallapop:cm-2057310": 1793957901.8226557,
-  "wallapop:cm-2056897": 1793958766.5600948
+  "wallapop:cm-2056897": 1793958766.5600948,
+  "wallapop:cm-2057311": 1793963227.5306656,
+  "wallapop:cm-2057302": 1793963228.557204
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11153,9 +11168,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/tapo-c510w-camara-de-vigilancia-wifi-exterior-360o-2k-deteccion-ia-deteccion-movimientovision-nocturna-a-coloralarma-luz-y-sonido-2056376": 1793941419.3013308,
   "https://www.chollometro.com/ofertas/salomon-alphaglide-zapatillas-de-senderismo-para-mujer-2056356": 1793943941.519753,
   "https://www.chollometro.com/ofertas/mando-inalambrico-dualsense-edicion-limitada-marvel-lobezno-amarillo-de-combate-ps5-2057122": 1793945141.3609085,
   "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313,
@@ -11167,7 +11181,9 @@
   "https://www.chollometro.com/ofertas/zapatillas-park-lifestyle-ii-unisex-tallas-355-al-48-varios-colores-2056308": 1793953700.5268478,
   "https://www.chollometro.com/ofertas/macbook-neo-a18-pro-8gb-256gb-rosa-nube-2057120": 1793955379.7286956,
   "https://www.chollometro.com/ofertas/maqueta-lego-architecture-fontana-di-trevi-21062-juego-de-construccion-18-anos-modelo-de-exposicion-roma-carrefour-2057310": 1793957898.055094,
-  "https://www.chollometro.com/ofertas/halo-campaign-evolved-ps5-2056897": 1793958762.6495
+  "https://www.chollometro.com/ofertas/halo-campaign-evolved-ps5-2056897": 1793958762.6495,
+  "https://www.chollometro.com/ofertas/lego-11501-botanicals-ramo-de-tulipanes-centro-de-mesa-decorativo-para-salon-con-14-tulipanes-en-5-colores-2057302": 1793963220.4905753,
+  "https://www.chollometro.com/ofertas/cupon-25-juego-de-construccion-barcaza-velera-de-jabba-lego-star-wars-75397-2057311": 1793963220.4905753
  },
  "asked": {
   "cm-2051213": 1793880926,
