@@ -1104,6 +1104,11 @@
    "price": 449.0,
    "t": 1793972827,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "7klrkZR": {
+   "price": 33.95,
+   "t": 1793974577,
+   "result": "solo -16% bajo la referencia"
   }
  },
  "posts": [
@@ -1615,7 +1620,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 104,
+ "last_listing_count": 95,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -11556,7 +11561,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 14,
+ "rotation_index": 19,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/saguaro-punto-barefoot-zapatillas-minimalistas-hombre-mujer-2057114": 1793953099.9624345,
   "https://www.chollometro.com/ofertas/new-balance-u471-unisex-zapatillas-2057224": 1793953099.9624345,
