@@ -1673,7 +1673,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 91,
+ "last_listing_count": 94,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2333,16 +2333,6 @@
   }
  },
  "wallapop_cache": {
-  "private sport shop|adidas zapatillas de running ultraboost 5x mujer- tallas- 36, 37 1/3, 42 2/3|private sport 5x": {
-   "t": 1793461008.8239388,
-   "query": "private sport 5x",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "privalia|munich zapatillas de deporte nexa 11- tallas- 39, 41, 42, 44, 45|privalia 11 munich": {
    "t": 1793465976.4956217,
    "query": "privalia 11 munich",
@@ -8220,6 +8210,16 @@
    "http_status": 200,
    "bytes": 70557,
    "raw_count": 31
+  },
+  "|orient ra-ac0q17y30b reloj hombre mako automatico 40mm 20atm edicion limitada|orient ac0q17y30b reloj": {
+   "t": 1793978626.3493161,
+   "query": "orient ac0q17y30b reloj",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -8605,7 +8605,8 @@
   "wallapop:cm-2057620": 1793974720.9384181,
   "wallapop:cm-2057667": 1793975463.520407,
   "wallapop:cm-2057793": 1793975650.4613504,
-  "wallapop:cm-2057247": 1793977636.6202614
+  "wallapop:cm-2057247": 1793977636.6202614,
+  "wallapop:cm-2057372": 1793978626.8535984
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11884,12 +11885,20 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~15 € (13 anuncios): ROI -59 % y -18 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|orient ra-ac0q17y30b reloj hombre mako automatico 40mm 20atm edicion limitada|orient ac0q17y30b reloj": {
+   "t": 1793978625.1955833,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 3)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 13,
+ "rotation_index": 18,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/maqueta-lego-architecture-fontana-di-trevi-21062-juego-de-construccion-18-anos-modelo-de-exposicion-roma-carrefour-2057310": 1793957898.055094,
   "https://www.chollometro.com/ofertas/halo-campaign-evolved-ps5-2056897": 1793958762.6495,
@@ -11907,7 +11916,8 @@
   "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755,
   "https://www.chollometro.com/ofertas/mario-kart-world-nintendo-switch-2-cuentas-seleccionadas-2057793": 1793975642.3706646,
   "https://www.chollometro.com/ofertas/zapatillas-puma-carina-20-mujer-varias-tallas-y-colores-2057247": 1793977629.8237655,
-  "https://www.chollometro.com/ofertas/la-comarca-lego-2057830": 1793978140.8698835
+  "https://www.chollometro.com/ofertas/la-comarca-lego-2057830": 1793978140.8698835,
+  "https://www.chollometro.com/ofertas/orient-ra-ac0q17y30b-reloj-hombre-mako-automatico-40mm-20atm-edicion-limitada-2057372": 1793978621.0568142
  },
  "asked": {
   "cm-2057830": 1793978147
