@@ -1600,7 +1600,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2227,16 +2227,6 @@
   }
  },
  "wallapop_cache": {
-  "atmosfera sport|zapatillas salomon speedcross peak (tallas de 41 a 46)|atmosfera sport 41": {
-   "t": 1793391570.0565908,
-   "query": "atmosfera sport 41",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "amazon|arrancador de baterias de coche 6000a, compresor de aire 150 psi, 7-en-1 booster bateria 12v (para 10 l gasolina o 8.5 l diesel)|arrancador 6000a baterias": {
    "t": 1793394252.9455833,
    "query": "arrancador 6000a baterias",
@@ -7828,6 +7818,41 @@
    "http_status": 200,
    "bytes": 89676,
    "raw_count": 39
+  },
+  "|auriculares sony wf-c510 bluetooth multipunto, hasta 22 horas de bateria, auriculares modo sonido ambiente, ipx4 - negro|auriculares c510 sony": {
+   "t": 1793951737.3628325,
+   "query": "auriculares c510 sony",
+   "prices": [
+    36.0,
+    30.0,
+    24.0,
+    28.0,
+    29.0,
+    29.99,
+    30.0,
+    30.0,
+    49.0,
+    30.0,
+    25.0,
+    24.99,
+    35.0,
+    31.9,
+    30.0,
+    25.0,
+    50.0,
+    40.0,
+    29.0,
+    35.0,
+    40.0,
+    32.9,
+    25.0,
+    35.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 78302,
+   "raw_count": 25
   }
  },
  "milanuncios_cache": {
@@ -8193,7 +8218,8 @@
   "wallapop:cm-2056916": 1793911231.060901,
   "wallapop:cm-2056938": 1793913520.8316872,
   "wallapop:cm-2057216": 1793949070.0938177,
-  "wallapop:cm-2057251": 1793951620.0000272
+  "wallapop:cm-2057251": 1793951620.0000272,
+  "wallapop:cm-2055853": 1793951737.9597967
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10986,13 +11012,14 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 20,
+ "rotation_index": 4,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/tapo-c510w-camara-de-vigilancia-wifi-exterior-360o-2k-deteccion-ia-deteccion-movimientovision-nocturna-a-coloralarma-luz-y-sonido-2056376": 1793941419.3013308,
   "https://www.chollometro.com/ofertas/salomon-alphaglide-zapatillas-de-senderismo-para-mujer-2056356": 1793943941.519753,
   "https://www.chollometro.com/ofertas/mando-inalambrico-dualsense-edicion-limitada-marvel-lobezno-amarillo-de-combate-ps5-2057122": 1793945141.3609085,
   "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313,
-  "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212
+  "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212,
+  "https://www.chollometro.com/ofertas/auriculares-sony-wf-c510-bluetooth-multipunto-hasta-22-horas-de-bateria-auriculares-modo-sonido-ambiente-ipx4-negro-2055853": 1793951734.193463
  },
  "asked": {
   "cm-2051213": 1793880926,
