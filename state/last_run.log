@@ -1,31 +1,8 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 97 productos únicos
+Listados: 93 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
   Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36100 bytes, 30 chollos
-  Chollometro «Skechers Flex Appeal 4.0 Brilliant View Zapatillas de Gimnasio»: Amazon 33.95 €
-  Chollometro «DJI Osmo Action 4 Pack Estándar»: AliExpress 140.0 €
-  Chollometro «Garmin Forerunner 170»: AliExpress 183.29 €
   Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67039 bytes, 30 chollos
-  cm-2057562 · Amazon 33.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Skechers Flex Appeal 4.0 Brilliant View Zapatillas de Gimnas
-  cm-2051452 · AliExpress 140.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · DJI Osmo Action 4 Pack Estándar
-  cm-2056542 · AliExpress 183.29 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Garmin Forerunner 170
-  Vinted «skechers flex»: HTTP 200, 3698385 bytes, 96 anuncios
-  Vinted «skechers flex»: 65 parecidos de 96
-  Wallapop «skechers flex»: 200 / 32869 bytes, 9 anuncios, 7 parecidos, 0 reservas
-  Milanuncios «skechers flex»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa VINTED+WALLAPOP: 67 anuncios, ~35 €, no publica
-  ⚠️ No publico «Skechers Flex Appeal 4.0 Brilliant View Zapatillas de Gimnasio»: reventa en VINTED+WALLAPOP ~35 € (67 anuncios): ROI -7 % y -2 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «dji osmo»: 200 / 129070 bytes, 40 anuncios, 39 parecidos, 0 reservas
-  Milanuncios «dji osmo»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa WALLAPOP: 28 anuncios, ~260 €, publica
-  Error publicando cm-2051452: Telegram sendPhoto: Bad Request: BUTTON_URL_INVALID
-  Wallapop «garmin 170 forerunner»: 200 / 75492 bytes, 26 anuncios, 19 parecidos, 0 reservas
-  Milanuncios «garmin 170 forerunner»: HTTP 403, 95512 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
-  Reventa WALLAPOP: 15 anuncios, ~213 €, no publica
-  ⚠️ No publico «Garmin Forerunner 170»: reventa en WALLAPOP ~213 € (15 anuncios): ROI 9 % y 17 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 47 descartes nuevos, 89 en lista
+Cascada al canal normal: 31 descartes nuevos, 107 en lista
