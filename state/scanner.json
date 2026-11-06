@@ -1620,7 +1620,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 95,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2280,16 +2280,6 @@
   }
  },
  "wallapop_cache": {
-  "prive by zalando|adidas terrex agravic speed 2 - zapatillas de trail. tallas 38 a 50. descuento aplicable a miembros plus|prive zalando 38": {
-   "t": 1793458674.6383011,
-   "query": "prive zalando 38",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "eneba|tarjeta regalo xbox live 100 eur xbox live key europe|eneba 100 tarjeta": {
    "t": 1793461005.9707036,
    "query": "eneba 100 tarjeta",
@@ -8110,6 +8100,57 @@
    "http_status": 200,
    "bytes": 96475,
    "raw_count": 40
+  },
+  "|zapatillas puma carina 2.0 mujer (varias tallas y colores)|zapatillas puma": {
+   "t": 1793977635.9259686,
+   "query": "zapatillas puma",
+   "prices": [
+    280.0,
+    20.0,
+    25.0,
+    15.0,
+    22.0,
+    36.0,
+    8.0,
+    8.0,
+    35.0,
+    40.0,
+    10.0,
+    12.0,
+    19.95,
+    15.0,
+    45.0,
+    20.0,
+    10.0,
+    30.0,
+    15.0,
+    15.0,
+    58.0,
+    19.0,
+    8.0,
+    20.0,
+    20.0,
+    30.0,
+    45.0,
+    22.0,
+    20.0,
+    45.0,
+    70.0,
+    30.0,
+    25.0,
+    26.0,
+    25.0,
+    25.0,
+    12.0,
+    28.0,
+    6.0,
+    30.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 119160,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8494,7 +8535,8 @@
   "wallapop:cm-2057200": 1793972693.3314967,
   "wallapop:cm-2057620": 1793974720.9384181,
   "wallapop:cm-2057667": 1793975463.520407,
-  "wallapop:cm-2057793": 1793975650.4613504
+  "wallapop:cm-2057793": 1793975650.4613504,
+  "wallapop:cm-2057247": 1793977636.6202614
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11737,14 +11779,49 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~50 € (79 anuncios): ROI -19 % y -10 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas puma carina 2.0 mujer (varias tallas y colores)|zapatillas puma": {
+   "t": 1793977635.3784332,
+   "prices": [
+    15.0,
+    45.0,
+    15.0,
+    10.0,
+    4.0,
+    55.0,
+    34.0,
+    28.0,
+    24.0,
+    6.0,
+    35.0,
+    12.0,
+    5.0,
+    6.0,
+    5.0,
+    50.0,
+    6.0,
+    15.0,
+    15.0,
+    40.0,
+    15.0,
+    6.0,
+    35.0,
+    12.0,
+    14.0,
+    27.0,
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~15 € (13 anuncios): ROI -59 % y -18 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 19,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/macbook-neo-a18-pro-8gb-256gb-rosa-nube-2057120": 1793955379.7286956,
   "https://www.chollometro.com/ofertas/maqueta-lego-architecture-fontana-di-trevi-21062-juego-de-construccion-18-anos-modelo-de-exposicion-roma-carrefour-2057310": 1793957898.055094,
   "https://www.chollometro.com/ofertas/halo-campaign-evolved-ps5-2056897": 1793958762.6495,
   "https://www.chollometro.com/ofertas/lego-11501-botanicals-ramo-de-tulipanes-centro-de-mesa-decorativo-para-salon-con-14-tulipanes-en-5-colores-2057302": 1793963220.4905753,
@@ -11759,7 +11836,8 @@
   "https://www.chollometro.com/ofertas/lego-star-wars-halcon-milenario-2057200": 1793972690.7320957,
   "https://www.chollometro.com/ofertas/new-balance-fuelcell-propel-v5-zapatillas-running-asfalto-tallas-36-365-37-375-2057620": 1793974716.1744974,
   "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755,
-  "https://www.chollometro.com/ofertas/mario-kart-world-nintendo-switch-2-cuentas-seleccionadas-2057793": 1793975642.3706646
+  "https://www.chollometro.com/ofertas/mario-kart-world-nintendo-switch-2-cuentas-seleccionadas-2057793": 1793975642.3706646,
+  "https://www.chollometro.com/ofertas/zapatillas-puma-carina-20-mujer-varias-tallas-y-colores-2057247": 1793977629.8237655
  },
  "asked": {}
 }
