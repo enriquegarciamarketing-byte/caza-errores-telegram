@@ -1669,11 +1669,42 @@
      "demand": "Muchos anuncios"
     }
    }
+  },
+  {
+   "id": "cm-2056050",
+   "gtin": null,
+   "price": 60.0,
+   "category": "OPORTUNIDAD DE REVENTA",
+   "t": 1793988603,
+   "title": "Zapatillas Hombre Converse Shai 001 (Tallas 40 a 47.5)",
+   "cap": {
+    "category": "OPORTUNIDAD DE REVENTA",
+    "title": "Zapatillas Hombre Converse Shai 001 (Tallas 40 a 47.5)",
+    "brand": "",
+    "current": 60.0,
+    "reference": 129.99,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "sizes": null,
+    "hold": false,
+    "store": "Footlocker",
+    "note": "🕒 Precio comprobado en Footlocker a las 19:09.",
+    "ref_text": "frente al precio anterior en la tienda",
+    "resale_price": 100.0,
+    "resale_count": 65,
+    "profit": 33.0,
+    "demand": "Muchos anuncios",
+    "source_label": "VINTED+WALLAPOP"
+   },
+   "message_id": 75,
+   "url": "https://www.footlocker.es/es/product/~/314109934704.html",
+   "alert_id": 453
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 94,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2432,16 +2463,6 @@
   }
  },
  "wallapop_cache": {
-  "shopdutyfree.es|macbook air 13 m5 24gb 1tb azul cielo|shopdutyfree 13 macbook": {
-   "t": 1793526360.6892369,
-   "query": "shopdutyfree 13 macbook",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "|macbook air 13 m5 24gb 1tb azul cielo|macbook m5 air": {
    "t": 1793528726.3423471,
    "query": "macbook m5 air",
@@ -8367,6 +8388,27 @@
    "http_status": 200,
    "bytes": 113433,
    "raw_count": 40
+  },
+  "|zapatillas hombre converse shai 001 (tallas 40 a 47.5)|zapatillas 001 converse": {
+   "t": 1793988602.3162296,
+   "query": "zapatillas 001 converse",
+   "prices": [
+    60.0,
+    80.0,
+    149.99,
+    150.0,
+    49.99,
+    150.0,
+    159.99,
+    230.0,
+    100.0,
+    50.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 49085,
+   "raw_count": 13
   }
  },
  "milanuncios_cache": {
@@ -12083,16 +12125,82 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~25 € (11 anuncios): ROI -32 % y -10 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas hombre converse shai 001 (tallas 40 a 47.5)|zapatillas 001 converse": {
+   "t": 1793988601.9000654,
+   "prices": [
+    95.0,
+    85.0,
+    79.99,
+    80.0,
+    65.0,
+    75.0,
+    105.0,
+    139.0,
+    85.0,
+    100.0,
+    100.0,
+    80.0,
+    90.0,
+    50.0,
+    25.0,
+    90.0,
+    95.0,
+    105.0,
+    38.0,
+    190.0,
+    95.0,
+    85.0,
+    120.0,
+    120.0,
+    120.0,
+    100.0,
+    184.99,
+    90.0,
+    85.0,
+    129.0,
+    150.0,
+    100.0,
+    130.0,
+    100.0,
+    89.0,
+    110.0,
+    140.0,
+    130.0,
+    90.0,
+    17.0,
+    150.0,
+    270.0,
+    160.0,
+    120.0,
+    180.0,
+    140.0,
+    150.0,
+    115.0,
+    165.0,
+    200.0,
+    150.0,
+    150.0,
+    139.0,
+    220.0,
+    160.0,
+    85.0,
+    178.0,
+    78.0,
+    250.0,
+    148.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": ""
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 13,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/skechers-flex-appeal-40-brilliant-view-zapatillas-de-gimnasio-2057562": 1793966388.7924454,
-  "https://www.chollometro.com/ofertas/dji-osmo-action-4-pack-estandar-2051452": 1793966388.7924454,
-  "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793966388.7924454,
   "https://www.chollometro.com/ofertas/lego-dc-comics-logotipo-de-batman-super-heroes-2057396": 1793969614.975744,
   "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-ancho-especial-2057617": 1793970368.8196087,
   "https://www.chollometro.com/ofertas/secador-de-pelo-dyson-supersonic-en-versiones-lisoondulado-o-rizadomuy-rizado-control-de-calor-motor-v9-accesorios-magneticos-2057267": 1793970508.5269454,
@@ -12107,7 +12215,10 @@
   "https://www.chollometro.com/ofertas/gamepad-pdp-realmz-500-234-stv-bioma-del-bosque-minecraft-multicolor-inalambricoalambrico-nintendo-switch-2052000": 1793981357.9789972,
   "https://www.chollometro.com/ofertas/tarjeta-regalo-xbox-live-50-por-41eur-80-por-64eur-100-por-82eur-150-por-120eur-eur-xbox-live-key-europe-2057813": 1793983575.2937927,
   "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-de-running-galaxy-8-2057905": 1793984694.2953718,
-  "https://www.chollometro.com/ofertas/garmin-vivoactive-5-2057779": 1793984694.2953718
+  "https://www.chollometro.com/ofertas/garmin-vivoactive-5-2057779": 1793984694.2953718,
+  "https://www.chollometro.com/ofertas/lego-shrek-asno-y-gato-con-botas-juego-de-construccion-18-anos-72423-2057599": 1793988594.1749086,
+  "https://www.chollometro.com/ofertas/lego-disney-pixar-toy-story-sujetalibros-de-slinky-43301-1311-piezas-figura-articulada-y-libros-decorativos-con-sorpresas-2057942": 1793988594.1749086,
+  "https://www.chollometro.com/ofertas/zapatillas-hombre-converse-shai-001-tallas-40-a-475-2056050": 1793988594.1749086
  },
  "asked": {
   "cm-2057830": 1793978147
