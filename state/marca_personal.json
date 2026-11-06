@@ -2,6 +2,9 @@
  "used": {
   "finanzas": [
    0
+  ],
+  "ahorro": [
+   0
   ]
  },
  "log": [
@@ -14,6 +17,11 @@
    "t": 1793957317,
    "slot": "manana",
    "topic": "El bot por dentro"
+  },
+  {
+   "t": 1793993331,
+   "slot": "tarde",
+   "topic": "Ahorro y promos"
   }
  ]
 }
