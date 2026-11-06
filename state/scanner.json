@@ -1600,7 +1600,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 95,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2260,37 +2260,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|arrancador de baterias de coche 6000a, compresor de aire 150 psi, 7-en-1 booster bateria 12v (para 10 l gasolina o 8.5 l diesel)|arrancador 6000a baterias": {
-   "t": 1793394252.9455833,
-   "query": "arrancador 6000a baterias",
-   "prices": [
-    30.0,
-    20.0,
-    35.0,
-    38.46,
-    40.38,
-    40.0,
-    38.0,
-    40.0,
-    30.0,
-    38.0,
-    45.0,
-    50.0,
-    50.0,
-    80.0,
-    70.0,
-    40.0,
-    39.0,
-    75.0,
-    119.0,
-    119.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 118927,
-   "raw_count": 34
-  },
   "aliexpress|nintendo switch 2, version renovada con bateria extraible [promo 11.11] [empieza 1-11]|aliexpress 11 nintendo": {
    "t": 1793399133.1309278,
    "query": "aliexpress 11 nintendo",
@@ -7886,6 +7855,56 @@
    "http_status": 200,
    "bytes": 78302,
    "raw_count": 25
+  },
+  "|turtle beach rematch mando inalambrico, nintendo switch 2|turtle beach": {
+   "t": 1793952347.2930412,
+   "query": "turtle beach",
+   "prices": [
+    50.0,
+    7.0,
+    24.5,
+    19.0,
+    70.0,
+    34.0,
+    199.0,
+    35.0,
+    10.0,
+    25.0,
+    28.0,
+    10.0,
+    20.0,
+    29.99,
+    75.0,
+    30.0,
+    10.0,
+    350.0,
+    15.0,
+    20.0,
+    30.0,
+    35.0,
+    10.0,
+    300.0,
+    30.0,
+    20.0,
+    52.0,
+    15.0,
+    49.0,
+    40.0,
+    40.0,
+    65.0,
+    45.0,
+    20.0,
+    15.0,
+    39.95,
+    10.0,
+    50.0,
+    10.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 120238,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -8252,7 +8271,8 @@
   "wallapop:cm-2056938": 1793913520.8316872,
   "wallapop:cm-2057216": 1793949070.0938177,
   "wallapop:cm-2057251": 1793951620.0000272,
-  "wallapop:cm-2055853": 1793951737.9597967
+  "wallapop:cm-2055853": 1793951737.9597967,
+  "wallapop:cm-2054501": 1793952347.7115443
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11045,14 +11065,15 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 3,
+ "rotation_index": 8,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/tapo-c510w-camara-de-vigilancia-wifi-exterior-360o-2k-deteccion-ia-deteccion-movimientovision-nocturna-a-coloralarma-luz-y-sonido-2056376": 1793941419.3013308,
   "https://www.chollometro.com/ofertas/salomon-alphaglide-zapatillas-de-senderismo-para-mujer-2056356": 1793943941.519753,
   "https://www.chollometro.com/ofertas/mando-inalambrico-dualsense-edicion-limitada-marvel-lobezno-amarillo-de-combate-ps5-2057122": 1793945141.3609085,
   "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313,
   "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212,
-  "https://www.chollometro.com/ofertas/auriculares-sony-wf-c510-bluetooth-multipunto-hasta-22-horas-de-bateria-auriculares-modo-sonido-ambiente-ipx4-negro-2055853": 1793951734.193463
+  "https://www.chollometro.com/ofertas/auriculares-sony-wf-c510-bluetooth-multipunto-hasta-22-horas-de-bateria-auriculares-modo-sonido-ambiente-ipx4-negro-2055853": 1793951734.193463,
+  "https://www.chollometro.com/ofertas/mando-switch-2-2054501": 1793952342.0173955
  },
  "asked": {
   "cm-2051213": 1793880926,
