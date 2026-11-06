@@ -1,17 +1,16 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 98 productos únicos
+Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36211 bytes, 30 chollos
-  Chollometro «Zapatillas New Balance v7 hierro- ancho especial- mujer»: Zalando Privé 80.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 100184 bytes, 30 chollos
-  cm-2057617 · Zalando Privé 80.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas New Balance v7 hierro- ancho especial- mujer
-  Vinted «zapatillas v7 new»: HTTP 200, 3691869 bytes, 96 anuncios
-  Vinted «zapatillas v7 new»: 76 parecidos de 96
-  Wallapop «zapatillas v7 new»: 200 / 129119 bytes, 35 anuncios, 20 parecidos, 0 reservas
-  Milanuncios «zapatillas v7 new»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 75 anuncios, ~42 €, no publica
-  ⚠️ No publico «Zapatillas New Balance v7 hierro- ancho especial- mujer»: reventa en VINTED+WALLAPOP ~42 € (75 anuncios): ROI -53 % y -42 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36257 bytes, 30 chollos
+  Chollometro «Secador de pelo Dyson Supersonic en versiones Liso+Ondulado o Rizado+M»: Dyson 255.55 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 97998 bytes, 30 chollos
+  cm-2057267 · Dyson 255.55 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Secador de pelo Dyson Supersonic en versiones Liso+Ondulado 
+  Wallapop «secador v9 pelo»: 200 / 123974 bytes, 32 anuncios, 0 parecidos, 0 reservas
+  Wallapop «secador v9»: 200 / 137525 bytes, 39 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «secador v9 pelo»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  ⚠️ No publico «Secador de pelo Dyson Supersonic en versiones Liso+Ondulado o Rizado+Muy Rizado (control d»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95509 bytes))
 Publicados en esta ejecución: 0
-Cascada al canal normal: 33 descartes nuevos, 142 en lista
+Cascada al canal normal: 31 descartes nuevos, 143 en lista

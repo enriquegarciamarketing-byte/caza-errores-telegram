@@ -1610,7 +1610,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 97,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2270,16 +2270,6 @@
   }
  },
  "wallapop_cache": {
-  "aliexpress|reloj garmin forerunner 265 (gps, amoled) [1 nov 00:00]|aliexpress 265 reloj": {
-   "t": 1793440294.4656372,
-   "query": "aliexpress 265 reloj",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "amazon|assassin's creed shadows (switch 2)|assassin creed": {
    "t": 1793442368.7393584,
    "query": "assassin creed",
@@ -7977,6 +7967,16 @@
    "http_status": 200,
    "bytes": 129119,
    "raw_count": 35
+  },
+  "|secador de pelo dyson supersonic en versiones liso+ondulado o rizado+muy rizado (control de calor, motor v9, accesorios magneticos, )|secador v9 pelo": {
+   "t": 1793970513.1267052,
+   "query": "secador v9 pelo",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -8355,7 +8355,8 @@
   "wallapop:cm-2057302": 1793963228.557204,
   "wallapop:cm-2057562": 1793966400.9369836,
   "wallapop:cm-2057396": 1793969618.8823156,
-  "wallapop:cm-2057617": 1793970374.7428708
+  "wallapop:cm-2057617": 1793970374.7428708,
+  "wallapop:cm-2057267": 1793970513.6196318
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11410,7 +11411,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313,
   "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212,
@@ -11428,7 +11429,8 @@
   "https://www.chollometro.com/ofertas/dji-osmo-action-4-pack-estandar-2051452": 1793966388.7924454,
   "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793966388.7924454,
   "https://www.chollometro.com/ofertas/lego-dc-comics-logotipo-de-batman-super-heroes-2057396": 1793969614.975744,
-  "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-ancho-especial-2057617": 1793970368.8196087
+  "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-ancho-especial-2057617": 1793970368.8196087,
+  "https://www.chollometro.com/ofertas/secador-de-pelo-dyson-supersonic-en-versiones-lisoondulado-o-rizadomuy-rizado-control-de-calor-motor-v9-accesorios-magneticos-2057267": 1793970508.5269454
  },
  "asked": {}
 }
