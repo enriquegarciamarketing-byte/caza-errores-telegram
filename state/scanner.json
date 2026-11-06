@@ -1109,6 +1109,11 @@
    "price": 33.95,
    "t": 1793974577,
    "result": "solo -16% bajo la referencia"
+  },
+  "RJK9wp1": {
+   "price": 43.79,
+   "t": 1793992291,
+   "result": "solo -0% bajo la referencia"
   }
  },
  "posts": [
@@ -1682,12 +1687,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1793992146
+   "checked": 1793992291
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 95,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12247,9 +12252,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 7,
+ "rotation_index": 12,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/new-balance-fuelcell-rebel-v4-zapatillas-running-asfalto-color-azul-y-rosa-81eur-2057645": 1793970610.3588617,
   "https://www.chollometro.com/ofertas/lego-star-wars-halcon-milenario-2057200": 1793972690.7320957,
   "https://www.chollometro.com/ofertas/new-balance-fuelcell-propel-v5-zapatillas-running-asfalto-tallas-36-365-37-375-2057620": 1793974716.1744974,
   "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755,
