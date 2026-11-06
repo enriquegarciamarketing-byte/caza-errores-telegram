@@ -1600,7 +1600,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 101,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2227,46 +2227,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|super meat boy 3d special edition para ps5 – edicion fisica especial|super 3d meat": {
-   "t": 1793391566.1183243,
-   "query": "super 3d meat",
-   "prices": [
-    25.99,
-    32.0,
-    34.95,
-    27.0,
-    39.0,
-    36.0,
-    29.9,
-    41.25,
-    55.0,
-    30.0,
-    26.0,
-    38.0,
-    46.0,
-    48.0,
-    31.99,
-    44.9,
-    44.99,
-    54.99,
-    45.0,
-    55.0,
-    29.9,
-    50.0,
-    80.0,
-    35.0,
-    34.9,
-    65.0,
-    30.0,
-    60.0,
-    49.9
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 81685,
-   "raw_count": 33
-  },
   "aliexpress|dji osmo pocket 4p [promo 11.11] [empieza 1-11]|aliexpress 4p dji": {
    "t": 1793391567.791271,
    "query": "aliexpress 4p dji",
@@ -7848,6 +7808,21 @@
    "http_status": 200,
    "bytes": 126550,
    "raw_count": 40
+  },
+  "|lego super mario game boy, juego de construccion +18 anos - 72046|lego 18 super": {
+   "t": 1793949069.4810994,
+   "query": "lego 18",
+   "prices": [
+    20.0,
+    15.0,
+    8.0,
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 90398,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -8211,7 +8186,8 @@
   "wallapop:cm-2056336": 1793909870.436811,
   "wallapop:cm-2056813": 1793911228.9858465,
   "wallapop:cm-2056916": 1793911231.060901,
-  "wallapop:cm-2056938": 1793913520.8316872
+  "wallapop:cm-2056938": 1793913520.8316872,
+  "wallapop:cm-2057216": 1793949070.0938177
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11004,11 +10980,12 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 20,
+ "rotation_index": 16,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/tapo-c510w-camara-de-vigilancia-wifi-exterior-360o-2k-deteccion-ia-deteccion-movimientovision-nocturna-a-coloralarma-luz-y-sonido-2056376": 1793941419.3013308,
   "https://www.chollometro.com/ofertas/salomon-alphaglide-zapatillas-de-senderismo-para-mujer-2056356": 1793943941.519753,
-  "https://www.chollometro.com/ofertas/mando-inalambrico-dualsense-edicion-limitada-marvel-lobezno-amarillo-de-combate-ps5-2057122": 1793945141.3609085
+  "https://www.chollometro.com/ofertas/mando-inalambrico-dualsense-edicion-limitada-marvel-lobezno-amarillo-de-combate-ps5-2057122": 1793945141.3609085,
+  "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313
  },
  "asked": {
   "cm-2051213": 1793880926,
