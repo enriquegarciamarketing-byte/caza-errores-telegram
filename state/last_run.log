@@ -1,16 +1,17 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 97 productos únicos
+Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
   Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36257 bytes, 30 chollos
-  Chollometro «Secador de pelo Dyson Supersonic en versiones Liso+Ondulado o Rizado+M»: Dyson 255.55 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 97998 bytes, 30 chollos
-  cm-2057267 · Dyson 255.55 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Secador de pelo Dyson Supersonic en versiones Liso+Ondulado 
-  Wallapop «secador v9 pelo»: 200 / 123974 bytes, 32 anuncios, 0 parecidos, 0 reservas
-  Wallapop «secador v9»: 200 / 137525 bytes, 39 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
-  Milanuncios «secador v9 pelo»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «Secador de pelo Dyson Supersonic en versiones Liso+Ondulado o Rizado+Muy Rizado (control d»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Chollometro «New Balance FUELCELL REBEL V4 - Zapatillas running asfalto-Color azul »: Zalando Privé 72.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 99273 bytes, 30 chollos
+  cm-2057645 · Zalando Privé 72.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance FUELCELL REBEL V4 - Zapatillas running asfalto-C
+  Vinted «new v4 balance»: HTTP 200, 3692186 bytes, 96 anuncios
+  Vinted «new v4 balance»: 88 parecidos de 96
+  Wallapop «new v4 balance»: 200 / 143999 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «new v4 balance»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 109 anuncios, ~50 €, no publica
+  ⚠️ No publico «New Balance FUELCELL REBEL V4 - Zapatillas running asfalto-Color azul y rosa 81€»: reventa en VINTED+WALLAPOP ~50 € (109 anuncios): ROI -37 % y -26 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 31 descartes nuevos, 143 en lista
+Cascada al canal normal: 38 descartes nuevos, 154 en lista
