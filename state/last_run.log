@@ -1,17 +1,8 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 95 productos únicos
+Listados: 103 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36895 bytes, 30 chollos
-  Chollometro «New Balance FUELCELL PROPEL V5 - Zapatillas running asfalto- Tallas- 3»: Zalando Privé 56.0 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67611 bytes, 30 chollos
-  cm-2057620 · Zalando Privé 56.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance FUELCELL PROPEL V5 - Zapatillas running asfalto-
-  Vinted «new v5 balance»: HTTP 200, 3687458 bytes, 96 anuncios
-  Vinted «new v5 balance»: 87 parecidos de 96
-  Wallapop «new v5 balance»: 200 / 146381 bytes, 40 anuncios, 31 parecidos, 0 reservas
-  Milanuncios «new v5 balance»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 107 anuncios, ~54 €, no publica
-  ⚠️ No publico «New Balance FUELCELL PROPEL V5 - Zapatillas running asfalto- Tallas- 36, 36.5, 37, 37.5»: reventa en VINTED+WALLAPOP ~54 € (107 anuncios): ROI -12 % y -7 €, por debajo del mínimo (30 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36878 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67616 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 35 descartes nuevos, 113 en lista
+Cascada al canal normal: 43 descartes nuevos, 136 en lista
