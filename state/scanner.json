@@ -1099,6 +1099,11 @@
    "price": 799.0,
    "t": 1793969163,
    "result": "la referencia corregida no supera el precio (media inflada)"
+  },
+  "RaOmnkM": {
+   "price": 449.0,
+   "t": 1793972827,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1610,12 +1615,12 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 95,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
  "discovery_cache": {
-  "t": 1793951976.6017313,
+  "t": 1793973594.5450525,
   "titles": [
    "zelda ocarina of time - nintendo switch 2",
    "ea sports fc™ 27 - edicion estandar playstation 5| disco fisico | videojuegos | castellano",
@@ -2270,16 +2275,6 @@
   }
  },
  "wallapop_cache": {
-  "instant gaming|forza horizon 6 - pc & xbox series x|s|instant gaming forza": {
-   "t": 1793453156.1884246,
-   "query": "instant gaming forza",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "prive by zalando|nike flex train - zapatillas para gimnasio- tallas- 38.5, 40, 47, 49.5|prive zalando 38": {
    "t": 1793453159.1337655,
    "query": "prive zalando 38",
@@ -7978,6 +7973,56 @@
    "http_status": 200,
    "bytes": 143999,
    "raw_count": 40
+  },
+  "|lego star wars halcon milenario|lego star": {
+   "t": 1793972692.9686024,
+   "query": "lego star",
+   "prices": [
+    119.95,
+    10.0,
+    9.0,
+    30.0,
+    49.0,
+    18.0,
+    12.95,
+    100.0,
+    70.0,
+    10.0,
+    69.95,
+    29.9,
+    12.95,
+    65.0,
+    42.9,
+    13.0,
+    30.0,
+    30.0,
+    30.0,
+    130.0,
+    50.0,
+    23.99,
+    25.0,
+    3.0,
+    60.0,
+    155.0,
+    39.99,
+    5.95,
+    42.99,
+    26.0,
+    49.95,
+    3.0,
+    44.95,
+    46.0,
+    28.0,
+    85.0,
+    8.0,
+    65.0,
+    50.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 106503,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8358,7 +8403,8 @@
   "wallapop:cm-2057396": 1793969618.8823156,
   "wallapop:cm-2057617": 1793970374.7428708,
   "wallapop:cm-2057267": 1793970513.6196318,
-  "wallapop:cm-2057645": 1793970634.4981084
+  "wallapop:cm-2057645": 1793970634.4981084,
+  "wallapop:cm-2057200": 1793972693.3314967
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11510,10 +11556,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 13,
+ "rotation_index": 9,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212,
-  "https://www.chollometro.com/ofertas/auriculares-sony-wf-c510-bluetooth-multipunto-hasta-22-horas-de-bateria-auriculares-modo-sonido-ambiente-ipx4-negro-2055853": 1793951734.193463,
   "https://www.chollometro.com/ofertas/mando-switch-2-2054501": 1793952342.0173955,
   "https://www.chollometro.com/ofertas/saguaro-punto-barefoot-zapatillas-minimalistas-hombre-mujer-2057114": 1793953099.9624345,
   "https://www.chollometro.com/ofertas/new-balance-u471-unisex-zapatillas-2057224": 1793953099.9624345,
@@ -11529,7 +11573,8 @@
   "https://www.chollometro.com/ofertas/lego-dc-comics-logotipo-de-batman-super-heroes-2057396": 1793969614.975744,
   "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-ancho-especial-2057617": 1793970368.8196087,
   "https://www.chollometro.com/ofertas/secador-de-pelo-dyson-supersonic-en-versiones-lisoondulado-o-rizadomuy-rizado-control-de-calor-motor-v9-accesorios-magneticos-2057267": 1793970508.5269454,
-  "https://www.chollometro.com/ofertas/new-balance-fuelcell-rebel-v4-zapatillas-running-asfalto-color-azul-y-rosa-81eur-2057645": 1793970610.3588617
+  "https://www.chollometro.com/ofertas/new-balance-fuelcell-rebel-v4-zapatillas-running-asfalto-color-azul-y-rosa-81eur-2057645": 1793970610.3588617,
+  "https://www.chollometro.com/ofertas/lego-star-wars-halcon-milenario-2057200": 1793972690.7320957
  },
  "asked": {}
 }
