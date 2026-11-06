@@ -2227,16 +2227,6 @@
   }
  },
  "wallapop_cache": {
-  "aliexpress|dji osmo pocket 4p [promo 11.11] [empieza 1-11]|aliexpress 4p dji": {
-   "t": 1793391567.791271,
-   "query": "aliexpress 4p dji",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "atmosfera sport|zapatillas salomon speedcross peak (tallas de 41 a 46)|atmosfera sport 41": {
    "t": 1793391570.0565908,
    "query": "atmosfera sport 41",
@@ -7823,6 +7813,21 @@
    "http_status": 200,
    "bytes": 90398,
    "raw_count": 39
+  },
+  "|lego icons el senor de los anillos: casco de sauron, juguete de construccion +18 anos - 11373|lego 18 icons": {
+   "t": 1793951619.360273,
+   "query": "lego 18",
+   "prices": [
+    20.0,
+    15.0,
+    8.0,
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 89676,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -8187,7 +8192,8 @@
   "wallapop:cm-2056813": 1793911228.9858465,
   "wallapop:cm-2056916": 1793911231.060901,
   "wallapop:cm-2056938": 1793913520.8316872,
-  "wallapop:cm-2057216": 1793949070.0938177
+  "wallapop:cm-2057216": 1793949070.0938177,
+  "wallapop:cm-2057251": 1793951620.0000272
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -10980,12 +10986,13 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/tapo-c510w-camara-de-vigilancia-wifi-exterior-360o-2k-deteccion-ia-deteccion-movimientovision-nocturna-a-coloralarma-luz-y-sonido-2056376": 1793941419.3013308,
   "https://www.chollometro.com/ofertas/salomon-alphaglide-zapatillas-de-senderismo-para-mujer-2056356": 1793943941.519753,
   "https://www.chollometro.com/ofertas/mando-inalambrico-dualsense-edicion-limitada-marvel-lobezno-amarillo-de-combate-ps5-2057122": 1793945141.3609085,
-  "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313
+  "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313,
+  "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212
  },
  "asked": {
   "cm-2051213": 1793880926,
