@@ -1647,28 +1647,10 @@
    "url": "https://www.elcorteingles.es/juguetes/A200044701-juego-de-construccion-el-senor-de-los-anillos-la-comarca-lego-icons-10354/&utm_medium=shared_referral&utm_campaign=shared_referral_icon_app&utm_source=social_media_app",
    "alert_id": 447,
    "alert_text_id": 448,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1793988947,
-   "card_data": {
-    "title": "La comarca Lego",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 161.25,
-    "reference": 269.99,
-    "image": "https://static.chollometro.com/threads/raw/JiJit/2057830_1/re/150x150/qt/55/2057830_1.jpg",
-    "store_label": "El Corte Inglés",
-    "conditions": "",
-    "resale": {
-     "price": 250.0,
-     "count": 14,
-     "roi": 46.04651162790698,
-     "profit": 74.25,
-     "source_label": "WALLAPOP",
-     "note": "14 anuncios de referencia · Wallapop · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   },
   {
    "id": "cm-2056050",
@@ -1700,12 +1682,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1793988828
+   "checked": 1793988952
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12200,7 +12182,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-dc-comics-logotipo-de-batman-super-heroes-2057396": 1793969614.975744,
   "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-ancho-especial-2057617": 1793970368.8196087,
