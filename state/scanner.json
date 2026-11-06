@@ -1610,7 +1610,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 95,
+ "last_listing_count": 96,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2270,16 +2270,6 @@
   }
  },
  "wallapop_cache": {
-  "showroomprive|hoff zapatillas de nobuk viena man. un monton de modelos.|showroomprive hoff": {
-   "t": 1793440290.4382687,
-   "query": "showroomprive hoff",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "dreametech|robot aspirador dreame matrix10 ultra (cambio mopas automatico, proleap 8cm) - black friday + regalo|dreametech matrix10 robot": {
    "t": 1793440292.5391164,
    "query": "dreametech matrix10 robot",
@@ -7938,6 +7928,34 @@
    "http_status": 200,
    "bytes": 129070,
    "raw_count": 40
+  },
+  "|lego dc comics logotipo de batman super heroes|lego comics": {
+   "t": 1793969618.2340636,
+   "query": "lego comics",
+   "prices": [
+    12.9,
+    5.0,
+    3.0,
+    45.0,
+    9.0,
+    3.0,
+    4.0,
+    3.0,
+    5.0,
+    15.0,
+    22.0,
+    3.0,
+    20.0,
+    40.0,
+    28.99,
+    25.0,
+    12.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 86138,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8314,7 +8332,8 @@
   "wallapop:cm-2056897": 1793958766.5600948,
   "wallapop:cm-2057311": 1793963227.5306656,
   "wallapop:cm-2057302": 1793963228.557204,
-  "wallapop:cm-2057562": 1793966400.9369836
+  "wallapop:cm-2057562": 1793966400.9369836,
+  "wallapop:cm-2057396": 1793969618.8823156
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11284,7 +11303,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 11,
+ "rotation_index": 16,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313,
   "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212,
@@ -11300,7 +11319,8 @@
   "https://www.chollometro.com/ofertas/cupon-25-juego-de-construccion-barcaza-velera-de-jabba-lego-star-wars-75397-2057311": 1793963220.4905753,
   "https://www.chollometro.com/ofertas/skechers-flex-appeal-40-brilliant-view-zapatillas-de-gimnasio-2057562": 1793966388.7924454,
   "https://www.chollometro.com/ofertas/dji-osmo-action-4-pack-estandar-2051452": 1793966388.7924454,
-  "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793966388.7924454
+  "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793966388.7924454,
+  "https://www.chollometro.com/ofertas/lego-dc-comics-logotipo-de-batman-super-heroes-2057396": 1793969614.975744
  },
  "asked": {}
 }
