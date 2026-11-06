@@ -1,8 +1,15 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 103 productos únicos
+Listados: 94 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36878 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67616 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36761 bytes, 30 chollos
+  Chollometro «Mando Switch 2 Pro version asiatica (envio desde alemania)»: AliExpress 59.95 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 63400 bytes, 30 chollos
+  cm-2057667 · AliExpress 59.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Mando Switch 2 Pro version asiatica
+  Wallapop «mando switch»: 200 / 109571 bytes, 40 anuncios, 20 parecidos, 0 reservas
+  Milanuncios «mando switch»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 13 anuncios, ~20 €, no publica
+  ⚠️ No publico «Mando Switch 2 Pro version asiatica»: reventa en WALLAPOP ~20 € (13 anuncios): ROI -71 % y -43 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 43 descartes nuevos, 136 en lista
+Cascada al canal normal: 37 descartes nuevos, 153 en lista
