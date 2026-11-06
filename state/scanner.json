@@ -1610,7 +1610,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 93,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2270,16 +2270,6 @@
   }
  },
  "wallapop_cache": {
-  "dreametech|robot aspirador dreame matrix10 ultra (cambio mopas automatico, proleap 8cm) - black friday + regalo|dreametech matrix10 robot": {
-   "t": 1793440292.5391164,
-   "query": "dreametech matrix10 robot",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
   "aliexpress|reloj garmin forerunner 265 (gps, amoled) [1 nov 00:00]|aliexpress 265 reloj": {
    "t": 1793440294.4656372,
    "query": "aliexpress 265 reloj",
@@ -7956,6 +7946,37 @@
    "http_status": 200,
    "bytes": 86138,
    "raw_count": 40
+  },
+  "|zapatillas new balance v7 hierro- ancho especial- mujer|zapatillas v7 new": {
+   "t": 1793970373.6045191,
+   "query": "zapatillas v7 new",
+   "prices": [
+    75.0,
+    40.0,
+    49.0,
+    50.0,
+    70.0,
+    43.0,
+    50.0,
+    112.0,
+    30.0,
+    65.0,
+    150.0,
+    70.0,
+    90.0,
+    49.0,
+    90.0,
+    95.0,
+    60.0,
+    60.0,
+    39.0,
+    49.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 129119,
+   "raw_count": 35
   }
  },
  "milanuncios_cache": {
@@ -8333,7 +8354,8 @@
   "wallapop:cm-2057311": 1793963227.5306656,
   "wallapop:cm-2057302": 1793963228.557204,
   "wallapop:cm-2057562": 1793966400.9369836,
-  "wallapop:cm-2057396": 1793969618.8823156
+  "wallapop:cm-2057396": 1793969618.8823156,
+  "wallapop:cm-2057617": 1793970374.7428708
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11298,12 +11320,97 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~36 € (60 anuncios): ROI -6 % y -2 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas new balance v7 hierro- ancho especial- mujer|zapatillas v7 new": {
+   "t": 1793970373.314428,
+   "prices": [
+    9.0,
+    50.0,
+    35.0,
+    7.0,
+    22.0,
+    15.0,
+    75.0,
+    56.0,
+    65.0,
+    60.0,
+    65.0,
+    78.0,
+    15.0,
+    55.0,
+    25.0,
+    35.0,
+    38.0,
+    20.0,
+    75.0,
+    15.0,
+    45.0,
+    90.0,
+    30.0,
+    49.0,
+    109.0,
+    35.0,
+    35.0,
+    60.0,
+    49.0,
+    69.0,
+    10.0,
+    58.99,
+    33.0,
+    30.0,
+    15.0,
+    60.0,
+    45.0,
+    35.9,
+    20.0,
+    109.0,
+    89.0,
+    10.0,
+    100.0,
+    40.0,
+    15.0,
+    100.0,
+    25.0,
+    40.0,
+    100.0,
+    8.0,
+    40.0,
+    95.0,
+    50.0,
+    29.0,
+    25.0,
+    30.0,
+    25.0,
+    20.0,
+    135.0,
+    40.0,
+    22.0,
+    35.0,
+    45.0,
+    60.0,
+    75.0,
+    60.0,
+    60.0,
+    25.0,
+    28.0,
+    80.0,
+    89.0,
+    28.0,
+    22.0,
+    44.0,
+    45.0,
+    25.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~35 € (56 anuncios): ROI -61 % y -49 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 15,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313,
   "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212,
@@ -11320,7 +11427,8 @@
   "https://www.chollometro.com/ofertas/skechers-flex-appeal-40-brilliant-view-zapatillas-de-gimnasio-2057562": 1793966388.7924454,
   "https://www.chollometro.com/ofertas/dji-osmo-action-4-pack-estandar-2051452": 1793966388.7924454,
   "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793966388.7924454,
-  "https://www.chollometro.com/ofertas/lego-dc-comics-logotipo-de-batman-super-heroes-2057396": 1793969614.975744
+  "https://www.chollometro.com/ofertas/lego-dc-comics-logotipo-de-batman-super-heroes-2057396": 1793969614.975744,
+  "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-ancho-especial-2057617": 1793970368.8196087
  },
  "asked": {}
 }
