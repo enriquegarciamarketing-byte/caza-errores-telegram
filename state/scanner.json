@@ -1620,7 +1620,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 96,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2280,21 +2280,6 @@
   }
  },
  "wallapop_cache": {
-  "amazon|apple iphone air de 1 tb, azul cielo: pantalla de 6,5 pulgadas con promotion hasta 120 hz, chip a19 pro, el iphone mas fino jamas creado|apple 120 iphone": {
-   "t": 1793458672.0886362,
-   "query": "apple 120",
-   "prices": [
-    100.0,
-    145.0,
-    45.0,
-    114.9
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 137299,
-   "raw_count": 40
-  },
   "prive by zalando|adidas terrex agravic speed 2 - zapatillas de trail. tallas 38 a 50. descuento aplicable a miembros plus|prive zalando 38": {
    "t": 1793458674.6383011,
    "query": "prive zalando 38",
@@ -8076,6 +8061,55 @@
    "http_status": 200,
    "bytes": 109571,
    "raw_count": 40
+  },
+  "|mario kart world nintendo switch 2 (cuentas seleccionadas)|mario kart": {
+   "t": 1793975649.8485467,
+   "query": "mario kart",
+   "prices": [
+    100.0,
+    29.9,
+    30.0,
+    20.0,
+    30.0,
+    80.0,
+    10.0,
+    29.0,
+    60.0,
+    40.0,
+    55.0,
+    10.0,
+    35.0,
+    30.0,
+    59.9,
+    14.95,
+    15.0,
+    25.0,
+    30.0,
+    39.0,
+    220.0,
+    15.0,
+    14.99,
+    23.95,
+    355.0,
+    160.0,
+    10.0,
+    449.0,
+    165.0,
+    30.0,
+    30.0,
+    8.0,
+    35.0,
+    15.0,
+    22.99,
+    20.0,
+    30.0,
+    29.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 96475,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8459,7 +8493,8 @@
   "wallapop:cm-2057645": 1793970634.4981084,
   "wallapop:cm-2057200": 1793972693.3314967,
   "wallapop:cm-2057620": 1793974720.9384181,
-  "wallapop:cm-2057667": 1793975463.520407
+  "wallapop:cm-2057667": 1793975463.520407,
+  "wallapop:cm-2057793": 1793975650.4613504
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -11707,7 +11742,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 13,
+ "rotation_index": 18,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/macbook-neo-a18-pro-8gb-256gb-rosa-nube-2057120": 1793955379.7286956,
   "https://www.chollometro.com/ofertas/maqueta-lego-architecture-fontana-di-trevi-21062-juego-de-construccion-18-anos-modelo-de-exposicion-roma-carrefour-2057310": 1793957898.055094,
@@ -11723,7 +11758,8 @@
   "https://www.chollometro.com/ofertas/new-balance-fuelcell-rebel-v4-zapatillas-running-asfalto-color-azul-y-rosa-81eur-2057645": 1793970610.3588617,
   "https://www.chollometro.com/ofertas/lego-star-wars-halcon-milenario-2057200": 1793972690.7320957,
   "https://www.chollometro.com/ofertas/new-balance-fuelcell-propel-v5-zapatillas-running-asfalto-tallas-36-365-37-375-2057620": 1793974716.1744974,
-  "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755
+  "https://www.chollometro.com/ofertas/mando-switch-2-pro-version-asiatica-envio-desde-alemania-2057667": 1793975459.5101755,
+  "https://www.chollometro.com/ofertas/mario-kart-world-nintendo-switch-2-cuentas-seleccionadas-2057793": 1793975642.3706646
  },
  "asked": {}
 }
