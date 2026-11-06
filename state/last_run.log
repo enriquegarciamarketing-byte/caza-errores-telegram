@@ -1,56 +1,8 @@
 Creators API: sin claves (productos con tallas descartados)
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 1357, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 1386, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 1432, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 1381, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 1141, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 1085, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 1527, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/ssl.py", line 455, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/ssl.py", line 1054, in _create
-    self.do_handshake()
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/ssl.py", line 1332, in do_handshake
-    self._sslobj.do_handshake()
-ConnectionResetError: [Errno 104] Connection reset by peer
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 2005, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 1603, in main
-    me = tg.call("getMe")
-         ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 195, in call
-    with urllib.request.urlopen(req, timeout=30) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 215, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 515, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 532, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 492, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 1405, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 1360, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [Errno 104] Connection reset by peer>
+Bot: @cazaerroresAmazon_bot
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36011 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71527 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 41 descartes nuevos, 147 en lista
