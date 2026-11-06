@@ -1094,6 +1094,11 @@
    "price": 39.95,
    "t": 1793963203,
    "result": "solo -22% bajo la referencia"
+  },
+  "1BKX8vV": {
+   "price": 799.0,
+   "t": 1793969163,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1605,7 +1610,7 @@
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 95,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -11279,7 +11284,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 11,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-super-mario-game-boy-juego-de-construccion-18-anos-72046-2057216": 1793949065.2590313,
   "https://www.chollometro.com/ofertas/lego-icons-el-senor-de-los-anillos-casco-de-sauron-juguete-de-construccion-18-anos-11373-2057251": 1793951615.4433212,
@@ -11297,9 +11302,5 @@
   "https://www.chollometro.com/ofertas/dji-osmo-action-4-pack-estandar-2051452": 1793966388.7924454,
   "https://www.chollometro.com/ofertas/garmin-forerunner-170-2056542": 1793966388.7924454
  },
- "asked": {
-  "cm-2051213": 1793880926,
-  "cm-2048864": 1793881535,
-  "cm-2049729": 1793881539
- }
+ "asked": {}
 }
