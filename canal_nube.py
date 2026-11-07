@@ -597,9 +597,10 @@ def buttons(url: str) -> dict:
     return {"inline_keyboard": [[{"text": "🛒 Ver en Amazon", "url": url}]]}
 
 
-def x_text(deal: dict, url: str, rules: dict) -> str:
+def x_text(deal: dict, url: str, rules: dict, state: dict | None = None) -> str:
     """Post para X con la voz de x_post.py: sin la palabra Amazon y, hasta tener la API, sin precio ni %."""
     from x_post import build_x_post
+    now = datetime.now(MADRID)
     # El ID de la cuenta nueva de afiliados solo va en X (único sitio dado de alta); el canal sigue con el suyo.
     if rules.get("x_affiliate_tag") and deal.get("asin"):
         url = f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['x_affiliate_tag']}"
@@ -608,7 +609,8 @@ def x_text(deal: dict, url: str, rules: dict) -> str:
     return build_x_post(deal.get("title") or "", deal.get("brand") or "", url, seed=deal.get("asin") or url,
                         extra_handles=rules.get("x_brand_handles"), badge=badge, price=deal.get("price"),
                         reference=deal.get("reference"), numbers=bool(rules.get("x_prices")),
-                        hour=datetime.now(MADRID).hour)
+                        hour=now.hour, month=now.month, day=now.day,
+                        recent=state.setdefault("x_recent", []) if state is not None else None)
 
 
 X_FILTER = {
@@ -662,7 +664,7 @@ def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, 
         return
     head = "🧪 PRUEBA · " if test else ""
     text = (f"{head}🐦 <b>Para X</b> · mantén pulsado el texto para copiarlo y activa la bandera «Paid partnership» antes de publicar\n\n"
-            f"<pre>{html.escape(x_text(deal, url, rules))}</pre>")
+            f"<pre>{html.escape(x_text(deal, url, rules, state))}</pre>")
     try:
         tg.call("sendMessage", {"chat_id": admin, "text": text, "parse_mode": "HTML",
                                 "link_preview_options": {"url": url, "prefer_large_media": True}})

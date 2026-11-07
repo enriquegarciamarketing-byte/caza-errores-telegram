@@ -1,12 +1,14 @@
-"""Texto para X (@AzvensLoL) con la voz de @kevincrestt (pero con mayúscula al empezar cada frase): primera
-persona, saluda como él ("Buenos días chavales"), cuenta lo que ha pillado el bot y por qué merece la pena,
-avisa del riesgo sin vender humo y acaba en el enlace.
+"""Texto para X (@AzvensLoL) con la voz de Enrique para trabajar su marca personal: plantillas distintas
+(TEMPLATES) que no se repiten entre posts seguidos, gancho en la primera línea, frases cortas en vosotros y
+cierre en 👇🏼 con el enlace debajo, para que X pinte la foto del producto en grande.
 
-    A correr chavales, acaba de saltar esta tv de @XiaomiEspana (Xiaomi TV Pro 32 Pulgadas 2026).
+    Os chivo una cosa antes de que se entere todo el mundo 🤫
+
+    Esta tv de @XiaomiEspana (Xiaomi TV Pro 32 Pulgadas 2026).
 
     De los descuentos más fuertes que le he visto.
 
-    Ojo, que estas suelen durar poco.
+    👇🏼
 
     https://link...
 
@@ -65,31 +67,63 @@ KINDS = [
     (r"consola|playstation|nintendo switch|xbox", "esta consola"),
 ]
 
-# Aperturas como las de @kevincrestt. {hi} es el saludo según la hora ("Buenos días", "Buenas tardes"...).
-OPENERS = [
-    "{hi} chavales, el bot acaba de cazar {what}.",
-    "{hi} jefes, os enseño lo que acaba de pillar el bot: {what}.",
-    "El bot acaba de pillar {what}.",
-    "Le acaba de saltar al bot {what}.",
-]
-OPENERS_URGENT = [  # errores de precio y chollazos
-    "A correr chavales, acaba de saltar {what}.",
-    "{hi} gente, el bot acaba de cazar {what}.",
-    "El bot acaba de cazar {what}.",
+# Posts completos con la voz de Enrique (marca personal: el que se montó un bot para no comprar nada a precio
+# normal). Cada uno con un gancho distinto arriba, que es lo único que se ve antes del "Mostrar más", y siempre
+# acaban en 👇🏼 con el enlace debajo para que X pinte la foto en grande. Algunos cierran con pregunta: en X las
+# respuestas pesan mucho más que los likes. {What} = "Esta tv de @XiaomiEspana (Xiaomi TV Pro 32)",
+# {a_kind} = "una tv", {why} y {caveat} salen de las listas de abajo. "when" filtra los de temporada u hora.
+TEMPLATES = [
+    {"id": "bot-aviso", "lines": ["Mi bot acaba de soltar un aviso que no me esperaba 👀", "{What}.", "{why}",
+                                  "Os lo dejo aquí antes de que vuele 👇🏼"]},
+    {"id": "regla", "lines": ["Regla que me aplico siempre: nada a precio normal.", "Y {what} ahora mismo no lo está.",
+                              "{why}", "Aquí lo tenéis 👇🏼"]},
+    {"id": "alguien", "lines": ["¿Alguien andaba detrás de {a_kind}?", "{What} acaba de caer.", "{why}",
+                                "Luego no digáis que no avisé 👇🏼"], "needs": "kind"},
+    {"id": "black-friday", "lines": ["Hay gente esperando al Black Friday para comprar esto.",
+                                     "Yo no esperaría: {what} ya ha bajado.", "{why}", "👇🏼"], "when": "noviembre"},
+    {"id": "no-dura", "lines": ["Esto no dura ni una tarde.", "{What}.", "{caveat}", "👇🏼"]},
+    {"id": "filtro", "lines": ["El bot descarta casi todo lo que ve. Esto ha pasado el filtro:", "{What}.", "{why}",
+                               "Enlace abajo 👇🏼"]},
+    {"id": "chivatazo", "lines": ["Os chivo una cosa antes de que se entere todo el mundo 🤫", "{What}.", "{why}",
+                                  "👇🏼"]},
+    {"id": "telegram", "lines": ["Estas cosas me duran minutos en el canal de Telegram.",
+                                 "Así que os lo pongo aquí también: {what}.", "{caveat}", "👇🏼"]},
+    {"id": "momento", "lines": ["Si os hace falta {a_kind}, es el momento.", "{What}.", "{why}", "👇🏼"],
+     "needs": "kind"},
+    {"id": "rapido", "lines": ["Pocas veces comparto algo tan rápido.", "{What}.", "{why}", "Corred 👇🏼"]},
+    {"id": "cartera", "lines": ["Mi cartera: este mes no compras nada más.", "Yo viendo {what}: 👀", "{why}", "👇🏼"]},
+    {"id": "pregunta", "lines": ["{What} acaba de bajar de precio.", "{why}",
+                                 "¿Lo pilláis ya o esperáis a ver si baja más? 👇🏼"]},
+    {"id": "cabeza", "lines": ["Esto es lo que quiero decir cuando digo que hay que comprar con cabeza.", "{What}.",
+                               "{why}", "👇🏼"]},
+    {"id": "error", "lines": ["ALERTA 🚨", "Esto huele a error de precio.", "{What}.", "{caveat}", "👇🏼"],
+     "badges": ["ERROR DE PRECIO"]},
+    {"id": "manana", "lines": ["Café en mano y el bot ya ha cazado algo ☕", "{What}.", "{why}", "👇🏼"],
+     "when": "manana"},
+    {"id": "noche", "lines": ["Último aviso antes de irme a dormir 😴", "{What}.", "{caveat}", "👇🏼"], "when": "noche"},
+    {"id": "comprado", "lines": ["Si no lo tuviera ya, lo pillaba ahora mismo.", "{What}.", "{why}",
+                                 "¿Alguien más se lo lleva? 👇🏼"]},
+    {"id": "guarda", "lines": ["Guardad este post, que esto no se ve todos los días.", "{What}.", "{why}", "👇🏼"]},
 ]
 # Por qué merece la pena, sin cifras (Amazon sin API).
 WHY = {
     "ERROR DE PRECIO": ["Error de precio de manual, nada que ver con lo que cuesta normalmente.",
-                        "Tiene toda la pinta de error, no es un precio normal para esto."],
+                        "Tiene toda la pinta de error, no es un precio normal para esto.",
+                        "Precio rarísimo para lo que es. Yo no me lo pensaría."],
     "CHOLLAZO": ["De los descuentos más fuertes que le he visto.",
-                 "Muy por debajo de su precio habitual, de esos que no se ven cada día."],
+                 "Muy por debajo de su precio habitual, de esos que no se ven cada día.",
+                 "El bot lo tenía vigilado y no lo había visto así de bien.",
+                 "Precio de los que hacen que te lo replantees aunque no lo necesites."],
     "CHOLLO": ["No es error de precio, pero está bastante mejor que de normal.",
-               "Si lo estabais esperando, es buen momento."],
+               "Si lo estabais esperando, es buen momento.",
+               "Buen precio para algo que se usa todos los días.",
+               "De lo que más se vende, y ahora sale bastante más barato."],
 }
 # Con cifras (AliExpress, y Amazon cuando haya API: "x_prices": true).
 WHY_NUMBERS = [
     "Está a {price} cuando a precio normal ronda los {ref}, un {pct}% menos.",
     "Ha bajado a {price} y su precio normal está en {ref} (un {pct}% menos).",
+    "{price} cuando lo normal es pagar {ref}. Un {pct}% menos.",
 ]
 # Una línea de contexto como las suyas, solo para algunos productos.
 CONTEXT = {
@@ -104,8 +138,11 @@ CAVEAT = {
                         "Aprovechad antes de que lo corten."],
     "default": ["Ojo, que estas suelen durar poco.",
                 "Si se agota lo aviso en Telegram, pero yo no lo dejaría pasar.",
-                "Yo de vosotros no lo pensaría mucho, que estas vuelan."],
+                "Yo de vosotros no lo pensaría mucho, que estas vuelan.",
+                "Cuando lo veáis ya puede estar agotado, avisados quedáis."],
 }
+ARTICLES = {"este": "un", "esta": "una", "estos": "unos", "estas": "unas"}
+RECENT_KEEP = 8  # plantillas que no se repiten hasta pasados estos posts
 X_LIMIT = 280
 
 
@@ -163,8 +200,15 @@ def _what(title: str, brand: str, extra_handles: dict | None) -> str:
     who = brand_mention(brand, extra_handles)
     name = short_name(title)
     tagged = who.startswith("@")
-    if kind and who:
-        return f"{kind} de {who} ({name})" if tagged else f"{kind} de {name}"
+    if kind and who and tagged:
+        return f"{kind} de {who} ({name})"
+    if kind:
+        # "esta cafetera De'Longhi Magnifica S", sin repetir la palabra del tipo ("cafetera de Cafetera...")
+        drop = {w.lower() for w in kind.split()[1:]} | {"robot", "aspirador", "aspiradora"} & set(kind.split())
+        rest = [w for w in name.split() if w.lower().strip(",.") not in drop]
+        while rest and rest[-1].lower() in {"de", "para", "con", "y", "e", "a", "en"}:
+            rest.pop()
+        return f"{kind} {' '.join(rest)}".strip()
     if who and tagged:
         return f"esto de {who} ({name})"
     return name or "esto"
@@ -176,14 +220,47 @@ def greeting(hour: int | None) -> str:
     return "Buenas tardes" if hour < 21 else "Buenas noches"
 
 
+def indefinite(kind: str) -> str:
+    """'esta tv' → 'una tv'."""
+    first, _, rest = kind.partition(" ")
+    return f"{ARTICLES.get(first, first)} {rest}".strip()
+
+
+def _fits(template: dict, badge: str, kind: str, hour: int | None, month: int | None, day: int | None) -> bool:
+    if template.get("badges") and badge not in template["badges"]:
+        return False
+    if template.get("needs") == "kind" and not kind:
+        return False
+    when = template.get("when")
+    if when == "noviembre":
+        return month == 11 and (day or 0) <= 27
+    if when == "manana":
+        return hour is not None and 7 <= hour < 11
+    if when == "noche":
+        return hour is not None and (hour >= 22 or hour < 2)
+    return True
+
+
+def choose_template(seed: str, badge: str, kind: str, hour: int | None = None, month: int | None = None,
+                    day: int | None = None, recent: list | None = None) -> dict:
+    """Plantilla para este producto sin repetir las últimas usadas (recent se actualiza)."""
+    pool = [t for t in TEMPLATES if _fits(t, badge, kind, hour, month, day)]
+    fresh = [t for t in pool if t["id"] not in (recent or [])] or pool
+    chosen = fresh[hashlib.sha256(f"tpl:{seed}".encode("utf-8")).digest()[0] % len(fresh)]
+    if recent is not None:
+        recent.append(chosen["id"])
+        del recent[:-RECENT_KEEP]
+    return chosen
+
+
 def build_x_post(title: str, brand: str, link: str, seed: str = "", extra_handles: dict | None = None,
                  extra_line: str = "", badge: str = "CHOLLO", price: float | None = None,
-                 reference: float | None = None, numbers: bool = False, hour: int | None = None) -> str:
+                 reference: float | None = None, numbers: bool = False, hour: int | None = None,
+                 month: int | None = None, day: int | None = None, recent: list | None = None) -> str:
     seed = seed or link
     badge = badge if badge in WHY else ("CHOLLAZO" if badge == "TOP VENTAS" else "CHOLLO")
     kind = product_kind(title)
-    pool = OPENERS_URGENT if badge in ("ERROR DE PRECIO", "CHOLLAZO") else OPENERS
-    opener = _pick(pool, seed, "open").format(hi=greeting(hour), what=_what(title, brand, extra_handles))
+    what = _what(title, brand, extra_handles)
     if numbers and price and reference and reference > price:
         pct = round((reference - price) / reference * 100)
         why = _pick(WHY_NUMBERS, seed, "why").format(price=_euro(price), ref=_euro(reference), pct=pct)
@@ -191,10 +268,18 @@ def build_x_post(title: str, brand: str, link: str, seed: str = "", extra_handle
         why = f"Está a {_euro(price)}, de lo más vendido ahora mismo."
     else:
         why = _pick(WHY[badge], seed, "why")
+    if kind in CONTEXT and not numbers:
+        why = f"{why} {CONTEXT[kind]}"
     caveat = _pick(CAVEAT.get(badge) or CAVEAT["default"], seed, "caveat")
-    middle = [why] + ([CONTEXT[kind]] if kind in CONTEXT else []) + ([extra_line] if extra_line else []) + [caveat]
+    template = choose_template(seed, badge, kind, hour, month, day, recent)
+    values = {"What": what[:1].upper() + what[1:], "what": what, "a_kind": indefinite(kind), "why": why,
+              "caveat": caveat}
+    lines = [line.format(**values) for line in template["lines"]]
+    if extra_line:
+        lines.insert(-1, extra_line)
+    optional = [i for i, line in enumerate(lines) if line in (why, caveat, extra_line)]
     while True:
-        text = "\n\n".join([opener, *middle, link])
-        if x_length(text) <= X_LIMIT or len(middle) <= 1:
+        text = "\n\n".join([*lines, link])
+        if x_length(text) <= X_LIMIT or not optional:
             return text
-        middle.pop()  # si no cabe, cae primero la urgencia: el contexto es lo que más suena a él
+        lines.pop(optional.pop())  # si no cabe, cae la línea de contexto antes que el gancho o el cierre

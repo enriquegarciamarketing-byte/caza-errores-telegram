@@ -19,11 +19,29 @@ class XPost(unittest.TestCase):
         text = x_post.build_x_post("XIAOMI TV Pro 32 Pulgadas 2026, QLED Smart TV", "Xiaomi",
                                    "https://amzn.example/x", seed="a", badge="CHOLLAZO")
         lines = text.split("\n\n")
-        self.assertIn("esta tv de @XiaomiEspana (Xiaomi TV Pro 32 Pulgadas 2026)", lines[0])
-        self.assertTrue(all(l[0].isupper() or l[0] in "@h" for l in lines))
+        self.assertIn("tv de @XiaomiEspana (Xiaomi TV Pro 32 Pulgadas 2026)", text)
+        self.assertTrue(all(l[0].isupper() or l[0] in "@h¿👇" for l in lines))
         self.assertEqual(lines[-1], "https://amzn.example/x")
+        self.assertTrue(lines[-2].endswith("👇🏼"), "el enlace va debajo de la flechita")
         self.assertNotIn("afiliado", text)
         self.assertLessEqual(x_post.x_length(text), 280)
+
+    def test_templates_rotate(self):
+        recent, firsts = [], []
+        for i in range(10):
+            text = x_post.build_x_post("Cecotec Conga 2290 Robot aspirador", "Cecotec", "https://a.example/x",
+                                       seed=f"s{i % 2}", recent=recent, hour=16, month=11, day=7)
+            firsts.append(text.split("\n\n")[0])
+            self.assertLessEqual(x_post.x_length(text), 280)
+        self.assertEqual(len(set(firsts[:8])), 8, "no se repite el gancho en 8 posts seguidos")
+
+    def test_season_and_error_templates(self):
+        ids = {t["id"] for t in x_post.TEMPLATES if x_post._fits(t, "CHOLLO", "esta tv", 15, 12, 5)}
+        self.assertNotIn("black-friday", ids)
+        self.assertNotIn("error", ids)
+        self.assertIn("error", {t["id"] for t in x_post.TEMPLATES
+                                if x_post._fits(t, "ERROR DE PRECIO", "", 15, 11, 7)})
+        self.assertEqual(x_post.indefinite("esta tv"), "una tv")
 
     def test_aliexpress_numbers(self):
         text = x_post.build_x_post("Auriculares Soundcore P40i", "Soundcore", "https://s.click.aliexpress.com/e/_x",
@@ -38,7 +56,7 @@ class XPost(unittest.TestCase):
         text = cn.x_text(deal, "https://www.amazon.es/dp/B04?tag=t-21", {})
         for banned in ("€", "%", "Amazon", "AMAZON", "⭐", "valoraciones"):
             self.assertNotIn(banned, text)
-        self.assertIn("esta afeitadora de Gillette Fusion5", text)
+        self.assertIn("esta afeitadora gillette fusion5", text.lower())
 
     def test_unknown_brand_not_tagged_and_amazon_brand_dropped(self):
         self.assertEqual(x_post.brand_mention("CECOTEC"), "Cecotec")
