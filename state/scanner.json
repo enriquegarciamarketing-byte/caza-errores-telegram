@@ -1727,7 +1727,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794063437
+   "checked": 1794063477
   },
   {
    "id": "cm-2058280",
@@ -1762,12 +1762,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794063437
+   "checked": 1794063477
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13418,10 +13418,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 20,
+ "rotation_index": 4,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/nintendo-switch-sports-resort-amazon-japon-2058280": 1794041860.44703,
-  "https://www.chollometro.com/ofertas/new-balance-supercomp-trainer-v3-zapatillas-running-asfalto-2057201": 1794041860.44703,
   "https://www.chollometro.com/ofertas/zapatillas-new-balance-fresh-foam-x-evoz-v4-gore-tex-tallas-36-365-37-2058441": 1794042816.2316992,
   "https://www.chollometro.com/ofertas/saucony-kinvara-zapatillas-negro-2058406": 1794046038.8531253,
   "https://www.chollometro.com/ofertas/la-sportiva-zapatillas-de-trail-running-levante-mujer-blanco-2058458": 1794046038.8531253,
