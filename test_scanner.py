@@ -514,7 +514,7 @@ class PrivateModeTest(unittest.TestCase):
         self.assertIn("Ver en Amazon", tg.photos[0]["caption"])
         button = tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]
         self.assertEqual(button["text"], "🛒 Ver en Amazon")
-        self.assertIn("tag=cazadores_errores-21", button["url"])
+        self.assertNotIn("tag=", button["url"])  # premium sin afiliado de momento
         self.assertIn(cand["gtin"], button["url"])
         self.assertNotIn("disable_notification", tg.photos[0]["extra"])
         self.assertEqual(state, before)
@@ -537,7 +537,7 @@ class PrivateModeTest(unittest.TestCase):
         self.assertTrue(ok)
         url = tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"]
         self.assertIn("https://www.amazon.es/s?k=", url)
-        self.assertIn("tag=cazadores_errores-21", url)
+        self.assertNotIn("tag=", url)  # premium sin afiliado de momento
         self.assertTrue(tg.photos[0]["caption"].startswith("🧪 PRUEBA · vista previa"))
 
     def test_publicacion_normal_sigue_yendo_al_canal_y_se_recuerda(self):
@@ -557,7 +557,7 @@ class PrivateModeTest(unittest.TestCase):
         self.assertEqual(tg.photos[1]["chat_id"], 1880159117)
         self.assertEqual(len(state["posts"]), 1)
         self.assertEqual(state["posts"][0]["id"], cand["id"])
-        self.assertIn("tag=cazadores_errores-21", tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"])
+        self.assertNotIn("tag=", tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"])
         self.assertEqual(state["seen"], {})
 
     def test_sin_producto_exacto_no_sale_al_canal_con_busqueda_por_ean(self):
@@ -870,7 +870,7 @@ class WallapopTest(unittest.TestCase):
             ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
         self.assertTrue(ok)
         url = tg.photos[0]["extra"]["reply_markup"]["inline_keyboard"][0][0]["url"]
-        self.assertIn("tag=cazadores_errores-21", url)
+        self.assertNotIn("tag=", url)  # premium sin afiliado de momento
         self.assertNotIn("otro-21", url)
         self.assertIn("/dp/B07X1KT6LD", url)
         self.assertIn("Wallapop", tg.photos[0]["caption"])

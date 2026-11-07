@@ -112,3 +112,17 @@ class ShortLinkTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SinEtiqueta(unittest.TestCase):
+    def test_sin_tag_el_enlace_sale_limpio(self):
+        import affiliate
+        self.assertEqual(affiliate.force_tag("https://www.amazon.es/dp/B0H8T5GC4W?tag=otro-21&th=1", ""),
+                         "https://www.amazon.es/dp/B0H8T5GC4W?th=1")
+        self.assertEqual(affiliate.fallback_link("", asin="B0H8T5GC4W"), "https://www.amazon.es/dp/B0H8T5GC4W")
+        self.assertEqual(affiliate.clean_store_url("https://www.amazon.es/dp/B0H8T5GC4W?tag=otro-21", {},
+                                                   expected_asin="B0H8T5GC4W"),
+                         "https://www.amazon.es/dp/B0H8T5GC4W")
+        tagged = affiliate.clean_store_url("https://www.amazon.es/dp/B0H8T5GC4W?tag=otro-21",
+                                           {"affiliate_tag": "mio-21"}, expected_asin="B0H8T5GC4W")
+        self.assertIn("tag=mio-21", tagged)

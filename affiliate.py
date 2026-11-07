@@ -68,16 +68,18 @@ def force_tag(url: str, tag: str) -> str:
     parts = urllib.parse.urlsplit(url.strip())
     query = [(key, value) for key, value in urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
              if key.lower() != "tag"]
-    query.append(("tag", tag))
+    if tag:  # sin etiqueta (premium de momento) el enlace sale limpio, sin tag de nadie
+        query.append(("tag", tag))
     return urllib.parse.urlunsplit((parts.scheme or "https", parts.netloc, parts.path,
                                     urllib.parse.urlencode(query), parts.fragment))
 
 
 def fallback_link(tag: str, asin: str | None = None, gtin: str | None = None) -> str | None:
+    suffix = f"tag={urllib.parse.quote(tag)}" if tag else ""
     if asin and re.fullmatch(r"[A-Z0-9]{10}", asin.upper()):
-        return f"https://www.amazon.es/dp/{asin.upper()}?tag={urllib.parse.quote(tag)}"
+        return f"https://www.amazon.es/dp/{asin.upper()}" + (f"?{suffix}" if suffix else "")
     if gtin and re.fullmatch(r"\d{8,14}", gtin):
-        return f"https://www.amazon.es/s?k={urllib.parse.quote(gtin)}&tag={urllib.parse.quote(tag)}"
+        return f"https://www.amazon.es/s?k={urllib.parse.quote(gtin)}" + (f"&{suffix}" if suffix else "")
     return None
 
 
@@ -168,10 +170,9 @@ def clean_store_url(url: str | None, cfg: dict | None = None, *, expected_asin: 
     current = _drop_affiliate_query(current)
     tag = ((cfg or {}).get("affiliate_tag") or "").strip()
     if is_amazon_es(current) or is_short_link(current):
-        if not tag:
-            return None
+        # Sin etiqueta configurada el enlace de Amazon sale limpio (sin tag de nadie), no se descarta.
         final, _warnings = prepare_amazon_link(current, tag, asin=expected_asin, resolve=resolve)
-        if not final or tag not in tag_values(final):
+        if not final or (tag and tag not in tag_values(final)) or (not tag and tag_values(final)):
             return None
         if expected_asin and re.fullmatch(r"[A-Z0-9]{10}", expected_asin.upper()):
             got = extract_asin(final)
@@ -190,8 +191,8 @@ def prepare_amazon_link(url: str | None, tag: str, *, asin: str | None = None, g
     """
     raw = (url or "").strip()
     warnings: list[str] = []
-    if not raw or not tag:
-        return fallback_link(tag, asin, gtin) if tag else None, warnings
+    if not raw:
+        return fallback_link(tag, asin, gtin), warnings
     if is_short_link(raw):
         return _prepare_short(raw, tag, asin=asin, gtin=gtin, resolve=resolve or resolve_redirects)
     if is_amazon_es(raw):
@@ -212,7 +213,7 @@ def _prepare_short(url: str, tag: str, *, asin: str | None, gtin: str | None, re
         warnings.append(f"El enlace corto resuelve al ASIN {got}, no a {expected}. No lo uso.")
         return fallback_link(tag, expected, gtin), warnings
     tags = tag_values(final)
-    if tag not in tags:
+    if tag and tag not in tags:
         warnings.append("El enlace corto no termina con tu etiqueta de afiliado. Publico el enlace directo.")
         return fallback_link(tag, expected or got, gtin), warnings
     if is_amazon_es(final):

@@ -1,5 +1,6 @@
 {
-  "affiliate_tag": "cazadores_errores-21",
+  "_nota_affiliate_tag": "ID de afiliado del premium y lo demás que no es el canal free. Vacío: enlaces de Amazon limpios, sin afiliado (premium privado, de momento sin tu ID). El free lleva el suyo en amazon_channel.affiliate_tag.",
+  "affiliate_tag": "",
   "sources": [
     "https://jimmyleaks.com/es/minimos-de-hoy/",
     "https://jimmyleaks.com/es/?order=-modified",

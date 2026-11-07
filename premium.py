@@ -68,7 +68,7 @@ def store_name(host: str) -> str:
 def apply_store_template(url: str, cfg: dict) -> str:
     """Plantilla opcional por tienda (`{url}`). Vacía: se publica el enlace tal cual.
 
-    Amazon no pasa por aquí: sigue forzando tag=cazadores_errores-21.
+    Amazon no pasa por aquí: lleva el affiliate_tag general de config.json (vacío = enlace limpio, sin afiliado).
     """
     store_id, _label = store_of(url)
     hooks = ((cfg or {}).get("store_affiliates") or {})

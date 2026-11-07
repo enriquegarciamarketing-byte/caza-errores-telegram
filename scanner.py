@@ -628,7 +628,7 @@ def resale_check(cfg: dict, cand: dict, category: str | None = None) -> tuple[bo
 
 
 def affiliate_link(cfg: dict, gtin: str) -> str:
-    return affiliate.fallback_link(cfg["affiliate_tag"], gtin=gtin)
+    return affiliate.fallback_link(cfg.get("affiliate_tag") or "", gtin=gtin)
 
 
 def use_amazon_link(url: str | None, cfg: dict, state: dict, tg, *, asin: str | None = None,
@@ -1222,7 +1222,8 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     url = link_override or cand.get("direct_url")
     if test_private and not url:
         query = gtin or card_title(cand)
-        url = f"https://www.amazon.es/s?k={urllib.parse.quote(str(query))}&tag={cfg['affiliate_tag']}"
+        url = affiliate.force_tag(f"https://www.amazon.es/s?k={urllib.parse.quote(str(query))}",
+                                  cfg.get("affiliate_tag") or "")
     expected_asin = cand.get("asin") or affiliate.extract_asin(cand.get("direct_url") or "")
     if url:
         url = use_amazon_link(url, cfg, state, tg, asin=expected_asin, gtin=gtin, dry=dry)
