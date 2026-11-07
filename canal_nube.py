@@ -607,7 +607,7 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     hour = deal.get("seen_hhmm") or f"{seen:%H:%M}"
     lines.append(f"🕒 {PRICE_NOTE.format(hour=hour)}")
     lines.append("")
-    lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Ver en Amazon</a></b>')
+    lines.append(buy_line(url, deal.get("short_url") or ""))
     lines.append("")
     lines.append(f"{PUBLI} {hashtags(deal, rules)}")
     return "\n".join(lines)
