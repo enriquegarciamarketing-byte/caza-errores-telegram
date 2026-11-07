@@ -1697,12 +1697,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794036026
+   "checked": 1794036172
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 101,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12352,7 +12352,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/intel-core-ultra-9-285k-ia-integrada-3257ghz-2058211": 1794020940.8483136,
   "https://www.chollometro.com/ofertas/lexar-nq780-1-tb-m2-nvme-ssd-2058234": 1794027139.832286,
