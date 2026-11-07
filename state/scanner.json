@@ -1732,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794066306
+   "checked": 1794066430
   },
   {
    "id": "cm-2058280",
@@ -1767,12 +1767,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794066306
+   "checked": 1794066430
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13413,7 +13413,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 20,
+ "rotation_index": 4,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/saucony-kinvara-zapatillas-negro-2058406": 1794046038.8531253,
   "https://www.chollometro.com/ofertas/la-sportiva-zapatillas-de-trail-running-levante-mujer-blanco-2058458": 1794046038.8531253,
