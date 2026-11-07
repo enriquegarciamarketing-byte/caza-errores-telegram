@@ -1,8 +1,152 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35779 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 63878 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 47 descartes nuevos, 139 en lista
+== pasada 2 · 09:29 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 3 · 09:32 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 4 · 09:34 ==
 Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35585 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 58691 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 49 descartes nuevos, 116 en lista
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 5 · 09:37 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35896 bytes, 30 chollos
+  Chollometro «ADIDAS Zapatillas deportivas mujer, Breaknet Sleek, verde»: Decathlon 34.99 €
+  Chollometro «Zapatillas altas Nike Dunk High piel negro y blanco (tallas 36-42.5)»: Privalia 39.99 €
+  Chollometro «Nike air force 1 07 camel»: Zalando Privé 54.9 €
+  Chollometro «LEGO Ideas - Juego de construcción Cohete Lunar de Tintin, 21367 (Y cu»: El Corte Inglés 127.95 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 65851 bytes, 30 chollos
+  cm-2058319 · Decathlon 34.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · ADIDAS Zapatillas deportivas mujer, Breaknet Sleek, verde
+  cm-2058279 · Privalia 39.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas altas Nike Dunk High piel negro y blanco (tallas 
+  cm-2058390 · Zalando Privé 54.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nike air force 1 07 camel
+  cm-2058285 · El Corte Inglés 127.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Ideas - Juego de construcción Cohete Lunar de Tintin, 2
+  Vinted «zapatillas 36 altas»: HTTP 200, 3690968 bytes, 96 anuncios
+  Vinted «zapatillas 36 altas»: 22 parecidos de 96
+  Wallapop «zapatillas 36 altas»: 200 / 133143 bytes, 40 anuncios, 21 parecidos, 0 reservas
+  Milanuncios «zapatillas 36 altas»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 30 anuncios, ~15 €, no publica
+  ⚠️ No publico «Zapatillas altas Nike Dunk High piel negro y blanco (tallas 36-42.5)»: reventa en VINTED+WALLAPOP ~15 € (30 anuncios): ROI -69 % y -28 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «nike 07 air»: 200 / 153386 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «nike 07 air»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 32 anuncios, ~60 €, no publica
+  ⚠️ No publico «Nike air force 1 07 camel»: reventa en WALLAPOP ~60 € (32 anuncios): ROI 0 % y 0 €, por debajo del mínimo (30 % y 25 €)
+  Vinted «adidas zapatillas»: HTTP 200, 3682814 bytes, 95 anuncios
+  Vinted «adidas zapatillas»: 26 parecidos de 95
+  Wallapop «adidas zapatillas»: 200 / 133681 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «adidas zapatillas»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 55 anuncios, ~30 €, no publica
+  ⚠️ No publico «ADIDAS Zapatillas deportivas mujer, Breaknet Sleek, verde»: reventa en VINTED+WALLAPOP ~30 € (55 anuncios): ROI -24 % y -8 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «lego 21367 ideas»: 200 / 59859 bytes, 22 anuncios, 22 parecidos, 0 reservas
+  Milanuncios «lego 21367 ideas»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 22 anuncios, ~132 €, no publica
+  ⚠️ No publico «LEGO Ideas - Juego de construcción Cohete Lunar de Tintin, 21367»: reventa en WALLAPOP ~132 € (22 anuncios): ROI -4 % y -5 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 09:39 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 7 · 09:42 ==
+Listados: 103 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 8 · 09:44 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 9 · 09:47 ==
+Listados: 91 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36347 bytes, 30 chollos
+  Chollometro «Brooks Zapatillas de running Hyperion Max 3 - Standard Hombre (White)»: Privatesportshop 83.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 63511 bytes, 30 chollos
+  cm-2058358 · Privatesportshop 83.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Brooks Zapatillas de running Hyperion Max 3 - Standard Hombr
+  Vinted «brooks zapatillas»: HTTP 200, 3692268 bytes, 96 anuncios
+  Vinted «brooks zapatillas»: 17 parecidos de 96
+  Wallapop «brooks zapatillas»: 200 / 142001 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «brooks zapatillas»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 50 anuncios, ~35 €, no publica
+  ⚠️ No publico «Brooks Zapatillas de running Hyperion Max 3 - Standard Hombre (White)»: reventa en VINTED+WALLAPOP ~35 € (50 anuncios): ROI -63 % y -53 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 10 · 09:49 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 09:52 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 09:54 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 13 · 09:57 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36054 bytes, 30 chollos
+  Chollometro «Nintendo switch sports resort amazon japon»: Amazon 30.46 €
+  Chollometro «New Balance - SUPERCOMP TRAINER V3 - Zapatillas running asfalto»: Zalando Privé 119.0 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75444 bytes, 30 chollos
+  cm-2058280 · Amazon 30.46 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nintendo switch sports resort amazon japon
+  cm-2057201 · Zalando Privé 119.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance - SUPERCOMP TRAINER V3 - Zapatillas running asfa
+  Wallapop «nintendo switch»: 200 / 123511 bytes, 39 anuncios, 34 parecidos, 1 reservas
+  Milanuncios «nintendo switch»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 22 anuncios, ~127 €, publica
+  Te lo paso por privado para que des el OK (mensaje 488): OPORTUNIDAD DE REVENTA · Nintendo switch sports resort amazon japon
+  Vinted «new v3 balance»: HTTP 200, 3691825 bytes, 96 anuncios
+  Vinted «new v3 balance»: 84 parecidos de 96
+  Wallapop «new v3 balance»: 200 / 141404 bytes, 40 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «new v3 balance»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 99 anuncios, ~50 €, no publica
+  ⚠️ No publico «New Balance - SUPERCOMP TRAINER V3 - Zapatillas running asfalto»: reventa en VINTED+WALLAPOP ~50 € (99 anuncios): ROI -62 % y -74 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 1
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 09:59 ==
+Publicado el pendiente cm-2058280 con tu OK (mensaje 78)
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 10:02 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  RJP2BvM · 239.97 € · media 647.39 · ref 279.97 → descartado (solo -14% bajo la referencia) · Lefant M210 Pro Omni Robot Aspirador y Fregasuelos Mascotas,
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 10:04 ==
+Listados: 95 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 467599 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 487970 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+Fin de la ejecución tras 16 pasadas.
