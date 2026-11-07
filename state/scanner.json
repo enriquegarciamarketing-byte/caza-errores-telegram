@@ -1732,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794083973
+   "checked": 1794084034
   },
   {
    "id": "cm-2058280",
@@ -1767,12 +1767,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794083973
+   "checked": 1794084034
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 104,
+ "last_listing_count": 94,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13685,7 +13685,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 5,
+ "rotation_index": 10,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-architecture-fontana-di-trevi-21062-1880-piezas-para-recrear-uno-de-los-monumentos-mas-emblematicos-de-roma-2058549": 1794063001.3467333,
   "https://www.chollometro.com/ofertas/salomon-extegra-gore-tex-impermeables-zapatillas-de-senderismo-para-mujer-tallas-36-a-44-2058537": 1794065037.2180994,
