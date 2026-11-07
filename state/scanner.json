@@ -1697,12 +1697,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794018858
+   "checked": 1794021976
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 95,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12352,15 +12352,15 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 9,
+ "rotation_index": 5,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/jordan-zion-4-low-country-beige-2058098": 1793998835.2465258,
   "https://www.chollometro.com/ofertas/warhammer-40000-space-marine-ii-ps5-caja-metalica-2057462": 1794000527.4864514,
   "https://www.chollometro.com/ofertas/zapatillas-unisex-reebok-world-70-2058143": 1794000527.4864514,
   "https://www.chollometro.com/ofertas/zapatillas-trail-new-balance-hierro-v9-2058181": 1794003139.7905724,
   "https://www.chollometro.com/ofertas/lexar-nq780-1-tb-m2-nvme-ssd-2058234": 1794005528.3036437,
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-q7tf-con-base-de-autovaciado-10000-pa-lidar-2058218": 1794007064.4606178,
-  "https://www.chollometro.com/ofertas/glorlin-mini-pc-amd-ryzen-5-6600h-aplicar-cupon-15-ahorro-18-al-tramitar-2057903": 1794007663.9984717
+  "https://www.chollometro.com/ofertas/glorlin-mini-pc-amd-ryzen-5-6600h-aplicar-cupon-15-ahorro-18-al-tramitar-2057903": 1794007663.9984717,
+  "https://www.chollometro.com/ofertas/intel-core-ultra-9-285k-ia-integrada-3257ghz-2058211": 1794020940.8483136
  },
  "asked": {
   "cm-2057830": 1793978147
