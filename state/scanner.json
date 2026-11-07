@@ -1154,6 +1154,11 @@
    "price": 43.95,
    "t": 1794058363,
    "result": "solo -6% bajo la referencia"
+  },
+  "ROopbne": {
+   "price": 28.99,
+   "t": 1794065623,
+   "result": "solo -3% bajo la referencia"
   }
  },
  "posts": [
@@ -1727,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794063754
+   "checked": 1794066073
   },
   {
    "id": "cm-2058280",
@@ -1762,81 +1767,51 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794063754
+   "checked": 1794066073
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
  "discovery_cache": {
-  "t": 1794042314.5878956,
+  "t": 1794063990.670881,
   "titles": [
-   "zelda ocarina of time - nintendo switch 2",
-   "ea sports fc™ 27 - edicion estandar playstation 5| disco fisico | videojuegos | castellano",
-   "10€ playstation store tarjeta regalo | cuenta espanola [codigo por correo]",
-   "tarjeta regalo digital de roblox - 800 robux [incluye un objeto virtual exclusivo] [codigo de juego online]",
-   "ivoler 4 piezas protector pantalla para nintendo switch 2 model 2025, instalacion en 30 segundos incluye marco de instalacion",
-   "playstation mando inalambrico dualsense®: coleccion hyperpop - rhythm blue",
-   "luna premium",
-   "logitech g g502 hero raton gaming con cable, 25,600 dpi, negro | alto rendimiento, captor hero 25k, rgb, peso personalizable,",
-   "jetech protector pantalla para nintendo switch 2, 2 unidades | alineacion automatica instalacion, cristal vidrio templado 9h,",
-   "jsaux protector pantalla ultra hd para nintendo switch 2, pack de 3 | cristal templado 9h, instalacion sin burbujas, marco de",
-   "xbox mando inalambrico carbon black series x|s, one, pc, televisores, moviles y mas",
-   "nintendo switch sports resort",
-   "playstation 5 - mando inalambrico dualsense",
-   "nintendo switch 2 pro controller",
-   "logitech g g305 lightspeed raton gaming inalambrico, hero 12k, negro | 12.000 dpi, raton con botones laterales, bateria de 25",
-   "logitech g g203 lightsync raton gaming negro, 6 botones programables | raton con cable para ordenador, iluminacion rgb person",
-   "krom kalista - teclado gaming de membrana rgb rainbow, formato 62%, modo gaming, n-19 anti-ghosting, windows | mac, layout es",
-   "csl-computer - alfombrilla de raton speed gaming titanwolf negro 900 x 400 mm - base de mesa grande - mejora la precision y l",
-   "jbl quantum 100m2 cascos circumaurales para gaming, jbl quantumsound signature, cable de audio de 3.5 mm, compatibles con mul",
-   "redragon m908 impact raton gaming mmo cableado rgb 12400 dpi | 12 botones laterales 18 atajos macro programables alta precisi",
-   "easysmx x05 pro mando inalambrico para pc – botones silenciosos mejorados, gatillos de 2 etapas, joysticks hall, sondeo 1000h",
-   "cobak funda nintendo switch 2 (2025) - set 3en1: 2 protectores vidrio + 2 gomas palancas + funda rigida portatil, negro",
-   "tomodachi life - switch",
-   "logitech g g335, auriculares para gaming con cable | microfono abatible silenciar, audio 3,5 mm, almohadillas viscoelasticas,",
-   "xbox mando nano – compatible, pc, dispositivos moviles y mucho mas",
-   "alan wake 2 deluxe edition - ps5",
-   "minecraft: nintendo switch edition, el embalaje puede variar",
-   "razer deathadder essential - raton gaming con sensor optico, 6400 dpi (5 botones programables, interruptores mecanicos, agarr",
-   "acegamer controlador inalambrico para ps4, controlador de juego compatible con ps4/pro/slim/pc, con turboboton/boton trasero/",
-   "grand theft auto vi - playstation 5 (codigo de descarga)",
    "almacenamiento",
    "dispositivos de red",
    "impresora y tinta",
-   "sandisk ultra dual drive go, memoria flash 128 gb (con conectores usb type-c y type-a reversibles, para android moviles, tabl",
+   "sandisk 128gb dual drive go superspeedand usb 3.1 gen 1 flash drive - navagio bay",
    "tp-link re330 - repetidor wifi 5 ac1200 de doble banda, puerto ethernet | amplificador de senal wifi. compatible con easymesh",
    "unionsine disco duro externo 500gb 2.5\" usb3.0 ultra slim portatil hdd | almacenamiento para pc, mac, macbook, chromebook, xb",
-   "sandisk ultra flair pendrive 128 gb memoria usb 3.0 (velocidad de lectura hasta 150 mb/s, proteccion con contrasena, carcasa ",
    "canon pixma ts3750i impresora multifuncion wi-fi de inyeccion de tinta | facil de usar; escanear y copiar, fotos sin bordes h",
-   "asus rog zephyrus g14 ga403uu-qs109x amd ryzen™ 9 8945hs portatil 35,6 cm (14\") 3k 32 gb lpddr5x-sdram 1",
+   "sandisk ultra flair pendrive 128 gb memoria usb 3.0 (velocidad de lectura hasta 150 mb/s, proteccion con contrasena, carcasa ",
    "philips 27e1n1100a monitor 27 pulgadas 120hz panel ips, 4ms gtg, altavoces, (1920x1080 hdmi 1x 1.4) negro",
    "tp-link ub500 - adaptador bluetooth usb para pc, plug & play, tamano mini | ideal para pc sin bluetooth. no necesita configur",
-   "toshiba canvio partner 2tb - disco duro externo portatil de 2,5&#x27;&#x27;, usb 3.2, compatible con mac y windows. (hdtb520ek3ab)",
    "arctic mx-7 (8 g) - pasta termica de alto rendimiento para cpus | para consolas, procesadores, tarjetas graficas y portatiles",
-   "sandisk 64 gb cruzer blade usb 2.0 flash drive - black",
    "sandisk 2tb extreme ssd portatil, usb-c, memoria de estado solido nvme externa, hasta 1050 mb/s, clasificacion ip65 de resist",
-   "apple ipad de 11 pulgadas: chip a16, modelo de 11 pulgadas, pantalla liquid retina, 128 gb, wi fi 6, camaras frontal y traser",
-   "hp deskjet 2920, impresora multifuncion de inyeccion de tinta a color | wi-fi de doble banda, panel lcd, hp smart app, impres",
-   "sandisk pendrive 64 gb ultra memoria flash usb 3.0 hasta 130 mb/s, (secureaccess software, proteccion de contrasenas) negro",
-   "intenso 3503480 lapiz usb 2.0 basic 32gb",
+   "toshiba canvio partner 2tb - disco duro externo portatil de 2,5&#x27;&#x27;, usb 3.2, compatible con mac y windows. (hdtb520ek3ab)",
+   "sandisk 64 gb cruzer blade usb 2.0 flash drive - black",
    "seagate portable drive 1tb, unidad de disco duro externo, usb 3.0 para pc, ordenador portatil y mac y servicios rescue, amazo",
+   "apple ipad de 11 pulgadas: chip a16, modelo de 11 pulgadas, pantalla liquid retina, 128 gb, wi fi 6, camaras frontal y traser",
+   "asus rog zephyrus g14 ga403uu-qs109x amd ryzen™ 9 8945hs portatil 35,6 cm (14\") 3k 32 gb lpddr5x-sdram 1",
+   "intenso 3503480 lapiz usb 2.0 basic 32gb",
+   "hp deskjet 2920, impresora multifuncion de inyeccion de tinta a color | wi-fi de doble banda, panel lcd, hp smart app, impres",
    "lenovo idea tab – tablet 11\" 2.5k (mediatek dimensity 6300, 8 gb ram, 256 gb ufs, 90 hz, 4 altavoces, wi-fi 5, bluetooth 5.2,",
+   "sandisk pendrive 64 gb ultra memoria flash usb 3.0 hasta 130 mb/s, (secureaccess software, proteccion de contrasenas) negro",
+   "wd 18tb my book disco duro externo de escritorio, usb 3.2 gen 1, exfat, superspeed usb-a, copia de seguridad y proteccion con",
    "lexar d40e  unidad flash dual usb tipo-c, usb-a/c, 64gb, champan plateado | usb 3.2 gen 1, type-c, carcasa de metal, diseno g",
-   "sandisk 64 gb ultra fit, usb-a laufwerk, bis 400 mb/s lesen | usb 3.2, ideal para ordenador portatil o de sobremesa, consolas",
-   "tnbfgo disco duro externo 2tb ultra delgado y portatil de 2.5\" con conexion usb, almacenamiento compatible con tv, ordenador ",
    "kingston datatraveler exodia s unidad flash usb - 128gb - usb 3.2 gen 1 - usb type a - negro/turquesa - dtxs/128gb",
+   "tnbfgo disco duro externo 2tb ultra delgado y portatil de 2.5\" con conexion usb, almacenamiento compatible con tv, ordenador ",
+   "yodoit monitor portatil pantalla portatil de 15,6 pulgadas ips 1080p fhd display usb type-c de computadora, juego hdr con hdm",
    "tp-link tl-sg108 - switch gigabit de 8 puertos, plug & play, carcasa acero | no necesita configuracion. diseno sin ventilador",
-   "tp-link ls105g switch gigabit 5 puertos, plug & play, carcasa acero, impresoras, webcams",
-   "lg monitor gaming ultragear 24g411a-b - 24&#x27;&#x27;, ips, 144hz, 1 ms, morado | fhd (1920 x 1080), panel ips, 144 (o/c) hz, 5ms, hdr",
-   "tp-link ls1005g - switch gigabit 5 puertos, plug & play, carcasa plastico | plug & play, no necesita configuracion. diseno si",
-   "tp-link tl-pa7017p kit - kit plc, adaptador powerline av1000, 1 puerto ge | amplia tu red a traves del cableado electrico. si",
+   "brother hll2400dwe, impresora laser monocromo (b/n) | 30 ppm, impresion a 2 caras, wifi, usb, bandeja de papel de 250 hojas",
+   "sandisk 64 gb ultra fit, usb-a laufwerk, bis 400 mb/s lesen | usb 3.2, ideal para ordenador portatil o de sobremesa, consolas",
    "tp-link tl-wpa4220 kit - adaptador powerline av600, kit plc wifi 300 mbps | amplia tu red a traves del cableado electrico. si",
    "tp-link tl-sg105 - switch gigabit de 5 puertos, plug & play, carcasa acero | plug & play, no necesita configuracion. diseno s",
-   "tp-link tl-mr110 - router 4g lte sim, wifi 4 300 mbps, 2 puertos ethernet | inserta una tarjeta sim para internet sin fibra e"
+   "origbelie lector cd dvd externo, usb 3.0 y type-c cd/dvd +/-rw drive | plug&play grabadora cd dvd externa para pc, portatil, ",
+   "lg monitor gaming ultragear 24g411a-b - 24&#x27;&#x27;, ips, 144hz, 1 ms, morado | fhd (1920 x 1080), panel ips, 144 (o/c) hz, 5ms, hdr"
   ]
  },
  "resale_cache": {
@@ -2665,24 +2640,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|auriculares gaming inalambricos logitech g535 lightspeed (236g ultraligeros, 33h bateria, flip-to-mute, usb-c) - pc / ps5 / ps4|auriculares g535 gaming": {
-   "t": 1793649222.1165168,
-   "query": "auriculares g535 gaming",
-   "prices": [
-    50.0,
-    59.0,
-    65.0,
-    55.0,
-    65.0,
-    80.0,
-    40.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 33767,
-   "raw_count": 10
   },
   "|logitech g g335, auriculares para gaming con cable microfono abatible silenciar,almohadillas viscoelasticas, pc, ps, xbox, switch/switch 2|logitech g335 auriculares": {
    "t": 1793649806.0381606,
@@ -8718,6 +8675,36 @@
    "http_status": 200,
    "bytes": 21758,
    "raw_count": 8
+  },
+  "|salomon extegra gore-tex impermeables zapatillas de senderismo para mujer, tallas 36 a 44|salomon 36 extegra": {
+   "t": 1794065041.507185,
+   "query": "salomon 36",
+   "prices": [
+    22.0,
+    24.0,
+    35.0,
+    35.0,
+    25.0,
+    40.0,
+    60.0,
+    22.0,
+    10.0,
+    15.0,
+    15.0,
+    45.0,
+    30.0,
+    25.0,
+    100.0,
+    70.0,
+    25.0,
+    35.0,
+    30.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 141738,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -13413,14 +13400,21 @@
    "demand_known": true,
    "blocked": false,
    "reason": ""
+  },
+  "|salomon extegra gore-tex impermeables zapatillas de senderismo para mujer, tallas 36 a 44|salomon 36 extegra": {
+   "t": 1794065040.1766605,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 3)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 14,
+ "rotation_index": 10,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/zapatillas-new-balance-fresh-foam-x-evoz-v4-gore-tex-tallas-36-365-37-2058441": 1794042816.2316992,
   "https://www.chollometro.com/ofertas/saucony-kinvara-zapatillas-negro-2058406": 1794046038.8531253,
   "https://www.chollometro.com/ofertas/la-sportiva-zapatillas-de-trail-running-levante-mujer-blanco-2058458": 1794046038.8531253,
   "https://www.chollometro.com/ofertas/sony-dualsense-blanco-mando-ps5-inalambrico-reacondicionado-oem-2058524": 1794046435.2772803,
@@ -13440,10 +13434,10 @@
   "https://www.chollometro.com/ofertas/ssd-1tb-fanxiang-s880-m2-nvme-pcie-40-7300mbs-2054736": 1794057577.222444,
   "https://www.chollometro.com/ofertas/puma-pounce-lite-zapatillas-para-correr-de-carreteraunisex-adulto-varios-colores-2058362": 1794059427.694443,
   "https://www.chollometro.com/ofertas/asics-zapatillas-gel-quantum-180-vii-hombre-negrosimply-taupe-2058497": 1794060515.1649816,
-  "https://www.chollometro.com/ofertas/lego-architecture-fontana-di-trevi-21062-1880-piezas-para-recrear-uno-de-los-monumentos-mas-emblematicos-de-roma-2058549": 1794063001.3467333
+  "https://www.chollometro.com/ofertas/lego-architecture-fontana-di-trevi-21062-1880-piezas-para-recrear-uno-de-los-monumentos-mas-emblematicos-de-roma-2058549": 1794063001.3467333,
+  "https://www.chollometro.com/ofertas/salomon-extegra-gore-tex-impermeables-zapatillas-de-senderismo-para-mujer-tallas-36-a-44-2058537": 1794065037.2180994
  },
  "asked": {
-  "cm-2057830": 1793978147,
   "cm-2058280": 1794041889
  }
 }
