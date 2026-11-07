@@ -1697,12 +1697,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794028176
+   "checked": 1794028294
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12352,7 +12352,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 2,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-q7tf-con-base-de-autovaciado-10000-pa-lidar-2058218": 1794007064.4606178,
   "https://www.chollometro.com/ofertas/glorlin-mini-pc-amd-ryzen-5-6600h-aplicar-cupon-15-ahorro-18-al-tramitar-2057903": 1794007663.9984717,
