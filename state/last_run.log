@@ -1,25 +1,8 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 100 productos únicos
+Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35537 bytes, 30 chollos
-  Chollometro «Zapatillas Altra EXPERIENCE FLOW 2 (Tallas 42 a 48)»: Zalando Privé 59.9 €
-  Chollometro «SSD 1TB Fanxiang S880 M.2 NVMe PCIe 4.0, 7300MB/s (Con disipador por 6»: AliExpress 124.35 €
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35624 bytes, 30 chollos
   Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67519 bytes, 30 chollos
-  cm-2058571 · Zalando Privé 59.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Altra EXPERIENCE FLOW 2 (Tallas 42 a 48)
-  cm-2054736 · AliExpress 124.35 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · SSD 1TB Fanxiang S880 M.2 NVMe PCIe 4.0, 7300MB/s (Con disip
-  Vinted «zapatillas 42 altra»: HTTP 200, 3679763 bytes, 96 anuncios
-  Vinted «zapatillas 42 altra»: 17 parecidos de 96
-  Wallapop «zapatillas 42 altra»: 200 / 95103 bytes, 27 anuncios, 8 parecidos, 0 reservas
-  Milanuncios «zapatillas 42 altra»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
-  Reventa VINTED+WALLAPOP: 20 anuncios, ~74 €, no publica
-  ⚠️ No publico «Zapatillas Altra EXPERIENCE FLOW 2 (Tallas 42 a 48)»: reventa en VINTED+WALLAPOP ~74 € (20 anuncios): ROI 14 % y 9 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «ssd 1tb fanxiang»: 200 / 52448 bytes, 13 anuncios, 2 parecidos, 0 reservas
-  Wallapop «ssd 1tb»: 200 / 104946 bytes, 40 anuncios, 32 parecidos, 0 reservas
-  Milanuncios «ssd 1tb fanxiang»: HTTP 403, 95508 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95508 bytes))
-  Reventa WALLAPOP: 28 anuncios, ~100 €, no publica
-  ⚠️ No publico «SSD 1TB Fanxiang S880 M.2 NVMe PCIe 4.0, 7300MB/s (Con disipador por 6€ más)»: reventa en WALLAPOP ~100 € (28 anuncios): ROI -25 % y -31 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 37 descartes nuevos, 110 en lista
+Cascada al canal normal: 40 descartes nuevos, 125 en lista
