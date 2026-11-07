@@ -1737,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794090992
+   "checked": 1794091089
   },
   {
    "id": "cm-2058280",
@@ -1772,12 +1772,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794090992
+   "checked": 1794091089
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13690,7 +13690,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/adidas-hombre-runfalcon-5-zapatillas-de-correr-2058522": 1794071239.1332943,
   "https://www.chollometro.com/ofertas/procesador-intel-core-ultra-5-245kf-52-ghz-box-14-nucleos-lga-1851-2058858": 1794071239.1332943,
