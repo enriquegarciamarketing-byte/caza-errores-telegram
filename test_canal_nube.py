@@ -82,9 +82,9 @@ class Texto(unittest.TestCase):
         deal["asin"] = "B0G7YP6MXV"
         text = cn.build_caption(deal, "https://www.amazon.es/dp/B0G7YP6MXV?tag=cazadores_errores-21", RULES)
         self.assertIn("379,98 €", text)
-        self.assertIn("precio más bajo de los 30 días anteriores", text)
         self.assertIn("<s>799,99 €</s>", text)
-        self.assertIn("-71 %</b> frente a su precio habitual de los últimos 90 días (1.299,99 €)", text)
+        for gone in ("30 días", "90 días", "historia"):
+            self.assertNotIn(gone, text)
         self.assertIn("a las 16:52", text)
         self.assertIn("dp/B0G7YP6MXV?tag=cazadores_errores-21", text)
         self.assertNotIn("PVP", text)
@@ -136,7 +136,8 @@ class TextoCorto(unittest.TestCase):
         self.assertIn("Visto en @cazachollos_com #Publicidad", text)
         for gone in ("frente a su", "30 días"):
             self.assertNotIn(gone, text)
-        self.assertIn("Precio más bajo de su historia", text)
+        self.assertNotIn("Precio más bajo de su historia", text)
+        self.assertNotIn("#MinimoHistorico", text)
         self.assertIn("#Publicidad", text)
         self.assertLessEqual(len(text.split("\n")), 12)
 
@@ -177,7 +178,6 @@ class Interes(unittest.TestCase):
     def test_compra_del_dia_a_dia_entra_en_las_top(self):
         casos = {
             "Aceite de Oliva Virgen Extra Hojiblanca 3 Litros": "Súper y bebidas",
-            "Mahou Cinco Estrellas Cerveza Dorada Lager, Pack de 24 latas x 33 cl": "Súper y bebidas",
             "Monster Energy Ultra Zero Bebida Energética, pack 24 latas": "Súper y bebidas",
             "Dodot Sensitive Pañales Talla 5, 11-16 kg, 42 unidades": "Bebé",
             "Royal Canin Mini Adult Pienso para perros 8 kg": "Mascotas",
@@ -331,13 +331,8 @@ class ManualDesdeJimmyleaks(unittest.TestCase):
         today = NOW.astimezone(cn.MADRID).date()
         points = [[(today - timedelta(days=d)).isoformat(), 260.0 if d == 20 else 393.55] for d in range(90, 3, -1)]
         points += [[today.isoformat(), 249.0]]  # hace 20 días estuvo a 260 €: frente al mínimo solo -4 %
-        spec = self.run_spec(self.detail(sorted(points)))
-        self.assertEqual(spec["ref_kind"], "media90")
-        deal = cn.manual_deal(spec, REAL)
-        caption = cn.build_caption(deal, "https://www.amazon.es/dp/B0TESTASIN?tag=x", REAL)
-        self.assertIn("frente a su precio medio de los últimos 90 días", caption)
-        self.assertIn("Su precio más bajo de los 30 días anteriores fue 260,00", caption)
-        self.assertEqual(spec["seen_at"], "16:30")
+        with self.assertRaises(ValueError):  # desde el 7/11: si estuvo cerca hace poco, "Antes" engañaría
+            self.run_spec(self.detail(sorted(points)))
 
     def test_con_rebaja_real_frente_al_minimo_usa_el_minimo(self):
         today = NOW.astimezone(cn.MADRID).date()
@@ -536,7 +531,7 @@ class MejorDescuentoReal(unittest.TestCase):
         self.assertEqual(deal["reference"], 100.0)
         self.assertEqual(round(deal["discount"]), 55)
         self.assertEqual(round(deal["drop_30"]), 50)
-        self.assertIn("precio medio de los últimos 90 días", cn.build_caption(dict(deal, asin="B0G7YP6MXV"), "u", REAL))
+        self.assertNotIn("90 días", cn.build_caption(dict(deal, asin="B0G7YP6MXV"), "u", REAL))
 
     def test_lefant_sigue_con_el_minimo_de_30_porque_estuvo_mucho_mas_barato(self):
         why, deal = cn.evaluate(dict(item_for("R0ZG4Bv"), was=None), scanner.parse_detail(LEFANT), REAL, NOW)
@@ -600,16 +595,15 @@ class PrecioRecomendado(unittest.TestCase):
         self.assertEqual(deal["reference"], 1799.99)
         self.assertEqual(round(deal["discount"]), 79)
         text = cn.build_caption(dict(deal, asin="B0G7YP6MXV"), "u", REAL)
-        self.assertIn("-79 %</b> frente a su PVP recomendado", text)
-        self.assertIn("-53 %</b> frente a su precio más bajo de los 30 días anteriores (799,99 €)", text)
+        self.assertIn("-79 %</b> de descuento", text)
+        self.assertNotIn("30 días", text)
         self.assertIn("<s>1.799,99 €</s>", text)
-        self.assertIn("frente al PVP", text)
         self.assertNotIn("ERROR DE PRECIO", text, "el error de precio sale de la bajada real, no del PVP")
 
     def test_sin_bajada_real_no_sale_aunque_el_pvp_sea_enorme(self):
         points = [[(self.today - timedelta(days=100)).isoformat(), 40.0], [self.today.isoformat(), 39.0]]
         _, detail = robot_with(points, 39.0)
-        item = dict(item_for("R0ZG4Bv"), price=39.0, was=99.0)
+        item = dict(item_for("R0ZG4Bv"), price=39.0, was=59.0)  # PVP creíble: menos de 1,5 veces la media
         why, _ = cn.evaluate(item, detail, REAL, NOW)
         self.assertIn("de bajada real", why)
         self.assertTrue(why.startswith("solo -"))

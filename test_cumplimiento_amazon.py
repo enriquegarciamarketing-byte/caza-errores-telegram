@@ -39,7 +39,19 @@ class TextoDelPost(unittest.TestCase):
             deal["discount"] = pct
             self.assertIn(tag, cn.build_caption(deal, URL, RULES))
         deal["historical_low"] = True
-        self.assertIn("#MinimoHistorico", cn.build_caption(deal, URL, RULES))
+        text = cn.build_caption(deal, URL, RULES)
+        self.assertNotIn("#MinimoHistorico", text)
+        self.assertNotIn("más bajo de su historia", text)
+
+    def test_sin_comparativas_de_historial(self):
+        deal = deal_with_rating()
+        deal["historical_low"] = True
+        for style in ("corto", "completo"):
+            text = cn.build_caption(deal, URL, dict(RULES, caption_style=style))
+            self.assertNotIn("30 días", text)
+            self.assertNotIn("90 días", text)
+            self.assertNotIn("historia", text)
+            self.assertNotIn("Historico", text)
 
     def test_enlace_directo_y_visible(self):
         text = cn.build_caption(deal_with_rating(), URL, RULES)
@@ -104,3 +116,23 @@ class Resumen(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ProductosExcluidosUE(unittest.TestCase):
+    def test_excluidos(self):
+        for title in ("Mahou Cinco Estrellas Cerveza Lata 24 x 33 cl", "Vino tinto Ramón Bilbao Crianza",
+                      "Ginebra Bombay Sapphire 70 cl", "Nutribén Innova 2 Leche de continuación 800 g",
+                      "Vaper desechable 600 caladas", "Papel de liar OCB Premium", "Whisky Johnnie Walker Black Label"):
+            self.assertTrue(cn.excluido_amazon(title), title)
+            self.assertTrue(cn.interest(title, RULES)["blocked"], title)
+
+    def test_no_excluidos(self):
+        for title in ("Copas de vino de cristal, set de 6", "Sacacorchos eléctrico recargable",
+                      "Nevera para cervezas 70 latas", "Monster Energy Ultra 24 latas", "Pañales Dodot Sensitive talla 4",
+                      "Aceite de oliva virgen extra 5 L", "Vinagre de vino de Jerez", "Anís estrellado 100 g"):
+            self.assertFalse(cn.excluido_amazon(title), title)
+
+    def test_manual_rechaza_excluidos(self):
+        with self.assertRaises(ValueError):
+            cn.manual_deal({"asin": "B000000000", "title": "Cerveza Estrella Galicia pack 12", "price": 9.9,
+                            "reference": 14.9}, RULES)

@@ -288,6 +288,46 @@ def title_head(title: str) -> str:
     return title[:min(cut, 90)]
 
 
+# Productos que Amazon Afiliados excluye en los sitios de la UE (Políticas del Programa, Lista de Productos,
+# 3(c)): leche de fórmula, bebidas alcohólicas, tabaco y cigarrillos electrónicos (y productos relacionados).
+# Nunca salen en el canal, ni con "relajado" ni a mano. Las excepciones evitan falsos positivos
+# (copas de vino, sacacorchos, una nevera para cervezas...).
+EXCLUIDOS_UE = [
+    # alcohol
+    "cerveza", "cervezas", "vino", "vinos", "vino tinto", "vino blanco", "cava", "champagne", "champán",
+    "champan", "sidra", "vermut", "vermouth", "whisky", "whiskey", "bourbon", "ginebra", "gin", "ron",
+    "vodka", "tequila", "mezcal", "brandy", "coñac", "cognac", "licor", "licores", "orujo", "pacharán",
+    "pacharan", "sake", "sangría", "sangria", "aguardiente", "absenta", "jägermeister",
+    "jagermeister", "baileys", "bebida alcohólica", "bebidas alcohólicas", "lambrusco",
+    "albariño", "verdejo", "moscatel", "oporto", "manzanilla de sanlúcar", "hard seltzer",
+    # leche de fórmula
+    "leche de fórmula", "leche de formula", "fórmula infantil", "formula infantil", "leche infantil",
+    "leche de inicio", "leche de continuación", "leche de continuacion", "leche de crecimiento",
+    "preparado lácteo infantil", "leche en polvo para bebés", "leche en polvo bebé",
+    # tabaco y cigarrillos electrónicos
+    "tabaco", "cigarrillo", "cigarrillos", "cigarro", "cigarros", "cigarrillo electrónico",
+    "cigarrillos electrónicos", "vaper", "vapers", "vape", "vapeo", "e-liquid", "eliquid", "e-líquido",
+    "líquido para vapear", "liquido para vapear", "pod desechable", "pods desechables", "shisha", "cachimba",
+    "narguile", "hookah", "papel de liar", "papelillos", "boquillas de liar", "picadura", "nicotina",
+    "iqos", "heets", "terea",
+]
+EXCLUIDOS_UE_EXCEPCIONES = [
+    "copa", "copas", "vaso", "vasos", "jarra", "jarras", "decantador", "sacacorchos", "abridor",
+    "abrebotellas", "descorchador", "vinoteca", "enfriador", "cubitera", "aireador", "tapón", "tapones",
+    "botellero", "nevera", "frigorífico", "dispensador", "grifo", "barril vacío", "kit de elaboración",
+    "cava de vino", "cava para vinos", "armario", "vinagre", "camiseta", "sudadera", "taza", "libro", "puzzle", "juego de mesa", "vinilo",
+]
+
+
+def excluido_amazon(title: str) -> str:
+    """La palabra que lo hace un Producto Excluido de Amazon Afiliados en la UE, o ''."""
+    folded = fold(title)
+    has = lambda word: re.search(rf"\b{re.escape(fold(word))}\b", folded) is not None
+    if any(has(word) for word in EXCLUIDOS_UE_EXCEPCIONES):
+        return ""
+    return next((word for word in EXCLUIDOS_UE if has(word)), "")
+
+
 def interest(title: str, rules: dict) -> dict:
     """Interés del producto para el público general: {'score', 'label', 'blocked'}.
 
@@ -303,6 +343,9 @@ def interest(title: str, rules: dict) -> dict:
         return lambda word: re.search(rf"\b{re.escape(fold(word))}\b", folded) is not None
 
     has = matcher(title)
+    excluded = excluido_amazon(title)
+    if excluded:
+        return {"score": 0, "label": "", "blocked": f"excluido por Amazon: {excluded}"}
     for word in list(conf.get("block") or []) + list(rules.get("block_keywords") or []):
         if has(word):
             return {"score": 0, "label": "", "blocked": word}
@@ -553,23 +596,10 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     seen = datetime.fromtimestamp(deal["seen_ts"], timezone.utc).astimezone(MADRID)
     lines = [HEADERS[badge_for(pct, rules, real_drop(deal))], "", f"<b>{e(clean_title(deal['title'], 140))}</b>", ""]
     lines.append(f"💰 <b>{e(euro(deal['price']))}</b>   <s>{e(euro(deal['reference']))}</s>")
-    if deal.get("ref_kind") == "pvp":
-        lines.append(f"📉 <b>-{round(pct)} %</b> frente a su PVP recomendado")
-        if deal.get("min_30") and float(deal.get("drop_30") or 0) >= 1:
-            lines.append(f"📊 <b>-{round(float(deal['drop_30']))} %</b> frente a su precio más bajo de los 30 días "
-                         f"anteriores ({e(euro(float(deal['min_30'])))})")
-    elif deal.get("ref_kind") == "media90":
-        lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio medio de los últimos 90 días")
-    else:
-        lines.append(f"📉 <b>-{round(pct)} %</b> frente a su precio más bajo de los 30 días anteriores")
-    habitual = float(deal.get("median_90") or 0)
-    if not deal.get("ref_kind") and habitual > float(deal["reference"]) * 1.10:
-        lines.append(f"🔻 <b>-{round(discount_pct(deal['price'], habitual))} %</b> frente a su precio habitual "
-                     f"de los últimos 90 días ({e(euro(habitual))})")
-    vs = " frente al PVP" if deal.get("ref_kind") == "pvp" else ""
-    lines.append(f"🤑 Te ahorras <b>{e(euro(deal['reference'] - deal['price']))}</b>{vs}")
-    if deal.get("historical_low"):
-        lines.append("🏆 <b>Precio más bajo de su historia</b>")
+    # Desde el 7/11/2026 sin comparativas con el historial (mínimo de 30 días, media de 90, mínimo
+    # histórico): son datos de terceros y acercan el canal a una alerta de precios, que Amazon no permite.
+    lines.append(f"📉 <b>-{round(pct)} %</b> de descuento")
+    lines.append(f"🤑 Te ahorras <b>{e(euro(deal['reference'] - deal['price']))}</b>")
     # Sin estrellas ni número de opiniones: Amazon solo deja mostrarlas si salen de su API oficial.
     for extra in deal.get("extra_lines") or []:
         lines.append(e(str(extra)))
@@ -593,8 +623,6 @@ def build_caption_short(deal: dict, url: str, rules: dict) -> str:
         lines.append(f"❌ (Antes: <s>{e(price_tag(deal['reference']))}</s>)")
         lines.append(f"🔥 ¡Te ahorras <b>{e(price_tag(float(deal['reference']) - float(deal['price'])))}</b>! "
                      f"({round(deal['discount'])} % dto.)")
-    if deal.get("historical_low"):
-        lines.append("🏆 <b>Precio más bajo de su historia</b>")
     for extra in deal.get("extra_lines") or []:
         lines.append(e(str(extra)))
     hour = deal.get("seen_hhmm") or f"{seen:%H:%M}"
@@ -617,11 +645,8 @@ TAGS = {"ERROR DE PRECIO": "#ErrorDePrecio", "CHOLLAZO": "#Chollazo", "CHOLLO": 
 
 
 def hashtags(deal: dict, rules: dict) -> str:
-    """Etiqueta según el descuento, y #MinimoHistorico si lo es: sirven para buscar dentro del canal."""
-    tags = [TAGS[badge_for(deal["discount"], rules, real_drop(deal))]]
-    if deal.get("historical_low"):
-        tags.append("#MinimoHistorico")
-    return " ".join(tags)
+    """Etiqueta según el descuento, para buscar dentro del canal. Sin #MinimoHistorico desde el 7/11/2026."""
+    return TAGS[badge_for(deal["discount"], rules, real_drop(deal))]
 
 
 def buttons(url: str, style: str = "success") -> dict:
@@ -1416,6 +1441,8 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
     reference = float(spec["reference"])
     if not title:
         raise ValueError("falta el título")
+    if excluido_amazon(title):
+        raise ValueError(f"producto excluido de Amazon Afiliados en la UE ({excluido_amazon(title)})")
     if price <= 0 or reference <= price:
         raise ValueError("el precio de referencia tiene que ser mayor que el precio actual")
     pct = discount_pct(price, reference)
@@ -1459,11 +1486,10 @@ def spec_from_jl(spec: dict, rules: dict, now: datetime, fetch=None, resolve_asi
                title=spec.get("title") or detail.get("name") or "")
     if min30 and discount_pct(float(price), min30) >= 10:
         out.update(reference=float(min30), habitual=float(avg90 or 0))
-    elif avg90 and float(avg90) > float(price):
+    elif avg90 and float(avg90) > float(price) and not min30:
+        # Sin la línea del mínimo de 30 días (quitada el 7/11/2026), la media de 90 solo vale si no hay
+        # precios recientes: si hace poco estuvo cerca de este precio, "Antes" engañaría y no se publica.
         out.update(reference=float(avg90), ref_kind="media90")
-        if min30:  # transparencia: si hace poco estuvo cerca de este precio, se dice
-            out["lines"] = [f"ℹ️ Su precio más bajo de los 30 días anteriores fue {euro(float(min30))}"] + \
-                list(out.get("lines") or [])[:2]
     else:
         raise ValueError(f"sin rebaja real (mínimo 30 días {min30}, media 90 días {avg90})")
     low = detail.get("low")
