@@ -991,8 +991,8 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "1D6o0dO": {
-   "price": 32.57,
-   "t": 1793716283,
+   "price": 30.94,
+   "t": 1794050216,
    "result": "valoraciones flojas (3.7 / 446)"
   },
   "7kAGLV1": {
@@ -1722,7 +1722,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794049423
+   "checked": 1794051716
   },
   {
    "id": "cm-2058280",
@@ -1757,7 +1757,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794049423
+   "checked": 1794051716
   }
  ],
  "tg_offset": 334822061,
@@ -13065,9 +13065,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 17,
+ "rotation_index": 13,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/robot-aspirador-roborock-q7tf-con-base-de-autovaciado-10000-pa-lidar-2058218": 1794029196.350589,
   "https://www.chollometro.com/ofertas/glorlin-mini-pc-amd-ryzen-5-6600h-aplicar-cupon-15-ahorro-18-al-tramitar-2057903": 1794029795.419873,
   "https://www.chollometro.com/ofertas/new-balance-zapatillas-237-varios-colores-2058283": 1794032552.5611992,
   "https://www.chollometro.com/ofertas/set-de-construccion-lego-ideas-et-el-extraterrestre-2057186": 1794033752.081265,
