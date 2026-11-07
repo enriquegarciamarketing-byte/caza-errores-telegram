@@ -1,8 +1,24 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 98 productos únicos
+Listados: 95 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35773 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 81405 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35664 bytes, 30 chollos
+  Chollometro «Zapatillas Mizuno WAVE SKY 9 (Tallas 40 a 46.5)»: Zalando Privé 82.9 €
+  Chollometro «Cabernet PS5»: Amazon 29.95 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 82021 bytes, 30 chollos
+  cm-2058585 · Zalando Privé 82.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Mizuno WAVE SKY 9 (Tallas 40 a 46.5)
+  cm-2058525 · Amazon 29.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Cabernet PS5
+  Vinted «zapatillas 40 mizuno»: HTTP 200, 3685592 bytes, 96 anuncios
+  Vinted «zapatillas 40 mizuno»: 17 parecidos de 96
+  Wallapop «zapatillas 40 mizuno»: 200 / 123457 bytes, 40 anuncios, 21 parecidos, 0 reservas
+  Milanuncios «zapatillas 40 mizuno»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 30 anuncios, ~20 €, no publica
+  ⚠️ No publico «Zapatillas Mizuno WAVE SKY 9 (Tallas 40 a 46.5)»: reventa en VINTED+WALLAPOP ~20 € (30 anuncios): ROI -79 % y -66 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «cabernet ps5»: 200 / 6292 bytes, 3 anuncios, 2 parecidos, 0 reservas
+  Milanuncios «cabernet ps5»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
+  ⚠️ No publico «Cabernet PS5»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95510 bytes))
 Publicados en esta ejecución: 0
-Cascada al canal normal: 45 descartes nuevos, 88 en lista
+Cascada al canal normal: 57 descartes nuevos, 118 en lista

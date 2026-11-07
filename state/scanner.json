@@ -1722,7 +1722,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794053827
+   "checked": 1794054639
   },
   {
    "id": "cm-2058280",
@@ -1757,12 +1757,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794053827
+   "checked": 1794054639
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 95,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2591,104 +2591,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|mando ps5 dualsense edge|mando ps5 dualsense": {
-   "t": 1793642829.4122496,
-   "query": "mando ps5 dualsense",
-   "prices": [
-    55.0,
-    38.5,
-    29.0,
-    30.0,
-    34.0,
-    80.0,
-    130.0,
-    62.5,
-    50.0,
-    50.0,
-    40.0,
-    44.99,
-    43.0,
-    40.0,
-    40.0,
-    65.0,
-    135.0,
-    135.0,
-    149.0,
-    45.0,
-    40.0,
-    53.0,
-    140.0,
-    45.0,
-    50.0,
-    49.9,
-    50.0,
-    180.0,
-    50.0,
-    45.0,
-    130.0,
-    150.0,
-    40.0,
-    45.0,
-    40.0,
-    150.0,
-    50.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 104661,
-   "raw_count": 39
-  },
-  "|nike air force 1 07 lv8 tech - zapatillas - blanco. tallas 38 a 49|nike lv8 air": {
-   "t": 1793643441.3632195,
-   "query": "nike lv8 air",
-   "prices": [
-    70.0,
-    75.0,
-    82.0,
-    79.5,
-    59.0,
-    89.0,
-    25.0,
-    50.0,
-    20.0,
-    85.0,
-    79.0,
-    25.0,
-    35.0,
-    119.0,
-    199.0,
-    50.0,
-    75.0,
-    40.0,
-    75.0,
-    27.0,
-    85.99,
-    46.0,
-    14.0,
-    90.0,
-    64.99,
-    85.0,
-    70.99,
-    28.0,
-    90.0,
-    105.0,
-    80.0,
-    80.0,
-    78.4,
-    70.0,
-    25.0,
-    49.0,
-    39.99,
-    5.0,
-    25.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 146240,
-   "raw_count": 40
   },
   "|garmin forerunner 165, reloj inteligente para correr con gps, negro|garmin 165 forerunner": {
    "t": 1793645720.9655201,
@@ -8696,6 +8598,51 @@
    "http_status": 200,
    "bytes": 143427,
    "raw_count": 39
+  },
+  "|zapatillas mizuno wave sky 9 (tallas 40 a 46.5)|zapatillas 40 mizuno": {
+   "t": 1794054681.7053804,
+   "query": "zapatillas 40 mizuno",
+   "prices": [
+    15.0,
+    10.0,
+    45.0,
+    15.0,
+    30.0,
+    6.0,
+    20.0,
+    10.0,
+    20.0,
+    12.0,
+    8.0,
+    10.0,
+    45.0,
+    20.0,
+    40.0,
+    14.0,
+    15.0,
+    35.0,
+    40.0,
+    30.0,
+    20.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 123457,
+   "raw_count": 40
+  },
+  "|cabernet ps5|cabernet ps5": {
+   "t": 1794054682.5383375,
+   "query": "cabernet ps5",
+   "prices": [
+    59.0,
+    89.99
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 6292,
+   "raw_count": 3
   }
  },
  "milanuncios_cache": {
@@ -13206,14 +13153,39 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~14 € (5 anuncios): ROI -67 % y -24 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas mizuno wave sky 9 (tallas 40 a 46.5)|zapatillas 40 mizuno": {
+   "t": 1794054681.343142,
+   "prices": [
+    69.0,
+    20.0,
+    20.0,
+    40.0,
+    30.0,
+    26.0,
+    31.0,
+    47.0,
+    35.0,
+    12.0,
+    12.99,
+    5.0,
+    19.99,
+    28.0,
+    35.0,
+    20.0,
+    70.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~25 € (13 anuncios): ROI -74 % y -61 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 5,
+ "rotation_index": 10,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/new-balance-zapatillas-237-varios-colores-2058283": 1794032552.5611992,
   "https://www.chollometro.com/ofertas/set-de-construccion-lego-ideas-et-el-extraterrestre-2057186": 1794033752.081265,
   "https://www.chollometro.com/ofertas/lego-ideas-disney-pixar-luxo-jr-juguete-de-construccion-18-anos-21357-2058223": 1794036282.4148426,
   "https://www.chollometro.com/ofertas/wifi6-mini-pc-diy-ordenador-para-juegos-genmachine-ryzen-amd-ryzen77840u-es8-nucleos-16-hilos-33-51-ghztdp28w-lpddr5-24g-6400mhz-2058242": 1794037380.3952343,
@@ -13238,7 +13210,9 @@
   "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-2058465": 1794052199.9819205,
   "https://www.chollometro.com/ofertas/nike-air-force-1-zapatillas-piel-blanco-tallas-35-a-45-2058623": 1794052799.2096386,
   "https://www.chollometro.com/ofertas/zapatillas-marca-puma-cassia-20-tallas-3738390404054142425-2058424": 1794052799.2096386,
-  "https://www.chollometro.com/ofertas/zapatillas-marca-under-armour-forge-96-tallas-355-36-365-375-38-385-39-45-2058457": 1794053399.8310523
+  "https://www.chollometro.com/ofertas/zapatillas-marca-under-armour-forge-96-tallas-355-36-365-375-38-385-39-45-2058457": 1794053399.8310523,
+  "https://www.chollometro.com/ofertas/zapatillas-mizuno-wave-sky-9-tallas-40-a-465-2058585": 1794054655.2871778,
+  "https://www.chollometro.com/ofertas/cabernet-ps5-2058525": 1794054655.2871778
  },
  "asked": {
   "cm-2057830": 1793978147,
