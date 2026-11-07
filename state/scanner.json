@@ -1727,7 +1727,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794060751
+   "checked": 1794060869
   },
   {
    "id": "cm-2058280",
@@ -1762,12 +1762,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794060751
+   "checked": 1794060869
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 93,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13410,7 +13410,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 9,
+ "rotation_index": 14,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/adidas-zapatillas-deportivas-mujer-breaknet-sleek-verde-talla-42-2058319": 1794040660.0131106,
   "https://www.chollometro.com/ofertas/zapatillas-altas-nike-dunk-high-piel-negro-y-blanco-tallas-36-425-2058279": 1794040660.0131106,
