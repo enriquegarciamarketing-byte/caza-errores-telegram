@@ -588,7 +588,11 @@ def build_caption_short(deal: dict, url: str, rules: dict) -> str:
     seen = datetime.fromtimestamp(deal.get("seen_ts") or time.time(), timezone.utc).astimezone(MADRID)
     lines = [HEADERS[badge_for(deal["discount"], rules, real_drop(deal))], "",
              f"<b>{e(clean_title(deal['title'], 90))}</b>", "",
-             f"💥 <b>{e(euro(deal['price']))}</b>  ·  <b>-{round(deal['discount'])} %</b>"]
+             f"💶 PRECIO: <b>{e(price_tag(deal['price']))}</b>"]
+    if deal.get("reference") and float(deal["reference"]) > float(deal["price"]):
+        lines.append(f"❌ (Antes: <s>{e(price_tag(deal['reference']))}</s>)")
+        lines.append(f"🔥 ¡Te ahorras <b>{e(price_tag(float(deal['reference']) - float(deal['price'])))}</b>! "
+                     f"({round(deal['discount'])} % dto.)")
     if deal.get("historical_low"):
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
     for extra in deal.get("extra_lines") or []:
@@ -597,8 +601,13 @@ def build_caption_short(deal: dict, url: str, rules: dict) -> str:
     lines += ["", f"🕒 {PRICE_NOTE.format(hour=hour)}"]
     if rules.get("post_style", "separadas") == "album":  # el álbum no admite botón: el enlace va en el texto
         lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Comprar en Amazon</a></b>')
-    lines += ["", f"{PUBLI} {hashtags(deal, rules)}"]
+    lines += ["", f"Visto en {rules.get('chat_id') or '@cazachollos_com'} {PUBLI} {hashtags(deal, rules)}"]
     return "\n".join(lines)
+
+
+def price_tag(amount: float) -> str:
+    """84,99€ y 120€ (sin ,00), como en la tarjeta."""
+    return euro(float(amount)).replace(",00 €", "€").replace(" €", "€")
 
 
 # Hora del precio y aviso corto; la exención completa de Amazon va en el mensaje fijado del canal.

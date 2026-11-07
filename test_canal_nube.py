@@ -130,8 +130,11 @@ class TextoCorto(unittest.TestCase):
                 "reference": 699.0, "discount": 57, "ref_kind": "pvp", "drop_30": 22, "min_30": 389.0,
                 "seen_ts": 1793461960, "historical_low": True}
         text = cn.build_caption(deal, "https://www.amazon.es/dp/B1?tag=t-21", cn.rules_from(REAL_CFG))
-        self.assertIn("💥 <b>299,00 €</b>  ·  <b>-57 %</b>", text)
-        for gone in ("frente a su", "Te ahorras", "30 días", "699"):
+        self.assertIn("💶 PRECIO: <b>299€</b>", text)
+        self.assertIn("❌ (Antes: <s>699€</s>)", text)
+        self.assertIn("🔥 ¡Te ahorras <b>400€</b>! (57 % dto.)", text)
+        self.assertIn("Visto en @cazachollos_com #Publicidad", text)
+        for gone in ("frente a su", "30 días"):
             self.assertNotIn(gone, text)
         self.assertIn("Precio más bajo de su historia", text)
         self.assertIn("#Publicidad", text)
