@@ -1,8 +1,27 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 101 productos únicos
+Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35671 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 61352 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35555 bytes, 30 chollos
+  Chollometro «Saucony KINVARA - Zapatillas - negro»: Zalando Privé 61.9 €
+  Chollometro «La Sportiva Zapatillas de trail running Levante Mujer (Blanco)»: Privatesportshop 71.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 61616 bytes, 30 chollos
+  cm-2058406 · Zalando Privé 61.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Saucony KINVARA - Zapatillas - negro
+  cm-2058458 · Privatesportshop 71.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · La Sportiva Zapatillas de trail running Levante Mujer (Blanc
+  Vinted «sportiva zapatillas»: HTTP 200, 3687761 bytes, 96 anuncios
+  Vinted «sportiva zapatillas»: 0 parecidos de 96
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 3)
+  Wallapop «sportiva zapatillas»: 200 / 147956 bytes, 40 anuncios, 35 parecidos, 0 reservas
+  Milanuncios «sportiva zapatillas»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 34 anuncios, ~71 €, no publica
+  ⚠️ No publico «La Sportiva Zapatillas de trail running Levante Mujer (Blanco)»: reventa en WALLAPOP ~71 € (34 anuncios): ROI -9 % y -6 €, por debajo del mínimo (25 % y 25 €)
+  Vinted «saucony kinvara»: HTTP 200, 3687278 bytes, 96 anuncios
+  Vinted «saucony kinvara»: 86 parecidos de 96
+  Wallapop «saucony kinvara»: 200 / 67679 bytes, 21 anuncios, 19 parecidos, 0 reservas
+  Milanuncios «saucony kinvara»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa VINTED+WALLAPOP: 81 anuncios, ~65 €, no publica
+  ⚠️ No publico «Saucony KINVARA - Zapatillas - negro»: reventa en VINTED+WALLAPOP ~65 € (81 anuncios): ROI -3 % y -2 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 43 descartes nuevos, 122 en lista
+Cascada al canal normal: 43 descartes nuevos, 131 en lista
