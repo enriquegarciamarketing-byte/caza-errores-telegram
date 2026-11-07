@@ -3831,6 +3831,20 @@
    "photo_message_id": null,
    "origen": "premium",
    "checked": 1794050453
+  },
+  {
+   "asin": "B0H294WYY1",
+   "jl_id": "",
+   "price": 32.99,
+   "reference": 47.99,
+   "t": 1794050701,
+   "url": "https://www.amazon.es/dp/B0H294WYY1?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 363,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>PHILIPS OneBlade Original 360 cuchillas</b>\n\n💶 PRECIO: <b>32,99€</b>\n❌ (Antes: <s>47,99€</s>)\n🔥 ¡Te ahorras <b>15€</b>! (31 % dto.)\n\n🕒 Precio a las 11:54 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0H294WYY1?tag=cazachollos0c-21\">amazon.es/dp/B0H294WYY1</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "PHILIPS OneBlade Original 360 cuchillas, compatibles con todos los mangos OneBlade y Pro, 4 unidades (modelo QP440/60)",
+   "manual": true
   }
  ],
  "seen": {
@@ -10641,10 +10655,12 @@
   1793965122,
   1793972920,
   1794042731,
-  1794045897
+  1794045897,
+  1794050706
  ],
  "x_recent": [
   "regla",
-  "black-friday"
+  "black-friday",
+  "no-dura"
  ]
 }
