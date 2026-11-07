@@ -599,7 +599,7 @@ class PrivateModeTest(unittest.TestCase):
         self.assertEqual(len(calls[0][0]), 3)
         self.assertEqual(calls[0][1], {"with_external": True})
 
-    def test_vista_previa_si_nadie_cumple_y_no_mancha_el_estado(self):
+    def test_si_nadie_cumple_no_envia_casi_aciertos_ni_mancha_el_estado(self):
         cfg = load_cfg()
         state = {"admin_chat_id": 5, "seen": {"keep": {"price": 1, "t": 1, "result": "ya"}}, "posts": []}
         snapshot = copy.deepcopy(state)
@@ -632,8 +632,7 @@ class PrivateModeTest(unittest.TestCase):
                                             scanner.now_utc())
         self.assertEqual(code, 0)
         fallback.assert_not_called()
-        self.assertEqual([item[0] for item in sent], ["p1"])
-        self.assertTrue(sent[0][2] and sent[0][3])
+        self.assertEqual(sent, [])  # lo que no pasa los filtros no llega al chat del administrador
         self.assertEqual(state, snapshot)
 
     def test_de_noche_la_prueba_si_envia_la_ganga(self):
@@ -875,7 +874,7 @@ class WallapopTest(unittest.TestCase):
         self.assertIn("/dp/B07X1KT6LD", url)
         self.assertIn("Wallapop", tg.photos[0]["caption"])
 
-    def test_si_wallapop_falla_no_hay_tarjeta_y_se_avisa(self):
+    def test_si_wallapop_falla_no_hay_tarjeta_ni_aviso_al_chat(self):
         cfg = load_cfg()
         state = {"admin_chat_id": 7, "posts": [], "seen": {"abc": {"price": 199, "t": 1, "result": "GANGA"}}}
         cand = deal(category="GANGA", discount=43)
@@ -897,9 +896,7 @@ class WallapopTest(unittest.TestCase):
             ok = scanner.publish(tg, cfg, state, cand, "@caza_errores", False)
         self.assertFalse(ok)
         self.assertEqual(state["posts"], [])
-        self.assertEqual(sent[0][0], "sendMessage")
-        self.assertIn("Wallapop", sent[0][1]["text"])
-        self.assertEqual(sent[0][1]["chat_id"], 7)
+        self.assertEqual(sent, [])  # el descarte queda en el log, no en tu chat
         scanner.note_wallapop_skip(state, cand)
         self.assertNotIn("abc", state["seen"])
 
@@ -1087,3 +1084,12 @@ class PremiumChannelTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SinAvisosDeDescartesTest(unittest.TestCase):
+    def test_descarte_por_reventa_no_escribe_al_administrador(self):
+        tg = mock.Mock()
+        state = {"admin_chat_id": 5}
+        scanner.alert_no_wallapop(tg, state, {"id": "x", "title": "Producto"}, "pocos anuncios", False)
+        tg.call.assert_not_called()
+        tg.send_photo.assert_not_called()

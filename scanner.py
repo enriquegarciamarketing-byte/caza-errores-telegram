@@ -1118,21 +1118,10 @@ def note_wallapop_skip(state: dict, cand: dict) -> None:
 
 
 def alert_no_wallapop(tg, state: dict, cand: dict, reason: str, dry: bool) -> None:
+    """Lo que no pasa los filtros del premium queda solo en el log: al chat del administrador
+    llegan únicamente los chollos que sí los pasan, para validarlos."""
     title = card_title(cand)[:90] or cand.get("id")
-    text = f"⚠️ No publico «{title}»: {reason}"
-    print(f"  {text}")
-    admin = (state or {}).get("admin_chat_id")
-    if dry or tg is None or not admin:
-        return
-    alerts = state.setdefault("admin_alerts", {})
-    key = f"wallapop:{cand.get('id')}"
-    if time.time() - float(alerts.get(key) or 0) < 12 * 3600:
-        return
-    try:
-        tg.call("sendMessage", {"chat_id": admin, "text": text})
-        alerts[key] = time.time()
-    except RuntimeError as exc:
-        print(f"  No pude avisar al administrador ({exc})")
+    print(f"  ⚠️ No publico «{title}»: {reason}")
 
 
 def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool, test_private: bool = False) -> bool:
@@ -1828,29 +1817,8 @@ def run_private_test(tg, cfg, state, channel, args, now) -> int:
     if posted:
         print(f"Prueba privada enviada al administrador: {posted}")
         return 0
-    pool = list(extras.get("pool") or [])
-    if not select_previews(pool, 1):
-        skip = {item.get("id") for item in pool}
-        pool.extend(preview_details_from_listings(extras.get("listings") or [], skip, PREVIEW_LIMIT, cfg))
-    previews = choose_test_previews(pool, cfg, state, PREVIEW_LIMIT)
-    if not previews:
-        print("Prueba privada: ningún producto premium supera los filtros. No envío chollos baratos ni vistas de ejemplo.")
-        return 0
-    print(f"Prueba privada: ningún candidato cumple los filtros; envío {len(previews)} casi-acierto(s) premium.")
-    for cand in previews:
-        gate = (cand.get("reject") or "").strip()
-        if gate:
-            print(f"  Casi-acierto {cand.get('id')}: {gate}")
-    for cand in previews:
-        prepared = prepare_preview(cand, cfg)
-        try:
-            if publish(tg, cfg, state, prepared, channel, args.dry_run, test_private=True, preview=True):
-                if not args.dry_run:
-                    time.sleep(2)
-            else:
-                note_wallapop_skip(state, prepared)
-        except RuntimeError as exc:
-            print(f"  Error enviando la vista previa {prepared.get('id')}: {exc}")
+    # Solo se manda lo que pasa los filtros; los casi-aciertos no llegan al chat para no saturarlo.
+    print("Prueba privada: ningún producto premium supera los filtros. No envío nada.")
     return 0
 
 
