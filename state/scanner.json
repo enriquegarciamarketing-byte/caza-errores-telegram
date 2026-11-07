@@ -1722,7 +1722,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794053536
+   "checked": 1794053827
   },
   {
    "id": "cm-2058280",
@@ -1757,12 +1757,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794053536
+   "checked": 1794053827
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13211,7 +13211,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 0,
+ "rotation_index": 5,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/new-balance-zapatillas-237-varios-colores-2058283": 1794032552.5611992,
   "https://www.chollometro.com/ofertas/set-de-construccion-lego-ideas-et-el-extraterrestre-2057186": 1794033752.081265,
