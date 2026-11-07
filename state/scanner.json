@@ -1722,7 +1722,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794057186
+   "checked": 1794057439
   },
   {
    "id": "cm-2058280",
@@ -1757,12 +1757,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794057186
+   "checked": 1794057439
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 101,
+ "last_listing_count": 95,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2660,39 +2660,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|lego fortnite 77073 autobus de batalla | set de construccion coleccionista con 9 minifiguras (precio nuevas cuentas, antiguas 10 € mas)|lego 77073 fortnite": {
-   "t": 1793645721.8857195,
-   "query": "lego 77073 fortnite",
-   "prices": [
-    75.0,
-    65.0,
-    10.0,
-    70.0,
-    70.0,
-    5.0,
-    54.99,
-    75.0,
-    75.0,
-    120.0,
-    79.0,
-    95.0,
-    90.0,
-    80.0,
-    84.9,
-    79.9,
-    90.0,
-    80.0,
-    90.0,
-    10.0,
-    80.0,
-    80.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 68520,
-   "raw_count": 27
   },
   "|lego star wars 75379 r2-d2 | droide construible de 1050 piezas (precio nuevas cuentas, antiguas 10€ mas)|lego r2 star": {
    "t": 1793645726.7760735,
@@ -8710,6 +8677,34 @@
    "http_status": 200,
    "bytes": 129096,
    "raw_count": 40
+  },
+  "|honor magic8 lite, bateria de 7500 mah, camara principal de 108mp, pantalla amoled de 6.79 pulgadas y 120hz, ip69k, version para la ue|honor magic8 lite": {
+   "t": 1794057459.3230588,
+   "query": "honor magic8 lite",
+   "prices": [
+    249.0,
+    275.0,
+    280.0,
+    195.0,
+    210.0,
+    230.0,
+    250.0,
+    280.0,
+    280.0,
+    255.0,
+    250.0,
+    300.0,
+    250.0,
+    270.0,
+    310.0,
+    279.0,
+    260.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 108389,
+   "raw_count": 38
   }
  },
  "milanuncios_cache": {
@@ -13279,7 +13274,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-ideas-disney-pixar-luxo-jr-juguete-de-construccion-18-anos-21357-2058223": 1794036282.4148426,
   "https://www.chollometro.com/ofertas/wifi6-mini-pc-diy-ordenador-para-juegos-genmachine-ryzen-amd-ryzen77840u-es8-nucleos-16-hilos-33-51-ghztdp28w-lpddr5-24g-6400mhz-2058242": 1794037380.3952343,
@@ -13307,7 +13302,8 @@
   "https://www.chollometro.com/ofertas/zapatillas-marca-under-armour-forge-96-tallas-355-36-365-375-38-385-39-45-2058457": 1794053399.8310523,
   "https://www.chollometro.com/ofertas/zapatillas-mizuno-wave-sky-9-tallas-40-a-465-2058585": 1794054655.2871778,
   "https://www.chollometro.com/ofertas/cabernet-ps5-2058525": 1794054655.2871778,
-  "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-415-43-465-2058425": 1794057201.1622298
+  "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-415-43-465-2058425": 1794057201.1622298,
+  "https://www.chollometro.com/ofertas/honor-magic8-lite-bateria-de-7500-mah-camara-principal-de-108mp-pantalla-amoled-de-679-pulgadas-y-120hz-ip69k-version-para-la-ue-2058602": 1794057453.3113036
  },
  "asked": {
   "cm-2057830": 1793978147,
