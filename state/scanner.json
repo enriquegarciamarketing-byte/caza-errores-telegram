@@ -1061,8 +1061,8 @@
    "result": "solo -1% bajo la referencia"
   },
   "MQWYDPR": {
-   "price": 100.81,
-   "t": 1793890875,
+   "price": 90.73,
+   "t": 1794062987,
    "result": "solo -10% bajo la referencia"
   },
   "1ZbY0E1": {
@@ -1727,7 +1727,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794061117
+   "checked": 1794063437
   },
   {
    "id": "cm-2058280",
@@ -1762,12 +1762,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794061117
+   "checked": 1794063437
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2665,16 +2665,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|elden ring tarnished edition para nintendo switch 2 (game key card) [precio sin ventaja 50,96€)|elden 50 ring": {
-   "t": 1793649221.1104374,
-   "query": "elden 50 ring",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
   },
   "|auriculares gaming inalambricos logitech g535 lightspeed (236g ultraligeros, 33h bateria, flip-to-mute, usb-c) - pc / ps5 / ps4|auriculares g535 gaming": {
    "t": 1793649222.1165168,
@@ -8710,6 +8700,24 @@
    "http_status": 200,
    "bytes": 145167,
    "raw_count": 39
+  },
+  "|lego architecture fontana di trevi 21062: 1880 piezas para recrear uno de los monumentos mas emblematicos de roma|lego 21062 architecture": {
+   "t": 1794063004.7021627,
+   "query": "lego 21062 architecture",
+   "prices": [
+    115.0,
+    120.0,
+    120.0,
+    120.0,
+    160.0,
+    150.0,
+    135.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 21758,
+   "raw_count": 8
   }
  },
  "milanuncios_cache": {
@@ -13410,13 +13418,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 3,
+ "rotation_index": 20,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/adidas-zapatillas-deportivas-mujer-breaknet-sleek-verde-talla-42-2058319": 1794040660.0131106,
-  "https://www.chollometro.com/ofertas/zapatillas-altas-nike-dunk-high-piel-negro-y-blanco-tallas-36-425-2058279": 1794040660.0131106,
-  "https://www.chollometro.com/ofertas/nike-air-force-1-07-camel-2058390": 1794040660.0131106,
-  "https://www.chollometro.com/ofertas/lego-ideas-juego-de-construccion-cohete-lunar-de-tintin-21367-y-cupon-de-32eur-de-regalo-2058285": 1794040660.0131106,
-  "https://www.chollometro.com/ofertas/brooks-zapatillas-de-running-hyperion-max-3-standard-hombre-white-2058358": 1794041259.9470363,
   "https://www.chollometro.com/ofertas/nintendo-switch-sports-resort-amazon-japon-2058280": 1794041860.44703,
   "https://www.chollometro.com/ofertas/new-balance-supercomp-trainer-v3-zapatillas-running-asfalto-2057201": 1794041860.44703,
   "https://www.chollometro.com/ofertas/zapatillas-new-balance-fresh-foam-x-evoz-v4-gore-tex-tallas-36-365-37-2058441": 1794042816.2316992,
@@ -13438,7 +13441,8 @@
   "https://www.chollometro.com/ofertas/zapatillas-altra-experience-flow-2-tallas-42-a-48-2058571": 1794057577.222444,
   "https://www.chollometro.com/ofertas/ssd-1tb-fanxiang-s880-m2-nvme-pcie-40-7300mbs-2054736": 1794057577.222444,
   "https://www.chollometro.com/ofertas/puma-pounce-lite-zapatillas-para-correr-de-carreteraunisex-adulto-varios-colores-2058362": 1794059427.694443,
-  "https://www.chollometro.com/ofertas/asics-zapatillas-gel-quantum-180-vii-hombre-negrosimply-taupe-2058497": 1794060515.1649816
+  "https://www.chollometro.com/ofertas/asics-zapatillas-gel-quantum-180-vii-hombre-negrosimply-taupe-2058497": 1794060515.1649816,
+  "https://www.chollometro.com/ofertas/lego-architecture-fontana-di-trevi-21062-1880-piezas-para-recrear-uno-de-los-monumentos-mas-emblematicos-de-roma-2058549": 1794063001.3467333
  },
  "asked": {
   "cm-2057830": 1793978147,
