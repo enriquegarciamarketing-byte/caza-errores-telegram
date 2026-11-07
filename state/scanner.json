@@ -1129,6 +1129,11 @@
    "price": 239.97,
    "t": 1794042145,
    "result": "solo -14% bajo la referencia"
+  },
+  "1L3GvGR": {
+   "price": 74.95,
+   "t": 1794043048,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   }
  },
  "posts": [
@@ -1702,7 +1707,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794042920
+   "checked": 1794043048
   },
   {
    "id": "cm-2058280",
@@ -1737,12 +1742,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794042920
+   "checked": 1794043048
   }
  ],
  "tg_offset": 334822061,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 96,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12704,7 +12709,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 13,
+ "rotation_index": 18,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lexar-nq780-1-tb-m2-nvme-ssd-2058234": 1794027139.832286,
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-q7tf-con-base-de-autovaciado-10000-pa-lidar-2058218": 1794029196.350589,
