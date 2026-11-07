@@ -1737,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794091089
+   "checked": 1794095666
   },
   {
    "id": "cm-2058280",
@@ -1772,12 +1772,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794091089
+   "checked": 1794095666
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13690,19 +13690,17 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 7,
+ "rotation_index": 3,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/adidas-hombre-runfalcon-5-zapatillas-de-correr-2058522": 1794071239.1332943,
-  "https://www.chollometro.com/ofertas/procesador-intel-core-ultra-5-245kf-52-ghz-box-14-nucleos-lga-1851-2058858": 1794071239.1332943,
-  "https://www.chollometro.com/ofertas/lego-disney-frozen-castillo-de-hielo-de-elsa-y-aventura-en-la-nieve-43281-216-piezas-4-anos-2057397": 1794071239.1332943,
-  "https://www.chollometro.com/ofertas/mando-con-cable-rematch-advanced-blossom-xbox-series-x-2058284": 1794072183.420864,
   "https://www.chollometro.com/ofertas/seiko-5-sports-honda-super-cub-edicion-limitada-7500-unidades-automatico-425-mm-2058957": 1794075111.603604,
   "https://www.chollometro.com/ofertas/new-balance-zapatillas-fresh-foam-x-860v13-2058581": 1794075711.8684177,
   "https://www.chollometro.com/ofertas/nike-air-force-1-07-negras-y-blancas-de-120-a-4490-2058677": 1794076196.3275173,
   "https://www.chollometro.com/ofertas/nike-nike-air-max-pulse-de-piel-tallas-385-39-40-405-2058961": 1794079230.986315,
   "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-barreda-decode-2058944": 1794079929.1340327,
   "https://www.chollometro.com/ofertas/nike-dunk-high-retro-de-piel-tallas-36-365-375-40-405-2058958": 1794080528.5650709,
-  "https://www.chollometro.com/ofertas/sony-wh-ch720n-auriculares-inalambricos-diadema-con-noise-cancelling-2058560": 1794081129.0430112
+  "https://www.chollometro.com/ofertas/sony-wh-ch720n-auriculares-inalambricos-diadema-con-noise-cancelling-2058560": 1794081129.0430112,
+  "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2058650": 1794093432.7851064,
+  "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-ride-tr2-gore-tex-tallas-355-385-41-2058812": 1794095231.191027
  },
  "asked": {
   "cm-2058280": 1794041889
