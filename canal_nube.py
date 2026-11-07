@@ -1175,66 +1175,82 @@ def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
 
 
 def make_summary_collage(items: list[dict], download=None, max_products: int = 4) -> Path | None:
-    """Imagen de cierre del resumen: los mejores chollos con foto y precio en naranja y el logo del canal.
+    """Imagen de cierre del resumen: los mejores chollos con precio en naranja, descuento y nombre, y el logo.
 
-    Devuelve None si no hay al menos 2 fotos que se puedan bajar (mejor sin imagen que una imagen pobre)."""
-    import io
-    import photos
+    Sin fotos de Amazon (las normas de afiliados no dejan retocarlas ni componerlas en un collage); las fotos
+    tal cual ya salen en cada post. Devuelve None con menos de 2 chollos. `download` queda por compatibilidad."""
     from PIL import Image, ImageDraw
     from publisher import BRAND_ORANGE, DEAL_LOGO, _font
 
-    download = download or photos.fetch_best
-    picked = []
-    for item in items:
-        if len(picked) >= max_products:
-            break
-        url = str(item.get("image") or "")
-        if not url:
-            continue
-        try:
-            raw = download(url)
-            photo = Image.open(io.BytesIO(raw)).convert("RGBA") if raw else None
-        except Exception:
-            photo = None
-        if photo is not None:
-            picked.append((item, photo))
+    picked = [item for item in items if item.get("price") is not None][:max_products]
     if len(picked) < 2:
         return None
 
     width, height, margin = 2160, 1080, 50
     canvas = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(canvas)
-    footer_top = 800
+    footer_top = 760
     column = (width - 2 * margin) // len(picked)
-    tag_h = 110
-    for index, (item, photo) in enumerate(picked):
+    tag_h = 120
+    dark, grey = "#1A1A1A", "#8A8A8A"
+
+    def fit(text: str, size: int, limit: int, bold: bool = True):
+        font = _font(size, bold=bold)
+        while draw.textbbox((0, 0), text, font=font)[2] > limit and size > 30:
+            size -= 4
+            font = _font(size, bold=bold)
+        return font
+
+    def centered(text: str, font, y: int, x0: int, fill: str) -> int:
+        tb = draw.textbbox((0, 0), text, font=font)
+        draw.text((x0 + (column - (tb[2] - tb[0])) // 2 - tb[0], y - tb[1]), text, font=font, fill=fill)
+        return tb[3] - tb[1]
+
+    for index, item in enumerate(picked):
         x0 = margin + index * column
+        inner = column - 80
+        if index:
+            draw.line([(x0, margin + 20), (x0, footer_top - 40)], fill="#E6E6E6", width=4)
         # Precio en caja naranja, como las tarjetas de chollos
         text = euro(item["price"]).replace(" €", "€")
-        size = 84
-        font = _font(size, bold=True)
-        while draw.textbbox((0, 0), text, font=font)[2] > column - 80 and size > 40:
-            size -= 4
-            font = _font(size, bold=True)
+        font = fit(text, 92, inner - 56)
         tb = draw.textbbox((0, 0), text, font=font)
         tw, th = tb[2] - tb[0], tb[3] - tb[1]
-        box_w = tw + 56
-        bx = x0 + (column - box_w) // 2
-        by = margin
-        draw.rectangle([bx, by, bx + box_w, by + tag_h], fill=BRAND_ORANGE)
+        bx, by = x0 + (column - tw - 56) // 2, margin + 10
+        draw.rounded_rectangle([bx, by, bx + tw + 56, by + tag_h], radius=18, fill=BRAND_ORANGE)
         draw.text((bx + 28 - tb[0], by + (tag_h - th) // 2 - tb[1]), text, font=font, fill="white")
-        # Foto encajada debajo, centrada
-        area_top = by + tag_h + 30
-        area_w, area_h = column - 40, footer_top - area_top - 20
-        fitted = photo.copy()
-        fitted.thumbnail((area_w, area_h), Image.LANCZOS)
-        if fitted.width < area_w and fitted.height < area_h:
-            scale = min(area_w / fitted.width, area_h / fitted.height)
-            fitted = photo.resize((max(1, int(photo.width * scale)), max(1, int(photo.height * scale))), Image.LANCZOS)
-            fitted.thumbnail((area_w, area_h), Image.LANCZOS)
-        px = x0 + (column - fitted.width) // 2
-        py = area_top + (area_h - fitted.height) // 2
-        canvas.paste(fitted, (px, py), fitted)
+        y = by + tag_h + 45
+        # Descuento grande y precio de antes tachado
+        y += centered(f"-{round(item.get('discount') or 0)} %", _font(120, bold=True), y, x0, dark) + 35
+        before = f"antes {euro(item['reference']).replace(' €', '€')}" if item.get("reference") else ""
+        if before:
+            bfont = fit(before, 50, inner, bold=False)
+            bb = draw.textbbox((0, 0), before, font=bfont)
+            bxl = x0 + (column - (bb[2] - bb[0])) // 2
+            centered(before, bfont, y, x0, grey)
+            mid = y + (bb[3] - bb[1]) // 2
+            draw.line([(bxl + draw.textlength("antes ", font=bfont), mid), (bxl + bb[2] - bb[0], mid)],
+                      fill=grey, width=4)
+            y += bb[3] - bb[1] + 50
+        # Nombre del producto, hasta 4 líneas
+        tfont = _font(46, bold=True)
+        words, lines, line = clean_title(item.get("title") or "", 90).split(), [], ""
+        for word in words:
+            trial = f"{line} {word}".strip()
+            if draw.textbbox((0, 0), trial, font=tfont)[2] <= inner:
+                line = trial
+            else:
+                lines.append(line)
+                line = word
+        lines.append(line)
+        if len(lines) > 4:
+            lines = lines[:4]
+            lines[3] = lines[3].rstrip(".,") + "…"
+        for text_line in lines:
+            if y + 56 > footer_top - 40:
+                break
+            centered(text_line, tfont, y, x0, dark)
+            y += 60
 
     # Pie: logo del canal y el nombre, a la derecha
     logo_size = 250
@@ -1257,7 +1273,7 @@ def make_summary_collage(items: list[dict], download=None, max_products: int = 4
     # A la izquierda del pie, el titular del cierre
     head_font = _font(64, bold=True)
     draw.text((margin, ly + 40), "LO MEJOR DE HOY", font=head_font, fill="#1A1A1A")
-    draw.text((margin, ly + 130), "EN AMAZON", font=head_font, fill=BRAND_ORANGE)
+    draw.text((margin, ly + 130), "CERRAMOS EL DÍA", font=head_font, fill=BRAND_ORANGE)  # sin la marca Amazon
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
     out = OUTPUT / "resumen.jpg"

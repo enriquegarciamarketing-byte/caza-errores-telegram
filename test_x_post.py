@@ -139,6 +139,16 @@ class AlbumAmazon(unittest.TestCase):
         self.assertEqual(cn.rules_from(real)["tag"], "cazachollos0c-21")
         self.assertNotIn("album_solo_pruebas", real["amazon_channel"])
 
+    def test_summary_image_without_amazon_photos(self):
+        items = [{"title": f"Producto {i}", "price": 10.0 + i, "reference": 30.0, "discount": 50, "image": "https://x/y.jpg"}
+                 for i in range(4)]
+
+        def no_download(url):
+            raise AssertionError("la imagen de cierre no debe bajar fotos de Amazon")
+
+        self.assertTrue(cn.make_summary_collage(items, download=no_download).is_file())
+        self.assertIsNone(cn.make_summary_collage(items[:1]))
+
 class FiltroX(unittest.TestCase):
     from datetime import datetime, timezone
     NOW = datetime(2026, 11, 5, 11, 0, tzinfo=timezone.utc)
