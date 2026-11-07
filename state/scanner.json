@@ -1149,6 +1149,11 @@
    "price": 39.99,
    "t": 1794048521,
    "result": "solo -25% bajo la referencia"
+  },
+  "MKJwNG5": {
+   "price": 43.95,
+   "t": 1794058363,
+   "result": "solo -6% bajo la referencia"
   }
  },
  "posts": [
@@ -1722,7 +1727,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794058005
+   "checked": 1794060463
   },
   {
    "id": "cm-2058280",
@@ -1757,12 +1762,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794058005
+   "checked": 1794060463
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 91,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2660,25 +2665,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|lego super mario 72046 game boy + lego speed champions 77256 coche regreso al futuro (cuentas nuevas)|lego 72046 super": {
-   "t": 1793649218.044748,
-   "query": "lego 72046 super",
-   "prices": [
-    47.9,
-    30.0,
-    50.0,
-    25.0,
-    59.9,
-    90.0,
-    49.99,
-    47.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 23051,
-   "raw_count": 8
   },
   "|playstation - astro bot para ps5 juego fisico nuevo precintado aventura espacial con dualsense|playstation ps5 astro": {
    "t": 1793649219.271472,
@@ -8706,6 +8692,27 @@
    "http_status": 200,
    "bytes": 104946,
    "raw_count": 40
+  },
+  "|puma pounce lite zapatillas para correr de carretera. unisex adulto. varios colores|puma pounce": {
+   "t": 1794059431.3329542,
+   "query": "puma pounce",
+   "prices": [
+    28.0,
+    12.0,
+    28.0,
+    30.0,
+    43.0,
+    37.99,
+    45.0,
+    69.95,
+    50.0,
+    50.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 44129,
+   "raw_count": 13
   }
  },
  "milanuncios_cache": {
@@ -13296,15 +13303,81 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~55 € (15 anuncios): ROI -17 % y -10 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|puma pounce lite zapatillas para correr de carretera. unisex adulto. varios colores|puma pounce": {
+   "t": 1794059431.112119,
+   "prices": [
+    8.0,
+    49.99,
+    60.0,
+    43.0,
+    37.99,
+    20.0,
+    40.0,
+    50.0,
+    5.0,
+    11.0,
+    32.99,
+    15.0,
+    45.0,
+    30.0,
+    55.0,
+    60.0,
+    12.0,
+    14.99,
+    15.0,
+    25.0,
+    40.99,
+    66.0,
+    41.0,
+    26.0,
+    28.0,
+    29.0,
+    30.0,
+    17.5,
+    18.0,
+    62.0,
+    6.5,
+    40.0,
+    22.0,
+    50.0,
+    40.0,
+    20.0,
+    26.0,
+    6.0,
+    39.0,
+    25.0,
+    23.0,
+    40.0,
+    25.0,
+    30.0,
+    50.0,
+    18.0,
+    34.99,
+    18.0,
+    25.0,
+    9.0,
+    20.0,
+    9.0,
+    14.0,
+    30.0,
+    47.0,
+    4.0,
+    210.0,
+    30.0,
+    8.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~26 € (46 anuncios): ROI -22 % y -6 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 19,
+ "rotation_index": 15,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/wifi6-mini-pc-diy-ordenador-para-juegos-genmachine-ryzen-amd-ryzen77840u-es8-nucleos-16-hilos-33-51-ghztdp28w-lpddr5-24g-6400mhz-2058242": 1794037380.3952343,
-  "https://www.chollometro.com/ofertas/zapatillas-de-trail-running-skechers-ridge-oak-hombre-2058053": 1794037980.8213227,
   "https://www.chollometro.com/ofertas/bose-quietcomfort-ultra-bluetooth-2a-generacion-auriculares-de-diadema-inalambricos-con-audio-espacial-cancelacion-de-ruido-30hrs-2058133": 1794038583.418309,
   "https://www.chollometro.com/ofertas/lego-fortnite-entrega-de-suministros-77080-314-piezas-3-minifiguras-y-accesorios-2057602": 1794038583.418309,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-deportivas-mujer-breaknet-sleek-verde-talla-42-2058319": 1794040660.0131106,
@@ -13331,7 +13404,8 @@
   "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-415-43-465-2058425": 1794057201.1622298,
   "https://www.chollometro.com/ofertas/honor-magic8-lite-bateria-de-7500-mah-camara-principal-de-108mp-pantalla-amoled-de-679-pulgadas-y-120hz-ip69k-version-para-la-ue-2058602": 1794057453.3113036,
   "https://www.chollometro.com/ofertas/zapatillas-altra-experience-flow-2-tallas-42-a-48-2058571": 1794057577.222444,
-  "https://www.chollometro.com/ofertas/ssd-1tb-fanxiang-s880-m2-nvme-pcie-40-7300mbs-2054736": 1794057577.222444
+  "https://www.chollometro.com/ofertas/ssd-1tb-fanxiang-s880-m2-nvme-pcie-40-7300mbs-2054736": 1794057577.222444,
+  "https://www.chollometro.com/ofertas/puma-pounce-lite-zapatillas-para-correr-de-carreteraunisex-adulto-varios-colores-2058362": 1794059427.694443
  },
  "asked": {
   "cm-2057830": 1793978147,
