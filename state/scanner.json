@@ -1732,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794071346
+   "checked": 1794073819
   },
   {
    "id": "cm-2058280",
@@ -1767,12 +1767,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794071346
+   "checked": 1794073819
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 92,
+ "last_listing_count": 97,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2814,56 +2814,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|zapatillas munich|zapatillas munich": {
-   "t": 1793653783.5407236,
-   "query": "zapatillas munich",
-   "prices": [
-    55.0,
-    15.0,
-    6.0,
-    25.0,
-    30.0,
-    30.0,
-    60.0,
-    25.0,
-    40.0,
-    45.0,
-    90.0,
-    28.45,
-    30.0,
-    15.0,
-    8.0,
-    26.0,
-    30.0,
-    30.0,
-    40.0,
-    10.0,
-    33.0,
-    25.0,
-    20.0,
-    18.0,
-    30.0,
-    50.0,
-    15.0,
-    25.0,
-    22.0,
-    39.0,
-    50.0,
-    40.0,
-    20.0,
-    35.0,
-    17.5,
-    40.0,
-    30.0,
-    18.0,
-    65.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 123459,
-   "raw_count": 40
   },
   "|mario kart 8 deluxe - cartucho de juego para nintendo switch, tarjeta fisica compatible con tv, mesa y modo portatil|mario kart": {
    "t": 1793653784.6147056,
@@ -8875,6 +8825,33 @@
    "http_status": 200,
    "bytes": 14939,
    "raw_count": 6
+  },
+  "|mando con cable rematch advanced - blossom - xbox series x|mando cable": {
+   "t": 1794072188.2832117,
+   "query": "mando cable",
+   "prices": [
+    9.99,
+    15.0,
+    12.0,
+    15.0,
+    18.0,
+    5.0,
+    5.0,
+    10.0,
+    14.0,
+    12.0,
+    32.95,
+    18.0,
+    10.0,
+    20.0,
+    10.0,
+    55.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 112544,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -13729,7 +13706,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 6,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-2058465": 1794052199.9819205,
   "https://www.chollometro.com/ofertas/nike-air-force-1-zapatillas-piel-blanco-tallas-35-a-45-2058623": 1794052799.2096386,
@@ -13749,7 +13726,8 @@
   "https://www.chollometro.com/ofertas/lego-jurassic-world-fosiles-de-dinosaurio-triceratops-77985-1154-piezas-y-figura-articulada-18-anos-2058572": 1794068382.4293976,
   "https://www.chollometro.com/ofertas/adidas-hombre-runfalcon-5-zapatillas-de-correr-2058522": 1794071239.1332943,
   "https://www.chollometro.com/ofertas/procesador-intel-core-ultra-5-245kf-52-ghz-box-14-nucleos-lga-1851-2058858": 1794071239.1332943,
-  "https://www.chollometro.com/ofertas/lego-disney-frozen-castillo-de-hielo-de-elsa-y-aventura-en-la-nieve-43281-216-piezas-4-anos-2057397": 1794071239.1332943
+  "https://www.chollometro.com/ofertas/lego-disney-frozen-castillo-de-hielo-de-elsa-y-aventura-en-la-nieve-43281-216-piezas-4-anos-2057397": 1794071239.1332943,
+  "https://www.chollometro.com/ofertas/mando-con-cable-rematch-advanced-blossom-xbox-series-x-2058284": 1794072183.420864
  },
  "asked": {
   "cm-2058280": 1794041889
