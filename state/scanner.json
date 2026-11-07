@@ -1697,12 +1697,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794031430
+   "checked": 1794034788
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -12352,12 +12352,14 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 4,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/intel-core-ultra-9-285k-ia-integrada-3257ghz-2058211": 1794020940.8483136,
   "https://www.chollometro.com/ofertas/lexar-nq780-1-tb-m2-nvme-ssd-2058234": 1794027139.832286,
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-q7tf-con-base-de-autovaciado-10000-pa-lidar-2058218": 1794029196.350589,
-  "https://www.chollometro.com/ofertas/glorlin-mini-pc-amd-ryzen-5-6600h-aplicar-cupon-15-ahorro-18-al-tramitar-2057903": 1794029795.419873
+  "https://www.chollometro.com/ofertas/glorlin-mini-pc-amd-ryzen-5-6600h-aplicar-cupon-15-ahorro-18-al-tramitar-2057903": 1794029795.419873,
+  "https://www.chollometro.com/ofertas/new-balance-zapatillas-237-varios-colores-2058283": 1794032552.5611992,
+  "https://www.chollometro.com/ofertas/set-de-construccion-lego-ideas-et-el-extraterrestre-2057186": 1794033752.081265
  },
  "asked": {
   "cm-2057830": 1793978147
