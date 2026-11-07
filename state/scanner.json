@@ -1159,6 +1159,11 @@
    "price": 28.99,
    "t": 1794065623,
    "result": "solo -3% bajo la referencia"
+  },
+  "RYXnXEL": {
+   "price": 47.45,
+   "t": 1794090692,
+   "result": "solo 2 puntos de precio en España (mínimo 15)"
   }
  },
  "posts": [
@@ -1732,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794086338
+   "checked": 1794090992
   },
   {
    "id": "cm-2058280",
@@ -1767,12 +1772,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794086338
+   "checked": 1794090992
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13685,11 +13690,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 6,
+ "rotation_index": 2,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/salomon-extegra-gore-tex-impermeables-zapatillas-de-senderismo-para-mujer-tallas-36-a-44-2058537": 1794065037.2180994,
-  "https://www.chollometro.com/ofertas/zapatillas-adidas-originals-tokyo-w-crema-piel-2058244": 1794067182.0441244,
-  "https://www.chollometro.com/ofertas/lego-jurassic-world-fosiles-de-dinosaurio-triceratops-77985-1154-piezas-y-figura-articulada-18-anos-2058572": 1794068382.4293976,
   "https://www.chollometro.com/ofertas/adidas-hombre-runfalcon-5-zapatillas-de-correr-2058522": 1794071239.1332943,
   "https://www.chollometro.com/ofertas/procesador-intel-core-ultra-5-245kf-52-ghz-box-14-nucleos-lga-1851-2058858": 1794071239.1332943,
   "https://www.chollometro.com/ofertas/lego-disney-frozen-castillo-de-hielo-de-elsa-y-aventura-en-la-nieve-43281-216-piezas-4-anos-2057397": 1794071239.1332943,
