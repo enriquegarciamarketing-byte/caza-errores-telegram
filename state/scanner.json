@@ -1732,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794073819
+   "checked": 1794076148
   },
   {
    "id": "cm-2058280",
@@ -1767,12 +1767,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794073819
+   "checked": 1794076148
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2814,103 +2814,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|mario kart 8 deluxe - cartucho de juego para nintendo switch, tarjeta fisica compatible con tv, mesa y modo portatil|mario kart": {
-   "t": 1793653784.6147056,
-   "query": "mario kart",
-   "prices": [
-    59.9,
-    20.0,
-    55.0,
-    35.0,
-    55.0,
-    10.0,
-    20.0,
-    25.0,
-    30.0,
-    30.0,
-    30.0,
-    35.0,
-    32.0,
-    20.0,
-    65.0,
-    30.0,
-    110.0,
-    30.0,
-    30.0,
-    30.0,
-    165.0,
-    35.0,
-    35.0,
-    300.0,
-    19.99,
-    30.0,
-    50.0,
-    29.99,
-    30.0,
-    160.0,
-    59.95,
-    20.0,
-    15.0,
-    35.0,
-    11.0,
-    30.0,
-    15.0,
-    15.0,
-    10.0,
-    26.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 93698,
-   "raw_count": 40
-  },
-  "|mando ps5 dualsense varios colores|mando ps5 dualsense": {
-   "t": 1793653785.5508137,
-   "query": "mando ps5 dualsense",
-   "prices": [
-    50.0,
-    60.0,
-    44.99,
-    130.0,
-    30.0,
-    40.0,
-    80.0,
-    43.0,
-    50.0,
-    34.99,
-    53.0,
-    38.5,
-    53.0,
-    40.0,
-    40.0,
-    45.0,
-    62.5,
-    50.0,
-    50.0,
-    34.0,
-    40.0,
-    95.0,
-    135.0,
-    45.0,
-    185.0,
-    50.0,
-    149.0,
-    45.0,
-    45.0,
-    35.0,
-    40.0,
-    50.0,
-    50.0,
-    55.0,
-    49.9
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 109270,
-   "raw_count": 39
   },
   "|nintendo switch 2 joy-con 2 pares - azul claro/rojo|nintendo switch": {
    "t": 1793654734.6446044,
@@ -8852,6 +8755,40 @@
    "http_status": 200,
    "bytes": 112544,
    "raw_count": 40
+  },
+  "|seiko 5 sports honda super cub edicion limitada 7.500 unidades, automatico 42,5 mm|seiko 500 sports": {
+   "t": 1794075115.9748402,
+   "query": "seiko 500",
+   "prices": [
+    10.0,
+    120.0,
+    5.0,
+    499.0,
+    10.0,
+    1499.0,
+    69.0,
+    29.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 125086,
+   "raw_count": 37
+  },
+  "|new balance zapatillas fresh foam x 860v13|new 860v13 balance": {
+   "t": 1794075716.2667563,
+   "query": "new 860v13 balance",
+   "prices": [
+    60.0,
+    69.0,
+    79.0,
+    89.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 24021,
+   "raw_count": 7
   }
  },
  "milanuncios_cache": {
@@ -13701,17 +13638,27 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~25 € (68 anuncios): ROI -35 % y -11 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|new balance zapatillas fresh foam x 860v13|new 860v13 balance": {
+   "t": 1794075716.0014696,
+   "prices": [
+    50.0,
+    20.0,
+    30.0,
+    55.0,
+    115.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~46 € (3 anuncios): ROI -39 % y -26 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 6,
+ "rotation_index": 2,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-2058465": 1794052199.9819205,
-  "https://www.chollometro.com/ofertas/nike-air-force-1-zapatillas-piel-blanco-tallas-35-a-45-2058623": 1794052799.2096386,
-  "https://www.chollometro.com/ofertas/zapatillas-marca-puma-cassia-20-tallas-3738390404054142425-2058424": 1794052799.2096386,
-  "https://www.chollometro.com/ofertas/zapatillas-marca-under-armour-forge-96-tallas-355-36-365-375-38-385-39-45-2058457": 1794053399.8310523,
   "https://www.chollometro.com/ofertas/zapatillas-mizuno-wave-sky-9-tallas-40-a-465-2058585": 1794054655.2871778,
   "https://www.chollometro.com/ofertas/cabernet-ps5-2058525": 1794054655.2871778,
   "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-415-43-465-2058425": 1794057201.1622298,
@@ -13727,7 +13674,9 @@
   "https://www.chollometro.com/ofertas/adidas-hombre-runfalcon-5-zapatillas-de-correr-2058522": 1794071239.1332943,
   "https://www.chollometro.com/ofertas/procesador-intel-core-ultra-5-245kf-52-ghz-box-14-nucleos-lga-1851-2058858": 1794071239.1332943,
   "https://www.chollometro.com/ofertas/lego-disney-frozen-castillo-de-hielo-de-elsa-y-aventura-en-la-nieve-43281-216-piezas-4-anos-2057397": 1794071239.1332943,
-  "https://www.chollometro.com/ofertas/mando-con-cable-rematch-advanced-blossom-xbox-series-x-2058284": 1794072183.420864
+  "https://www.chollometro.com/ofertas/mando-con-cable-rematch-advanced-blossom-xbox-series-x-2058284": 1794072183.420864,
+  "https://www.chollometro.com/ofertas/seiko-5-sports-honda-super-cub-edicion-limitada-7500-unidades-automatico-425-mm-2058957": 1794075111.603604,
+  "https://www.chollometro.com/ofertas/new-balance-zapatillas-fresh-foam-x-860v13-2058581": 1794075711.8684177
  },
  "asked": {
   "cm-2058280": 1794041889
