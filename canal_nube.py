@@ -904,9 +904,16 @@ def make_card_clasica(deal: dict, rules: dict) -> Path:
 ENDED = "⛔ <b>YA NO ESTÁ A ESTE PRECIO</b> (comprobado a las {hour})"
 
 
+def sin_historial(caption: str) -> str:
+    """Quita de un texto ya publicado lo que se dejó de poner el 7/11/2026: la línea del mínimo histórico y
+    el hashtag #MinimoHistorico (así, al marcar un post como terminado, no vuelven)."""
+    lines = [line for line in caption.split("\n") if "Precio más bajo de su historia" not in line]
+    return "\n".join(lines).replace(" #MinimoHistorico", "").replace("#MinimoHistorico", "")
+
+
 def ended_caption(caption: str) -> str:
     """Texto del post terminado: sin enlace a Amazon ni estrellas (los posts antiguos aún las llevan)."""
-    kept = [line for line in caption.split("\n")
+    kept = [line for line in sin_historial(caption).split("\n")
             if not line.startswith("🔗") and not line.startswith("⭐")]
     while kept and not kept[-1].strip():
         kept.pop()
