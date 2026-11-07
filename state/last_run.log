@@ -1,107 +1,34 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36629 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 75344 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 46 descartes nuevos, 133 en lista
-== pasada 2 · 16:51 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 3 · 16:54 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 16:56 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 16:59 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36508 bytes, 30 chollos
-  Chollometro «Zapatillas adidas Originals Tokyo W crema piel»: Zalando Privé 35.9 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 103963 bytes, 30 chollos
-  cm-2058244 · Zalando Privé 35.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas adidas Originals Tokyo W crema piel
-  Vinted «zapatillas adidas»: HTTP 200, 3685376 bytes, 96 anuncios
-  Vinted «zapatillas adidas»: 27 parecidos de 96
-  Wallapop «zapatillas adidas»: 200 / 135300 bytes, 40 anuncios, 40 parecidos, 0 reservas
-  Milanuncios «zapatillas adidas»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa VINTED+WALLAPOP: 56 anuncios, ~28 €, no publica
-  ⚠️ No publico «Zapatillas adidas Originals Tokyo W crema piel»: reventa en VINTED+WALLAPOP ~28 € (56 anuncios): ROI -31 % y -11 €, por debajo del mínimo (30 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 6 · 17:01 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 7 · 17:04 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 8 · 17:06 ==
-Listados: 104 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 17:09 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36491 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 108919 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 10 · 17:11 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 17:14 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 17:16 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 17:19 ==
-Listados: 102 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36590 bytes, 30 chollos
-  Chollometro «LEGO Jurassic World Fósiles de Dinosaurio: Triceratops 77985, 1154 pie»: Carrefour 59.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 104954 bytes, 30 chollos
-  cm-2058572 · Carrefour 59.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Jurassic World Fósiles de Dinosaurio: Triceratops 77985
-  Wallapop «lego 77985 jurassic»: 200 / 12087 bytes, 4 anuncios, 2 parecidos, 0 reservas
-  Wallapop «lego 77985»: 200 / 11219 bytes, 4 anuncios, 2 parecidos, 0 reservas
-  Milanuncios «lego 77985 jurassic»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  Rr8Qx0m · 186.84 € · media 319.81 · ref 184.90 → descartado (la referencia corregida no supera el precio (media inflada)) · Corsair MP600 Micro 1TB M.2 NVMe PCIe x4 Gen4 SSD – M.2 2242
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36269 bytes, 30 chollos
+  Chollometro «Adidas Hombre Runfalcon 5. Zapatillas de Correr. Varios colores.»: Amazon 32.99 €
+  Chollometro «Procesador Intel Core Ultra 5 245KF 5,2 GHz Box 14 núcleos (LGA 1851)»: Powerplanetonline 166.0 €
+  Chollometro «LEGO Disney Frozen Castillo de Hielo de Elsa y Aventura en la Nieve (4»: Carrefour 31.49 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 121772 bytes, 30 chollos
+  cm-2058522 · Amazon 32.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Adidas Hombre Runfalcon 5. Zapatillas de Correr. Varios colo
+  cm-2058858 · Powerplanetonline 166.0 € → candidato externo · Procesador Intel Core Ultra 5 245KF 5,2 GHz Box 14 núcleos (
+  cm-2057397 · Carrefour 31.49 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Disney Frozen Castillo de Hielo de Elsa y Aventura en l
+  Vinted «adidas runfalcon»: HTTP 200, 3682889 bytes, 96 anuncios
+  Vinted «adidas runfalcon»: 77 parecidos de 96
+  Wallapop «adidas runfalcon»: 200 / 132732 bytes, 38 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «adidas runfalcon»: HTTP 200, 95999 bytes, bloqueado
+  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
+  Reventa VINTED+WALLAPOP: 101 anuncios, ~25 €, no publica
+  ⚠️ No publico «Adidas Hombre Runfalcon 5. Zapatillas de Correr. Varios colores.»: reventa en VINTED+WALLAPOP ~25 € (101 anuncios): ROI -34 % y -11 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «lego 43281 disney»: 200 / 6226 bytes, 2 anuncios, 2 parecidos, 0 reservas
+  Wallapop «lego 43281»: 200 / 5361 bytes, 2 anuncios, 2 parecidos, 0 reservas
+  Milanuncios «lego 43281 disney»: HTTP 200, 95999 bytes, bloqueado
+  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
   Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
-  ⚠️ No publico «LEGO Jurassic World Fósiles de Dinosaurio: Triceratops 77985, 1154 piezas y figura articul»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «LEGO Disney Frozen Castillo de Hielo de Elsa y Aventura en la Nieve (43281) – 216 piezas +»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios bloqueado (HTTP 200, 95999 bytes)
+  Wallapop «procesador 245kf intel»: 200 / 14939 bytes, 6 anuncios, 2 parecidos, 0 reservas
+  Wallapop «procesador 245kf»: 200 / 14067 bytes, 6 anuncios, 2 parecidos, 0 reservas
+  Milanuncios «procesador 245kf intel»: HTTP 200, 95999 bytes, bloqueado
+  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
+  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
+  ⚠️ No publico «Procesador Intel Core Ultra 5 245KF 5,2 GHz Box 14 núcleos (LGA 1851)»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios bloqueado (HTTP 200, 95999 bytes)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 17:21 ==
-Listados: 92 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 15 · 17:24 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 16 · 17:26 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-Fin de la ejecución tras 16 pasadas.
+Cascada al canal normal: 40 descartes nuevos, 84 en lista
