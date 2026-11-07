@@ -15,7 +15,7 @@ LEFANT = (FIX / "jl_detail_lefant.html").read_text(encoding="utf-8")
 SOCKS = (FIX / "jl_detail_calcetines.html").read_text(encoding="utf-8")
 CFG = {"affiliate_tag": "cazadores_errores-21",
        "amazon_channel": {"sources": ["https://jimmyleaks.com/es/minimos-de-hoy/"], "block_keywords": ["funda"]}}
-RULES = cn.rules_from(CFG)
+RULES = dict(cn.rules_from(CFG), caption_style="completo")  # el texto largo explica la referencia
 # Lefant visto en Jimmyleaks a las 15:52:40 UTC (data-timestamp 1793461960).
 NOW = datetime.fromtimestamp(1793461960 + 9 * 60, timezone.utc)
 
@@ -120,7 +120,22 @@ class Administrador(unittest.TestCase):
         self.assertIsNone(cn.admin_chat_id({}, dict(RULES, admin_username="nadie_xyz"), TG()))
 
 
-REAL = cn.rules_from(json.loads((Path(__file__).resolve().parent / "config.json").read_text(encoding="utf-8")))
+REAL_CFG = json.loads((Path(__file__).resolve().parent / "config.json").read_text(encoding="utf-8"))
+REAL = dict(cn.rules_from(REAL_CFG), caption_style="completo")
+
+
+class TextoCorto(unittest.TestCase):
+    def test_caption_corto_por_defecto(self):
+        deal = {"asin": "B1", "title": "Dreame L10s Ultra Robot aspirador con estación de vaciado", "price": 299.0,
+                "reference": 699.0, "discount": 57, "ref_kind": "pvp", "drop_30": 22, "min_30": 389.0,
+                "seen_ts": 1793461960, "historical_low": True}
+        text = cn.build_caption(deal, "https://www.amazon.es/dp/B1?tag=t-21", cn.rules_from(REAL_CFG))
+        self.assertIn("💥 <b>299,00 €</b>  ·  <b>-57 %</b>", text)
+        for gone in ("frente a su", "Te ahorras", "30 días", "699"):
+            self.assertNotIn(gone, text)
+        self.assertIn("Precio más bajo de su historia", text)
+        self.assertIn("#Publicidad", text)
+        self.assertLessEqual(len(text.split("\n")), 12)
 
 
 class Interes(unittest.TestCase):

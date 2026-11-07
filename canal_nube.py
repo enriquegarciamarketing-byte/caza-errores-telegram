@@ -544,6 +544,10 @@ HEADERS = {
 
 
 def build_caption(deal: dict, url: str, rules: dict) -> str:
+    """Por defecto texto corto y llamativo ("caption_style": "corto"): el detalle del precio (frente a qué
+    referencia, mínimo de 30 días, ahorro) ya va en la tarjeta. "completo" vuelve al texto largo de antes."""
+    if rules.get("caption_style", "corto") == "corto":
+        return build_caption_short(deal, url, rules)
     e = html.escape
     pct = deal["discount"]
     seen = datetime.fromtimestamp(deal["seen_ts"], timezone.utc).astimezone(MADRID)
@@ -579,6 +583,24 @@ def build_caption(deal: dict, url: str, rules: dict) -> str:
     return "\n".join(lines)
 
 
+def build_caption_short(deal: dict, url: str, rules: dict) -> str:
+    e = html.escape
+    seen = datetime.fromtimestamp(deal.get("seen_ts") or time.time(), timezone.utc).astimezone(MADRID)
+    lines = [HEADERS[badge_for(deal["discount"], rules, real_drop(deal))], "",
+             f"<b>{e(clean_title(deal['title'], 90))}</b>", "",
+             f"💥 <b>{e(euro(deal['price']))}</b>  ·  <b>-{round(deal['discount'])} %</b>"]
+    if deal.get("historical_low"):
+        lines.append("🏆 <b>Precio más bajo de su historia</b>")
+    for extra in deal.get("extra_lines") or []:
+        lines.append(e(str(extra)))
+    hour = deal.get("seen_hhmm") or f"{seen:%H:%M}"
+    lines += ["", f"🕒 {PRICE_NOTE.format(hour=hour)}"]
+    if rules.get("post_style", "separadas") == "album":  # el álbum no admite botón: el enlace va en el texto
+        lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Comprar en Amazon</a></b>')
+    lines += ["", f"{PUBLI} {hashtags(deal, rules)}"]
+    return "\n".join(lines)
+
+
 # Hora del precio y aviso corto; la exención completa de Amazon va en el mensaje fijado del canal.
 PRICE_NOTE = "Precio a las {hour} · puede cambiar"
 PUBLI = "#Publicidad"
@@ -593,8 +615,13 @@ def hashtags(deal: dict, rules: dict) -> str:
     return " ".join(tags)
 
 
-def buttons(url: str) -> dict:
-    return {"inline_keyboard": [[{"text": "🛒 Ver en Amazon", "url": url}]]}
+def buttons(url: str, style: str = "success") -> dict:
+    """Botón del post. Telegram solo admite tres colores ("success" verde, "danger" rojo, "primary" azul); no hay
+    amarillo, así que va en verde, el de comprar. Cámbialo con "button_style" en config.json."""
+    button = {"text": "🛒 Comprar en Amazon", "url": url}
+    if style:
+        button["style"] = style
+    return {"inline_keyboard": [[button]]}
 
 
 def x_text(deal: dict, url: str, rules: dict, state: dict | None = None) -> str:
@@ -764,7 +791,7 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
     if style == "separadas" and image:
         try:
             photo = send_product_photo(tg, target, image)
-            message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
+            message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
             message["photo_message_id"] = photo.get("message_id")
             return message
         except (RuntimeError, OSError, urllib.error.URLError) as exc:
@@ -785,7 +812,7 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
             return sent[0]
         except (RuntimeError, OSError, urllib.error.URLError) as exc:
             log(f"  No he podido mandar el álbum ({exc}); mando solo la tarjeta")
-    return tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
+    return tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
 
 
 def make_card_clasica(deal: dict, rules: dict) -> Path:
@@ -943,7 +970,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         url = f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['tag']}"
         caption = build_caption(deal, url, rules)
         if dry:
-            log("  [prueba, no se envía]\n" + caption)
+            log("  [prueba, no se envía]\n" + caption + f"\n[botón] {url}")
             sent += 1
             continue
         try:
@@ -1453,7 +1480,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
         log("Post manual: no encuentro tu chat privado. Escribe /start al bot y repite.")
         return 2
     if args.dry_run or tg is None:
-        log("[prueba, no se envía]\n" + caption)
+        log("[prueba, no se envía]\n" + caption + f"\n[botón] {url}")
         return 0
     message = publish(tg, target, deal, rules, caption, url, log)
     send_x_draft(tg, state, rules, deal, url, log, test=bool(args.test_private), manual=True)

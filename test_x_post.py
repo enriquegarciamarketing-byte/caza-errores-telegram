@@ -146,7 +146,8 @@ class AlbumAmazon(unittest.TestCase):
         self.assertEqual(calls[0][1]["photo"], self.DEAL["image"], "la foto de Amazon va por URL, sin retocar")
         self.assertTrue(calls[0][1]["disable_notification"])
         self.assertEqual(calls[1][1]["caption"], "texto")
-        self.assertIn("reply_markup", calls[1][1], "la tarjeta lleva el botón Ver en Amazon")
+        button = calls[1][1]["reply_markup"]["inline_keyboard"][0][0]
+        self.assertEqual((button["text"], button["style"]), ("🛒 Comprar en Amazon", "success"))
         self.assertEqual((msg["message_id"], msg["photo_message_id"]), (22, 21))
 
     def test_channel_own_affiliate_tag(self):
