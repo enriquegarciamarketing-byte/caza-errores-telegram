@@ -1727,7 +1727,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794060463
+   "checked": 1794060500
   },
   {
    "id": "cm-2058280",
@@ -1762,12 +1762,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794060463
+   "checked": 1794060500
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 97,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2665,41 +2665,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|playstation - astro bot para ps5 juego fisico nuevo precintado aventura espacial con dualsense|playstation ps5 astro": {
-   "t": 1793649219.271472,
-   "query": "playstation ps5 astro",
-   "prices": [
-    49.99,
-    35.0,
-    34.0,
-    34.0,
-    38.0,
-    38.0,
-    35.0,
-    29.95,
-    40.0,
-    40.0,
-    37.0,
-    30.0,
-    40.0,
-    39.95,
-    40.0,
-    400.0,
-    40.0,
-    75.0,
-    40.0,
-    39.99,
-    40.0,
-    6.0,
-    40.0,
-    45.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 105245,
-   "raw_count": 40
   },
   "|elden ring tarnished edition para nintendo switch 2 (game key card) [precio sin ventaja 50,96€)|elden 50 ring": {
    "t": 1793649221.1104374,
@@ -8713,6 +8678,38 @@
    "http_status": 200,
    "bytes": 44129,
    "raw_count": 13
+  },
+  "|asics zapatillas gel-quantum 180 vii hombre (negro/simply taupe)|asics 180 zapatillas": {
+   "t": 1794060519.2520099,
+   "query": "asics 180 zapatillas",
+   "prices": [
+    22.0,
+    25.0,
+    75.99,
+    50.0,
+    25.0,
+    35.0,
+    50.0,
+    60.0,
+    50.0,
+    49.95,
+    76.99,
+    10.0,
+    75.0,
+    70.0,
+    25.0,
+    72.99,
+    40.0,
+    76.99,
+    75.99,
+    40.0,
+    70.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 145167,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -13371,15 +13368,50 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~26 € (46 anuncios): ROI -22 % y -6 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|asics zapatillas gel-quantum 180 vii hombre (negro/simply taupe)|asics 180 zapatillas": {
+   "t": 1794060518.9493356,
+   "prices": [
+    120.0,
+    35.0,
+    25.0,
+    120.0,
+    110.0,
+    128.0,
+    110.0,
+    30.0,
+    50.0,
+    45.0,
+    105.0,
+    120.0,
+    110.0,
+    55.0,
+    110.0,
+    120.0,
+    120.0,
+    55.0,
+    120.0,
+    150.0,
+    45.0,
+    125.0,
+    120.0,
+    280.0,
+    109.0,
+    85.0,
+    14.0,
+    180.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": ""
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/bose-quietcomfort-ultra-bluetooth-2a-generacion-auriculares-de-diadema-inalambricos-con-audio-espacial-cancelacion-de-ruido-30hrs-2058133": 1794038583.418309,
-  "https://www.chollometro.com/ofertas/lego-fortnite-entrega-de-suministros-77080-314-piezas-3-minifiguras-y-accesorios-2057602": 1794038583.418309,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-deportivas-mujer-breaknet-sleek-verde-talla-42-2058319": 1794040660.0131106,
   "https://www.chollometro.com/ofertas/zapatillas-altas-nike-dunk-high-piel-negro-y-blanco-tallas-36-425-2058279": 1794040660.0131106,
   "https://www.chollometro.com/ofertas/nike-air-force-1-07-camel-2058390": 1794040660.0131106,
@@ -13405,7 +13437,8 @@
   "https://www.chollometro.com/ofertas/honor-magic8-lite-bateria-de-7500-mah-camara-principal-de-108mp-pantalla-amoled-de-679-pulgadas-y-120hz-ip69k-version-para-la-ue-2058602": 1794057453.3113036,
   "https://www.chollometro.com/ofertas/zapatillas-altra-experience-flow-2-tallas-42-a-48-2058571": 1794057577.222444,
   "https://www.chollometro.com/ofertas/ssd-1tb-fanxiang-s880-m2-nvme-pcie-40-7300mbs-2054736": 1794057577.222444,
-  "https://www.chollometro.com/ofertas/puma-pounce-lite-zapatillas-para-correr-de-carreteraunisex-adulto-varios-colores-2058362": 1794059427.694443
+  "https://www.chollometro.com/ofertas/puma-pounce-lite-zapatillas-para-correr-de-carreteraunisex-adulto-varios-colores-2058362": 1794059427.694443,
+  "https://www.chollometro.com/ofertas/asics-zapatillas-gel-quantum-180-vii-hombre-negrosimply-taupe-2058497": 1794060515.1649816
  },
  "asked": {
   "cm-2057830": 1793978147,
