@@ -627,10 +627,18 @@ def build_caption_short(deal: dict, url: str, rules: dict) -> str:
         lines.append(e(str(extra)))
     hour = deal.get("seen_hhmm") or f"{seen:%H:%M}"
     lines += ["", f"🕒 {PRICE_NOTE.format(hour=hour)}"]
-    if rules.get("post_style", "foto") == "album":  # el álbum no admite botón: el enlace va en el texto
-        lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Comprar en Amazon</a></b>')
+    # Enlace también en el texto, aparte y con "EN AMAZON" a la vista: Amazon no deja enlaces que oculten
+    # adónde llevan. El botón de debajo se mantiene.
+    lines += ["", buy_line(url)]
     lines += ["", f"Visto en {rules.get('chat_id') or '@cazachollos_com'} {PUBLI} {hashtags(deal, rules)}"]
     return "\n".join(lines)
+
+
+BUY_TEXT = "COMPRA AQUÍ EN AMAZON"
+
+
+def buy_line(url: str) -> str:
+    return f'🛒 <b><a href="{html.escape(url, quote=True)}">{BUY_TEXT}</a></b> 👈'
 
 
 def price_tag(amount: float) -> str:
@@ -915,10 +923,10 @@ def sin_historial(caption: str) -> str:
 def ended_caption(caption: str) -> str:
     """Texto del post terminado: sin enlace a Amazon ni estrellas (los posts antiguos aún las llevan)."""
     kept = [line for line in sin_historial(caption).split("\n")
-            if not line.startswith("🔗") and not line.startswith("⭐")]
+            if not line.startswith(("🔗", "⭐", "🛒"))]
     while kept and not kept[-1].strip():
         kept.pop()
-    return "\n".join(kept)
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(kept))
 
 
 def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fetch) -> None:

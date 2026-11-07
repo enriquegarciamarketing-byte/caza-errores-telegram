@@ -139,7 +139,8 @@ class TextoCorto(unittest.TestCase):
         self.assertNotIn("Precio más bajo de su historia", text)
         self.assertNotIn("#MinimoHistorico", text)
         self.assertIn("#Publicidad", text)
-        self.assertLessEqual(len(text.split("\n")), 12)
+        self.assertLessEqual(len(text.split("\n")), 14)
+        self.assertIn(">COMPRA AQUÍ EN AMAZON</a></b> 👈", text)
 
 
 class Interes(unittest.TestCase):

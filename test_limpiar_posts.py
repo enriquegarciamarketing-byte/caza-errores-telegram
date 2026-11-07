@@ -72,5 +72,25 @@ class Limpieza(unittest.TestCase):
         self.assertTrue(text.endswith("Visto en @cazachollos_com #Publicidad #Chollo"))
 
 
+class EnlaceEnElTexto(unittest.TestCase):
+    URL = "https://www.amazon.es/dp/B0CWH4ND6V?tag=cazachollos0c-21"
+
+    def test_se_anade_antes_de_visto_en(self):
+        text = lp.con_enlace(cn.sin_historial(CAP), self.URL, ended=False)
+        lines = text.split("\n")
+        i = next(n for n, line in enumerate(lines) if "COMPRA AQUÍ EN AMAZON" in line)
+        self.assertTrue(lines[i].startswith("🛒 <b><a href=\"" + self.URL))
+        self.assertEqual(lines[i + 1], "")
+        self.assertTrue(lines[i + 2].startswith("Visto en"))
+        self.assertEqual(lp.con_enlace(text, self.URL, ended=False), text, "no se duplica")
+
+    def test_terminado_no_lleva_enlace(self):
+        self.assertNotIn("COMPRA", lp.con_enlace(CAP, self.URL, ended=True))
+        con = lp.con_enlace(cn.sin_historial(CAP), self.URL, ended=False)
+        ended = cn.ended_caption(con)
+        self.assertNotIn("COMPRA", ended)
+        self.assertNotIn("\n\n\n", ended)
+
+
 if __name__ == "__main__":
     unittest.main()
