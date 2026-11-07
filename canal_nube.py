@@ -599,7 +599,7 @@ def build_caption_short(deal: dict, url: str, rules: dict) -> str:
         lines.append(e(str(extra)))
     hour = deal.get("seen_hhmm") or f"{seen:%H:%M}"
     lines += ["", f"🕒 {PRICE_NOTE.format(hour=hour)}"]
-    if rules.get("post_style", "separadas") == "album":  # el álbum no admite botón: el enlace va en el texto
+    if rules.get("post_style", "foto") == "album":  # el álbum no admite botón: el enlace va en el texto
         lines.append(f'🔗 <b><a href="{e(url, quote=True)}">Comprar en Amazon</a></b>')
     lines += ["", f"Visto en {rules.get('chat_id') or '@cazachollos_com'} {PUBLI} {hashtags(deal, rules)}"]
     return "\n".join(lines)
@@ -778,11 +778,19 @@ def _media_group(tg, chat_id, media: list, files: dict) -> list:
     return result["result"]
 
 
+def full_size(image: str) -> str:
+    """Foto de Amazon en grande: cambia el sufijo de tamaño (._AC_US100_, ._SL160_…) por ._AC_SL1500_.
+    Es la misma foto, solo a más resolución (redimensionar sin deformar sí está permitido)."""
+    if re.search(r"(media-amazon|images-amazon|ssl-images-amazon)\.com/images/I/", image):
+        return re.sub(r"\._[A-Za-z0-9_,]+_\.(jpg|jpeg|png|webp)$", r"._AC_SL1500_.\1", image)
+    return image
+
+
 def send_product_photo(tg, target, image: str) -> dict:
     """Foto del producto tal cual y en silencio (la notificación la da la tarjeta con el texto que va justo detrás).
     Si es una URL de Amazon, Telegram la baja directamente: no se guarda ni se retoca."""
     if image.startswith("http"):
-        return tg.call("sendPhoto", {"chat_id": target, "photo": image, "disable_notification": True})
+        return tg.call("sendPhoto", {"chat_id": target, "photo": full_size(image), "disable_notification": True})
     local = ROOT / image
     if not local.is_file():
         raise RuntimeError(f"no encuentro la foto {image}")
@@ -790,13 +798,23 @@ def send_product_photo(tg, target, image: str) -> dict:
 
 
 def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=print) -> dict:
-    """Por defecto ("post_style": "separadas") dos fotos en mensajes seguidos para que en el móvil se vean a todo
-    lo ancho: primero la del producto tal cual y después la tarjeta con el texto y el botón "Ver en Amazon".
-    En un álbum las dos fotos cuadradas salen una al lado de otra a medio ancho y sin botón.
-    "post_style": "album" vuelve al álbum; "tarjeta" o un chollo sin foto sacan solo la tarjeta."""
+    """Por defecto ("post_style": "foto") un solo mensaje: la foto del producto tal cual y en grande, con el texto
+    y el botón "Comprar en Amazon". Si la foto falla, o el chollo no tiene, sale la tarjeta.
+    Otros estilos en config: "separadas" (foto y tarjeta en dos mensajes), "album" o "tarjeta"."""
     card = make_card(deal, rules)
     image = str(deal.get("image") or "")
-    style = rules.get("post_style", "separadas")
+    style = rules.get("post_style", "foto")
+    if style == "foto" and image:
+        # Solo la foto del producto, a todo lo ancho, con el texto y el botón (como los canales grandes).
+        try:
+            if image.startswith("http"):
+                return tg.call("sendPhoto", {"chat_id": target, "photo": full_size(image), "caption": caption,
+                                             "parse_mode": "HTML", "reply_markup": buttons(url, rules.get("button_style", "success"))})
+            local = ROOT / image
+            if local.is_file():
+                return tg.send_photo(target, local, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
+        except (RuntimeError, OSError, urllib.error.URLError) as exc:
+            log(f"  No he podido mandar la foto del producto ({exc}); mando la tarjeta")
     if style == "separadas" and image:
         try:
             photo = send_product_photo(tg, target, image)

@@ -140,7 +140,7 @@ class AlbumAmazon(unittest.TestCase):
                 return {"message_id": 22}
 
         rules = dict(cn.rules_from({}), **self.RULES)
-        rules.pop("post_style", None)
+        rules["post_style"] = "separadas"
         msg = cn.publish(FakeTG(), "@c", dict(self.DEAL), rules, "texto", "https://www.amazon.es/dp/B0TEST")
         self.assertEqual([c[0] for c in calls], ["sendPhoto", "sendPhoto-card"])
         self.assertEqual(calls[0][1]["photo"], self.DEAL["image"], "la foto de Amazon va por URL, sin retocar")
@@ -149,6 +149,28 @@ class AlbumAmazon(unittest.TestCase):
         button = calls[1][1]["reply_markup"]["inline_keyboard"][0][0]
         self.assertEqual((button["text"], button["style"]), ("🛒 Comprar en Amazon", "success"))
         self.assertEqual((msg["message_id"], msg["photo_message_id"]), (22, 21))
+
+    def test_solo_foto_del_producto_por_defecto(self):
+        calls = []
+
+        class FakeTG:
+            def call(self, method, params):
+                calls.append((method, params))
+                return {"message_id": 30}
+
+            def send_photo(self, *a, **k):
+                raise AssertionError("no debe mandar la tarjeta")
+
+        rules = dict(cn.rules_from({}), **self.RULES)
+        rules.pop("post_style", None)
+        deal = dict(self.DEAL, image="https://m.media-amazon.com/images/I/abc._AC_US100_.jpg")
+        msg = cn.publish(FakeTG(), "@c", deal, rules, "texto", "https://www.amazon.es/dp/B0TEST")
+        self.assertEqual(msg["message_id"], 30)
+        self.assertEqual(len(calls), 1)
+        params = calls[0][1]
+        self.assertEqual(params["photo"], "https://m.media-amazon.com/images/I/abc._AC_SL1500_.jpg")
+        self.assertEqual(params["caption"], "texto")
+        self.assertEqual(params["reply_markup"]["inline_keyboard"][0][0]["text"], "🛒 Comprar en Amazon")
 
     def test_channel_own_affiliate_tag(self):
         cfg = {"affiliate_tag": "viejo-21", "amazon_channel": {"affiliate_tag": "cazachollos0c-21"}}
