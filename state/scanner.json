@@ -1732,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794066430
+   "checked": 1794068817
   },
   {
    "id": "cm-2058280",
@@ -1767,12 +1767,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794066430
+   "checked": 1794068817
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2640,74 +2640,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|logitech g g335, auriculares para gaming con cable microfono abatible silenciar,almohadillas viscoelasticas, pc, ps, xbox, switch/switch 2|logitech g335 auriculares": {
-   "t": 1793649806.0381606,
-   "query": "logitech g335 auriculares",
-   "prices": [
-    35.0,
-    29.0,
-    30.0,
-    35.0,
-    30.0,
-    38.0,
-    13.0,
-    39.0,
-    40.0,
-    39.0,
-    25.0,
-    35.0,
-    26.0,
-    30.0,
-    20.0,
-    29.0,
-    9.99,
-    20.95,
-    15.0,
-    40.0,
-    30.0,
-    10.0,
-    30.0,
-    35.0,
-    40.0,
-    35.0,
-    40.0,
-    35.0,
-    80.0,
-    30.0,
-    30.0,
-    35.0,
-    35.0,
-    35.0,
-    30.0,
-    15.0,
-    45.0,
-    33.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 108280,
-   "raw_count": 38
-  },
-  "|lego super mario 72046 game boy + lego minecraft 21586 el jardin (cuentas nuevas)|lego 72046 super": {
-   "t": 1793649806.8658688,
-   "query": "lego 72046 super",
-   "prices": [
-    47.9,
-    30.0,
-    50.0,
-    25.0,
-    59.9,
-    90.0,
-    49.99,
-    47.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 23051,
-   "raw_count": 8
   },
   "|lego figuras star wars - 75455 - boba fett|lego 75455 figuras": {
    "t": 1793651003.0568843,
@@ -8705,6 +8637,70 @@
    "http_status": 200,
    "bytes": 141738,
    "raw_count": 40
+  },
+  "|zapatillas adidas originals tokyo w crema piel|zapatillas adidas": {
+   "t": 1794067186.6982732,
+   "query": "zapatillas adidas",
+   "prices": [
+    30.0,
+    22.0,
+    49.99,
+    35.0,
+    30.0,
+    35.0,
+    35.0,
+    20.0,
+    80.0,
+    35.0,
+    55.0,
+    22.0,
+    36.0,
+    12.0,
+    65.0,
+    50.0,
+    50.0,
+    10.0,
+    8.0,
+    6.0,
+    29.9,
+    25.0,
+    20.0,
+    22.0,
+    50.0,
+    40.0,
+    55.0,
+    41.0,
+    19.99,
+    37.0,
+    60.0,
+    5.0,
+    68.0,
+    10.0,
+    35.0,
+    25.0,
+    20.0,
+    35.0,
+    25.0,
+    40.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 135300,
+   "raw_count": 40
+  },
+  "|lego jurassic world fosiles de dinosaurio: triceratops 77985, 1154 piezas y figura articulada +18 anos|lego 77985 jurassic": {
+   "t": 1794068386.3917391,
+   "query": "lego 77985 jurassic",
+   "prices": [
+    79.99,
+    90.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 12087,
+   "raw_count": 4
   }
  },
  "milanuncios_cache": {
@@ -13408,16 +13404,49 @@
    "demand_known": false,
    "blocked": false,
    "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 3)"
+  },
+  "|zapatillas adidas originals tokyo w crema piel|zapatillas adidas": {
+   "t": 1794067186.354906,
+   "prices": [
+    22.0,
+    55.0,
+    55.0,
+    15.0,
+    30.0,
+    28.0,
+    45.0,
+    33.0,
+    15.0,
+    25.0,
+    10.0,
+    30.0,
+    22.0,
+    25.0,
+    14.99,
+    19.0,
+    15.0,
+    30.0,
+    25.0,
+    12.95,
+    50.0,
+    18.0,
+    30.0,
+    35.0,
+    28.0,
+    25.0,
+    4.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~25 € (25 anuncios): ROI -39 % y -14 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 4,
+ "rotation_index": 0,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/saucony-kinvara-zapatillas-negro-2058406": 1794046038.8531253,
-  "https://www.chollometro.com/ofertas/la-sportiva-zapatillas-de-trail-running-levante-mujer-blanco-2058458": 1794046038.8531253,
-  "https://www.chollometro.com/ofertas/sony-dualsense-blanco-mando-ps5-inalambrico-reacondicionado-oem-2058524": 1794046435.2772803,
   "https://www.chollometro.com/ofertas/lego-ideas-camara-polaroid-onestep-sx-70-21345-camara-instantanea-construible-con-fotos-que-salen-al-pulsar-el-disparador-18-anos-2058479": 1794047035.814078,
   "https://www.chollometro.com/ofertas/new-balance-zapatillas-408-blanco-roto-tallas-36-a-415-2058418": 1794047639.6916947,
   "https://www.chollometro.com/ofertas/cthulhu-the-cosmic-abyss-ps5-2058194": 1794048236.4572682,
@@ -13435,7 +13464,9 @@
   "https://www.chollometro.com/ofertas/puma-pounce-lite-zapatillas-para-correr-de-carreteraunisex-adulto-varios-colores-2058362": 1794059427.694443,
   "https://www.chollometro.com/ofertas/asics-zapatillas-gel-quantum-180-vii-hombre-negrosimply-taupe-2058497": 1794060515.1649816,
   "https://www.chollometro.com/ofertas/lego-architecture-fontana-di-trevi-21062-1880-piezas-para-recrear-uno-de-los-monumentos-mas-emblematicos-de-roma-2058549": 1794063001.3467333,
-  "https://www.chollometro.com/ofertas/salomon-extegra-gore-tex-impermeables-zapatillas-de-senderismo-para-mujer-tallas-36-a-44-2058537": 1794065037.2180994
+  "https://www.chollometro.com/ofertas/salomon-extegra-gore-tex-impermeables-zapatillas-de-senderismo-para-mujer-tallas-36-a-44-2058537": 1794065037.2180994,
+  "https://www.chollometro.com/ofertas/zapatillas-adidas-originals-tokyo-w-crema-piel-2058244": 1794067182.0441244,
+  "https://www.chollometro.com/ofertas/lego-jurassic-world-fosiles-de-dinosaurio-triceratops-77985-1154-piezas-y-figura-articulada-18-anos-2058572": 1794068382.4293976
  },
  "asked": {
   "cm-2058280": 1794041889
