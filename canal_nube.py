@@ -1507,7 +1507,12 @@ def spec_from_jl(spec: dict, rules: dict, now: datetime, fetch=None, resolve_asi
     avg90 = (hist.get("reference") if hist.get("ok") else None) or detail.get("avg90")
     out = dict(spec, asin=asin, price=float(price), image=spec.get("image") or detail.get("image") or "",
                title=spec.get("title") or detail.get("name") or "")
-    if min30 and discount_pct(float(price), min30) >= 10:
+    pvp = float(spec.get("pvp") or 0)
+    real_ok = not min30 or discount_pct(float(price), min30) >= 10
+    if pvp > float(price) and real_ok:
+        # Post a mano frente al PVP recomendado (como el bot automático): solo con bajada real de verdad.
+        out.update(reference=pvp, ref_kind="pvp", min_30=float(min30) if min30 else None)
+    elif min30 and discount_pct(float(price), min30) >= 10:
         out.update(reference=float(min30), habitual=float(avg90 or 0))
     elif avg90 and float(avg90) > float(price) and not min30:
         # Sin la línea del mínimo de 30 días (quitada el 7/11/2026), la media de 90 solo vale si no hay

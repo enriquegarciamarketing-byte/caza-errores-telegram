@@ -336,6 +336,21 @@ class ManualDesdeJimmyleaks(unittest.TestCase):
         with self.assertRaises(ValueError):  # desde el 7/11: si estuvo cerca hace poco, "Antes" engañaría
             self.run_spec(self.detail(sorted(points)))
 
+    def test_frente_al_pvp_con_bajada_real(self):
+        today = NOW.astimezone(cn.MADRID).date()
+        points = [[(today - timedelta(days=d)).isoformat(), 300.0] for d in range(90, 0, -1)] + [[today.isoformat(), 249.0]]
+        spec = self.run_spec(self.detail(points), {"pvp": 399.0})
+        self.assertEqual(spec["ref_kind"], "pvp")
+        self.assertEqual(spec["reference"], 399.0)
+        deal = cn.manual_deal(spec, REAL)
+        self.assertEqual(round(deal["discount"]), 38)
+
+    def test_frente_al_pvp_sin_bajada_real_no_sale(self):
+        today = NOW.astimezone(cn.MADRID).date()
+        points = [[(today - timedelta(days=d)).isoformat(), 255.0] for d in range(90, 0, -1)] + [[today.isoformat(), 249.0]]
+        with self.assertRaises(ValueError):
+            self.run_spec(self.detail(points), {"pvp": 399.0})
+
     def test_con_rebaja_real_frente_al_minimo_usa_el_minimo(self):
         today = NOW.astimezone(cn.MADRID).date()
         points = [[(today - timedelta(days=d)).isoformat(), 393.55] for d in range(90, 0, -1)] + [[today.isoformat(), 249.0]]
