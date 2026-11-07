@@ -1732,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794084034
+   "checked": 1794086338
   },
   {
    "id": "cm-2058280",
@@ -1767,17 +1767,17 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794084034
+   "checked": 1794086338
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
  "discovery_cache": {
-  "t": 1794063990.670881,
+  "t": 1794085605.1489263,
   "titles": [
    "almacenamiento",
    "dispositivos de red",
@@ -13685,9 +13685,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 6,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-architecture-fontana-di-trevi-21062-1880-piezas-para-recrear-uno-de-los-monumentos-mas-emblematicos-de-roma-2058549": 1794063001.3467333,
   "https://www.chollometro.com/ofertas/salomon-extegra-gore-tex-impermeables-zapatillas-de-senderismo-para-mujer-tallas-36-a-44-2058537": 1794065037.2180994,
   "https://www.chollometro.com/ofertas/zapatillas-adidas-originals-tokyo-w-crema-piel-2058244": 1794067182.0441244,
   "https://www.chollometro.com/ofertas/lego-jurassic-world-fosiles-de-dinosaurio-triceratops-77985-1154-piezas-y-figura-articulada-18-anos-2058572": 1794068382.4293976,
