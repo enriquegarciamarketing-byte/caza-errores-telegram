@@ -1722,7 +1722,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794057809
+   "checked": 1794058005
   },
   {
    "id": "cm-2058280",
@@ -1757,12 +1757,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794057809
+   "checked": 1794058005
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 91,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13301,9 +13301,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 14,
+ "rotation_index": 19,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-ideas-disney-pixar-luxo-jr-juguete-de-construccion-18-anos-21357-2058223": 1794036282.4148426,
   "https://www.chollometro.com/ofertas/wifi6-mini-pc-diy-ordenador-para-juegos-genmachine-ryzen-amd-ryzen77840u-es8-nucleos-16-hilos-33-51-ghztdp28w-lpddr5-24g-6400mhz-2058242": 1794037380.3952343,
   "https://www.chollometro.com/ofertas/zapatillas-de-trail-running-skechers-ridge-oak-hombre-2058053": 1794037980.8213227,
   "https://www.chollometro.com/ofertas/bose-quietcomfort-ultra-bluetooth-2a-generacion-auriculares-de-diadema-inalambricos-con-audio-espacial-cancelacion-de-ruido-30hrs-2058133": 1794038583.418309,
