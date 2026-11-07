@@ -1732,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794071223
+   "checked": 1794071346
   },
   {
    "id": "cm-2058280",
@@ -1767,12 +1767,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794071223
+   "checked": 1794071346
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 92,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13729,7 +13729,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 5,
+ "rotation_index": 10,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-2058465": 1794052199.9819205,
   "https://www.chollometro.com/ofertas/nike-air-force-1-zapatillas-piel-blanco-tallas-35-a-45-2058623": 1794052799.2096386,
