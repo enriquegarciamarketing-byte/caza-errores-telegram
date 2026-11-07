@@ -1697,12 +1697,12 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794036172
+   "checked": 1794036269
   }
  ],
  "tg_offset": 334822060,
  "admin_chat_id": 9188393228,
- "last_listing_count": 102,
+ "last_listing_count": 93,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2461,26 +2461,6 @@
   }
  },
  "wallapop_cache": {
-  "|barra de sonido sony ht-s40r 5.1 canales 600w (subwoofer, altavoces traseros inalambricos, dolby digital, hdmi arc)|barra s40r sonido": {
-   "t": 1793619298.41564,
-   "query": "barra s40r sonido",
-   "prices": [
-    137.5,
-    180.0,
-    100.0,
-    140.0,
-    195.0,
-    180.0,
-    40.0,
-    300.0,
-    209.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 70812,
-   "raw_count": 18
-  },
   "|lego disney princess calendario de adviento 2026|lego 2026 disney": {
    "t": 1793619300.39493,
    "query": "lego 2026",
@@ -8411,6 +8391,22 @@
    "http_status": 200,
    "bytes": 10410,
    "raw_count": 4
+  },
+  "|lego ideas disney pixar luxo jr., juguete de construccion +18 anos - 21357|lego 18 ideas": {
+   "t": 1794036285.99968,
+   "query": "lego 18",
+   "prices": [
+    15.0,
+    8.0,
+    15.0,
+    8.5,
+    15.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 92254,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8834,7 +8830,8 @@
   "wallapop:cm-2057462": 1794000534.662475,
   "wallapop:cm-2058143": 1794000537.0055344,
   "wallapop:cm-2058181": 1794003144.9250546,
-  "wallapop:cm-2058234": 1794005534.9264953
+  "wallapop:cm-2058234": 1794005534.9264953,
+  "wallapop:cm-2058223": 1794036286.448538
  },
  "vinted_cache": {
   "puma|zapatillas hombre puma axelion refresh (tallas 39 a 48.5 en 4 colores)|puma 39 zapatillas": {
@@ -12352,14 +12349,15 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 7,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/intel-core-ultra-9-285k-ia-integrada-3257ghz-2058211": 1794020940.8483136,
   "https://www.chollometro.com/ofertas/lexar-nq780-1-tb-m2-nvme-ssd-2058234": 1794027139.832286,
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-q7tf-con-base-de-autovaciado-10000-pa-lidar-2058218": 1794029196.350589,
   "https://www.chollometro.com/ofertas/glorlin-mini-pc-amd-ryzen-5-6600h-aplicar-cupon-15-ahorro-18-al-tramitar-2057903": 1794029795.419873,
   "https://www.chollometro.com/ofertas/new-balance-zapatillas-237-varios-colores-2058283": 1794032552.5611992,
-  "https://www.chollometro.com/ofertas/set-de-construccion-lego-ideas-et-el-extraterrestre-2057186": 1794033752.081265
+  "https://www.chollometro.com/ofertas/set-de-construccion-lego-ideas-et-el-extraterrestre-2057186": 1794033752.081265,
+  "https://www.chollometro.com/ofertas/lego-ideas-disney-pixar-luxo-jr-juguete-de-construccion-18-anos-21357-2058223": 1794036282.4148426
  },
  "asked": {
   "cm-2057830": 1793978147
