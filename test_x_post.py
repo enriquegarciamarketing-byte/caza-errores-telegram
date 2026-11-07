@@ -1,3 +1,4 @@
+import json
 import unittest
 
 import canal_nube as cn
@@ -98,7 +99,7 @@ class AlbumAmazon(unittest.TestCase):
         original = cn._media_group
         cn._media_group = fake_group
         try:
-            rules = dict(cn.rules_from({}), **self.RULES)
+            rules = dict(cn.rules_from({}), **self.RULES, post_style="album")
             msg = cn.publish(object(), "@c", dict(self.DEAL), rules, "texto", "https://www.amazon.es/dp/B0TEST")
         finally:
             cn._media_group = original
@@ -107,6 +108,36 @@ class AlbumAmazon(unittest.TestCase):
         self.assertEqual(sent["media"][0]["caption"], "texto")
         self.assertEqual(list(sent["files"]), ["card"], "la foto de Amazon no se descarga ni se sube retocada")
 
+
+    def test_two_separate_photos_by_default(self):
+        calls = []
+
+        class FakeTG:
+            def call(self, method, params):
+                calls.append((method, params))
+                return {"message_id": 21}
+
+            def send_photo(self, chat, image, caption, extra=None):
+                calls.append(("sendPhoto-card", {"caption": caption, **(extra or {})}))
+                return {"message_id": 22}
+
+        rules = dict(cn.rules_from({}), **self.RULES)
+        rules.pop("post_style", None)
+        msg = cn.publish(FakeTG(), "@c", dict(self.DEAL), rules, "texto", "https://www.amazon.es/dp/B0TEST")
+        self.assertEqual([c[0] for c in calls], ["sendPhoto", "sendPhoto-card"])
+        self.assertEqual(calls[0][1]["photo"], self.DEAL["image"], "la foto de Amazon va por URL, sin retocar")
+        self.assertTrue(calls[0][1]["disable_notification"])
+        self.assertEqual(calls[1][1]["caption"], "texto")
+        self.assertIn("reply_markup", calls[1][1], "la tarjeta lleva el botón Ver en Amazon")
+        self.assertEqual((msg["message_id"], msg["photo_message_id"]), (22, 21))
+
+    def test_channel_own_affiliate_tag(self):
+        cfg = {"affiliate_tag": "viejo-21", "amazon_channel": {"affiliate_tag": "cazachollos0c-21"}}
+        self.assertEqual(cn.rules_from(cfg)["tag"], "cazachollos0c-21")
+        self.assertEqual(cn.rules_from({"affiliate_tag": "viejo-21"})["tag"], "viejo-21")
+        real = json.load(open(cn.ROOT / "config.json", encoding="utf-8"))
+        self.assertEqual(cn.rules_from(real)["tag"], "cazachollos0c-21")
+        self.assertNotIn("album_solo_pruebas", real["amazon_channel"])
 
 class FiltroX(unittest.TestCase):
     from datetime import datetime, timezone

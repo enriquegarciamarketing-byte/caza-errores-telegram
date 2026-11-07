@@ -244,7 +244,7 @@
   "amazon_channel": {
     "_nota": "Canal @cazachollos_com. Solo Amazon.es. Lo ejecuta canal_nube.py en GitHub Actions (scan-generic.yml).",
     "chat_id": "@cazachollos_com",
-    "album_solo_pruebas": true,
+    "affiliate_tag": "cazachollos0c-21",
     "x_prices": false,
     "x_affiliate_tag": "cazachollos0c-21",
     "amazon_photo": true,

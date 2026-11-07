@@ -90,7 +90,10 @@ def load_json(path: Path, default):
 def rules_from(cfg: dict) -> dict:
     rules = dict(DEFAULTS)
     rules.update((cfg or {}).get("amazon_channel") or {})
-    rules["tag"] = ((cfg or {}).get("affiliate_tag") or "").strip()
+    # El canal free puede llevar su propio ID de afiliado ("affiliate_tag" dentro de amazon_channel);
+    # si no, usa el general de config.json (el del premium).
+    rules["tag"] = (str(rules.get("affiliate_tag") or "").strip()
+                    or ((cfg or {}).get("affiliate_tag") or "").strip())
     return rules
 
 
@@ -737,13 +740,34 @@ def _media_group(tg, chat_id, media: list, files: dict) -> list:
     return result["result"]
 
 
+def send_product_photo(tg, target, image: str) -> dict:
+    """Foto del producto tal cual y en silencio (la notificación la da la tarjeta con el texto que va justo detrás).
+    Si es una URL de Amazon, Telegram la baja directamente: no se guarda ni se retoca."""
+    if image.startswith("http"):
+        return tg.call("sendPhoto", {"chat_id": target, "photo": image, "disable_notification": True})
+    local = ROOT / image
+    if not local.is_file():
+        raise RuntimeError(f"no encuentro la foto {image}")
+    return tg.send_photo(target, local, "", {"disable_notification": True})
+
+
 def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=print) -> dict:
-    """Post doble como el de AliExpress: foto del producto tal cual (Telegram la baja de Amazon por URL, sin
-    guardarla ni retocarla) y la tarjeta. El texto va en la primera foto; los álbumes no admiten botón, el
-    enlace va en el texto. Sin foto, o con "post_style": "tarjeta", sale solo la tarjeta con su botón."""
+    """Por defecto ("post_style": "separadas") dos fotos en mensajes seguidos para que en el móvil se vean a todo
+    lo ancho: primero la del producto tal cual y después la tarjeta con el texto y el botón "Ver en Amazon".
+    En un álbum las dos fotos cuadradas salen una al lado de otra a medio ancho y sin botón.
+    "post_style": "album" vuelve al álbum; "tarjeta" o un chollo sin foto sacan solo la tarjeta."""
     card = make_card(deal, rules)
     image = str(deal.get("image") or "")
-    if rules.get("post_style", "album") == "album" and image:
+    style = rules.get("post_style", "separadas")
+    if style == "separadas" and image:
+        try:
+            photo = send_product_photo(tg, target, image)
+            message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url)})
+            message["photo_message_id"] = photo.get("message_id")
+            return message
+        except (RuntimeError, OSError, urllib.error.URLError) as exc:
+            log(f"  No he podido mandar la foto del producto ({exc}); mando solo la tarjeta")
+    if style == "album" and image:
         cap = {"caption": caption, "parse_mode": "HTML"}
         card_item = {"type": "photo", "media": "attach://card"}
         files = {"card": (card.name, card.read_bytes())}
@@ -933,7 +957,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             record = {
                 "asin": deal["asin"], "jl_id": deal["jl_id"], "price": deal["price"],
                 "reference": deal["reference"], "t": int(now.timestamp()), "url": url, "chat": target,
-                "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140],
+                "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140], "photo_message_id": message.get("photo_message_id"),
             }
             if item.get("cascada"):
                 record["origen"] = "premium"  # para medir cuánto aporta la cascada
@@ -1420,7 +1444,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
     if not args.test_private:
         state.setdefault("posts", []).append({
             "asin": deal["asin"], "jl_id": "", "price": deal["price"], "reference": deal["reference"],
-            "t": int(now.timestamp()), "url": url, "chat": target, "message_id": int(message["message_id"]),
+            "t": int(now.timestamp()), "url": url, "chat": target, "message_id": int(message["message_id"]), "photo_message_id": message.get("photo_message_id"),
             "caption": caption, "title": deal["title"][:140], "manual": True,
         })
     return 0
