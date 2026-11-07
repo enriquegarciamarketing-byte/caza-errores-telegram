@@ -1722,7 +1722,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794054639
+   "checked": 1794057186
   },
   {
    "id": "cm-2058280",
@@ -1757,12 +1757,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794054639
+   "checked": 1794057186
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 95,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2548,6 +2548,75 @@
    "transient": false,
    "reserved": 0,
    "demand_known": false
+  },
+  "|zapatillas de deporte new balance fuelcell rebel v5- tallas- 41.5, 43, 46.5|vinted+wallapop+milanuncios:zapatillas v5 deporte": {
+   "t": 1794057207.7176478,
+   "prices": [
+    60.0,
+    22.0,
+    90.0,
+    22.0,
+    80.0,
+    50.0,
+    40.0,
+    85.0,
+    140.0,
+    20.0,
+    85.0,
+    56.0,
+    35.0,
+    45.0,
+    65.0,
+    14.95,
+    55.0,
+    25.0,
+    30.0,
+    35.0,
+    50.0,
+    120.0,
+    45.0,
+    13.0,
+    60.0,
+    40.0,
+    70.0,
+    50.0,
+    45.0,
+    60.0,
+    66.0,
+    70.0,
+    15.0,
+    65.0,
+    40.0,
+    20.0,
+    45.0,
+    55.0,
+    68.0,
+    58.0,
+    35.0,
+    65.0,
+    60.0,
+    60.0,
+    40.0,
+    50.0,
+    60.0,
+    35.0
+   ],
+   "parts": [
+    [
+     "Vinted",
+     11
+    ],
+    [
+     "Wallapop",
+     37
+    ]
+   ],
+   "failures": [
+    "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+   ],
+   "transient": false,
+   "reserved": 0,
+   "demand_known": true
   }
  },
  "wallapop_cache": {
@@ -2591,56 +2660,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|garmin forerunner 165, reloj inteligente para correr con gps, negro|garmin 165 forerunner": {
-   "t": 1793645720.9655201,
-   "query": "garmin 165 forerunner",
-   "prices": [
-    155.0,
-    130.0,
-    149.0,
-    155.0,
-    150.0,
-    155.0,
-    149.99,
-    145.0,
-    145.0,
-    140.0,
-    160.0,
-    160.0,
-    160.0,
-    160.0,
-    144.99,
-    144.99,
-    145.0,
-    160.0,
-    185.0,
-    155.0,
-    175.0,
-    140.0,
-    165.0,
-    170.0,
-    165.0,
-    185.0,
-    199.0,
-    150.0,
-    180.0,
-    165.0,
-    120.0,
-    155.0,
-    160.0,
-    130.0,
-    149.95,
-    180.0,
-    160.0,
-    160.0,
-    160.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 108217,
-   "raw_count": 39
   },
   "|lego fortnite 77073 autobus de batalla | set de construccion coleccionista con 9 minifiguras (precio nuevas cuentas, antiguas 10 € mas)|lego 77073 fortnite": {
    "t": 1793645721.8857195,
@@ -8643,6 +8662,54 @@
    "http_status": 200,
    "bytes": 6292,
    "raw_count": 3
+  },
+  "|zapatillas de deporte new balance fuelcell rebel v5- tallas- 41.5, 43, 46.5|zapatillas v5 deporte": {
+   "t": 1794057207.5664368,
+   "query": "zapatillas v5",
+   "prices": [
+    56.0,
+    35.0,
+    45.0,
+    65.0,
+    14.95,
+    55.0,
+    25.0,
+    30.0,
+    35.0,
+    50.0,
+    120.0,
+    45.0,
+    13.0,
+    60.0,
+    40.0,
+    70.0,
+    50.0,
+    45.0,
+    60.0,
+    66.0,
+    70.0,
+    15.0,
+    65.0,
+    40.0,
+    20.0,
+    45.0,
+    55.0,
+    68.0,
+    58.0,
+    35.0,
+    65.0,
+    60.0,
+    60.0,
+    40.0,
+    50.0,
+    60.0,
+    35.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 129096,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -8760,6 +8827,14 @@
   },
   "|game disco duro ssd 2tb 7400mb/s nvme m.2 con disipador para ps5|game 2tb disco": {
    "t": 1793994921.80933,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "blocked": true,
+   "reason": "Milanuncios bloqueado (HTTP 200, 95999 bytes)"
+  },
+  "|zapatillas de deporte new balance fuelcell rebel v5- tallas- 41.5, 43, 46.5|zapatillas v5 deporte": {
+   "t": 1794057207.7171977,
    "prices": [],
    "reserved": 0,
    "demand_known": false,
@@ -13179,14 +13254,33 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~25 € (13 anuncios): ROI -74 % y -61 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|zapatillas de deporte new balance fuelcell rebel v5- tallas- 41.5, 43, 46.5|zapatillas v5 deporte": {
+   "t": 1794057206.1693738,
+   "prices": [
+    60.0,
+    22.0,
+    90.0,
+    22.0,
+    80.0,
+    50.0,
+    40.0,
+    85.0,
+    140.0,
+    20.0,
+    85.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~68 € (7 anuncios): ROI -22 % y -17 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 15,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/set-de-construccion-lego-ideas-et-el-extraterrestre-2057186": 1794033752.081265,
   "https://www.chollometro.com/ofertas/lego-ideas-disney-pixar-luxo-jr-juguete-de-construccion-18-anos-21357-2058223": 1794036282.4148426,
   "https://www.chollometro.com/ofertas/wifi6-mini-pc-diy-ordenador-para-juegos-genmachine-ryzen-amd-ryzen77840u-es8-nucleos-16-hilos-33-51-ghztdp28w-lpddr5-24g-6400mhz-2058242": 1794037380.3952343,
   "https://www.chollometro.com/ofertas/zapatillas-de-trail-running-skechers-ridge-oak-hombre-2058053": 1794037980.8213227,
@@ -13212,7 +13306,8 @@
   "https://www.chollometro.com/ofertas/zapatillas-marca-puma-cassia-20-tallas-3738390404054142425-2058424": 1794052799.2096386,
   "https://www.chollometro.com/ofertas/zapatillas-marca-under-armour-forge-96-tallas-355-36-365-375-38-385-39-45-2058457": 1794053399.8310523,
   "https://www.chollometro.com/ofertas/zapatillas-mizuno-wave-sky-9-tallas-40-a-465-2058585": 1794054655.2871778,
-  "https://www.chollometro.com/ofertas/cabernet-ps5-2058525": 1794054655.2871778
+  "https://www.chollometro.com/ofertas/cabernet-ps5-2058525": 1794054655.2871778,
+  "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-415-43-465-2058425": 1794057201.1622298
  },
  "asked": {
   "cm-2057830": 1793978147,
