@@ -53,10 +53,12 @@ def formato_corto(caption: str, post: dict, rules: dict) -> str:
 
 
 def con_enlace(caption: str, url: str, ended: bool) -> str:
-    """Añade la línea «🛒 COMPRA AQUÍ EN AMAZON» (enlazada) antes de «Visto en…», si el post sigue activo."""
-    if ended or cn.BUY_TEXT in caption:
+    """Añade la línea «🛒 amazon.es/dp/…» (enlazada) antes de «Visto en…», si el post sigue activo."""
+    if ended:
         return caption
     lines = caption.split("\n")
+    if any(line.startswith("🛒 ") for line in lines):  # ya la lleva: se deja como la pone el bot ahora
+        return "\n".join(cn.buy_line(url) if line.startswith("🛒 ") else line for line in lines)
     at = next((i for i, line in enumerate(lines) if line.startswith("Visto en")), len(lines))
     return "\n".join(lines[:at] + [cn.buy_line(url), ""] + lines[at:])
 

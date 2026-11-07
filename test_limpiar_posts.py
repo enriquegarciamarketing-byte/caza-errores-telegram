@@ -78,18 +78,31 @@ class EnlaceEnElTexto(unittest.TestCase):
     def test_se_anade_antes_de_visto_en(self):
         text = lp.con_enlace(cn.sin_historial(CAP), self.URL, ended=False)
         lines = text.split("\n")
-        i = next(n for n, line in enumerate(lines) if "COMPRA AQUÍ EN AMAZON" in line)
-        self.assertTrue(lines[i].startswith("🛒 <b><a href=\"" + self.URL))
+        i = next(n for n, line in enumerate(lines) if line.startswith("🛒 "))
+        self.assertEqual(lines[i], f'🛒 <a href="{self.URL}">amazon.es/dp/B0CWH4ND6V</a>')
         self.assertEqual(lines[i + 1], "")
         self.assertTrue(lines[i + 2].startswith("Visto en"))
         self.assertEqual(lp.con_enlace(text, self.URL, ended=False), text, "no se duplica")
+        self.assertFalse(lines[i].endswith("👈"))
+        viejo = text.replace(lines[i], f'🛒 <b><a href="{self.URL}">COMPRA AQUÍ EN AMAZON</a></b> 👈')
+        self.assertEqual(lp.con_enlace(viejo, self.URL, ended=False), text, "la línea antigua se iguala")
 
     def test_terminado_no_lleva_enlace(self):
-        self.assertNotIn("COMPRA", lp.con_enlace(CAP, self.URL, ended=True))
+        self.assertNotIn("🛒", lp.con_enlace(CAP, self.URL, ended=True))
         con = lp.con_enlace(cn.sin_historial(CAP), self.URL, ended=False)
         ended = cn.ended_caption(con)
-        self.assertNotIn("COMPRA", ended)
+        self.assertNotIn("🛒", ended)
         self.assertNotIn("\n\n\n", ended)
+
+
+class EnlaceCorto(unittest.TestCase):
+    def test_manual_con_link_amazon(self):
+        deal = cn.manual_deal({"asin": "B0CWH4ND6V", "url": "https://link.amazon/B02KRwXLs", "title": "Belkin",
+                               "price": 14.99, "reference": 44.99}, {"max_discount_pct": 95},
+                              resolve=lambda u: "https://www.amazon.es/dp/B0CWH4ND6V?tag=cazachollos0c-21")
+        from test_canal_nube import RULES as FULL
+        text = cn.build_caption(deal, "https://www.amazon.es/dp/B0CWH4ND6V?tag=cazachollos0c-21", FULL)
+        self.assertIn('🛒 <a href="https://link.amazon/B02KRwXLs">https://link.amazon/B02KRwXLs</a>', text)
 
 
 if __name__ == "__main__":

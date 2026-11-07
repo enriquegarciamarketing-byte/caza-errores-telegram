@@ -629,16 +629,20 @@ def build_caption_short(deal: dict, url: str, rules: dict) -> str:
     lines += ["", f"🕒 {PRICE_NOTE.format(hour=hour)}"]
     # Enlace también en el texto, aparte y con "EN AMAZON" a la vista: Amazon no deja enlaces que oculten
     # adónde llevan. El botón de debajo se mantiene.
-    lines += ["", buy_line(url)]
+    lines += ["", buy_line(url, deal.get("short_url") or "")]
     lines += ["", f"Visto en {rules.get('chat_id') or '@cazachollos_com'} {PUBLI} {hashtags(deal, rules)}"]
     return "\n".join(lines)
 
 
-BUY_TEXT = "COMPRA AQUÍ EN AMAZON"
-
-
-def buy_line(url: str) -> str:
-    return f'🛒 <b><a href="{html.escape(url, quote=True)}">{BUY_TEXT}</a></b> 👈'
+def buy_line(url: str, short: str = "") -> str:
+    """Línea del enlace en el texto: 🛒 y el enlace a la vista. Si hay enlace corto oficial de Amazon
+    (link.amazon, amzn.to, amzn.eu, de SiteStripe en los posts a mano) sale ese; si no, amazon.es/dp/ASIN,
+    que se ve corto y deja claro que va a Amazon. Por dentro, siempre con tu tag."""
+    if short:
+        return f'🛒 <a href="{html.escape(short, quote=True)}">{html.escape(short)}</a>'
+    match = re.search(r"/dp/([A-Z0-9]{10})", url or "")
+    shown = f"amazon.es/dp/{match.group(1)}" if match else "amazon.es"
+    return f'🛒 <a href="{html.escape(url, quote=True)}">{shown}</a>'
 
 
 def price_tag(amount: float) -> str:
@@ -1477,6 +1481,7 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
         "historical_low": bool(spec.get("historical_low")), "rating": spec.get("rating"),
         "reviews": spec.get("reviews"), "image": spec.get("image") or "", "seen_ts": int(time.time()),
         "seen_hhmm": spec.get("seen_at") or "", "extra_lines": list(spec.get("lines") or []),
+        "short_url": url if url and affiliate.is_short_link(url) else "",
         "interest": 0, "interest_label": "", "ref_kind": spec.get("ref_kind") or "",
     }
 
