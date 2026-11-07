@@ -5,6 +5,9 @@
   ],
   "ahorro": [
    0
+  ],
+  "dia": [
+   0
   ]
  },
  "log": [
@@ -27,6 +30,11 @@
    "t": 1794043275,
    "slot": "manana",
    "topic": "El bot por dentro"
+  },
+  {
+   "t": 1794079176,
+   "slot": "tarde",
+   "topic": "Tu día a día"
   }
  ]
 }
