@@ -136,3 +136,33 @@ class ProductosExcluidosUE(unittest.TestCase):
         with self.assertRaises(ValueError):
             cn.manual_deal({"asin": "B000000000", "title": "Cerveza Estrella Galicia pack 12", "price": 9.9,
                             "reference": 14.9}, RULES)
+
+
+class AvisoAlTerminar(unittest.TestCase):
+    def run_track(self, in_stock, price):
+        import scanner
+        calls = []
+        class TG:
+            def call(self, method, params):
+                calls.append(params)
+        post = {"asin": "B0G7YP6MXV", "jl_id": "R0ZG4Bv", "price": 99.0, "t": NOW.timestamp(), "message_id": 5,
+                "chat": "@cazachollos_com", "caption": "💥 <b>CHOLLO</b>\n\n🔗 enlace\n\n#Publicidad #Chollo"}
+        original = scanner.parse_detail
+        scanner.parse_detail = lambda html: {"in_stock": in_stock, "price": price}
+        try:
+            cn.track_posts(TG(), {"posts": [post]}, NOW, dict(RULES, track_hours=48, max_tracking_checks_per_run=4),
+                           lambda *_: None, False, lambda url: "")
+        finally:
+            scanner.parse_detail = original
+        return calls[0]["caption"] if calls else ""
+
+    def test_sin_stock_es_agotado(self):
+        self.assertTrue(self.run_track(False, None).startswith("🚫 <b>AGOTADO</b>"))
+
+    def test_mas_caro_es_ya_no_esta(self):
+        text = self.run_track(True, 120.0)
+        self.assertTrue(text.startswith("⛔ <b>YA NO ESTÁ A ESTE PRECIO</b>"))
+        self.assertNotIn("AGOTADO", text)
+
+    def test_sigue_igual_no_se_toca(self):
+        self.assertEqual(self.run_track(True, 99.0), "")

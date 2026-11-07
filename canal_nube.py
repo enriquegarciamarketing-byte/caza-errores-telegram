@@ -902,6 +902,7 @@ def make_card_clasica(deal: dict, rules: dict) -> Path:
 # ------------------------------------------------------------------ seguimiento
 
 ENDED = "⛔ <b>YA NO ESTÁ A ESTE PRECIO</b> (comprobado a las {hour})"
+SOLD_OUT = "🚫 <b>AGOTADO</b> (comprobado a las {hour})"  # ya no se puede comprar a ningún precio
 
 
 def sin_historial(caption: str) -> str:
@@ -940,7 +941,9 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
         log(f"  Seguimiento {post['asin']}: terminado (ahora {price}, stock {detail.get('in_stock')})")
         if dry or tg is None:
             continue
-        caption = ENDED.format(hour=f"{now.astimezone(MADRID):%H:%M}") + "\n\n" + ended_caption(post["caption"])
+        # Sin stock (o sin precio): AGOTADO. En stock pero más caro que lo publicado: YA NO ESTÁ A ESTE PRECIO.
+        notice = SOLD_OUT if (not detail.get("in_stock") or price is None) else ENDED
+        caption = notice.format(hour=f"{now.astimezone(MADRID):%H:%M}") + "\n\n" + ended_caption(post["caption"])
         try:
             # Sin reply_markup Telegram quita el botón: un chollo terminado deja de enlazar a Amazon.
             tg.call("editMessageCaption", {"chat_id": post["chat"], "message_id": post["message_id"],
