@@ -1732,7 +1732,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794076148
+   "checked": 1794078430
   },
   {
    "id": "cm-2058280",
@@ -1767,12 +1767,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794076148
+   "checked": 1794078430
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2814,56 +2814,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|nintendo switch 2 joy-con 2 pares - azul claro/rojo|nintendo switch": {
-   "t": 1793654734.6446044,
-   "query": "nintendo switch",
-   "prices": [
-    370.0,
-    129.9,
-    119.99,
-    100.0,
-    129.9,
-    130.0,
-    150.0,
-    50.0,
-    50.0,
-    129.99,
-    180.0,
-    120.0,
-    129.9,
-    175.0,
-    119.0,
-    179.99,
-    129.9,
-    110.0,
-    180.0,
-    135.0,
-    230.0,
-    145.0,
-    180.0,
-    250.0,
-    170.0,
-    185.5,
-    115.0,
-    360.0,
-    150.0,
-    615.0,
-    150.0,
-    380.0,
-    20.0,
-    30.0,
-    350.0,
-    400.0,
-    140.0,
-    140.0,
-    325.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 135951,
-   "raw_count": 40
   },
   "|ghost of yotei ps5 - playstation|ghost ps5 yotei": {
    "t": 1793655937.7277231,
@@ -8789,6 +8739,56 @@
    "http_status": 200,
    "bytes": 24021,
    "raw_count": 7
+  },
+  "|nike air force 1 '07 negras y blancas. de 120 a 44.90|nike 07 air": {
+   "t": 1794076219.7873766,
+   "query": "nike 07 air",
+   "prices": [
+    40.0,
+    50.0,
+    30.0,
+    70.0,
+    70.0,
+    85.0,
+    65.0,
+    40.0,
+    20.0,
+    79.0,
+    59.0,
+    60.0,
+    62.99,
+    79.0,
+    40.0,
+    90.0,
+    60.0,
+    90.0,
+    20.0,
+    79.0,
+    40.0,
+    55.0,
+    110.0,
+    49.99,
+    85.0,
+    20.0,
+    45.0,
+    49.0,
+    90.0,
+    39.99,
+    75.0,
+    90.0,
+    20.0,
+    35.0,
+    80.0,
+    69.99,
+    25.0,
+    20.0,
+    79.99
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 149567,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -13657,10 +13657,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 19,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/zapatillas-mizuno-wave-sky-9-tallas-40-a-465-2058585": 1794054655.2871778,
-  "https://www.chollometro.com/ofertas/cabernet-ps5-2058525": 1794054655.2871778,
   "https://www.chollometro.com/ofertas/zapatillas-de-deporte-new-balance-fuelcell-rebel-v5-tallas-415-43-465-2058425": 1794057201.1622298,
   "https://www.chollometro.com/ofertas/honor-magic8-lite-bateria-de-7500-mah-camara-principal-de-108mp-pantalla-amoled-de-679-pulgadas-y-120hz-ip69k-version-para-la-ue-2058602": 1794057453.3113036,
   "https://www.chollometro.com/ofertas/zapatillas-altra-experience-flow-2-tallas-42-a-48-2058571": 1794057577.222444,
@@ -13676,7 +13674,8 @@
   "https://www.chollometro.com/ofertas/lego-disney-frozen-castillo-de-hielo-de-elsa-y-aventura-en-la-nieve-43281-216-piezas-4-anos-2057397": 1794071239.1332943,
   "https://www.chollometro.com/ofertas/mando-con-cable-rematch-advanced-blossom-xbox-series-x-2058284": 1794072183.420864,
   "https://www.chollometro.com/ofertas/seiko-5-sports-honda-super-cub-edicion-limitada-7500-unidades-automatico-425-mm-2058957": 1794075111.603604,
-  "https://www.chollometro.com/ofertas/new-balance-zapatillas-fresh-foam-x-860v13-2058581": 1794075711.8684177
+  "https://www.chollometro.com/ofertas/new-balance-zapatillas-fresh-foam-x-860v13-2058581": 1794075711.8684177,
+  "https://www.chollometro.com/ofertas/nike-air-force-1-07-negras-y-blancas-de-120-a-4490-2058677": 1794076196.3275173
  },
  "asked": {
   "cm-2058280": 1794041889
