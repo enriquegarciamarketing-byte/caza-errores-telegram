@@ -1161,9 +1161,9 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "RYXnXEL": {
-   "price": 47.45,
-   "t": 1794090692,
-   "result": "solo 2 puntos de precio en España (mínimo 15)"
+   "price": 47.4,
+   "t": 1794150568,
+   "result": "solo 3 puntos de precio en España (mínimo 15)"
   },
   "R9PQbnY": {
    "price": 43.95,
@@ -1747,7 +1747,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794149709
+   "checked": 1794152218
   },
   {
    "id": "cm-2058280",
@@ -1782,7 +1782,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794149709
+   "checked": 1794152218
   },
   {
    "id": "cm-2057212",
@@ -1858,7 +1858,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2922,37 +2922,6 @@
   }
  },
  "wallapop_cache": {
-  "|zapatillas new balance flite-r (tallas 41.5 a 45)|zapatillas 41 new": {
-   "t": 1793714062.9752443,
-   "query": "zapatillas 41 new",
-   "prices": [
-    45.0,
-    40.0,
-    30.0,
-    5.0,
-    20.0,
-    15.0,
-    22.0,
-    45.0,
-    15.0,
-    10.0,
-    30.0,
-    8.0,
-    25.0,
-    10.0,
-    25.0,
-    35.0,
-    15.0,
-    130.0,
-    35.0,
-    25.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 115269,
-   "raw_count": 40
-  },
   "|mando con cable rematch advanced - purple fade - xbox series x - pegi 7|mando cable": {
    "t": 1793714063.950198,
    "query": "mando cable",
@@ -8879,6 +8848,29 @@
    "http_status": 200,
    "bytes": 89243,
    "raw_count": 39
+  },
+  "|lego star wars crucero de ataque clase venator 75441|lego 75441 star": {
+   "t": 1794149988.309599,
+   "query": "lego 75441 star",
+   "prices": [
+    50.0,
+    57.9,
+    60.0,
+    59.99,
+    49.9,
+    40.0,
+    60.0,
+    39.95,
+    65.0,
+    59.95,
+    58.95,
+    65.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 40082,
+   "raw_count": 16
   }
  },
  "milanuncios_cache": {
@@ -14143,11 +14135,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 20,
+ "rotation_index": 16,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-harry-potter-castillo-y-terrenos-de-hogwarts-18-anos-76419-2057212": 1794127914.307796,
-  "https://www.chollometro.com/ofertas/salomon-grivola-mid-gore-tex-zapatillas-de-senderismo-2059263": 1794128514.4744167,
-  "https://www.chollometro.com/ofertas/adidas-hombre-galaxy-7-zapatillas-de-correr-2058904": 1794128514.4744167,
   "https://www.chollometro.com/ofertas/skyrim-anniversary-edition-switch-2-2059309": 1794133165.3319764,
   "https://www.chollometro.com/ofertas/nike-performance-metcon-10-zapatillas-de-entrenamiento-tallas-355-36-365-40-445-2059264": 1794133165.3319764,
   "https://www.chollometro.com/ofertas/dreame-l40-ultra-a-blanco-robot-aspirador-friegasuelos-24000-pa-con-base-multifuncion-2059361": 1794133165.3319764,
@@ -14162,7 +14151,8 @@
   "https://www.chollometro.com/ofertas/lego-ideas-cohete-lunar-de-tintin-21367-2059413": 1794144559.5112484,
   "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-cupon-ventajas-5eur-cuentas-seleccionadas-2059495": 1794144559.5112484,
   "https://www.chollometro.com/ofertas/nike-zapatillas-deportivas-zoomx-vaporfly-next-4-running-tallas-38-385-40-2059472": 1794145158.3605704,
-  "https://www.chollometro.com/ofertas/rayman-legends-retold-nintendo-switch-2-pal-espana-preventa-2059371": 1794147476.3299742
+  "https://www.chollometro.com/ofertas/rayman-legends-retold-nintendo-switch-2-pal-espana-preventa-2059371": 1794147476.3299742,
+  "https://www.chollometro.com/ofertas/lego-star-wars-crucero-de-ataque-clase-venator-75441-2058591": 1794149984.7080996
  },
  "asked": {
   "cm-2057212": 1794127930,
