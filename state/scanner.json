@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794170189
+   "checked": 1794172557
   },
   {
    "id": "cm-2057212",
@@ -1873,7 +1873,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 95,
+ "last_listing_count": 97,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2937,39 +2937,6 @@
   }
  },
  "wallapop_cache": {
-  "|figura construible lego one piece tony tony chopper (75643)|figura 75643 construible": {
-   "t": 1793727514.7327366,
-   "query": "figura 75643 construible",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
-  "|lego technic hypercar koenigsegg jesko absolut gris 42173 (801 piezas, motor v8, puertas diedricas, oferta privalia)|lego v8 technic": {
-   "t": 1793727516.7862759,
-   "query": "lego v8",
-   "prices": [
-    2.0,
-    35.0,
-    33.0,
-    20.0,
-    49.0,
-    35.0,
-    150.0,
-    47.0,
-    30.0,
-    25.0,
-    80.0,
-    150.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 105374,
-   "raw_count": 38
-  },
   "|lego technic el planeta tierra y la luna en orbita 42179 (526 piezas, modelo astronomico, engranajes, oferta privalia)|lego 42179 technic": {
    "t": 1793727517.7591329,
    "query": "lego 42179 technic",
@@ -8920,6 +8887,48 @@
    "http_status": 200,
    "bytes": 43067,
    "raw_count": 14
+  },
+  "|zapatillas hombre reebok world 70 azul marino (41 a 45)|zapatillas 70 reebok": {
+   "t": 1794170324.1814358,
+   "query": "zapatillas 70",
+   "prices": [
+    35.0,
+    49.0,
+    50.0,
+    10.0,
+    40.0,
+    42.95,
+    30.0,
+    50.0,
+    40.0,
+    37.0,
+    30.0,
+    15.0,
+    45.0,
+    45.0,
+    75.0,
+    40.0,
+    25.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 143096,
+   "raw_count": 40
+  },
+  "|robot aspirador y fregasuelos roborock saros 20 sonic complete (36.000 pa / sistema vibrarise 5.0/perfil 7,95 cm/ia reactive 3.0)|robot 20 aspirador": {
+   "t": 1794172123.8957722,
+   "query": "robot 20 aspirador",
+   "prices": [
+    40.0,
+    30.0,
+    650.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 140207,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -14447,14 +14456,35 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~26 € (12 anuncios): ROI -55 % y -27 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|zapatillas hombre reebok world 70 azul marino (41 a 45)|zapatillas 70 reebok": {
+   "t": 1794170322.9415858,
+   "prices": [
+    29.0,
+    49.0,
+    33.0,
+    30.0,
+    35.0,
+    55.0,
+    70.0,
+    35.0,
+    29.0,
+    25.0,
+    11.0,
+    49.0,
+    39.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~34 € (12 anuncios): ROI 2 % y 1 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 13,
+ "rotation_index": 9,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-star-wars-crucero-de-ataque-clase-venator-75441-2058591": 1794149984.7080996,
   "https://www.chollometro.com/ofertas/logitech-g-pro-x-auriculares-gaming-con-microfono-para-pcpsxbox-audifonos-con-microfono-y-cable-blue-voce-dts-headphonex-71-2059693": 1794152900.354159,
   "https://www.chollometro.com/ofertas/puma-st-runner-v3-nl-zapatillas-deportivas-2059731": 1794155935.0852175,
   "https://www.chollometro.com/ofertas/lego-disney-marvel-spider-man-persecucion-del-furgon-penitenciario-2057260": 1794156535.1623008,
@@ -14467,7 +14497,9 @@
   "https://www.chollometro.com/ofertas/hoka-bondi-7-hombre-zapatillas-tallas-42-42-23-45-13-recogida-en-tienda-2059820": 1794162977.018129,
   "https://www.chollometro.com/ofertas/361-zapatillas-running-mujeres-hasta-79-de-descuento-2059919": 1794165797.2780313,
   "https://www.chollometro.com/ofertas/361-zapatillas-de-running-centauri-2-hombre-2059925": 1794166397.4630218,
-  "https://www.chollometro.com/ofertas/dyson-v8-origin-2026-aspiradora-sin-cable-con-130-aw-de-succion-40-min-de-autonomia-y-cabezal-antienredos-2059824": 1794169154.7665377
+  "https://www.chollometro.com/ofertas/dyson-v8-origin-2026-aspiradora-sin-cable-con-130-aw-de-succion-40-min-de-autonomia-y-cabezal-antienredos-2059824": 1794169154.7665377,
+  "https://www.chollometro.com/ofertas/zapatillas-hombre-reebok-world-70-azul-marino-41-a-45-2059700": 1794170320.1398847,
+  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-roborock-saros-20-sonic-complete-36000-pa-sistema-vibrarise-50perfil-795-cmia-reactive-30-2059926": 1794172120.2362657
  },
  "asked": {
   "cm-2057212": 1794127930,
@@ -14476,6 +14508,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 64
+  "passes": 80
  }
 }
