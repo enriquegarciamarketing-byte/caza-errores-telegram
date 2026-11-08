@@ -1737,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794123397
+   "checked": 1794125910
   },
   {
    "id": "cm-2058280",
@@ -1772,12 +1772,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794123397
+   "checked": 1794125910
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 94,
+ "last_listing_count": 92,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2848,30 +2848,6 @@
    "http_status": 200,
    "bytes": 101584,
    "raw_count": 38
-  },
-  "|reloj deportivo casio g-shock ga-2100 diferentes colores|reloj 2100 deportivo": {
-   "t": 1793659677.703259,
-   "query": "reloj 2100 deportivo",
-   "prices": [
-    40.0,
-    40.0,
-    70.0,
-    80.0,
-    50.0,
-    87.9,
-    63.0,
-    45.0,
-    65.0,
-    60.0,
-    75.0,
-    80.0,
-    120.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 112181,
-   "raw_count": 34
   },
   "|new balance zapatilla de running de hombre freshfoam arishi v4 tiralux|new v4 balance": {
    "t": 1793692129.862246,
@@ -8791,6 +8767,31 @@
    "http_status": 200,
    "bytes": 102169,
    "raw_count": 37
+  },
+  "|columbia sportswear peakfreak 11 mujer zapatillas (37,5, 40,5 y 42) tambien otros colores|columbia 11 sportswear": {
+   "t": 1794124878.6835206,
+   "query": "columbia 11",
+   "prices": [
+    15.0,
+    15.0,
+    30.0,
+    30.0,
+    15.0,
+    29.0,
+    9.0,
+    125.0,
+    20.0,
+    30.0,
+    30.0,
+    120.0,
+    55.0,
+    100.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 122095,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -13682,19 +13683,33 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~25 € (9 anuncios): ROI -53 % y -25 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|columbia sportswear peakfreak 11 mujer zapatillas (37,5, 40,5 y 42) tambien otros colores|columbia 11 sportswear": {
+   "t": 1794124877.297761,
+   "prices": [
+    85.0,
+    20.0,
+    61.0,
+    10.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~53 € (3 anuncios): ROI -25 % y -16 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2058650": 1794115369.7000914,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-ride-tr2-gore-tex-tallas-355-385-41-2058812": 1794117108.0128486,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-41-42-43-2058799": 1794117707.810974,
   "https://www.chollometro.com/ofertas/adidas-hombre-runfalcon-5-zapatillas-de-correr-2058847": 1794119564.196988,
   "https://www.chollometro.com/ofertas/lego-city-barco-y-helicoptero-de-rescate-de-guardacostas-juguete-de-construccion-7-anos-60504-2058326": 1794120763.8483849,
-  "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-de-running-galaxy-8-2057954": 1794120763.8483849
+  "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-de-running-galaxy-8-2057954": 1794120763.8483849,
+  "https://www.chollometro.com/ofertas/columbia-sportswear-peakfreak-11-mujer-zapatillas-2059178": 1794124874.04955
  },
  "asked": {
   "cm-2058280": 1794041889
