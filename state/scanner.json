@@ -1174,6 +1174,11 @@
    "price": 299.0,
    "t": 1794142093,
    "result": "solo -9% bajo la referencia"
+  },
+  "7k03NYv": {
+   "price": 258.0,
+   "t": 1794152885,
+   "result": "valoraciones flojas (5.0 / 1)"
   }
  },
  "posts": [
@@ -1747,7 +1752,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794152218
+   "checked": 1794154535
   },
   {
    "id": "cm-2058280",
@@ -1782,7 +1787,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794152218
+   "checked": 1794154535
   },
   {
    "id": "cm-2057212",
@@ -1858,7 +1863,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 98,
+ "last_listing_count": 93,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2922,32 +2927,6 @@
   }
  },
  "wallapop_cache": {
-  "|mando con cable rematch advanced - purple fade - xbox series x - pegi 7|mando cable": {
-   "t": 1793714063.950198,
-   "query": "mando cable",
-   "prices": [
-    10.0,
-    7.5,
-    20.0,
-    15.0,
-    10.0,
-    5.0,
-    29.0,
-    40.0,
-    5.0,
-    12.5,
-    25.0,
-    18.0,
-    20.0,
-    10.95,
-    30.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 108199,
-   "raw_count": 40
-  },
   "|microfono dji mic mini 2tx 1rx (2 unidades por 57,60€)|microfono 2tx dji": {
    "t": 1793714066.0515563,
    "query": "microfono 2tx",
@@ -8871,6 +8850,52 @@
    "http_status": 200,
    "bytes": 40082,
    "raw_count": 16
+  },
+  "|logitech g pro x auriculares gaming con microfono, para pc/ps/xbox audifonos con microfono y cable, blue vo!ce, dts headphone:x 7.1|logitech pro": {
+   "t": 1794152903.1316078,
+   "query": "logitech pro",
+   "prices": [
+    45.0,
+    135.0,
+    39.95,
+    70.0,
+    55.0,
+    15.0,
+    70.0,
+    169.99,
+    15.0,
+    54.95,
+    45.0,
+    32.0,
+    135.0,
+    35.0,
+    35.0,
+    39.99,
+    10.0,
+    65.0,
+    95.0,
+    70.0,
+    20.0,
+    65.0,
+    15.0,
+    50.0,
+    30.0,
+    49.95,
+    155.0,
+    65.0,
+    80.0,
+    130.0,
+    80.0,
+    70.0,
+    90.0,
+    20.0,
+    160.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 122846,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -14135,7 +14160,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/skyrim-anniversary-edition-switch-2-2059309": 1794133165.3319764,
   "https://www.chollometro.com/ofertas/nike-performance-metcon-10-zapatillas-de-entrenamiento-tallas-355-36-365-40-445-2059264": 1794133165.3319764,
@@ -14152,7 +14177,8 @@
   "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-cupon-ventajas-5eur-cuentas-seleccionadas-2059495": 1794144559.5112484,
   "https://www.chollometro.com/ofertas/nike-zapatillas-deportivas-zoomx-vaporfly-next-4-running-tallas-38-385-40-2059472": 1794145158.3605704,
   "https://www.chollometro.com/ofertas/rayman-legends-retold-nintendo-switch-2-pal-espana-preventa-2059371": 1794147476.3299742,
-  "https://www.chollometro.com/ofertas/lego-star-wars-crucero-de-ataque-clase-venator-75441-2058591": 1794149984.7080996
+  "https://www.chollometro.com/ofertas/lego-star-wars-crucero-de-ataque-clase-venator-75441-2058591": 1794149984.7080996,
+  "https://www.chollometro.com/ofertas/logitech-g-pro-x-auriculares-gaming-con-microfono-para-pcpsxbox-audifonos-con-microfono-y-cable-blue-voce-dts-headphonex-71-2059693": 1794152900.354159
  },
  "asked": {
   "cm-2057212": 1794127930,
