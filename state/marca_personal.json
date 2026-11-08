@@ -1,7 +1,8 @@
 {
  "used": {
   "finanzas": [
-   0
+   0,
+   1
   ],
   "ahorro": [
    0
@@ -35,6 +36,11 @@
    "t": 1794079176,
    "slot": "tarde",
    "topic": "Tu día a día"
+  },
+  {
+   "t": 1794165580,
+   "slot": "tarde",
+   "topic": "Finanzas e inversión"
   }
  ]
 }
