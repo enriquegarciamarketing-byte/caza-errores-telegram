@@ -1076,8 +1076,8 @@
    "result": "solo -27% bajo la referencia"
   },
   "MW35m8N": {
-   "price": 237.99,
-   "t": 1793917052,
+   "price": 233.99,
+   "t": 1794165333,
    "result": "solo -2% bajo la referencia"
   },
   "RNme967": {
@@ -1184,6 +1184,11 @@
    "price": 29.99,
    "t": 1794161761,
    "result": "solo -27% bajo la referencia"
+  },
+  "7embzyd": {
+   "price": 278.99,
+   "t": 1794165182,
+   "result": "solo -5% bajo la referencia"
   }
  },
  "posts": [
@@ -1792,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794164012
+   "checked": 1794167433
   },
   {
    "id": "cm-2057212",
@@ -1868,7 +1873,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 101,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2932,88 +2937,6 @@
   }
  },
  "wallapop_cache": {
-  "|ps5 - mortal shell 2|ps5 mortal": {
-   "t": 1793721685.0471337,
-   "query": "ps5 mortal",
-   "prices": [
-    39.0,
-    35.0,
-    34.0,
-    15.0,
-    15.0,
-    35.0,
-    28.0,
-    34.9,
-    15.0,
-    15.0,
-    35.0,
-    20.0,
-    15.0,
-    35.0,
-    20.0,
-    10.0,
-    18.0,
-    20.0,
-    35.0,
-    10.0,
-    15.0,
-    35.0,
-    19.99,
-    18.9,
-    35.0,
-    20.0,
-    38.0,
-    35.0,
-    37.0,
-    44.99,
-    15.0,
-    20.0,
-    19.0,
-    38.0,
-    15.0,
-    34.99
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 96744,
-   "raw_count": 40
-  },
-  "|zapatillas nike sb zoom janoski og+ (tallas 36, 36.5, 37.5, 38 y 38.5)|zapatillas 36 nike": {
-   "t": 1793724258.2460816,
-   "query": "zapatillas 36 nike",
-   "prices": [
-    7.0,
-    15.0,
-    20.0,
-    18.0,
-    10.0,
-    25.0,
-    50.0,
-    75.0,
-    25.0,
-    35.0,
-    6.0,
-    6.0,
-    7.99,
-    42.0,
-    15.0,
-    40.0,
-    15.0,
-    19.0,
-    19.0,
-    17.0,
-    12.0,
-    25.0,
-    45.0,
-    20.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 127665,
-   "raw_count": 40
-  },
   "|zapatilla casual unisex 530 new balance azul marino|zapatilla 530 casual": {
    "t": 1793724260.6388829,
    "query": "zapatilla 530 casual",
@@ -8930,6 +8853,61 @@
    "http_status": 200,
    "bytes": 105968,
    "raw_count": 33
+  },
+  "|zapatillas running mujeres - hasta 79% de descuento!!|zapatillas 79 running": {
+   "t": 1794165802.283266,
+   "query": "zapatillas 79",
+   "prices": [
+    60.0,
+    20.0,
+    50.0,
+    30.0,
+    42.5,
+    20.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 132147,
+   "raw_count": 40
+  },
+  "|zapatillas de running centauri 2 hombre|zapatillas running": {
+   "t": 1794166402.4548776,
+   "query": "zapatillas running",
+   "prices": [
+    15.0,
+    25.0,
+    35.0,
+    60.0,
+    50.0,
+    35.0,
+    25.0,
+    13.0,
+    85.0,
+    20.0,
+    35.0,
+    50.0,
+    50.0,
+    40.0,
+    21.0,
+    55.0,
+    26.0,
+    40.0,
+    55.0,
+    25.0,
+    64.0,
+    35.0,
+    25.0,
+    70.0,
+    17.0,
+    43.0,
+    40.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 133890,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -14419,16 +14397,51 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~60 € (27 anuncios): ROI -31 % y -25 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|zapatillas running mujeres - hasta 79% de descuento!!|zapatillas 79 running": {
+   "t": 1794165800.9419143,
+   "prices": [
+    39.0,
+    10.0,
+    70.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 2 anuncios parecidos (mínimo 3)"
+  },
+  "|zapatillas de running centauri 2 hombre|zapatillas running": {
+   "t": 1794166401.8873003,
+   "prices": [
+    78.0,
+    24.0,
+    36.0,
+    8.0,
+    29.0,
+    45.0,
+    20.0,
+    55.0,
+    17.71,
+    30.0,
+    35.0,
+    95.0,
+    20.0,
+    20.0,
+    12.0,
+    10.0,
+    30.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~26 € (12 anuncios): ROI -55 % y -27 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 0,
+ "rotation_index": 17,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-ideas-cohete-lunar-de-tintin-21367-2059413": 1794144559.5112484,
-  "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-cupon-ventajas-5eur-cuentas-seleccionadas-2059495": 1794144559.5112484,
-  "https://www.chollometro.com/ofertas/nike-zapatillas-deportivas-zoomx-vaporfly-next-4-running-tallas-38-385-40-2059472": 1794145158.3605704,
   "https://www.chollometro.com/ofertas/rayman-legends-retold-nintendo-switch-2-pal-espana-preventa-2059371": 1794147476.3299742,
   "https://www.chollometro.com/ofertas/lego-star-wars-crucero-de-ataque-clase-venator-75441-2058591": 1794149984.7080996,
   "https://www.chollometro.com/ofertas/logitech-g-pro-x-auriculares-gaming-con-microfono-para-pcpsxbox-audifonos-con-microfono-y-cable-blue-voce-dts-headphonex-71-2059693": 1794152900.354159,
@@ -14440,7 +14453,9 @@
   "https://www.chollometro.com/ofertas/fosmet-gafas-inteligentes-ia-con-camara-165-traduccion-smart-glasses-de-solo-45g-asistente-gptreconocimiento-de-objetosproteccion-uv-2059720": 1794157803.6000001,
   "https://www.chollometro.com/ofertas/zapatillas-saucony-triumph-23-2059341": 1794158403.6383135,
   "https://www.chollometro.com/ofertas/brooks-zapatilla-revel-max-tallas-41-a-46-2059440": 1794161781.1065054,
-  "https://www.chollometro.com/ofertas/hoka-bondi-7-hombre-zapatillas-tallas-42-42-23-45-13-recogida-en-tienda-2059820": 1794162977.018129
+  "https://www.chollometro.com/ofertas/hoka-bondi-7-hombre-zapatillas-tallas-42-42-23-45-13-recogida-en-tienda-2059820": 1794162977.018129,
+  "https://www.chollometro.com/ofertas/361-zapatillas-running-mujeres-hasta-79-de-descuento-2059919": 1794165797.2780313,
+  "https://www.chollometro.com/ofertas/361-zapatillas-de-running-centauri-2-hombre-2059925": 1794166397.4630218
  },
  "asked": {
   "cm-2057212": 1794127930,
@@ -14449,6 +14464,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 32
+  "passes": 48
  }
 }
