@@ -1737,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794101819
+   "checked": 1794105693
   },
   {
    "id": "cm-2058280",
@@ -1772,12 +1772,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794101819
+   "checked": 1794105693
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 93,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13690,11 +13690,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 12,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-barreda-decode-2058944": 1794079929.1340327,
-  "https://www.chollometro.com/ofertas/nike-dunk-high-retro-de-piel-tallas-36-365-375-40-405-2058958": 1794080528.5650709,
-  "https://www.chollometro.com/ofertas/sony-wh-ch720n-auriculares-inalambricos-diadema-con-noise-cancelling-2058560": 1794081129.0430112,
   "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2058650": 1794093432.7851064,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-ride-tr2-gore-tex-tallas-355-385-41-2058812": 1794095231.191027
  },
