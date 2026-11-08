@@ -1737,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794118743
+   "checked": 1794121800
   },
   {
    "id": "cm-2058280",
@@ -1772,7 +1772,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794118743
+   "checked": 1794121800
   }
  ],
  "tg_offset": 334822062,
@@ -13687,11 +13687,14 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 17,
+ "rotation_index": 13,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2058650": 1794115369.7000914,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-ride-tr2-gore-tex-tallas-355-385-41-2058812": 1794117108.0128486,
-  "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-41-42-43-2058799": 1794117707.810974
+  "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-41-42-43-2058799": 1794117707.810974,
+  "https://www.chollometro.com/ofertas/adidas-hombre-runfalcon-5-zapatillas-de-correr-2058847": 1794119564.196988,
+  "https://www.chollometro.com/ofertas/lego-city-barco-y-helicoptero-de-rescate-de-guardacostas-juguete-de-construccion-7-anos-60504-2058326": 1794120763.8483849,
+  "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-de-running-galaxy-8-2057954": 1794120763.8483849
  },
  "asked": {
   "cm-2058280": 1794041889
