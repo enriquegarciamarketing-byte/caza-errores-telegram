@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794174948
+   "checked": 1794177371
   },
   {
    "id": "cm-2057212",
@@ -1873,12 +1873,12 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
  "discovery_cache": {
-  "t": 1794154889.580121,
+  "t": 1794176641.4598515,
   "titles": [
    "10€ playstation store tarjeta regalo | cuenta espanola [codigo por correo]",
    "zelda ocarina of time - nintendo switch 2",
@@ -2937,25 +2937,6 @@
   }
  },
  "wallapop_cache": {
-  "|lego star wars calendario de adviento 2026|lego 2026 star": {
-   "t": 1793727519.7722251,
-   "query": "lego 2026 star",
-   "prices": [
-    29.0,
-    25.0,
-    15.0,
-    20.0,
-    38.0,
-    10.0,
-    39.9,
-    40.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 101045,
-   "raw_count": 36
-  },
   "|nba 2k27 ed estandar ps5|nba 2k27 estandar": {
    "t": 1793728113.1037464,
    "query": "nba 2k27",
@@ -8935,6 +8916,37 @@
    "http_status": 200,
    "bytes": 117654,
    "raw_count": 35
+  },
+  "|lego one piece restaurante flotante baratie 75640 set para adultos, decoracion anime con interior detallado y 10 minifiguras|lego 75640 one": {
+   "t": 1794175739.874316,
+   "query": "lego 75640 one",
+   "prices": [
+    229.95,
+    229.95,
+    185.0,
+    229.89,
+    250.0,
+    180.0,
+    235.0,
+    229.9,
+    287.9,
+    210.0,
+    259.0,
+    250.0,
+    249.0,
+    250.0,
+    270.0,
+    270.0,
+    240.0,
+    250.0,
+    249.0,
+    299.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 65263,
+   "raw_count": 23
   }
  },
  "milanuncios_cache": {
@@ -14593,7 +14605,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 5,
+ "rotation_index": 1,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/puma-st-runner-v3-nl-zapatillas-deportivas-2059731": 1794155935.0852175,
   "https://www.chollometro.com/ofertas/lego-disney-marvel-spider-man-persecucion-del-furgon-penitenciario-2057260": 1794156535.1623008,
@@ -14610,7 +14622,8 @@
   "https://www.chollometro.com/ofertas/zapatillas-hombre-reebok-world-70-azul-marino-41-a-45-2059700": 1794170320.1398847,
   "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-roborock-saros-20-sonic-complete-36000-pa-sistema-vibrarise-50perfil-795-cmia-reactive-30-2059926": 1794172120.2362657,
   "https://www.chollometro.com/ofertas/skechers-glide-step-pro-zapatillas-mujer-glide-step-air-cooled-memory-foam-no-tie-fit-y-suela-de-traccion-flexible-varios-colores-2059988": 1794172711.675276,
-  "https://www.chollometro.com/ofertas/zapatillas-craft-pure-trail-x-tallas-405-a-47-2059322": 1794173911.5836518
+  "https://www.chollometro.com/ofertas/zapatillas-craft-pure-trail-x-tallas-405-a-47-2059322": 1794173911.5836518,
+  "https://www.chollometro.com/ofertas/lego-one-piece-restaurante-flotante-baratie-75640-set-para-adultos-decoracion-anime-con-interior-detallado-y-10-minifiguras-2059431": 1794175736.4583461
  },
  "asked": {
   "cm-2057212": 1794127930,
@@ -14619,6 +14632,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 96
+  "passes": 112
  }
 }
