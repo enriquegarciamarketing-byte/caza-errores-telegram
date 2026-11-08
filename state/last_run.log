@@ -1,47 +1,131 @@
 Creators API: sin claves (productos con tallas descartados)
-Traceback (most recent call last):
-  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 1974, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 1593, in main
-    me = tg.call("getMe")
-         ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/scanner.py", line 195, in call
-    with urllib.request.urlopen(req, timeout=30) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 215, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 515, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 532, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 492, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 1405, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/urllib/request.py", line 1361, in do_open
-    r = h.getresponse()
-        ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 1478, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 343, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 304, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/socket.py", line 720, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/ssl.py", line 1264, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/ssl.py", line 1116, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+Bot: @cazaerroresAmazon_bot
+Listados: 96 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 468581 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 483213 bytes, 30 ASIN, 33 títulos
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36732 bytes, 30 chollos
+  Chollometro «Skyrim Anniversary Edition SWITCH 2»: PcComponentes 34.0 €
+  Chollometro «Nike Performance METCON 10 - Zapatillas de entrenamiento- Tallas- 35.5»: Zalando Privé 65.9 €
+  Chollometro «Dreame L40 Ultra A BLANCO, robot aspirador friegasuelos 24.000 Pa con »: Amazon 299.0 €
+  Chollometro «LEGO Pokémon Rayquaza (72168) – Pokémon Legendario articulado con Tris»: Carrefour 90.99 €
+  Chollometro «Set de Construcción LEGO Harry Potter Castillo de Hogwarts: Ala Este»: Carrefour 153.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70034 bytes, 30 chollos
+  cm-2059309 · PcComponentes 34.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Skyrim Anniversary Edition SWITCH 2
+  cm-2059264 · Zalando Privé 65.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nike Performance METCON 10 - Zapatillas de entrenamiento- Ta
+  cm-2059361 · Amazon 299.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Dreame L40 Ultra A BLANCO, robot aspirador friegasuelos 24.0
+  cm-2057255 · Carrefour 90.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Pokémon Rayquaza (72168) – Pokémon Legendario articulad
+  cm-2057183 · Carrefour 153.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Set de Construcción LEGO Harry Potter Castillo de Hogwarts: 
+  Vinted «nike 10 performance»: HTTP 200, 3695688 bytes, 96 anuncios
+  Vinted «nike 10 performance»: 12 parecidos de 96
+  Wallapop «nike 10 performance»: 200 / 22040 bytes, 7 anuncios, 0 parecidos, 0 reservas
+  Wallapop «nike 10»: 200 / 142478 bytes, 40 anuncios, 20 parecidos, 0 reservas
+  Milanuncios «nike 10 performance»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 14 anuncios, ~31 €, no publica
+  ⚠️ No publico «Nike Performance METCON 10 - Zapatillas de entrenamiento- Tallas- 35.5, 36, 36.5, 40, 44.5»: reventa en VINTED+WALLAPOP ~31 € (14 anuncios): ROI -58 % y -38 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «skyrim anniversary»: 200 / 23578 bytes, 10 anuncios, 6 parecidos, 0 reservas
+  Milanuncios «skyrim anniversary»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 5 anuncios, ~85 €, publica
+  Te lo paso por privado para que des el OK (mensaje 526): OPORTUNIDAD DE REVENTA · Skyrim Anniversary Edition SWITCH 2
+  Wallapop «lego 72168 pokemon»: 200 / 8751 bytes, 4 anuncios, 4 parecidos, 0 reservas
+  Milanuncios «lego 72168 pokemon»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 4 anuncios, ~92 €, no publica
+  ⚠️ No publico «LEGO Pokémon Rayquaza (72168) – Pokémon Legendario articulado con Tristana, base y 1083 pi»: reventa en WALLAPOP ~92 € (4 anuncios): ROI -6 % y -6 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «construccion lego»: 200 / 101395 bytes, 40 anuncios, 12 parecidos, 0 reservas
+  Milanuncios «construccion lego»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 10 anuncios, ~17 €, no publica
+  ⚠️ No publico «Set de Construcción LEGO Harry Potter Castillo de Hogwarts: Ala Este»: reventa en WALLAPOP ~17 € (10 anuncios): ROI -91 % y -140 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «dreame l40 ultra»: 200 / 109841 bytes, 29 anuncios, 10 parecidos, 0 reservas
+  Milanuncios «dreame l40 ultra»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 7 anuncios, ~366 €, no publica
+  ⚠️ No publico «Dreame L40 Ultra A BLANCO, robot aspirador friegasuelos 24.000 Pa con base multifunción»: reventa en WALLAPOP ~366 € (7 anuncios): ROI 14 % y 41 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 1
+Cascada al canal normal: 38 descartes nuevos, 65 en lista
+== pasada 2 · 11:21 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 3 · 11:24 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 4 · 11:26 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 5 · 11:29 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36732 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70423 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 11:31 ==
+Listados: 89 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 7 · 11:34 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 11:36 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 9 · 11:39 ==
+Listados: 103 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36769 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 73071 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 10 · 11:41 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 48 descartes nuevos, 48 en lista
+== pasada 11 · 11:44 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 11:46 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 11:49 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36688 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 66006 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 11:51 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 11:54 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 16 · 11:56 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+Fin de la ejecución tras 16 pasadas.
