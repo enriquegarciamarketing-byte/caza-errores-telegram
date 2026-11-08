@@ -1156,9 +1156,9 @@
    "result": "solo -6% bajo la referencia"
   },
   "ROopbne": {
-   "price": 28.99,
-   "t": 1794065623,
-   "result": "solo -3% bajo la referencia"
+   "price": 30.2,
+   "t": 1794110466,
+   "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "RYXnXEL": {
    "price": 47.45,
@@ -1737,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794109034
+   "checked": 1794112266
   },
   {
    "id": "cm-2058280",
@@ -1772,18 +1772,49 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794109034
+   "checked": 1794112266
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 105,
+ "last_listing_count": 104,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
  "discovery_cache": {
-  "t": 1794107252.329509,
-  "titles": []
+  "t": 1794110932.2849753,
+  "titles": [
+   "zelda ocarina of time - nintendo switch 2",
+   "ea sports fc™ 27 - edicion estandar playstation 5| disco fisico | videojuegos | castellano",
+   "10€ playstation store tarjeta regalo | cuenta espanola [codigo por correo]",
+   "tarjeta regalo digital de roblox - 800 robux [incluye un objeto virtual exclusivo] [codigo de juego online]",
+   "ivoler 4 piezas protector pantalla para nintendo switch 2 model 2025, instalacion en 30 segundos incluye marco de instalacion",
+   "logitech g g502 hero raton gaming con cable, 25,600 dpi, negro | alto rendimiento, captor hero 25k, rgb, peso personalizable,",
+   "playstation mando inalambrico dualsense®: coleccion hyperpop - rhythm blue",
+   "luna premium",
+   "xbox mando inalambrico carbon black series x|s, one, pc, televisores, moviles y mas",
+   "jetech protector pantalla para nintendo switch 2, 2 unidades | alineacion automatica instalacion, cristal vidrio templado 9h,",
+   "jsaux protector pantalla ultra hd para nintendo switch 2, pack de 3 | cristal templado 9h, instalacion sin burbujas, marco de",
+   "playstation 5 - mando inalambrico dualsense",
+   "logitech g g305 lightspeed raton gaming inalambrico, hero 12k, negro | 12.000 dpi, raton con botones laterales, bateria de 25",
+   "nintendo switch 2 pro controller",
+   "logitech g g203 lightsync raton gaming negro, 6 botones programables | raton con cable para ordenador, iluminacion rgb person",
+   "nintendo switch sports resort",
+   "krom kalista - teclado gaming de membrana rgb rainbow, formato 62%, modo gaming, n-19 anti-ghosting, windows | mac, layout es",
+   "logitech g g335, auriculares para gaming con cable | microfono abatible silenciar, audio 3,5 mm, almohadillas viscoelasticas,",
+   "jbl quantum 100m2 cascos circumaurales para gaming, jbl quantumsound signature, cable de audio de 3.5 mm, compatibles con mul",
+   "csl-computer - alfombrilla de raton speed gaming titanwolf negro 900 x 400 mm - base de mesa grande - mejora la precision y l",
+   "easysmx x05 pro mando inalambrico para pc – botones silenciosos mejorados, gatillos de 2 etapas, joysticks hall, sondeo 1000h",
+   "cobak funda nintendo switch 2 (2025) - set 3en1: 2 protectores vidrio + 2 gomas palancas + funda rigida portatil, negro",
+   "redragon m908 impact raton gaming mmo cableado rgb 12400 dpi | 12 botones laterales 18 atajos macro programables alta precisi",
+   "tomodachi life - switch",
+   "nintendo switch 2 carrying case + protector pantalla",
+   "xbox mando nano – compatible, pc, dispositivos moviles y mucho mas",
+   "acegamer controlador inalambrico para ps4, controlador de juego compatible con ps4/pro/slim/pc, con turboboton/boton trasero/",
+   "minecraft: nintendo switch edition, el embalaje puede variar",
+   "ozeino cascos gaming, auriculares gaming con microfono rotatorio, luz rgb, premium stereo, orejeras ligero comodo, para ps4 p",
+   "logitech mk295 silent, qwerty espanol - blanco | combo teclado y raton inalambricos, silenttouch, seguimiento optico, sin dem"
+  ]
  },
  "resale_cache": {
   "carrefour|lego ideas cohete lunar de tintin, juguete de construccion +18 anos - 21367 (-40% en cupon) - precio final 83.99|wallapop+milanuncios:carrefour 18 lego": {
@@ -13656,7 +13687,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 4,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2058650": 1794093432.7851064,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-ride-tr2-gore-tex-tallas-355-385-41-2058812": 1794095231.191027
