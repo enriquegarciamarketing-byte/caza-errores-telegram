@@ -1285,5 +1285,19 @@
         "until": "2026-11-18T23:59:00+01:00"
       }
     ]
-  }
+  },
+  "_nota_alerts": "Alertas privadas: lo que encaja te llega solo a tu chat con el bot, nunca al canal. min_discount es el % frente a la media de 90 días o al precio anterior; si pones max_price_eur, cualquier precio por debajo también avisa.",
+  "alerts": [
+    {
+      "id": "tv-98",
+      "enabled": true,
+      "label": "ALERTA TV 98 PULGADAS",
+      "sizes": [97, 98, 100],
+      "min_discount": 30,
+      "min_discount_at_low": 15,
+      "max_price_eur": null,
+      "asins": ["B0GR9QCYJG"]
+    }
+  ],
+  "alerts_detail_every_passes": 4
 }

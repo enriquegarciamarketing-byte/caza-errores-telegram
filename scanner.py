@@ -36,6 +36,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import affiliate
+import alertas
 import cascada
 from amazon_api import ApiError, CreatorsAPI, color_of, size_of
 import feeds
@@ -54,6 +55,7 @@ STATE_PATH = ROOT / "state" / "scanner.json"
 MADRID = ZoneInfo("Europe/Madrid")
 USER_AGENT = "CazaErroresBot/1.0 (+https://t.me/caza_errores)"
 BASE = "https://jimmyleaks.com"
+LAST_LISTINGS: list[dict] = []  # productos leídos en la última pasada
 LINK_RE = re.compile(
     r"https://(?:link\.amazon|amzn\.to|amzn\.eu|amzlinks\.in|www\.amazon\.es)/\S+",
     re.I,
@@ -783,6 +785,7 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
         time.sleep(1)
     print(f"Listados: {len(listings)} productos únicos")
     state["last_listing_count"] = len(listings)
+    LAST_LISTINGS[:] = list(listings.values())  # para las alertas privadas (alertas.py)
     if extras is not None:
         extras["listings"] = list(listings.values())
 
@@ -1904,6 +1907,11 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime, with
         except RuntimeError as exc:
             print(f"  Error publicando {cand['id']}: {exc}")
     print(f"Publicados en esta ejecución: {posted}")
+    try:  # Alertas privadas (teles de 98"): un fallo aquí nunca para el escáner
+        alertas.check(tg, cfg, state, LAST_LISTINGS, fetch=fetch,
+                      parse_detail=parse_detail, dry=bool(args.dry_run))
+    except Exception as exc:
+        print(f"Aviso: alertas privadas no disponibles ({exc!r})")
     flush_cascade(cfg, state, now, dry=bool(args.dry_run))
     return 0
 
