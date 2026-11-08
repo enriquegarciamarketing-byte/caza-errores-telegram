@@ -1737,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794095666
+   "checked": 1794097992
   },
   {
    "id": "cm-2058280",
@@ -1772,12 +1772,12 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794095666
+   "checked": 1794097992
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 97,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -13690,10 +13690,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 3,
+ "rotation_index": 20,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/seiko-5-sports-honda-super-cub-edicion-limitada-7500-unidades-automatico-425-mm-2058957": 1794075111.603604,
-  "https://www.chollometro.com/ofertas/new-balance-zapatillas-fresh-foam-x-860v13-2058581": 1794075711.8684177,
   "https://www.chollometro.com/ofertas/nike-air-force-1-07-negras-y-blancas-de-120-a-4490-2058677": 1794076196.3275173,
   "https://www.chollometro.com/ofertas/nike-nike-air-max-pulse-de-piel-tallas-385-39-40-405-2058961": 1794079230.986315,
   "https://www.chollometro.com/ofertas/adidas-mens-zapatilla-barreda-decode-2058944": 1794079929.1340327,
