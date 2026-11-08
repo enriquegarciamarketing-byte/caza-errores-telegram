@@ -1136,9 +1136,9 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "1EbYaLE": {
-   "price": 133.03,
-   "t": 1794047621,
-   "result": "solo -5% bajo la referencia"
+   "price": 119.73,
+   "t": 1794161761,
+   "result": "solo -10% bajo la referencia"
   },
   "M5Jr0p7": {
    "price": 307.99,
@@ -1179,6 +1179,11 @@
    "price": 258.0,
    "t": 1794152885,
    "result": "valoraciones flojas (5.0 / 1)"
+  },
+  "1bZn5K6": {
+   "price": 29.99,
+   "t": 1794161761,
+   "result": "solo -27% bajo la referencia"
   }
  },
  "posts": [
@@ -1787,7 +1792,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794159439
+   "checked": 1794164012
   },
   {
    "id": "cm-2057212",
@@ -1863,7 +1868,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 101,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2927,67 +2932,6 @@
   }
  },
  "wallapop_cache": {
-  "|airpods 5 con estuche de carga inalambrica: cancelacion activa de ruido, audio espacial y hasta 22 h de autonomia|airpods 22 estuche": {
-   "t": 1793721104.123925,
-   "query": "airpods 22 estuche",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
-  "|zapatillas hombre new balance 2002r protection pack (tallas 40.5 a 46.5, azul gris, diseno desconstruido, oferta el corte ingles)|zapatillas 2002r new": {
-   "t": 1793721105.8214567,
-   "query": "zapatillas 2002r new",
-   "prices": [
-    50.0,
-    60.0,
-    55.0,
-    30.0,
-    49.0,
-    55.0,
-    55.0,
-    20.0,
-    40.0,
-    27.0,
-    49.0,
-    40.0,
-    35.0,
-    37.0,
-    58.0,
-    55.0,
-    45.0,
-    50.0,
-    23.0,
-    80.99,
-    50.0,
-    63.85,
-    55.0,
-    60.0,
-    79.99,
-    24.0,
-    50.0,
-    70.0,
-    95.0,
-    60.0,
-    70.0,
-    75.0,
-    35.0,
-    65.0,
-    65.0,
-    75.0,
-    40.0,
-    45.0,
-    100.0,
-    95.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 145613,
-   "raw_count": 40
-  },
   "|ps5 - mortal shell 2|ps5 mortal": {
    "t": 1793721685.0471337,
    "query": "ps5 mortal",
@@ -8935,6 +8879,57 @@
    "http_status": 200,
    "bytes": 114439,
    "raw_count": 31
+  },
+  "|brooks zapatilla revel max. tallas 41 a 46|brooks 41 zapatilla": {
+   "t": 1794161785.1850705,
+   "query": "brooks 41 zapatilla",
+   "prices": [
+    80.0,
+    86.99,
+    25.0,
+    40.0,
+    18.0,
+    22.5,
+    65.0,
+    50.0,
+    90.0,
+    95.0,
+    82.0,
+    90.0,
+    29.0,
+    90.0,
+    14.0,
+    50.0,
+    90.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 134895,
+   "raw_count": 38
+  },
+  "|hoka bondi 7 hombre zapatillas- tallas- 42, 42 2/3, 45 1/3- recogida en tienda|hoka 42 bondi": {
+   "t": 1794162983.6978068,
+   "query": "hoka 42 bondi",
+   "prices": [
+    59.99,
+    75.0,
+    30.0,
+    130.0,
+    80.0,
+    66.0,
+    90.0,
+    55.0,
+    80.0,
+    50.0,
+    65.0,
+    129.99
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 105968,
+   "raw_count": 33
   }
  },
  "milanuncios_cache": {
@@ -14356,16 +14351,81 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~62 € (58 anuncios): ROI -25 % y -19 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|brooks zapatilla revel max. tallas 41 a 46|brooks 41 zapatilla": {
+   "t": 1794161784.8965175,
+   "prices": [
+    28.0,
+    80.0,
+    59.0,
+    70.0,
+    38.0,
+    19.0,
+    12.0,
+    75.0,
+    90.0,
+    30.0,
+    27.0,
+    99.0,
+    35.0,
+    40.0,
+    45.0,
+    50.0,
+    34.99,
+    70.0,
+    50.0,
+    11.0,
+    90.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~44 € (18 anuncios): ROI -34 % y -20 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|hoka bondi 7 hombre zapatillas- tallas- 42, 42 2/3, 45 1/3- recogida en tienda|hoka 42 bondi": {
+   "t": 1794162983.1961532,
+   "prices": [
+    120.0,
+    52.0,
+    140.0,
+    75.0,
+    125.0,
+    119.99,
+    43.0,
+    35.0,
+    68.0,
+    50.0,
+    190.0,
+    140.0,
+    69.0,
+    50.0,
+    79.0,
+    70.0,
+    50.0,
+    72.0,
+    40.0,
+    50.0,
+    139.0,
+    90.0,
+    55.0,
+    78.0,
+    50.0,
+    99.0,
+    50.0,
+    70.0,
+    18.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~60 € (27 anuncios): ROI -31 % y -25 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 4,
+ "rotation_index": 0,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/nike-performance-pegasus-41-goretex-zapatillas-running-asfalto-tallas-365-39-40-2059258": 1794138603.5056186,
-  "https://www.chollometro.com/ofertas/nba-2k27-playstation-5-2058980": 1794138603.5056186,
-  "https://www.chollometro.com/ofertas/nike-sportswear-zapatillas-deportivas-nike-modelo-p-6000-color-blanco-y-metalizado-2059335": 1794139202.3191035,
   "https://www.chollometro.com/ofertas/lego-ideas-cohete-lunar-de-tintin-21367-2059413": 1794144559.5112484,
   "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-cupon-ventajas-5eur-cuentas-seleccionadas-2059495": 1794144559.5112484,
   "https://www.chollometro.com/ofertas/nike-zapatillas-deportivas-zoomx-vaporfly-next-4-running-tallas-38-385-40-2059472": 1794145158.3605704,
@@ -14378,7 +14438,9 @@
   "https://www.chollometro.com/ofertas/set-de-construccion-lego-harry-potter-aventura-en-el-autobus-noctambulo-76446-recogida-en-tienda-gratuita-2058019": 1794156535.1623008,
   "https://www.chollometro.com/ofertas/set-de-construccion-lego-technic-hipercoche-bugatti-chiron-pur-sport-42222-recogida-en-tienda-gratutia-2058058": 1794156535.1623008,
   "https://www.chollometro.com/ofertas/fosmet-gafas-inteligentes-ia-con-camara-165-traduccion-smart-glasses-de-solo-45g-asistente-gptreconocimiento-de-objetosproteccion-uv-2059720": 1794157803.6000001,
-  "https://www.chollometro.com/ofertas/zapatillas-saucony-triumph-23-2059341": 1794158403.6383135
+  "https://www.chollometro.com/ofertas/zapatillas-saucony-triumph-23-2059341": 1794158403.6383135,
+  "https://www.chollometro.com/ofertas/brooks-zapatilla-revel-max-tallas-41-a-46-2059440": 1794161781.1065054,
+  "https://www.chollometro.com/ofertas/hoka-bondi-7-hombre-zapatillas-tallas-42-42-23-45-13-recogida-en-tienda-2059820": 1794162977.018129
  },
  "asked": {
   "cm-2057212": 1794127930,
@@ -14387,6 +14449,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 16
+  "passes": 32
  }
 }
