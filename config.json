@@ -1296,7 +1296,7 @@
       "min_discount": 30,
       "min_discount_at_low": 15,
       "max_price_eur": null,
-      "asins": ["B0GR9QCYJG"]
+      "asins": []
     }
   ],
   "alerts_detail_every_passes": 4
