@@ -1031,8 +1031,8 @@
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "Rr8Qx0m": {
-   "price": 186.84,
-   "t": 1794071223,
+   "price": 186.98,
+   "t": 1794137417,
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "1LZOdBK": {
@@ -1737,7 +1737,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794135397
+   "checked": 1794138317
   },
   {
    "id": "cm-2058280",
@@ -1772,7 +1772,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794135397
+   "checked": 1794138317
   },
   {
    "id": "cm-2057212",
@@ -1884,7 +1884,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2948,99 +2948,6 @@
   }
  },
  "wallapop_cache": {
-  "|zapatillas running new balance fresh foam 520 v9 para hombre – tallas 40.5 a 46.5|zapatillas v9 running": {
-   "t": 1793697311.899307,
-   "query": "zapatillas v9 running",
-   "prices": [
-    50.0,
-    60.0,
-    80.0,
-    50.0,
-    75.0,
-    90.0,
-    90.0,
-    30.0,
-    87.0,
-    70.0,
-    90.0,
-    50.0,
-    120.0,
-    70.0,
-    75.0,
-    95.0,
-    100.0,
-    80.0,
-    100.0,
-    60.0,
-    75.0,
-    99.0,
-    75.0,
-    100.0,
-    40.0,
-    40.0,
-    99.0,
-    40.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 136659,
-   "raw_count": 38
-  },
-  "|nike air force 1 de piel- gore-tex- tallas- 40, 40.5, 42|nike 40 air": {
-   "t": 1793700167.3740225,
-   "query": "nike 40 air",
-   "prices": [
-    48.0,
-    20.0,
-    35.0,
-    10.0,
-    2.5,
-    20.0,
-    35.0,
-    35.0,
-    40.0,
-    35.0,
-    2.0,
-    45.0,
-    35.0,
-    8.0,
-    50.0,
-    49.0,
-    64.95,
-    45.0,
-    10.0,
-    60.0,
-    50.0,
-    89.0,
-    60.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 128947,
-   "raw_count": 40
-  },
-  "|juego lies of p para playstation 5 | ps5 - playstation 5 - ps5 - pal eu - nuevo original precintado|juego ps5 lies": {
-   "t": 1793700168.37575,
-   "query": "juego ps5 lies",
-   "prices": [
-    30.0,
-    29.9,
-    20.0,
-    25.0,
-    48.9,
-    30.0,
-    30.0,
-    30.0,
-    34.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 91626,
-   "raw_count": 36
-  },
   "|zapatillas nike streakfly 2 (para miembros plus)|zapatillas nike": {
    "t": 1793702470.7888474,
    "query": "zapatillas nike",
@@ -8852,6 +8759,104 @@
    "http_status": 200,
    "bytes": 109841,
    "raw_count": 29
+  },
+  "|lego jurassic world ataque del dinosaurio marino mosasaurus|lego jurassic": {
+   "t": 1794136086.3053632,
+   "query": "lego jurassic",
+   "prices": [
+    50.0,
+    12.0,
+    80.0,
+    1.0,
+    4.0,
+    6.0,
+    1.0,
+    1.0,
+    5.0,
+    12.0,
+    5.0,
+    14.0,
+    19.9,
+    77.0,
+    12.0,
+    10.0,
+    20.0,
+    5.0,
+    25.0,
+    12.0,
+    10.0,
+    5.0,
+    12.0,
+    11.0,
+    8.0,
+    10.0,
+    80.0,
+    55.0,
+    5.0,
+    3.93,
+    14.0,
+    9.99,
+    69.0,
+    10.0,
+    9.0,
+    7.0,
+    15.0,
+    15.0,
+    10.0,
+    5.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 94317,
+   "raw_count": 40
+  },
+  "|set de construccion lego star wars grogu (aprendiz de mandaloriano)|construccion lego": {
+   "t": 1794136087.295885,
+   "query": "construccion lego",
+   "prices": [
+    15.0,
+    20.0,
+    30.0,
+    45.0,
+    15.0,
+    15.0,
+    29.99,
+    32.0,
+    18.5,
+    10.0,
+    20.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 102731,
+   "raw_count": 40
+  },
+  "|merrell zapatillas de running promorph- tallas- 40, 42, 43.5|merrell 40 zapatillas": {
+   "t": 1794137288.5260336,
+   "query": "merrell 40 zapatillas",
+   "prices": [
+    40.0,
+    4.0,
+    30.0,
+    49.0,
+    79.7,
+    10.0,
+    75.0,
+    70.0,
+    100.0,
+    60.0,
+    85.0,
+    60.0,
+    63.0,
+    60.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 129523,
+   "raw_count": 38
   }
  },
  "milanuncios_cache": {
@@ -13929,14 +13934,44 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~70 € (8 anuncios): ROI -2 % y -1 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|merrell zapatillas de running promorph- tallas- 40, 42, 43.5|merrell 40 zapatillas": {
+   "t": 1794137288.251261,
+   "prices": [
+    70.0,
+    34.0,
+    68.0,
+    20.0,
+    44.0,
+    18.0,
+    20.0,
+    69.99,
+    25.0,
+    59.0,
+    60.0,
+    50.0,
+    30.0,
+    27.0,
+    90.0,
+    50.0,
+    26.0,
+    74.0,
+    65.0,
+    45.0,
+    60.0,
+    24.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~46 € (19 anuncios): ROI -24 % y -13 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 19,
+ "rotation_index": 15,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-technic-ford-gt-2022-42154-2058650": 1794115369.7000914,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-ride-tr2-gore-tex-tallas-355-385-41-2058812": 1794117108.0128486,
   "https://www.chollometro.com/ofertas/saucony-zapatillas-de-running-hurricane-25-running-tallas-41-42-43-2058799": 1794117707.810974,
   "https://www.chollometro.com/ofertas/adidas-hombre-runfalcon-5-zapatillas-de-correr-2058847": 1794119564.196988,
@@ -13950,7 +13985,10 @@
   "https://www.chollometro.com/ofertas/nike-performance-metcon-10-zapatillas-de-entrenamiento-tallas-355-36-365-40-445-2059264": 1794133165.3319764,
   "https://www.chollometro.com/ofertas/dreame-l40-ultra-a-blanco-robot-aspirador-friegasuelos-24000-pa-con-base-multifuncion-2059361": 1794133165.3319764,
   "https://www.chollometro.com/ofertas/lego-pokemon-rayquaza-72168-pokemon-legendario-articulado-con-tristana-base-y-1083-piezas-2057255": 1794133165.3319764,
-  "https://www.chollometro.com/ofertas/set-de-construccion-lego-harry-potter-castillo-de-hogwarts-ala-este-2057183": 1794133165.3319764
+  "https://www.chollometro.com/ofertas/set-de-construccion-lego-harry-potter-castillo-de-hogwarts-ala-este-2057183": 1794133165.3319764,
+  "https://www.chollometro.com/ofertas/lego-jurassic-world-ataque-del-dinosaurio-marino-mosasaurus-2058975": 1794136081.038547,
+  "https://www.chollometro.com/ofertas/set-de-construccion-lego-star-wars-grogu-aprendiz-de-mandaloriano-2059346": 1794136081.038547,
+  "https://www.chollometro.com/ofertas/merrell-zapatillas-de-running-promorph-tallas-40-42-435-2059407": 1794137282.7722454
  },
  "asked": {
   "cm-2057212": 1794127930,
