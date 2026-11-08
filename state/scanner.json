@@ -1747,7 +1747,7 @@
    "message_id": 75,
    "url": "https://www.footlocker.es/es/product/~/314109934704.html",
    "alert_id": 453,
-   "checked": 1794146794
+   "checked": 1794149709
   },
   {
    "id": "cm-2058280",
@@ -1782,7 +1782,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794146794
+   "checked": 1794149709
   },
   {
    "id": "cm-2057212",
@@ -1858,7 +1858,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2922,22 +2922,6 @@
   }
  },
  "wallapop_cache": {
-  "|auriculares apple airpods 5 con carga inalambrica y anc (traduccion tiempo real, audio adaptativo, chip h2, usb-c, blanco, mediamarkt)|auriculares h2 apple": {
-   "t": 1793709991.3243933,
-   "query": "auriculares h2",
-   "prices": [
-    20.0,
-    15.0,
-    90.0,
-    18.0,
-    28.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 134774,
-   "raw_count": 40
-  },
   "|zapatillas new balance flite-r (tallas 41.5 a 45)|zapatillas 41 new": {
    "t": 1793714062.9752443,
    "query": "zapatillas 41 new",
@@ -8847,6 +8831,54 @@
    "http_status": 200,
    "bytes": 132333,
    "raw_count": 40
+  },
+  "|rayman legends retold nintendo switch 2 - pal espana - preventa|rayman legends": {
+   "t": 1794147480.5276763,
+   "query": "rayman legends",
+   "prices": [
+    15.0,
+    15.0,
+    10.0,
+    8.0,
+    14.99,
+    30.0,
+    16.0,
+    5.0,
+    10.0,
+    14.0,
+    15.0,
+    10.0,
+    12.0,
+    25.0,
+    10.0,
+    22.0,
+    7.0,
+    9.0,
+    12.99,
+    14.0,
+    10.0,
+    18.0,
+    8.0,
+    8.0,
+    9.99,
+    13.0,
+    15.0,
+    8.0,
+    12.99,
+    8.0,
+    15.0,
+    15.0,
+    15.0,
+    9.0,
+    19.9,
+    8.5,
+    9.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 89243,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -14111,9 +14143,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 3,
+ "rotation_index": 20,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/columbia-sportswear-peakfreak-11-mujer-zapatillas-2059178": 1794124874.04955,
   "https://www.chollometro.com/ofertas/lego-harry-potter-castillo-y-terrenos-de-hogwarts-18-anos-76419-2057212": 1794127914.307796,
   "https://www.chollometro.com/ofertas/salomon-grivola-mid-gore-tex-zapatillas-de-senderismo-2059263": 1794128514.4744167,
   "https://www.chollometro.com/ofertas/adidas-hombre-galaxy-7-zapatillas-de-correr-2058904": 1794128514.4744167,
@@ -14130,7 +14161,8 @@
   "https://www.chollometro.com/ofertas/nike-sportswear-zapatillas-deportivas-nike-modelo-p-6000-color-blanco-y-metalizado-2059335": 1794139202.3191035,
   "https://www.chollometro.com/ofertas/lego-ideas-cohete-lunar-de-tintin-21367-2059413": 1794144559.5112484,
   "https://www.chollometro.com/ofertas/dragon-ball-z-sparking-zero-ps5-desde-espana-cupon-ventajas-5eur-cuentas-seleccionadas-2059495": 1794144559.5112484,
-  "https://www.chollometro.com/ofertas/nike-zapatillas-deportivas-zoomx-vaporfly-next-4-running-tallas-38-385-40-2059472": 1794145158.3605704
+  "https://www.chollometro.com/ofertas/nike-zapatillas-deportivas-zoomx-vaporfly-next-4-running-tallas-38-385-40-2059472": 1794145158.3605704,
+  "https://www.chollometro.com/ofertas/rayman-legends-retold-nintendo-switch-2-pal-espana-preventa-2059371": 1794147476.3299742
  },
  "asked": {
   "cm-2057212": 1794127930,
