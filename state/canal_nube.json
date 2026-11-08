@@ -4405,6 +4405,20 @@
    "photo_message_id": null,
    "origen": "premium",
    "checked": 1794166769
+  },
+  {
+   "asin": "B0H2FSPMFH",
+   "jl_id": "",
+   "price": 74.0,
+   "reference": 124.0,
+   "t": 1794169100,
+   "url": "https://www.amazon.es/dp/B0H2FSPMFH?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 406,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Cafetera Nescafé Dolce Gusto NEO Latte De&#x27;Longhi Blanca con 3 Packs de Café</b>\n\n💶 PRECIO: <b>74€</b>\n❌ (Antes: <s>124€</s>)\n🔥 ¡Te ahorras <b>50€</b>! (40 % dto.)\n⚡ Oferta flash\nℹ️ Incluye 3 packs de café NEO (Espresso, Café au Lait y Cappuccino)\n\n🕒 Precio a las 21:14 · puede cambiar\n\n🛒 <a href=\"https://link.amazon/B06EaGSaT\">https://link.amazon/B06EaGSaT</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Cafetera Nescafé Dolce Gusto NEO Latte De'Longhi Blanca con 3 Packs de Café",
+   "manual": true
   }
  ],
  "seen": {
@@ -12008,7 +12022,8 @@
   1794137624,
   1794142477,
   1794153336,
-  1794162866
+  1794162866,
+  1794169106
  ],
  "x_recent": [
   "regla",
@@ -12016,6 +12031,7 @@
   "pregunta",
   "guarda",
   "alguien",
-  "bot-aviso"
+  "bot-aviso",
+  "chivatazo"
  ]
 }
