@@ -34,6 +34,7 @@ from zoneinfo import ZoneInfo
 
 import cascada
 import scanner
+from amazon_api import ApiError, CreatorsAPI
 
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
@@ -42,6 +43,7 @@ PREMIUM_STATE = ROOT / "state" / "scanner.json"
 OUTPUT = ROOT / "output" / "canal_nube"
 MADRID = ZoneInfo("Europe/Madrid")
 JL = "https://jimmyleaks.com"
+API = None  # Creators API de Amazon: se activa en main() si están los secretos
 USER_AGENT = "CazaChollosBot/2.0 (+https://t.me/cazachollos_com)"
 ASIN_RE = re.compile(r"^[A-Z0-9]{10}$")
 BACKLOG = 0  # chollos aprobados en la última pasada que no cupieron: la siguiente se adelanta
@@ -995,6 +997,38 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
             log(f"  No he podido marcar el post {post['message_id']}: {exc}")
 
 
+def api_price_check(deal: dict, log=print) -> str:
+    """Contrasta el chollo con la API oficial de Amazon justo antes de publicarlo.
+
+    Devuelve el motivo de descarte, o "" si puede salir. Si Amazon da un precio más bajo, el chollo
+    se publica con ese precio. Si la API no responde (cuenta aún en revisión, sin las 10 ventas…)
+    se sigue con el precio de jimmyleaks y no se vuelve a llamar en esta ejecución."""
+    global API
+    if API is None:
+        return ""
+    try:
+        live = API.get_item(deal["asin"])
+    except ApiError as exc:
+        log(f"  API de Amazon sin acceso todavía ({exc}). Sigo con jimmyleaks en esta ejecución.")
+        API = None
+        return ""
+    if live is None or live.get("price") is None:
+        log(f"  API de Amazon: sin precio para {deal['asin']} ({live}). Uso el de jimmyleaks.")
+        return ""
+    if any(word in live.get("availability", "") for word in ("OUT_OF_STOCK", "UNAVAILABLE")):
+        return "Amazon lo da sin stock"
+    price = float(live["price"])
+    if price > deal["price"] + 0.009:
+        return f"Amazon lo tiene a {euro(price)}, no a {euro(deal['price'])}"
+    if price < deal["price"] - 0.009:
+        log(f"  API de Amazon: {deal['asin']} está aún más barato ({euro(deal['price'])} → {euro(price)})")
+        deal["price"] = price
+        deal["discount"] = discount_pct(price, deal.get("reference"))
+    deal["api_price"] = True
+    log(f"  API de Amazon: {deal['asin']} confirmado a {euro(price)}")
+    return ""
+
+
 def listing_priority(item: dict, rules: dict | None = None) -> tuple:
     """Qué fichas abrir antes: las grandes bajadas (por tramos de 10 %), luego lo que más interesa y los mínimos históricos."""
     verdict = fold(item.get("verdict") or "")
@@ -1070,6 +1104,10 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             continue
         if again.get("price") is None or abs(float(again["price"]) - deal["price"]) > 0.009 or not again.get("in_stock"):
             log(f"  ✗ {deal['asin']} el precio ha cambiado ({deal['price']} → {again.get('price')})")
+            continue
+        why = api_price_check(deal, log)
+        if why:
+            log(f"  ✗ {deal['asin']} {why}")
             continue
         url = f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['tag']}"
         caption = build_caption(deal, url, rules)
@@ -1653,6 +1691,9 @@ def main() -> int:
         # GitHub retrasa mucho las tareas frecuentes: cada ejecución hace pasadas seguidas durante un rato.
         # Si quedan chollos aprobados sin publicar, la siguiente pasada se adelanta (--busy-every).
         rules = rules_from(cfg)
+        global API
+        API = CreatorsAPI.from_env(rules.get("tag") or "")
+        print("Precios: " + ("comprobados con la API de Amazon antes de publicar" if API else "jimmyleaks (sin secretos de la API de Amazon)"))
         code = 0
         deadline = time.time() + args.minutes * 60 if args.minutes else None
         index = 0

@@ -55,6 +55,8 @@ jobs:
       - name: Buscar y publicar en el canal normal
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET }}
         run: |
           ARGS=()
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi

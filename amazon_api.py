@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Cliente mínimo de la Creators API de Amazon Afiliados (API oficial).
 
-Se activa solo cuando existen los secretos AMAZON_CREATORS_CLIENT_ID y
-AMAZON_CREATORS_CLIENT_SECRET (requisito de Amazon: 10 ventas válidas en 30 días).
+Se activa solo cuando existen los secretos AMAZON_CREATORS_ID y AMAZON_CREATORS_SECRET
+(o sus nombres antiguos AMAZON_CREATORS_CLIENT_ID / AMAZON_CREATORS_CLIENT_SECRET).
+Requisito de Amazon: 10 ventas válidas en 30 días. Credenciales v3.x (Login with Amazon).
 Sirve para comprobar en vivo el precio y el stock de cada talla antes de publicar.
 
 Cualquier respuesta inesperada lanza ApiError: el escáner descarta el producto
@@ -61,8 +62,9 @@ class CreatorsAPI:
 
     @classmethod
     def from_env(cls, partner_tag: str) -> "CreatorsAPI | None":
-        cid = os.environ.get("AMAZON_CREATORS_CLIENT_ID", "").strip()
-        secret = os.environ.get("AMAZON_CREATORS_CLIENT_SECRET", "").strip()
+        env = os.environ
+        cid = (env.get("AMAZON_CREATORS_ID") or env.get("AMAZON_CREATORS_CLIENT_ID") or "").strip()
+        secret = (env.get("AMAZON_CREATORS_SECRET") or env.get("AMAZON_CREATORS_CLIENT_SECRET") or "").strip()
         return cls(cid, secret, partner_tag) if cid and secret else None
 
     def _post(self, url: str, body: dict, headers: dict) -> dict:
@@ -108,6 +110,21 @@ class CreatorsAPI:
             "price": float(amount) if isinstance(amount, (int, float, str)) and str(amount) else None,
             "saving_basis": float(basis_amount) if isinstance(basis_amount, (int, float, str)) and str(basis_amount) else None,
             "in_stock": avail.upper() in {"IN_STOCK", "INSTOCK", "AVAILABLE"},
+            "availability": avail.upper(),
+        }
+
+    def get_item(self, asin: str) -> dict | None:
+        """Precio y stock en vivo de un ASIN concreto. None si Amazon no devuelve ese producto."""
+        data = self.call("getItems", {"itemIds": [asin], "itemIdType": "ASIN", "resources": PRICE_RESOURCES})
+        items = _get(data, "itemsResult", "items", default=[]) or []
+        item = next((i for i in items if str(_get(i, "asin", default="")).upper() == asin.upper()), None)
+        if item is None:
+            return None
+        return {
+            "asin": asin,
+            "title": _get(item, "itemInfo", "title", "displayValue", default=""),
+            "image": _get(item, "images", "primary", "large", "url"),
+            **self._offer(item),
         }
 
     def find_by_ean(self, ean: str) -> dict:
