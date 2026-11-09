@@ -1071,9 +1071,9 @@
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "7gKaBx7": {
-   "price": 41.7,
-   "t": 1793917052,
-   "result": "solo -27% bajo la referencia"
+   "price": 79.95,
+   "t": 1794254040,
+   "result": "sin precios de los 30 días anteriores para comparar"
   },
   "MW35m8N": {
    "price": 241.99,
@@ -1226,8 +1226,8 @@
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "1ZDBy97": {
-   "price": 26.99,
-   "t": 1794246282,
+   "price": 26.95,
+   "t": 1794253590,
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "72jQZEz": {
@@ -1993,7 +1993,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 78,
+ "last_listing_count": 76,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3411,64 +3411,6 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
-  },
-  "|mars gaming mc-lcdpro, atx, pantalla lcd ips 7.2\" ,cristal templado curvado frontal y lateral,estructura de doble camara|mars gaming": {
-   "t": 1793864562.3767464,
-   "query": "mars gaming",
-   "prices": [
-    17.0,
-    15.0,
-    100.0,
-    30.0,
-    25.0,
-    17.0,
-    5.0,
-    80.0,
-    28.14,
-    10.0,
-    10.0,
-    12.0,
-    45.0,
-    35.0,
-    20.0,
-    10.0,
-    35.0,
-    20.0,
-    15.0,
-    10.0,
-    50.0,
-    18.0,
-    8.0,
-    25.0,
-    14.0,
-    45.0,
-    40.0,
-    25.0,
-    20.0,
-    15.0,
-    60.0,
-    19.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 113171,
-   "raw_count": 40
-  },
-  "|greedfall the dying world ps5 - playstation 5 - standard edition|greedfall ps5 dying": {
-   "t": 1793870339.168468,
-   "query": "greedfall ps5 dying",
-   "prices": [
-    50.0,
-    30.0,
-    39.0,
-    65.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 15199,
-   "raw_count": 5
   },
   "|robot aspirador y fregasuelos dreame d30 ultra (25000pa, 230 min autonomia, 37db ultra silencioso, navegacion laser lidar, control app)|robot d30 aspirador": {
    "t": 1793871533.6361926,
@@ -9471,6 +9413,34 @@
    "http_status": 200,
    "bytes": 61275,
    "raw_count": 25
+  },
+  "|casio g-shock dw-5600rl-1er|casio 5600rl shock": {
+   "t": 1794253326.7962453,
+   "query": "casio 5600rl shock",
+   "prices": [
+    90.0,
+    84.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 6445,
+   "raw_count": 2
+  },
+  "|nike sportswear. zapatillas deportivas nike, modelo total 90, color marron.|nike 90 sportswear": {
+   "t": 1794254513.3295553,
+   "query": "nike 90 sportswear",
+   "prices": [
+    16.5,
+    25.0,
+    90.0,
+    49.9
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 128608,
+   "raw_count": 30
   }
  },
  "milanuncios_cache": {
@@ -16024,21 +15994,59 @@
    "demand_known": true,
    "blocked": false,
    "reason": "Vinted solo tiene 2 anuncios parecidos (mínimo 3)"
+  },
+  "|nike sportswear. zapatillas deportivas nike, modelo total 90, color marron.|nike 90 sportswear": {
+   "t": 1794254513.0678833,
+   "prices": [
+    29.99,
+    12.95,
+    55.0,
+    17.99,
+    19.2,
+    32.99,
+    19.9,
+    18.95,
+    29.99,
+    24.9,
+    24.9,
+    30.0,
+    30.0,
+    23.0,
+    54.9,
+    69.9,
+    18.0,
+    11.0,
+    25.0,
+    29.92,
+    11.9,
+    60.0,
+    14.99,
+    50.0,
+    29.9,
+    48.0,
+    23.0,
+    50.0,
+    35.0,
+    65.0,
+    24.95,
+    34.9,
+    50.0,
+    29.99,
+    25.0,
+    27.9,
+    49.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~27 € (33 anuncios): ROI -29 % y -10 €, por debajo del mínimo (30 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 6,
+ "rotation_index": 2,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-minifigura-gigante-de-papa-noel-40820-2060589": 1794231725.506521,
-  "https://www.chollometro.com/ofertas/lego-technic-ferrari-fxx-k-42212-2060754": 1794231725.506521,
-  "https://www.chollometro.com/ofertas/deporvillage-reebok-nano-x5-edge-2059630": 1794231725.506521,
-  "https://www.chollometro.com/ofertas/zapatillas-adidas-originals-handball-spezial-tallas-355-a-45-13-2060670": 1794231725.506521,
-  "https://www.chollometro.com/ofertas/lego-editions-casco-de-ayrton-senna-43024-juguetes-para-adolescentes-de-14-anos-merchandising-de-f1-maqueta-3d-y-minifigura-2060768": 1794231725.506521,
-  "https://www.chollometro.com/ofertas/nike-air-max-alpha-trainer-2060770": 1794232324.7042608,
-  "https://www.chollometro.com/ofertas/lego-star-wars-halcon-milenario-75375-2060686": 1794232324.7042608,
-  "https://www.chollometro.com/ofertas/lego-icons-10365-la-perla-negra-2862-piezas-8-minifiguras-y-el-barco-de-jack-sparrow-que-merece-un-sitio-en-tu-coleccion-2060758": 1794232324.7042608,
   "https://www.chollometro.com/ofertas/zapatillas-nike-air-jordan-1-low-se-tallas-355-a-425-2060678": 1794235254.57366,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-running-galaxy-6-tallas-36-a-40-2060761": 1794235254.57366,
   "https://www.chollometro.com/ofertas/zapatillas-nike-air-max-90-drift-tallas-355-a-495-2060779": 1794235254.57366,
@@ -16061,7 +16069,9 @@
   "https://www.chollometro.com/ofertas/zapatillas-asics-1130-tallas-36-a-49-2060707": 1794249101.944544,
   "https://www.chollometro.com/ofertas/auriculares-gaming-sony-inzone-h9-ii-baja-latencia-24ghzbluetooth-anc-sonido-360-fnatic-2061082": 1794252498.068373,
   "https://www.chollometro.com/ofertas/lego-harry-potter-aventura-en-el-autobus-noctambulo-76446-2060430": 1794252498.068373,
-  "https://www.chollometro.com/ofertas/super-mario-party-jamboree-nintendo-switch-2061105": 1794252498.068373
+  "https://www.chollometro.com/ofertas/super-mario-party-jamboree-nintendo-switch-2061105": 1794252498.068373,
+  "https://www.chollometro.com/ofertas/casio-g-shock-dw-5600rl-1er-2061223": 1794253302.4389858,
+  "https://www.chollometro.com/ofertas/nike-sportswear-zapatillas-deportivas-nike-modelo-total-90-color-marron-2059364": 1794254508.0112572
  },
  "asked": {
   "cm-2060262": 1794211053,
@@ -16070,6 +16080,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 407
+  "passes": 423
  }
 }
