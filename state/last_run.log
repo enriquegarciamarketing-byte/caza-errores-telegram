@@ -1,126 +1,106 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 96 productos únicos
+Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36625 bytes, 30 chollos
-  Chollometro «NIKE DOWNSHIFTER 14 - Zapatillas running asfalto. Tallas 38 a 50. Desc»: Zalando 38.18 €
-  Chollometro «LEGO Disney Pixar Toy Story: Sujetalibros de Slinky 43301 Set para adu»: Amazon 116.99 €
-  Chollometro «Skechers Flex Appeal 4.0 Brilliant View Zapatillas Mujer.»: Amazon 33.95 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 92738 bytes, 30 chollos
-  cm-2060434 · Zalando 38.18 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · NIKE DOWNSHIFTER 14 - Zapatillas running asfalto. Tallas 38 
-  cm-2059430 · Amazon 116.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Disney Pixar Toy Story: Sujetalibros de Slinky 43301 Se
-  cm-2060330 · Amazon 33.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Skechers Flex Appeal 4.0 Brilliant View Zapatillas Mujer.
-  Vinted «skechers flex»: HTTP 200, 3691396 bytes, 96 anuncios
-  Vinted «skechers flex»: 66 parecidos de 96
-  Wallapop «skechers flex»: 200 / 24888 bytes, 7 anuncios, 5 parecidos, 0 reservas
-  Milanuncios «skechers flex»: HTTP 200, 95999 bytes, bloqueado
-  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
-  Reventa VINTED+WALLAPOP: 63 anuncios, ~36 €, no publica
-  ⚠️ No publico «Skechers Flex Appeal 4.0 Brilliant View Zapatillas Mujer.»: reventa en VINTED+WALLAPOP ~36 € (63 anuncios): ROI -6 % y -2 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «nike 14 downshifter»: HTTP 200, 3682357 bytes, 96 anuncios
-  Vinted «nike 14 downshifter»: 80 parecidos de 96
-  Wallapop «nike 14 downshifter»: 200 / 119125 bytes, 35 anuncios, 34 parecidos, 0 reservas
-  Milanuncios «nike 14 downshifter»: HTTP 200, 95999 bytes, bloqueado
-  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
-  Reventa VINTED+WALLAPOP: 113 anuncios, ~45 €, no publica
-  ⚠️ No publico «NIKE DOWNSHIFTER 14 - Zapatillas running asfalto. Tallas 38 a 50. Descuento SOLO APLICABLE»: reventa en VINTED+WALLAPOP ~45 € (113 anuncios): ROI 7 % y 3 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «lego 43301 disney»: 200 / 3128 bytes, 1 anuncios, 1 parecidos, 0 reservas
-  Wallapop «lego 43301»: 200 / 5955 bytes, 3 anuncios, 3 parecidos, 0 reservas
-  Milanuncios «lego 43301 disney»: HTTP 200, 95999 bytes, bloqueado
-  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
-  Reventa WALLAPOP: 3 anuncios, ~124 €, no publica
-  ⚠️ No publico «LEGO Disney Pixar Toy Story: Sujetalibros de Slinky 43301 Set para adultos, sujetalibros d»: reventa en WALLAPOP ~124 € (3 anuncios): ROI -1 % y -1 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35827 bytes, 30 chollos
+  Chollometro «Nike FREE METCON 7 - Zapatillas de entrenamiento. Tallas 38 a 50. Desc»: Zalando 66.26 €
+  Chollometro «LEGO Architecture Fontana di Trevi 21062»: Amazon 124.79 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70938 bytes, 30 chollos
+  cm-2060203 · Zalando 66.26 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nike FREE METCON 7 - Zapatillas de entrenamiento. Tallas 38 
+  cm-2060493 · Amazon 124.79 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Architecture Fontana di Trevi 21062
+  Vinted «nike 38 free»: HTTP 200, 3685457 bytes, 96 anuncios
+  Vinted «nike 38 free»: 26 parecidos de 96
+  Wallapop «nike 38 free»: 200 / 128597 bytes, 39 anuncios, 14 parecidos, 0 reservas
+  Milanuncios «nike 38 free»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Reventa VINTED+WALLAPOP: 25 anuncios, ~25 €, no publica
+  ⚠️ No publico «Nike FREE METCON 7 - Zapatillas de entrenamiento. Tallas 38 a 50. Descuento SOLO APLICABLE»: reventa en VINTED+WALLAPOP ~25 € (25 anuncios): ROI -68 % y -45 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 21062 architecture»: 200 / 25884 bytes, 10 anuncios, 9 parecidos, 0 reservas
+  Milanuncios «lego 21062 architecture»: HTTP 403, 95512 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95512 bytes))
+  Reventa WALLAPOP: 9 anuncios, ~123 €, no publica
+  ⚠️ No publico «LEGO Architecture Fontana di Trevi 21062»: reventa en WALLAPOP ~123 € (9 anuncios): ROI -8 % y -10 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 36 descartes nuevos, 66 en lista
-== pasada 2 · 11:15 ==
-Listados: 100 productos únicos
+Cascada al canal normal: 32 descartes nuevos, 75 en lista
+== pasada 2 · 12:18 ==
+Listados: 92 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 11:17 ==
+Cascada al canal normal: 54 descartes nuevos, 54 en lista
+== pasada 3 · 12:20 ==
 Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 11:20 ==
+== pasada 4 · 12:23 ==
 Listados: 93 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 11:22 ==
-Listados: 98 productos únicos
+== pasada 5 · 12:25 ==
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36625 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 90562 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35827 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 60980 bytes, 30 chollos
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 11:25 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 11:27 ==
-Listados: 97 productos únicos
-  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 460473 bytes, 30 ASIN, 30 títulos
-  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
-  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 3789 bytes, bloqueado
+== pasada 6 · 12:28 ==
+Listados: 94 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 11:30 ==
-Listados: 92 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 11:32 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36225 bytes, 30 chollos
-  Chollometro «Turtle Beach Victrix Gambit Prime Mando de juegos con cable para XBOX »: Amazon 49.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 78770 bytes, 30 chollos
-  cm-2060188 · Amazon 49.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Turtle Beach Victrix Gambit Prime Mando de juegos con cable 
-  Wallapop «turtle beach»: 200 / 123290 bytes, 39 anuncios, 37 parecidos, 0 reservas
-  Milanuncios «turtle beach»: HTTP 200, 95999 bytes, bloqueado
-  Milanuncios no aporta datos: Milanuncios bloqueado (HTTP 200, 95999 bytes)
-  Reventa WALLAPOP: 25 anuncios, ~23 €, no publica
-  ⚠️ No publico «Turtle Beach Victrix Gambit Prime Mando de juegos con cable para XBOX & PC»: reventa en WALLAPOP ~23 € (25 anuncios): ROI -60 % y -30 €, por debajo del mínimo (30 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 11:35 ==
+== pasada 7 · 12:30 ==
 Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 11:37 ==
+== pasada 8 · 12:33 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 9 · 12:35 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35783 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67109 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 10 · 12:38 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 12:40 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 12:43 ==
+Listados: 103 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 13 · 12:45 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35597 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 112586 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 56 descartes nuevos, 56 en lista
+== pasada 14 · 12:48 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 15 · 12:50 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 16 · 12:53 ==
 Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 11:40 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 13 · 11:42 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36386 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 83811 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 11:45 ==
-Listados: 101 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 15 · 11:47 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 16 · 11:50 ==
-Listados: 90 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
 Fin de la ejecución tras 16 pasadas.
