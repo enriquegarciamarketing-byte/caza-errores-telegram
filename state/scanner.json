@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794203841
+   "checked": 1794207755
   },
   {
    "id": "cm-2057212",
@@ -14572,12 +14572,11 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 1,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/cecotec-aspirador-vertical-conga-thunderbrush-560-2-en-1-600-w-tecnologia-ciclonica-filtro-de-alta-eficienciacon-cupon-ventaja-barata-2060011": 1794182214.2030735,
-  "https://www.chollometro.com/ofertas/msi-pro-z790-p-wifi-placa-base-atx-12a-y-13a-gen-core-intel-z790-lga-1700-pcie-50-4-ranuras-m2-gen4-ddr5-7000-mhz-oc-2059835": 1794183414.419036,
   "https://www.chollometro.com/ofertas/sony-inzone-buds-auriculares-inalambricos-para-gaming-con-cancelacion-de-ruido-en-blanco-2060131": 1794186143.5221796,
-  "https://www.chollometro.com/ofertas/garmin-fenix-8-47-mm-amoled-slate-gray-smartwatch-gps-multibanda-mapas-linterna-led-llamadas-10-atm-y-buceo-40-m-2060064": 1794197340.1982055
+  "https://www.chollometro.com/ofertas/garmin-fenix-8-47-mm-amoled-slate-gray-smartwatch-gps-multibanda-mapas-linterna-led-llamadas-10-atm-y-buceo-40-m-2060064": 1794197340.1982055,
+  "https://www.chollometro.com/ofertas/msi-pro-z790-p-wifi-placa-base-atx-12a-y-13a-gen-core-intel-z790-lga-1700-pcie-50-4-ranuras-m2-gen4-ddr5-7000-mhz-oc-2059835": 1794205818.8668582
  },
  "asked": {
   "cm-2057212": 1794127930,
@@ -14586,6 +14585,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 224
+  "passes": 238
  }
 }
