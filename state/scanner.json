@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794199576
+   "checked": 1794203841
   },
   {
    "id": "cm-2057212",
@@ -1873,7 +1873,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 97,
+ "last_listing_count": 100,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -14572,9 +14572,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 19,
+ "rotation_index": 15,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/zapatillas-altra-experience-wild-2-2041717": 1794179345.6845284,
   "https://www.chollometro.com/ofertas/cecotec-aspirador-vertical-conga-thunderbrush-560-2-en-1-600-w-tecnologia-ciclonica-filtro-de-alta-eficienciacon-cupon-ventaja-barata-2060011": 1794182214.2030735,
   "https://www.chollometro.com/ofertas/msi-pro-z790-p-wifi-placa-base-atx-12a-y-13a-gen-core-intel-z790-lga-1700-pcie-50-4-ranuras-m2-gen4-ddr5-7000-mhz-oc-2059835": 1794183414.419036,
   "https://www.chollometro.com/ofertas/sony-inzone-buds-auriculares-inalambricos-para-gaming-con-cancelacion-de-ruido-en-blanco-2060131": 1794186143.5221796,
@@ -14587,6 +14586,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 208
+  "passes": 224
  }
 }
