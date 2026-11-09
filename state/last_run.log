@@ -1,36 +1,8 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 77 productos únicos
+Listados: 78 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35874 bytes, 30 chollos
-  Chollometro «ASICS SportStyle GEL NYC UNISEX - Zapatillas - white/glacier grey 35,5»: Zalando 93.56 €
-  Chollometro «NIKE. Zapatillas de running, modelo Nike Structure 26, color rosa. Var»: Showroomprive 55.9 €
-  Chollometro «Zapatillas Asics 1130 (tallas 36 a 49)»: Zalando 50.66 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71685 bytes, 30 chollos
-  cm-2061151 · Zalando 93.56 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · ASICS SportStyle GEL NYC UNISEX - Zapatillas - white/glacier
-  cm-2060642 · Showroomprive 55.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · NIKE. Zapatillas de running, modelo Nike Structure 26, color
-  cm-2060707 · Zalando 50.66 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Asics 1130 (tallas 36 a 49)
-  Vinted «nike 26 zapatillas»: HTTP 200, 3691379 bytes, 96 anuncios
-  Vinted «nike 26 zapatillas»: 21 parecidos de 96
-  Wallapop «nike 26 zapatillas»: 200 / 114745 bytes, 40 anuncios, 35 parecidos, 0 reservas
-  Milanuncios «nike 26 zapatillas»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa VINTED+WALLAPOP: 30 anuncios, ~10 €, no publica
-  ⚠️ No publico «NIKE. Zapatillas de running, modelo Nike Structure 26, color rosa. Varias tallas.»: reventa en VINTED+WALLAPOP ~10 € (30 anuncios): ROI -87 % y -48 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «zapatillas 1130 asics»: HTTP 200, 3693738 bytes, 96 anuncios
-  Vinted «zapatillas 1130 asics»: 86 parecidos de 96
-  Wallapop «zapatillas 1130 asics»: 200 / 134131 bytes, 40 anuncios, 39 parecidos, 0 reservas
-  Milanuncios «zapatillas 1130 asics»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa VINTED+WALLAPOP: 114 anuncios, ~59 €, no publica
-  ⚠️ No publico «Zapatillas Asics 1130 (tallas 36 a 49)»: reventa en VINTED+WALLAPOP ~59 € (114 anuncios): ROI 7 % y 3 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «asics 35 sportstyle»: HTTP 200, 2869921 bytes, 6 anuncios
-  Vinted «asics 35 sportstyle»: 2 parecidos de 6
-  Wallapop «asics 35 sportstyle»: 200 / 1262 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «asics 35»: 200 / 117457 bytes, 39 anuncios, 15 parecidos, 0 reservas
-  Milanuncios «asics 35 sportstyle»: HTTP 403, 95511 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
-  Reventa VINTED+WALLAPOP: 15 anuncios, ~17 €, no publica
-  ⚠️ No publico «ASICS SportStyle GEL NYC UNISEX - Zapatillas - white/glacier grey 35,5 a 49»: reventa en VINTED+WALLAPOP ~17 € (15 anuncios): ROI -85 % y -80 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36032 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68803 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 27 descartes nuevos, 81 en lista
+Cascada al canal normal: 33 descartes nuevos, 100 en lista
