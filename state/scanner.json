@@ -1216,8 +1216,8 @@
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "R3kjLnR": {
-   "price": 36.74,
-   "t": 1794245667,
+   "price": 38.78,
+   "t": 1794267767,
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "R4xPreX": {
@@ -2013,7 +2013,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 78,
+ "last_listing_count": 68,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16180,9 +16180,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 12,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/ugg-zapatilla-ugg-modelo-tasman-biarritz-color-mustard-varias-tallas-2059901": 1794244716.2144368,
   "https://www.chollometro.com/ofertas/lego-technic-furgoneta-ford-bronco-2060941": 1794247565.5467296,
   "https://www.chollometro.com/ofertas/marvel-cosmic-invasion-nintendo-switch-2061102": 1794248159.0391421,
   "https://www.chollometro.com/ofertas/asics-sportstyle-gel-nyc-unisex-zapatillas-whiteglacier-grey-355-a-49-2061151": 1794249101.944544,
@@ -16212,6 +16211,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 472
+  "passes": 488
  }
 }
