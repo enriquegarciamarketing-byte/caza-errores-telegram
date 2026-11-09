@@ -1214,6 +1214,11 @@
    "price": 67.0,
    "t": 1794245149,
    "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "R3kjLnR": {
+   "price": 36.74,
+   "t": 1794245667,
+   "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
  "posts": [
@@ -1986,7 +1991,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 76,
+ "last_listing_count": 74,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -15851,7 +15856,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/jbl-quantum-360p-inalambricos-para-ps5-ps4-y-pc-por-2999-eur-con-bluetooth-y-microfono-desmontable-2060635": 1794226781.9777129,
   "https://www.chollometro.com/ofertas/lego-harry-potter-castillo-de-hogwarts-ala-este-76473-2060609": 1794226781.9777129,
@@ -15890,6 +15895,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 381
+  "passes": 382
  }
 }
