@@ -871,9 +871,9 @@
    "result": "solo -13% bajo la referencia"
   },
   "MKODNQM": {
-   "price": 53.12,
-   "t": 1793574520,
-   "result": "solo -15% bajo la referencia"
+   "price": 143.0,
+   "t": 1794246946,
+   "result": "sin precios de los 30 días anteriores para comparar"
   },
   "1qGDjQw": {
    "price": 54.99,
@@ -1066,9 +1066,9 @@
    "result": "solo -10% bajo la referencia"
   },
   "1ZbY0E1": {
-   "price": 34.6,
-   "t": 1793906521,
-   "result": "solo -15% bajo la referencia"
+   "price": 39.95,
+   "t": 1794247546,
+   "result": "sin precios de los 30 días anteriores para comparar"
   },
   "7gKaBx7": {
    "price": 41.7,
@@ -1228,6 +1228,11 @@
   "1ZDBy97": {
    "price": 26.99,
    "t": 1794246282,
+   "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "72jQZEz": {
+   "price": 38.99,
+   "t": 1794248596,
    "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
@@ -1983,9 +1988,9 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 79,
+ "last_listing_count": 78,
  "health_alerts": {
-  "no_listings": 1793887946.189363
+  "no_listings": 1794246356.8198528
  },
  "discovery_cache": {
   "t": 1794242919.1275446,
@@ -3401,54 +3406,6 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
-  },
-  "|grand theft auto vi ps5, edicion estandar|grand ps5 theft": {
-   "t": 1793820557.1761808,
-   "query": "grand ps5 theft",
-   "prices": [
-    77.0,
-    13.0,
-    15.0,
-    15.0,
-    17.0,
-    10.0,
-    15.0,
-    5.0,
-    15.0,
-    8.0,
-    11.95,
-    20.0,
-    30.0,
-    14.0,
-    15.0,
-    18.0,
-    14.99,
-    13.0,
-    10.0,
-    18.0,
-    15.0,
-    24.95,
-    15.0,
-    15.0,
-    10.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 86189,
-   "raw_count": 40
-  },
-  "|lost ember: wolf pack edition - playstation 5|lost ember": {
-   "t": 1793822548.421266,
-   "query": "lost ember",
-   "prices": [
-    33.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 9344,
-   "raw_count": 3
   },
   "|mizuno zapatillas deportivas de running de mujer neo zen 2|mizuno zapatillas": {
    "t": 1793824263.9329371,
@@ -9426,6 +9383,93 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
+  },
+  "|lego technic furgoneta ford bronco|lego technic": {
+   "t": 1794247568.1523182,
+   "query": "lego technic",
+   "prices": [
+    40.0,
+    25.0,
+    20.0,
+    35.0,
+    35.0,
+    50.0,
+    230.0,
+    31.99,
+    8.0,
+    445.0,
+    70.0,
+    15.0,
+    41.0,
+    40.0,
+    30.0,
+    200.0,
+    120.0,
+    38.0,
+    295.0,
+    50.0,
+    109.0,
+    65.0,
+    10.0,
+    15.0,
+    10.0,
+    18.0,
+    10.0,
+    100.0,
+    599.0,
+    30.0,
+    179.0,
+    50.0,
+    100.0,
+    87.0,
+    350.0,
+    110.0,
+    115.0,
+    23.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 104313,
+   "raw_count": 40
+  },
+  "|marvel cosmic invasion – nintendo switch|marvel cosmic": {
+   "t": 1794248161.8178678,
+   "query": "marvel cosmic",
+   "prices": [
+    30.0,
+    50.0,
+    29.5,
+    28.0,
+    32.0,
+    50.0,
+    40.0,
+    35.0,
+    39.95,
+    8.0,
+    30.0,
+    89.0,
+    33.99,
+    24.7,
+    29.95,
+    24.0,
+    59.99,
+    35.99,
+    30.0,
+    64.9,
+    10.0,
+    29.95,
+    34.95,
+    42.0,
+    40.0,
+    54.9,
+    70.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 68163,
+   "raw_count": 28
   }
  },
  "milanuncios_cache": {
@@ -15848,7 +15892,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 1,
+ "rotation_index": 18,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/jbl-quantum-360p-inalambricos-para-ps5-ps4-y-pc-por-2999-eur-con-bluetooth-y-microfono-desmontable-2060635": 1794226781.9777129,
   "https://www.chollometro.com/ofertas/lego-harry-potter-castillo-de-hogwarts-ala-este-76473-2060609": 1794226781.9777129,
@@ -15878,7 +15922,9 @@
   "https://www.chollometro.com/ofertas/spiderman-miles-morales-ps5-2060510": 1794242919.1278517,
   "https://www.chollometro.com/ofertas/lego-42231-technic-coche-dodge-charger-rt-de-fast-and-furious-kit-de-maquetas-2060110": 1794243513.8489733,
   "https://www.chollometro.com/ofertas/zapatillas-asics-novablast-6-tallas-40-a-505-2060739": 1794243513.8489733,
-  "https://www.chollometro.com/ofertas/ugg-zapatilla-ugg-modelo-tasman-biarritz-color-mustard-varias-tallas-2059901": 1794244716.2144368
+  "https://www.chollometro.com/ofertas/ugg-zapatilla-ugg-modelo-tasman-biarritz-color-mustard-varias-tallas-2059901": 1794244716.2144368,
+  "https://www.chollometro.com/ofertas/lego-technic-furgoneta-ford-bronco-2060941": 1794247565.5467296,
+  "https://www.chollometro.com/ofertas/marvel-cosmic-invasion-nintendo-switch-2061102": 1794248159.0391421
  },
  "asked": {
   "cm-2060262": 1794211053,
@@ -15887,6 +15933,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 385
+  "passes": 401
  }
 }
