@@ -1,152 +1,138 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35285 bytes, 30 chollos
+  Chollometro «Zapatillas Nike AIR JORDAN 1 LOW SE (Tallas 35.5 a 42.5)»: Zalando 56.12 €
+  Chollometro «ADIDAS Zapatillas Running Galaxy 6 TALLAS 36 A 40»: Veepee 29.9 €
+  Chollometro «Zapatillas Nike Air Max 90 Drift (Tallas 35.5 a 49.5)»: Zalando 76.4 €
+  Chollometro «LEGO Harry Potter Castillo y Terrenos de Hogwarts 76419 – 2660 piezas,»: Amazon 95.19 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72102 bytes, 30 chollos
+  cm-2060678 · Zalando 56.12 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Nike AIR JORDAN 1 LOW SE (Tallas 35.5 a 42.5)
+  cm-2060761 · Veepee 29.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · ADIDAS Zapatillas Running Galaxy 6 TALLAS 36 A 40
+  cm-2060779 · Zalando 76.4 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Nike Air Max 90 Drift (Tallas 35.5 a 49.5)
+  cm-2060782 · Amazon 95.19 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Harry Potter Castillo y Terrenos de Hogwarts 76419 – 26
+  Vinted «zapatillas 35 nike»: HTTP 200, 3686990 bytes, 96 anuncios
+  Vinted «zapatillas 35 nike»: 28 parecidos de 96
+  Wallapop «zapatillas 35 nike»: 200 / 116798 bytes, 40 anuncios, 27 parecidos, 0 reservas
+  Milanuncios «zapatillas 35 nike»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 41 anuncios, ~15 €, no publica
+  ⚠️ No publico «Zapatillas Nike AIR JORDAN 1 LOW SE (Tallas 35.5 a 42.5)»: reventa en VINTED+WALLAPOP ~15 € (41 anuncios): ROI -78 % y -44 €, por debajo del mínimo (30 % y 25 €)
+  Vinted «adidas 36 zapatillas»: HTTP 200, 3688786 bytes, 96 anuncios
+  Vinted «adidas 36 zapatillas»: 23 parecidos de 96
+  Wallapop «adidas 36 zapatillas»: 200 / 133428 bytes, 40 anuncios, 30 parecidos, 0 reservas
+  Milanuncios «adidas 36 zapatillas»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 33 anuncios, ~30 €, no publica
+  ⚠️ No publico «ADIDAS Zapatillas Running Galaxy 6 TALLAS 36 A 40»: reventa en VINTED+WALLAPOP ~30 € (33 anuncios): ROI -11 % y -3 €, por debajo del mínimo (30 % y 25 €)
+  Vinted «zapatillas 90 nike»: HTTP 200, 3694366 bytes, 96 anuncios
+  Vinted «zapatillas 90 nike»: 66 parecidos de 96
+  Wallapop «zapatillas 90 nike»: 200 / 129657 bytes, 40 anuncios, 38 parecidos, 0 reservas
+  Milanuncios «zapatillas 90 nike»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa VINTED+WALLAPOP: 95 anuncios, ~43 €, no publica
+  ⚠️ No publico «Zapatillas Nike Air Max 90 Drift (Tallas 35.5 a 49.5)»: reventa en VINTED+WALLAPOP ~43 € (95 anuncios): ROI -49 % y -38 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 76419 harry»: 200 / 82975 bytes, 32 anuncios, 26 parecidos, 0 reservas
+  Milanuncios «lego 76419 harry»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 26 anuncios, ~140 €, publica
+  Te lo paso por privado para que des el OK (mensaje 542): OPORTUNIDAD DE REVENTA · LEGO Harry Potter Castillo y Terrenos de Hogwarts 76419 – 2660 piezas, maqueta de colecció
+Publicados en esta ejecución: 1
+Cascada al canal normal: 38 descartes nuevos, 78 en lista
+== pasada 2 · 15:43 ==
 Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36515 bytes, 30 chollos
-  Chollometro «LEGO Minifigura Gigante de Papá Noel 40820»: Amazon 41.99 €
-  Chollometro «LEGO Technic Ferrari FXX K 42212»: Amazon 38.49 €
-  Chollometro «Deporvillage Zapatillas CrossFit, Hiit, functional training Reebok nan»: Deporvillage 76.95 €
-  Chollometro «Zapatillas adidas Originals HANDBALL SPEZIAL (Tallas 35.5 a 45 1/3)»: Zalando 47.54 €
-  Chollometro «LEGO Editions Casco de Ayrton Senna 43024 Juguetes para adolescentes d»: Amazon 59.49 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77001 bytes, 30 chollos
-  cm-2060589 · Amazon 41.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Minifigura Gigante de Papá Noel 40820
-  cm-2060754 · Amazon 38.49 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Technic Ferrari FXX K 42212
-  cm-2059630 · Deporvillage 76.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Deporvillage Zapatillas CrossFit, Hiit, functional training 
-  cm-2060670 · Zalando 47.54 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas adidas Originals HANDBALL SPEZIAL (Tallas 35.5 a 
-  cm-2060768 · Amazon 59.49 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Editions Casco de Ayrton Senna 43024 Juguetes para adol
-  Vinted «zapatillas 35 adidas»: HTTP 200, 3690414 bytes, 96 anuncios
-  Vinted «zapatillas 35 adidas»: 30 parecidos de 96
-  Wallapop «zapatillas 35 adidas»: 200 / 123741 bytes, 40 anuncios, 21 parecidos, 0 reservas
-  Milanuncios «zapatillas 35 adidas»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 39 anuncios, ~14 €, no publica
-  ⚠️ No publico «Zapatillas adidas Originals HANDBALL SPEZIAL (Tallas 35.5 a 45 1/3)»: reventa en VINTED+WALLAPOP ~14 € (39 anuncios): ROI -76 % y -36 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «lego 40820 minifigura»: 200 / 12256 bytes, 5 anuncios, 5 parecidos, 0 reservas
-  Milanuncios «lego 40820 minifigura»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 5 anuncios, ~51 €, no publica
-  ⚠️ No publico «LEGO Minifigura Gigante de Papá Noel 40820»: reventa en WALLAPOP ~51 € (5 anuncios): ROI 11 % y 5 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «deporvillage x5 zapatillas»: HTTP 200, 2815199 bytes, 0 anuncios
-  Vinted «deporvillage x5 zapatillas»: 0 parecidos de 0
-  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 3)
-  Wallapop «deporvillage x5 zapatillas»: 200 / 1278 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop «deporvillage x5»: 200 / 390 bytes, 0 anuncios, 0 parecidos, 0 reservas
-  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
-  Milanuncios «deporvillage x5 zapatillas»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  ⚠️ No publico «Deporvillage Zapatillas CrossFit, Hiit, functional training Reebok nano X5 Edge»: Vinted solo tiene 0 anuncios parecidos (mínimo 3); Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Wallapop «lego 42212 technic»: 200 / 44057 bytes, 16 anuncios, 14 parecidos, 0 reservas
-  Milanuncios «lego 42212 technic»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 14 anuncios, ~48 €, no publica
-  ⚠️ No publico «LEGO Technic Ferrari FXX K 42212»: reventa en WALLAPOP ~48 € (14 anuncios): ROI 12 % y 5 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «lego f1 editions»: 200 / 62305 bytes, 24 anuncios, 3 parecidos, 0 reservas
-  Milanuncios «lego f1 editions»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 3 anuncios, ~72 €, no publica
-  ⚠️ No publico «LEGO Editions Casco de Ayrton Senna 43024 Juguetes para adolescentes de 14+ años, merchand»: reventa en WALLAPOP ~72 € (3 anuncios): ROI 11 % y 7 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 29 descartes nuevos, 64 en lista
-== pasada 2 · 14:44 ==
-Listados: 100 productos únicos
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 3 · 15:45 ==
+Listados: 103 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 14:46 ==
-Listados: 104 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 14:49 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 14:51 ==
-Listados: 98 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35923 bytes, 30 chollos
-  Chollometro «Nike Air Max Alpha trainer»: Zalando 45.6 €
-  Chollometro «LEGO Star Wars Halcón Milenario 75375»: Amazon 55.99 €
-  Chollometro «LEGO Icons 10365 La Perla Negra: 2.862 piezas, 8 minifiguras y el barc»: Disneystore 298.34 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71866 bytes, 30 chollos
-  cm-2060770 · Zalando 45.6 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nike Air Max Alpha trainer
-  cm-2060686 · Amazon 55.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Star Wars Halcón Milenario 75375
-  cm-2060758 · Disneystore 298.34 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Icons 10365 La Perla Negra: 2.862 piezas, 8 minifiguras
-  Wallapop «nike air»: 200 / 126030 bytes, 40 anuncios, 39 parecidos, 0 reservas
-  Milanuncios «nike air»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 34 anuncios, ~35 €, no publica
-  ⚠️ No publico «Nike Air Max Alpha trainer»: reventa en WALLAPOP ~35 € (34 anuncios): ROI -31 % y -14 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «lego 75375 star»: 200 / 75176 bytes, 34 anuncios, 33 parecidos, 0 reservas
-  Milanuncios «lego 75375 star»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 32 anuncios, ~66 €, no publica
-  ⚠️ No publico «LEGO Star Wars Halcón Milenario 75375»: reventa en WALLAPOP ~66 € (32 anuncios): ROI 9 % y 5 €, por debajo del mínimo (30 % y 25 €)
-  Wallapop «lego 10365 icons»: 200 / 23706 bytes, 8 anuncios, 7 parecidos, 0 reservas
-  Milanuncios «lego 10365 icons»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa WALLAPOP: 6 anuncios, ~375 €, no publica
-  ⚠️ No publico «LEGO Icons 10365 La Perla Negra: 2.862 piezas, 8 minifiguras y el barco de Jack Sparrow qu»: reventa en WALLAPOP ~375 € (6 anuncios): ROI 19 % y 56 €, por debajo del mínimo (25 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 14:54 ==
-Listados: 100 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 7 · 14:56 ==
-Listados: 99 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 14:59 ==
-Listados: 97 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 9 · 15:01 ==
-Listados: 96 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35825 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 65846 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 10 · 15:04 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 11 · 15:06 ==
+== pasada 4 · 15:48 ==
 Listados: 101 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 15:09 ==
-Listados: 90 productos únicos
+== pasada 5 · 15:50 ==
+Listados: 94 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35016 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69397 bytes, 30 chollos
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 6 · 15:53 ==
+Listados: 95 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 13 · 15:11 ==
-Listados: 100 productos únicos
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 7 · 15:55 ==
+Listados: 102 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35951 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 68800 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
-== pasada 14 · 15:14 ==
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 8 · 15:58 ==
+Listados: 105 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 9 · 16:00 ==
+Listados: 93 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35483 bytes, 30 chollos
+  Chollometro «Bose QuietComfort Ultra Bluetooth (2.ª generación) Auriculares inalámb»: Amazon 307.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 84028 bytes, 30 chollos
+  cm-2057902 · Amazon 307.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Bose QuietComfort Ultra Bluetooth (2.ª generación) Auricular
+  Wallapop «bose quietcomfort»: 200 / 126408 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «bose quietcomfort»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 33 anuncios, ~110 €, no publica
+  ⚠️ No publico «Bose QuietComfort Ultra Bluetooth (2.ª generación) Auriculares inalámbricos con Audio Espa»: reventa en WALLAPOP ~110 € (33 anuncios): ROI -67 % y -205 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 10 · 16:03 ==
+Listados: 95 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 16:05 ==
 Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 15 · 15:16 ==
-Listados: 100 productos únicos
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 16:08 ==
+Listados: 101 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 16:10 ==
+Listados: 93 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35515 bytes, 30 chollos
+  Chollometro «Mando GameSir G7 Pro Shadow Ember · Xbox y PC, sticks TMR y base de ca»: PcComponentes 66.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77549 bytes, 30 chollos
+  cm-2060765 · PcComponentes 66.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Mando GameSir G7 Pro Shadow Ember · Xbox y PC, sticks TMR y 
+  Wallapop «mando g7 gamesir»: 200 / 120880 bytes, 37 anuncios, 36 parecidos, 0 reservas
+  Milanuncios «mando g7 gamesir»: HTTP 403, 95510 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
+  Reventa WALLAPOP: 33 anuncios, ~59 €, no publica
+  ⚠️ No publico «Mando GameSir G7 Pro Shadow Ember · Xbox y PC, sticks TMR y base de carga por 66,99 €»: reventa en WALLAPOP ~59 € (33 anuncios): ROI -19 % y -13 €, por debajo del mínimo (25 % y 25 €)
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 14 · 16:13 ==
+Listados: 97 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 16:15 ==
+Listados: 99 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 57 descartes nuevos, 57 en lista
+== pasada 16 · 16:18 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
-== pasada 16 · 15:19 ==
-Listados: 86 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 58 descartes nuevos, 58 en lista
 Fin de la ejecución tras 16 pasadas.
