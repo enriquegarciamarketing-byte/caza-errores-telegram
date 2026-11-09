@@ -1,137 +1,121 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 101 productos únicos
+Listados: 89 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35285 bytes, 30 chollos
-  Chollometro «Zapatillas Nike AIR JORDAN 1 LOW SE (Tallas 35.5 a 42.5)»: Zalando 56.12 €
-  Chollometro «ADIDAS Zapatillas Running Galaxy 6 TALLAS 36 A 40»: Veepee 29.9 €
-  Chollometro «Zapatillas Nike Air Max 90 Drift (Tallas 35.5 a 49.5)»: Zalando 76.4 €
-  Chollometro «LEGO Harry Potter Castillo y Terrenos de Hogwarts 76419 – 2660 piezas,»: Amazon 95.19 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72102 bytes, 30 chollos
-  cm-2060678 · Zalando 56.12 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Nike AIR JORDAN 1 LOW SE (Tallas 35.5 a 42.5)
-  cm-2060761 · Veepee 29.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · ADIDAS Zapatillas Running Galaxy 6 TALLAS 36 A 40
-  cm-2060779 · Zalando 76.4 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Nike Air Max 90 Drift (Tallas 35.5 a 49.5)
-  cm-2060782 · Amazon 95.19 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Harry Potter Castillo y Terrenos de Hogwarts 76419 – 26
-  Vinted «zapatillas 35 nike»: HTTP 200, 3686990 bytes, 96 anuncios
-  Vinted «zapatillas 35 nike»: 28 parecidos de 96
-  Wallapop «zapatillas 35 nike»: 200 / 116798 bytes, 40 anuncios, 27 parecidos, 0 reservas
-  Milanuncios «zapatillas 35 nike»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 41 anuncios, ~15 €, no publica
-  ⚠️ No publico «Zapatillas Nike AIR JORDAN 1 LOW SE (Tallas 35.5 a 42.5)»: reventa en VINTED+WALLAPOP ~15 € (41 anuncios): ROI -78 % y -44 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «adidas 36 zapatillas»: HTTP 200, 3688786 bytes, 96 anuncios
-  Vinted «adidas 36 zapatillas»: 23 parecidos de 96
-  Wallapop «adidas 36 zapatillas»: 200 / 133428 bytes, 40 anuncios, 30 parecidos, 0 reservas
-  Milanuncios «adidas 36 zapatillas»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 33 anuncios, ~30 €, no publica
-  ⚠️ No publico «ADIDAS Zapatillas Running Galaxy 6 TALLAS 36 A 40»: reventa en VINTED+WALLAPOP ~30 € (33 anuncios): ROI -11 % y -3 €, por debajo del mínimo (30 % y 25 €)
-  Vinted «zapatillas 90 nike»: HTTP 200, 3694366 bytes, 96 anuncios
-  Vinted «zapatillas 90 nike»: 66 parecidos de 96
-  Wallapop «zapatillas 90 nike»: 200 / 129657 bytes, 40 anuncios, 38 parecidos, 0 reservas
-  Milanuncios «zapatillas 90 nike»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 95 anuncios, ~43 €, no publica
-  ⚠️ No publico «Zapatillas Nike Air Max 90 Drift (Tallas 35.5 a 49.5)»: reventa en VINTED+WALLAPOP ~43 € (95 anuncios): ROI -49 % y -38 €, por debajo del mínimo (25 % y 25 €)
-  Wallapop «lego 76419 harry»: 200 / 82975 bytes, 32 anuncios, 26 parecidos, 0 reservas
-  Milanuncios «lego 76419 harry»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 26 anuncios, ~140 €, publica
-  Te lo paso por privado para que des el OK (mensaje 542): OPORTUNIDAD DE REVENTA · LEGO Harry Potter Castillo y Terrenos de Hogwarts 76419 – 2660 piezas, maqueta de colecció
-Publicados en esta ejecución: 1
-Cascada al canal normal: 38 descartes nuevos, 78 en lista
-== pasada 2 · 15:43 ==
-Listados: 96 productos únicos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35705 bytes, 30 chollos
+  Chollometro «LEGO Art Paisaje Japonés con Cerezos en Flor 31218»: Amazon 93.59 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 70816 bytes, 30 chollos
+  cm-2060818 · Amazon 93.59 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Art Paisaje Japonés con Cerezos en Flor 31218
+  Wallapop «lego 31218 art»: 200 / 7366 bytes, 2 anuncios, 2 parecidos, 0 reservas
+  Wallapop «lego 31218»: 200 / 6505 bytes, 2 anuncios, 2 parecidos, 0 reservas
+  Milanuncios «lego 31218 art»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 2 anuncios, ~0 €, no publica
+  ⚠️ No publico «LEGO Art Paisaje Japonés con Cerezos en Flor 31218»: WALLAPOP solo tiene 2 anuncios parecidos (mínimo 3) · Milanuncios no disponible (HTTP 403 (95511 bytes))
+Publicados en esta ejecución: 0
+Cascada al canal normal: 37 descartes nuevos, 80 en lista
+== pasada 2 · 16:43 ==
+Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 3 · 15:45 ==
-Listados: 103 productos únicos
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 3 · 16:46 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 4 · 15:48 ==
-Listados: 101 productos únicos
+Cascada al canal normal: 58 descartes nuevos, 58 en lista
+== pasada 4 · 16:48 ==
+Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 5 · 15:50 ==
-Listados: 94 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35016 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 69397 bytes, 30 chollos
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 6 · 15:53 ==
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 5 · 16:51 ==
 Listados: 95 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35780 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77743 bytes, 30 chollos
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 7 · 15:55 ==
-Listados: 102 productos únicos
+== pasada 6 · 16:53 ==
+Listados: 99 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 8 · 15:58 ==
-Listados: 105 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 9 · 16:00 ==
-Listados: 93 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35483 bytes, 30 chollos
-  Chollometro «Bose QuietComfort Ultra Bluetooth (2.ª generación) Auriculares inalámb»: Amazon 307.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 84028 bytes, 30 chollos
-  cm-2057902 · Amazon 307.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Bose QuietComfort Ultra Bluetooth (2.ª generación) Auricular
-  Wallapop «bose quietcomfort»: 200 / 126408 bytes, 40 anuncios, 39 parecidos, 0 reservas
-  Milanuncios «bose quietcomfort»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 33 anuncios, ~110 €, no publica
-  ⚠️ No publico «Bose QuietComfort Ultra Bluetooth (2.ª generación) Auriculares inalámbricos con Audio Espa»: reventa en WALLAPOP ~110 € (33 anuncios): ROI -67 % y -205 €, por debajo del mínimo (25 % y 25 €)
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 10 · 16:03 ==
-Listados: 95 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 11 · 16:05 ==
+== pasada 7 · 16:56 ==
 Listados: 98 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 12 · 16:08 ==
-Listados: 101 productos únicos
+== pasada 8 · 16:58 ==
+Listados: 103 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 13 · 16:10 ==
-Listados: 93 productos únicos
+== pasada 9 · 17:01 ==
+Listados: 100 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35515 bytes, 30 chollos
-  Chollometro «Mando GameSir G7 Pro Shadow Ember · Xbox y PC, sticks TMR y base de ca»: PcComponentes 66.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77549 bytes, 30 chollos
-  cm-2060765 · PcComponentes 66.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Mando GameSir G7 Pro Shadow Ember · Xbox y PC, sticks TMR y 
-  Wallapop «mando g7 gamesir»: 200 / 120880 bytes, 37 anuncios, 36 parecidos, 0 reservas
-  Milanuncios «mando g7 gamesir»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 33 anuncios, ~59 €, no publica
-  ⚠️ No publico «Mando GameSir G7 Pro Shadow Ember · Xbox y PC, sticks TMR y base de carga por 66,99 €»: reventa en WALLAPOP ~59 € (33 anuncios): ROI -19 % y -13 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36443 bytes, 30 chollos
+  Chollometro «Adidas Zapatillas de trekking - excursionismo Terrex Ax4 - Tallas- 44,»: Privalia 37.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 77298 bytes, 30 chollos
+  cm-2060947 · Privalia 37.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Adidas Zapatillas de trekking - excursionismo Terrex Ax4 - T
+  Vinted «adidas ax4 zapatillas»: HTTP 200, 3691959 bytes, 96 anuncios
+  Vinted «adidas ax4 zapatillas»: 75 parecidos de 96
+  Wallapop «adidas ax4 zapatillas»: 200 / 130480 bytes, 35 anuncios, 31 parecidos, 0 reservas
+  Milanuncios «adidas ax4 zapatillas»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 103 anuncios, ~50 €, no publica
+  ⚠️ No publico «Adidas Zapatillas de trekking - excursionismo Terrex Ax4 - Tallas- 44, 46, 46 2/3, 47 1/3»: reventa en VINTED+WALLAPOP ~50 € (103 anuncios): ROI 20 % y 8 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
 Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 14 · 16:13 ==
+== pasada 10 · 17:03 ==
+Listados: 92 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 11 · 17:06 ==
+Listados: 98 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 12 · 17:08 ==
+Listados: 100 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 13 · 17:11 ==
 Listados: 97 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36286 bytes, 30 chollos
+  Chollometro «Netac 7400 MB/s SSD NVMe M2 1TB DEVUELVEN 7 EUROS»: AliExpress 110.0 €
+  Chollometro «Juego de construcción Wicket el Ewok Disney Star Wars LEGO»: El Corte Inglés 95.95 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 62535 bytes, 30 chollos
+  cm-2060911 · AliExpress 110.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Netac 7400 MB/s SSD NVMe M2 1TB DEVUELVEN 7 EUROS
+  cm-2060834 · El Corte Inglés 95.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Juego de construcción Wicket el Ewok Disney Star Wars LEGO
+  Wallapop «netac m2 ssd»: 200 / 54415 bytes, 18 anuncios, 0 parecidos, 0 reservas
+  Wallapop «netac m2»: 200 / 55193 bytes, 19 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «netac m2 ssd»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  ⚠️ No publico «Netac 7400 MB/s SSD NVMe M2 1TB DEVUELVEN 7 EUROS»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Wallapop «juego construccion»: 200 / 115336 bytes, 40 anuncios, 34 parecidos, 0 reservas
+  Milanuncios «juego construccion»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 23 anuncios, ~12 €, no publica
+  ⚠️ No publico «Juego de construcción Wicket el Ewok Disney Star Wars LEGO»: reventa en WALLAPOP ~12 € (23 anuncios): ROI -90 % y -87 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 60 descartes nuevos, 60 en lista
-== pasada 15 · 16:15 ==
-Listados: 99 productos únicos
+Cascada al canal normal: 59 descartes nuevos, 59 en lista
+== pasada 14 · 17:13 ==
+Listados: 96 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
-Cascada al canal normal: 57 descartes nuevos, 57 en lista
-== pasada 16 · 16:18 ==
-Listados: 99 productos únicos
+Cascada al canal normal: 60 descartes nuevos, 60 en lista
+== pasada 15 · 17:16 ==
+Listados: 102 productos únicos
+Candidatos nuevos tras el filtro rápido: 0
+Publicados en esta ejecución: 0
+Cascada al canal normal: 56 descartes nuevos, 56 en lista
+== pasada 16 · 17:18 ==
+Listados: 103 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
 Publicados en esta ejecución: 0
 Cascada al canal normal: 59 descartes nuevos, 59 en lista
