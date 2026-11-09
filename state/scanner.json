@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794179781
+   "checked": 1794184450
   },
   {
    "id": "cm-2057212",
@@ -1873,7 +1873,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 99,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -14605,11 +14605,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 14,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/fosmet-gafas-inteligentes-ia-con-camara-165-traduccion-smart-glasses-de-solo-45g-asistente-gptreconocimiento-de-objetosproteccion-uv-2059720": 1794157803.6000001,
-  "https://www.chollometro.com/ofertas/zapatillas-saucony-triumph-23-2059341": 1794158403.6383135,
-  "https://www.chollometro.com/ofertas/brooks-zapatilla-revel-max-tallas-41-a-46-2059440": 1794161781.1065054,
   "https://www.chollometro.com/ofertas/hoka-bondi-7-hombre-zapatillas-tallas-42-42-23-45-13-recogida-en-tienda-2059820": 1794162977.018129,
   "https://www.chollometro.com/ofertas/361-zapatillas-running-mujeres-hasta-79-de-descuento-2059919": 1794165797.2780313,
   "https://www.chollometro.com/ofertas/361-zapatillas-de-running-centauri-2-hombre-2059925": 1794166397.4630218,
@@ -14619,7 +14616,9 @@
   "https://www.chollometro.com/ofertas/skechers-glide-step-pro-zapatillas-mujer-glide-step-air-cooled-memory-foam-no-tie-fit-y-suela-de-traccion-flexible-varios-colores-2059988": 1794172711.675276,
   "https://www.chollometro.com/ofertas/zapatillas-craft-pure-trail-x-tallas-405-a-47-2059322": 1794173911.5836518,
   "https://www.chollometro.com/ofertas/lego-one-piece-restaurante-flotante-baratie-75640-set-para-adultos-decoracion-anime-con-interior-detallado-y-10-minifiguras-2059431": 1794175736.4583461,
-  "https://www.chollometro.com/ofertas/zapatillas-altra-experience-wild-2-2041717": 1794179345.6845284
+  "https://www.chollometro.com/ofertas/zapatillas-altra-experience-wild-2-2041717": 1794179345.6845284,
+  "https://www.chollometro.com/ofertas/cecotec-aspirador-vertical-conga-thunderbrush-560-2-en-1-600-w-tecnologia-ciclonica-filtro-de-alta-eficienciacon-cupon-ventaja-barata-2060011": 1794182214.2030735,
+  "https://www.chollometro.com/ofertas/msi-pro-z790-p-wifi-placa-base-atx-12a-y-13a-gen-core-intel-z790-lga-1700-pcie-50-4-ranuras-m2-gen4-ddr5-7000-mhz-oc-2059835": 1794183414.419036
  },
  "asked": {
   "cm-2057212": 1794127930,
@@ -14628,6 +14627,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 128
+  "passes": 144
  }
 }
