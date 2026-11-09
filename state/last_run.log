@@ -1,8 +1,17 @@
 Creators API: activa, se verifica cada producto en vivo
 Bot: @cazaerroresAmazon_bot
-Listados: 67 productos únicos
+Listados: 70 productos únicos
+  Más vendidos https://www.amazon.es/gp/bestsellers/videogames: HTTP 200, 468978 bytes, 30 ASIN, 30 títulos
+  Más vendidos https://www.amazon.es/gp/bestsellers/computers: HTTP 200, 3789 bytes, bloqueado
+  Más vendidos https://www.amazon.es/gp/movers-and-shakers/videogames: HTTP 200, 342518 bytes, 0 ASIN, 0 títulos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35624 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71995 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35401 bytes, 30 chollos
+  Chollometro «Zapatillas Cuero HOFF - Hombres»: Privalia 39.99 €
+  Chollometro «Nike Air force low retro»: Zalando 60.02 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 65161 bytes, 30 chollos
+  cm-2060523 · Privalia 39.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Cuero HOFF - Hombres
+  cm-2061199 · Zalando 60.02 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Nike Air force low retro
+  cm-2060523: no se publica (horario nocturno: las gangas esperan al día)
+  cm-2061199: no se publica (horario nocturno: las gangas esperan al día)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 38 descartes nuevos, 124 en lista
+Cascada al canal normal: 40 descartes nuevos, 95 en lista
