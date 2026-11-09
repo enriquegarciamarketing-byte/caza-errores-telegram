@@ -1,8 +1,30 @@
 Creators API: sin claves (productos con tallas descartados)
 Bot: @cazaerroresAmazon_bot
-Listados: 80 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36032 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 64132 bytes, 30 chollos
+Listados: 79 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  RrLrZpM · 76.88 € · media None → descartado (sin precios de los 30 días anteriores para comparar) · OhO sunshine OhO - Gafas de sol de video, cámara de grabació
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35690 bytes, 30 chollos
+  Chollometro «Auriculares gaming Sony INZONE H9 II (baja latencia 2.4GHz/Bluetooth, »: Amazon 179.0 €
+  Chollometro «LEGO Harry Potter Aventura en el Autobús Noctámbulo 76446»: Amazon 34.98 €
+  Chollometro «Super Mario Party Jamboree – Nintendo Switch»: Amazon 46.9 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 61401 bytes, 30 chollos
+  cm-2061082 · Amazon 179.0 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Auriculares gaming Sony INZONE H9 II (baja latencia 2.4GHz/B
+  cm-2060430 · Amazon 34.98 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Harry Potter Aventura en el Autobús Noctámbulo 76446
+  cm-2061105 · Amazon 46.9 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Super Mario Party Jamboree – Nintendo Switch
+  Wallapop «auriculares h9 gaming»: 200 / 121386 bytes, 35 anuncios, 19 parecidos, 0 reservas
+  Milanuncios «auriculares h9 gaming»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 16 anuncios, ~135 €, no publica
+  ⚠️ No publico «Auriculares gaming Sony INZONE H9 II (baja latencia 2.4GHz/Bluetooth, ANC, sonido 360, Fna»: reventa en WALLAPOP ~135 € (16 anuncios): ROI -29 % y -53 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «super mario»: 200 / 92681 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «super mario»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 31 anuncios, ~27 €, no publica
+  ⚠️ No publico «Super Mario Party Jamboree – Nintendo Switch»: reventa en WALLAPOP ~27 € (31 anuncios): ROI -50 % y -23 €, por debajo del mínimo (30 % y 25 €)
+  Wallapop «lego 76446 harry»: 200 / 61275 bytes, 25 anuncios, 22 parecidos, 0 reservas
+  Milanuncios «lego 76446 harry»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  Reventa WALLAPOP: 20 anuncios, ~40 €, no publica
+  ⚠️ No publico «LEGO Harry Potter Aventura en el Autobús Noctámbulo 76446»: reventa en WALLAPOP ~40 € (20 anuncios): ROI 3 % y 1 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 25 descartes nuevos, 125 en lista
+Cascada al canal normal: 37 descartes nuevos, 89 en lista
