@@ -1,17 +1,8 @@
 Creators API: activa, se verifica cada producto en vivo
 Bot: @cazaerroresAmazon_bot
-Listados: 78 productos únicos
+Listados: 67 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
   Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35624 bytes, 30 chollos
-  Chollometro «Zapatillas Nike Sportswear AIR FORCE 1 '07 - Beige (Tallas 38.5 a 42.5»: Zalando 60.8 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 74594 bytes, 30 chollos
-  cm-2061399 · Zalando 60.8 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatillas Nike Sportswear AIR FORCE 1 '07 - Beige (Tallas 3
-  Vinted «zapatillas 07 nike»: HTTP 200, 3702773 bytes, 96 anuncios
-  Vinted «zapatillas 07 nike»: 72 parecidos de 96
-  Wallapop «zapatillas 07 nike»: 200 / 142957 bytes, 40 anuncios, 40 parecidos, 0 reservas
-  Milanuncios «zapatillas 07 nike»: HTTP 403, 95509 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
-  Reventa VINTED+WALLAPOP: 88 anuncios, ~70 €, no publica
-  ⚠️ No publico «Zapatillas Nike Sportswear AIR FORCE 1 '07 - Beige (Tallas 38.5 a 42.5, 44, 45, 47, 48.5 y»: reventa en VINTED+WALLAPOP ~70 € (88 anuncios): ROI 6 % y 4 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71995 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 35 descartes nuevos, 102 en lista
+Cascada al canal normal: 38 descartes nuevos, 124 en lista
