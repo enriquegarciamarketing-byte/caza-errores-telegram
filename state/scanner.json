@@ -2008,7 +2008,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 73,
+ "last_listing_count": 67,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16156,7 +16156,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 7,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-art-paisaje-japones-con-cerezos-en-flor-31218-2060818": 1794238880.9324555,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-de-trekking-excursionismo-terrex-ax4-tallas-44-46-46-23-47-13-2060947": 1794240081.5938199,
@@ -16192,6 +16192,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 445
+  "passes": 446
  }
 }
