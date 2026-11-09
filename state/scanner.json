@@ -1076,9 +1076,9 @@
    "result": "solo -27% bajo la referencia"
   },
   "MW35m8N": {
-   "price": 233.99,
-   "t": 1794165333,
-   "result": "solo -2% bajo la referencia"
+   "price": 241.99,
+   "t": 1794246282,
+   "result": "sin precios de los 30 días anteriores para comparar"
   },
   "RNme967": {
    "price": 90.0,
@@ -1218,6 +1218,16 @@
   "R3kjLnR": {
    "price": 36.74,
    "t": 1794245667,
+   "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "R4xPreX": {
+   "price": 63.14,
+   "t": 1794246282,
+   "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "1ZDBy97": {
+   "price": 26.99,
+   "t": 1794246282,
    "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
@@ -1965,33 +1975,15 @@
    "url": "https://www.amazon.es/dp/B0BV7BYNYD?smid=A1AT7YVPFBWXBL",
    "alert_id": 542,
    "alert_text_id": 543,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1794246072,
-   "card_data": {
-    "title": "LEGO Harry Potter Castillo y Terrenos de Hogwarts 76419 – 2660 piezas, maqueta de colección",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 95.19,
-    "reference": 95.19,
-    "image": "https://static.chollometro.com/threads/raw/pLXZf/2060782_1/re/150x150/qt/55/2060782_1.jpg",
-    "store_label": "Amazon",
-    "conditions": "Con cupón",
-    "resale": {
-     "price": 140.0,
-     "count": 26,
-     "roi": 37.61949784641244,
-     "profit": 35.81,
-     "source_label": "WALLAPOP",
-     "note": "26 anuncios de referencia · Wallapop 26 · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 77,
+ "last_listing_count": 79,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -15856,7 +15848,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 17,
+ "rotation_index": 1,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/jbl-quantum-360p-inalambricos-para-ps5-ps4-y-pc-por-2999-eur-con-bluetooth-y-microfono-desmontable-2060635": 1794226781.9777129,
   "https://www.chollometro.com/ofertas/lego-harry-potter-castillo-de-hogwarts-ala-este-76473-2060609": 1794226781.9777129,
@@ -15895,6 +15887,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 384
+  "passes": 385
  }
 }
