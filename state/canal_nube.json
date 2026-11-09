@@ -4602,6 +4602,20 @@
    "photo_message_id": null,
    "checked": 1794246534,
    "ended": 1794246534
+  },
+  {
+   "asin": "B07W5JK8TV",
+   "jl_id": "",
+   "price": 23.55,
+   "reference": 34.99,
+   "t": 1794251636,
+   "url": "https://www.amazon.es/dp/B07W5JK8TV?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 420,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Teclado Logitech Pebble Keys 2 K380s Bluetooth Multidispositivo QWERTY Español</b>\n\n💶 PRECIO: <b>23,55€</b>\n❌ (Antes: <s>34,99€</s>)\n🔥 ¡Te ahorras <b>11,44€</b>! (33 % dto.)\n⚡ Oferta flash\nℹ️ Entrega entre el 28 de diciembre y el 18 de enero\n\n🕒 Precio a las 20:14 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B07W5JK8TV?tag=cazachollos0c-21\">amazon.es/dp/B07W5JK8TV</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Teclado Logitech Pebble Keys 2 K380s Bluetooth Multidispositivo QWERTY Español",
+   "manual": true
   }
  ],
  "seen": {
@@ -12509,16 +12523,17 @@
   1794169106,
   1794177166,
   1794220493,
-  1794221323
+  1794221323,
+  1794251640
  ],
  "x_recent": [
-  "regla",
   "black-friday",
   "pregunta",
   "guarda",
   "alguien",
   "bot-aviso",
   "comprado",
-  "no-dura"
+  "no-dura",
+  "filtro"
  ]
 }
