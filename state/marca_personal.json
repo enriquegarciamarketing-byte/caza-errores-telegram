@@ -5,7 +5,8 @@
    1
   ],
   "ahorro": [
-   0
+   0,
+   1
   ],
   "dia": [
    0
@@ -46,6 +47,11 @@
    "t": 1794217142,
    "slot": "manana",
    "topic": "El bot por dentro"
+  },
+  {
+   "t": 1794252642,
+   "slot": "tarde",
+   "topic": "Ahorro y promos"
   }
  ]
 }
