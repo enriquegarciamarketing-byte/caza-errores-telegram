@@ -4630,6 +4630,20 @@
    "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>Levi&#x27;s 508 Regular Taper Jeans Hombre Rock Cod</b>\n\n💶 PRECIO: <b>39,30€</b>\n❌ (Antes: <s>120€</s>)\n🔥 ¡Te ahorras <b>80,70€</b>! (67 % dto.)\nℹ️ Precio para la talla 38W / 34L en color Rock Cod\n\n🕒 Precio a las 21:31 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B00VGIPQ1S?tag=cazachollos0c-21\">amazon.es/dp/B00VGIPQ1S</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
    "title": "Levi's 508 Regular Taper Jeans Hombre Rock Cod",
    "manual": true
+  },
+  {
+   "asin": "B0CHYWX4NL",
+   "jl_id": "",
+   "price": 750.6,
+   "reference": 1199.0,
+   "t": 1794258720,
+   "url": "https://www.amazon.es/dp/B0CHYWX4NL?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 422,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Lavavajillas Bosch SMS6ZCI10E de 60 cm con Secado Zeolitas y 3ª Bandeja</b>\n\n💶 PRECIO: <b>750,60€</b>\n❌ (Antes: <s>1.199€</s>)\n🔥 ¡Te ahorras <b>448,40€</b>! (37 % dto.)\nℹ️ 14 servicios, 40 dB y control desde el móvil con Home Connect\n\n🕒 Precio a las 22:10 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CHYWX4NL?tag=cazachollos0c-21\">amazon.es/dp/B0CHYWX4NL</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Lavavajillas Bosch SMS6ZCI10E de 60 cm con Secado Zeolitas y 3ª Bandeja",
+   "manual": true
   }
  ],
  "seen": {
@@ -12544,16 +12558,17 @@
   1794220493,
   1794221323,
   1794251640,
-  1794256273
+  1794256273,
+  1794258723
  ],
  "x_recent": [
-  "black-friday",
   "pregunta",
   "guarda",
   "alguien",
   "bot-aviso",
   "comprado",
   "no-dura",
-  "filtro"
+  "filtro",
+  "regla"
  ]
 }
