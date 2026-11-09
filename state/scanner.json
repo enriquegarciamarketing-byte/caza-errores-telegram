@@ -16091,7 +16091,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 17,
+ "rotation_index": 1,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-nike-air-jordan-1-low-se-tallas-355-a-425-2060678": 1794235254.57366,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-running-galaxy-6-tallas-36-a-40-2060761": 1794235254.57366,
@@ -16128,6 +16128,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 426
+  "passes": 427
  }
 }
