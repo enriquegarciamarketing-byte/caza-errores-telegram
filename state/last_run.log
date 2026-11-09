@@ -1,8 +1,16 @@
 Creators API: activa, se verifica cada producto en vivo
 Bot: @cazaerroresAmazon_bot
-Listados: 71 productos únicos
+Listados: 66 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36077 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 64195 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 35993 bytes, 30 chollos
+  Chollometro «Casio G-Shock DW-9052GBX-1A4 – 48,5 mm, negro y oro rosa, 200 m»: Timestore 62.01 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 61659 bytes, 30 chollos
+  cm-2061364 · Timestore 62.01 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Casio G-Shock DW-9052GBX-1A4 – 48,5 mm, negro y oro rosa, 20
+  Wallapop «casio 9052gbx shock»: 200 / 1262 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop «casio 9052gbx»: 200 / 388 bytes, 0 anuncios, 0 parecidos, 0 reservas
+  Wallapop no aporta datos: Wallapop solo tiene 0 anuncios parecidos (mínimo 3)
+  Milanuncios «casio 9052gbx shock»: HTTP 403, 95509 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95509 bytes))
+  ⚠️ No publico «Casio G-Shock DW-9052GBX-1A4 – 48,5 mm, negro y oro rosa, 200 m»: Wallapop solo tiene 0 anuncios parecidos (mínimo 3); Milanuncios no disponible (HTTP 403 (95509 bytes))
 Publicados en esta ejecución: 0
-Cascada al canal normal: 27 descartes nuevos, 133 en lista
+Cascada al canal normal: 32 descartes nuevos, 139 en lista

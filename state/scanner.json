@@ -2008,7 +2008,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 71,
+ "last_listing_count": 66,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3426,52 +3426,6 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
-  },
-  "|amd ryzen 7 7800x3d [promo 11.11]|amd 7800x3d ryzen": {
-   "t": 1793881537.566219,
-   "query": "amd 7800x3d ryzen",
-   "prices": [
-    260.0,
-    315.0,
-    215.0,
-    225.0,
-    230.0,
-    239.0,
-    220.0,
-    199.99,
-    250.0,
-    260.0,
-    235.0,
-    260.0,
-    285.0,
-    250.0,
-    400.0,
-    249.0,
-    220.0,
-    240.0,
-    190.0,
-    230.0,
-    210.0,
-    290.0,
-    239.0,
-    260.0,
-    240.0,
-    235.0,
-    280.0,
-    250.0,
-    280.0,
-    260.0,
-    239.0,
-    270.0,
-    247.5,
-    235.0,
-    250.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 99358,
-   "raw_count": 39
   },
   "|sony wh-1000xm6 auriculares bluetooth [promo 11.11]|sony 1000xm6 auriculares": {
    "t": 1793881541.726932,
@@ -9479,6 +9433,16 @@
    "http_status": 200,
    "bytes": 51494,
    "raw_count": 20
+  },
+  "|casio g-shock dw-9052gbx-1a4 – 48,5 mm, negro y oro rosa, 200 m|casio 9052gbx shock": {
+   "t": 1794259710.5344453,
+   "query": "casio 9052gbx shock",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
   }
  },
  "milanuncios_cache": {
@@ -16156,7 +16120,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 1,
+ "rotation_index": 6,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-art-paisaje-japones-con-cerezos-en-flor-31218-2060818": 1794238880.9324555,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-de-trekking-excursionismo-terrex-ax4-tallas-44-46-46-23-47-13-2060947": 1794240081.5938199,
@@ -16183,7 +16147,8 @@
   "https://www.chollometro.com/ofertas/sir-g8-plus-mfi-mando-para-iphone-151617ipad-mini-y-androidipad-palancasgatillos-efecto-hall-genshin-impact-pubg-mobile-y-minecraft-2055283": 1794257282.634509,
   "https://www.chollometro.com/ofertas/auriculares-gaming-sony-inzone-buds-true-wireless-baja-latencia-anc-360-spatial-sound-pcps5-2061081": 1794257872.8717399,
   "https://www.chollometro.com/ofertas/lego-botanicals-ramo-de-flores-fantasia-en-rosa-10342-2061193": 1794258472.8663583,
-  "https://www.chollometro.com/ofertas/casio-g-shock-gm-2100-1aer-casioak-bisel-de-acero-inoxidable-y-esfera-gris-2061338": 1794258472.8663583
+  "https://www.chollometro.com/ofertas/casio-g-shock-gm-2100-1aer-casioak-bisel-de-acero-inoxidable-y-esfera-gris-2061338": 1794258472.8663583,
+  "https://www.chollometro.com/ofertas/casio-g-shock-dw-9052gbx-1a4-485-mm-negro-y-oro-rosa-200-m-2061364": 1794259706.1839125
  },
  "asked": {
   "cm-2060262": 1794211053,
@@ -16192,6 +16157,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 448
+  "passes": 449
  }
 }
