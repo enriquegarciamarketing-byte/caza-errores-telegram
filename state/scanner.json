@@ -1993,7 +1993,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 67,
+ "last_listing_count": 79,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3411,23 +3411,6 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
-  },
-  "|garmin instinct 3 amoled negro: 45 mm por 249 € y 50 mm por 279 € – reloj gps multibanda, 10 atm, linterna led, hasta 24 dias de bateria|garmin 45 instinct": {
-   "t": 1793872804.335986,
-   "query": "garmin 45 instinct",
-   "prices": [
-    120.0,
-    250.0,
-    250.0,
-    220.0,
-    220.0,
-    255.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 102816,
-   "raw_count": 33
   },
   "|camara mirrorless canon eos r50 24,2 mp 18-45 mm wi-fi bluetooth|camara r50 mirrorless": {
    "t": 1793877984.1431792,
@@ -9445,6 +9428,55 @@
    "http_status": 200,
    "bytes": 11150,
    "raw_count": 4
+  },
+  "|assassin's creed shadows (xbox series x)|assassin creed": {
+   "t": 1794256077.3572388,
+   "query": "assassin creed",
+   "prices": [
+    45.0,
+    15.0,
+    25.0,
+    29.9,
+    19.0,
+    45.0,
+    6.0,
+    12.99,
+    12.0,
+    55.0,
+    12.0,
+    30.0,
+    18.0,
+    32.0,
+    7.99,
+    10.0,
+    15.0,
+    35.0,
+    20.0,
+    50.0,
+    5.0,
+    12.95,
+    8.5,
+    15.0,
+    8.0,
+    55.0,
+    140.0,
+    24.0,
+    10.0,
+    20.0,
+    5.0,
+    80.0,
+    17.0,
+    45.0,
+    9.99,
+    15.0,
+    15.0,
+    40.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 100491,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -16059,7 +16091,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 12,
+ "rotation_index": 17,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-nike-air-jordan-1-low-se-tallas-355-a-425-2060678": 1794235254.57366,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-running-galaxy-6-tallas-36-a-40-2060761": 1794235254.57366,
@@ -16086,7 +16118,8 @@
   "https://www.chollometro.com/ofertas/super-mario-party-jamboree-nintendo-switch-2061105": 1794252498.068373,
   "https://www.chollometro.com/ofertas/casio-g-shock-dw-5600rl-1er-2061223": 1794253302.4389858,
   "https://www.chollometro.com/ofertas/nike-sportswear-zapatillas-deportivas-nike-modelo-total-90-color-marron-2059364": 1794254508.0112572,
-  "https://www.chollometro.com/ofertas/reloj-casio-g-shock-dw-5600ww-7-blanco-2060709": 1794255721.826794
+  "https://www.chollometro.com/ofertas/reloj-casio-g-shock-dw-5600ww-7-blanco-2060709": 1794255721.826794,
+  "https://www.chollometro.com/ofertas/assassins-creed-shadows-xbox-series-x-2061201": 1794256071.9456599
  },
  "asked": {
   "cm-2060262": 1794211053,
@@ -16095,6 +16128,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 425
+  "passes": 426
  }
 }
