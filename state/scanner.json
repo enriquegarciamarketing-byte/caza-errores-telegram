@@ -1993,7 +1993,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 79,
+ "last_listing_count": 78,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16029,7 +16029,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 1,
+ "rotation_index": 6,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-minifigura-gigante-de-papa-noel-40820-2060589": 1794231725.506521,
   "https://www.chollometro.com/ofertas/lego-technic-ferrari-fxx-k-42212-2060754": 1794231725.506521,
@@ -16070,6 +16070,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 406
+  "passes": 407
  }
 }
