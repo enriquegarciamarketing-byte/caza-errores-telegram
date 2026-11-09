@@ -2008,7 +2008,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 67,
+ "last_listing_count": 75,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16120,10 +16120,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 12,
+ "rotation_index": 17,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/netac-7400-mbs-ssd-nvme-m2-1tb-devuelven-7-euros-2060911": 1794240681.6707206,
-  "https://www.chollometro.com/ofertas/juego-de-construccion-wicket-el-ewok-disney-star-wars-lego-2060834": 1794240681.6707206,
   "https://www.chollometro.com/ofertas/juego-de-construccion-gato-bicolor-lego-21349-promo-25devolucion-en-juguetes-2060934": 1794242919.1278517,
   "https://www.chollometro.com/ofertas/spiderman-miles-morales-ps5-2060510": 1794242919.1278517,
   "https://www.chollometro.com/ofertas/lego-42231-technic-coche-dodge-charger-rt-de-fast-and-furious-kit-de-maquetas-2060110": 1794243513.8489733,
@@ -16155,6 +16153,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 467
+  "passes": 468
  }
 }
