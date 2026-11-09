@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794188378
+   "checked": 1794192618
   },
   {
    "id": "cm-2057212",
@@ -1873,7 +1873,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 88,
+ "last_listing_count": 102,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -14605,11 +14605,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 6,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/361-zapatillas-de-running-centauri-2-hombre-2059925": 1794166397.4630218,
-  "https://www.chollometro.com/ofertas/dyson-v8-origin-2026-aspiradora-sin-cable-con-130-aw-de-succion-40-min-de-autonomia-y-cabezal-antienredos-2059824": 1794169154.7665377,
-  "https://www.chollometro.com/ofertas/zapatillas-hombre-reebok-world-70-azul-marino-41-a-45-2059700": 1794170320.1398847,
   "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-roborock-saros-20-sonic-complete-36000-pa-sistema-vibrarise-50perfil-795-cmia-reactive-30-2059926": 1794172120.2362657,
   "https://www.chollometro.com/ofertas/skechers-glide-step-pro-zapatillas-mujer-glide-step-air-cooled-memory-foam-no-tie-fit-y-suela-de-traccion-flexible-varios-colores-2059988": 1794172711.675276,
   "https://www.chollometro.com/ofertas/zapatillas-craft-pure-trail-x-tallas-405-a-47-2059322": 1794173911.5836518,
@@ -14626,6 +14623,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 160
+  "passes": 176
  }
 }
