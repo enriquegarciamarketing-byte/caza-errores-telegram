@@ -1993,7 +1993,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 76,
+ "last_listing_count": 75,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3405,16 +3405,6 @@
   "|fosmet gafas inteligentes ia con camara, 165 traduccion smart glasses de solo 45g, asistente gpt/reconocimiento de objetos/proteccion uv|fosmet 45g gafas": {
    "t": 1794157807.960397,
    "query": "fosmet 45g gafas",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
-  "|robot aspirador y fregasuelos dreame d30 ultra (25000pa, 230 min autonomia, 37db ultra silencioso, navegacion laser lidar, control app)|robot d30 aspirador": {
-   "t": 1793871533.6361926,
-   "query": "robot d30 aspirador",
    "prices": [],
    "reserved": 0,
    "demand_known": false,
@@ -9441,6 +9431,20 @@
    "http_status": 200,
    "bytes": 128608,
    "raw_count": 30
+  },
+  "|reloj casio g-shock dw-5600ww-7 blanco|reloj 5600ww casio": {
+   "t": 1794255725.5475333,
+   "query": "reloj 5600ww casio",
+   "prices": [
+    55.0,
+    79.0,
+    89.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 11150,
+   "raw_count": 4
   }
  },
  "milanuncios_cache": {
@@ -16040,12 +16044,22 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~27 € (33 anuncios): ROI -29 % y -10 €, por debajo del mínimo (30 % y 25 €)"
+  },
+  "|reloj casio g-shock dw-5600ww-7 blanco|reloj 5600ww casio": {
+   "t": 1794255725.3593628,
+   "prices": [
+    75.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 1 anuncios parecidos (mínimo 3)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 2,
+ "rotation_index": 7,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-nike-air-jordan-1-low-se-tallas-355-a-425-2060678": 1794235254.57366,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-running-galaxy-6-tallas-36-a-40-2060761": 1794235254.57366,
@@ -16071,7 +16085,8 @@
   "https://www.chollometro.com/ofertas/lego-harry-potter-aventura-en-el-autobus-noctambulo-76446-2060430": 1794252498.068373,
   "https://www.chollometro.com/ofertas/super-mario-party-jamboree-nintendo-switch-2061105": 1794252498.068373,
   "https://www.chollometro.com/ofertas/casio-g-shock-dw-5600rl-1er-2061223": 1794253302.4389858,
-  "https://www.chollometro.com/ofertas/nike-sportswear-zapatillas-deportivas-nike-modelo-total-90-color-marron-2059364": 1794254508.0112572
+  "https://www.chollometro.com/ofertas/nike-sportswear-zapatillas-deportivas-nike-modelo-total-90-color-marron-2059364": 1794254508.0112572,
+  "https://www.chollometro.com/ofertas/reloj-casio-g-shock-dw-5600ww-7-blanco-2060709": 1794255721.826794
  },
  "asked": {
   "cm-2060262": 1794211053,
@@ -16080,6 +16095,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 423
+  "passes": 424
  }
 }
