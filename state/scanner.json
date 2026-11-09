@@ -1254,6 +1254,11 @@
    "price": 619.0,
    "t": 1794258308,
    "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "RNqXveK": {
+   "price": 45.95,
+   "t": 1794265803,
+   "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
  "posts": [
@@ -2008,7 +2013,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 70,
+ "last_listing_count": 78,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16175,7 +16180,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 11,
+ "rotation_index": 16,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/ugg-zapatilla-ugg-modelo-tasman-biarritz-color-mustard-varias-tallas-2059901": 1794244716.2144368,
   "https://www.chollometro.com/ofertas/lego-technic-furgoneta-ford-bronco-2060941": 1794247565.5467296,
@@ -16207,6 +16212,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 471
+  "passes": 472
  }
 }
