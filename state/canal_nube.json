@@ -4506,6 +4506,20 @@
    "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>VENUM Classic 2.0 Gorra, Marrón</b>\n\n💶 PRECIO: <b>10€</b>\n❌ (Antes: <s>19,99€</s>)\n🔥 ¡Te ahorras <b>9,99€</b>! (50 % dto.)\n\n🕒 Precio a las 11:01 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CL8GGNMF?tag=cazachollos0c-21\">amazon.es/dp/B0CL8GGNMF</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
    "title": "VENUM Classic 2.0 Gorra, Marrón",
    "photo_message_id": null
+  },
+  {
+   "asin": "B0CB4P9JQY",
+   "jl_id": "",
+   "price": 581.0,
+   "reference": 929.0,
+   "t": 1794220489,
+   "url": "https://www.amazon.es/dp/B0CB4P9JQY?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 415,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Frigorífico Combi Samsung No Frost 185,5 cm 344 L SpaceMax</b>\n\n💶 PRECIO: <b>581€</b>\n❌ (Antes: <s>929€</s>)\n🔥 ¡Te ahorras <b>348€</b>! (37 % dto.)\nℹ️ Clase energética C · Modelo RB34C600CSA/EF\n\n🕒 Precio a las 11:33 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CB4P9JQY?tag=cazachollos0c-21\">amazon.es/dp/B0CB4P9JQY</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Frigorífico Combi Samsung No Frost 185,5 cm 344 L SpaceMax",
+   "manual": true
   }
  ],
  "seen": {
@@ -12316,7 +12330,8 @@
   1794153336,
   1794162866,
   1794169106,
-  1794177166
+  1794177166,
+  1794220493
  ],
  "x_recent": [
   "regla",
@@ -12325,6 +12340,7 @@
   "guarda",
   "alguien",
   "bot-aviso",
-  "comprado"
+  "comprado",
+  "telegram"
  ]
 }
