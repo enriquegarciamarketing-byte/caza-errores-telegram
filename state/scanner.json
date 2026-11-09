@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794192618
+   "checked": 1794195938
   },
   {
    "id": "cm-2057212",
@@ -14605,10 +14605,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 6,
+ "rotation_index": 2,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-roborock-saros-20-sonic-complete-36000-pa-sistema-vibrarise-50perfil-795-cmia-reactive-30-2059926": 1794172120.2362657,
-  "https://www.chollometro.com/ofertas/skechers-glide-step-pro-zapatillas-mujer-glide-step-air-cooled-memory-foam-no-tie-fit-y-suela-de-traccion-flexible-varios-colores-2059988": 1794172711.675276,
   "https://www.chollometro.com/ofertas/zapatillas-craft-pure-trail-x-tallas-405-a-47-2059322": 1794173911.5836518,
   "https://www.chollometro.com/ofertas/lego-one-piece-restaurante-flotante-baratie-75640-set-para-adultos-decoracion-anime-con-interior-detallado-y-10-minifiguras-2059431": 1794175736.4583461,
   "https://www.chollometro.com/ofertas/zapatillas-altra-experience-wild-2-2041717": 1794179345.6845284,
@@ -14623,6 +14621,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 176
+  "passes": 192
  }
 }
