@@ -121,6 +121,9 @@ class Administrador(unittest.TestCase):
 
 
 REAL_CFG = json.loads((Path(__file__).resolve().parent / "config.json").read_text(encoding="utf-8"))
+# El foco del día ("foco" en config.json) es temporal: las pruebas de categorías van sin él.
+REAL_FOCO = dict(cn.rules_from(REAL_CFG))
+(REAL_CFG.get("amazon_channel") or {}).pop("foco", None)
 REAL = dict(cn.rules_from(REAL_CFG), caption_style="completo")
 
 
@@ -681,3 +684,40 @@ class Pendientes(unittest.TestCase):
                fetch=lambda url: LEFANT if "/dp/" in url else "<html></html>",
                resolve_asin=lambda jl: "B0G7YP6MXV", log=lambda *a: None, cascade_loader=lambda log: [])
         self.assertEqual([i["id"] for i in state["backlog"]], ["R0ZG4Bv"])
+
+
+class FocoDelDia(unittest.TestCase):
+    RULES = dict(REAL, foco={"hasta": "2026-11-09T23:59",
+                             "solo_categorias": ["Aspiradoras", "Electrodomésticos", "Móviles y tablets"],
+                             "fuentes": ["https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified"]})
+    HOY = datetime(2026, 11, 9, 12, 0, tzinfo=cn.MADRID)
+    MANANA = datetime(2026, 11, 10, 9, 0, tzinfo=cn.MADRID)
+
+    def test_con_foco_la_ropa_no_sale(self):
+        for title in ("Tommy Hilfiger Camisa Hombre Manga Corta", "VENUM Classic 2.0 Gorra, Marrón",
+                      "Massi Morino Corbata Gris de Rayas"):
+            self.assertTrue(cn.interest(title, self.RULES, self.HOY)["blocked"], title)
+
+    def test_con_foco_tech_y_hogar_si(self):
+        for title, label in (("Roborock Q7 Max Robot Aspirador", "Aspiradoras"),
+                             ("Cosori Freidora de Aire 5,5 L", "Electrodomésticos"),
+                             ("Ecovacs Deebot T30 Omni", "Aspiradoras")):
+            taste = cn.interest(title, self.RULES, self.HOY)
+            self.assertEqual((taste["label"], taste["blocked"]), (label, ""), title)
+
+    def test_el_foco_caduca_solo(self):
+        taste = cn.interest("VENUM Classic 2.0 Gorra, Marrón", self.RULES, self.MANANA)
+        self.assertEqual(taste["blocked"], "")
+
+    def test_con_foco_rota_solo_por_sus_listados(self):
+        rules = dict(self.RULES, sources=[f"https://x/{i}" for i in range(20)], core_sources=2, max_sources_per_run=4)
+        picked = cn.sources_for_run(rules, self.HOY, {"rotation": 0})
+        self.assertEqual(picked[:2], ["https://x/0", "https://x/1"])
+        self.assertTrue(all("hogar-y-cocina" in url for url in picked[2:]))
+        self.assertTrue(all("hogar-y-cocina" not in url for url in cn.sources_for_run(rules, self.MANANA, {"rotation": 0})))
+
+    def test_el_foco_real_de_config_es_valido(self):
+        labels = {tier["label"] for tier in REAL["interest"]["tiers"]}
+        foco = REAL_FOCO.get("foco")
+        if foco:
+            self.assertLessEqual(set(foco["solo_categorias"]), labels)

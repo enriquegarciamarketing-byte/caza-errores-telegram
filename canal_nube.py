@@ -328,7 +328,37 @@ def excluido_amazon(title: str) -> str:
     return next((word for word in EXCLUIDOS_UE if has(word)), "")
 
 
-def interest(title: str, rules: dict) -> dict:
+def foco_activo(rules: dict, now: datetime | None = None) -> dict:
+    """El foco del día ("foco" en config.json) si sigue vigente, o {}.
+
+    Mientras dura, el canal solo saca las categorías de "solo_categorias" (p. ej. tech y hogar) y
+    nada de "cualquier categoría" (ropa, complementos…). Caduca solo al pasar "hasta"."""
+    foco = rules.get("foco") or {}
+    if not foco.get("solo_categorias"):
+        return {}
+    until = str(foco.get("hasta") or "").strip()
+    if until:
+        try:
+            limit = datetime.fromisoformat(until)
+        except ValueError:
+            return {}
+        if limit.tzinfo is None:
+            limit = limit.replace(tzinfo=MADRID)
+        if (now or datetime.now(MADRID)) > limit:
+            return {}
+    return foco
+
+
+def interest(title: str, rules: dict, now: datetime | None = None) -> dict:
+    """Interés con el foco del día aplicado: fuera del foco cuenta como bloqueado."""
+    taste = interest_base(title, rules)
+    foco = foco_activo(rules, now)
+    if foco and not taste["blocked"] and taste["label"] not in set(foco["solo_categorias"]):
+        taste = {"score": 0, "label": "", "blocked": f"fuera del foco de hoy ({taste['label'] or 'sin categoría top'})"}
+    return taste
+
+
+def interest_base(title: str, rules: dict) -> dict:
     """Interés del producto para el público general: {'score', 'label', 'blocked'}.
 
     Lo bloqueado (consumibles, tornillería, papelería, ropa interior…) nunca sale. Lo que más se compra
@@ -416,7 +446,7 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
                 and gap <= float(rules.get("media90_max_gap_pct", 15)) + 1e-9):
             pct, ref_kind, reference = drop_90, "media90", float(median_90)
     ref_text = "su media de los 90 días" if ref_kind else "su mínimo de los 30 días anteriores"
-    taste = interest(title, rules)
+    taste = interest(title, rules, now)
     if taste["blocked"]:
         return f"poco interés («{taste['blocked']}»)", {}
     low = detail.get("low")
@@ -1120,6 +1150,10 @@ def sources_for_run(rules: dict, now: datetime, state: dict | None = None) -> li
     if not limit or len(sources) <= limit:
         return sources
     fixed, rest = sources[:core], sources[core:]
+    foco = foco_activo(rules, now)
+    if foco.get("fuentes"):
+        # Con foco del día se rota solo por los listados de esas categorías (tech y hogar), no por moda.
+        rest = list(foco["fuentes"])
     take = max(0, limit - len(fixed))
     if not rest or not take:
         return fixed

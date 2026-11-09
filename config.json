@@ -324,6 +324,42 @@
       "audiolibro",
       "tarjeta regalo"
     ],
+    "foco": {
+      "_nota": "Foco del día pedido por Enrique el 9/11/2026: demasiada ropa, hoy solo tech y hogar (robots aspiradores, freidoras de aire, cafeteras, móviles, TV…). Mientras no pase 'hasta', solo salen estas categorías y nada de moda, complementos ni 'cualquier categoría'; los listados rotativos pasan a ser solo los de 'fuentes'. Para alargarlo, cambia la fecha de 'hasta'; para quitarlo, borra este bloque.",
+      "hasta": "2026-11-09T23:59",
+      "solo_categorias": [
+        "Móviles y tablets",
+        "Aspiradoras",
+        "Cafeteras",
+        "Electrodomésticos",
+        "Muebles y descanso",
+        "TV y sonido",
+        "Informática",
+        "Consolas",
+        "Relojes inteligentes",
+        "Cocina",
+        "Cuidado personal",
+        "Hogar inteligente",
+        "Clima",
+        "Movilidad y fitness",
+        "Herramientas",
+        "Cámaras y drones"
+      ],
+      "fuentes": [
+        "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified",
+        "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified&page=2",
+        "https://jimmyleaks.com/es/c/hogar-y-cocina/?order=-modified&page=3",
+        "https://jimmyleaks.com/es/c/electronica/?order=-modified",
+        "https://jimmyleaks.com/es/c/electronica/?order=-modified&page=2",
+        "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-modified",
+        "https://jimmyleaks.com/es/c/informatica/?order=-modified",
+        "https://jimmyleaks.com/es/c/informatica/?order=-modified&page=2",
+        "https://jimmyleaks.com/es/c/dispositivos-amazon-y-accesorios/?order=-modified",
+        "https://jimmyleaks.com/es/c/videojuegos/?order=-modified",
+        "https://jimmyleaks.com/es/c/bricolaje-y-herramientas/?order=-modified",
+        "https://jimmyleaks.com/es/c/iluminacion/?order=-modified"
+      ]
+    },
     "interest": {
       "_nota": "Cuenta el mejor descuento real: frente al mínimo de los 30 días anteriores o frente a la media de los 90 días (y en ese caso tiene que haber bajado al menos un 10 % frente al mínimo de 30). Categorías top (las que llevan min_discount) desde -25 %, resto de categorías de la lista desde -30 %, cualquier otra categoría desde -40 % y 8 €. En su mínimo histórico, las top desde -15 %. Tras 30 min sin publicar baja a -18 % top, -22 % resto y -30 % cualquier categoría. Se publica primero lo de más descuento. block nunca sale.",
       "any_category_min_discount": 40,
@@ -371,7 +407,14 @@
             "dyson gen5",
             "dyson v15",
             "dyson v12",
-            "dyson v8"
+            "dyson v8",
+            "ecovacs",
+            "deebot",
+            "eufy robovac",
+            "lefant",
+            "robot friegasuelos",
+            "aspirador sin cable",
+            "aspiradora sin cable"
           ],
           "min_discount": 25
         },
@@ -412,7 +455,11 @@
             "robot de cocina",
             "thermomix",
             "mambo",
-            "termo electrico"
+            "termo electrico",
+            "airfryer",
+            "ninja foodi",
+            "freidora de aire caliente",
+            "horno de aire"
           ],
           "min_discount": 25,
           "not_if": [
