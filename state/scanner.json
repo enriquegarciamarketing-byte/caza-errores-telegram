@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794207755
+   "checked": 1794213274
   },
   {
    "id": "cm-2057212",
@@ -1869,11 +1869,64 @@
    "needs_ok": true,
    "ask_until": 1794143991,
    "expired": true
+  },
+  {
+   "id": "cm-2060262",
+   "gtin": null,
+   "price": 109.0,
+   "category": "OPORTUNIDAD DE REVENTA",
+   "t": 1794211053,
+   "title": "Reloj CASIO G-SHOCK \"Fine Metallic\" GM-2100YM-8A | Caja de acero de 44,4mm | 20ATM/200m",
+   "cap": {
+    "category": "OPORTUNIDAD DE REVENTA",
+    "title": "Reloj CASIO G-SHOCK \"Fine Metallic\" GM-2100YM-8A | Caja de acero de 44,4mm | 20ATM/200m",
+    "brand": "",
+    "current": 109.0,
+    "reference": 269.0,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "sizes": null,
+    "hold": false,
+    "store": "Showroomprive",
+    "note": "",
+    "ref_text": "frente al precio anterior en la tienda",
+    "resale_price": 194.2,
+    "resale_count": 3,
+    "profit": 73.48999999999998,
+    "demand": "Muchos anuncios",
+    "source_label": "WALLAPOP"
+   },
+   "url": "https://www.showroomprive.es/ficheproduit.aspx?produit=42134820",
+   "alert_id": 537,
+   "alert_text_id": 538,
+   "pending": true,
+   "needs_ok": true,
+   "ask_until": 1794221853,
+   "card_data": {
+    "title": "Reloj CASIO G-SHOCK \"Fine Metallic\" GM-2100YM-8A | Caja de acero de 44,4mm | 20ATM/200m",
+    "category": "OPORTUNIDAD DE REVENTA",
+    "current": 109.0,
+    "reference": 269.0,
+    "image": "https://static.chollometro.com/threads/raw/pUSMi/2060262_1/re/150x150/qt/55/2060262_1.jpg",
+    "store_label": "Showroomprive",
+    "conditions": "",
+    "resale": {
+     "price": 194.2,
+     "count": 3,
+     "roi": 67.42201834862384,
+     "profit": 73.48999999999998,
+     "source_label": "WALLAPOP",
+     "note": "3 anuncios de referencia · Wallapop 3 · Muchos anuncios",
+     "sample": false,
+     "demand": "Muchos anuncios"
+    }
+   }
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 100,
+ "last_listing_count": 98,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -2904,51 +2957,6 @@
   }
  },
  "wallapop_cache": {
-  "|nba 2k27 ed estandar ps5|nba 2k27 estandar": {
-   "t": 1793728113.1037464,
-   "query": "nba 2k27",
-   "prices": [
-    38.0,
-    39.99,
-    34.99,
-    45.0,
-    50.0,
-    40.0,
-    50.0,
-    40.0,
-    50.0,
-    70.0,
-    45.99,
-    45.0,
-    50.0,
-    60.0,
-    55.0,
-    50.0,
-    45.0,
-    79.0,
-    50.0,
-    40.0,
-    45.0,
-    60.0,
-    50.0,
-    65.0,
-    59.9,
-    70.0,
-    70.0,
-    55.0,
-    55.0,
-    60.0,
-    60.0,
-    60.0,
-    55.0,
-    55.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 62295,
-   "raw_count": 34
-  },
   "|nba 2k27 playstation 5|nba 2k27 playstation": {
    "t": 1794138631.2772803,
    "query": "nba 2k27 playstation",
@@ -8914,6 +8922,20 @@
    "http_status": 200,
    "bytes": 65263,
    "raw_count": 23
+  },
+  "|reloj casio g-shock \"fine metallic\" gm-2100ym-8a | caja de acero de 44,4mm | 20atm/200m|reloj 2100ym casio": {
+   "t": 1794211040.9797018,
+   "query": "reloj 2100ym casio",
+   "prices": [
+    175.0,
+    199.0,
+    219.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 22038,
+   "raw_count": 5
   }
  },
  "milanuncios_cache": {
@@ -14567,24 +14589,33 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~50 € (19 anuncios): ROI -30 % y -19 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|reloj casio g-shock \"fine metallic\" gm-2100ym-8a | caja de acero de 44,4mm | 20atm/200m|reloj 2100ym casio": {
+   "t": 1794211040.7320197,
+   "prices": [],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "Vinted solo tiene 0 anuncios parecidos (mínimo 3)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 1,
+ "rotation_index": 18,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/sony-inzone-buds-auriculares-inalambricos-para-gaming-con-cancelacion-de-ruido-en-blanco-2060131": 1794186143.5221796,
   "https://www.chollometro.com/ofertas/garmin-fenix-8-47-mm-amoled-slate-gray-smartwatch-gps-multibanda-mapas-linterna-led-llamadas-10-atm-y-buceo-40-m-2060064": 1794197340.1982055,
-  "https://www.chollometro.com/ofertas/msi-pro-z790-p-wifi-placa-base-atx-12a-y-13a-gen-core-intel-z790-lga-1700-pcie-50-4-ranuras-m2-gen4-ddr5-7000-mhz-oc-2059835": 1794205818.8668582
+  "https://www.chollometro.com/ofertas/msi-pro-z790-p-wifi-placa-base-atx-12a-y-13a-gen-core-intel-z790-lga-1700-pcie-50-4-ranuras-m2-gen4-ddr5-7000-mhz-oc-2059835": 1794205818.8668582,
+  "https://www.chollometro.com/ofertas/reloj-casio-g-shock-fine-metallic-gm-2100ym-8a-caja-de-acero-de-444mm-20atm200m-2060262": 1794211037.2026517
  },
  "asked": {
   "cm-2057212": 1794127930,
-  "cm-2059309": 1794133191
+  "cm-2059309": 1794133191,
+  "cm-2060262": 1794211053
  },
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 238
+  "passes": 254
  }
 }
