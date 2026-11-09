@@ -6395,8 +6395,8 @@
    "price": 349.0
   },
   "1Gp0DmM": {
-   "t": 1794238988,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794260674,
+   "why": "sin precio en la ficha",
    "price": 22.05
   },
   "RXr6KJn": {
@@ -10185,8 +10185,8 @@
    "price": 13.89
   },
   "M5jQaj9": {
-   "t": 1794239108,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794261394,
+   "why": "sin precio en la ficha",
    "price": 479.0
   },
   "RXrAgEV": {
@@ -10240,8 +10240,8 @@
    "price": 11.99
   },
   "ROdNYE1": {
-   "t": 1794231980,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794259714,
+   "why": "sin precio en la ficha",
    "price": 135.0
   },
   "M6Xya5x": {
@@ -11305,8 +11305,8 @@
    "price": 17.01
   },
   "RY6bJJE": {
-   "t": 1794236999,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794259714,
+   "why": "sin precio en la ficha",
    "price": 299.95
   },
   "7gmqne1": {
@@ -11320,8 +11320,8 @@
    "price": 239.97
   },
   "M52rbAl": {
-   "t": 1794236399,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794259714,
+   "why": "sin precio en la ficha",
    "price": 25.49
   },
   "1L3GvGR": {
@@ -11330,8 +11330,8 @@
    "price": 74.95
   },
   "R4xYN2r": {
-   "t": 1794237359,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794259834,
+   "why": "sin precio en la ficha",
    "price": 199.9
   },
   "1bZ3KeE": {
@@ -11645,9 +11645,9 @@
    "price": 35.0
   },
   "7k04xdJ": {
-   "t": 1794246654,
+   "t": 1794261634,
    "why": "sin precio en la ficha",
-   "price": 59.0
+   "price": 102.28
   },
   "7knLzVM": {
    "t": 1794209165,
@@ -11830,7 +11830,7 @@
    "price": 79.95
   },
   "MQqvnPM": {
-   "t": 1794236399,
+   "t": 1794259714,
    "why": "precio fuera de rango (6.98 €)",
    "price": 6.98
   },
@@ -11905,8 +11905,8 @@
    "price": 61.38
   },
   "72NgNN7": {
-   "t": 1794236999,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794259714,
+   "why": "sin precio en la ficha",
    "price": 44.95
   },
   "R3zwJp7": {
@@ -11990,8 +11990,8 @@
    "price": 41.04
   },
   "RVg5PN8": {
-   "t": 1794236399,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794259714,
+   "why": "sin precio en la ficha",
    "price": 99.99
   },
   "18a9brM": {
@@ -12020,8 +12020,8 @@
    "price": 11.68
   },
   "1D6dKZq": {
-   "t": 1794239108,
-   "why": "ya publicado hace poco y no ha bajado más",
+   "t": 1794261634,
+   "why": "sin precio en la ficha",
    "price": 299.0
   },
   "ROoEOnR": {
@@ -12523,10 +12523,25 @@
    "t": 1794253096,
    "why": "sin precio en la ficha",
    "price": 219.99
+  },
+  "MW2Vwow": {
+   "t": 1794259714,
+   "why": "sin precio en la ficha",
+   "price": 1099.0
+  },
+  "ROoxjXG": {
+   "t": 1794259714,
+   "why": "sin precio en la ficha",
+   "price": 74.9
+  },
+  "MKJavVQ": {
+   "t": 1794259714,
+   "why": "sin precio en la ficha",
+   "price": 589.0
   }
  },
  "summary_sent": "2026-11-08",
- "rotation": 2734,
+ "rotation": 2752,
  "backlog": [],
  "private_chats": {
   "darkness_gg": 9188393228
