@@ -1081,8 +1081,8 @@
    "result": "solo -2% bajo la referencia"
   },
   "RNme967": {
-   "price": 105.0,
-   "t": 1793917052,
+   "price": 90.0,
+   "t": 1794186578,
    "result": "la referencia corregida no supera el precio (media inflada)"
   },
   "7nQ22Ll": {
@@ -1111,9 +1111,9 @@
    "result": "solo -16% bajo la referencia"
   },
   "RJK9wp1": {
-   "price": 43.95,
-   "t": 1794081672,
-   "result": "solo -0% bajo la referencia"
+   "price": 40.3,
+   "t": 1794186428,
+   "result": "solo -8% bajo la referencia"
   },
   "7AG8NNk": {
    "price": 234.0,
@@ -1797,7 +1797,7 @@
    "ask_until": 1794052689,
    "approved": true,
    "message_id": 78,
-   "checked": 1794184450
+   "checked": 1794188378
   },
   {
    "id": "cm-2057212",
@@ -1873,7 +1873,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 99,
+ "last_listing_count": 88,
  "health_alerts": {
   "no_listings": 1793887946.189363
  },
@@ -14605,10 +14605,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 14,
+ "rotation_index": 10,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/hoka-bondi-7-hombre-zapatillas-tallas-42-42-23-45-13-recogida-en-tienda-2059820": 1794162977.018129,
-  "https://www.chollometro.com/ofertas/361-zapatillas-running-mujeres-hasta-79-de-descuento-2059919": 1794165797.2780313,
   "https://www.chollometro.com/ofertas/361-zapatillas-de-running-centauri-2-hombre-2059925": 1794166397.4630218,
   "https://www.chollometro.com/ofertas/dyson-v8-origin-2026-aspiradora-sin-cable-con-130-aw-de-succion-40-min-de-autonomia-y-cabezal-antienredos-2059824": 1794169154.7665377,
   "https://www.chollometro.com/ofertas/zapatillas-hombre-reebok-world-70-azul-marino-41-a-45-2059700": 1794170320.1398847,
@@ -14618,7 +14616,8 @@
   "https://www.chollometro.com/ofertas/lego-one-piece-restaurante-flotante-baratie-75640-set-para-adultos-decoracion-anime-con-interior-detallado-y-10-minifiguras-2059431": 1794175736.4583461,
   "https://www.chollometro.com/ofertas/zapatillas-altra-experience-wild-2-2041717": 1794179345.6845284,
   "https://www.chollometro.com/ofertas/cecotec-aspirador-vertical-conga-thunderbrush-560-2-en-1-600-w-tecnologia-ciclonica-filtro-de-alta-eficienciacon-cupon-ventaja-barata-2060011": 1794182214.2030735,
-  "https://www.chollometro.com/ofertas/msi-pro-z790-p-wifi-placa-base-atx-12a-y-13a-gen-core-intel-z790-lga-1700-pcie-50-4-ranuras-m2-gen4-ddr5-7000-mhz-oc-2059835": 1794183414.419036
+  "https://www.chollometro.com/ofertas/msi-pro-z790-p-wifi-placa-base-atx-12a-y-13a-gen-core-intel-z790-lga-1700-pcie-50-4-ranuras-m2-gen4-ddr5-7000-mhz-oc-2059835": 1794183414.419036,
+  "https://www.chollometro.com/ofertas/sony-inzone-buds-auriculares-inalambricos-para-gaming-con-cancelacion-de-ruido-en-blanco-2060131": 1794186143.5221796
  },
  "asked": {
   "cm-2057212": 1794127930,
@@ -14627,6 +14626,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 144
+  "passes": 160
  }
 }
