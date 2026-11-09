@@ -1234,6 +1234,11 @@
    "price": 38.99,
    "t": 1794248596,
    "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "RYAz0ER": {
+   "price": 229.99,
+   "t": 1794249377,
+   "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
  "posts": [
@@ -1988,7 +1993,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 78,
+ "last_listing_count": 73,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16019,7 +16024,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 7,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/lego-ideas-et-the-extra-terrestrial-21370-2060599": 1794227982.0413456,
   "https://www.chollometro.com/ofertas/adidas-zapatillas-de-running-galaxy-6-tallas-36-a-42-2018058": 1794228581.4838858,
@@ -16060,6 +16065,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 403
+  "passes": 404
  }
 }
