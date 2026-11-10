@@ -2832,7 +2832,7 @@
   },
   "B006URYANA": {
    "price": null,
-   "t": 1794348236,
+   "t": 1794351520,
    "result": "sin precio en Amazon"
   },
   "B004V2HE7K": {
@@ -2901,8 +2901,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B000VDCT3C": {
-   "price": 609.14,
-   "t": 1794348296,
+   "price": 609.06,
+   "t": 1794351520,
    "result": "Amazon no marca precio anterior"
   },
   "B073S3WPMD": {
@@ -5758,7 +5758,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794351395
+   "checked": 1794351520
   },
   {
    "id": "cm-2062698",
@@ -20967,13 +20967,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 899
+  "passes": 900
  },
  "jl_paused_until": 1794352070.364791,
- "amazon_search_index": 90,
- "last_api_count": 22,
+ "amazon_search_index": 94,
+ "last_api_count": 26,
  "api_calls": {
-  "2026-11-10": 260
+  "2026-11-10": 264
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -22827,7 +22827,7 @@
   "B000VDCT3C": [
    [
     20261110,
-    609.14,
+    609.06,
     609.14
    ]
   ],
