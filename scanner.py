@@ -1858,7 +1858,7 @@ def main() -> int:
             print(f"Bot: @{me['username']}" + ("" if state.get("admin_chat_id") else " · administrador sin vincular"))
         except RuntimeError as exc:
             print(f"Aviso: {exc}")
-        if args.test_private:
+        if args.test_private or args.test_asin:
             print("Prueba privada: no se leen mensajes del administrador ni se avanza el offset.")
         else:
             handle_updates(tg, cfg, state, channel, args.dry_run)
