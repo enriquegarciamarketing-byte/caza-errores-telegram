@@ -2093,7 +2093,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 73,
+ "last_listing_count": 77,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3508,33 +3508,6 @@
    "http_status": 200,
    "bytes": 75492,
    "raw_count": 26
-  },
-  "|saguaro punto barefoot zapatillas minimalistas hombre mujer|saguaro punto": {
-   "t": 1793953128.2306013,
-   "query": "saguaro punto",
-   "prices": [
-    39.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 67378,
-   "raw_count": 21
-  },
-  "|zapatillas park lifestyle ii unisex (tallas 35.5 al 48, varios colores) envio gratis registrado|zapatillas 35 park": {
-   "t": 1793953707.2378082,
-   "query": "zapatillas 35 park",
-   "prices": [
-    55.0,
-    9.0,
-    28.0,
-    160.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 29261,
-   "raw_count": 7
   },
   "|macbook neo a18 pro 8gb 256gb rosa nube|macbook a18 neo": {
    "t": 1793955383.7455075,
@@ -9492,6 +9465,39 @@
    "http_status": 200,
    "bytes": 16252,
    "raw_count": 4
+  },
+  "|tira led inteligente govee h6098 rgbic+w con wifi, bluetooth y camara | sincronizacion con pantalla y musica | con bombilla por 53,83€|tira h6098 led": {
+   "t": 1794311360.300712,
+   "query": "tira h6098 led",
+   "prices": [],
+   "reserved": 0,
+   "demand_known": false,
+   "http_status": null,
+   "bytes": null,
+   "raw_count": null
+  },
+  "|robot aspirador y fregasuelos roborock qrevo 2 pro (25.000 pa, mopa flexiarm, 75°c)|robot 25 aspirador": {
+   "t": 1794311362.549096,
+   "query": "robot 25",
+   "prices": [
+    15.0,
+    30.0,
+    60.0,
+    75.0,
+    5300.0,
+    25.0,
+    49.0,
+    1200.0,
+    25.0,
+    75.0,
+    25.0,
+    50.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 144218,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -16684,7 +16690,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 12,
+ "rotation_index": 17,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
@@ -16706,7 +16712,9 @@
   "https://www.chollometro.com/ofertas/guitarra-inalambrica-turtle-beach-riffmasterwireles-nintendo-switch-12-hasta-36h-de-autonomia-2062138": 1794307043.8703918,
   "https://www.chollometro.com/ofertas/robot-aspirador-dreame-matrix10-ultra-con-autovaciado-blanco-2051996": 1794310381.0617871,
   "https://www.chollometro.com/ofertas/calvin-klein-jeans-zapatillas-tallas-de-la-36-a-la-41-2061628": 1794310381.0617871,
-  "https://www.chollometro.com/ofertas/new-balance-fuelcell-rebel-v4-zapatillas-running-asfalto-2061989": 1794310381.0617871
+  "https://www.chollometro.com/ofertas/new-balance-fuelcell-rebel-v4-zapatillas-running-asfalto-2061989": 1794310381.0617871,
+  "https://www.chollometro.com/ofertas/tira-led-inteligente-govee-h6098-rgbicw-con-wifi-bluetooth-y-camara-sincronizacion-con-pantalla-y-musica-con-bombilla-por-5383eur-2062254": 1794311354.321396,
+  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-roborock-qrevo-2-pro-25000-pa-mopa-flexiarm-75c-2061864": 1794311354.321396
  },
  "asked": {
   "cm-2060782": 1794235272,
@@ -16715,6 +16723,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 656
+  "passes": 657
  }
 }
