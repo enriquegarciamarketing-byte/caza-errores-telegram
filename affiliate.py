@@ -63,6 +63,21 @@ def extract_asin(url: str) -> str | None:
     return None
 
 
+class MissingTag(ValueError):
+    """Un enlace de Amazon que iba a salir sin el tag de Enrique. Nunca se publica."""
+
+
+def require_tag(url: str, tag: str) -> None:
+    """Última comprobación antes de publicar (10/11/2026): todo enlace de Amazon lleva el tag de Enrique y solo ese.
+    Los enlaces cortos (link.amazon, amzn.to…) los saca él con su cuenta y pasan tal cual."""
+    if not tag or not url or is_short_link(url) or "amazon." not in _host(url):
+        return
+    query = urllib.parse.parse_qsl(urllib.parse.urlsplit(url.strip()).query, keep_blank_values=True)
+    tags = [value for key, value in query if key.lower() == "tag"]
+    if tags != [tag]:
+        raise MissingTag(f"el enlace de Amazon no lleva tu tag {tag} ({url})")
+
+
 def force_tag(url: str, tag: str) -> str:
     """Deja un solo parámetro tag, el del canal, y conserva el resto de la consulta."""
     parts = urllib.parse.urlsplit(url.strip())

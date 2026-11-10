@@ -963,6 +963,8 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
     "fondo_blanco": true en config), con el texto
     y el botón "Comprar en Amazon". Si la foto falla, o el chollo no tiene, sale la tarjeta.
     Otros estilos en config: "separadas" (foto y tarjeta en dos mensajes), "album" o "tarjeta"."""
+    import affiliate
+    affiliate.require_tag(url, rules.get("tag") or "")  # sin tu tag no sale nada (MissingTag es un ValueError)
     card = make_card(deal, rules)
     image = str(deal.get("image") or "")
     style = rules.get("post_style", "foto")

@@ -185,3 +185,30 @@ class NetworkTest(unittest.TestCase):
         with mock.patch.object(scanner.urllib.request, "urlopen", side_effect=urllib.error.URLError("sin wifi")):
             with self.assertRaises(RuntimeError):
                 tg.call("getUpdates")
+
+
+class TagGuardTest(unittest.TestCase):
+    TAG = "cazachollos0c-21"
+
+    def test_amazon_sin_tag_o_con_otro_no_sale(self):
+        import affiliate
+        for url in ("https://www.amazon.es/dp/B0TEST1234",
+                    "https://www.amazon.es/dp/B0TEST1234?tag=otro-21",
+                    "https://www.amazon.es/dp/B0TEST1234?tag=otro-21&tag=cazachollos0c-21"):
+            with self.assertRaises(affiliate.MissingTag):
+                affiliate.require_tag(url, self.TAG)
+
+    def test_con_tu_tag_enlaces_cortos_y_otras_tiendas_pasan(self):
+        import affiliate
+        affiliate.require_tag("https://www.amazon.es/dp/B0TEST1234?tag=cazachollos0c-21", self.TAG)
+        affiliate.require_tag("https://link.amazon/B06HSXRm5", self.TAG)
+        affiliate.require_tag("https://www.pccomponentes.com/x", self.TAG)
+
+    def test_el_boton_del_premium_y_el_post_del_free_lo_comprueban(self):
+        import affiliate
+        import canal_nube
+        with self.assertRaises(affiliate.MissingTag):
+            scanner.buttons_for("https://www.amazon.es/dp/B0TEST1234")
+        self.assertIn("inline_keyboard", scanner.buttons_for("https://www.amazon.es/dp/B0TEST1234?tag=cazachollos0c-21"))
+        with self.assertRaises(affiliate.MissingTag):
+            canal_nube.publish(None, "@c", {"asin": "B0TEST1234"}, {"tag": self.TAG}, "", "https://www.amazon.es/dp/B0TEST1234")

@@ -290,7 +290,11 @@ def conditions_label(cand: dict) -> str:
     return " + ".join(parts)
 
 
-def buttons_for(url: str) -> dict:
+def buttons_for(url: str, check_tag: bool = True) -> dict:
+    """Botón de compra. Todo post nuevo pasa por aquí: sin tu tag no sale nada (MissingTag).
+    check_tag=False solo para marcar como agotado un post viejo, que no se vuelve a lanzar."""
+    if check_tag:
+        affiliate.require_tag(url, load_json(CONFIG_PATH, {}).get("affiliate_tag", ""))
     shop = premium.store_of(url)[1]
     return {"inline_keyboard": [[{"text": f"🛒 Ver en {shop}", "url": url}]]}
 
@@ -2010,6 +2014,10 @@ def run_private_test(tg, cfg, state, channel, args, now) -> int:
                     time.sleep(2)
             else:
                 note_wallapop_skip(state, cand)
+        except affiliate.MissingTag as exc:
+            print(f"  ⛔ No publico {cand['id']}: {exc}")
+            eventos.emit("publicacion", id=cand.get("id"), titulo=card_title(cand), estado="NO PUBLICADO", motivo=str(exc))
+            health_alert(tg, state, "sin_tag", f"no he publicado un producto porque {exc}.", every_hours=1)
         except RuntimeError as exc:
             print(f"  Error publicando {cand['id']}: {exc}")
     if posted:
@@ -2055,7 +2063,7 @@ def track_posts(tg, state: dict, channel: str, now: datetime, dry: bool, limit: 
         try:
             tg.call("editMessageCaption", {"chat_id": channel, "message_id": post["message_id"],
                                            "caption": caption[:1024], "parse_mode": "HTML",
-                                           "reply_markup": buttons_for(post["url"])})
+                                           "reply_markup": buttons_for(post["url"], check_tag=False)})
             post["ended"] = int(now.timestamp())
         except RuntimeError as exc:
             print(f"  No he podido marcar el post {post['message_id']}: {exc}")
@@ -2105,6 +2113,10 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime, with
                 note_wallapop_skip(state, cand)
                 if cand.get("cascade_reason") and not cand.get("needs_ok"):
                     CASCADA.add(cand, cand["cascade_reason"], now.timestamp())
+        except affiliate.MissingTag as exc:
+            print(f"  ⛔ No publico {cand['id']}: {exc}")
+            eventos.emit("publicacion", id=cand.get("id"), titulo=card_title(cand), estado="NO PUBLICADO", motivo=str(exc))
+            health_alert(tg, state, "sin_tag", f"no he publicado un producto porque {exc}.", every_hours=1)
         except RuntimeError as exc:
             print(f"  Error publicando {cand['id']}: {exc}")
     print(f"Publicados en esta ejecución: {posted}")

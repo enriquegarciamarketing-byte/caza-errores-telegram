@@ -484,7 +484,7 @@ class Manual(unittest.TestCase):
             def call(self, *a, **k):
                 raise AssertionError("con fondo blanco la foto se sube, no se manda por URL")
 
-        cn.publish(TG(), "@x", deal, dict(RULES, post_style="foto"), "texto", "https://www.amazon.es/dp/B0HC84XR1P")
+        cn.publish(TG(), "@x", deal, dict(RULES, post_style="foto"), "texto", "https://www.amazon.es/dp/B0HC84XR1P?tag=" + RULES["tag"])
         self.assertEqual(sent, ["B0HC84XR1P-lienzo.jpg"])
 
     def test_fondo_blanco_en_todos_los_posts(self):
@@ -502,7 +502,7 @@ class Manual(unittest.TestCase):
                 raise AssertionError("con fondo blanco la foto se sube, no se manda por URL")
 
         cn.publish(TG(), "@x", deal, dict(RULES, post_style="foto", fondo_blanco=True), "texto",
-                   "https://www.amazon.es/dp/B0HC84XR1P")
+                   "https://www.amazon.es/dp/B0HC84XR1P?tag=" + RULES["tag"])
         self.assertEqual(sent, ["B0HC84XR1P-lienzo.jpg"])
         self.assertTrue(cn.rules_from(json.loads((cn.ROOT / "config.json").read_text()))["fondo_blanco"])
 
