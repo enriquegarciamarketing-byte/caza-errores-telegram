@@ -16651,7 +16651,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 13,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
@@ -16679,6 +16679,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 651
+  "passes": 652
  }
 }
