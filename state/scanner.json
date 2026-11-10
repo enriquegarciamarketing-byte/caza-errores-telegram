@@ -4102,7 +4102,7 @@
   },
   "B01N19J3A5": {
    "price": null,
-   "t": 1794349197,
+   "t": 1794350052,
    "result": "sin precio en Amazon"
   },
   "B085F55TSD": {
@@ -4152,7 +4152,7 @@
   },
   "B0BBXZ7S5N": {
    "price": null,
-   "t": 1794349197,
+   "t": 1794350052,
    "result": "sin precio en Amazon"
   },
   "B0CFD9ZKZJ": {
@@ -5628,7 +5628,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794349702
+   "checked": 1794350052
   },
   {
    "id": "cm-2062698",
@@ -5835,18 +5835,10 @@
    "url": "https://www.amazon.es/dp/B0GCMYWSJK?tag=cazachollos0c-21",
    "alert_id": 588,
    "alert_text_id": 589,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1794350019,
-   "card_data": {
-    "title": "Bannilu Secador de pelo profesional iones, Hair Dryer iónico con 1 difusor, 2 boquillas de peinado, 3 temperaturas, aire frío y caliente, secado rápido para tod",
-    "category": "ERROR DE PRECIO",
-    "current": 39.99,
-    "reference": 139.99,
-    "image": "https://m.media-amazon.com/images/I/41espbO5GBL._SL500_.jpg",
-    "store_label": "Amazon",
-    "conditions": ""
-   }
+   "expired": true
   },
   {
    "id": "B0D47HM4XQ",
@@ -5873,18 +5865,10 @@
    "url": "https://www.amazon.es/dp/B0D47HM4XQ?tag=cazachollos0c-21",
    "alert_id": 590,
    "alert_text_id": 591,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1794350023,
-   "card_data": {
-    "title": "Faszin Plancha de Pelo Profesional 2 en 1, Titanio Iónico, 20s LCD | 150% Suave, 3D Flotante, 11 Niveles 130-230°C, LCD, Apagado 30 min, Cable 360°, Brillo 123%",
-    "category": "ERROR DE PRECIO",
-    "current": 39.99,
-    "reference": 139.99,
-    "image": "https://m.media-amazon.com/images/I/41jNnWwPIfL._SL500_.jpg",
-    "store_label": "Amazon",
-    "conditions": ""
-   }
+   "expired": true
   }
  ],
  "tg_offset": 334822062,
@@ -20853,13 +20837,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 868
+  "passes": 869
  },
  "jl_paused_until": 1794350216.919604,
- "amazon_search_index": 152,
- "last_api_count": 10,
+ "amazon_search_index": 156,
+ "last_api_count": 22,
  "api_calls": {
-  "2026-11-10": 136
+  "2026-11-10": 140
  },
  "price_history": {
   "B0CC5NJD6H": [
