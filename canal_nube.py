@@ -102,6 +102,9 @@ def rules_from(cfg: dict) -> dict:
     shared = (cfg or {}).get("amazon_search") or {}
     own = ((cfg or {}).get("amazon_channel") or {}).get("amazon_search") or {}
     rules["amazon_search"] = {**shared, **own} if (shared or own) else {}
+    # Marcas de confianza: con ellas se acepta el «precio recomendado» de Amazon como referencia.
+    rules["trusted_brands"] = list(((cfg or {}).get("resale") or {}).get("brands") or []) + \
+        list(rules["amazon_search"].get("trusted_brands") or [])
     return rules
 
 
@@ -1351,9 +1354,11 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
         if not asin or price is None or not was or why in ("sin stock", "sin imagen", "sin precio en Amazon"):
             continue
         brand = (cand.get("brand") or "").strip()
+        trusted = {fold(b) for b in rules.get("trusted_brands") or []}
+        known = bool(brand) and (fold(brand) in trusted or any(fold(brand).startswith(t + " ") for t in trusted))
         items.append({"id": f"amz-{asin}", "asin": asin, "amazon": True, "title": cand.get("title") or "",
                       "price": float(price), "was": float(was), "ts": int(now.timestamp()),
-                      "brand": brand, "brand_ok": bool(brand) and fold(brand) not in {fold(g) for g in generic},
+                      "brand": brand, "brand_ok": known,
                       "image": cand.get("image") or "", "basis_type": cand.get("basis_type") or ""})
     log(f"  Amazon (API): {len(results)} con descuento grande, {len(items)} con precio anterior y stock")
     return items
@@ -1458,7 +1463,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         if item.get("amazon"):
             why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
             if not why and item.get("basis_type") == "LIST_PRICE" and not item.get("brand_ok"):
-                why, deal = "precio recomendado de un vendedor sin marca (suele estar inflado)", {}
+                why, deal = "precio recomendado de una marca poco conocida (suele estar inflado)", {}
         elif not detail.get("full", True) and (rules.get("modo_listado") or {}).get("enabled"):
             why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
         else:
