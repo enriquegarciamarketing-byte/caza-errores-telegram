@@ -1,0 +1,21 @@
+name: tmp departamentos BF
+on:
+  push:
+    branches: [tmp-bf-check]
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: |
+          UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+          curl -sL --compressed -A "$UA" -H 'Accept-Language: es-ES,es;q=0.9' -H 'Accept: text/html' -o p.html -w 'STATUS %{http_code} %{size_download}\n' "https://www.amazon.es/blackfriday"
+          grep -c captcha p.html || true
+          python3 - <<'PY'
+          import re,html
+          t=html.unescape(open("p.html",encoding="utf-8",errors="ignore").read()).replace('\\"','"')
+          for m in re.finditer(r'Jard[ií]n',t):
+              s=t[max(0,m.start()-250):m.end()+150].replace("\n"," ")
+              if re.search(r'\d{7,}',s): print("CTX",s); 
+          ids=set(re.findall(r'"(\d{9,11})"',t)); print("IDS",len(ids), [i for i in ids if i.startswith("15712")])
+          PY
