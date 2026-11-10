@@ -185,7 +185,7 @@ def parse_detail(page: str) -> dict:
         "rating": float(rating_m.group(1)) if rating_m else None,
         "reviews": int(re.sub(r"\D", "", rating_m.group(2))) if rating_m else None,
         "page_price": parse_eur(strip_tags(big.group(1))) if big else None,
-        "full": bool(product.get("offers")),
+        "full": parse_eur(str(offer.get("price") or "")) is not None,
     }
 
 
