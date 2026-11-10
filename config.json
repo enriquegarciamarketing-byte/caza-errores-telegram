@@ -1,6 +1,6 @@
 {
-  "_nota_affiliate_tag": "ID de afiliado del premium y lo demás que no es el canal free. Vacío: enlaces de Amazon limpios, sin afiliado (premium privado, de momento sin tu ID). El free lleva el suyo en amazon_channel.affiliate_tag.",
-  "affiliate_tag": "",
+  "_nota_affiliate_tag": "ID de afiliado del premium y lo demás que no es el canal free. Desde el 10/11/2026 el premium lleva tu ID (cazachollos0c-21). Vacío: enlaces de Amazon limpios, sin afiliado. El free lleva el suyo en amazon_channel.affiliate_tag.",
+  "affiliate_tag": "cazachollos0c-21",
   "sources": [
     "https://jimmyleaks.com/es/minimos-de-hoy/",
     "https://jimmyleaks.com/es/?order=-modified",

@@ -172,7 +172,7 @@ class LinkTest(unittest.TestCase):
             "https://www.amazon.es/dp/B0H8T5GC4W?tag=otro-21&utm_source=afiliado",
             CFG, expected_asin="B0H8T5GC4W",
         )
-        self.assertNotIn("tag=", url)  # premium sin afiliado de momento
+        self.assertIn("tag=cazachollos0c-21", url)  # premium con tu afiliado
         self.assertNotIn("otro-21", url)
         self.assertNotIn("utm_source", url)
         self.assertIsNone(affiliate.clean_store_url(
