@@ -2654,6 +2654,151 @@
    "price": 3.89,
    "t": 1794345646,
    "result": "Amazon no marca precio anterior"
+  },
+  "B0BX9H2JLB": {
+   "price": 445.23,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0D6N76Q6N": {
+   "price": 32.0,
+   "t": 1794345720,
+   "result": "sin stock"
+  },
+  "B0B5VQ4B7H": {
+   "price": 62.21,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B072PQWS69": {
+   "price": 22.66,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B089X8KWG7": {
+   "price": 20.84,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0B3WPMX47": {
+   "price": 78.7,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DB8SDBJJ": {
+   "price": 9.99,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0981BKNCG": {
+   "price": 12.99,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B089ZVBHMG": {
+   "price": 45.27,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CT8XRNG2": {
+   "price": 16.27,
+   "t": 1794345720,
+   "result": "solo -7% bajo la referencia (el premium solo publica errores de precio)"
+  },
+  "B08HP49V26": {
+   "price": 15.99,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0D2RQ5CNX": {
+   "price": 14.9,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0C34GZZB1": {
+   "price": 26.63,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0FH7J9DLW": {
+   "price": 15.99,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0D49DLN3M": {
+   "price": 17.54,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00K4X4EIW": {
+   "price": 16.45,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DV99XGB3": {
+   "price": 25.77,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0D6NM2ZHX": {
+   "price": 37.25,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B07TW8Q5M5": {
+   "price": 12.9,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CT94SRTP": {
+   "price": 17.9,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0FH7GTS2N": {
+   "price": 19.99,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B089ZDZ6C9": {
+   "price": 39.6,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B07S54VHD6": {
+   "price": 46.49,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B07S1BKF3G": {
+   "price": 52.99,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DB8QPMS7": {
+   "price": 9.99,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B07DV6YH19": {
+   "price": 18.62,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DFD2ML75": {
+   "price": 34.89,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B08Y71QM9Q": {
+   "price": 17.02,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CTKRG1GH": {
+   "price": 22.13,
+   "t": 1794345720,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -3473,7 +3618,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794345646
+   "checked": 1794345720
   },
   {
    "id": "cm-2062698",
@@ -18620,9 +18765,9 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 804
+  "passes": 805
  },
  "jl_paused_until": 1794346545.136906,
- "amazon_search_index": 64,
- "last_api_count": 16
+ "amazon_search_index": 68,
+ "last_api_count": 29
 }
