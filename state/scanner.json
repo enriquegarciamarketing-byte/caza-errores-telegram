@@ -2959,6 +2959,81 @@
    "price": 29.46,
    "t": 1794346421,
    "result": "Amazon no marca precio anterior"
+  },
+  "B01B4NAC3G": {
+   "price": 7.49,
+   "t": 1794346547,
+   "result": "sin stock"
+  },
+  "B092VPDBZQ": {
+   "price": 109.0,
+   "t": 1794346547,
+   "result": "marca poco conocida (EZVIZ): su precio anterior no es fiable"
+  },
+  "B0DFYYPN5F": {
+   "price": 12.7,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0751DF7RL": {
+   "price": 14.25,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0BZMMKBM1": {
+   "price": 42.9,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0C8Y3V1YY": {
+   "price": 45.33,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B073Q3NLLG": {
+   "price": 50.26,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0BG8FWG1T": {
+   "price": 14.5,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DJY4XGB1": {
+   "price": 31.83,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B016AQYC0Q": {
+   "price": 24.42,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CYTBQ5PH": {
+   "price": 263.36,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0979H1YPZ": {
+   "price": 10.53,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DF34HLQH": {
+   "price": 10.13,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0BB7WPTK8": {
+   "price": 10.55,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B07HKK5NVP": {
+   "price": 8.15,
+   "t": 1794346547,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -3778,7 +3853,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794346421
+   "checked": 1794346547
   },
   {
    "id": "cm-2062698",
@@ -18873,7 +18948,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 5,
+ "rotation_index": 10,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -18925,9 +19000,9 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 807
+  "passes": 808
  },
- "jl_paused_until": 1794346545.136906,
- "amazon_search_index": 76,
- "last_api_count": 26
+ "jl_paused_until": 1794348347.337671,
+ "amazon_search_index": 80,
+ "last_api_count": 15
 }
