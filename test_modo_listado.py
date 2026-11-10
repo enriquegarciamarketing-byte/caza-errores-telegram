@@ -52,3 +52,22 @@ def test_seguimiento_no_marca_agotado_con_ficha_nueva():
     rules = dict(RULES, track_hours=48, max_tracking_checks_per_run=4)
     canal_nube.track_posts(None, state, NOW, rules, lambda *_: None, True, lambda url: NUEVA)
     assert not post.get("ended")
+
+
+RELAX = canal_nube.rules_from({"amazon_channel": {
+    "max_price_age_minutes": 60, "min_price_eur": 7, "max_price_eur": 3000,
+    "modo_listado": {"enabled": True, "min_discount": 50, "max_discount": 85,
+                     "relaxed_min_discount": 30, "relaxed_any_category_min_discount": 60},
+    "interest": {"tiers": [{"label": "Aspiradoras", "keywords": ["aspiradora"], "score": 100, "min_discount": 25}]}}})
+
+
+def test_sin_silencios_top_desde_30():
+    assert canal_nube.evaluate_listing(item(price=170.0), {}, RELAX, NOW, relaxed=True)[0] == ""
+    assert "solo -" in canal_nube.evaluate_listing(item(price=200.0), {}, RELAX, NOW, relaxed=True)[0]
+    assert "solo -" in canal_nube.evaluate_listing(item(price=170.0), {}, RELAX, NOW)[0]
+
+
+def test_sin_silencios_fuera_de_top_solo_muy_grande():
+    assert canal_nube.evaluate_listing(item("Gorra marrón", 90.0, 249.0), {}, RELAX, NOW, relaxed=True)[0] == ""
+    assert "categorías top" in canal_nube.evaluate_listing(item("Gorra marrón", 120.0, 249.0), {}, RELAX, NOW, relaxed=True)[0]
+    assert "categorías top" in canal_nube.evaluate_listing(item("Gorra marrón", 90.0, 249.0), {}, RELAX, NOW)[0]

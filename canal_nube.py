@@ -518,7 +518,7 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
     }
 
 
-def evaluate_listing(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str, dict]:
+def evaluate_listing(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool = False) -> tuple[str, dict]:
     """Modo temporal (10/11/2026): jimmyleaks quitó de la ficha el historial, el stock y las valoraciones.
 
     Sin historial no se puede comprobar la bajada real, así que se va a lo seguro: solo categorías top,
@@ -542,12 +542,19 @@ def evaluate_listing(item: dict, detail: dict, rules: dict, now: datetime) -> tu
     taste = interest(title, rules, now)
     if taste["blocked"]:
         return f"poco interés («{taste['blocked']}»)", {}
-    if not (taste["score"] > 0 and taste.get("min_discount")):
-        return "modo listado: solo categorías top", {}
+    top = bool(taste["score"] > 0 and taste.get("min_discount"))
     if was <= float(price) + 0.009:
-        return "sin PVP tachado", {}
+        return "sin PVP tachado" if top or relaxed else "modo listado: solo categorías top", {}
     pct = discount_pct(float(price), was)
-    if pct + 1e-9 < float(conf.get("min_discount", 50)):
+    if not top:
+        # Sin publicar desde hace rato (10/11/2026): fuera de las top también sale si el descuento es muy grande.
+        any_pct = conf.get("relaxed_any_category_min_discount")
+        if not (relaxed and any_pct is not None and pct + 1e-9 >= float(any_pct)):
+            return "modo listado: solo categorías top", {}
+    needed = float(conf.get("min_discount", 50))
+    if relaxed and top and conf.get("relaxed_min_discount") is not None:
+        needed = min(needed, float(conf["relaxed_min_discount"]))
+    if pct + 1e-9 < needed:
         return f"modo listado: solo -{pct:.0f}% frente a su PVP ({euro(was)})", {}
     if pct > float(conf.get("max_discount", 85)) + 1e-9:
         return f"modo listado: -{pct:.0f}% parece un PVP inflado", {}
@@ -1366,7 +1373,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
             log(f"  Ficha {item['id']}: {exc}")
             continue
         if not detail.get("full", True) and (rules.get("modo_listado") or {}).get("enabled"):
-            why, deal = evaluate_listing(item, detail, rules, now)
+            why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
         else:
             why, deal = evaluate(item, detail, rules, now, relaxed=relaxed)
         if not why and item.get("cascada") and (scanner.has_size_variant(detail.get("name") or "")
