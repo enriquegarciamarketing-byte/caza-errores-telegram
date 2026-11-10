@@ -1325,7 +1325,9 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
     def skip(item: dict) -> bool:
         last = seen.get(item["id"]) or {}
         same_price = last.get("price") is not None and abs(float(last["price"]) - float(item["price"])) < 0.01
-        low_discount_only = str(last.get("why") or "").startswith("solo -")
+        why = str(last.get("why") or "")
+        # Descartes solo por descuento o por categoría (también los del modo listado): en modo sin silencios se revisan.
+        low_discount_only = why.startswith("solo -") or (why.startswith("modo listado:") and "inflado" not in why)
         if last.get("why") == "sin precio en la ficha":
             return False  # descartes por la ficha nueva de jimmyleaks (9-10/11/2026): se vuelven a mirar
         # ya descartado a este mismo precio; si baja más, se vuelve a mirar
