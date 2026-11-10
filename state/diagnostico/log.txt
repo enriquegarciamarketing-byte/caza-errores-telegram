@@ -1,4 +1,20 @@
-Traceback (most recent call last):
-  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/tools/diagnostico.py", line 4, in <module>
-    import canal_nube, scanner
-ModuleNotFoundError: No module named 'canal_nube'
+Listado: 10 productos
+API: secretos presentes
+
+R05VQ61 - Jeans Hombre - Corte Regular - Lee X Straight - Avenue | listado 18.42 € | 96183 bytes
+  parse_detail: {'name': '', 'brand': '', 'gtin': '', 'image': None, 'price': None, 'in_stock': False, 'avg90': None, 'low': None, 'modified': '2026-10-05T04:04:56.326141', 'rating': None, 'reviews': None}
+  ld+json: 4 | priceSeries: False
+  ASIN: B0D6NLBH4J
+  API error: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
+
+RXK2vn7 Baliza V16 Geolocalización DGT | Luz Emergencia Coche Homolo | listado 12.34 € | 93066 bytes
+  parse_detail: {'name': '', 'brand': '', 'gtin': '', 'image': None, 'price': None, 'in_stock': False, 'avg90': None, 'low': None, 'modified': '2026-09-07T08:55:06.930241', 'rating': None, 'reviews': None}
+  ld+json: 4 | priceSeries: False
+  ASIN: B0GYVL3MD2
+  API error: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
+
+7gk9Avj Vaqueros Mujer FLO Bootcut Talle Medio, Azul (FLO), 24W/30L | listado 26.15 € | 96355 bytes
+  parse_detail: {'name': '', 'brand': '', 'gtin': '', 'image': None, 'price': None, 'in_stock': False, 'avg90': None, 'low': None, 'modified': '2026-09-24T16:11:08.200926', 'rating': None, 'reviews': None}
+  ld+json: 4 | priceSeries: False
+  ASIN: B0DK2CF376
+  API error: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
