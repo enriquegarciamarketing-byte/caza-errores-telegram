@@ -1261,8 +1261,8 @@
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "1Ew3VE7": {
-   "price": 349.99,
-   "t": 1794268714,
+   "price": 179.0,
+   "t": 1794276243,
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "RXy6GX1": {
@@ -2023,7 +2023,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 74,
+ "last_listing_count": 76,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16190,12 +16190,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 4,
+ "rotation_index": 0,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/casio-g-shock-dw-5600rl-1er-2061223": 1794253302.4389858,
-  "https://www.chollometro.com/ofertas/nike-sportswear-zapatillas-deportivas-nike-modelo-total-90-color-marron-2059364": 1794254508.0112572,
-  "https://www.chollometro.com/ofertas/reloj-casio-g-shock-dw-5600ww-7-blanco-2060709": 1794255721.826794,
-  "https://www.chollometro.com/ofertas/assassins-creed-shadows-xbox-series-x-2061201": 1794256071.9456599,
   "https://www.chollometro.com/ofertas/reloj-garmin-fenix-8-47mm-pantalla-amoled-linterna-led-altavoz-y-microfono-mapas-negro-2061181": 1794256674.3858204,
   "https://www.chollometro.com/ofertas/sir-g8-plus-mfi-mando-para-iphone-151617ipad-mini-y-androidipad-palancasgatillos-efecto-hall-genshin-impact-pubg-mobile-y-minecraft-2055283": 1794257282.634509,
   "https://www.chollometro.com/ofertas/auriculares-gaming-sony-inzone-buds-true-wireless-baja-latencia-anc-360-spatial-sound-pcps5-2061081": 1794257872.8717399,
@@ -16213,6 +16209,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 520
+  "passes": 536
  }
 }
