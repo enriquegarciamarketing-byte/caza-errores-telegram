@@ -2133,12 +2133,12 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794318367
+   "checked": 1794318884
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 71,
+ "last_listing_count": 76,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16922,7 +16922,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 9,
+ "rotation_index": 14,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-qrevo-2-pro-set-prox-25000-pa-doble-sistema-antienredos-y-base-multifuncion-leer-descripcion-para-el-precio-2061689": 1794297930.4837275,
   "https://www.chollometro.com/ofertas/nintendo-switch-2-zelda-ocarina-of-time-2061892": 1794298530.0719144,
@@ -16959,6 +16959,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 689
+  "passes": 690
  }
 }
