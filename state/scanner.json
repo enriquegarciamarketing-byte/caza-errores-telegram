@@ -4221,13 +4221,13 @@
    "result": "Amazon no marca precio anterior"
   },
   "B08174FXZD": {
-   "price": 7.9,
-   "t": 1794346768,
+   "price": 8.14,
+   "t": 1794350878,
    "result": "Amazon no marca precio anterior"
   },
   "B0829KVGXM": {
    "price": null,
-   "t": 1794346768,
+   "t": 1794350878,
    "result": "sin precio en Amazon"
   },
   "B07ZTWY3W6": {
@@ -4808,6 +4808,11 @@
   "B07NXG933V": {
    "price": 184.99,
    "t": 1794347695,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0B4NTM35T": {
+   "price": 15.16,
+   "t": 1794350878,
    "result": "Amazon no marca precio anterior"
   }
  },
@@ -5628,7 +5633,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794350052
+   "checked": 1794350878
   },
   {
    "id": "cm-2062698",
@@ -20783,7 +20788,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -20837,13 +20842,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 869
+  "passes": 870
  },
- "jl_paused_until": 1794350216.919604,
- "amazon_search_index": 156,
+ "jl_paused_until": 1794352678.724464,
+ "amazon_search_index": 160,
  "last_api_count": 22,
  "api_calls": {
-  "2026-11-10": 140
+  "2026-11-10": 144
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -24484,6 +24489,153 @@
     20261110,
     10.87,
     10.87
+   ]
+  ],
+  "B08DQVBNNK": [
+   [
+    20261110,
+    31.99,
+    31.99
+   ]
+  ],
+  "B0CK2JWMBG": [
+   [
+    20261110,
+    8.0,
+    8.0
+   ]
+  ],
+  "B0BS6XT1B1": [
+   [
+    20261110,
+    49.27,
+    49.27
+   ]
+  ],
+  "B0CJWWP742": [
+   [
+    20261110,
+    29.99,
+    29.99
+   ]
+  ],
+  "B08174FXZD": [
+   [
+    20261110,
+    8.14,
+    8.14
+   ]
+  ],
+  "B07JMD494D": [
+   [
+    20261110,
+    7.0,
+    7.0
+   ]
+  ],
+  "B07ZTWY3W6": [
+   [
+    20261110,
+    36.89,
+    36.89
+   ]
+  ],
+  "B0B2JV62RS": [
+   [
+    20261110,
+    6.25,
+    6.25
+   ]
+  ],
+  "B0DGGM4B8Y": [
+   [
+    20261110,
+    22.99,
+    22.99
+   ]
+  ],
+  "B079583BC9": [
+   [
+    20261110,
+    24.86,
+    24.86
+   ]
+  ],
+  "B09C18Q6CB": [
+   [
+    20261110,
+    14.9,
+    14.9
+   ]
+  ],
+  "B00P7S404C": [
+   [
+    20261110,
+    4.99,
+    4.99
+   ]
+  ],
+  "B085GWZVLC": [
+   [
+    20261110,
+    10.0,
+    10.0
+   ]
+  ],
+  "B00TQPVIHY": [
+   [
+    20261110,
+    17.73,
+    17.73
+   ]
+  ],
+  "B081ZL4S8B": [
+   [
+    20261110,
+    11.84,
+    11.84
+   ]
+  ],
+  "B0C5CR22HV": [
+   [
+    20261110,
+    8.0,
+    8.0
+   ]
+  ],
+  "B07DPXV9ZP": [
+   [
+    20261110,
+    7.99,
+    7.99
+   ]
+  ],
+  "B07SZ93J56": [
+   [
+    20261110,
+    5.14,
+    5.14
+   ]
+  ],
+  "B07MGJ6MKJ": [
+   [
+    20261110,
+    11.6,
+    11.6
+   ]
+  ],
+  "B09XF2FF8K": [
+   [
+    20261110,
+    12.5,
+    12.5
+   ]
+  ],
+  "B0B4NTM35T": [
+   [
+    20261110,
+    15.16,
+    15.16
    ]
   ]
  }
