@@ -2023,7 +2023,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 78,
+ "last_listing_count": 67,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16190,7 +16190,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 17,
+ "rotation_index": 13,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-nike-sportswear-air-force-1-07-beige-tallas-385-a-425-44-45-47-485-y-495-2061399": 1794263007.8007722,
   "https://www.chollometro.com/ofertas/zapatillas-cuero-hoff-hombres-2060523": 1794265701.3858333,
@@ -16203,6 +16203,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 552
+  "passes": 568
  }
 }
