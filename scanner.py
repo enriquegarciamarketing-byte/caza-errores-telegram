@@ -838,6 +838,35 @@ def listing_error_lane(cfg: dict, item: dict, slack: float = 0.0) -> bool:
             and was >= float(cfg.get("error_min_reference_eur") or 0))
 
 
+def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]:
+    """Errores buscados directamente en Amazon con la API (buscador_amazon.py). Mismos filtros que el resto."""
+    import buscador_amazon
+    started = time.time()
+    results = buscador_amazon.search(API, cfg, state, now)
+    state["last_api_count"] = len(results)
+    good = [c for c, why in results if not why]
+    print(f"Amazon (API): {len(results)} productos con mucho descuento · {len(good)} con precio anterior honesto")
+    eventos.emit("pasada", fuente="Amazon", listados=len(results), candidatos=len(good))
+    out = []
+    for cand, why in results:
+        key = cand.get("id")
+        if not key:
+            continue
+        prev = seen.get(key)
+        if prev and cand.get("price") is not None and abs(float(prev.get("price") or 0) - float(cand["price"])) < 0.01:
+            continue  # ya visto a este precio
+        category, reason = (None, why) if why else classify(cfg, cand)
+        if category:
+            category, reason = quality_checks(cand, now, category, reason)
+        seen[key] = {"price": cand.get("price"), "t": int(now.timestamp()), "result": category or reason}
+        print(f"  {key} · {cand.get('price')} € · antes {cand.get('was')} → {category or 'descartado'} ({reason}) · {card_title(cand)[:60]}")
+        product_event(cand, now, category, reason, started)
+        if category:
+            cand["category"] = category
+            out.append(cand)
+    return out
+
+
 def listing_drop_pct(item: dict) -> float:
     m = re.search(r"(\d+)% por debajo", (item.get("verdict") or "").lower())
     return float(m.group(1)) if m else listing_drop(item) * 100
@@ -1027,6 +1056,8 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
             qualified.append(cand)
         if extras is not None:
             extras.setdefault("pool", []).append({**cand, "reject": None if category else reason})
+    if only_errors and API is not None and (cfg.get("amazon_search") or {}).get("enabled"):
+        qualified.extend(scan_amazon(cfg, state, now, seen))
     external = []
     if with_external and not only_errors:  # Chollometro y otras tiendas: fuera en el modo solo errores
         try:
@@ -1131,6 +1162,8 @@ def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tup
         cand["asin"] = asin
         cand["direct_url"] = affiliate.force_tag(f"https://www.amazon.es/dp/{asin}",
                                                  load_json(CONFIG_PATH, {}).get("affiliate_tag", ""))
+    if cand.get("origin") == "amazon_api":
+        return category, reason + " · precio y stock de Amazon (API)"
     problem = history_problem(cand, now)
     if problem:
         return None, problem
@@ -1151,8 +1184,9 @@ def verify_live_asin(cand: dict, category: str, reason: str) -> tuple[str | None
     try:
         live = API.get_item(cand["asin"])
     except (ApiError, KeyError, TypeError, ValueError) as exc:
-        print(f"  API de Amazon sin acceso ({exc}). Sigo con el precio de la ficha.")
-        API = None
+        print(f"  API de Amazon sin respuesta ({exc}). Sigo con el precio de la ficha.")
+        if any(w in str(exc) for w in ("AssociateNotEligible", "HTTP 401", "HTTP 403")):
+            API = None  # sin acceso de verdad (no un 429 pasajero): se apaga para esta ejecución
         return category, reason + " · precio vivo en la ficha"
     if not live or not live.get("in_stock") or not live.get("price"):
         return None, "sin stock o sin precio en Amazon"
@@ -1171,6 +1205,18 @@ def resolve_asin(jl_id: str) -> str | None:
 
 def recheck_listing(cand: dict) -> str:
     """Segunda lectura de la ficha justo antes de publicar. Devuelve el motivo para no publicar, o ''."""
+    if cand.get("origin") == "amazon_api":
+        if API is None:
+            return ""
+        try:
+            live = API.get_item(cand["asin"])
+        except (ApiError, KeyError, TypeError, ValueError):
+            return ""  # sin respuesta ahora: vale el precio de hace unos segundos
+        if not live or not live.get("in_stock") or not live.get("price"):
+            return "ya no está disponible en Amazon"
+        if abs(float(live["price"]) - float(cand["price"])) > 0.009:
+            return f"el precio ha cambiado ({cand['price']} → {live['price']})"
+        return ""
     if cand.get("listing_mode"):
         try:
             again = parse_detail(fetch(f"{BASE}/es/dp/{cand['id']}/"))
@@ -2080,9 +2126,9 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime, with
         if not args.dry_run:
             health_alert(tg, state, "scan_error", f"el escaneo ha fallado ({exc!r}). Reviso en la próxima pasada.")
         return 1
-    if state.get("last_listing_count", 0) == 0 and not args.dry_run:
-        health_alert(tg, state, "no_listings", "no he podido leer ningún producto de Jimmyleaks. "
-                     "Puede que hayan cambiado la web o bloqueado al bot.")
+    if state.get("last_listing_count", 0) == 0 and not state.get("last_api_count") and not args.dry_run:
+        health_alert(tg, state, "no_listings", "no he podido leer ningún producto ni de Jimmyleaks ni de la "
+                     "API de Amazon. Puede que Jimmyleaks siga bloqueando y la API haya llegado a su límite.")
     order = {"ERROR DE PRECIO": 0, "RESERVA COLECCIONISTA": 1, "MÍNIMO HISTÓRICO": 2, "GANGA": 3,
              "OPORTUNIDAD DE REVENTA": 4}
     rules = resale_rules(cfg) or {}

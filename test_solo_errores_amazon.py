@@ -212,3 +212,60 @@ class TagGuardTest(unittest.TestCase):
         self.assertIn("inline_keyboard", scanner.buttons_for("https://www.amazon.es/dp/B0TEST1234?tag=cazachollos0c-21"))
         with self.assertRaises(affiliate.MissingTag):
             canal_nube.publish(None, "@c", {"asin": "B0TEST1234"}, {"tag": self.TAG}, "", "https://www.amazon.es/dp/B0TEST1234")
+
+
+def api_item(asin, title, brand, price, basis, basis_type, avail="IN_STOCK"):
+    return {"asin": asin, "itemInfo": {"title": {"displayValue": title}, "byLineInfo": {"brand": {"displayValue": brand}}},
+            "images": {"primary": {"large": {"url": f"https://m.media-amazon.com/images/I/{asin}._SL500_.jpg"}}},
+            "offersV2": {"listings": [{"availability": {"type": avail},
+                                       "price": {"money": {"amount": price}, "savingBasis": {"money": {"amount": basis},
+                                                                                             "savingBasisType": basis_type}}}]}}
+
+
+class FakeAPI:
+    def __init__(self, items):
+        self.items, self.calls = items, []
+
+    def call(self, op, body):
+        self.calls.append((op, body))
+        return {"searchResult": {"items": self.items}}
+
+    def get_item(self, asin):
+        return None
+
+
+class AmazonSearchTest(unittest.TestCase):
+    def setUp(self):
+        self.cfg = load_cfg(scope=True)
+        self.now = scanner.now_utc()
+
+    def test_precio_honesto_con_marca_es_error(self):
+        import buscador_amazon as ba
+        cand, why = ba.to_candidate(api_item("B0AAAAAAA1", "Robot aspirador Roborock S8", "Roborock", 99.0, 499.0, "WAS_PRICE"),
+                                    "robot aspirador", self.cfg, self.now, "cazachollos0c-21")
+        self.assertEqual(why, "")
+        self.assertEqual(cand["direct_url"], "https://www.amazon.es/dp/B0AAAAAAA1?tag=cazachollos0c-21")
+        self.assertEqual(scanner.classify(self.cfg, cand)[0], "ERROR DE PRECIO")
+
+    def test_precio_recomendado_inflado_no_vale(self):
+        import buscador_amazon as ba
+        _, why = ba.to_candidate(api_item("B0AAAAAAA2", "Auriculares Bluetooth 5.4", "Ordtop", 15.99, 59.99, "LIST_PRICE"),
+                                 "auriculares", self.cfg, self.now, "x")
+        self.assertIn("precio recomendado", why)
+
+    def test_la_busqueda_rota_y_publica_solo_lo_bueno(self):
+        items = [api_item("B0AAAAAAA1", "Robot aspirador Roborock S8", "Roborock", 99.0, 499.0, "WAS_PRICE"),
+                 api_item("B0AAAAAAA2", "Auriculares Bluetooth 5.4", "Ordtop", 15.99, 59.99, "LIST_PRICE"),
+                 api_item("B0AAAAAAA3", "Freidora de aire Cosori", "Cosori", 60.0, 120.0, "LOWEST_PRICE_STRIKETHROUGH"),
+                 api_item("B0AAAAAAA4", "Robot aspirador genérico", "Generico", 20.0, 200.0, "WAS_PRICE")]
+        fake = FakeAPI(items)
+        state = {"seen": {}}
+        with mock.patch.object(scanner, "API", fake), mock.patch.object(scanner.time, "sleep"), \
+             mock.patch("buscador_amazon.time.sleep"), mock.patch("builtins.print"):
+            found = scanner.scan_amazon(self.cfg, state, self.now, state["seen"])
+            again = scanner.scan_amazon(self.cfg, state, self.now, state["seen"])
+        self.assertEqual([c["asin"] for c in found], ["B0AAAAAAA1"])
+        self.assertEqual(again, [])  # mismo precio: no se repite
+        self.assertEqual(len(fake.calls), 8)  # 4 búsquedas por pasada
+        self.assertEqual(fake.calls[0][1]["minSavingPercent"], 70)
+        self.assertEqual(state["amazon_search_index"], 8)
