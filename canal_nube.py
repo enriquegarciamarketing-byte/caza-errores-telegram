@@ -1231,6 +1231,9 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         if again.get("price") is None or abs(float(again["price"]) - deal["price"]) > 0.009 or not again.get("in_stock"):
             log(f"  ✗ {deal['asin']} el precio ha cambiado ({deal['price']} → {again.get('price')})")
             continue
+        if not args.test_private and recently_posted(state, deal["asin"], deal["price"], now, rules, deal["title"]):
+            log(f"  ✗ {deal['asin']} el mismo producto acaba de salir en esta pasada")  # p. ej. dos ASIN del mismo Sony
+            continue
         why = api_price_check(deal, log)
         if why:
             log(f"  ✗ {deal['asin']} {why}")
