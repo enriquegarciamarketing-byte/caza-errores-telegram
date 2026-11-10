@@ -1,24 +1,8 @@
 Creators API: activa, se verifica cada producto en vivo
 Bot: @cazaerroresAmazon_bot
-Listados: 67 productos únicos
+Listados: 76 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
   Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36633 bytes, 30 chollos
-  Chollometro «LEGO Star Wars R2-D2»: PcComponentes 79.99 €
-  Chollometro «Hoka Zapatillas de Running Mach 6 Hombre (Azul)»: Privatesportshop 74.99 €
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 89704 bytes, 30 chollos
-  cm-2061600 · PcComponentes 79.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Star Wars R2-D2
-  cm-2060300 · Privatesportshop 74.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Hoka Zapatillas de Running Mach 6 Hombre (Azul)
-  Vinted «hoka zapatillas»: HTTP 200, 3694454 bytes, 96 anuncios
-  Vinted «hoka zapatillas»: 30 parecidos de 96
-  Wallapop «hoka zapatillas»: 200 / 138665 bytes, 40 anuncios, 40 parecidos, 0 reservas
-  Milanuncios «hoka zapatillas»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa VINTED+WALLAPOP: 64 anuncios, ~55 €, no publica
-  ⚠️ No publico «Hoka Zapatillas de Running Mach 6 Hombre (Azul)»: reventa en VINTED+WALLAPOP ~55 € (64 anuncios): ROI -33 % y -25 €, por debajo del mínimo (25 % y 25 €)
-  Wallapop «lego r2 star»: 200 / 100325 bytes, 40 anuncios, 26 parecidos, 0 reservas
-  Milanuncios «lego r2 star»: HTTP 403, 95510 bytes
-  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95510 bytes))
-  Reventa WALLAPOP: 10 anuncios, ~6 €, no publica
-  ⚠️ No publico «LEGO Star Wars R2-D2»: reventa en WALLAPOP ~6 € (10 anuncios): ROI -95 % y -76 €, por debajo del mínimo (25 % y 25 €)
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 78900 bytes, 30 chollos
 Publicados en esta ejecución: 0
-Cascada al canal normal: 39 descartes nuevos, 159 en lista
+Cascada al canal normal: 24 descartes nuevos, 170 en lista
