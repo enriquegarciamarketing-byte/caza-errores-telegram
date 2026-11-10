@@ -2133,12 +2133,12 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794318884
+   "checked": 1794321403
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 76,
+ "last_listing_count": 67,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3523,64 +3523,6 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
-  },
-  "|garmin forerunner 170|garmin 170 forerunner": {
-   "t": 1793966408.062758,
-   "query": "garmin 170 forerunner",
-   "prices": [
-    215.0,
-    200.0,
-    160.0,
-    170.0,
-    220.0,
-    210.0,
-    7.0,
-    199.0,
-    8.0,
-    7.0,
-    6.0,
-    275.0,
-    240.0,
-    150.0,
-    280.0,
-    239.0,
-    260.0,
-    270.0,
-    276.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 75492,
-   "raw_count": 26
-  },
-  "|lego dc comics logotipo de batman super heroes|lego comics": {
-   "t": 1793969618.2340636,
-   "query": "lego comics",
-   "prices": [
-    12.9,
-    5.0,
-    3.0,
-    45.0,
-    9.0,
-    3.0,
-    4.0,
-    3.0,
-    5.0,
-    15.0,
-    22.0,
-    3.0,
-    20.0,
-    40.0,
-    28.99,
-    25.0,
-    12.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 86138,
-   "raw_count": 40
   },
   "|zapatillas new balance v7 hierro- ancho especial- mujer|zapatillas v7 new": {
    "t": 1793970373.6045191,
@@ -9577,6 +9519,33 @@
    "http_status": 200,
    "bytes": 37965,
    "raw_count": 7
+  },
+  "|zapatillas new balance 1080v15|zapatillas 1080v15 new": {
+   "t": 1794319771.4679642,
+   "query": "zapatillas 1080v15 new",
+   "prices": [
+    100.0,
+    115.0,
+    100.0,
+    70.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 84758,
+   "raw_count": 25
+  },
+  "|apple iphone air, azul cielo, 256 gb|apple 256 iphone": {
+   "t": 1794320372.781602,
+   "query": "apple 256 iphone",
+   "prices": [
+    775.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 125541,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -16917,16 +16886,56 @@
    "demand_known": true,
    "blocked": false,
    "reason": "reventa en Vinted ~30 € (50 anuncios): ROI -60 % y -40 €, por debajo del mínimo (25 % y 25 €)"
+  },
+  "|zapatillas new balance 1080v15|zapatillas 1080v15 new": {
+   "t": 1794319771.0743992,
+   "prices": [
+    78.0,
+    110.0,
+    99.0,
+    95.0,
+    95.0,
+    50.0,
+    50.0,
+    80.0,
+    80.0,
+    99.0,
+    95.0,
+    95.0,
+    35.0,
+    80.0,
+    160.0,
+    65.0,
+    95.0,
+    120.0,
+    95.0,
+    100.0,
+    135.0,
+    100.0,
+    80.0,
+    130.0,
+    110.0,
+    110.0,
+    120.0,
+    160.0,
+    75.0,
+    50.0,
+    135.0,
+    280.0,
+    100.0,
+    185.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "blocked": false,
+   "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 14,
+ "rotation_index": 10,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/robot-aspirador-roborock-qrevo-2-pro-set-prox-25000-pa-doble-sistema-antienredos-y-base-multifuncion-leer-descripcion-para-el-precio-2061689": 1794297930.4837275,
-  "https://www.chollometro.com/ofertas/nintendo-switch-2-zelda-ocarina-of-time-2061892": 1794298530.0719144,
-  "https://www.chollometro.com/ofertas/dreame-u20-aspiradora-escobamano-sin-cable-370w-blanca-2043817": 1794298530.0719144,
   "https://www.chollometro.com/ofertas/astrobot-edicion-estandar-ps5-pal-espana-formato-fisico-nuevo-precintado-2061653": 1794299636.821295,
   "https://www.chollometro.com/ofertas/lego-star-wars-busto-de-darth-vader-2060938": 1794300287.2189598,
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
@@ -16950,7 +16959,9 @@
   "https://www.chollometro.com/ofertas/casio-g-shock-montre-classique-pour-homme-ga-010-2aer-2061938": 1794316309.471012,
   "https://www.chollometro.com/ofertas/roborock-h60-aspirador-escoba-sin-cable-3-en-1-2062134": 1794317284.5870001,
   "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-2062447": 1794317284.5870001,
-  "https://www.chollometro.com/ofertas/vans-ultrarange-exp-zapatillas-tallas-385-39-40-2061898": 1794318381.0064461
+  "https://www.chollometro.com/ofertas/vans-ultrarange-exp-zapatillas-tallas-385-39-40-2061898": 1794318381.0064461,
+  "https://www.chollometro.com/ofertas/zapatillas-new-balance-1080v15-2062472": 1794319767.3810015,
+  "https://www.chollometro.com/ofertas/apple-iphone-air-azul-cielo-256-gb-2062366": 1794320367.9414585
  },
  "asked": {
   "cm-2060782": 1794235272,
@@ -16959,6 +16970,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 690
+  "passes": 706
  }
 }
