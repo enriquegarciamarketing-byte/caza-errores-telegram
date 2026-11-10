@@ -18,7 +18,10 @@ from datetime import datetime
 
 from amazon_api import PRICE_RESOURCES, ApiError, _get
 
-RESOURCES = PRICE_RESOURCES + ["itemInfo.byLineInfo"]
+RESOURCES = PRICE_RESOURCES + ["itemInfo.byLineInfo", "itemInfo.externalIds", "offersV2.listings.merchantInfo",
+                                "offersV2.listings.dealDetails", "offersV2.listings.isBuyBoxWinner",
+                                "offersV2.listings.condition"]
+AMAZON_SELLER_IDS = {"A1AT7YVPFBWXBL"}  # Amazon.es
 HONEST = {
     "WAS_PRICE": "frente a su precio mediano en Amazon",
     "LOWEST_PRICE": "frente a su precio más bajo de los últimos 30 días",
@@ -49,15 +52,28 @@ def to_candidate(item: dict, keyword: str, cfg: dict, now: datetime, tag: str) -
     basis_type = str(_get(listing, "price", "savingBasis", "savingBasisType", default="") or "").upper()
     avail = str(_get(listing, "availability", "type", default="") or "").upper()
     image = _get(item, "images", "primary", "large", "url")
+    seller = str(_get(listing, "merchantInfo", "name", default="") or "")
+    seller_id = str(_get(listing, "merchantInfo", "id", default="") or "")
+    badge = str(_get(listing, "dealDetails", "badge", default="") or "").strip()
+    condition = str(_get(listing, "condition", "value", default="New") or "New")
+    eans = _get(item, "itemInfo", "externalIds", "eans", "displayValues", default=[]) or []
     base = {"id": asin, "asin": asin, "title": title, "name": title, "brand": brand,
             "price": float(price) if price is not None else None, "source": f"Amazon · {keyword}",
-            "ts": now.timestamp(), "image": image or "", "basis_type": basis_type}
+            "ts": now.timestamp(), "image": image or "", "basis_type": basis_type, "seller": seller,
+            "seller_id": seller_id, "deal_badge": badge, "ean": eans[0] if eans else None,
+            "sold_by_amazon": seller_id in AMAZON_SELLER_IDS or fold(seller) == "amazon",
+            "official_store": bool(brand) and fold(brand) in fold(seller)}
     if not asin or price is None:
         return base, "sin precio en Amazon"
     if basis is None or float(basis) <= float(price):
         return base, "Amazon no marca precio anterior"
     disc = (float(basis) - float(price)) / float(basis) * 100
     base.update(was=float(basis), discount=disc)
+    if condition.lower() != "new":
+        return base, f"no es nuevo ({condition})"
+    if not (base["sold_by_amazon"] or base["official_store"]):
+        # Reglas de calidad (10/11/2026): los que inflan y luego «rebajan» son vendedores de terceros.
+        return base, f"lo vende {seller or 'un tercero'}, no Amazon ni la tienda oficial de la marca"
     if basis_type not in HONEST:
         return base, f"-{disc:.0f}% frente al precio recomendado, que puede estar inflado"
     if avail and avail not in {"IN_STOCK", "INSTOCK", "AVAILABLE"}:

@@ -1351,15 +1351,18 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
     for cand, why in results:
         asin = cand.get("asin")
         price, was = cand.get("price"), cand.get("was")
-        if not asin or price is None or not was or why in ("sin stock", "sin imagen", "sin precio en Amazon"):
-            continue
+        if not asin or price is None or not was or why in ("sin stock", "sin imagen", "sin precio en Amazon") \
+                or why.startswith(("lo vende", "no es nuevo")):
+            continue  # reglas de calidad: solo Amazon o la tienda oficial de la marca, y producto nuevo
         brand = (cand.get("brand") or "").strip()
         trusted = {fold(b) for b in rules.get("trusted_brands") or []}
         known = bool(brand) and (fold(brand) in trusted or any(fold(brand).startswith(t + " ") for t in trusted))
         items.append({"id": f"amz-{asin}", "asin": asin, "amazon": True, "title": cand.get("title") or "",
                       "price": float(price), "was": float(was), "ts": int(now.timestamp()),
                       "brand": brand, "brand_ok": known,
-                      "image": cand.get("image") or "", "basis_type": cand.get("basis_type") or ""})
+                      "image": cand.get("image") or "", "basis_type": cand.get("basis_type") or "",
+                      "seller": cand.get("seller") or "", "deal_badge": cand.get("deal_badge") or "",
+                      "sold_by_amazon": bool(cand.get("sold_by_amazon"))})
     log(f"  Amazon (API): {len(results)} con descuento grande, {len(items)} con precio anterior y stock")
     return items
 

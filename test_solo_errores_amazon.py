@@ -214,10 +214,10 @@ class TagGuardTest(unittest.TestCase):
             canal_nube.publish(None, "@c", {"asin": "B0TEST1234"}, {"tag": self.TAG}, "", "https://www.amazon.es/dp/B0TEST1234")
 
 
-def api_item(asin, title, brand, price, basis, basis_type, avail="IN_STOCK"):
+def api_item(asin, title, brand, price, basis, basis_type, avail="IN_STOCK", seller="Amazon", seller_id="A1AT7YVPFBWXBL"):
     return {"asin": asin, "itemInfo": {"title": {"displayValue": title}, "byLineInfo": {"brand": {"displayValue": brand}}},
             "images": {"primary": {"large": {"url": f"https://m.media-amazon.com/images/I/{asin}._SL500_.jpg"}}},
-            "offersV2": {"listings": [{"availability": {"type": avail},
+            "offersV2": {"listings": [{"availability": {"type": avail}, "merchantInfo": {"name": seller, "id": seller_id},
                                        "price": {"money": {"amount": price}, "savingBasis": {"money": {"amount": basis},
                                                                                              "savingBasisType": basis_type}}}]}}
 
@@ -355,3 +355,18 @@ class TrustedBrandTest(unittest.TestCase):
         self.assertFalse(ba.is_trusted("UJJ", cfg))
         self.assertTrue(ba.is_trusted("Roborock", cfg))
         self.assertTrue(ba.is_trusted("SONY", cfg))
+
+
+class SellerRuleTest(unittest.TestCase):
+    def test_solo_amazon_o_la_tienda_oficial(self):
+        import buscador_amazon as ba
+        cfg, now = load_cfg(scope=True), scanner.now_utc()
+        tablet = api_item("B0GVYYTNQ8", "Tablet Android 10", "Teclast", 89.99, 299.99, "LOWEST_PRICE_STRIKETHROUGH",
+                          seller="ZIIZI Store", seller_id="APCUF7N2BULEX")
+        _, why = ba.to_candidate(tablet, "tablet", cfg, now, "x")
+        self.assertIn("lo vende ZIIZI Store", why)
+        robo = api_item("B0GZZM4CXF", "Roborock Qrevo 2 Pro", "roborock", 99.0, 689.0, "WAS_PRICE",
+                        seller="Roborock Official EU", seller_id="AYQYOFE0SRACD")
+        cand, why = ba.to_candidate(robo, "roborock", cfg, now, "x")
+        self.assertEqual(why, "")
+        self.assertTrue(cand["official_store"])
