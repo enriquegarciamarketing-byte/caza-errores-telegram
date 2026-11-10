@@ -113,7 +113,8 @@ def _git(args: list[str], data: str | None = None, timeout: int = 40) -> str:
 
 
 def _enabled_here() -> bool:
-    return os.environ.get("GITHUB_ACTIONS") == "true"
+    """En GitHub Actions, o en el Mac con el bot local (CASCADA_PUSH=1, lo pone local/caza_errores.sh)."""
+    return os.environ.get("GITHUB_ACTIONS") == "true" or os.environ.get("CASCADA_PUSH") == "1"
 
 
 def push(entries: list[dict], branch: str = DEFAULT_BRANCH, log=print) -> bool:

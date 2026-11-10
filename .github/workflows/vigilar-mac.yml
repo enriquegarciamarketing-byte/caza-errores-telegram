@@ -1,0 +1,54 @@
+name: Vigilar el bot de errores del Mac
+
+# El premium corre en el Mac (local/caza_errores.sh) y sube un latido (state/latido_mac.json) cada ~30 min.
+# Si lleva más de 50 min sin latir, te avisa por Telegram: las 2 primeras horas en cada revisión y luego
+# cada 6 horas, para no saturarte si el Mac se queda apagado.
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Comprobar el latido
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+        run: |
+          python - <<'EOF'
+          import json, os, time, urllib.parse, urllib.request
+          from datetime import datetime, timezone
+          try:
+              beat = json.load(open("state/latido_mac.json"))
+          except FileNotFoundError:
+              print("Todavía no hay latido del Mac: nada que vigilar.")
+              raise SystemExit(0)
+          minutes = (time.time() - float(beat.get("t") or 0)) / 60
+          print(f"Último latido hace {minutes:.0f} min ({beat.get('hora')}, {beat.get('equipo')}).")
+          if minutes <= 50:
+              raise SystemExit(0)
+          if minutes > 130 and datetime.now(timezone.utc).hour % 6:
+              print("Ya avisado: el siguiente aviso, en la próxima hora múltiplo de 6.")
+              raise SystemExit(0)
+          token, admin = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("ADMIN_CHAT_ID")
+          if not (token and admin):
+              raise SystemExit("Faltan TELEGRAM_BOT_TOKEN o ADMIN_CHAT_ID en los secretos.")
+          hours = minutes / 60
+          since = f"{minutes:.0f} min" if minutes < 120 else f"{hours:.0f} h"
+          text = (f"🔴 Caza Errores: el bot del Mac no da señales desde hace {since} "
+                  f"(último latido {beat.get('hora')}). Mira que esté encendido, enchufado y con internet. "
+                  "Mientras tanto no salen errores en el premium.")
+          data = urllib.parse.urlencode({"chat_id": admin, "text": text}).encode()
+          urllib.request.urlopen(f"https://api.telegram.org/bot{token}/sendMessage", data, timeout=20)
+          print("Aviso enviado.")
+          EOF

@@ -29,8 +29,13 @@ WORKFLOW = ROOT / ".github" / "workflows" / "scan-deals.yml"
 MADRID = ZoneInfo("Europe/Madrid")
 
 
-def load_cfg() -> dict:
-    return json.loads(scanner.CONFIG_PATH.read_text(encoding="utf-8"))
+def load_cfg(scope: bool = False) -> dict:
+    """Config real. Sin `scope` se quita premium_scope: estos tests cubren también las gangas y las
+    otras tiendas, que siguen en el código aunque el premium esté en modo solo errores de Amazon."""
+    cfg = json.loads(scanner.CONFIG_PATH.read_text(encoding="utf-8"))
+    if not scope:
+        cfg.pop("premium_scope", None)
+    return cfg
 
 
 def deal(**overrides) -> dict:

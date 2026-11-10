@@ -430,6 +430,9 @@ def classify(cfg: dict, cand: dict) -> tuple[str | None, str]:
         if price < cfg["error_min_price_eur"]:
             return None, f"error de precio pero importe demasiado bajo ({price} €)"
         category, reason = "ERROR DE PRECIO", f"-{disc:.0f}% bajo la referencia"
+    elif amazon_errors_only(cfg):
+        # El mismo arranque «solo -X% bajo la referencia» que la cascada acepta para el canal normal.
+        return None, f"solo -{disc:.0f}% bajo la referencia (el premium solo publica errores de precio)"
     elif disc < cfg["bargain_min_discount"]:
         return None, f"solo -{disc:.0f}% bajo la referencia"
     elif price < cfg["bargain_min_price_eur"]:
@@ -763,11 +766,18 @@ def pass_sources(cfg: dict, state: dict) -> list[str]:
     return fixed + [url for url in chosen if url not in fixed]
 
 
-def listing_error_lane(cfg: dict, item: dict) -> bool:
+def amazon_errors_only(cfg: dict) -> bool:
+    """Premium solo con errores de precio de Amazon (desde el 10/11/2026): nada de gangas,
+    mínimos históricos ni otras tiendas. Lo que no llega a error baja al canal normal por la cascada."""
+    return str((cfg or {}).get("premium_scope") or "").strip().lower() == "amazon_errors"
+
+
+def listing_error_lane(cfg: dict, item: dict, slack: float = 0.0) -> bool:
     """Bajada de tipo error en el listado (-70 % o más) sobre algo que vale de verdad.
 
-    Es solo un filtro de entrada: el descuento honesto se calcula luego con el gráfico."""
-    threshold = float(cfg.get("error_min_discount") or 70)
+    Es solo un filtro de entrada: el descuento honesto se calcula luego con el gráfico.
+    `slack` baja un poco el listón del listado (su rebaja no siempre coincide con la referencia honesta)."""
+    threshold = float(cfg.get("error_min_discount") or 70) - float(slack or 0)
     price = float(item.get("price") or 0)
     if not price or price + 1e-9 < float(cfg.get("error_min_price_eur") or 0):
         return False
@@ -799,16 +809,22 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
     max_age = cfg["max_listing_age_minutes"] * 60
     rules = resale_rules(cfg) or {}
     price_floor = float(rules.get("min_price_eur") or 0)
+    only_errors = amazon_errors_only(cfg)
+    slack = float(cfg.get("error_lane_slack_pct") or 0) if only_errors else 0.0
     fresh = []
     for item in listings.values():
         if not item["price"] or now.timestamp() - item["ts"] > max_age:
             continue
         # Un posible error de precio (Conga a 23 € que vale 370 €) entra aunque no llegue al mínimo
         # de precio ni sea de una categoría premium: lo filtran luego el gráfico y la reventa.
-        lane = listing_error_lane(cfg, item)
+        lane = listing_error_lane(cfg, item, slack)
         item["error_lane"] = lane
         verdict = item["verdict"].lower()
         if "encima" in verdict or "habitual" in verdict:
+            continue
+        if only_errors and not lane:
+            # Solo errores: no se gasta ninguna ficha en lo que no apunta a error; baja al canal normal.
+            cascade_listing(cfg, item, "listado: no es error de precio", now)
             continue
         if price_floor and item["price"] + 1e-9 < price_floor and not lane:
             cascade_listing(cfg, item, "listado: por debajo del mínimo de reventa", now)
@@ -882,7 +898,7 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
         if extras is not None:
             extras.setdefault("pool", []).append({**cand, "reject": None if category else reason})
     external = []
-    if with_external:
+    if with_external and not only_errors:  # Chollometro y otras tiendas: fuera en el modo solo errores
         try:
             external = feeds.external_candidates(cfg, state)
         except Exception as exc:

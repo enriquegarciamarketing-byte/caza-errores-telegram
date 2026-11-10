@@ -1,5 +1,13 @@
 # Caza Errores — ofertas en Telegram
 
+## Premium @caza_errores: solo errores de Amazon, 24/7 en el Mac (10/11/2026)
+
+- **Solo errores de precio de Amazon** (`premium_scope: "amazon_errors"` en `config.json`): -70 % o más frente a la referencia honesta, como siempre con reventa, beneficio y ROI. Hasta -92 % sale solo, de -92 % a -98 % te pide OK por privado. Fuera gangas, mínimos históricos, Chollometro y otras tiendas. El listado deja pasar desde -60 % (`error_lane_slack_pct`) y la ficha decide con el -70 %. Lo que no llega a error baja al canal normal por la cascada. Quitar `premium_scope` vuelve al modo anterior.
+- **Corre en el MacBook**, no en GitHub: `local/caza_errores.sh` hace ciclos de 30 min con una pasada por minuto (GitHub solo lo arrancaba más o menos una vez por hora) y con la IP de casa. Al acabar cada ciclo se trae el código nuevo de GitHub y sube la memoria (`state/scanner.json`) y el latido (`state/latido_mac.json`). Logs en `state/local_logs/` (7 días).
+- **Instalar o reinstalar**: en la carpeta del bot, `bash local/instalar_mac.sh` (crea `.venv`, comprueba `.env`, Telegram y el permiso de subir a GitHub, y lo deja en launchd para que arranque solo y se levante si se cae). `--estado` dice si está vivo; `--parar` lo quita. Los secretos van en `.env` (plantilla `local/env.ejemplo`), nunca en el repo.
+- **Que no se duerma**: el bot mantiene el Mac despierto con el cargador puesto (`caffeinate`). Para cortes de luz y tapa cerrada, los `pmset` que imprime el instalador.
+- **Vigilante** (`vigilar-mac.yml`, cada hora en GitHub): si el Mac lleva más de 50 min sin latir, te avisa por Telegram (las 2 primeras horas en cada revisión, luego cada 6 h). `scan-deals.yml` ya no está programado; se puede lanzar a mano como reserva.
+
 ## Canal AliExpress @cazachollos_com (`canal_aliexpress.py`, 04/11/2026)
 
 Sustituye al canal de Amazon cuando esté probado. Corre en GitHub Actions (`canal-aliexpress.yml`) con la **API oficial de afiliados de AliExpress** (nada de scraping).

@@ -10,3 +10,6 @@ state/launchd.log
 # Logs de cada pasada: se ven en la pestaña Actions, no se suben al repo (es público)
 state/*.log
 *_last_run.log
+
+# Logs del bot del Mac (local/caza_errores.sh)
+state/local_logs/

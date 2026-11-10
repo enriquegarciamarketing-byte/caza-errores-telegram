@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Plantilla: local/instalar_mac.sh cambia __REPO__ por la carpeta del bot y la copia a ~/Library/LaunchAgents. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.cazachollos.errores</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__REPO__/local/caza_errores.sh</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>__REPO__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <!-- Arranca al iniciar sesión y se levanta solo si se cae, siempre. -->
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>30</integer>
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>StandardOutPath</key>
+  <string>__REPO__/state/local_logs/launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>__REPO__/state/local_logs/launchd.log</string>
+</dict>
+</plist>
