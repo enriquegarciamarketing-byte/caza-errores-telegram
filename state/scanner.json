@@ -1259,6 +1259,11 @@
    "price": 45.95,
    "t": 1794265803,
    "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "1Ew3VE7": {
+   "price": 349.99,
+   "t": 1794268714,
+   "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
  "posts": [
@@ -2013,7 +2018,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 68,
+ "last_listing_count": 69,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16180,10 +16185,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 12,
+ "rotation_index": 8,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/lego-technic-furgoneta-ford-bronco-2060941": 1794247565.5467296,
-  "https://www.chollometro.com/ofertas/marvel-cosmic-invasion-nintendo-switch-2061102": 1794248159.0391421,
   "https://www.chollometro.com/ofertas/asics-sportstyle-gel-nyc-unisex-zapatillas-whiteglacier-grey-355-a-49-2061151": 1794249101.944544,
   "https://www.chollometro.com/ofertas/nike-zapatillas-de-running-modelo-nike-structure-26-color-rosa-varias-tallas-2060642": 1794249101.944544,
   "https://www.chollometro.com/ofertas/zapatillas-asics-1130-tallas-36-a-49-2060707": 1794249101.944544,
@@ -16211,6 +16214,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 488
+  "passes": 504
  }
 }
