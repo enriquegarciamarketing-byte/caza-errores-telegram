@@ -941,7 +941,8 @@ def send_product_photo(tg, target, image: str) -> dict:
 
 
 def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=print) -> dict:
-    """Por defecto ("post_style": "foto") un solo mensaje: la foto del producto tal cual y en grande, con el texto
+    """Por defecto ("post_style": "foto") un solo mensaje: la foto del producto en grande (sobre lienzo blanco con
+    "fondo_blanco": true en config), con el texto
     y el botón "Comprar en Amazon". Si la foto falla, o el chollo no tiene, sale la tarjeta.
     Otros estilos en config: "separadas" (foto y tarjeta en dos mensajes), "album" o "tarjeta"."""
     card = make_card(deal, rules)
@@ -950,8 +951,9 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
     if style == "foto" and image:
         # Solo la foto del producto, a todo lo ancho, con el texto y el botón (como los canales grandes).
         try:
-            if deal.get("white_canvas"):
-                # Post manual con "fondo_blanco": true → la foto sobre un lienzo blanco más grande.
+            if deal.get("white_canvas") or rules.get("fondo_blanco"):
+                # "fondo_blanco": true en config (todos los posts del canal) o en el post manual → la foto sobre un
+                # lienzo blanco fijo de 1600×1600, para que todas las imágenes del canal midan lo mismo.
                 padded = white_canvas_photo(image, deal["asin"])
                 if padded:
                     return tg.send_photo(target, padded, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})

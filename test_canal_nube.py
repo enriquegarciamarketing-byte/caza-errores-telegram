@@ -487,6 +487,25 @@ class Manual(unittest.TestCase):
         cn.publish(TG(), "@x", deal, dict(RULES, post_style="foto"), "texto", "https://www.amazon.es/dp/B0HC84XR1P")
         self.assertEqual(sent, ["B0HC84XR1P-lienzo.jpg"])
 
+    def test_fondo_blanco_en_todos_los_posts(self):
+        # Con "fondo_blanco": true en config, también los posts automáticos (sin el campo en el JSON) van con lienzo.
+        deal = cn.manual_deal(self.SPEC, RULES)
+        self.assertFalse(deal["white_canvas"])
+        sent = []
+
+        class TG:
+            def send_photo(self, chat_id, image, caption, extra=None):
+                sent.append(Path(image).name)
+                return {"message_id": 1}
+
+            def call(self, *a, **k):
+                raise AssertionError("con fondo blanco la foto se sube, no se manda por URL")
+
+        cn.publish(TG(), "@x", deal, dict(RULES, post_style="foto", fondo_blanco=True), "texto",
+                   "https://www.amazon.es/dp/B0HC84XR1P")
+        self.assertEqual(sent, ["B0HC84XR1P-lienzo.jpg"])
+        self.assertTrue(cn.rules_from(json.loads((cn.ROOT / "config.json").read_text()))["fondo_blanco"])
+
 
 class Pasada(unittest.TestCase):
     def pages(self, detail_pages=None):

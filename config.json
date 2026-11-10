@@ -255,6 +255,8 @@
     "x_prices": false,
     "x_affiliate_tag": "cazachollos0c-21",
     "amazon_photo": true,
+    "_nota_fondo_blanco": "Desde el 10/11/2026 todas las fotos de producto del canal salen centradas en un lienzo blanco de 1600x1600 (como /chollo-free) para que todas midan lo mismo. false = foto tal cual.",
+    "fondo_blanco": true,
     "admin_username": "Darkness_gg",
     "sources": [
       "https://jimmyleaks.com/es/?order=-modified",
