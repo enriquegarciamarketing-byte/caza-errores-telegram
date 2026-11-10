@@ -26,7 +26,7 @@ def emit(kind: str, **data) -> None:
 
 
 def source_label(url: str) -> str:
-    """https://jimmyleaks.com/es/?order=-drop → «Jimmyleaks · bajadas de la última hora»."""
+    """https://jimmyleaks.com/es/?order=-drop → «Caza Chollos · bajadas de la última hora» (sin nombrar la fuente)."""
     parsed = urllib.parse.urlparse(url or "")
     query = urllib.parse.parse_qs(parsed.query)
     order = (query.get("order") or [""])[0]
@@ -39,5 +39,4 @@ def source_label(url: str) -> str:
         what = names.get(order, order.lstrip("-"))
     else:
         what = "portada"
-    host = (parsed.hostname or "").replace("www.", "").split(".")[0].capitalize() or "Fuente"
-    return f"{host} · {what}"
+    return f"Caza Chollos · {what}"

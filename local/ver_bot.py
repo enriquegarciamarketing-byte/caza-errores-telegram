@@ -1,6 +1,6 @@
 """Vista en directo del bot de errores del Mac, con colores, al estilo:
 
-──── Jimmyleaks · hogar y cocina ──── 17:42:05
+──── Caza Chollos · hogar y cocina ──── 17:42:05
 📦 Bosch, Placa de inducción PUE611BB5E
 💶 Antes 261,77 € → Ahora 82,95 € · -68%
 🏷️ Marca: Bosch ✅
@@ -54,7 +54,8 @@ def product(e: dict) -> str:
     verdict = e.get("veredicto") or "DESCARTADO"
     good = verdict != "DESCARTADO"
     head_color = ORANGE if good else DIM
-    lines = [f"{head_color}──── {e.get('fuente') or 'Jimmyleaks'} ──── {clock(e.get('t'))}{RESET}",
+    source = (e.get("fuente") or "Caza Chollos").replace("Jimmyleaks", "Caza Chollos")
+    lines = [f"{head_color}──── {source} ──── {clock(e.get('t'))}{RESET}",
              f"📦 {BOLD if good else ''}{e.get('titulo') or e.get('id')}{RESET}"]
     if e.get("precio") is not None:
         price = f"💶 Ahora {eur(e['precio'])}"
