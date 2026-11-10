@@ -3099,6 +3099,161 @@
    "price": 25.95,
    "t": 1794346664,
    "result": "Amazon no marca precio anterior"
+  },
+  "B00B0W6FLU": {
+   "price": 196.03,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0B7R17CFK": {
+   "price": 196.16,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B017LTE0C6": {
+   "price": 305.0,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B09DPZD21H": {
+   "price": 28.44,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B004IT3K9W": {
+   "price": 14.95,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B07QY3LZSP": {
+   "price": 10.0,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B07QWT5M5K": {
+   "price": 8.0,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B000VE9W3G": {
+   "price": 10.22,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0HP6CL9GD": {
+   "price": 96.7,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0HNVCY1K4": {
+   "price": 99.0,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0HNVBYW3D": {
+   "price": 159.0,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0HNVF3T17": {
+   "price": 129.0,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0035PZ5AM": {
+   "price": 39.2,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0035PYYHC": {
+   "price": 19.13,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00SJ8IWOG": {
+   "price": 52.2,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B010YYQ910": {
+   "price": 54.0,
+   "t": 1794346788,
+   "result": "lo vende Saparo Dana - FAST SHIPPING ⭐⭐⭐⭐⭐, no Amazon ni la tienda oficial de la marca"
+  },
+  "B085558BGK": {
+   "price": 38.65,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B000XIWQ6U": {
+   "price": 93.51,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00I051TX4": {
+   "price": 38.0,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00SJ8L69O": {
+   "price": 51.84,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B010YSKOR6": {
+   "price": 70.68,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0923BZW9T": {
+   "price": 7.54,
+   "t": 1794346788,
+   "result": "lo vende Imagine It Delivered, no Amazon ni la tienda oficial de la marca"
+  },
+  "B09X5KZN9M": {
+   "price": 5.43,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B09KLC874D": {
+   "price": 24.55,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B000808J4Q": {
+   "price": 2.18,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B08FT92JN4": {
+   "price": 1.48,
+   "t": 1794346788,
+   "result": "lo vende Marketdeferreteria, no Amazon ni la tienda oficial de la marca"
+  },
+  "B001U3QJEC": {
+   "price": 2.61,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B08XW5L79V": {
+   "price": 2.87,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B08XW7C1ZN": {
+   "price": 2.87,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B01BW74NS4": {
+   "price": 49.93,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B08XWJQ7Y4": {
+   "price": 2.87,
+   "t": 1794346788,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -3918,7 +4073,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794346664
+   "checked": 1794346788
   },
   {
    "id": "cm-2062698",
@@ -19065,9 +19220,9 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 809
+  "passes": 810
  },
  "jl_paused_until": 1794348347.337671,
- "amazon_search_index": 84,
- "last_api_count": 14
+ "amazon_search_index": 88,
+ "last_api_count": 32
 }
