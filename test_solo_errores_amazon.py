@@ -269,3 +269,19 @@ class AmazonSearchTest(unittest.TestCase):
         self.assertEqual(len(fake.calls), 8)  # 4 búsquedas por pasada
         self.assertEqual(fake.calls[0][1]["minSavingPercent"], 70)
         self.assertEqual(state["amazon_search_index"], 8)
+
+
+class BlockPauseTest(unittest.TestCase):
+    def test_si_jimmyleaks_bloquea_se_pausa_30_min(self):
+        import urllib.error
+        cfg = {**load_cfg(scope=True), "sources": ["a", "b", "c"], "rotating_sources": [], "amazon_search": {"enabled": False}}
+        state = {"seen": {}}
+        err = urllib.error.HTTPError("u", 403, "Forbidden", None, None)
+        with mock.patch.object(scanner, "fetch", side_effect=err) as fetch, mock.patch.object(scanner.time, "sleep"), \
+             mock.patch.object(scanner.feeds, "amazon_hot_titles", return_value=[]), mock.patch("builtins.print"):
+            now = scanner.now_utc()
+            scanner.scan(cfg, state, now, with_external=False)
+            self.assertEqual(fetch.call_count, 2)
+            self.assertGreater(state["jl_paused_until"], now.timestamp())
+            scanner.scan(cfg, state, now, with_external=False)
+            self.assertEqual(fetch.call_count, 2)  # en pausa: ni lo intenta

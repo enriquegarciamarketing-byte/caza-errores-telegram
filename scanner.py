@@ -934,7 +934,12 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
          with_external: bool = True) -> list[dict]:
     seen = state.setdefault("seen", {})
     listings: dict[str, dict] = {}
-    for url in pass_sources(cfg, state):
+    paused_until = float(state.get("jl_paused_until") or 0)
+    sources = [] if now.timestamp() < paused_until else pass_sources(cfg, state)
+    if not sources and paused_until:
+        print(f"Jimmyleaks en pausa por bloqueo hasta las {datetime.fromtimestamp(paused_until, MADRID):%H:%M}: solo Amazon.")
+    blocked = 0
+    for url in sources:
         try:
             label = eventos.source_label(url)
             for item in parse_listing(fetch(url)):
@@ -942,7 +947,17 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
                 listings.setdefault(item["id"], item)
         except Exception as exc:  # red, HTTP o HTML inesperado: se sigue con las demás fuentes
             print(f"Aviso: no se pudo leer {url} ({exc})")
+            if "403" in str(exc) or "429" in str(exc):
+                blocked += 1
+                if blocked >= 2 and not listings:
+                    # Nos está bloqueando: insistir cada minuto solo alarga el bloqueo. Se vuelve a probar en 30 min.
+                    state["jl_paused_until"] = now.timestamp() + 30 * 60
+                    print("Jimmyleaks bloquea al bot: lo dejo en pausa 30 min y sigo solo con Amazon.")
+                    eventos.emit("aviso", texto="Jimmyleaks bloquea al bot: en pausa 30 min, sigo con Amazon")
+                    break
         time.sleep(1)
+    if listings:
+        state.pop("jl_paused_until", None)
     print(f"Listados: {len(listings)} productos únicos")
     state["last_listing_count"] = len(listings)
     LAST_LISTINGS[:] = list(listings.values())  # para las alertas privadas (alertas.py)
