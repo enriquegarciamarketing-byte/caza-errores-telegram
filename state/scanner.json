@@ -1314,6 +1314,11 @@
    "price": 43.99,
    "t": 1794314716,
    "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "1D2bxBN": {
+   "price": 349.0,
+   "t": 1794321737,
+   "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
  "posts": [
@@ -2133,12 +2138,12 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794321403
+   "checked": 1794321737
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 67,
+ "last_listing_count": 75,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3523,97 +3528,6 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
-  },
-  "|zapatillas new balance v7 hierro- ancho especial- mujer|zapatillas v7 new": {
-   "t": 1793970373.6045191,
-   "query": "zapatillas v7 new",
-   "prices": [
-    75.0,
-    40.0,
-    49.0,
-    50.0,
-    70.0,
-    43.0,
-    50.0,
-    112.0,
-    30.0,
-    65.0,
-    150.0,
-    70.0,
-    90.0,
-    49.0,
-    90.0,
-    95.0,
-    60.0,
-    60.0,
-    39.0,
-    49.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 129119,
-   "raw_count": 35
-  },
-  "|secador de pelo dyson supersonic en versiones liso+ondulado o rizado+muy rizado (control de calor, motor v9, accesorios magneticos, )|secador v9 pelo": {
-   "t": 1793970513.1267052,
-   "query": "secador v9 pelo",
-   "prices": [],
-   "reserved": 0,
-   "demand_known": false,
-   "http_status": null,
-   "bytes": null,
-   "raw_count": null
-  },
-  "|new balance fuelcell rebel v4 - zapatillas running asfalto-color azul y rosa 81€|new v4 balance": {
-   "t": 1793970633.9083524,
-   "query": "new v4 balance",
-   "prices": [
-    40.0,
-    22.0,
-    90.0,
-    20.0,
-    70.0,
-    70.0,
-    70.0,
-    32.5,
-    40.0,
-    70.0,
-    35.0,
-    80.0,
-    75.0,
-    130.0,
-    8.0,
-    60.0,
-    85.0,
-    90.0,
-    50.0,
-    58.0,
-    68.0,
-    60.0,
-    79.0,
-    80.0,
-    65.0,
-    65.0,
-    35.0,
-    58.0,
-    30.0,
-    100.0,
-    180.0,
-    40.0,
-    70.0,
-    60.0,
-    50.0,
-    70.0,
-    23.0,
-    80.0,
-    25.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 143999,
-   "raw_count": 40
   },
   "|lego star wars halcon milenario|lego star": {
    "t": 1793972692.9686024,
@@ -9546,6 +9460,59 @@
    "http_status": 200,
    "bytes": 125541,
    "raw_count": 40
+  },
+  "|aspirador escoba sin cable dyson v8 origin, 115 w, 2 en 1, 0.54 l, autonomia bateria 40 min|aspirador v8 escoba": {
+   "t": 1794321762.6293354,
+   "query": "aspirador v8 escoba",
+   "prices": [
+    39.0,
+    316.0,
+    249.0
+   ],
+   "reserved": 1,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 122720,
+   "raw_count": 34
+  },
+  "|acer nitro 50 n50-656, intel core i5-14400f, 16gb ram, 512 gb ssd, geforce rtx 5060, sin sistema operativo, negro|acer n50 nitro": {
+   "t": 1794321763.5185935,
+   "query": "acer n50 nitro",
+   "prices": [
+    175.0,
+    650.0,
+    225.0,
+    805.0,
+    165.0,
+    474.05,
+    800.0,
+    670.0,
+    800.0,
+    413.1,
+    895.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 116229,
+   "raw_count": 35
+  },
+  "|accesorio ps5 - sony unidad de disco|accesorio ps5 sony": {
+   "t": 1794321764.638706,
+   "query": "accesorio ps5 sony",
+   "prices": [
+    125.0,
+    400.0,
+    1000.0,
+    650.0,
+    5.0,
+    18.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 131059,
+   "raw_count": 39
   }
  },
  "milanuncios_cache": {
@@ -16934,9 +16901,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 10,
+ "rotation_index": 15,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/astrobot-edicion-estandar-ps5-pal-espana-formato-fisico-nuevo-precintado-2061653": 1794299636.821295,
   "https://www.chollometro.com/ofertas/lego-star-wars-busto-de-darth-vader-2060938": 1794300287.2189598,
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -16961,15 +16927,17 @@
   "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-2062447": 1794317284.5870001,
   "https://www.chollometro.com/ofertas/vans-ultrarange-exp-zapatillas-tallas-385-39-40-2061898": 1794318381.0064461,
   "https://www.chollometro.com/ofertas/zapatillas-new-balance-1080v15-2062472": 1794319767.3810015,
-  "https://www.chollometro.com/ofertas/apple-iphone-air-azul-cielo-256-gb-2062366": 1794320367.9414585
+  "https://www.chollometro.com/ofertas/apple-iphone-air-azul-cielo-256-gb-2062366": 1794320367.9414585,
+  "https://www.chollometro.com/ofertas/aspirador-escoba-sin-cable-dyson-v8-origin-115-w-2-en-1-054-l-autonomia-bateria-40-min-2062578": 1794321755.2240143,
+  "https://www.chollometro.com/ofertas/acer-nitro-50-n50-656-intel-core-i5-14400f-16gb-ram-512-gb-ssd-geforce-rtx-5060-sin-sistema-operativo-negro-2062616": 1794321755.2240143,
+  "https://www.chollometro.com/ofertas/accesorio-ps5-sony-unidad-de-disco-2062596": 1794321755.2240143
  },
  "asked": {
-  "cm-2060782": 1794235272,
   "cm-2061653": 1794299646
  },
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 706
+  "passes": 707
  }
 }
