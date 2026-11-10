@@ -2104,11 +2104,42 @@
    "needs_ok": true,
    "ask_until": 1794310446,
    "expired": true
+  },
+  {
+   "id": "cm-2062134",
+   "gtin": null,
+   "price": 84.55,
+   "category": "OPORTUNIDAD DE REVENTA",
+   "t": 1794317290,
+   "title": "Roborock H60 aspirador escoba sin cable 3 en 1",
+   "cap": {
+    "category": "OPORTUNIDAD DE REVENTA",
+    "title": "Roborock H60 aspirador escoba sin cable 3 en 1",
+    "brand": "",
+    "current": 84.55,
+    "reference": 249.0,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "sizes": null,
+    "hold": false,
+    "store": "Roborock",
+    "note": "🕒 Precio comprobado en Roborock a las 14:27.",
+    "ref_text": "frente al precio anterior en la tienda",
+    "resale_price": 138.0,
+    "resale_count": 3,
+    "profit": 44.55,
+    "demand": "Muchos anuncios",
+    "source_label": "WALLAPOP"
+   },
+   "message_id": 97,
+   "url": "https://es.roborock.com/products/roborock-h60",
+   "alert_id": 562
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 74,
+ "last_listing_count": 65,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3523,56 +3554,6 @@
    "http_status": 200,
    "bytes": 75492,
    "raw_count": 26
-  },
-  "|dji osmo action 4 pack estandar|dji osmo": {
-   "t": 1793966401.4177165,
-   "query": "dji osmo",
-   "prices": [
-    330.0,
-    270.0,
-    25.0,
-    55.0,
-    250.0,
-    15.0,
-    360.0,
-    149.0,
-    195.0,
-    370.0,
-    300.0,
-    260.0,
-    270.0,
-    375.0,
-    100.0,
-    22.0,
-    350.0,
-    110.0,
-    269.0,
-    299.0,
-    245.0,
-    185.0,
-    255.99,
-    299.0,
-    55.0,
-    50.0,
-    29.9,
-    250.0,
-    550.0,
-    250.0,
-    250.0,
-    363.0,
-    350.0,
-    259.95,
-    265.0,
-    350.0,
-    35.0,
-    120.0,
-    45.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 129070,
-   "raw_count": 40
   },
   "|lego dc comics logotipo de batman super heroes|lego comics": {
    "t": 1793969618.2340636,
@@ -9583,6 +9564,20 @@
    "http_status": 200,
    "bytes": 144904,
    "raw_count": 35
+  },
+  "|roborock h60 aspirador escoba sin cable 3 en 1|roborock h60 aspirador": {
+   "t": 1794317290.0271761,
+   "query": "roborock h60 aspirador",
+   "prices": [
+    90.0,
+    270.0,
+    150.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 37965,
+   "raw_count": 7
   }
  },
  "milanuncios_cache": {
@@ -16928,9 +16923,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 5,
+ "rotation_index": 10,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
   "https://www.chollometro.com/ofertas/caja-gaming-mars-gaming-mc-lcdpro-atx-con-pantalla-lcd-ips-de-72-cristal-templado-curva-doble-camara-y-soporte-para-rl-de-360-mm-2060197": 1794296298.487146,
   "https://www.chollometro.com/ofertas/lego-star-wars-r2-d2-2061600": 1794296603.751416,
@@ -16958,7 +16952,9 @@
   "https://www.chollometro.com/ofertas/zalando-prive-new-balance-hasta-72-zapatillas-2062383": 1794314139.4332032,
   "https://www.chollometro.com/ofertas/roborock-q7l5-robot-aspirador-y-fregador-succion-extrema-de-8000-pa-negro-2062013": 1794315599.7168698,
   "https://www.chollometro.com/ofertas/new-balance-rebel-zapatillas-de-trail-running-suela-vibram-2062421": 1794315599.7168698,
-  "https://www.chollometro.com/ofertas/casio-g-shock-montre-classique-pour-homme-ga-010-2aer-2061938": 1794316309.471012
+  "https://www.chollometro.com/ofertas/casio-g-shock-montre-classique-pour-homme-ga-010-2aer-2061938": 1794316309.471012,
+  "https://www.chollometro.com/ofertas/roborock-h60-aspirador-escoba-sin-cable-3-en-1-2062134": 1794317284.5870001,
+  "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-2062447": 1794317284.5870001
  },
  "asked": {
   "cm-2060782": 1794235272,
@@ -16967,6 +16963,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 684
+  "passes": 685
  }
 }
