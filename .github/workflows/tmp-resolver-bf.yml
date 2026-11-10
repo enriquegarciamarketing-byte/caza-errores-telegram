@@ -1,0 +1,14 @@
+name: tmp resolver BF
+on:
+  push:
+    branches: [tmp-resolver-bf]
+jobs:
+  r:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: |
+          for c in B0fzSfDoR B0ca3hgy9 B0aNsLjNI B096RvVbx B05ehgjXV B0apMlZzG B0aHKMFfU B047ufbME B034hwaX9 B00YLKIUb B02zz1jQG B0hNaKxZk B0gdgZCDl B0h550fZ3 B0gQPKOCp B03wkLE1i; do
+            u=$(curl -s -o /dev/null -w '%{url_effective}' -L --max-redirs 8 -A 'Mozilla/5.0' "https://link.amazon/$c")
+            echo "RES $c $u"
+          done
