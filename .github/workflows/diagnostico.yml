@@ -14,7 +14,7 @@ jobs:
       - env:
           AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID }}
           AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET }}
-        run: mkdir -p state/diagnostico && python -u tools/diagnostico.py 2>&1 | tee state/diagnostico/log.txt || true
+        run: mkdir -p state/diagnostico && PYTHONPATH=. python -u tools/diagnostico.py 2>&1 | tee state/diagnostico/log.txt || true
       - run: |
           git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add state/diagnostico && git commit -m "Diagnóstico [skip ci]" && for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
