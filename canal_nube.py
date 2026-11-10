@@ -620,6 +620,10 @@ def quota_reason(state: dict, now: datetime, rules: dict, already: int = 0) -> s
                    if datetime.fromtimestamp(p.get("t") or 0, timezone.utc).astimezone(MADRID).date() == today]
     if len(last_hour) + already >= int(rules["max_per_hour"]):
         return "cupo de la hora cubierto"
+    gap = float(rules.get("min_minutes_between_posts") or 0) * 60
+    last = max([p.get("t") or 0 for p in posts] or [0])
+    if gap and (already or now.timestamp() - last < gap):
+        return f"menos de {gap / 60:.0f} min desde el último post"
     if len(today_posts) + already >= int(rules["max_per_day"]):
         return "cupo del día cubierto"
     return ""
