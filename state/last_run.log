@@ -1,8 +1,16 @@
 Creators API: activa, se verifica cada producto en vivo
 Bot: @cazaerroresAmazon_bot
-Listados: 77 productos únicos
-Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36656 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 60914 bytes, 30 chollos
+Listados: 72 productos únicos
+Candidatos nuevos tras el filtro rápido: 1
+  MW3kr6D · 599.0 € · media None → descartado (sin precios de los 30 días anteriores para comparar) · dreame X50 Ultra Complete Robot Aspirador y Fregasuelos, 20.
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36081 bytes, 30 chollos
+  Chollometro «LEGO Star Wars Busto de Darth Vader»: Amazon 31.49 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 67226 bytes, 30 chollos
+  cm-2060938 · Amazon 31.49 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Star Wars Busto de Darth Vader
+  Wallapop «lego star»: 200 / 101697 bytes, 40 anuncios, 39 parecidos, 0 reservas
+  Milanuncios «lego star»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 27 anuncios, ~25 €, no publica
+  ⚠️ No publico «LEGO Star Wars Busto de Darth Vader»: reventa en WALLAPOP ~25 € (27 anuncios): ROI -31 % y -10 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 26 descartes nuevos, 97 en lista
+Cascada al canal normal: 37 descartes nuevos, 115 en lista
