@@ -7,10 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - run: |
-          UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
-          for n in 6198073031 6198055031 1703496031 2454134031 2665403031 599371031 4772051031 599392031 667050031 1571260031 599386031 5512277031 12472656031 3677431031 599383031 1571258031 1571259031 1571261031 1571262031 3628728031 1703495031 2454133031 2454136031 599370031 599391031 667049031 599385031 599382031; do
-            t=$(curl -sL --compressed -A "$UA" -H 'Accept-Language: es-ES,es;q=0.9' "https://www.amazon.es/b?node=$n" | grep -o '<title>[^<]*</title>' | head -1)
-            echo "NODE $n $t"
-            sleep 1
-          done
+      - uses: actions/checkout@v4
+      - run: python3 bf_nodes.py
+        env:
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID || secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET || secrets.AMAZON_CREATORS_CLIENT_SECRET }}
