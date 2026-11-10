@@ -1,8 +1,24 @@
 Creators API: activa, se verifica cada producto en vivo
 Bot: @cazaerroresAmazon_bot
-Listados: 69 productos únicos
+Listados: 75 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36204 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 72248 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36584 bytes, 30 chollos
+  Chollometro «On Running Zapatillas de running Cloudpulse 1- Tallas- 37, 42, 42.5»: Privalia 74.99 €
+  Chollometro «Caja gaming Mars Gaming MC-LCDPRO ATX con pantalla LCD IPS de 7,2", cr»: Amazon 63.35 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 85649 bytes, 30 chollos
+  cm-2060937 · Privalia 74.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · On Running Zapatillas de running Cloudpulse 1- Tallas- 37, 4
+  cm-2060197 · Amazon 63.35 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Caja gaming Mars Gaming MC-LCDPRO ATX con pantalla LCD IPS d
+  Vinted «running 37 zapatillas»: HTTP 200, 3693659 bytes, 96 anuncios
+  Vinted «running 37 zapatillas»: 26 parecidos de 96
+  Wallapop «running 37 zapatillas»: 200 / 126577 bytes, 39 anuncios, 18 parecidos, 0 reservas
+  Milanuncios «running 37 zapatillas»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 33 anuncios, ~18 €, no publica
+  ⚠️ No publico «On Running Zapatillas de running Cloudpulse 1- Tallas- 37, 42, 42.5»: reventa en VINTED+WALLAPOP ~18 € (33 anuncios): ROI -80 % y -60 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «caja 360 gaming»: 200 / 126052 bytes, 37 anuncios, 8 parecidos, 0 reservas
+  Milanuncios «caja 360 gaming»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 7 anuncios, ~22 €, no publica
+  ⚠️ No publico «Caja gaming Mars Gaming MC-LCDPRO ATX con pantalla LCD IPS de 7,2", cristal templado curva»: reventa en WALLAPOP ~22 € (7 anuncios): ROI -71 % y -45 €, por debajo del mínimo (25 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 24 descartes nuevos, 130 en lista
+Cascada al canal normal: 40 descartes nuevos, 148 en lista
