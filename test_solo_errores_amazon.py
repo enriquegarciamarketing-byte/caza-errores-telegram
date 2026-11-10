@@ -448,3 +448,45 @@ class ExtrasTest(unittest.TestCase):
         import buscador_amazon as ba
         self.assertIn("30 días", ba.problem_text("HTTP 403 AssociateNotEligible"))
         self.assertIn("límite", ba.problem_text("HTTP 429 TooManyRequests"))
+
+
+class LearningTest(unittest.TestCase):
+    def test_dos_no_bloquean_la_marca_y_un_ok_la_salva(self):
+        import aprendizaje as ap
+        state = {}
+        post = {"brand": "Faszin", "seller": "Faszin Store EU", "source": "Amazon · plancha de pelo"}
+        self.assertEqual(ap.record(state, post, "no"), [])
+        newly = ap.record(state, post, "no")
+        self.assertIn("la marca Faszin", newly)
+        self.assertIn("has rechazado la marca Faszin", ap.blocked(state["learning"], {"brand": "FASZIN"}))
+        ap.record(state, {"brand": "Faszin"}, "ok")
+        self.assertEqual(ap.blocked(state["learning"], {"brand": "Faszin"}), "")
+
+    def test_responder_no_descarta_y_aprende(self):
+        state = {"admin_chat_id": 1, "posts": [{"id": "B0X", "needs_ok": True, "pending": True, "alert_id": 50,
+                                                "brand": "Faszin", "seller": "X", "source": "Amazon · plancha",
+                                                "ask_until": 9e12}]}
+        sent = []
+
+        class TG:
+            def call(self, method, params):
+                if method == "getUpdates":
+                    return [{"update_id": 1, "message": {"message_id": 9, "chat": {"id": 1, "type": "private"},
+                                                         "from": {"id": 1}, "text": "no",
+                                                         "reply_to_message": {"message_id": 50}}}]
+                sent.append(params)
+                return {}
+        with mock.patch("builtins.print"):
+            scanner.handle_updates(TG(), load_cfg(scope=True), state, "@c", False)
+        self.assertTrue(state["posts"][0].get("rejected"))
+        self.assertFalse(state["posts"][0]["pending"])
+        self.assertEqual(state["learning"]["brand"]["faszin"]["no"], 1)
+        self.assertIn("Descartado", sent[-1]["text"])
+
+    def test_las_busquedas_que_venden_salen_mas(self):
+        import buscador_amazon as ba
+        learning = {"sales": {"keywords": {"robot aspirador": 4}}, "keyword": {"plancha de pelo": {"ok": 0, "no": 3}}}
+        rot = ba.rotation({"keywords": ["robot aspirador", "plancha de pelo", "freidora de aire"]}, learning, lap=1)
+        self.assertEqual(rot.count("robot aspirador"), 2)
+        self.assertNotIn("plancha de pelo", rot)  # vuelta impar: las rechazadas descansan
+        self.assertIn("freidora de aire", rot)

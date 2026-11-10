@@ -1358,7 +1358,8 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
            "amazon_search": {**conf, "per_pass": conf.get("per_run") or 8}}
     box = state if remember else {"amazon_search_index": state.get("amazon_search_index")}
     import historial
-    results = buscador_amazon.search(API, cfg, box, now, log=log)
+    learning = load_json(PREMIUM_STATE, {}).get("learning") or {}
+    results = buscador_amazon.search(API, cfg, box, now, log=log, learning=learning)
     hist = state.setdefault("price_history", {}) if remember else dict(state.get("price_history") or {})
     for cand, _ in results:
         historial.record(hist, cand.get("asin"), cand.get("price"), now)
@@ -1375,6 +1376,9 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
             continue  # reglas de calidad: solo Amazon o la tienda oficial de la marca, y producto nuevo
         # Historial propio: si ya estuvo a este precio hace poco o el precio anterior está inflado, fuera;
         # con historial suficiente la referencia es su precio habitual, no el que pone el vendedor.
+        import aprendizaje
+        if aprendizaje.blocked(learning, cand):
+            continue  # marca o vendedor que has rechazado varias veces en el premium
         honest, hwhy, info = historial.check(asin, float(price), float(was), now, hist, other,
                                              min_drop_pct=min_saving)
         if hwhy:

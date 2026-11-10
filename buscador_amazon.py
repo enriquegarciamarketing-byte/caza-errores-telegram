@@ -29,14 +29,50 @@ HONEST = {
 }
 
 
-def next_batch(conf: dict, state: dict) -> list[str]:
-    keywords = [k for k in conf.get("keywords") or [] if str(k).strip()]
+def rotation(conf: dict, learning: dict | None = None, lap: int = 0, today=None) -> list[str]:
+    """Lista de búsquedas de esta vuelta: las de temporada primero y, con lo aprendido, las que venden o
+    apruebas salen más veces; las que rechazas, una vuelta sí y otra no."""
+    import aprendizaje
+    base = [k for k in conf.get("keywords") or [] if str(k).strip()]
+    keywords = season_keywords(conf, today) + base
+    out, seen = [], set()
+    for k in keywords:
+        if k in seen:
+            continue
+        seen.add(k)
+        weight = aprendizaje.keyword_weight(learning, k)
+        if weight < 0.75 and lap % 2:
+            continue
+        out.extend([k] * max(1, round(weight)))
+    return out
+
+
+def season_keywords(conf: dict, today=None) -> list[str]:
+    """Búsquedas de las temporadas activas hoy (config amazon_search.seasons: desde/hasta en MM-DD)."""
+    from datetime import date
+    today = today or date.today()
+    md = today.strftime("%m-%d")
+    out = []
+    for season in conf.get("seasons") or []:
+        start, end = str(season.get("from") or ""), str(season.get("to") or "")
+        active = (start <= md <= end) if start <= end else (md >= start or md <= end)  # cruza fin de año
+        if start and end and active:
+            out += [k for k in season.get("keywords") or [] if str(k).strip()]
+    return out
+
+
+def next_batch(conf: dict, state: dict, learning: dict | None = None) -> list[str]:
+    lap = int(state.get("amazon_search_lap") or 0)
+    keywords = rotation(conf, learning, lap)
     if not keywords:
         return []
     per = max(1, int(conf.get("per_pass") or 4))
     start = int(state.get("amazon_search_index") or 0) % len(keywords)
-    batch = [keywords[(start + i) % len(keywords)] for i in range(min(per, len(keywords)))]
-    state["amazon_search_index"] = (start + len(batch)) % len(keywords)
+    batch = list(dict.fromkeys(keywords[(start + i) % len(keywords)] for i in range(min(per, len(keywords)))))
+    nxt = start + min(per, len(keywords))
+    if nxt >= len(keywords):
+        state["amazon_search_lap"] = lap + 1
+    state["amazon_search_index"] = nxt % len(keywords)
     return batch
 
 
@@ -88,7 +124,7 @@ def to_candidate(item: dict, keyword: str, cfg: dict, now: datetime, tag: str) -
     return cand, ""
 
 
-def search(api, cfg: dict, state: dict, now: datetime, log=print) -> list[tuple[dict, str]]:
+def search(api, cfg: dict, state: dict, now: datetime, log=print, learning: dict | None = None) -> list[tuple[dict, str]]:
     """Una tanda de búsquedas. Devuelve (candidato o datos, motivo de descarte o "")."""
     conf = cfg.get("amazon_search") or {}
     if api is None or not conf.get("enabled"):
@@ -96,7 +132,7 @@ def search(api, cfg: dict, state: dict, now: datetime, log=print) -> list[tuple[
     tag = str(cfg.get("affiliate_tag") or "")
     min_saving = max(1, min(99, int(float(cfg.get("error_min_discount") or 70) - float(conf.get("slack_pct") or 0))))
     out: list[tuple[dict, str]] = []
-    for keyword in next_batch(conf, state):
+    for keyword in next_batch(conf, state, learning):
         try:
             data = api.call("searchItems", {"keywords": keyword, "searchIndex": conf.get("search_index") or "All",
                                             "minSavingPercent": min_saving, "itemCount": 10, "resources": RESOURCES})

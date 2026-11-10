@@ -757,6 +757,20 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
                             "del que quieras publicar (mantén pulsado el mensaje → Responder).")
                     tg.call("sendMessage", {"chat_id": admin, "reply_to_message_id": msg["message_id"], "text": note})
                 continue
+        if post and post.get("needs_ok") and not link and NO_RE.match(text) and not post.get("approved"):
+            # Tu NO: se descarta y el bot aprende (marca, vendedor y búsqueda).
+            if dry:
+                print(f"[prueba] NO para {post['id']}")
+                continue
+            post["pending"] = False
+            post["rejected"] = True
+            post.pop("card_data", None)
+            import aprendizaje
+            newly = aprendizaje.record(state, post, "no")
+            extra = (" A partir de ahora no te propongo " + " ni ".join(newly) + ".") if newly else ""
+            tg.call("sendMessage", {"chat_id": admin, "reply_to_message_id": msg["message_id"],
+                                    "text": f"👎 Descartado. Lo apunto para afinar lo que te paso.{extra}"})
+            continue
         if post and post.get("needs_ok") and not link:
             if not OK_RE.match(text):
                 continue
@@ -772,6 +786,8 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
                                         "text": "⌛ Este ya ha caducado: el precio puede haber cambiado. No lo publico."})
             else:
                 post["approved"] = True
+                import aprendizaje
+                aprendizaje.record(state, post, "ok")
                 tg.call("sendMessage", {"chat_id": admin, "reply_to_message_id": msg["message_id"],
                                         "text": "👍 Recibido. Lo publico en el premium ahora mismo."})
             continue
@@ -845,7 +861,7 @@ def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]
     import buscador_amazon
     started = time.time()
     import historial
-    results = buscador_amazon.search(API, cfg, state, now)
+    results = buscador_amazon.search(API, cfg, state, now, learning=state.get("learning"))
     state["last_api_count"] = len(results)
     if state.get("api_error"):
         state["api_problem"] = buscador_amazon.problem_text(state.pop("api_error"))
@@ -865,6 +881,9 @@ def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]
         prev = seen.get(key)
         if prev and cand.get("price") is not None and abs(float(prev.get("price") or 0) - float(cand["price"])) < 0.01:
             continue  # ya visto a este precio
+        if not why:
+            import aprendizaje
+            why = aprendizaje.blocked(state.get("learning"), cand)
         if not why and not buscador_amazon.is_trusted(cand.get("brand") or "", cfg):
             why = f"marca poco conocida ({cand.get('brand') or 'sin marca'}): su precio anterior no es fiable"
         if not why:
@@ -1519,6 +1538,8 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
         return True
     admin = state.get("admin_chat_id")
     record = {"id": cand["id"], "gtin": gtin, "price": cand["price"], "category": cand["category"],
+              "brand": cand.get("brand") or "", "seller": cand.get("seller") or "", "source": cand.get("source") or "",
+              "asin": cand.get("asin") or "",
               "t": int(now_utc().timestamp()), "title": card_title(cand)[:120], "cap": caption_data(cand)}
     if url:
         silent = cand["category"] != "ERROR DE PRECIO" and now_utc().astimezone(MADRID).hour < 9
@@ -1567,6 +1588,7 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
 
 
 OK_RE = re.compile(r"^\s*(ok|okay|vale|si|sí|publica|publicalo|publícalo|dale|👍|✅)\b", re.I)
+NO_RE = re.compile(r"^\s*(no|nop|nope|descarta|descártalo|descartalo|fuera|paso|👎|❌)(\b|$)", re.I)
 
 
 def ask_admin(tg, state: dict, cand: dict, card: Path, url: str | None, summary: str, offer: dict, dry: bool) -> bool:
@@ -1588,8 +1610,8 @@ def ask_admin(tg, state: dict, cand: dict, card: Path, url: str | None, summary:
     if cand.get("coupons") or cand.get("coupon_text") or cand.get("paypal"):
         how = " Pruébalo con los cupones y el pago que pone el post."
     text = (f"{icon} Pendiente de tu OK · arriba tienes el post tal cual saldría.\n\n{reason}{how} Si sale a "
-            f"{euro(cand['price'])}, respóndeme OK a este mensaje (o a la foto) y se publica en el premium. "
-            f"Caduca en {hours:g} h.")
+            f"{euro(cand['price'])}, respóndeme OK a este mensaje (o a la foto) y se publica en el premium; "
+            f"si no te convence, responde NO y aprendo de ello. Caduca en {hours:g} h.")
     buttons = [[{"text": f"Abrir en {store}", "url": url}]]
     asin = cand.get("asin") or affiliate.extract_asin(url or "")
     if asin:
