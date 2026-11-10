@@ -1,0 +1,15 @@
+name: tmp fix Jardín BF
+on:
+  push:
+    branches: [tmp-bf-check]
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          curl -sL --compressed -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36' -H 'Accept-Language: es-ES,es;q=0.9' -o p.html https://www.amazon.es/blackfriday
+          python3 bf_fix.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
