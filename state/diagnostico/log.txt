@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/runner/work/caza-errores-telegram/caza-errores-telegram/tools/diagnostico.py", line 4, in <module>
+    import canal_nube, scanner
+ModuleNotFoundError: No module named 'canal_nube'
