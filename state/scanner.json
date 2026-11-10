@@ -2135,12 +2135,12 @@
    "message_id": 97,
    "url": "https://es.roborock.com/products/roborock-h60",
    "alert_id": 562,
-   "checked": 1794317386
+   "checked": 1794317508
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 74,
+ "last_listing_count": 78,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16924,7 +16924,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
   "https://www.chollometro.com/ofertas/caja-gaming-mars-gaming-mc-lcdpro-atx-con-pantalla-lcd-ips-de-72-cristal-templado-curva-doble-camara-y-soporte-para-rl-de-360-mm-2060197": 1794296298.487146,
@@ -16964,6 +16964,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 686
+  "passes": 687
  }
 }
