@@ -3034,6 +3034,71 @@
    "price": 8.15,
    "t": 1794346547,
    "result": "Amazon no marca precio anterior"
+  },
+  "B07YQ6V759": {
+   "price": 74.89,
+   "t": 1794346664,
+   "result": "marca poco conocida (Honeywell Home): su precio anterior no es fiable"
+  },
+  "B0DZW6JKYH": {
+   "price": 22.05,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B008J35BL8": {
+   "price": 105.17,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00QMD78O0": {
+   "price": 122.35,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DDQ3VF8T": {
+   "price": 47.88,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00069LMJ8": {
+   "price": 19.15,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00069LIAQ": {
+   "price": 32.13,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00YH9MI2S": {
+   "price": 38.0,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B06Y129BYQ": {
+   "price": 99.0,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B09ZPWJ9KR": {
+   "price": 11.87,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0001OZJQU": {
+   "price": 64.58,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B000XUP52A": {
+   "price": 1.54,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0001OZKVO": {
+   "price": 25.95,
+   "t": 1794346664,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -3853,7 +3918,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794346547
+   "checked": 1794346664
   },
   {
    "id": "cm-2062698",
@@ -19000,9 +19065,9 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 808
+  "passes": 809
  },
  "jl_paused_until": 1794348347.337671,
- "amazon_search_index": 80,
- "last_api_count": 15
+ "amazon_search_index": 84,
+ "last_api_count": 14
 }
