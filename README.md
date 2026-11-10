@@ -6,7 +6,7 @@
 - **Corre en el MacBook**, no en GitHub: `local/caza_errores.sh` hace ciclos de 30 min con una pasada por minuto (GitHub solo lo arrancaba más o menos una vez por hora) y con la IP de casa. Al acabar cada ciclo se trae el código nuevo de GitHub y sube la memoria (`state/scanner.json`) y el latido (`state/latido_mac.json`). Logs en `state/local_logs/` (7 días).
 - **Instalar o reinstalar**: en la carpeta del bot, `bash local/instalar_mac.sh` (crea `.venv`, comprueba `.env`, Telegram y el permiso de subir a GitHub, y lo deja en launchd para que arranque solo y se levante si se cae). `--estado` dice si está vivo; `--parar` lo quita. Los secretos van en `.env` (plantilla `local/env.ejemplo`), nunca en el repo.
 - **Que no se duerma**: el bot mantiene el Mac despierto con el cargador puesto (`caffeinate`). Para cortes de luz y tapa cerrada, los `pmset` que imprime el instalador.
-- **Vigilante** (`vigilar-mac.yml`, cada hora en GitHub): si el Mac lleva más de 50 min sin latir, te avisa por Telegram (las 2 primeras horas en cada revisión, luego cada 6 h). `scan-deals.yml` ya no está programado; se puede lanzar a mano como reserva.
+- **Vigilante** (`vigilar-mac.yml`, cada hora en GitHub): si el Mac lleva más de 50 min sin latir, te avisa por Telegram (las 2 primeras horas en cada revisión, luego cada 6 h). `scan-deals.yml` queda de **reserva automática**: sigue programado pero solo busca si el Mac lleva más de 50 min sin latir (el Mac late al arrancar y cada ciclo).
 
 ## Canal AliExpress @cazachollos_com (`canal_aliexpress.py`, 04/11/2026)
 

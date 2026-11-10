@@ -76,7 +76,10 @@ done
 if [ -n "$faltan" ]; then
   mal "Faltan en .env:$faltan"; exit 1
 fi
-ok "Secretos en .env."
+ok "Secretos en .env. Publicará en: $TELEGRAM_CHAT_ID"
+if [ "$TELEGRAM_CHAT_ID" != "@caza_errores" ]; then
+  nota "Ojo: el premium es @caza_errores. Si $TELEGRAM_CHAT_ID no es ese canal (o su número), cámbialo en .env."
+fi
 if curl -sS -m 15 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getMe" | grep -q '"ok":true'; then
   ok "Telegram responde."
 else

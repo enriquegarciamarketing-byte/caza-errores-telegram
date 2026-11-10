@@ -2,9 +2,9 @@ name: Escanear chollos automáticamente
 
 on:
   schedule:
-    # GitHub retrasa mucho las tareas frecuentes y en la práctica arranca esta más o menos una vez por hora.
-    # Por eso cada ejecución programada busca durante ~40 min: una pasada cada 2,5 min, las 24 horas
-    # (los errores de precio salen a cualquier hora; las gangas respetan el horario nocturno del config).
+    # Desde el 10/11/2026 el premium corre 24/7 en el Mac (local/caza_errores.sh). Esta tarea programada queda
+    # de RESERVA: solo busca si el Mac lleva más de 50 min sin latir (state/latido_mac.json); si no, sale al momento.
+    # GitHub la arranca más o menos una vez por hora y cada ejecución busca ~40 min, una pasada cada 2,5 min.
     - cron: "3-59/10 * * * *"
   workflow_dispatch:
     inputs:
@@ -74,16 +74,33 @@ jobs:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
 
+      - name: ¿Está el Mac en marcha?
+        id: mac
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, time
+          try:
+              t = float(json.load(open("state/latido_mac.json")).get("t") or 0)
+          except Exception:
+              t = 0
+          alive = time.time() - t < 50 * 60
+          print("vivo=" + ("true" if alive else "false"))
+          PY
+          grep -q "vivo=true" "$GITHUB_OUTPUT" && echo "El Mac está buscando errores: GitHub no hace nada." || echo "Sin latido reciente del Mac (o lanzado a mano): GitHub busca."
+
       - name: Preparar Python
+        if: github.event_name != 'schedule' || steps.mac.outputs.vivo != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
 
       - name: Instalar dependencias
+        if: github.event_name != 'schedule' || steps.mac.outputs.vivo != 'true'
         run: python -m pip install -r requirements.txt
 
       - name: Buscar y publicar chollos
+        if: github.event_name != 'schedule' || steps.mac.outputs.vivo != 'true'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -118,7 +135,7 @@ jobs:
 
       # La prueba privada no debe dejar memoria en el repositorio.
       - name: Guardar memoria del escáner
-        if: always() && (github.event_name != 'workflow_dispatch' || (inputs.test_private != true && inputs.check_sources != true))
+        if: always() && (github.event_name != 'schedule' || steps.mac.outputs.vivo != 'true') && (github.event_name != 'workflow_dispatch' || (inputs.test_private != true && inputs.check_sources != true))
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

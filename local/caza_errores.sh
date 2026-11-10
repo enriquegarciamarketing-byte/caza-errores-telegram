@@ -92,6 +92,10 @@ command -v caffeinate >/dev/null 2>&1 && caffeinate -s -i -w $$ &
 log "Bot de errores en marcha en $(scutil --get ComputerName 2>/dev/null || hostname)."
 aviso_telegram "🟢 Caza Errores: el bot de errores de Amazon está en marcha en el Mac."
 
+# Latido nada más arrancar: así GitHub deja de buscar de reserva desde el primer minuto.
+latido 0
+guardar_memoria >> "$LOG_DIR/errores-$(date +%F).log" 2>&1
+
 fallos=0
 while true; do
   hoy_log="$LOG_DIR/errores-$(date +%F).log"

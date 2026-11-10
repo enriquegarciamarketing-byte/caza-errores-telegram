@@ -47,7 +47,7 @@ jobs:
           since = f"{minutes:.0f} min" if minutes < 120 else f"{hours:.0f} h"
           text = (f"🔴 Caza Errores: el bot del Mac no da señales desde hace {since} "
                   f"(último latido {beat.get('hora')}). Mira que esté encendido, enchufado y con internet. "
-                  "Mientras tanto no salen errores en el premium.")
+                  "Mientras tanto GitHub busca errores de reserva, pero mucho más despacio.")
           data = urllib.parse.urlencode({"chat_id": admin, "text": text}).encode()
           urllib.request.urlopen(f"https://api.telegram.org/bot{token}/sendMessage", data, timeout=20)
           print("Aviso enviado.")
