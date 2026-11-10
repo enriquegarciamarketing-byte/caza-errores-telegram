@@ -2023,7 +2023,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 76,
+ "last_listing_count": 78,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16190,14 +16190,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 0,
+ "rotation_index": 17,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/reloj-garmin-fenix-8-47mm-pantalla-amoled-linterna-led-altavoz-y-microfono-mapas-negro-2061181": 1794256674.3858204,
-  "https://www.chollometro.com/ofertas/sir-g8-plus-mfi-mando-para-iphone-151617ipad-mini-y-androidipad-palancasgatillos-efecto-hall-genshin-impact-pubg-mobile-y-minecraft-2055283": 1794257282.634509,
-  "https://www.chollometro.com/ofertas/auriculares-gaming-sony-inzone-buds-true-wireless-baja-latencia-anc-360-spatial-sound-pcps5-2061081": 1794257872.8717399,
-  "https://www.chollometro.com/ofertas/lego-botanicals-ramo-de-flores-fantasia-en-rosa-10342-2061193": 1794258472.8663583,
-  "https://www.chollometro.com/ofertas/casio-g-shock-gm-2100-1aer-casioak-bisel-de-acero-inoxidable-y-esfera-gris-2061338": 1794258472.8663583,
-  "https://www.chollometro.com/ofertas/casio-g-shock-dw-9052gbx-1a4-485-mm-negro-y-oro-rosa-200-m-2061364": 1794259706.1839125,
   "https://www.chollometro.com/ofertas/zapatillas-nike-sportswear-air-force-1-07-beige-tallas-385-a-425-44-45-47-485-y-495-2061399": 1794263007.8007722,
   "https://www.chollometro.com/ofertas/zapatillas-cuero-hoff-hombres-2060523": 1794265701.3858333,
   "https://www.chollometro.com/ofertas/nike-air-force-low-retro-2061199": 1794265701.3858333
@@ -16209,6 +16203,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 536
+  "passes": 552
  }
 }
