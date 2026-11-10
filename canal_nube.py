@@ -900,6 +900,32 @@ def full_size(image: str) -> str:
     return image
 
 
+def white_canvas_photo(image: str, asin: str, margin: float = 0.12) -> Path | None:
+    """Foto del producto centrada en un lienzo blanco cuadrado con margen, para que las fotos muy altas o muy
+    anchas (botellas, cables…) no salgan estrechas o recortadas en el canal. La foto no se retoca ni se deforma:
+    solo se le pone más fondo blanco alrededor. Devuelve None si no se puede bajar o abrir."""
+    import io
+    import photos
+    from PIL import Image
+
+    local = ROOT / image if image and not image.startswith("http") else None
+    raw = local.read_bytes() if local and local.is_file() else (photos.fetch_best(full_size(image)) if image else None)
+    if not raw:
+        return None
+    try:
+        with Image.open(io.BytesIO(raw)) as opened:
+            rgba = opened.convert("RGBA")
+    except (OSError, ValueError):
+        return None
+    side = int(round(max(rgba.size) / (1 - 2 * margin)))
+    canvas = Image.new("RGB", (side, side), "white")
+    canvas.paste(rgba, ((side - rgba.width) // 2, (side - rgba.height) // 2), rgba)
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    out = OUTPUT / f"{asin}-lienzo.jpg"
+    canvas.save(out, "JPEG", quality=93)
+    return out
+
+
 def send_product_photo(tg, target, image: str) -> dict:
     """Foto del producto tal cual y en silencio (la notificación la da la tarjeta con el texto que va justo detrás).
     Si es una URL de Amazon, Telegram la baja directamente: no se guarda ni se retoca."""
@@ -921,6 +947,12 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
     if style == "foto" and image:
         # Solo la foto del producto, a todo lo ancho, con el texto y el botón (como los canales grandes).
         try:
+            if deal.get("white_canvas"):
+                # Post manual con "fondo_blanco": true → la foto sobre un lienzo blanco más grande.
+                padded = white_canvas_photo(image, deal["asin"])
+                if padded:
+                    return tg.send_photo(target, padded, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
+                log("  No he podido preparar el fondo blanco; mando la foto tal cual")
             if image.startswith("http"):
                 return tg.call("sendPhoto", {"chat_id": target, "photo": full_size(image), "caption": caption,
                                              "parse_mode": "HTML", "reply_markup": buttons(url, rules.get("button_style", "success"))})
@@ -1618,6 +1650,7 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
         "seen_hhmm": spec.get("seen_at") or "", "extra_lines": list(spec.get("lines") or []),
         "short_url": url if url and affiliate.is_short_link(url) else "",
         "interest": 0, "interest_label": "", "ref_kind": spec.get("ref_kind") or "",
+        "white_canvas": bool(spec.get("fondo_blanco")),
     }
 
 

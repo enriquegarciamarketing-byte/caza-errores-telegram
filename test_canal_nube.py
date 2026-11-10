@@ -465,6 +465,29 @@ class Manual(unittest.TestCase):
         card = cn.make_card(deal, RULES)
         self.assertTrue(card.exists())
 
+    def test_fondo_blanco(self):
+        from PIL import Image
+        deal = cn.manual_deal(dict(self.SPEC, fondo_blanco=True), RULES)
+        self.assertTrue(deal["white_canvas"])
+        self.assertFalse(cn.manual_deal(self.SPEC, RULES)["white_canvas"])
+        out = cn.white_canvas_photo(deal["image"], deal["asin"])
+        with Image.open(cn.ROOT / "images" / "manual" / "B0HC84XR1P.png") as src, Image.open(out) as padded:
+            self.assertEqual(padded.width, padded.height)
+            self.assertGreater(padded.width, max(src.size))
+            self.assertEqual(padded.getpixel((3, 3)), (255, 255, 255))
+        sent = []
+
+        class TG:
+            def send_photo(self, chat_id, image, caption, extra=None):
+                sent.append(Path(image).name)
+                return {"message_id": 1}
+
+            def call(self, *a, **k):
+                raise AssertionError("con fondo blanco la foto se sube, no se manda por URL")
+
+        cn.publish(TG(), "@x", deal, dict(RULES, post_style="foto"), "texto", "https://www.amazon.es/dp/B0HC84XR1P")
+        self.assertEqual(sent, ["B0HC84XR1P-lienzo.jpg"])
+
 
 class Pasada(unittest.TestCase):
     def pages(self, detail_pages=None):
