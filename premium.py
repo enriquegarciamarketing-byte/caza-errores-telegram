@@ -9,6 +9,8 @@ import wallapop
 # Host fragment, id de config, nombre visible en la tarjeta y el botón.
 STORES = (
     ("amazon.", "amazon", "Amazon"),
+    ("link.amazon", "amazon", "Amazon"),  # enlaces cortos de SiteStripe
+    ("amzn.", "amazon", "Amazon"),
     ("carrefour.", "carrefour", "Carrefour"),
     ("lidl.", "lidl", "Lidl"),
     ("game.es", "game", "GAME"),

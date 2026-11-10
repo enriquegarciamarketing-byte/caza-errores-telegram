@@ -1484,7 +1484,8 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
         print("Enlace no válido", file=sys.stderr)
         return 2
     spec = dict(spec)
-    spec["link"] = use_amazon_link(spec["link"], load_json(CONFIG_PATH, {}), state, tg, asin=spec.get("asin"))
+    if not spec.get("keep_link"):  # keep_link: el enlace que pasa Enrique tal cual, sin tocar la etiqueta
+        spec["link"] = use_amazon_link(spec["link"], load_json(CONFIG_PATH, {}), state, tg, asin=spec.get("asin"))
     if not spec["link"]:
         print("El enlace no lleva tu etiqueta y no hay alternativa.", file=sys.stderr)
         return 1
@@ -1496,7 +1497,7 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
              "image_path": src, "category": spec["category"], "current": float(spec["current"]),
              "reference": float(spec["reference"]), "days": 90, "ref_label": spec.get("ref_label"),
              "sold_out": bool(spec.get("sold_out")), "hold": bool(spec.get("hold")),
-             "store_label": premium.store_of(spec["link"])[1]}
+             "store_label": spec.get("store") or premium.store_of(spec["link"])[1], "jpeg_quality": 95}
     if spec.get("resale_price"):
         rp = float(spec["resale_price"])
         offer["resale"] = {"price": rp, "count": spec.get("resale_count"),
@@ -1519,6 +1520,9 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
         cap["note"] = str(spec["note"])
     if spec.get("hold"):
         cap["hold"] = True
+    for key in ("store", "demand", "source_label"):
+        if spec.get(key):
+            cap[key] = str(spec[key])
     caption = caption_for(spec["link"], cap)
     if spec.get("message_id"):
         mid = int(spec["message_id"])
@@ -1546,9 +1550,13 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
         msg = tg.send_photo(channel, card, caption, {"reply_markup": buttons_for(spec["link"])})
         mid = msg["message_id"]
         print(f"Publicado como mensaje {mid}")
-    state.setdefault("posts", []).append({"id": pid, "message_id": mid, "url": spec["link"], "cap": cap,
-                                          "price": float(spec["current"]), "category": spec["category"],
-                                          "t": int(now_utc().timestamp()), "gtin": None})
+    existing = next((p for p in state.get("posts", []) if spec.get("message_id") and p.get("message_id") == mid), None)
+    if existing:  # post rehecho: se actualiza su entrada en vez de duplicarla
+        existing.update(url=spec["link"], cap=cap, price=float(spec["current"]), category=spec["category"])
+    else:
+        state.setdefault("posts", []).append({"id": pid, "message_id": mid, "url": spec["link"], "cap": cap,
+                                              "price": float(spec["current"]), "category": spec["category"],
+                                              "t": int(now_utc().timestamp()), "gtin": None})
     save_state(state)
     return 0
 
