@@ -47,6 +47,136 @@
     "slack_pct": 0,
     "pause_seconds": 1.1,
     "search_index": "All",
+    "_nota_seasons": "Temporadas: entre from y to (MM-DD) sus búsquedas se suman solas a la rotación, delante de las de siempre.",
+    "seasons": [
+      {
+        "name": "Black Friday y Cyber Monday",
+        "from": "11-01",
+        "to": "12-03",
+        "keywords": [
+          "black friday robot aspirador",
+          "smart tv 55 pulgadas",
+          "auriculares bluetooth sony",
+          "apple ipad",
+          "playstation 5",
+          "cafetera superautomática delonghi",
+          "freidora de aire cosori",
+          "dyson",
+          "kindle paperwhite",
+          "smartwatch samsung",
+          "portátil asus",
+          "monitor samsung",
+          "lego",
+          "nintendo switch 2",
+          "airpods pro",
+          "taladro bosch"
+        ]
+      },
+      {
+        "name": "Navidad y Reyes",
+        "from": "12-01",
+        "to": "01-06",
+        "keywords": [
+          "juguetes lego",
+          "playmobil",
+          "juegos de mesa",
+          "patinete eléctrico niños",
+          "colonia hombre",
+          "perfume mujer",
+          "set de regalo",
+          "robot de cocina",
+          "videojuegos nintendo",
+          "auriculares regalo",
+          "cesta navidad",
+          "turrón"
+        ]
+      },
+      {
+        "name": "Rebajas de invierno",
+        "from": "01-07",
+        "to": "02-28",
+        "keywords": [
+          "abrigo hombre",
+          "chaqueta mujer",
+          "zapatillas nike",
+          "zapatillas adidas",
+          "cinta de correr",
+          "bicicleta estática",
+          "báscula inteligente",
+          "pesas ajustables",
+          "colchón viscoelástico",
+          "edredón nórdico"
+        ]
+      },
+      {
+        "name": "San Valentín",
+        "from": "02-01",
+        "to": "02-14",
+        "keywords": [
+          "perfume mujer",
+          "colonia hombre",
+          "joyas pandora",
+          "reloj mujer",
+          "set cosmética"
+        ]
+      },
+      {
+        "name": "Primavera y jardín",
+        "from": "03-15",
+        "to": "05-31",
+        "keywords": [
+          "cortacésped",
+          "hidrolimpiadora karcher",
+          "muebles de jardín",
+          "barbacoa",
+          "manguera extensible",
+          "bicicleta de montaña"
+        ]
+      },
+      {
+        "name": "Prime Day y verano",
+        "from": "06-15",
+        "to": "08-15",
+        "keywords": [
+          "aire acondicionado portátil",
+          "ventilador de techo",
+          "nevera portátil",
+          "protector solar",
+          "gafas de sol ray-ban",
+          "maleta de cabina",
+          "piscina desmontable",
+          "kindle",
+          "echo dot",
+          "fire tv stick"
+        ]
+      },
+      {
+        "name": "Vuelta al cole",
+        "from": "08-15",
+        "to": "09-30",
+        "keywords": [
+          "mochila escolar",
+          "portátil estudiante",
+          "calculadora científica casio",
+          "tablet samsung",
+          "material escolar",
+          "estuche escolar",
+          "impresora multifunción hp"
+        ]
+      },
+      {
+        "name": "Otoño y calefacción",
+        "from": "10-01",
+        "to": "11-30",
+        "keywords": [
+          "radiador de aceite",
+          "calefactor cerámico",
+          "manta eléctrica",
+          "deshumidificador",
+          "estufa de pellets"
+        ]
+      }
+    ],
     "keywords": [
       "robot aspirador",
       "aspiradora sin cable",

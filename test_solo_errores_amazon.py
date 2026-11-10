@@ -490,3 +490,29 @@ class LearningTest(unittest.TestCase):
         self.assertEqual(rot.count("robot aspirador"), 2)
         self.assertNotIn("plancha de pelo", rot)  # vuelta impar: las rechazadas descansan
         self.assertIn("freidora de aire", rot)
+
+
+class SeasonsTest(unittest.TestCase):
+    def test_temporadas_activas(self):
+        import buscador_amazon as ba
+        from datetime import date
+        conf = load_cfg(scope=True)["amazon_search"]
+        self.assertIn("playstation 5", ba.season_keywords(conf, date(2026, 11, 20)))     # Black Friday
+        self.assertIn("juguetes lego", ba.season_keywords(conf, date(2027, 1, 3)))       # Navidad cruza el año
+        self.assertNotIn("juguetes lego", ba.season_keywords(conf, date(2027, 4, 3)))
+        rot = ba.rotation(conf, {}, 0, today=None)
+        self.assertGreater(len(rot), len(conf["keywords"]) - 5)
+
+
+class HistoryLineTest(unittest.TestCase):
+    def test_linea_del_historial(self):
+        import historial as h
+        self.assertEqual(h.post_line({"days": 3, "usual": 100, "min": 90}, 50), "")  # aún poco historial
+        self.assertEqual(h.post_line({"days": 21, "usual": 100, "min": 60}, 59.9), "📉 El precio más bajo que hemos visto en 21 días")
+        self.assertEqual(h.post_line({"days": 10, "usual": 399, "min": 300}, 320), "📊 Su precio habitual: 399,00 €")
+
+    def test_sale_en_el_post_del_premium(self):
+        cand = {"category": "ERROR DE PRECIO", "title": "Roborock", "price": 99.0, "avg90": 499.0,
+                "history": {"days": 14, "usual": 499.0, "min": 449.0}}
+        text = scanner.caption_for("https://www.amazon.es/dp/B0X?tag=t", scanner.caption_data(cand))
+        self.assertIn("📉 El precio más bajo que hemos visto en 14 días", text)

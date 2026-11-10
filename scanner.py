@@ -271,6 +271,11 @@ def caption_data(cand: dict) -> dict:
         data["ref_text"] = cand["ref_text"]
     if cand.get("deal_line"):
         data["deal_line"] = cand["deal_line"]
+    if cand.get("history"):
+        import historial
+        line = historial.post_line(cand["history"], float(cand.get("price") or 0))
+        if line:
+            data["history_line"] = line
     if deal.get("ok") and deal.get("price") and not deal.get("reserva"):
         data.update(resale_price=deal["price"], resale_count=deal.get("count"),
                     profit=deal.get("profit"), demand=deal.get("demand") or "",

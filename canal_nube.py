@@ -1386,6 +1386,7 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
             continue
         if honest:
             was = honest
+        cand["history"] = info
         brand = (cand.get("brand") or "").strip()
         trusted = {fold(b) for b in rules.get("trusted_brands") or []}
         known = bool(brand) and (fold(brand) in trusted or any(fold(brand).startswith(t + " ") for t in trusted))
@@ -1394,7 +1395,7 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
                       "brand": brand, "brand_ok": known,
                       "image": cand.get("image") or "", "basis_type": cand.get("basis_type") or "",
                       "seller": cand.get("seller") or "", "deal_badge": cand.get("deal_badge") or "",
-                      "deal_end": cand.get("deal_end") or "",
+                      "deal_end": cand.get("deal_end") or "", "history": cand.get("history") or {},
                       "sold_by_amazon": bool(cand.get("sold_by_amazon"))})
     log(f"  Amazon (API): {len(results)} con descuento grande, {len(items)} con precio anterior y stock")
     return items
@@ -1503,6 +1504,10 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                 line = buscador_amazon.deal_line(item.get("deal_badge") or "", item.get("deal_end") or "", now)
                 if line:  # oferta oficial de Amazon: da urgencia y es un dato real
                     deal["extra_lines"] = [line] + list(deal.get("extra_lines") or [])
+                import historial
+                hline = historial.post_line(item.get("history"), float(deal["price"]))
+                if hline:  # nuestro propio historial: por qué es buen precio, con datos
+                    deal["extra_lines"] = list(deal.get("extra_lines") or []) + [hline]
             if not why and not item.get("brand_ok"):
                 # Vendedores sin marca conocida inflan tanto el precio recomendado como el «mediano» (10/11/2026).
                 why, deal = f"marca poco conocida ({item.get('brand') or 'sin marca'}): su precio anterior no es fiable", {}

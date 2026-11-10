@@ -109,3 +109,21 @@ def check(asin: str, price: float, claimed_ref: float | None, now: datetime, *hi
 
 def keepa_url(asin: str) -> str:
     return KEEPA.format(asin=asin)
+
+
+SHOW_AFTER_DAYS = 7  # el historial se enseña en el post solo cuando ya dice algo
+
+
+def post_line(info: dict | None, price: float) -> str:
+    """«📉 El precio más bajo que hemos visto en 21 días» o «📊 Su precio habitual: 399,00 €»."""
+    info = info or {}
+    days = int(info.get("days") or 0)
+    if days < SHOW_AFTER_DAYS or not info.get("usual"):
+        return ""
+    if price <= float(info.get("min") or 0) + 0.009:
+        return f"📉 El precio más bajo que hemos visto en {days} días"
+    usual = float(info["usual"])
+    if usual > price * 1.05:
+        return f"📊 Su precio habitual: {usual:,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
+    return ""
+
