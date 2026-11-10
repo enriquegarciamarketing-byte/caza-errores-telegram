@@ -1,8 +1,50 @@
 Creators API: activa, se verifica cada producto en vivo
 Bot: @cazaerroresAmazon_bot
-Listados: 72 productos únicos
+Listados: 71 productos únicos
 Candidatos nuevos tras el filtro rápido: 0
-  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36122 bytes, 30 chollos
-  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 81968 bytes, 30 chollos
+  Chollometro https://www.chollometro.com/rss/hot: HTTP 200, 36418 bytes, 30 chollos
+  Chollometro «Zapatillas Cuero Diadora Tokyo Unisex Retro Leder»: Deporte-outlet 29.99 €
+  Chollometro «Zapatilla adidas Terrex Trailmaker 2 GORE-TEX Speed Lace Hiking (Talla»: Zalando Privé 63.1 €
+  Chollometro «New Balance FUELCELL REBEL V5 - Zapatillas running asfalto- Descuento »: Zalando Privé 68.44 €
+  Chollometro «LEGO Icons 10300 DeLorean Regreso al Futuro por 159,95€ en El Corte In»: El Corte Inglés 159.95 €
+  Chollometro «LEGO Marvel Los 4 Fantásticos: H.E.R.B.I.E. 76339»: Amazon 48.99 €
+  Chollometro https://www.chollometro.com/rss/nuevos: HTTP 200, 71425 bytes, 30 chollos
+  cm-2061802 · Deporte-outlet 29.99 € → candidato externo · Zapatillas Cuero Diadora Tokyo Unisex Retro Leder
+  cm-2061860 · Zalando Privé 63.1 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · Zapatilla adidas Terrex Trailmaker 2 GORE-TEX Speed Lace Hik
+  cm-2061958 · Zalando Privé 68.44 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · New Balance FUELCELL REBEL V5 - Zapatillas running asfalto- 
+  cm-2061163 · El Corte Inglés 159.95 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Icons 10300 DeLorean Regreso al Futuro por 159,95€ en E
+  cm-2061341 · Amazon 48.99 € → candidato externo (la tienda no deja comprobar el precio: te lo paso para que des el OK) · LEGO Marvel Los 4 Fantásticos: H.E.R.B.I.E. 76339
+  Vinted «zapatillas cuero»: HTTP 200, 3692594 bytes, 96 anuncios
+  Vinted «zapatillas cuero»: 0 parecidos de 96
+  Vinted no aporta datos: Vinted solo tiene 0 anuncios parecidos (mínimo 3)
+  Wallapop «zapatillas cuero»: 200 / 128960 bytes, 39 anuncios, 25 parecidos, 0 reservas
+  Milanuncios «zapatillas cuero»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 19 anuncios, ~21 €, no publica
+  ⚠️ No publico «Zapatillas Cuero Diadora Tokyo Unisex Retro Leder»: reventa en WALLAPOP ~21 € (19 anuncios): ROI -40 % y -12 €, por debajo del mínimo (30 % y 25 €)
+  Vinted «new v5 balance»: HTTP 200, 3694357 bytes, 96 anuncios
+  Vinted «new v5 balance»: 88 parecidos de 96
+  Wallapop «new v5 balance»: 200 / 144514 bytes, 40 anuncios, 31 parecidos, 0 reservas
+  Milanuncios «new v5 balance»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 110 anuncios, ~57 €, no publica
+  ⚠️ No publico «New Balance FUELCELL REBEL V5 - Zapatillas running asfalto- Descuento con código»: reventa en VINTED+WALLAPOP ~57 € (110 anuncios): ROI -23 % y -16 €, por debajo del mínimo (25 % y 25 €)
+  Vinted «zapatilla 40 adidas»: HTTP 200, 3693683 bytes, 96 anuncios
+  Vinted «zapatilla 40 adidas»: 51 parecidos de 96
+  Wallapop «zapatilla 40 adidas»: 200 / 120172 bytes, 40 anuncios, 16 parecidos, 0 reservas
+  Milanuncios «zapatilla 40 adidas»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa VINTED+WALLAPOP: 63 anuncios, ~35 €, no publica
+  ⚠️ No publico «Zapatilla adidas Terrex Trailmaker 2 GORE-TEX Speed Lace Hiking (Tallas 40 a 49 1/3)»: reventa en VINTED+WALLAPOP ~35 € (63 anuncios): ROI -50 % y -32 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 10300 icons»: 200 / 23021 bytes, 9 anuncios, 9 parecidos, 0 reservas
+  Milanuncios «lego 10300 icons»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 9 anuncios, ~179 €, no publica
+  ⚠️ No publico «LEGO Icons 10300 DeLorean Regreso al Futuro por 159,95€ en El Corte Inglés (+25% regalo en»: reventa en WALLAPOP ~179 € (9 anuncios): ROI 5 % y 8 €, por debajo del mínimo (25 % y 25 €)
+  Wallapop «lego 76339 marvel»: 200 / 16785 bytes, 6 anuncios, 4 parecidos, 0 reservas
+  Milanuncios «lego 76339 marvel»: HTTP 403, 95511 bytes
+  Milanuncios no aporta datos: Milanuncios no disponible (HTTP 403 (95511 bytes))
+  Reventa WALLAPOP: 4 anuncios, ~51 €, no publica
+  ⚠️ No publico «LEGO Marvel Los 4 Fantásticos: H.E.R.B.I.E. 76339»: reventa en WALLAPOP ~51 € (4 anuncios): ROI -6 % y -3 €, por debajo del mínimo (30 % y 25 €)
 Publicados en esta ejecución: 0
-Cascada al canal normal: 38 descartes nuevos, 167 en lista
+Cascada al canal normal: 38 descartes nuevos, 86 en lista
