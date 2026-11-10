@@ -1264,6 +1264,11 @@
    "price": 349.99,
    "t": 1794268714,
    "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "RXy6GX1": {
+   "price": 399.99,
+   "t": 1794274012,
+   "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
  "posts": [
@@ -2018,7 +2023,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 69,
+ "last_listing_count": 74,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16185,14 +16190,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 8,
+ "rotation_index": 4,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/asics-sportstyle-gel-nyc-unisex-zapatillas-whiteglacier-grey-355-a-49-2061151": 1794249101.944544,
-  "https://www.chollometro.com/ofertas/nike-zapatillas-de-running-modelo-nike-structure-26-color-rosa-varias-tallas-2060642": 1794249101.944544,
-  "https://www.chollometro.com/ofertas/zapatillas-asics-1130-tallas-36-a-49-2060707": 1794249101.944544,
-  "https://www.chollometro.com/ofertas/auriculares-gaming-sony-inzone-h9-ii-baja-latencia-24ghzbluetooth-anc-sonido-360-fnatic-2061082": 1794252498.068373,
-  "https://www.chollometro.com/ofertas/lego-harry-potter-aventura-en-el-autobus-noctambulo-76446-2060430": 1794252498.068373,
-  "https://www.chollometro.com/ofertas/super-mario-party-jamboree-nintendo-switch-2061105": 1794252498.068373,
   "https://www.chollometro.com/ofertas/casio-g-shock-dw-5600rl-1er-2061223": 1794253302.4389858,
   "https://www.chollometro.com/ofertas/nike-sportswear-zapatillas-deportivas-nike-modelo-total-90-color-marron-2059364": 1794254508.0112572,
   "https://www.chollometro.com/ofertas/reloj-casio-g-shock-dw-5600ww-7-blanco-2060709": 1794255721.826794,
@@ -16214,6 +16213,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 504
+  "passes": 520
  }
 }
