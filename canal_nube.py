@@ -1391,17 +1391,33 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         # ya descartado a este mismo precio; si baja más, se vuelve a mirar
         return same_price and now.timestamp() - (last.get("t") or 0) < recheck and not (relaxed and low_discount_only)
 
-    for url in sources_for_run(rules, now, state if remember else None):
+    paused_until = float(state.get("jl_paused_until") or 0)
+    sources = [] if now.timestamp() < paused_until else sources_for_run(rules, now, state if remember else None)
+    if not sources and paused_until:
+        log("  Jimmyleaks en pausa por bloqueo: solo Amazon")
+    blocked, read_any = 0, False
+    for url in sources:
         try:
             items = scanner.parse_listing(fetch(url))
+            read_any = True
         except Exception as exc:
             log(f"  Listado {url}: {exc}")
+            if ("403" in str(exc) or "429" in str(exc)) and not read_any:
+                blocked += 1
+                if blocked >= 2:
+                    # Nos bloquea: insistir solo alarga el bloqueo. Se vuelve a probar en 30 min.
+                    if remember:
+                        state["jl_paused_until"] = now.timestamp() + 30 * 60
+                    log("  Jimmyleaks bloquea al bot: lo dejo en pausa 30 min y sigo con Amazon")
+                    break
             continue
         fresh = [i for i in items if i.get("ts") and now.timestamp() - i["ts"] <= max_age and i.get("price")]
         log(f"  Listado {url}: {len(items)} productos, {len(fresh)} vistos en la última hora")
         for item in fresh:
             if not skip(item):
                 pool.setdefault(item["id"], item)
+    if read_any:
+        state.pop("jl_paused_until", None)
     for item in state.get("backlog") or []:
         if item.get("id") and item.get("ts") and now.timestamp() - item["ts"] <= max_age and item.get("price"):
             pool.setdefault(item["id"], dict(item))

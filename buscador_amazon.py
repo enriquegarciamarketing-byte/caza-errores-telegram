@@ -51,7 +51,7 @@ def to_candidate(item: dict, keyword: str, cfg: dict, now: datetime, tag: str) -
     image = _get(item, "images", "primary", "large", "url")
     base = {"id": asin, "asin": asin, "title": title, "name": title, "brand": brand,
             "price": float(price) if price is not None else None, "source": f"Amazon · {keyword}",
-            "ts": now.timestamp()}
+            "ts": now.timestamp(), "image": image or "", "basis_type": basis_type}
     if not asin or price is None:
         return base, "sin precio en Amazon"
     if basis is None or float(basis) <= float(price):
