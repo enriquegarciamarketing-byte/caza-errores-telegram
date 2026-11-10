@@ -2148,7 +2148,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794331704
+   "checked": 1794332527
   },
   {
    "id": "cm-2062698",
@@ -2422,44 +2422,13 @@
   }
  ],
  "tg_offset": 334822062,
- "last_listing_count": 75,
+ "last_listing_count": 77,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
  "discovery_cache": {
-  "t": 1794310377.6854873,
-  "titles": [
-   "ea sports fc™ 27 - edicion estandar playstation 5| disco fisico | videojuegos | castellano",
-   "10€ playstation store tarjeta regalo | cuenta espanola [codigo por correo]",
-   "tarjeta regalo digital de roblox - 800 robux [incluye un objeto virtual exclusivo] [codigo de juego online]",
-   "zelda ocarina of time - nintendo switch 2",
-   "luna premium",
-   "logitech g g502 hero raton gaming con cable, 25,600 dpi, negro | alto rendimiento, captor hero 25k, rgb, peso personalizable,",
-   "playstation mando inalambrico dualsense®: coleccion hyperpop - techno red",
-   "xbox mando inalambrico robot white series x|s, one, pc, televisores, moviles y mas",
-   "ivoler 4 piezas protector pantalla para nintendo switch 2 model 2025, instalacion en 30 segundos incluye marco de instalacion",
-   "playstation 5 - mando inalambrico dualsense",
-   "logitech g g305 lightspeed raton gaming inalambrico, hero 12k, negro | 12.000 dpi, raton con botones laterales, bateria de 25",
-   "nintendo switch 2 pro controller",
-   "logitech g g335, auriculares para gaming con cable | microfono abatible silenciar, audio 3,5 mm, almohadillas viscoelasticas,",
-   "nintendo switch sports resort",
-   "csl-computer - alfombrilla de raton speed gaming titanwolf negro 900 x 400 mm - base de mesa grande - mejora la precision y l",
-   "logitech g g203 lightsync raton gaming negro, 6 botones programables | raton con cable para ordenador, iluminacion rgb person",
-   "jsaux protector pantalla ultra hd para nintendo switch 2, pack de 3 | cristal templado 9h, instalacion sin burbujas, marco de",
-   "jetech protector pantalla para nintendo switch 2, 2 unidades | alineacion automatica instalacion, cristal vidrio templado 9h,",
-   "jbl quantum 100m2 cascos circumaurales para gaming, jbl quantumsound signature, cable de audio de 3.5 mm, compatibles con mul",
-   "krom kalista - teclado gaming de membrana rgb rainbow, formato 62%, modo gaming, n-19 anti-ghosting, windows | mac, layout es",
-   "easysmx x05 pro mando inalambrico para pc – botones silenciosos mejorados, gatillos de 2 etapas, joysticks hall, sondeo 1000h",
-   "tomodachi life - switch",
-   "nintendo switch + mario kart 8 deluxe",
-   "gxtrust forze cascos gaming con licencia oficial para playstation, negro | auriculares gaming para ps4 y ps5, microfono plega",
-   "jbl quantum 100 auriculares para gamers con sonido quantumsound, microfono boom diseno ligero, comodo y llamativo, compatible",
-   "minecraft: nintendo switch edition, el embalaje puede variar",
-   "redragon m908 impact raton gaming mmo cableado rgb 12400 dpi | 12 botones laterales 18 atajos macro programables alta precisi",
-   "nintendo switch 2 carrying case + protector pantalla",
-   "playstation consola 5 estandar chassis e",
-   "lr44, powerowl paquete de 12 pilas de boton lr44 1.5v alcalinas para relojes, calculadoras y juguetes"
-  ]
+  "t": 1794332545.5015874,
+  "titles": []
  },
  "resale_cache": {
   "carrefour|lego ideas cohete lunar de tintin, juguete de construccion +18 anos - 21367 (-40% en cupon) - precio final 83.99|wallapop+milanuncios:carrefour 18 lego": {
@@ -17333,7 +17302,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 14,
+ "rotation_index": 19,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -17385,6 +17354,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 753
+  "passes": 754
  }
 }
