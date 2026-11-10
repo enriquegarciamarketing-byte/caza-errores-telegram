@@ -1,0 +1,16 @@
+name: Probar API de Amazon (temporal)
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - env:
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET }}
+        run: PYTHONPATH=. python -u tools/probar_api.py
