@@ -1,16 +1,25 @@
-"""Qué datos de vendedor y oferta da la API (temporal)."""
-import json, time
-from amazon_api import CreatorsAPI
-api = CreatorsAPI.from_env("cazachollos0c-21")
-RES = ["offersV2.listings.price", "offersV2.listings.availability", "offersV2.listings.merchantInfo",
-       "offersV2.listings.isBuyBoxWinner", "offersV2.listings.dealDetails", "offersV2.listings.condition",
-       "itemInfo.title", "itemInfo.byLineInfo", "itemInfo.externalIds", "customerReviews.count", "customerReviews.starRating"]
-for kw in ["sony auriculares", "tablet android", "roborock"]:
+"""Qué tiendas y comparadores dejan buscar por EAN al bot (temporal)."""
+import re, urllib.request
+EAN = "4548736142374"  # Sony WH-CH520
+UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",
+      "Accept-Language": "es-ES,es;q=0.9", "Accept": "text/html,application/xhtml+xml"}
+URLS = {
+    "idealo": f"https://www.idealo.es/resultados.html?q={EAN}",
+    "pccomponentes": f"https://www.pccomponentes.com/buscar/?query={EAN}",
+    "mediamarkt": f"https://www.mediamarkt.es/es/search.html?query={EAN}",
+    "elcorteingles": f"https://www.elcorteingles.es/search-nwx/1/?s={EAN}",
+    "carrefour": f"https://www.carrefour.es/?q={EAN}",
+    "fnac": f"https://www.fnac.es/SearchResult/ResultList.aspx?Search={EAN}",
+    "worten": f"https://www.worten.es/search?query={EAN}",
+    "kelkoo": f"https://www.kelkoo.es/buscar?query={EAN}",
+    "pricerunner": f"https://www.pricerunner.com/results?q={EAN}",
+    "google_shopping": f"https://www.google.com/search?tbm=shop&q={EAN}",
+}
+for name, url in URLS.items():
     try:
-        d = api.call("searchItems", {"keywords": kw, "minSavingPercent": 40, "itemCount": 4, "resources": RES})
-        for it in (d.get("searchResult") or {}).get("items") or []:
-            print(kw, "→", json.dumps({k: it.get(k) for k in ("asin", "offersV2", "customerReviews")}, ensure_ascii=False)[:900])
-            print("   ids:", json.dumps(((it.get("itemInfo") or {}).get("externalIds")), ensure_ascii=False)[:200])
+        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=20) as r:
+            html = r.read().decode("utf-8", "replace")
+        prices = re.findall(r"(\d{1,4}[.,]\d{2})\s*(?:€|&euro;|EUR)", html)
+        print(f"{name}: HTTP {r.status} · {len(html)//1024} KB · 'WH-CH520' {'sí' if 'CH520' in html.upper() else 'no'} · precios {prices[:8]}")
     except Exception as e:
-        print(kw, "ERROR", str(e)[:500])
-    time.sleep(1.2)
+        print(f"{name}: ERROR {str(e)[:120]}")
