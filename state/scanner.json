@@ -5623,7 +5623,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794347708
+   "checked": 1794348657
   },
   {
    "id": "cm-2062698",
@@ -20794,7 +20794,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 10,
+ "rotation_index": 15,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -20848,13 +20848,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 836
+  "passes": 837
  },
- "jl_paused_until": 1794348388.260779,
- "amazon_search_index": 24,
- "last_api_count": 8,
+ "jl_paused_until": 1794350457.281209,
+ "amazon_search_index": 28,
+ "last_api_count": 29,
  "api_calls": {
-  "2026-11-10": 8
+  "2026-11-10": 12
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -20988,6 +20988,160 @@
     20261110,
     2.99,
     2.99
+   ]
+  ],
+  "B0C69QY9WV": [
+   [
+    20261110,
+    69.9,
+    69.9
+   ]
+  ],
+  "B0H83P3R7W": [
+   [
+    20261110,
+    27.53,
+    27.53
+   ]
+  ],
+  "B0H9D1K6LR": [
+   [
+    20261110,
+    16.99,
+    16.99
+   ]
+  ],
+  "B0GJ6LRC9F": [
+   [
+    20261110,
+    39.68,
+    39.68
+   ]
+  ],
+  "B0BW4WT5N2": [
+   [
+    20261110,
+    15.35,
+    15.35
+   ]
+  ],
+  "B017UM7B1G": [
+   [
+    20261110,
+    19.99,
+    19.99
+   ]
+  ],
+  "B078T3XLVX": [
+   [
+    20261110,
+    29.99,
+    29.99
+   ]
+  ],
+  "B00ZUMRZJ2": [
+   [
+    20261110,
+    99.9,
+    99.9
+   ]
+  ],
+  "B01LY8DA2A": [
+   [
+    20261110,
+    164.7,
+    164.7
+   ]
+  ],
+  "B0HPS3DNNF": [
+   [
+    20261110,
+    23.99,
+    23.99
+   ]
+  ],
+  "B0HN1ZV5JS": [
+   [
+    20261110,
+    24.99,
+    24.99
+   ]
+  ],
+  "B0HJ4KMRG6": [
+   [
+    20261110,
+    16.14,
+    16.14
+   ]
+  ],
+  "B0HPNJ32QQ": [
+   [
+    20261110,
+    15.99,
+    15.99
+   ]
+  ],
+  "B0HP9GF3KX": [
+   [
+    20261110,
+    19.99,
+    19.99
+   ]
+  ],
+  "B0HMKWMC3C": [
+   [
+    20261110,
+    23.99,
+    23.99
+   ]
+  ],
+  "B0HN6FPTF7": [
+   [
+    20261110,
+    27.99,
+    27.99
+   ]
+  ],
+  "B0HMLDDRC6": [
+   [
+    20261110,
+    23.99,
+    23.99
+   ]
+  ],
+  "B0HP9TNLMS": [
+   [
+    20261110,
+    19.99,
+    19.99
+   ]
+  ],
+  "B0HNRNNWWW": [
+   [
+    20261110,
+    19.99,
+    19.99
+   ]
+  ],
+  "B0HFN1MD6X": [
+   [
+    20261110,
+    29.99,
+    29.99
+   ]
+  ],
+  "B0HFMZRJ9S": [
+   [
+    20261110,
+    27.99,
+    27.99
+   ]
+  ],
+  "B0HJ2MCGSS": [
+   [
+    20261110,
+    22.99,
+    22.99
    ]
   ]
  }
