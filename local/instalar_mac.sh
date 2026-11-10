@@ -3,6 +3,7 @@
 # Uso (desde la carpeta del bot):  bash local/instalar_mac.sh            → instala y arranca
 #                                  bash local/instalar_mac.sh --parar    → lo para y lo quita del arranque
 #                                  bash local/instalar_mac.sh --estado   → dice si está vivo y la última línea del log
+#                                  bash local/instalar_mac.sh --actualizar → baja lo nuevo de GitHub y reinicia el bot
 set -u
 cd "$(dirname "$0")/.." || exit 1
 REPO="$(pwd)"
@@ -18,6 +19,22 @@ if [ "${1:-}" = "--parar" ]; then
   launchctl bootout "$DOMAIN/$LABEL" 2>/dev/null && ok "Bot parado." || nota "No estaba en marcha."
   rm -f "$PLIST"
   exit 0
+fi
+
+if [ "${1:-}" = "--actualizar" ]; then
+  # Para el bot, guarda su memoria, se trae lo nuevo de GitHub (gana la memoria del Mac) y sigue instalando.
+  launchctl bootout "$DOMAIN/$LABEL" 2>/dev/null || true
+  export GIT_AUTHOR_NAME="Caza Errores (Mac)" GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+  export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+  git add state/scanner.json state/latido_mac.json 2>/dev/null || true
+  git diff --cached --quiet || git commit -qm "Memoria del premium desde el Mac [skip ci]"
+  if git pull -q --rebase -X theirs origin main; then
+    git push -q origin HEAD:main 2>/dev/null || true
+    ok "Código actualizado desde GitHub."
+  else
+    git rebase --abort 2>/dev/null || true
+    mal "No he podido actualizar desde GitHub (sigo con el código que había)."
+  fi
 fi
 
 if [ "${1:-}" = "--estado" ]; then
