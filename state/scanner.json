@@ -3254,6 +3254,56 @@
    "price": 2.87,
    "t": 1794346788,
    "result": "Amazon no marca precio anterior"
+  },
+  "B01HRYM7ZM": {
+   "price": 12.28,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B01HRYA984": {
+   "price": 38.39,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0013LLABI": {
+   "price": 38.08,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0GTM3KNXS": {
+   "price": 13.83,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0013LI52U": {
+   "price": 13.0,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B000VDJIW2": {
+   "price": 7.68,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0013LEIAS": {
+   "price": 41.3,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0013LHYRM": {
+   "price": 1.31,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B005APUI02": {
+   "price": 19.73,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0013LG31A": {
+   "price": 29.07,
+   "t": 1794347084,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -4073,7 +4123,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794346788
+   "checked": 1794347084
   },
   {
    "id": "cm-2062698",
@@ -19220,9 +19270,81 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 810
+  "passes": 811
  },
  "jl_paused_until": 1794348347.337671,
- "amazon_search_index": 88,
- "last_api_count": 32
+ "amazon_search_index": 92,
+ "last_api_count": 10,
+ "price_history": {
+  "B01HRYM7ZM": [
+   [
+    20261110,
+    12.28,
+    12.28
+   ]
+  ],
+  "B01HRYA984": [
+   [
+    20261110,
+    38.39,
+    38.39
+   ]
+  ],
+  "B0013LLABI": [
+   [
+    20261110,
+    38.08,
+    38.08
+   ]
+  ],
+  "B0GTM3KNXS": [
+   [
+    20261110,
+    13.83,
+    13.83
+   ]
+  ],
+  "B0013LI52U": [
+   [
+    20261110,
+    13.0,
+    13.0
+   ]
+  ],
+  "B000VDJIW2": [
+   [
+    20261110,
+    7.68,
+    7.68
+   ]
+  ],
+  "B0013LEIAS": [
+   [
+    20261110,
+    41.3,
+    41.3
+   ]
+  ],
+  "B0013LHYRM": [
+   [
+    20261110,
+    1.31,
+    1.31
+   ]
+  ],
+  "B005APUI02": [
+   [
+    20261110,
+    19.73,
+    19.73
+   ]
+  ],
+  "B0013LG31A": [
+   [
+    20261110,
+    29.07,
+    29.07
+   ]
+  ]
+ }
 }
