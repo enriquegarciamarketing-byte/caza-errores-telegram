@@ -471,9 +471,8 @@ class Manual(unittest.TestCase):
         self.assertTrue(deal["white_canvas"])
         self.assertFalse(cn.manual_deal(self.SPEC, RULES)["white_canvas"])
         out = cn.white_canvas_photo(deal["image"], deal["asin"])
-        with Image.open(cn.ROOT / "images" / "manual" / "B0HC84XR1P.png") as src, Image.open(out) as padded:
-            self.assertEqual(padded.width, padded.height)
-            self.assertGreater(padded.width, max(src.size))
+        with Image.open(out) as padded:
+            self.assertEqual(padded.size, (1600, 1600))
             self.assertEqual(padded.getpixel((3, 3)), (255, 255, 255))
         sent = []
 

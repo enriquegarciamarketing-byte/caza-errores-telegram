@@ -900,10 +900,11 @@ def full_size(image: str) -> str:
     return image
 
 
-def white_canvas_photo(image: str, asin: str, margin: float = 0.12) -> Path | None:
-    """Foto del producto centrada en un lienzo blanco cuadrado con margen, para que las fotos muy altas o muy
-    anchas (botellas, cables…) no salgan estrechas o recortadas en el canal. La foto no se retoca ni se deforma:
-    solo se le pone más fondo blanco alrededor. Devuelve None si no se puede bajar o abrir."""
+def white_canvas_photo(image: str, asin: str, margin: float = 0.12, side: int = 1600) -> Path | None:
+    """Foto del producto centrada en un lienzo blanco cuadrado de tamaño fijo (1600×1600) con margen, para que
+    todas las fotos del canal midan lo mismo y las muy altas o muy anchas (botellas, cables…) no salgan estrechas
+    o recortadas. La foto no se retoca ni se deforma: se ajusta de tamaño manteniendo la proporción y se le pone
+    fondo blanco alrededor. Devuelve None si no se puede bajar o abrir."""
     import io
     import photos
     from PIL import Image
@@ -917,7 +918,9 @@ def white_canvas_photo(image: str, asin: str, margin: float = 0.12) -> Path | No
             rgba = opened.convert("RGBA")
     except (OSError, ValueError):
         return None
-    side = int(round(max(rgba.size) / (1 - 2 * margin)))
+    box = int(round(side * (1 - 2 * margin)))
+    scale = box / max(rgba.size)
+    rgba = rgba.resize((max(1, round(rgba.width * scale)), max(1, round(rgba.height * scale))), Image.LANCZOS)
     canvas = Image.new("RGB", (side, side), "white")
     canvas.paste(rgba, ((side - rgba.width) // 2, (side - rgba.height) // 2), rgba)
     OUTPUT.mkdir(parents=True, exist_ok=True)
