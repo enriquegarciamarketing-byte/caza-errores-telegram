@@ -2121,19 +2121,17 @@
     "historical_low": false,
     "rating": null,
     "reviews": null,
-    "sizes": null,
-    "hold": false,
-    "store": "Roborock",
-    "note": "🕒 Precio comprobado en Roborock a las 14:27.",
-    "ref_text": "frente al precio anterior en la tienda",
+    "ref_text": "frente al precio anterior en la tienda de Roborock",
     "resale_price": 138.0,
     "resale_count": 3,
     "profit": 44.55,
+    "note": "🕒 Precio comprobado en Amazon a las 14:41.",
+    "store": "Amazon",
     "demand": "Muchos anuncios",
     "source_label": "WALLAPOP"
    },
    "message_id": 97,
-   "url": "https://es.roborock.com/products/roborock-h60",
+   "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
    "checked": 1794317630
   }
