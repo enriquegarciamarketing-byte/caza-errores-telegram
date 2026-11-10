@@ -2834,6 +2834,131 @@
    "price": null,
    "t": 1794345991,
    "result": "sin precio en Amazon"
+  },
+  "B004V2HE7K": {
+   "price": 728.95,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0F8KFJLHM": {
+   "price": 169.66,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CQJJG4NV": {
+   "price": 60.08,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0D86N25MG": {
+   "price": 27.69,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CCVGTJ93": {
+   "price": 27.73,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00763MHB4": {
+   "price": 2500.0,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CZL8Y2NB": {
+   "price": 69.99,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B004U4UHRI": {
+   "price": 499.9,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0C3N1T4V6": {
+   "price": 47.38,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B07RV35H4D": {
+   "price": 22.1,
+   "t": 1794346421,
+   "result": "marca poco conocida (Rollei): su precio anterior no es fiable"
+  },
+  "B0026FCKC8": {
+   "price": 697.95,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "8475831265": {
+   "price": 2.8,
+   "t": 1794346421,
+   "result": "lo vende Imosver, no Amazon ni la tienda oficial de la marca"
+  },
+  "B073QQNWW4": {
+   "price": 26.14,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B000VDCT3C": {
+   "price": 609.18,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B073S3WPMD": {
+   "price": 25.3,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B073S3BSLP": {
+   "price": 24.28,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B000144I2Q": {
+   "price": 694.9,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00403MGLO": {
+   "price": 81.99,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B071DPTVTW": {
+   "price": 36.99,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0C8Z4DLSK": {
+   "price": 23.63,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B06XGJ443D": {
+   "price": 22.06,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B01LB29PG0": {
+   "price": 56.0,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B084RCPBV7": {
+   "price": 28.0,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B071PB1Y59": {
+   "price": 299.0,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0BTDG6BQT": {
+   "price": 29.46,
+   "t": 1794346421,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -3653,7 +3778,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794345991
+   "checked": 1794346421
   },
   {
    "id": "cm-2062698",
@@ -18800,9 +18925,9 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 806
+  "passes": 807
  },
  "jl_paused_until": 1794346545.136906,
- "amazon_search_index": 72,
- "last_api_count": 18
+ "amazon_search_index": 76,
+ "last_api_count": 26
 }
