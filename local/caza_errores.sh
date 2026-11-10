@@ -83,7 +83,7 @@ guardar_memoria() {
 }
 
 limpiar_logs() {
-  find "$LOG_DIR" -name 'errores-*.log' -mtime +7 -delete 2>/dev/null || true
+  find "$LOG_DIR" \( -name 'errores-*.log' -o -name 'eventos-*.jsonl' \) -mtime +7 -delete 2>/dev/null || true
 }
 
 # Mientras el bot esté vivo, el Mac no se duerme (con el cargador puesto).
@@ -99,6 +99,8 @@ guardar_memoria >> "$LOG_DIR/errores-$(date +%F).log" 2>&1
 fallos=0
 while true; do
   hoy_log="$LOG_DIR/errores-$(date +%F).log"
+  # Decisiones del escáner para la vista en directo (local/ver_bot.py).
+  export CAZA_EVENTOS="$LOG_DIR/eventos-$(date +%F).jsonl"
   inicio=$(date +%s)
   sincronizar >> "$hoy_log" 2>&1
   log "Ciclo de ${CICLO_MINUTOS} min, una pasada cada ${PASADA_SEGUNDOS} s" >> "$hoy_log"

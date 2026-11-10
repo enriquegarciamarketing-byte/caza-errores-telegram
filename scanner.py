@@ -39,6 +39,7 @@ from zoneinfo import ZoneInfo
 import affiliate
 import alertas
 import cascada
+import eventos
 from amazon_api import ApiError, CreatorsAPI, color_of, size_of
 import feeds
 import premium
@@ -216,6 +217,9 @@ class Telegram:
                 result = json.loads(exc.read().decode("utf-8"))
             except (json.JSONDecodeError, UnicodeDecodeError):
                 result = {"ok": False, "description": f"HTTP {exc.code}"}
+        except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as exc:
+            # Un corte de wifi en el Mac no puede tumbar el bot: se trata como un fallo normal de Telegram.
+            result = {"ok": False, "description": f"sin conexión ({exc})"}
         if not result.get("ok"):
             raise RuntimeError(f"Telegram {method}: {result.get('description')}")
         return result["result"]
@@ -449,6 +453,9 @@ def classify(cfg: dict, cand: dict) -> tuple[str | None, str]:
         if (cand.get("rating") or 0) < cfg["bargain_min_rating"] or cand.get("reviews", 0) < cfg["bargain_min_reviews"]:
             return None, f"valoraciones flojas ({cand.get('rating')} / {cand.get('reviews')})"
         category, reason = ("MÍNIMO HISTÓRICO" if is_low else "GANGA"), f"-{disc:.0f}% bajo la referencia"
+    if not premium_resale(cfg):
+        ok, why = error_check(cfg, cand)
+        return (category, reason) if ok else (None, why)
     ok, why = resale_check(cfg, cand, category)
     if not ok:
         return None, why
@@ -574,9 +581,11 @@ def error_quality(cfg: dict, cand: dict, rules: dict) -> str | None:
     ref = float(cand.get("reference_price") or cand.get("avg90") or 0)
     floor = float(cfg.get("error_min_reference_eur") or 60)
     if ref + 1e-9 < floor:
-        return f"error de precio de algo que vale {euro(ref)} (mínimo {euro(floor)} para reventa)"
+        return f"error de precio de algo que vale {euro(ref)} (mínimo {euro(floor)})"
     if not (cand.get("brand") or "").strip() or is_generic_brand(cand.get("brand") or "", rules.get("generic_brands") or []):
         return "error de precio sin marca reconocible"
+    if cand.get("listing_mode"):
+        return None  # Desde el 9/11/2026 jimmyleaks no da opiniones ni estrellas: no se pueden exigir.
     reviews = int(cand.get("reviews") or 0)
     if reviews < int(cfg.get("error_min_reviews") or 15):
         return f"error de precio con pocas opiniones ({reviews})"
@@ -584,6 +593,34 @@ def error_quality(cfg: dict, cand: dict, rules: dict) -> str | None:
     if rating is not None and float(rating) < float(cfg.get("error_min_rating") or 3.8):
         return f"error de precio con valoración floja ({rating})"
     return None
+
+
+def error_check(cfg: dict, cand: dict) -> tuple[bool, str]:
+    """Modo solo errores (10/11/2026): nada de reventa, Wallapop ni categorías. Solo lo que evita publicar
+    un error falso o de algo sin valor: tallas (mezclan precios), marca, opiniones, que valga de verdad,
+    historial suficiente y PVP inflado."""
+    rules = resale_rules(cfg) or {}
+    name = cand.get("name") or cand.get("title") or ""
+    if has_size_variant(name) or has_size_variant(cand.get("title") or ""):
+        return False, "tiene tallas: el precio puede ser de otra talla"
+    problem = error_quality(cfg, cand, rules)
+    if problem:
+        return False, problem
+    if cand.get("series") is not None:
+        points = int(cand["spain_points"]) if cand.get("spain_points") is not None else spain_point_count(cand)
+        minimum = int(rules.get("min_spain_points", 15))
+        if points < minimum:
+            return False, f"solo {points} puntos de precio en España (mínimo {minimum})"
+        was, raw_avg = cand.get("was"), cand.get("avg90")
+        pvp_ratio = float(rules.get("max_pvp_vs_avg", 1.5))
+        if was and raw_avg and float(was) > float(raw_avg) * pvp_ratio + 1e-9:
+            return False, f"el PVP ({euro(float(was))}) supera {pvp_ratio:g}× la media de 90 días ({euro(float(raw_avg))})"
+    return True, ""
+
+
+def premium_resale(cfg: dict) -> bool:
+    """¿El premium mira la reventa (Wallapop, ROI)? En el modo solo errores, no, salvo premium_resale: true."""
+    return not amazon_errors_only(cfg) or bool((cfg or {}).get("premium_resale"))
 
 
 def resale_check(cfg: dict, cand: dict, category: str | None = None) -> tuple[bool, str]:
@@ -797,13 +834,77 @@ def listing_error_lane(cfg: dict, item: dict, slack: float = 0.0) -> bool:
             and was >= float(cfg.get("error_min_reference_eur") or 0))
 
 
+def listing_drop_pct(item: dict) -> float:
+    m = re.search(r"(\d+)% por debajo", (item.get("verdict") or "").lower())
+    return float(m.group(1)) if m else listing_drop(item) * 100
+
+
+def brand_ok(cand: dict, cfg: dict | None = None) -> bool:
+    field = (cand.get("brand") or "").strip()
+    generic = ((cfg or {}).get("resale") or {}).get("generic_brands") or ["amazon", "sin marca", "generico", "marca blanca"]
+    return bool(field) and not is_generic_brand(field, generic)
+
+
+def listing_event(item: dict, now: datetime, reason: str) -> None:
+    eventos.emit("producto", fase="listado", id=item.get("id"), fuente=item.get("source"),
+                 titulo=item.get("title"), marca=item.get("brand"), marca_ok=brand_ok(item),
+                 precio=item.get("price"), antes=item.get("was"), descuento=round(listing_drop_pct(item)),
+                 hace=int(now.timestamp() - (item.get("ts") or now.timestamp())), veredicto="DESCARTADO",
+                 motivo=reason)
+
+
+def product_event(cand: dict, now: datetime, category: str | None, reason: str, started: float) -> None:
+    ref = cand.get("reference_price") or cand.get("avg90")
+    price = cand.get("price")
+    disc = cand.get("discount")
+    if disc is None and ref and price and float(ref) > float(price):
+        disc = (float(ref) - float(price)) / float(ref) * 100
+    eventos.emit("producto", fase="ficha", id=cand.get("id"), fuente=cand.get("source"),
+                 titulo=card_title(cand) or cand.get("title"), marca=cand.get("brand"), marca_ok=brand_ok(cand),
+                 precio=price, antes=round(float(ref), 2) if ref else cand.get("was"),
+                 descuento=round(disc) if disc is not None else None, referencia=cand.get("ref_text"),
+                 hace=int(now.timestamp() - (cand.get("ts") or now.timestamp())),
+                 segundos=round(time.time() - started, 1), veredicto=category or "DESCARTADO",
+                 motivo=reason, pedir_ok=bool(cand.get("needs_ok")))
+
+
+def listing_error_candidate(cfg: dict, item: dict, detail: dict) -> tuple[dict | None, str]:
+    """Premium solo errores con la ficha nueva de jimmyleaks (sin historial, media ni stock desde el 9/11/2026).
+
+    La referencia sale del listado: la media que da jimmyleaks («78% por debajo de la media») o, si el listado
+    lo marca como mínimo histórico, el PVP tachado. El precio grande de la ficha tiene que coincidir con el
+    del listado (precio vivo). La API de Amazon, si responde, confirma precio y stock antes de publicar."""
+    price = float(item.get("price") or 0)
+    page = detail.get("page_price")
+    if page is not None and abs(float(page) - price) > 0.009:
+        return None, f"el listado ({euro(price)}) y la ficha ({euro(float(page))}) no coinciden"
+    verdict = (item.get("verdict") or "").lower()
+    m = re.search(r"(\d+)% por debajo", verdict)
+    was = float(item.get("was") or 0)
+    if m and 0 < int(m.group(1)) < 100:
+        ref, text = price / (1 - int(m.group(1)) / 100), "frente a su precio medio"
+    elif was > price and "mínimo" in verdict:
+        ref, text = was, "frente a su PVP (y es su mínimo histórico)"
+    else:
+        return None, "sin precio medio para comprobar que es un error"
+    image = item.get("image") or detail.get("image")
+    if not image:
+        return None, "sin imagen"
+    cand = {**item, "name": item.get("title") or detail.get("name") or "", "brand": item.get("brand") or detail.get("brand") or "",
+            "price": price, "avg90": round(ref, 2), "reference_price": round(ref, 2), "ref_text": text,
+            "image": image, "in_stock": True, "listing_mode": True, "page_price": page}
+    return cand, ""
+
+
 def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
          with_external: bool = True) -> list[dict]:
     seen = state.setdefault("seen", {})
     listings: dict[str, dict] = {}
     for url in pass_sources(cfg, state):
         try:
+            label = eventos.source_label(url)
             for item in parse_listing(fetch(url)):
+                item["source"] = label
                 listings.setdefault(item["id"], item)
         except Exception as exc:  # red, HTTP o HTML inesperado: se sigue con las demás fuentes
             print(f"Aviso: no se pudo leer {url} ({exc})")
@@ -833,11 +934,13 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
         if only_errors and not lane:
             # Solo errores: no se gasta ninguna ficha en lo que no apunta a error; baja al canal normal.
             cascade_listing(cfg, item, "listado: no es error de precio", now)
+            need = float(cfg.get("error_min_discount") or 70) - slack
+            listing_event(item, now, f"descuento {listing_drop_pct(item):.0f}% (mín. {need:.0f}%)")
             continue
         if price_floor and item["price"] + 1e-9 < price_floor and not lane:
             cascade_listing(cfg, item, "listado: por debajo del mínimo de reventa", now)
             continue
-        if premium.commodity_hit(item, rules):
+        if not only_errors and premium.commodity_hit(item, rules):
             cascade_listing(cfg, item, "listado: producto de poco valor para revender", now)
             continue
         if (rules.get("require_priority", True) and not lane
@@ -871,17 +974,31 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
 
     fresh.sort(key=rank, reverse=True)
     print(f"Candidatos nuevos tras el filtro rápido: {len(fresh)}")
+    eventos.emit("pasada", listados=len(listings), candidatos=len(fresh))
 
     qualified = []
     for item in fresh[: cfg["max_detail_fetches_per_run"]]:
+        started = time.time()
         try:
             detail = parse_detail(fetch(f"{BASE}/es/dp/{item['id']}/"))
         except Exception as exc:
             print(f"Aviso: ficha {item['id']} no disponible ({exc})")
             continue
         time.sleep(1)
-        cand = {**item, **{k: v for k, v in detail.items() if v not in (None, "")}}
-        cand["price"] = detail.get("price") or item["price"]
+        listing_cand = None
+        if only_errors and detail.get("series") in (None, []) and not detail.get("avg90"):
+            listing_cand, why = listing_error_candidate(cfg, item, detail)
+            if listing_cand is None:
+                seen[item["id"]] = {"price": item["price"], "t": int(now.timestamp()), "result": why}
+                print(f"  {item['id']} · {item['price']} € → descartado ({why}) · {(item.get('title') or '')[:60]}")
+                product_event(item, now, None, why, started)
+                continue
+        if listing_cand is not None:
+            cand = listing_cand
+            detail = {**detail, "in_stock": True, "image": cand["image"]}
+        else:
+            cand = {**item, **{k: v for k, v in detail.items() if v not in (None, "")}}
+            cand["price"] = detail.get("price") or item["price"]
         category, reason = classify(cfg, cand)
         if category:
             category, reason = quality_checks(cand, now, category, reason)
@@ -900,6 +1017,7 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
         if ref and cand.get("avg90") and abs(float(ref) - float(cand["avg90"])) > 0.5:
             ref_bit = f" · ref {float(ref):.2f}"
         print(f"  {item['id']} · {cand['price']} € · media {cand.get('avg90')}{ref_bit} → {category or 'descartado'} ({reason}) · {card_title(cand)[:60]}")
+        product_event(cand, now, category, reason, started)
         if category:
             cand["category"] = category
             qualified.append(cand)
@@ -1012,12 +1130,31 @@ def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tup
     problem = history_problem(cand, now)
     if problem:
         return None, problem
+    if API is not None and cand.get("listing_mode"):
+        return verify_live_asin(cand, category, reason)
     if API is not None:
         try:
             return verify_live(cand, category, reason, variant)
         except (ApiError, KeyError, TypeError, ValueError) as exc:
             return None, f"no se pudo verificar en Amazon ({exc})"
     return category, reason + " · controles OK"
+
+
+def verify_live_asin(cand: dict, category: str, reason: str) -> tuple[str | None, str]:
+    """Modo listado: precio y stock por ASIN en la API de Amazon. Si la cuenta aún no tiene acceso a la API,
+    se apaga para el resto de la ejecución y se sigue con el precio vivo de la ficha de jimmyleaks."""
+    global API
+    try:
+        live = API.get_item(cand["asin"])
+    except (ApiError, KeyError, TypeError, ValueError) as exc:
+        print(f"  API de Amazon sin acceso ({exc}). Sigo con el precio de la ficha.")
+        API = None
+        return category, reason + " · precio vivo en la ficha"
+    if not live or not live.get("in_stock") or not live.get("price"):
+        return None, "sin stock o sin precio en Amazon"
+    if abs(float(live["price"]) - float(cand["price"])) > max(0.5, float(cand["price"]) * 0.03):
+        return None, f"Amazon marca {live['price']} € y no {cand['price']} €"
+    return category, reason + " · precio verificado en Amazon"
 
 
 def resolve_asin(jl_id: str) -> str | None:
@@ -1030,6 +1167,15 @@ def resolve_asin(jl_id: str) -> str | None:
 
 def recheck_listing(cand: dict) -> str:
     """Segunda lectura de la ficha justo antes de publicar. Devuelve el motivo para no publicar, o ''."""
+    if cand.get("listing_mode"):
+        try:
+            again = parse_detail(fetch(f"{BASE}/es/dp/{cand['id']}/"))
+        except Exception as exc:
+            return f"no he podido releer la ficha ({exc})"
+        page = again.get("page_price")
+        if page is not None and abs(float(page) - float(cand["price"])) > 0.009:
+            return f"el precio ha cambiado ({cand['price']} → {page})"
+        return ""
     if cand.get("origin") in ("chollometro", "watchlist") or cand.get("series") is None:
         return ""
     try:
@@ -1200,12 +1346,13 @@ def attach_wallapop(tg, cfg: dict, state: dict, cand: dict, dry: bool, test_priv
 
 def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: str, dry: bool,
             link_override: str | None = None, test_private: bool = False, preview: bool = False) -> bool:
-    if not attach_wallapop(tg, cfg, state, cand, dry, test_private=test_private):
+    if premium_resale(cfg) and not attach_wallapop(tg, cfg, state, cand, dry, test_private=test_private):
         return False
     if not dry and not link_override:
         why = recheck_listing(cand)
         if why:
             print(f"  No publico {cand.get('id')}: {why}")
+            cand["no_publish"] = why
             return False
     img_dir = OUTPUT_DIR / "src"
     img_dir.mkdir(parents=True, exist_ok=True)
@@ -1669,13 +1816,22 @@ def run_loop(tg, cfg: dict, state: dict, channel: str, args) -> int:
         if index:
             print(f"== pasada {index + 1} · {now_utc().astimezone(MADRID):%H:%M} ==")
             if tg and not args.test_private:
-                handle_updates(tg, cfg, state, channel, args.dry_run)
-                if not args.dry_run:
-                    publish_pending_from_reply(tg, state, channel)
+                try:
+                    handle_updates(tg, cfg, state, channel, args.dry_run)
+                    if not args.dry_run:
+                        publish_pending_from_reply(tg, state, channel)
+                except Exception as exc:
+                    print(f"Aviso: no he podido atender los mensajes del bot ({exc!r}); sigo.")
         expire_asks(state)
         try:
             code = run_scan(tg, cfg, state, channel, args, now_utc(),
                             with_external=index % external_every == 0)
+        except Exception as exc:  # en el Mac el bot no puede caerse por un fallo raro de una pasada
+            import traceback
+            traceback.print_exc()
+            print(f"Pasada fallida ({exc!r}): sigo en la siguiente.")
+            eventos.emit("aviso", texto=f"pasada fallida: {exc!r}")
+            code = 1
         finally:
             if not args.dry_run and not args.test_private:
                 save_state(state)
@@ -1931,6 +2087,7 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime, with
         ok, why = (True, "") if args.ignore_limits else allowed_to_post(cfg, state, cand, now)
         if not ok:
             print(f"  {cand['id']}: no se publica ({why})")
+            eventos.emit("publicacion", id=cand.get("id"), titulo=card_title(cand), estado="NO PUBLICADO", motivo=why)
             if "recientemente" not in why:
                 # Aplazado por horario o cupo: se vuelve a evaluar en la próxima pasada.
                 state.get("seen", {}).pop(cand["id"], None)
@@ -1938,8 +2095,13 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime, with
         try:
             if publish(tg, cfg, state, cand, channel, args.dry_run):
                 posted += 1
+                eventos.emit("publicacion", id=cand.get("id"), titulo=card_title(cand),
+                             estado="TE PIDO OK" if cand.get("needs_ok") else "PUBLICADO",
+                             precio=cand.get("price"), descuento=round(float(cand.get("discount") or 0)))
                 time.sleep(2)
             else:
+                eventos.emit("publicacion", id=cand.get("id"), titulo=card_title(cand), estado="NO PUBLICADO",
+                             motivo=cand.get("no_publish") or "ver el log")
                 note_wallapop_skip(state, cand)
                 if cand.get("cascade_reason") and not cand.get("needs_ok"):
                     CASCADA.add(cand, cand["cascade_reason"], now.timestamp())
