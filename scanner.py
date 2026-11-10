@@ -1069,7 +1069,8 @@ def scan(cfg: dict, state: dict, now: datetime, extras: dict | None = None,
 
     fresh.sort(key=rank, reverse=True)
     print(f"Candidatos nuevos tras el filtro rápido: {len(fresh)}")
-    eventos.emit("pasada", listados=len(listings), candidatos=len(fresh))
+    if sources:  # con Jimmyleaks en pausa, la línea de «0 productos» solo es ruido en la vista en directo
+        eventos.emit("pasada", fuente="Jimmyleaks", listados=len(listings), candidatos=len(fresh))
 
     qualified = []
     for item in fresh[: cfg["max_detail_fetches_per_run"]]:

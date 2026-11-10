@@ -96,7 +96,9 @@ def render(e: dict, shown: set) -> str | None:
     if kind == "pasada":
         if ONLY_GOOD:
             return None
-        where = "Amazon" if e.get("fuente") == "Amazon" else "listado"
+        if not e.get("listados") and e.get("fuente") != "Amazon":
+            return None  # Jimmyleaks sin productos (bloqueado o en pausa): nada que ver
+        where = "Amazon" if e.get("fuente") == "Amazon" else "Jimmyleaks"
         return (f"{DIM}· {clock(e.get('t'))} · pasada {where} · {e.get('listados', 0)} productos mirados · "
                 f"{e.get('candidatos', 0)} con pinta de error{RESET}")
     if kind == "producto":
