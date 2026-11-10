@@ -1216,8 +1216,8 @@
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "R3kjLnR": {
-   "price": 38.78,
-   "t": 1794267767,
+   "price": 40.7,
+   "t": 1794312963,
    "result": "sin precios de los 30 días anteriores para comparar"
   },
   "R4xPreX": {
@@ -1298,6 +1298,16 @@
   "RNXzKQx": {
    "price": 899.0,
    "t": 1794310362,
+   "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "1EvZmBD": {
+   "price": 25.3,
+   "t": 1794311763,
+   "result": "sin precios de los 30 días anteriores para comparar"
+  },
+  "1BKBdxZ": {
+   "price": 152.99,
+   "t": 1794312063,
    "result": "sin precios de los 30 días anteriores para comparar"
   }
  },
@@ -2093,7 +2103,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 77,
+ "last_listing_count": 68,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3508,34 +3518,6 @@
    "http_status": 200,
    "bytes": 75492,
    "raw_count": 26
-  },
-  "|macbook neo a18 pro 8gb 256gb rosa nube|macbook a18 neo": {
-   "t": 1793955383.7455075,
-   "query": "macbook a18 neo",
-   "prices": [
-    25.0,
-    690.0,
-    690.0,
-    554.0,
-    25.0,
-    585.0,
-    679.0,
-    560.0,
-    25.0,
-    25.0,
-    749.99,
-    650.0,
-    600.0,
-    750.0,
-    499.0,
-    500.0,
-    749.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 129946,
-   "raw_count": 38
   },
   "|maqueta lego architecture fontana di trevi 21062 (juego de construccion +18 anos, modelo de exposicion, roma, carrefour)|maqueta 21062 lego": {
    "t": 1793957901.33619,
@@ -9498,6 +9480,51 @@
    "http_status": 200,
    "bytes": 144218,
    "raw_count": 39
+  },
+  "|google pixel 10 - smartphone android libre con gemini, camara trasera triple avanzada, - obsidiana, 128gb|google 128gb pixel": {
+   "t": 1794312682.2260327,
+   "query": "google 128gb pixel",
+   "prices": [
+    495.0,
+    475.0,
+    110.0,
+    55.0,
+    150.0,
+    260.0,
+    225.0,
+    220.0,
+    150.0,
+    280.0,
+    299.0,
+    340.0,
+    160.0,
+    320.0,
+    450.0,
+    120.0,
+    150.0,
+    240.0,
+    180.0,
+    285.0,
+    379.0,
+    231.0,
+    440.0,
+    50.0,
+    239.0,
+    225.0,
+    480.0,
+    149.0,
+    400.0,
+    160.0,
+    350.0,
+    159.0,
+    479.0,
+    320.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 136480,
+   "raw_count": 40
   }
  },
  "milanuncios_cache": {
@@ -16690,7 +16717,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 17,
+ "rotation_index": 13,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
@@ -16714,7 +16741,8 @@
   "https://www.chollometro.com/ofertas/calvin-klein-jeans-zapatillas-tallas-de-la-36-a-la-41-2061628": 1794310381.0617871,
   "https://www.chollometro.com/ofertas/new-balance-fuelcell-rebel-v4-zapatillas-running-asfalto-2061989": 1794310381.0617871,
   "https://www.chollometro.com/ofertas/tira-led-inteligente-govee-h6098-rgbicw-con-wifi-bluetooth-y-camara-sincronizacion-con-pantalla-y-musica-con-bombilla-por-5383eur-2062254": 1794311354.321396,
-  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-roborock-qrevo-2-pro-25000-pa-mopa-flexiarm-75c-2061864": 1794311354.321396
+  "https://www.chollometro.com/ofertas/robot-aspirador-y-fregasuelos-roborock-qrevo-2-pro-25000-pa-mopa-flexiarm-75c-2061864": 1794311354.321396,
+  "https://www.chollometro.com/ofertas/google-pixel-10-smartphone-android-libre-con-gemini-camara-trasera-triple-avanzada-obsidiana-128gb-2062191": 1794312678.183036
  },
  "asked": {
   "cm-2060782": 1794235272,
@@ -16723,6 +16751,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 657
+  "passes": 673
  }
 }
