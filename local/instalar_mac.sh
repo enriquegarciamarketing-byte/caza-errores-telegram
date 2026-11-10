@@ -21,6 +21,23 @@ if [ "${1:-}" = "--parar" ]; then
   exit 0
 fi
 
+hay_internet() {
+  curl -sS -m 8 -o /dev/null https://api.telegram.org 2>/dev/null || curl -sS -m 8 -o /dev/null https://github.com 2>/dev/null
+}
+
+if [ "${1:-}" = "--actualizar" ] || [ -z "${1:-}" ]; then
+  # Sin internet (wifi reconectando al abrir la tapa) no se toca nada: el bot que esté en marcha sigue en marcha.
+  espera=0
+  until hay_internet; do
+    if [ "$espera" -ge 60 ]; then
+      mal "El Mac no tiene internet. No he tocado el bot. Conecta la wifi y vuelve a darle a ▶️ Encender bot."
+      exit 1
+    fi
+    [ "$espera" -eq 0 ] && nota "Esperando a que vuelva internet (la wifi tarda unos segundos al abrir la tapa)…"
+    sleep 5; espera=$((espera + 5))
+  done
+fi
+
 if [ "${1:-}" = "--actualizar" ]; then
   # Para el bot, guarda su memoria, se trae lo nuevo de GitHub (gana la memoria del Mac) y sigue instalando.
   launchctl bootout "$DOMAIN/$LABEL" 2>/dev/null || true
@@ -97,10 +114,13 @@ ok "Secretos en .env. Publicará en: $TELEGRAM_CHAT_ID"
 if [ "$TELEGRAM_CHAT_ID" != "@caza_errores" ]; then
   nota "Ojo: el premium es @caza_errores. Si $TELEGRAM_CHAT_ID no es ese canal (o su número), cámbialo en .env."
 fi
-if curl -sS -m 15 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getMe" | grep -q '"ok":true'; then
+respuesta="$(curl -sS -m 15 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getMe" 2>&1)"
+if echo "$respuesta" | grep -q '"ok":true'; then
   ok "Telegram responde."
-else
+elif echo "$respuesta" | grep -q '"ok":false'; then
   mal "Telegram no acepta el TELEGRAM_BOT_TOKEN de .env."; exit 1
+else
+  mal "No llego a Telegram (¿sin internet?). Conecta la wifi y vuelve a darle a ▶️ Encender bot."; exit 1
 fi
 
 # 4. Permiso para subir a GitHub (memoria del premium, latido y cascada al canal normal).
