@@ -2093,7 +2093,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 75,
+ "last_listing_count": 73,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16684,7 +16684,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 7,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
@@ -16715,6 +16715,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 655
+  "passes": 656
  }
 }
