@@ -2028,7 +2028,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 76,
+ "last_listing_count": 70,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3446,40 +3446,6 @@
    "http_status": null,
    "bytes": null,
    "raw_count": null
-  },
-  "|zapatillas puma caven iii topcat (tallas 43 a 48)|zapatillas 43 puma": {
-   "t": 1793900262.3500972,
-   "query": "zapatillas 43 puma",
-   "prices": [
-    29.99,
-    35.0,
-    10.0,
-    22.0,
-    50.0,
-    15.0,
-    30.0,
-    5.0,
-    28.0,
-    10.0,
-    20.0,
-    30.0,
-    10.0,
-    30.0,
-    25.0,
-    20.0,
-    30.0,
-    35.0,
-    15.0,
-    20.0,
-    5.0,
-    50.0,
-    30.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 134600,
-   "raw_count": 40
   },
   "|garmin forerunner 170|garmin 170 forerunner": {
    "t": 1793966408.062758,
@@ -9433,6 +9399,22 @@
    "http_status": 200,
    "bytes": 100325,
    "raw_count": 40
+  },
+  "|dreame u20 aspiradora escoba/mano sin cable 370w blanca|dreame u20 aspiradora": {
+   "t": 1794298535.1475868,
+   "query": "dreame u20 aspiradora",
+   "prices": [
+    130.0,
+    180.0,
+    135.0,
+    98.0,
+    150.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 23688,
+   "raw_count": 7
   }
  },
  "milanuncios_cache": {
@@ -16265,22 +16247,24 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 15,
+ "rotation_index": 11,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/aspiradora-fregona-en-seco-y-humedo-roborock-f25-lt-20000-pa-diseno-plano-180-autolimpieza-90c-2061604": 1794285778.7133534,
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
   "https://www.chollometro.com/ofertas/caja-gaming-mars-gaming-mc-lcdpro-atx-con-pantalla-lcd-ips-de-72-cristal-templado-curva-doble-camara-y-soporte-para-rl-de-360-mm-2060197": 1794296298.487146,
   "https://www.chollometro.com/ofertas/lego-star-wars-r2-d2-2061600": 1794296603.751416,
-  "https://www.chollometro.com/ofertas/hoka-zapatillas-de-running-mach-6-hombre-azul-2060300": 1794296603.751416
+  "https://www.chollometro.com/ofertas/hoka-zapatillas-de-running-mach-6-hombre-azul-2060300": 1794296603.751416,
+  "https://www.chollometro.com/ofertas/robot-aspirador-roborock-qrevo-2-pro-set-prox-25000-pa-doble-sistema-antienredos-y-base-multifuncion-leer-descripcion-para-el-precio-2061689": 1794297930.4837275,
+  "https://www.chollometro.com/ofertas/nintendo-switch-2-zelda-ocarina-of-time-2061892": 1794298530.0719144,
+  "https://www.chollometro.com/ofertas/dreame-u20-aspiradora-escobamano-sin-cable-370w-blanca-2043817": 1794298530.0719144
  },
  "asked": {
-  "cm-2060262": 1794211053,
   "cm-2060782": 1794235272
  },
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 623
+  "passes": 639
  }
 }
