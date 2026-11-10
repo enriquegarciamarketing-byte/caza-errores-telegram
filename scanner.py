@@ -842,8 +842,14 @@ def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]
     """Errores buscados directamente en Amazon con la API (buscador_amazon.py). Mismos filtros que el resto."""
     import buscador_amazon
     started = time.time()
+    import historial
     results = buscador_amazon.search(API, cfg, state, now)
     state["last_api_count"] = len(results)
+    hist = state.setdefault("price_history", {})
+    for cand, _ in results:
+        historial.record(hist, cand.get("asin"), cand.get("price"), now)
+    state["price_history"] = historial.prune(hist, now)
+    other = load_json(ROOT / "state" / "canal_nube.json", {}).get("price_history") or {}
     good = [c for c, why in results if not why]
     print(f"Amazon (API): {len(results)} productos con mucho descuento · {len(good)} con precio anterior honesto")
     eventos.emit("pasada", fuente="Amazon", listados=len(results), candidatos=len(good))
@@ -857,6 +863,15 @@ def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]
             continue  # ya visto a este precio
         if not why and not buscador_amazon.is_trusted(cand.get("brand") or "", cfg):
             why = f"marca poco conocida ({cand.get('brand') or 'sin marca'}): su precio anterior no es fiable"
+        if not why:
+            # Historial propio: el truco de subir el precio unos días y luego «rebajarlo» no pasa.
+            honest, why, info = historial.check(cand["asin"], float(cand["price"]), cand.get("was"), now,
+                                                state["price_history"], other,
+                                                min_drop_pct=float(cfg.get("error_min_discount") or 70))
+            cand["history"] = info
+            if honest:
+                cand.update(avg90=honest, reference_price=honest,
+                            ref_text=f"frente a su precio habitual ({info['days']} días de historial)")
         category, reason = (None, why) if why else classify(cfg, cand)
         if category:
             category, reason = quality_checks(cand, now, category, reason)
@@ -1571,6 +1586,16 @@ def ask_admin(tg, state: dict, cand: dict, card: Path, url: str | None, summary:
             f"{euro(cand['price'])}, respóndeme OK a este mensaje (o a la foto) y se publica en el premium. "
             f"Caduca en {hours:g} h.")
     buttons = [[{"text": f"Abrir en {store}", "url": url}]]
+    asin = cand.get("asin") or affiliate.extract_asin(url or "")
+    if asin:
+        import historial
+        buttons[0].append({"text": "📈 Ver en Keepa", "url": historial.keepa_url(asin)})
+        info = cand.get("history") or {}
+        if info.get("days", 0) >= historial.MIN_DAYS:
+            text += (f"\n\n📈 Historial propio: {info['days']} días, precio habitual {euro(info['usual'])}, "
+                     f"mínimo {euro(info['min'])}.")
+        else:
+            text += "\n\n⚠️ Aún no tengo historial de este producto: míralo en Keepa antes de dar el OK."
     if cand.get("series") is not None and cand.get("id") and not str(cand["id"]).startswith(("cm-", "watch-")):
         buttons[0].append({"text": "Ver histórico", "url": f"{BASE}/es/dp/{cand['id']}/"})
     caption_cand = {**cand, "note": ""}

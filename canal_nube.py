@@ -1348,7 +1348,14 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
     cfg = {"affiliate_tag": rules.get("tag"), "error_min_discount": min_saving,
            "amazon_search": {**conf, "per_pass": conf.get("per_run") or 8}}
     box = state if remember else {"amazon_search_index": state.get("amazon_search_index")}
+    import historial
     results = buscador_amazon.search(API, cfg, box, now, log=log)
+    hist = state.setdefault("price_history", {}) if remember else dict(state.get("price_history") or {})
+    for cand, _ in results:
+        historial.record(hist, cand.get("asin"), cand.get("price"), now)
+    if remember:
+        state["price_history"] = historial.prune(hist, now)
+    other = load_json(PREMIUM_STATE, {}).get("price_history") or {}
     generic = (rules.get("generic_brands") or ["generico", "genérico", "sin marca", "marca blanca"])
     items = []
     for cand, why in results:
@@ -1357,6 +1364,15 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
         if not asin or price is None or not was or why in ("sin stock", "sin imagen", "sin precio en Amazon") \
                 or why.startswith(("lo vende", "no es nuevo")):
             continue  # reglas de calidad: solo Amazon o la tienda oficial de la marca, y producto nuevo
+        # Historial propio: si ya estuvo a este precio hace poco o el precio anterior está inflado, fuera;
+        # con historial suficiente la referencia es su precio habitual, no el que pone el vendedor.
+        honest, hwhy, info = historial.check(asin, float(price), float(was), now, hist, other,
+                                             min_drop_pct=min_saving)
+        if hwhy:
+            log(f"  ✗ amz-{asin} {clean_title(cand.get('title') or '', 50)}: {hwhy}")
+            continue
+        if honest:
+            was = honest
         brand = (cand.get("brand") or "").strip()
         trusted = {fold(b) for b in rules.get("trusted_brands") or []}
         known = bool(brand) and (fold(brand) in trusted or any(fold(brand).startswith(t + " ") for t in trusted))

@@ -370,3 +370,58 @@ class SellerRuleTest(unittest.TestCase):
         cand, why = ba.to_candidate(robo, "roborock", cfg, now, "x")
         self.assertEqual(why, "")
         self.assertTrue(cand["official_store"])
+
+
+class HistoryTest(unittest.TestCase):
+    def setUp(self):
+        import historial
+        from datetime import timedelta
+        self.h, self.td = historial, timedelta
+        self.now = scanner.now_utc()
+
+    def hist(self, prices):
+        """prices: precio por día, del más antiguo (hace len días) a ayer."""
+        hist = {}
+        for i, p in enumerate(prices):
+            self.h.record(hist, "B0PLANCHA1", p, self.now - self.td(days=len(prices) - i))
+        return hist
+
+    def test_la_trampa_de_subir_y_bajar_no_pasa(self):
+        # La plancha: 30 € de siempre, el vendedor la sube a 119 € tres días y ahora «-75 %» a 29,99 €.
+        hist = self.hist([30, 30, 31, 29.5, 30, 119, 119, 119])
+        honest, why, info = self.h.check("B0PLANCHA1", 29.99, 119.0, self.now, hist, min_drop_pct=70)
+        self.assertIsNone(honest)
+        self.assertTrue(why)
+
+    def test_un_error_de_verdad_si_pasa(self):
+        hist = self.hist([399, 399, 389, 399, 395, 399])
+        honest, why, info = self.h.check("B0PLANCHA1", 89.0, 399.0, self.now, hist, min_drop_pct=70)
+        self.assertEqual(why, "")
+        self.assertAlmostEqual(honest, 399.0)
+
+    def test_sin_historial_decide_cada_canal(self):
+        honest, why, info = self.h.check("B0NUEVO000", 50.0, 200.0, self.now, {}, min_drop_pct=70)
+        self.assertEqual((honest, why, info["days"]), (None, "", 0))
+
+    def test_el_ok_lleva_boton_de_keepa(self):
+        sent = []
+
+        class TG:
+            def send_photo(self, chat, card, caption, extra=None):
+                sent.append(extra)
+                return {"message_id": 1}
+
+            def call(self, m, p):
+                sent.append(p)
+                return {"message_id": 2}
+
+        cand = {"id": "B0AAAAAAA1", "asin": "B0AAAAAAA1", "price": 50.0, "category": "ERROR DE PRECIO",
+                "image": "u", "title": "x", "history": {"days": 0}}
+        with mock.patch.object(scanner, "caption_for", return_value="txt"), \
+             mock.patch.object(scanner, "caption_data", return_value={}), mock.patch("builtins.print"):
+            scanner.ask_admin(TG(), {"admin_chat_id": 1}, cand, "card.jpg",
+                              "https://www.amazon.es/dp/B0AAAAAAA1?tag=x", "s",
+                              {"title": "x", "category": "E", "current": 1, "reference": 2}, False)
+        buttons = sent[0]["reply_markup"]["inline_keyboard"][0]
+        self.assertIn("https://keepa.com/#!product/9-B0AAAAAAA1", [b["url"] for b in buttons])
+        self.assertIn("Keepa", sent[1]["text"])
