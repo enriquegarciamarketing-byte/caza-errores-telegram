@@ -911,8 +911,9 @@ def full_size(image: str) -> str:
     return image
 
 
-def white_canvas_photo(image: str, asin: str, margin: float = 0.12, side: int = 1600) -> Path | None:
-    """Foto del producto centrada en un lienzo blanco cuadrado de tamaño fijo (1600×1600) con margen, para que
+def white_canvas_photo(image: str, asin: str, margin: float = 0.12, side: int = 2560) -> Path | None:
+    """Foto del producto centrada en un lienzo blanco cuadrado de tamaño fijo (2560×2560, el máximo que guarda
+    Telegram) con margen, para que
     todas las fotos del canal midan lo mismo y las muy altas o muy anchas (botellas, cables…) no salgan estrechas
     o recortadas. La foto no se retoca ni se deforma: se ajusta de tamaño manteniendo la proporción y se le pone
     fondo blanco alrededor. Devuelve None si no se puede bajar o abrir."""
@@ -932,11 +933,17 @@ def white_canvas_photo(image: str, asin: str, margin: float = 0.12, side: int = 
     box = int(round(side * (1 - 2 * margin)))
     scale = box / max(rgba.size)
     rgba = rgba.resize((max(1, round(rgba.width * scale)), max(1, round(rgba.height * scale))), Image.LANCZOS)
+    if scale > 1.08:
+        # Foto más pequeña que el hueco: un enfoque suave para que no se vea blanda al ampliarla.
+        from PIL import ImageFilter
+        alpha = rgba.getchannel("A")
+        rgba = rgba.convert("RGB").filter(ImageFilter.UnsharpMask(radius=1.2, percent=60, threshold=2))
+        rgba.putalpha(alpha)
     canvas = Image.new("RGB", (side, side), "white")
     canvas.paste(rgba, ((side - rgba.width) // 2, (side - rgba.height) // 2), rgba)
     OUTPUT.mkdir(parents=True, exist_ok=True)
     out = OUTPUT / f"{asin}-lienzo.jpg"
-    canvas.save(out, "JPEG", quality=93)
+    canvas.save(out, "JPEG", quality=95, subsampling=0, optimize=True)
     return out
 
 
@@ -964,7 +971,7 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
         try:
             if deal.get("white_canvas") or rules.get("fondo_blanco"):
                 # "fondo_blanco": true en config (todos los posts del canal) o en el post manual → la foto sobre un
-                # lienzo blanco fijo de 1600×1600, para que todas las imágenes del canal midan lo mismo.
+                # lienzo blanco fijo de 2560×2560, para que todas las imágenes del canal midan lo mismo.
                 padded = white_canvas_photo(image, deal["asin"])
                 if padded:
                     return tg.send_photo(target, padded, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})

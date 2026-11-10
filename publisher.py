@@ -847,7 +847,7 @@ def create_price_card(offer: dict) -> Path:
 
 def _save_card(canvas, offer: dict) -> Path:
     """JPEG de alta calidad. 4:4:4 a partir de 95 para que Telegram no parta de un archivo ya borroso."""
-    quality = int(offer.get("jpeg_quality") or 91)
+    quality = int(offer.get("jpeg_quality") or 95)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output = OUTPUT_DIR / f"{offer['id']}.jpg"
     options = {"quality": quality, "optimize": True}

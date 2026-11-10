@@ -472,7 +472,7 @@ class Manual(unittest.TestCase):
         self.assertFalse(cn.manual_deal(self.SPEC, RULES)["white_canvas"])
         out = cn.white_canvas_photo(deal["image"], deal["asin"])
         with Image.open(out) as padded:
-            self.assertEqual(padded.size, (1600, 1600))
+            self.assertEqual(padded.size, (2560, 2560))
             self.assertEqual(padded.getpixel((3, 3)), (255, 255, 255))
         sent = []
 

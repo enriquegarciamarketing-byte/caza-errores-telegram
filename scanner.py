@@ -105,6 +105,14 @@ def fetch(url: str, binary: bool = False, timeout: int = 25):
     return data if binary else data.decode("utf-8", "replace")
 
 
+def product_photo(url: str) -> bytes:
+    """Foto del producto a la máxima resolución que dé Amazon: el original sin el sufijo de tamaño
+    (._SL500_, ._AC_US100_…) y, si no responde, la URL tal cual."""
+    import photos
+    data = photos.fetch_best(url) if url else None
+    return data or fetch(url, binary=True)
+
+
 def strip_tags(fragment: str) -> str:
     return html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", fragment))).strip()
 
@@ -1203,7 +1211,7 @@ def publish(tg: Telegram | None, cfg: dict, state: dict, cand: dict, channel: st
     img_dir.mkdir(parents=True, exist_ok=True)
     src = img_dir / f"{cand['id']}.jpg"
     try:
-        src.write_bytes(fetch(cand["image"], binary=True))
+        src.write_bytes(product_photo(cand["image"]))
     except (urllib.error.URLError, TimeoutError) as exc:
         print(f"  No se pudo descargar la foto de {cand['id']} ({exc})")
         return False
@@ -1401,7 +1409,7 @@ def publish_pending_from_reply(tg: Telegram, state: dict, channel: str) -> None:
         try:
             src = OUTPUT_DIR / "src" / f"{post['id']}.jpg"
             src.parent.mkdir(parents=True, exist_ok=True)
-            src.write_bytes(fetch(data["image"], binary=True))
+            src.write_bytes(product_photo(data["image"]))
             card = create_price_card({"id": f"scan-{post['id']}", "title": data["title"], "image_path": src,
                                       "category": data["category"], "current": data["current"],
                                       "reference": data["reference"], "days": 90,
@@ -1508,7 +1516,7 @@ def custom_post(tg, state: dict, channel: str, spec: dict) -> int:
     pid = re.sub(r"[^A-Za-z0-9]", "", spec.get("id") or "custom")[:30] or "custom"
     src = OUTPUT_DIR / "src" / f"{pid}.jpg"
     src.parent.mkdir(parents=True, exist_ok=True)
-    src.write_bytes(fetch(spec["image"], binary=True))
+    src.write_bytes(product_photo(spec["image"]))
     offer = {"id": f"custom-{pid}", "title": card_title({"name": spec["title"], "brand": spec.get("brand", "")}),
              "image_path": src, "category": spec["category"], "current": float(spec["current"]),
              "reference": float(spec["reference"]), "days": 90, "ref_label": spec.get("ref_label"),
