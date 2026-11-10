@@ -4757,6 +4757,20 @@
    "title": "M210 Pro Omni Robot Aspirador y Fregasuelo, Rodillo Autolimpiante",
    "photo_message_id": null,
    "checked": 1794305615
+  },
+  {
+   "asin": "B07CNLFVKV",
+   "jl_id": "",
+   "price": 33.8,
+   "reference": 88.0,
+   "t": 1794305669,
+   "url": "https://www.amazon.es/dp/B07CNLFVKV?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 431,
+   "photo_message_id": null,
+   "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>Diesel Only The Brave Eau de Toilette para hombre de 125 ml</b>\n\n💶 PRECIO: <b>33,80€</b>\n❌ (Antes: <s>88€</s>)\n🔥 ¡Te ahorras <b>54,20€</b>! (62 % dto.)\nℹ️ Oferta de Black Friday anticipado\n\n🕒 Precio a las 11:14 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B07CNLFVKV?tag=cazachollos0c-21\">amazon.es/dp/B07CNLFVKV</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
+   "title": "Diesel Only The Brave Eau de Toilette para hombre de 125 ml",
+   "manual": true
   }
  ],
  "seen": {
@@ -13187,16 +13201,17 @@
   1794301469,
   1794304796,
   1794305463,
-  1794305520
+  1794305520,
+  1794305672
  ],
  "x_recent": [
-  "guarda",
   "alguien",
   "bot-aviso",
   "comprado",
   "no-dura",
   "filtro",
   "regla",
-  "black-friday"
+  "black-friday",
+  "telegram"
  ]
 }
