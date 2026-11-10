@@ -438,6 +438,11 @@
     "_nota": "Canal @cazachollos_com. Solo Amazon.es. Lo ejecuta canal_nube.py en GitHub Actions (scan-generic.yml).",
     "chat_id": "@cazachollos_com",
     "affiliate_tag": "cazachollos0c-21",
+    "amazon_search": {
+      "_nota": "Desde el 10/11/2026 el free también busca directamente en Amazon con la API (Jimmyleaks bloquea al bot). Usa la lista de búsquedas de amazon_search (la del premium) por turnos: per_run búsquedas en cada ejecución (~1.000 consultas al día), pidiendo el descuento mínimo del modo listado. Pasan las mismas reglas del free; si el precio anterior es el «recomendado», solo con marca.",
+      "enabled": true,
+      "per_run": 8
+    },
     "x_prices": false,
     "x_affiliate_tag": "cazachollos0c-21",
     "amazon_photo": true,

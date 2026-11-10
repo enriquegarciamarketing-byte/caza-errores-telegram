@@ -285,3 +285,25 @@ class BlockPauseTest(unittest.TestCase):
             self.assertGreater(state["jl_paused_until"], now.timestamp())
             scanner.scan(cfg, state, now, with_external=False)
             self.assertEqual(fetch.call_count, 2)  # en pausa: ni lo intenta
+
+
+class FreeAmazonTest(unittest.TestCase):
+    def test_el_free_busca_en_amazon_y_aplica_sus_reglas(self):
+        import canal_nube as cn
+        cfg = load_cfg(scope=True)
+        rules = cn.rules_from(cfg)
+        self.assertTrue(rules["amazon_search"]["enabled"])
+        items = [api_item("B0AAAAAAA1", "Robot aspirador Roborock Q7 Max", "Roborock", 149.0, 399.0, "WAS_PRICE"),
+                 api_item("B0AAAAAAA2", "Auriculares Bluetooth 5.4 deportivos", "Ordtop", 15.99, 59.99, "LIST_PRICE"),
+                 api_item("B0AAAAAAA3", "Robot aspirador Cecotec Conga", "Cecotec", 99.0, 120.0, "LIST_PRICE")]
+        fake = FakeAPI(items)
+        state = {"seen": {}, "posts": []}
+        logs = []
+        with mock.patch.object(cn, "API", fake), mock.patch("buscador_amazon.time.sleep"):
+            approved = cn.find_deals(dict(rules, sources=[], rotating_sources=[]), state, scanner.now_utc(),
+                                     fetch=lambda url: "", resolve_asin=lambda i: None, log=logs.append)
+        asins = [deal["asin"] for _, deal in approved]
+        self.assertIn("B0AAAAAAA1", asins)          # -63 % frente a su precio mediano, categoría top
+        self.assertNotIn("B0AAAAAAA2", asins)       # precio recomendado de un vendedor sin marca
+        self.assertNotIn("B0AAAAAAA3", asins)       # solo -18 %
+        self.assertEqual(fake.calls[0][1]["minSavingPercent"], 50)

@@ -97,6 +97,11 @@ def rules_from(cfg: dict) -> dict:
     # si no, usa el general de config.json (el del premium).
     rules["tag"] = (str(rules.get("affiliate_tag") or "").strip()
                     or ((cfg or {}).get("affiliate_tag") or "").strip())
+    # Búsqueda directa en Amazon (10/11/2026): la lista de búsquedas es la del premium; lo propio del free
+    # (búsquedas por ejecución, encendido) va en amazon_channel.amazon_search.
+    shared = (cfg or {}).get("amazon_search") or {}
+    own = ((cfg or {}).get("amazon_channel") or {}).get("amazon_search") or {}
+    rules["amazon_search"] = {**shared, **own} if (shared or own) else {}
     return rules
 
 
@@ -1074,7 +1079,7 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
     live.sort(key=lambda p: p.get("checked") or p.get("t") or 0)
     for post in live[: int(rules["max_tracking_checks_per_run"])]:
         try:
-            detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{post['jl_id']}/"))
+            detail = live_check(post, fetch)
         except Exception as exc:
             post["checked"] = int(now.timestamp())
             log(f"  Seguimiento {post['asin']}: {exc}")
@@ -1208,11 +1213,14 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         if sent >= limit:
             break
         # Segunda lectura justo antes de enviar: mismo precio y todavía reciente.
-        try:
-            again = scanner.parse_detail(fetch(f"{JL}/es/dp/{item['id']}/"))
-        except Exception as exc:
-            log(f"  ✗ {deal['asin']} sin segunda lectura: {exc}")
-            continue
+        if item.get("amazon"):
+            again = {"price": deal["price"], "in_stock": True}  # lo relee api_price_check, aquí abajo
+        else:
+            try:
+                again = scanner.parse_detail(fetch(f"{JL}/es/dp/{item['id']}/"))
+            except Exception as exc:
+                log(f"  ✗ {deal['asin']} sin segunda lectura: {exc}")
+                continue
         if deal.get("modo_listado") and not again.get("full", True):
             # Ficha nueva sin stock ni datos: solo se compara el precio grande (si lo hay). El stock lo mira la API.
             again = {"price": again.get("page_price") if again.get("page_price") is not None else deal["price"],
@@ -1320,6 +1328,47 @@ def sources_for_run(rules: dict, now: datetime, state: dict | None = None) -> li
     return fixed + [rest[(start + i) % len(rest)] for i in range(min(take, len(rest)))]
 
 
+def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bool = False,
+                 remember: bool = True) -> list[dict]:
+    """Desde el 10/11/2026 (jimmyleaks bloquea al bot con HTTP 403) el canal busca también directamente en
+    Amazon con la API: unas búsquedas por ejecución de la lista de config (amazon_search.keywords), por turnos,
+    pidiendo descuento grande. Devuelve items con la forma de los del listado, que pasan por las mismas reglas."""
+    import buscador_amazon
+    conf = rules.get("amazon_search") or {}
+    if API is None or not conf.get("enabled"):
+        return []
+    listing = rules.get("modo_listado") or {}
+    min_saving = float(listing.get("relaxed_min_discount" if relaxed else "min_discount") or 50)
+    cfg = {"affiliate_tag": rules.get("tag"), "error_min_discount": min_saving,
+           "amazon_search": {**conf, "per_pass": conf.get("per_run") or 8}}
+    box = state if remember else {"amazon_search_index": state.get("amazon_search_index")}
+    results = buscador_amazon.search(API, cfg, box, now, log=log)
+    generic = (rules.get("generic_brands") or ["generico", "genérico", "sin marca", "marca blanca"])
+    items = []
+    for cand, why in results:
+        asin = cand.get("asin")
+        price, was = cand.get("price"), cand.get("was")
+        if not asin or price is None or not was or why in ("sin stock", "sin imagen", "sin precio en Amazon"):
+            continue
+        brand = (cand.get("brand") or "").strip()
+        items.append({"id": f"amz-{asin}", "asin": asin, "amazon": True, "title": cand.get("title") or "",
+                      "price": float(price), "was": float(was), "ts": int(now.timestamp()),
+                      "brand": brand, "brand_ok": bool(brand) and fold(brand) not in {fold(g) for g in generic},
+                      "image": cand.get("image") or "", "basis_type": cand.get("basis_type") or ""})
+    log(f"  Amazon (API): {len(results)} con descuento grande, {len(items)} con precio anterior y stock")
+    return items
+
+
+def live_check(post: dict, fetch) -> dict:
+    """Precio y stock de un post ya publicado: por la API si salió de Amazon, por jimmyleaks si no."""
+    if str(post.get("jl_id") or "").startswith("amz-"):
+        if API is None:
+            raise RuntimeError("sin API de Amazon para comprobarlo")
+        live = API.get_item(post["asin"]) or {}
+        return {"price": live.get("price"), "in_stock": bool(live.get("in_stock")), "full": True}
+    return scanner.parse_detail(fetch(f"{JL}/es/dp/{post['jl_id']}/"))
+
+
 def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log, remember: bool = True,
                relaxed: bool = False, cascade: list | None = None) -> list:
     """Busca en los listados y devuelve [(item, deal)] que cumplen todas las reglas, mejor descuento primero.
@@ -1356,6 +1405,10 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
     for item in state.get("backlog") or []:
         if item.get("id") and item.get("ts") and now.timestamp() - item["ts"] <= max_age and item.get("price"):
             pool.setdefault(item["id"], dict(item))
+    api_items = amazon_items(rules, state, now, log, relaxed, remember)
+    for item in api_items:
+        if not skip(item):
+            pool.setdefault(item["id"], item)
     extra = 0
     for item in cascade or []:
         if not item.get("ts") or now.timestamp() - item["ts"] > max_age or not item.get("price") or skip(item):
@@ -1378,12 +1431,19 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                                                    if from_premium else ""))
     approved = []
     for item in chosen:
-        try:
-            detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{item['id']}/"))
-        except Exception as exc:
-            log(f"  Ficha {item['id']}: {exc}")
-            continue
-        if not detail.get("full", True) and (rules.get("modo_listado") or {}).get("enabled"):
+        if item.get("amazon"):
+            detail = {"page_price": item["price"], "image": item.get("image"), "full": False}
+        else:
+            try:
+                detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{item['id']}/"))
+            except Exception as exc:
+                log(f"  Ficha {item['id']}: {exc}")
+                continue
+        if item.get("amazon"):
+            why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
+            if not why and item.get("basis_type") == "LIST_PRICE" and not item.get("brand_ok"):
+                why, deal = "precio recomendado de un vendedor sin marca (suele estar inflado)", {}
+        elif not detail.get("full", True) and (rules.get("modo_listado") or {}).get("enabled"):
             why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
         else:
             why, deal = evaluate(item, detail, rules, now, relaxed=relaxed)
@@ -1391,7 +1451,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                                                  or scanner.has_size_variant(item.get("title") or "")):
             why = "tiene tallas y no se puede comprobar el precio de cada una"
         if not why:
-            asin = resolve_asin(item["id"])
+            asin = item.get("asin") if item.get("amazon") else resolve_asin(item["id"])
             if not asin or not ASIN_RE.fullmatch(asin):
                 why = "no he podido sacar el producto exacto de Amazon (ASIN)"
             else:
@@ -1431,7 +1491,7 @@ def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: in
         if datetime.fromtimestamp(post.get("t") or 0, timezone.utc).astimezone(MADRID).date() != today:
             continue
         try:
-            detail = scanner.parse_detail(fetch(f"{JL}/es/dp/{post['jl_id']}/"))
+            detail = live_check(post, fetch)
         except Exception as exc:
             log(f"  Resumen: no he podido releer {post['asin']} ({exc}); lo dejo fuera")
             continue
