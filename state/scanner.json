@@ -2085,33 +2085,15 @@
    "url": "https://es.aliexpress.com/item/1005010084895696.html",
    "alert_id": 551,
    "alert_text_id": 552,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1794310446,
-   "card_data": {
-    "title": "Astrobot (Edición Estándar) PS5 - PAL España - Formato físico - Nuevo precintado",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 38.53,
-    "reference": 49.99,
-    "image": "https://static.chollometro.com/threads/raw/Ulicv/2061653_1/re/150x150/qt/55/2061653_1.jpg",
-    "store_label": "AliExpress",
-    "conditions": "Con cupón",
-    "resale": {
-     "price": 150.0,
-     "count": 11,
-     "roi": 264.6509213599792,
-     "profit": 101.97,
-     "source_label": "WALLAPOP",
-     "note": "11 anuncios de referencia · Wallapop · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 76,
+ "last_listing_count": 75,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16702,7 +16684,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 18,
+ "rotation_index": 2,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
@@ -16733,6 +16715,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 653
+  "passes": 654
  }
 }
