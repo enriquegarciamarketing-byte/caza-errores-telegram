@@ -1278,6 +1278,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         last = seen.get(item["id"]) or {}
         same_price = last.get("price") is not None and abs(float(last["price"]) - float(item["price"])) < 0.01
         low_discount_only = str(last.get("why") or "").startswith("solo -")
+        if last.get("why") == "sin precio en la ficha":
+            return False  # descartes por la ficha nueva de jimmyleaks (9-10/11/2026): se vuelven a mirar
         # ya descartado a este mismo precio; si baja más, se vuelve a mirar
         return same_price and now.timestamp() - (last.get("t") or 0) < recheck and not (relaxed and low_discount_only)
 
