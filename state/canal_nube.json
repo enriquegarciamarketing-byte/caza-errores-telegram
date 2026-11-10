@@ -4800,6 +4800,20 @@
    "photo_message_id": null,
    "origen": "premium",
    "checked": 1794312087
+  },
+  {
+   "asin": "B0H8CWY9ZN",
+   "jl_id": "",
+   "price": 24.99,
+   "reference": 129.98,
+   "t": 1794313029,
+   "url": "https://www.amazon.es/dp/B0H8CWY9ZN?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 438,
+   "photo_message_id": null,
+   "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>Blink Outdoor 4 + Videotimbre 2K+ Cableado con Módulo de Sincronización</b>\n\n💶 PRECIO: <b>24,99€</b>\n❌ (Antes: <s>129,98€</s>)\n🔥 ¡Te ahorras <b>104,99€</b>! (81 % dto.)\nℹ️ Pack de cámara exterior Outdoor 4 y videotimbre 2K+ cableado, sin suscripción\n\n🕒 Precio a las 13:11 · puede cambiar\n\n🛒 <a href=\"https://link.amazon/B02S3S362\">https://link.amazon/B02S3S362</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
+   "title": "Blink Outdoor 4 + Videotimbre 2K+ Cableado con Módulo de Sincronización",
+   "manual": true
   }
  ],
  "seen": {
@@ -13361,16 +13375,17 @@
   1794304796,
   1794305463,
   1794305520,
-  1794305672
+  1794305672,
+  1794313034
  ],
  "x_recent": [
-  "alguien",
   "bot-aviso",
   "comprado",
   "no-dura",
   "filtro",
   "regla",
   "black-friday",
-  "telegram"
+  "telegram",
+  "rapido"
  ]
 }
