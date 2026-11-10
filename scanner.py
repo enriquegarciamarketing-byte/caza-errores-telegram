@@ -860,7 +860,8 @@ def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]
             category, reason = quality_checks(cand, now, category, reason)
         seen[key] = {"price": cand.get("price"), "t": int(now.timestamp()), "result": category or reason}
         print(f"  {key} · {cand.get('price')} € · antes {cand.get('was')} → {category or 'descartado'} ({reason}) · {card_title(cand)[:60]}")
-        product_event(cand, now, category, reason, started)
+        if why not in ("Amazon no marca precio anterior", "sin precio en Amazon"):  # ruido para la vista en directo
+            product_event(cand, now, category, reason, started)
         if category:
             cand["category"] = category
             out.append(cand)
