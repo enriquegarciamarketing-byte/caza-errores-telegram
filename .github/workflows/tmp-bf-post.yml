@@ -1,0 +1,13 @@
+name: tmp post Black Friday
+on:
+  push:
+    branches: [tmp-bf-post]
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 bf_send.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
