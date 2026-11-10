@@ -16290,7 +16290,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 16,
+ "rotation_index": 0,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/aspiradora-fregona-en-seco-y-humedo-roborock-f25-lt-20000-pa-diseno-plano-180-autolimpieza-90c-2061604": 1794285778.7133534,
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
@@ -16310,6 +16310,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 640
+  "passes": 641
  }
 }
