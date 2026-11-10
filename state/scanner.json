@@ -2133,12 +2133,12 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794317630
+   "checked": 1794318367
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 79,
+ "last_listing_count": 71,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16922,12 +16922,8 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 4,
+ "rotation_index": 9,
  "cm_opened": {
-  "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
-  "https://www.chollometro.com/ofertas/caja-gaming-mars-gaming-mc-lcdpro-atx-con-pantalla-lcd-ips-de-72-cristal-templado-curva-doble-camara-y-soporte-para-rl-de-360-mm-2060197": 1794296298.487146,
-  "https://www.chollometro.com/ofertas/lego-star-wars-r2-d2-2061600": 1794296603.751416,
-  "https://www.chollometro.com/ofertas/hoka-zapatillas-de-running-mach-6-hombre-azul-2060300": 1794296603.751416,
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-qrevo-2-pro-set-prox-25000-pa-doble-sistema-antienredos-y-base-multifuncion-leer-descripcion-para-el-precio-2061689": 1794297930.4837275,
   "https://www.chollometro.com/ofertas/nintendo-switch-2-zelda-ocarina-of-time-2061892": 1794298530.0719144,
   "https://www.chollometro.com/ofertas/dreame-u20-aspiradora-escobamano-sin-cable-370w-blanca-2043817": 1794298530.0719144,
@@ -16953,7 +16949,8 @@
   "https://www.chollometro.com/ofertas/new-balance-rebel-zapatillas-de-trail-running-suela-vibram-2062421": 1794315599.7168698,
   "https://www.chollometro.com/ofertas/casio-g-shock-montre-classique-pour-homme-ga-010-2aer-2061938": 1794316309.471012,
   "https://www.chollometro.com/ofertas/roborock-h60-aspirador-escoba-sin-cable-3-en-1-2062134": 1794317284.5870001,
-  "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-2062447": 1794317284.5870001
+  "https://www.chollometro.com/ofertas/new-balance-hierro-v9-zapatillas-de-trail-running-2062447": 1794317284.5870001,
+  "https://www.chollometro.com/ofertas/vans-ultrarange-exp-zapatillas-tallas-385-39-40-2061898": 1794318381.0064461
  },
  "asked": {
   "cm-2060782": 1794235272,
@@ -16962,6 +16959,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 688
+  "passes": 689
  }
 }
