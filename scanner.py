@@ -269,6 +269,8 @@ def caption_data(cand: dict) -> dict:
             data[key] = cand[key]
     if cand.get("ref_text"):
         data["ref_text"] = cand["ref_text"]
+    if cand.get("deal_line"):
+        data["deal_line"] = cand["deal_line"]
     if deal.get("ok") and deal.get("price") and not deal.get("reserva"):
         data.update(resale_price=deal["price"], resale_count=deal.get("count"),
                     profit=deal.get("profit"), demand=deal.get("demand") or "",
@@ -845,6 +847,8 @@ def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]
     import historial
     results = buscador_amazon.search(API, cfg, state, now)
     state["last_api_count"] = len(results)
+    if state.get("api_error"):
+        state["api_problem"] = buscador_amazon.problem_text(state.pop("api_error"))
     hist = state.setdefault("price_history", {})
     for cand, _ in results:
         historial.record(hist, cand.get("asin"), cand.get("price"), now)
@@ -875,6 +879,7 @@ def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]
         category, reason = (None, why) if why else classify(cfg, cand)
         if category:
             category, reason = quality_checks(cand, now, category, reason)
+            cand["deal_line"] = buscador_amazon.deal_line(cand.get("deal_badge") or "", cand.get("deal_end") or "", now)
         seen[key] = {"price": cand.get("price"), "t": int(now.timestamp()), "result": category or reason}
         print(f"  {key} · {cand.get('price')} € · antes {cand.get('was')} → {category or 'descartado'} ({reason}) · {card_title(cand)[:60]}")
         if why not in ("Amazon no marca precio anterior", "sin precio en Amazon"):  # ruido para la vista en directo
@@ -2213,6 +2218,9 @@ def run_scan(tg, cfg: dict, state: dict, channel: str, args, now: datetime, with
         if not args.dry_run:
             health_alert(tg, state, "scan_error", f"el escaneo ha fallado ({exc!r}). Reviso en la próxima pasada.")
         return 1
+    api_problem = state.pop("api_problem", "")
+    if api_problem and not args.dry_run:
+        health_alert(tg, state, "api_amazon", api_problem, every_hours=6)
     if state.get("last_listing_count", 0) == 0 and not state.get("last_api_count") and not args.dry_run:
         health_alert(tg, state, "no_listings", "no he podido leer ningún producto ni de Jimmyleaks ni de la "
                      "API de Amazon. Puede que Jimmyleaks siga bloqueando y la API haya llegado a su límite.")

@@ -55,12 +55,13 @@ def to_candidate(item: dict, keyword: str, cfg: dict, now: datetime, tag: str) -
     seller = str(_get(listing, "merchantInfo", "name", default="") or "")
     seller_id = str(_get(listing, "merchantInfo", "id", default="") or "")
     badge = str(_get(listing, "dealDetails", "badge", default="") or "").strip()
+    deal_end = str(_get(listing, "dealDetails", "endTime", default="") or "")
     condition = str(_get(listing, "condition", "value", default="New") or "New")
     eans = _get(item, "itemInfo", "externalIds", "eans", "displayValues", default=[]) or []
     base = {"id": asin, "asin": asin, "title": title, "name": title, "brand": brand,
             "price": float(price) if price is not None else None, "source": f"Amazon · {keyword}",
             "ts": now.timestamp(), "image": image or "", "basis_type": basis_type, "seller": seller,
-            "seller_id": seller_id, "deal_badge": badge, "ean": eans[0] if eans else None,
+            "seller_id": seller_id, "deal_badge": badge, "deal_end": deal_end, "ean": eans[0] if eans else None,
             "sold_by_amazon": seller_id in AMAZON_SELLER_IDS or fold(seller) == "amazon",
             "official_store": bool(brand) and fold(brand) in fold(seller)}
     if not asin or price is None:
@@ -101,11 +102,19 @@ def search(api, cfg: dict, state: dict, now: datetime, log=print) -> list[tuple[
                                             "minSavingPercent": min_saving, "itemCount": 10, "resources": RESOURCES})
         except ApiError as exc:
             log(f"Aviso: búsqueda «{keyword}» en Amazon sin respuesta ({str(exc)[:160]})")
-            if "429" in str(exc) or "TooManyRequests" in str(exc):
+            text = str(exc)
+            if any(w in text for w in ("429", "TooManyRequests", "AssociateNotEligible", "HTTP 401", "HTTP 403")):
+                state["api_error"] = text[:300]
+            if "429" in text or "TooManyRequests" in text:
                 break  # límite de la API: se sigue en la próxima pasada
             continue
         finally:
             time.sleep(float(conf.get("pause_seconds") or 1.1))
+        calls = state.setdefault("api_calls", {})
+        today = now.strftime("%Y-%m-%d")
+        calls[today] = int(calls.get(today) or 0) + 1
+        for day in [d for d in calls if d != today]:
+            calls.pop(day, None)
         items = _get(data, "searchResult", "items", default=[]) or []
         for item in items:
             out.append(to_candidate(item, keyword, cfg, now, tag))
@@ -129,4 +138,38 @@ def is_trusted(brand: str, cfg: dict) -> bool:
     """Solo marcas conocidas: los vendedores sin marca inflan el precio anterior (recomendado o «mediano»)."""
     b = fold(brand)
     return bool(b) and any(b == t or b.startswith(t + " ") for t in trusted_brands(cfg))
+
+
+def deal_line(badge: str, end: str, now: datetime) -> str:
+    """«⚡ Oferta flash · acaba hoy a las 23:59»: la oferta oficial de Amazon y cuándo termina (hora de Madrid).
+
+    Solo si Amazon la marca. «Finaliza en» (sin nombre) sale como «Oferta por tiempo limitado»."""
+    from zoneinfo import ZoneInfo
+    badge = (badge or "").strip().rstrip(":").strip()
+    if not badge:
+        return ""
+    if badge.lower().startswith("finaliza"):
+        badge = "Oferta por tiempo limitado"
+    text = f"⚡ {badge}"
+    try:
+        ends = datetime.fromisoformat(end.replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Madrid"))
+    except (ValueError, AttributeError):
+        return text
+    local = now.astimezone(ZoneInfo("Europe/Madrid"))
+    days = (ends.date() - local.date()).days
+    if ends <= local or days > 14:
+        return text
+    when = "hoy" if days == 0 else "mañana" if days == 1 else f"el {ends:%d/%m}"
+    return f"{text} · acaba {when} a las {ends:%H:%M}"
+
+
+def problem_text(error: str) -> str:
+    """Aviso claro para tu privado cuando la API de Amazon falla por algo que hay que saber."""
+    if "AssociateNotEligible" in error:
+        return ("Amazon no deja usar la API de afiliados (AssociateNotEligible): suele ser por no tener ventas "
+                "en los últimos 30 días. Mientras tanto no busco en Amazon.")
+    if "429" in error or "TooManyRequests" in error:
+        return ("la API de Amazon ha llegado a su límite de consultas (unas 8.640 al día). Sigo en cuanto "
+                "se libere; si pasa a menudo, bajo las búsquedas por pasada.")
+    return f"la API de Amazon rechaza las consultas ({error[:160]}). Revisa las credenciales en el .env y en GitHub."
 

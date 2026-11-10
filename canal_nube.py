@@ -1214,6 +1214,10 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
                           relaxed=relaxed, cascade=cascade)
     if args.test_private:
         approved.sort(key=lambda pair: not pair[0].get("cascada"))  # en la prueba, primero los del premium
+    last_label = next((p.get("label") for p in reversed(state.get("posts") or []) if p.get("label")), None)
+    if last_label and not args.test_private:
+        # Variedad: si hay algo de otra categoría, sale antes que repetir la del último post (3 robots seguidos no).
+        approved.sort(key=lambda pair: pair[1].get("interest_label") == last_label)
     limit = int(rules["test_private_posts"] if args.test_private else rules["max_per_run"])
     sent = 0
     for item, deal in approved:
@@ -1262,6 +1266,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
                 "asin": deal["asin"], "jl_id": deal["jl_id"], "price": deal["price"],
                 "reference": deal["reference"], "t": int(now.timestamp()), "url": url, "chat": target,
                 "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140], "photo_message_id": message.get("photo_message_id"),
+                "label": deal.get("interest_label") or "",
             }
             if item.get("cascada"):
                 record["origen"] = "premium"  # para medir cuánto aporta la cascada
@@ -1385,6 +1390,7 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
                       "brand": brand, "brand_ok": known,
                       "image": cand.get("image") or "", "basis_type": cand.get("basis_type") or "",
                       "seller": cand.get("seller") or "", "deal_badge": cand.get("deal_badge") or "",
+                      "deal_end": cand.get("deal_end") or "",
                       "sold_by_amazon": bool(cand.get("sold_by_amazon"))})
     log(f"  Amazon (API): {len(results)} con descuento grande, {len(items)} con precio anterior y stock")
     return items
@@ -1488,6 +1494,11 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                 continue
         if item.get("amazon"):
             why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
+            if not why:
+                import buscador_amazon
+                line = buscador_amazon.deal_line(item.get("deal_badge") or "", item.get("deal_end") or "", now)
+                if line:  # oferta oficial de Amazon: da urgencia y es un dato real
+                    deal["extra_lines"] = [line] + list(deal.get("extra_lines") or [])
             if not why and not item.get("brand_ok"):
                 # Vendedores sin marca conocida inflan tanto el precio recomendado como el «mediano» (10/11/2026).
                 why, deal = f"marca poco conocida ({item.get('brand') or 'sin marca'}): su precio anterior no es fiable", {}

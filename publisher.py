@@ -270,7 +270,8 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
                   sold_out: bool = False, sizes: list | None = None, note: str = "",
                   hold: bool = False, demand: str = "", profit: float | None = None,
                   source_label: str = "", store: str = "", coupons: list | None = None,
-                  coupon_text: str = "", paypal: bool = False, from_spain: bool = False) -> str:
+                  coupon_text: str = "", paypal: bool = False, from_spain: bool = False,
+                  deal_line: str = "") -> str:
     """Copy del canal: categoría, marca en negrita, precio, beneficio y enlace de la tienda."""
     e = html.escape
     brand = nice_brand(brand)
@@ -290,6 +291,8 @@ def build_caption(*, url: str, category: str, title: str, current: float, refere
         lines.append(f"🏷️ <b>-{pct}%</b> {e(ref_text)}")
     else:
         lines.append(f"💰 <b>{e(euro(current))}</b> en {e(shop)}")
+    if deal_line:
+        lines.append(f"<b>{e(deal_line)}</b>")  # oferta oficial de Amazon (Oferta flash, Black Friday…)
     if historical_low:
         lines.append("🏆 <b>Precio más bajo de su historia</b>")
     if hold:

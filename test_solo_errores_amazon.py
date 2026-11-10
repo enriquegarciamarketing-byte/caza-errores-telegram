@@ -425,3 +425,26 @@ class HistoryTest(unittest.TestCase):
         buttons = sent[0]["reply_markup"]["inline_keyboard"][0]
         self.assertIn("https://keepa.com/#!product/9-B0AAAAAAA1", [b["url"] for b in buttons])
         self.assertIn("Keepa", sent[1]["text"])
+
+
+class ExtrasTest(unittest.TestCase):
+    def test_linea_de_oferta_oficial(self):
+        import buscador_amazon as ba
+        from datetime import datetime, timezone
+        now = datetime(2026, 11, 10, 20, 0, tzinfo=timezone.utc)
+        self.assertEqual(ba.deal_line("Oferta flash", "2026-11-10T22:59:59Z", now), "⚡ Oferta flash · acaba hoy a las 23:59")
+        self.assertEqual(ba.deal_line("Black Friday anticipado", "2026-11-11T22:45:00Z", now),
+                         "⚡ Black Friday anticipado · acaba mañana a las 23:45")
+        self.assertEqual(ba.deal_line("Finaliza en ", "2026-11-30T22:00:00Z", now), "⚡ Oferta por tiempo limitado")
+        self.assertEqual(ba.deal_line("", "", now), "")
+
+    def test_el_post_del_premium_la_muestra(self):
+        cand = {"category": "ERROR DE PRECIO", "title": "Roborock Qrevo", "price": 99.0, "avg90": 499.0,
+                "deal_line": "⚡ Oferta flash · acaba hoy a las 23:59"}
+        text = scanner.caption_for("https://www.amazon.es/dp/B0X?tag=t", scanner.caption_data(cand))
+        self.assertIn("⚡ Oferta flash · acaba hoy a las 23:59", text)
+
+    def test_aviso_si_amazon_quita_la_api(self):
+        import buscador_amazon as ba
+        self.assertIn("30 días", ba.problem_text("HTTP 403 AssociateNotEligible"))
+        self.assertIn("límite", ba.problem_text("HTTP 429 TooManyRequests"))
