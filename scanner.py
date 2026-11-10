@@ -127,7 +127,7 @@ def parse_listing(page: str) -> list[dict]:
         ts = re.search(r'data-timestamp="(\d+)"', block)
         items.append({
             "id": m.group(1),
-            "title": grab(r'<h2 class="tk-title">(.*?)</h2>') or "",
+            "title": grab(r'<h[23] class="tk-title">(.*?)</h[23]>') or "",
             "brand": grab(r'class="tk-brand"[^>]*>(.*?)</a>') or "",
             "rating": parse_eur(grab(r'class="tk-rating".*?<span>(.*?)</span>')),
             "reviews": reviews,
@@ -136,6 +136,7 @@ def parse_listing(page: str) -> list[dict]:
             "was": parse_eur(grab(r'<span class="was">(.*?)</span>')),
             "verdict": grab(r'<span class="verdict[^"]*">(.*?)</span>') or "",
             "ts": int(ts.group(1)) if ts else 0,
+            "image": (re.search(r'class="tk-photo".*?<img[^>]*\ssrc="([^"]+)"', block, re.S) or [None, None])[1],
         })
     return items
 
@@ -165,6 +166,9 @@ def parse_detail(page: str) -> dict:
             series = json.loads(raw_series.group(1))
         except json.JSONDecodeError:
             series = []
+    # Desde el 9/11/2026 jimmyleaks ya no pone en la ficha los datos de producto (JSON-LD), el historial ni el
+    # stock: solo el precio grande. Va aparte ("page_price") para no hacer creer al premium que hay ficha completa.
+    big = re.search(r'class="bigprice[^"]*"[^>]*>(.*?)</', page, re.S)
     rating = re.search(r"</h1>\s*<p[^>]*>(.*?)</p>", page, re.S)
     rating_m = re.search(r"([\d.]+)\s*\(([\d.,]+)\+?\)", strip_tags(rating.group(1))) if rating else None
     return {
@@ -180,6 +184,8 @@ def parse_detail(page: str) -> dict:
         "series": series,
         "rating": float(rating_m.group(1)) if rating_m else None,
         "reviews": int(re.sub(r"\D", "", rating_m.group(2))) if rating_m else None,
+        "page_price": parse_eur(strip_tags(big.group(1))) if big else None,
+        "full": bool(product.get("offers")),
     }
 
 

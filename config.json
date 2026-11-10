@@ -243,6 +243,12 @@
     ]
   },
   "amazon_channel": {
+    "modo_listado": {
+      "_nota": "Temporal desde el 10/11/2026: jimmyleaks quitó historial, stock y valoraciones de sus fichas. Solo categorías top, -50 % o más frente al PVP tachado y como mucho -85 %. La API de Amazon confirma precio y stock antes de publicar cuando responde. Se usa solo si la ficha no trae los datos completos.",
+      "enabled": true,
+      "min_discount": 50,
+      "max_discount": 85
+    },
     "_nota": "Canal @cazachollos_com. Solo Amazon.es. Lo ejecuta canal_nube.py en GitHub Actions (scan-generic.yml).",
     "chat_id": "@cazachollos_com",
     "affiliate_tag": "cazachollos0c-21",

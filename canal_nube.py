@@ -514,6 +514,51 @@ def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool
     }
 
 
+def evaluate_listing(item: dict, detail: dict, rules: dict, now: datetime) -> tuple[str, dict]:
+    """Modo temporal (10/11/2026): jimmyleaks quitó de la ficha el historial, el stock y las valoraciones.
+
+    Sin historial no se puede comprobar la bajada real, así que se va a lo seguro: solo categorías top,
+    descuento grande frente al PVP tachado del listado y tope para PVP inflados. La API de Amazon (si
+    responde) confirma precio y stock justo antes de publicar."""
+    conf = rules.get("modo_listado") or {}
+    title = item.get("title") or detail.get("name") or ""
+    price, was = item.get("price"), float(item.get("was") or 0)
+    if not title:
+        return "sin título", {}
+    if price is None:
+        return "sin precio en el listado", {}
+    page = detail.get("page_price")
+    if page is not None and abs(float(page) - float(price)) > 0.009:
+        return f"el listado ({price}) y la ficha ({page}) no coinciden", {}
+    age = (now.timestamp() - int(item.get("ts") or 0)) / 60
+    if not item.get("ts") or age > float(rules["max_price_age_minutes"]):
+        return f"precio visto hace {age:.0f} min (máximo {rules['max_price_age_minutes']})", {}
+    if price < float(rules["min_price_eur"]) or price > float(rules["max_price_eur"]):
+        return f"precio fuera de rango ({price} €)", {}
+    taste = interest(title, rules, now)
+    if taste["blocked"]:
+        return f"poco interés («{taste['blocked']}»)", {}
+    if not (taste["score"] > 0 and taste.get("min_discount")):
+        return "modo listado: solo categorías top", {}
+    if was <= float(price) + 0.009:
+        return "sin PVP tachado", {}
+    pct = discount_pct(float(price), was)
+    if pct + 1e-9 < float(conf.get("min_discount", 50)):
+        return f"modo listado: solo -{pct:.0f}% frente a su PVP ({euro(was)})", {}
+    if pct > float(conf.get("max_discount", 85)) + 1e-9:
+        return f"modo listado: -{pct:.0f}% parece un PVP inflado", {}
+    image = item.get("image") or detail.get("image")
+    if not image:
+        return "sin foto", {}
+    return "", {
+        "jl_id": item["id"], "title": title, "price": float(price), "reference": was, "median_90": None,
+        "discount": pct, "ref_kind": "pvp", "drop_30": None, "min_30": None, "historical_low": False,
+        "rating": None, "reviews": None, "image": full_size(image), "seen_ts": int(item["ts"]),
+        "brand": item.get("brand") or "", "interest": taste["score"], "interest_label": taste["label"],
+        "modo_listado": True,
+    }
+
+
 # ------------------------------------------------------------------ cupos
 
 def in_quiet_hours(now: datetime, rules: dict) -> bool:
@@ -979,6 +1024,15 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
             continue
         post["checked"] = int(now.timestamp())
         price = detail.get("price")
+        if not detail.get("full", True):
+            # La ficha nueva de jimmyleaks no dice si hay stock: nunca se marca AGOTADO con ella.
+            # Solo "ya no está a este precio" si su precio grande ha subido.
+            page = detail.get("page_price")
+            if page is None or page <= float(post["price"]) + 0.009:
+                log(f"  Seguimiento {post['asin']}: sin datos de stock, lo dejo como está")
+                continue
+            detail = {"price": page, "in_stock": True}
+            price = page
         if detail.get("in_stock") and price is not None and price <= float(post["price"]) + 0.009:
             log(f"  Seguimiento {post['asin']}: sigue a {euro(float(post['price']))}")
             continue
@@ -1102,6 +1156,10 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         except Exception as exc:
             log(f"  ✗ {deal['asin']} sin segunda lectura: {exc}")
             continue
+        if deal.get("modo_listado") and not again.get("full", True):
+            # Ficha nueva sin stock ni datos: solo se compara el precio grande (si lo hay). El stock lo mira la API.
+            again = {"price": again.get("page_price") if again.get("page_price") is not None else deal["price"],
+                     "in_stock": True}
         if again.get("price") is None or abs(float(again["price"]) - deal["price"]) > 0.009 or not again.get("in_stock"):
             log(f"  ✗ {deal['asin']} el precio ha cambiado ({deal['price']} → {again.get('price')})")
             continue
@@ -1264,7 +1322,10 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         except Exception as exc:
             log(f"  Ficha {item['id']}: {exc}")
             continue
-        why, deal = evaluate(item, detail, rules, now, relaxed=relaxed)
+        if not detail.get("full", True) and (rules.get("modo_listado") or {}).get("enabled"):
+            why, deal = evaluate_listing(item, detail, rules, now)
+        else:
+            why, deal = evaluate(item, detail, rules, now, relaxed=relaxed)
         if not why and item.get("cascada") and (scanner.has_size_variant(detail.get("name") or "")
                                                  or scanner.has_size_variant(item.get("title") or "")):
             why = "tiene tallas y no se puede comprobar el precio de cada una"
