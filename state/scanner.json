@@ -2024,11 +2024,69 @@
    "needs_ok": true,
    "ask_until": 1794246072,
    "expired": true
+  },
+  {
+   "id": "cm-2061653",
+   "gtin": null,
+   "price": 38.53,
+   "category": "OPORTUNIDAD DE REVENTA",
+   "t": 1794299646,
+   "title": "Astrobot (Edición Estándar) PS5 - PAL España - Formato físico - Nuevo precintado",
+   "cap": {
+    "category": "OPORTUNIDAD DE REVENTA",
+    "title": "Astrobot (Edición Estándar) PS5 - PAL España - Formato físico - Nuevo precintado",
+    "brand": "",
+    "current": 38.53,
+    "reference": 49.99,
+    "historical_low": false,
+    "rating": null,
+    "reviews": null,
+    "sizes": null,
+    "hold": false,
+    "store": "AliExpress",
+    "note": "",
+    "coupons": [
+     "ESD1108",
+     "AEES08",
+     "CHOLLOES08"
+    ],
+    "ref_text": "frente al precio anterior en la tienda",
+    "resale_price": 150.0,
+    "resale_count": 11,
+    "profit": 101.97,
+    "demand": "Muchos anuncios",
+    "source_label": "WALLAPOP"
+   },
+   "url": "https://es.aliexpress.com/item/1005010084895696.html",
+   "alert_id": 551,
+   "alert_text_id": 552,
+   "pending": true,
+   "needs_ok": true,
+   "ask_until": 1794310446,
+   "card_data": {
+    "title": "Astrobot (Edición Estándar) PS5 - PAL España - Formato físico - Nuevo precintado",
+    "category": "OPORTUNIDAD DE REVENTA",
+    "current": 38.53,
+    "reference": 49.99,
+    "image": "https://static.chollometro.com/threads/raw/Ulicv/2061653_1/re/150x150/qt/55/2061653_1.jpg",
+    "store_label": "AliExpress",
+    "conditions": "Con cupón",
+    "resale": {
+     "price": 150.0,
+     "count": 11,
+     "roi": 264.6509213599792,
+     "profit": 101.97,
+     "source_label": "WALLAPOP",
+     "note": "11 anuncios de referencia · Wallapop · Muchos anuncios",
+     "sample": false,
+     "demand": "Muchos anuncios"
+    }
+   }
   }
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 70,
+ "last_listing_count": 77,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3476,44 +3534,6 @@
    "http_status": 200,
    "bytes": 75492,
    "raw_count": 26
-  },
-  "|zapatillas converse run star trainer animals (tallas 35, 44, 44.5, 45, 46, 46.5 y 47.5)|zapatillas 35 converse": {
-   "t": 1793903198.5801184,
-   "query": "zapatillas 35 converse",
-   "prices": [
-    27.0,
-    37.0,
-    9.0,
-    10.0,
-    15.0,
-    20.0,
-    11.0,
-    28.0,
-    10.0,
-    10.0,
-    30.0,
-    15.0,
-    19.0,
-    15.0,
-    5.0,
-    3.0,
-    25.0,
-    15.0,
-    20.0,
-    26.0,
-    15.0,
-    35.0,
-    30.0,
-    15.0,
-    33.0,
-    13.0,
-    15.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 120743,
-   "raw_count": 40
   },
   "|new balance fuelcell supercomp trainer v3 - zapatillas de running neutras con placa de carbono|new v3 balance": {
    "t": 1793903684.658276,
@@ -9415,6 +9435,29 @@
    "http_status": 200,
    "bytes": 23688,
    "raw_count": 7
+  },
+  "|astrobot (edicion estandar) ps5 - pal espana - formato fisico - nuevo precintado|astrobot ps5 edicion": {
+   "t": 1794299642.570694,
+   "query": "astrobot ps5 edicion",
+   "prices": [
+    20.0,
+    100.0,
+    175.0,
+    150.0,
+    130.0,
+    300.0,
+    169.0,
+    139.0,
+    150.0,
+    150.0,
+    150.0,
+    79.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 46111,
+   "raw_count": 16
   }
  },
  "milanuncios_cache": {
@@ -16247,7 +16290,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 11,
+ "rotation_index": 16,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/aspiradora-fregona-en-seco-y-humedo-roborock-f25-lt-20000-pa-diseno-plano-180-autolimpieza-90c-2061604": 1794285778.7133534,
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
@@ -16257,14 +16300,16 @@
   "https://www.chollometro.com/ofertas/hoka-zapatillas-de-running-mach-6-hombre-azul-2060300": 1794296603.751416,
   "https://www.chollometro.com/ofertas/robot-aspirador-roborock-qrevo-2-pro-set-prox-25000-pa-doble-sistema-antienredos-y-base-multifuncion-leer-descripcion-para-el-precio-2061689": 1794297930.4837275,
   "https://www.chollometro.com/ofertas/nintendo-switch-2-zelda-ocarina-of-time-2061892": 1794298530.0719144,
-  "https://www.chollometro.com/ofertas/dreame-u20-aspiradora-escobamano-sin-cable-370w-blanca-2043817": 1794298530.0719144
+  "https://www.chollometro.com/ofertas/dreame-u20-aspiradora-escobamano-sin-cable-370w-blanca-2043817": 1794298530.0719144,
+  "https://www.chollometro.com/ofertas/astrobot-edicion-estandar-ps5-pal-espana-formato-fisico-nuevo-precintado-2061653": 1794299636.821295
  },
  "asked": {
-  "cm-2060782": 1794235272
+  "cm-2060782": 1794235272,
+  "cm-2061653": 1794299646
  },
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 639
+  "passes": 640
  }
 }
