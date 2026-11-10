@@ -2108,7 +2108,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 71,
+ "last_listing_count": 73,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -3523,24 +3523,6 @@
    "http_status": 200,
    "bytes": 75492,
    "raw_count": 26
-  },
-  "|skechers flex appeal 4.0 brilliant view zapatillas de gimnasio|skechers flex": {
-   "t": 1793966400.3505154,
-   "query": "skechers flex",
-   "prices": [
-    35.0,
-    25.0,
-    53.95,
-    45.0,
-    35.0,
-    36.98,
-    38.0
-   ],
-   "reserved": 0,
-   "demand_known": true,
-   "http_status": 200,
-   "bytes": 32869,
-   "raw_count": 9
   },
   "|dji osmo action 4 pack estandar|dji osmo": {
    "t": 1793966401.4177165,
@@ -9572,6 +9554,35 @@
    "http_status": 200,
    "bytes": 33660,
    "raw_count": 11
+  },
+  "|casio g-shock montre classique pour homme ga-010-2aer|casio 2aer shock": {
+   "t": 1794316313.1985736,
+   "query": "casio 2aer shock",
+   "prices": [
+    40.0,
+    300.0,
+    160.0,
+    58.5,
+    47.0,
+    80.0,
+    475.0,
+    84.9,
+    210.0,
+    50.0,
+    95.0,
+    65.0,
+    111.0,
+    95.0,
+    100.0,
+    110.0,
+    70.0,
+    150.0
+   ],
+   "reserved": 0,
+   "demand_known": true,
+   "http_status": 200,
+   "bytes": 144904,
+   "raw_count": 35
   }
  },
  "milanuncios_cache": {
@@ -16917,7 +16928,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 11,
+ "rotation_index": 16,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/ordenador-all-in-one-hp-omnistudio-24-cv0006ns-238-ryzen-5-16gb-512gb-ssd-radeon-610m-freedos-teclado-y-raton-2060588": 1794295113.161014,
   "https://www.chollometro.com/ofertas/on-running-zapatillas-de-running-cloudpulse-1-tallas-37-42-425-2060937": 1794296298.487146,
@@ -16946,7 +16957,8 @@
   "https://www.chollometro.com/ofertas/nike-performance-racing-streakfly-zapatillas-running-asfalto-2062415": 1794314139.4332032,
   "https://www.chollometro.com/ofertas/zalando-prive-new-balance-hasta-72-zapatillas-2062383": 1794314139.4332032,
   "https://www.chollometro.com/ofertas/roborock-q7l5-robot-aspirador-y-fregador-succion-extrema-de-8000-pa-negro-2062013": 1794315599.7168698,
-  "https://www.chollometro.com/ofertas/new-balance-rebel-zapatillas-de-trail-running-suela-vibram-2062421": 1794315599.7168698
+  "https://www.chollometro.com/ofertas/new-balance-rebel-zapatillas-de-trail-running-suela-vibram-2062421": 1794315599.7168698,
+  "https://www.chollometro.com/ofertas/casio-g-shock-montre-classique-pour-homme-ga-010-2aer-2061938": 1794316309.471012
  },
  "asked": {
   "cm-2060782": 1794235272,
@@ -16955,6 +16967,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 681
+  "passes": 682
  }
 }
