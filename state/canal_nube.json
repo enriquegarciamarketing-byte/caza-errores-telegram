@@ -4672,6 +4672,20 @@
    "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Cellucor C4 Ultimate Pre-Entreno Tutti Frutti 40/20 Porciones</b>\n\n💶 PRECIO: <b>23,92€</b>\n❌ (Antes: <s>30,44€</s>)\n🔥 ¡Te ahorras <b>6,52€</b>! (21 % dto.)\n🎟️ Cupón del 30 % ya aplicado en la ficha (hasta el 30/11)\n\n🕒 Precio a las 10:03 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CG2FV3X9?tag=cazachollos0c-21\">amazon.es/dp/B0CG2FV3X9</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
    "title": "Cellucor C4 Ultimate Pre-Entreno Tutti Frutti 40/20 Porciones",
    "manual": true
+  },
+  {
+   "asin": "B0CTHLDWJQ",
+   "jl_id": "",
+   "price": 2.25,
+   "reference": 3.2,
+   "t": 1794304792,
+   "url": "https://www.amazon.es/dp/B0CTHLDWJQ?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 428,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>KH7 Quitagrasas Desengrasante Recambio de 715 ml</b>\n\n💶 PRECIO: <b>2,25€</b>\n❌ (Antes: <s>3,20€</s>)\n🔥 ¡Te ahorras <b>0,95€</b>! (30 % dto.)\nℹ️ Ahorra un 5 % extra si te llevas 4 o más\n\n🕒 Precio a las 10:59 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CTHLDWJQ?tag=cazachollos0c-21\">amazon.es/dp/B0CTHLDWJQ</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "KH7 Quitagrasas Desengrasante Recambio de 715 ml",
+   "manual": true
   }
  ],
  "seen": {
@@ -13064,16 +13078,17 @@
   1794256273,
   1794258723,
   1794300579,
-  1794301469
+  1794301469,
+  1794304796
  ],
  "x_recent": [
-  "pregunta",
   "guarda",
   "alguien",
   "bot-aviso",
   "comprado",
   "no-dura",
   "filtro",
-  "regla"
+  "regla",
+  "cabeza"
  ]
 }
