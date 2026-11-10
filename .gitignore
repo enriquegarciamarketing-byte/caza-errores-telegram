@@ -6,3 +6,7 @@ output/
 state/canal_amazon.json
 state/canal_amazon.log
 state/launchd.log
+
+# Logs de cada pasada: se ven en la pestaña Actions, no se suben al repo (es público)
+state/*.log
+*_last_run.log

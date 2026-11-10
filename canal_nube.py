@@ -20,6 +20,7 @@ import argparse
 import difflib
 import html
 import json
+import privado
 import os
 import re
 import statistics
@@ -104,7 +105,7 @@ def save_state(state: dict) -> None:
     cutoff = time.time() - 30 * 86400
     state["seen"] = {k: v for k, v in (state.get("seen") or {}).items() if (v.get("t") or 0) >= cutoff}
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    STATE_PATH.write_text(json.dumps(privado.strip(state), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 def merge_states(local: dict, remote: dict) -> dict:
@@ -148,7 +149,10 @@ def merge_states(local: dict, remote: dict) -> dict:
 def admin_chat_id(state: dict, rules: dict | None = None, tg=None, log=print) -> int | None:
     """Tu chat privado con el bot. Con admin_username en config.json se busca por tu @usuario:
     en la memoria de esta pasada, en la del escáner premium o en los mensajes pendientes del bot.
-    Leer los mensajes pendientes sin offset no los marca como leídos, así que no molesta al escáner."""
+    Leer los mensajes pendientes sin offset no los marca como leídos, así que no molesta al escáner.
+    Con el secreto ADMIN_CHAT_ID en GitHub se usa ese y no se guarda en la memoria (repo público)."""
+    if privado.admin_id():
+        return privado.admin_id()
     username = str((rules or {}).get("admin_username") or "").lstrip("@").lower()
     if not username:
         admin = state.get("admin_chat_id") or load_json(PREMIUM_STATE, {}).get("admin_chat_id")

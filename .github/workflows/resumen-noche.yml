@@ -23,6 +23,10 @@ concurrency:
   group: telegram-resumen-noche
   cancel-in-progress: false
 
+# Tu chat privado con el bot sale de este secreto y no se guarda en el repo (es público).
+env:
+  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+
 jobs:
   resumen:
     runs-on: ubuntu-latest
@@ -46,4 +50,4 @@ jobs:
           python -u canal_nube.py "${ARGS[@]}" 2>&1 | tee state/resumen_last_run.log
       - name: Guardar memoria
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
-        run: tools/guardar_memoria.sh "Resumen de la noche" state/canal_nube.json state/resumen_last_run.log
+        run: tools/guardar_memoria.sh "Resumen de la noche" state/canal_nube.json

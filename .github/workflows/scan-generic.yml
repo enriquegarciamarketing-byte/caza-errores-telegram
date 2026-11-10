@@ -26,6 +26,10 @@ concurrency:
   group: telegram-canal-normal
   cancel-in-progress: false
 
+# Tu chat privado con el bot sale de este secreto y no se guarda en el repo (es público).
+env:
+  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -67,4 +71,4 @@ jobs:
 
       - name: Guardar memoria del canal normal
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
-        run: tools/guardar_memoria.sh "Actualizar memoria del canal normal" state/canal_nube.json state/canal_nube_last_run.log
+        run: tools/guardar_memoria.sh "Actualizar memoria del canal normal" state/canal_nube.json

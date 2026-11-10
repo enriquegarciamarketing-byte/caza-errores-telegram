@@ -7,6 +7,7 @@ import html
 
 import affiliate
 import json
+import privado
 import os
 import re
 import sys
@@ -915,7 +916,7 @@ def _alert_admin(token: str, text: str) -> None:
     except (OSError, json.JSONDecodeError):
         print(text)
         return
-    admin = state.get("admin_chat_id") if isinstance(state, dict) else None
+    admin = privado.admin_id() or (state.get("admin_chat_id") if isinstance(state, dict) else None)
     if not token or not admin:
         print(text)
         return

@@ -83,7 +83,7 @@ Controles antes de publicar sin revisión: precio del listado igual al de la fic
 
 Productos con tallas (ropa, calzado, bolsas por tamaños): Jimmyleaks a veces mezcla la media de una talla con el precio de otra. Sin Creators API se descartan. Con ella (`amazon_api.py`), el bot comprueba en vivo que la talla con historial está a ese precio, lista todas las tallas del mismo color que también lo están y enlaza al producto exacto. Para activarla, añade en GitHub Secrets `AMAZON_CREATORS_CLIENT_ID` y `AMAZON_CREATORS_CLIENT_SECRET` (Amazon exige 10 ventas válidas en 30 días). Con la API activa, también se verifica en vivo el precio de los productos sin tallas.
 
-Ajustes en `config.json`. Memoria en `state/scanner.json` e informe de la última pasada en `state/last_run.log`.
+Ajustes en `config.json`. Memoria en `state/scanner.json`; el informe de cada pasada se ve en la pestaña Actions (los logs ya no se suben al repo).
 
 ## Publicación manual (offers.json)
 
@@ -146,3 +146,9 @@ El bot necesita permiso para publicar en el canal. GitHub Actions registra los I
 Telegram Bot API y GitHub Actions pueden funcionar dentro de las cuotas gratuitas. El flujo actual publica ofertas aprobadas; la búsqueda y verificación de precios son manuales. No automatiza la extracción de Amazon ni de Wallapop. Cumple las condiciones de tu cuenta de Afiliados de Amazon y usa imágenes con permiso.
 
 Referencias: [políticas de Amazon Afiliados España](https://afiliados.amazon.es/help/operating/policies), [términos de Wallapop](https://about.wallapop.com/condiciones-de-uso/), [Telegram Bot API](https://core.telegram.org/bots/api).
+
+## Seguridad (repo público)
+
+- Las claves (Telegram, Amazon, AliExpress) van en *Settings → Secrets and variables → Actions*, nunca en el código.
+- Tu chat privado con el bot va en el secreto `ADMIN_CHAT_ID`. Con él puesto, el bot no lo guarda en `state/` (ver `privado.py`).
+- Los logs de cada pasada no se suben al repo; se consultan en la pestaña Actions.

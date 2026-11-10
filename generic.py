@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import privado
 import re
 import sys
 import time
@@ -50,10 +51,12 @@ def save_state(state: dict) -> None:
         posts = sorted(posts, key=lambda item: item.get("t") or 0)[-4000:]
         state["posts"] = posts
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    STATE_PATH.write_text(json.dumps(privado.strip(state), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def admin_chat_id(state: dict) -> int | None:
+    if privado.admin_id():
+        return privado.admin_id()
     if state.get("admin_chat_id"):
         return state["admin_chat_id"]
     premium_state = load_json(PREMIUM_STATE, {})

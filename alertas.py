@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import privado
 import os
 import re
 import sys
@@ -215,7 +216,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     cfg = json.loads(CONFIG_PATH.read_text("utf-8"))
-    state = json.loads(STATE_PATH.read_text("utf-8")) if STATE_PATH.exists() else {}
+    state = privado.fill(json.loads(STATE_PATH.read_text("utf-8")) if STATE_PATH.exists() else {})
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     tg = scanner.Telegram(token) if token else None
     listings: dict[str, dict] = {}

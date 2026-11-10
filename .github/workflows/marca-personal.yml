@@ -25,6 +25,10 @@ concurrency:
   group: marca-personal
   cancel-in-progress: false
 
+# Tu chat privado con el bot sale de este secreto y no se guarda en el repo (es público).
+env:
+  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+
 jobs:
   post:
     runs-on: ubuntu-latest

@@ -257,7 +257,6 @@
     "amazon_photo": true,
     "_nota_fondo_blanco": "Desde el 10/11/2026 todas las fotos de producto del canal salen centradas en un lienzo blanco de 1600x1600 (como /chollo-free) para que todas midan lo mismo. false = foto tal cual.",
     "fondo_blanco": true,
-    "admin_username": "Darkness_gg",
     "sources": [
       "https://jimmyleaks.com/es/?order=-modified",
       "https://jimmyleaks.com/es/?order=-modified&page=2",
@@ -333,7 +332,7 @@
       "tarjeta regalo"
     ],
     "foco": {
-      "_nota": "Foco del día pedido por Enrique el 9/11/2026: demasiada ropa, hoy solo tech y hogar (robots aspiradores, freidoras de aire, cafeteras, móviles, TV…). Mientras no pase 'hasta', solo salen estas categorías y nada de moda, complementos ni 'cualquier categoría'; los listados rotativos pasan a ser solo los de 'fuentes'. Para alargarlo, cambia la fecha de 'hasta'; para quitarlo, borra este bloque.",
+      "_nota": "Foco del día pedido el 9/11/2026: demasiada ropa, hoy solo tech y hogar (robots aspiradores, freidoras de aire, cafeteras, móviles, TV…). Mientras no pase 'hasta', solo salen estas categorías y nada de moda, complementos ni 'cualquier categoría'; los listados rotativos pasan a ser solo los de 'fuentes'. Para alargarlo, cambia la fecha de 'hasta'; para quitarlo, borra este bloque.",
       "hasta": "2026-11-09T23:59",
       "solo_categorias": [
         "Móviles y tablets",
@@ -1044,7 +1043,6 @@
     "_nota": "Canal @cazachollos_com con AliExpress (canal_aliexpress.py, workflow canal-aliexpress.yml). Con live false solo aprende precios y no publica en el canal. Las llaves van en GitHub Secrets: ALIEXPRESS_APP_KEY, ALIEXPRESS_APP_SECRET, ALIEXPRESS_TRACKING_ID (cazachollos_tg) y ALIEXPRESS_TRACKING_ID_X (cazachollos_x).",
     "live": false,
     "chat_id": "@cazachollos_com",
-    "admin_username": "Darkness_gg",
     "x_drafts": true,
     "queries": [
       {

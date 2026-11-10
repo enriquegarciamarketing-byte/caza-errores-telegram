@@ -21,6 +21,7 @@ import argparse
 import copy
 import html
 import json
+import privado
 import os
 import re
 import statistics
@@ -77,7 +78,7 @@ def load_json(path: Path, default):
 
 def save_state(state: dict) -> None:
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    STATE_PATH.write_text(json.dumps(privado.strip(state), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 def parse_eur(text: str | None) -> float | None:
@@ -1583,7 +1584,7 @@ def main() -> int:
         return 2
 
     cfg = load_json(CONFIG_PATH, {})
-    state = load_json(STATE_PATH, {"seen": {}, "posts": [], "tg_offset": 0})
+    state = privado.fill(load_json(STATE_PATH, {"seen": {}, "posts": [], "tg_offset": 0}))
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     channel = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     tg = Telegram(token) if token else None

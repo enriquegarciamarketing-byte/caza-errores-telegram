@@ -19,6 +19,10 @@ concurrency:
   group: telegram-scanner
   cancel-in-progress: false
 
+# Tu chat privado con el bot sale de este secreto y no se guarda en el repo (es público).
+env:
+  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+
 jobs:
   publish:
     runs-on: ubuntu-latest

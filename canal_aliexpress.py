@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import privado
 import os
 import re
 import sys
@@ -437,6 +438,8 @@ def send_x_draft(tg: Telegram, admin: int, photo_url: str, text: str, test: bool
 
 
 def admin_chat_id(state: dict, rules: dict, tg: Telegram | None, log=print) -> int | None:
+    if privado.admin_id():
+        return privado.admin_id()
     username = str(rules.get("admin_username") or "").lstrip("@").lower()
     if not username:
         return None
@@ -688,7 +691,7 @@ def run_manual(spec, rules: dict, tg, args, now: datetime, log=print) -> int:
 def save_state(state: dict) -> None:
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     tmp = STATE_PATH.with_suffix(".tmp")
-    tmp.write_text(json.dumps(state, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    tmp.write_text(json.dumps(privado.strip(state), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     tmp.replace(STATE_PATH)
 
 

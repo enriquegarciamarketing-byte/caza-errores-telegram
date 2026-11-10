@@ -17,6 +17,10 @@ concurrency:
   group: telegram-post-manual
   cancel-in-progress: false
 
+# Tu chat privado con el bot sale de este secreto y no se guarda en el repo (es público).
+env:
+  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+
 jobs:
   limpiar:
     runs-on: ubuntu-latest
@@ -37,4 +41,4 @@ jobs:
           python -u tools/limpiar_posts.py "$MENSAJES" 2>&1 | tee state/limpiar_last_run.log
       - name: Guardar memoria
         if: always()
-        run: tools/guardar_memoria.sh "Limpiar posts" state/canal_nube.json state/limpiar_last_run.log
+        run: tools/guardar_memoria.sh "Limpiar posts" state/canal_nube.json
