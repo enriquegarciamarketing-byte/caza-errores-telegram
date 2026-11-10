@@ -307,3 +307,30 @@ class FreeAmazonTest(unittest.TestCase):
         self.assertNotIn("B0AAAAAAA2", asins)       # precio recomendado de un vendedor sin marca
         self.assertNotIn("B0AAAAAAA3", asins)       # solo -18 %
         self.assertEqual(fake.calls[0][1]["minSavingPercent"], 50)
+
+
+class AskAllTest(unittest.TestCase):
+    def test_todo_error_pide_ok_antes(self):
+        cfg = load_cfg(scope=True)
+        self.assertTrue(cfg["premium_ask_all"])
+        cand = {"id": "B0AAAAAAA1", "asin": "B0AAAAAAA1", "price": 99.0, "avg90": 499.0, "discount": 80.2,
+                "origin": "amazon_api", "ref_text": "frente a su precio mediano en Amazon",
+                "direct_url": "https://www.amazon.es/dp/B0AAAAAAA1?tag=cazachollos0c-21", "title": "Roborock S8"}
+        category, _ = scanner.quality_checks(cand, scanner.now_utc(), "ERROR DE PRECIO", "-80%")
+        self.assertEqual(category, "ERROR DE PRECIO")
+        self.assertTrue(cand["needs_ok"])
+        self.assertIn("-80 % frente a su precio mediano", cand["ask_reason"])
+
+    def test_la_prueba_nunca_publica_en_el_canal(self):
+        class API:
+            def get_item(self, asin):
+                return {"price": 50.0, "saving_basis": 100.0, "title": "Producto de prueba", "image": "u"}
+        sent = []
+        with mock.patch.object(scanner, "API", API()), \
+             mock.patch.object(scanner, "publish", side_effect=lambda tg, cfg, st, cand, ch, dry: sent.append(cand) or True), \
+             mock.patch.object(scanner, "save_state") as save, mock.patch("builtins.print"):
+            code = scanner.test_ask(object(), load_cfg(scope=True), {"admin_chat_id": 1}, "@caza_errores", "B0AAAAAAA1", False)
+        self.assertEqual(code, 0)
+        self.assertTrue(sent[0]["needs_ok"])          # va a ask_admin, nunca al canal
+        self.assertIn("PRUEBA", sent[0]["ask_reason"])
+        save.assert_not_called()                     # tu OK no encuentra nada que publicar

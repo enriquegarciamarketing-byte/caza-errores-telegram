@@ -1162,6 +1162,13 @@ def quality_checks(cand: dict, now: datetime, category: str, reason: str) -> tup
         cand["ask_hours"] = float(cfg.get("error_ask_hours") or 1)
         cand["ask_reason"] = (f"Es un -{cand['discount']:.0f} %, más de lo que publico solo (-{auto_max:g} %). "
                               "Mira que en Amazon esté a ese precio y lo vende Amazon o un vendedor fiable.")
+    elif cfg.get("premium_ask_all") and category == "ERROR DE PRECIO":
+        # Desde el 10/11/2026 todo error te llega antes por privado y solo sale con tu OK.
+        cand["needs_ok"] = True
+        cand["ask_hours"] = float(cfg.get("error_ask_hours") or 1)
+        ref = cand.get("ref_text") or "frente a su precio de referencia"
+        cand["ask_reason"] = (f"Error de precio de -{float(cand.get('discount') or 0):.0f} % {ref}. "
+                              "Ábrelo en Amazon y mira precio y vendedor.")
     modified = cand.get("modified")
     if modified:
         try:
@@ -1805,6 +1812,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--test-private", action="store_true",
                         help="Envía al chat del administrador lo que iría al canal, sin guardar memoria ni consumir mensajes")
     parser.add_argument("--manual-id", default="", help="ID de Jimmyleaks a publicar a mano")
+    parser.add_argument("--test-asin", default="", help="Prueba: te manda por privado la petición de OK de este "
+                                                        "ASIN como si fuera un error. Nunca se publica.")
     parser.add_argument("--manual-link", default="", help="Enlace corto de afiliado para --manual-id")
     parser.add_argument("--edit-message", type=int, default=0, help="Reescribe el texto de un post ya publicado")
     parser.add_argument("--custom", default="", help="JSON con un post hecho a mano (ver custom_post)")
@@ -1857,6 +1866,8 @@ def main() -> int:
                 publish_pending_from_reply(tg, state, channel)
 
     now = now_utc()
+    if args.test_asin:
+        return test_ask(tg, cfg, state, channel, args.test_asin.strip().upper(), args.dry_run)
     if not (args.custom or args.manual_id):
         return run_loop(tg, cfg, state, channel, args)
     if args.custom:
@@ -1867,6 +1878,39 @@ def main() -> int:
         return publish_manual(tg, cfg, state, channel, args.manual_id.strip(), args.manual_link.strip(),
                               args.dry_run, args.test_private)
     return run_scan(tg, cfg, state, channel, args, now)
+
+
+def test_ask(tg, cfg: dict, state: dict, channel: str, asin: str, dry: bool) -> int:
+    """Prueba del aviso previo: coge un producto real de Amazon (API) y te manda por privado la petición de OK
+    tal cual la verías con un error de verdad. No se guarda memoria, así que tu OK no publica nada."""
+    if not re.fullmatch(r"[A-Z0-9]{10}", asin):
+        print("ASIN no válido", file=sys.stderr)
+        return 2
+    if API is None:
+        print("Falta la API de Amazon (AMAZON_CREATORS_ID / SECRET)", file=sys.stderr)
+        return 2
+    if not state.get("admin_chat_id") and not dry:
+        print("Falta tu chat (ADMIN_CHAT_ID): no sé a quién mandar la prueba.", file=sys.stderr)
+        return 2
+    live = API.get_item(asin)
+    if not live or not live.get("price"):
+        print(f"Amazon no devuelve precio para {asin}", file=sys.stderr)
+        return 2
+    price = float(live["price"])
+    basis = float(live.get("saving_basis") or 0) or round(price / 0.25, 2)  # sin precio anterior: uno ficticio
+    tag = cfg.get("affiliate_tag", "")
+    cand = {"id": f"prueba-{asin}", "asin": asin, "title": live.get("title") or asin, "name": live.get("title") or asin,
+            "brand": "", "price": price, "avg90": basis, "reference_price": basis, "image": live.get("image"),
+            "discount": (basis - price) / basis * 100, "category": "ERROR DE PRECIO", "origin": "prueba",
+            "ref_text": "frente a su precio anterior en Amazon" if live.get("saving_basis") else "(referencia inventada para la prueba)",
+            "direct_url": f"https://www.amazon.es/dp/{asin}?tag={tag}" if tag else f"https://www.amazon.es/dp/{asin}",
+            "needs_ok": True, "ask_hours": 1,
+            "ask_reason": "🧪 PRUEBA: así te llegará cada error antes de publicarse. Esta no se publicará "
+                          "aunque respondas OK."}
+    print(f"Prueba de aviso: {asin} · {price} € (referencia {basis} €)")
+    ok = publish(tg, cfg, state, cand, channel, dry)
+    print("Prueba enviada a tu chat." if ok else "No se ha podido enviar la prueba.")
+    return 0 if ok else 1  # sin save_state: el OK de la prueba no encuentra nada que publicar
 
 
 def run_loop(tg, cfg: dict, state: dict, channel: str, args) -> int:

@@ -38,6 +38,8 @@
   "premium_scope": "amazon_errors",
   "_nota_premium_resale": "Desde el 10/11/2026 (17:41) el premium no mira la reventa: ni Wallapop, ni ROI, ni categorías de reventa, y los posts no llevan bloque de reventa. Solo errores de precio, con los filtros que evitan errores falsos (tallas, marca, opiniones, valor mínimo, historial y PVP inflado). true vuelve a la reventa.",
   "premium_resale": false,
+  "_nota_premium_ask_all": "Desde el 10/11/2026 todo error del premium te llega antes por privado (Darkness) y solo se publica si respondes OK a ese mensaje (caduca en error_ask_hours). false: de -70 % a error_auto_max_discount sale solo.",
+  "premium_ask_all": true,
   "amazon_search": {
     "_nota": "Desde el 10/11/2026 (Jimmyleaks bloquea al bot con HTTP 403) el premium busca los errores directamente en Amazon con la API de creadores. En cada pasada lanza per_pass búsquedas de esta lista, por turnos, pidiendo solo productos con al menos error_min_discount - slack_pct de ahorro. Solo vale el precio anterior honesto (precio mediano o más bajo de 30 días), nunca el «precio recomendado». La API da ~8.640 consultas al día: con 4 por pasada y una pasada por minuto son ~5.800, y el resto queda para el canal normal y las comprobaciones.",
     "enabled": true,

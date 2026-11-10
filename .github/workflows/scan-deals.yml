@@ -23,6 +23,10 @@ on:
         required: false
         type: boolean
         default: false
+      test_asin:
+        description: "Prueba del aviso previo: ASIN de Amazon que te llega por privado como si fuera un error (nunca se publica)"
+        required: false
+        type: string
       manual_id:
         description: "Publicar a mano: ID de Jimmyleaks"
         required: false
@@ -107,6 +111,7 @@ jobs:
           AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID || secrets.AMAZON_CREATORS_CLIENT_ID }}
           AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET || secrets.AMAZON_CREATORS_CLIENT_SECRET }}
           MANUAL_ID: ${{ inputs.manual_id }}
+          TEST_ASIN: ${{ inputs.test_asin }}
           MANUAL_LINK: ${{ inputs.manual_link }}
           EDIT_MESSAGE: ${{ inputs.edit_message }}
           CUSTOM: ${{ inputs.custom }}
@@ -115,6 +120,7 @@ jobs:
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
           if [ "${{ inputs.ignore_limits }}" = "true" ]; then ARGS+=(--ignore-limits); fi
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
+          if [ -n "$TEST_ASIN" ]; then ARGS+=(--test-asin "$TEST_ASIN"); fi
           if [ -n "$MANUAL_ID" ]; then ARGS+=(--manual-id "$MANUAL_ID"); fi
           if [ -n "$MANUAL_LINK" ]; then ARGS+=(--manual-link "$MANUAL_LINK"); fi
           if [ -n "$EDIT_MESSAGE" ]; then ARGS+=(--edit-message "$EDIT_MESSAGE"); fi
