@@ -2153,7 +2153,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794333905
+   "checked": 1794334747
   },
   {
    "id": "cm-2062698",
@@ -2186,28 +2186,10 @@
    "url": "https://www.mediamarkt.es/es/product/_nintendo-switch-switch-rhythm-paradise-groove-1627104.html",
    "alert_id": 563,
    "alert_text_id": 564,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1794334036,
-   "card_data": {
-    "title": "Nintendo Switch - Rhythm Paradise Groove",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 29.63,
-    "reference": 40.0,
-    "image": "https://static.chollometro.com/threads/raw/08ofU/2062698_1/re/150x150/qt/55/2062698_1.jpg",
-    "store_label": "MediaMarkt",
-    "conditions": "Con cupón",
-    "resale": {
-     "price": 127.92000000000002,
-     "count": 28,
-     "roi": 303.3884576442795,
-     "profit": 89.89400000000002,
-     "source_label": "WALLAPOP",
-     "note": "28 anuncios de referencia · Wallapop · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   },
   {
    "id": "cm-2062757",
@@ -2240,28 +2222,10 @@
    "url": "https://www.mediamarkt.es/es/product/_nintendo-switch-2-sports-resort-1668365.html",
    "alert_id": 565,
    "alert_text_id": 566,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1794334042,
-   "card_data": {
-    "title": "Nintendo Switch 2 Sports Resort",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 41.33,
-    "reference": 53.0,
-    "image": "https://static.chollometro.com/threads/raw/iTDE6/2062757_1/re/150x150/qt/55/2062757_1.jpg",
-    "store_label": "MediaMarkt",
-    "conditions": "Con cupón",
-    "resale": {
-     "price": 127.92000000000002,
-     "count": 28,
-     "roi": 189.1942898620857,
-     "profit": 78.19400000000002,
-     "source_label": "WALLAPOP",
-     "note": "28 anuncios de referencia · Wallapop · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   },
   {
    "id": "cm-2062635",
@@ -2294,28 +2258,10 @@
    "url": "https://www.mediamarkt.es/es/product/_nintendo-switch-tomodachi-life-una-vida-de-ensueno-1619783.html",
    "alert_id": 567,
    "alert_text_id": 568,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1794334046,
-   "card_data": {
-    "title": "Nintendo Switch Tomodachi Life: Una vida de ensueño",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 36.69,
-    "reference": 47.0,
-    "image": "https://static.chollometro.com/threads/raw/oXsnp/2062635_1/re/150x150/qt/55/2062635_1.jpg",
-    "store_label": "MediaMarkt",
-    "conditions": "Con cupón",
-    "resale": {
-     "price": 127.92000000000002,
-     "count": 28,
-     "roi": 225.76723902970843,
-     "profit": 82.83400000000002,
-     "source_label": "WALLAPOP",
-     "note": "28 anuncios de referencia · Wallapop · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   },
   {
    "id": "cm-2062732",
@@ -2348,28 +2294,10 @@
    "url": "https://www.mediamarkt.es/es/product/_nintendo-switch-2-mario-kart-world-1598255.html",
    "alert_id": 569,
    "alert_text_id": 570,
-   "pending": true,
+   "pending": false,
    "needs_ok": true,
    "ask_until": 1794334617,
-   "card_data": {
-    "title": "Nintendo Switch 2 Mario Kart World",
-    "category": "OPORTUNIDAD DE REVENTA",
-    "current": 58.0,
-    "reference": 79.99,
-    "image": "https://static.chollometro.com/threads/raw/U62CF/2062732_1/re/150x150/qt/55/2062732_1.jpg",
-    "store_label": "MediaMarkt",
-    "conditions": "Con cupón",
-    "resale": {
-     "price": 120.0,
-     "count": 26,
-     "roi": 93.10344827586206,
-     "profit": 54.0,
-     "source_label": "WALLAPOP",
-     "note": "26 anuncios de referencia · Wallapop · Muchos anuncios",
-     "sample": false,
-     "demand": "Muchos anuncios"
-    }
-   }
+   "expired": true
   },
   {
    "id": "cm-2062694",
@@ -2427,7 +2355,7 @@
   }
  ],
  "tg_offset": 334822062,
- "last_listing_count": 76,
+ "last_listing_count": 69,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -17307,7 +17235,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 7,
+ "rotation_index": 12,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -17359,6 +17287,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 760
+  "passes": 761
  }
 }
