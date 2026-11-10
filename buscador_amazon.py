@@ -94,3 +94,23 @@ def search(api, cfg: dict, state: dict, now: datetime, log=print) -> list[tuple[
         for item in items:
             out.append(to_candidate(item, keyword, cfg, now, tag))
     return out
+
+
+def fold(text: str) -> str:
+    import unicodedata
+    text = unicodedata.normalize("NFKD", str(text or "")).encode("ascii", "ignore").decode()
+    return " ".join(text.lower().replace("-", " ").split())
+
+
+def trusted_brands(cfg: dict) -> set[str]:
+    names = list(((cfg or {}).get("resale") or {}).get("brands") or [])
+    names += list(((cfg or {}).get("amazon_search") or {}).get("trusted_brands") or [])
+    names += list((((cfg or {}).get("amazon_channel") or {}).get("amazon_search") or {}).get("trusted_brands") or [])
+    return {fold(n) for n in names if str(n).strip()}
+
+
+def is_trusted(brand: str, cfg: dict) -> bool:
+    """Solo marcas conocidas: los vendedores sin marca inflan el precio anterior (recomendado o «mediano»)."""
+    b = fold(brand)
+    return bool(b) and any(b == t or b.startswith(t + " ") for t in trusted_brands(cfg))
+

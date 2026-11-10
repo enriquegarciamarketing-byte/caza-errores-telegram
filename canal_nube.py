@@ -1462,8 +1462,9 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                 continue
         if item.get("amazon"):
             why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
-            if not why and item.get("basis_type") == "LIST_PRICE" and not item.get("brand_ok"):
-                why, deal = "precio recomendado de una marca poco conocida (suele estar inflado)", {}
+            if not why and not item.get("brand_ok"):
+                # Vendedores sin marca conocida inflan tanto el precio recomendado como el «mediano» (10/11/2026).
+                why, deal = f"marca poco conocida ({item.get('brand') or 'sin marca'}): su precio anterior no es fiable", {}
         elif not detail.get("full", True) and (rules.get("modo_listado") or {}).get("enabled"):
             why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
         else:

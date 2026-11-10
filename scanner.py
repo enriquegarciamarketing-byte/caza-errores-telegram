@@ -855,6 +855,8 @@ def scan_amazon(cfg: dict, state: dict, now: datetime, seen: dict) -> list[dict]
         prev = seen.get(key)
         if prev and cand.get("price") is not None and abs(float(prev.get("price") or 0) - float(cand["price"])) < 0.01:
             continue  # ya visto a este precio
+        if not why and not buscador_amazon.is_trusted(cand.get("brand") or "", cfg):
+            why = f"marca poco conocida ({cand.get('brand') or 'sin marca'}): su precio anterior no es fiable"
         category, reason = (None, why) if why else classify(cfg, cand)
         if category:
             category, reason = quality_checks(cand, now, category, reason)

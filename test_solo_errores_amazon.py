@@ -292,7 +292,7 @@ class FreeAmazonTest(unittest.TestCase):
         import canal_nube as cn
         cfg = load_cfg(scope=True)
         rules = cn.rules_from(cfg)
-        self.assertTrue(rules["amazon_search"]["enabled"])
+        rules["amazon_search"] = dict(rules["amazon_search"], enabled=True)
         items = [api_item("B0AAAAAAA1", "Robot aspirador Roborock Q7 Max", "Roborock", 149.0, 399.0, "WAS_PRICE"),
                  api_item("B0AAAAAAA2", "Auriculares Bluetooth 5.4 deportivos", "Ordtop", 15.99, 59.99, "LIST_PRICE"),
                  api_item("B0AAAAAAA3", "Robot aspirador Cecotec Conga", "Cecotec", 99.0, 120.0, "LIST_PRICE")]
@@ -334,3 +334,24 @@ class AskAllTest(unittest.TestCase):
         self.assertTrue(sent[0]["needs_ok"])          # va a ask_admin, nunca al canal
         self.assertIn("PRUEBA", sent[0]["ask_reason"])
         save.assert_not_called()                     # tu OK no encuentra nada que publicar
+
+
+class TrustedBrandTest(unittest.TestCase):
+    def test_tablets_y_portatiles_sin_marca_conocida_no_salen_ni_con_precio_mediano(self):
+        import canal_nube as cn
+        rules = cn.rules_from(load_cfg(scope=True))
+        rules["amazon_search"] = dict(rules["amazon_search"], enabled=True)
+        items = [api_item("B0H9LQ788R", "Tablet Android 15 Tablet 10 Pulgadas", "UJJ", 99.99, 299.99, "WAS_PRICE"),
+                 api_item("B0HKN8VJ1Y", "Ordenador Pc Portátil 15,6 pulgadas", "Teclast", 579.99, 1599.99, "WAS_PRICE"),
+                 api_item("B0BTDT8V59", "Sony WH-CH720N Auriculares Inalámbricos", "Sony", 67.0, 149.99, "WAS_PRICE")]
+        with mock.patch.object(cn, "API", FakeAPI(items)), mock.patch("buscador_amazon.time.sleep"):
+            approved = cn.find_deals(dict(rules, sources=[], rotating_sources=[]), {"seen": {}, "posts": []},
+                                     scanner.now_utc(), fetch=lambda u: "", resolve_asin=lambda i: None, log=lambda *a: None)
+        self.assertEqual([d["asin"] for _, d in approved], ["B0BTDT8V59"])
+
+    def test_el_premium_tampoco(self):
+        import buscador_amazon as ba
+        cfg = load_cfg(scope=True)
+        self.assertFalse(ba.is_trusted("UJJ", cfg))
+        self.assertTrue(ba.is_trusted("Roborock", cfg))
+        self.assertTrue(ba.is_trusted("SONY", cfg))
