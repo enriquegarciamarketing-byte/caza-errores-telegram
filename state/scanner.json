@@ -1151,9 +1151,9 @@
    "result": "solo -25% bajo la referencia"
   },
   "MKJwNG5": {
-   "price": 43.95,
-   "t": 1794058363,
-   "result": "solo -6% bajo la referencia"
+   "price": 45.95,
+   "t": 1794290297,
+   "result": "sin precios de los 30 días anteriores para comparar"
   },
   "ROopbne": {
    "price": 30.2,
@@ -2028,7 +2028,7 @@
  ],
  "tg_offset": 334822062,
  "admin_chat_id": 9188393228,
- "last_listing_count": 71,
+ "last_listing_count": 75,
  "health_alerts": {
   "no_listings": 1794246356.8198528
  },
@@ -16228,7 +16228,7 @@
  "private_chats": {
   "darkness_gg": 9188393228
  },
- "rotation_index": 9,
+ "rotation_index": 5,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/aspiradora-fregona-en-seco-y-humedo-roborock-f25-lt-20000-pa-diseno-plano-180-autolimpieza-90c-2061604": 1794285778.7133534
  },
@@ -16239,6 +16239,6 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 584
+  "passes": 600
  }
 }
