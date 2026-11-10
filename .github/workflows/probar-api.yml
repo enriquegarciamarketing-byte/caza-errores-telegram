@@ -14,4 +14,4 @@ jobs:
           AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID }}
           AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET }}
           AMAZON_CREATORS_VERSION: ${{ secrets.AMAZON_CREATORS_VERSION }}
-        run: PYTHONPATH=. python -u tools/probar_api.py
+        run: python -m pip install -q -r requirements.txt && PYTHONPATH=. python -u tools/probar_api.py
