@@ -631,7 +631,7 @@
     "test_private_posts": 3,
     "quiet_hours": [
       0,
-      8
+      7
     ],
     "max_details_per_run": 60,
     "max_tracking_checks_per_run": 4,

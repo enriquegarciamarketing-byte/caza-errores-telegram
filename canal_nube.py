@@ -1637,7 +1637,7 @@ def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
         lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
         lines.append("")
     lines.append(f"🕒 Precios a las {hour} · pueden cambiar")
-    lines.append("😴 Mañana a las 8:00 volvemos con más chollos. Activa las notificaciones 🔔")
+    lines.append("😴 Mañana a las 7:00 volvemos con más chollos. Activa las notificaciones 🔔")
     lines.append("")
     lines.append(PUBLI)
     return "\n".join(lines)
@@ -1795,7 +1795,7 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     try:
         collage = make_summary_collage(items)
         if collage:
-            tg.send_photo(target, collage, "🔔 Mañana a las 8:00 más chollos en @cazachollos_com")
+            tg.send_photo(target, collage, "🔔 Mañana a las 7:00 más chollos en @cazachollos_com")
             log("Resumen: imagen de cierre enviada.")
         else:
             log("Resumen: sin fotos suficientes para la imagen de cierre.")
@@ -2005,11 +2005,11 @@ def main() -> int:
                 save_state(state)
             why = quota_reason(state, now, rules)
             if "silencio" in why and deadline is not None and not args.test_private:
-                # GitHub arranca el bot más o menos una vez por hora. Si toca poco antes de las 8,
-                # espera despierto y publica a las 8 en punto en vez de cerrarse hasta la siguiente.
+                # GitHub arranca el bot más o menos una vez por hora. Si toca poco antes de la hora de arranque,
+                # espera despierto y publica a esa hora en punto en vez de cerrarse hasta la siguiente.
                 left = seconds_until_quiet_end(datetime.now(timezone.utc), rules)
                 if 0 < left <= float(rules.get("wake_before_minutes") or 0) * 60:
-                    print(f"Silencio: espero {int(left // 60) + 1} min y publico desde las 08:00.")
+                    print(f"Silencio: espero {int(left // 60) + 1} min y publico desde las {int((rules.get('quiet_hours') or [0, 7])[1]):02d}:00.")
                     time.sleep(left + 5)
                     deadline = time.time() + args.minutes * 60
                     continue

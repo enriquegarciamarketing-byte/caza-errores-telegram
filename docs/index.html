@@ -200,7 +200,7 @@ footer a{font-weight:700;color:var(--text)}
       </div>
       <div class="box tgbox">
         <h2>Que no se te escape ninguno</h2>
-        <p>Los chollos salen primero en Telegram, de 08:00 a 23:50, y a las 23:59 el resumen con los mejores del día.</p>
+        <p>Los chollos salen primero en Telegram, de 07:00 a 23:50, y a las 23:59 el resumen con los mejores del día.</p>
         <a href="https://t.me/cazachollos_com" rel="noopener">Unirme a @cazachollos_com</a>
       </div>
       <div class="box how">
@@ -326,7 +326,7 @@ footer a{font-weight:700;color:var(--text)}
     if (!shown.length) {
       $("feed").innerHTML = query
         ? `<li class="empty"><h2>No hay chollos que coincidan con «${esc(query)}»</h2><p>Prueba con otra palabra o quita el filtro de categoría.</p></li>`
-        : `<li class="empty"><h2>Ahora mismo no hay chollos aquí</h2><p>El bot publica de 08:00 a 23:50. Únete al canal y te llegan en cuanto salen.</p><a class="go" style="margin:0 auto" href="https://t.me/cazachollos_com" rel="noopener">Unirme a Telegram</a></li>`;
+        : `<li class="empty"><h2>Ahora mismo no hay chollos aquí</h2><p>El bot publica de 07:00 a 23:50. Únete al canal y te llegan en cuanto salen.</p><a class="go" style="margin:0 auto" href="https://t.me/cazachollos_com" rel="noopener">Unirme a Telegram</a></li>`;
       return;
     }
     $("feed").innerHTML = shown.map(dealCard).join("");
