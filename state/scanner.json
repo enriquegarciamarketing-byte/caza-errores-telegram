@@ -1982,7 +1982,7 @@
   },
   "B07QCLTY8Y": {
    "price": 610.19,
-   "t": 1794385078,
+   "t": 1794384538,
    "result": "Amazon no marca precio anterior"
   },
   "B01EU5SKCA": {
@@ -2311,9 +2311,9 @@
    "result": "sin precio en Amazon"
   },
   "B09GPFW4DQ": {
-   "price": 11.31,
-   "t": 1794345586,
-   "result": "solo -17% bajo la referencia (el premium solo publica errores de precio)"
+   "price": 12.9,
+   "t": 1794384658,
+   "result": "solo -5% (ahorro 1 €): no es error de precio"
   },
   "B08CF2TB3B": {
    "price": 11.19,
@@ -2696,9 +2696,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B07RV35H4D": {
-   "price": 22.1,
-   "t": 1794345806,
-   "result": "solo -22% bajo la referencia (el premium solo publica errores de precio)"
+   "price": 19.89,
+   "t": 1794384899,
+   "result": "solo -29% (ahorro 8 €): no es error de precio"
   },
   "B0026FCKC8": {
    "price": 697.95,
@@ -2716,8 +2716,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B000VDCT3C": {
-   "price": 610.4,
-   "t": 1794382198,
+   "price": 610.34,
+   "t": 1794384899,
    "result": "Amazon no marca precio anterior"
   },
   "B073S3WPMD": {
@@ -2746,8 +2746,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0C8Z4DLSK": {
-   "price": 23.63,
-   "t": 1794345806,
+   "price": 24.04,
+   "t": 1794384958,
    "result": "Amazon no marca precio anterior"
   },
   "B06XGJ443D": {
@@ -2771,8 +2771,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0BTDG6BQT": {
-   "price": 29.46,
-   "t": 1794345806,
+   "price": 31.24,
+   "t": 1794384958,
    "result": "Amazon no marca precio anterior"
   },
   "B01B4NAC3G": {
@@ -2916,13 +2916,13 @@
    "result": "Amazon no marca precio anterior"
   },
   "B00B0W6FLU": {
-   "price": 196.03,
-   "t": 1794376884,
+   "price": 197.0,
+   "t": 1794385082,
    "result": "Amazon no marca precio anterior"
   },
   "B0B7R17CFK": {
-   "price": 196.33,
-   "t": 1794379577,
+   "price": 196.35,
+   "t": 1794385082,
    "result": "Amazon no marca precio anterior"
   },
   "B017LTE0C6": {
@@ -3191,8 +3191,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B004Y182UG": {
-   "price": 48.5,
-   "t": 1794346227,
+   "price": 43.65,
+   "t": 1794385319,
    "result": "Amazon no marca precio anterior"
   },
   "B0CSHJR8K2": {
@@ -3917,7 +3917,7 @@
   },
   "B01N19J3A5": {
    "price": null,
-   "t": 1794383071,
+   "t": 1794385800,
    "result": "sin precio en Amazon"
   },
   "B085F55TSD": {
@@ -3951,9 +3951,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B07C8PHWL8": {
-   "price": 139.0,
-   "t": 1794383071,
-   "result": "solo -6% (ahorro 9 €): no es error de precio"
+   "price": 146.98,
+   "t": 1794385860,
+   "result": "Amazon no marca precio anterior"
   },
   "B08K94SH9G": {
    "price": 145.0,
@@ -4342,7 +4342,7 @@
   },
   "B0C6B19QHW": {
    "price": null,
-   "t": 1794383309,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B08N689K9L": {
@@ -4367,7 +4367,7 @@
   },
   "B00J43YFGO": {
    "price": null,
-   "t": 1794383309,
+   "t": 1794386100,
    "result": "sin precio en Amazon"
   },
   "B01LQAYQUW": {
@@ -4397,7 +4397,7 @@
   },
   "B0756HNM7H": {
    "price": null,
-   "t": 1794383369,
+   "t": 1794386100,
    "result": "sin precio en Amazon"
   },
   "B083P8WMXG": {
@@ -4407,7 +4407,7 @@
   },
   "B08K3XD3BZ": {
    "price": null,
-   "t": 1794383369,
+   "t": 1794386100,
    "result": "sin precio en Amazon"
   },
   "B094NKN2Z7": {
@@ -4426,9 +4426,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0D4ZCTSFS": {
-   "price": 89.04,
-   "t": 1794383429,
-   "result": "Amazon no marca precio anterior"
+   "price": 78.02,
+   "t": 1794386160,
+   "result": "solo -14% (ahorro 12 €): no es error de precio"
   },
   "B0068NPD1Y": {
    "price": 114.69,
@@ -6631,8 +6631,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B098TGMJRN": {
-   "price": 455.66,
-   "t": 1794381777,
+   "price": 451.37,
+   "t": 1794384477,
    "result": "Amazon no marca precio anterior"
   },
   "B09FLMQT38": {
@@ -6647,7 +6647,7 @@
   },
   "B0093RN0PI": {
    "price": null,
-   "t": 1794381777,
+   "t": 1794384538,
    "result": "sin precio en Amazon"
   },
   "B0FSJR51DS": {
@@ -6811,8 +6811,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0BRXZXWLQ": {
-   "price": 115.29,
-   "t": 1794381898,
+   "price": 115.1,
+   "t": 1794384598,
    "result": "sin stock"
   },
   "B0BLSMDC35": {
@@ -6881,8 +6881,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B00PS1KPR4": {
-   "price": 98.77,
-   "t": 1794381898,
+   "price": 99.17,
+   "t": 1794384658,
    "result": "Amazon no marca precio anterior"
   },
   "B095XC8S38": {
@@ -6892,7 +6892,7 @@
   },
   "B0FQBX55DY": {
    "price": null,
-   "t": 1794381898,
+   "t": 1794384658,
    "result": "sin precio en Amazon"
   },
   "B09735J5N3": {
@@ -6912,7 +6912,7 @@
   },
   "B0BK9FNCVN": {
    "price": null,
-   "t": 1794381898,
+   "t": 1794384658,
    "result": "sin precio en Amazon"
   },
   "B06WWHJZF6": {
@@ -6962,7 +6962,7 @@
   },
   "B09GKZ9VJH": {
    "price": null,
-   "t": 1794381958,
+   "t": 1794384658,
    "result": "sin precio en Amazon"
   },
   "B0F2G97WYK": {
@@ -6997,7 +6997,7 @@
   },
   "B08R65H2J7": {
    "price": null,
-   "t": 1794381958,
+   "t": 1794384658,
    "result": "sin precio en Amazon"
   },
   "B0859M3WJF": {
@@ -7031,8 +7031,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0B2X1KDDY": {
-   "price": 259.19,
-   "t": 1794381958,
+   "price": 258.58,
+   "t": 1794384658,
    "result": "Amazon no marca precio anterior"
   },
   "B0F6NW632X": {
@@ -7137,7 +7137,7 @@
   },
   "B08T8KYD1D": {
    "price": null,
-   "t": 1794382017,
+   "t": 1794384718,
    "result": "sin precio en Amazon"
   },
   "B0HBXKQCX7": {
@@ -7241,8 +7241,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0162YQHJA": {
-   "price": 29.78,
-   "t": 1794382017,
+   "price": 41.0,
+   "t": 1794384778,
    "result": "Amazon no marca precio anterior"
   },
   "B004TA0AZM": {
@@ -7417,7 +7417,7 @@
   },
   "B0DCVDDCRZ": {
    "price": null,
-   "t": 1794382077,
+   "t": 1794384838,
    "result": "sin precio en Amazon"
   },
   "B0FJXWB78M": {
@@ -7431,9 +7431,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0D6PFPTXH": {
-   "price": 54.53,
-   "t": 1794382138,
-   "result": "solo -4% (ahorro 2 €): no es error de precio"
+   "price": 29.99,
+   "t": 1794384838,
+   "result": "solo -47% (ahorro 27 €): no es error de precio"
   },
   "B09H7V5WM2": {
    "price": 19.99,
@@ -7522,7 +7522,7 @@
   },
   "B0D1VQBWFW": {
    "price": null,
-   "t": 1794382138,
+   "t": 1794384899,
    "result": "sin precio en Amazon"
   },
   "B0D9VCH1DP": {
@@ -7547,7 +7547,7 @@
   },
   "B0D1VSGBWZ": {
    "price": null,
-   "t": 1794382138,
+   "t": 1794384899,
    "result": "sin precio en Amazon"
   },
   "B0FG2QDB8X": {
@@ -7571,8 +7571,8 @@
    "result": "solo -5% (ahorro 1 €): no es error de precio"
   },
   "B0DWND9XBM": {
-   "price": 170.84,
-   "t": 1794382198,
+   "price": 153.83,
+   "t": 1794384899,
    "result": "Amazon no marca precio anterior"
   },
   "B0G3LS8P96": {
@@ -7621,8 +7621,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0007XD4M6": {
-   "price": 441.13,
-   "t": 1794382198,
+   "price": 442.48,
+   "t": 1794384899,
    "result": "Amazon no marca precio anterior"
   },
   "B0DQKFZGHQ": {
@@ -7631,8 +7631,8 @@
    "result": "solo -10% (ahorro 4 €): no es error de precio"
   },
   "B09YCMC5Y4": {
-   "price": 40.55,
-   "t": 1794382198,
+   "price": 42.36,
+   "t": 1794384958,
    "result": "Amazon no marca precio anterior"
   },
   "B081Q6MCDN": {
@@ -7991,8 +7991,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B00IKI352E": {
-   "price": 71.51,
-   "t": 1794382378,
+   "price": 71.49,
+   "t": 1794385139,
    "result": "Amazon no marca precio anterior"
   },
   "B00AXXTJY2": {
@@ -8136,8 +8136,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B07YHWZBP8": {
-   "price": 367.5,
-   "t": 1794382439,
+   "price": 369.34,
+   "t": 1794385199,
    "result": "Amazon no marca precio anterior"
   },
   "B08XVXV8ZV": {
@@ -8186,8 +8186,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0CTTWN7QG": {
-   "price": 851.99,
-   "t": 1794382439,
+   "price": 851.91,
+   "t": 1794385199,
    "result": "Amazon no marca precio anterior"
   },
   "B08T1ZC381": {
@@ -8201,8 +8201,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0913J9BTB": {
-   "price": 410.98,
-   "t": 1794382439,
+   "price": 427.8,
+   "t": 1794385199,
    "result": "Amazon no marca precio anterior"
   },
   "B0913HV2SS": {
@@ -8216,8 +8216,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0CTTX1XWT": {
-   "price": 874.93,
-   "t": 1794382439,
+   "price": 874.06,
+   "t": 1794385199,
    "result": "Amazon no marca precio anterior"
   },
   "B0DHLM3NT5": {
@@ -8362,7 +8362,7 @@
   },
   "B00B81B446": {
    "price": null,
-   "t": 1794382499,
+   "t": 1794385259,
    "result": "sin precio en Amazon"
   },
   "B09KL9WM4Q": {
@@ -8671,8 +8671,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0F9FFWG6Y": {
-   "price": 41.54,
-   "t": 1794382679,
+   "price": 37.39,
+   "t": 1794385379,
    "result": "Amazon no marca precio anterior"
   },
   "B0F2X3S7T6": {
@@ -8706,8 +8706,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0F8J923LP": {
-   "price": 38.09,
-   "t": 1794382679,
+   "price": 34.28,
+   "t": 1794385379,
    "result": "Amazon no marca precio anterior"
   },
   "B0F9FHV2X1": {
@@ -9161,8 +9161,8 @@
    "result": "solo -55% (ahorro 175 €): no es error de precio"
   },
   "B0B5V6X8NT": {
-   "price": 143.21,
-   "t": 1794382827,
+   "price": 143.5,
+   "t": 1794385559,
    "result": "-28% frente al precio recomendado, que puede estar inflado"
   },
   "B0DV96SRRF": {
@@ -9676,13 +9676,13 @@
    "result": "Amazon no marca precio anterior"
   },
   "B09TWC54MX": {
-   "price": 93.37,
-   "t": 1794383007,
+   "price": 91.99,
+   "t": 1794385800,
    "result": "Amazon no marca precio anterior"
   },
   "B09YVFJFQ6": {
-   "price": 44.9,
-   "t": 1794383007,
+   "price": 44.34,
+   "t": 1794385800,
    "result": "Amazon no marca precio anterior"
   },
   "B09RWZ9SNP": {
@@ -9776,8 +9776,8 @@
    "result": "-25% frente al precio recomendado, que puede estar inflado"
   },
   "B08YZ459Y4": {
-   "price": 9.15,
-   "t": 1794383128,
+   "price": 9.33,
+   "t": 1794385860,
    "result": "Amazon no marca precio anterior"
   },
   "B09P4C2KZP": {
@@ -10011,9 +10011,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0BVHDTQC5": {
-   "price": 80.0,
-   "t": 1794383188,
-   "result": "Amazon no marca precio anterior"
+   "price": 65.27,
+   "t": 1794385980,
+   "result": "sin stock"
   },
   "B0DVD4DGJ2": {
    "price": 79.0,
@@ -10047,7 +10047,7 @@
   },
   "B000J34HN4": {
    "price": null,
-   "t": 1794383188,
+   "t": 1794385980,
    "result": "sin precio en Amazon"
   },
   "B088HGY89N": {
@@ -10167,22 +10167,22 @@
   },
   "B08S13XYVT": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B009KKQXFM": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B078214MR5": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B01IT2CBHU": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B003TSVY32": {
@@ -10192,27 +10192,27 @@
   },
   "B01K7QZPMO": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B00X4F9UUE": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B003TT392U": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B00UJV4SS0": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B00XA8LXEQ": {
    "price": null,
-   "t": 1794383248,
+   "t": 1794386040,
    "result": "sin precio en Amazon"
   },
   "B0BLK7G2FK": {
@@ -10252,7 +10252,7 @@
   },
   "B01MTY38DG": {
    "price": null,
-   "t": 1794383309,
+   "t": 1794386100,
    "result": "sin precio en Amazon"
   },
   "B0186W2L1Y": {
@@ -10262,7 +10262,7 @@
   },
   "B06XDFBVNH": {
    "price": null,
-   "t": 1794383369,
+   "t": 1794386100,
    "result": "sin precio en Amazon"
   },
   "B00J8E45R8": {
@@ -10441,8 +10441,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B006TCEMRK": {
-   "price": 90.01,
-   "t": 1794383429,
+   "price": 90.59,
+   "t": 1794386160,
    "result": "Amazon no marca precio anterior"
   },
   "B0GL25D4YM": {
@@ -10775,10 +10775,55 @@
    "t": 1794384390,
    "result": "Amazon no marca precio anterior"
   },
-  "B01CNKF3A6": {
-   "price": 89.97,
-   "t": 1794385865,
+  "B0C2W3NNSX": {
+   "price": 793.89,
+   "t": 1794384477,
    "result": "Amazon no marca precio anterior"
+  },
+  "B0D454XPQ7": {
+   "price": 47.32,
+   "t": 1794384718,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0956NGQ2S": {
+   "price": 73.79,
+   "t": 1794385199,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0F8J8R4P6": {
+   "price": 54.56,
+   "t": 1794385379,
+   "result": "-70% frente al precio recomendado, que puede estar inflado"
+  },
+  "B0DTQ5Q32M": {
+   "price": 32.94,
+   "t": 1794385379,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0FDCVNMPN": {
+   "price": 30.25,
+   "t": 1794385439,
+   "result": "-60% frente al precio recomendado, que puede estar inflado"
+  },
+  "B0CMV2NR7H": {
+   "price": 35.1,
+   "t": 1794385559,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DTYV87YN": {
+   "price": 44.95,
+   "t": 1794385679,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0FLXFY5HM": {
+   "price": 23.68,
+   "t": 1794385860,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B00PQSVJLK": {
+   "price": null,
+   "t": 1794386040,
+   "result": "sin precio en Amazon"
   }
  },
  "posts": [
@@ -11598,7 +11643,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794385997
+   "checked": 1794386220
   },
   {
    "id": "cm-2062698",
@@ -26863,7 +26908,6 @@
   "https://www.chollometro.com/ofertas/volante-logitech-g-g29-auriculares-gaming-astro-a10-playstation-5-y-4pc-microfono-volteable-control-de-volumen-force-feedback-2062824": 1794325085.18843
  },
  "asked": {
-  "cm-2061653": 1794299646,
   "cm-2062698": 1794323236,
   "cm-2062757": 1794323242,
   "cm-2062635": 1794323246,
@@ -26877,13 +26921,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1175
+  "passes": 1201
  },
- "jl_paused_until": 1794386553.029373,
- "amazon_search_index": 78,
- "last_api_count": 17,
+ "jl_paused_until": 1794386578.724846,
+ "amazon_search_index": 182,
+ "last_api_count": 31,
  "api_calls": {
-  "2026-11-11": 839
+  "2026-11-11": 943
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -29058,7 +29102,7 @@
    [
     20261111,
     11.31,
-    11.31
+    12.9
    ]
   ],
   "B08CF2TB3B": [
@@ -29959,7 +30003,7 @@
    ],
    [
     20261111,
-    22.1,
+    19.89,
     22.1
    ]
   ],
@@ -30080,7 +30124,7 @@
    [
     20261111,
     23.63,
-    23.63
+    24.04
    ]
   ],
   "B06XGJ443D": [
@@ -30140,7 +30184,7 @@
    [
     20261111,
     29.46,
-    29.46
+    31.24
    ]
   ],
   "B01B4NAC3G": [
@@ -30500,7 +30544,7 @@
    [
     20261111,
     196.22,
-    196.34
+    196.35
    ]
   ],
   "B017LTE0C6": [
@@ -31147,7 +31191,7 @@
    ],
    [
     20261111,
-    48.5,
+    43.65,
     48.5
    ]
   ],
@@ -37866,7 +37910,7 @@
   "B098TGMJRN": [
    [
     20261111,
-    455.66,
+    451.37,
     455.66
    ]
   ],
@@ -38111,7 +38155,7 @@
   "B0BRXZXWLQ": [
    [
     20261111,
-    115.29,
+    115.1,
     115.29
    ]
   ],
@@ -38210,7 +38254,7 @@
    [
     20261111,
     98.77,
-    98.77
+    99.17
    ]
   ],
   "B095XC8S38": [
@@ -38391,7 +38435,7 @@
   "B0B2X1KDDY": [
    [
     20261111,
-    259.19,
+    258.58,
     259.19
    ]
   ],
@@ -38679,7 +38723,7 @@
    [
     20261111,
     29.78,
-    29.78
+    41.0
    ]
   ],
   "B004TA0AZM": [
@@ -38937,7 +38981,7 @@
   "B0D6PFPTXH": [
    [
     20261111,
-    54.53,
+    29.99,
     54.53
    ]
   ],
@@ -39119,7 +39163,7 @@
   "B0DWND9XBM": [
    [
     20261111,
-    170.84,
+    153.83,
     170.84
    ]
   ],
@@ -39190,7 +39234,7 @@
    [
     20261111,
     441.13,
-    441.13
+    442.48
    ]
   ],
   "B0DQKFZGHQ": [
@@ -39204,7 +39248,7 @@
    [
     20261111,
     40.55,
-    40.55
+    42.36
    ]
   ],
   "B081Q6MCDN": [
@@ -39707,7 +39751,7 @@
   "B00IKI352E": [
    [
     20261111,
-    71.51,
+    71.49,
     71.51
    ]
   ],
@@ -39911,7 +39955,7 @@
    [
     20261111,
     367.5,
-    367.5
+    369.34
    ]
   ],
   "B08XVXV8ZV": [
@@ -39980,7 +40024,7 @@
   "B0CTTWN7QG": [
    [
     20261111,
-    851.99,
+    851.91,
     851.99
    ]
   ],
@@ -40002,7 +40046,7 @@
    [
     20261111,
     410.98,
-    410.98
+    427.8
    ]
   ],
   "B0913HV2SS": [
@@ -40022,7 +40066,7 @@
   "B0CTTX1XWT": [
    [
     20261111,
-    874.93,
+    874.06,
     874.93
    ]
   ],
@@ -40652,7 +40696,7 @@
   "B0F9FFWG6Y": [
    [
     20261111,
-    41.54,
+    37.39,
     41.54
    ]
   ],
@@ -40701,7 +40745,7 @@
   "B0F8J923LP": [
    [
     20261111,
-    38.09,
+    34.28,
     38.09
    ]
   ],
@@ -41339,7 +41383,7 @@
    [
     20261111,
     143.21,
-    143.21
+    143.5
    ]
   ],
   "B0DV96SRRF": [
@@ -42059,14 +42103,14 @@
   "B09TWC54MX": [
    [
     20261111,
-    93.37,
+    91.99,
     93.37
    ]
   ],
   "B09YVFJFQ6": [
    [
     20261111,
-    44.9,
+    44.34,
     44.9
    ]
   ],
@@ -42200,7 +42244,7 @@
    [
     20261111,
     9.15,
-    9.15
+    9.33
    ]
   ],
   "B09P4C2KZP": [
@@ -42528,7 +42572,7 @@
   "B0BVHDTQC5": [
    [
     20261111,
-    80.0,
+    65.27,
     80.0
    ]
   ],
@@ -43040,7 +43084,7 @@
    [
     20261111,
     90.01,
-    90.01
+    90.59
    ]
   ],
   "B0GL25D4YM": [
@@ -43498,11 +43542,67 @@
     160.0
    ]
   ],
-  "B01CNKF3A6": [
+  "B0C2W3NNSX": [
    [
     20261111,
-    89.97,
-    89.97
+    793.89,
+    793.89
+   ]
+  ],
+  "B0D454XPQ7": [
+   [
+    20261111,
+    47.32,
+    47.32
+   ]
+  ],
+  "B0956NGQ2S": [
+   [
+    20261111,
+    73.79,
+    73.79
+   ]
+  ],
+  "B0F8J8R4P6": [
+   [
+    20261111,
+    54.56,
+    54.56
+   ]
+  ],
+  "B0DTQ5Q32M": [
+   [
+    20261111,
+    32.94,
+    32.94
+   ]
+  ],
+  "B0FDCVNMPN": [
+   [
+    20261111,
+    30.25,
+    30.25
+   ]
+  ],
+  "B0CMV2NR7H": [
+   [
+    20261111,
+    35.1,
+    35.1
+   ]
+  ],
+  "B0DTYV87YN": [
+   [
+    20261111,
+    44.95,
+    44.95
+   ]
+  ],
+  "B0FLXFY5HM": [
+   [
+    20261111,
+    23.68,
+    23.68
    ]
   ]
  },
