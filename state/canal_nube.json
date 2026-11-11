@@ -5251,6 +5251,20 @@
    "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Apple iPhone 14 128 GB Rojo (Reacondicionado)</b>\n\n💶 PRECIO: <b>359,56€</b>\n❌ (Antes: <s>629,99€</s>)\n🔥 ¡Te ahorras <b>270,43€</b>! (43 % dto.)\nℹ️ Reacondicionado · el «Antes» es el precio del iPhone 14 nuevo\n\n🕒 Precio a las 10:55 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0BNLX3333?tag=cazachollos0c-21\">amazon.es/dp/B0BNLX3333</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
    "title": "Apple iPhone 14 128 GB Rojo (Reacondicionado)",
    "manual": true
+  },
+  {
+   "asin": "B0897PBMFW",
+   "jl_id": "",
+   "price": 155.22,
+   "reference": 399.0,
+   "t": 1794391613,
+   "url": "https://www.amazon.es/dp/B0897PBMFW?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 483,
+   "photo_message_id": null,
+   "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>HUAWEI Watch GT Runner 2 Smartwatch con GPS de Running Azul</b>\n\n💶 PRECIO: <b>155,22€</b>\n❌ (Antes: <s>399€</s>)\n🔥 ¡Te ahorras <b>243,78€</b>! (61 % dto.)\nℹ️ Oferta Black Friday anticipado · 44 € menos que su mínimo de 30 días\n\n🕒 Precio a las 11:06 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0897PBMFW?tag=cazachollos0c-21\">amazon.es/dp/B0897PBMFW</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
+   "title": "HUAWEI Watch GT Runner 2 Smartwatch con GPS de Running Azul",
+   "manual": true
   }
  ],
  "seen": {
@@ -15488,17 +15502,18 @@
   1794387510,
   1794387731,
   1794388247,
-  1794391119
+  1794391119,
+  1794391618
  ],
  "x_recent": [
-  "black-friday",
   "telegram",
   "rapido",
   "chivatazo",
   "bot-aviso",
   "pregunta",
   "comprado",
-  "filtro"
+  "filtro",
+  "cabeza"
  ],
  "jl_paused_until": 1794389902.713424,
  "amazon_search_index": 14,
