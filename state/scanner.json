@@ -1,69 +1,9 @@
 {
  "seen": {
-  "7kremZM": {
-   "price": 21.02,
-   "t": 1793157221,
-   "result": "valoraciones flojas (4.0 / 1)"
-  },
-  "72jpYkm": {
-   "price": 16.47,
-   "t": 1793157221,
-   "result": "valoraciones flojas (4.5 / 25)"
-  },
-  "7gmzB8J": {
-   "price": 169.99,
-   "t": 1793157221,
-   "result": "solo -19% bajo la media"
-  },
-  "RYpxVv7": {
-   "price": 18.04,
-   "t": 1793157221,
-   "result": "solo -22% bajo la media"
-  },
-  "1GbZOyR": {
-   "price": 11.7,
-   "t": 1793157221,
-   "result": "importe demasiado bajo para ganga"
-  },
   "R3Non5G": {
    "price": 13.41,
    "t": 1793187929,
    "result": "solo -34% bajo la media"
-  },
-  "1L0G5K1": {
-   "price": 15.0,
-   "t": 1793157221,
-   "result": "MÍNIMO HISTÓRICO"
-  },
-  "MQxAKPb": {
-   "price": 192.03,
-   "t": 1793157221,
-   "result": "solo -19% bajo la media"
-  },
-  "7gZ5JlM": {
-   "price": 96.17,
-   "t": 1793157221,
-   "result": "valoraciones flojas (3.5 / 37)"
-  },
-  "lROv5r7": {
-   "price": 10.39,
-   "t": 1793157221,
-   "result": "importe demasiado bajo para ganga"
-  },
-  "RXrAgkB": {
-   "price": 27.36,
-   "t": 1793157221,
-   "result": "solo -18% bajo la media"
-  },
-  "7yQyzp7": {
-   "price": 74.99,
-   "t": 1793157221,
-   "result": "solo -38% bajo la media"
-  },
-  "R04Lx4R": {
-   "price": 6.59,
-   "t": 1793157221,
-   "result": "importe demasiado bajo para ganga"
   },
   "7yrqbdw": {
    "price": 9.03,
@@ -75,75 +15,10 @@
    "t": 1793194488,
    "result": "solo -39% bajo la media"
   },
-  "1BXOBjk": {
-   "price": 32.5,
-   "t": 1793157629,
-   "result": "solo -31% bajo la media"
-  },
-  "1vVGjNa": {
-   "price": 17.3,
-   "t": 1793157629,
-   "result": "solo -31% bajo la media"
-  },
-  "1qGnOkp": {
-   "price": 7.99,
-   "t": 1793157629,
-   "result": "importe demasiado bajo para ganga"
-  },
-  "MjzOBYM": {
-   "price": 6.53,
-   "t": 1793158084,
-   "result": "importe demasiado bajo para ganga"
-  },
-  "1bZgGQy": {
-   "price": 59.99,
-   "t": 1793158084,
-   "result": "valoraciones flojas (3.0 / 38)"
-  },
-  "RYx6VL7": {
-   "price": 15.47,
-   "t": 1793158084,
-   "result": "solo -20% bajo la media"
-  },
-  "MKJprXa": {
-   "price": 9.99,
-   "t": 1793158084,
-   "result": "importe demasiado bajo para ganga"
-  },
-  "7nQaZb4": {
-   "price": 149.99,
-   "t": 1793158506,
-   "result": "solo -23% bajo la media"
-  },
   "M52BOEw": {
    "price": 21.66,
    "t": 1793218021,
    "result": "solo -35% bajo la media"
-  },
-  "RrQDxG7": {
-   "price": 12.32,
-   "t": 1793159777,
-   "result": "solo -25% bajo la media"
-  },
-  "RoWlqoR": {
-   "price": 3.99,
-   "t": 1793159777,
-   "result": "solo -31% bajo la media"
-  },
-  "1ZKNx9M": {
-   "price": 47.5,
-   "t": 1793159777,
-   "result": "solo -26% bajo la media"
-  },
-  "7PkWmY9": {
-   "price": 7.5,
-   "t": 1793159777,
-   "result": "solo -37% bajo la media"
-  },
-  "MlxQ0A8": {
-   "price": 34.99,
-   "t": 1793159777,
-   "result": "solo -18% bajo la media"
   },
   "MlxQgp5": {
    "price": 5.65,
@@ -2157,12 +2032,12 @@
   },
   "B0093RN1OS": {
    "price": null,
-   "t": 1794350991,
+   "t": 1794367555,
    "result": "sin precio en Amazon"
   },
   "B0CFQ9C6L7": {
-   "price": 746.0,
-   "t": 1794345406,
+   "price": 671.4,
+   "t": 1794367555,
    "result": "Amazon no marca precio anterior"
   },
   "B07QCLTY8Y": {
@@ -2246,9 +2121,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0815JGFQ8": {
-   "price": null,
-   "t": 1794356516,
-   "result": "sin precio en Amazon"
+   "price": 61.71,
+   "t": 1794367705,
+   "result": "Amazon no marca precio anterior"
   },
   "B01FJLA8NI": {
    "price": 347.36,
@@ -2492,7 +2367,7 @@
   },
   "B00M0KILOA": {
    "price": null,
-   "t": 1794356576,
+   "t": 1794367855,
    "result": "sin precio en Amazon"
   },
   "B09GPFW4DQ": {
@@ -2521,8 +2396,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0D44WPRPB": {
-   "price": 32.09,
-   "t": 1794356636,
+   "price": 31.38,
+   "t": 1794368005,
    "result": "Amazon no marca precio anterior"
   },
   "B0HHBNYMTB": {
@@ -2546,13 +2421,13 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0BPMF2QR7": {
-   "price": 24.73,
-   "t": 1794356636,
+   "price": 25.0,
+   "t": 1794368005,
    "result": "Amazon no marca precio anterior"
   },
   "B097Q2NYRF": {
-   "price": 26.46,
-   "t": 1794345586,
+   "price": 27.28,
+   "t": 1794368005,
    "result": "Amazon no marca precio anterior"
   },
   "B0BNNS2YH1": {
@@ -2656,8 +2531,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0BX9H2JLB": {
-   "price": 448.48,
-   "t": 1794364063,
+   "price": 447.5,
+   "t": 1794368455,
    "result": "Amazon no marca precio anterior"
   },
   "B0D6N76Q6N": {
@@ -2832,7 +2707,7 @@
   },
   "B006URYANA": {
    "price": null,
-   "t": 1794356817,
+   "t": 1794368455,
    "result": "sin precio en Amazon"
   },
   "B004V2HE7K": {
@@ -2901,8 +2776,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B000VDCT3C": {
-   "price": 608.92,
-   "t": 1794356817,
+   "price": 615.78,
+   "t": 1794368605,
    "result": "Amazon no marca precio anterior"
   },
   "B073S3WPMD": {
@@ -2921,8 +2796,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B00403MGLO": {
-   "price": 81.99,
-   "t": 1794345806,
+   "price": 77.99,
+   "t": 1794368605,
    "result": "Amazon no marca precio anterior"
   },
   "B071DPTVTW": {
@@ -3101,13 +2976,13 @@
    "result": "Amazon no marca precio anterior"
   },
   "B00B0W6FLU": {
-   "price": 196.03,
-   "t": 1794345987,
+   "price": 197.0,
+   "t": 1794369055,
    "result": "Amazon no marca precio anterior"
   },
   "B0B7R17CFK": {
-   "price": 196.21,
-   "t": 1794354297,
+   "price": 196.28,
+   "t": 1794369055,
    "result": "Amazon no marca precio anterior"
   },
   "B017LTE0C6": {
@@ -3246,8 +3121,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B01BW74NS4": {
-   "price": 49.93,
-   "t": 1794348477,
+   "price": 49.98,
+   "t": 1794369055,
    "result": "Amazon no marca precio anterior"
   },
   "B08XWJQ7Y4": {
@@ -3336,8 +3211,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B07H771NVJ": {
-   "price": 126.08,
-   "t": 1794354478,
+   "price": 125.79,
+   "t": 1794369505,
    "result": "Amazon no marca precio anterior"
   },
   "B07NQJG5SQ": {
@@ -3346,9 +3221,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B01LZ4CJ9A": {
-   "price": 6.64,
-   "t": 1794346167,
-   "result": "sin stock"
+   "price": 6.93,
+   "t": 1794369505,
+   "result": "Amazon no marca precio anterior"
   },
   "B0D1YF3MR2": {
    "price": 185.07,
@@ -5017,7 +4892,7 @@
   },
   "B08XNSLQSC": {
    "price": null,
-   "t": 1794356516,
+   "t": 1794367855,
    "result": "sin precio en Amazon"
   },
   "B0DWY1WNCN": {
@@ -5094,6 +4969,31 @@
    "price": 24.99,
    "t": 1794365713,
    "result": "marca poco conocida (CASCHO): su precio anterior no es fiable"
+  },
+  "B07T5XCB2N": {
+   "price": 208.24,
+   "t": 1794367705,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0B2RSSN4W": {
+   "price": 9.99,
+   "t": 1794368305,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B08GW8VVGD": {
+   "price": 51.95,
+   "t": 1794368455,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B002019Y7C": {
+   "price": 7.79,
+   "t": 1794369055,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B06XG2GJTP": {
+   "price": 97.45,
+   "t": 1794369805,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -5913,7 +5813,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794366163
+   "checked": 1794369805
   },
   {
    "id": "cm-2062698",
@@ -6162,8 +6062,42 @@
   "no_listings": 1794342986.452299
  },
  "discovery_cache": {
-  "t": 1794363917.4638116,
-  "titles": []
+  "t": 1794367561.847521,
+  "titles": [
+   "almacenamiento",
+   "dispositivos de red",
+   "impresora y tinta",
+   "sandisk ultra dual drive go, memoria flash 128 gb (con conectores usb type-c y type-a reversibles, para android moviles, tabl",
+   "philips 27e1n1100a monitor 27 pulgadas 120hz panel ips, 4ms gtg, altavoces, (1920x1080 hdmi 1x 1.4) negro",
+   "unionsine disco duro externo 500gb 2.5\" usb3.0 ultra slim portatil hdd | almacenamiento para pc, mac, macbook, chromebook, xb",
+   "tp-link re330 - repetidor wifi 5 ac1200 de doble banda, puerto ethernet | amplificador de senal wifi. compatible con easymesh",
+   "sandisk ultra flair pendrive 128 gb memoria usb 3.0 (velocidad de lectura hasta 150 mb/s, proteccion con contrasena, carcasa ",
+   "arctic mx-7 (8 g) - pasta termica de alto rendimiento para cpus | para consolas, procesadores, tarjetas graficas y portatiles",
+   "canon pixma ts3750i impresora multifuncion wi-fi de inyeccion de tinta | facil de usar; escanear y copiar, fotos sin bordes h",
+   "tp-link ub500 - adaptador bluetooth usb para pc, plug & play, tamano mini | ideal para pc sin bluetooth. no necesita configur",
+   "intenso 3503480 lapiz usb 2.0 basic 32gb",
+   "toshiba canvio partner 2tb - disco duro externo portatil de 2,5&#x27;&#x27;, usb 3.2, compatible con mac y windows. (hdtb520ek3ab)",
+   "seagate portable drive 1tb, unidad de disco duro externo, usb 3.0 para pc, ordenador portatil y mac y servicios rescue, amazo",
+   "hp deskjet 2920, impresora multifuncion de inyeccion de tinta a color | wi-fi de doble banda, panel lcd, hp smart app, impres",
+   "lenovo idea tab – tablet 11\" 2.5k (mediatek dimensity 6300, 8 gb ram, 256 gb ufs, 90 hz, 4 altavoces, wi-fi 5, bluetooth 5.2,",
+   "sandisk pendrive 64 gb ultra memoria flash usb 3.0 hasta 130 mb/s, (secureaccess software, proteccion de contrasenas) negro",
+   "sandisk 64 gb cruzer blade usb 2.0 flash drive - black",
+   "apple ipad de 11 pulgadas: chip a16, modelo de 11 pulgadas, pantalla liquid retina, 128 gb, wi fi 6, camaras frontal y traser",
+   "lexar d40e  unidad flash dual usb tipo-c, usb-a/c, 64gb, champan plateado | usb 3.2 gen 1, type-c, carcasa de metal, diseno g",
+   "sandisk 64 gb ultra fit, usb-a laufwerk, bis 400 mb/s lesen | usb 3.2, ideal para ordenador portatil o de sobremesa, consolas",
+   "tp-link ls105g switch gigabit 5 puertos, plug & play, carcasa acero, impresoras, webcams",
+   "tp-link tl-sg108 - switch gigabit de 8 puertos, plug & play, carcasa acero | no necesita configuracion. diseno sin ventilador",
+   "strong repetidor wifi n300, amplificador wifi largo alcance | 300 mbps, repetidor wifi, amplificador senal wifi, wps, puerto ",
+   "tp-link tl-wpa4220 kit - adaptador powerline av600, kit plc wifi 300 mbps | amplia tu red a traves del cableado electrico. si",
+   "tp-link tl-sg105 - switch gigabit de 5 puertos, plug & play, carcasa acero | plug & play, no necesita configuracion. diseno s",
+   "kingston datatraveler exodia s unidad flash usb - 128gb - usb 3.2 gen 1 - usb type a - negro/turquesa - dtxs/128gb",
+   "cudy 4g lte n300 wi-fi router, ranura sim, 4 puertos lan, lt400 | mifi para caravana, wi-fi movil, 4 puertos 100m, ranura nan",
+   "yodoit monitor portatil pantalla portatil de 15,6 pulgadas ips 1080p fhd display usb type-c de computadora, juego hdr con hdm",
+   "origbelie lector cd dvd externo, usb 3.0 y type-c cd/dvd +/-rw drive | plug&play grabadora cd dvd externa para pc, portatil, ",
+   "tp-link tl-pa7017p kit - kit plc, adaptador powerline av1000, 1 puerto ge | amplia tu red a traves del cableado electrico. si",
+   "wd 2tb my passport disco duro externo portatil, usb 3.2 gen 1/usb 3.0, copia de seguridad y proteccion con contrasena, format",
+   "intenso 3533490 lapiz usb 3.2 speed 64gb"
+  ]
  },
  "resale_cache": {
   "carrefour|lego ideas cohete lunar de tintin, juguete de construccion +18 anos - 21367 (-40% en cupon) - precio final 83.99|wallapop+milanuncios:carrefour 18 lego": {
@@ -21037,7 +20971,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 8,
+ "rotation_index": 18,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -21091,13 +21025,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1032
+  "passes": 1048
  },
- "jl_paused_until": 1794367513.57496,
- "amazon_search_index": 64,
- "last_api_count": 34,
+ "jl_paused_until": 1794371155.716512,
+ "amazon_search_index": 128,
+ "last_api_count": 24,
  "api_calls": {
-  "2026-11-11": 268
+  "2026-11-11": 332
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -22477,7 +22411,7 @@
    ],
    [
     20261111,
-    746.0,
+    671.4,
     746.0
    ]
   ],
@@ -22673,11 +22607,21 @@
     20261110,
     60.67,
     60.67
+   ],
+   [
+    20261111,
+    61.71,
+    61.71
    ]
   ],
   "B01FJLA8NI": [
    [
     20261110,
+    347.36,
+    347.36
+   ],
+   [
+    20261111,
     347.36,
     347.36
    ]
@@ -23316,7 +23260,7 @@
    ],
    [
     20261111,
-    32.09,
+    31.38,
     32.09
    ]
   ],
@@ -23377,7 +23321,7 @@
    [
     20261111,
     24.73,
-    24.73
+    25.0
    ]
   ],
   "B097Q2NYRF": [
@@ -23389,7 +23333,7 @@
    [
     20261111,
     26.46,
-    26.46
+    27.28
    ]
   ],
   "B0BNNS2YH1": [
@@ -24207,7 +24151,7 @@
    [
     20261111,
     608.92,
-    608.92
+    615.78
    ]
   ],
   "B073S3WPMD": [
@@ -24254,7 +24198,7 @@
    ],
    [
     20261111,
-    81.99,
+    77.99,
     81.99
    ]
   ],
@@ -24687,7 +24631,7 @@
    [
     20261111,
     196.03,
-    196.03
+    197.0
    ]
   ],
   "B0B7R17CFK": [
@@ -24699,7 +24643,7 @@
    [
     20261111,
     196.22,
-    196.22
+    196.28
    ]
   ],
   "B017LTE0C6": [
@@ -24929,7 +24873,7 @@
    [
     20261111,
     7.54,
-    7.54
+    7.55
    ]
   ],
   "B09X5KZN9M": [
@@ -25025,7 +24969,7 @@
    [
     20261111,
     49.94,
-    49.94
+    49.98
    ]
   ],
   "B08XWJQ7Y4": [
@@ -25240,7 +25184,7 @@
    ],
    [
     20261111,
-    126.08,
+    125.79,
     126.08
    ]
   ],
@@ -25265,7 +25209,7 @@
    [
     20261111,
     6.64,
-    6.64
+    6.93
    ]
   ],
   "B0D1YF3MR2": [
@@ -29636,6 +29580,41 @@
     20261111,
     24.99,
     24.99
+   ]
+  ],
+  "B07T5XCB2N": [
+   [
+    20261111,
+    208.24,
+    208.24
+   ]
+  ],
+  "B0B2RSSN4W": [
+   [
+    20261111,
+    9.99,
+    9.99
+   ]
+  ],
+  "B08GW8VVGD": [
+   [
+    20261111,
+    51.95,
+    51.95
+   ]
+  ],
+  "B002019Y7C": [
+   [
+    20261111,
+    7.79,
+    7.79
+   ]
+  ],
+  "B06XG2GJTP": [
+   [
+    20261111,
+    97.45,
+    97.45
    ]
   ]
  },
