@@ -416,6 +416,15 @@ class Resumen(unittest.TestCase):
                        log=out.append)
         self.assertIn("ya enviado", out[-1])
 
+    def test_el_canal_espera_despierto_al_resumen(self):
+        rules = dict(RULES, summary_time="23:59", summary_window_minutes=100, summary_stay_awake_minutes=40)
+        at = lambda h, m: datetime(2026, 11, 11, h, m, tzinfo=timezone.utc)  # invierno: Madrid = UTC+1
+        self.assertIsNone(cn.seconds_until_summary({}, at(22, 0), rules))       # 23:00: aún lejos
+        self.assertEqual(cn.seconds_until_summary({}, at(22, 30), rules), 29 * 60)  # 23:30: se queda despierto
+        self.assertEqual(cn.seconds_until_summary({}, at(23, 10), rules), -11 * 60)  # 00:10: toca ya (respaldo)
+        self.assertIsNone(cn.seconds_until_summary({"summary_sent": "2026-11-11"}, at(22, 30), rules))
+        self.assertIsNone(cn.seconds_until_summary({}, datetime(2026, 11, 12, 1, 0, tzinfo=timezone.utc), rules))
+
     def test_resumen_sale_aunque_jimmyleaks_bloquee(self):
         # 10/11/2026: jimmyleaks daba 403 a GitHub y el resumen se quedaba vacío y marcado como enviado.
         night = datetime(2026, 11, 10, 23, 5, tzinfo=timezone.utc)  # 00:05 en Madrid, cierra el día 10

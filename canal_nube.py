@@ -1565,6 +1565,23 @@ def closing_day(now: datetime, rules: dict):
     return (local - timedelta(days=1)).date() if local.hour < 12 <= hour else local.date()
 
 
+def seconds_until_summary(state: dict, now: datetime, rules: dict) -> float | None:
+    """Segundos hasta el resumen de hoy si aún no ha salido (negativo si ya es la hora); None si ya salió
+    o si quedan más de `summary_stay_awake_minutes` (el canal se queda despierto ese rato para mandarlo)."""
+    local = now.astimezone(MADRID)
+    hour, minute = (int(x) for x in str(rules.get("summary_time") or "23:59").split(":"))
+    day = closing_day(now, rules)
+    if state.get("summary_sent") == day.isoformat():
+        return None
+    target = datetime(day.year, day.month, day.day, hour, minute, tzinfo=MADRID)
+    left = (target - local).total_seconds()
+    window = int(rules.get("summary_window_minutes") or 100) * 60
+    awake = float(rules.get("summary_stay_awake_minutes") or 40) * 60
+    if left > awake or left <= -window:
+        return None
+    return left
+
+
 def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: int = 10) -> list[dict]:
     """Los posts del día que siguen activos (vuelve a mirar el precio), mejor descuento primero."""
     today = closing_day(now, rules)
@@ -1996,13 +2013,32 @@ def main() -> int:
                     time.sleep(left + 5)
                     deadline = time.time() + args.minutes * 60
                     continue
+            # Resumen clavado a las 23:59: la pasada que está viva a esa hora se queda despierta y lo manda
+            # ella misma, en vez de depender de que GitHub arranque la tarea programada (se la salta a menudo).
+            left = None
+            if deadline is not None and not args.test_private and not args.dry_run:
+                left = seconds_until_summary(state, datetime.now(timezone.utc), rules)
+            if left is not None and ("cerrado" in why or (left <= 0 and "silencio" in why)):
+                if left > 0:
+                    print(f"Resumen: espero despierto {int(left // 60)} min {int(left % 60)} s y lo mando a las "
+                          f"{rules.get('summary_time') or '23:59'}.")
+                    time.sleep(left + 2)
+                run_summary(args, cfg, state, datetime.now(timezone.utc), tg=tg)
+                save_state(state)
+                break
             if "silencio" in why or "cerrado" in why or args.test_private:
                 break
             if deadline is None and index >= args.loop:
                 break
             wait = args.busy_every if (BACKLOG and args.busy_every) else args.every
             pause = max(0, wait - (time.time() - started))
-            if deadline is not None and time.time() + pause >= deadline:
+            if left is not None:
+                # Cerca del cierre no se apaga por tiempo: sigue publicando hasta las 23:50 y espera al resumen.
+                pause = min(pause, max(1.0, (datetime.now(timezone.utc).astimezone(MADRID).replace(
+                    hour=int(str(rules.get("close_time") or "23:50").split(":")[0]),
+                    minute=int(str(rules.get("close_time") or "23:50").split(":")[1]), second=5, microsecond=0)
+                    - datetime.now(timezone.utc).astimezone(MADRID)).total_seconds()))
+            elif deadline is not None and time.time() + pause >= deadline:
                 break
             time.sleep(pause)
     if not args.dry_run and not args.test_private:
