@@ -5412,6 +5412,21 @@
    "photo_message_id": null,
    "label": "Cuidado personal",
    "brand": "PHILIPS"
+  },
+  {
+   "asin": "B0788C3DKG",
+   "jl_id": "",
+   "price": 14.37,
+   "reference": 49.9,
+   "t": 1794404962,
+   "url": "https://www.amazon.es/dp/B0788C3DKG?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 494,
+   "photo_message_id": null,
+   "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>Pantalón Corto Tommy Hilfiger Hombre Azul Marino</b>\n\n💶 PRECIO: <b>14,37€</b>\n❌ (Antes: <s>49,90€</s>)\n🔥 ¡Te ahorras <b>35,53€</b>! (71 % dto.)\nℹ️ Precio para la talla S en azul marino\n\n🕒 Precio a las 14:47 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0788C3DKG?tag=cazachollos0c-21\">amazon.es/dp/B0788C3DKG</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
+   "title": "Pantalón Corto Tommy Hilfiger Hombre Azul Marino",
+   "manual": true,
+   "brand": "tommy hilfiger"
   }
  ],
  "seen": {
@@ -16676,17 +16691,18 @@
   1794388247,
   1794391119,
   1794391618,
-  1794404268
+  1794404268,
+  1794404965
  ],
  "x_recent": [
-  "regla",
   "black-friday",
   "telegram",
   "rapido",
   "chivatazo",
   "bot-aviso",
   "pregunta",
-  "comprado"
+  "comprado",
+  "cartera"
  ],
  "jl_paused_until": 1794406484.284215,
  "amazon_search_index": 198,
