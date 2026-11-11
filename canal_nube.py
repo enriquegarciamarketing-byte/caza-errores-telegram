@@ -762,6 +762,24 @@ def product_kind(title: str) -> str:
     return best
 
 
+def value_reason(deal: dict, rules: dict) -> str:
+    """Filtro final de calidad (11/11/2026): que la gente vea un chollo de verdad, no morralla.
+
+    - Al menos «min_saved_eur» € de ahorro (un champú de 12 € a -45 % no aporta).
+    - Al menos «min_discount_any» % de descuento, venga de donde venga (también en modo sin silencios)."""
+    conf = rules.get("calidad") or {}
+    price, ref = float(deal.get("price") or 0), float(deal.get("reference") or 0)
+    saved = ref - price if ref > price else 0.0
+    min_saved = float(conf.get("min_saved_eur", 0))
+    if min_saved and saved + 1e-9 < min_saved:
+        return f"calidad: solo {euro(saved)} de ahorro (mínimo {euro(min_saved)})"
+    min_pct = float(conf.get("min_discount_any", 0))
+    pct = float(deal.get("discount") or discount_pct(price, ref))
+    if min_pct and pct + 1e-9 < min_pct:
+        return f"calidad: solo -{int(pct)}% (mínimo -{min_pct:.0f}%)"
+    return ""
+
+
 def brand_of(post: dict) -> str:
     """Marca de un post o chollo: la que da Amazon y, en los posts antiguos que no la guardaban, la primera
     palabra del título si es una marca (sin cifras: 'WH-CH720N' no es una marca)."""
@@ -770,6 +788,20 @@ def brand_of(post: dict) -> str:
         return brand
     first = (fold(post.get("title") or "").split() or [""])[0].strip(",.-|")
     return first if len(first) >= 3 and first.isalpha() else ""
+
+
+def times_today(state: dict, deal: dict, now: datetime) -> int:
+    """Cuántos posts de hoy son del mismo tipo o de la misma marca: los que aún no han salido van antes
+    (relojes, maletas, herramientas... no siempre lo mismo)."""
+    today = now.astimezone(MADRID).date()
+    kind, brand = product_kind(deal.get("title") or ""), brand_of(deal)
+    count = 0
+    for post in state.get("posts") or []:
+        if datetime.fromtimestamp(post.get("t") or 0, MADRID).date() != today:
+            continue
+        count += bool(kind) and product_kind(post.get("title") or "") == kind
+        count += bool(brand) and brand_of(post) == brand
+    return count
 
 
 def variety_reason(state: dict, deal: dict, now: datetime, rules: dict) -> str:
@@ -801,6 +833,17 @@ def variety_reason(state: dict, deal: dict, now: datetime, rules: dict) -> str:
         if kind_day > 0 and same_kind >= kind_day:
             return f"variedad: hoy ya han salido {same_kind} productos de tipo «{kind}»"
     brand = brand_of(deal)
+    family_days = float(conf.get("misma_familia_dias", 3))
+    if brand and kind and family_days > 0:
+        # Dos monitores Lenovo Legion (27" y 24"), el Lefant M330 Pro y luego el M330 Plus, el Roborock Saros 20
+        # y el Saros Z70...: misma marca y mismo tipo de producto es casi el mismo chollo. Espera unos días.
+        for post in reversed(posts):
+            ago = now.timestamp() - (post.get("t") or 0)
+            if ago >= family_days * 86400:
+                break
+            if brand_of(post) == brand and product_kind(post.get("title") or "") == kind:
+                when = f"hace {int(ago // 3600)} h" if ago < 86400 else f"hace {ago / 86400:.0f} días"
+                return f"variedad: ya salió un «{kind}» de {brand.title()} {when}"
     if brand:
         for post in reversed(posts):
             ago = now.timestamp() - (post.get("t") or 0)
@@ -1380,6 +1423,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         # Variedad: primero lo que no repite tipo de producto reciente y, después, lo que no repite la
         # categoría del último post (3 robots seguidos no; dos monitores seguidos tampoco).
         approved.sort(key=lambda pair: (bool(variety_reason(state, pair[1], now, rules)),
+                                        times_today(state, pair[1], now),
                                         bool(last_label) and pair[1].get("interest_label") == last_label))
     limit = int(rules["test_private_posts"] if args.test_private else rules["max_per_run"])
     sent = 0
@@ -1703,6 +1747,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         if not why and item.get("cascada") and (scanner.has_size_variant(detail.get("name") or "")
                                                  or scanner.has_size_variant(item.get("title") or "")):
             why = "tiene tallas y no se puede comprobar el precio de cada una"
+        if not why:
+            why = value_reason(deal, rules)
         if not why:
             asin = item.get("asin") if item.get("amazon") else resolve_asin(item["id"])
             if not asin or not ASIN_RE.fullmatch(asin):

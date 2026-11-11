@@ -218,9 +218,14 @@ class SinSilencios(unittest.TestCase):
         item = dict(item_for("R0ZG4Bv"), price=640.0, was=None)  # robot aspirador a -20 % de su mínimo de 30 días (800 €)
         why, _ = cn.evaluate(item, detail, REAL, NOW)
         self.assertIn("solo -20%", why)
+        # 11/11/2026: sin silencios ya no vale un -20 % (morralla); hace falta -30 % en las top.
+        why, _ = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
+        self.assertIn("solo -20%", why)
+        detail["price"] = item["price"] = 560.0
+        detail["series"][0]["points"][-1][1] = 560.0
         why, deal = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
         self.assertEqual(why, "")
-        self.assertEqual(round(deal["discount"]), 20)
+        self.assertEqual(round(deal["discount"]), 30)
         detail["price"] = item["price"] = 720.0  # -10 %: ni en modo sin silencios
         detail["series"][0]["points"][-1][1] = 720.0
         why, _ = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
@@ -720,7 +725,10 @@ class PrecioRecomendado(unittest.TestCase):
         item = dict(item_for("R0ZG4Bv"), price=85.0, was=135.0)  # aspirador: -37 % de PVP, -15 % real
         why, _ = cn.evaluate(item, detail, REAL, NOW)
         self.assertIn("frente a su PVP recomendado", why)
-        why, deal = cn.evaluate(item, detail, REAL, NOW, relaxed=True)  # sin silencios: top desde -30 %
+        why, _ = cn.evaluate(item, detail, REAL, NOW, relaxed=True)  # 11/11/2026: sin silencios top desde -40 %
+        self.assertIn("frente a su PVP recomendado", why)
+        item["was"] = 145.0  # -41 % de PVP
+        why, deal = cn.evaluate(item, detail, REAL, NOW, relaxed=True)
         self.assertEqual(why, "")
         self.assertEqual(deal["ref_kind"], "pvp")
 
@@ -883,3 +891,43 @@ class NadaDeCascosSonyEnBucle(unittest.TestCase):
                            {"t": t(mins - 30), "title": "Cecotec Cafetera", "brand": "Cecotec"}]}
         self.assertIn("Cecotec", cn.variety_reason(state, {"title": "Cecotec Conga 8290 Robot Aspirador",
                                                            "brand": "Cecotec"}, NOW, rules))
+
+
+class VariedadYCalidad(unittest.TestCase):
+    """11/11/2026: dos monitores Lenovo Legion casi iguales, el Lefant M330 Pro y al día siguiente el M330 Plus,
+    y posts flojos (champús de 12 €, biberones con 6 € de ahorro)."""
+
+    def setUp(self):
+        self.rules = {**REAL}
+
+    def test_misma_marca_y_tipo_espera_unos_dias(self):
+        t = int(NOW.timestamp())
+        state = {"posts": [{"t": t - 30 * 3600, "title": "Lefant M330 Pro Robot Aspirador y Fregasuelos",
+                            "brand": "Lefant"}]}
+        why = cn.variety_reason(state, {"title": "Lefant M330 Plus Robot Aspirador y Fregasuelos", "brand": "Lefant"},
+                                NOW, self.rules)
+        self.assertIn("Lefant", why)
+        state = {"posts": [{"t": t - 26 * 3600, "title": 'Lenovo Legion 27-10 Monitor Gaming FHD 27"'}]}
+        why = cn.variety_reason(state, {"title": 'Lenovo Legion 24-10- Monitor Gaming FHD 23.8"', "brand": "Lenovo"},
+                                NOW, self.rules)
+        self.assertIn("monitor", why)
+        state = {"posts": [{"t": t - 4 * 86400, "title": 'Lenovo Legion 27-10 Monitor Gaming FHD 27"'}]}
+        self.assertEqual(cn.variety_reason(state, {"title": 'Lenovo Legion 24-10 Monitor Gaming', "brand": "Lenovo"},
+                                           NOW, self.rules), "")
+
+    def test_otro_tipo_de_la_misma_marca_si_al_dia_siguiente(self):
+        t = int(NOW.timestamp())
+        state = {"posts": [{"t": t - 26 * 3600, "title": "Cecotec Freidora de Aire 5L", "brand": "Cecotec"}]}
+        self.assertEqual(cn.variety_reason(state, {"title": "Cecotec Cafetera Espresso Power", "brand": "Cecotec"},
+                                           NOW, self.rules), "")
+
+    def test_filtro_de_valor(self):
+        self.assertIn("ahorro", cn.value_reason({"price": 11.99, "reference": 17.99, "discount": 33}, self.rules))
+        self.assertIn("-34%", cn.value_reason({"price": 23.0, "reference": 35.0, "discount": 34.3}, self.rules))
+        self.assertEqual(cn.value_reason({"price": 67.0, "reference": 149.99, "discount": 55}, self.rules), "")
+
+    def test_lo_que_no_ha_salido_hoy_va_antes(self):
+        t = int(NOW.timestamp())
+        state = {"posts": [{"t": t - 600, "title": "Sony WH-CH720N Auriculares", "brand": "Sony"}]}
+        self.assertGreater(cn.times_today(state, {"title": "Sony WH-1000XM5 Auriculares", "brand": "Sony"}, NOW),
+                           cn.times_today(state, {"title": "Casio Reloj Digital", "brand": "Casio"}, NOW))
