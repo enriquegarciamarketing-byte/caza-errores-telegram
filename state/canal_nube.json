@@ -5365,6 +5365,21 @@
    "photo_message_id": null,
    "label": "Moda de marca",
    "brand": "Levi's"
+  },
+  {
+   "asin": "B0FP9QSY8J",
+   "jl_id": "",
+   "price": 1.79,
+   "reference": 2.25,
+   "t": 1794404263,
+   "url": "https://www.amazon.es/dp/B0FP9QSY8J?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 491,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Calendario de Adviento dekora Elfo Travieso con 24 Chocolatinas de Leche</b>\n\n💶 PRECIO: <b>1,79€</b>\n❌ (Antes: <s>2,25€</s>)\n🔥 ¡Te ahorras <b>0,46€</b>! (20 % dto.)\nℹ️ 24 chocolatinas de chocolate con leche (50 g) aptas para vegetarianos\n\n🕒 Precio a las 14:36 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0FP9QSY8J?tag=cazachollos0c-21\">amazon.es/dp/B0FP9QSY8J</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Calendario de Adviento dekora Elfo Travieso con 24 Chocolatinas de Leche",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -16418,17 +16433,18 @@
   1794387731,
   1794388247,
   1794391119,
-  1794391618
+  1794391618,
+  1794404268
  ],
  "x_recent": [
-  "regla",
   "black-friday",
   "telegram",
   "rapido",
   "chivatazo",
   "bot-aviso",
   "pregunta",
-  "comprado"
+  "comprado",
+  "cabeza"
  ],
  "jl_paused_until": 1794402445.601286,
  "amazon_search_index": 30,
