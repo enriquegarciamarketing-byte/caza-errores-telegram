@@ -1,4 +1,6 @@
 {
+  "_nota_premium_pausado": "11/11/2026: premium en pausa, Enrique publica los errores a mano. Con true, la búsqueda automática del premium (Mac y reserva de GitHub) no hace nada ni gasta la API de Amazon, que queda entera para el canal free. Para encenderlo de nuevo, false.",
+  "premium_pausado": true,
   "_nota_affiliate_tag": "ID de afiliado del premium y lo demás que no es el canal free. Desde el 10/11/2026 el premium lleva tu ID (cazachollos0c-21). Vacío: enlaces de Amazon limpios, sin afiliado. El free lleva el suyo en amazon_channel.affiliate_tag.",
   "affiliate_tag": "cazachollos0c-21",
   "sources": [
@@ -593,8 +595,9 @@
     "amazon_search": {
       "_nota": "Desde el 10/11/2026 el free también busca directamente en Amazon con la API (Jimmyleaks bloquea al bot). Usa la lista de búsquedas de amazon_search (la del premium) por turnos: per_run búsquedas en cada ejecución (~1.000 consultas al día), pidiendo el descuento mínimo del modo listado. Pasan las mismas reglas del free; si el precio anterior es el «recomendado», solo con marca.",
       "enabled": true,
-      "per_run": 8,
-      "pause_seconds": 2.0,
+      "_nota_cupo": "Con el premium en pausa (11/11/2026) el free tiene la API para él solo: 12 búsquedas por pasada y 1,2 s entre consultas (la API admite 1 por segundo).",
+      "per_run": 12,
+      "pause_seconds": 1.2,
       "_nota_marcas": "Con «precio recomendado» como referencia solo valen marcas de confianza: las de resale.brands más estas.",
       "trusted_brands": ["Cecotec", "Jata", "Moulinex", "Tefal", "Rowenta", "Krups", "Taurus", "Orbegozo", "Braun", "Oral-B", "Remington", "Rowenta", "Severin", "Russell Hobbs", "Princess", "Mellerware", "Siemens", "Balay", "Teka", "Whirlpool", "Beko", "Candy", "Haier", "Panasonic", "Sharp", "Nespresso", "Dolce Gusto", "Smeg", "KitchenAid", "Lefant", "Conga", "Rowenta", "Karcher", "Kärcher", "Nike", "Adidas", "Puma", "New Balance", "Asics", "Skechers", "Levi's", "Tommy Hilfiger", "Calvin Klein", "Ray-Ban", "Casio", "Fossil", "Samsonite", "Playmobil", "Hasbro", "Mattel", "Chicco", "Bugaboo", "Medela", "Philips Avent", "Nivea", "L'Oréal", "Garnier", "Gillette", "Fairy", "Ariel", "Finish", "Colgate"]
     },

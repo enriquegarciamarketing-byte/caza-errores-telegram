@@ -1885,8 +1885,26 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def premium_paused(cfg: dict) -> bool:
+    """Interruptor del premium (11/11/2026): con "premium_pausado": true en config.json la búsqueda automática
+    de errores no hace nada (ni consulta la API de Amazon, que así queda entera para el canal free). Los
+    posts a mano siguen funcionando. Para volver a encenderlo, false o borrar la línea."""
+    return bool((cfg or {}).get("premium_pausado"))
+
+
 def main() -> int:
     args = build_parser().parse_args()
+    auto = not (args.check_sources or args.custom or args.manual_id or args.test_asin or args.edit_message
+                or args.test_private)
+    if auto and premium_paused(load_json(CONFIG_PATH, {})):
+        # El Mac relanza el escáner cada ciclo: se espera lo que duraría el ciclo para no dar vueltas en vacío
+        # (y no llenar GitHub de commits del latido).
+        wait = max(60.0, float(args.minutes or 0) * 60)
+        print(f"Premium en pausa (premium_pausado en config.json): no busco errores. Vuelvo a mirar en {wait / 60:.0f} min.",
+              flush=True)
+        if not args.dry_run:
+            time.sleep(wait)
+        return 0
     if args.check_sources:
         cfg = load_json(CONFIG_PATH, {})
         return resale_market.probe((cfg.get("resale") or {}))
