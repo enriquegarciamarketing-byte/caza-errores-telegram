@@ -3046,8 +3046,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0013LLABI": {
-   "price": 38.08,
-   "t": 1794346047,
+   "price": 38.09,
+   "t": 1794393970,
    "result": "Amazon no marca precio anterior"
   },
   "B0GTM3KNXS": {
@@ -3061,8 +3061,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B000VDJIW2": {
-   "price": 7.68,
-   "t": 1794346047,
+   "price": 7.13,
+   "t": 1794393970,
    "result": "Amazon no marca precio anterior"
   },
   "B0013LEIAS": {
@@ -3076,13 +3076,13 @@
    "result": "Amazon no marca precio anterior"
   },
   "B005APUI02": {
-   "price": 19.73,
-   "t": 1794346047,
+   "price": 17.76,
+   "t": 1794393970,
    "result": "Amazon no marca precio anterior"
   },
   "B0013LG31A": {
-   "price": 29.07,
-   "t": 1794346047,
+   "price": 26.16,
+   "t": 1794393970,
    "result": "Amazon no marca precio anterior"
   },
   "B0DNMQQYS2": {
@@ -11833,7 +11833,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794393633
+   "checked": 1794393970
   },
   {
    "id": "cm-2062698",
@@ -27086,7 +27086,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 15,
+ "rotation_index": 20,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -27141,13 +27141,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1322
+  "passes": 1323
  },
- "jl_paused_until": 1794393908.062357,
- "amazon_search_index": 108,
- "last_api_count": 32,
+ "jl_paused_until": 1794395770.674686,
+ "amazon_search_index": 112,
+ "last_api_count": 10,
  "api_calls": {
-  "2026-11-11": 1427
+  "2026-11-11": 1431
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -31153,7 +31153,7 @@
    [
     20261111,
     38.08,
-    38.08
+    38.09
    ]
   ],
   "B0GTM3KNXS": [
@@ -31188,7 +31188,7 @@
    ],
    [
     20261111,
-    7.68,
+    7.13,
     7.68
    ]
   ],
@@ -31224,7 +31224,7 @@
    ],
    [
     20261111,
-    19.73,
+    17.76,
     19.73
    ]
   ],
@@ -31236,7 +31236,7 @@
    ],
    [
     20261111,
-    29.07,
+    26.16,
     29.07
    ]
   ],
