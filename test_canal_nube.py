@@ -310,7 +310,8 @@ class MismoProducto(unittest.TestCase):
         state = {"posts": [posted]}
         title = "roborock Qrevo S Pro Set Robot Aspirador (Versión Mejorada del QV)"
         self.assertTrue(cn.recently_posted(state, "B0GHN3V6BP", 369.99, NOW, REAL, title))
-        self.assertFalse(cn.recently_posted(state, "B0GHN3V6BP", 320.0, NOW, REAL, title), "si baja un 10 % más, sí")
+        # 11/11/2026: nada de repetir producto, ni aunque baje más.
+        self.assertTrue(cn.recently_posted(state, "B0GHN3V6BP", 320.0, NOW, REAL, title))
 
     def test_modelos_distintos_de_la_misma_marca_si_salen(self):
         state = {"posts": [{"asin": "B0G81F3HSR", "price": 329.98, "t": int(NOW.timestamp()) - 3600,
@@ -931,3 +932,48 @@ class VariedadYCalidad(unittest.TestCase):
         state = {"posts": [{"t": t - 600, "title": "Sony WH-CH720N Auriculares", "brand": "Sony"}]}
         self.assertGreater(cn.times_today(state, {"title": "Sony WH-1000XM5 Auriculares", "brand": "Sony"}, NOW),
                            cn.times_today(state, {"title": "Casio Reloj Digital", "brand": "Casio"}, NOW))
+
+
+class HoraGarantizadaYGustos(unittest.TestCase):
+    """11/11/2026: cada hora tiene que salir algo, sin repetir, y el bot aprende de los posts a mano."""
+
+    def test_en_modo_hora_se_relajan_topes_pero_no_la_familia(self):
+        t = int(NOW.timestamp())
+        state = {"posts": [{"t": t - 20 * 60, "title": "JBL Tune 520BT Auriculares", "brand": "JBL"},
+                           {"t": t - 2 * 3600, "title": "Lefant M330 Pro Robot Aspirador", "brand": "Lefant"}]}
+        deal = {"title": "Bose QuietComfort Auriculares", "brand": "Bose"}
+        self.assertIn("auriculares", cn.variety_reason(state, deal, NOW, REAL))
+        self.assertEqual(cn.variety_reason(state, deal, NOW, REAL, urgent=True), "")
+        near = {"title": "Lefant M330 Plus Robot Aspirador", "brand": "Lefant"}
+        self.assertIn("Lefant", cn.variety_reason(state, near, NOW, REAL, urgent=True))
+
+    def test_nunca_repite_producto_aunque_baje(self):
+        state = {"posts": [{"asin": "B0BTDT8V59", "price": 67.0, "t": int(NOW.timestamp()) - 20 * 86400,
+                            "title": "Sony WH-CH720N Auriculares Inalámbricos"}]}
+        self.assertTrue(cn.recently_posted(state, "B0BTDT8V59", 49.0, NOW, REAL, "Sony WH-CH720N Auriculares"))
+
+    def test_gustos_de_los_posts_a_mano(self):
+        t = int(NOW.timestamp())
+        state = {"posts": [
+            {"t": t - 86400, "manual": True, "title": "Lavavajillas Bosch SMS6ZCI10E de 60 cm"},
+            {"t": t - 2 * 86400, "manual": True, "title": "Reloj Tommy Hilfiger Hombre 1791476 Multifunción"},
+            {"t": t - 3 * 86400, "manual": True, "title": "HUAWEI Watch GT Runner 2 Smartwatch con GPS"},
+            {"t": t - 3600, "title": "Cecotec Freidora de Aire 5L", "brand": "Cecotec"},  # del bot: no cuenta
+        ]}
+        tastes = cn.taste_profile(state, REAL, NOW)
+        self.assertEqual(tastes["kinds"].get("reloj"), 2)
+        self.assertNotIn("freidora", tastes["kinds"])
+        self.assertIn("lavavajillas bosch", tastes["searches"])
+        reloj = {"title": "Casio Reloj Digital Hombre", "brand": "Casio", "discount": 50, "price": 20, "reference": 40}
+        otro = {"title": "Rowenta Plancha de Vapor", "brand": "Rowenta", "discount": 50, "price": 20, "reference": 40}
+        self.assertGreater(cn.deal_rank(reloj, tastes), cn.deal_rank(otro, tastes))
+
+    def test_categorias_de_la_lista_no_top_desde_50(self):
+        item = {"id": "amz-X", "title": "Casio Reloj Digital Hombre Edifice EFR-526", "price": 45.0, "was": 100.0,
+                "ts": int(NOW.timestamp()), "image": "https://img/x.jpg"}
+        why, _ = cn.evaluate_listing(item, {}, REAL, NOW)
+        taste = cn.interest(item["title"], REAL, NOW)
+        if taste["score"] > 0 and not taste.get("min_discount"):
+            self.assertEqual(why, "")
+            why, _ = cn.evaluate_listing(dict(item, price=60.0), {}, REAL, NOW)
+            self.assertIn("solo categorías top", why)

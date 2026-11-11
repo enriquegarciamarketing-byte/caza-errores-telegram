@@ -415,10 +415,68 @@ def interest_base(title: str, rules: dict) -> dict:
     return full
 
 
-def deal_rank(deal: dict) -> float:
-    """Orden de publicación: sobre todo el descuento, luego el interés y los euros ahorrados (con tope)."""
+def deal_rank(deal: dict, tastes: dict | None = None) -> float:
+    """Orden de publicación: sobre todo el descuento, luego el interés y los euros ahorrados (con tope).
+
+    Con `tastes` (lo que Enrique publica a mano), lo que se parece a sus chollos sube puestos."""
     saved = max(0.0, float(deal.get("reference") or 0) - float(deal.get("price") or 0))
-    return 0.25 * float(deal.get("interest") or 0) + 2 * float(deal.get("discount") or 0) + min(saved, 200.0) / 10
+    base = 0.25 * float(deal.get("interest") or 0) + 2 * float(deal.get("discount") or 0) + min(saved, 200.0) / 10
+    return base + taste_bonus(deal, tastes)
+
+
+# ------------------------------------------------------------------ lo que le gusta a Enrique (11/11/2026)
+# «Aprende de los chollos que voy pidiendo yo, que son los que molan»: sus posts a mano (/chollo-free,
+# caza-chollos) marcan qué tipos de producto y qué marcas quiere ver. El bot los busca más en Amazon y,
+# entre dos chollos parecidos, saca antes el que se parece a los suyos. Nunca se salta las reglas de calidad.
+BUSQUEDA_TIPO = {"movil": "smartphone", "teclado y raton": "teclado", "camara": "cámara", "cuidado del pelo": "secador"}
+TIPOS_GENERICOS = {"salud", "limpieza", "cosmetica", "ropa", "suplementos", "bebidas", "mascotas", "juguete", "bebe"}
+
+
+def known_brand(title: str, rules: dict) -> str:
+    """Marca conocida en el arranque del título ('Frigorífico Combi Samsung…' → 'samsung')."""
+    head = fold(title_head(title or ""))
+    best, best_at = "", len(head) + 1
+    for name in rules.get("trusted_brands") or []:
+        found = re.search(r"(?<![a-z0-9])" + re.escape(fold(name)) + r"(?![a-z0-9])", head)
+        if found and found.start() < best_at:
+            best, best_at = fold(name), found.start()
+    return best
+
+
+def taste_profile(state: dict, rules: dict, now: datetime) -> dict:
+    """Tipos de producto y marcas de los posts a mano de los últimos «dias» días, con cuántas veces."""
+    conf = rules.get("gustos") or {}
+    if conf.get("enabled") is False:
+        return {}
+    days = float(conf.get("dias", 60))
+    kinds: dict[str, int] = {}
+    brands: dict[str, int] = {}
+    searches: list[str] = []
+    for post in reversed(state.get("posts") or []):
+        if not post.get("manual") or now.timestamp() - (post.get("t") or 0) > days * 86400:
+            continue
+        title = post.get("title") or ""
+        kind = product_kind(title)
+        brand = fold(str(post.get("brand") or "")) or known_brand(title, rules)
+        if kind:
+            kinds[kind] = kinds.get(kind, 0) + 1
+        if brand:
+            brands[brand] = brands.get(brand, 0) + 1
+        word = "" if kind in TIPOS_GENERICOS else BUSQUEDA_TIPO.get(kind, kind)
+        query = " ".join(w for w in (word, brand) if w)
+        if query and (kind not in TIPOS_GENERICOS or brand) and query not in searches:
+            searches.append(query)
+    return {"kinds": kinds, "brands": brands, "searches": searches[: int(conf.get("max_busquedas", 12))]}
+
+
+def taste_bonus(deal: dict, tastes: dict | None) -> float:
+    if not tastes:
+        return 0.0
+    kind = product_kind(deal.get("title") or "")
+    brand = fold(str(deal.get("brand") or ""))
+    bonus = 6.0 * min(int((tastes.get("kinds") or {}).get(kind, 0)), 3) if kind else 0.0
+    bonus += 5.0 * min(int((tastes.get("brands") or {}).get(brand, 0)), 2) if brand else 0.0
+    return bonus
 
 
 def evaluate(item: dict, detail: dict, rules: dict, now: datetime, relaxed: bool = False) -> tuple[str, dict]:
@@ -554,7 +612,12 @@ def evaluate_listing(item: dict, detail: dict, rules: dict, now: datetime, relax
     if was <= float(price) + 0.009:
         return "sin PVP tachado" if top or relaxed else "modo listado: solo categorías top", {}
     pct = discount_pct(float(price), was)
-    if not top:
+    listed = taste["score"] > 0 and conf.get("listed_min_discount") is not None
+    if not top and listed and pct + 1e-9 >= float(conf["listed_min_discount"]):
+        # 11/11/2026: más variedad (relojes, cocina, herramientas, perfumes de marca...): las categorías de la
+        # lista que no son top también salen, pero solo con descuento grande.
+        pass
+    elif not top:
         # Sin publicar desde hace rato (10/11/2026): fuera de las top también sale si el descuento es muy grande.
         any_pct = conf.get("relaxed_any_category_min_discount")
         if not (relaxed and any_pct is not None and pct + 1e-9 >= float(any_pct)):
@@ -804,7 +867,7 @@ def times_today(state: dict, deal: dict, now: datetime) -> int:
     return count
 
 
-def variety_reason(state: dict, deal: dict, now: datetime, rules: dict) -> str:
+def variety_reason(state: dict, deal: dict, now: datetime, rules: dict, urgent: bool = False) -> str:
     """Motivo para no publicar ahora por repetir tipo de producto o marca; vacío si se puede.
 
     11/11/2026: el canal se llenó de auriculares Sony. Ahora, además de no repetir tipo seguido:
@@ -821,6 +884,11 @@ def variety_reason(state: dict, deal: dict, now: datetime, rules: dict) -> str:
     todays = [p for p in posts
               if datetime.fromtimestamp(p.get("t") or 0, MADRID).date() == today and not p.get("manual")]
     kind = product_kind(deal.get("title") or "")
+    if urgent:
+        # Hora garantizada (11/11/2026): si se acaba la hora sin post, se relajan los topes de variedad, pero
+        # nunca se repite producto ni se saca casi el mismo (misma marca y tipo en unos días).
+        minutes = last_n = kind_day = brand_day = 0
+        brand_hours = 0
     if kind:
         if minutes > 0 and last_n > 0:
             recent = [p for p in posts if now.timestamp() - (p.get("t") or 0) < minutes * 60]
@@ -829,7 +897,8 @@ def variety_reason(state: dict, deal: dict, now: datetime, rules: dict) -> str:
                     ago = int((now.timestamp() - (post.get("t") or 0)) // 60)
                     return f"variedad: ya salió otro producto de tipo «{kind}» hace {ago} min"
         same_kind = sum(1 for p in todays if product_kind(p.get("title") or "") == kind)
-        kind_day = int((conf.get("tipos_dia") or {}).get(kind, kind_day))  # p. ej. robots aspiradores: 3
+        if not urgent:
+            kind_day = int((conf.get("tipos_dia") or {}).get(kind, kind_day))  # p. ej. robots aspiradores: 3
         if kind_day > 0 and same_kind >= kind_day:
             return f"variedad: hoy ya han salido {same_kind} productos de tipo «{kind}»"
     brand = brand_of(deal)
@@ -844,13 +913,14 @@ def variety_reason(state: dict, deal: dict, now: datetime, rules: dict) -> str:
             if brand_of(post) == brand and product_kind(post.get("title") or "") == kind:
                 when = f"hace {int(ago // 3600)} h" if ago < 86400 else f"hace {ago / 86400:.0f} días"
                 return f"variedad: ya salió un «{kind}» de {brand.title()} {when}"
-    if brand:
+    if brand and brand_hours > 0:
         for post in reversed(posts):
             ago = now.timestamp() - (post.get("t") or 0)
             if ago >= brand_hours * 3600:
                 break
             if brand_of(post) == brand:
                 return f"variedad: ya salió algo de {brand.title()} hace {int(ago // 60)} min"
+    if brand:
         same_brand = sum(1 for p in todays if brand_of(p) == brand)
         if brand_day > 0 and same_brand >= brand_day:
             return f"variedad: hoy ya han salido {same_brand} productos de {brand.title()}"
@@ -1370,6 +1440,31 @@ def listing_priority(item: dict, rules: dict | None = None) -> tuple:
 
 # ------------------------------------------------------------------ pasada
 
+def silence_alert(tg, state: dict, now: datetime, rules: dict, log=print, dry: bool = False) -> None:
+    """Si pese a la hora garantizada lleva «aviso_silencio_minutos» sin publicar, te avisa por privado una vez
+    (por ejemplo, la API de Amazon saturada). Un aviso por cada racha sin posts."""
+    minutes = float(rules.get("aviso_silencio_minutos") or 0)
+    last = max([p.get("t") or 0 for p in state.get("posts") or []] or [0])
+    opened = now.astimezone(MADRID).replace(hour=int((rules.get("quiet_hours") or [0, 7])[1]), minute=0,
+                                            second=0, microsecond=0).timestamp()
+    since = max(last, opened)
+    if not minutes or now.timestamp() - since < minutes * 60 or float(state.get("silence_alert_t") or 0) >= since:
+        return
+    state["silence_alert_t"] = int(now.timestamp())
+    error = str(state.get("api_error") or "")
+    why = "la API de Amazon está saturada" if "429" in error else "no encuentro chollos que pasen las reglas de calidad"
+    text = (f"⚠️ El canal free lleva {int((now.timestamp() - since) // 60)} min sin publicar: {why}. "
+            f"Sigo buscando en cada pasada.")
+    log(f"Aviso por privado: {text}")
+    admin = admin_chat_id(state, rules, tg, log)
+    if dry or tg is None or not admin:
+        return
+    try:
+        tg.call("sendMessage", {"chat_id": admin, "text": text})
+    except Exception as exc:  # el aviso nunca debe tumbar la pasada
+        log(f"  No he podido avisarte por privado: {exc}")
+
+
 def live_rules(rules: dict, test: bool) -> dict:
     """Con "album_solo_pruebas": true el álbum nuevo solo sale en las pruebas privadas; el canal sigue igual
     hasta que des el visto bueno y se quite esa línea de config.json."""
@@ -1413,9 +1508,22 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
                 f"admito desde -{rules.get('fallback_min_discount_top')} % en categorías estrella, "
                 f"-{(rules.get('interest') or {}).get('any_category_fallback_min_discount', '—')} % en cualquier categoría "
                 f"y -{rules.get('fallback_min_discount')} % en el resto de las top.")
+    urgent = False
+    hour_limit = float(rules.get("hora_garantizada_minutos") or 0) * 60
+    if hour_limit and not args.test_private:
+        last = max([p.get("t") or 0 for p in state.get("posts") or []] or [0])
+        # Cuenta desde el último post o desde que abre el canal (a las 7:00 no hay que esperar a nada).
+        opened = now.astimezone(MADRID).replace(hour=int((rules.get("quiet_hours") or [0, 7])[1]), minute=0,
+                                                second=0, microsecond=0).timestamp()
+        urgent = now.timestamp() - max(last, opened) >= hour_limit or (last < opened <= now.timestamp())
+        if urgent:
+            relaxed = True
+            log(f"Hora garantizada: {int((now.timestamp() - last) // 60)} min sin publicar. Sale el mejor chollo "
+                f"que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).")
+            silence_alert(tg, state, now, rules, log, dry)
     cascade = cascade_items(cfg, rules, now, log, cascade_loader, test=bool(args.dry_run or args.test_private))
     approved = find_deals(rules, state, now, fetch, resolve_asin, log, remember=not args.test_private,
-                          relaxed=relaxed, cascade=cascade)
+                          relaxed=relaxed, cascade=cascade, urgent=urgent)
     if args.test_private:
         approved.sort(key=lambda pair: not pair[0].get("cascada"))  # en la prueba, primero los del premium
     last_label = next((p.get("label") for p in reversed(state.get("posts") or []) if p.get("label")), None)
@@ -1423,6 +1531,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         # Variedad: primero lo que no repite tipo de producto reciente y, después, lo que no repite la
         # categoría del último post (3 robots seguidos no; dos monitores seguidos tampoco).
         approved.sort(key=lambda pair: (bool(variety_reason(state, pair[1], now, rules)),
+                                        bool(variety_reason(state, pair[1], now, rules, urgent=True)),
                                         times_today(state, pair[1], now),
                                         bool(last_label) and pair[1].get("interest_label") == last_label))
     limit = int(rules["test_private_posts"] if args.test_private else rules["max_per_run"])
@@ -1450,7 +1559,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             log(f"  ✗ {deal['asin']} el mismo producto acaba de salir en esta pasada")  # p. ej. dos ASIN del mismo Sony
             continue
         if not args.test_private:
-            why = variety_reason(state, deal, now, rules)
+            why = variety_reason(state, deal, now, rules, urgent=urgent)
             if why:
                 log(f"  ⏸ {deal['asin']} {why}; espera en la cola")  # sigue en el backlog para más tarde
                 continue
@@ -1567,8 +1676,10 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
         return []
     listing = rules.get("modo_listado") or {}
     min_saving = float(listing.get("relaxed_min_discount" if relaxed else "min_discount") or 50)
+    mine = (taste_profile(state, rules, now).get("searches") or []) if (rules.get("gustos") or {}).get("buscar", True) else []
     cfg = {"affiliate_tag": rules.get("tag"), "error_min_discount": min_saving,
-           "amazon_search": {**conf, "per_pass": conf.get("per_run") or 8}}
+           "amazon_search": {**conf, "per_pass": conf.get("per_run") or 8,
+                             "keywords": mine + [k for k in conf.get("keywords") or [] if k not in mine]}}
     box = state if remember else {"amazon_search_index": state.get("amazon_search_index")}
     import historial
     learning = load_json(PREMIUM_STATE, {}).get("learning") or {}
@@ -1641,7 +1752,7 @@ def live_check(post: dict, fetch, cache: dict | None = None) -> dict:
 
 
 def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log, remember: bool = True,
-               relaxed: bool = False, cascade: list | None = None) -> list:
+               relaxed: bool = False, cascade: list | None = None, urgent: bool = False) -> list:
     """Busca en los listados y devuelve [(item, deal)] que cumplen todas las reglas, mejor descuento primero.
 
     `cascade` son productos que el premium descartó por no dar para revender: pasan exactamente
@@ -1689,9 +1800,17 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                 pool.setdefault(item["id"], item)
     if read_any:
         state.pop("jl_paused_until", None)
+    # Con la hora a punto de acabarse, la cola vale más tiempo si la API de Amazon puede reconfirmar el precio
+    # justo antes de publicar (api_price_check): mejor un buen chollo de hace 2 h que nada.
+    backlog_age = max_age
+    if urgent and API is not None:
+        backlog_age = max(max_age, float(rules.get("backlog_urgent_max_minutes") or 0) * 60)
     for item in state.get("backlog") or []:
-        if item.get("id") and item.get("ts") and now.timestamp() - item["ts"] <= max_age and item.get("price"):
-            pool.setdefault(item["id"], dict(item))
+        if item.get("id") and item.get("ts") and now.timestamp() - item["ts"] <= backlog_age and item.get("price"):
+            again = dict(item)
+            if item.get("amazon") and now.timestamp() - item["ts"] > max_age:
+                again["ts"] = int(now.timestamp())  # solo con API: api_price_check lo relee antes de enviarlo
+            pool.setdefault(item["id"], again)
     api_items = amazon_items(rules, state, now, log, relaxed, remember)
     for item in api_items:
         if not skip(item):
@@ -1767,7 +1886,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         tag = " · descarte del premium" if item.get("cascada") else ""
         log(f"  ✓ {deal['asin']} {label}: {euro(deal['price'])} (-{deal['discount']:.0f}% vs {euro(deal['reference'])}){tag}")
         approved.append((item, deal))
-    approved.sort(key=lambda pair: deal_rank(pair[1]), reverse=True)
+    tastes = taste_profile(state, rules, now)
+    approved.sort(key=lambda pair: deal_rank(pair[1], tastes), reverse=True)
     return approved
 
 
@@ -2154,6 +2274,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
             "asin": deal["asin"], "jl_id": "", "price": deal["price"], "reference": deal["reference"],
             "t": int(now.timestamp()), "url": url, "chat": target, "message_id": int(message["message_id"]), "photo_message_id": message.get("photo_message_id"),
             "caption": caption, "title": deal["title"][:140], "manual": True,
+            "brand": deal.get("brand") or known_brand(deal["title"], rules),
         })
     return 0
 
