@@ -20,16 +20,6 @@
    "t": 1793218021,
    "result": "solo -35% bajo la media"
   },
-  "RXr9EnK": {
-   "price": 10.0,
-   "t": 1793182300,
-   "result": "importe demasiado bajo para ganga"
-  },
-  "1bax9Qo": {
-   "price": 3.73,
-   "t": 1793182300,
-   "result": "importe demasiado bajo para ganga"
-  },
   "R0pAj4R": {
    "price": 12.0,
    "t": 1793185228,
@@ -11783,7 +11773,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794391659
+   "checked": 1794391985
   },
   {
    "id": "cm-2062698",
@@ -27091,13 +27081,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1292
+  "passes": 1293
  },
  "jl_paused_until": 1794392074.906256,
- "amazon_search_index": 174,
- "last_api_count": 9,
+ "amazon_search_index": 178,
+ "last_api_count": 14,
  "api_calls": {
-  "2026-11-11": 1307
+  "2026-11-11": 1311
  },
  "price_history": {
   "B0CC5NJD6H": [
