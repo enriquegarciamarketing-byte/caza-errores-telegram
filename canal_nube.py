@@ -679,8 +679,10 @@ def quota_reason(state: dict, now: datetime, rules: dict, already: int = 0) -> s
     posts = state.get("posts") or []
     last_hour = [p for p in posts if (p.get("t") or 0) >= now.timestamp() - 3600]
     today = now.astimezone(MADRID).date()
+    # Los posts manuales no gastan el cupo diario del automático (sí cuentan para el ritmo por hora y la separación).
     today_posts = [p for p in posts
-                   if datetime.fromtimestamp(p.get("t") or 0, timezone.utc).astimezone(MADRID).date() == today]
+                   if not p.get("manual")
+                   and datetime.fromtimestamp(p.get("t") or 0, timezone.utc).astimezone(MADRID).date() == today]
     if len(last_hour) + already >= int(rules["max_per_hour"]):
         return "cupo de la hora cubierto"
     gap = float(rules.get("min_minutes_between_posts") or 0) * 60
