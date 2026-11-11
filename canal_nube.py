@@ -629,11 +629,38 @@ def quota_reason(state: dict, now: datetime, rules: dict, already: int = 0) -> s
     return ""
 
 
-def same_product(title_a: str, title_b: str) -> bool:
-    """Misma ficha con otro ASIN (otro color, pack o vendedor): el principio del título casi idéntico.
+# Medidas y specs que llevan letras y números pero no son un modelo (5L, 1450W, 128GB, IP68, USB3...).
+_NO_MODELO = re.compile(
+    r"^(\d+([.,]\d+)?(w|kw|l|ml|cl|gb|tb|mb|mah|pa|kpa|cm|mm|m|kg|g|gr|h|hz|khz|ms|v|mp|k|bar|uds|ud|"
+    r"piezas|pzs|x\d+|p|in|pulgadas|ah|wh|lm|rpm|db|ghz|fps)|x\d+|ip\d+|usb\d*|hdmi\d*|wifi\d*|bt\d*|"
+    r"bluetooth\d*|ddr\d*|pcie\d*|gen\d*|ios\d*|qi\d*|ps\d|\d+(\+\d+)+|\d+x\d+(x\d+)?)$")
 
-    Se compara el arranque del título, que es donde Amazon pone marca y modelo; así 'Lefant M3 MAX' y
-    'Lefant M5 Pro' siguen siendo productos distintos y 'Qrevo S Pro Set (QV 35A)' en dos colores no."""
+
+def model_codes(title: str) -> set[str]:
+    """Códigos de modelo del arranque del título ('Sony WH-CH720N…' → {'whch720n'}, 'Lefant M330…' → {'m330'}).
+
+    11/11/2026: el mismo Sony WH-CH720N salió tres veces con ASIN distintos (otro color, otra ficha) porque
+    los títulos empezaban distinto («SONY WH-CH720N Diadema…», «Sony WH-CH720N Bluetooth…»). El código de
+    modelo es lo que de verdad identifica el producto, empiece como empiece el título."""
+    words = fold(title_head(title or "")).replace("/", " ").split()[:8]
+    codes = set()
+    for word in words:
+        token = re.sub(r"[^a-z0-9+]", "", word.replace("-", ""))
+        if len(token) < 3 or _NO_MODELO.match(token):
+            continue
+        if re.search(r"[a-z]", token) and re.search(r"\d", token):
+            codes.add(token)
+    return codes
+
+
+def same_product(title_a: str, title_b: str) -> bool:
+    """Misma ficha con otro ASIN (otro color, pack o vendedor).
+
+    Primero por código de modelo (WH-CH720N, M330, JEFR1229…): si comparten uno, es el mismo producto.
+    Si no, el principio del título casi idéntico, que es donde Amazon pone marca y modelo; así 'Lefant M3 MAX'
+    y 'Lefant M5 Pro' siguen siendo productos distintos y 'Qrevo S Pro Set (QV 35A)' en dos colores no."""
+    if model_codes(title_a) & model_codes(title_b):
+        return True
     a, b = fold(title_a)[:60], fold(title_b)[:60]
     if len(a) < 20 or len(b) < 20:
         return False
@@ -735,19 +762,55 @@ def product_kind(title: str) -> str:
     return best
 
 
+def brand_of(post: dict) -> str:
+    """Marca de un post o chollo: la que da Amazon y, en los posts antiguos que no la guardaban, la primera
+    palabra del título si es una marca (sin cifras: 'WH-CH720N' no es una marca)."""
+    brand = fold(str(post.get("brand") or "")).strip()
+    if brand:
+        return brand
+    first = (fold(post.get("title") or "").split() or [""])[0].strip(",.-|")
+    return first if len(first) >= 3 and first.isalpha() else ""
+
+
 def variety_reason(state: dict, deal: dict, now: datetime, rules: dict) -> str:
-    """Motivo para no publicar ahora por repetir tipo de producto; vacío si se puede."""
+    """Motivo para no publicar ahora por repetir tipo de producto o marca; vacío si se puede.
+
+    11/11/2026: el canal se llenó de auriculares Sony. Ahora, además de no repetir tipo seguido:
+    - como mucho «mismo_tipo_dia» productos del mismo tipo al día (dos auriculares al día, no cinco);
+    - como mucho «misma_marca_dia» de la misma marca al día y ninguno de esa marca en «misma_marca_horas»."""
     conf = rules.get("variedad") or {}
     minutes = float(conf.get("misma_clase_minutos", 180))
     last_n = int(conf.get("misma_clase_ultimos_posts", 3))
+    kind_day = int(conf.get("mismo_tipo_dia", 2))
+    brand_day = int(conf.get("misma_marca_dia", 2))
+    brand_hours = float(conf.get("misma_marca_horas", 4))
+    posts = state.get("posts") or []
+    today = now.astimezone(MADRID).date()
+    todays = [p for p in posts
+              if datetime.fromtimestamp(p.get("t") or 0, MADRID).date() == today and not p.get("manual")]
     kind = product_kind(deal.get("title") or "")
-    if not kind or minutes <= 0 or last_n <= 0:
-        return ""
-    recent = [p for p in state.get("posts") or [] if now.timestamp() - (p.get("t") or 0) < minutes * 60]
-    for post in recent[-last_n:]:
-        if product_kind(post.get("title") or "") == kind:
-            ago = int((now.timestamp() - (post.get("t") or 0)) // 60)
-            return f"variedad: ya salió otro producto de tipo «{kind}» hace {ago} min"
+    if kind:
+        if minutes > 0 and last_n > 0:
+            recent = [p for p in posts if now.timestamp() - (p.get("t") or 0) < minutes * 60]
+            for post in recent[-last_n:]:
+                if product_kind(post.get("title") or "") == kind:
+                    ago = int((now.timestamp() - (post.get("t") or 0)) // 60)
+                    return f"variedad: ya salió otro producto de tipo «{kind}» hace {ago} min"
+        same_kind = sum(1 for p in todays if product_kind(p.get("title") or "") == kind)
+        kind_day = int((conf.get("tipos_dia") or {}).get(kind, kind_day))  # p. ej. robots aspiradores: 3
+        if kind_day > 0 and same_kind >= kind_day:
+            return f"variedad: hoy ya han salido {same_kind} productos de tipo «{kind}»"
+    brand = brand_of(deal)
+    if brand:
+        for post in reversed(posts):
+            ago = now.timestamp() - (post.get("t") or 0)
+            if ago >= brand_hours * 3600:
+                break
+            if brand_of(post) == brand:
+                return f"variedad: ya salió algo de {brand.title()} hace {int(ago // 60)} min"
+        same_brand = sum(1 for p in todays if brand_of(p) == brand)
+        if brand_day > 0 and same_brand >= brand_day:
+            return f"variedad: hoy ya han salido {same_brand} productos de {brand.title()}"
     return ""
 
 
@@ -1372,6 +1435,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
                 "reference": deal["reference"], "t": int(now.timestamp()), "url": url, "chat": target,
                 "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140], "photo_message_id": message.get("photo_message_id"),
                 "label": deal.get("interest_label") or "",
+                "brand": deal.get("brand") or item.get("brand") or "",
             }
             if item.get("cascada"):
                 record["origen"] = "premium"  # para medir cuánto aporta la cascada

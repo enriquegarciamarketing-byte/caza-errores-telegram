@@ -133,9 +133,19 @@ def search(api, cfg: dict, state: dict, now: datetime, log=print, learning: dict
     min_saving = max(1, min(99, int(float(cfg.get("error_min_discount") or 70) - float(conf.get("slack_pct") or 0))))
     out: list[tuple[dict, str]] = []
     for keyword in next_batch(conf, state, learning):
+        body = {"keywords": keyword, "searchIndex": conf.get("search_index") or "All",
+                "minSavingPercent": min_saving, "itemCount": 10, "resources": RESOURCES}
         try:
-            data = api.call("searchItems", {"keywords": keyword, "searchIndex": conf.get("search_index") or "All",
-                                            "minSavingPercent": min_saving, "itemCount": 10, "resources": RESOURCES})
+            try:
+                data = api.call("searchItems", body)
+            except ApiError as first:
+                # 11/11/2026: el Mac (premium) y GitHub (free) comparten el límite de 1 consulta por segundo y
+                # chocaban: con un 429 el free se quedaba sin búsquedas y solo publicaba lo que tenía en cola
+                # (los mismos auriculares Sony una y otra vez). Se espera un poco y se reintenta una vez.
+                if "429" not in str(first) and "TooManyRequests" not in str(first):
+                    raise
+                time.sleep(float(conf.get("retry_seconds") or 4))
+                data = api.call("searchItems", body)
         except ApiError as exc:
             log(f"Aviso: búsqueda «{keyword}» en Amazon sin respuesta ({str(exc)[:160]})")
             text = str(exc)

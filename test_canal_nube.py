@@ -831,7 +831,55 @@ class Variedad(unittest.TestCase):
     def test_tras_tres_posts_de_otro_tipo_vuelve_a_valer(self):
         state = self._state(("Sony WH-CH720N Auriculares Inalámbricos", 90), ("JATA Freidora de Aire 5L", 60),
                             ("Cecotec Cafetera Espresso Compacta", 40), ("Lefant M330 Pro Robot Aspirador", 20))
-        self.assertEqual(cn.variety_reason(state, {"title": "Sony WH-CH520 Auriculares Bluetooth"}, NOW, RULES), "")
+        self.assertEqual(cn.variety_reason(state, {"title": "JBL Tune 520BT Auriculares Bluetooth"}, NOW, RULES), "")
+        # Otra de Sony a los 90 min, no: misma marca en menos de 4 horas (11/11/2026).
+        self.assertIn("Sony", cn.variety_reason(state, {"title": "Sony WH-CH520 Auriculares Bluetooth"}, NOW, RULES))
         state = self._state(("Sony WH-CH720N Auriculares Inalámbricos", 28))
         self.assertIn("auriculares",
                       cn.variety_reason(state, {"title": "Sony WH-CH520 Auriculares Bluetooth"}, NOW, RULES))
+
+
+class NadaDeCascosSonyEnBucle(unittest.TestCase):
+    """11/11/2026: el mismo Sony WH-CH720N salió 3 veces (ASIN distintos) y el WH-CH520 dos, y no paraban."""
+
+    def test_codigo_de_modelo(self):
+        self.assertEqual(cn.model_codes("SONY WH-CH720N Auriculares Inalámbricos Diadema con Noise Cancelling"),
+                         {"whch720n"})
+        self.assertEqual(cn.model_codes("JATA JEFR1229 - Freidora de Aire 5L sin Aceite, 1450W, 200ºC"), {"jefr1229"})
+        self.assertEqual(cn.model_codes("Apple iPhone 14 128 GB Rojo (Reacondicionado)"), set())
+        self.assertEqual(cn.model_codes('Lenovo Legion 27-10 Monitor Gaming FHD 27" (IPS, 240 Hz, 0.5 ms)'), set())
+
+    def test_mismo_modelo_con_otro_titulo_es_el_mismo_producto(self):
+        self.assertTrue(cn.same_product("Sony WH-CH720N Auriculares Inalámbricos Bluetooth Noise Cancelling de",
+                                        "SONY WH-CH720N Auriculares Inalámbricos Diadema con Noise Cancelling |"))
+        self.assertTrue(cn.same_product("WH-CH720N Auriculares Inalámbricos Diadema con Noise Cancelling",
+                                        "Sony WH-CH720N Auriculares Inalámbricos Bluetooth Noise Cancelling de"))
+        self.assertTrue(cn.same_product("Sony WH-CH520, Auriculares de diadema inalámbricos Bluetooth, diseño ligero",
+                                        "Sony WH-CH520 Auriculares Bluetooth con 50 h de batería, sonido DSEE"))
+        self.assertFalse(cn.same_product("Sony WH-CH520 Auriculares Bluetooth con 50 h de batería",
+                                         "Sony WH-CH720N Auriculares Inalámbricos Bluetooth Noise Cancelling"))
+
+    def test_otro_asin_del_mismo_sony_no_se_republica(self):
+        state = {"posts": [{"asin": "B0BTDT8V59", "price": 67.0, "t": int(NOW.timestamp()) - 3 * 3600,
+                            "title": "Sony WH-CH720N Auriculares Inalámbricos Bluetooth Noise Cancelling de"}]}
+        self.assertTrue(cn.recently_posted(state, "B0DYFBHJ5H", 67.0, NOW, REAL,
+                                           "SONY WH-CH720N Auriculares Inalámbricos Diadema con Noise Cancelling |"))
+
+    def test_tope_diario_por_tipo_y_por_marca(self):
+        rules = {**RULES, "variedad": {"misma_clase_minutos": 180, "misma_clase_ultimos_posts": 3,
+                                       "mismo_tipo_dia": 2, "misma_marca_dia": 2, "misma_marca_horas": 4}}
+        day_start = cn.datetime.combine(NOW.astimezone(cn.MADRID).date(), cn.datetime.min.time(), cn.MADRID)
+        mins = int((NOW - day_start).total_seconds() // 60)
+        if mins < 300:
+            self.skipTest("NOW demasiado temprano para el escenario")
+        t = lambda m: int(NOW.timestamp()) - m * 60
+        state = {"posts": [{"t": t(mins - 5), "title": "JBL Tune 520BT Auriculares"},
+                           {"t": t(mins - 30), "title": "Bose QuietComfort Auriculares"},
+                           {"t": t(250), "title": "JATA Freidora de Aire 5L"},
+                           {"t": t(240), "title": "Cecotec Cafetera Espresso"},
+                           {"t": t(230), "title": "Lefant M330 Pro Robot Aspirador"}]}
+        self.assertIn("auriculares", cn.variety_reason(state, {"title": "Sennheiser HD 450 Auriculares"}, NOW, rules))
+        state = {"posts": [{"t": t(mins - 5), "title": "Cecotec Freidora", "brand": "Cecotec"},
+                           {"t": t(mins - 30), "title": "Cecotec Cafetera", "brand": "Cecotec"}]}
+        self.assertIn("Cecotec", cn.variety_reason(state, {"title": "Cecotec Conga 8290 Robot Aspirador",
+                                                           "brand": "Cecotec"}, NOW, rules))

@@ -56,7 +56,7 @@
         "keywords": [
           "black friday robot aspirador",
           "smart tv 55 pulgadas",
-          "auriculares bluetooth sony",
+          "sartenes tefal",
           "apple ipad",
           "playstation 5",
           "cafetera superautomática delonghi",
@@ -68,7 +68,7 @@
           "monitor samsung",
           "lego",
           "nintendo switch 2",
-          "airpods pro",
+          "aspiradora sin cable dyson",
           "taladro bosch"
         ]
       },
@@ -203,7 +203,7 @@
       "televisor qled",
       "barra de sonido",
       "altavoz bluetooth",
-      "auriculares inalámbricos sony",
+      "auriculares inalámbricos",
       "auriculares bose",
       "auriculares cancelación de ruido",
       "airpods",
@@ -574,6 +574,7 @@
       "_nota": "Desde el 10/11/2026 el free también busca directamente en Amazon con la API (Jimmyleaks bloquea al bot). Usa la lista de búsquedas de amazon_search (la del premium) por turnos: per_run búsquedas en cada ejecución (~1.000 consultas al día), pidiendo el descuento mínimo del modo listado. Pasan las mismas reglas del free; si el precio anterior es el «recomendado», solo con marca.",
       "enabled": true,
       "per_run": 8,
+      "pause_seconds": 2.0,
       "_nota_marcas": "Con «precio recomendado» como referencia solo valen marcas de confianza: las de resale.brands más estas.",
       "trusted_brands": ["Cecotec", "Jata", "Moulinex", "Tefal", "Rowenta", "Krups", "Taurus", "Orbegozo", "Braun", "Oral-B", "Remington", "Rowenta", "Severin", "Russell Hobbs", "Princess", "Mellerware", "Siemens", "Balay", "Teka", "Whirlpool", "Beko", "Candy", "Haier", "Panasonic", "Sharp", "Nespresso", "Dolce Gusto", "Smeg", "KitchenAid", "Lefant", "Conga", "Rowenta", "Karcher", "Kärcher", "Nike", "Adidas", "Puma", "New Balance", "Asics", "Skechers", "Levi's", "Tommy Hilfiger", "Calvin Klein", "Ray-Ban", "Casio", "Fossil", "Samsonite", "Playmobil", "Hasbro", "Mattel", "Chicco", "Bugaboo", "Medela", "Philips Avent", "Nivea", "L'Oréal", "Garnier", "Gillette", "Fairy", "Ariel", "Finish", "Colgate"]
     },
@@ -628,8 +629,8 @@
     "max_per_day": 30,
     "max_per_run": 1,
     "min_minutes_between_posts": 15,
-    "_nota_variedad": "Desde el 11/11/2026: nada de dos productos del mismo tipo seguidos (dos monitores, dos auriculares...). Si ya salió uno igual entre los últimos misma_clase_ultimos_posts posts de los últimos misma_clase_minutos minutos, espera en la cola.",
-    "variedad": {"misma_clase_minutos": 180, "misma_clase_ultimos_posts": 3},
+    "_nota_variedad": "Desde el 11/11/2026: nada de dos productos del mismo tipo seguidos (dos monitores, dos auriculares...). Si ya salió uno igual entre los últimos misma_clase_ultimos_posts posts de los últimos misma_clase_minutos minutos, espera en la cola. Desde el 11/11/2026 (canal lleno de auriculares Sony): como mucho mismo_tipo_dia del mismo tipo al día, misma_marca_dia de la misma marca al día y ninguno de la misma marca en misma_marca_horas horas. Además, dos fichas del mismo modelo (mismo código, p. ej. WH-CH720N en otro color) cuentan como el mismo producto.",
+    "variedad": {"misma_clase_minutos": 180, "misma_clase_ultimos_posts": 3, "mismo_tipo_dia": 2, "misma_marca_dia": 2, "misma_marca_horas": 4, "tipos_dia": {"robot aspirador": 3, "aspiradora": 3}},
     "test_private_posts": 3,
     "quiet_hours": [
       0,
