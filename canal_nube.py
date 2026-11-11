@@ -1401,11 +1401,17 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
     return items
 
 
-def live_check(post: dict, fetch) -> dict:
+def live_check(post: dict, fetch, cache: dict | None = None) -> dict:
     """Precio y stock de un post ya publicado: primero por la API de Amazon (vale para cualquier ASIN)
-    y, si no hay API o no responde, por jimmyleaks cuando el post salió de allí."""
+    y, si no hay API o no responde, por jimmyleaks cuando el post salió de allí.
+    `cache` son las respuestas de la API ya pedidas en bloque (resumen de la noche)."""
     from_amazon = str(post.get("jl_id") or "").startswith("amz-")
-    if API is not None and post.get("asin"):
+    asin = str(post.get("asin") or "").upper()
+    if cache is not None and asin in cache:
+        live = cache[asin]
+        return {"price": live.get("price"), "in_stock": bool(live.get("in_stock")),
+                "image": live.get("image") or "", "full": True}
+    if API is not None and asin and cache is None:
         try:
             live = API.get_item(post["asin"])
             if live is not None:
@@ -1563,13 +1569,19 @@ def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: in
     """Los posts del día que siguen activos (vuelve a mirar el precio), mejor descuento primero."""
     today = closing_day(now, rules)
     items, unverified = [], []
-    for post in state.get("posts") or []:
-        if post.get("ended") or not post.get("jl_id"):
-            continue
-        if datetime.fromtimestamp(post.get("t") or 0, timezone.utc).astimezone(MADRID).date() != today:
-            continue
+    todays = [post for post in state.get("posts") or []
+              if not post.get("ended") and post.get("jl_id")
+              and datetime.fromtimestamp(post.get("t") or 0, timezone.utc).astimezone(MADRID).date() == today]
+    cache = None
+    if API is not None and todays:
         try:
-            detail = live_check(post, fetch)
+            cache = API.get_items([post["asin"] for post in todays])
+            log(f"  Resumen: {len(cache)} de {len(todays)} releídos con la API de Amazon")
+        except Exception as exc:
+            log(f"  Resumen: la API de Amazon no responde ({exc}); pruebo uno a uno")
+    for post in todays:
+        try:
+            detail = live_check(post, fetch, cache)
         except Exception as exc:
             # Salió hoy y el canal no lo ha marcado como agotado: va con el precio publicado.
             # (El 10/11/2026 jimmyleaks bloqueó a GitHub y el resumen se quedó vacío por esto.)

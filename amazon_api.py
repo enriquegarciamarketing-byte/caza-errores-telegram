@@ -127,6 +127,30 @@ class CreatorsAPI:
             **self._offer(item),
         }
 
+    def get_items(self, asins: list[str], pause: float = 1.1) -> dict[str, dict]:
+        """Precio y stock de varios ASIN, de 10 en 10 (lo que admite getItems) y sin pasar del ritmo
+        de la API (1 petición por segundo; si devuelve 429 espera y reintenta una vez)."""
+        found: dict[str, dict] = {}
+        wanted = list(dict.fromkeys(a.upper() for a in asins if a))
+        for start in range(0, len(wanted), 10):
+            chunk = wanted[start:start + 10]
+            if start:
+                time.sleep(pause)
+            body = {"itemIds": chunk, "itemIdType": "ASIN", "resources": PRICE_RESOURCES}
+            try:
+                data = self.call("getItems", body)
+            except ApiError as exc:
+                if "HTTP 429" not in str(exc):
+                    raise
+                time.sleep(pause * 3)
+                data = self.call("getItems", body)
+            for item in _get(data, "itemsResult", "items", default=[]) or []:
+                asin = str(_get(item, "asin", default="")).upper()
+                if asin in chunk:
+                    found[asin] = {"asin": asin, "title": _get(item, "itemInfo", "title", "displayValue", default=""),
+                                   "image": _get(item, "images", "primary", "large", "url"), **self._offer(item)}
+        return found
+
     def find_by_ean(self, ean: str) -> dict:
         """Devuelve el artículo de Amazon.es cuyo EAN coincide (ASIN, padre, precio, stock)."""
         data = self.call("searchItems", {"keywords": ean, "itemCount": 3, "resources": PRICE_RESOURCES})
