@@ -1402,12 +1402,22 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
 
 
 def live_check(post: dict, fetch) -> dict:
-    """Precio y stock de un post ya publicado: por la API si salió de Amazon, por jimmyleaks si no."""
-    if str(post.get("jl_id") or "").startswith("amz-"):
-        if API is None:
-            raise RuntimeError("sin API de Amazon para comprobarlo")
-        live = API.get_item(post["asin"]) or {}
-        return {"price": live.get("price"), "in_stock": bool(live.get("in_stock")), "full": True}
+    """Precio y stock de un post ya publicado: primero por la API de Amazon (vale para cualquier ASIN)
+    y, si no hay API o no responde, por jimmyleaks cuando el post salió de allí."""
+    from_amazon = str(post.get("jl_id") or "").startswith("amz-")
+    if API is not None and post.get("asin"):
+        try:
+            live = API.get_item(post["asin"])
+            if live is not None:
+                return {"price": live.get("price"), "in_stock": bool(live.get("in_stock")),
+                        "image": live.get("image") or "", "full": True}
+            if from_amazon:
+                return {"price": None, "in_stock": False, "full": True}
+        except ApiError:
+            if from_amazon:
+                raise
+    if from_amazon:
+        raise RuntimeError("sin API de Amazon para comprobarlo")
     return scanner.parse_detail(fetch(f"{JL}/es/dp/{post['jl_id']}/"))
 
 
@@ -1552,7 +1562,7 @@ def closing_day(now: datetime, rules: dict):
 def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: int = 10) -> list[dict]:
     """Los posts del día que siguen activos (vuelve a mirar el precio), mejor descuento primero."""
     today = closing_day(now, rules)
-    items = []
+    items, unverified = [], []
     for post in state.get("posts") or []:
         if post.get("ended") or not post.get("jl_id"):
             continue
@@ -1561,8 +1571,11 @@ def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: in
         try:
             detail = live_check(post, fetch)
         except Exception as exc:
-            log(f"  Resumen: no he podido releer {post['asin']} ({exc}); lo dejo fuera")
-            continue
+            # Salió hoy y el canal no lo ha marcado como agotado: va con el precio publicado.
+            # (El 10/11/2026 jimmyleaks bloqueó a GitHub y el resumen se quedó vacío por esto.)
+            log(f"  Resumen: no he podido releer {post['asin']} ({exc}); va con el precio publicado")
+            unverified.append(post["asin"])
+            detail = {"price": float(post["price"]), "in_stock": True, "image": post.get("image") or ""}
         price = detail.get("price")
         if not detail.get("in_stock") or price is None or price > float(post["price"]) + 0.009:
             log(f"  Resumen: {post['asin']} ya no está a {post['price']} €; fuera")
@@ -1571,6 +1584,8 @@ def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: in
                       "reference": float(post["reference"]), "url": post["url"],
                       "image": detail.get("image") or "",
                       "discount": discount_pct(float(price), float(post["reference"]))})
+    if unverified:
+        log(f"  Resumen: {len(unverified)} sin poder releer (van con el precio publicado)")
     items.sort(key=lambda item: item["discount"], reverse=True)
     return items[:limit]
 
@@ -1900,6 +1915,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
 
 
 def main() -> int:
+    global API
     parser = argparse.ArgumentParser(description="Canal @cazachollos_com: solo Amazon, precio verificado")
     parser.add_argument("--dry-run", action="store_true", help="Lo revisa todo pero no envía nada")
     parser.add_argument("--test-private", action="store_true", help="Hasta 3 ejemplos a tu chat, nunca al canal")
@@ -1937,12 +1953,13 @@ def main() -> int:
     elif args.manual:
         code = run_manual(args, cfg, state, now, tg=tg)
     elif args.resumen:
+        API = CreatorsAPI.from_env(rules_from(cfg).get("tag") or "")
+        print("Resumen: precios releídos " + ("con la API de Amazon" if API else "sin la API de Amazon (faltan secretos)"))
         code = run_summary(args, cfg, state, now, tg=tg)
     else:
         # GitHub retrasa mucho las tareas frecuentes: cada ejecución hace pasadas seguidas durante un rato.
         # Si quedan chollos aprobados sin publicar, la siguiente pasada se adelanta (--busy-every).
         rules = rules_from(cfg)
-        global API
         API = CreatorsAPI.from_env(rules.get("tag") or "")
         print("Precios: " + ("comprobados con la API de Amazon antes de publicar" if API else "jimmyleaks (sin secretos de la API de Amazon)"))
         code = 0

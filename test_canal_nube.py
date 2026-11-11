@@ -416,6 +416,32 @@ class Resumen(unittest.TestCase):
                        log=out.append)
         self.assertIn("ya enviado", out[-1])
 
+    def test_resumen_sale_aunque_jimmyleaks_bloquee(self):
+        # 10/11/2026: jimmyleaks daba 403 a GitHub y el resumen se quedaba vacío y marcado como enviado.
+        night = datetime(2026, 11, 10, 23, 5, tzinfo=timezone.utc)  # 00:05 en Madrid, cierra el día 10
+        t = datetime(2026, 11, 10, 12, 0, tzinfo=timezone.utc).timestamp()
+        posts = [{"asin": f"B0TEST000{i}", "jl_id": f"jl{i}", "t": t, "price": 10.0 + i, "reference": 40.0,
+                  "url": f"https://www.amazon.es/dp/B0TEST000{i}", "title": f"Producto {i}"} for i in range(4)]
+
+        def blocked(url):
+            raise RuntimeError("HTTP Error 403: Forbidden")
+        out = []
+        items = cn.summary_items({"posts": posts}, night, RULES, blocked, out.append)
+        self.assertEqual(len(items), 4)
+        self.assertEqual(items[0]["price"], 10.0)  # mejor descuento primero, con el precio publicado
+
+    def test_resumen_relee_con_la_api_de_amazon(self):
+        class FakeAPI:
+            def get_item(self, asin):
+                return {"price": 9.0, "in_stock": True, "image": "x.jpg"}
+        old, cn.API = cn.API, FakeAPI()
+        try:
+            detail = cn.live_check({"asin": "B0TEST0001", "jl_id": "jl1"}, lambda u: (_ for _ in ()).throw(AssertionError))
+        finally:
+            cn.API = old
+        self.assertEqual(detail["price"], 9.0)
+        self.assertTrue(detail["in_stock"])
+
     def test_tras_el_resumen_no_salen_mas_productos(self):
         rules = dict(RULES, close_time="23:50", quiet_hours=[0, 8])
         evening = datetime(2026, 10, 31, 21, 0, tzinfo=timezone.utc)  # 22:00 en Madrid

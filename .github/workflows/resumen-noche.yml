@@ -43,6 +43,9 @@ jobs:
       - name: Resumen de las mejores ofertas del día
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          # Para releer los precios del día con la API de Amazon (jimmyleaks bloquea a GitHub).
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET }}
         run: |
           ARGS=(--resumen)
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private --ignore-limits); fi
