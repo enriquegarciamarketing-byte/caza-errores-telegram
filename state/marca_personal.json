@@ -2,7 +2,8 @@
  "used": {
   "finanzas": [
    0,
-   1
+   1,
+   2
   ],
   "ahorro": [
    0,
@@ -62,6 +63,11 @@
    "t": 1794389292,
    "slot": "manana",
    "topic": "El bot por dentro"
+  },
+  {
+   "t": 1794425678,
+   "slot": "tarde",
+   "topic": "Finanzas e inversión"
   }
  ]
 }
