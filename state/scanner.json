@@ -20,31 +20,6 @@
    "t": 1793218021,
    "result": "solo -35% bajo la media"
   },
-  "RJXVQBv": {
-   "price": 30.77,
-   "t": 1793179102,
-   "result": "sin EAN para enlazar al producto exacto"
-  },
-  "1bmlK5R": {
-   "price": 9.99,
-   "t": 1793179102,
-   "result": "importe demasiado bajo para ganga"
-  },
-  "1ZebmnQ": {
-   "price": 44.74,
-   "t": 1793179102,
-   "result": "valoraciones flojas (5.0 / 3)"
-  },
-  "R9Dnlr7": {
-   "price": 7.49,
-   "t": 1793179102,
-   "result": "solo -34% bajo la media"
-  },
-  "1qZQE5p": {
-   "price": 61.0,
-   "t": 1793179102,
-   "result": "solo -23% bajo la media"
-  },
   "RXr9EnK": {
    "price": 10.0,
    "t": 1793182300,
@@ -11693,7 +11668,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794388660
+   "checked": 1794389499
   },
   {
    "id": "cm-2062698",
@@ -12007,41 +11982,41 @@
   "api_amazon": 1794381248.0407252
  },
  "discovery_cache": {
-  "t": 1794367561.847521,
+  "t": 1794389503.5730312,
   "titles": [
    "almacenamiento",
    "dispositivos de red",
    "impresora y tinta",
-   "sandisk ultra dual drive go, memoria flash 128 gb (con conectores usb type-c y type-a reversibles, para android moviles, tabl",
    "philips 27e1n1100a monitor 27 pulgadas 120hz panel ips, 4ms gtg, altavoces, (1920x1080 hdmi 1x 1.4) negro",
-   "unionsine disco duro externo 500gb 2.5\" usb3.0 ultra slim portatil hdd | almacenamiento para pc, mac, macbook, chromebook, xb",
    "tp-link re330 - repetidor wifi 5 ac1200 de doble banda, puerto ethernet | amplificador de senal wifi. compatible con easymesh",
-   "sandisk ultra flair pendrive 128 gb memoria usb 3.0 (velocidad de lectura hasta 150 mb/s, proteccion con contrasena, carcasa ",
+   "sandisk ultra dual drive go, memoria flash 128 gb (con conectores usb type-c y type-a reversibles, para android moviles, tabl",
+   "unionsine disco duro externo 500gb 2.5\" usb3.0 ultra slim portatil hdd | almacenamiento para pc, mac, macbook, chromebook, xb",
    "arctic mx-7 (8 g) - pasta termica de alto rendimiento para cpus | para consolas, procesadores, tarjetas graficas y portatiles",
-   "canon pixma ts3750i impresora multifuncion wi-fi de inyeccion de tinta | facil de usar; escanear y copiar, fotos sin bordes h",
-   "tp-link ub500 - adaptador bluetooth usb para pc, plug & play, tamano mini | ideal para pc sin bluetooth. no necesita configur",
-   "intenso 3503480 lapiz usb 2.0 basic 32gb",
-   "toshiba canvio partner 2tb - disco duro externo portatil de 2,5&#x27;&#x27;, usb 3.2, compatible con mac y windows. (hdtb520ek3ab)",
+   "sandisk ultra flair pendrive 128 gb memoria usb 3.0 (velocidad de lectura hasta 150 mb/s, proteccion con contrasena, carcasa ",
    "seagate portable drive 1tb, unidad de disco duro externo, usb 3.0 para pc, ordenador portatil y mac y servicios rescue, amazo",
+   "intenso 3503480 lapiz usb 2.0 basic 32gb",
+   "canon pixma ts3750i impresora multifuncion wi-fi de inyeccion de tinta | facil de usar; escanear y copiar, fotos sin bordes h",
    "hp deskjet 2920, impresora multifuncion de inyeccion de tinta a color | wi-fi de doble banda, panel lcd, hp smart app, impres",
-   "lenovo idea tab – tablet 11\" 2.5k (mediatek dimensity 6300, 8 gb ram, 256 gb ufs, 90 hz, 4 altavoces, wi-fi 5, bluetooth 5.2,",
-   "sandisk pendrive 64 gb ultra memoria flash usb 3.0 hasta 130 mb/s, (secureaccess software, proteccion de contrasenas) negro",
-   "sandisk 64 gb cruzer blade usb 2.0 flash drive - black",
    "apple ipad de 11 pulgadas: chip a16, modelo de 11 pulgadas, pantalla liquid retina, 128 gb, wi fi 6, camaras frontal y traser",
+   "sandisk 64 gb cruzer blade usb 2.0 flash drive - black",
+   "toshiba canvio partner 2tb - disco duro externo portatil de 2,5&#x27;&#x27;, usb 3.2, compatible con mac y windows. (hdtb520ek3ab)",
+   "lenovo idea tab – tablet 11\" 2.5k (mediatek dimensity 6300, 8 gb ram, 256 gb ufs, 90 hz, 4 altavoces, wi-fi 5, bluetooth 5.2,",
+   "tp-link ub500 - adaptador bluetooth usb para pc, plug & play, tamano mini | ideal para pc sin bluetooth. no necesita configur",
+   "sandisk pendrive 64 gb ultra memoria flash usb 3.0 hasta 130 mb/s, (secureaccess software, proteccion de contrasenas) negro",
+   "instax link wide impresora para telefonos, color gris moka",
+   "strong repetidor wifi n300, amplificador wifi largo alcance | 300 mbps, repetidor wifi, amplificador senal wifi, wps, puerto ",
    "lexar d40e  unidad flash dual usb tipo-c, usb-a/c, 64gb, champan plateado | usb 3.2 gen 1, type-c, carcasa de metal, diseno g",
-   "sandisk 64 gb ultra fit, usb-a laufwerk, bis 400 mb/s lesen | usb 3.2, ideal para ordenador portatil o de sobremesa, consolas",
    "tp-link ls105g switch gigabit 5 puertos, plug & play, carcasa acero, impresoras, webcams",
    "tp-link tl-sg108 - switch gigabit de 8 puertos, plug & play, carcasa acero | no necesita configuracion. diseno sin ventilador",
-   "strong repetidor wifi n300, amplificador wifi largo alcance | 300 mbps, repetidor wifi, amplificador senal wifi, wps, puerto ",
    "tp-link tl-wpa4220 kit - adaptador powerline av600, kit plc wifi 300 mbps | amplia tu red a traves del cableado electrico. si",
-   "tp-link tl-sg105 - switch gigabit de 5 puertos, plug & play, carcasa acero | plug & play, no necesita configuracion. diseno s",
-   "kingston datatraveler exodia s unidad flash usb - 128gb - usb 3.2 gen 1 - usb type a - negro/turquesa - dtxs/128gb",
-   "cudy 4g lte n300 wi-fi router, ranura sim, 4 puertos lan, lt400 | mifi para caravana, wi-fi movil, 4 puertos 100m, ranura nan",
-   "yodoit monitor portatil pantalla portatil de 15,6 pulgadas ips 1080p fhd display usb type-c de computadora, juego hdr con hdm",
-   "origbelie lector cd dvd externo, usb 3.0 y type-c cd/dvd +/-rw drive | plug&play grabadora cd dvd externa para pc, portatil, ",
    "tp-link tl-pa7017p kit - kit plc, adaptador powerline av1000, 1 puerto ge | amplia tu red a traves del cableado electrico. si",
-   "wd 2tb my passport disco duro externo portatil, usb 3.2 gen 1/usb 3.0, copia de seguridad y proteccion con contrasena, format",
-   "intenso 3533490 lapiz usb 3.2 speed 64gb"
+   "tp-link tl-sg105 - switch gigabit de 5 puertos, plug & play, carcasa acero | plug & play, no necesita configuracion. diseno s",
+   "cudy 4g lte n300 wi-fi router, ranura sim, 4 puertos lan, lt400 | mifi para caravana, wi-fi movil, 4 puertos 100m, ranura nan",
+   "tp-link re700x - repetidor wifi 6 ax3000, doble banda, puerto ge, easymesh | amplificador de senal wifi. ancho de banda de 16",
+   "instax mini link 3 impresora fotografica para smartphone, rosa | impresion de alta velocidad, efectos ar 3d integrados, modo ",
+   "sandisk 64 gb ultra fit, usb-a laufwerk, bis 400 mb/s lesen | usb 3.2, ideal para ordenador portatil o de sobremesa, consolas",
+   "lg monitor gaming ultragear 24g411a-b - 24&#x27;&#x27;, ips, 144hz, 1 ms, morado | fhd (1920 x 1080), panel ips, 144 (o/c) hz, 5ms, hdr",
+   "kingston datatraveler exodia s unidad flash usb - 128gb - usb 3.2 gen 1 - usb type a - negro/turquesa - dtxs/128gb"
   ]
  },
  "resale_cache": {
@@ -26971,13 +26946,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1236
+  "passes": 1237
  },
  "jl_paused_until": 1794390340.609522,
- "amazon_search_index": 136,
- "last_api_count": 31,
+ "amazon_search_index": 140,
+ "last_api_count": 7,
  "api_calls": {
-  "2026-11-11": 1083
+  "2026-11-11": 1087
  },
  "price_history": {
   "B0CC5NJD6H": [
