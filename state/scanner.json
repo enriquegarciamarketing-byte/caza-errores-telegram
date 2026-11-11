@@ -3486,9 +3486,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B001FWXKJA": {
-   "price": 38.0,
-   "t": 1794382764,
-   "result": "Amazon no marca precio anterior"
+   "price": 34.23,
+   "t": 1794388540,
+   "result": "lo vende Be and Care, no Amazon ni la tienda oficial de la marca"
   },
   "B0GN958R22": {
    "price": 27.07,
@@ -10869,6 +10869,11 @@
    "price": 66.51,
    "t": 1794388328,
    "result": "Amazon no marca precio anterior"
+  },
+  "B07G8J2Y2D": {
+   "price": null,
+   "t": 1794388540,
+   "result": "sin precio en Amazon"
   }
  },
  "posts": [
@@ -11688,7 +11693,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794388328
+   "checked": 1794388540
   },
   {
    "id": "cm-2062698",
@@ -26911,7 +26916,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 0,
+ "rotation_index": 5,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -26966,13 +26971,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1234
+  "passes": 1235
  },
- "jl_paused_until": 1794388409.958426,
- "amazon_search_index": 128,
- "last_api_count": 26,
+ "jl_paused_until": 1794390340.609522,
+ "amazon_search_index": 132,
+ "last_api_count": 27,
  "api_calls": {
-  "2026-11-11": 1075
+  "2026-11-11": 1079
  },
  "price_history": {
   "B0CC5NJD6H": [
