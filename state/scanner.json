@@ -20,11 +20,6 @@
    "t": 1793218021,
    "result": "solo -35% bajo la media"
   },
-  "R0pAj4R": {
-   "price": 12.0,
-   "t": 1793185228,
-   "result": "solo -40% bajo la media"
-  },
   "RYPZOv7": {
    "price": 13.12,
    "t": 1793187929,
@@ -11833,7 +11828,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794394564
+   "checked": 1794395047
   },
   {
    "id": "cm-2062698",
@@ -27141,13 +27136,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1325
+  "passes": 1326
  },
  "jl_paused_until": 1794395770.674686,
- "amazon_search_index": 120,
- "last_api_count": 8,
+ "amazon_search_index": 124,
+ "last_api_count": 19,
  "api_calls": {
-  "2026-11-11": 1439
+  "2026-11-11": 1443
  },
  "price_history": {
   "B0CC5NJD6H": [
