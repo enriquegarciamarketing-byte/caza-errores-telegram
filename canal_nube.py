@@ -653,6 +653,104 @@ def recently_posted(state: dict, asin: str, price: float, now: datetime, rules: 
     return False
 
 
+# ------------------------------------------------------------------ variedad (11/11/2026)
+# Dos monitores Lenovo Legion seguidos (o dos auriculares Sony en media hora) no aportan: el canal tiene
+# que ir variando. Se mira el TIPO de producto (más fino que la categoría "Informática" o "TV y sonido"):
+# si ya salió uno igual entre los últimos posts recientes, este espera en la cola a la siguiente pasada.
+TIPOS_PRODUCTO = [
+    ("robot aspirador", ["robot aspirador", "robot aspiradora", "robot fregasuelos", "robot friegasuelos",
+                         "aspirador robot", "aspiradora robot", "roomba", "robovac"]),
+    ("aspiradora", ["aspiradora", "aspirador", "escoba electrica"]),
+    ("monitor", ["monitor"]),
+    ("televisor", ["televisor", "television", "smart tv", "qled", "oled tv", "google tv", "google-tv", "bravia"]),
+    ("auriculares", ["auriculares", "cascos", "earbuds", "headphones", "airpods"]),
+    ("altavoz", ["altavoz", "altavoces", "barra de sonido", "soundbar"]),
+    ("movil", ["smartphone", "movil", "telefono movil", "iphone"]),
+    ("tablet", ["tablet", "ipad"]),
+    ("portatil", ["portatil", "laptop", "macbook", "chromebook"]),
+    ("reloj", ["smartwatch", "reloj inteligente", "pulsera de actividad", "apple watch", "reloj"]),
+    ("teclado y raton", ["teclado", "raton"]),
+    ("consola", ["consola", "ps5", "playstation 5", "nintendo switch", "xbox"]),
+    ("mando", ["mando"]),
+    ("camara", ["camara", "webcam", "videotimbre", "timbre inteligente"]),
+    ("almacenamiento", ["ssd", "disco duro", "memoria usb", "pendrive", "tarjeta microsd", "tarjeta de memoria"]),
+    ("router", ["router", "repetidor", "sistema mesh"]),
+    ("impresora", ["impresora"]),
+    ("cargador", ["cargador", "power bank", "powerbank", "bateria externa"]),
+    ("soporte", ["soporte"]),
+    ("freidora", ["freidora"]),
+    ("cafetera", ["cafetera"]),
+    ("microondas", ["microondas"]),
+    ("robot de cocina", ["robot de cocina", "thermomix"]),
+    ("batidora", ["batidora", "licuadora"]),
+    ("menaje", ["sarten", "sartenes", "olla", "bateria de cocina", "cuchillo", "cuchillos"]),
+    ("lavadora", ["lavadora", "secadora"]),
+    ("frigorifico", ["frigorifico", "nevera", "congelador"]),
+    ("lavavajillas", ["lavavajillas"]),
+    ("climatizacion", ["ventilador", "calefactor", "radiador", "aire acondicionado", "deshumidificador",
+                       "humidificador", "purificador"]),
+    ("plancha", ["plancha de vapor", "centro de planchado", "plancha de ropa"]),
+    ("cuidado del pelo", ["secador", "plancha de pelo", "rizador", "moldeador"]),
+    ("afeitado", ["afeitadora", "recortadora", "depiladora", "maquina de cortar pelo"]),
+    ("cepillo de dientes", ["cepillo de dientes", "cepillo electrico", "irrigador"]),
+    ("iluminacion", ["lampara", "bombilla", "bombillas", "tira led", "flexo"]),
+    ("descanso", ["colchon", "almohada", "canape", "somier", "topper"]),
+    ("silla", ["silla", "sillon"]),
+    ("mesa", ["mesa", "escritorio"]),
+    ("patinete", ["patinete"]),
+    ("bicicleta", ["bicicleta"]),
+    ("herramientas", ["taladro", "atornillador", "amoladora", "sierra"]),
+    ("calzado", ["zapatillas", "zapatilla", "botas"]),
+    ("equipaje", ["mochila", "maleta"]),
+    ("bebe", ["panales", "toallitas", "biberon", "biberones", "chupete", "chupetes"]),
+    ("limpieza", ["detergente", "suavizante", "lavavajillas en capsulas", "capsulas de lavado", "desengrasante",
+                  "quitagrasas", "limpiador", "papel higienico", "papel de cocina"]),
+    ("perfume", ["eau de toilette", "eau de parfum", "perfume", "colonia"]),
+    ("cosmetica", ["serum", "crema facial", "crema hidratante", "champu", "acondicionador", "mascarilla",
+                   "acido salicilico", "salicylic acid", "niacinamida", "protector solar"]),
+    ("ropa", ["jeans", "vaqueros", "pantalon", "pantalones", "shorts", "camiseta", "sudadera", "chaqueta",
+              "abrigo", "gorro", "sombrero", "hat"]),
+    ("suplementos", ["pre-entreno", "preentreno", "proteina", "whey", "creatina"]),
+    ("salud", ["preservativos", "termometro", "tensiometro"]),
+    ("bebidas", ["bebida energetica", "refresco", "monster energy", "agua mineral"]),
+    ("mascotas", ["pienso", "comida para perros", "comida para gatos", "arena para gatos", "cama para perros",
+                   "cama para gatos", "rascador"]),
+    ("juguete", ["lego", "juguete", "muneca", "peluche", "puzzle"]),
+]
+
+
+def product_kind(title: str) -> str:
+    """Tipo de producto por el arranque del título (marca, modelo y qué es): el término que antes aparece.
+
+    'Lenovo Legion 24-10 Monitor Gaming' → monitor · 'Lefant M330 Pro Robot Aspirador' → robot aspirador.
+    Se mira solo el arranque para no confundirse con la descripción ('compatible con monitor')."""
+    head = fold(title_head(title or ""))
+    best, best_at, best_word = "", len(head) + 1, ""
+    for kind, words in TIPOS_PRODUCTO:
+        for word in words:
+            found = re.search(r"(?<![a-z0-9])" + re.escape(word) + r"(?![a-z0-9])", head)
+            # A igualdad de posición gana el término más largo ('robot aspirador' frente a 'robot').
+            if found and (found.start() < best_at or (found.start() == best_at and len(word) > len(best_word))):
+                best, best_at, best_word = kind, found.start(), word
+    return best
+
+
+def variety_reason(state: dict, deal: dict, now: datetime, rules: dict) -> str:
+    """Motivo para no publicar ahora por repetir tipo de producto; vacío si se puede."""
+    conf = rules.get("variedad") or {}
+    minutes = float(conf.get("misma_clase_minutos", 180))
+    last_n = int(conf.get("misma_clase_ultimos_posts", 3))
+    kind = product_kind(deal.get("title") or "")
+    if not kind or minutes <= 0 or last_n <= 0:
+        return ""
+    recent = [p for p in state.get("posts") or [] if now.timestamp() - (p.get("t") or 0) < minutes * 60]
+    for post in recent[-last_n:]:
+        if product_kind(post.get("title") or "") == kind:
+            ago = int((now.timestamp() - (post.get("t") or 0)) // 60)
+            return f"variedad: ya salió otro producto de tipo «{kind}» hace {ago} min"
+    return ""
+
+
 # ------------------------------------------------------------------ texto y tarjeta
 
 def clean_title(title: str, limit: int = 95) -> str:
@@ -1215,9 +1313,11 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
     if args.test_private:
         approved.sort(key=lambda pair: not pair[0].get("cascada"))  # en la prueba, primero los del premium
     last_label = next((p.get("label") for p in reversed(state.get("posts") or []) if p.get("label")), None)
-    if last_label and not args.test_private:
-        # Variedad: si hay algo de otra categoría, sale antes que repetir la del último post (3 robots seguidos no).
-        approved.sort(key=lambda pair: pair[1].get("interest_label") == last_label)
+    if not args.test_private:
+        # Variedad: primero lo que no repite tipo de producto reciente y, después, lo que no repite la
+        # categoría del último post (3 robots seguidos no; dos monitores seguidos tampoco).
+        approved.sort(key=lambda pair: (bool(variety_reason(state, pair[1], now, rules)),
+                                        bool(last_label) and pair[1].get("interest_label") == last_label))
     limit = int(rules["test_private_posts"] if args.test_private else rules["max_per_run"])
     sent = 0
     for item, deal in approved:
@@ -1242,6 +1342,11 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         if not args.test_private and recently_posted(state, deal["asin"], deal["price"], now, rules, deal["title"]):
             log(f"  ✗ {deal['asin']} el mismo producto acaba de salir en esta pasada")  # p. ej. dos ASIN del mismo Sony
             continue
+        if not args.test_private:
+            why = variety_reason(state, deal, now, rules)
+            if why:
+                log(f"  ⏸ {deal['asin']} {why}; espera en la cola")  # sigue en el backlog para más tarde
+                continue
         why = api_price_check(deal, log)
         if why:
             log(f"  ✗ {deal['asin']} {why}")

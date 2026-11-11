@@ -797,3 +797,41 @@ class FocoDelDia(unittest.TestCase):
         foco = REAL_FOCO.get("foco")
         if foco:
             self.assertLessEqual(set(foco["solo_categorias"]), labels)
+
+
+class Variedad(unittest.TestCase):
+    """11/11/2026: salieron dos monitores Lenovo Legion seguidos y dos auriculares Sony en media hora."""
+
+    def test_tipo_de_producto(self):
+        self.assertEqual(cn.product_kind('Lenovo Legion 27-10 Monitor Gaming FHD 27" (IPS, 240 Hz)'), "monitor")
+        self.assertEqual(cn.product_kind("Lenovo Legion 24-10- Monitor Gaming FHD 23.8\""), "monitor")
+        self.assertEqual(cn.product_kind("Sony WH-CH520 Auriculares Bluetooth con 50 h de batería"), "auriculares")
+        self.assertEqual(cn.product_kind("Lefant M330 Pro Robot Aspirador y Fregasuelos con Mapeo 3 en 1"),
+                         "robot aspirador")
+        self.assertEqual(cn.product_kind("JATA JEFR1229 - Freidora de Aire 5L sin Aceite, 1450W"), "freidora")
+        self.assertEqual(cn.product_kind("Cecotec Cafetera Espresso Compacta Power Espresso 20"), "cafetera")
+        self.assertEqual(cn.product_kind("Producto rarísimo sin tipo conocido XYZ"), "")
+
+    def _state(self, *posts):
+        return {"posts": [{"t": int(NOW.timestamp()) - mins * 60, "title": title} for title, mins in posts]}
+
+    def test_segundo_monitor_seguido_espera(self):
+        state = self._state(('Lenovo Legion 27-10 Monitor Gaming FHD 27"', 44))
+        why = cn.variety_reason(state, {"title": 'Lenovo Legion 24-10- Monitor Gaming FHD 23.8"'}, NOW, RULES)
+        self.assertIn("monitor", why)
+
+    def test_otro_tipo_si_pasa(self):
+        state = self._state(('Lenovo Legion 27-10 Monitor Gaming FHD 27"', 10))
+        self.assertEqual(cn.variety_reason(state, {"title": "JATA Freidora de Aire 5L sin Aceite"}, NOW, RULES), "")
+
+    def test_pasadas_tres_horas_vuelve_a_valer(self):
+        state = self._state(('Lenovo Legion 27-10 Monitor Gaming FHD 27"', 200))
+        self.assertEqual(cn.variety_reason(state, {"title": "LG UltraGear Monitor Gaming 27\""}, NOW, RULES), "")
+
+    def test_tras_tres_posts_de_otro_tipo_vuelve_a_valer(self):
+        state = self._state(("Sony WH-CH720N Auriculares Inalámbricos", 90), ("JATA Freidora de Aire 5L", 60),
+                            ("Cecotec Cafetera Espresso Compacta", 40), ("Lefant M330 Pro Robot Aspirador", 20))
+        self.assertEqual(cn.variety_reason(state, {"title": "Sony WH-CH520 Auriculares Bluetooth"}, NOW, RULES), "")
+        state = self._state(("Sony WH-CH720N Auriculares Inalámbricos", 28))
+        self.assertIn("auriculares",
+                      cn.variety_reason(state, {"title": "Sony WH-CH520 Auriculares Bluetooth"}, NOW, RULES))

@@ -628,6 +628,8 @@
     "max_per_day": 30,
     "max_per_run": 1,
     "min_minutes_between_posts": 15,
+    "_nota_variedad": "Desde el 11/11/2026: nada de dos productos del mismo tipo seguidos (dos monitores, dos auriculares...). Si ya salió uno igual entre los últimos misma_clase_ultimos_posts posts de los últimos misma_clase_minutos minutos, espera en la cola.",
+    "variedad": {"misma_clase_minutos": 180, "misma_clase_ultimos_posts": 3},
     "test_private_posts": 3,
     "quiet_hours": [
       0,
