@@ -4342,7 +4342,7 @@
   },
   "B00J43YFGO": {
    "price": null,
-   "t": 1794388803,
+   "t": 1794391659,
    "result": "sin precio en Amazon"
   },
   "B01LQAYQUW": {
@@ -4352,12 +4352,12 @@
   },
   "B0993K1HKH": {
    "price": null,
-   "t": 1794380598,
+   "t": 1794391659,
    "result": "sin precio en Amazon"
   },
   "B09P9KMRNL": {
    "price": null,
-   "t": 1794380598,
+   "t": 1794391659,
    "result": "sin precio en Amazon"
   },
   "B00DMZBNQ0": {
@@ -4372,7 +4372,7 @@
   },
   "B0756HNM7H": {
    "price": null,
-   "t": 1794388863,
+   "t": 1794391659,
    "result": "sin precio en Amazon"
   },
   "B083P8WMXG": {
@@ -4382,7 +4382,7 @@
   },
   "B08K3XD3BZ": {
    "price": null,
-   "t": 1794386100,
+   "t": 1794391659,
    "result": "sin precio en Amazon"
   },
   "B094NKN2Z7": {
@@ -11783,7 +11783,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794391537
+   "checked": 1794391659
   },
   {
    "id": "cm-2062698",
@@ -27091,13 +27091,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1291
+  "passes": 1292
  },
  "jl_paused_until": 1794392074.906256,
- "amazon_search_index": 170,
- "last_api_count": 18,
+ "amazon_search_index": 174,
+ "last_api_count": 9,
  "api_calls": {
-  "2026-11-11": 1303
+  "2026-11-11": 1307
  },
  "price_history": {
   "B0CC5NJD6H": [
