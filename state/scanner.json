@@ -11878,7 +11878,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794395083
+   "checked": 1794396131
   },
   {
    "id": "cm-2062698",
@@ -27171,7 +27171,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 20,
+ "rotation_index": 4,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -27227,13 +27227,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1351
+  "passes": 1352
  },
- "jl_paused_until": 1794395740.809915,
- "amazon_search_index": 38,
- "last_api_count": 36,
+ "jl_paused_until": 1794397931.330698,
+ "amazon_search_index": 42,
+ "last_api_count": 10,
  "api_calls": {
-  "2026-11-11": 1543
+  "2026-11-11": 1547
  },
  "price_history": {
   "B0CC5NJD6H": [
