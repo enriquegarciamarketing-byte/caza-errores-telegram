@@ -2332,7 +2332,7 @@
   },
   "B00M0KILOA": {
    "price": null,
-   "t": 1794376402,
+   "t": 1794379220,
    "result": "sin precio en Amazon"
   },
   "B09GPFW4DQ": {
@@ -5838,7 +5838,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794379129
+   "checked": 1794379220
   },
   {
    "id": "cm-2062698",
@@ -21050,13 +21050,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1081
+  "passes": 1082
  },
  "jl_paused_until": 1794379244.205189,
- "amazon_search_index": 74,
- "last_api_count": 39,
+ "amazon_search_index": 78,
+ "last_api_count": 18,
  "api_calls": {
-  "2026-11-11": 463
+  "2026-11-11": 467
  },
  "price_history": {
   "B0CC5NJD6H": [
