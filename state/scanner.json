@@ -11648,7 +11648,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794387520
+   "checked": 1794387721
   },
   {
    "id": "cm-2062698",
@@ -26926,13 +26926,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1207
+  "passes": 1208
  },
  "jl_paused_until": 1794388645.763754,
- "amazon_search_index": 20,
- "last_api_count": 5,
+ "amazon_search_index": 24,
+ "last_api_count": 15,
  "api_calls": {
-  "2026-11-11": 967
+  "2026-11-11": 971
  },
  "price_history": {
   "B0CC5NJD6H": [
