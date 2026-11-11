@@ -5648,6 +5648,21 @@
    "photo_message_id": null,
    "label": "Moda de marca",
    "brand": "adidas"
+  },
+  {
+   "asin": "B0HHSMQCTS",
+   "jl_id": "",
+   "price": 59.9,
+   "reference": 129.0,
+   "t": 1794437182,
+   "url": "https://www.amazon.es/dp/B0HHSMQCTS?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 512,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Cecotec Conga Rockstar 8000 Aspirador de Colchones con Doble Rodillo y Luz UV</b>\n\n💶 PRECIO: <b>59,90€</b>\n❌ (Antes: <s>129€</s>)\n🔥 ¡Te ahorras <b>69,10€</b>! (54 % dto.)\nℹ️ 400 W y 10.000 Pa con sensor de ultrasonidos antiácaros\n\n🕒 Precio a las 23:44 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0HHSMQCTS?tag=cazachollos0c-21\">amazon.es/dp/B0HHSMQCTS</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Cecotec Conga Rockstar 8000 Aspirador de Colchones con Doble Rodillo y Luz UV",
+   "manual": true,
+   "brand": "cecotec"
   }
  ],
  "seen": {
@@ -17291,17 +17306,18 @@
   1794404965,
   1794408633,
   1794408712,
-  1794415338
+  1794415338,
+  1794437187
  ],
  "x_recent": [
-  "black-friday",
   "telegram",
   "rapido",
   "chivatazo",
   "bot-aviso",
   "pregunta",
   "comprado",
-  "cartera"
+  "cartera",
+  "noche"
  ],
  "jl_paused_until": 1794434938.336069,
  "amazon_search_index": 30,
