@@ -2886,8 +2886,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0B7R17CFK": {
-   "price": 196.37,
-   "t": 1794387873,
+   "price": 196.4,
+   "t": 1794393633,
    "result": "Amazon no marca precio anterior"
   },
   "B017LTE0C6": {
@@ -2976,13 +2976,13 @@
    "result": "Amazon no marca precio anterior"
   },
   "B00SJ8L69O": {
-   "price": 51.84,
-   "t": 1794345987,
+   "price": 55.22,
+   "t": 1794393633,
    "result": "Amazon no marca precio anterior"
   },
   "B010YSKOR6": {
-   "price": 70.68,
-   "t": 1794345987,
+   "price": 64.24,
+   "t": 1794393633,
    "result": "Amazon no marca precio anterior"
   },
   "B0923BZW9T": {
@@ -11004,6 +11004,16 @@
    "price": 84.95,
    "t": 1794393311,
    "result": "Amazon no marca precio anterior"
+  },
+  "B00SJ90U2M": {
+   "price": 42.82,
+   "t": 1794393633,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B01AAH8L7Q": {
+   "price": 103.79,
+   "t": 1794393633,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -11823,7 +11833,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794393311
+   "checked": 1794393633
   },
   {
    "id": "cm-2062698",
@@ -27131,13 +27141,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1321
+  "passes": 1322
  },
  "jl_paused_until": 1794393908.062357,
- "amazon_search_index": 104,
- "last_api_count": 28,
+ "amazon_search_index": 108,
+ "last_api_count": 32,
  "api_calls": {
-  "2026-11-11": 1423
+  "2026-11-11": 1427
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -30759,7 +30769,7 @@
    [
     20261111,
     196.22,
-    196.38
+    196.4
    ]
   ],
   "B017LTE0C6": [
@@ -30975,7 +30985,7 @@
    [
     20261111,
     51.84,
-    51.84
+    55.22
    ]
   ],
   "B010YSKOR6": [
@@ -30986,7 +30996,7 @@
    ],
    [
     20261111,
-    70.68,
+    64.24,
     70.68
    ]
   ],
@@ -44112,6 +44122,20 @@
     20261111,
     84.95,
     84.95
+   ]
+  ],
+  "B00SJ90U2M": [
+   [
+    20261111,
+    42.82,
+    42.82
+   ]
+  ],
+  "B01AAH8L7Q": [
+   [
+    20261111,
+    103.79,
+    103.79
    ]
   ]
  },
