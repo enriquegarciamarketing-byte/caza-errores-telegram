@@ -1257,7 +1257,7 @@
   },
   "B00NZ1Z48E": {
    "price": null,
-   "t": 1794386730,
+   "t": 1794389525,
    "result": "sin precio en Amazon"
   },
   "B0HFQRHSZF": {
@@ -1521,9 +1521,9 @@
    "result": "ERROR DE PRECIO"
   },
   "B0HFN1MD6X": {
-   "price": 29.99,
-   "t": 1794345106,
-   "result": "Amazon no marca precio anterior"
+   "price": null,
+   "t": 1794389765,
+   "result": "sin precio en Amazon"
   },
   "B0HFMZRJ9S": {
    "price": 129.99,
@@ -3892,7 +3892,7 @@
   },
   "B01N19J3A5": {
    "price": null,
-   "t": 1794385800,
+   "t": 1794388562,
    "result": "sin precio en Amazon"
   },
   "B085F55TSD": {
@@ -3926,9 +3926,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B07C8PHWL8": {
-   "price": 146.98,
-   "t": 1794385860,
-   "result": "Amazon no marca precio anterior"
+   "price": 139.0,
+   "t": 1794388562,
+   "result": "solo -6% (ahorro 9 €): no es error de precio"
   },
   "B08K94SH9G": {
    "price": 145.0,
@@ -3942,7 +3942,7 @@
   },
   "B0BBXZ7S5N": {
    "price": null,
-   "t": 1794386489,
+   "t": 1794389224,
    "result": "sin precio en Amazon"
   },
   "B0CFD9ZKZJ": {
@@ -4317,7 +4317,7 @@
   },
   "B0C6B19QHW": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388803,
    "result": "sin precio en Amazon"
   },
   "B08N689K9L": {
@@ -4342,7 +4342,7 @@
   },
   "B00J43YFGO": {
    "price": null,
-   "t": 1794386100,
+   "t": 1794388803,
    "result": "sin precio en Amazon"
   },
   "B01LQAYQUW": {
@@ -4372,7 +4372,7 @@
   },
   "B0756HNM7H": {
    "price": null,
-   "t": 1794386100,
+   "t": 1794388863,
    "result": "sin precio en Amazon"
   },
   "B083P8WMXG": {
@@ -4401,9 +4401,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0D4ZCTSFS": {
-   "price": 78.02,
-   "t": 1794386160,
-   "result": "solo -14% (ahorro 12 €): no es error de precio"
+   "price": 89.04,
+   "t": 1794388923,
+   "result": "Amazon no marca precio anterior"
   },
   "B0068NPD1Y": {
    "price": 114.69,
@@ -5196,9 +5196,9 @@
    "result": "solo -16% (ahorro 6 €): no es error de precio"
   },
   "B0H7JJ3NHL": {
-   "price": 31.34,
-   "t": 1794380996,
-   "result": "solo -8% (ahorro 3 €): no es error de precio"
+   "price": 32.48,
+   "t": 1794389284,
+   "result": "sin stock"
   },
   "B0CWP55Z6K": {
    "price": 33.99,
@@ -5237,7 +5237,7 @@
   },
   "B0DKC85RYT": {
    "price": null,
-   "t": 1794386549,
+   "t": 1794389284,
    "result": "sin precio en Amazon"
   },
   "B0HMJLNK2S": {
@@ -5266,9 +5266,9 @@
    "result": "solo -5% (ahorro 2 €): no es error de precio"
   },
   "B0B9SYVNVB": {
-   "price": 94.79,
-   "t": 1794381056,
-   "result": "-14% frente al precio recomendado, que puede estar inflado"
+   "price": 97.36,
+   "t": 1794389344,
+   "result": "-11% frente al precio recomendado, que puede estar inflado"
   },
   "B0DYJPLHFP": {
    "price": 32.99,
@@ -5307,7 +5307,7 @@
   },
   "B0CS3Q9342": {
    "price": null,
-   "t": 1794386549,
+   "t": 1794389344,
    "result": "sin precio en Amazon"
   },
   "B0CJ2RZQ12": {
@@ -5822,7 +5822,7 @@
   },
   "B01F93NXU6": {
    "price": null,
-   "t": 1794386790,
+   "t": 1794389585,
    "result": "sin precio en Amazon"
   },
   "B0DLT77FFP": {
@@ -6006,8 +6006,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0C4JT6PRX": {
-   "price": 11.4,
-   "t": 1794384150,
+   "price": 11.25,
+   "t": 1794389645,
    "result": "Amazon no marca precio anterior"
   },
   "B0B2KBSMV2": {
@@ -6067,7 +6067,7 @@
   },
   "B0DFMK5J4C": {
    "price": null,
-   "t": 1794386970,
+   "t": 1794389705,
    "result": "sin precio en Amazon"
   },
   "B0DF2KSVXV": {
@@ -6151,9 +6151,9 @@
    "result": "-57% frente al precio recomendado, que puede estar inflado"
   },
   "B0BTDX26B2": {
-   "price": 67.0,
-   "t": 1794381478,
-   "result": "-55% frente al precio recomendado, que puede estar inflado"
+   "price": 68.99,
+   "t": 1794389765,
+   "result": "-54% frente al precio recomendado, que puede estar inflado"
   },
   "B0BTJ9WHL9": {
    "price": 29.9,
@@ -7341,9 +7341,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0G26ZHPS8": {
-   "price": 34.18,
-   "t": 1794382077,
-   "result": "-32% frente al precio recomendado, que puede estar inflado"
+   "price": 33.02,
+   "t": 1794389224,
+   "result": "-34% frente al precio recomendado, que puede estar inflado"
   },
   "B0F8BKBG3K": {
    "price": 6.12,
@@ -8441,8 +8441,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0D1CH9JLD": {
-   "price": 523.63,
-   "t": 1794382559,
+   "price": 523.1,
+   "t": 1794388021,
    "result": "Amazon no marca precio anterior"
   },
   "B0BBT6JYLH": {
@@ -8501,9 +8501,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B09S3YG8FY": {
-   "price": 93.71,
-   "t": 1794382619,
-   "result": "-53% frente al precio recomendado, que puede estar inflado"
+   "price": 96.88,
+   "t": 1794388081,
+   "result": "-52% frente al precio recomendado, que puede estar inflado"
   },
   "B07ZFV1Q96": {
    "price": 999.0,
@@ -9136,8 +9136,8 @@
    "result": "solo -55% (ahorro 175 €): no es error de precio"
   },
   "B0B5V6X8NT": {
-   "price": 143.5,
-   "t": 1794385559,
+   "price": 143.38,
+   "t": 1794388322,
    "result": "-28% frente al precio recomendado, que puede estar inflado"
   },
   "B0DV96SRRF": {
@@ -9651,13 +9651,13 @@
    "result": "Amazon no marca precio anterior"
   },
   "B09TWC54MX": {
-   "price": 91.99,
-   "t": 1794385800,
+   "price": 92.45,
+   "t": 1794388502,
    "result": "Amazon no marca precio anterior"
   },
   "B09YVFJFQ6": {
-   "price": 44.34,
-   "t": 1794385800,
+   "price": 44.67,
+   "t": 1794388502,
    "result": "Amazon no marca precio anterior"
   },
   "B09RWZ9SNP": {
@@ -9751,8 +9751,8 @@
    "result": "-25% frente al precio recomendado, que puede estar inflado"
   },
   "B08YZ459Y4": {
-   "price": 9.33,
-   "t": 1794385860,
+   "price": 9.24,
+   "t": 1794388623,
    "result": "Amazon no marca precio anterior"
   },
   "B09P4C2KZP": {
@@ -10022,7 +10022,7 @@
   },
   "B000J34HN4": {
    "price": null,
-   "t": 1794385980,
+   "t": 1794388683,
    "result": "sin precio en Amazon"
   },
   "B088HGY89N": {
@@ -10031,9 +10031,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0C13W3Q5C": {
-   "price": 46.9,
-   "t": 1794383188,
-   "result": "solo -6% (ahorro 3 €): no es error de precio"
+   "price": null,
+   "t": 1794388683,
+   "result": "sin precio en Amazon"
   },
   "B00YBW2CDG": {
    "price": 28.74,
@@ -10142,22 +10142,22 @@
   },
   "B08S13XYVT": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B009KKQXFM": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B078214MR5": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B01IT2CBHU": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B003TSVY32": {
@@ -10167,27 +10167,27 @@
   },
   "B01K7QZPMO": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B00X4F9UUE": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B003TT392U": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B00UJV4SS0": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B00XA8LXEQ": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B0BLK7G2FK": {
@@ -10227,7 +10227,7 @@
   },
   "B01MTY38DG": {
    "price": null,
-   "t": 1794386100,
+   "t": 1794388803,
    "result": "sin precio en Amazon"
   },
   "B0186W2L1Y": {
@@ -10237,7 +10237,7 @@
   },
   "B06XDFBVNH": {
    "price": null,
-   "t": 1794386100,
+   "t": 1794388863,
    "result": "sin precio en Amazon"
   },
   "B00J8E45R8": {
@@ -10281,9 +10281,9 @@
    "result": "solo -3% (ahorro 0 €): no es error de precio"
   },
   "B07DCS6D3L": {
-   "price": 19.5,
-   "t": 1794383369,
-   "result": "sin stock"
+   "price": null,
+   "t": 1794388863,
+   "result": "sin precio en Amazon"
   },
   "B009RJX7XW": {
    "price": 8.41,
@@ -10606,8 +10606,8 @@
    "result": "solo -57% (ahorro 62 €): no es error de precio"
   },
   "B098MPSQS5": {
-   "price": 53.29,
-   "t": 1794383550,
+   "price": 48.85,
+   "t": 1794389044,
    "result": "Amazon no marca precio anterior"
   },
   "B0H8Z8VMQ2": {
@@ -10697,12 +10697,12 @@
   },
   "B0CDFZXYK8": {
    "price": null,
-   "t": 1794386369,
+   "t": 1794389164,
    "result": "sin precio en Amazon"
   },
   "B07G6KFXYH": {
-   "price": 70.17,
-   "t": 1794386369,
+   "price": 69.47,
+   "t": 1794389164,
    "result": "Amazon no marca precio anterior"
   },
   "B0FKT988BZ": {
@@ -10797,7 +10797,7 @@
   },
   "B00PQSVJLK": {
    "price": null,
-   "t": 1794386040,
+   "t": 1794388743,
    "result": "sin precio en Amazon"
   },
   "B0FNWFTJKQ": {
@@ -10835,20 +10835,75 @@
    "t": 1794387271,
    "result": "Amazon no marca precio anterior"
   },
-  "B0G53YWLZK": {
-   "price": 38.96,
-   "t": 1794388328,
+  "B0DGWX5YPJ": {
+   "price": 129.99,
+   "t": 1794388021,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0D6PLSD3P": {
+   "price": 30.93,
+   "t": 1794388141,
+   "result": "sin stock"
+  },
+  "B0848LDPCQ": {
+   "price": 73.76,
+   "t": 1794388141,
    "result": "Amazon no marca precio anterior"
   },
   "B084HGVJLN": {
    "price": 66.51,
-   "t": 1794388328,
+   "t": 1794388141,
    "result": "Amazon no marca precio anterior"
   },
-  "B07G8J2Y2D": {
+  "B0FGXQ5SGM": {
+   "price": 26.39,
+   "t": 1794388683,
+   "result": "solo -29% (ahorro 11 €): no es error de precio"
+  },
+  "B0CYLV3ZFZ": {
+   "price": 26.0,
+   "t": 1794388743,
+   "result": "-67% frente al precio recomendado, que puede estar inflado"
+  },
+  "B0FB9BD4BR": {
    "price": null,
-   "t": 1794388540,
+   "t": 1794388863,
    "result": "sin precio en Amazon"
+  },
+  "B0DSLBN5FS": {
+   "price": 299.99,
+   "t": 1794389044,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DWK8GJZX": {
+   "price": 169.99,
+   "t": 1794389044,
+   "result": "solo -11% (ahorro 20 €): no es error de precio"
+  },
+  "B0HNSGCDH1": {
+   "price": 32.99,
+   "t": 1794389284,
+   "result": "-75% frente al precio recomendado, que puede estar inflado"
+  },
+  "B0F2139C5S": {
+   "price": 69.99,
+   "t": 1794389405,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CZ9RX5XD": {
+   "price": 46.99,
+   "t": 1794389585,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0CTP2HHJG": {
+   "price": 23.59,
+   "t": 1794389645,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0H8XRPX2F": {
+   "price": 39.99,
+   "t": 1794389705,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -11668,7 +11723,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794389740
+   "checked": 1794389765
   },
   {
    "id": "cm-2062698",
@@ -11982,8 +12037,38 @@
   "api_amazon": 1794381248.0407252
  },
  "discovery_cache": {
-  "t": 1794389503.5730312,
+  "t": 1794389170.8661308,
   "titles": [
+   "100€ playstation store tarjeta regalo | cuenta espanola [codigo por correo]",
+   "ea sports fc™ 27 - edicion estandar playstation 5| disco fisico | videojuegos | castellano",
+   "luna premium",
+   "logitech g g502 hero raton gaming con cable, 25,600 dpi, negro | alto rendimiento, captor hero 25k, rgb, peso personalizable,",
+   "tarjeta regalo digital de roblox - 800 robux [incluye un objeto virtual exclusivo] [codigo de juego online]",
+   "playstation mando inalambrico dualsense®: coleccion hyperpop - techno red",
+   "zelda ocarina of time - nintendo switch 2",
+   "xbox mando inalambrico robot white series x|s, one, pc, televisores, moviles y mas",
+   "ivoler 4 piezas protector pantalla para nintendo switch 2 model 2025, instalacion en 30 segundos incluye marco de instalacion",
+   "logitech g g305 lightspeed raton gaming inalambrico, hero 12k, negro | 12.000 dpi, raton con botones laterales, bateria de 25",
+   "playstation 5 - mando inalambrico dualsense",
+   "jbl quantum 100m2 cascos circumaurales para gaming, jbl quantumsound signature, cable de audio de 3.5 mm, compatibles con mul",
+   "logitech g g335, auriculares para gaming con cable | microfono abatible silenciar, audio 3,5 mm, almohadillas viscoelasticas,",
+   "nintendo switch 2 pro controller",
+   "logitech g g203 lightsync raton gaming negro, 6 botones programables | raton con cable para ordenador, iluminacion rgb person",
+   "nintendo switch sports resort",
+   "jetech protector pantalla para nintendo switch 2, 2 unidades | alineacion automatica instalacion, cristal vidrio templado 9h,",
+   "krom kalista - teclado gaming de membrana rgb rainbow, formato 62%, modo gaming, n-19 anti-ghosting, windows | mac, layout es",
+   "csl-computer - alfombrilla de raton speed gaming titanwolf negro 900 x 400 mm - base de mesa grande - mejora la precision y l",
+   "jsaux protector pantalla ultra hd para nintendo switch 2, pack de 3 | cristal templado 9h, instalacion sin burbujas, marco de",
+   "tomodachi life - switch",
+   "redragon m908 impact raton gaming mmo cableado rgb 12400 dpi | 12 botones laterales 18 atajos macro programables alta precisi",
+   "ozeino cascos gaming, auriculares gaming con microfono rotatorio, luz rgb, premium stereo, orejeras ligero comodo, para ps4 p",
+   "oivo cargador mando ps5, 2h rapido base de carga para playstation 5 dualsense, estacion de carga mando ps5 con 2 tipos de cab",
+   "nintendo switch 2 carrying case + protector pantalla",
+   "hasbro gaming juego de mesa electronico operacion con estuche todo en uno - version espanol-portugues",
+   "gxtrust forze cascos gaming con licencia oficial para playstation, negro | auriculares gaming para ps4 y ps5, microfono plega",
+   "playstation consola 5 estandar chassis e",
+   "minecraft: nintendo switch edition, el embalaje puede variar",
+   "lr44, powerowl paquete de 12 pilas de boton lr44 1.5v alcalinas para relojes, calculadoras y juguetes",
    "almacenamiento",
    "dispositivos de red",
    "impresora y tinta",
@@ -26946,13 +27031,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1239
+  "passes": 1261
  },
- "jl_paused_until": 1794390340.609522,
- "amazon_search_index": 148,
- "last_api_count": 17,
+ "jl_paused_until": 1794390242.581143,
+ "amazon_search_index": 50,
+ "last_api_count": 37,
  "api_calls": {
-  "2026-11-11": 1095
+  "2026-11-11": 1183
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -36023,7 +36108,7 @@
    [
     20261111,
     31.34,
-    31.34
+    32.48
    ]
   ],
   "B0CWP55Z6K": [
@@ -36114,7 +36199,7 @@
    [
     20261111,
     94.79,
-    94.79
+    97.36
    ]
   ],
   "B0DYJPLHFP": [
@@ -37135,7 +37220,7 @@
   "B0C4JT6PRX": [
    [
     20261111,
-    11.4,
+    11.25,
     11.55
    ]
   ],
@@ -37332,7 +37417,7 @@
    [
     20261111,
     67.0,
-    67.0
+    68.99
    ]
   ],
   "B0BTJ9WHL9": [
@@ -38927,7 +39012,7 @@
   "B0G26ZHPS8": [
    [
     20261111,
-    34.18,
+    33.02,
     34.18
    ]
   ],
@@ -40439,7 +40524,7 @@
   "B0D1CH9JLD": [
    [
     20261111,
-    523.63,
+    523.1,
     523.63
    ]
   ],
@@ -40524,7 +40609,7 @@
    [
     20261111,
     93.71,
-    93.71
+    96.88
    ]
   ],
   "B07ZFV1Q96": [
@@ -43379,7 +43464,7 @@
   "B098MPSQS5": [
    [
     20261111,
-    53.29,
+    48.85,
     53.29
    ]
   ],
@@ -43505,7 +43590,7 @@
   "B07G6KFXYH": [
    [
     20261111,
-    70.17,
+    69.47,
     70.88
    ]
   ],
@@ -43684,11 +43769,25 @@
     99.99
    ]
   ],
-  "B0G53YWLZK": [
+  "B0DGWX5YPJ": [
    [
     20261111,
-    38.96,
-    38.96
+    129.99,
+    129.99
+   ]
+  ],
+  "B0D6PLSD3P": [
+   [
+    20261111,
+    30.93,
+    30.93
+   ]
+  ],
+  "B0848LDPCQ": [
+   [
+    20261111,
+    73.76,
+    73.76
    ]
   ],
   "B084HGVJLN": [
@@ -43697,8 +43796,71 @@
     66.51,
     66.51
    ]
+  ],
+  "B0FGXQ5SGM": [
+   [
+    20261111,
+    26.39,
+    26.39
+   ]
+  ],
+  "B0CYLV3ZFZ": [
+   [
+    20261111,
+    26.0,
+    26.0
+   ]
+  ],
+  "B0DSLBN5FS": [
+   [
+    20261111,
+    299.99,
+    299.99
+   ]
+  ],
+  "B0DWK8GJZX": [
+   [
+    20261111,
+    169.99,
+    169.99
+   ]
+  ],
+  "B0HNSGCDH1": [
+   [
+    20261111,
+    32.99,
+    32.99
+   ]
+  ],
+  "B0F2139C5S": [
+   [
+    20261111,
+    69.99,
+    69.99
+   ]
+  ],
+  "B0CZ9RX5XD": [
+   [
+    20261111,
+    46.99,
+    46.99
+   ]
+  ],
+  "B0CTP2HHJG": [
+   [
+    20261111,
+    23.59,
+    23.59
+   ]
+  ],
+  "B0H8XRPX2F": [
+   [
+    20261111,
+    39.99,
+    39.99
+   ]
   ]
  },
- "amazon_search_lap": 9,
+ "amazon_search_lap": 10,
  "learning": {}
 }
