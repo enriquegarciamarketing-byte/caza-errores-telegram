@@ -3496,9 +3496,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B001FWXKJA": {
-   "price": 34.23,
-   "t": 1794379997,
-   "result": "lo vende Be and Care, no Amazon ni la tienda oficial de la marca"
+   "price": 38.0,
+   "t": 1794382764,
+   "result": "Amazon no marca precio anterior"
   },
   "B0GN958R22": {
    "price": 27.07,
@@ -9683,7 +9683,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794382679
+   "checked": 1794382764
   },
   {
    "id": "cm-2062698",
@@ -24962,13 +24962,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1141
+  "passes": 1142
  },
  "jl_paused_until": 1794382917.228229,
- "amazon_search_index": 128,
- "last_api_count": 39,
+ "amazon_search_index": 132,
+ "last_api_count": 27,
  "api_calls": {
-  "2026-11-11": 703
+  "2026-11-11": 707
  },
  "price_history": {
   "B0CC5NJD6H": [
