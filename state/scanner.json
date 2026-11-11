@@ -11144,6 +11144,11 @@
    "price": 49.99,
    "t": 1794396734,
    "result": "Amazon no marca precio anterior"
+  },
+  "B07NXT952X": {
+   "price": 23.99,
+   "t": 1794397016,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -11963,7 +11968,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794396855
+   "checked": 1794397016
   },
   {
    "id": "cm-2062698",
@@ -27305,13 +27310,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1381
+  "passes": 1382
  },
  "jl_paused_until": 1794397571.968573,
- "amazon_search_index": 158,
- "last_api_count": 38,
+ "amazon_search_index": 162,
+ "last_api_count": 20,
  "api_calls": {
-  "2026-11-11": 1661
+  "2026-11-11": 1665
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -44489,6 +44494,13 @@
     20261111,
     49.99,
     49.99
+   ]
+  ],
+  "B07NXT952X": [
+   [
+    20261111,
+    23.99,
+    23.99
    ]
   ]
  },
