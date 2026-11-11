@@ -4136,9 +4136,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0DW4KCS22": {
-   "price": 18.4,
-   "t": 1794346828,
-   "result": "sin stock"
+   "price": 24.92,
+   "t": 1794383804,
+   "result": "Amazon no marca precio anterior"
   },
   "B0CRHYZ3X2": {
    "price": 26.09,
@@ -4171,8 +4171,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0F1P3JMTR": {
-   "price": 19.74,
-   "t": 1794346828,
+   "price": 18.75,
+   "t": 1794383804,
    "result": "Amazon no marca precio anterior"
   },
   "B07NYQHPG8": {
@@ -4237,7 +4237,7 @@
   },
   "B00NXY0F28": {
    "price": null,
-   "t": 1794380478,
+   "t": 1794383804,
    "result": "sin precio en Amazon"
   },
   "B09SJ1M77H": {
@@ -8864,6 +8864,11 @@
    "price": 56.99,
    "t": 1794382679,
    "result": "Amazon no marca precio anterior"
+  },
+  "B0C819LXSC": {
+   "price": 185.99,
+   "t": 1794383804,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -9683,7 +9688,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794383676
+   "checked": 1794383804
   },
   {
    "id": "cm-2062698",
@@ -24962,13 +24967,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1149
+  "passes": 1150
  },
  "jl_paused_until": 1794384766.276456,
- "amazon_search_index": 160,
+ "amazon_search_index": 164,
  "last_api_count": 22,
  "api_calls": {
-  "2026-11-11": 731
+  "2026-11-11": 735
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -31443,7 +31448,7 @@
    [
     20261111,
     18.4,
-    18.4
+    24.92
    ]
   ],
   "B0CRHYZ3X2": [
@@ -31526,7 +31531,7 @@
    ],
    [
     20261111,
-    19.74,
+    18.75,
     19.74
    ]
   ],
@@ -38986,6 +38991,13 @@
     20261111,
     56.99,
     56.99
+   ]
+  ],
+  "B0C819LXSC": [
+   [
+    20261111,
+    185.99,
+    185.99
    ]
   ]
  },
