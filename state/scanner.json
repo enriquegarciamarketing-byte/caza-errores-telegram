@@ -4681,8 +4681,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0BGS36NS7": {
-   "price": 231.47,
-   "t": 1794383669,
+   "price": 229.96,
+   "t": 1794387276,
    "result": "Amazon no marca precio anterior"
   },
   "B08CRZ25T5": {
@@ -10824,6 +10824,11 @@
    "price": null,
    "t": 1794386040,
    "result": "sin precio en Amazon"
+  },
+  "B099SF8DWX": {
+   "price": 98.98,
+   "t": 1794387276,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -11643,7 +11648,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794387156
+   "checked": 1794387276
   },
   {
    "id": "cm-2062698",
@@ -26921,13 +26926,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1204
+  "passes": 1205
  },
  "jl_paused_until": 1794388645.763754,
- "amazon_search_index": 8,
- "last_api_count": 19,
+ "amazon_search_index": 12,
+ "last_api_count": 12,
  "api_calls": {
-  "2026-11-11": 955
+  "2026-11-11": 959
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -43603,6 +43608,13 @@
     20261111,
     23.68,
     23.68
+   ]
+  ],
+  "B099SF8DWX": [
+   [
+    20261111,
+    98.98,
+    98.98
    ]
   ]
  },
