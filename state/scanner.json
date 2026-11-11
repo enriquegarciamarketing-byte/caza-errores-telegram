@@ -1601,9 +1601,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B09MJRCYYB": {
-   "price": 315.28,
-   "t": 1794353455,
-   "result": "lo vende Click&Carry, no Amazon ni la tienda oficial de la marca"
+   "price": 376.0,
+   "t": 1794396696,
+   "result": "Amazon no marca precio anterior"
   },
   "B08PCD1YDK": {
    "price": 359.0,
@@ -11883,7 +11883,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794396568
+   "checked": 1794396696
   },
   {
    "id": "cm-2062698",
@@ -27232,13 +27232,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1354
+  "passes": 1355
  },
  "jl_paused_until": 1794397931.330698,
- "amazon_search_index": 50,
- "last_api_count": 27,
+ "amazon_search_index": 54,
+ "last_api_count": 20,
  "api_calls": {
-  "2026-11-11": 1555
+  "2026-11-11": 1559
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -27924,7 +27924,7 @@
    [
     20261111,
     315.28,
-    315.28
+    376.0
    ]
   ],
   "B08PCD1YDK": [
