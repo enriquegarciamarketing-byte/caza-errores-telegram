@@ -4187,12 +4187,12 @@
   },
   "B00NXY0F28": {
    "price": null,
-   "t": 1794383804,
+   "t": 1794397188,
    "result": "sin precio en Amazon"
   },
   "B09SJ1M77H": {
-   "price": 102.01,
-   "t": 1794383924,
+   "price": 102.34,
+   "t": 1794397188,
    "result": "Amazon no marca precio anterior"
   },
   "B09J1N9J6V": {
@@ -4261,8 +4261,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0DXFT58TM": {
-   "price": 35.79,
-   "t": 1794346888,
+   "price": 32.21,
+   "t": 1794397188,
    "result": "Amazon no marca precio anterior"
   },
   "B0F8J5W8KN": {
@@ -4271,8 +4271,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0F8J54J96": {
-   "price": 40.58,
-   "t": 1794346888,
+   "price": 36.52,
+   "t": 1794397188,
    "result": "Amazon no marca precio anterior"
   },
   "B0GYS2V64Q": {
@@ -11149,6 +11149,16 @@
    "price": 23.99,
    "t": 1794397016,
    "result": "Amazon no marca precio anterior"
+  },
+  "B0F4KGRRCW": {
+   "price": 46.64,
+   "t": 1794397188,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0DXFQQLTG": {
+   "price": 35.88,
+   "t": 1794397188,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -11968,7 +11978,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794397016
+   "checked": 1794397188
   },
   {
    "id": "cm-2062698",
@@ -27310,13 +27320,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1382
+  "passes": 1383
  },
  "jl_paused_until": 1794397571.968573,
- "amazon_search_index": 162,
- "last_api_count": 20,
+ "amazon_search_index": 166,
+ "last_api_count": 32,
  "api_calls": {
-  "2026-11-11": 1665
+  "2026-11-11": 1669
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -34203,7 +34213,7 @@
    ],
    [
     20261111,
-    35.79,
+    32.21,
     35.79
    ]
   ],
@@ -34227,7 +34237,7 @@
    ],
    [
     20261111,
-    40.58,
+    36.52,
     40.58
    ]
   ],
@@ -44501,6 +44511,20 @@
     20261111,
     23.99,
     23.99
+   ]
+  ],
+  "B0F4KGRRCW": [
+   [
+    20261111,
+    46.64,
+    46.64
+   ]
+  ],
+  "B0DXFQQLTG": [
+   [
+    20261111,
+    35.88,
+    35.88
    ]
   ]
  },
