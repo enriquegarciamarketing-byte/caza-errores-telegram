@@ -11643,7 +11643,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794386220
+   "checked": 1794386404
   },
   {
    "id": "cm-2062698",
@@ -26921,13 +26921,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1201
+  "passes": 1202
  },
  "jl_paused_until": 1794386578.724846,
- "amazon_search_index": 182,
- "last_api_count": 31,
+ "amazon_search_index": 0,
+ "last_api_count": 18,
  "api_calls": {
-  "2026-11-11": 943
+  "2026-11-11": 947
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -43606,6 +43606,6 @@
    ]
   ]
  },
- "amazon_search_lap": 8,
+ "amazon_search_lap": 9,
  "learning": {}
 }
