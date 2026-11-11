@@ -5165,6 +5165,20 @@
    "photo_message_id": null,
    "label": "Informática",
    "checked": 1794385388
+  },
+  {
+   "asin": "B0DGLC3Y3L",
+   "jl_id": "",
+   "price": 35.01,
+   "reference": 51.9,
+   "t": 1794387505,
+   "url": "https://www.amazon.es/dp/B0DGLC3Y3L?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 475,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Freidora de Aire Cecotec Cecofry&amp;Grill Duoheat 4000 de 4 L y 1900W</b>\n\n💶 PRECIO: <b>35,01€</b>\n❌ (Antes: <s>51,90€</s>)\n🔥 ¡Te ahorras <b>16,89€</b>! (33 % dto.)\n⚡ Oferta flash\nℹ️ Doble resistencia, función plancha y pared divisoria móvil\n\n🕒 Precio a las 09:57 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0DGLC3Y3L?tag=cazachollos0c-21\">amazon.es/dp/B0DGLC3Y3L</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Freidora de Aire Cecotec Cecofry&Grill Duoheat 4000 de 4 L y 1900W",
+   "manual": true
   }
  ],
  "seen": {
@@ -15042,17 +15056,18 @@
   1794313034,
   1794377562,
   1794378304,
-  1794381174
+  1794381174,
+  1794387510
  ],
  "x_recent": [
-  "filtro",
   "regla",
   "black-friday",
   "telegram",
   "rapido",
   "chivatazo",
   "bot-aviso",
-  "pregunta"
+  "pregunta",
+  "cabeza"
  ],
  "jl_paused_until": 1794387428.194056,
  "amazon_search_index": 160,
