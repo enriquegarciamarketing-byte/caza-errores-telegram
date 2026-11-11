@@ -3581,8 +3581,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B00MOIX3SC": {
-   "price": 123.59,
-   "t": 1794377305,
+   "price": 123.69,
+   "t": 1794382966,
    "result": "lo vende PBEXPRESS, no Amazon ni la tienda oficial de la marca"
   },
   "B07Q3ZDZLP": {
@@ -3672,7 +3672,7 @@
   },
   "B017T1JUJO": {
    "price": null,
-   "t": 1794380057,
+   "t": 1794382966,
    "result": "sin precio en Amazon"
   },
   "B0D47HM4XQ": {
@@ -9683,7 +9683,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794382764
+   "checked": 1794382966
   },
   {
    "id": "cm-2062698",
@@ -24906,7 +24906,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 6,
+ "rotation_index": 11,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -24962,13 +24962,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1142
+  "passes": 1143
  },
- "jl_paused_until": 1794382917.228229,
- "amazon_search_index": 132,
- "last_api_count": 27,
+ "jl_paused_until": 1794384766.276456,
+ "amazon_search_index": 136,
+ "last_api_count": 31,
  "api_calls": {
-  "2026-11-11": 707
+  "2026-11-11": 711
  },
  "price_history": {
   "B0CC5NJD6H": [
