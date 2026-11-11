@@ -11059,6 +11059,11 @@
    "price": 599.0,
    "t": 1794394843,
    "result": "solo -20% (ahorro 151 €): no es error de precio"
+  },
+  "B0H2DXVHLN": {
+   "price": 20.99,
+   "t": 1794396568,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -11878,7 +11883,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794396268
+   "checked": 1794396568
   },
   {
    "id": "cm-2062698",
@@ -27227,13 +27232,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1353
+  "passes": 1354
  },
  "jl_paused_until": 1794397931.330698,
- "amazon_search_index": 46,
- "last_api_count": 18,
+ "amazon_search_index": 50,
+ "last_api_count": 27,
  "api_calls": {
-  "2026-11-11": 1551
+  "2026-11-11": 1555
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -44292,6 +44297,13 @@
     20261111,
     599.0,
     599.0
+   ]
+  ],
+  "B0H2DXVHLN": [
+   [
+    20261111,
+    20.99,
+    20.99
    ]
   ]
  },
