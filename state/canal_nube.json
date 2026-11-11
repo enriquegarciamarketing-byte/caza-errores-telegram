@@ -5522,6 +5522,21 @@
    "label": "Deporte",
    "brand": "PUMA",
    "checked": 1794415075
+  },
+  {
+   "asin": "B09WJCZZJ4",
+   "jl_id": "",
+   "price": 13.64,
+   "reference": 46.0,
+   "t": 1794415334,
+   "url": "https://www.amazon.es/dp/B09WJCZZJ4?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 501,
+   "photo_message_id": null,
+   "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>Anillo Thomas Sabo de Plata de Ley 925 con Piedra Azul</b>\n\n💶 PRECIO: <b>13,64€</b>\n❌ (Antes: <s>46€</s>)\n🔥 ¡Te ahorras <b>32,36€</b>! (70 % dto.)\nℹ️ El precio es para la talla 52\n\n🕒 Precio a las 17:41 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B09WJCZZJ4?tag=cazachollos0c-21\">amazon.es/dp/B09WJCZZJ4</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
+   "title": "Anillo Thomas Sabo de Plata de Ley 925 con Piedra Azul",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -17089,17 +17104,18 @@
   1794404268,
   1794404965,
   1794408633,
-  1794408712
+  1794408712,
+  1794415338
  ],
  "x_recent": [
-  "black-friday",
   "telegram",
   "rapido",
   "chivatazo",
   "bot-aviso",
   "pregunta",
   "comprado",
-  "cartera"
+  "cartera",
+  "filtro"
  ],
  "jl_paused_until": 1794415195.43925,
  "amazon_search_index": 138,
