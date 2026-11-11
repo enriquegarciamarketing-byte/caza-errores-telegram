@@ -1947,7 +1947,7 @@
   },
   "B0093RN1OS": {
    "price": null,
-   "t": 1794381777,
+   "t": 1794390660,
    "result": "sin precio en Amazon"
   },
   "B0CFQ9C6L7": {
@@ -11723,7 +11723,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794390537
+   "checked": 1794390660
   },
   {
    "id": "cm-2062698",
@@ -27031,13 +27031,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1265
+  "passes": 1266
  },
  "jl_paused_until": 1794392092.850469,
- "amazon_search_index": 66,
+ "amazon_search_index": 70,
  "last_api_count": 18,
  "api_calls": {
-  "2026-11-11": 1199
+  "2026-11-11": 1203
  },
  "price_history": {
   "B0CC5NJD6H": [
