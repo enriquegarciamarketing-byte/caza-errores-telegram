@@ -1467,7 +1467,7 @@
   },
   "B00NZ1Z48E": {
    "price": null,
-   "t": 1794355948,
+   "t": 1794364963,
    "result": "sin precio en Amazon"
   },
   "B0HFQRHSZF": {
@@ -1551,8 +1551,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0GWM59Z3G": {
-   "price": 14.45,
-   "t": 1794344986,
+   "price": 14.87,
+   "t": 1794365413,
    "result": "Amazon no marca precio anterior"
   },
   "B0DZXWKXKB": {
@@ -1836,9 +1836,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0BBP48ZTY": {
-   "price": 421.0,
-   "t": 1794345166,
-   "result": "Amazon no marca precio anterior"
+   "price": 389.82,
+   "t": 1794365713,
+   "result": "lo vende Click&Carry, no Amazon ni la tienda oficial de la marca"
   },
   "B082DN7RVM": {
    "price": 183.68,
@@ -1952,12 +1952,12 @@
   },
   "B0FM85H4Z4": {
    "price": null,
-   "t": 1794356309,
+   "t": 1794365863,
    "result": "sin precio en Amazon"
   },
   "B0FM86HZC3": {
    "price": null,
-   "t": 1794356309,
+   "t": 1794365863,
    "result": "sin precio en Amazon"
   },
   "B076HSPM7M": {
@@ -1987,12 +1987,12 @@
   },
   "B0DJ9MB321": {
    "price": null,
-   "t": 1794356369,
+   "t": 1794366013,
    "result": "sin precio en Amazon"
   },
   "9915984510": {
    "price": null,
-   "t": 1794356369,
+   "t": 1794366013,
    "result": "sin precio en Amazon"
   },
   "B003E20ZQA": {
@@ -2017,7 +2017,7 @@
   },
   "B0BRNVCZ9J": {
    "price": null,
-   "t": 1794356369,
+   "t": 1794366013,
    "result": "sin precio en Amazon"
   },
   "B00GRYEUD6": {
@@ -2027,7 +2027,7 @@
   },
   "B0BTMV9B4R": {
    "price": null,
-   "t": 1794356369,
+   "t": 1794366013,
    "result": "sin precio en Amazon"
   },
   "B07KPW2PTC": {
@@ -2656,8 +2656,8 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0BX9H2JLB": {
-   "price": 445.23,
-   "t": 1794345686,
+   "price": 448.48,
+   "t": 1794364063,
    "result": "Amazon no marca precio anterior"
   },
   "B0D6N76Q6N": {
@@ -4116,9 +4116,9 @@
    "result": "Amazon no marca precio anterior"
   },
   "B0CZSQ25XV": {
-   "price": 67.6,
-   "t": 1794346708,
-   "result": "sin stock"
+   "price": 67.66,
+   "t": 1794364363,
+   "result": "lo vende KITSTORE, no Amazon ni la tienda oficial de la marca"
   },
   "B0BHGZ1BV7": {
    "price": 793.53,
@@ -4897,7 +4897,7 @@
   },
   "B00F9YQWAO": {
    "price": null,
-   "t": 1794355647,
+   "t": 1794364363,
    "result": "sin precio en Amazon"
   },
   "B0HNJKWHQ5": {
@@ -5069,6 +5069,31 @@
    "price": 549.99,
    "t": 1794356430,
    "result": "lo vende TUDUODUO, no Amazon ni la tienda oficial de la marca"
+  },
+  "B0HQMYM17D": {
+   "price": 27.99,
+   "t": 1794363913,
+   "result": "lo vende YPSZW-Direct, no Amazon ni la tienda oficial de la marca"
+  },
+  "B0HHLXPPR9": {
+   "price": 35.99,
+   "t": 1794364063,
+   "result": "lo vende hui zhou shi xuan gu dian zi shang wu you xian gong si, no Amazon ni la tienda oficial de la marca"
+  },
+  "B0CX99P8XP": {
+   "price": 24.88,
+   "t": 1794365113,
+   "result": "Amazon no marca precio anterior"
+  },
+  "B0HPMVTBD8": {
+   "price": 36.99,
+   "t": 1794365713,
+   "result": "lo vende shihuijian1, no Amazon ni la tienda oficial de la marca"
+  },
+  "B0HL8RDFYR": {
+   "price": 24.99,
+   "t": 1794365713,
+   "result": "marca poco conocida (CASCHO): su precio anterior no es fiable"
   }
  },
  "posts": [
@@ -5888,7 +5913,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794358200
+   "checked": 1794366163
   },
   {
    "id": "cm-2062698",
@@ -6137,39 +6162,8 @@
   "no_listings": 1794342986.452299
  },
  "discovery_cache": {
-  "t": 1794337210.9320643,
-  "titles": [
-   "ea sports fc™ 27 - edicion estandar playstation 5| disco fisico | videojuegos | castellano",
-   "10€ playstation store tarjeta regalo | cuenta espanola [codigo por correo]",
-   "tarjeta regalo digital de roblox - 800 robux [incluye un objeto virtual exclusivo] [codigo de juego online]",
-   "zelda ocarina of time - nintendo switch 2",
-   "luna premium",
-   "logitech g g502 hero raton gaming con cable, 25,600 dpi, negro | alto rendimiento, captor hero 25k, rgb, peso personalizable,",
-   "playstation mando inalambrico dualsense®: coleccion hyperpop - techno red",
-   "xbox mando inalambrico robot white series x|s, one, pc, televisores, moviles y mas",
-   "ivoler 4 piezas protector pantalla para nintendo switch 2 model 2025, instalacion en 30 segundos incluye marco de instalacion",
-   "playstation 5 - mando inalambrico dualsense",
-   "logitech g g305 lightspeed raton gaming inalambrico, hero 12k, negro | 12.000 dpi, raton con botones laterales, bateria de 25",
-   "nintendo switch 2 pro controller",
-   "logitech g g335, auriculares para gaming con cable | microfono abatible silenciar, audio 3,5 mm, almohadillas viscoelasticas,",
-   "nintendo switch sports resort",
-   "csl-computer - alfombrilla de raton speed gaming titanwolf negro 900 x 400 mm - base de mesa grande - mejora la precision y l",
-   "logitech g g203 lightsync raton gaming negro, 6 botones programables | raton con cable para ordenador, iluminacion rgb person",
-   "jsaux protector pantalla ultra hd para nintendo switch 2, pack de 3 | cristal templado 9h, instalacion sin burbujas, marco de",
-   "jetech protector pantalla para nintendo switch 2, 2 unidades | alineacion automatica instalacion, cristal vidrio templado 9h,",
-   "jbl quantum 100m2 cascos circumaurales para gaming, jbl quantumsound signature, cable de audio de 3.5 mm, compatibles con mul",
-   "krom kalista - teclado gaming de membrana rgb rainbow, formato 62%, modo gaming, n-19 anti-ghosting, windows | mac, layout es",
-   "easysmx x05 pro mando inalambrico para pc – botones silenciosos mejorados, gatillos de 2 etapas, joysticks hall, sondeo 1000h",
-   "tomodachi life - switch",
-   "nintendo switch + mario kart 8 deluxe",
-   "gxtrust forze cascos gaming con licencia oficial para playstation, negro | auriculares gaming para ps4 y ps5, microfono plega",
-   "jbl quantum 100 auriculares para gamers con sonido quantumsound, microfono boom diseno ligero, comodo y llamativo, compatible",
-   "minecraft: nintendo switch edition, el embalaje puede variar",
-   "redragon m908 impact raton gaming mmo cableado rgb 12400 dpi | 12 botones laterales 18 atajos macro programables alta precisi",
-   "nintendo switch 2 carrying case + protector pantalla",
-   "playstation consola 5 estandar chassis e",
-   "lr44, powerowl paquete de 12 pilas de boton lr44 1.5v alcalinas para relojes, calculadoras y juguetes"
-  ]
+  "t": 1794363917.4638116,
+  "titles": []
  },
  "resale_cache": {
   "carrefour|lego ideas cohete lunar de tintin, juguete de construccion +18 anos - 21367 (-40% en cupon) - precio final 83.99|wallapop+milanuncios:carrefour 18 lego": {
@@ -21043,7 +21037,7 @@
    "reason": "reventa en Vinted ~95 € (32 anuncios): ROI 13 % y 10 €, por debajo del mínimo (25 % y 25 €)"
   }
  },
- "rotation_index": 19,
+ "rotation_index": 8,
  "cm_opened": {
   "https://www.chollometro.com/ofertas/zapatillas-cuero-diadora-tokyo-unisex-retro-leder-2061802": 1794303597.2633893,
   "https://www.chollometro.com/ofertas/zapatilla-adidas-terrex-trailmaker-2-gore-tex-speed-lace-hiking-tallas-40-a-49-13-2061860": 1794303597.2633893,
@@ -21097,13 +21091,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1016
+  "passes": 1032
  },
- "jl_paused_until": 1794359399.275376,
- "amazon_search_index": 0,
- "last_api_count": 16,
+ "jl_paused_until": 1794367513.57496,
+ "amazon_search_index": 64,
+ "last_api_count": 34,
  "api_calls": {
-  "2026-11-11": 204
+  "2026-11-11": 268
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -21134,7 +21128,7 @@
    [
     20261111,
     14.45,
-    14.45
+    14.87
    ]
   ],
   "B0DZXWKXKB": [
@@ -21430,6 +21424,11 @@
     20261110,
     29.99,
     29.99
+   ],
+   [
+    20261111,
+    29.99,
+    29.99
    ]
   ],
   "B0HPS3DNNF": [
@@ -21612,11 +21611,21 @@
     20261110,
     26.99,
     26.99
+   ],
+   [
+    20261111,
+    26.99,
+    26.99
    ]
   ],
   "B0HMKQGPY2": [
    [
     20261110,
+    24.99,
+    24.99
+   ],
+   [
+    20261111,
     24.99,
     24.99
    ]
@@ -21710,6 +21719,11 @@
     20261110,
     39.99,
     39.99
+   ],
+   [
+    20261111,
+    39.99,
+    39.99
    ]
   ],
   "B0HF7YT65P": [
@@ -21792,7 +21806,7 @@
    ],
    [
     20261111,
-    421.0,
+    389.82,
     421.0
    ]
   ],
@@ -22367,6 +22381,11 @@
   "B07BCB23G8": [
    [
     20261110,
+    296.0,
+    296.0
+   ],
+   [
+    20261111,
     296.0,
     296.0
    ]
@@ -23622,7 +23641,7 @@
    [
     20261111,
     445.23,
-    445.23
+    448.48
    ]
   ],
   "B0D6N76Q6N": [
@@ -27048,7 +27067,7 @@
    [
     20261111,
     67.6,
-    67.6
+    67.66
    ]
   ],
   "B07QN7ZJF9": [
@@ -29296,6 +29315,11 @@
     20261110,
     33.09,
     33.09
+   ],
+   [
+    20261111,
+    33.09,
+    33.09
    ]
   ],
   "B096FYLJ6M": [
@@ -29308,6 +29332,11 @@
   "B0HCBKG5PJ": [
    [
     20261110,
+    39.99,
+    39.99
+   ],
+   [
+    20261111,
     39.99,
     39.99
    ]
@@ -29572,6 +29601,41 @@
     20261111,
     549.99,
     549.99
+   ]
+  ],
+  "B0HQMYM17D": [
+   [
+    20261111,
+    27.99,
+    27.99
+   ]
+  ],
+  "B0HHLXPPR9": [
+   [
+    20261111,
+    35.99,
+    35.99
+   ]
+  ],
+  "B0CX99P8XP": [
+   [
+    20261111,
+    24.88,
+    24.88
+   ]
+  ],
+  "B0HPMVTBD8": [
+   [
+    20261111,
+    36.99,
+    36.99
+   ]
+  ],
+  "B0HL8RDFYR": [
+   [
+    20261111,
+    24.99,
+    24.99
    ]
   ]
  },
