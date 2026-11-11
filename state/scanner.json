@@ -10904,6 +10904,11 @@
    "price": 39.99,
    "t": 1794389705,
    "result": "Amazon no marca precio anterior"
+  },
+  "B01CNKF3A6": {
+   "price": 89.97,
+   "t": 1794390788,
+   "result": "Amazon no marca precio anterior"
   }
  },
  "posts": [
@@ -11723,7 +11728,7 @@
    "message_id": 97,
    "url": "https://link.amazon/B03l2rS5z",
    "alert_id": 562,
-   "checked": 1794390660
+   "checked": 1794390788
   },
   {
    "id": "cm-2062698",
@@ -27031,13 +27036,13 @@
  "alerts": {
   "watch": {},
   "sent": {},
-  "passes": 1266
+  "passes": 1267
  },
  "jl_paused_until": 1794392092.850469,
- "amazon_search_index": 70,
- "last_api_count": 18,
+ "amazon_search_index": 74,
+ "last_api_count": 39,
  "api_calls": {
-  "2026-11-11": 1203
+  "2026-11-11": 1207
  },
  "price_history": {
   "B0CC5NJD6H": [
@@ -43858,6 +43863,13 @@
     20261111,
     39.99,
     39.99
+   ]
+  ],
+  "B01CNKF3A6": [
+   [
+    20261111,
+    89.97,
+    89.97
    ]
   ]
  },
