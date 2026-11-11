@@ -19,6 +19,11 @@ on:
         required: false
         type: boolean
         default: false
+      minutes:
+        description: "Buscar y publicar durante estos minutos seguidos (vacío: una sola pasada)"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -68,6 +73,7 @@ jobs:
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private); fi
           set -o pipefail
           if [ "${{ github.event_name }}" = "schedule" ]; then ARGS+=(--minutes 55 --every 120 --busy-every 60); fi
+          if [ -n "${{ inputs.minutes }}" ]; then ARGS+=(--minutes "${{ inputs.minutes }}" --every 120 --busy-every 60); fi
           python -u canal_nube.py "${ARGS[@]}" 2>&1 | tee state/canal_nube_last_run.log
 
       - name: Guardar memoria del canal normal
