@@ -4756,7 +4756,7 @@
    "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>M210 Pro Omni Robot Aspirador y Fregasuelo</b>\n\n💶 PRECIO: <b>239,99€</b>\n❌ (Antes: <s>699,99€</s>)\n🔥 ¡Te ahorras <b>460€</b>! (66 % dto.)\n\n🕒 Precio a las 11:10 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0H4LH6GH2?tag=cazachollos0c-21\">amazon.es/dp/B0H4LH6GH2</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
    "title": "M210 Pro Omni Robot Aspirador y Fregasuelo, Rodillo Autolimpiante",
    "photo_message_id": null,
-   "checked": 1794358753
+   "checked": 1794377536
   },
   {
    "asin": "B07CNLFVKV",
@@ -4784,7 +4784,7 @@
    "caption": "🚨 <b>ERROR DE PRECIO EN AMAZON</b> 🚨\n\n<b>MS-AC317 Auriculares Inalámbricos de Oído Abierto</b>\n\n💶 PRECIO: <b>25,30€</b>\n❌ (Antes: <s>109€</s>)\n🔥 ¡Te ahorras <b>83,70€</b>! (77 % dto.)\n\n🕒 Precio a las 12:55 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0GVKY6W2P?tag=cazachollos0c-21\">amazon.es/dp/B0GVKY6W2P</a>\n\nVisto en @cazachollos_com #Publicidad #ErrorDePrecio",
    "title": "MS-AC317 Auriculares Inalámbricos de Oído Abierto, Bluetooth 5.4, con Reducción de Ruido con IA, 24 Horas de Reproducción, Carga Rápida USB-",
    "photo_message_id": null,
-   "checked": 1794358753
+   "checked": 1794377536
   },
   {
    "asin": "B0CJMQ2V9M",
@@ -4957,7 +4957,7 @@
    "title": "Foodi MAX, Freidora de Aire 6 en 1 con Compartimento Doble, 9,6L",
    "photo_message_id": null,
    "origen": "premium",
-   "checked": 1794358753
+   "checked": 1794377536
   },
   {
    "asin": "B0H6XL2R3D",
@@ -4972,7 +4972,7 @@
    "title": "POCO F9 Pro, Smartphone 12+256, Negro, batería de 6330mAh, carga de 100 W",
    "photo_message_id": null,
    "origen": "premium",
-   "checked": 1794358753
+   "checked": 1794377536
   },
   {
    "asin": "B0H8N499TP",
@@ -5088,6 +5088,20 @@
    "title": "JATA JEFR1229 - Freidora de Aire 5L sin Aceite, 1450W, 200ºC, Pantalla Digital, Programas Automáticos, Antiadherente sin BPA, Temporizador 6",
    "photo_message_id": null,
    "checked": 1794365336
+  },
+  {
+   "asin": "B0BTDT8V59",
+   "jl_id": "amz-B0BTDT8V59",
+   "price": 67.0,
+   "reference": 149.99,
+   "t": 1794377536,
+   "url": "https://www.amazon.es/dp/B0BTDT8V59?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 469,
+   "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>Sony WH-CH720N Auriculares Inalámbricos Bluetooth Noise Cancelling de Diadema</b>\n\n💶 PRECIO: <b>67€</b>\n❌ (Antes: <s>149,99€</s>)\n🔥 ¡Te ahorras <b>82,99€</b>! (55 % dto.)\n\n🕒 Precio a las 07:12 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0BTDT8V59?tag=cazachollos0c-21\">amazon.es/dp/B0BTDT8V59</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
+   "title": "Sony WH-CH720N Auriculares Inalámbricos Bluetooth Noise Cancelling de Diadema, Sonido de, modo Sonido Ambiente, Diseño Ligero, hasta 35 hora",
+   "photo_message_id": null,
+   "label": "TV y sonido"
   }
  ],
  "seen": {
@@ -14134,7 +14148,7 @@
    "price": 23.46
   },
   "amz-B0CQK8TZCF": {
-   "t": 1794345773,
+   "t": 1794377536,
    "why": "modo listado: solo categorías top",
    "price": 28.49
   },
@@ -14199,7 +14213,7 @@
    "price": 64.99
   },
   "amz-B0HC26TT1Q": {
-   "t": 1794345773,
+   "t": 1794377536,
    "why": "modo listado: solo categorías top",
    "price": 34.19
   },
@@ -14394,71 +14408,49 @@
    "price": null
   },
   "amz-B09FL24X75": {
-   "t": 1794347000,
-   "why": "borrado a mano: marca y vendedor poco fiables",
-   "price": null
+   "t": 1794377536,
+   "why": "marca poco conocida (TECLAST): su precio anterior no es fiable",
+   "price": 129.99
   },
   "amz-B0HNP1KTDQ": {
    "t": 1794347000,
    "why": "borrado a mano: marca y vendedor poco fiables",
    "price": null
+  },
+  "amz-B0FQGLL37Q": {
+   "t": 1794377536,
+   "why": "modo listado: solo -28% frente a su PVP (2.069,00 €)",
+   "price": 1499.0
+  },
+  "amz-B0H79Q2ZKJ": {
+   "t": 1794377536,
+   "why": "modo listado: solo -18% frente a su PVP (219,90 €)",
+   "price": 179.9
+  },
+  "amz-B0H79Q6WQC": {
+   "t": 1794377536,
+   "why": "modo listado: solo -18% frente a su PVP (219,90 €)",
+   "price": 179.9
+  },
+  "amz-B0DYF1ZLHM": {
+   "t": 1794377536,
+   "why": "modo listado: solo categorías top",
+   "price": 1199.0
+  },
+  "amz-B0FJ8SPP5Q": {
+   "t": 1794377536,
+   "why": "modo listado: solo -6% frente a su PVP (319,00 €)",
+   "price": 299.0
+  },
+  "amz-B0GVJTRHZH": {
+   "t": 1794377536,
+   "why": "modo listado: solo -5% frente a su PVP (109,99 €)",
+   "price": 104.4
   }
  },
  "summary_sent": "2026-11-10",
- "rotation": 3058,
+ "rotation": 3059,
  "backlog": [
-  {
-   "id": "amz-B0DYFBHJ5H",
-   "asin": "B0DYFBHJ5H",
-   "amazon": true,
-   "title": "SONY WH-CH720N Auriculares Inalámbricos Diadema con Noise Cancelling | Bluetooh, Sonido Ambiente, Diseño Ligero, hasta 50 horas de batería - Rosa",
-   "price": 64.0,
-   "was": 149.99,
-   "ts": 1794345773,
-   "brand": "Sony",
-   "brand_ok": true,
-   "image": "https://m.media-amazon.com/images/I/31iRB-2fS2L._SL500_.jpg",
-   "basis_type": "LIST_PRICE"
-  },
-  {
-   "id": "amz-B0BTDT8V59",
-   "asin": "B0BTDT8V59",
-   "amazon": true,
-   "title": "Sony WH-CH720N Auriculares Inalámbricos Bluetooth Noise Cancelling de Diadema, Sonido de, modo Sonido Ambiente, Diseño Ligero, hasta 35 horas de batería, iOS y Android - Azul",
-   "price": 67.0,
-   "was": 149.99,
-   "ts": 1794345773,
-   "brand": "Sony",
-   "brand_ok": true,
-   "image": "https://m.media-amazon.com/images/I/31qntETGoKL._SL500_.jpg",
-   "basis_type": "LIST_PRICE"
-  },
-  {
-   "id": "amz-B0HJZPF8XY",
-   "asin": "B0HJZPF8XY",
-   "amazon": true,
-   "title": "2026 Ordenador Portátil 15,6 Pulgadas Core i3-7100U 8GB +256 GB SSD-Gray | PC Laptop Win 11 Pro 1920x1080 con Teclado Retroiluminado Numérico Lector de Huellas WiFi 5 Notebook para Oficina y Estudio",
-   "price": 299.99,
-   "was": 599.99,
-   "ts": 1794345893,
-   "brand": "Ruzava",
-   "brand_ok": false,
-   "image": "https://m.media-amazon.com/images/I/5133tOUjjpL._SL500_.jpg",
-   "basis_type": "LOWEST_PRICE_STRIKETHROUGH"
-  },
-  {
-   "id": "amz-B0BTJD6LCL",
-   "asin": "B0BTJD6LCL",
-   "amazon": true,
-   "title": "Sony WH-CH520, Auriculares de diadema inalámbricos Bluetooth, diseño ligero, 50 h de batería, carga rápida, ecualizador, llamadas nítidas, iOS y Android - Negro",
-   "price": 29.9,
-   "was": 69.99,
-   "ts": 1794345773,
-   "brand": "Sony",
-   "brand_ok": true,
-   "image": "https://m.media-amazon.com/images/I/31U9zjxcWdL._SL500_.jpg",
-   "basis_type": "LIST_PRICE"
-  },
   {
    "id": "amz-B0BTJ9WHL9",
    "asin": "B0BTJ9WHL9",
@@ -14466,37 +14458,78 @@
    "title": "Sony WH-CH520 Auriculares Bluetooth con 50 h de batería, sonido DSEE y micrófono integrado, Beige",
    "price": 29.9,
    "was": 69.99,
-   "ts": 1794345773,
+   "ts": 1794377536,
    "brand": "Sony",
    "brand_ok": true,
    "image": "https://m.media-amazon.com/images/I/31e1LrUy0LL._SL500_.jpg",
-   "basis_type": "LIST_PRICE"
+   "basis_type": "LIST_PRICE",
+   "seller": "Amazon",
+   "deal_badge": "",
+   "deal_end": "",
+   "history": {
+    "days": 0
+   },
+   "sold_by_amazon": true
   },
   {
-   "id": "amz-B0FNWCYLZN",
-   "asin": "B0FNWCYLZN",
+   "id": "amz-B0DHL93XCN",
+   "asin": "B0DHL93XCN",
    "amazon": true,
-   "title": "Soundcore P31i de Anker Auriculares Bluetooth con Cancelación de Ruido | Auriculare con Traductor, Sonido de Alta Resolución LDAC, 50h de uso, Carga Rápida, Audio Espacial, IP55",
-   "price": 29.99,
-   "was": 69.99,
-   "ts": 1794345773,
-   "brand": "Soundcore",
+   "title": "JBL Wave Beam 2, Auriculares Wireless con Cancelación de Ruido, Negro | Bluetooth 5.3, Hasta 40 Hrs de Autonomía, Sonido JBL Pure Bass, Smart Ambient, Connexion Multipunto",
+   "price": 49.99,
+   "was": 79.99,
+   "ts": 1794377536,
+   "brand": "JBL",
    "brand_ok": true,
-   "image": "https://m.media-amazon.com/images/I/31Py0ZyI4EL._SL500_.jpg",
-   "basis_type": "LIST_PRICE"
+   "image": "https://m.media-amazon.com/images/I/31mr0ORTf5L._SL500_.jpg",
+   "basis_type": "LIST_PRICE",
+   "seller": "Amazon",
+   "deal_badge": "",
+   "deal_end": "",
+   "history": {
+    "days": 0
+   },
+   "sold_by_amazon": true
   },
   {
-   "id": "amz-B0FNWCQ1CY",
-   "asin": "B0FNWCQ1CY",
+   "id": "amz-B0H6XTP3WL",
+   "asin": "B0H6XTP3WL",
    "amazon": true,
-   "title": "Soundcore P31i de Anker Auriculares Bluetooth con Cancelación de Ruido | Auriculare con Traductor, Sonido de Alta Resolución LDAC, 50h de uso, Carga Rápida, Audio Espacial, IP55",
-   "price": 29.99,
-   "was": 69.99,
-   "ts": 1794345773,
-   "brand": "Soundcore",
+   "title": "POCO X8, Smartphone 8G+256GB, Negro, batería de 8340mAh, carga de 67 W | Pantalla AMOLED de 6,83\" 1,5K con protección ocular, Snapdragon® 6s Gen 4, cámara OIS de 50 MP, 3500 nits, HyperOS 3",
+   "price": 279.9,
+   "was": 399.9,
+   "ts": 1794377536,
+   "brand": "Xiaomi",
    "brand_ok": true,
-   "image": "https://m.media-amazon.com/images/I/21zLR50ULSL._SL500_.jpg",
-   "basis_type": "LIST_PRICE"
+   "image": "https://m.media-amazon.com/images/I/41UozLpH-LL._SL500_.jpg",
+   "basis_type": "LIST_PRICE",
+   "seller": "Amazon",
+   "deal_badge": "Black Friday anticipado",
+   "deal_end": "2026-11-30T22:59:59Z",
+   "history": {
+    "days": 0
+   },
+   "sold_by_amazon": true
+  },
+  {
+   "id": "amz-B0H712TT2V",
+   "asin": "B0H712TT2V",
+   "amazon": true,
+   "title": "REDMI 17 5G, Smartphone 4+128GB, Azul, batería de 7500mAh, carga de 45 W | Snapdragon® 4 Gen 5 con 5G, Corning® Gorilla® Glass 7i, pantalla inmersiva de 6,9\", cámara dual AI de 50 MP",
+   "price": 179.9,
+   "was": 259.9,
+   "ts": 1794377536,
+   "brand": "Xiaomi",
+   "brand_ok": true,
+   "image": "https://m.media-amazon.com/images/I/41YnDPE9CBL._SL500_.jpg",
+   "basis_type": "LIST_PRICE",
+   "seller": "Amazon",
+   "deal_badge": "",
+   "deal_end": "",
+   "history": {
+    "days": 0
+   },
+   "sold_by_amazon": true
   }
  ],
  "x_drafts": [
@@ -14534,18 +14567,493 @@
   1794305463,
   1794305520,
   1794305672,
-  1794313034
+  1794313034,
+  1794377562
  ],
  "x_recent": [
-  "bot-aviso",
   "comprado",
   "no-dura",
   "filtro",
   "regla",
   "black-friday",
   "telegram",
-  "rapido"
+  "rapido",
+  "chivatazo"
  ],
- "jl_paused_until": 1794347273.804494,
- "amazon_search_index": 48
+ "jl_paused_until": 1794379336.09736,
+ "amazon_search_index": 56,
+ "api_calls": {
+  "2026-11-11": 8
+ },
+ "price_history": {
+  "B0CRTYZG5C": [
+   [
+    20261111,
+    23.99,
+    23.99
+   ]
+  ],
+  "B0FNWCYLZN": [
+   [
+    20261111,
+    29.99,
+    29.99
+   ]
+  ],
+  "B0C3HCD34R": [
+   [
+    20261111,
+    29.99,
+    29.99
+   ]
+  ],
+  "B0DHL93XCN": [
+   [
+    20261111,
+    49.99,
+    49.99
+   ]
+  ],
+  "B0BTDT8V59": [
+   [
+    20261111,
+    67.0,
+    67.0
+   ]
+  ],
+  "B0CRTR3PMF": [
+   [
+    20261111,
+    24.99,
+    24.99
+   ]
+  ],
+  "B0FNWCQ1CY": [
+   [
+    20261111,
+    29.99,
+    29.99
+   ]
+  ],
+  "B0HFN1MD6X": [
+   [
+    20261111,
+    29.99,
+    29.99
+   ]
+  ],
+  "B0CQXKXBR7": [
+   [
+    20261111,
+    41.99,
+    41.99
+   ]
+  ],
+  "B0C3KWT5V6": [
+   [
+    20261111,
+    31.99,
+    31.99
+   ]
+  ],
+  "B0BTYCRJSS": [
+   [
+    20261111,
+    17.99,
+    17.99
+   ]
+  ],
+  "B0BYD8F9W7": [
+   [
+    20261111,
+    23.46,
+    23.46
+   ]
+  ],
+  "B0H5CL8QXH": [
+   [
+    20261111,
+    15.19,
+    15.19
+   ]
+  ],
+  "B0BHTJLFVP": [
+   [
+    20261111,
+    42.5,
+    42.5
+   ]
+  ],
+  "B0DBLN4C47": [
+   [
+    20261111,
+    37.99,
+    37.99
+   ]
+  ],
+  "B0BTJ9WHL9": [
+   [
+    20261111,
+    29.9,
+    29.9
+   ]
+  ],
+  "B0DGJ69JGD": [
+   [
+    20261111,
+    378.41,
+    378.41
+   ]
+  ],
+  "B086YXMFYZ": [
+   [
+    20261111,
+    226.69,
+    226.69
+   ]
+  ],
+  "B08QJSGKP7": [
+   [
+    20261111,
+    149.0,
+    149.0
+   ]
+  ],
+  "B09MMKPSFP": [
+   [
+    20261111,
+    205.0,
+    205.0
+   ]
+  ],
+  "B08QCRJ68F": [
+   [
+    20261111,
+    199.0,
+    199.0
+   ]
+  ],
+  "B0CQK8TZCF": [
+   [
+    20261111,
+    28.49,
+    28.49
+   ]
+  ],
+  "B0HHGXGKS1": [
+   [
+    20261111,
+    39.99,
+    39.99
+   ]
+  ],
+  "B0HC26TT1Q": [
+   [
+    20261111,
+    34.19,
+    34.19
+   ]
+  ],
+  "B0HHHKXQG7": [
+   [
+    20261111,
+    39.99,
+    39.99
+   ]
+  ],
+  "B0BDJ7DZ6H": [
+   [
+    20261111,
+    545.62,
+    545.62
+   ]
+  ],
+  "B0BNM1R46Q": [
+   [
+    20261111,
+    485.0,
+    485.0
+   ]
+  ],
+  "B09MGFJK73": [
+   [
+    20261111,
+    268.94,
+    268.94
+   ]
+  ],
+  "B0CHWPKY7R": [
+   [
+    20261111,
+    689.71,
+    689.71
+   ]
+  ],
+  "B0BNLX3333": [
+   [
+    20261111,
+    361.28,
+    361.28
+   ]
+  ],
+  "B09MJRCYYB": [
+   [
+    20261111,
+    315.28,
+    315.28
+   ]
+  ],
+  "B0CHWZ6YV6": [
+   [
+    20261111,
+    702.9,
+    702.9
+   ]
+  ],
+  "B0BDKJKGSN": [
+   [
+    20261111,
+    539.95,
+    539.95
+   ]
+  ],
+  "B09MJSNM1L": [
+   [
+    20261111,
+    355.77,
+    355.77
+   ]
+  ],
+  "B08PCFVC58": [
+   [
+    20261111,
+    188.04,
+    188.04
+   ]
+  ],
+  "B0FQGLL37Q": [
+   [
+    20261111,
+    1499.0,
+    1499.0
+   ]
+  ],
+  "B07FTCXNQK": [
+   [
+    20261111,
+    107.89,
+    107.89
+   ]
+  ],
+  "B07YYNQTT4": [
+   [
+    20261111,
+    239.89,
+    239.89
+   ]
+  ],
+  "B09G9LHBWF": [
+   [
+    20261111,
+    479.69,
+    479.69
+   ]
+  ],
+  "B0HLDDHGCH": [
+   [
+    20261111,
+    89.99,
+    89.99
+   ]
+  ],
+  "B09FL24X75": [
+   [
+    20261111,
+    129.99,
+    129.99
+   ]
+  ],
+  "B0GVF31D1W": [
+   [
+    20261111,
+    99.99,
+    99.99
+   ]
+  ],
+  "B0DJ5796F6": [
+   [
+    20261111,
+    799.0,
+    799.0
+   ]
+  ],
+  "B0HJQH3BBG": [
+   [
+    20261111,
+    99.99,
+    99.99
+   ]
+  ],
+  "B0GZ37SM58": [
+   [
+    20261111,
+    169.99,
+    169.99
+   ]
+  ],
+  "B0D1YPHCY6": [
+   [
+    20261111,
+    1099.0,
+    1099.0
+   ]
+  ],
+  "B0HKN8VJ1Y": [
+   [
+    20261111,
+    579.99,
+    579.99
+   ]
+  ],
+  "B0DYF1ZLHM": [
+   [
+    20261111,
+    1199.0,
+    1199.0
+   ]
+  ],
+  "B0DCHHY728": [
+   [
+    20261111,
+    1099.0,
+    1099.0
+   ]
+  ],
+  "B0FVY1FWL5": [
+   [
+    20261111,
+    279.99,
+    279.99
+   ]
+  ],
+  "B0BYMPCWHN": [
+   [
+    20261111,
+    304.51,
+    304.51
+   ]
+  ],
+  "B0BYMRY1SP": [
+   [
+    20261111,
+    300.48,
+    300.48
+   ]
+  ],
+  "B0FJ8SPP5Q": [
+   [
+    20261111,
+    299.0,
+    299.0
+   ]
+  ],
+  "B09BRFHPQP": [
+   [
+    20261111,
+    261.95,
+    261.95
+   ]
+  ],
+  "B09QH4B1Q5": [
+   [
+    20261111,
+    179.0,
+    179.0
+   ]
+  ],
+  "B0BYMP9KZP": [
+   [
+    20261111,
+    299.46,
+    299.46
+   ]
+  ],
+  "B0CNQ5WD9K": [
+   [
+    20261111,
+    755.82,
+    755.82
+   ]
+  ],
+  "B0C78G8ZC3": [
+   [
+    20261111,
+    159.0,
+    159.0
+   ]
+  ],
+  "B08QXFPWWG": [
+   [
+    20261111,
+    246.99,
+    246.99
+   ]
+  ],
+  "B0GVJTRHZH": [
+   [
+    20261111,
+    104.4,
+    104.4
+   ]
+  ],
+  "B0H79Q2ZKJ": [
+   [
+    20261111,
+    179.9,
+    179.9
+   ]
+  ],
+  "B0H712TT2V": [
+   [
+    20261111,
+    179.9,
+    179.9
+   ]
+  ],
+  "B09QH6KD26": [
+   [
+    20261111,
+    173.09,
+    173.09
+   ]
+  ],
+  "B0H6XTP3WL": [
+   [
+    20261111,
+    279.9,
+    279.9
+   ]
+  ],
+  "B0H79Q6WQC": [
+   [
+    20261111,
+    179.9,
+    179.9
+   ]
+  ],
+  "B08FMQFRRD": [
+   [
+    20261111,
+    109.0,
+    109.0
+   ]
+  ],
+  "B0CR3MQW15": [
+   [
+    20261111,
+    261.01,
+    261.01
+   ]
+  ]
+ }
 }
