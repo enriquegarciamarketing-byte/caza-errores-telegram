@@ -6165,6 +6165,25 @@
    "label": "Cafeteras",
    "brand": "KRUPS",
    "checked": 1794497881
+  },
+  {
+   "asin": "B09ZYLM43B",
+   "jl_id": "",
+   "price": 142.49,
+   "reference": 194.39,
+   "t": 1794500438,
+   "url": "https://www.amazon.es/dp/B09ZYLM43B?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 550,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavXm_OMkFZk9qvSwhTs9U61Cb7sAAqQRaxsa2LFTZjT7xfEqK7cBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavXm_AchbSYvn_e0l_5-mhL4Ro4AAqMRaxsa2LFTGTv835CgURYBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Ninja Foodi MAX AF400EUCP Freidora de Aire Doble 9,5 L con Pinzas</b>\n\n💶 PRECIO: <b>142,49€</b>\n❌ (Antes: <s>194,39€</s>)\n🔥 ¡Te ahorras <b>51,90€</b>! (27 % dto.)\n🖤 Black Friday anticipado · Vendido y enviado por Amazon\n🍟 Dos cestas independientes · 6 en 1 · Pinzas incluidas\nℹ️ Envío gratis con Prime · Devoluciones gratis\n\n🕒 Precio a las 17:17 · puede cambiar\n\n🛒 <a href=\"https://link.amazon/B09btAUC6\">https://link.amazon/B09btAUC6</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Ninja Foodi MAX AF400EUCP Freidora de Aire Doble 9,5 L con Pinzas",
+   "manual": true,
+   "brand": "ninja"
   }
  ],
  "seen": {
@@ -18430,7 +18449,6 @@
   }
  ],
  "x_drafts": [
-  1794162866,
   1794169106,
   1794177166,
   1794220493,
@@ -18479,17 +18497,18 @@
   1794489109,
   1794490531,
   1794490911,
-  1794496322
+  1794496322,
+  1794500444
  ],
  "x_recent": [
-  "pregunta",
   "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
   "rapido",
-  "regla"
+  "regla",
+  "guarda"
  ],
  "jl_paused_until": 1794499441.006531,
  "amazon_search_index": 127,
