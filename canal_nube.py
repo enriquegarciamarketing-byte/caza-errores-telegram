@@ -1347,10 +1347,13 @@ def send_rich_carousel(tg, chat_id, photos: list, caption: str, reply_markup: di
     sent = result["result"]
     # Las fotos del carrusel ya subidas a Telegram (la más grande de cada una): el seguimiento las reutiliza para
     # reescribir el post con AGOTADO / YA NO ESTÁ A ESTE PRECIO sin volver a subirlas.
-    blocks = (sent.get("rich_message") or {}).get("blocks") or []
-    show = next((b for b in blocks if b.get("type") == "slideshow"), {})
-    sent["slides"] = [max(b["photo"], key=lambda s: (s.get("width") or 0) * (s.get("height") or 0))["file_id"]
-                      for b in show.get("blocks") or [] if b.get("type") == "photo" and b.get("photo")]
+    try:
+        blocks = (sent.get("rich_message") or {}).get("blocks") or []
+        show = next((b for b in blocks if b.get("type") == "slideshow"), {})
+        sent["slides"] = [max(b["photo"], key=lambda s: (s.get("width") or 0) * (s.get("height") or 0))["file_id"]
+                          for b in show.get("blocks") or [] if b.get("type") == "photo" and b.get("photo")]
+    except (KeyError, TypeError, ValueError, AttributeError):
+        sent["slides"] = []  # el post ya ha salido: sin fotos guardadas solo se pierde el aviso de AGOTADO
     return sent
 
 
