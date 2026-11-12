@@ -5998,6 +5998,21 @@
    "photo_message_id": null,
    "label": "Aspiradoras",
    "brand": "roborock"
+  },
+  {
+   "asin": "B0D6RW3DH5",
+   "jl_id": "",
+   "price": 12.33,
+   "reference": 16.95,
+   "t": 1794488439,
+   "url": "https://www.amazon.es/dp/B0D6RW3DH5?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 535,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Café en Grano illy Intenso 500 g</b>\n\n💶 PRECIO: <b>12,33€</b>\n❌ (Antes: <s>16,95€</s>)\n🔥 ¡Te ahorras <b>4,62€</b>! (27 % dto.)\n🔁 Con Suscríbete y ahorra se queda en 11,10 €\n\n🕒 Precio a las 13:59 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0D6RW3DH5?tag=cazachollos0c-21\">amazon.es/dp/B0D6RW3DH5</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Café en Grano illy Intenso 500 g",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -18167,7 +18182,6 @@
   }
  ],
  "x_drafts": [
-  1794050706,
   1794053144,
   1794053179,
   1794082024,
@@ -18216,17 +18230,18 @@
   1794479855,
   1794479943,
   1794480481,
-  1794481342
+  1794481342,
+  1794488443
  ],
  "x_recent": [
-  "bot-aviso",
   "pregunta",
   "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
-  "rapido"
+  "rapido",
+  "filtro"
  ],
  "jl_paused_until": 1794487014.013186,
  "amazon_search_index": 165,
