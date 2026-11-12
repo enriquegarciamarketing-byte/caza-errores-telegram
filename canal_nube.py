@@ -1311,9 +1311,10 @@ def keepa_canvas(asin: str, margin: float = 0.04, side: int = 2560) -> Path | No
 
 
 def caption_to_rich_html(caption: str) -> str:
-    """El texto del post (HTML de Telegram con saltos de línea) en párrafos para un mensaje enriquecido."""
-    paras = [p.strip("\n") for p in caption.split("\n\n")]
-    return "".join("<p>" + p.replace("\n", "<br/>") + "</p>" for p in paras if p.strip())
+    """El texto del post (HTML de Telegram con saltos de línea) tal cual para un mensaje enriquecido: en HTML
+    enriquecido los saltos de línea no cuentan, así que cada uno pasa a <br> (y las líneas en blanco, a <br><br>)
+    para que el copy salga con los mismos huecos que en los posts de siempre."""
+    return "<p>" + caption.strip("\n").replace("\n", "<br>") + "</p>"
 
 
 def send_rich_carousel(tg, chat_id, photos: list, caption: str, reply_markup: dict) -> dict:
