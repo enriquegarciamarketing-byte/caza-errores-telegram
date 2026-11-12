@@ -5933,6 +5933,21 @@
    "title": "Nespresso De'Longhi Vertuo Pop Cafetera de Cápsulas Negra",
    "manual": true,
    "brand": "nespresso"
+  },
+  {
+   "asin": "B0FVVQ91TJ",
+   "jl_id": "",
+   "price": 9.99,
+   "reference": 12.99,
+   "t": 1794480477,
+   "url": "https://www.amazon.es/dp/B0FVVQ91TJ?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 531,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>DeLorean Regreso al Futuro II de Jada Toys Metálico Escala 1:32</b>\n\n💶 PRECIO: <b>9,99€</b>\n❌ (Antes: <s>12,99€</s>)\n🔥 ¡Te ahorras <b>3€</b>! (23 % dto.)\n⚡ Oferta flash\nℹ️ Puertas de ala de gaviota · Réplica oficial de la película\n\n🕒 Precio a las 11:46 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0FVVQ91TJ?tag=cazachollos0c-21\">amazon.es/dp/B0FVVQ91TJ</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "DeLorean Regreso al Futuro II de Jada Toys Metálico Escala 1:32",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -17973,7 +17988,6 @@
  "rotation": 3088,
  "backlog": [],
  "x_drafts": [
-  1794042731,
   1794045897,
   1794050706,
   1794053144,
@@ -18022,17 +18036,18 @@
   1794479087,
   1794479720,
   1794479855,
-  1794479943
+  1794479943,
+  1794480481
  ],
  "x_recent": [
-  "bot-aviso",
   "pregunta",
   "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
-  "rapido"
+  "rapido",
+  "telegram"
  ],
  "jl_paused_until": 1794480352.165874,
  "amazon_search_index": 90,
