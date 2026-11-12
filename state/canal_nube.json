@@ -6204,6 +6204,25 @@
    "title": "Ninja Foodi MAX AF400EUCP Freidora de Aire Doble 9,5 L con Pinzas",
    "manual": true,
    "brand": "ninja"
+  },
+  {
+   "asin": "B000VOLKEA",
+   "jl_id": "",
+   "price": 15.6,
+   "reference": 17.3,
+   "t": 1794503368,
+   "url": "https://www.amazon.es/dp/B000VOLKEA?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 552,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavXyzNzquEhTa2tfNbojTDAWr4wAAkEPaxvihLFTVQWilSZPytABAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavXyzBUCSm0pQFSK5e-EVAUU8y8AAkAPaxvihLFTTvbZEyhux5UBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Calvin Klein CKIN2U para Él Eau de Toilette 100 ml</b>\n\n💶 PRECIO: <b>15,60€</b>\n❌ (Antes: <s>17,30€</s>)\n🔥 ¡Te ahorras <b>1,70€</b>! (10 % dto.)\n🎟️ Marca el cupón de 3,90 € de la ficha (19,50 € → 15,60 €)\n\n🕒 Precio a las 18:09 · puede cambiar\n\n🛒 <a href=\"https://link.amazon/B06vseu0D\">https://link.amazon/B06vseu0D</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Calvin Klein CKIN2U para Él Eau de Toilette 100 ml",
+   "manual": true,
+   "brand": "calvin klein"
   }
  ],
  "seen": {
@@ -18449,7 +18468,6 @@
  "rotation": 3097,
  "backlog": [],
  "x_drafts": [
-  1794169106,
   1794177166,
   1794220493,
   1794221323,
@@ -18498,17 +18516,18 @@
   1794490531,
   1794490911,
   1794496322,
-  1794500444
+  1794500444,
+  1794503373
  ],
  "x_recent": [
-  "pregunta",
   "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
   "rapido",
-  "regla"
+  "regla",
+  "bot-aviso"
  ],
  "jl_paused_until": 1794502065.116696,
  "amazon_search_index": 176,
