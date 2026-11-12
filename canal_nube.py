@@ -1310,6 +1310,42 @@ def keepa_canvas(asin: str, margin: float = 0.04, side: int = 2560) -> Path | No
     return out
 
 
+def caption_to_rich_html(caption: str) -> str:
+    """El texto del post (HTML de Telegram con saltos de línea) en párrafos para un mensaje enriquecido."""
+    paras = [p.strip("\n") for p in caption.split("\n\n")]
+    return "".join("<p>" + p.replace("\n", "<br/>") + "</p>" for p in paras if p.strip())
+
+
+def send_rich_carousel(tg, chat_id, photos: list, caption: str, reply_markup: dict) -> dict:
+    """Carrusel nativo de Telegram (sendRichMessage con <tg-slideshow>): se ve la primera foto en grande y al
+    deslizar salen las demás, con el texto del post debajo y el botón de comprar. photos: [(id, ruta), …]."""
+    media = [{"id": key, "media": {"type": "photo", "media": f"attach://{key}"}} for key, _ in photos]
+    slides = "".join(f'<img src="tg://photo?id={key}"/>' for key, _ in photos)
+    rich = {"html": f"<tg-slideshow>{slides}</tg-slideshow>" + caption_to_rich_html(caption), "media": media}
+    fields = (("chat_id", str(chat_id)), ("rich_message", json.dumps(rich, ensure_ascii=False)),
+              ("reply_markup", json.dumps(reply_markup, ensure_ascii=False)))
+    boundary = "----caza" + uuid.uuid4().hex
+    parts = [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
+             for k, v in fields]
+    for key, path in photos:
+        parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"{key}\"; filename=\"{path.name}\"\r\n"
+                     "Content-Type: image/jpeg\r\n\r\n".encode("utf-8") + path.read_bytes() + b"\r\n")
+    parts.append(f"--{boundary}--\r\n".encode("ascii"))
+    req = urllib.request.Request(tg.base + "sendRichMessage", data=b"".join(parts),
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        try:
+            result = json.loads(exc.read().decode("utf-8") or "{}")
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            result = {"ok": False, "description": f"HTTP {exc.code}"}
+    if not result.get("ok"):
+        raise RuntimeError(f"Telegram sendRichMessage: {result.get('description')}")
+    return result["result"]
+
+
 def send_product_photo(tg, target, image: str) -> dict:
     """Foto del producto tal cual y en silencio (la notificación la da la tarjeta con el texto que va justo detrás).
     Si es una URL de Amazon, Telegram la baja directamente: no se guarda ni se retoca."""
@@ -1340,15 +1376,16 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
                 padded = white_canvas_photo(image, deal["asin"])
                 if padded and deal.get("keepa"):
                     # Carrusel ("keepa": true en el post manual): primero la foto de siempre y, al deslizar, la
-                    # gráfica de Keepa en el mismo lienzo. Los álbumes de Telegram no llevan botón: el enlace va en el texto.
+                    # gráfica de Keepa en el mismo lienzo, con el texto y el botón de comprar debajo.
                     graph = keepa_canvas(deal["asin"])
                     if graph:
-                        sent = _media_group(tg, target, [
-                            {"type": "photo", "media": "attach://photo", "caption": caption, "parse_mode": "HTML"},
-                            {"type": "photo", "media": "attach://keepa"},
-                        ], {"photo": (padded.name, padded.read_bytes()), "keepa": (graph.name, graph.read_bytes())})
-                        return sent[0]
-                    log("  No he podido bajar la gráfica de Keepa; mando solo la foto")
+                        try:
+                            return send_rich_carousel(tg, target, [("foto", padded), ("keepa", graph)], caption,
+                                                      buttons(url, rules.get("button_style", "success")))
+                        except (RuntimeError, OSError) as exc:
+                            log(f"  No ha salido el carrusel ({exc}); mando solo la foto")
+                    else:
+                        log("  No he podido bajar la gráfica de Keepa; mando solo la foto")
                 if padded:
                     return tg.send_photo(target, padded, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
                 log("  No he podido preparar el fondo blanco; mando la foto tal cual")
