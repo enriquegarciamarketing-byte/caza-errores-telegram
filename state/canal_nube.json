@@ -5748,6 +5748,21 @@
    "photo_message_id": null,
    "label": "Moda de marca",
    "brand": "adidas"
+  },
+  {
+   "asin": "B0GT9BW7DK",
+   "jl_id": "",
+   "price": 116.22,
+   "reference": 149.0,
+   "t": 1794472972,
+   "url": "https://www.amazon.es/dp/B0GT9BW7DK?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 519,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Xiaomi Redmi Pad 2 Tablet 9.7″ 4+64 GB Gris Grafito</b>\n\n💶 PRECIO: <b>116,22€</b>\n❌ (Antes: <s>149€</s>)\n🔥 ¡Te ahorras <b>32,78€</b>! (22 % dto.)\n🖥️ Pantalla 2K 120 Hz · Snapdragon 6s Gen 2 · 4+64 GB · 7600 mAh\n🏷️ Black Friday anticipado\nℹ️ Sin cargador en la caja · Vendido por Amazon · 1 año de garantía adicional\n\n🕒 Precio a las 09:37 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0GT9BW7DK?tag=cazachollos0c-21\">amazon.es/dp/B0GT9BW7DK</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Xiaomi Redmi Pad 2 Tablet 9.7″ 4+64 GB Gris Grafito",
+   "manual": true,
+   "brand": "xiaomi"
   }
  ],
  "seen": {
@@ -17827,7 +17842,6 @@
   }
  ],
  "x_drafts": [
-  1793880218,
   1793885492,
   1793889012,
   1793897718,
@@ -17876,17 +17890,18 @@
   1794408712,
   1794415338,
   1794437187,
-  1794468538
+  1794468538,
+  1794472976
  ],
  "x_recent": [
-  "telegram",
   "rapido",
   "chivatazo",
   "bot-aviso",
   "pregunta",
   "comprado",
   "cartera",
-  "cabeza"
+  "cabeza",
+  "guarda"
  ],
  "jl_paused_until": 1794471206.580889,
  "amazon_search_index": 150,
