@@ -99,6 +99,17 @@ def limpiar(tg, state: dict, rules: dict, ids: set[int], dry: bool, log=print) -
                     pass
                 post["photo_message_id"] = None
                 log("  ✓ foto del producto puesta, foto suelta borrada")
+            elif post.get("slides") and caption != (post.get("caption") or ""):
+                # Post en carrusel (mensaje enriquecido): se reescribe con las mismas fotos y el botón.
+                ids = [f"s{n}" for n in range(len(post["slides"]))]
+                slides = "".join(f'<img src="tg://photo?id={i}"/>' for i in ids)
+                params = {"chat_id": chat, "message_id": mid, "rich_message": {
+                    "html": f"<tg-slideshow>{slides}</tg-slideshow>" + cn.caption_to_rich_html(caption),
+                    "media": [{"id": i, "media": {"type": "photo", "media": f}} for i, f in zip(ids, post["slides"])]}}
+                if markup:
+                    params["reply_markup"] = markup
+                tg.call("editMessageText", params)
+                log("  ✓ texto del carrusel editado")
             elif caption != (post.get("caption") or ""):
                 params = {"chat_id": chat, "message_id": mid, "caption": caption, "parse_mode": "HTML"}
                 if markup:
