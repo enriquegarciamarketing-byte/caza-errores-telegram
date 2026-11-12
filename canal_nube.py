@@ -676,13 +676,13 @@ def quota_reason(state: dict, now: datetime, rules: dict, already: int = 0) -> s
         return "horario de silencio"
     if day_closed(state, now, rules):
         return "día cerrado con el resumen"
-    posts = state.get("posts") or []
+    # Los posts manuales no cuentan para nada del automático: ni cupo del día, ni ritmo por hora, ni separación
+    # entre posts (Enrique, 12/11/2026).
+    posts = [p for p in state.get("posts") or [] if not p.get("manual")]
     last_hour = [p for p in posts if (p.get("t") or 0) >= now.timestamp() - 3600]
     today = now.astimezone(MADRID).date()
-    # Los posts manuales no gastan el cupo diario del automático (sí cuentan para el ritmo por hora y la separación).
     today_posts = [p for p in posts
-                   if not p.get("manual")
-                   and datetime.fromtimestamp(p.get("t") or 0, timezone.utc).astimezone(MADRID).date() == today]
+                   if datetime.fromtimestamp(p.get("t") or 0, timezone.utc).astimezone(MADRID).date() == today]
     if len(last_hour) + already >= int(rules["max_per_hour"]):
         return "cupo de la hora cubierto"
     gap = float(rules.get("min_minutes_between_posts") or 0) * 60
@@ -1588,7 +1588,7 @@ def silence_alert(tg, state: dict, now: datetime, rules: dict, log=print, dry: b
     """Si pese a la hora garantizada lleva «aviso_silencio_minutos» sin publicar, te avisa por privado una vez
     (por ejemplo, la API de Amazon saturada). Un aviso por cada racha sin posts."""
     minutes = float(rules.get("aviso_silencio_minutos") or 0)
-    last = max([p.get("t") or 0 for p in state.get("posts") or []] or [0])
+    last = max([p.get("t") or 0 for p in state.get("posts") or [] if not p.get("manual")] or [0])
     opened = now.astimezone(MADRID).replace(hour=int((rules.get("quiet_hours") or [0, 7])[1]), minute=0,
                                             second=0, microsecond=0).timestamp()
     since = max(last, opened)
@@ -1645,7 +1645,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
     relaxed = False
     silence = float(rules.get("silence_minutes") or 0) * 60
     if silence and not args.test_private:
-        last = max([p.get("t") or 0 for p in state.get("posts") or []] or [0])
+        last = max([p.get("t") or 0 for p in state.get("posts") or [] if not p.get("manual")] or [0])
         relaxed = now.timestamp() - last >= silence
         if relaxed:
             log(f"Modo sin silencios: {int((now.timestamp() - last) // 60)} min sin publicar; "
@@ -1655,7 +1655,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
     urgent = False
     hour_limit = float(rules.get("hora_garantizada_minutos") or 0) * 60
     if hour_limit and not args.test_private:
-        last = max([p.get("t") or 0 for p in state.get("posts") or []] or [0])
+        last = max([p.get("t") or 0 for p in state.get("posts") or [] if not p.get("manual")] or [0])
         # Cuenta desde el último post o desde que abre el canal (a las 7:00 no hay que esperar a nada).
         opened = now.astimezone(MADRID).replace(hour=int((rules.get("quiet_hours") or [0, 7])[1]), minute=0,
                                                 second=0, microsecond=0).timestamp()
