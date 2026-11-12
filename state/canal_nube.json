@@ -6043,6 +6043,21 @@
    "title": "Vinoteca Cecotec Bolero GrandSommelier 600 para 6 Botellas",
    "manual": true,
    "brand": "cecotec"
+  },
+  {
+   "asin": "B09CD32DNH",
+   "jl_id": "",
+   "price": 358.03,
+   "reference": 459.0,
+   "t": 1794489104,
+   "url": "https://www.amazon.es/dp/B09CD32DNH?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 538,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Monitor Gaming ASUS ROG Strix XG27AQDMGR QHD OLED 240 Hz</b>\n\n💶 PRECIO: <b>358,03€</b>\n❌ (Antes: <s>459€</s>)\n🔥 ¡Te ahorras <b>100,97€</b>! (22 % dto.)\n🎟️ Sale a 459 € en la ficha y se descuentan 100,97 € al tramitar el pedido\n\n🕒 Precio a las 14:10 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B09CD32DNH?tag=cazachollos0c-21\">amazon.es/dp/B09CD32DNH</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Monitor Gaming ASUS ROG Strix XG27AQDMGR QHD OLED 240 Hz",
+   "manual": true,
+   "brand": "asus"
   }
  ],
  "seen": {
@@ -18212,7 +18227,6 @@
   }
  ],
  "x_drafts": [
-  1794082024,
   1794137624,
   1794142477,
   1794153336,
@@ -18261,17 +18275,18 @@
   1794481342,
   1794488443,
   1794488523,
-  1794488596
+  1794488596,
+  1794489109
  ],
  "x_recent": [
-  "cartera",
   "cabeza",
   "black-friday",
   "momento",
   "rapido",
   "filtro",
   "chivatazo",
-  "regla"
+  "regla",
+  "telegram"
  ],
  "jl_paused_until": 1794487014.013186,
  "amazon_search_index": 165,
