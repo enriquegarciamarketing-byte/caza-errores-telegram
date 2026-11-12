@@ -1279,6 +1279,74 @@ def white_canvas_photo(image: str, asin: str, margin: float = 0.12, side: int = 
     return out
 
 
+KEEPA_GRAPH = ("https://graph.keepa.com/pricehistory.png?asin={asin}&domain=es&salesrank=0&used=0"
+               "&range=90&width=1000&height=750")
+
+
+def keepa_canvas(asin: str, margin: float = 0.04, side: int = 2560) -> Path | None:
+    """Gráfica de precios de Keepa (90 días) centrada en el mismo lienzo blanco de 2560×2560 que la foto del
+    producto, para el carrusel de los posts manuales con "keepa": true. Devuelve None si Keepa no responde."""
+    import io
+    from PIL import Image
+
+    req = urllib.request.Request(KEEPA_GRAPH.format(asin=asin), headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            raw = resp.read()
+        with Image.open(io.BytesIO(raw)) as opened:
+            graph = opened.convert("RGB")
+    except (OSError, ValueError):
+        return None
+    if graph.width < 600:  # Keepa devuelve una miniatura de 500×200 cuando no acepta los parámetros
+        return None
+    box = int(round(side * (1 - 2 * margin)))
+    scale = box / max(graph.size)
+    graph = graph.resize((max(1, round(graph.width * scale)), max(1, round(graph.height * scale))), Image.LANCZOS)
+    canvas = Image.new("RGB", (side, side), "white")
+    canvas.paste(graph, ((side - graph.width) // 2, (side - graph.height) // 2))
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    out = OUTPUT / f"{asin}-keepa.jpg"
+    canvas.save(out, "JPEG", quality=95, subsampling=0, optimize=True)
+    return out
+
+
+def caption_to_rich_html(caption: str) -> str:
+    """El texto del post (HTML de Telegram con saltos de línea) tal cual para un mensaje enriquecido: en HTML
+    enriquecido los saltos de línea no cuentan, así que cada uno pasa a <br> (y las líneas en blanco, a <br><br>)
+    para que el copy salga con los mismos huecos que en los posts de siempre."""
+    return "<p>" + caption.strip("\n").replace("\n", "<br>") + "</p>"
+
+
+def send_rich_carousel(tg, chat_id, photos: list, caption: str, reply_markup: dict) -> dict:
+    """Carrusel nativo de Telegram (sendRichMessage con <tg-slideshow>): se ve la primera foto en grande y al
+    deslizar salen las demás, con el texto del post debajo y el botón de comprar. photos: [(id, ruta), …]."""
+    media = [{"id": key, "media": {"type": "photo", "media": f"attach://{key}"}} for key, _ in photos]
+    slides = "".join(f'<img src="tg://photo?id={key}"/>' for key, _ in photos)
+    rich = {"html": f"<tg-slideshow>{slides}</tg-slideshow>" + caption_to_rich_html(caption), "media": media}
+    fields = (("chat_id", str(chat_id)), ("rich_message", json.dumps(rich, ensure_ascii=False)),
+              ("reply_markup", json.dumps(reply_markup, ensure_ascii=False)))
+    boundary = "----caza" + uuid.uuid4().hex
+    parts = [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
+             for k, v in fields]
+    for key, path in photos:
+        parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"{key}\"; filename=\"{path.name}\"\r\n"
+                     "Content-Type: image/jpeg\r\n\r\n".encode("utf-8") + path.read_bytes() + b"\r\n")
+    parts.append(f"--{boundary}--\r\n".encode("ascii"))
+    req = urllib.request.Request(tg.base + "sendRichMessage", data=b"".join(parts),
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        try:
+            result = json.loads(exc.read().decode("utf-8") or "{}")
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            result = {"ok": False, "description": f"HTTP {exc.code}"}
+    if not result.get("ok"):
+        raise RuntimeError(f"Telegram sendRichMessage: {result.get('description')}")
+    return result["result"]
+
+
 def send_product_photo(tg, target, image: str) -> dict:
     """Foto del producto tal cual y en silencio (la notificación la da la tarjeta con el texto que va justo detrás).
     Si es una URL de Amazon, Telegram la baja directamente: no se guarda ni se retoca."""
@@ -1307,6 +1375,18 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
                 # "fondo_blanco": true en config (todos los posts del canal) o en el post manual → la foto sobre un
                 # lienzo blanco fijo de 2560×2560, para que todas las imágenes del canal midan lo mismo.
                 padded = white_canvas_photo(image, deal["asin"])
+                if padded and deal.get("keepa"):
+                    # Carrusel ("keepa": true en el post manual): primero la foto de siempre y, al deslizar, la
+                    # gráfica de Keepa en el mismo lienzo, con el texto y el botón de comprar debajo.
+                    graph = keepa_canvas(deal["asin"])
+                    if graph:
+                        try:
+                            return send_rich_carousel(tg, target, [("foto", padded), ("keepa", graph)], caption,
+                                                      buttons(url, rules.get("button_style", "success")))
+                        except (RuntimeError, OSError) as exc:
+                            log(f"  No ha salido el carrusel ({exc}); mando solo la foto")
+                    else:
+                        log("  No he podido bajar la gráfica de Keepa; mando solo la foto")
                 if padded:
                     return tg.send_photo(target, padded, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
                 log("  No he podido preparar el fondo blanco; mando la foto tal cual")
@@ -2234,6 +2314,7 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
         "short_url": url if url and affiliate.is_short_link(url) else "",
         "interest": 0, "interest_label": "", "ref_kind": spec.get("ref_kind") or "",
         "white_canvas": bool(spec.get("fondo_blanco")),
+        "keepa": bool(spec.get("keepa")),
     }
 
 
