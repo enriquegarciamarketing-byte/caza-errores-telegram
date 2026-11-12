@@ -620,7 +620,6 @@
       "https://jimmyleaks.com/es/c/deportes-y-aire-libre/?order=-modified",
       "https://jimmyleaks.com/es/c/belleza/?order=-modified",
       "https://jimmyleaks.com/es/c/grandes-electrodomesticos/?order=-modified",
-      "https://jimmyleaks.com/es/c/moda/?order=-modified",
       "https://jimmyleaks.com/es/c/informatica/?order=-modified",
       "https://jimmyleaks.com/es/c/juguetes-y-juegos/?order=-modified",
       "https://jimmyleaks.com/es/c/salud-y-cuidado-personal/?order=-modified",
@@ -657,6 +656,16 @@
     "_nota_gustos": "Desde el 11/11/2026 el bot aprende de tus posts a mano (/chollo-free, caza-chollos) de los últimos dias días: busca primero en Amazon esos tipos y marcas (hasta max_busquedas) y, entre chollos parecidos, saca antes el que se parece a los tuyos. Nunca se salta la calidad ni la variedad.",
     "gustos": {"enabled": true, "buscar": true, "dias": 60, "max_busquedas": 12},
     "calidad": {"min_saved_eur": 10, "min_discount_any": 35},
+    "_nota_moda": "Desde el 12/11/2026 (el free se llenó de zapatillas, vaqueros y bolsos de marca: sus PVP tachados están inflados y siempre pasan el -50 %): la moda solo sale desde -min_descuento %, como mucho 1 post de moda de cada cupo_cada_posts (también con la hora garantizada) y el free no busca ropa en Amazon (sin_busquedas). El listado de moda de Jimmyleaks ya no está en las fuentes. Para quitarlo, borra este bloque.",
+    "moda": {
+      "min_descuento": 65,
+      "cupo_cada_posts": 5,
+      "sin_busquedas": true,
+      "tipos": ["ropa", "calzado"],
+      "palabras": ["sneaker", "sneakers", "shoes", "camisa", "camiseta", "polo", "pantalon corto", "vestido", "falda", "chandal", "abrigo", "cazadora", "jersey", "bolso", "bandolera", "cartera", "rinonera", "cinturon", "anillo", "collar", "pulsera", "pendientes", "gafas de sol", "gorra", "chanclas", "sandalias", "reloj analogico", "reloj de cuarzo", "reloj hombre", "reloj mujer"],
+      "excepciones": ["smartwatch", "reloj inteligente", "pulsera de actividad", "pulsera actividad", "pulsera inteligente", "calculadora", "teclado electronico", "smartband", "collar para perro", "collar para perros", "collar para gato", "collar antipulgas"],
+      "marcas": ["nike", "adidas", "puma", "new balance", "converse", "vans", "asics", "skechers", "reebok", "levi's", "tommy hilfiger", "calvin klein", "lacoste", "guess", "michael kors", "pepe jeans", "the north face", "thomas sabo", "pandora", "swarovski", "ray-ban", "casio", "fossil", "seiko", "citizen", "festina", "lotus", "timberland", "jack & jones", "superdry"]
+    },
     "variedad": {"misma_clase_minutos": 180, "misma_clase_ultimos_posts": 3, "mismo_tipo_dia": 2, "misma_marca_dia": 2, "misma_marca_horas": 4, "misma_familia_dias": 3, "tipos_dia": {"robot aspirador": 3, "aspiradora": 3}},
     "test_private_posts": 3,
     "quiet_hours": [

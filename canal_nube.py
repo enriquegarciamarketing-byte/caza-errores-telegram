@@ -827,6 +827,43 @@ def product_kind(title: str) -> str:
     return best
 
 
+def es_moda(title: str, rules: dict) -> bool:
+    """Ropa, calzado y complementos (12/11/2026: el free se llenó de zapatillas y vaqueros de marca).
+
+    Se mira el arranque del título: tipo de producto ropa o calzado, una palabra de moda ('camisa', 'bolso',
+    'anillo', 'sneaker'...) o una marca de moda en un producto sin tipo o de reloj/equipaje
+    ('Calvin Klein Reloj Analógico', 'Levi's 555 Relaxed'). Un smartwatch Huawei no es moda."""
+    conf = rules.get("moda") or {}
+    if not conf:
+        return False
+    head = fold(title_head(title or ""))
+    kind = product_kind(title or "")
+    if kind in set(conf.get("tipos") or []):
+        return True
+
+    def has(word: str) -> bool:
+        return bool(re.search(r"(?<![a-z0-9])" + re.escape(fold(word)) + r"(?![a-z0-9])", head))
+
+    if any(has(w) for w in conf.get("excepciones") or []):
+        return False
+    if any(has(w) for w in conf.get("palabras") or []):
+        return True
+    return kind in set(conf.get("tipos_con_marca") or ["", "reloj", "equipaje"]) and \
+        any(has(b) for b in conf.get("marcas") or [])
+
+
+def moda_reason(deal: dict, rules: dict) -> str:
+    """La moda solo sale con descuento muy grande: sus PVP tachados están inflados y siempre llegan al -50 %."""
+    conf = rules.get("moda") or {}
+    needed = conf.get("min_descuento")
+    if needed is None or not es_moda(deal.get("title") or "", rules):
+        return ""
+    pct = float(deal.get("discount") or discount_pct(float(deal.get("price") or 0), deal.get("reference")))
+    if pct + 1e-9 < float(needed):
+        return f"moda: solo -{int(pct)}% (la ropa necesita -{float(needed):.0f}%)"
+    return ""
+
+
 def value_reason(deal: dict, rules: dict) -> str:
     """Filtro final de calidad (11/11/2026): que la gente vea un chollo de verdad, no morralla.
 
@@ -842,7 +879,7 @@ def value_reason(deal: dict, rules: dict) -> str:
     pct = float(deal.get("discount") or discount_pct(price, ref))
     if min_pct and pct + 1e-9 < min_pct:
         return f"calidad: solo -{int(pct)}% (mínimo -{min_pct:.0f}%)"
-    return ""
+    return moda_reason(deal, rules)
 
 
 def brand_of(post: dict) -> str:
@@ -886,6 +923,13 @@ def variety_reason(state: dict, deal: dict, now: datetime, rules: dict, urgent: 
     todays = [p for p in posts
               if datetime.fromtimestamp(p.get("t") or 0, MADRID).date() == today and not p.get("manual")]
     kind = product_kind(deal.get("title") or "")
+    moda = rules.get("moda") or {}
+    cada = int(moda.get("cupo_cada_posts") or 0)
+    if cada > 1 and es_moda(deal.get("title") or "", rules):
+        # 12/11/2026: como mucho 1 post de moda de cada «cupo_cada_posts», también con la hora garantizada.
+        for back, post in enumerate(reversed(posts[-(cada - 1):]), start=1):
+            if es_moda(post.get("title") or "", rules):
+                return f"variedad: ya salió moda hace {back} post{'s' if back > 1 else ''} (máx. 1 de cada {cada})"
     if urgent:
         # Hora garantizada (11/11/2026): si se acaba la hora sin post, se relajan los topes de variedad, pero
         # nunca se repite producto ni se saca casi el mismo (misma marca y tipo en unos días).
@@ -1679,9 +1723,12 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
     listing = rules.get("modo_listado") or {}
     min_saving = float(listing.get("relaxed_min_discount" if relaxed else "min_discount") or 50)
     mine = (taste_profile(state, rules, now).get("searches") or []) if (rules.get("gustos") or {}).get("buscar", True) else []
+    keywords = mine + [k for k in conf.get("keywords") or [] if k not in mine]
+    if (rules.get("moda") or {}).get("sin_busquedas"):
+        # 12/11/2026: el free no busca ropa ni zapatillas (la lista es compartida con el premium, no se toca).
+        keywords = [k for k in keywords if not es_moda(k, rules)]
     cfg = {"affiliate_tag": rules.get("tag"), "error_min_discount": min_saving,
-           "amazon_search": {**conf, "per_pass": conf.get("per_run") or 8,
-                             "keywords": mine + [k for k in conf.get("keywords") or [] if k not in mine]}}
+           "amazon_search": {**conf, "per_pass": conf.get("per_run") or 8, "keywords": keywords}}
     box = state if remember else {"amazon_search_index": state.get("amazon_search_index")}
     import historial
     learning = load_json(PREMIUM_STATE, {}).get("learning") or {}
