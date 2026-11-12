@@ -6058,6 +6058,21 @@
    "title": "Monitor Gaming ASUS ROG Strix XG27AQDMGR QHD OLED 240 Hz",
    "manual": true,
    "brand": "asus"
+  },
+  {
+   "asin": "B01BMCT1ZY",
+   "jl_id": "",
+   "price": 36.99,
+   "reference": 38.77,
+   "t": 1794490525,
+   "url": "https://www.amazon.es/dp/B01BMCT1ZY?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 540,
+   "photo_message_id": null,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Detergente Colon Profesional en Gel 9 kg 134 Dosis</b>\n\n💶 PRECIO: <b>36,99€</b>\n❌ (Antes: <s>38,77€</s>)\n🔥 ¡Te ahorras <b>1,78€</b>! (5 % dto.)\nℹ️ Solo queda 1 en stock\n\n🕒 Precio a las 14:34 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B01BMCT1ZY?tag=cazachollos0c-21\">amazon.es/dp/B01BMCT1ZY</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Detergente Colon Profesional en Gel 9 kg 134 Dosis",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -18227,7 +18242,6 @@
   }
  ],
  "x_drafts": [
-  1794137624,
   1794142477,
   1794153336,
   1794162866,
@@ -18276,17 +18290,18 @@
   1794488443,
   1794488523,
   1794488596,
-  1794489109
+  1794489109,
+  1794490531
  ],
  "x_recent": [
-  "cabeza",
   "black-friday",
   "momento",
   "rapido",
   "filtro",
   "chivatazo",
   "regla",
-  "telegram"
+  "telegram",
+  "bot-aviso"
  ],
  "jl_paused_until": 1794487014.013186,
  "amazon_search_index": 165,
