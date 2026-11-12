@@ -1,0 +1,38 @@
+name: Editar enlace de posts del canal free
+
+# Cambia la línea 🛒 de posts ya publicados en @cazachollos_com por amazon.es/dp/ASIN con tu etiqueta
+# (para los que salieron con un enlace corto sin afiliado). Fotos, texto y botón se quedan igual.
+on:
+  workflow_dispatch:
+    inputs:
+      mensajes:
+        description: "Números de mensaje del canal free, separados por comas"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-post-manual
+  cancel-in-progress: false
+
+jobs:
+  editar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Editar el enlace
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          MENSAJES: ${{ inputs.mensajes }}
+        run: python -u tools/editar_enlace.py "$MENSAJES"
+      - name: Guardar memoria
+        if: always()
+        run: tools/guardar_memoria.sh "Editar enlace" state/canal_nube.json
