@@ -68,6 +68,11 @@
    "t": 1794425678,
    "slot": "tarde",
    "topic": "Finanzas e inversión"
+  },
+  {
+   "t": 1794475820,
+   "slot": "manana",
+   "topic": "El bot por dentro"
   }
  ]
 }
