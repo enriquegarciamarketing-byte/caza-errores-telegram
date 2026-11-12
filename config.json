@@ -606,6 +606,8 @@
     "amazon_photo": true,
     "_nota_fondo_blanco": "Desde el 10/11/2026 todas las fotos de producto del canal salen centradas en un lienzo blanco de 1600x1600 (como /chollo-free) para que todas midan lo mismo. false = foto tal cual.",
     "fondo_blanco": true,
+    "_nota_keepa": "Desde el 12/11/2026 cada post del canal sale en carrusel: primero la foto de siempre sobre fondo blanco y, al deslizar, la gráfica de Keepa de 90 días del mismo tamaño, con el copy de siempre y el botón. false = solo la foto.",
+    "keepa": true,
     "sources": [
       "https://jimmyleaks.com/es/?order=-modified",
       "https://jimmyleaks.com/es/?order=-modified&page=2",

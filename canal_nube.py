@@ -1344,7 +1344,17 @@ def send_rich_carousel(tg, chat_id, photos: list, caption: str, reply_markup: di
             result = {"ok": False, "description": f"HTTP {exc.code}"}
     if not result.get("ok"):
         raise RuntimeError(f"Telegram sendRichMessage: {result.get('description')}")
-    return result["result"]
+    sent = result["result"]
+    # Las fotos del carrusel ya subidas a Telegram (la más grande de cada una): el seguimiento las reutiliza para
+    # reescribir el post con AGOTADO / YA NO ESTÁ A ESTE PRECIO sin volver a subirlas.
+    try:
+        blocks = (sent.get("rich_message") or {}).get("blocks") or []
+        show = next((b for b in blocks if b.get("type") == "slideshow"), {})
+        sent["slides"] = [max(b["photo"], key=lambda s: (s.get("width") or 0) * (s.get("height") or 0))["file_id"]
+                          for b in show.get("blocks") or [] if b.get("type") == "photo" and b.get("photo")]
+    except (KeyError, TypeError, ValueError, AttributeError):
+        sent["slides"] = []  # el post ya ha salido: sin fotos guardadas solo se pierde el aviso de AGOTADO
+    return sent
 
 
 def send_product_photo(tg, target, image: str) -> dict:
@@ -1375,7 +1385,7 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
                 # "fondo_blanco": true en config (todos los posts del canal) o en el post manual → la foto sobre un
                 # lienzo blanco fijo de 2560×2560, para que todas las imágenes del canal midan lo mismo.
                 padded = white_canvas_photo(image, deal["asin"])
-                if padded and deal.get("keepa"):
+                if padded and (deal.get("keepa") or rules.get("keepa")):
                     # Carrusel ("keepa": true en el post manual): primero la foto de siempre y, al deslizar, la
                     # gráfica de Keepa en el mismo lienzo, con el texto y el botón de comprar debajo.
                     graph = keepa_canvas(deal["asin"])
@@ -1513,8 +1523,16 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
         caption = notice.format(hour=f"{now.astimezone(MADRID):%H:%M}") + "\n\n" + ended_caption(post["caption"])
         try:
             # Sin reply_markup Telegram quita el botón: un chollo terminado deja de enlazar a Amazon.
-            tg.call("editMessageCaption", {"chat_id": post["chat"], "message_id": post["message_id"],
-                                           "caption": caption[:1024], "parse_mode": "HTML"})
+            if post.get("slides"):
+                # Post en carrusel (mensaje enriquecido): se reescribe con las mismas fotos, ya subidas a Telegram.
+                ids = [f"s{n}" for n in range(len(post["slides"]))]
+                slides = "".join(f'<img src="tg://photo?id={i}"/>' for i in ids)
+                tg.call("editMessageText", {"chat_id": post["chat"], "message_id": post["message_id"], "rich_message": {
+                    "html": f"<tg-slideshow>{slides}</tg-slideshow>" + caption_to_rich_html(caption),
+                    "media": [{"id": i, "media": {"type": "photo", "media": f}} for i, f in zip(ids, post["slides"])]}})
+            else:
+                tg.call("editMessageCaption", {"chat_id": post["chat"], "message_id": post["message_id"],
+                                               "caption": caption[:1024], "parse_mode": "HTML"})
             post["ended"] = int(now.timestamp())
         except RuntimeError as exc:
             log(f"  No he podido marcar el post {post['message_id']}: {exc}")
@@ -1712,7 +1730,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             record = {
                 "asin": deal["asin"], "jl_id": deal["jl_id"], "price": deal["price"],
                 "reference": deal["reference"], "t": int(now.timestamp()), "url": url, "chat": target,
-                "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140], "photo_message_id": message.get("photo_message_id"),
+                "message_id": int(message["message_id"]), "caption": caption, "title": deal["title"][:140], "photo_message_id": message.get("photo_message_id"), "slides": message.get("slides") or [],
                 "label": deal.get("interest_label") or "",
                 "brand": deal.get("brand") or item.get("brand") or "",
             }
@@ -2402,7 +2420,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
     if not args.test_private:
         state.setdefault("posts", []).append({
             "asin": deal["asin"], "jl_id": "", "price": deal["price"], "reference": deal["reference"],
-            "t": int(now.timestamp()), "url": url, "chat": target, "message_id": int(message["message_id"]), "photo_message_id": message.get("photo_message_id"),
+            "t": int(now.timestamp()), "url": url, "chat": target, "message_id": int(message["message_id"]), "photo_message_id": message.get("photo_message_id"), "slides": message.get("slides") or [],
             "caption": caption, "title": deal["title"][:140], "manual": True,
             "brand": deal.get("brand") or known_brand(deal["title"], rules),
         })
