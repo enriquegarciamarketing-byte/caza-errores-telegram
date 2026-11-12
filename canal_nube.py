@@ -1596,7 +1596,18 @@ def silence_alert(tg, state: dict, now: datetime, rules: dict, log=print, dry: b
         return
     state["silence_alert_t"] = int(now.timestamp())
     error = str(state.get("api_error") or "")
-    why = "la API de Amazon está saturada" if "429" in error else "no encuentro chollos que pasen las reglas de calidad"
+    queued = len(state.get("backlog") or [])
+    if "429" in error:
+        why = "la API de Amazon está saturada"
+    elif queued:
+        # 12/11/2026: antes decía «API saturada» por un error viejo que nunca se borraba; el motivo real era
+        # que lo aprobado estaba en cola frenado por variedad (misma marca y tipo hace poco).
+        why = (f"lo que encuentro no pasa las reglas y {queued} chollo{'s' if queued > 1 else ''} en cola "
+               f"espera{'n' if queued > 1 else ''} por variedad (misma marca y tipo hace poco)")
+    else:
+        why = "no encuentro chollos que pasen las reglas de calidad"
+    if float(state.get("jl_paused_until") or 0) > now.timestamp():
+        why += "; Jimmyleaks sigue bloqueando al bot, solo busco con la API de Amazon"
     text = (f"⚠️ El canal free lleva {int((now.timestamp() - since) // 60)} min sin publicar: {why}. "
             f"Sigo buscando en cada pasada.")
     log(f"Aviso por privado: {text}")
@@ -1810,7 +1821,7 @@ def sources_for_run(rules: dict, now: datetime, state: dict | None = None) -> li
 
 
 def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bool = False,
-                 remember: bool = True) -> list[dict]:
+                 remember: bool = True, urgent: bool = False) -> list[dict]:
     """Desde el 10/11/2026 (jimmyleaks bloquea al bot con HTTP 403) el canal busca también directamente en
     Amazon con la API: unas búsquedas por ejecución de la lista de config (amazon_search.keywords), por turnos,
     pidiendo descuento grande. Devuelve items con la forma de los del listado, que pasan por las mismas reglas."""
@@ -1825,8 +1836,14 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
     if (rules.get("moda") or {}).get("sin_busquedas"):
         # 12/11/2026: el free no busca ropa ni zapatillas (la lista es compartida con el premium, no se toca).
         keywords = [k for k in keywords if not es_moda(k, rules)]
+    per_pass = int(conf.get("per_run") or 8)
+    if urgent:
+        # 12/11/2026: con Jimmyleaks bloqueado, la hora garantizada se quedaba sin candidatos (lo poco que salía
+        # estaba frenado por variedad) y el free pasaba casi 2 h sin publicar. Cuando se acaba la hora sin post,
+        # más búsquedas por pasada: hay API de sobra (premium en pausa) y las reglas de calidad no cambian.
+        per_pass = int(conf.get("per_run_urgente") or per_pass * 2)
     cfg = {"affiliate_tag": rules.get("tag"), "error_min_discount": min_saving,
-           "amazon_search": {**conf, "per_pass": conf.get("per_run") or 8, "keywords": keywords}}
+           "amazon_search": {**conf, "per_pass": per_pass, "keywords": keywords}}
     box = state if remember else {"amazon_search_index": state.get("amazon_search_index")}
     import historial
     learning = load_json(PREMIUM_STATE, {}).get("learning") or {}
@@ -1958,7 +1975,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
             if item.get("amazon") and now.timestamp() - item["ts"] > max_age:
                 again["ts"] = int(now.timestamp())  # solo con API: api_price_check lo relee antes de enviarlo
             pool.setdefault(item["id"], again)
-    api_items = amazon_items(rules, state, now, log, relaxed, remember)
+    api_items = amazon_items(rules, state, now, log, relaxed, remember, urgent=urgent)
     for item in api_items:
         if not skip(item):
             pool.setdefault(item["id"], item)

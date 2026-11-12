@@ -78,4 +78,4 @@ jobs:
 
       - name: Guardar memoria del canal normal
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
-        run: tools/guardar_memoria.sh "Actualizar memoria del canal normal" state/canal_nube.json
+        run: tools/guardar_memoria.sh "Actualizar memoria del canal normal" state/canal_nube.json state/canal_nube_last_run.log

@@ -156,6 +156,7 @@ def search(api, cfg: dict, state: dict, now: datetime, log=print, learning: dict
             continue
         finally:
             time.sleep(float(conf.get("pause_seconds") or 1.1))
+        state.pop("api_error", None)  # la API ha respondido: el aviso de saturación ya no vale (antes se quedaba pegado)
         calls = state.setdefault("api_calls", {})
         today = now.strftime("%Y-%m-%d")
         calls[today] = int(calls.get(today) or 0) + 1

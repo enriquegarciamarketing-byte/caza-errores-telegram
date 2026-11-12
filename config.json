@@ -597,6 +597,8 @@
       "enabled": true,
       "_nota_cupo": "Con el premium en pausa (11/11/2026) el free tiene la API para él solo: 12 búsquedas por pasada y 1,2 s entre consultas (la API admite 1 por segundo).",
       "per_run": 12,
+      "_nota_urgente": "Desde el 12/11/2026: cuando se cumple la hora garantizada sin post, per_run_urgente búsquedas por pasada en vez de per_run, para que haya más candidatos (mismas reglas de calidad y variedad).",
+      "per_run_urgente": 24,
       "pause_seconds": 1.2,
       "_nota_marcas": "Con «precio recomendado» como referencia solo valen marcas de confianza: las de resale.brands más estas.",
       "trusted_brands": ["Cecotec", "Jata", "Moulinex", "Tefal", "Rowenta", "Krups", "Taurus", "Orbegozo", "Braun", "Oral-B", "Remington", "Rowenta", "Severin", "Russell Hobbs", "Princess", "Mellerware", "Siemens", "Balay", "Teka", "Whirlpool", "Beko", "Candy", "Haier", "Panasonic", "Sharp", "Nespresso", "Dolce Gusto", "Smeg", "KitchenAid", "Lefant", "Conga", "Rowenta", "Karcher", "Kärcher", "Nike", "Adidas", "Puma", "New Balance", "Asics", "Skechers", "Levi's", "Tommy Hilfiger", "Calvin Klein", "Ray-Ban", "Casio", "Fossil", "Samsonite", "Playmobil", "Hasbro", "Mattel", "Chicco", "Bugaboo", "Medela", "Philips Avent", "Nivea", "L'Oréal", "Garnier", "Gillette", "Fairy", "Ariel", "Finish", "Colgate"]
