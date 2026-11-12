@@ -641,6 +641,82 @@ def evaluate_listing(item: dict, detail: dict, rules: dict, now: datetime, relax
     }
 
 
+def evaluate_amazon(item: dict, rules: dict, now: datetime, relaxed: bool = False) -> tuple[str, dict]:
+    """Chollos sacados de la API de Amazon (12/11/2026: el free deja Jimmyleaks, que bloquea al bot).
+
+    Amazon da su propio precio de referencia honesto: el «precio más bajo de los últimos 30 días» (lo que
+    obliga la normativa europea para tachar un precio) o el precio mediano de los últimos 90 días. Con esa
+    referencia se aplican las mismas reglas de bajada real que con el historial de Jimmyleaks (top -25 %,
+    resto -30 %, cualquier categoría -40 %...). Con el precio mediano o el PVP, solo marcas de confianza (el
+    mínimo de 30 días no se puede inflar); con el PVP, además, los mínimos del PVP. Precio y stock se reconfirman con la API antes de enviar."""
+    conf = rules.get("api_reglas") or {}
+    title = item.get("title") or ""
+    price, was = item.get("price"), float(item.get("was") or 0)
+    if not title:
+        return "sin título", {}
+    if price is None:
+        return "sin precio", {}
+    price = float(price)
+    age = (now.timestamp() - int(item.get("ts") or 0)) / 60
+    if not item.get("ts") or age > float(rules["max_price_age_minutes"]):
+        return f"precio visto hace {age:.0f} min (máximo {rules['max_price_age_minutes']})", {}
+    if price < float(rules["min_price_eur"]) or price > float(rules["max_price_eur"]):
+        return f"precio fuera de rango ({price} €)", {}
+    if was <= price + 0.009:
+        return "Amazon no marca precio anterior", {}
+    taste = interest(title, rules, now)
+    if taste["blocked"]:
+        return f"poco interés («{taste['blocked']}»)", {}
+    if not item.get("image"):
+        return "sin foto", {}
+    basis = str(item.get("basis_type") or "").upper()
+    if conf.get("solo_marca", True) and not item.get("brand_ok") and basis not in ("LOWEST_PRICE", "LOWEST_PRICE_STRIKETHROUGH"):
+        # 10/11/2026: los vendedores sin marca conocida inflan tanto el PVP como el precio mediano. El mínimo de
+        # los 30 días no se puede inflar sin tenerlo caro un mes entero: con esa referencia vale cualquier marca.
+        return f"marca poco conocida ({item.get('brand') or 'sin marca'}): su precio anterior no es fiable", {}
+    pct = discount_pct(price, was)
+    kind = "top" if taste["score"] > 0 and taste.get("min_discount") else ("tier" if taste["score"] > 0 else "any")
+    icon = rules.get("interest") or {}
+    drop_30 = min_30 = median_90 = None
+    if basis in ("LOWEST_PRICE", "LOWEST_PRICE_STRIKETHROUGH", "WAS_PRICE"):
+        if basis == "WAS_PRICE":
+            ref_kind, median_90, ref_text = "media90", was, "su precio mediano de los 90 días"
+        else:
+            ref_kind, min_30, drop_30, ref_text = "", was, pct, "su mínimo de los 30 días anteriores"
+        if kind == "any":
+            needed = float(icon.get("any_category_min_discount", 101))
+            if relaxed and icon.get("any_category_fallback_min_discount") is not None:
+                needed = min(needed, float(icon["any_category_fallback_min_discount"]))
+            any_price = float(icon.get("any_category_min_price_eur", 0))
+            if price < any_price:
+                return f"categoría de poco interés (fuera de las top solo desde {any_price:.0f} €)", {}
+        else:
+            needed = float(taste.get("min_discount") or rules["min_discount_pct"])
+            if relaxed:
+                top = taste["score"] >= 90
+                needed = min(needed, float(rules.get("fallback_min_discount_top" if top else "fallback_min_discount") or needed))
+        if pct + 1e-9 < needed:
+            return f"solo -{pct:.0f}% frente a {ref_text} ({euro(was)})", {}
+        if pct > float(rules["max_discount_pct"]) + 1e-9:
+            return f"descuento sospechoso (-{pct:.0f}%)", {}
+    else:
+        pvp_conf = rules.get("pvp") or {}
+        needed = float(pvp_conf.get(("relaxed_" if relaxed else "") + kind, 101))
+        if pct + 1e-9 < needed:
+            return f"solo -{pct:.0f}% frente a su PVP recomendado ({euro(was)})", {}
+        top_pct = float((rules.get("modo_listado") or {}).get("max_discount", 85))
+        if pct > top_pct + 1e-9:
+            return f"-{pct:.0f}% parece un PVP inflado", {}
+        ref_kind = "pvp"
+    return "", {
+        "jl_id": item["id"], "title": title, "price": price, "reference": was, "median_90": median_90,
+        "discount": pct, "ref_kind": ref_kind, "drop_30": drop_30, "min_30": min_30, "historical_low": False,
+        "rating": None, "reviews": None, "image": full_size(item["image"]), "seen_ts": int(item["ts"]),
+        "brand": item.get("brand") or "", "interest": taste["score"], "interest_label": taste["label"],
+        "modo_listado": True,
+    }
+
+
 # ------------------------------------------------------------------ cupos
 
 def in_quiet_hours(now: datetime, rules: dict) -> bool:
@@ -1550,10 +1626,23 @@ def api_price_check(deal: dict, log=print) -> str:
     try:
         live = API.get_item(deal["asin"])
     except ApiError as exc:
-        log(f"  API de Amazon sin acceso todavía ({exc}). Sigo con jimmyleaks en esta ejecución.")
-        API = None
-        return ""
+        if "429" in str(exc) or "TooManyRequests" in str(exc):
+            # 12/11/2026: antes un 429 aquí apagaba la API el resto de la ejecución (~55 min sin buscar en
+            # Amazon). Ahora se espera, se reintenta una vez y, si sigue, el chollo espera a la siguiente pasada.
+            time.sleep(4)
+            try:
+                live = API.get_item(deal["asin"])
+            except ApiError as again:
+                return f"la API de Amazon no ha podido reconfirmar el precio ({str(again)[:60]}); lo intento luego"
+        elif str(deal.get("jl_id") or "").startswith("amz-"):
+            return f"la API de Amazon no ha podido reconfirmar el precio ({str(exc)[:60]})"
+        else:
+            log(f"  API de Amazon sin acceso todavía ({exc}). Sigo con jimmyleaks en esta ejecución.")
+            API = None
+            return ""
     if live is None or live.get("price") is None:
+        if str(deal.get("jl_id") or "").startswith("amz-"):
+            return "Amazon ya no da precio"
         log(f"  API de Amazon: sin precio para {deal['asin']} ({live}). Uso el de jimmyleaks.")
         return ""
     if any(word in live.get("availability", "") for word in ("OUT_OF_STOCK", "UNAVAILABLE")):
@@ -1606,7 +1695,7 @@ def silence_alert(tg, state: dict, now: datetime, rules: dict, log=print, dry: b
                f"espera{'n' if queued > 1 else ''} por variedad (misma marca y tipo hace poco)")
     else:
         why = "no encuentro chollos que pasen las reglas de calidad"
-    if float(state.get("jl_paused_until") or 0) > now.timestamp():
+    if rules.get("jimmyleaks", True) and float(state.get("jl_paused_until") or 0) > now.timestamp():
         why += "; Jimmyleaks sigue bloqueando al bot, solo busco con la API de Amazon"
     text = (f"⚠️ El canal free lleva {int((now.timestamp() - since) // 60)} min sin publicar: {why}. "
             f"Sigo buscando en cada pasada.")
@@ -1831,6 +1920,10 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
         return []
     listing = rules.get("modo_listado") or {}
     min_saving = float(listing.get("relaxed_min_discount" if relaxed else "min_discount") or 50)
+    api_conf = rules.get("api_reglas") or {}
+    if api_conf.get("enabled"):
+        # Se pide a Amazon el ahorro mínimo de las categorías top: lo demás lo filtran las reglas de siempre.
+        min_saving = float(api_conf.get("min_ahorro_busqueda_relajado" if relaxed else "min_ahorro_busqueda") or 25)
     mine = (taste_profile(state, rules, now).get("searches") or []) if (rules.get("gustos") or {}).get("buscar", True) else []
     keywords = mine + [k for k in conf.get("keywords") or [] if k not in mine]
     if (rules.get("moda") or {}).get("sin_busquedas"):
@@ -1938,8 +2031,11 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
         return same_price and now.timestamp() - (last.get("t") or 0) < recheck and not (relaxed and low_discount_only)
 
     paused_until = float(state.get("jl_paused_until") or 0)
-    sources = [] if now.timestamp() < paused_until else sources_for_run(rules, now, state if remember else None)
-    if not sources and paused_until:
+    jl_on = rules.get("jimmyleaks", True)
+    sources = [] if (not jl_on or now.timestamp() < paused_until) else sources_for_run(rules, now, state if remember else None)
+    if not jl_on:
+        pass  # 12/11/2026: Jimmyleaks fuera (bloquea al bot). Todo sale de la API de Amazon.
+    elif not sources and paused_until:
         log("  Jimmyleaks en pausa por bloqueo: solo Amazon")
     blocked, read_any = 0, False
     for url in sources:
@@ -1970,6 +2066,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
     if urgent and API is not None:
         backlog_age = max(max_age, float(rules.get("backlog_urgent_max_minutes") or 0) * 60)
     for item in state.get("backlog") or []:
+        if not jl_on and not item.get("amazon"):
+            continue  # sin Jimmyleaks no se puede releer su ficha
         if item.get("id") and item.get("ts") and now.timestamp() - item["ts"] <= backlog_age and item.get("price"):
             again = dict(item)
             if item.get("amazon") and now.timestamp() - item["ts"] > max_age:
@@ -1981,6 +2079,8 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
             pool.setdefault(item["id"], item)
     extra = 0
     for item in cascade or []:
+        if not jl_on and not item.get("amazon"):
+            continue  # los descartes del premium se releen en Jimmyleaks: sin él no entran
         if not item.get("ts") or now.timestamp() - item["ts"] > max_age or not item.get("price") or skip(item):
             continue
         if not float(rules["min_price_eur"]) <= float(item["price"]) <= float(rules["max_price_eur"]):
@@ -1993,7 +2093,12 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
     ordered = sorted(pool.values(), key=lambda item: listing_priority(item, rules), reverse=True)
     ordered = [item for item in ordered if listing_priority(item, rules)[0] >= 0]
     budget = int(rules["max_details_per_run"])
-    chosen = ordered[:budget]
+    if not jl_on:
+        chosen = [item for item in ordered if item.get("amazon")]  # no hay ficha que abrir: no gastan presupuesto
+        ordered_jl = [item for item in ordered if not item.get("amazon")]
+        chosen += ordered_jl[:budget]
+    else:
+        chosen = ordered[:budget]
     # Los descartes del premium tienen fichas propias por pasada: no quitan sitio a los listados.
     chosen += [item for item in ordered[budget:] if item.get("cascada")][: int(rules.get("cascade_max_details") or 0)]
     from_premium = sum(1 for item in chosen if item.get("cascada"))
@@ -2010,7 +2115,10 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                 log(f"  Ficha {item['id']}: {exc}")
                 continue
         if item.get("amazon"):
-            why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
+            if (rules.get("api_reglas") or {}).get("enabled"):
+                why, deal = evaluate_amazon(item, rules, now, relaxed=relaxed)
+            else:
+                why, deal = evaluate_listing(item, detail, rules, now, relaxed=relaxed)
             if not why:
                 import buscador_amazon
                 line = buscador_amazon.deal_line(item.get("deal_badge") or "", item.get("deal_end") or "", now)
@@ -2020,7 +2128,7 @@ def find_deals(rules: dict, state: dict, now: datetime, fetch, resolve_asin, log
                 hline = historial.post_line(item.get("history"), float(deal["price"]))
                 if hline:  # nuestro propio historial: por qué es buen precio, con datos
                     deal["extra_lines"] = list(deal.get("extra_lines") or []) + [hline]
-            if not why and not item.get("brand_ok"):
+            if not why and not item.get("brand_ok") and not (rules.get("api_reglas") or {}).get("enabled"):
                 # Vendedores sin marca conocida inflan tanto el precio recomendado como el «mediano» (10/11/2026).
                 why, deal = f"marca poco conocida ({item.get('brand') or 'sin marca'}): su precio anterior no es fiable", {}
         elif not detail.get("full", True) and (rules.get("modo_listado") or {}).get("enabled"):

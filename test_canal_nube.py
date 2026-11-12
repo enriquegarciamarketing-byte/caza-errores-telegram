@@ -749,7 +749,8 @@ class Pendientes(unittest.TestCase):
         def fetch(url):
             fetched.append(url)
             return LEFANT if "/dp/" in url else "<html></html>"
-        approved = cn.find_deals(dict(REAL, sources=[]), state, NOW, fetch, lambda jl: "B0G7YP6MXV", lambda *a: None)
+        approved = cn.find_deals(dict(REAL, sources=[], jimmyleaks=True), state, NOW, fetch, lambda jl: "B0G7YP6MXV",
+                                 lambda *a: None)
         self.assertEqual([i["id"] for i, _ in approved], ["R0ZG4Bv"])
 
     def test_pendiente_caducado_no_vuelve(self):
@@ -764,7 +765,8 @@ class Pendientes(unittest.TestCase):
         item = dict(item_for("R0ZG4Bv"))
         state = {"seen": {}, "posts": [], "backlog": [item]}
         cfg = {"affiliate_tag": "cazadores_errores-21",
-               "amazon_channel": {**{k: v for k, v in REAL.items() if k != "tag"}, "sources": [], "max_per_run": 0}}
+               "amazon_channel": {**{k: v for k, v in REAL.items() if k != "tag"}, "sources": [], "max_per_run": 0,
+                                  "jimmyleaks": True}}
         cn.run(SimpleNamespace(dry_run=True, test_private=False, ignore_limits=True), cfg, state, NOW,
                fetch=lambda url: LEFANT if "/dp/" in url else "<html></html>",
                resolve_asin=lambda jl: "B0G7YP6MXV", log=lambda *a: None, cascade_loader=lambda log: [])

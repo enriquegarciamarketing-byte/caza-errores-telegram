@@ -306,7 +306,7 @@ class FreeAmazonTest(unittest.TestCase):
         self.assertIn("B0AAAAAAA1", asins)          # -63 % frente a su precio mediano, categoría top
         self.assertNotIn("B0AAAAAAA2", asins)       # precio recomendado de un vendedor sin marca
         self.assertNotIn("B0AAAAAAA3", asins)       # solo -18 %
-        self.assertEqual(fake.calls[0][1]["minSavingPercent"], 50)
+        self.assertEqual(fake.calls[0][1]["minSavingPercent"], 25)  # 12/11/2026: reglas de la API, sin Jimmyleaks
 
 
 class AskAllTest(unittest.TestCase):
@@ -516,3 +516,51 @@ class HistoryLineTest(unittest.TestCase):
                 "history": {"days": 14, "usual": 499.0, "min": 449.0}}
         text = scanner.caption_for("https://www.amazon.es/dp/B0X?tag=t", scanner.caption_data(cand))
         self.assertIn("📉 El precio más bajo que hemos visto en 14 días", text)
+
+
+class SinJimmyleaksTest(unittest.TestCase):
+    """12/11/2026: el free deja Jimmyleaks y todo sale de la API de Amazon con su referencia honesta."""
+
+    def find(self, items, state=None, fetch=None):
+        import canal_nube as cn
+        rules = cn.rules_from(load_cfg(scope=True))
+        rules["amazon_search"] = dict(rules["amazon_search"], enabled=True)
+        fetched = []
+
+        def no_jl(url):
+            fetched.append(url)
+            raise AssertionError("no debe abrir Jimmyleaks")
+        with mock.patch.object(cn, "API", FakeAPI(items)), mock.patch("buscador_amazon.time.sleep"):
+            approved = cn.find_deals(rules, state or {"seen": {}, "posts": []}, scanner.now_utc(),
+                                     fetch=fetch or no_jl, resolve_asin=lambda i: None, log=lambda *a: None)
+        return [d["asin"] for _, d in approved], fetched
+
+    def test_jimmyleaks_apagado(self):
+        import canal_nube as cn
+        self.assertFalse(cn.rules_from(load_cfg(scope=True))["jimmyleaks"])
+        state = {"seen": {}, "posts": [], "backlog": [{"id": "R0ZG4Bv", "ts": scanner.now_utc().timestamp(), "price": 10.0}]}
+        asins, fetched = self.find([], state)
+        self.assertEqual((asins, fetched), ([], []))
+
+    def test_bajada_frente_al_minimo_de_30_dias(self):
+        asins, _ = self.find([
+            api_item("B0CCCCCCC1", "Freidora de aire Cosori 5,5 L", "Cosori", 53.99, 89.99, "LOWEST_PRICE"),     # -40 % top, marca cualquiera
+            api_item("B0CCCCCCC2", "Freidora de aire Cecotec Cecofry", "Cecotec", 79.0, 89.0, "LOWEST_PRICE"),   # -11 %
+            api_item("B0CCCCCCC3", "Cafetera Krups Nescafé Dolce Gusto", "Krups", 39.99, 99.99, "LIST_PRICE"),  # -60 % PVP con marca
+        ])
+        self.assertIn("B0CCCCCCC1", asins)
+        self.assertNotIn("B0CCCCCCC2", asins)
+        self.assertIn("B0CCCCCCC3", asins)
+
+    def test_un_429_al_reconfirmar_no_apaga_la_api(self):
+        import canal_nube as cn
+        from amazon_api import ApiError
+
+        class Busy:
+            def get_item(self, asin):
+                raise ApiError("HTTP 429 en getItems: TooManyRequests")
+        busy = Busy()
+        with mock.patch.object(cn, "API", busy), mock.patch.object(cn.time, "sleep"):
+            why = cn.api_price_check({"asin": "B0CCCCCCC1", "jl_id": "amz-B0CCCCCCC1", "price": 59.99}, log=lambda *a: None)
+            self.assertIs(cn.API, busy)
+        self.assertIn("lo intento luego", why)
