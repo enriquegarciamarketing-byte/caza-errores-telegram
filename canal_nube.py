@@ -2229,22 +2229,30 @@ def summary_items(state: dict, now: datetime, rules: dict, fetch, log, limit: in
 NUMBERS = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 
 
-def build_summary(items: list[dict], now: datetime, test: bool = False) -> str:
+def build_summary(items: list[dict], now: datetime, test: bool = False, header: str = "", intro: str = "",
+                  notes: list | None = None, closing: str | None = None) -> str:
+    """Resumen de la noche. Con header/intro/notes/closing sirve también para un resumen manual (recopilaciones)."""
     e = html.escape
     hour = now.astimezone(MADRID).strftime("%H:%M")
     lines = []
     if test:
-        lines += ["🧪 <b>PRUEBA</b> · así saldría el resumen de la noche", ""]
-    lines += ["🌙 <b>CERRAMOS EL DÍA · LO MEJOR DE HOY EN AMAZON</b>", "",
-              f"Los {len(items)} chollos más bestias de hoy que siguen activos ahora mismo 👇", ""]
+        lines += ["🧪 <b>PRUEBA</b> · así saldría el resumen", ""]
+    lines += [f"<b>{e(header)}</b>" if header else "🌙 <b>CERRAMOS EL DÍA · LO MEJOR DE HOY EN AMAZON</b>", "",
+              e(intro) if intro else f"Los {len(items)} chollos más bestias de hoy que siguen activos ahora mismo 👇", ""]
+    if notes:
+        lines += [e(str(n)) for n in notes] + [""]
     for index, item in enumerate(items):
-        lines.append(f"{NUMBERS[index]} <b>{e(clean_title(item['title'], 70))}</b>")
+        num = NUMBERS[index] if index < len(NUMBERS) else f"{index + 1}."
+        lines.append(f"{num} <b>{e(clean_title(item['title'], 70))}</b>")
         lines.append(f"💰 <b>{e(euro(item['price']))}</b>  <s>{e(euro(item['reference']))}</s>  "
                      f"📉 <b>-{round(item['discount'])} %</b>")
         lines.append(f'🔗 <a href="{e(item["url"], quote=True)}">Ver en Amazon</a>')
         lines.append("")
     lines.append(f"🕒 Precios a las {hour} · pueden cambiar")
-    lines.append("😴 Mañana a las 7:00 volvemos con más chollos. Activa las notificaciones 🔔")
+    if closing is None:
+        lines.append("😴 Mañana a las 7:00 volvemos con más chollos. Activa las notificaciones 🔔")
+    elif closing:
+        lines.append(e(closing))
     lines.append("")
     lines.append(PUBLI)
     return "\n".join(lines)
@@ -2516,6 +2524,46 @@ def spec_from_jl(spec: dict, rules: dict, now: datetime, fetch=None, resolve_asi
     return out
 
 
+
+def run_manual_summary(args, spec: dict, rules: dict, state: dict, now: datetime, tg=None, log=print) -> int:
+    """Resumen hecho a mano con el formato del resumen de la noche (p. ej. una recopilación de chollos).
+
+    JSON: {"resumen": true, "titulo": "…", "intro": "…", "notas": ["…"], "cierre": "…",
+           "items": [{"asin"|"url", "title", "price", "reference"}, …]}. Enlaces con el afiliado del canal."""
+    import affiliate
+    items = []
+    for raw in spec.get("items") or []:
+        asin = str(raw.get("asin") or affiliate.extract_asin(str(raw.get("url") or "")) or "").strip().upper()
+        if not ASIN_RE.fullmatch(asin):
+            raise ValueError(f"ASIN no válido en {raw}")
+        title, price, reference = str(raw.get("title") or "").strip(), float(raw["price"]), float(raw["reference"])
+        if not title or price <= 0 or reference <= price:
+            raise ValueError(f"datos no válidos en {asin}")
+        if excluido_amazon(title):
+            raise ValueError(f"{asin} excluido de Amazon Afiliados ({excluido_amazon(title)})")
+        items.append({"asin": asin, "title": title, "price": price, "reference": reference,
+                      "discount": discount_pct(price, reference), "image": raw.get("image") or "",
+                      "url": f"https://www.amazon.es/dp/{asin}?tag={rules['tag']}"})
+    if not items:
+        raise ValueError("el resumen no lleva productos")
+    items.sort(key=lambda item: item["discount"], reverse=True)
+    text = build_summary(items, now, test=bool(args.test_private), header=spec.get("titulo") or "",
+                         intro=spec.get("intro") or "", notes=spec.get("notas") or [], closing=spec.get("cierre", ""))
+    if len(text) > 4096:
+        raise ValueError(f"el resumen ocupa {len(text)} caracteres (máximo 4096): pártelo en dos")
+    target = admin_chat_id(state, rules, tg, log) if args.test_private else rules["chat_id"]
+    if args.dry_run or tg is None:
+        log("[prueba, no se envía]\n" + text)
+        return 0
+    if not target:
+        log("Post manual: no encuentro tu chat privado. Escribe /start al bot y repite.")
+        return 2
+    message = tg.call("sendMessage", {"chat_id": target, "text": text, "parse_mode": "HTML",
+                                      "disable_web_page_preview": True})
+    where = "tu chat (prueba)" if args.test_private else target
+    log(f"Post manual enviado a {where} (mensaje {message.get('message_id')}): resumen con {len(items)} chollos")
+    return 0
+
 def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) -> int:
     rules = live_rules(rules_from(cfg), bool(args.test_private))
     if not rules["tag"]:
@@ -2523,6 +2571,8 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
         return 2
     try:
         spec = json.loads(args.manual)
+        if isinstance(spec, dict) and spec.get("resumen"):
+            return run_manual_summary(args, spec, rules, state, now, tg, log)
         if spec.get("jl_id"):
             spec = spec_from_jl(spec, rules, now, log=log)
         deal = manual_deal(spec, rules)
