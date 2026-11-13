@@ -11,7 +11,8 @@
    2
   ],
   "dia": [
-   0
+   0,
+   1
   ]
  },
  "log": [
@@ -84,6 +85,11 @@
    "t": 1794562223,
    "slot": "manana",
    "topic": "El bot por dentro"
+  },
+  {
+   "t": 1794598201,
+   "slot": "tarde",
+   "topic": "Tu día a día"
   }
  ]
 }
