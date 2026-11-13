@@ -4,48 +4,28 @@ on:
   workflow_dispatch:
     inputs:
       datos:
-        description: "JSON del chollo: asin, title, price, reference, image, lines, seen_at…"
+        description: "URL corta a resolver (rama temporal)"
         required: true
         type: string
       privado:
-        description: "Mandarlo solo a tu chat privado (prueba). Desmárcalo para publicarlo en el canal."
         required: false
         type: boolean
         default: true
 
 permissions:
-  contents: write
-
-concurrency:
-  group: telegram-post-manual
-  cancel-in-progress: false
-
-# Tu chat privado con el bot sale de este secreto y no se guarda en el repo (es público).
-env:
-  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+  contents: read
 
 jobs:
-  publicar:
+  resolver:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 3
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}  # desde main es main; desde una rama de pruebas, el código de esa rama
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-      - run: python -m pip install -r requirements.txt
-      - name: Publicar el post manual
+          ref: ${{ github.ref_name }}
+      - name: Resolver enlace
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           DATOS: ${{ inputs.datos }}
         run: |
-          ARGS=(--manual "$DATOS")
-          if [ "${{ inputs.privado }}" = "true" ]; then ARGS+=(--test-private); fi
-          set -o pipefail
-          python -u canal_nube.py "${ARGS[@]}" 2>&1 | tee state/manual_last_run.log
-      - name: Guardar memoria
-        if: always() && inputs.privado != true
-        run: tools/guardar_memoria.sh "Post manual" state/canal_nube.json
+          python3 -c "import os,affiliate;print('FINAL', affiliate.resolve_redirects(os.environ['DATOS']))" || true
+          curl -sIL -A 'Mozilla/5.0' "$DATOS" | grep -i '^location' || true
