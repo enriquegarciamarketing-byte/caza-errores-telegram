@@ -670,7 +670,7 @@
       "excepciones": ["smartwatch", "reloj inteligente", "pulsera de actividad", "pulsera actividad", "pulsera inteligente", "calculadora", "teclado electronico", "smartband", "collar para perro", "collar para perros", "collar para gato", "collar antipulgas"],
       "marcas": ["nike", "adidas", "puma", "new balance", "converse", "vans", "asics", "skechers", "reebok", "levi's", "tommy hilfiger", "calvin klein", "lacoste", "guess", "michael kors", "pepe jeans", "the north face", "thomas sabo", "pandora", "swarovski", "ray-ban", "casio", "fossil", "seiko", "citizen", "festina", "lotus", "timberland", "jack & jones", "superdry"]
     },
-    "variedad": {"misma_clase_minutos": 180, "misma_clase_ultimos_posts": 3, "mismo_tipo_dia": 2, "misma_marca_dia": 2, "misma_marca_horas": 4, "misma_familia_dias": 3, "tipos_dia": {"robot aspirador": 3, "aspiradora": 3}},
+    "variedad": {"misma_clase_minutos": 180, "misma_clase_ultimos_posts": 3, "mismo_tipo_dia": 2, "misma_marca_dia": 2, "misma_marca_horas": 4, "misma_familia_dias": 3, "misma_familia_horas_urgente": 24, "tipos_dia": {"robot aspirador": 3, "aspiradora": 3}},
     "test_private_posts": 3,
     "quiet_hours": [
       0,

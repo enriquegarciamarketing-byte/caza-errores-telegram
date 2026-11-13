@@ -1025,6 +1025,11 @@ def variety_reason(state: dict, deal: dict, now: datetime, rules: dict, urgent: 
             return f"variedad: hoy ya han salido {same_kind} productos de tipo «{kind}»"
     brand = brand_of(deal)
     family_days = float(conf.get("misma_familia_dias", 3))
+    if urgent:
+        # 13/11/2026: con la hora garantizada la familia (misma marca y tipo) solo cuenta en las últimas
+        # «misma_familia_horas_urgente» horas. Con 3 días, toda la cola (Ring, Braun, Lefant, Ninja...) quedaba
+        # bloqueada y el canal pasó más de 5 h sin publicar. Nunca repite el mismo producto (eso va aparte).
+        family_days = min(family_days, float(conf.get("misma_familia_horas_urgente", 24)) / 24)
     if brand and kind and family_days > 0:
         # Dos monitores Lenovo Legion (27" y 24"), el Lefant M330 Pro y luego el M330 Plus, el Roborock Saros 20
         # y el Saros Z70...: misma marca y mismo tipo de producto es casi el mismo chollo. Espera unos días.
