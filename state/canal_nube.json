@@ -6581,6 +6581,25 @@
    "label": "Droguería y limpieza",
    "brand": "Finish",
    "checked": 1794566492
+  },
+  {
+   "asin": "B07VF1HBVK",
+   "jl_id": "",
+   "price": 11.35,
+   "reference": 39.59,
+   "t": 1794567979,
+   "url": "https://www.amazon.es/dp/B07VF1HBVK?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 574,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavbvL32sx5BbIpCUXg8Ot20kD1MAAusPaxslRLhTqGwqz5nQdu0BAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavbvLwAB1aGwZ9t0iSjBfB7mG6yRAALqD2sbJUS4U49UnTcxF6V7AQADAgADdwADPQQ"
+   ],
+   "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>Lámpara colgante EGLO Camastra de acero negro y dorado</b>\n\n💶 PRECIO: <b>11,35€</b>\n❌ (Antes: <s>39,59€</s>)\n🔥 ¡Te ahorras <b>28,24€</b>! (71 % dto.)\n♻️ Reacondicionado · estado Bueno\nℹ️ Lo verás en «Nuevos y usados» de la ficha\n\n🕒 Precio a las 12:05 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B07VF1HBVK?tag=cazachollos0c-21\">amazon.es/dp/B07VF1HBVK</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
+   "title": "Lámpara colgante EGLO Camastra de acero negro y dorado",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -21089,7 +21108,6 @@
   }
  ],
  "x_drafts": [
-  1794258723,
   1794300579,
   1794301469,
   1794304796,
@@ -21138,17 +21156,18 @@
   1794519166,
   1794553500,
   1794558270,
-  1794559985
+  1794559985,
+  1794567984
  ],
  "x_recent": [
-  "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
   "rapido",
   "regla",
-  "alguien"
+  "alguien",
+  "bot-aviso"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 145,
