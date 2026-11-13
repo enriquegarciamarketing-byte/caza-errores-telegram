@@ -1,704 +1,503 @@
-== 2026-11-13 10:51 ==
+== 2026-11-13 11:52 ==
 Precios: comprobados con la API de Amazon antes de publicar
-  Seguimiento B0FDFBB14L: sigue a 59,55 €
-  Seguimiento B0HGXN8DX3: sigue a 159,99 €
-  Seguimiento B0HHNQ9XT8: sigue a 59,00 €
-  Seguimiento B0DQWYBF55: sigue a 24,99 €
-  Amazon (API): 104 con descuento grande, 22 con precio anterior y stock
-Candidatos a revisar: 7
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ✗ amz-B0CX1TJXKV Sony ULT Wear Auriculares inalambricos Bluetooth con…: solo -28% frente a su PVP recomendado (149,00 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 58 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 2 · 10:53 ==
   Seguimiento B0GY17VXC4: sigue a 56,00 €
   Seguimiento B0DP1GJB7P: sigue a 63,88 €
   Seguimiento B0BPZV534P: sigue a 22,61 €
-  Seguimiento B0B29MWWM2: sigue a 42,50 €
-  Amazon (API): 112 con descuento grande, 22 con precio anterior y stock
-Candidatos a revisar: 6
+  Seguimiento B0DZ75JCD8: sigue a 109,00 €
+Modo sin silencios: 77 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+Hora garantizada: 77 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
+Aviso por privado: ⚠️ El canal free lleva 77 min sin publicar: la API de Amazon está saturada. Sigo buscando en cada pasada.
+  ✗ amz-B085F55TSD Almirón Advance 3, Leche de Crecimiento en Polvo…: no es ninguna bajada: hace menos de una semana ya estaba a 16.08 € (historial propio de 3 días)
+  Amazon (API): 226 con descuento grande, 78 con precio anterior y stock
+Candidatos a revisar: 20
   ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
   ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
   ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
   ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
   ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✗ amz-B0FPXDNJ1T LEGO Marvel Iron Man Mark 3: Edición para Coleccionistas…: solo -27% frente a su PVP recomendado (129,99 €)
+  ✗ amz-B0FPXFKGQR LEGO Technic Coche de Carreras BMW M4 GT3 EVO 42226: solo -29% frente a su PVP recomendado (64,99 €)
+  ✗ amz-B0CWH3TBGB LEGO Technic McLaren P1 42172: solo -27% frente a su PVP recomendado (449,99 €)
+  ✗ amz-B0FPXFZXC2 LEGO Technic Coche Porsche 911 GT3 R Rexy AO Racing 42224: solo -21% frente a su PVP recomendado (139,99 €)
+  ✗ amz-B08KTNQT5D PLAYMOBIL City Action 70569 Helicóptero de la policía: solo -23% frente a su PVP recomendado (34,99 €)
+  ✗ amz-B0FRXXYTKB Play Fun Capybara Juego de Cartas para familias y Amigos…: precio fuera de rango (10.96 €)
+  ✗ amz-B01N10IAFG LEGO Icons Bici de Carretera 11380: solo -17% frente a su PVP recomendado (119,99 €)
+  ✗ amz-B0G7LG7HZK PLAYMOBIL My Life Estadio de Fútbol: solo -16% frente a su precio mediano de los 90 días (30,99 €)
+  ✗ amz-B07SDLQ3J7 Unik REVOLUTION Vigo Maleta Cabina 55x40x20 Expandible 41L: marca poco conocida (Unik REVOLUTION): su precio anterior no es fiable
+  ✗ amz-B0D27WKGQX Amazon Basics Estantería ajustable con 5 baldas: solo -5% frente a su precio mediano de los 90 días (29,99 €)
+  ✗ amz-B07FNSKMST Amazon Essentials Equipaje Rígido: solo -5% frente a su precio mediano de los 90 días (79,90 €)
   ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
+  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
   ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
   ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
   ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 60 min; espera en la cola
+  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 14 h; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 3 · 10:55 ==
+== pasada 2 · 11:54 ==
   Seguimiento B0DNNYGK5P: sigue a 42,77 €
   Seguimiento B09KY2RDBR: sigue a 19,99 €
   Seguimiento B0FL7K9LLT: sigue a 259,00 €
-  Seguimiento B0FJM2CGKJ: sigue a 54,99 €
-  Amazon (API): 116 con descuento grande, 51 con precio anterior y stock
-Candidatos a revisar: 8
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ✗ amz-B09T9NQZY7 ASUS ROG Strix 1000W Platinum: solo -23% frente a su precio mediano de los 90 días (246,95 €)
-  ✗ amz-B0DS66858F Lexar Play Tarjeta Micro SD 128GB: marca poco conocida (Lexar): su precio anterior no es fiable
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 62 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 4 · 10:57 ==
-  Seguimiento B01M0OV1EV: sigue a 32,99 €
-  Seguimiento B01L6L44NU: sigue a 39,99 €
-  Seguimiento B07W5JKP66: sigue a 84,99 €
-  Seguimiento B0FDGY6XVF: sigue a 76,99 €
-  Amazon (API): 115 con descuento grande, 18 con precio anterior y stock
-Candidatos a revisar: 6
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 64 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 5 · 10:59 ==
-  Seguimiento B0C5P1XP65: sigue a 41,50 €
-  Seguimiento B0D8BZDPXB: sigue a 109,95 €
-  Seguimiento B0F5QBSRDR: sigue a 22,99 €
-  Seguimiento B0DZ75JCD8: sigue a 109,00 €
-  Amazon (API): 116 con descuento grande, 46 con precio anterior y stock
-Candidatos a revisar: 9
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ✗ amz-B0FFN2FKD6 SwitchBot Matter Plug Mini paquete de 2 con monitor de…: marca poco conocida (SwitchBot): su precio anterior no es fiable
-  ✗ amz-B018YP6X26 Bosch PRO Amoladora GWS 7-115: solo -6% frente a su precio mediano de los 90 días (68,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 66 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 6 · 11:01 ==
   Seguimiento B0F7Y4P7V1: sigue a 30,00 €
-  Seguimiento B07MM4V7NR: sigue a 58,95 €
-  Seguimiento B0FL7NNGRG: sigue a 35,09 €
-  Seguimiento B0CB1T83FT: sigue a 23,80 €
-  Amazon (API): 116 con descuento grande, 21 con precio anterior y stock
-Candidatos a revisar: 7
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 68 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 7 · 11:03 ==
-  Seguimiento B07DJJLTSL: sigue a 48,99 €
-  Seguimiento B0F1X5P8YD: sigue a 32,18 €
-  Seguimiento B0GHNXGFT8: sigue a 106,72 €
-  Seguimiento B086QKXW1M: sigue a 99,99 €
-  Amazon (API): 117 con descuento grande, 64 con precio anterior y stock
-Candidatos a revisar: 7
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 70 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 8 · 11:05 ==
-  Seguimiento B0FRS4CNYF: sigue a 54,00 €
-  Seguimiento B07MGYW187: sigue a 21,13 €
-  Seguimiento B09PYP9L4T: sigue a 22,99 €
-  Seguimiento B0BTJD6LCL: sigue a 29,90 €
-  Amazon (API): 113 con descuento grande, 34 con precio anterior y stock
-Candidatos a revisar: 7
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 72 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 9 · 11:07 ==
-  Seguimiento B09S5CCXXR: sigue a 93,99 €
-  Seguimiento B0FHW6BXYC: sigue a 65,90 €
-  Seguimiento B0FP5MKTJG: sigue a 409,00 €
-  Seguimiento B0DQWYBF55: sigue a 24,99 €
-  ✗ amz-B085F55TSD Almirón Advance 3, Leche de Crecimiento en Polvo…: no es ninguna bajada: hace menos de una semana ya estaba a 16.08 € (historial propio de 3 días)
-  Amazon (API): 113 con descuento grande, 40 con precio anterior y stock
-Candidatos a revisar: 7
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 74 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 10 · 11:09 ==
-  Seguimiento B0FDFBB14L: sigue a 59,55 €
-  Seguimiento B0HGXN8DX3: sigue a 159,99 €
-  Seguimiento B0HHNQ9XT8: sigue a 59,00 €
-  Seguimiento B0B29MWWM2: sigue a 42,50 €
+Modo sin silencios: 79 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+Hora garantizada: 79 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
   ✗ amz-B00XA1QUGE Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 18.82 € (historial propio de 3 días)
   ✗ amz-B0CZFDCV69 Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 37.64 € (historial propio de 3 días)
-  Amazon (API): 120 con descuento grande, 81 con precio anterior y stock
-Candidatos a revisar: 5
+  Amazon (API): 234 con descuento grande, 112 con precio anterior y stock
+Candidatos a revisar: 34
   ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
   ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
   ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
   ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 76 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 11 · 11:11 ==
-  Seguimiento B0GY17VXC4: sigue a 56,00 €
-  Seguimiento B0DP1GJB7P: sigue a 63,88 €
-  Seguimiento B0BPZV534P: sigue a 22,61 €
-  Seguimiento B0FJM2CGKJ: sigue a 54,99 €
-Modo sin silencios: 36 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  Amazon (API): 116 con descuento grande, 34 con precio anterior y stock
-Candidatos a revisar: 14
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
+  ✗ amz-B07DLBVT2L Cecotec Hervidor de Agua Eléctrico ThermoSense 390 Clear.…: solo -43% frente a su PVP recomendado (38,66 €)
+  ✗ amz-B0D983F79F SEVERIN Hervidor eléctrico 1 L: solo -44% frente a su PVP recomendado (39,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
   ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
   ✗ amz-B0GYKJNXF9 Rowenta Intense Comfort, Radiador de refuerzo: solo -43% frente a su PVP recomendado (69,99 €)
   ✗ amz-B0GJTFJRLD Cecotec Ventilador de Techo con Luz Aero 3666 Invisible…: solo -40% frente a su PVP recomendado (79,90 €)
   ✗ amz-B0BPYQTWNH Cecotec Ventilador de Techo con Luz EnergySilence Aero 4260…: solo -41% frente a su PVP recomendado (89,90 €)
-  ✗ amz-B0BPYVWS6Y Cecotec Calefactor Cerámico de Sobremesa ReadyWarm 1500 Max…: solo -40% frente a su PVP recomendado (29,83 €)
-  ✗ amz-B0DV97F7PN Ufesa Comfort 1300 Purificador de Aire con Filtro HEPA: marca poco conocida (Ufesa): su precio anterior no es fiable
-  ✗ amz-B0GJTJHBR6 Cecotec Ventilador de Pie Circulador de Aire Con Luz LED…: solo -39% frente a su PVP recomendado (74,99 €)
-  ✗ amz-B0BPZMQDKS Cecotec Circulador de Sobremesa EnergySilence 800 Cyclone…: solo -13% frente a su PVP recomendado (37,90 €)
-  ✗ amz-B0HCBHKRGV Cecotec Aspirador de Mano Conga Rockstar Micro Hand Flex: solo -7% frente a su precio mediano de los 90 días (26,90 €)
-  ✗ amz-B0935WKVFY Taurus New Dakar 1500 Radiador de Aceite 1500W: solo -8% frente a su precio mediano de los 90 días (61,90 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 78 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 12 · 11:13 ==
-  Seguimiento B0DNNYGK5P: sigue a 42,77 €
-  Seguimiento B09KY2RDBR: sigue a 19,99 €
-  Seguimiento B0FL7K9LLT: sigue a 259,00 €
-  Seguimiento B0FDGY6XVF: sigue a 76,99 €
-Modo sin silencios: 38 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  ✗ amz-B0HPXNQJGK 2026 Auriculares Inalámbricos Deportivos 5.4: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 3 días)
-  Amazon (API): 114 con descuento grande, 58 con precio anterior y stock
-Candidatos a revisar: 37
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✗ amz-B07DLBVT2L Cecotec Hervidor de Agua Eléctrico ThermoSense 390 Clear.…: solo -43% frente a su PVP recomendado (38,66 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0FKT5TSCR Cecotec Centro de Planchado Horizontal IronHero H-2800…: solo -46% frente a su PVP recomendado (71,86 €)
-  ✗ amz-B0F7Y1RRGV Taurus Geyser Eco 3200 Plancha de Vapor 3200W: solo -45% frente a su PVP recomendado (69,99 €)
   ✗ amz-B0DXKMXPXW JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
   ✗ amz-B0DXKR56ND JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
   ✗ amz-B0DXKQRN6C JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
   ✗ amz-B0CGD77CLW JBL PartyBox Ultimate, altavoz portátil para fiestas con…: solo -33% frente a su PVP recomendado (1.499,00 €)
-  ✗ amz-B0FG2SM3P4 JBL Sense Lite, Auriculares Inalámbricos Abiertos True…: solo -31% frente a su PVP recomendado (99,99 €)
   ✗ amz-B07ND8MYKY Russell Hobbs Hervidor de Agua Eléctrico Colours Plus: solo -30% frente a su PVP recomendado (46,70 €)
-  ✗ amz-B091B7KX55 Cecotec Tostadora Digital ClassicToast 15000 Yellow Extra…: solo -37% frente a su PVP recomendado (45,90 €)
-  ✗ amz-B0CF2QKJXW Bosch - Tostadora compacta con rejilla recalentadora…: solo -33% frente a su PVP recomendado (44,99 €)
-  ✗ amz-B0BPYVB79M Cecotec Tostadora Vertical 1 Ranura Larga Toastin' time 850…: solo -39% frente a su PVP recomendado (39,42 €)
-  ✗ amz-B0DVZJ1SRJ Moulinex Subito, tostadora 2ranuras y calentador de…: solo -33% frente a su PVP recomendado (44,99 €)
-  ✗ amz-B0C815WY3Z Philips OneBlade 360 - Maquinilla de Afeitar Híbrida: solo -36% frente a su PVP recomendado (54,99 €)
-  ✗ amz-B0FDL1XP3J Philips Recortadora Todo En Uno series 3000: solo -33% frente a su PVP recomendado (44,99 €)
-  ✗ amz-B0FJM24KXM Philips Recortadora todo en uno de 11 en 1 Serie 5000: solo -31% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0GNMR2J1J Rowenta Force Pro 300, Centro de planchado: solo -36% frente a su PVP recomendado (139,99 €)
+  ✗ amz-B01MYB5W0Y Russell Hobbs Hervidor Agua Eléctrico: solo -34% frente a su PVP recomendado (49,51 €)
+  ✗ amz-B0BPYVWS6Y Cecotec Calefactor Cerámico de Sobremesa ReadyWarm 1500 Max…: solo -40% frente a su PVP recomendado (29,83 €)
+  ✗ amz-B0GJTJHBR6 Cecotec Ventilador de Pie Circulador de Aire Con Luz LED…: solo -39% frente a su PVP recomendado (74,99 €)
+  ✗ amz-B0GKGSBWWH 70mai M310 Plus 4K - Cámara de salpicadero frontal para…: marca poco conocida (70mai): su precio anterior no es fiable
+  ✗ amz-B0DXVN5PWF Samsonite GUARDIT 3.0 - Mochila para portátil 15.6": solo -20% frente a su precio mediano de los 90 días (62,30 €)
   ✗ amz-B07DLHY5F7 Cecotec Hervidor de Agua Eléctrico ThermoSense 370 Clear.…: solo -29% frente a su PVP recomendado (37,90 €)
   ✗ amz-B07DHM5XHF Cecotec Hervidor de Agua Eléctrico ThermoSense 120. 1 Litro: solo -26% frente a su PVP recomendado (30,90 €)
-  ✗ amz-B08CHFWHYV SEVERIN - Mini hervidor de agua 0,5 l: solo -25% frente a su PVP recomendado (39,99 €)
   ✗ amz-B0GJFGS6CK Tefal Thermo Protect Kettle, Hervidor eléctrico de 1500W: solo -29% frente a su PVP recomendado (34,99 €)
-  ✗ amz-B00PGTAVVS JATA HOGAR OPC10 - Olla a Presión Clásica Exprés 10 L Gran…: solo -24% frente a su PVP recomendado (88,00 €)
-  ✗ amz-B0CF2RV4MS Bosch - Tostadora compacta con rejilla recalentadora…: solo -29% frente a su precio mediano de los 90 días (39,69 €)
-  ✗ amz-B0DT6TGHCT Philips i9000 Prestige, Afeitadora Eléctrica Hombre: solo -27% frente a su mínimo de los 30 días anteriores (275,70 €)
-  ✗ amz-B09C6L1F7M Rowenta Focus Excel, Placha de vapor vertical: solo -25% frente a su precio mediano de los 90 días (74,99 €)
-  ✗ amz-B0F1V1Y8SL Rowenta Pure Force, Plancha de vapor vertical 2 en 1: solo -25% frente a su PVP recomendado (79,99 €)
+  ✗ amz-B08CHFWHYV SEVERIN - Mini hervidor de agua 0,5 l: solo -25% frente a su PVP recomendado (39,99 €)
   ✗ amz-B0DMV3BMGP JBL Flip 7 - Tragbarer, wasserdichter und sturzsicherer…: solo -10% frente a su precio mediano de los 90 días (106,00 €)
-  ✗ amz-B007HMTKU0 Severin Tostadora automática: solo -17% frente a su precio mediano de los 90 días (48,40 €)
-  ✗ amz-B0FP2PM873 Rowenta Pure Pop, Plancha de Vapor 1300 W para Viaje: solo -14% frente a su precio mediano de los 90 días (34,99 €)
-  ✗ amz-B0B6993LT7 Rowenta Effective+, Plancha de vapor: solo -13% frente a su precio mediano de los 90 días (31,99 €)
-  ✗ amz-B0BNJKTSSM Cecotec Plancha Ropa de Vapor Anodizada Fast&Furious 6050…: solo -18% frente a su PVP recomendado (44,90 €)
-  ✗ amz-B00R3Z49G6 Amazon Basics Juego de Cuchillos de Cocina y Soporte (14…: solo -9% frente a su precio mediano de los 90 días (23,09 €)
+  ✗ amz-B0FFTHTYX8 ARIEL PODS Platinum Detergente Lavadora Liquido 76…: solo -18% frente a su precio mediano de los 90 días (28,08 €)
+  ✗ amz-B075Y7H8V6 Lenovo Mochila Lenovo casual para equipos portátiles de…: solo -10% frente a su precio mediano de los 90 días (17,00 €)
+  ✗ amz-B0BPZMQDKS Cecotec Circulador de Sobremesa EnergySilence 800 Cyclone…: solo -13% frente a su PVP recomendado (37,90 €)
+  ✗ amz-B0HCBHKRGV Cecotec Aspirador de Mano Conga Rockstar Micro Hand Flex: solo -7% frente a su precio mediano de los 90 días (26,90 €)
+  ✗ amz-B0935WKVFY Taurus New Dakar 1500 Radiador de Aceite 1500W: solo -8% frente a su precio mediano de los 90 días (61,90 €)
   ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
   ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
   ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 80 min; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 2 h; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 14 h; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 13 · 11:15 ==
+== pasada 3 · 11:56 ==
   Seguimiento B01M0OV1EV: sigue a 32,99 €
   Seguimiento B01L6L44NU: sigue a 39,99 €
   Seguimiento B07W5JKP66: sigue a 84,99 €
-  Seguimiento B0DZ75JCD8: sigue a 109,00 €
-Modo sin silencios: 40 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  Amazon (API): 113 con descuento grande, 41 con precio anterior y stock
-Candidatos a revisar: 32
+  Seguimiento B086QKXW1M: sigue a 99,99 €
+Modo sin silencios: 81 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+Hora garantizada: 81 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
+  ✗ amz-B0HPXNQJGK 2026 Auriculares Inalámbricos Deportivos 5.4: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 3 días)
+  Amazon (API): 227 con descuento grande, 98 con precio anterior y stock
+Candidatos a revisar: 63
   ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
   ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
+  ✓ B0F1G5849S Cecotec Plancha Vertical Suela Cerámica IronHero V-1500…: 16,30 € (-53% vs 34,56 €)
   ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
   ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
   ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✗ amz-B0F29MWN4P Botella Termica 750ml, Cantimplora Acero Inoxidable: precio fuera de rango (10.28 €)
+  ✗ amz-B0FKT5TSCR Cecotec Centro de Planchado Horizontal IronHero H-2800…: solo -46% frente a su PVP recomendado (71,86 €)
   ✗ amz-B0FN8FR84Q dreame L10s Ultra Gen 3 Kit Robot Aspirador y Fregasuelos: solo -34% frente a su PVP recomendado (499,00 €)
-  ✗ amz-B0GSS73FLQ Ninja MAX PRO, Freidora de Aire sin Aceite: solo -37% frente a su PVP recomendado (149,99 €)
   ✗ amz-B0GSS34ZYM Ninja Foodi FlexDrawer, Freidora de Aire con Compartimento…: solo -37% frente a su PVP recomendado (269,99 €)
-  ✗ amz-B0H95PYTXM Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -33% frente a su PVP recomendado (179,99 €)
+  ✗ amz-B0GSS73FLQ Ninja MAX PRO, Freidora de Aire sin Aceite: solo -37% frente a su PVP recomendado (149,99 €)
+  ✗ amz-B0HHN6GWLV Cecotec Freidora de Aire con Cesta de Cristal Cecofry&Glass…: solo -38% frente a su PVP recomendado (129,00 €)
+  ✗ amz-B0DGLDWY7M Cecotec Freidora de Aire 8.5 L Cecofry&Grill Smokin'Prime…: solo -37% frente a su PVP recomendado (86,85 €)
+  ✗ amz-B0FG2SM3P4 JBL Sense Lite, Auriculares Inalámbricos Abiertos True…: solo -31% frente a su PVP recomendado (99,99 €)
   ✗ amz-B0GVDVBZT8 LG 55QNED82B6B - Smart TV QNED EVO AI 55" 4K Sin Reflejos…: solo -36% frente a su PVP recomendado (829,00 €)
   ✗ amz-B0HK11FH9N Lenovo L27-4e, Monitor IPS Full HD de 27": solo -36% frente a su PVP recomendado (139,99 €)
   ✗ amz-B0FX5217CY Moulinex Easy Fry XL Surface: solo -38% frente a su PVP recomendado (159,99 €)
+  ✗ amz-B091B7KX55 Cecotec Tostadora Digital ClassicToast 15000 Yellow Extra…: solo -37% frente a su PVP recomendado (45,90 €)
+  ✗ amz-B0BPYVB79M Cecotec Tostadora Vertical 1 Ranura Larga Toastin' time 850…: solo -39% frente a su PVP recomendado (39,42 €)
+  ✗ amz-B0CF2QKJXW Bosch - Tostadora compacta con rejilla recalentadora…: solo -33% frente a su PVP recomendado (44,99 €)
+  ✗ amz-B0DVZJ1SRJ Moulinex Subito, tostadora 2ranuras y calentador de…: solo -33% frente a su PVP recomendado (44,99 €)
+  ✗ amz-B0C815WY3Z Philips OneBlade 360 - Maquinilla de Afeitar Híbrida: solo -36% frente a su PVP recomendado (54,99 €)
+  ✗ amz-B0FDL1XP3J Philips Recortadora Todo En Uno series 3000: solo -33% frente a su PVP recomendado (44,99 €)
+  ✗ amz-B0FJM3WXX6 Philips Recortadora todo en uno de 17 en 1 Serie 7000: solo -31% frente a su PVP recomendado (79,99 €)
   ✗ amz-B0FK4WS9BR Tefal Duetto On - Juego de 3 Sartenes: solo -33% frente a su PVP recomendado (89,99 €)
   ✗ amz-B079J6DGND Tefal Daily Cook - Sartén 26 cm: solo -32% frente a su PVP recomendado (33,99 €)
+  ✗ amz-B0GNMR2J1J Rowenta Force Pro 300, Centro de planchado: solo -36% frente a su PVP recomendado (139,99 €)
   ✗ amz-B0HD8TJTZH Sony BRAVIA 6 OLED Google-TV: solo -23% frente a su mínimo de los 30 días anteriores (1.299,00 €)
   ✗ amz-B0GTRP6G9Y LG 43QNED70B6C - Smart TV QNED MiniLED AI 43" 4K Sin…: solo -23% frente a su PVP recomendado (449,00 €)
-  ✗ amz-B0H2WCBNLB HP OmniBook 3 Ordenador Portátil 16": solo -20% frente a su PVP recomendado (749,00 €)
   ✗ amz-B0FWCTL8CW MSI Pro MP273WA E14A Monitor Profesional de 27" FHD: solo -25% frente a su PVP recomendado (131,99 €)
   ✗ amz-B0F8F1GXCV Lenovo L24-4e - Monitor FHD 23.8": solo -23% frente a su precio mediano de los 90 días (74,99 €)
-  ✗ amz-B0FWCPNPCV MSI mag 276CFA E20 Monitor Gaming de 27" FHD 1500R: solo -28% frente a su PVP recomendado (151,99 €)
   ✗ amz-B0FDKTQ17D Moulinex Easy Fry Max 5L, Freidora de aire: solo -20% frente a su precio mediano de los 90 días (74,99 €)
+  ✗ amz-B00PGTAVVS JATA HOGAR OPC10 - Olla a Presión Clásica Exprés 10 L Gran…: solo -24% frente a su PVP recomendado (88,00 €)
+  ✗ amz-B0CF2RV4MS Bosch - Tostadora compacta con rejilla recalentadora…: solo -29% frente a su precio mediano de los 90 días (39,69 €)
+  ✗ amz-B0DT6TGHCT Philips i9000 Prestige, Afeitadora Eléctrica Hombre: solo -27% frente a su mínimo de los 30 días anteriores (275,70 €)
+  ✗ amz-B0FPXDNJ1T LEGO Marvel Iron Man Mark 3: Edición para Coleccionistas…: solo -27% frente a su PVP recomendado (129,99 €)
+  ✗ amz-B0CWH3TBGB LEGO Technic McLaren P1 42172: solo -27% frente a su PVP recomendado (449,99 €)
+  ✗ amz-B0FPXFZXC2 LEGO Technic Coche Porsche 911 GT3 R Rexy AO Racing 42224: solo -21% frente a su PVP recomendado (139,99 €)
+  ✗ amz-B0FPXFTQ9S LEGO Star Wars The Razor Crest 75447: solo -20% frente a su PVP recomendado (149,99 €)
+  ✗ amz-B0FPXFKGQR LEGO Technic Coche de Carreras BMW M4 GT3 EVO 42226: solo -29% frente a su PVP recomendado (64,99 €)
+  ✗ amz-B09C6L1F7M Rowenta Focus Excel, Placha de vapor vertical: solo -25% frente a su precio mediano de los 90 días (74,99 €)
+  ✗ amz-B0F1V1Y8SL Rowenta Pure Force, Plancha de vapor vertical 2 en 1: solo -25% frente a su PVP recomendado (79,99 €)
   ✗ amz-B0F4K1H6X5 XIAOMI S40C Robot Aspirador con Fregado: solo -12% frente a su PVP recomendado (159,99 €)
   ✗ amz-B0BWSFGQ49 De'Longhi Magnifica S - Cafetera Superautomática 2 Bebidas…: solo -14% frente a su precio mediano de los 90 días (299,99 €)
   ✗ amz-B09CGRQ965 De'Longhi Magnifica Evo - Cafetera Superautomática 7…: solo -17% frente a su precio mediano de los 90 días (479,99 €)
   ✗ amz-B0FDGFJDZH De'Longhi Magnifica Start - Cafetera Superautomática 4…: solo -12% frente a su precio mediano de los 90 días (419,99 €)
   ✗ amz-B0GZL1BLJ9 Sony BRAVIA 2 II 55 Pulgadas TV 4K Smart TV (Google TV): solo -14% frente a su precio mediano de los 90 días (699,00 €)
+  ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
   ✗ amz-B06X3Z9MF3 De’Longhi Dedica Style – Perfetto Cafetera Espresso Manual…: solo -17% frente a su PVP recomendado (159,00 €)
+  ✗ amz-B007HMTKU0 Severin Tostadora automática: solo -17% frente a su precio mediano de los 90 días (48,40 €)
+  ✗ amz-B01N10IAFG LEGO Icons Bici de Carretera 11380: solo -17% frente a su PVP recomendado (119,99 €)
+  ✗ amz-B0FP2PM873 Rowenta Pure Pop, Plancha de Vapor 1300 W para Viaje: solo -14% frente a su precio mediano de los 90 días (34,99 €)
+  ✗ amz-B0B6993LT7 Rowenta Effective+, Plancha de vapor: solo -13% frente a su precio mediano de los 90 días (31,99 €)
+  ✗ amz-B0BNJKTSSM Cecotec Plancha Ropa de Vapor Anodizada Fast&Furious 6050…: solo -18% frente a su PVP recomendado (44,90 €)
   ✗ amz-B0F4JZNGT8 XIAOMI H40 Robot Aspirador con Auto-Vaciado: solo -4% frente a su precio mediano de los 90 días (209,00 €)
   ✗ amz-B0GYPZ5CZD LG OLED55B65LA - Smart TV OLED AI 55" 4K Sin Reflejos 98.3%: solo -5% frente a su precio mediano de los 90 días (949,00 €)
   ✗ amz-B0DJD4SX35 PHILIPS Evnia 34M2C5501A Gaming Monitor 34 Pulgadas 180Hz…: solo -8% frente a su precio mediano de los 90 días (260,00 €)
+  ✗ amz-B00R3Z49G6 Amazon Basics Juego de Cuchillos de Cocina y Soporte (14…: solo -9% frente a su precio mediano de los 90 días (23,09 €)
   ✗ amz-B0CZHWW22L Tefal Jamie Oliver - Sartén 24 cm: solo -10% frente a su precio mediano de los 90 días (30,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 17 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 82 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 14 · 11:17 ==
+  API de Amazon: B0F1G5849S confirmado a 16,30 €
+  Enviado a @cazachollos_com (mensaje 573): Cecotec Plancha Vertical Suela Cerámica IronHero V-1500 Essential Blue
+  X: no te lo paso (categoría poco interesante para X (sin categoría top))
+== pasada 4 · 11:57 ==
   Seguimiento B0C5P1XP65: sigue a 41,50 €
   Seguimiento B0D8BZDPXB: sigue a 109,95 €
   Seguimiento B0F5QBSRDR: sigue a 22,99 €
-  Seguimiento B0F7Y4P7V1: sigue a 30,00 €
-Modo sin silencios: 42 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  Amazon (API): 111 con descuento grande, 50 con precio anterior y stock
-Candidatos a revisar: 38
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✗ amz-B01C4HCV58 Logitech MK235 Combo con Teclado: ya publicado hace poco y no ha bajado más
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0GYKJNXF9 Rowenta Intense Comfort, Radiador de refuerzo: solo -43% frente a su PVP recomendado (69,99 €)
-  ✗ amz-B0GSS73FLQ Ninja MAX PRO, Freidora de Aire sin Aceite: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0GSS34ZYM Ninja Foodi FlexDrawer, Freidora de Aire con Compartimento…: solo -37% frente a su PVP recomendado (269,99 €)
-  ✗ amz-B0H95PYTXM Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -33% frente a su PVP recomendado (179,99 €)
-  ✗ amz-B0HHN6GWLV Cecotec Freidora de Aire con Cesta de Cristal Cecofry&Glass…: solo -38% frente a su PVP recomendado (129,00 €)
-  ✗ amz-B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: solo -33% frente a su PVP recomendado (59,99 €)
-  ✗ amz-B07W7KMK4W Logitech G G413 TKL SE Teclado Mecánico Gaming: solo -37% frente a su PVP recomendado (69,99 €)
-  ✗ amz-B0FX5217CY Moulinex Easy Fry XL Surface: solo -38% frente a su PVP recomendado (159,99 €)
-  ✗ amz-B0BPYVWS6Y Cecotec Calefactor Cerámico de Sobremesa ReadyWarm 1500 Max…: solo -40% frente a su PVP recomendado (29,83 €)
-  ✗ amz-B0H9558S91 Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -28% frente a su PVP recomendado (179,99 €)
-  ✗ amz-B07W7N1D8L Logitech G512 Teclado Gaming Mecánico: solo -27% frente a su PVP recomendado (109,99 €)
-  ✗ amz-B07W6J8XG2 Logitech MK470 Combo Teclado y Ratón Inalámbrico para…: solo -24% frente a su PVP recomendado (49,99 €)
-  ✗ amz-B08291ZSXV Cecotec Deshumidificador Eléctrico Silencioso BigDry 2000…: solo -25% frente a su PVP recomendado (60,00 €)
-  ✗ amz-B0FPXDNJ1T LEGO Marvel Iron Man Mark 3: Edición para Coleccionistas…: solo -27% frente a su PVP recomendado (129,99 €)
-  ✗ amz-B0CWH3TBGB LEGO Technic McLaren P1 42172: solo -27% frente a su PVP recomendado (449,99 €)
-  ✗ amz-B0FPXFKGQR LEGO Technic Coche de Carreras BMW M4 GT3 EVO 42226: solo -29% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0FPXFZXC2 LEGO Technic Coche Porsche 911 GT3 R Rexy AO Racing 42224: solo -21% frente a su PVP recomendado (139,99 €)
-  ✗ amz-B00S2WDIGG CALVIN KLEIN CK ONE Eau de Toilette unisex: solo -25% frente a su precio mediano de los 90 días (35,36 €)
-  ✗ amz-B0FXMNMTL2 Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -29% frente a su precio mediano de los 90 días (69,99 €)
-  ✗ amz-B084G8WZFS CALVIN KLEIN CK Everyone Eau de Toilette unisex |Fragancia…: solo -25% frente a su precio mediano de los 90 días (25,50 €)
-  ✗ amz-B0FXML1H2Y Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -21% frente a su precio mediano de los 90 días (44,95 €)
-  ✗ amz-B0FXMP9W5H Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -24% frente a su precio mediano de los 90 días (55,90 €)
-  ✗ amz-B0FXXQJP38 Calvin Klein euphoria Magnetic Elixir Parfum Intense para…: solo -23% frente a su precio mediano de los 90 días (44,50 €)
-  ✗ amz-B0FXM2SN8L Calvin Klein Euphoria Solar Elixir Parfum Intense para Mujer: solo -23% frente a su precio mediano de los 90 días (58,80 €)
-  ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
-  ✗ amz-B01N10IAFG LEGO Icons Bici de Carretera 11380: solo -17% frente a su PVP recomendado (119,99 €)
-  ✗ amz-B000273HTW Tommy Hilfiger Tommy 100 ml, Eau de Toilette para Hombre: solo -18% frente a su precio mediano de los 90 días (30,95 €)
-  ✗ amz-B0FR4TDZX3 Final Fantasy VII Remake Intergrade: marca poco conocida (Square Enix): su precio anterior no es fiable
-  ✗ amz-B0935WKVFY Taurus New Dakar 1500 Radiador de Aceite 1500W: solo -8% frente a su precio mediano de los 90 días (61,90 €)
-  ✗ amz-B073RKVZLY De'Longhi De 'longhi TCH8993ER.BC: solo -8% frente a su precio mediano de los 90 días (119,00 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 17 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió otro producto de tipo «teclado y raton» hace 84 min; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 84 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 15 · 11:19 ==
+  Seguimiento B0BTJD6LCL: sigue a 29,90 €
+No publico: menos de 15 min desde el último post.
+== pasada 5 · 11:58 ==
   Seguimiento B0CB1T83FT: sigue a 23,80 €
   Seguimiento B07MM4V7NR: sigue a 58,95 €
   Seguimiento B0FL7NNGRG: sigue a 35,09 €
-  Seguimiento B086QKXW1M: sigue a 99,99 €
-Modo sin silencios: 44 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  Amazon (API): 112 con descuento grande, 60 con precio anterior y stock
-Candidatos a revisar: 32
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✗ amz-B0B59Z1X62 Oral-B iO 6 Cepillo de Dientes Eléctrico: solo -40% frente a su PVP recomendado (209,95 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0BJQQ78BY Cecotec Robot de Cocina Multifunción Mambo 11090. 1600 W: solo -33% frente a su PVP recomendado (311,12 €)
-  ✗ amz-B0DWMLMRWQ roborock Q7L5+ Robot Aspirador y Fregador Succión Extrema…: solo -36% frente a su PVP recomendado (279,99 €)
-  ✗ amz-B0DWK7NXXT roborock Q7L5+ Robot Aspirador y Fregador Succión Extrema…: solo -37% frente a su PVP recomendado (269,99 €)
-  ✗ amz-B0H8N499TP roborock Saros 20 Flow Complete Robot Aspirador Succión…: solo -31% frente a su PVP recomendado (1.299,00 €)
-  ✗ amz-B0H6XY62VK POCO X8, Smartphone 8G+256GB: solo -30% frente a su PVP recomendado (399,90 €)
-  ✗ amz-B0FN8FR84Q dreame L10s Ultra Gen 3 Kit Robot Aspirador y Fregasuelos: solo -34% frente a su PVP recomendado (499,00 €)
-  ✗ amz-B0B3JJH9YW Cecotec Ventilador de Techo con Aspas Retráctites y Lámpara…: solo -39% frente a su PVP recomendado (79,90 €)
-  ✗ amz-B0822N3B24 Cecotec Parrilla Eléctrica Rock'nGrill 1500 Rapid. 1500 W: solo -31% frente a su PVP recomendado (47,62 €)
-  ✗ amz-B0FQGPHDT7 Apple iPhone Air 256 GB - Negro espacial: solo -26% frente a su PVP recomendado (1.319,00 €)
-  ✗ amz-B07P6YDWTS Krups Nespresso Citiz - Cafetera de cápsulas: solo -24% frente a su PVP recomendado (183,99 €)
-  ✗ amz-B0DWK6P2GH roborock Q10 S5+ Set Robot Aspirador y Fregasuelo 2 en 1…: solo -20% frente a su precio mediano de los 90 días (249,99 €)
-  ✗ amz-B0F8BTV1LS Oral-B Pro-Expert Protección Profesional Pasta de Dientes: precio fuera de rango (12.06 €)
-  ✗ amz-B0DJ2XLZ5B Cecotec Limpiador Facial Masajeador Fototerapia Facecare…: solo -21% frente a su precio mediano de los 90 días (50,50 €)
-  ✗ amz-B08291ZSXV Cecotec Deshumidificador Eléctrico Silencioso BigDry 2000…: solo -25% frente a su PVP recomendado (60,00 €)
-  ✗ amz-B00S2WDIGG CALVIN KLEIN CK ONE Eau de Toilette unisex: solo -25% frente a su precio mediano de los 90 días (35,36 €)
-  ✗ amz-B0G36BS9YH Nespresso De'Longhi Essenza Mini: solo -16% frente a su precio mediano de los 90 días (99,00 €)
-  ✗ amz-B0F6V59PQM KRUPS Nespresso Vertuo Pop, Cafetera de Cápsulas: solo -17% frente a su precio mediano de los 90 días (58,90 €)
-  ✗ amz-B0F4K1H6X5 XIAOMI S40C Robot Aspirador con Fregado: solo -12% frente a su PVP recomendado (159,99 €)
-  ✗ amz-B0F53MJY8T dreame L40 Ultra Ae Robot Aspirador: solo -15% frente a su precio mediano de los 90 días (399,00 €)
-  ✗ amz-B0D7CPSNSX AOC CQ32G4VE Gaming Monitor 32 Pulgadas 180Hz Panel Fast VA: solo -11% frente a su precio mediano de los 90 días (178,95 €)
-  ✗ amz-B0DP1MRNXM Oral-B iO 2 Cepillo de Dientes Eléctrico con 1 Cabezal: solo -16% frente a su precio mediano de los 90 días (53,66 €)
-  ✗ amz-B0FHJNDQBR Google Pixel 10 - Smartphone Android Libre con Gemini: solo -9% frente a su precio mediano de los 90 días (549,00 €)
-  ✗ amz-B0FHL7TPXC Google Pixel 10 Pro XL - Smartphone Android Libre con Gemini: solo -8% frente a su PVP recomendado (1.299,00 €)
-  ✗ amz-B0FWCTSS9B MSI Pro MP243WA E14 montior de 24" FHD: solo -6% frente a su PVP recomendado (89,00 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 17 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió otro producto de tipo «teclado y raton» hace 86 min; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 86 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 16 · 11:21 ==
+  Seguimiento B0DQWYBF55: sigue a 24,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 6 · 11:59 ==
   Seguimiento B07DJJLTSL: sigue a 48,99 €
   Seguimiento B0F1X5P8YD: sigue a 32,18 €
   Seguimiento B0GHNXGFT8: sigue a 106,72 €
-  Seguimiento B0BTJD6LCL: sigue a 29,90 €
-Modo sin silencios: 46 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 46 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  ✗ amz-B0HC7953JL Cecotec Placa de Inducción 4 Zonas Bolero Squad I…: no es ninguna bajada: hace menos de una semana ya estaba a 99.90 € (historial propio de 3 días)
-  ✗ amz-B0HPS3DNNF Auriculares Inalambricos Bluetooth: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 3 días)
-  ✗ amz-B0HN1ZV5JS Auriculares Inalambricos Bluetooth 5.4 HiFi…: solo -8% frente a su precio habitual de 23.99 € (historial de 3 días)
-  Amazon (API): 216 con descuento grande, 114 con precio anterior y stock
-Candidatos a revisar: 78
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0FN8FR84Q dreame L10s Ultra Gen 3 Kit Robot Aspirador y Fregasuelos: solo -34% frente a su PVP recomendado (499,00 €)
-  ✗ amz-B0GSS73FLQ Ninja MAX PRO, Freidora de Aire sin Aceite: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0HHN6GWLV Cecotec Freidora de Aire con Cesta de Cristal Cecofry&Glass…: solo -38% frente a su PVP recomendado (129,00 €)
-  ✗ amz-B0DGLDWY7M Cecotec Freidora de Aire 8.5 L Cecofry&Grill Smokin'Prime…: solo -37% frente a su PVP recomendado (86,85 €)
-  ✗ amz-B0BJQQ78BY Cecotec Robot de Cocina Multifunción Mambo 11090. 1600 W: solo -33% frente a su PVP recomendado (311,12 €)
-  ✗ amz-B0CFYL21WV Cecotec Horno de sobremesa Bake&Toast 3090 Black Gyro: solo -37% frente a su PVP recomendado (89,90 €)
-  ✗ amz-B0BQ1JSZSN Cecotec Horno de sobremesa Bake&Toast 2300 White: solo -38% frente a su PVP recomendado (66,90 €)
-  ✗ amz-B0BPZX6QH5 Cecotec Placa de Inducción de 1 Zona Flex Bolero Squad I…: solo -40% frente a su PVP recomendado (148,90 €)
-  ✗ amz-B0G7F8MZ53 Cecotec Lavadora Carga Frontal 7Kg Bolero DressCode 7450…: solo -33% frente a su PVP recomendado (377,80 €)
-  ✗ amz-B08DRDVL2W Hisense Congelador FV191N4AW2: solo -31% frente a su PVP recomendado (489,00 €)
-  ✗ amz-B0FRGFVJDW Cecotec Campana Extractora 60cm Telescópica Bolero Flux TLT…: solo -39% frente a su PVP recomendado (139,00 €)
-  ✗ amz-B0GT2HY84T Hisense 65U7S Pro - MiniLED Smart TV 65 Pulgadas: solo -39% frente a su PVP recomendado (1.199,00 €)
-  ✗ amz-B0DXKMXPXW JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0F7M3HPBD Bose Auriculares de botón QC Ultra Bluetooth (2.ª Gen): solo -33% frente a su PVP recomendado (299,95 €)
-  ✗ amz-B0F7M3YLVS Bose Auriculares de botón QC Ultra Bluetooth(2.ª Gen): solo -33% frente a su PVP recomendado (299,95 €)
-  ✗ amz-B0DK3TBCRD JBL Tune Flex 2, Auriculares con Cancelación de Ruido: solo -30% frente a su PVP recomendado (99,99 €)
-  ✗ amz-B0FX5217CY Moulinex Easy Fry XL Surface: solo -38% frente a su PVP recomendado (159,99 €)
-  ✗ amz-B09PYP9L4T Finish Quantum Infinity Shine Pastillas para lavavajillas: ya publicado hace poco y no ha bajado más
-  ✗ amz-B09LD46DWY Taurus - Batidora de Vaso 1500W: solo -34% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0BV27DXYM Candy Idea CHW6LBX/4U2, Placa de Gas: solo -37% frente a su PVP recomendado (121,76 €)
-  ✗ amz-B00U0AEL7I Severin Cafetera Espresso con espumador de leche: solo -20% frente a su precio mediano de los 90 días (49,99 €)
-  ✗ amz-B0BQ1M7RDL Cecotec Robot de Cocina Multifunción con Jarra Unique Mambo…: solo -21% frente a su PVP recomendado (629,90 €)
-  ✗ amz-B07HC7J3PZ Cecotec Microondas ProClean 3160 Mirror. 700W con 6 Niveles: solo -26% frente a su PVP recomendado (80,90 €)
-  ✗ amz-B0BQ1HRYV8 Cecotec Horno Multifunción Integrable Air Fryer 73L Bolero…: solo -21% frente a su PVP recomendado (289,00 €)
-  ✗ amz-B01LWAJQNU Balay, Placa de inducción, 60 cm: solo -25% frente a su PVP recomendado (358,23 €)
-  ✗ amz-B0BV29JJ83 Hisense HS622E10W - Lavavajillas 60cm: solo -21% frente a su PVP recomendado (327,88 €)
-  ✗ amz-B0BWH9T9NL Hisense HS622E10X - Lavavajillas 60cm: solo -20% frente a su PVP recomendado (349,00 €)
-  ✗ amz-B0BPYRY8KB Cecotec Lavadora 10Kg de Carga Frontal Bolero Dresscode…: solo -22% frente a su PVP recomendado (446,90 €)
-  ✗ amz-B0BPYVJ7YD Cecotec Lavadora 8Kg Carga Frontal Bolero Dresscode 8500…: solo -21% frente a su PVP recomendado (379,90 €)
-  ✗ amz-B0BHJ79616 Hisense RB440N4BWE - Frigorífico Combi 2 Puertas: solo -22% frente a su PVP recomendado (584,50 €)
-  ✗ amz-B0GTRP6G9Y LG 43QNED70B6C - Smart TV QNED MiniLED AI 43" 4K Sin…: solo -23% frente a su PVP recomendado (449,00 €)
-  ✗ amz-B08Z4H7L2L Sony HT-S40R - Barra de Sonido 5.1: solo -24% frente a su precio mediano de los 90 días (254,00 €)
-  ✗ amz-B0D96Q5P49 TCL S55HE Barra de Sonido 2.1: solo -23% frente a su PVP recomendado (129,00 €)
-  ✗ amz-B0CX1TJXKV Sony ULT Wear Auriculares inalambricos Bluetooth con…: solo -28% frente a su PVP recomendado (149,00 €)
-  ✗ amz-B0FDKTQ17D Moulinex Easy Fry Max 5L, Freidora de aire: solo -20% frente a su precio mediano de los 90 días (74,99 €)
-  ✗ amz-B0D96QSSWW Hisense HI6311BSCE - Placa Induccion: solo -20% frente a su PVP recomendado (209,99 €)
-  ✗ amz-B0C6TYG684 Candy C63TPSC/E1 Placa Inducción con Zona Flex: solo -28% frente a su PVP recomendado (220,15 €)
-  ✗ amz-B0FCY9BLXG Candy ProWash&Dry 500 - BWR 4128BL8-S Lavasecadora: solo -24% frente a su PVP recomendado (628,15 €)
-  ✗ amz-B0F4K1H6X5 XIAOMI S40C Robot Aspirador con Fregado: solo -12% frente a su PVP recomendado (159,99 €)
-  ✗ amz-B0F53MJY8T dreame L40 Ultra Ae Robot Aspirador: solo -15% frente a su precio mediano de los 90 días (399,00 €)
-  ✗ amz-B0GQT9CQ17 ECOVACS DEEBOT T50 Omni Gen3 Robot Aspirador y fregasuelos: solo -14% frente a su precio mediano de los 90 días (349,00 €)
-  ✗ amz-B0BWSFGQ49 De'Longhi Magnifica S - Cafetera Superautomática 2 Bebidas…: solo -14% frente a su precio mediano de los 90 días (299,99 €)
-  ✗ amz-B09CGRQ965 De'Longhi Magnifica Evo - Cafetera Superautomática 7…: solo -17% frente a su precio mediano de los 90 días (479,99 €)
-  ✗ amz-B0FDGFJDZH De'Longhi Magnifica Start - Cafetera Superautomática 4…: solo -12% frente a su precio mediano de los 90 días (419,99 €)
-  ✗ amz-B08DL4GQMG De'Longhi Cafetera Superautomática: solo -15% frente a su precio mediano de los 90 días (408,63 €)
-  ✗ amz-B0BQ1SQ6DQ Cecotec Cafetera Espresso Compacta Power Espresso 20 Retro…: solo -14% frente a su PVP recomendado (103,99 €)
-  ✗ amz-B0G36BS9YH Nespresso De'Longhi Essenza Mini: solo -16% frente a su precio mediano de los 90 días (99,00 €)
-  ✗ amz-B00U65CWOG Russell Hobbs Robot de Cocina Cook@Home: solo -13% frente a su PVP recomendado (144,30 €)
-  ✗ amz-B0BQ1DCF48 Cecotec Horno Integrable Multifunción 70L Bolero Hexa…: solo -18% frente a su PVP recomendado (206,90 €)
-  ✗ amz-B0BPZJ1XM8 Cecotec Horno Integrable Multifunción 70L Bolero Hexa…: solo -13% frente a su PVP recomendado (217,90 €)
-  ✗ amz-B0FL7MGH1S Cecotec Placa de Inducción 3 zonas de fuego Placa Bolero…: solo -16% frente a su precio mediano de los 90 días (129,00 €)
-  ✗ amz-B0CVLZN7H5 Candy Rapidò CF0C7SB0FW Lavavajillas 45 CM: solo -13% frente a su PVP recomendado (424,15 €)
-  ✗ amz-B08DMSL5Z1 Hisense WF1Q9041BW - Lavadora: solo -16% frente a su PVP recomendado (379,00 €)
-  ✗ amz-B0BXDQ2WC6 Hisense RB390N4ACE - Frigorífico Combi 2 Puertas: solo -18% frente a su PVP recomendado (499,00 €)
-  ✗ amz-B0FRG72CT1 Cecotec Congelador Horizontal 249L Bolero CoolMarket Chest…: solo -15% frente a su precio mediano de los 90 días (233,90 €)
-  ✗ amz-B07PN779Q1 Orbegozo TL 07160 MA Campana Extractora Telescópica 60 cm: solo -15% frente a su precio mediano de los 90 días (64,50 €)
-  ✗ amz-B0F8QFTXW9 TCL 43T69C 43 Pulgadas QLED 4K HDR10+ Smart TV: solo -18% frente a su PVP recomendado (329,00 €)
-  ✗ amz-B0GQF24H9M Hisense 65E8S - MiniLED 65 Pulgadas Smart TV 4K: solo -11% frente a su precio mediano de los 90 días (660,33 €)
-  ✗ amz-B0FRRMD96F Anker soundcore 2 Altavoz Bluetooth Portátil 12 W: solo -18% frente a su precio mediano de los 90 días (33,99 €)
-  ✗ amz-B06X3Z9MF3 De’Longhi Dedica Style – Perfetto Cafetera Espresso Manual…: solo -17% frente a su PVP recomendado (159,00 €)
-  ✗ amz-B0DWFYRPFN De'Longhi Classic EM450.M, Máquina Café Manual con Varilla…: solo -19% frente a su PVP recomendado (147,60 €)
-  ✗ amz-B0CHBG62NP Candy CI633CBB1 Placa Inducción: solo -18% frente a su PVP recomendado (191,25 €)
-  ✗ amz-B07MHR5BJV Candy CBT6130/3X, Campana Telescópica 60 CM: solo -15% frente a su precio mediano de los 90 días (61,99 €)
-  ✗ amz-B078Y5Q6W9 Sony HT-S150 Barra sonido TV compacta con Bluetooth 2…: solo -15% frente a su precio mediano de los 90 días (96,95 €)
-  ✗ amz-B0BJ6VVK4M Cecotec Cafetera Express Cafelizzia 890 Gray. Espressos y…: solo -6% frente a su precio mediano de los 90 días (89,90 €)
-  ✗ amz-B0BXF6466K Hisense RB390N4BCC - Frigorífico Combi,No Frost: solo -9% frente a su precio mediano de los 90 días (551,00 €)
-  ✗ amz-B0GYPYSKH1 LG OLED65B65LA - Smart TV OLED AI 65" 4K Sin Reflejos 98.3%: solo -8% frente a su precio mediano de los 90 días (1.199,00 €)
-  ✗ amz-B0GYPZ5CZD LG OLED55B65LA - Smart TV OLED AI 55" 4K Sin Reflejos 98.3%: solo -5% frente a su precio mediano de los 90 días (949,00 €)
-  ✗ amz-B0FLXT2KW1 Balay, Lavadora, 10 kg, AutoDosificación: solo -9% frente a su precio mediano de los 90 días (611,53 €)
-  ✗ amz-B0DMTLL99Q CANDY City Fresco 300 CNCQ2T518EB: solo -3% frente a su PVP recomendado (384,18 €)
-  ✗ amz-B0H7BF91XG XIAOMI TV Pro 32 Pulgadas 2026: solo -7% frente a su precio mediano de los 90 días (139,00 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 17 · 11:23 ==
+  Seguimiento B0B29MWWM2: sigue a 42,50 €
+No publico: menos de 15 min desde el último post.
+== pasada 7 · 12:00 ==
   Seguimiento B0FRS4CNYF: sigue a 54,00 €
   Seguimiento B07MGYW187: sigue a 21,13 €
   Seguimiento B09PYP9L4T: sigue a 22,99 €
-  Seguimiento B0DQWYBF55: sigue a 24,99 €
-Modo sin silencios: 48 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 48 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  Amazon (API): 218 con descuento grande, 42 con precio anterior y stock
-Candidatos a revisar: 32
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0H7156BS8 REDMI 17 5G, Smartphone 4+128GB: solo -31% frente a su PVP recomendado (259,90 €)
-  ✗ amz-B0H6XTP3WL POCO X8, Smartphone 8G+256GB: solo -30% frente a su PVP recomendado (399,90 €)
-  ✗ amz-B0DHL93XCN JBL Wave Beam 2, Auriculares Wireless con Cancelación de…: solo -38% frente a su PVP recomendado (79,99 €)
-  ✗ amz-B0F8NVC66B AOC 25G4SRE Gaming Monitor 25 Pulgadas 310Hz Panel Fast IPS: solo -38% frente a su PVP recomendado (179,00 €)
-  ✗ amz-B0F5BTWP9T AOC U27G4R Gaming Monitor 27 Pulgadas: solo -34% frente a su PVP recomendado (349,00 €)
-  ✗ amz-B0FQGPHDT7 Apple iPhone Air 256 GB - Negro espacial: solo -26% frente a su PVP recomendado (1.319,00 €)
-  ✗ amz-B0GX9SBDKC XIAOMI REDMI Pad 2 4+256GB Tablet de 11" 2.5K Gris Batería…: solo -29% frente a su PVP recomendado (279,90 €)
-  ✗ amz-B0H79Q2ZKJ REDMI 17, 4+128GB, Negro, 7500mAh: solo -28% frente a su PVP recomendado (219,90 €)
-  ✗ amz-B0H4H1SZ8K REDMI Note 17 5G, Smartphone 6+128GB: solo -28% frente a su PVP recomendado (349,90 €)
-  ✗ amz-B0H79Q6WQC REDMI 17, 4+128GB, Azul Profundo: solo -28% frente a su PVP recomendado (219,90 €)
-  ✗ amz-B0FWCPNPCV MSI mag 276CFA E20 Monitor Gaming de 27" FHD 1500R: solo -28% frente a su PVP recomendado (151,99 €)
-  ✗ amz-B0FWCPC442 MSI mag 275UPDA E14 Monitor Gaming de 27": solo -29% frente a su PVP recomendado (352,99 €)
-  ✗ amz-B0FWCTL8CW MSI Pro MP273WA E14A Monitor Profesional de 27" FHD: solo -25% frente a su PVP recomendado (131,99 €)
-  ✗ amz-B0FWCLJ51V MSI Pro MP275QA E14 de 27" WQHD: solo -25% frente a su PVP recomendado (171,99 €)
-  ✗ amz-B0G4N31XVY AOC Q27B36X Gaming Monitor 27 Pulgadas 144Hz Panel IPS: solo -19% frente a su precio mediano de los 90 días (129,00 €)
-  ✗ amz-B0D7CPSNSX AOC CQ32G4VE Gaming Monitor 32 Pulgadas 180Hz Panel Fast VA: solo -11% frente a su precio mediano de los 90 días (178,95 €)
-  ✗ amz-B08MQLFVMX Philips Monitors 346E2CUAE/00-34" Curved 1500R: solo -13% frente a su precio mediano de los 90 días (239,90 €)
-  ✗ amz-B0815XFSGK AMD Ryzen 7 5800X Procesador: solo -11% frente a su precio mediano de los 90 días (228,46 €)
-  ✗ amz-B0FHJNDQBR Google Pixel 10 - Smartphone Android Libre con Gemini: solo -9% frente a su precio mediano de los 90 días (549,00 €)
-  ✗ amz-B0FHL7TPXC Google Pixel 10 Pro XL - Smartphone Android Libre con Gemini: solo -8% frente a su PVP recomendado (1.299,00 €)
-  ✗ amz-B0HBXCF2HS Lenovo LOQ | Portátil Gaming| AMD Ryzen 7| RTX 3050| 16GB: solo -9% frente a su precio mediano de los 90 días (1.099,00 €)
-  ✗ amz-B0FWCTSGL9 MSI mag 275FA E20 Monitor Gaming de 27" FHD: solo -10% frente a su precio mediano de los 90 días (120,97 €)
-  ✗ amz-B0CS3W1DMF MSI mag 27C6F Monitor Curvo Gaming FHD de 27": solo -4% frente a su precio mediano de los 90 días (109,00 €)
-  ✗ amz-B0HBCGNL34 Lenovo LOQ 32Q-10 | Monitor Gaming: solo -5% frente a su precio mediano de los 90 días (189,99 €)
-  ✗ amz-B0DJD4SX35 PHILIPS Evnia 34M2C5501A Gaming Monitor 34 Pulgadas 180Hz…: solo -8% frente a su precio mediano de los 90 días (260,00 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 18 · 11:25 ==
+  Seguimiento B0FJM2CGKJ: sigue a 54,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 8 · 12:01 ==
   Seguimiento B09S5CCXXR: sigue a 93,99 €
   Seguimiento B0FHW6BXYC: sigue a 65,90 €
   Seguimiento B0FP5MKTJG: sigue a 409,00 €
-  Seguimiento B0B29MWWM2: sigue a 42,50 €
-Modo sin silencios: 50 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 50 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  Amazon (API): 230 con descuento grande, 69 con precio anterior y stock
-Candidatos a revisar: 30
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0CS3FD17C TP-Link TL-MR110 - Router 4G LTE SIM: solo -32% frente a su PVP recomendado (65,99 €)
-  ✗ amz-B0GJTBKGDV Epson EcoTank ET-2955 Impresora de Depósito de Tinta: solo -35% frente a su PVP recomendado (369,34 €)
-  ✗ amz-B0FKNG3MZ7 Epson EcoTank ET-3950 Impresora de Depósito de Tinta: solo -30% frente a su PVP recomendado (500,43 €)
-  ✗ amz-B07W7KMK4W Logitech G G413 TKL SE Teclado Mecánico Gaming: solo -37% frente a su PVP recomendado (69,99 €)
-  ✗ amz-B07QBNYJ6X SanDisk 32GB Cruzer Blade USB Flash Drive: solo -38% frente a su PVP recomendado (36,99 €)
-  ✗ amz-B07W4DG81W Logitech G G923 volante y pedales de carrera para Xbox & PC: calidad: solo -28% (mínimo -35%)
-  ✗ amz-B09T9P4MSL ASUS ROG Strix 1200W Platinum: solo -23% frente a su PVP recomendado (259,90 €)
-  ✗ amz-B09T9NQZY7 ASUS ROG Strix 1000W Platinum: solo -23% frente a su precio mediano de los 90 días (246,95 €)
-  ✗ amz-B0DFQ9S6KS TP-Link Archer BE3600–Router WiFi 7 BE3600 de doble banda: solo -12% frente a su PVP recomendado (89,99 €)
-  ✗ amz-B0G49TJHTL Mercusys MB118-4G-Router 4G LTE Exterior con SIM: solo -14% frente a su mínimo de los 30 días anteriores (64,99 €)
-  ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
-  ✗ amz-B08K9SBMJR Logitech G G923 Volante de Carreras y Pedales: solo -13% frente a su PVP recomendado (263,99 €)
-  ✗ amz-B095SYK1R9 TP-Link RE500X Repetidor WiFi 6 AX1500 Doble Banda: solo -10% frente a su precio mediano de los 90 días (49,99 €)
-  ✗ amz-B00K11UHVA TP-Link TL-WA860RE - Repetidor WiFi 4: solo -15% frente a su PVP recomendado (24,99 €)
-  ✗ amz-B085S1MXRV Cudy AC1200 5-Puerto Gigabit WiFi Router: solo -5% frente a su mínimo de los 30 días anteriores (28,06 €)
-  ✗ amz-B0FCSSNXT4 HP DeskJet 2920, Impresora Multifunción de Inyección de…: solo -6% frente a su precio mediano de los 90 días (49,90 €)
-  ✗ amz-B0FCSVV6X7 HP DeskJet 4320, Impresora Multifunción de inyección de…: solo -3% frente a su precio mediano de los 90 días (57,90 €)
-  ✗ amz-B0DHW558TP HP Envy 6520e 714N9B, Impresora multifunción de inyección…: solo -4% frente a su precio mediano de los 90 días (79,71 €)
-  ✗ amz-B0D3HK2372 Logitech G G515 Lightspeed TKL Teclado para Gaming…: solo -8% frente a su PVP recomendado (129,99 €)
-  ✗ amz-B01BGBJ8Y0 Logitech C270 Webcam HD, Camara para PC: solo -5% frente a su precio mediano de los 90 días (17,94 €)
-  ✗ amz-B0DX65SQXF Amazon Basics Unidad de Estado Sólido Externa Portátil de…: solo -4% frente a su precio mediano de los 90 días (190,05 €)
-  ✗ amz-B0F6LB6Y9N HUAWEI AX3 New Enrutador, Wi-Fi 6 Plus de Banda Dual 3000…: solo -5% frente a su precio mediano de los 90 días (36,99 €)
-  ✗ amz-B0C1N8CWZ4 GIGABYTE H610M K DDR4 Placa Base: solo -6% frente a su PVP recomendado (59,59 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 19 · 11:27 ==
+  Seguimiento B0FDGY6XVF: sigue a 76,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 9 · 12:02 ==
   Seguimiento B0FDFBB14L: sigue a 59,55 €
   Seguimiento B0HGXN8DX3: sigue a 159,99 €
   Seguimiento B0HHNQ9XT8: sigue a 59,00 €
-  Seguimiento B0FJM2CGKJ: sigue a 54,99 €
-Modo sin silencios: 52 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 52 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  Amazon (API): 233 con descuento grande, 65 con precio anterior y stock
-Candidatos a revisar: 22
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0BHJFV7DF Cecotec Patinete Eléctrico Bongo Serie S+ MAX Infinity. 750…: solo -41% frente a su PVP recomendado (497,90 €)
-  ✗ amz-B0FVX35WC8 SwitchBot Termostato Inteligente para radiador: solo -26% frente a su mínimo de los 30 días anteriores (69,99 €)
-  ✗ amz-B0BQ1KV15R Cecotec Patinete Eléctrico Bongo V55 2x2 Connected: solo -21% frente a su PVP recomendado (673,90 €)
-  ✗ amz-B002L4596I Bosch PRO Sierra circular GKS 190: solo -28% frente a su PVP recomendado (204,49 €)
-  ✗ amz-B077TZYQRT Black+Decker Hidrolimpiadora de Alta Presión BXPW2000PE con…: solo -21% frente a su PVP recomendado (139,90 €)
-  ✗ amz-B0FMRQGF4P SwitchBot Termostato Inteligente para Radiador Combo…: solo -17% frente a su mínimo de los 30 días anteriores (59,99 €)
-  ✗ amz-B07BRS1KXS Bosch PRO Amoladora GWS 880 | Nivel superior de control de…: solo -20% frente a su PVP recomendado (85,91 €)
-  ✗ amz-B002EX2Y6E Bosch Sierra circular PKS 55 A: solo -15% frente a su PVP recomendado (134,00 €)
-  ✗ amz-B07RB6CQVS Makita HP333DSAX1 Taladro atornillador inalámbrico 12 V…: solo -8% frente a su precio mediano de los 90 días (205,01 €)
-  ✗ amz-B017AWGGL2 DEWALT DWE4233-QS - Mini-Amoladora 125 mm: solo -6% frente a su precio mediano de los 90 días (119,48 €)
-  ✗ amz-B078HR358D Bosch PRO Amoladora GWS 9-125 S: solo -6% frente a su PVP recomendado (98,01 €)
-  ✗ amz-B01EWNGZ4U DEWALT Kit combo sin escobillas 18V XR con 2 baterías 5Ah: solo -5% frente a su precio mediano de los 90 días (346,88 €)
-  ✗ amz-B01L31KAGI DEWALT Juego de taladro mixto (100 piezas): solo -6% frente a su precio mediano de los 90 días (32,24 €)
-  ✗ amz-B0DQ93HX2L Kärcher Hidrolimpiadora K 5 FJ: solo -9% frente a su PVP recomendado (319,95 €)
-  ✗ amz-B01AI2PJQY Bosch AFS 23-37 - Desbrozadora: solo -6% frente a su precio mediano de los 90 días (137,64 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 20 · 11:29 ==
+  Seguimiento B0DZ75JCD8: sigue a 109,00 €
+No publico: menos de 15 min desde el último post.
+== pasada 10 · 12:03 ==
   Seguimiento B0GY17VXC4: sigue a 56,00 €
   Seguimiento B0DP1GJB7P: sigue a 63,88 €
   Seguimiento B0BPZV534P: sigue a 22,61 €
+  Seguimiento B0F7Y4P7V1: sigue a 30,00 €
+No publico: menos de 15 min desde el último post.
+== pasada 11 · 12:04 ==
+  Seguimiento B0DNNYGK5P: sigue a 42,77 €
+  Seguimiento B09KY2RDBR: sigue a 19,99 €
+  Seguimiento B0FL7K9LLT: sigue a 259,00 €
+  Seguimiento B086QKXW1M: sigue a 99,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 12 · 12:05 ==
+  Seguimiento B01M0OV1EV: sigue a 32,99 €
+  Seguimiento B01L6L44NU: sigue a 39,99 €
+  Seguimiento B07W5JKP66: sigue a 84,99 €
+  Seguimiento B0F1G5849S: sigue a 16,30 €
+No publico: menos de 15 min desde el último post.
+== pasada 13 · 12:06 ==
+  Seguimiento B0C5P1XP65: sigue a 41,50 €
+  Seguimiento B0D8BZDPXB: sigue a 109,95 €
+  Seguimiento B0F5QBSRDR: sigue a 22,99 €
+  Seguimiento B0DQWYBF55: sigue a 24,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 14 · 12:07 ==
+  Seguimiento B0CB1T83FT: sigue a 23,80 €
+  Seguimiento B07MM4V7NR: sigue a 58,95 €
+  Seguimiento B0FL7NNGRG: sigue a 35,09 €
+  Seguimiento B0B29MWWM2: sigue a 42,50 €
+No publico: menos de 15 min desde el último post.
+== pasada 15 · 12:08 ==
+  Seguimiento B07DJJLTSL: sigue a 48,99 €
+  Seguimiento B0F1X5P8YD: sigue a 32,18 €
+  Seguimiento B0GHNXGFT8: sigue a 106,72 €
+  Seguimiento B0FJM2CGKJ: sigue a 54,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 16 · 12:09 ==
+  Seguimiento B0FRS4CNYF: sigue a 54,00 €
+  Seguimiento B07MGYW187: sigue a 21,13 €
+  Seguimiento B09PYP9L4T: sigue a 22,99 €
   Seguimiento B0FDGY6XVF: sigue a 76,99 €
-Modo sin silencios: 54 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 54 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  Amazon (API): 230 con descuento grande, 99 con precio anterior y stock
-Candidatos a revisar: 33
+No publico: menos de 15 min desde el último post.
+== pasada 17 · 12:10 ==
+  Seguimiento B09S5CCXXR: sigue a 93,99 €
+  Seguimiento B0FHW6BXYC: sigue a 65,90 €
+  Seguimiento B0FP5MKTJG: sigue a 409,00 €
+  Seguimiento B0DZ75JCD8: sigue a 109,00 €
+No publico: menos de 15 min desde el último post.
+== pasada 18 · 12:11 ==
+  Seguimiento B0FDFBB14L: sigue a 59,55 €
+  Seguimiento B0HGXN8DX3: sigue a 159,99 €
+  Seguimiento B0HHNQ9XT8: sigue a 59,00 €
+  Seguimiento B0F7Y4P7V1: sigue a 30,00 €
+  Amazon (API): 114 con descuento grande, 43 con precio anterior y stock
+Candidatos a revisar: 8
   ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
   ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
   ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
   ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B00CHHDY66 variedad: ya salió otro producto de tipo «teclado y raton» hace 138 min; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 138 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 19 · 12:13 ==
+  Seguimiento B0GY17VXC4: sigue a 56,00 €
+  Seguimiento B0DP1GJB7P: sigue a 63,88 €
+  Seguimiento B0BPZV534P: sigue a 22,61 €
+  Seguimiento B086QKXW1M: sigue a 99,99 €
+  Amazon (API): 109 con descuento grande, 70 con precio anterior y stock
+Candidatos a revisar: 11
+  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✗ amz-B0H1RVDSGP roborock Qrevo Edge 2 Flow Set Robot Aspirador Succión…: solo -33% frente a su PVP recomendado (899,00 €)
+  ✗ amz-B0BPZTWHH4 Cecotec Afeitadora de Cabeza Inalámbrica Bamba…: solo -22% frente a su precio mediano de los 90 días (24,70 €)
+  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B00CHHDY66 variedad: ya salió otro producto de tipo «teclado y raton» hace 140 min; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 140 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 20 · 12:15 ==
+  Seguimiento B0DNNYGK5P: sigue a 42,77 €
+  Seguimiento B09KY2RDBR: sigue a 19,99 €
+  Seguimiento B0FL7K9LLT: sigue a 259,00 €
+  Seguimiento B01M0OV1EV: sigue a 32,99 €
+  ✗ amz-B0HC7953JL Cecotec Placa de Inducción 4 Zonas Bolero Squad I…: no es ninguna bajada: hace menos de una semana ya estaba a 99.90 € (historial propio de 3 días)
+  Amazon (API): 107 con descuento grande, 65 con precio anterior y stock
+Candidatos a revisar: 11
+  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  ✗ amz-B0C2PJKMLX AEG LFN8E8436C Lavadora de Carga Frontal Integrable 8 Kg: marca poco conocida (AEG): su precio anterior no es fiable
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✗ amz-B0DHCK2JND Hisense H23MOBS5HG4 - Microondas Con Grill: solo -27% frente a su PVP recomendado (109,00 €)
+  ✗ amz-B09MWMJG76 Ufesa TotalChef RK7 Robot de Cocina Inteligente Multifunción: marca poco conocida (Ufesa): su precio anterior no es fiable
+  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B00CHHDY66 variedad: ya salió otro producto de tipo «teclado y raton» hace 142 min; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 142 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 21 · 12:17 ==
+  Seguimiento B01L6L44NU: sigue a 39,99 €
+  Seguimiento B07W5JKP66: sigue a 84,99 €
+  Seguimiento B0F1G5849S: sigue a 16,30 €
+  Seguimiento B0DQWYBF55: sigue a 24,99 €
+  ✗ amz-B0HPS3DNNF Auriculares Inalambricos Bluetooth: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 3 días)
+  Amazon (API): 109 con descuento grande, 47 con precio anterior y stock
+Candidatos a revisar: 9
+  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✗ amz-B0DZ76B7XQ Sony ULT Field 3 - Altavoz Bluetooth portátil con ULT Power…: ya publicado hace poco y no ha bajado más
   ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
   ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
   ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✗ amz-B0CVGZBYBQ GXTrust Rhox Barra de Sonido con Iluminación RGB 12W (6W…: marca poco conocida (GXTrust): su precio anterior no es fiable
+  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 144 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 22 · 12:19 ==
+  Seguimiento B0C5P1XP65: sigue a 41,50 €
+  Seguimiento B0D8BZDPXB: sigue a 109,95 €
+  Seguimiento B0F5QBSRDR: sigue a 22,99 €
+  Seguimiento B0B29MWWM2: sigue a 42,50 €
+  Amazon (API): 106 con descuento grande, 16 con precio anterior y stock
+Candidatos a revisar: 8
+  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✗ amz-B081ZNCP9D FitPro Tonic Pulsera de Actividad Inteligente con Monitor…: precio fuera de rango (7.27 €)
+  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 146 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 23 · 12:21 ==
+  Seguimiento B0CB1T83FT: sigue a 23,80 €
+  Seguimiento B07MM4V7NR: sigue a 58,95 €
+  Seguimiento B0FL7NNGRG: sigue a 35,09 €
+  Seguimiento B0FJM2CGKJ: sigue a 54,99 €
+  Amazon (API): 110 con descuento grande, 24 con precio anterior y stock
+Candidatos a revisar: 8
+  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✗ amz-B0DGVC3DDW GIGABYTE X870 AORUS Elite WIFI7 Placa Base: solo -3% frente a su precio mediano de los 90 días (273,74 €)
+  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 148 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 24 · 12:23 ==
+  Seguimiento B07DJJLTSL: sigue a 48,99 €
+  Seguimiento B0F1X5P8YD: sigue a 32,18 €
+  Seguimiento B0GHNXGFT8: sigue a 106,72 €
+  Seguimiento B0FDGY6XVF: sigue a 76,99 €
+  Amazon (API): 117 con descuento grande, 56 con precio anterior y stock
+Candidatos a revisar: 7
+  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✗ amz-B0D5QTQTV1 UGREEN Webcam 2K 30FPS Full HD Cámara USB A PC Dos Micro…: marca poco conocida (UGREEN): su precio anterior no es fiable
+  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 150 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 25 · 12:25 ==
+  Seguimiento B0FRS4CNYF: sigue a 54,00 €
+  Seguimiento B07MGYW187: sigue a 21,13 €
+  Seguimiento B09PYP9L4T: sigue a 22,99 €
+  Seguimiento B0DZ75JCD8: sigue a 109,00 €
+  Amazon (API): 115 con descuento grande, 30 con precio anterior y stock
+Candidatos a revisar: 7
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✗ amz-B0FLY4HLQ4 WOLFANG Camara Vigilancia WiFi Interior 1080P: marca poco conocida (WOLFANG): su precio anterior no es fiable
+  ✗ amz-B0FR4P3QFN Dragon Quest VII: Reimagined: marca poco conocida (Square Enix): su precio anterior no es fiable
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 152 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 26 · 12:27 ==
+  Seguimiento B09S5CCXXR: sigue a 93,99 €
+  Seguimiento B0FHW6BXYC: sigue a 65,90 €
+  Seguimiento B0FP5MKTJG: sigue a 409,00 €
+  Seguimiento B0F7Y4P7V1: sigue a 30,00 €
+  Amazon (API): 117 con descuento grande, 35 con precio anterior y stock
+Candidatos a revisar: 6
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✗ amz-B0BFJKTDJW Tapo L610(4-Pack)-Bombilla LED Inteligente: marca poco conocida (Tapo): su precio anterior no es fiable
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 154 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 27 · 12:29 ==
+  Seguimiento B0FDFBB14L: sigue a 59,55 €
+  Seguimiento B0HGXN8DX3: sigue a 159,99 €
+  Seguimiento B0HHNQ9XT8: sigue a 59,00 €
+  Seguimiento B086QKXW1M: sigue a 99,99 €
+  Amazon (API): 117 con descuento grande, 29 con precio anterior y stock
+Candidatos a revisar: 5
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✗ amz-B0DKFMVRKW Jackery Explorer 1000 v2 Estación de Energía Portátil con…: marca poco conocida (Jackery): su precio anterior no es fiable
+  ✗ amz-B07RVNMZJH SMARTGYRO Speedway - Patinete Eléctrico para Adultos con…: marca poco conocida (SMARTGYRO): su precio anterior no es fiable
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
+  ⏸ B07CGPZ3ZQ variedad: ya salió otro producto de tipo «teclado y raton» hace 156 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 28 · 12:31 ==
+  Seguimiento B0GY17VXC4: sigue a 56,00 €
+  Seguimiento B0DP1GJB7P: sigue a 63,88 €
+  Seguimiento B0BPZV534P: sigue a 22,61 €
+  Seguimiento B0DNNYGK5P: sigue a 42,77 €
+Modo sin silencios: 35 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+  Amazon (API): 116 con descuento grande, 65 con precio anterior y stock
+Candidatos a revisar: 27
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
   ✗ amz-B0GJ4T4S7K Braun Series 9 Pro+ Afeitadora Eléctrica Hombre: solo -43% frente a su PVP recomendado (439,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
   ✗ amz-B08J4NMBL2 Braun Mini Depiladora Facial para Mujer FS1000: solo -40% frente a su PVP recomendado (29,99 €)
   ✗ amz-B0DDQCPY72 Oral-B iO 6 Cepillo de Dientes Eléctrico con 3 Cabezales: solo -40% frente a su PVP recomendado (209,95 €)
   ✗ amz-B0B59Z1X62 Oral-B iO 6 Cepillo de Dientes Eléctrico: solo -40% frente a su PVP recomendado (209,95 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
   ✗ amz-B0C815WY3Z Philips OneBlade 360 - Maquinilla de Afeitar Híbrida: solo -36% frente a su PVP recomendado (54,99 €)
   ✗ amz-B0FDL1XP3J Philips Recortadora Todo En Uno series 3000: solo -33% frente a su PVP recomendado (44,99 €)
   ✗ amz-B0DQWHNRH6 Braun Recortadora Todo en Uno Series 3: solo -38% frente a su PVP recomendado (39,99 €)
@@ -706,51 +505,55 @@ Candidatos a revisar: 33
   ✗ amz-B0FZW81W7X Braun Silk·épil 7 Depiladora Eléctrica Mujer: solo -37% frente a su PVP recomendado (149,99 €)
   ✗ amz-B0HCVG6L8V Cecotec Depiladora de Arranque con 48 Pinzas SkinCare…: solo -36% frente a su PVP recomendado (31,23 €)
   ✗ amz-B0BQ19Z3YK Cecotec Secador Compacto de Pelo Bamba IoniCare Power&Go.…: solo -38% frente a su PVP recomendado (25,57 €)
+  ✗ amz-B0CCYQDKK4 ghd Gold Max - Plancha de Pelo Profesional: marca poco conocida (ghd): su precio anterior no es fiable
+  ✗ amz-B07V25CN6C GUESS Seductive, Bruma Corporal para Mujer: precio fuera de rango (7.87 €)
   ✗ amz-B08XYXNG7F Rowenta Advancer Easy, recortadora de barba: solo -21% frente a su precio mediano de los 90 días (29,99 €)
   ✗ amz-B0G4CNQBVG Braun Silk·épil 7 Depiladora Eléctrica Mujer: solo -24% frente a su precio mediano de los 90 días (79,00 €)
-  ✗ amz-B0DMDNLJH9 Amazon Basics Set de mancuernas hexagonales con…: solo -25% frente a su precio mediano de los 90 días (69,98 €)
+  ✗ amz-B086GHJFJY Remington Secador de Pelo Profesional PROluxe Midnight…: solo -27% frente a su precio mediano de los 90 días (47,91 €)
   ✗ amz-B00S2WDIGG CALVIN KLEIN CK ONE Eau de Toilette unisex: solo -25% frente a su precio mediano de los 90 días (35,36 €)
   ✗ amz-B0DDSCP32R Amazon Basics - Tienda de campaña instantánea con Bolsa de…: solo -15% frente a su precio mediano de los 90 días (99,90 €)
   ✗ amz-B0DP1MRNXM Oral-B iO 2 Cepillo de Dientes Eléctrico con 1 Cabezal: solo -16% frente a su precio mediano de los 90 días (53,66 €)
   ✗ amz-B0HG86P9LQ Oral-B iO Kids Disney Angel Cepillo de Dientes Eléctrico: solo -11% frente a su precio mediano de los 90 días (50,79 €)
-  ✗ amz-B0DMD4G5XH Amazon Basics Set de mancuernas hexagonales con…: solo -13% frente a su precio mediano de los 90 días (45,99 €)
   ✗ amz-B000273HTW Tommy Hilfiger Tommy 100 ml, Eau de Toilette para Hombre: solo -18% frente a su precio mediano de los 90 días (30,95 €)
   ✗ amz-B0D8J5CVPK CALVIN KLEIN CK One Essence Parfum Intense Unisex: solo -20% frente a su precio mediano de los 90 días (21,99 €)
   ✗ amz-B0DGB15KLM Tommy Hilfiger Tommy Girl Forever 100 ml: solo -17% frente a su precio mediano de los 90 días (33,50 €)
-  ✗ amz-B0DNHRW9CR Amazon Basics Neoprene Dumbbell Weights Set with Stand: solo -15% frente a su precio mediano de los 90 días (34,90 €)
-  ✗ amz-B0D27WKGQX Amazon Basics Estantería ajustable con 5 baldas: solo -5% frente a su precio mediano de los 90 días (29,99 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
   ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
   ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
   ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 21 · 11:31 ==
-  Seguimiento B0DNNYGK5P: sigue a 42,77 €
+== pasada 29 · 12:33 ==
+  Seguimiento B01M0OV1EV: sigue a 32,99 €
   Seguimiento B09KY2RDBR: sigue a 19,99 €
   Seguimiento B0FL7K9LLT: sigue a 259,00 €
-  Seguimiento B0DZ75JCD8: sigue a 109,00 €
-Modo sin silencios: 56 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 56 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  ✗ amz-B085F55TSD Almirón Advance 3, Leche de Crecimiento en Polvo…: no es ninguna bajada: hace menos de una semana ya estaba a 16.08 € (historial propio de 3 días)
-  ✗ amz-B00XA1QUGE Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 18.82 € (historial propio de 3 días)
-  ✗ amz-B0CZFDCV69 Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 37.64 € (historial propio de 3 días)
-  Amazon (API): 234 con descuento grande, 126 con precio anterior y stock
-Candidatos a revisar: 21
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  Seguimiento B0DQWYBF55: sigue a 24,99 €
+Modo sin silencios: 37 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+  Amazon (API): 112 con descuento grande, 26 con precio anterior y stock
+Candidatos a revisar: 5
   ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
   ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0BK1N7B9B ARIEL PODS Todo en 1 Detergente Lavadora Liquido en…: solo -36% frente a su PVP recomendado (35,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✗ amz-B0D27WKGQX Amazon Basics Estantería ajustable con 5 baldas: solo -5% frente a su precio mediano de los 90 días (29,99 €)
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 30 · 12:35 ==
+  Seguimiento B01L6L44NU: sigue a 39,99 €
+  Seguimiento B07W5JKP66: sigue a 84,99 €
+  Seguimiento B0F1G5849S: sigue a 16,30 €
+  Seguimiento B0B29MWWM2: sigue a 42,50 €
+Modo sin silencios: 39 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+  ✗ amz-B085F55TSD Almirón Advance 3, Leche de Crecimiento en Polvo…: no es ninguna bajada: hace menos de una semana ya estaba a 16.08 € (historial propio de 3 días)
+  Amazon (API): 115 con descuento grande, 57 con precio anterior y stock
+Candidatos a revisar: 15
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0GGZDZZVS Samsonite Paradiver Light Maleta Cabina Ryanair 40x30x20cm: 76,02 € (-46% vs 140,00 €)
   ✗ amz-B0DXVN5PWF Samsonite GUARDIT 3.0 - Mochila para portátil 15.6": solo -20% frente a su precio mediano de los 90 días (62,30 €)
   ✗ amz-B0FPXDNJ1T LEGO Marvel Iron Man Mark 3: Edición para Coleccionistas…: solo -27% frente a su PVP recomendado (129,99 €)
   ✗ amz-B0FPXFKGQR LEGO Technic Coche de Carreras BMW M4 GT3 EVO 42226: solo -29% frente a su PVP recomendado (64,99 €)
@@ -758,491 +561,320 @@ Candidatos a revisar: 21
   ✗ amz-B0FPXFZXC2 LEGO Technic Coche Porsche 911 GT3 R Rexy AO Racing 42224: solo -21% frente a su PVP recomendado (139,99 €)
   ✗ amz-B08KTNQT5D PLAYMOBIL City Action 70569 Helicóptero de la policía: solo -23% frente a su PVP recomendado (34,99 €)
   ✗ amz-B0D2P63N58 Mattel Games Pictionary Juego para Adultos: solo -25% frente a su PVP recomendado (19,99 €)
-  ✗ amz-B0FFTHTYX8 ARIEL PODS Platinum Detergente Lavadora Liquido 76…: solo -18% frente a su precio mediano de los 90 días (28,08 €)
   ✗ amz-B01N10IAFG LEGO Icons Bici de Carretera 11380: solo -17% frente a su PVP recomendado (119,99 €)
   ✗ amz-B0G7LG7HZK PLAYMOBIL My Life Estadio de Fútbol: solo -16% frente a su precio mediano de los 90 días (30,99 €)
   ✗ amz-B075Y7H8V6 Lenovo Mochila Lenovo casual para equipos portátiles de…: solo -10% frente a su precio mediano de los 90 días (17,00 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
   ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
   ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
   ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
+  ⏸ B0GGZDZZVS variedad: ya salió un «equipaje» de Samsonite hace 5 h; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 22 · 11:33 ==
-  Seguimiento B01M0OV1EV: sigue a 32,99 €
-  Seguimiento B01L6L44NU: sigue a 39,99 €
-  Seguimiento B07W5JKP66: sigue a 84,99 €
-  Seguimiento B0F7Y4P7V1: sigue a 30,00 €
-Modo sin silencios: 58 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 58 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  ✗ amz-B0HPXNQJGK 2026 Auriculares Inalámbricos Deportivos 5.4: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 3 días)
-  Amazon (API): 229 con descuento grande, 91 con precio anterior y stock
-Candidatos a revisar: 52
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+== pasada 31 · 12:37 ==
+  Seguimiento B0C5P1XP65: sigue a 41,50 €
+  Seguimiento B0D8BZDPXB: sigue a 109,95 €
+  Seguimiento B0F5QBSRDR: sigue a 22,99 €
+  Seguimiento B0FJM2CGKJ: sigue a 54,99 €
+Modo sin silencios: 41 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+  ✗ amz-B00XA1QUGE Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 18.82 € (historial propio de 3 días)
+  ✗ amz-B0CZFDCV69 Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 37.64 € (historial propio de 3 días)
+  Amazon (API): 119 con descuento grande, 72 con precio anterior y stock
+Candidatos a revisar: 7
   ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✗ amz-B07DLBVT2L Cecotec Hervidor de Agua Eléctrico ThermoSense 390 Clear.…: solo -43% frente a su PVP recomendado (38,66 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
   ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0GGZDZZVS Samsonite Paradiver Light Maleta Cabina Ryanair 40x30x20cm: 76,02 € (-46% vs 140,00 €)
+  ✗ amz-B0BK1N7B9B ARIEL PODS Todo en 1 Detergente Lavadora Liquido en…: solo -36% frente a su PVP recomendado (35,99 €)
+  ✗ amz-B0FFTHTYX8 ARIEL PODS Platinum Detergente Lavadora Liquido 76…: solo -18% frente a su precio mediano de los 90 días (28,08 €)
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0GGZDZZVS variedad: ya salió un «equipaje» de Samsonite hace 5 h; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 32 · 12:39 ==
+  Seguimiento B0CB1T83FT: sigue a 23,80 €
+  Seguimiento B07MM4V7NR: sigue a 58,95 €
+  Seguimiento B0FL7NNGRG: sigue a 35,09 €
+  Seguimiento B0FDGY6XVF: sigue a 76,99 €
+Modo sin silencios: 43 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+  Amazon (API): 116 con descuento grande, 43 con precio anterior y stock
+Candidatos a revisar: 27
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✗ amz-B07DLBVT2L Cecotec Hervidor de Agua Eléctrico ThermoSense 390 Clear.…: solo -43% frente a su PVP recomendado (38,66 €)
+  ✗ amz-B0D983F79F SEVERIN Hervidor eléctrico 1 L: solo -44% frente a su PVP recomendado (39,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
   ✗ amz-B0GYKJNXF9 Rowenta Intense Comfort, Radiador de refuerzo: solo -43% frente a su PVP recomendado (69,99 €)
   ✗ amz-B0GJTFJRLD Cecotec Ventilador de Techo con Luz Aero 3666 Invisible…: solo -40% frente a su PVP recomendado (79,90 €)
   ✗ amz-B0BPYQTWNH Cecotec Ventilador de Techo con Luz EnergySilence Aero 4260…: solo -41% frente a su PVP recomendado (89,90 €)
+  ✓ B0GGZDZZVS Samsonite Paradiver Light Maleta Cabina Ryanair 40x30x20cm: 76,02 € (-46% vs 140,00 €)
+  ✗ amz-B0DXKMXPXW JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
+  ✗ amz-B0DXKR56ND JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
+  ✗ amz-B0CGD77CLW JBL PartyBox Ultimate, altavoz portátil para fiestas con…: solo -33% frente a su PVP recomendado (1.499,00 €)
+  ✗ amz-B0DXKQRN6C JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
+  ✗ amz-B07ND8MYKY Russell Hobbs Hervidor de Agua Eléctrico Colours Plus: solo -30% frente a su PVP recomendado (46,70 €)
+  ✗ amz-B0BPYVWS6Y Cecotec Calefactor Cerámico de Sobremesa ReadyWarm 1500 Max…: solo -40% frente a su PVP recomendado (29,83 €)
+  ✗ amz-B0GJTJHBR6 Cecotec Ventilador de Pie Circulador de Aire Con Luz LED…: solo -39% frente a su PVP recomendado (74,99 €)
+  ✗ amz-B07DHM5XHF Cecotec Hervidor de Agua Eléctrico ThermoSense 120. 1 Litro: solo -26% frente a su PVP recomendado (30,90 €)
+  ✗ amz-B07DLHY5F7 Cecotec Hervidor de Agua Eléctrico ThermoSense 370 Clear.…: solo -29% frente a su PVP recomendado (37,90 €)
+  ✗ amz-B08CHFWHYV SEVERIN - Mini hervidor de agua 0,5 l: solo -25% frente a su PVP recomendado (39,99 €)
+  ✗ amz-B0GJFGS6CK Tefal Thermo Protect Kettle, Hervidor eléctrico de 1500W: solo -29% frente a su PVP recomendado (34,99 €)
+  ✗ amz-B00PGTAVVS JATA HOGAR OPC10 - Olla a Presión Clásica Exprés 10 L Gran…: solo -24% frente a su PVP recomendado (88,00 €)
+  ✗ amz-B0DMV3BMGP JBL Flip 7 - Tragbarer, wasserdichter und sturzsicherer…: solo -10% frente a su precio mediano de los 90 días (106,00 €)
+  ✗ amz-B0FRRMD96F Anker soundcore 2 Altavoz Bluetooth Portátil 12 W: solo -18% frente a su precio mediano de los 90 días (33,99 €)
+  ✗ amz-B0BPZMQDKS Cecotec Circulador de Sobremesa EnergySilence 800 Cyclone…: solo -13% frente a su PVP recomendado (37,90 €)
+  ✗ amz-B0HCBHKRGV Cecotec Aspirador de Mano Conga Rockstar Micro Hand Flex: solo -7% frente a su precio mediano de los 90 días (26,90 €)
+  ✗ amz-B0935WKVFY Taurus New Dakar 1500 Radiador de Aceite 1500W: solo -8% frente a su precio mediano de los 90 días (61,90 €)
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0GGZDZZVS variedad: ya salió un «equipaje» de Samsonite hace 5 h; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 33 · 12:41 ==
+  Seguimiento B07DJJLTSL: sigue a 48,99 €
+  Seguimiento B0F1X5P8YD: sigue a 32,18 €
+  Seguimiento B0GHNXGFT8: sigue a 106,72 €
+  Seguimiento B0DZ75JCD8: sigue a 109,00 €
+Modo sin silencios: 45 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+Hora garantizada: 45 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
+  ✗ amz-B0HPXNQJGK 2026 Auriculares Inalámbricos Deportivos 5.4: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 3 días)
+  Amazon (API): 228 con descuento grande, 101 con precio anterior y stock
+Candidatos a revisar: 63
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
+  ✗ amz-B0F1G5849S Cecotec Plancha Vertical Suela Cerámica IronHero V-1500…: ya publicado hace poco y no ha bajado más
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0GGZDZZVS Samsonite Paradiver Light Maleta Cabina Ryanair 40x30x20cm: 76,02 € (-46% vs 140,00 €)
   ✗ amz-B0FKT5TSCR Cecotec Centro de Planchado Horizontal IronHero H-2800…: solo -46% frente a su PVP recomendado (71,86 €)
   ✗ amz-B0F7Y1RRGV Taurus Geyser Eco 3200 Plancha de Vapor 3200W: solo -45% frente a su PVP recomendado (69,99 €)
   ✗ amz-B0FN8FR84Q dreame L10s Ultra Gen 3 Kit Robot Aspirador y Fregasuelos: solo -34% frente a su PVP recomendado (499,00 €)
-  ✗ amz-B0DXKMXPXW JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0DXKR56ND JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0DXKQRN6C JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0CGD77CLW JBL PartyBox Ultimate, altavoz portátil para fiestas con…: solo -33% frente a su PVP recomendado (1.499,00 €)
+  ✗ amz-B0GSS34ZYM Ninja Foodi FlexDrawer, Freidora de Aire con Compartimento…: solo -37% frente a su PVP recomendado (269,99 €)
+  ✗ amz-B0GSS73FLQ Ninja MAX PRO, Freidora de Aire sin Aceite: solo -37% frente a su PVP recomendado (149,99 €)
+  ✗ amz-B0HHN6GWLV Cecotec Freidora de Aire con Cesta de Cristal Cecofry&Glass…: solo -38% frente a su PVP recomendado (129,00 €)
+  ✗ amz-B0H95PYTXM Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -33% frente a su PVP recomendado (179,99 €)
   ✗ amz-B0FG2SM3P4 JBL Sense Lite, Auriculares Inalámbricos Abiertos True…: solo -31% frente a su PVP recomendado (99,99 €)
-  ✗ amz-B07ND8MYKY Russell Hobbs Hervidor de Agua Eléctrico Colours Plus: solo -30% frente a su PVP recomendado (46,70 €)
+  ✗ amz-B0GVDVBZT8 LG 55QNED82B6B - Smart TV QNED EVO AI 55" 4K Sin Reflejos…: solo -36% frente a su PVP recomendado (829,00 €)
+  ✗ amz-B0HK11FH9N Lenovo L27-4e, Monitor IPS Full HD de 27": solo -36% frente a su PVP recomendado (139,99 €)
+  ✗ amz-B0FX5217CY Moulinex Easy Fry XL Surface: solo -38% frente a su PVP recomendado (159,99 €)
   ✗ amz-B091B7KX55 Cecotec Tostadora Digital ClassicToast 15000 Yellow Extra…: solo -37% frente a su PVP recomendado (45,90 €)
   ✗ amz-B0CF2QKJXW Bosch - Tostadora compacta con rejilla recalentadora…: solo -33% frente a su PVP recomendado (44,99 €)
   ✗ amz-B0BPYVB79M Cecotec Tostadora Vertical 1 Ranura Larga Toastin' time 850…: solo -39% frente a su PVP recomendado (39,42 €)
   ✗ amz-B0DVZJ1SRJ Moulinex Subito, tostadora 2ranuras y calentador de…: solo -33% frente a su PVP recomendado (44,99 €)
+  ✗ amz-B0BPZNF3LR Cecotec Tostadora Vertical 1 Ranura Larga Toastin' time 850…: solo -38% frente a su PVP recomendado (41,50 €)
+  ✗ amz-B09Z2LXLV1 RAXCO Juego de cuchillos de cocina de acero inoxidable de…: marca poco conocida (RAXCO): su precio anterior no es fiable
   ✗ amz-B0C815WY3Z Philips OneBlade 360 - Maquinilla de Afeitar Híbrida: solo -36% frente a su PVP recomendado (54,99 €)
   ✗ amz-B0FDL1XP3J Philips Recortadora Todo En Uno series 3000: solo -33% frente a su PVP recomendado (44,99 €)
-  ✗ amz-B0FJM24KXM Philips Recortadora todo en uno de 11 en 1 Serie 5000: solo -31% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0BPYVWS6Y Cecotec Calefactor Cerámico de Sobremesa ReadyWarm 1500 Max…: solo -40% frente a su PVP recomendado (29,83 €)
-  ✗ amz-B0GJTJHBR6 Cecotec Ventilador de Pie Circulador de Aire Con Luz LED…: solo -39% frente a su PVP recomendado (74,99 €)
+  ✗ amz-B0FJM3WXX6 Philips Recortadora todo en uno de 17 en 1 Serie 7000: solo -31% frente a su PVP recomendado (79,99 €)
+  ✗ amz-B0FK4WS9BR Tefal Duetto On - Juego de 3 Sartenes: solo -33% frente a su PVP recomendado (89,99 €)
+  ✗ amz-B079J6DGND Tefal Daily Cook - Sartén 26 cm: solo -32% frente a su PVP recomendado (33,99 €)
   ✗ amz-B0GNMR2J1J Rowenta Force Pro 300, Centro de planchado: solo -36% frente a su PVP recomendado (139,99 €)
-  ✗ amz-B07DLHY5F7 Cecotec Hervidor de Agua Eléctrico ThermoSense 370 Clear.…: solo -29% frente a su PVP recomendado (37,90 €)
-  ✗ amz-B07DHM5XHF Cecotec Hervidor de Agua Eléctrico ThermoSense 120. 1 Litro: solo -26% frente a su PVP recomendado (30,90 €)
-  ✗ amz-B08CHFWHYV SEVERIN - Mini hervidor de agua 0,5 l: solo -25% frente a su PVP recomendado (39,99 €)
-  ✗ amz-B0GJFGS6CK Tefal Thermo Protect Kettle, Hervidor eléctrico de 1500W: solo -29% frente a su PVP recomendado (34,99 €)
-  ✗ amz-B00PGTAVVS JATA HOGAR OPC10 - Olla a Presión Clásica Exprés 10 L Gran…: solo -24% frente a su PVP recomendado (88,00 €)
+  ✗ amz-B0DWKBMSWG roborock Q10 S5+ Robot Aspirador y Fregasuelo 2 en 1 10000…: solo -20% frente a su precio mediano de los 90 días (249,99 €)
+  ✗ amz-B0GTRP6G9Y LG 43QNED70B6C - Smart TV QNED MiniLED AI 43" 4K Sin…: solo -23% frente a su PVP recomendado (449,00 €)
+  ✗ amz-B0HD8TJTZH Sony BRAVIA 6 OLED Google-TV: solo -23% frente a su mínimo de los 30 días anteriores (1.299,00 €)
+  ✗ amz-B0H2WCBNLB HP OmniBook 3 Ordenador Portátil 16": solo -20% frente a su PVP recomendado (749,00 €)
+  ✗ amz-B0FWCTL8CW MSI Pro MP273WA E14A Monitor Profesional de 27" FHD: solo -25% frente a su PVP recomendado (131,99 €)
+  ✗ amz-B0F8F1GXCV Lenovo L24-4e - Monitor FHD 23.8": solo -23% frente a su precio mediano de los 90 días (74,99 €)
+  ✗ amz-B0FDKTQ17D Moulinex Easy Fry Max 5L, Freidora de aire: solo -20% frente a su precio mediano de los 90 días (74,99 €)
   ✗ amz-B0CF2RV4MS Bosch - Tostadora compacta con rejilla recalentadora…: solo -29% frente a su precio mediano de los 90 días (39,69 €)
   ✗ amz-B0DT6TGHCT Philips i9000 Prestige, Afeitadora Eléctrica Hombre: solo -27% frente a su mínimo de los 30 días anteriores (275,70 €)
+  ✗ amz-B0FPXDNJ1T LEGO Marvel Iron Man Mark 3: Edición para Coleccionistas…: solo -27% frente a su PVP recomendado (129,99 €)
+  ✗ amz-B0CWH3TBGB LEGO Technic McLaren P1 42172: solo -27% frente a su PVP recomendado (449,99 €)
+  ✗ amz-B0FPXFZXC2 LEGO Technic Coche Porsche 911 GT3 R Rexy AO Racing 42224: solo -21% frente a su PVP recomendado (139,99 €)
+  ✗ amz-B0FPXFKGQR LEGO Technic Coche de Carreras BMW M4 GT3 EVO 42226: solo -29% frente a su PVP recomendado (64,99 €)
+  ✗ amz-B0FPXFTQ9S LEGO Star Wars The Razor Crest 75447: solo -20% frente a su PVP recomendado (149,99 €)
   ✗ amz-B09C6L1F7M Rowenta Focus Excel, Placha de vapor vertical: solo -25% frente a su precio mediano de los 90 días (74,99 €)
   ✗ amz-B0F1V1Y8SL Rowenta Pure Force, Plancha de vapor vertical 2 en 1: solo -25% frente a su PVP recomendado (79,99 €)
   ✗ amz-B0F4K1H6X5 XIAOMI S40C Robot Aspirador con Fregado: solo -12% frente a su PVP recomendado (159,99 €)
-  ✗ amz-B0DMV3BMGP JBL Flip 7 - Tragbarer, wasserdichter und sturzsicherer…: solo -10% frente a su precio mediano de los 90 días (106,00 €)
+  ✗ amz-B09CGRQ965 De'Longhi Magnifica Evo - Cafetera Superautomática 7…: solo -17% frente a su precio mediano de los 90 días (479,99 €)
+  ✗ amz-B0BWSFGQ49 De'Longhi Magnifica S - Cafetera Superautomática 2 Bebidas…: solo -14% frente a su precio mediano de los 90 días (299,99 €)
+  ✗ amz-B0FDGFJDZH De'Longhi Magnifica Start - Cafetera Superautomática 4…: solo -12% frente a su precio mediano de los 90 días (419,99 €)
+  ✗ amz-B08DL4GQMG De'Longhi Cafetera Superautomática: solo -15% frente a su precio mediano de los 90 días (408,63 €)
+  ✗ amz-B0GZL1BLJ9 Sony BRAVIA 2 II 55 Pulgadas TV 4K Smart TV (Google TV): solo -14% frente a su precio mediano de los 90 días (699,00 €)
+  ✗ amz-B0HD8R1N66 Sony BRAVIA 6 OLED Google-TV: solo -19% frente a su precio mediano de los 90 días (1.299,00 €)
+  ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
+  ✗ amz-B06X3Z9MF3 De’Longhi Dedica Style – Perfetto Cafetera Espresso Manual…: solo -17% frente a su PVP recomendado (159,00 €)
   ✗ amz-B007HMTKU0 Severin Tostadora automática: solo -17% frente a su precio mediano de los 90 días (48,40 €)
-  ✗ amz-B0BPZMQDKS Cecotec Circulador de Sobremesa EnergySilence 800 Cyclone…: solo -13% frente a su PVP recomendado (37,90 €)
+  ✗ amz-B01N10IAFG LEGO Icons Bici de Carretera 11380: solo -17% frente a su PVP recomendado (119,99 €)
   ✗ amz-B0FP2PM873 Rowenta Pure Pop, Plancha de Vapor 1300 W para Viaje: solo -14% frente a su precio mediano de los 90 días (34,99 €)
   ✗ amz-B0B6993LT7 Rowenta Effective+, Plancha de vapor: solo -13% frente a su precio mediano de los 90 días (31,99 €)
-  ✗ amz-B0BNJKTSSM Cecotec Plancha Ropa de Vapor Anodizada Fast&Furious 6050…: solo -18% frente a su PVP recomendado (44,90 €)
-  ✗ amz-B0HCBHKRGV Cecotec Aspirador de Mano Conga Rockstar Micro Hand Flex: solo -7% frente a su precio mediano de los 90 días (26,90 €)
   ✗ amz-B0F4JZNGT8 XIAOMI H40 Robot Aspirador con Auto-Vaciado: solo -4% frente a su precio mediano de los 90 días (209,00 €)
+  ✗ amz-B0GYPZ5CZD LG OLED55B65LA - Smart TV OLED AI 55" 4K Sin Reflejos 98.3%: solo -5% frente a su precio mediano de los 90 días (949,00 €)
+  ✗ amz-B0DJD4SX35 PHILIPS Evnia 34M2C5501A Gaming Monitor 34 Pulgadas 180Hz…: solo -8% frente a su precio mediano de los 90 días (260,00 €)
   ✗ amz-B00R3Z49G6 Amazon Basics Juego de Cuchillos de Cocina y Soporte (14…: solo -9% frente a su precio mediano de los 90 días (23,09 €)
-  ✗ amz-B0935WKVFY Taurus New Dakar 1500 Radiador de Aceite 1500W: solo -8% frente a su precio mediano de los 90 días (61,90 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 23 h; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
+  ✗ amz-B0CZHWW22L Tefal Jamie Oliver - Sartén 24 cm: solo -10% frente a su precio mediano de los 90 días (30,99 €)
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
   ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
   ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
   ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
+  ⏸ B0GGZDZZVS variedad: ya salió un «equipaje» de Samsonite hace 5 h; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 23 · 11:35 ==
-  Seguimiento B0C5P1XP65: sigue a 41,50 €
-  Seguimiento B0D8BZDPXB: sigue a 109,95 €
-  Seguimiento B0F5QBSRDR: sigue a 22,99 €
-  Seguimiento B086QKXW1M: sigue a 99,99 €
-Modo sin silencios: 60 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 60 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  Amazon (API): 224 con descuento grande, 82 con precio anterior y stock
-Candidatos a revisar: 56
+== pasada 34 · 12:43 ==
+  Seguimiento B0FRS4CNYF: sigue a 54,00 €
+  Seguimiento B07MGYW187: sigue a 21,13 €
+  Seguimiento B09PYP9L4T: sigue a 22,99 €
+  Seguimiento B0F7Y4P7V1: sigue a 30,00 €
+Modo sin silencios: 47 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+Hora garantizada: 47 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
+  Amazon (API): 223 con descuento grande, 113 con precio anterior y stock
+Candidatos a revisar: 59
   ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
   ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
   ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
   ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
+  ✗ amz-B0B59Z1X62 Oral-B iO 6 Cepillo de Dientes Eléctrico: solo -40% frente a su PVP recomendado (209,95 €)
   ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✗ amz-B0GYKJNXF9 Rowenta Intense Comfort, Radiador de refuerzo: solo -43% frente a su PVP recomendado (69,99 €)
+  ✓ B0GGZDZZVS Samsonite Paradiver Light Maleta Cabina Ryanair 40x30x20cm: 76,02 € (-46% vs 140,00 €)
   ✗ amz-B0GSS73FLQ Ninja MAX PRO, Freidora de Aire sin Aceite: solo -37% frente a su PVP recomendado (149,99 €)
   ✗ amz-B0GSS34ZYM Ninja Foodi FlexDrawer, Freidora de Aire con Compartimento…: solo -37% frente a su PVP recomendado (269,99 €)
   ✗ amz-B0H95PYTXM Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -33% frente a su PVP recomendado (179,99 €)
   ✗ amz-B0HHN6GWLV Cecotec Freidora de Aire con Cesta de Cristal Cecofry&Glass…: solo -38% frente a su PVP recomendado (129,00 €)
-  ✗ amz-B0GVDVBZT8 LG 55QNED82B6B - Smart TV QNED EVO AI 55" 4K Sin Reflejos…: solo -36% frente a su PVP recomendado (829,00 €)
-  ✗ amz-B0HK11FH9N Lenovo L27-4e, Monitor IPS Full HD de 27": solo -36% frente a su PVP recomendado (139,99 €)
-  ✗ amz-B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: solo -33% frente a su PVP recomendado (59,99 €)
-  ✗ amz-B07W7KMK4W Logitech G G413 TKL SE Teclado Mecánico Gaming: solo -37% frente a su PVP recomendado (69,99 €)
-  ✗ amz-B0FX5217CY Moulinex Easy Fry XL Surface: solo -38% frente a su PVP recomendado (159,99 €)
-  ✗ amz-B0FK4WS9BR Tefal Duetto On - Juego de 3 Sartenes: solo -33% frente a su PVP recomendado (89,99 €)
-  ✗ amz-B079J6DGND Tefal Daily Cook - Sartén 26 cm: solo -32% frente a su PVP recomendado (33,99 €)
-  ✗ amz-B0BPYVWS6Y Cecotec Calefactor Cerámico de Sobremesa ReadyWarm 1500 Max…: solo -40% frente a su PVP recomendado (29,83 €)
-  ✗ amz-B0H9558S91 Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -28% frente a su PVP recomendado (179,99 €)
-  ✗ amz-B0FQGPHDT7 Apple iPhone Air 256 GB - Negro espacial: solo -26% frente a su PVP recomendado (1.319,00 €)
-  ✗ amz-B0HD8TJTZH Sony BRAVIA 6 OLED Google-TV: solo -23% frente a su mínimo de los 30 días anteriores (1.299,00 €)
-  ✗ amz-B0GTRP6G9Y LG 43QNED70B6C - Smart TV QNED MiniLED AI 43" 4K Sin…: solo -23% frente a su PVP recomendado (449,00 €)
-  ✗ amz-B0FWCTL8CW MSI Pro MP273WA E14A Monitor Profesional de 27" FHD: solo -25% frente a su PVP recomendado (131,99 €)
-  ✗ amz-B0F8F1GXCV Lenovo L24-4e - Monitor FHD 23.8": solo -23% frente a su precio mediano de los 90 días (74,99 €)
-  ✗ amz-B07W7N1D8L Logitech G512 Teclado Gaming Mecánico: solo -27% frente a su PVP recomendado (109,99 €)
-  ✗ amz-B07W6J8XG2 Logitech MK470 Combo Teclado y Ratón Inalámbrico para…: solo -24% frente a su PVP recomendado (49,99 €)
-  ✗ amz-B0FDKTQ17D Moulinex Easy Fry Max 5L, Freidora de aire: solo -20% frente a su precio mediano de los 90 días (74,99 €)
-  ✗ amz-B08291ZSXV Cecotec Deshumidificador Eléctrico Silencioso BigDry 2000…: solo -25% frente a su PVP recomendado (60,00 €)
-  ✗ amz-B0FPXDNJ1T LEGO Marvel Iron Man Mark 3: Edición para Coleccionistas…: solo -27% frente a su PVP recomendado (129,99 €)
-  ✗ amz-B0CWH3TBGB LEGO Technic McLaren P1 42172: solo -27% frente a su PVP recomendado (449,99 €)
-  ✗ amz-B0FPXFKGQR LEGO Technic Coche de Carreras BMW M4 GT3 EVO 42226: solo -29% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0FPXFZXC2 LEGO Technic Coche Porsche 911 GT3 R Rexy AO Racing 42224: solo -21% frente a su PVP recomendado (139,99 €)
-  ✗ amz-B00S2WDIGG CALVIN KLEIN CK ONE Eau de Toilette unisex: solo -25% frente a su precio mediano de los 90 días (35,36 €)
-  ✗ amz-B0FXMNMTL2 Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -29% frente a su precio mediano de los 90 días (69,99 €)
-  ✗ amz-B084G8WZFS CALVIN KLEIN CK Everyone Eau de Toilette unisex |Fragancia…: solo -25% frente a su precio mediano de los 90 días (25,50 €)
-  ✗ amz-B0FXML1H2Y Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -21% frente a su precio mediano de los 90 días (44,95 €)
-  ✗ amz-B0FXMP9W5H Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -24% frente a su precio mediano de los 90 días (55,90 €)
-  ✗ amz-B0FXXQJP38 Calvin Klein euphoria Magnetic Elixir Parfum Intense para…: solo -23% frente a su precio mediano de los 90 días (44,50 €)
-  ✗ amz-B0FXM2SN8L Calvin Klein Euphoria Solar Elixir Parfum Intense para Mujer: solo -23% frente a su precio mediano de los 90 días (58,80 €)
-  ✗ amz-B0BWSFGQ49 De'Longhi Magnifica S - Cafetera Superautomática 2 Bebidas…: solo -14% frente a su precio mediano de los 90 días (299,99 €)
-  ✗ amz-B09CGRQ965 De'Longhi Magnifica Evo - Cafetera Superautomática 7…: solo -17% frente a su precio mediano de los 90 días (479,99 €)
-  ✗ amz-B0FDGFJDZH De'Longhi Magnifica Start - Cafetera Superautomática 4…: solo -12% frente a su precio mediano de los 90 días (419,99 €)
-  ✗ amz-B0GZL1BLJ9 Sony BRAVIA 2 II 55 Pulgadas TV 4K Smart TV (Google TV): solo -14% frente a su precio mediano de los 90 días (699,00 €)
-  ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
-  ✗ amz-B06X3Z9MF3 De’Longhi Dedica Style – Perfetto Cafetera Espresso Manual…: solo -17% frente a su PVP recomendado (159,00 €)
-  ✗ amz-B01N10IAFG LEGO Icons Bici de Carretera 11380: solo -17% frente a su PVP recomendado (119,99 €)
-  ✗ amz-B000273HTW Tommy Hilfiger Tommy 100 ml, Eau de Toilette para Hombre: solo -18% frente a su precio mediano de los 90 días (30,95 €)
-  ✗ amz-B0FHJNDQBR Google Pixel 10 - Smartphone Android Libre con Gemini: solo -9% frente a su precio mediano de los 90 días (549,00 €)
-  ✗ amz-B0GYPZ5CZD LG OLED55B65LA - Smart TV OLED AI 55" 4K Sin Reflejos 98.3%: solo -5% frente a su precio mediano de los 90 días (949,00 €)
-  ✗ amz-B0DJD4SX35 PHILIPS Evnia 34M2C5501A Gaming Monitor 34 Pulgadas 180Hz…: solo -8% frente a su precio mediano de los 90 días (260,00 €)
-  ✗ amz-B0CZHWW22L Tefal Jamie Oliver - Sartén 24 cm: solo -10% frente a su precio mediano de los 90 días (30,99 €)
-  ✗ amz-B0935WKVFY Taurus New Dakar 1500 Radiador de Aceite 1500W: solo -8% frente a su precio mediano de los 90 días (61,90 €)
-  ✗ amz-B073RKVZLY De'Longhi De 'longhi TCH8993ER.BC: solo -8% frente a su precio mediano de los 90 días (119,00 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 24 · 11:37 ==
-  Seguimiento B0CB1T83FT: sigue a 23,80 €
-  Seguimiento B07MM4V7NR: sigue a 58,95 €
-  Seguimiento B0FL7NNGRG: sigue a 35,09 €
-  Seguimiento B0BTJD6LCL: sigue a 29,90 €
-Modo sin silencios: 62 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 62 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  ✗ amz-B0HC7953JL Cecotec Placa de Inducción 4 Zonas Bolero Squad I…: no es ninguna bajada: hace menos de una semana ya estaba a 99.90 € (historial propio de 3 días)
-  Amazon (API): 221 con descuento grande, 127 con precio anterior y stock
-Candidatos a revisar: 72
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✗ amz-B0B59Z1X62 Oral-B iO 6 Cepillo de Dientes Eléctrico: solo -40% frente a su PVP recomendado (209,95 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
   ✗ amz-B0BJQQ78BY Cecotec Robot de Cocina Multifunción Mambo 11090. 1600 W: solo -33% frente a su PVP recomendado (311,12 €)
   ✗ amz-B0DWMLMRWQ roborock Q7L5+ Robot Aspirador y Fregador Succión Extrema…: solo -36% frente a su PVP recomendado (279,99 €)
   ✗ amz-B0DWK7NXXT roborock Q7L5+ Robot Aspirador y Fregador Succión Extrema…: solo -37% frente a su PVP recomendado (269,99 €)
   ✗ amz-B0H8N499TP roborock Saros 20 Flow Complete Robot Aspirador Succión…: solo -31% frente a su PVP recomendado (1.299,00 €)
   ✗ amz-B0H6XY62VK POCO X8, Smartphone 8G+256GB: solo -30% frente a su PVP recomendado (399,90 €)
   ✗ amz-B0FN8FR84Q dreame L10s Ultra Gen 3 Kit Robot Aspirador y Fregasuelos: solo -34% frente a su PVP recomendado (499,00 €)
-  ✗ amz-B0GSS73FLQ Ninja MAX PRO, Freidora de Aire sin Aceite: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0HHN6GWLV Cecotec Freidora de Aire con Cesta de Cristal Cecofry&Glass…: solo -38% frente a su PVP recomendado (129,00 €)
   ✗ amz-B0DGLDWY7M Cecotec Freidora de Aire 8.5 L Cecofry&Grill Smokin'Prime…: solo -37% frente a su PVP recomendado (86,85 €)
-  ✗ amz-B0H95PYTXM Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -33% frente a su PVP recomendado (179,99 €)
+  ✗ amz-B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: solo -33% frente a su PVP recomendado (59,99 €)
+  ✗ amz-B07W7KMK4W Logitech G G413 TKL SE Teclado Mecánico Gaming: solo -37% frente a su PVP recomendado (69,99 €)
+  ✗ amz-B0FX5217CY Moulinex Easy Fry XL Surface: solo -38% frente a su PVP recomendado (159,99 €)
+  ✗ amz-B0BPYVWS6Y Cecotec Calefactor Cerámico de Sobremesa ReadyWarm 1500 Max…: solo -40% frente a su PVP recomendado (29,83 €)
+  ✗ amz-B0B3JJH9YW Cecotec Ventilador de Techo con Aspas Retráctites y Lámpara…: solo -39% frente a su PVP recomendado (79,90 €)
+  ✗ amz-B0822N3B24 Cecotec Parrilla Eléctrica Rock'nGrill 1500 Rapid. 1500 W: solo -31% frente a su PVP recomendado (47,62 €)
+  ✗ amz-B0H9558S91 Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -28% frente a su PVP recomendado (179,99 €)
+  ✗ amz-B0FQGPHDT7 Apple iPhone Air 256 GB - Negro espacial: solo -26% frente a su PVP recomendado (1.319,00 €)
+  ✗ amz-B07P6YDWTS Krups Nespresso Citiz - Cafetera de cápsulas: solo -24% frente a su PVP recomendado (183,99 €)
+  ✗ amz-B0DWK6P2GH roborock Q10 S5+ Set Robot Aspirador y Fregasuelo 2 en 1…: solo -20% frente a su precio mediano de los 90 días (249,99 €)
+  ✗ amz-B07W7N1D8L Logitech G512 Teclado Gaming Mecánico: solo -27% frente a su PVP recomendado (109,99 €)
+  ✗ amz-B07W6J8XG2 Logitech MK470 Combo Teclado y Ratón Inalámbrico para…: solo -24% frente a su PVP recomendado (49,99 €)
+  ✗ amz-B0FDKTQ17D Moulinex Easy Fry Max 5L, Freidora de aire: solo -20% frente a su precio mediano de los 90 días (74,99 €)
+  ✗ amz-B0DJ2XLZ5B Cecotec Limpiador Facial Masajeador Fototerapia Facecare…: solo -21% frente a su precio mediano de los 90 días (50,50 €)
+  ✗ amz-B0BPZTWHH4 Cecotec Afeitadora de Cabeza Inalámbrica Bamba…: solo -22% frente a su precio mediano de los 90 días (24,70 €)
+  ✗ amz-B08291ZSXV Cecotec Deshumidificador Eléctrico Silencioso BigDry 2000…: solo -25% frente a su PVP recomendado (60,00 €)
+  ✗ amz-B00S2WDIGG CALVIN KLEIN CK ONE Eau de Toilette unisex: solo -25% frente a su precio mediano de los 90 días (35,36 €)
+  ✗ amz-B0FXMNMTL2 Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -29% frente a su precio mediano de los 90 días (69,99 €)
+  ✗ amz-B084G8WZFS CALVIN KLEIN CK Everyone Eau de Toilette unisex |Fragancia…: solo -25% frente a su precio mediano de los 90 días (25,50 €)
+  ✗ amz-B0FXML1H2Y Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -21% frente a su precio mediano de los 90 días (44,95 €)
+  ✗ amz-B0FXXQJP38 Calvin Klein euphoria Magnetic Elixir Parfum Intense para…: solo -23% frente a su precio mediano de los 90 días (44,50 €)
+  ✗ amz-B0FXMP9W5H Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -24% frente a su precio mediano de los 90 días (55,90 €)
+  ✗ amz-B0FXM2SN8L Calvin Klein Euphoria Solar Elixir Parfum Intense para Mujer: solo -23% frente a su precio mediano de los 90 días (58,80 €)
+  ✗ amz-B0G36BS9YH Nespresso De'Longhi Essenza Mini: solo -16% frente a su precio mediano de los 90 días (99,00 €)
+  ✗ amz-B0F6V59PQM KRUPS Nespresso Vertuo Pop, Cafetera de Cápsulas: solo -17% frente a su precio mediano de los 90 días (58,90 €)
+  ✗ amz-B0F4K1H6X5 XIAOMI S40C Robot Aspirador con Fregado: solo -12% frente a su PVP recomendado (159,99 €)
+  ✗ amz-B0F53MJY8T dreame L40 Ultra Ae Robot Aspirador: solo -15% frente a su precio mediano de los 90 días (399,00 €)
+  ✗ amz-B0BWSFGQ49 De'Longhi Magnifica S - Cafetera Superautomática 2 Bebidas…: solo -14% frente a su precio mediano de los 90 días (299,99 €)
+  ✗ amz-B09CGRQ965 De'Longhi Magnifica Evo - Cafetera Superautomática 7…: solo -17% frente a su precio mediano de los 90 días (479,99 €)
+  ✗ amz-B0FDGFJDZH De'Longhi Magnifica Start - Cafetera Superautomática 4…: solo -12% frente a su precio mediano de los 90 días (419,99 €)
+  ✗ amz-B08DL4GQMG De'Longhi Cafetera Superautomática: solo -15% frente a su precio mediano de los 90 días (408,63 €)
+  ✗ amz-B0D7CPSNSX AOC CQ32G4VE Gaming Monitor 32 Pulgadas 180Hz Panel Fast VA: solo -11% frente a su precio mediano de los 90 días (178,95 €)
+  ✗ amz-B06X3Z9MF3 De’Longhi Dedica Style – Perfetto Cafetera Espresso Manual…: solo -17% frente a su PVP recomendado (159,00 €)
+  ✗ amz-B0DP1MRNXM Oral-B iO 2 Cepillo de Dientes Eléctrico con 1 Cabezal: solo -16% frente a su precio mediano de los 90 días (53,66 €)
+  ✗ amz-B000273HTW Tommy Hilfiger Tommy 100 ml, Eau de Toilette para Hombre: solo -18% frente a su precio mediano de los 90 días (30,95 €)
+  ✗ amz-B0FHJNDQBR Google Pixel 10 - Smartphone Android Libre con Gemini: solo -9% frente a su precio mediano de los 90 días (549,00 €)
+  ✗ amz-B0FHL7TPXC Google Pixel 10 Pro XL - Smartphone Android Libre con Gemini: solo -8% frente a su PVP recomendado (1.299,00 €)
+  ✗ amz-B0935WKVFY Taurus New Dakar 1500 Radiador de Aceite 1500W: solo -8% frente a su precio mediano de los 90 días (61,90 €)
+  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
+  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
+  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
+  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
+  ⏸ B0GGZDZZVS variedad: ya salió un «equipaje» de Samsonite hace 5 h; espera en la cola
+  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 2 h; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 35 · 12:45 ==
+  Seguimiento B09S5CCXXR: sigue a 93,99 €
+  Seguimiento B0FHW6BXYC: sigue a 65,90 €
+  Seguimiento B0FP5MKTJG: sigue a 409,00 €
+  Seguimiento B086QKXW1M: sigue a 99,99 €
+Modo sin silencios: 49 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+Hora garantizada: 49 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
+  ✗ amz-B0HC7953JL Cecotec Placa de Inducción 4 Zonas Bolero Squad I…: no es ninguna bajada: hace menos de una semana ya estaba a 99.90 € (historial propio de 3 días)
+  ✗ amz-B0HPS3DNNF Auriculares Inalambricos Bluetooth: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 3 días)
+  Amazon (API): 216 con descuento grande, 107 con precio anterior y stock
+Candidatos a revisar: 68
+  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
+  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
+  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
+  ✓ B0GMH56TRH roborock Qrevo Edge 2 Robot Aspirador Succión Extrema de…: 499,99 € (-44% vs 899,99 €)
+  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
+  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
+  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
+  ✓ B0GGZDZZVS Samsonite Paradiver Light Maleta Cabina Ryanair 40x30x20cm: 76,02 € (-46% vs 140,00 €)
+  ✗ amz-B0BJQQ78BY Cecotec Robot de Cocina Multifunción Mambo 11090. 1600 W: solo -33% frente a su PVP recomendado (311,12 €)
   ✗ amz-B0CFYL21WV Cecotec Horno de sobremesa Bake&Toast 3090 Black Gyro: solo -37% frente a su PVP recomendado (89,90 €)
   ✗ amz-B0BQ1JSZSN Cecotec Horno de sobremesa Bake&Toast 2300 White: solo -38% frente a su PVP recomendado (66,90 €)
   ✗ amz-B0BPZX6QH5 Cecotec Placa de Inducción de 1 Zona Flex Bolero Squad I…: solo -40% frente a su PVP recomendado (148,90 €)
   ✗ amz-B0G7F8MZ53 Cecotec Lavadora Carga Frontal 7Kg Bolero DressCode 7450…: solo -33% frente a su PVP recomendado (377,80 €)
-  ✗ amz-B0FX5217CY Moulinex Easy Fry XL Surface: solo -38% frente a su PVP recomendado (159,99 €)
+  ✗ amz-B08DRDVL2W Hisense Congelador FV191N4AW2: solo -31% frente a su PVP recomendado (489,00 €)
+  ✗ amz-B0FRGFVJDW Cecotec Campana Extractora 60cm Telescópica Bolero Flux TLT…: solo -39% frente a su PVP recomendado (139,00 €)
+  ✗ amz-B0DXKMXPXW JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
+  ✗ amz-B0F7M3YLVS Bose Auriculares de botón QC Ultra Bluetooth(2.ª Gen): solo -33% frente a su PVP recomendado (299,95 €)
+  ✗ amz-B0DK3TBCRD JBL Tune Flex 2, Auriculares con Cancelación de Ruido: solo -30% frente a su PVP recomendado (99,99 €)
+  ✗ amz-B0DHL93XCN JBL Wave Beam 2, Auriculares Wireless con Cancelación de…: solo -38% frente a su PVP recomendado (79,99 €)
   ✗ amz-B09LD46DWY Taurus - Batidora de Vaso 1500W: solo -34% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0B3JJH9YW Cecotec Ventilador de Techo con Aspas Retráctites y Lámpara…: solo -39% frente a su PVP recomendado (79,90 €)
-  ✗ amz-B0822N3B24 Cecotec Parrilla Eléctrica Rock'nGrill 1500 Rapid. 1500 W: solo -31% frente a su PVP recomendado (47,62 €)
-  ✗ amz-B07P6YDWTS Krups Nespresso Citiz - Cafetera de cápsulas: solo -24% frente a su PVP recomendado (183,99 €)
-  ✗ amz-B0DWK6P2GH roborock Q10 S5+ Set Robot Aspirador y Fregasuelo 2 en 1…: solo -20% frente a su precio mediano de los 90 días (249,99 €)
+  ✗ amz-B0BV27DXYM Candy Idea CHW6LBX/4U2, Placa de Gas: solo -37% frente a su PVP recomendado (121,76 €)
   ✗ amz-B00U0AEL7I Severin Cafetera Espresso con espumador de leche: solo -20% frente a su precio mediano de los 90 días (49,99 €)
   ✗ amz-B0BQ1M7RDL Cecotec Robot de Cocina Multifunción con Jarra Unique Mambo…: solo -21% frente a su PVP recomendado (629,90 €)
   ✗ amz-B07HC7J3PZ Cecotec Microondas ProClean 3160 Mirror. 700W con 6 Niveles: solo -26% frente a su PVP recomendado (80,90 €)
+  ✗ amz-B0DHCK2JND Hisense H23MOBS5HG4 - Microondas Con Grill: solo -27% frente a su PVP recomendado (109,00 €)
   ✗ amz-B0BQ1HRYV8 Cecotec Horno Multifunción Integrable Air Fryer 73L Bolero…: solo -21% frente a su PVP recomendado (289,00 €)
   ✗ amz-B01LWAJQNU Balay, Placa de inducción, 60 cm: solo -25% frente a su PVP recomendado (358,23 €)
   ✗ amz-B0BV29JJ83 Hisense HS622E10W - Lavavajillas 60cm: solo -21% frente a su PVP recomendado (327,88 €)
   ✗ amz-B0BWH9T9NL Hisense HS622E10X - Lavavajillas 60cm: solo -20% frente a su PVP recomendado (349,00 €)
   ✗ amz-B0BPYRY8KB Cecotec Lavadora 10Kg de Carga Frontal Bolero Dresscode…: solo -22% frente a su PVP recomendado (446,90 €)
   ✗ amz-B0BPYVJ7YD Cecotec Lavadora 8Kg Carga Frontal Bolero Dresscode 8500…: solo -21% frente a su PVP recomendado (379,90 €)
-  ✗ amz-B0FDKTQ17D Moulinex Easy Fry Max 5L, Freidora de aire: solo -20% frente a su precio mediano de los 90 días (74,99 €)
+  ✗ amz-B0BHJ79616 Hisense RB440N4BWE - Frigorífico Combi 2 Puertas: solo -22% frente a su PVP recomendado (584,50 €)
+  ✗ amz-B0GTRP6G9Y LG 43QNED70B6C - Smart TV QNED MiniLED AI 43" 4K Sin…: solo -23% frente a su PVP recomendado (449,00 €)
+  ✗ amz-B0HD8TJTZH Sony BRAVIA 6 OLED Google-TV: solo -23% frente a su mínimo de los 30 días anteriores (1.299,00 €)
+  ✗ amz-B08Z4H7L2L Sony HT-S40R - Barra de Sonido 5.1: solo -24% frente a su precio mediano de los 90 días (254,00 €)
+  ✗ amz-B0D96Q5P49 TCL S55HE Barra de Sonido 2.1: solo -23% frente a su PVP recomendado (129,00 €)
+  ✗ amz-B0CX1TJXKV Sony ULT Wear Auriculares inalambricos Bluetooth con…: solo -28% frente a su PVP recomendado (149,00 €)
+  ✗ amz-B0FGYFDPNP Bose Ultra Open Earbuds, Auriculares inalámbricos de botón…: solo -21% frente a su precio mediano de los 90 días (254,00 €)
   ✗ amz-B0D96QSSWW Hisense HI6311BSCE - Placa Induccion: solo -20% frente a su PVP recomendado (209,99 €)
-  ✗ amz-B0DJ2XLZ5B Cecotec Limpiador Facial Masajeador Fototerapia Facecare…: solo -21% frente a su precio mediano de los 90 días (50,50 €)
-  ✗ amz-B08291ZSXV Cecotec Deshumidificador Eléctrico Silencioso BigDry 2000…: solo -25% frente a su PVP recomendado (60,00 €)
-  ✗ amz-B00S2WDIGG CALVIN KLEIN CK ONE Eau de Toilette unisex: solo -25% frente a su precio mediano de los 90 días (35,36 €)
+  ✗ amz-B08PVDQFQQ Cecotec Batidora de mano Power TitanBlack 1200 XL…: solo -26% frente a su PVP recomendado (39,90 €)
   ✗ amz-B0C6TYG684 Candy C63TPSC/E1 Placa Inducción con Zona Flex: solo -28% frente a su PVP recomendado (220,15 €)
   ✗ amz-B0FCY9BLXG Candy ProWash&Dry 500 - BWR 4128BL8-S Lavasecadora: solo -24% frente a su PVP recomendado (628,15 €)
-  ✗ amz-B0G36BS9YH Nespresso De'Longhi Essenza Mini: solo -16% frente a su precio mediano de los 90 días (99,00 €)
-  ✗ amz-B0F6V59PQM KRUPS Nespresso Vertuo Pop, Cafetera de Cápsulas: solo -17% frente a su precio mediano de los 90 días (58,90 €)
-  ✗ amz-B0F4K1H6X5 XIAOMI S40C Robot Aspirador con Fregado: solo -12% frente a su PVP recomendado (159,99 €)
-  ✗ amz-B0F53MJY8T dreame L40 Ultra Ae Robot Aspirador: solo -15% frente a su precio mediano de los 90 días (399,00 €)
-  ✗ amz-B0GQT9CQ17 ECOVACS DEEBOT T50 Omni Gen3 Robot Aspirador y fregasuelos: solo -14% frente a su precio mediano de los 90 días (349,00 €)
-  ✗ amz-B0BWSFGQ49 De'Longhi Magnifica S - Cafetera Superautomática 2 Bebidas…: solo -14% frente a su precio mediano de los 90 días (299,99 €)
-  ✗ amz-B09CGRQ965 De'Longhi Magnifica Evo - Cafetera Superautomática 7…: solo -17% frente a su precio mediano de los 90 días (479,99 €)
-  ✗ amz-B0FDGFJDZH De'Longhi Magnifica Start - Cafetera Superautomática 4…: solo -12% frente a su precio mediano de los 90 días (419,99 €)
-  ✗ amz-B08DL4GQMG De'Longhi Cafetera Superautomática: solo -15% frente a su precio mediano de los 90 días (408,63 €)
   ✗ amz-B0BQ1SQ6DQ Cecotec Cafetera Espresso Compacta Power Espresso 20 Retro…: solo -14% frente a su PVP recomendado (103,99 €)
+  ✗ amz-B0G36BS9YH Nespresso De'Longhi Essenza Mini: solo -16% frente a su precio mediano de los 90 días (99,00 €)
   ✗ amz-B00U65CWOG Russell Hobbs Robot de Cocina Cook@Home: solo -13% frente a su PVP recomendado (144,30 €)
   ✗ amz-B0BQ1DCF48 Cecotec Horno Integrable Multifunción 70L Bolero Hexa…: solo -18% frente a su PVP recomendado (206,90 €)
-  ✗ amz-B0BPZJ1XM8 Cecotec Horno Integrable Multifunción 70L Bolero Hexa…: solo -13% frente a su PVP recomendado (217,90 €)
   ✗ amz-B0FL7MGH1S Cecotec Placa de Inducción 3 zonas de fuego Placa Bolero…: solo -16% frente a su precio mediano de los 90 días (129,00 €)
   ✗ amz-B0CVLZN7H5 Candy Rapidò CF0C7SB0FW Lavavajillas 45 CM: solo -13% frente a su PVP recomendado (424,15 €)
   ✗ amz-B08DMSL5Z1 Hisense WF1Q9041BW - Lavadora: solo -16% frente a su PVP recomendado (379,00 €)
-  ✗ amz-B0D7CPSNSX AOC CQ32G4VE Gaming Monitor 32 Pulgadas 180Hz Panel Fast VA: solo -11% frente a su precio mediano de los 90 días (178,95 €)
-  ✗ amz-B06X3Z9MF3 De’Longhi Dedica Style – Perfetto Cafetera Espresso Manual…: solo -17% frente a su PVP recomendado (159,00 €)
-  ✗ amz-B0DWFYRPFN De'Longhi Classic EM450.M, Máquina Café Manual con Varilla…: solo -19% frente a su PVP recomendado (147,60 €)
-  ✗ amz-B0DP1MRNXM Oral-B iO 2 Cepillo de Dientes Eléctrico con 1 Cabezal: solo -16% frente a su precio mediano de los 90 días (53,66 €)
-  ✗ amz-B0CHBG62NP Candy CI633CBB1 Placa Inducción: solo -18% frente a su PVP recomendado (191,25 €)
-  ✗ amz-B0FHJNDQBR Google Pixel 10 - Smartphone Android Libre con Gemini: solo -9% frente a su precio mediano de los 90 días (549,00 €)
-  ✗ amz-B0FHL7TPXC Google Pixel 10 Pro XL - Smartphone Android Libre con Gemini: solo -8% frente a su PVP recomendado (1.299,00 €)
-  ✗ amz-B0BJ6VVK4M Cecotec Cafetera Express Cafelizzia 890 Gray. Espressos y…: solo -6% frente a su precio mediano de los 90 días (89,90 €)
-  ✗ amz-B0FWCTSS9B MSI Pro MP243WA E14 montior de 24" FHD: solo -6% frente a su PVP recomendado (89,00 €)
-  ✗ amz-B0FLXT2KW1 Balay, Lavadora, 10 kg, AutoDosificación: solo -9% frente a su precio mediano de los 90 días (611,53 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 13 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 25 · 11:39 ==
-  Seguimiento B07DJJLTSL: sigue a 48,99 €
-  Seguimiento B0F1X5P8YD: sigue a 32,18 €
-  Seguimiento B0GHNXGFT8: sigue a 106,72 €
-  Seguimiento B0DQWYBF55: sigue a 24,99 €
-Modo sin silencios: 64 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 64 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  ✗ amz-B0HPS3DNNF Auriculares Inalambricos Bluetooth: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 3 días)
-  ✗ amz-B0HN1ZV5JS Auriculares Inalambricos Bluetooth 5.4 HiFi…: solo -8% frente a su precio habitual de 23.99 € (historial de 3 días)
-  Amazon (API): 213 con descuento grande, 64 con precio anterior y stock
-Candidatos a revisar: 45
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B08DRDVL2W Hisense Congelador FV191N4AW2: solo -31% frente a su PVP recomendado (489,00 €)
-  ✗ amz-B0FRGFVJDW Cecotec Campana Extractora 60cm Telescópica Bolero Flux TLT…: solo -39% frente a su PVP recomendado (139,00 €)
-  ✗ amz-B0H7156BS8 REDMI 17 5G, Smartphone 4+128GB: solo -31% frente a su PVP recomendado (259,90 €)
-  ✗ amz-B0H6XTP3WL POCO X8, Smartphone 8G+256GB: solo -30% frente a su PVP recomendado (399,90 €)
-  ✗ amz-B0GT2HY84T Hisense 65U7S Pro - MiniLED Smart TV 65 Pulgadas: solo -39% frente a su PVP recomendado (1.199,00 €)
-  ✗ amz-B0DXKMXPXW JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0F7M3HPBD Bose Auriculares de botón QC Ultra Bluetooth (2.ª Gen): solo -33% frente a su PVP recomendado (299,95 €)
-  ✗ amz-B0F7M3YLVS Bose Auriculares de botón QC Ultra Bluetooth(2.ª Gen): solo -33% frente a su PVP recomendado (299,95 €)
-  ✗ amz-B0DHL93XCN JBL Wave Beam 2, Auriculares Wireless con Cancelación de…: solo -38% frente a su PVP recomendado (79,99 €)
-  ✗ amz-B0BV27DXYM Candy Idea CHW6LBX/4U2, Placa de Gas: solo -37% frente a su PVP recomendado (121,76 €)
-  ✗ amz-B0BHJ79616 Hisense RB440N4BWE - Frigorífico Combi 2 Puertas: solo -22% frente a su PVP recomendado (584,50 €)
-  ✗ amz-B0FQGPHDT7 Apple iPhone Air 256 GB - Negro espacial: solo -26% frente a su PVP recomendado (1.319,00 €)
-  ✗ amz-B0GX9SBDKC XIAOMI REDMI Pad 2 4+256GB Tablet de 11" 2.5K Gris Batería…: solo -29% frente a su PVP recomendado (279,90 €)
-  ✗ amz-B0H79Q2ZKJ REDMI 17, 4+128GB, Negro, 7500mAh: solo -28% frente a su PVP recomendado (219,90 €)
-  ✗ amz-B0H79Q6WQC REDMI 17, 4+128GB, Azul Profundo: solo -28% frente a su PVP recomendado (219,90 €)
-  ✗ amz-B0H4H1SZ8K REDMI Note 17 5G, Smartphone 6+128GB: solo -28% frente a su PVP recomendado (349,90 €)
-  ✗ amz-B0GTRP6G9Y LG 43QNED70B6C - Smart TV QNED MiniLED AI 43" 4K Sin…: solo -23% frente a su PVP recomendado (449,00 €)
-  ✗ amz-B0GX9S46M2 Hisense 65UR8S - RGB MiniLED 65 Pulgadas Smart TV 4K: solo -20% frente a su precio mediano de los 90 días (1.179,00 €)
-  ✗ amz-B08Z4H7L2L Sony HT-S40R - Barra de Sonido 5.1: solo -24% frente a su precio mediano de los 90 días (254,00 €)
-  ✗ amz-B0D96Q5P49 TCL S55HE Barra de Sonido 2.1: solo -23% frente a su PVP recomendado (129,00 €)
-  ✗ amz-B0FGYFDPNP Bose Ultra Open Earbuds, Auriculares inalámbricos de botón…: solo -21% frente a su precio mediano de los 90 días (254,00 €)
   ✗ amz-B0BXDQ2WC6 Hisense RB390N4ACE - Frigorífico Combi 2 Puertas: solo -18% frente a su PVP recomendado (499,00 €)
-  ✗ amz-B0FRG72CT1 Cecotec Congelador Horizontal 249L Bolero CoolMarket Chest…: solo -15% frente a su precio mediano de los 90 días (233,90 €)
   ✗ amz-B07PN779Q1 Orbegozo TL 07160 MA Campana Extractora Telescópica 60 cm: solo -15% frente a su precio mediano de los 90 días (64,50 €)
   ✗ amz-B0F8QFTXW9 TCL 43T69C 43 Pulgadas QLED 4K HDR10+ Smart TV: solo -18% frente a su PVP recomendado (329,00 €)
+  ✗ amz-B0HD8R1N66 Sony BRAVIA 6 OLED Google-TV: solo -19% frente a su precio mediano de los 90 días (1.299,00 €)
   ✗ amz-B0GQF24H9M Hisense 65E8S - MiniLED 65 Pulgadas Smart TV 4K: solo -11% frente a su precio mediano de los 90 días (660,33 €)
   ✗ amz-B0FRRMD96F Anker soundcore 2 Altavoz Bluetooth Portátil 12 W: solo -18% frente a su precio mediano de los 90 días (33,99 €)
+  ✗ amz-B06X3Z9MF3 De’Longhi Dedica Style – Perfetto Cafetera Espresso Manual…: solo -17% frente a su PVP recomendado (159,00 €)
+  ✗ amz-B0DWFYRPFN De'Longhi Classic EM450.M, Máquina Café Manual con Varilla…: solo -19% frente a su PVP recomendado (147,60 €)
+  ✗ amz-B0CHBG62NP Candy CI633CBB1 Placa Inducción: solo -18% frente a su PVP recomendado (191,25 €)
   ✗ amz-B07MHR5BJV Candy CBT6130/3X, Campana Telescópica 60 CM: solo -15% frente a su precio mediano de los 90 días (61,99 €)
   ✗ amz-B078Y5Q6W9 Sony HT-S150 Barra sonido TV compacta con Bluetooth 2…: solo -15% frente a su precio mediano de los 90 días (96,95 €)
+  ✗ amz-B0BJ6VVK4M Cecotec Cafetera Express Cafelizzia 890 Gray. Espressos y…: solo -6% frente a su precio mediano de los 90 días (89,90 €)
+  ✗ amz-B0FHP2YXWD Hisense HI6352BSCE - Placa Vitrocerámica Flex: solo -8% frente a su PVP recomendado (310,25 €)
   ✗ amz-B0BXF6466K Hisense RB390N4BCC - Frigorífico Combi,No Frost: solo -9% frente a su precio mediano de los 90 días (551,00 €)
-  ✗ amz-B0FHJNDQBR Google Pixel 10 - Smartphone Android Libre con Gemini: solo -9% frente a su precio mediano de los 90 días (549,00 €)
-  ✗ amz-B0FHL7TPXC Google Pixel 10 Pro XL - Smartphone Android Libre con Gemini: solo -8% frente a su PVP recomendado (1.299,00 €)
   ✗ amz-B0GYPYSKH1 LG OLED65B65LA - Smart TV OLED AI 65" 4K Sin Reflejos 98.3%: solo -8% frente a su precio mediano de los 90 días (1.199,00 €)
   ✗ amz-B0GYPZ5CZD LG OLED55B65LA - Smart TV OLED AI 55" 4K Sin Reflejos 98.3%: solo -5% frente a su precio mediano de los 90 días (949,00 €)
+  ✗ amz-B0FLXT2KW1 Balay, Lavadora, 10 kg, AutoDosificación: solo -9% frente a su precio mediano de los 90 días (611,53 €)
   ✗ amz-B0DMTLL99Q CANDY City Fresco 300 CNCQ2T518EB: solo -3% frente a su PVP recomendado (384,18 €)
   ✗ amz-B0H7BF91XG XIAOMI TV Pro 32 Pulgadas 2026: solo -7% frente a su precio mediano de los 90 días (139,00 €)
   ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
   ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
+  ⏸ B0GMH56TRH variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
   ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
   ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
   ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 14 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 26 · 11:41 ==
-  Seguimiento B0FRS4CNYF: sigue a 54,00 €
-  Seguimiento B07MGYW187: sigue a 21,13 €
-  Seguimiento B09PYP9L4T: sigue a 22,99 €
-  Seguimiento B0B29MWWM2: sigue a 42,50 €
-Modo sin silencios: 66 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 66 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  Amazon (API): 227 con descuento grande, 74 con precio anterior y stock
-Candidatos a revisar: 45
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0F8NVC66B AOC 25G4SRE Gaming Monitor 25 Pulgadas 310Hz Panel Fast IPS: solo -38% frente a su PVP recomendado (179,00 €)
-  ✗ amz-B0F5BTWP9T AOC U27G4R Gaming Monitor 27 Pulgadas: solo -34% frente a su PVP recomendado (349,00 €)
-  ✗ amz-B0CS3FD17C TP-Link TL-MR110 - Router 4G LTE SIM: solo -32% frente a su PVP recomendado (65,99 €)
-  ✗ amz-B0GJTBKGDV Epson EcoTank ET-2955 Impresora de Depósito de Tinta: solo -35% frente a su PVP recomendado (369,34 €)
-  ✗ amz-B0FKNG3MZ7 Epson EcoTank ET-3950 Impresora de Depósito de Tinta: solo -30% frente a su PVP recomendado (500,43 €)
-  ✗ amz-B0H6BFS3MT HP ENVY 6520, Impresora Multifunción A4 Color: solo -30% frente a su PVP recomendado (114,90 €)
-  ✗ amz-B07W7KMK4W Logitech G G413 TKL SE Teclado Mecánico Gaming: solo -37% frente a su PVP recomendado (69,99 €)
-  ✗ amz-B07QBNYJ6X SanDisk 32GB Cruzer Blade USB Flash Drive: solo -38% frente a su PVP recomendado (36,99 €)
-  ✗ amz-B0FWCPNPCV MSI mag 276CFA E20 Monitor Gaming de 27" FHD 1500R: solo -28% frente a su PVP recomendado (151,99 €)
-  ✗ amz-B0FWCPC442 MSI mag 275UPDA E14 Monitor Gaming de 27": solo -29% frente a su PVP recomendado (352,99 €)
-  ✗ amz-B0FWCTL8CW MSI Pro MP273WA E14A Monitor Profesional de 27" FHD: solo -25% frente a su PVP recomendado (131,99 €)
-  ✗ amz-B0FWCLJ51V MSI Pro MP275QA E14 de 27" WQHD: solo -25% frente a su PVP recomendado (171,99 €)
-  ✗ amz-B09T9P4MSL ASUS ROG Strix 1200W Platinum: solo -23% frente a su PVP recomendado (259,90 €)
-  ✗ amz-B09T9NQZY7 ASUS ROG Strix 1000W Platinum: solo -23% frente a su precio mediano de los 90 días (246,95 €)
-  ✗ amz-B0G4N31XVY AOC Q27B36X Gaming Monitor 27 Pulgadas 144Hz Panel IPS: solo -19% frente a su precio mediano de los 90 días (129,00 €)
-  ✗ amz-B0D7CPSNSX AOC CQ32G4VE Gaming Monitor 32 Pulgadas 180Hz Panel Fast VA: solo -11% frente a su precio mediano de los 90 días (178,95 €)
-  ✗ amz-B0DFQ9S6KS TP-Link Archer BE3600–Router WiFi 7 BE3600 de doble banda: solo -12% frente a su PVP recomendado (89,99 €)
-  ✗ amz-B0G49TJHTL Mercusys MB118-4G-Router 4G LTE Exterior con SIM: solo -14% frente a su mínimo de los 30 días anteriores (64,99 €)
-  ✗ amz-B08MQLFVMX Philips Monitors 346E2CUAE/00-34" Curved 1500R: solo -13% frente a su precio mediano de los 90 días (239,90 €)
-  ✗ amz-B0815XFSGK AMD Ryzen 7 5800X Procesador: solo -11% frente a su precio mediano de los 90 días (228,46 €)
-  ✗ amz-B095SYK1R9 TP-Link RE500X Repetidor WiFi 6 AX1500 Doble Banda: solo -10% frente a su precio mediano de los 90 días (49,99 €)
-  ✗ amz-B00K11UHVA TP-Link TL-WA860RE - Repetidor WiFi 4: solo -15% frente a su PVP recomendado (24,99 €)
-  ✗ amz-B0HBXCF2HS Lenovo LOQ | Portátil Gaming| AMD Ryzen 7| RTX 3050| 16GB: solo -9% frente a su precio mediano de los 90 días (1.099,00 €)
-  ✗ amz-B0FWCTSGL9 MSI mag 275FA E20 Monitor Gaming de 27" FHD: solo -10% frente a su precio mediano de los 90 días (120,97 €)
-  ✗ amz-B0CS3W1DMF MSI mag 27C6F Monitor Curvo Gaming FHD de 27": solo -4% frente a su precio mediano de los 90 días (109,00 €)
-  ✗ amz-B0HBCGNL34 Lenovo LOQ 32Q-10 | Monitor Gaming: solo -5% frente a su precio mediano de los 90 días (189,99 €)
-  ✗ amz-B0DJD4SX35 PHILIPS Evnia 34M2C5501A Gaming Monitor 34 Pulgadas 180Hz…: solo -8% frente a su precio mediano de los 90 días (260,00 €)
-  ✗ amz-B085S1MXRV Cudy AC1200 5-Puerto Gigabit WiFi Router: solo -5% frente a su mínimo de los 30 días anteriores (28,06 €)
-  ✗ amz-B0FCSSNXT4 HP DeskJet 2920, Impresora Multifunción de Inyección de…: solo -6% frente a su precio mediano de los 90 días (49,90 €)
-  ✗ amz-B0FCSVV6X7 HP DeskJet 4320, Impresora Multifunción de inyección de…: solo -3% frente a su precio mediano de los 90 días (57,90 €)
-  ✗ amz-B0DHW558TP HP Envy 6520e 714N9B, Impresora multifunción de inyección…: solo -4% frente a su precio mediano de los 90 días (79,71 €)
-  ✗ amz-B0D3HK2372 Logitech G G515 Lightspeed TKL Teclado para Gaming…: solo -8% frente a su PVP recomendado (129,99 €)
-  ✗ amz-B01BGBJ8Y0 Logitech C270 Webcam HD, Camara para PC: solo -5% frente a su precio mediano de los 90 días (17,94 €)
-  ✗ amz-B0DX65SQXF Amazon Basics Unidad de Estado Sólido Externa Portátil de…: solo -4% frente a su precio mediano de los 90 días (190,05 €)
-  ✗ amz-B0F6LB6Y9N HUAWEI AX3 New Enrutador, Wi-Fi 6 Plus de Banda Dual 3000…: solo -5% frente a su precio mediano de los 90 días (36,99 €)
-  ✗ amz-B0C1N8CWZ4 GIGABYTE H610M K DDR4 Placa Base: solo -6% frente a su PVP recomendado (59,59 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 14 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 27 · 11:43 ==
-  Seguimiento B09S5CCXXR: sigue a 93,99 €
-  Seguimiento B0FHW6BXYC: sigue a 65,90 €
-  Seguimiento B0FP5MKTJG: sigue a 409,00 €
-  Seguimiento B0FJM2CGKJ: sigue a 54,99 €
-Modo sin silencios: 68 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 68 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  Amazon (API): 231 con descuento grande, 71 con precio anterior y stock
-Candidatos a revisar: 25
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0CG19QXWD DJI Osmo Pocket 3, cámara con CMOS 1'' y vídeo 4K/120 fps: solo -37% frente a su PVP recomendado (429,00 €)
-  ✗ amz-B08K9VCZ5G Logitech G G923 Volante de Carreras y Pedales: solo -24% frente a su PVP recomendado (273,99 €)
-  ✗ amz-B0FVX35WC8 SwitchBot Termostato Inteligente para radiador: solo -26% frente a su mínimo de los 30 días anteriores (69,99 €)
-  ✗ amz-B002L4596I Bosch PRO Sierra circular GKS 190: solo -28% frente a su PVP recomendado (204,49 €)
-  ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
-  ✗ amz-B08K9SBMJR Logitech G G923 Volante de Carreras y Pedales: solo -13% frente a su PVP recomendado (263,99 €)
-  ✗ amz-B0FMRQGF4P SwitchBot Termostato Inteligente para Radiador Combo…: solo -17% frente a su mínimo de los 30 días anteriores (59,99 €)
-  ✗ amz-B07BRS1KXS Bosch PRO Amoladora GWS 880 | Nivel superior de control de…: solo -20% frente a su PVP recomendado (85,91 €)
-  ✗ amz-B002EX2Y6E Bosch Sierra circular PKS 55 A: solo -15% frente a su PVP recomendado (134,00 €)
-  ✗ amz-B0FP2KTYVL SwitchBot Hub Mini Matter, Hub Domótico Casa & IR Blaster…: marca poco conocida (SwitchBot): su precio anterior no es fiable
-  ✗ amz-B07RB6CQVS Makita HP333DSAX1 Taladro atornillador inalámbrico 12 V…: solo -8% frente a su precio mediano de los 90 días (205,01 €)
-  ✗ amz-B017AWGGL2 DEWALT DWE4233-QS - Mini-Amoladora 125 mm: solo -6% frente a su precio mediano de los 90 días (119,48 €)
-  ✗ amz-B078HR358D Bosch PRO Amoladora GWS 9-125 S: solo -6% frente a su PVP recomendado (98,01 €)
-  ✗ amz-B00ARAUS3M Bosch Professional 18V System batería GBA 18V 4.0Ah: solo -5% frente a su precio mediano de los 90 días (64,96 €)
-  ✗ amz-B01EWNGZ4U DEWALT Kit combo sin escobillas 18V XR con 2 baterías 5Ah: solo -5% frente a su precio mediano de los 90 días (346,88 €)
-  ✗ amz-B01L31KAGI DEWALT Juego de taladro mixto (100 piezas): solo -6% frente a su precio mediano de los 90 días (32,24 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 14 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 28 · 11:45 ==
-  Seguimiento B0FDFBB14L: sigue a 59,55 €
-  Seguimiento B0HGXN8DX3: sigue a 159,99 €
-  Seguimiento B0HHNQ9XT8: sigue a 59,00 €
-  Seguimiento B0FDGY6XVF: sigue a 76,99 €
-Modo sin silencios: 70 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 70 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  Amazon (API): 233 con descuento grande, 94 con precio anterior y stock
-Candidatos a revisar: 42
-  ✓ B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: 89,93 € (-55% vs 199,99 €)
-  ✗ amz-B0F6YG5P11 Braun Series 5 Afeitadora Eléctrica Hombre: ya publicado hace poco y no ha bajado más
-  ✓ B0B2BNM4PV Videotimbre Pro con batería Ring (Battery Video Doorbell…: 99,99 € (-50% vs 199,99 €)
-  ✓ B0G4NC8KN7 roborock Saros 20 Set Robot Aspirador Succión Extrema de…: 799,00 € (-47% vs 1.499,00 €)
-  ✓ B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: 101,28 € (-44% vs 179,99 €)
-  ✓ B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming Inalámbrico: 34,42 € (-43% vs 59,99 €)
-  ✓ B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: 17,85 € (-40% vs 29,99 €)
-  ✗ amz-B0GJ4T4S7K Braun Series 9 Pro+ Afeitadora Eléctrica Hombre: solo -43% frente a su PVP recomendado (439,99 €)
-  ✗ amz-B08J4NMBL2 Braun Mini Depiladora Facial para Mujer FS1000: solo -40% frente a su PVP recomendado (29,99 €)
-  ✗ amz-B0B59Z1X62 Oral-B iO 6 Cepillo de Dientes Eléctrico: solo -40% frente a su PVP recomendado (209,95 €)
-  ✗ amz-B0DDQCPY72 Oral-B iO 6 Cepillo de Dientes Eléctrico con 3 Cabezales: solo -40% frente a su PVP recomendado (209,95 €)
-  ✓ B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: 49,99 € (-47% vs 94,90 €)
-  ✓ B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: 59,99 € (-45% vs 109,99 €)
-  ✓ B0DQWYGX7M Braun Recortadora De Barba Hombre Series 7: 49,99 € (-47% vs 94,99 €)
-  ✗ amz-B0BHJFV7DF Cecotec Patinete Eléctrico Bongo Serie S+ MAX Infinity. 750…: solo -41% frente a su PVP recomendado (497,90 €)
-  ✗ amz-B0C815WY3Z Philips OneBlade 360 - Maquinilla de Afeitar Híbrida: solo -36% frente a su PVP recomendado (54,99 €)
-  ✗ amz-B0FDL1XP3J Philips Recortadora Todo En Uno series 3000: solo -33% frente a su PVP recomendado (44,99 €)
-  ✗ amz-B0DQWHNRH6 Braun Recortadora Todo en Uno Series 3: solo -38% frente a su PVP recomendado (39,99 €)
-  ✗ amz-B0FJM24KXM Philips Recortadora todo en uno de 11 en 1 Serie 5000: solo -31% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0FJM3WXX6 Philips Recortadora todo en uno de 17 en 1 Serie 7000: solo -31% frente a su PVP recomendado (79,99 €)
-  ✗ amz-B0FZW81W7X Braun Silk·épil 7 Depiladora Eléctrica Mujer: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0HCVG6L8V Cecotec Depiladora de Arranque con 48 Pinzas SkinCare…: solo -36% frente a su PVP recomendado (31,23 €)
-  ✗ amz-B0BQ19Z3YK Cecotec Secador Compacto de Pelo Bamba IoniCare Power&Go.…: solo -38% frente a su PVP recomendado (25,57 €)
-  ✗ amz-B08XYXNG7F Rowenta Advancer Easy, recortadora de barba: solo -21% frente a su precio mediano de los 90 días (29,99 €)
-  ✗ amz-B0G4CNQBVG Braun Silk·épil 7 Depiladora Eléctrica Mujer: solo -24% frente a su precio mediano de los 90 días (79,00 €)
-  ✗ amz-B0H83BSN2R Afeitadora Eléctrica Mujer, MAXGROOM 3 en 1 Depiladora…: marca poco conocida (MAXGROOM): su precio anterior no es fiable
-  ✗ amz-B0BQ1KV15R Cecotec Patinete Eléctrico Bongo V55 2x2 Connected: solo -21% frente a su PVP recomendado (673,90 €)
-  ✗ amz-B0DMDNLJH9 Amazon Basics Set de mancuernas hexagonales con…: solo -25% frente a su precio mediano de los 90 días (69,98 €)
-  ✗ amz-B077TZYQRT Black+Decker Hidrolimpiadora de Alta Presión BXPW2000PE con…: solo -21% frente a su PVP recomendado (139,90 €)
-  ✗ amz-B00S2WDIGG CALVIN KLEIN CK ONE Eau de Toilette unisex: solo -25% frente a su precio mediano de los 90 días (35,36 €)
-  ✗ amz-B0DDSCP32R Amazon Basics - Tienda de campaña instantánea con Bolsa de…: solo -15% frente a su precio mediano de los 90 días (99,90 €)
-  ✗ amz-B0DP1MRNXM Oral-B iO 2 Cepillo de Dientes Eléctrico con 1 Cabezal: solo -16% frente a su precio mediano de los 90 días (53,66 €)
-  ✗ amz-B0HG86P9LQ Oral-B iO Kids Disney Angel Cepillo de Dientes Eléctrico: solo -11% frente a su precio mediano de los 90 días (50,79 €)
-  ✗ amz-B0DMD4G5XH Amazon Basics Set de mancuernas hexagonales con…: solo -13% frente a su precio mediano de los 90 días (45,99 €)
-  ✗ amz-B000273HTW Tommy Hilfiger Tommy 100 ml, Eau de Toilette para Hombre: solo -18% frente a su precio mediano de los 90 días (30,95 €)
-  ✗ amz-B0D8J5CVPK CALVIN KLEIN CK One Essence Parfum Intense Unisex: solo -20% frente a su precio mediano de los 90 días (21,99 €)
-  ✗ amz-B0DGB15KLM Tommy Hilfiger Tommy Girl Forever 100 ml: solo -17% frente a su precio mediano de los 90 días (33,50 €)
-  ✗ amz-B0DNHRW9CR Amazon Basics Neoprene Dumbbell Weights Set with Stand: solo -15% frente a su precio mediano de los 90 días (34,90 €)
-  ✗ amz-B00ECBKOCW Remington Secador de Pelo Profesional Silk: solo -3% frente a su precio mediano de los 90 días (30,00 €)
-  ✗ amz-B08P253ZL8 smartGyro Speedway Pro - Patinete Eléctrico de 48V: marca poco conocida (SMARTGYRO): su precio anterior no es fiable
-  ✗ amz-B0DQ93HX2L Kärcher Hidrolimpiadora K 5 FJ: solo -9% frente a su PVP recomendado (319,95 €)
-  ✗ amz-B01AI2PJQY Bosch AFS 23-37 - Desbrozadora: solo -6% frente a su precio mediano de los 90 días (137,64 €)
-  ⏸ B0FNWFTJKQ variedad: ya salió un «robot aspirador» de Lefant hace 2 días; espera en la cola
-  ⏸ B0G4NC8KN7 variedad: ya salió un «robot aspirador» de Roborock hace 1 días; espera en la cola
-  ⏸ B0F99K7DS9 variedad: ya salió un «freidora» de Ninja hace 18 h; espera en la cola
-  ⏸ B0B2BNM4PV variedad: ya salió un «camara» de Ring hace 2 días; espera en la cola
-  ⏸ B0DQWYGX7M variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B3JBYXG8 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0F9X7H8W6 variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 1 h; espera en la cola
-  ⏸ B07CGPZ3ZQ variedad: ya salió un «teclado y raton» de Logitech G hace 14 h; espera en la cola
+  ⏸ B0GGZDZZVS variedad: ya salió un «equipaje» de Samsonite hace 5 h; espera en la cola
+  ⏸ B00CHHDY66 variedad: ya salió un «teclado y raton» de Logitech hace 2 h; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
