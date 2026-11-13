@@ -6542,6 +6542,25 @@
    "title": "Filtro de Grifo BRITA On Tap Pro V-MF con Indicador Digital",
    "manual": true,
    "brand": ""
+  },
+  {
+   "asin": "B01C4HCV58",
+   "jl_id": "",
+   "price": 17.99,
+   "reference": 29.99,
+   "t": 1794559980,
+   "url": "https://www.amazon.es/dp/B01C4HCV58?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 571,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavbP8BpF55XekRKaIT3K5NpeFkAAAvsPaxvihLlTUZF7c_-oGgEBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavbP8AcDkQauB-nYazS7_ThvtzgAAvwPaxvihLlT2PCoTmf9CTkBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Logitech MK235 Combo Teclado y Ratón Inalámbricos QWERTY Español</b>\n\n💶 PRECIO: <b>17,99€</b>\n❌ (Antes: <s>29,99€</s>)\n🔥 ¡Te ahorras <b>12€</b>! (40 % dto.)\nℹ️ Receptor USB de 2,4 GHz y 15 teclas de función\n\n🕒 Precio a las 09:51 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B01C4HCV58?tag=cazachollos0c-21\">amazon.es/dp/B01C4HCV58</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Logitech MK235 Combo Teclado y Ratón Inalámbricos QWERTY Español",
+   "manual": true,
+   "brand": "logitech"
   }
  ],
  "seen": {
@@ -20867,7 +20886,6 @@
   }
  ],
  "x_drafts": [
-  1794256273,
   1794258723,
   1794300579,
   1794301469,
@@ -20916,17 +20934,18 @@
   1794503549,
   1794519166,
   1794553500,
-  1794558270
+  1794558270,
+  1794559985
  ],
  "x_recent": [
-  "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
   "rapido",
   "regla",
-  "alguien"
+  "alguien",
+  "bot-aviso"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 116,
