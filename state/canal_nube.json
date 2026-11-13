@@ -6808,6 +6808,25 @@
    "label": "TV y sonido",
    "brand": "SteelSeries",
    "checked": 1794590695
+  },
+  {
+   "asin": "B0DT1C5FZC",
+   "jl_id": "",
+   "price": 25.12,
+   "reference": 49.9,
+   "t": 1794592206,
+   "url": "https://www.amazon.es/dp/B0DT1C5FZC?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 587,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavdN04bSU7TGcWV5ckq-IMWbLB4AAtkQaxslRLhTHd04JjUlQm0BAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavdN0-SqDjRPHQnxQCHwQCCVn-YAAtgQaxslRLhTCvLnlMROAAFbAQADAgADdwADPQQ"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Tommy Hilfiger Pack de 3 Camisetas Slim Fit de Manga Corta para Hombre</b>\n\n💶 PRECIO: <b>25,12€</b>\n❌ (Antes: <s>49,90€</s>)\n🔥 ¡Te ahorras <b>24,78€</b>! (50 % dto.)\nℹ️ Pack de 3 en azul marino · este precio es en talla S\n\n🕒 Precio a las 18:44 · puede cambiar\n\n🛒 <a href=\"https://link.amazon/B0doaLCb6\">https://link.amazon/B0doaLCb6</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Tommy Hilfiger Pack de 3 Camisetas Slim Fit de Manga Corta para Hombre",
+   "manual": true,
+   "brand": "tommy hilfiger"
   }
  ],
  "seen": {
@@ -21603,7 +21622,6 @@
   }
  ],
  "x_drafts": [
-  1794305672,
   1794313034,
   1794377562,
   1794378304,
@@ -21652,17 +21670,18 @@
   1794568046,
   1794568087,
   1794569943,
-  1794570151
+  1794570151,
+  1794592211
  ],
  "x_recent": [
-  "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
   "rapido",
   "regla",
-  "alguien"
+  "alguien",
+  "chivatazo"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 123,
