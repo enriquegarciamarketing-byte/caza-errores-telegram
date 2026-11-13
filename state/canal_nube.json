@@ -6828,6 +6828,25 @@
    "title": "Tommy Hilfiger Pack de 3 Camisetas Slim Fit de Manga Corta para Hombre",
    "manual": true,
    "brand": "tommy hilfiger"
+  },
+  {
+   "asin": "B07Q31N9D4",
+   "jl_id": "",
+   "price": 22.42,
+   "reference": 29.9,
+   "t": 1794598495,
+   "url": "https://www.amazon.es/dp/B07Q31N9D4?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 588,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavdmZCClYfUCmJyXMp7xvYQpu6IAAjERaxslRLhTrcdSBsRKanwBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavdmZL12pdNWNYhlwRhXBCYZYmMAAjARaxslRLhTk_tzRnxdu-EBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Proteína Whey Healthy Fusion con Colágeno y Magnesio sabor Chocolate 1 kg</b>\n\n💶 PRECIO: <b>22,42€</b>\n❌ (Antes: <s>29,90€</s>)\n🔥 ¡Te ahorras <b>7,48€</b>! (25 % dto.)\n⚡ Black Friday anticipado\nℹ️ Con Suscríbete y ahorra baja a 20,18€\nℹ️ Mismo precio en Caramelo y Doble Chocolate\n\n🕒 Precio a las 20:34 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B07Q31N9D4?tag=cazachollos0c-21\">amazon.es/dp/B07Q31N9D4</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Proteína Whey Healthy Fusion con Colágeno y Magnesio sabor Chocolate 1 kg",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -21677,7 +21696,6 @@
   }
  ],
  "x_drafts": [
-  1794313034,
   1794377562,
   1794378304,
   1794381174,
@@ -21726,17 +21744,18 @@
   1794568087,
   1794569943,
   1794570151,
-  1794592211
+  1794592211,
+  1794598501
  ],
  "x_recent": [
-  "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
   "rapido",
   "regla",
-  "alguien"
+  "alguien",
+  "bot-aviso"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 50,
