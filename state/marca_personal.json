@@ -90,6 +90,11 @@
    "t": 1794598201,
    "slot": "tarde",
    "topic": "Tu día a día"
+  },
+  {
+   "t": 1794648069,
+   "slot": "manana",
+   "topic": "El bot por dentro"
   }
  ]
 }
