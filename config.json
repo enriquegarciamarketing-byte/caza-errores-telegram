@@ -1381,6 +1381,8 @@
     "api_reglas": {"enabled": true, "min_ahorro_busqueda": 25, "min_ahorro_busqueda_relajado": 25, "solo_marca": true},
     "_nota_hora": "Desde el 11/11/2026 cada hora sale algo sí o sí (de 7:00 al cierre). A los hora_garantizada_minutos sin publicar sale el mejor chollo que cumpla la calidad aunque repita tipo o marca de hoy; nunca un producto ya publicado ni casi el mismo (misma marca y tipo en misma_familia_dias). La cola vale hasta backlog_urgent_max_minutes si la API de Amazon reconfirma el precio. Si a los aviso_silencio_minutos sigue sin salir nada, te avisa por privado.",
     "hora_garantizada_minutos": 45,
+    "_nota_ultimo_recurso": "14/11/2026: con la hora garantizada solo cuentan como familia (misma marca y tipo) los posts de hoy, así lo de ayer no bloquea la apertura de las 7:00. Y si pasan hora_garantizada_minutos + ultimo_recurso_minutos sin post, la familia deja de contar: sale el mejor chollo que cumpla la calidad (nunca el mismo producto).",
+    "ultimo_recurso_minutos": 15,
     "backlog_urgent_max_minutes": 180,
     "aviso_silencio_minutos": 75,
     "fallback_min_discount_top": 30,

@@ -982,7 +982,8 @@ def times_today(state: dict, deal: dict, now: datetime) -> int:
     return count
 
 
-def variety_reason(state: dict, deal: dict, now: datetime, rules: dict, urgent: bool = False) -> str:
+def variety_reason(state: dict, deal: dict, now: datetime, rules: dict, urgent: bool = False,
+                   family_from: float = 0.0, last_resort: bool = False) -> str:
     """Motivo para no publicar ahora por repetir tipo de producto o marca; vacío si se puede.
 
     11/11/2026: el canal se llenó de auriculares Sony. Ahora, además de no repetir tipo seguido:
@@ -1030,13 +1031,18 @@ def variety_reason(state: dict, deal: dict, now: datetime, rules: dict, urgent: 
         # «misma_familia_horas_urgente» horas. Con 3 días, toda la cola (Ring, Braun, Lefant, Ninja...) quedaba
         # bloqueada y el canal pasó más de 5 h sin publicar. Nunca repite el mismo producto (eso va aparte).
         family_days = min(family_days, float(conf.get("misma_familia_horas_urgente", 24)) / 24)
+    if last_resort:
+        # 14/11/2026: a las 7:00 la cola entera (Ring, Braun, Logitech) seguía bloqueada por posts de ayer y el canal
+        # no publicó nada hasta casi las 9. Si la hora garantizada lleva ya un rato sin poder sacar nada, la familia
+        # deja de contar: sale el mejor chollo (nunca el mismo producto, eso lo vigila recently_posted aparte).
+        family_days = 0
     if brand and kind and family_days > 0:
         # Dos monitores Lenovo Legion (27" y 24"), el Lefant M330 Pro y luego el M330 Plus, el Roborock Saros 20
         # y el Saros Z70...: misma marca y mismo tipo de producto es casi el mismo chollo. Espera unos días.
         for post in reversed(posts):
             ago = now.timestamp() - (post.get("t") or 0)
-            if ago >= family_days * 86400:
-                break
+            if ago >= family_days * 86400 or (urgent and (post.get("t") or 0) < family_from):
+                break  # con la hora garantizada solo cuentan los posts de hoy (desde la apertura de las 7:00)
             if brand_of(post) == brand and product_kind(post.get("title") or "") == kind:
                 when = f"hace {int(ago // 3600)} h" if ago < 86400 else f"hace {ago / 86400:.0f} días"
                 return f"variedad: ya salió un «{kind}» de {brand.title()} {when}"
@@ -1758,6 +1764,8 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
                 f"-{(rules.get('interest') or {}).get('any_category_fallback_min_discount', '—')} % en cualquier categoría "
                 f"y -{rules.get('fallback_min_discount')} % en el resto de las top.")
     urgent = False
+    last_resort = False
+    family_from = 0.0
     hour_limit = float(rules.get("hora_garantizada_minutos") or 0) * 60
     if hour_limit and not args.test_private:
         last = max([p.get("t") or 0 for p in state.get("posts") or [] if not p.get("manual")] or [0])
@@ -1767,6 +1775,10 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         urgent = now.timestamp() - max(last, opened) >= hour_limit or (last < opened <= now.timestamp())
         if urgent:
             relaxed = True
+            family_from = opened
+            # Último recurso: «ultimo_recurso_minutos» después de la hora garantizada sin post, ni la familia bloquea.
+            last_resort = (now.timestamp() - max(last, opened)
+                           >= hour_limit + float(rules.get("ultimo_recurso_minutos", 15)) * 60)
             log(f"Hora garantizada: {int((now.timestamp() - last) // 60)} min sin publicar. Sale el mejor chollo "
                 f"que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).")
             silence_alert(tg, state, now, rules, log, dry)
@@ -1780,7 +1792,8 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         # Variedad: primero lo que no repite tipo de producto reciente y, después, lo que no repite la
         # categoría del último post (3 robots seguidos no; dos monitores seguidos tampoco).
         approved.sort(key=lambda pair: (bool(variety_reason(state, pair[1], now, rules)),
-                                        bool(variety_reason(state, pair[1], now, rules, urgent=True)),
+                                        bool(variety_reason(state, pair[1], now, rules, urgent=True,
+                                                             family_from=family_from, last_resort=last_resort)),
                                         times_today(state, pair[1], now),
                                         bool(last_label) and pair[1].get("interest_label") == last_label))
     limit = int(rules["test_private_posts"] if args.test_private else rules["max_per_run"])
@@ -1808,7 +1821,8 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
             log(f"  ✗ {deal['asin']} el mismo producto acaba de salir en esta pasada")  # p. ej. dos ASIN del mismo Sony
             continue
         if not args.test_private:
-            why = variety_reason(state, deal, now, rules, urgent=urgent)
+            why = variety_reason(state, deal, now, rules, urgent=urgent, family_from=family_from,
+                                 last_resort=last_resort)
             if why:
                 log(f"  ⏸ {deal['asin']} {why}; espera en la cola")  # sigue en el backlog para más tarde
                 continue

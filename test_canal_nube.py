@@ -949,6 +949,19 @@ class HoraGarantizadaYGustos(unittest.TestCase):
         near = {"title": "Lefant M330 Plus Robot Aspirador", "brand": "Lefant"}
         self.assertIn("Lefant", cn.variety_reason(state, near, NOW, REAL, urgent=True))
 
+    def test_apertura_no_la_bloquean_los_posts_de_ayer(self):
+        # 14/11/2026: a las 7:00 Ring, Braun y Logitech esperaban por posts de la tarde anterior.
+        t = int(NOW.timestamp())
+        state = {"posts": [{"t": t - 19 * 3600, "title": "Ring cámara Pro con luces y batería", "brand": "Ring"}]}
+        deal = {"title": "Ring Videotimbre Pro cámara con batería", "brand": "Ring"}
+        self.assertIn("Ring", cn.variety_reason(state, deal, NOW, REAL, urgent=True))
+        self.assertEqual(cn.variety_reason(state, deal, NOW, REAL, urgent=True, family_from=t - 3600), "")
+        # Último recurso: ni siquiera la familia de hoy bloquea, pero el resto de reglas sigue.
+        state["posts"][0]["t"] = t - 2 * 3600
+        self.assertIn("Ring", cn.variety_reason(state, deal, NOW, REAL, urgent=True, family_from=t - 3 * 3600))
+        self.assertEqual(cn.variety_reason(state, deal, NOW, REAL, urgent=True, family_from=t - 3 * 3600,
+                                           last_resort=True), "")
+
     def test_nunca_repite_producto_aunque_baje(self):
         state = {"posts": [{"asin": "B0BTDT8V59", "price": 67.0, "t": int(NOW.timestamp()) - 20 * 86400,
                             "title": "Sony WH-CH720N Auriculares Inalámbricos"}]}
