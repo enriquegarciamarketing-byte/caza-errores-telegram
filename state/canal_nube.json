@@ -6583,7 +6583,7 @@
    ],
    "label": "Droguería y limpieza",
    "brand": "Finish",
-   "checked": 1794728711
+   "checked": 1794732259
   },
   {
    "asin": "B0F1G5849S",
@@ -6603,7 +6603,7 @@
    ],
    "label": "",
    "brand": "Cecotec",
-   "checked": 1794728711
+   "checked": 1794731899
   },
   {
    "asin": "B07VF1HBVK",
@@ -6731,7 +6731,7 @@
    "slides": [],
    "label": "Hogar inteligente",
    "brand": "Ring",
-   "checked": 1794728951
+   "checked": 1794732139
   },
   {
    "asin": "B01LXWYSOO",
@@ -6751,7 +6751,7 @@
    ],
    "label": "Electrodomésticos",
    "brand": "Teka",
-   "checked": 1794728831
+   "checked": 1794732019
   },
   {
    "asin": "B0HM7BV51S",
@@ -6768,7 +6768,7 @@
    "slides": [],
    "label": "",
    "brand": "Ring",
-   "checked": 1794728831
+   "checked": 1794732139
   },
   {
    "asin": "B0BPZYCFPZ",
@@ -6809,7 +6809,7 @@
    ],
    "label": "TV y sonido",
    "brand": "SteelSeries",
-   "checked": 1794728951
+   "checked": 1794732259
   },
   {
    "asin": "B0DT1C5FZC",
@@ -6867,7 +6867,7 @@
    ],
    "label": "Aspiradoras",
    "brand": "Lefant",
-   "checked": 1794728711
+   "checked": 1794732019
   },
   {
    "asin": "B0B3JBYXG8",
@@ -6887,7 +6887,7 @@
    ],
    "label": "Cuidado personal",
    "brand": "Braun",
-   "checked": 1794728831
+   "checked": 1794732139
   },
   {
    "asin": "B07CGPZ3ZQ",
@@ -6907,7 +6907,7 @@
    ],
    "label": "Informática",
    "brand": "Logitech G",
-   "checked": 1794728951
+   "checked": 1794732259
   },
   {
    "asin": "B0B2BNM4PV",
@@ -6927,7 +6927,7 @@
    ],
    "label": "Hogar inteligente",
    "brand": "Ring",
-   "checked": 1794728591
+   "checked": 1794731899
   },
   {
    "asin": "B00CHHDY66",
@@ -6947,7 +6947,7 @@
    ],
    "label": "Informática",
    "brand": "Logitech",
-   "checked": 1794728591
+   "checked": 1794731899
   },
   {
    "asin": "B0GGZB83YP",
@@ -6988,7 +6988,7 @@
    ],
    "label": "Cuidado personal",
    "brand": "Braun",
-   "checked": 1794728951
+   "checked": 1794732259
   },
   {
    "asin": "B09DRCXV4C",
@@ -7008,7 +7008,7 @@
    ],
    "label": "Cámaras y drones",
    "brand": "Ring",
-   "checked": 1794728831
+   "checked": 1794732139
   },
   {
    "asin": "B0CRM5LQZN",
@@ -7046,7 +7046,7 @@
    "slides": [],
    "label": "Hogar inteligente",
    "brand": "Ring",
-   "checked": 1794728591
+   "checked": 1794731899
   },
   {
    "asin": "B0GKP7R5P6",
@@ -7066,7 +7066,27 @@
    ],
    "label": "Clima",
    "brand": "SwitchBot",
-   "checked": 1794728711
+   "checked": 1794732019
+  },
+  {
+   "asin": "B07W6FQ658",
+   "jl_id": "amz-B07W6FQ658",
+   "price": 65.99,
+   "reference": 129.99,
+   "t": 1794729139,
+   "url": "https://www.amazon.es/dp/B07W6FQ658?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 604,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Logitech G G733 Lightspeed Auriculares Inalámbricos con Micrófono</b>\n\n💶 PRECIO: <b>65,99€</b>\n❌ (Antes: <s>129,99€</s>)\n🔥 ¡Te ahorras <b>64€</b>! (49 % dto.)\n⚡ Black Friday anticipado\n\n🕒 Precio a las 08:52 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B07W6FQ658?tag=cazachollos0c-21\">amazon.es/dp/B07W6FQ658</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Logitech G G733 Lightspeed Auriculares Inalámbricos con Micrófono - Blanco | Auriculares Inalámbricos gamer con micrófono, LIGHTSYNC RGB, Bl",
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavlk7Cv410cXgL1gNUlwQsgKPc4AAmkQaxtUNMlTzVDXL0Uk3k4BAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavlk7I8VwAuyeSJRj45WTFKWb2kAAmoQaxtUNMlT75K-XpQmNrABAAMCAAN3AAM9BA"
+   ],
+   "label": "TV y sonido",
+   "brand": "Logitech G",
+   "checked": 1794732019
   }
  ],
  "seen": {
@@ -21058,7 +21078,7 @@
    "price": 113.0
   },
   "amz-B0F4JZNGT8": {
-   "t": 1794728351,
+   "t": 1794732019,
    "why": "solo -4% frente a su precio mediano de los 90 días (209,00 €)",
    "price": 199.99
   },
@@ -21078,12 +21098,12 @@
    "price": 249.0
   },
   "amz-B0B3JJH9YW": {
-   "t": 1794728351,
+   "t": 1794732019,
    "why": "solo -39% frente a su PVP recomendado (79,90 €)",
    "price": 49.06
   },
   "amz-B0FXXQJP38": {
-   "t": 1794728231,
+   "t": 1794732019,
    "why": "solo -23% frente a su precio mediano de los 90 días (44,50 €)",
    "price": 34.22
   },
@@ -21103,7 +21123,7 @@
    "price": 149.79
   },
   "amz-B08DL4GQMG": {
-   "t": 1794728351,
+   "t": 1794732019,
    "why": "solo -15% frente a su precio mediano de los 90 días (408,63 €)",
    "price": 346.17
   },
@@ -21118,12 +21138,12 @@
    "price": 299.0
   },
   "amz-B0BPYVJ7YD": {
-   "t": 1794728351,
+   "t": 1794732139,
    "why": "solo -21% frente a su PVP recomendado (379,90 €)",
    "price": 299.0
   },
   "amz-B08PVDQFQQ": {
-   "t": 1794728351,
+   "t": 1794732019,
    "why": "solo -26% frente a su PVP recomendado (39,90 €)",
    "price": 29.56
   },
@@ -21158,12 +21178,12 @@
    "price": 199.95
   },
   "amz-B0F7M3YLVS": {
-   "t": 1794728471,
+   "t": 1794732139,
    "why": "solo -33% frente a su PVP recomendado (299,95 €)",
    "price": 199.95
   },
   "amz-B0FGYFDPNP": {
-   "t": 1794728471,
+   "t": 1794732139,
    "why": "solo -21% frente a su precio mediano de los 90 días (254,00 €)",
    "price": 199.95
   },
@@ -21173,7 +21193,7 @@
    "price": 109.95
   },
   "amz-B0F8NVC66B": {
-   "t": 1794728591,
+   "t": 1794732259,
    "why": "solo -39% frente a su PVP recomendado (179,00 €)",
    "price": 109.0
   },
@@ -21193,7 +21213,7 @@
    "price": 26.66
   },
   "amz-B0FCSVV6X7": {
-   "t": 1794728591,
+   "t": 1794732259,
    "why": "solo -3% frente a su precio mediano de los 90 días (57,90 €)",
    "price": 56.14
   },
@@ -21263,12 +21283,12 @@
    "price": 179.0
   },
   "amz-B09LD46DWY": {
-   "t": 1794728351,
+   "t": 1794732019,
    "why": "solo -38% frente a su PVP recomendado (64,99 €)",
    "price": 40.48
   },
   "amz-B0F8QFTXW9": {
-   "t": 1794728471,
+   "t": 1794732139,
    "why": "solo -18% frente a su PVP recomendado (329,00 €)",
    "price": 269.0
   },
@@ -21298,7 +21318,7 @@
    "price": 17.99
   },
   "amz-B0797LMGXH": {
-   "t": 1794728231,
+   "t": 1794732019,
    "why": "solo -33% frente a su PVP recomendado (59,99 €)",
    "price": 39.99
   },
@@ -21323,7 +21343,7 @@
    "price": 12.06
   },
   "amz-B0FHL7TPXC": {
-   "t": 1794728471,
+   "t": 1794732259,
    "why": "solo -8% frente a su PVP recomendado (1.299,00 €)",
    "price": 1199.0
   },
@@ -21333,7 +21353,7 @@
    "price": 22.99
   },
   "amz-B0FLXT2KW1": {
-   "t": 1794728351,
+   "t": 1794732139,
    "why": "solo -9% frente a su precio mediano de los 90 días (611,53 €)",
    "price": 559.3
   },
@@ -21368,7 +21388,7 @@
    "price": 75.9
   },
   "amz-B0D983F79F": {
-   "t": 1794728111,
+   "t": 1794731779,
    "why": "solo -43% frente a su PVP recomendado (39,99 €)",
    "price": 22.86
   },
@@ -21378,7 +21398,7 @@
    "price": 109.99
   },
   "amz-B0BPZTWHH4": {
-   "t": 1794728351,
+   "t": 1794732019,
    "why": "solo -22% frente a su precio mediano de los 90 días (24,70 €)",
    "price": 19.2
   },
@@ -21428,7 +21448,7 @@
    "price": 7.87
   },
   "amz-B0BPZNF3LR": {
-   "t": 1794728111,
+   "t": 1794731779,
    "why": "solo -38% frente a su PVP recomendado (41,50 €)",
    "price": 25.73
   },
@@ -21463,7 +21483,7 @@
    "price": 12.92
   },
   "amz-B0BPYWQTLV": {
-   "t": 1794728351,
+   "t": 1794732139,
    "why": "solo -26% frente a su PVP recomendado (649,00 €)",
    "price": 479.0
   },
@@ -21478,12 +21498,12 @@
    "price": 18.99
   },
   "amz-B0FMGKKVW4": {
-   "t": 1794728111,
+   "t": 1794731779,
    "why": "solo -30% frente a su PVP recomendado (99,99 €)",
    "price": 69.99
   },
   "amz-B0DXKM74RR": {
-   "t": 1794728111,
+   "t": 1794731779,
    "why": "solo -30% frente a su PVP recomendado (199,99 €)",
    "price": 139.0
   },
@@ -21503,7 +21523,7 @@
    "price": 70.28
   },
   "amz-B0F63WRQCX": {
-   "t": 1794677890,
+   "t": 1794732259,
    "why": "marca poco conocida (GXTrust): su precio anterior no es fiable",
    "price": 15.09
   },
@@ -21513,7 +21533,7 @@
    "price": 119.99
   },
   "amz-B0C9DX9PJL": {
-   "t": 1794728831,
+   "t": 1794731299,
    "why": "solo -37% frente a su PVP recomendado (26,99 €)",
    "price": 17.0
   },
@@ -21523,7 +21543,7 @@
    "price": 48.99
   },
   "amz-B07JLFJKPQ": {
-   "t": 1794728951,
+   "t": 1794731539,
    "why": "solo -26% frente a su PVP recomendado (62,99 €)",
    "price": 46.62
   },
@@ -21558,7 +21578,7 @@
    "price": 45.69
   },
   "amz-B0FPXBMXFN": {
-   "t": 1794728231,
+   "t": 1794731899,
    "why": "solo -25% frente a su PVP recomendado (79,99 €)",
    "price": 59.99
   },
@@ -21568,7 +21588,7 @@
    "price": 349.0
   },
   "amz-B0F1CZVLK6": {
-   "t": 1794728351,
+   "t": 1794732139,
    "why": "solo -17% frente a su PVP recomendado (359,00 €)",
    "price": 299.0
   },
@@ -21613,7 +21633,7 @@
    "price": 23.4
   },
   "amz-B0FHKYBPS1": {
-   "t": 1794728591,
+   "t": 1794732259,
    "why": "solo -16% frente a su mínimo de los 30 días anteriores (635,38 €)",
    "price": 534.29
   },
@@ -21683,7 +21703,7 @@
    "price": 89.93
   },
   "amz-B08PC3H4WR": {
-   "t": 1794728351,
+   "t": 1794732139,
    "why": "solo -22% frente a su PVP recomendado (101,90 €)",
    "price": 79.9
   },
@@ -21763,7 +21783,7 @@
    "price": 137.09
   },
   "amz-B0DRNSG1JX": {
-   "t": 1794728351,
+   "t": 1794732139,
    "why": "solo -10% frente a su precio mediano de los 90 días (128,99 €)",
    "price": 116.0
   },
@@ -21798,7 +21818,7 @@
    "price": 99.99
   },
   "amz-B00M8YHBGM": {
-   "t": 1794728111,
+   "t": 1794731779,
    "why": "solo -23% frente a su PVP recomendado (50,96 €)",
    "price": 39.0
   },
@@ -21813,7 +21833,7 @@
    "price": 109.99
   },
   "amz-B0GGRRTLFR": {
-   "t": 1794728351,
+   "t": 1794732019,
    "why": "solo -26% frente a su precio mediano de los 90 días (79,90 €)",
    "price": 58.8
   },
@@ -21883,12 +21903,12 @@
    "price": 31.9
   },
   "amz-B0FDKQZ18F": {
-   "t": 1794728471,
+   "t": 1794732139,
    "why": "solo -33% frente a su PVP recomendado (449,95 €)",
    "price": 299.99
   },
   "amz-B0GTRPVDL7": {
-   "t": 1794728471,
+   "t": 1794732139,
    "why": "solo -3% frente a su precio mediano de los 90 días (348,99 €)",
    "price": 339.0
   },
@@ -21983,7 +22003,7 @@
    "price": 146.25
   },
   "amz-B0DMWH4VQJ": {
-   "t": 1794728351,
+   "t": 1794732139,
    "why": "solo -10% frente a su PVP recomendado (394,99 €)",
    "price": 357.0
   },
@@ -21993,7 +22013,7 @@
    "price": 129.0
   },
   "amz-B0GTRQNMS6": {
-   "t": 1794728471,
+   "t": 1794732139,
    "why": "solo -4% frente a su precio mediano de los 90 días (1.039,00 €)",
    "price": 999.0
   },
@@ -22008,12 +22028,12 @@
    "price": 10.99
   },
   "amz-B08NCL135Q": {
-   "t": 1794728591,
+   "t": 1794732259,
    "why": "solo -12% frente a su PVP recomendado (454,99 €)",
    "price": 398.34
   },
   "amz-B09B83Y8S1": {
-   "t": 1794728951,
+   "t": 1794731419,
    "why": "solo -22% frente a su precio mediano de los 90 días (134,00 €)",
    "price": 104.99
   },
@@ -22056,13 +22076,17 @@
    "t": 1794727151,
    "why": "marca poco conocida (BRA): su precio anterior no es fiable",
    "price": 21.9
+  },
+  "amz-B0DT4R1N9N": {
+   "t": 1794732259,
+   "why": "solo -34% frente a su PVP recomendado (179,00 €)",
+   "price": 119.0
   }
  },
  "summary_sent": "2026-11-14",
  "rotation": 3103,
  "backlog": [],
  "x_drafts": [
-  1794377562,
   1794378304,
   1794381174,
   1794387510,
@@ -22111,22 +22135,23 @@
   1794569943,
   1794570151,
   1794592211,
-  1794598501
+  1794598501,
+  1794729197
  ],
  "x_recent": [
-  "comprado",
   "cartera",
   "cabeza",
   "black-friday",
   "momento",
   "rapido",
   "regla",
-  "alguien"
+  "alguien",
+  "chivatazo"
  ],
  "jl_paused_until": 1794513122.695286,
- "amazon_search_index": 170,
+ "amazon_search_index": 90,
  "api_calls": {
-  "2026-11-15": 1344
+  "2026-11-15": 1668
  },
  "price_history": {
   "B0CRTYZG5C": [
@@ -22469,7 +22494,7 @@
    [
     20261115,
     41.5,
-    42.0
+    42.3
    ]
   ],
   "B0DBLN4C47": [
@@ -22729,7 +22754,7 @@
    ],
    [
     20261115,
-    545.0,
+    520.83,
     545.0
    ]
   ],
@@ -22886,6 +22911,11 @@
    [
     20261114,
     179.48,
+    202.0
+   ],
+   [
+    20261115,
+    202.0,
     202.0
    ]
   ],
@@ -23212,7 +23242,7 @@
    ],
    [
     20261115,
-    304.51,
+    301.46,
     304.51
    ]
   ],
@@ -24605,7 +24635,7 @@
    ],
    [
     20261115,
-    241.0,
+    237.3,
     241.0
    ]
   ],
@@ -35150,6 +35180,11 @@
     20261114,
     22.99,
     22.99
+   ],
+   [
+    20261115,
+    22.99,
+    22.99
    ]
   ],
   "B07L3DG8DK": [
@@ -35911,6 +35946,11 @@
    ],
    [
     20261114,
+    21.66,
+    21.66
+   ],
+   [
+    20261115,
     21.66,
     21.66
    ]
@@ -39406,7 +39446,7 @@
    [
     20261115,
     42.82,
-    42.82
+    54.9
    ]
   ],
   "B085NLKB1X": [
@@ -39806,6 +39846,11 @@
     20261113,
     89.99,
     89.99
+   ],
+   [
+    20261115,
+    89.99,
+    89.99
    ]
   ],
   "B0D9PQD5V4": [
@@ -39999,6 +40044,11 @@
     20261114,
     98.24,
     99.25
+   ],
+   [
+    20261115,
+    98.24,
+    98.24
    ]
   ],
   "B0FDKTQ17D": [
@@ -44099,6 +44149,11 @@
     20261114,
     217.44,
     217.44
+   ],
+   [
+    20261115,
+    217.44,
+    217.44
    ]
   ],
   "B0DXFY3QPG": [
@@ -44951,6 +45006,11 @@
    ],
    [
     20261113,
+    263.36,
+    263.36
+   ],
+   [
+    20261115,
     263.36,
     263.36
    ]
@@ -50916,7 +50976,7 @@
    [
     20261115,
     36.31,
-    36.31
+    36.34
    ]
   ],
   "B0FTFWWRXT": [
@@ -52634,7 +52694,7 @@
    [
     20261115,
     214.82,
-    228.98
+    236.07
    ]
   ],
   "B0DBJ5PBLT": [
@@ -57965,7 +58025,7 @@
    ],
    [
     20261115,
-    164.01,
+    162.36,
     164.01
    ]
   ],
@@ -59080,6 +59140,11 @@
    ],
    [
     20261114,
+    15.1,
+    15.1
+   ],
+   [
+    20261115,
     15.1,
     15.1
    ]
@@ -60423,7 +60488,7 @@
    ],
    [
     20261115,
-    447.95,
+    399.0,
     447.95
    ]
   ],
@@ -62133,7 +62198,7 @@
    ],
    [
     20261115,
-    32.83,
+    31.53,
     32.83
    ]
   ],
@@ -63884,6 +63949,11 @@
     20261113,
     99.0,
     99.0
+   ],
+   [
+    20261115,
+    140.0,
+    140.0
    ]
   ],
   "B0D5PP1W71": [
@@ -68291,6 +68361,11 @@
     20261114,
     30.0,
     30.0
+   ],
+   [
+    20261115,
+    30.0,
+    30.0
    ]
   ],
   "B0DHGC791H": [
@@ -68624,6 +68699,11 @@
    ],
    [
     20261114,
+    61.03,
+    61.03
+   ],
+   [
+    20261115,
     61.03,
     61.03
    ]
@@ -70829,6 +70909,11 @@
     20261112,
     59.99,
     59.99
+   ],
+   [
+    20261115,
+    59.99,
+    59.99
    ]
   ],
   "B0G5898MQZ": [
@@ -72215,6 +72300,11 @@
    ],
    [
     20261114,
+    35.79,
+    35.79
+   ],
+   [
+    20261115,
     35.79,
     35.79
    ]
@@ -74727,7 +74817,7 @@
    [
     20261115,
     184.0,
-    184.0
+    184.05
    ]
   ],
   "B0FR9RDDFF": [
@@ -77572,6 +77662,11 @@
     20261114,
     42.57,
     42.57
+   ],
+   [
+    20261115,
+    42.57,
+    42.57
    ]
   ],
   "B0HMQR2Z44": [
@@ -79822,6 +79917,11 @@
     20261114,
     59.9,
     59.9
+   ],
+   [
+    20261115,
+    59.9,
+    59.9
    ]
   ],
   "B0DNT34JTP": [
@@ -81616,7 +81716,7 @@
    [
     20261115,
     103.82,
-    103.85
+    103.87
    ]
   ],
   "B00UG59I5C": [
@@ -81677,7 +81777,7 @@
    [
     20261115,
     87.03,
-    87.06
+    87.07
    ]
   ],
   "B003AJE4S2": [
@@ -88606,6 +88706,11 @@
     20261114,
     110.3,
     110.3
+   ],
+   [
+    20261115,
+    110.3,
+    110.3
    ]
   ],
   "B0H762Z6QD": [
@@ -91208,7 +91313,7 @@
    ],
    [
     20261115,
-    443.35,
+    441.71,
     446.92
    ]
   ],
@@ -91427,6 +91532,11 @@
    ],
    [
     20261114,
+    15.09,
+    15.09
+   ],
+   [
+    20261115,
     15.09,
     15.09
    ]
@@ -93103,6 +93213,11 @@
     20261114,
     96.99,
     96.99
+   ],
+   [
+    20261115,
+    96.99,
+    96.99
    ]
   ],
   "B0HHSJ75G5": [
@@ -93993,7 +94108,7 @@
    ],
    [
     20261115,
-    151.55,
+    144.38,
     151.55
    ]
   ],
@@ -94446,9 +94561,51 @@
     83.86,
     83.86
    ]
+  ],
+  "B07W6FQ658": [
+   [
+    20261115,
+    65.99,
+    65.99
+   ]
+  ],
+  "B0HCHZ8TWR": [
+   [
+    20261115,
+    54.29,
+    54.29
+   ]
+  ],
+  "B0DT4R1N9N": [
+   [
+    20261115,
+    119.0,
+    119.0
+   ]
+  ],
+  "B0CXHZ9V2Q": [
+   [
+    20261115,
+    39.99,
+    39.99
+   ]
+  ],
+  "B005M0K8ZU": [
+   [
+    20261115,
+    125.1,
+    125.1
+   ]
+  ],
+  "B085NLT2V8": [
+   [
+    20261115,
+    33.0,
+    33.0
+   ]
   ]
  },
  "api_error": "HTTP 429 en searchItems: {\"message\":\"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates\",\"type\":\"ThrottleException\"}",
- "amazon_search_lap": 114,
+ "amazon_search_lap": 116,
  "silence_alert_t": 1794726911
 }
