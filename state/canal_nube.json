@@ -6948,7 +6948,7 @@
    ],
    "label": "Informática",
    "brand": "Logitech",
-   "checked": 1794783557
+   "checked": 1794784746
   },
   {
    "asin": "B0GGZB83YP",
@@ -7009,7 +7009,7 @@
    ],
    "label": "Cámaras y drones",
    "brand": "Ring",
-   "checked": 1794783005
+   "checked": 1794784746
   },
   {
    "asin": "B0CRM5LQZN",
@@ -7047,7 +7047,8 @@
    "slides": [],
    "label": "Hogar inteligente",
    "brand": "Ring",
-   "checked": 1794783005
+   "checked": 1794784746,
+   "ended": 1794784746
   },
   {
    "asin": "B0GKP7R5P6",
@@ -7128,7 +7129,7 @@
    ],
    "label": "Aspiradoras",
    "brand": "roborock",
-   "checked": 1794783005
+   "checked": 1794784746
   }
  ],
  "seen": {
