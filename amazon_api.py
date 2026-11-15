@@ -12,6 +12,7 @@ en vez de publicarlo con datos dudosos.
 
 from __future__ import annotations
 
+import http.client
 import json
 import os
 import time
@@ -76,7 +77,8 @@ class CreatorsAPI:
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", "replace")[:300]
             raise ApiError(f"HTTP {exc.code} en {url.rsplit('/', 1)[-1]}: {detail}") from None
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        except (OSError, http.client.HTTPException, json.JSONDecodeError) as exc:
+            # OSError cubre URLError, timeouts y «Remote end closed connection» (15/11 tumbó una pasada entera)
             raise ApiError(f"Fallo de conexión con la Creators API: {exc}") from None
 
     def _auth(self) -> str:

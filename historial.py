@@ -81,20 +81,30 @@ def summary(asin: str, now: datetime, *hists: dict) -> dict:
         return {"days": 0}
     lows = [r[1] for r in rows]
     recent = [r[1] for r in rows if _age_days(r[0], now) <= 7]
+    highs7 = [r[2] for r in rows if _age_days(r[0], now) <= 7]
     return {"days": len(rows), "min": min(lows), "usual": round(statistics.median(lows), 2),
-            "min_7": min(recent) if recent else None, "first_day": rows[0][0]}
+            "min_7": min(recent) if recent else None, "max_7": max(highs7) if highs7 else None,
+            "first_day": rows[0][0]}
 
 
 def check(asin: str, price: float, claimed_ref: float | None, now: datetime, *hists: dict,
-          min_drop_pct: float = 0) -> tuple[float | None, str, dict]:
+          min_drop_pct: float = 0, estable_ok: bool = False) -> tuple[float | None, str, dict]:
     """(referencia honesta o None, motivo de descarte o "", resumen).
 
-    Sin historial suficiente devuelve (None, "", resumen) y cada canal decide qué hacer."""
+    Sin historial suficiente devuelve (None, "", resumen) y cada canal decide qué hacer.
+
+    `estable_ok` (free, marcas conocidas, 15/11/2026): si el precio lleva días estable en su mínimo y nunca
+    lo hemos visto subir (sin el truco de subir y bajar), no se descarta por «no es ninguna bajada»: el
+    historial propio solo tiene unos días y frenaba todas las ofertas que Amazon mantiene más de 3 días.
+    Devuelve (None, "", resumen) y el canal aplica sus reglas de siempre frente al PVP."""
     info = summary(asin, now, *hists)
     if info.get("days", 0) < MIN_DAYS:
         return None, "", info
     usual, low7 = info["usual"], info.get("min_7")
     if low7 is not None and price >= low7 * 0.97:
+        high7 = info.get("max_7") or price
+        if estable_ok and price <= low7 * 1.03 and high7 < price * 1.15:
+            return None, "", info
         return None, (f"no es ninguna bajada: hace menos de una semana ya estaba a {low7:.2f} € "
                       f"(historial propio de {info['days']} días)"), info
     real_pct = (usual - price) / usual * 100 if usual > 0 else 0

@@ -1979,17 +1979,17 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
         import aprendizaje
         if aprendizaje.blocked(learning, cand):
             continue  # marca o vendedor que has rechazado varias veces en el premium
+        brand = (cand.get("brand") or "").strip()
+        trusted = {fold(b) for b in rules.get("trusted_brands") or []}
+        known = bool(brand) and (fold(brand) in trusted or any(fold(brand).startswith(t + " ") for t in trusted))
         honest, hwhy, info = historial.check(asin, float(price), float(was), now, hist, other,
-                                             min_drop_pct=min_saving)
+                                             min_drop_pct=min_saving, estable_ok=known)
         if hwhy:
             log(f"  ✗ amz-{asin} {clean_title(cand.get('title') or '', 50)}: {hwhy}")
             continue
         if honest:
             was = honest
         cand["history"] = info
-        brand = (cand.get("brand") or "").strip()
-        trusted = {fold(b) for b in rules.get("trusted_brands") or []}
-        known = bool(brand) and (fold(brand) in trusted or any(fold(brand).startswith(t + " ") for t in trusted))
         items.append({"id": f"amz-{asin}", "asin": asin, "amazon": True, "title": cand.get("title") or "",
                       "price": float(price), "was": float(was), "ts": int(now.timestamp()),
                       "brand": brand, "brand_ok": known,
