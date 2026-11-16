@@ -15,7 +15,8 @@
   ],
   "dia": [
    0,
-   1
+   1,
+   2
   ]
  },
  "log": [
@@ -118,6 +119,11 @@
    "t": 1794824649,
    "slot": "manana",
    "topic": "Ahorro y promos"
+  },
+  {
+   "t": 1794857508,
+   "slot": "tarde",
+   "topic": "Tu día a día"
   }
  ]
 }
