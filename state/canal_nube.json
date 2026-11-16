@@ -6948,7 +6948,7 @@
    ],
    "label": "Informática",
    "brand": "Logitech",
-   "checked": 1794811805
+   "checked": 1794815214
   },
   {
    "asin": "B0GGZB83YP",
@@ -6989,7 +6989,7 @@
    ],
    "label": "Cuidado personal",
    "brand": "Braun",
-   "checked": 1794811865
+   "checked": 1794815094
   },
   {
    "asin": "B09DRCXV4C",
@@ -7009,7 +7009,7 @@
    ],
    "label": "Cámaras y drones",
    "brand": "Ring",
-   "checked": 1794811805
+   "checked": 1794815094
   },
   {
    "asin": "B0CRM5LQZN",
@@ -7068,7 +7068,7 @@
    ],
    "label": "Clima",
    "brand": "SwitchBot",
-   "checked": 1794811865
+   "checked": 1794815214
   },
   {
    "asin": "B07W6FQ658",
@@ -7088,7 +7088,7 @@
    ],
    "label": "TV y sonido",
    "brand": "Logitech G",
-   "checked": 1794811865
+   "checked": 1794815214
   },
   {
    "asin": "B0CN1NFYZ6",
@@ -7129,7 +7129,7 @@
    ],
    "label": "Aspiradoras",
    "brand": "roborock",
-   "checked": 1794811805
+   "checked": 1794815094
   },
   {
    "asin": "B0GL3FXQ5B",
@@ -7149,7 +7149,7 @@
    ],
    "label": "TV y sonido",
    "brand": "JBL",
-   "checked": 1794811865
+   "checked": 1794815094
   },
   {
    "asin": "B0DBM7PY4J",
@@ -7169,7 +7169,7 @@
    ],
    "label": "Cuidado personal",
    "brand": "Oral-B",
-   "checked": 1794811745
+   "checked": 1794815214
   },
   {
    "asin": "B0D3JFVGFV",
@@ -7189,7 +7189,47 @@
    ],
    "label": "TV y sonido",
    "brand": "Beats",
-   "checked": 1794811805
+   "checked": 1794814974
+  },
+  {
+   "asin": "B07W5JKKFJ",
+   "jl_id": "amz-B07W5JKKFJ",
+   "price": 64.97,
+   "reference": 119.99,
+   "t": 1794812814,
+   "url": "https://www.amazon.es/dp/B07W5JKKFJ?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 612,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Logitech Brio 500 HD Webcam Cámara USB C</b>\n\n💶 PRECIO: <b>64,97€</b>\n❌ (Antes: <s>119,99€</s>)\n🔥 ¡Te ahorras <b>55,02€</b>! (46 % dto.)\n⚡ Black Friday anticipado · acaba el 30/11 a las 23:59\n\n🕒 Precio a las 08:06 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B07W5JKKFJ?tag=cazachollos0c-21\">amazon.es/dp/B07W5JKKFJ</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Logitech Brio 500 HD Webcam Cámara USB C, C, 4K, Grafito | webcam 4k para pc, cámara para pc, cámara usb para portátil, 1080p, webcam usb co",
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavqrr3in9nfdGSnOUHIhOhSAESMAArEQaxtUNNlTY3K_l01wRNcBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavqrr27KewmVuScScn6y4O1QgyAAArIQaxtUNNlTsc__dXVMkrkBAAMCAAN3AAM9BA"
+   ],
+   "label": "Informática",
+   "brand": "Logitech",
+   "checked": 1794814974
+  },
+  {
+   "asin": "B0CP7JSC7J",
+   "jl_id": "amz-B0CP7JSC7J",
+   "price": 28.99,
+   "reference": 49.99,
+   "t": 1794813894,
+   "url": "https://www.amazon.es/dp/B0CP7JSC7J?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 613,
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>PlayStation 5 The Last of Us: Parte II Remastered</b>\n\n💶 PRECIO: <b>28,99€</b>\n❌ (Antes: <s>49,99€</s>)\n🔥 ¡Te ahorras <b>21€</b>! (42 % dto.)\n\n🕒 Precio a las 08:06 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CP7JSC7J?tag=cazachollos0c-21\">amazon.es/dp/B0CP7JSC7J</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "PlayStation 5 The Last of Us: Parte II Remastered",
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavqv5uIY_2_GhIBzpbncNaNEU88AAsEQaxtUNNlT_aXiKTZXN_EBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavqv5oCwHpCVH7MIr9aXFnykPwkAAsAQaxtUNNlTQ1XCQVIXXNoBAAMCAAN3AAM9BA"
+   ],
+   "label": "Consolas",
+   "brand": "Playstation",
+   "checked": 1794814974
   }
  ],
  "seen": {
@@ -16511,12 +16551,12 @@
    "price": 1499.0
   },
   "amz-B0H79Q2ZKJ": {
-   "t": 1794782584,
+   "t": 1794812574,
    "why": "solo -28% frente a su PVP recomendado (219,90 €)",
    "price": 158.7
   },
   "amz-B0H79Q6WQC": {
-   "t": 1794782584,
+   "t": 1794812574,
    "why": "solo -28% frente a su PVP recomendado (219,90 €)",
    "price": 158.7
   },
@@ -16536,7 +16576,7 @@
    "price": 104.4
   },
   "amz-B0H6XTP3WL": {
-   "t": 1794782584,
+   "t": 1794812574,
    "why": "solo -30% frente a su PVP recomendado (399,90 €)",
    "price": 279.9
   },
@@ -16646,7 +16686,7 @@
    "price": 248.82
   },
   "amz-B095SYK1R9": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -10% frente a su precio mediano de los 90 días (49,99 €)",
    "price": 44.99
   },
@@ -16686,12 +16726,12 @@
    "price": 153.66
   },
   "amz-B0DGVC3DDW": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -3% frente a su precio mediano de los 90 días (273,74 €)",
    "price": 265.72
   },
   "amz-B0C1N8CWZ4": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -6% frente a su PVP recomendado (59,59 €)",
    "price": 55.99
   },
@@ -16701,9 +16741,9 @@
    "price": 39.99
   },
   "amz-B0F5QBSRDR": {
-   "t": 1794747951,
-   "why": "ya publicado hace poco y no ha bajado más",
-   "price": 22.99
+   "t": 1794812814,
+   "why": "precio fuera de rango (14.96 €)",
+   "price": 14.96
   },
   "amz-B0G26ZHPS8": {
    "t": 1794389122,
@@ -16711,7 +16751,7 @@
    "price": 33.02
   },
   "amz-B0GJTBKGDV": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -35% frente a su PVP recomendado (369,34 €)",
    "price": 239.99
   },
@@ -16721,7 +16761,7 @@
    "price": 34.42
   },
   "amz-B0CS3FD17C": {
-   "t": 1794600286,
+   "t": 1794812694,
    "why": "solo -32% frente a su PVP recomendado (65,99 €)",
    "price": 44.99
   },
@@ -16786,7 +16826,7 @@
    "price": 1113.99
   },
   "amz-B086QKXW1M": {
-   "t": 1794584428,
+   "t": 1794813894,
    "why": "ya publicado hace poco y no ha bajado más",
    "price": 99.99
   },
@@ -16926,7 +16966,7 @@
    "price": 25.46
   },
   "amz-B0D8J5CVPK": {
-   "t": 1794782944,
+   "t": 1794815214,
    "why": "solo -20% frente a su precio mediano de los 90 días (21,99 €)",
    "price": 17.62
   },
@@ -17646,8 +17686,8 @@
    "price": 28.64
   },
   "amz-B0DV96SRRF": {
-   "t": 1794512686,
-   "why": "modo listado: solo categorías top",
+   "t": 1794815214,
+   "why": "solo -8% frente a su precio mediano de los 90 días (49,00 €)",
    "price": 44.95
   },
   "amz-B005LU5G44": {
@@ -18616,7 +18656,7 @@
    "price": 65.9
   },
   "amz-B0F6LB6Y9N": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -5% frente a su precio mediano de los 90 días (36,99 €)",
    "price": 35.14
   },
@@ -18676,7 +18716,7 @@
    "price": 36.9
   },
   "amz-B0B3JBYXG8": {
-   "t": 1794782944,
+   "t": 1794815214,
    "why": "ya publicado hace poco y no ha bajado más",
    "price": 49.99
   },
@@ -18686,7 +18726,7 @@
    "price": 49.99
   },
   "amz-B0GJ4T4S7K": {
-   "t": 1794782944,
+   "t": 1794815214,
    "why": "solo -43% frente a su PVP recomendado (439,99 €)",
    "price": 249.99
   },
@@ -18901,9 +18941,9 @@
    "price": 48.99
   },
   "amz-B07W4DG81W": {
-   "t": 1794782704,
+   "t": 1794812814,
    "why": "calidad: solo -28% (mínimo -35%)",
-   "price": 170.12
+   "price": 169.99
   },
   "amz-B0GHW68JDP": {
    "t": 1794512206,
@@ -18961,7 +19001,7 @@
    "price": 51.99
   },
   "amz-B0FS781V14": {
-   "t": 1794748071,
+   "t": 1794814974,
    "why": "marca poco conocida (SwitchBot): su precio anterior no es fiable",
    "price": 63.99
   },
@@ -19011,7 +19051,7 @@
    "price": 63.79
   },
   "amz-B017AWGGL2": {
-   "t": 1794782824,
+   "t": 1794814974,
    "why": "solo -6% frente a su precio mediano de los 90 días (119,48 €)",
    "price": 112.7
   },
@@ -19026,7 +19066,7 @@
    "price": 105.0
   },
   "amz-B008LAFV32": {
-   "t": 1794782824,
+   "t": 1794814974,
    "why": "solo -9% frente a su precio mediano de los 90 días (64,95 €)",
    "price": 59.0
   },
@@ -19811,12 +19851,12 @@
    "price": 398.97
   },
   "amz-B07KXQX3S3": {
-   "t": 1794782704,
+   "t": 1794812814,
    "why": "solo -19% frente a su PVP recomendado (42,99 €)",
    "price": 34.99
   },
   "amz-B08K9SBMJR": {
-   "t": 1794782824,
+   "t": 1794812814,
    "why": "solo -13% frente a su PVP recomendado (263,99 €)",
    "price": 229.0
   },
@@ -20241,7 +20281,7 @@
    "price": 199.9
   },
   "amz-B0H4H1SZ8K": {
-   "t": 1794782584,
+   "t": 1794812574,
    "why": "solo -28% frente a su PVP recomendado (349,90 €)",
    "price": 252.6
   },
@@ -20266,17 +20306,17 @@
    "price": 249.0
   },
   "amz-B0FWCLJ51V": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -25% frente a su PVP recomendado (171,99 €)",
    "price": 129.0
   },
   "amz-B09T9P4MSL": {
-   "t": 1794782704,
-   "why": "solo -23% frente a su PVP recomendado (259,90 €)",
-   "price": 199.0
+   "t": 1794812694,
+   "why": "solo -25% frente a su PVP recomendado (259,90 €)",
+   "price": 194.99
   },
   "amz-B0G4N31XVY": {
-   "t": 1794782704,
+   "t": 1794812574,
    "why": "solo -19% frente a su precio mediano de los 90 días (129,00 €)",
    "price": 104.9
   },
@@ -20286,7 +20326,7 @@
    "price": 38.46
   },
   "amz-B0HBXCF2HS": {
-   "t": 1794782584,
+   "t": 1794812574,
    "why": "solo -9% frente a su precio mediano de los 90 días (1.099,00 €)",
    "price": 999.0
   },
@@ -20321,7 +20361,7 @@
    "price": 18.51
   },
   "amz-B07QBNYJ6X": {
-   "t": 1794782704,
+   "t": 1794812814,
    "why": "solo -38% frente a su PVP recomendado (36,99 €)",
    "price": 22.9
   },
@@ -20336,7 +20376,7 @@
    "price": 75.0
   },
   "amz-B0DFQ9S6KS": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -12% frente a su PVP recomendado (89,99 €)",
    "price": 78.98
   },
@@ -20426,7 +20466,7 @@
    "price": 119.99
   },
   "amz-B0HDCKCY39": {
-   "t": 1794521498,
+   "t": 1794813894,
    "why": "solo -25% frente a su mínimo de los 30 días anteriores (199,99 €)",
    "price": 149.99
   },
@@ -20501,7 +20541,7 @@
    "price": 49.99
   },
   "amz-B07BRS1KXS": {
-   "t": 1794782824,
+   "t": 1794814974,
    "why": "solo -20% frente a su PVP recomendado (85,91 €)",
    "price": 69.0
   },
@@ -20516,7 +20556,7 @@
    "price": 32.99
   },
   "amz-B07RB6CQVS": {
-   "t": 1794782824,
+   "t": 1794814974,
    "why": "solo -7% frente a su precio mediano de los 90 días (204,23 €)",
    "price": 189.0
   },
@@ -20546,7 +20586,7 @@
    "price": 34.18
   },
   "amz-B0BHJFV7DF": {
-   "t": 1794782944,
+   "t": 1794815094,
    "why": "solo -41% frente a su PVP recomendado (497,90 €)",
    "price": 294.84
   },
@@ -20566,7 +20606,7 @@
    "price": 675.0
   },
   "amz-B0BQ1KV15R": {
-   "t": 1794782944,
+   "t": 1794815094,
    "why": "solo -21% frente a su PVP recomendado (673,90 €)",
    "price": 530.9
   },
@@ -20576,7 +20616,7 @@
    "price": 134.9
   },
   "amz-B077TZYQRT": {
-   "t": 1794782824,
+   "t": 1794814974,
    "why": "solo -21% frente a su PVP recomendado (139,90 €)",
    "price": 109.9
   },
@@ -20596,17 +20636,17 @@
    "price": 139.99
   },
   "amz-B0DMD4G5XH": {
-   "t": 1794782944,
+   "t": 1794815094,
    "why": "solo -13% frente a su precio mediano de los 90 días (45,99 €)",
    "price": 39.86
   },
   "amz-B0DQ93HX2L": {
-   "t": 1794782824,
+   "t": 1794814974,
    "why": "solo -9% frente a su PVP recomendado (319,95 €)",
    "price": 289.95
   },
   "amz-B01AI2PJQY": {
-   "t": 1794782944,
+   "t": 1794814974,
    "why": "solo -6% frente a su precio mediano de los 90 días (137,64 €)",
    "price": 129.1
   },
@@ -20631,7 +20671,7 @@
    "price": 124.95
   },
   "amz-B0DQWHNRH6": {
-   "t": 1794782944,
+   "t": 1794815214,
    "why": "solo -38% frente a su PVP recomendado (39,99 €)",
    "price": 24.99
   },
@@ -20641,7 +20681,7 @@
    "price": 19.9
   },
   "amz-B0FZW81W7X": {
-   "t": 1794782944,
+   "t": 1794815214,
    "why": "solo -37% frente a su PVP recomendado (149,99 €)",
    "price": 94.99
   },
@@ -20661,7 +20701,7 @@
    "price": 23.74
   },
   "amz-B0G4CNQBVG": {
-   "t": 1794782944,
+   "t": 1794815214,
    "why": "solo -24% frente a su precio mediano de los 90 días (79,00 €)",
    "price": 59.9
   },
@@ -21316,12 +21356,12 @@
    "price": 26.66
   },
   "amz-B0FCSVV6X7": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -3% frente a su precio mediano de los 90 días (57,90 €)",
    "price": 56.14
   },
   "amz-B0DHW558TP": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -4% frente a su precio mediano de los 90 días (79,71 €)",
    "price": 76.7
   },
@@ -21446,7 +21486,7 @@
    "price": 12.06
   },
   "amz-B0FHL7TPXC": {
-   "t": 1794782584,
+   "t": 1794812574,
    "why": "solo -8% frente a su PVP recomendado (1.299,00 €)",
    "price": 1199.0
   },
@@ -21471,12 +21511,12 @@
    "price": 79.9
   },
   "amz-B0CG19QXWD": {
-   "t": 1794782824,
+   "t": 1794813894,
    "why": "solo -37% frente a su PVP recomendado (429,00 €)",
    "price": 269.0
   },
   "amz-B0F6YG5P11": {
-   "t": 1794762006,
+   "t": 1794815214,
    "why": "ya publicado hace poco y no ha bajado más",
    "price": 74.99
   },
@@ -21636,7 +21676,7 @@
    "price": 119.99
   },
   "amz-B0C9DX9PJL": {
-   "t": 1794782944,
+   "t": 1794815214,
    "why": "solo -37% frente a su PVP recomendado (26,99 €)",
    "price": 17.0
   },
@@ -21701,7 +21741,7 @@
    "price": 252.6
   },
   "amz-B0DK14G8Z2": {
-   "t": 1794685949,
+   "t": 1794814974,
    "why": "solo -20% frente a su mínimo de los 30 días anteriores (69,99 €)",
    "price": 55.99
   },
@@ -21826,7 +21866,7 @@
    "price": 28.49
   },
   "amz-B0HGM7RC3L": {
-   "t": 1794766699,
+   "t": 1794812694,
    "why": "marca poco conocida (Strong): su precio anterior no es fiable",
    "price": 20.89
   },
@@ -21841,7 +21881,7 @@
    "price": 199.95
   },
   "amz-B0D4R175FB": {
-   "t": 1794766939,
+   "t": 1794815214,
    "why": "marca poco conocida (DKNY): su precio anterior no es fiable",
    "price": 26.5
   },
@@ -21881,7 +21921,7 @@
    "price": 77.74
   },
   "amz-B0D4VSBD2Z": {
-   "t": 1794782944,
+   "t": 1794815094,
    "why": "solo -5% frente a su mínimo de los 30 días anteriores (144,34 €)",
    "price": 137.09
   },
@@ -21896,7 +21936,7 @@
    "price": 99.99
   },
   "amz-B0F9X7H8W6": {
-   "t": 1794782944,
+   "t": 1794815214,
    "why": "ya publicado hace poco y no ha bajado más",
    "price": 59.99
   },
@@ -21996,7 +22036,7 @@
    "price": 266.02
   },
   "amz-B0DP7D8RWC": {
-   "t": 1794766939,
+   "t": 1794815094,
    "why": "marca poco conocida (MILLET): su precio anterior no es fiable",
    "price": 107.4
   },
@@ -22056,7 +22096,7 @@
    "price": 40.61
   },
   "amz-B09GWK2WZ1": {
-   "t": 1794766819,
+   "t": 1794812814,
    "why": "marca poco conocida (Anda Seat): su precio anterior no es fiable",
    "price": 217.75
   },
@@ -22096,7 +22136,7 @@
    "price": 631.0
   },
   "amz-B0G92NRF52": {
-   "t": 1794766819,
+   "t": 1794812814,
    "why": "marca poco conocida (UGREEN): su precio anterior no es fiable",
    "price": 29.05
   },
@@ -22121,7 +22161,7 @@
    "price": 999.0
   },
   "amz-B0FLQ8KQC7": {
-   "t": 1794766699,
+   "t": 1794812574,
    "why": "ya publicado hace poco y no ha bajado más",
    "price": 92.0
   },
@@ -22191,12 +22231,12 @@
    "price": 224.0
   },
   "amz-B09KZPGM77": {
-   "t": 1794782944,
+   "t": 1794815094,
    "why": "marca poco conocida (Mammut): su precio anterior no es fiable",
    "price": 70.8
   },
   "amz-B083HVJBVR": {
-   "t": 1794768019,
+   "t": 1794815094,
    "why": "marca poco conocida (SONGMICS): su precio anterior no es fiable",
    "price": 29.61
   },
@@ -22211,7 +22251,7 @@
    "price": 8.6
   },
   "amz-B0HG13PG1J": {
-   "t": 1794762006,
+   "t": 1794815214,
    "why": "calidad: solo -33% (mínimo -35%)",
    "price": 39.99
   },
@@ -22326,7 +22366,7 @@
    "price": 659.0
   },
   "amz-B0H2TMCY8F": {
-   "t": 1794775007,
+   "t": 1794815094,
    "why": "calidad: solo -30% (mínimo -35%)",
    "price": 110.99
   },
@@ -22391,7 +22431,7 @@
    "price": 31.29
   },
   "amz-B08XNJB8TM": {
-   "t": 1794782704,
+   "t": 1794812694,
    "why": "solo -39% frente a su PVP recomendado (249,90 €)",
    "price": 152.99
   },
@@ -22426,7 +22466,7 @@
    "price": 55.27
   },
   "amz-B00IPL6EV0": {
-   "t": 1794782824,
+   "t": 1794814974,
    "why": "solo -25% frente a su precio mediano de los 90 días (119,00 €)",
    "price": 88.99
   },
@@ -22784,32 +22824,357 @@
    "t": 1794811265,
    "why": "solo -7% frente a su precio mediano de los 90 días (849,00 €)",
    "price": 789.0
+  },
+  "amz-B0GNN5GMWY": {
+   "t": 1794812574,
+   "why": "solo -27% frente a su PVP recomendado (899,00 €)",
+   "price": 656.0
+  },
+  "amz-B0H7959ZGC": {
+   "t": 1794812574,
+   "why": "solo -28% frente a su PVP recomendado (219,90 €)",
+   "price": 158.7
+  },
+  "amz-B0GQZ67HHZ": {
+   "t": 1794812574,
+   "why": "solo -22% frente a su PVP recomendado (899,00 €)",
+   "price": 699.0
+  },
+  "amz-B0D1YMN8CN": {
+   "t": 1794812574,
+   "why": "solo -20% frente a su mínimo de los 30 días anteriores (1.499,00 €)",
+   "price": 1199.0
+  },
+  "amz-B0H8YRFL38": {
+   "t": 1794812574,
+   "why": "solo -27% frente a su PVP recomendado (899,00 €)",
+   "price": 659.0
+  },
+  "amz-B0F1DMN5HW": {
+   "t": 1794812574,
+   "why": "solo -7% frente a su precio mediano de los 90 días (639,99 €)",
+   "price": 592.5
+  },
+  "amz-B08BKPQQDD": {
+   "t": 1794812694,
+   "why": "marca poco conocida (Cooler Master): su precio anterior no es fiable",
+   "price": 45.9
+  },
+  "amz-B0DNZCT6ML": {
+   "t": 1794812694,
+   "why": "marca poco conocida (Thermaltake): su precio anterior no es fiable",
+   "price": 74.0
+  },
+  "amz-B0BV2D4FN1": {
+   "t": 1794812694,
+   "why": "solo -43% frente a su PVP recomendado (133,99 €)",
+   "price": 75.9
+  },
+  "amz-B0F1Z5982Y": {
+   "t": 1794812694,
+   "why": "solo -44% frente a su PVP recomendado (249,99 €)",
+   "price": 139.99
+  },
+  "amz-B0FB43WPJC": {
+   "t": 1794812694,
+   "why": "solo -41% frente a su PVP recomendado (144,99 €)",
+   "price": 84.9
+  },
+  "amz-B0DK579HVY": {
+   "t": 1794812694,
+   "why": "marca poco conocida (Tenda): su precio anterior no es fiable",
+   "price": 24.75
+  },
+  "amz-B0DCZJSJ7Z": {
+   "t": 1794812694,
+   "why": "marca poco conocida (Thermaltake): su precio anterior no es fiable",
+   "price": 66.59
+  },
+  "amz-B0DRBMB5PM": {
+   "t": 1794812694,
+   "why": "marca poco conocida (Tenda): su precio anterior no es fiable",
+   "price": 22.55
+  },
+  "amz-B0GXZQH1G6": {
+   "t": 1794812694,
+   "why": "solo -27% frente a su PVP recomendado (219,00 €)",
+   "price": 159.0
+  },
+  "amz-B0GXZSGDQ7": {
+   "t": 1794812694,
+   "why": "solo -27% frente a su PVP recomendado (299,00 €)",
+   "price": 219.0
+  },
+  "amz-B01N7BN0YF": {
+   "t": 1794812694,
+   "why": "marca poco conocida (LaCie): su precio anterior no es fiable",
+   "price": 113.99
+  },
+  "amz-B09KB8GGN1": {
+   "t": 1794812694,
+   "why": "solo -25% frente a su precio mediano de los 90 días (504,80 €)",
+   "price": 378.99
+  },
+  "amz-B0F1Z3YZN4": {
+   "t": 1794812694,
+   "why": "solo -25% frente a su precio mediano de los 90 días (222,90 €)",
+   "price": 166.99
+  },
+  "amz-B0BK541686": {
+   "t": 1794812694,
+   "why": "solo -25% frente a su PVP recomendado (129,90 €)",
+   "price": 96.99
+  },
+  "amz-B0GVNTCQFR": {
+   "t": 1794812694,
+   "why": "precio fuera de rango (12.21 €)",
+   "price": 12.21
+  },
+  "amz-B07TH6YFPY": {
+   "t": 1794812694,
+   "why": "solo -19% frente a su precio mediano de los 90 días (156,63 €)",
+   "price": 126.43
+  },
+  "amz-B0FKBRLWNW": {
+   "t": 1794812694,
+   "why": "solo -15% frente a su precio mediano de los 90 días (259,00 €)",
+   "price": 219.0
+  },
+  "amz-B089HFR9CX": {
+   "t": 1794812694,
+   "why": "solo -15% frente a su precio mediano de los 90 días (169,99 €)",
+   "price": 143.99
+  },
+  "amz-B089HG351D": {
+   "t": 1794812694,
+   "why": "solo -17% frente a su precio mediano de los 90 días (148,56 €)",
+   "price": 122.99
+  },
+  "amz-B0GQCJ2D3D": {
+   "t": 1794812694,
+   "why": "solo -8% frente a su precio mediano de los 90 días (304,99 €)",
+   "price": 279.99
+  },
+  "amz-B0HC453DG1": {
+   "t": 1794812694,
+   "why": "solo -5% frente a su precio mediano de los 90 días (554,99 €)",
+   "price": 529.99
+  },
+  "amz-B0GSW8D7HP": {
+   "t": 1794812814,
+   "why": "marca poco conocida (Happy Mom): su precio anterior no es fiable",
+   "price": 34.9
+  },
+  "amz-B07YYJRXQR": {
+   "t": 1794812814,
+   "why": "solo -34% frente a su PVP recomendado (31,99 €)",
+   "price": 20.99
+  },
+  "amz-B0BF8NHH2P": {
+   "t": 1794812814,
+   "why": "solo -27% frente a su PVP recomendado (74,99 €)",
+   "price": 54.99
+  },
+  "amz-B0G72Q8QJ5": {
+   "t": 1794812814,
+   "why": "marca poco conocida (Warner): su precio anterior no es fiable",
+   "price": 39.95
+  },
+  "amz-B0DFQKQ9CB": {
+   "t": 1794812814,
+   "why": "solo -28% frente a su PVP recomendado (64,99 €)",
+   "price": 46.76
+  },
+  "amz-B0G1BC4THX": {
+   "t": 1794812814,
+   "why": "marca poco conocida (UGREEN): su precio anterior no es fiable",
+   "price": 599.99
+  },
+  "amz-B0DTQ35NH6": {
+   "t": 1794812814,
+   "why": "solo -19% frente a su precio mediano de los 90 días (147,14 €)",
+   "price": 119.9
+  },
+  "amz-B0CXDYCKVS": {
+   "t": 1794813894,
+   "why": "marca poco conocida (Outright Games): su precio anterior no es fiable",
+   "price": 15.85
+  },
+  "amz-B0DQWZQFZW": {
+   "t": 1794813894,
+   "why": "marca poco conocida (NIVIAN): su precio anterior no es fiable",
+   "price": 81.21
+  },
+  "amz-B0DP8K22HP": {
+   "t": 1794813894,
+   "why": "precio fuera de rango (8.39 €)",
+   "price": 8.39
+  },
+  "amz-B0DP8LHZFJ": {
+   "t": 1794813894,
+   "why": "solo -11% frente a su precio mediano de los 90 días (30,00 €)",
+   "price": 26.64
+  },
+  "amz-B0D34VK962": {
+   "t": 1794813894,
+   "why": "precio fuera de rango (8.07 €)",
+   "price": 8.07
+  },
+  "amz-B0DX1QL96S": {
+   "t": 1794813894,
+   "why": "marca poco conocida (Refoss): su precio anterior no es fiable",
+   "price": 20.39
+  },
+  "amz-B0DSK6QFXZ": {
+   "t": 1794814974,
+   "why": "marca poco conocida (meross): su precio anterior no es fiable",
+   "price": 39.99
+  },
+  "amz-B0BX9F28BC": {
+   "t": 1794814974,
+   "why": "solo -8% frente a su precio mediano de los 90 días (61,57 €)",
+   "price": 56.89
+  },
+  "amz-B09PNY1TXV": {
+   "t": 1794815094,
+   "why": "marca poco conocida (Helly Hansen): su precio anterior no es fiable",
+   "price": 60.4
+  },
+  "amz-B0F9X92FQH": {
+   "t": 1794815214,
+   "why": "ya publicado hace poco y no ha bajado más",
+   "price": 59.99
+  },
+  "amz-B08WMTXJVF": {
+   "t": 1794815214,
+   "why": "marca poco conocida (BaByliss): su precio anterior no es fiable",
+   "price": 49.9
+  },
+  "amz-B08DJ18C85": {
+   "t": 1794815214,
+   "why": "solo -40% frente a su PVP recomendado (29,99 €)",
+   "price": 17.99
+  },
+  "amz-B0BLZT677G": {
+   "t": 1794815214,
+   "why": "solo -40% frente a su PVP recomendado (29,99 €)",
+   "price": 17.99
+  },
+  "amz-B00ECBKODQ": {
+   "t": 1794815214,
+   "why": "solo -40% frente a su PVP recomendado (29,99 €)",
+   "price": 17.99
+  },
+  "amz-B0DBM7PY4J": {
+   "t": 1794815214,
+   "why": "ya publicado hace poco y no ha bajado más",
+   "price": 289.95
+  },
+  "amz-B0DDQF57MQ": {
+   "t": 1794815214,
+   "why": "solo -40% frente a su PVP recomendado (209,95 €)",
+   "price": 124.95
+  },
+  "amz-B0HF4TSHST": {
+   "t": 1794815214,
+   "why": "solo -44% frente a su PVP recomendado (179,95 €)",
+   "price": 99.95
+  },
+  "amz-B01N1UX8RW": {
+   "t": 1794815214,
+   "why": "marca poco conocida (RENPHO): su precio anterior no es fiable",
+   "price": 20.99
+  },
+  "amz-B09RN8Q4CW": {
+   "t": 1794815214,
+   "why": "solo -38% frente a su PVP recomendado (44,99 €)",
+   "price": 27.99
+  },
+  "amz-B01KLXFBFE": {
+   "t": 1794815214,
+   "why": "solo -37% frente a su precio mediano de los 90 días (53,55 €)",
+   "price": 33.99
+  },
+  "amz-B0CVY1696Z": {
+   "t": 1794815214,
+   "why": "precio fuera de rango (14.99 €)",
+   "price": 14.99
+  },
+  "amz-B00MCSW96Q": {
+   "t": 1794815214,
+   "why": "solo -29% frente a su precio mediano de los 90 días (27,99 €)",
+   "price": 19.99
+  },
+  "amz-B01N39SZ87": {
+   "t": 1794815214,
+   "why": "precio fuera de rango (12.92 €)",
+   "price": 12.92
+  },
+  "amz-B09SLXH2CQ": {
+   "t": 1794815214,
+   "why": "solo -27% frente a su precio mediano de los 90 días (40,90 €)",
+   "price": 29.99
+  },
+  "amz-B09W2K62Z6": {
+   "t": 1794815214,
+   "why": "marca poco conocida (RENPHO): su precio anterior no es fiable",
+   "price": 20.89
+  },
+  "amz-B00MCSW8VC": {
+   "t": 1794815214,
+   "why": "solo -26% frente a su precio mediano de los 90 días (28,09 €)",
+   "price": 20.8
+  },
+  "amz-B0B5XPR45B": {
+   "t": 1794815214,
+   "why": "solo -17% frente a su precio mediano de los 90 días (120,00 €)",
+   "price": 99.95
   }
  },
  "summary_sent": "2026-11-15",
  "rotation": 3103,
  "backlog": [
   {
-   "id": "amz-B07W7KMK4W",
-   "asin": "B07W7KMK4W",
+   "id": "amz-B0DQWQJ1MY",
+   "asin": "B0DQWQJ1MY",
    "amazon": true,
-   "title": "Logitech G G413 TKL SE Teclado Mecánico Gaming | Teclado Compacto Retroiluminado, Interruptores Mecánicos Táctiles, Anti-Ghosting, Windows, macOS, QWERTY Español - Negro",
-   "price": 41.79,
-   "was": 69.99,
-   "ts": 1794810125,
-   "brand": "Logitech G",
+   "title": "Braun Recortadora Todo en Uno Series 5, AIO5565, Negro | Kit de Styling 13en1 para Barba, Pelo, Orejas, Nariz Y Cuerpo, 120 Min, Cortapelos Hombre con Lámina Ultra Afilada",
+   "price": 39.99,
+   "was": 79.99,
+   "ts": 1794815214,
+   "brand": "Braun",
    "brand_ok": true,
-   "image": "https://m.media-amazon.com/images/I/31P2UYfjn1L._SL500_.jpg",
+   "image": "https://m.media-amazon.com/images/I/415QD26fFWL._SL500_.jpg",
    "basis_type": "LIST_PRICE",
    "seller": "Amazon",
-   "deal_badge": "",
-   "deal_end": "",
+   "deal_badge": "Black Friday anticipado",
+   "deal_end": "2026-11-30T22:59:59Z",
    "history": {
-    "days": 4,
-    "min": 42.89,
-    "usual": 42.89,
-    "min_7": 42.89,
-    "max_7": 43.99,
+    "days": 0
+   },
+   "sold_by_amazon": true
+  },
+  {
+   "id": "amz-B0B5FGHCKR",
+   "asin": "B0B5FGHCKR",
+   "amazon": true,
+   "title": "Oral-B iO 5N Cepillos de Dientes Eléctricos, Negro y Blanco, Pack de 2 | Cepillo Dental con 2 Cabezales, 5 Modos de Cepillado, Sensor de Presión, Estuche de Viaje, Batería de Larga Duración",
+   "price": 144.95,
+   "was": 299.95,
+   "ts": 1794815214,
+   "brand": "Oral-B",
+   "brand_ok": true,
+   "image": "https://m.media-amazon.com/images/I/51oVY1K8wOL._SL500_.jpg",
+   "basis_type": "LIST_PRICE",
+   "seller": "Amazon",
+   "deal_badge": "Black Friday anticipado",
+   "deal_end": "2026-11-30T22:59:59Z",
+   "history": {
+    "days": 1,
+    "min": 255.55,
+    "usual": 255.55,
+    "min_7": 255.55,
+    "max_7": 256.44,
     "first_day": 20261112
    },
    "sold_by_amazon": true
@@ -22821,7 +23186,7 @@
    "title": "Oral-B iO 3 Cepillo de Dientes Eléctrico con 3 Cabezales, Azul | Mango Recargable, 3 Modos de Cepillado con Blanqueamiento Dental, Sensor de Presión, Regalos Originales para Mujer y Hombre",
    "price": 59.95,
    "was": 109.95,
-   "ts": 1794810245,
+   "ts": 1794815214,
    "brand": "Oral-B",
    "brand_ok": true,
    "image": "https://m.media-amazon.com/images/I/41IhHIwOrML._SL500_.jpg",
@@ -22836,7 +23201,6 @@
   }
  ],
  "x_drafts": [
-  1794387510,
   1794387731,
   1794388247,
   1794391119,
@@ -22885,22 +23249,23 @@
   1794598501,
   1794729197,
   1794758870,
-  1794808980
+  1794808980,
+  1794812848
  ],
  "x_recent": [
-  "black-friday",
   "momento",
   "rapido",
   "regla",
   "alguien",
   "chivatazo",
   "filtro",
-  "cartera"
+  "cartera",
+  "manana"
  ],
  "jl_paused_until": 1794513122.695286,
- "amazon_search_index": 64,
+ "amazon_search_index": 148,
  "api_calls": {
-  "2026-11-16": 120
+  "2026-11-16": 204
  },
  "price_history": {
   "B0CRTYZG5C": [
@@ -24077,6 +24442,11 @@
     20261115,
     1199.0,
     1199.0
+   ],
+   [
+    20261116,
+    995.99,
+    995.99
    ]
   ],
   "B0DCHHY728": [
@@ -24104,6 +24474,11 @@
     20261115,
     1000.09,
     1000.09
+   ],
+   [
+    20261116,
+    575.66,
+    575.66
    ]
   ],
   "B0FVY1FWL5": [
@@ -24129,6 +24504,11 @@
    ],
    [
     20261115,
+    279.99,
+    279.99
+   ],
+   [
+    20261116,
     279.99,
     279.99
    ]
@@ -24158,6 +24538,11 @@
     20261115,
     301.46,
     304.51
+   ],
+   [
+    20261116,
+    301.13,
+    301.13
    ]
   ],
   "B0BYMRY1SP": [
@@ -24183,6 +24568,11 @@
    ],
    [
     20261115,
+    300.48,
+    300.48
+   ],
+   [
+    20261116,
     300.48,
     300.48
    ]
@@ -24246,6 +24636,11 @@
     20261115,
     294.66,
     294.66
+   ],
+   [
+    20261116,
+    294.66,
+    294.66
    ]
   ],
   "B0BYMP9KZP": [
@@ -24271,6 +24666,11 @@
    ],
    [
     20261115,
+    299.46,
+    299.46
+   ],
+   [
+    20261116,
     299.46,
     299.46
    ]
@@ -24349,6 +24749,11 @@
     20261115,
     227.99,
     227.99
+   ],
+   [
+    20261116,
+    227.99,
+    227.99
    ]
   ],
   "B0GVJTRHZH": [
@@ -24386,6 +24791,11 @@
    ],
    [
     20261115,
+    158.7,
+    158.7
+   ],
+   [
+    20261116,
     158.7,
     158.7
    ]
@@ -24432,6 +24842,11 @@
     20261115,
     173.09,
     174.59
+   ],
+   [
+    20261116,
+    174.59,
+    174.59
    ]
   ],
   "B0H6XTP3WL": [
@@ -24459,6 +24874,11 @@
     20261115,
     279.9,
     279.9
+   ],
+   [
+    20261116,
+    279.9,
+    279.9
    ]
   ],
   "B0H79Q6WQC": [
@@ -24484,6 +24904,11 @@
    ],
    [
     20261115,
+    158.7,
+    158.7
+   ],
+   [
+    20261116,
     158.7,
     158.7
    ]
@@ -24537,6 +24962,11 @@
     20261115,
     105.0,
     105.0
+   ],
+   [
+    20261116,
+    98.8,
+    98.8
    ]
   ],
   "B0FLQ8KQC7": [
@@ -24547,6 +24977,11 @@
    ],
    [
     20261115,
+    92.0,
+    92.0
+   ],
+   [
+    20261116,
     92.0,
     92.0
    ]
@@ -24566,6 +25001,11 @@
     20261113,
     82.99,
     82.99
+   ],
+   [
+    20261116,
+    74.99,
+    74.99
    ]
   ],
   "B0C23M7Y9V": [
@@ -24593,6 +25033,11 @@
     20261115,
     149.99,
     149.99
+   ],
+   [
+    20261116,
+    94.98,
+    94.98
    ]
   ],
   "B0HBCGNL34": [
@@ -24822,6 +25267,11 @@
     20261115,
     147.24,
     147.24
+   ],
+   [
+    20261116,
+    147.24,
+    147.24
    ]
   ],
   "B0B7CMZ3QH": [
@@ -24965,6 +25415,11 @@
     20261115,
     38.59,
     38.59
+   ],
+   [
+    20261116,
+    38.59,
+    38.59
    ]
   ],
   "B0D5XYMRS8": [
@@ -24990,6 +25445,11 @@
    ],
    [
     20261115,
+    68.66,
+    68.66
+   ],
+   [
+    20261116,
     68.66,
     68.66
    ]
@@ -25019,6 +25479,11 @@
     20261115,
     38.39,
     38.39
+   ],
+   [
+    20261116,
+    38.39,
+    38.39
    ]
   ],
   "B00SK7UMOE": [
@@ -25044,6 +25509,11 @@
    ],
    [
     20261115,
+    115.99,
+    115.99
+   ],
+   [
+    20261116,
     115.99,
     115.99
    ]
@@ -25073,6 +25543,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    39.99,
+    39.99
    ]
   ],
   "B0056ZOLXQ": [
@@ -25098,6 +25573,11 @@
    ],
    [
     20261115,
+    48.49,
+    48.49
+   ],
+   [
+    20261116,
     48.49,
     48.49
    ]
@@ -25175,6 +25655,11 @@
     20261115,
     254.99,
     254.99
+   ],
+   [
+    20261116,
+    254.99,
+    254.99
    ]
   ],
   "B0GRGBQJ7C": [
@@ -25200,6 +25685,11 @@
    ],
    [
     20261115,
+    149.99,
+    149.99
+   ],
+   [
+    20261116,
     149.99,
     149.99
    ]
@@ -25229,6 +25719,11 @@
     20261115,
     174.99,
     174.99
+   ],
+   [
+    20261116,
+    174.99,
+    174.99
    ]
   ],
   "B081T22XTX": [
@@ -25254,6 +25749,11 @@
    ],
    [
     20261115,
+    57.99,
+    57.99
+   ],
+   [
+    20261116,
     57.99,
     57.99
    ]
@@ -25312,6 +25812,11 @@
     20261115,
     189.99,
     189.99
+   ],
+   [
+    20261116,
+    189.99,
+    189.99
    ]
   ],
   "B0CTM3WTYV": [
@@ -25339,6 +25844,11 @@
     20261115,
     35.99,
     35.99
+   ],
+   [
+    20261116,
+    35.99,
+    35.99
    ]
   ],
   "B01GELBO1C": [
@@ -25364,6 +25874,11 @@
    ],
    [
     20261115,
+    199.99,
+    199.99
+   ],
+   [
+    20261116,
     199.99,
     199.99
    ]
@@ -25405,6 +25920,11 @@
     20261115,
     169.99,
     169.99
+   ],
+   [
+    20261116,
+    169.99,
+    169.99
    ]
   ],
   "B0BS6DZ87M": [
@@ -25425,6 +25945,11 @@
    ],
    [
     20261115,
+    74.99,
+    74.99
+   ],
+   [
+    20261116,
     74.99,
     74.99
    ]
@@ -25452,6 +25977,11 @@
    ],
    [
     20261115,
+    83.93,
+    83.93
+   ],
+   [
+    20261116,
     83.93,
     83.93
    ]
@@ -25493,6 +26023,11 @@
     20261115,
     500.65,
     500.65
+   ],
+   [
+    20261116,
+    500.65,
+    500.65
    ]
   ],
   "B0815XFSGK": [
@@ -25518,6 +26053,11 @@
    ],
    [
     20261115,
+    214.95,
+    214.95
+   ],
+   [
+    20261116,
     214.95,
     214.95
    ]
@@ -25547,6 +26087,11 @@
     20261115,
     173.66,
     173.66
+   ],
+   [
+    20261116,
+    173.96,
+    173.96
    ]
   ],
   "B0C3T4MFMM": [
@@ -25572,6 +26117,11 @@
    ],
    [
     20261115,
+    170.45,
+    170.45
+   ],
+   [
+    20261116,
     170.45,
     170.45
    ]
@@ -25601,6 +26151,11 @@
     20261115,
     237.3,
     241.0
+   ],
+   [
+    20261116,
+    237.3,
+    237.3
    ]
   ],
   "B0BBHD5D8Y": [
@@ -25626,6 +26181,11 @@
    ],
    [
     20261115,
+    906.14,
+    906.14
+   ],
+   [
+    20261116,
     906.14,
     906.14
    ]
@@ -25655,6 +26215,11 @@
     20261115,
     310.96,
     310.96
+   ],
+   [
+    20261116,
+    310.96,
+    310.96
    ]
   ],
   "B06XNRQHG4": [
@@ -25680,6 +26245,11 @@
    ],
    [
     20261115,
+    226.65,
+    226.65
+   ],
+   [
+    20261116,
     226.65,
     226.65
    ]
@@ -25726,6 +26296,11 @@
     20261115,
     79.97,
     79.97
+   ],
+   [
+    20261116,
+    79.97,
+    79.97
    ]
   ],
   "B0C3T39N6P": [
@@ -25751,6 +26326,11 @@
    ],
    [
     20261115,
+    201.2,
+    201.2
+   ],
+   [
+    20261116,
     201.2,
     201.2
    ]
@@ -25787,6 +26367,11 @@
     20261115,
     258.0,
     258.0
+   ],
+   [
+    20261116,
+    258.0,
+    258.0
    ]
   ],
   "B005404P9I": [
@@ -25812,6 +26397,11 @@
    ],
    [
     20261115,
+    473.67,
+    473.67
+   ],
+   [
+    20261116,
     473.67,
     473.67
    ]
@@ -25841,6 +26431,11 @@
     20261115,
     276.5,
     276.5
+   ],
+   [
+    20261116,
+    276.5,
+    276.5
    ]
   ],
   "B0759FKH8K": [
@@ -25866,6 +26461,11 @@
    ],
    [
     20261115,
+    85.95,
+    85.95
+   ],
+   [
+    20261116,
     85.95,
     85.95
    ]
@@ -25907,6 +26507,11 @@
     20261115,
     170.0,
     170.0
+   ],
+   [
+    20261116,
+    170.0,
+    170.0
    ]
   ],
   "B08TX5KL5T": [
@@ -25934,6 +26539,11 @@
     20261115,
     720.74,
     720.74
+   ],
+   [
+    20261116,
+    720.74,
+    720.74
    ]
   ],
   "B0DGVC3DDW": [
@@ -25959,6 +26569,11 @@
    ],
    [
     20261115,
+    265.72,
+    265.72
+   ],
+   [
+    20261116,
     265.72,
     265.72
    ]
@@ -26013,6 +26628,11 @@
    ],
    [
     20261115,
+    55.99,
+    55.99
+   ],
+   [
+    20261116,
     55.99,
     55.99
    ]
@@ -26350,6 +26970,11 @@
     20261113,
     44.99,
     44.99
+   ],
+   [
+    20261116,
+    44.99,
+    44.99
    ]
   ],
   "B0F6LB6Y9N": [
@@ -26375,6 +27000,11 @@
    ],
    [
     20261115,
+    35.14,
+    35.14
+   ],
+   [
+    20261116,
     35.14,
     35.14
    ]
@@ -26436,6 +27066,11 @@
    ],
    [
     20261115,
+    32.9,
+    32.9
+   ],
+   [
+    20261116,
     32.9,
     32.9
    ]
@@ -26550,6 +27185,11 @@
     20261115,
     44.99,
     44.99
+   ],
+   [
+    20261116,
+    44.99,
+    44.99
    ]
   ],
   "B06WWHJZF6": [
@@ -26577,6 +27217,11 @@
     20261115,
     11.99,
     11.99
+   ],
+   [
+    20261116,
+    10.99,
+    10.99
    ]
   ],
   "B0HL92NKF5": [
@@ -26602,6 +27247,11 @@
    ],
    [
     20261115,
+    33.99,
+    33.99
+   ],
+   [
+    20261116,
     33.99,
     33.99
    ]
@@ -26631,6 +27281,11 @@
     20261115,
     11.99,
     11.99
+   ],
+   [
+    20261116,
+    11.99,
+    11.99
    ]
   ],
   "B09J8D4N53": [
@@ -26656,6 +27311,11 @@
    ],
    [
     20261115,
+    22.9,
+    22.9
+   ],
+   [
+    20261116,
     22.9,
     22.9
    ]
@@ -26724,6 +27384,11 @@
     20261115,
     23.99,
     23.99
+   ],
+   [
+    20261116,
+    20.34,
+    20.34
    ]
   ],
   "B0GW975FZ3": [
@@ -26751,6 +27416,11 @@
     20261115,
     18.99,
     18.99
+   ],
+   [
+    20261116,
+    18.04,
+    18.04
    ]
   ],
   "B0CLGW56BD": [
@@ -26785,6 +27455,11 @@
     20261115,
     239.99,
     239.99
+   ],
+   [
+    20261116,
+    239.99,
+    239.99
    ]
   ],
   "B0DHW558TP": [
@@ -26810,6 +27485,11 @@
    ],
    [
     20261115,
+    76.7,
+    76.7
+   ],
+   [
+    20261116,
     76.7,
     76.7
    ]
@@ -26853,6 +27533,11 @@
     20261115,
     171.9,
     171.9
+   ],
+   [
+    20261116,
+    171.9,
+    171.9
    ]
   ],
   "B01HMGYF5K": [
@@ -26878,6 +27563,11 @@
    ],
    [
     20261115,
+    111.99,
+    111.99
+   ],
+   [
+    20261116,
     111.99,
     111.99
    ]
@@ -26982,6 +27672,11 @@
     20261115,
     84.95,
     84.95
+   ],
+   [
+    20261116,
+    84.95,
+    84.95
    ]
   ],
   "B0C77G4TFG": [
@@ -27007,6 +27702,11 @@
    ],
    [
     20261115,
+    26.99,
+    26.99
+   ],
+   [
+    20261116,
     26.99,
     26.99
    ]
@@ -27048,6 +27748,11 @@
     20261115,
     39.89,
     39.89
+   ],
+   [
+    20261116,
+    39.89,
+    39.89
    ]
   ],
   "B0GTW78BS4": [
@@ -27073,6 +27778,11 @@
    ],
    [
     20261115,
+    23.69,
+    23.69
+   ],
+   [
+    20261116,
     23.69,
     23.69
    ]
@@ -27133,6 +27843,11 @@
     20261115,
     38.95,
     38.95
+   ],
+   [
+    20261116,
+    38.95,
+    38.95
    ]
   ],
   "B07W5JKFQC": [
@@ -27160,6 +27875,11 @@
     20261115,
     19.9,
     19.9
+   ],
+   [
+    20261116,
+    18.89,
+    18.89
    ]
   ],
   "B07CGPZ3ZQ": [
@@ -27187,6 +27907,11 @@
     20261115,
     34.42,
     34.42
+   ],
+   [
+    20261116,
+    32.99,
+    32.99
    ]
   ],
   "B07GS6ZB7T": [
@@ -27212,6 +27937,11 @@
    ],
    [
     20261115,
+    28.78,
+    28.78
+   ],
+   [
+    20261116,
     28.78,
     28.78
    ]
@@ -27295,6 +28025,11 @@
     20261115,
     24.99,
     24.99
+   ],
+   [
+    20261116,
+    18.89,
+    18.89
    ]
   ],
   "B0F5QBSRDR": [
@@ -27312,6 +28047,11 @@
     20261115,
     22.99,
     22.99
+   ],
+   [
+    20261116,
+    14.96,
+    14.96
    ]
   ],
   "B07W5JKP66": [
@@ -27337,6 +28077,11 @@
    ],
    [
     20261115,
+    84.99,
+    84.99
+   ],
+   [
+    20261116,
     84.99,
     84.99
    ]
@@ -27429,6 +28174,11 @@
     20261113,
     255.26,
     255.26
+   ],
+   [
+    20261116,
+    242.5,
+    242.5
    ]
   ],
   "B0DV9W27XL": [
@@ -27454,6 +28204,11 @@
    ],
    [
     20261115,
+    325.21,
+    325.21
+   ],
+   [
+    20261116,
     325.21,
     325.21
    ]
@@ -27544,6 +28299,11 @@
    ],
    [
     20261115,
+    5.59,
+    5.59
+   ],
+   [
+    20261116,
     5.59,
     5.59
    ]
@@ -27789,6 +28549,11 @@
     20261115,
     10.95,
     10.95
+   ],
+   [
+    20261116,
+    10.95,
+    10.95
    ]
   ],
   "B00PLF22P0": [
@@ -27814,6 +28579,11 @@
    ],
    [
     20261115,
+    26.99,
+    26.99
+   ],
+   [
+    20261116,
     26.99,
     26.99
    ]
@@ -27939,6 +28709,11 @@
     20261115,
     18.13,
     18.13
+   ],
+   [
+    20261116,
+    18.13,
+    18.13
    ]
   ],
   "B00YMZBPKI": [
@@ -27966,6 +28741,11 @@
     20261115,
     8.78,
     8.78
+   ],
+   [
+    20261116,
+    8.78,
+    8.78
    ]
   ],
   "B008IEC2GA": [
@@ -27991,6 +28771,11 @@
    ],
    [
     20261115,
+    7.95,
+    7.95
+   ],
+   [
+    20261116,
     7.95,
     7.95
    ]
@@ -28119,6 +28904,11 @@
     20261115,
     468.89,
     468.89
+   ],
+   [
+    20261116,
+    468.89,
+    468.89
    ]
   ],
   "B07QMZ5JGF": [
@@ -28144,6 +28934,11 @@
    ],
    [
     20261115,
+    219.0,
+    219.0
+   ],
+   [
+    20261116,
     219.0,
     219.0
    ]
@@ -28373,6 +29168,11 @@
     20261115,
     17.15,
     17.25
+   ],
+   [
+    20261116,
+    17.35,
+    17.35
    ]
   ],
   "B07SWSCBJJ": [
@@ -28398,6 +29198,11 @@
    ],
    [
     20261115,
+    16.45,
+    16.45
+   ],
+   [
+    20261116,
     16.45,
     16.45
    ]
@@ -28521,6 +29326,11 @@
     20261115,
     14.0,
     14.0
+   ],
+   [
+    20261116,
+    14.38,
+    14.38
    ]
   ],
   "B0C6T6XD1K": [
@@ -28610,6 +29420,11 @@
     20261115,
     33.99,
     33.99
+   ],
+   [
+    20261116,
+    25.99,
+    25.99
    ]
   ],
   "B0BYPQZPZ9": [
@@ -28637,6 +29452,11 @@
     20261115,
     17.94,
     17.94
+   ],
+   [
+    20261116,
+    17.94,
+    17.94
    ]
   ],
   "B0981BKNCG": [
@@ -28662,6 +29482,11 @@
    ],
    [
     20261115,
+    12.99,
+    12.99
+   ],
+   [
+    20261116,
     12.99,
     12.99
    ]
@@ -29225,6 +30050,11 @@
     20261115,
     179.0,
     179.0
+   ],
+   [
+    20261116,
+    179.0,
+    179.0
    ]
   ],
   "B004V2HE7K": [
@@ -29264,6 +30094,11 @@
     20261115,
     242.91,
     243.67
+   ],
+   [
+    20261116,
+    243.53,
+    243.53
    ]
   ],
   "B000O161X0": [
@@ -29316,6 +30151,11 @@
    ],
    [
     20261115,
+    324.05,
+    324.05
+   ],
+   [
+    20261116,
     324.05,
     324.05
    ]
@@ -29398,6 +30238,11 @@
    ],
    [
     20261115,
+    34.72,
+    34.72
+   ],
+   [
+    20261116,
     34.72,
     34.72
    ]
@@ -29530,6 +30375,11 @@
     20261113,
     109.99,
     109.99
+   ],
+   [
+    20261116,
+    109.99,
+    109.99
    ]
   ],
   "B0H62LYCZ5": [
@@ -29655,6 +30505,11 @@
     20261115,
     34.92,
     34.92
+   ],
+   [
+    20261116,
+    34.92,
+    34.92
    ]
   ],
   "B0FC2VKWYK": [
@@ -29766,6 +30621,11 @@
     20261115,
     99.99,
     99.99
+   ],
+   [
+    20261116,
+    99.99,
+    99.99
    ]
   ],
   "B09WZBVWL9": [
@@ -29813,6 +30673,11 @@
    ],
    [
     20261115,
+    189.99,
+    189.99
+   ],
+   [
+    20261116,
     189.99,
     189.99
    ]
@@ -29879,6 +30744,11 @@
    ],
    [
     20261115,
+    26.99,
+    26.99
+   ],
+   [
+    20261116,
     26.99,
     26.99
    ]
@@ -29956,6 +30826,11 @@
     20261115,
     14.99,
     14.99
+   ],
+   [
+    20261116,
+    14.99,
+    14.99
    ]
   ],
   "B09MM39P84": [
@@ -29981,6 +30856,11 @@
    ],
    [
     20261115,
+    25.9,
+    25.9
+   ],
+   [
+    20261116,
     25.9,
     25.9
    ]
@@ -30104,6 +30984,11 @@
     20261115,
     89.99,
     89.99
+   ],
+   [
+    20261116,
+    89.99,
+    89.99
    ]
   ],
   "B07YQ6V759": [
@@ -30167,6 +31052,11 @@
    ],
    [
     20261114,
+    49.95,
+    49.95
+   ],
+   [
+    20261116,
     49.95,
     49.95
    ]
@@ -30288,6 +31178,11 @@
     20261115,
     33.99,
     33.99
+   ],
+   [
+    20261116,
+    33.99,
+    33.99
    ]
   ],
   "B0CWP55Z6K": [
@@ -30383,6 +31278,11 @@
    ],
    [
     20261115,
+    32.29,
+    32.29
+   ],
+   [
+    20261116,
     32.29,
     32.29
    ]
@@ -30493,6 +31393,11 @@
    ],
    [
     20261115,
+    39.99,
+    39.99
+   ],
+   [
+    20261116,
     39.99,
     39.99
    ]
@@ -30615,6 +31520,11 @@
     20261115,
     59.99,
     59.99
+   ],
+   [
+    20261116,
+    59.99,
+    59.99
    ]
   ],
   "B097ZXM2TH": [
@@ -30735,6 +31645,11 @@
     20261112,
     14.79,
     14.79
+   ],
+   [
+    20261116,
+    12.79,
+    12.79
    ]
   ],
   "B002UHKARY": [
@@ -30760,6 +31675,11 @@
    ],
    [
     20261115,
+    10.79,
+    10.79
+   ],
+   [
+    20261116,
     10.79,
     10.79
    ]
@@ -30852,6 +31772,11 @@
    ],
    [
     20261115,
+    12.99,
+    12.99
+   ],
+   [
+    20261116,
     12.99,
     12.99
    ]
@@ -30972,6 +31897,11 @@
     20261115,
     128.0,
     128.0
+   ],
+   [
+    20261116,
+    128.0,
+    128.0
    ]
   ],
   "B097ZZF4J9": [
@@ -31071,6 +32001,11 @@
     20261115,
     209.8,
     209.8
+   ],
+   [
+    20261116,
+    209.8,
+    209.8
    ]
   ],
   "B09DF1WVZ1": [
@@ -31098,6 +32033,11 @@
     20261115,
     169.8,
     169.8
+   ],
+   [
+    20261116,
+    169.8,
+    169.8
    ]
   ],
   "B09DDFY4ZC": [
@@ -31123,6 +32063,11 @@
    ],
    [
     20261115,
+    149.8,
+    149.8
+   ],
+   [
+    20261116,
     149.8,
     149.8
    ]
@@ -31162,6 +32107,11 @@
    ],
    [
     20261115,
+    198.26,
+    198.26
+   ],
+   [
+    20261116,
     198.26,
     198.26
    ]
@@ -31462,6 +32412,11 @@
     20261115,
     39.8,
     39.8
+   ],
+   [
+    20261116,
+    39.8,
+    39.8
    ]
   ],
   "B0G43R7PTR": [
@@ -31499,6 +32454,11 @@
    ],
    [
     20261115,
+    51.99,
+    51.99
+   ],
+   [
+    20261116,
     51.99,
     51.99
    ]
@@ -31732,6 +32692,11 @@
     20261115,
     158.39,
     158.39
+   ],
+   [
+    20261116,
+    158.39,
+    158.39
    ]
   ],
   "B07ZFV1Q96": [
@@ -31829,6 +32794,11 @@
    ],
    [
     20261115,
+    23.9,
+    23.9
+   ],
+   [
+    20261116,
     23.9,
     23.9
    ]
@@ -31964,6 +32934,11 @@
    ],
    [
     20261115,
+    63.17,
+    63.17
+   ],
+   [
+    20261116,
     63.17,
     63.17
    ]
@@ -32534,6 +33509,11 @@
     20261115,
     88.39,
     88.39
+   ],
+   [
+    20261116,
+    88.39,
+    88.39
    ]
   ],
   "B0CYCC9R41": [
@@ -32645,6 +33625,11 @@
    ],
    [
     20261113,
+    17.67,
+    17.67
+   ],
+   [
+    20261116,
     17.67,
     17.67
    ]
@@ -32803,6 +33788,11 @@
     20261115,
     16.47,
     16.47
+   ],
+   [
+    20261116,
+    16.47,
+    16.47
    ]
   ],
   "B0D8J5CVPK": [
@@ -32828,6 +33818,11 @@
    ],
    [
     20261115,
+    17.62,
+    17.62
+   ],
+   [
+    20261116,
     17.62,
     17.62
    ]
@@ -39403,6 +40398,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    39.99,
+    39.99
    ]
   ],
   "B0HHLXPPR9": [
@@ -39859,6 +40859,11 @@
    ],
    [
     20261115,
+    329.98,
+    329.98
+   ],
+   [
+    20261116,
     329.98,
     329.98
    ]
@@ -44297,6 +45302,11 @@
     20261115,
     38.9,
     38.9
+   ],
+   [
+    20261116,
+    38.9,
+    38.9
    ]
   ],
   "B0H8XRPX2F": [
@@ -44588,6 +45598,11 @@
    ],
    [
     20261115,
+    25.99,
+    25.99
+   ],
+   [
+    20261116,
     25.99,
     25.99
    ]
@@ -44898,6 +45913,11 @@
     20261115,
     799.0,
     799.0
+   ],
+   [
+    20261116,
+    799.0,
+    799.0
    ]
   ],
   "B09QLCNJS5": [
@@ -44923,6 +45943,11 @@
    ],
    [
     20261115,
+    395.26,
+    395.26
+   ],
+   [
+    20261116,
     395.26,
     395.26
    ]
@@ -44952,6 +45977,11 @@
     20261115,
     249.9,
     249.9
+   ],
+   [
+    20261116,
+    249.9,
+    249.9
    ]
   ],
   "B0D7V1FCLD": [
@@ -44977,6 +46007,11 @@
    ],
    [
     20261115,
+    644.9,
+    644.9
+   ],
+   [
+    20261116,
     644.9,
     644.9
    ]
@@ -45045,6 +46080,11 @@
    ],
    [
     20261115,
+    94.99,
+    94.99
+   ],
+   [
+    20261116,
     94.99,
     94.99
    ]
@@ -45149,6 +46189,11 @@
     20261115,
     81.63,
     81.63
+   ],
+   [
+    20261116,
+    81.63,
+    81.63
    ]
   ],
   "B0CD9VF8R4": [
@@ -45208,6 +46253,11 @@
     20261115,
     84.86,
     84.86
+   ],
+   [
+    20261116,
+    84.86,
+    84.86
    ]
   ],
   "B0F9XGPK24": [
@@ -45233,6 +46283,11 @@
    ],
    [
     20261115,
+    83.43,
+    83.43
+   ],
+   [
+    20261116,
     83.43,
     83.43
    ]
@@ -45262,6 +46317,11 @@
     20261115,
     89.81,
     89.81
+   ],
+   [
+    20261116,
+    89.81,
+    89.81
    ]
   ],
   "B0F4YZPHTS": [
@@ -45277,6 +46337,11 @@
    ],
    [
     20261115,
+    42.6,
+    42.6
+   ],
+   [
+    20261116,
     42.6,
     42.6
    ]
@@ -45450,6 +46515,11 @@
     20261115,
     47.15,
     47.15
+   ],
+   [
+    20261116,
+    47.15,
+    47.15
    ]
   ],
   "B07XPD49FY": [
@@ -45502,6 +46572,11 @@
    ],
    [
     20261115,
+    39.99,
+    39.99
+   ],
+   [
+    20261116,
     39.99,
     39.99
    ]
@@ -45634,6 +46709,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    39.99,
+    39.99
    ]
   ],
   "B0HF7RLPQQ": [
@@ -45705,6 +46785,11 @@
     20261115,
     7.7,
     7.7
+   ],
+   [
+    20261116,
+    7.7,
+    7.7
    ]
   ],
   "B0D5H17J2G": [
@@ -45730,6 +46815,11 @@
    ],
    [
     20261115,
+    19.99,
+    19.99
+   ],
+   [
+    20261116,
     19.99,
     19.99
    ]
@@ -45759,6 +46849,11 @@
     20261115,
     21.99,
     21.99
+   ],
+   [
+    20261116,
+    21.99,
+    21.99
    ]
   ],
   "B0H86X99FC": [
@@ -45784,6 +46879,11 @@
    ],
    [
     20261115,
+    16.14,
+    16.14
+   ],
+   [
+    20261116,
     16.14,
     16.14
    ]
@@ -45818,6 +46918,11 @@
    ],
    [
     20261115,
+    49.51,
+    49.51
+   ],
+   [
+    20261116,
     49.51,
     49.51
    ]
@@ -45901,6 +47006,11 @@
     20261115,
     599.99,
     599.99
+   ],
+   [
+    20261116,
+    599.99,
+    599.99
    ]
   ],
   "B0HJL69HJ5": [
@@ -45916,6 +47026,11 @@
    ],
    [
     20261113,
+    569.99,
+    569.99
+   ],
+   [
+    20261116,
     569.99,
     569.99
    ]
@@ -45943,6 +47058,11 @@
    ],
    [
     20261115,
+    899.99,
+    899.99
+   ],
+   [
+    20261116,
     899.99,
     899.99
    ]
@@ -45982,6 +47102,11 @@
    ],
    [
     20261115,
+    702.99,
+    702.99
+   ],
+   [
+    20261116,
     702.99,
     702.99
    ]
@@ -46339,6 +47464,11 @@
    ],
    [
     20261115,
+    62.0,
+    62.0
+   ],
+   [
+    20261116,
     62.0,
     62.0
    ]
@@ -47260,6 +48390,11 @@
     20261115,
     29.99,
     29.99
+   ],
+   [
+    20261116,
+    32.99,
+    32.99
    ]
   ],
   "B0CYTBQ5PH": [
@@ -47386,6 +48521,11 @@
    ],
    [
     20261115,
+    499.99,
+    499.99
+   ],
+   [
+    20261116,
     499.99,
     499.99
    ]
@@ -47890,6 +49030,11 @@
     20261115,
     129.99,
     129.99
+   ],
+   [
+    20261116,
+    129.99,
+    129.99
    ]
   ],
   "B0FCXTRG5V": [
@@ -48047,6 +49192,11 @@
     20261115,
     74.99,
     74.99
+   ],
+   [
+    20261116,
+    74.99,
+    74.99
    ]
   ],
   "B0FH4VJG33": [
@@ -48072,6 +49222,11 @@
    ],
    [
     20261115,
+    56.99,
+    56.99
+   ],
+   [
+    20261116,
     56.99,
     56.99
    ]
@@ -48365,6 +49520,11 @@
     20261115,
     65.89,
     65.89
+   ],
+   [
+    20261116,
+    65.89,
+    65.89
    ]
   ],
   "B0012PUS8G": [
@@ -48392,6 +49552,11 @@
     20261115,
     35.82,
     35.82
+   ],
+   [
+    20261116,
+    35.82,
+    35.82
    ]
   ],
   "B083ZHB9TG": [
@@ -48417,6 +49582,11 @@
    ],
    [
     20261115,
+    58.54,
+    58.54
+   ],
+   [
+    20261116,
     58.54,
     58.54
    ]
@@ -48657,6 +49827,11 @@
     20261115,
     26.9,
     26.9
+   ],
+   [
+    20261116,
+    26.9,
+    26.9
    ]
   ],
   "B0DGB15KLM": [
@@ -48736,6 +49911,11 @@
    ],
    [
     20261115,
+    22.95,
+    22.95
+   ],
+   [
+    20261116,
     22.95,
     22.95
    ]
@@ -49156,6 +50336,11 @@
     20261115,
     43.07,
     44.95
+   ],
+   [
+    20261116,
+    27.99,
+    27.99
    ]
   ],
   "B0GCMYWSJK": [
@@ -49181,6 +50366,11 @@
    ],
    [
     20261115,
+    39.99,
+    39.99
+   ],
+   [
+    20261116,
     39.99,
     39.99
    ]
@@ -49280,6 +50470,11 @@
     20261115,
     28.09,
     28.9
+   ],
+   [
+    20261116,
+    20.8,
+    20.8
    ]
   ],
   "B01KLXFBFE": [
@@ -49307,6 +50502,11 @@
     20261115,
     53.55,
     53.55
+   ],
+   [
+    20261116,
+    33.99,
+    33.99
    ]
   ],
   "B003WOKJFM": [
@@ -49452,6 +50652,11 @@
     20261112,
     44.95,
     44.95
+   ],
+   [
+    20261116,
+    44.95,
+    44.95
    ]
   ],
   "B01IRCH76W": [
@@ -49525,6 +50730,11 @@
    ],
    [
     20261115,
+    24.99,
+    24.99
+   ],
+   [
+    20261116,
     24.99,
     24.99
    ]
@@ -49690,6 +50900,11 @@
    ],
    [
     20261115,
+    19.99,
+    19.99
+   ],
+   [
+    20261116,
     19.99,
     19.99
    ]
@@ -55264,6 +56479,11 @@
     20261115,
     214.82,
     236.07
+   ],
+   [
+    20261116,
+    209.47,
+    209.47
    ]
   ],
   "B0DBJ5PBLT": [
@@ -56513,6 +57733,11 @@
     20261115,
     37.99,
     37.99
+   ],
+   [
+    20261116,
+    37.99,
+    37.99
    ]
   ],
   "B0G7LBB2F4": [
@@ -56538,6 +57763,11 @@
    ],
    [
     20261115,
+    39.99,
+    39.99
+   ],
+   [
+    20261116,
     39.99,
     39.99
    ]
@@ -57976,6 +59206,11 @@
     20261115,
     59.99,
     59.99
+   ],
+   [
+    20261116,
+    49.99,
+    49.99
    ]
   ],
   "B0HHMW74FZ": [
@@ -58001,6 +59236,11 @@
    ],
    [
     20261115,
+    16.14,
+    16.14
+   ],
+   [
+    20261116,
     16.14,
     16.14
    ]
@@ -58107,6 +59347,11 @@
     20261115,
     179.99,
     179.99
+   ],
+   [
+    20261116,
+    179.99,
+    179.99
    ]
   ],
   "B06XT3TVKP": [
@@ -58204,6 +59449,11 @@
     20261115,
     34.9,
     34.9
+   ],
+   [
+    20261116,
+    29.9,
+    29.9
    ]
   ],
   "B07MNWB6DJ": [
@@ -58411,6 +59661,11 @@
    ],
    [
     20261115,
+    28.98,
+    28.98
+   ],
+   [
+    20261116,
     28.98,
     28.98
    ]
@@ -64341,6 +65596,11 @@
     20261115,
     29.99,
     29.99
+   ],
+   [
+    20261116,
+    29.99,
+    29.99
    ]
   ],
   "B0055ZNNOK": [
@@ -64594,6 +65854,11 @@
     20261115,
     28.99,
     28.99
+   ],
+   [
+    20261116,
+    28.99,
+    28.99
    ]
   ],
   "B001BSIZS4": [
@@ -64631,6 +65896,11 @@
    ],
    [
     20261115,
+    49.99,
+    49.99
+   ],
+   [
+    20261116,
     49.99,
     49.99
    ]
@@ -64687,6 +65957,11 @@
    ],
    [
     20261115,
+    249.99,
+    249.99
+   ],
+   [
+    20261116,
     249.99,
     249.99
    ]
@@ -64819,6 +66094,11 @@
     20261115,
     19.99,
     19.99
+   ],
+   [
+    20261116,
+    19.99,
+    19.99
    ]
   ],
   "B098P52S8V": [
@@ -64871,6 +66151,11 @@
    ],
    [
     20261115,
+    23.2,
+    23.2
+   ],
+   [
+    20261116,
     23.2,
     23.2
    ]
@@ -65075,6 +66360,11 @@
     20261115,
     20.99,
     20.99
+   ],
+   [
+    20261116,
+    15.99,
+    15.99
    ]
   ],
   "B07N7T9HXF": [
@@ -65114,6 +66404,11 @@
     20261115,
     31.53,
     32.83
+   ],
+   [
+    20261116,
+    22.99,
+    22.99
    ]
   ],
   "B0B36K15ZT": [
@@ -65235,6 +66530,11 @@
     20261115,
     22.05,
     22.05
+   ],
+   [
+    20261116,
+    22.05,
+    22.05
    ]
   ],
   "B0H8P5CDJX": [
@@ -65260,6 +66560,11 @@
    ],
    [
     20261115,
+    25.99,
+    25.99
+   ],
+   [
+    20261116,
     25.99,
     25.99
    ]
@@ -65289,6 +66594,11 @@
     20261115,
     20.99,
     20.99
+   ],
+   [
+    20261116,
+    20.99,
+    20.99
    ]
   ],
   "B0H8PGDLHJ": [
@@ -65316,6 +66626,11 @@
     20261115,
     25.99,
     25.99
+   ],
+   [
+    20261116,
+    25.99,
+    25.99
    ]
   ],
   "B0FWK5PS56": [
@@ -65341,6 +66656,11 @@
    ],
    [
     20261115,
+    29.99,
+    29.99
+   ],
+   [
+    20261116,
     29.99,
     29.99
    ]
@@ -65634,6 +66954,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    39.99,
+    39.99
    ]
   ],
   "B0DRHXXTGH": [
@@ -65834,6 +67159,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    39.99,
+    39.99
    ]
   ],
   "B0BZMLXNLS": [
@@ -65906,6 +67236,11 @@
     20261115,
     19.9,
     19.9
+   ],
+   [
+    20261116,
+    24.99,
+    24.99
    ]
   ],
   "B0DKXFJDD9": [
@@ -65949,6 +67284,11 @@
     20261115,
     194.3,
     194.33
+   ],
+   [
+    20261116,
+    194.28,
+    194.28
    ]
   ],
   "B0H556RP1H": [
@@ -65971,6 +67311,11 @@
     20261115,
     99.99,
     99.99
+   ],
+   [
+    20261116,
+    99.99,
+    99.99
    ]
   ],
   "B0H7RS98KJ": [
@@ -65991,6 +67336,11 @@
    ],
    [
     20261115,
+    129.99,
+    129.99
+   ],
+   [
+    20261116,
     129.99,
     129.99
    ]
@@ -66070,6 +67420,11 @@
     20261112,
     255.55,
     256.44
+   ],
+   [
+    20261116,
+    144.95,
+    144.95
    ]
   ],
   "B0B2RPRK8H": [
@@ -67075,6 +68430,11 @@
     20261115,
     14.99,
     17.04
+   ],
+   [
+    20261116,
+    14.99,
+    14.99
    ]
   ],
   "B0GWQPT2GY": [
@@ -67104,6 +68464,11 @@
     20261115,
     189.0,
     189.0
+   ],
+   [
+    20261116,
+    233.32,
+    233.32
    ]
   ],
   "B0DX65SQXF": [
@@ -67124,6 +68489,11 @@
    ],
    [
     20261115,
+    183.35,
+    183.35
+   ],
+   [
+    20261116,
     183.35,
     183.35
    ]
@@ -67169,6 +68539,11 @@
     20261115,
     46.57,
     46.57
+   ],
+   [
+    20261116,
+    46.57,
+    46.57
    ]
   ],
   "B0DHLGKN8B": [
@@ -67196,6 +68571,11 @@
    ],
    [
     20261115,
+    44.99,
+    44.99
+   ],
+   [
+    20261116,
     44.99,
     44.99
    ]
@@ -67291,6 +68671,11 @@
     20261115,
     86.9,
     86.9
+   ],
+   [
+    20261116,
+    86.9,
+    86.9
    ]
   ],
   "B07MF6XQ88": [
@@ -67334,6 +68719,11 @@
     20261115,
     170.12,
     170.12
+   ],
+   [
+    20261116,
+    169.99,
+    169.99
    ]
   ],
   "B0C3BSZ56D": [
@@ -67356,6 +68746,11 @@
     20261115,
     74.99,
     74.99
+   ],
+   [
+    20261116,
+    59.99,
+    59.99
    ]
   ],
   "B0BWK86TKG": [
@@ -67388,6 +68783,11 @@
    ],
    [
     20261115,
+    39.99,
+    39.99
+   ],
+   [
+    20261116,
     39.99,
     39.99
    ]
@@ -67461,6 +68861,11 @@
     20261115,
     29.9,
     29.9
+   ],
+   [
+    20261116,
+    29.9,
+    29.9
    ]
   ],
   "B09B3ZTGZ5": [
@@ -67481,6 +68886,11 @@
    ],
    [
     20261115,
+    18.57,
+    18.57
+   ],
+   [
+    20261116,
     18.57,
     18.57
    ]
@@ -67519,6 +68929,11 @@
     20261115,
     525.99,
     525.99
+   ],
+   [
+    20261116,
+    525.99,
+    525.99
    ]
   ],
   "B0886FX682": [
@@ -67539,6 +68954,11 @@
    ],
    [
     20261115,
+    299.0,
+    299.0
+   ],
+   [
+    20261116,
     299.0,
     299.0
    ]
@@ -67575,6 +68995,11 @@
    ],
    [
     20261115,
+    36.5,
+    36.5
+   ],
+   [
+    20261116,
     36.5,
     36.5
    ]
@@ -67634,6 +69059,11 @@
     20261115,
     63.99,
     63.99
+   ],
+   [
+    20261116,
+    63.99,
+    63.99
    ]
   ],
   "B07ZRZLHH4": [
@@ -67654,6 +69084,11 @@
    ],
    [
     20261115,
+    184.98,
+    184.98
+   ],
+   [
+    20261116,
     184.98,
     184.98
    ]
@@ -67699,6 +69134,11 @@
     20261115,
     246.13,
     247.36
+   ],
+   [
+    20261116,
+    288.86,
+    288.86
    ]
   ],
   "B01B5UZ4OU": [
@@ -67740,6 +69180,11 @@
    ],
    [
     20261115,
+    57.0,
+    57.0
+   ],
+   [
+    20261116,
     57.0,
     57.0
    ]
@@ -67793,6 +69238,11 @@
     20261115,
     79.99,
     79.99
+   ],
+   [
+    20261116,
+    69.99,
+    69.99
    ]
   ],
   "B0FH4TZZ7S": [
@@ -67875,6 +69325,11 @@
     20261115,
     34.99,
     34.99
+   ],
+   [
+    20261116,
+    34.99,
+    34.99
    ]
   ],
   "B07X44W1M9": [
@@ -67952,6 +69407,11 @@
     20261115,
     8.54,
     8.54
+   ],
+   [
+    20261116,
+    8.54,
+    8.54
    ]
   ],
   "B0HC7D3JVF": [
@@ -67974,6 +69434,11 @@
     20261115,
     13.99,
     13.99
+   ],
+   [
+    20261116,
+    11.3,
+    11.3
    ]
   ],
   "B0HJCH6QP1": [
@@ -67996,6 +69461,11 @@
     20261115,
     22.87,
     22.87
+   ],
+   [
+    20261116,
+    19.55,
+    19.55
    ]
   ],
   "B0BFJKTDJW": [
@@ -68016,6 +69486,11 @@
    ],
    [
     20261115,
+    29.99,
+    29.99
+   ],
+   [
+    20261116,
     29.99,
     29.99
    ]
@@ -68061,6 +69536,11 @@
     20261115,
     449.0,
     449.0
+   ],
+   [
+    20261116,
+    449.0,
+    449.0
    ]
   ],
   "B0CN3XSNGH": [
@@ -68081,6 +69561,11 @@
    ],
    [
     20261115,
+    50.0,
+    50.0
+   ],
+   [
+    20261116,
     50.0,
     50.0
    ]
@@ -68105,6 +69590,11 @@
     20261115,
     409.0,
     409.0
+   ],
+   [
+    20261116,
+    409.0,
+    409.0
    ]
   ],
   "B0FP2KTYVL": [
@@ -68125,6 +69615,11 @@
    ],
    [
     20261115,
+    41.69,
+    41.69
+   ],
+   [
+    20261116,
     41.69,
     41.69
    ]
@@ -68196,6 +69691,11 @@
     20261115,
     63.99,
     63.99
+   ],
+   [
+    20261116,
+    63.99,
+    63.99
    ]
   ],
   "B09DYSPRVH": [
@@ -68264,6 +69764,11 @@
     20261115,
     52.39,
     52.39
+   ],
+   [
+    20261116,
+    52.39,
+    52.39
    ]
   ],
   "B09S36NL8L": [
@@ -68314,6 +69819,11 @@
     20261115,
     33.98,
     33.98
+   ],
+   [
+    20261116,
+    33.98,
+    33.98
    ]
   ],
   "B018YPAKS4": [
@@ -68336,6 +69846,11 @@
     20261115,
     68.07,
     68.16
+   ],
+   [
+    20261116,
+    68.07,
+    68.07
    ]
   ],
   "B0GVXQDZWC": [
@@ -68363,6 +69878,11 @@
    ],
    [
     20261115,
+    112.7,
+    112.7
+   ],
+   [
+    20261116,
     112.7,
     112.7
    ]
@@ -68408,6 +69928,11 @@
     20261115,
     144.99,
     144.99
+   ],
+   [
+    20261116,
+    144.99,
+    144.99
    ]
   ],
   "B0F5Q3Y46J": [
@@ -68428,6 +69953,11 @@
    ],
    [
     20261115,
+    47.99,
+    47.99
+   ],
+   [
+    20261116,
     47.99,
     47.99
    ]
@@ -68452,6 +69982,11 @@
     20261115,
     240.8,
     240.8
+   ],
+   [
+    20261116,
+    240.8,
+    240.8
    ]
   ],
   "B0F5Q2P92K": [
@@ -68472,6 +70007,11 @@
    ],
    [
     20261115,
+    49.99,
+    49.99
+   ],
+   [
+    20261116,
     49.99,
     49.99
    ]
@@ -68536,6 +70076,11 @@
     20261115,
     88.99,
     118.8
+   ],
+   [
+    20261116,
+    88.99,
+    88.99
    ]
   ],
   "B0CGX9DS9C": [
@@ -68618,6 +70163,11 @@
     20261115,
     59.0,
     59.0
+   ],
+   [
+    20261116,
+    59.0,
+    59.0
    ]
   ],
   "B01L31KAGI": [
@@ -68640,6 +70190,11 @@
     20261115,
     29.08,
     30.23
+   ],
+   [
+    20261116,
+    30.23,
+    30.23
    ]
   ],
   "B07RFVHHQK": [
@@ -68660,6 +70215,11 @@
    ],
    [
     20261115,
+    151.63,
+    151.63
+   ],
+   [
+    20261116,
     151.63,
     151.63
    ]
@@ -68698,6 +70258,11 @@
     20261115,
     117.56,
     117.56
+   ],
+   [
+    20261116,
+    117.56,
+    117.56
    ]
   ],
   "B0H5WSD37M": [
@@ -68718,6 +70283,11 @@
    ],
    [
     20261115,
+    89.99,
+    89.99
+   ],
+   [
+    20261116,
     89.99,
     89.99
    ]
@@ -68742,6 +70312,11 @@
     20261115,
     89.99,
     89.99
+   ],
+   [
+    20261116,
+    89.99,
+    89.99
    ]
   ],
   "B0H38B6PJS": [
@@ -68764,6 +70339,11 @@
     20261115,
     89.99,
     89.99
+   ],
+   [
+    20261116,
+    89.99,
+    89.99
    ]
   ],
   "B0H2LFV9GY": [
@@ -68779,6 +70359,11 @@
    ],
    [
     20261115,
+    47.49,
+    47.49
+   ],
+   [
+    20261116,
     47.49,
     47.49
    ]
@@ -68824,6 +70409,11 @@
     20261115,
     63.79,
     63.79
+   ],
+   [
+    20261116,
+    63.79,
+    63.79
    ]
   ],
   "B06XVRWMS9": [
@@ -68844,6 +70434,11 @@
    ],
    [
     20261115,
+    154.73,
+    154.73
+   ],
+   [
+    20261116,
     154.73,
     154.73
    ]
@@ -68889,6 +70484,11 @@
     20261115,
     109.25,
     109.25
+   ],
+   [
+    20261116,
+    109.25,
+    109.25
    ]
   ],
   "B0HF327XMC": [
@@ -68909,6 +70509,11 @@
    ],
    [
     20261115,
+    52.57,
+    52.57
+   ],
+   [
+    20261116,
     52.57,
     52.57
    ]
@@ -68945,6 +70550,11 @@
    ],
    [
     20261115,
+    59.99,
+    59.99
+   ],
+   [
+    20261116,
     59.99,
     59.99
    ]
@@ -69024,6 +70634,11 @@
    ],
    [
     20261115,
+    788.0,
+    788.0
+   ],
+   [
+    20261116,
     788.0,
     788.0
    ]
@@ -69132,6 +70747,11 @@
     20261115,
     599.0,
     599.0
+   ],
+   [
+    20261116,
+    599.0,
+    599.0
    ]
   ],
   "B0DTKPW5TP": [
@@ -69152,6 +70772,11 @@
    ],
    [
     20261115,
+    599.0,
+    599.0
+   ],
+   [
+    20261116,
     599.0,
     599.0
    ]
@@ -69211,6 +70836,11 @@
     20261115,
     669.0,
     669.0
+   ],
+   [
+    20261116,
+    669.0,
+    669.0
    ]
   ],
   "B085DMNZNG": [
@@ -69245,6 +70875,11 @@
    ],
    [
     20261115,
+    169.99,
+    169.99
+   ],
+   [
+    20261116,
     169.99,
     169.99
    ]
@@ -69307,6 +70942,11 @@
    ],
    [
     20261115,
+    198.99,
+    198.99
+   ],
+   [
+    20261116,
     198.99,
     198.99
    ]
@@ -69378,6 +71018,11 @@
     20261115,
     59.99,
     59.99
+   ],
+   [
+    20261116,
+    59.99,
+    59.99
    ]
   ],
   "B0DMD159MN": [
@@ -69398,6 +71043,11 @@
    ],
    [
     20261115,
+    28.49,
+    28.49
+   ],
+   [
+    20261116,
     28.49,
     28.49
    ]
@@ -69975,6 +71625,11 @@
     20261115,
     222.13,
     222.13
+   ],
+   [
+    20261116,
+    217.55,
+    217.55
    ]
   ],
   "B08GY8NHF2": [
@@ -70016,6 +71671,11 @@
     20261115,
     38.22,
     38.22
+   ],
+   [
+    20261116,
+    38.22,
+    38.22
    ]
   ],
   "B0CHFYYQZ6": [
@@ -70030,6 +71690,11 @@
     20261112,
     17.0,
     17.0
+   ],
+   [
+    20261116,
+    12.92,
+    12.92
    ]
   ],
   "B0CVB7B3LX": [
@@ -71772,6 +73437,11 @@
     20261115,
     67.95,
     67.95
+   ],
+   [
+    20261116,
+    54.99,
+    54.99
    ]
   ],
   "B007VBGTX8": [
@@ -71806,6 +73476,11 @@
    ],
    [
     20261115,
+    13.2,
+    13.2
+   ],
+   [
+    20261116,
     13.2,
     13.2
    ]
@@ -72340,6 +74015,11 @@
    ],
    [
     20261115,
+    33.16,
+    33.16
+   ],
+   [
+    20261116,
     33.16,
     33.16
    ]
@@ -76895,6 +78575,11 @@
     20261115,
     229.0,
     229.0
+   ],
+   [
+    20261116,
+    229.0,
+    229.0
    ]
   ],
   "B00400OMU0": [
@@ -77478,6 +79163,11 @@
     20261115,
     749.0,
     749.0
+   ],
+   [
+    20261116,
+    699.0,
+    699.0
    ]
   ],
   "B0DVS48MRB": [
@@ -78029,6 +79719,11 @@
    ],
    [
     20261115,
+    34.99,
+    34.99
+   ],
+   [
+    20261116,
     34.99,
     34.99
    ]
@@ -79345,6 +81040,11 @@
     20261115,
     278.99,
     278.99
+   ],
+   [
+    20261116,
+    278.99,
+    278.99
    ]
   ],
   "B0064XFZQG": [
@@ -79379,6 +81079,11 @@
     20261115,
     34.91,
     34.91
+   ],
+   [
+    20261116,
+    34.91,
+    34.91
    ]
   ],
   "B0H45397DS": [
@@ -79399,6 +81104,11 @@
    ],
    [
     20261115,
+    29.99,
+    29.99
+   ],
+   [
+    20261116,
     29.99,
     29.99
    ]
@@ -81904,6 +83614,11 @@
     20261115,
     109.24,
     109.24
+   ],
+   [
+    20261116,
+    109.24,
+    109.24
    ]
   ],
   "B0GVJWD4WK": [
@@ -81924,6 +83639,11 @@
    ],
    [
     20261115,
+    164.55,
+    164.55
+   ],
+   [
+    20261116,
     164.55,
     164.55
    ]
@@ -81960,6 +83680,11 @@
     20261115,
     276.92,
     276.92
+   ],
+   [
+    20261116,
+    263.07,
+    263.07
    ]
   ],
   "B0HJR6C5D7": [
@@ -81980,6 +83705,11 @@
    ],
    [
     20261115,
+    344.3,
+    344.3
+   ],
+   [
+    20261116,
     344.3,
     344.3
    ]
@@ -82004,6 +83734,11 @@
     20261115,
     496.46,
     496.46
+   ],
+   [
+    20261116,
+    506.39,
+    506.39
    ]
   ],
   "B0H7156BS8": [
@@ -82046,6 +83781,11 @@
    ],
    [
     20261115,
+    252.6,
+    252.6
+   ],
+   [
+    20261116,
     252.6,
     252.6
    ]
@@ -82119,6 +83859,11 @@
    ],
    [
     20261115,
+    42.57,
+    42.57
+   ],
+   [
+    20261116,
     42.57,
     42.57
    ]
@@ -82211,6 +83956,11 @@
     20261115,
     19.99,
     19.99
+   ],
+   [
+    20261116,
+    19.99,
+    19.99
    ]
   ],
   "B0GWQLDTK9": [
@@ -82250,6 +84000,11 @@
     20261115,
     999.0,
     999.0
+   ],
+   [
+    20261116,
+    999.0,
+    999.0
    ]
   ],
   "B0DVS79JQ9": [
@@ -82270,6 +84025,11 @@
    ],
    [
     20261115,
+    1660.9,
+    1660.9
+   ],
+   [
+    20261116,
     1660.9,
     1660.9
    ]
@@ -82294,6 +84054,11 @@
     20261115,
     849.0,
     849.0
+   ],
+   [
+    20261116,
+    799.0,
+    799.0
    ]
   ],
   "B0HHRKQD7V": [
@@ -82314,6 +84079,11 @@
    ],
    [
     20261115,
+    385.81,
+    385.81
+   ],
+   [
+    20261116,
     385.81,
     385.81
    ]
@@ -82338,6 +84108,11 @@
     20261115,
     104.9,
     104.9
+   ],
+   [
+    20261116,
+    104.9,
+    104.9
    ]
   ],
   "B0FWCPNPCV": [
@@ -82360,6 +84135,11 @@
     20261115,
     109.0,
     109.0
+   ],
+   [
+    20261116,
+    99.0,
+    99.0
    ]
   ],
   "B0FWCTSGL9": [
@@ -82382,6 +84162,11 @@
     20261115,
     109.0,
     109.0
+   ],
+   [
+    20261116,
+    99.0,
+    99.0
    ]
   ],
   "B0FWCLJ51V": [
@@ -82402,6 +84187,11 @@
    ],
    [
     20261115,
+    129.0,
+    129.0
+   ],
+   [
+    20261116,
     129.0,
     129.0
    ]
@@ -82443,6 +84233,11 @@
     20261115,
     249.0,
     249.0
+   ],
+   [
+    20261116,
+    229.0,
+    229.0
    ]
   ],
   "B0DH58HJJD": [
@@ -82475,6 +84270,11 @@
    ],
    [
     20261115,
+    109.99,
+    109.99
+   ],
+   [
+    20261116,
     109.99,
     109.99
    ]
@@ -82511,6 +84311,11 @@
     20261115,
     274.95,
     274.95
+   ],
+   [
+    20261116,
+    274.95,
+    274.95
    ]
   ],
   "B0DN7CYYSD": [
@@ -82523,6 +84328,11 @@
     20261114,
     198.81,
     198.81
+   ],
+   [
+    20261116,
+    198.58,
+    198.58
    ]
   ],
   "B0GK1FMZWB": [
@@ -82545,6 +84355,11 @@
     20261115,
     130.98,
     130.98
+   ],
+   [
+    20261116,
+    108.56,
+    108.56
    ]
   ],
   "B0FFSX492V": [
@@ -82565,6 +84380,11 @@
    ],
    [
     20261115,
+    51.99,
+    51.99
+   ],
+   [
+    20261116,
     51.99,
     51.99
    ]
@@ -82589,6 +84409,11 @@
     20261115,
     219.99,
     219.99
+   ],
+   [
+    20261116,
+    198.37,
+    198.37
    ]
   ],
   "B0CN1NFYZ6": [
@@ -82677,6 +84502,11 @@
     20261115,
     106.99,
     106.99
+   ],
+   [
+    20261116,
+    106.99,
+    106.99
    ]
   ],
   "B09DVN7QWH": [
@@ -82697,6 +84527,11 @@
    ],
    [
     20261115,
+    82.8,
+    82.8
+   ],
+   [
+    20261116,
     82.8,
     82.8
    ]
@@ -82738,6 +84573,11 @@
     20261115,
     199.0,
     199.0
+   ],
+   [
+    20261116,
+    194.99,
+    194.99
    ]
   ],
   "B0CC3QBGDL": [
@@ -82789,6 +84629,11 @@
     20261115,
     78.98,
     78.98
+   ],
+   [
+    20261116,
+    78.98,
+    78.98
    ]
   ],
   "B085S2147W": [
@@ -82803,6 +84648,11 @@
     20261112,
     45.99,
     45.99
+   ],
+   [
+    20261116,
+    32.9,
+    32.9
    ]
   ],
   "B00K11UHVA": [
@@ -82859,6 +84709,11 @@
     20261115,
     49.9,
     49.9
+   ],
+   [
+    20261116,
+    49.9,
+    49.9
    ]
   ],
   "B0FKNG3MZ7": [
@@ -82910,6 +84765,11 @@
     20261115,
     168.0,
     168.0
+   ],
+   [
+    20261116,
+    168.0,
+    168.0
    ]
   ],
   "B0CMV82BJW": [
@@ -82930,6 +84790,11 @@
    ],
    [
     20261115,
+    40.56,
+    40.56
+   ],
+   [
+    20261116,
     40.56,
     40.56
    ]
@@ -82979,6 +84844,11 @@
    ],
    [
     20261115,
+    64.99,
+    64.99
+   ],
+   [
+    20261116,
     64.99,
     64.99
    ]
@@ -83042,6 +84912,11 @@
     20261115,
     55.99,
     55.99
+   ],
+   [
+    20261116,
+    55.99,
+    55.99
    ]
   ],
   "B0CBCPB2T1": [
@@ -83086,6 +84961,11 @@
     20261115,
     79.9,
     79.9
+   ],
+   [
+    20261116,
+    79.9,
+    79.9
    ]
   ],
   "B0DMM3SYSZ": [
@@ -83106,6 +84986,11 @@
    ],
    [
     20261115,
+    79.9,
+    79.9
+   ],
+   [
+    20261116,
     79.9,
     79.9
    ]
@@ -83130,6 +85015,11 @@
     20261115,
     79.9,
     79.9
+   ],
+   [
+    20261116,
+    79.9,
+    79.9
    ]
   ],
   "B08BRYHFGF": [
@@ -83150,6 +85040,11 @@
    ],
    [
     20261115,
+    86.16,
+    86.16
+   ],
+   [
+    20261116,
     86.16,
     86.16
    ]
@@ -83186,6 +85081,11 @@
     20261115,
     75.0,
     75.0
+   ],
+   [
+    20261116,
+    75.0,
+    75.0
    ]
   ],
   "B0C76ZD7KV": [
@@ -83206,6 +85106,11 @@
    ],
    [
     20261115,
+    17.13,
+    17.13
+   ],
+   [
+    20261116,
     17.13,
     17.13
    ]
@@ -83247,6 +85152,11 @@
     20261115,
     18.51,
     18.51
+   ],
+   [
+    20261116,
+    18.51,
+    18.51
    ]
   ],
   "B07MM4V7NR": [
@@ -83269,6 +85179,11 @@
     20261115,
     58.95,
     58.95
+   ],
+   [
+    20261116,
+    56.0,
+    56.0
    ]
   ],
   "B0H28ZXG34": [
@@ -83289,6 +85204,11 @@
    ],
    [
     20261115,
+    25.99,
+    25.99
+   ],
+   [
+    20261116,
     25.99,
     25.99
    ]
@@ -83347,6 +85267,11 @@
     20261115,
     169.0,
     169.0
+   ],
+   [
+    20261116,
+    159.99,
+    159.99
    ]
   ],
   "B0C59FBGG1": [
@@ -83379,6 +85304,11 @@
    ],
    [
     20261115,
+    139.99,
+    139.99
+   ],
+   [
+    20261116,
     139.99,
     139.99
    ]
@@ -83415,6 +85345,11 @@
     20261115,
     99.99,
     99.99
+   ],
+   [
+    20261116,
+    89.99,
+    89.99
    ]
   ],
   "B0D2KTQZXD": [
@@ -83435,6 +85370,11 @@
    ],
    [
     20261115,
+    269.99,
+    269.99
+   ],
+   [
+    20261116,
     269.99,
     269.99
    ]
@@ -83459,6 +85399,11 @@
     20261115,
     129.99,
     129.99
+   ],
+   [
+    20261116,
+    119.99,
+    119.99
    ]
   ],
   "B07LBSBX5L": [
@@ -83503,6 +85448,11 @@
     20261115,
     99.99,
     99.99
+   ],
+   [
+    20261116,
+    99.99,
+    99.99
    ]
   ],
   "B0DFWJYXTX": [
@@ -83523,6 +85473,11 @@
    ],
    [
     20261115,
+    380.9,
+    380.9
+   ],
+   [
+    20261116,
     380.9,
     380.9
    ]
@@ -83583,6 +85538,11 @@
     20261115,
     14.79,
     16.62
+   ],
+   [
+    20261116,
+    16.62,
+    16.62
    ]
   ],
   "B074XTVQW9": [
@@ -83603,6 +85563,11 @@
    ],
    [
     20261115,
+    18.99,
+    18.99
+   ],
+   [
+    20261116,
     18.99,
     18.99
    ]
@@ -83627,6 +85592,11 @@
     20261115,
     22.5,
     22.9
+   ],
+   [
+    20261116,
+    22.9,
+    22.9
    ]
   ],
   "B0DRXPLZFK": [
@@ -83647,6 +85617,11 @@
    ],
    [
     20261115,
+    25.99,
+    25.99
+   ],
+   [
+    20261116,
     25.99,
     25.99
    ]
@@ -83688,6 +85663,11 @@
     20261115,
     6.95,
     6.95
+   ],
+   [
+    20261116,
+    6.95,
+    6.95
    ]
   ],
   "B00P8XQPY4": [
@@ -83708,6 +85688,11 @@
    ],
    [
     20261115,
+    22.95,
+    22.95
+   ],
+   [
+    20261116,
     22.95,
     22.95
    ]
@@ -83732,6 +85717,11 @@
     20261115,
     799.0,
     799.0
+   ],
+   [
+    20261116,
+    799.0,
+    799.0
    ]
   ],
   "B0FGY4F2W3": [
@@ -83752,6 +85742,11 @@
    ],
    [
     20261115,
+    182.9,
+    182.9
+   ],
+   [
+    20261116,
     182.9,
     182.9
    ]
@@ -83776,6 +85771,11 @@
     20261115,
     115.77,
     115.77
+   ],
+   [
+    20261116,
+    115.77,
+    115.77
    ]
   ],
   "B0C5MB5MTS": [
@@ -83798,6 +85798,11 @@
     20261115,
     452.0,
     452.0
+   ],
+   [
+    20261116,
+    415.0,
+    415.0
    ]
   ],
   "B0H412PLYC": [
@@ -83818,6 +85823,11 @@
    ],
    [
     20261115,
+    969.99,
+    969.99
+   ],
+   [
+    20261116,
     969.99,
     969.99
    ]
@@ -83854,6 +85864,11 @@
     20261115,
     164.89,
     164.89
+   ],
+   [
+    20261116,
+    164.89,
+    164.89
    ]
   ],
   "B0FFP61L6C": [
@@ -83874,6 +85889,11 @@
    ],
    [
     20261115,
+    49.99,
+    49.99
+   ],
+   [
+    20261116,
     49.99,
     49.99
    ]
@@ -83898,6 +85918,11 @@
     20261115,
     47.67,
     47.67
+   ],
+   [
+    20261116,
+    47.67,
+    47.67
    ]
   ],
   "B0DQ7CQFMV": [
@@ -83918,6 +85943,11 @@
    ],
    [
     20261115,
+    59.99,
+    59.99
+   ],
+   [
+    20261116,
     59.99,
     59.99
    ]
@@ -83971,6 +86001,11 @@
     20261115,
     23.99,
     23.99
+   ],
+   [
+    20261116,
+    23.99,
+    23.99
    ]
   ],
   "B0CSZ6QC7C": [
@@ -83991,6 +86026,11 @@
    ],
    [
     20261115,
+    228.42,
+    228.42
+   ],
+   [
+    20261116,
     228.42,
     228.42
    ]
@@ -84015,6 +86055,11 @@
     20261115,
     106.8,
     106.8
+   ],
+   [
+    20261116,
+    106.8,
+    106.8
    ]
   ],
   "B0CQ3PJKRV": [
@@ -84037,6 +86082,11 @@
     20261115,
     112.97,
     112.97
+   ],
+   [
+    20261116,
+    107.2,
+    107.2
    ]
   ],
   "B0FRFRMDRP": [
@@ -84057,6 +86107,11 @@
    ],
    [
     20261115,
+    26.99,
+    26.99
+   ],
+   [
+    20261116,
     26.99,
     26.99
    ]
@@ -84147,6 +86202,11 @@
     20261115,
     49.99,
     54.49
+   ],
+   [
+    20261116,
+    39.9,
+    39.9
    ]
   ],
   "B0D42BGBV3": [
@@ -84176,6 +86236,11 @@
     20261115,
     23.95,
     23.95
+   ],
+   [
+    20261116,
+    23.95,
+    23.95
    ]
   ],
   "B0HHXS61Y5": [
@@ -84196,6 +86261,11 @@
    ],
    [
     20261115,
+    39.99,
+    39.99
+   ],
+   [
+    20261116,
     39.99,
     39.99
    ]
@@ -84220,6 +86290,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    33.99,
+    33.99
    ]
   ],
   "B07PTMKYS7": [
@@ -84240,6 +86315,11 @@
    ],
    [
     20261115,
+    249.9,
+    249.9
+   ],
+   [
+    20261116,
     249.9,
     249.9
    ]
@@ -84286,6 +86366,11 @@
     20261115,
     29.99,
     29.99
+   ],
+   [
+    20261116,
+    29.99,
+    29.99
    ]
   ],
   "B0FQNQWZ8B": [
@@ -84308,6 +86393,11 @@
     20261115,
     32.9,
     32.9
+   ],
+   [
+    20261116,
+    32.9,
+    32.9
    ]
   ],
   "B0HR9XYSHZ": [
@@ -84328,6 +86418,11 @@
    ],
    [
     20261115,
+    19.95,
+    19.95
+   ],
+   [
+    20261116,
     19.95,
     19.95
    ]
@@ -84374,6 +86469,11 @@
     20261115,
     59.9,
     59.9
+   ],
+   [
+    20261116,
+    59.9,
+    59.9
    ]
   ],
   "B0HKS33GPX": [
@@ -84394,6 +86494,11 @@
    ],
    [
     20261115,
+    59.9,
+    59.9
+   ],
+   [
+    20261116,
     59.9,
     59.9
    ]
@@ -84435,6 +86540,11 @@
     20261115,
     79.99,
     79.99
+   ],
+   [
+    20261116,
+    79.99,
+    79.99
    ]
   ],
   "B0GYRWXPLX": [
@@ -84447,6 +86557,11 @@
     20261113,
     37.69,
     49.98
+   ],
+   [
+    20261116,
+    35.8,
+    35.8
    ]
   ],
   "B0HLZ6JRC6": [
@@ -84467,6 +86582,11 @@
    ],
    [
     20261115,
+    79.99,
+    79.99
+   ],
+   [
+    20261116,
     79.99,
     79.99
    ]
@@ -84513,6 +86633,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    39.99,
+    39.99
    ]
   ],
   "B00HV9TB4O": [
@@ -84535,6 +86660,11 @@
     20261115,
     249.0,
     249.0
+   ],
+   [
+    20261116,
+    249.0,
+    249.0
    ]
   ],
   "B01BUAVMQY": [
@@ -84555,6 +86685,11 @@
    ],
    [
     20261115,
+    1799.0,
+    1799.0
+   ],
+   [
+    20261116,
     1799.0,
     1799.0
    ]
@@ -84591,6 +86726,11 @@
     20261115,
     479.0,
     479.0
+   ],
+   [
+    20261116,
+    479.0,
+    479.0
    ]
   ],
   "B0DFC3ZK6Q": [
@@ -84611,6 +86751,11 @@
    ],
    [
     20261115,
+    59.97,
+    59.97
+   ],
+   [
+    20261116,
     59.97,
     59.97
    ]
@@ -84635,6 +86780,11 @@
     20261115,
     32.99,
     32.99
+   ],
+   [
+    20261116,
+    31.34,
+    31.34
    ]
   ],
   "B0FBGS3DVW": [
@@ -84655,6 +86805,11 @@
    ],
    [
     20261115,
+    67.76,
+    67.76
+   ],
+   [
+    20261116,
     67.76,
     67.76
    ]
@@ -84679,6 +86834,11 @@
     20261115,
     58.99,
     58.99
+   ],
+   [
+    20261116,
+    58.99,
+    58.99
    ]
   ],
   "B0FNR7PN58": [
@@ -84699,6 +86859,11 @@
    ],
    [
     20261115,
+    64.99,
+    64.99
+   ],
+   [
+    20261116,
     64.99,
     64.99
    ]
@@ -84723,6 +86888,11 @@
     20261115,
     73.99,
     73.99
+   ],
+   [
+    20261116,
+    73.99,
+    73.99
    ]
   ],
   "B0GXV9RQH5": [
@@ -84743,6 +86913,11 @@
    ],
    [
     20261115,
+    85.99,
+    85.99
+   ],
+   [
+    20261116,
     85.99,
     85.99
    ]
@@ -84767,6 +86942,11 @@
     20261115,
     56.99,
     56.99
+   ],
+   [
+    20261116,
+    56.99,
+    56.99
    ]
   ],
   "B0FQ5VKV59": [
@@ -84787,6 +86967,11 @@
    ],
    [
     20261115,
+    139.99,
+    139.99
+   ],
+   [
+    20261116,
     139.99,
     139.99
    ]
@@ -84811,6 +86996,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    39.99,
+    39.99
    ]
   ],
   "B0FRMR3RGL": [
@@ -84831,6 +87021,11 @@
    ],
    [
     20261115,
+    119.99,
+    119.99
+   ],
+   [
+    20261116,
     119.99,
     119.99
    ]
@@ -84953,6 +87148,11 @@
     20261115,
     39.99,
     39.99
+   ],
+   [
+    20261116,
+    39.99,
+    39.99
    ]
   ],
   "B0GCFG2NRC": [
@@ -84973,6 +87173,11 @@
    ],
    [
     20261115,
+    68.99,
+    68.99
+   ],
+   [
+    20261116,
     68.99,
     68.99
    ]
@@ -84997,6 +87202,11 @@
     20261115,
     16.99,
     16.99
+   ],
+   [
+    20261116,
+    16.99,
+    16.99
    ]
   ],
   "B0DQ5NTHB8": [
@@ -85017,6 +87227,11 @@
    ],
    [
     20261115,
+    38.99,
+    38.99
+   ],
+   [
+    20261116,
     38.99,
     38.99
    ]
@@ -85090,6 +87305,11 @@
     20261115,
     99.99,
     99.99
+   ],
+   [
+    20261116,
+    99.99,
+    99.99
    ]
   ],
   "B0GTM8C5CZ": [
@@ -85134,6 +87354,11 @@
     20261115,
     189.0,
     189.0
+   ],
+   [
+    20261116,
+    189.0,
+    189.0
    ]
   ],
   "B0CKC1B2VP": [
@@ -85154,6 +87379,11 @@
    ],
    [
     20261115,
+    189.0,
+    189.0
+   ],
+   [
+    20261116,
     189.0,
     189.0
    ]
@@ -85178,11 +87408,21 @@
     20261115,
     56.99,
     56.99
+   ],
+   [
+    20261116,
+    56.99,
+    56.99
    ]
   ],
   "B0HDCKCY39": [
    [
     20261112,
+    149.99,
+    149.99
+   ],
+   [
+    20261116,
     149.99,
     149.99
    ]
@@ -85207,6 +87447,11 @@
     20261115,
     18.99,
     18.99
+   ],
+   [
+    20261116,
+    18.99,
+    18.99
    ]
   ],
   "B083FF167K": [
@@ -85227,6 +87472,11 @@
    ],
    [
     20261115,
+    32.99,
+    32.99
+   ],
+   [
+    20261116,
     32.99,
     32.99
    ]
@@ -85251,6 +87501,11 @@
     20261115,
     12.99,
     12.99
+   ],
+   [
+    20261116,
+    12.99,
+    12.99
    ]
   ],
   "B0B74PGRPP": [
@@ -85271,6 +87526,11 @@
    ],
    [
     20261115,
+    10.49,
+    10.49
+   ],
+   [
+    20261116,
     10.49,
     10.49
    ]
@@ -85346,6 +87606,11 @@
     20261115,
     17.99,
     17.99
+   ],
+   [
+    20261116,
+    17.99,
+    17.99
    ]
   ],
   "B0HJCH586C": [
@@ -85368,6 +87633,11 @@
     20261115,
     31.87,
     31.87
+   ],
+   [
+    20261116,
+    24.43,
+    24.43
    ]
   ],
   "B0DZH7RZPG": [
@@ -85388,6 +87658,11 @@
    ],
    [
     20261115,
+    31.34,
+    31.34
+   ],
+   [
+    20261116,
     31.34,
     31.34
    ]
@@ -85436,6 +87711,11 @@
     20261115,
     518.84,
     518.84
+   ],
+   [
+    20261116,
+    518.84,
+    518.84
    ]
   ],
   "B0FQWDJ2SN": [
@@ -85475,6 +87755,11 @@
     20261115,
     206.95,
     206.95
+   ],
+   [
+    20261116,
+    206.95,
+    206.95
    ]
   ],
   "B0FMXW27LS": [
@@ -85495,6 +87780,11 @@
    ],
    [
     20261115,
+    29.99,
+    29.99
+   ],
+   [
+    20261116,
     29.99,
     29.99
    ]
@@ -85534,6 +87824,11 @@
    ],
    [
     20261115,
+    28.99,
+    28.99
+   ],
+   [
+    20261116,
     28.99,
     28.99
    ]
@@ -85580,6 +87875,11 @@
     20261115,
     49.99,
     49.99
+   ],
+   [
+    20261116,
+    49.99,
+    49.99
    ]
   ],
   "B08MCH893K": [
@@ -85624,6 +87924,11 @@
     20261115,
     117.9,
     117.9
+   ],
+   [
+    20261116,
+    117.9,
+    117.9
    ]
   ],
   "B0H9WYKXL1": [
@@ -85644,6 +87949,11 @@
    ],
    [
     20261115,
+    35.99,
+    35.99
+   ],
+   [
+    20261116,
     35.99,
     35.99
    ]
@@ -85668,6 +87978,11 @@
     20261115,
     61.99,
     61.99
+   ],
+   [
+    20261116,
+    61.99,
+    61.99
    ]
   ],
   "B000K2NPE6": [
@@ -85688,6 +88003,11 @@
    ],
    [
     20261115,
+    24.76,
+    24.76
+   ],
+   [
+    20261116,
     24.76,
     24.76
    ]
@@ -85712,6 +88032,11 @@
     20261115,
     33.99,
     33.99
+   ],
+   [
+    20261116,
+    33.99,
+    33.99
    ]
   ],
   "B07MJHBCKX": [
@@ -85732,6 +88057,11 @@
    ],
    [
     20261115,
+    23.29,
+    23.29
+   ],
+   [
+    20261116,
     23.29,
     23.29
    ]
@@ -85756,6 +88086,11 @@
     20261115,
     264.8,
     264.8
+   ],
+   [
+    20261116,
+    264.8,
+    264.8
    ]
   ],
   "B094VPZ9T4": [
@@ -85766,6 +88101,11 @@
    ],
    [
     20261115,
+    54.99,
+    54.99
+   ],
+   [
+    20261116,
     54.99,
     54.99
    ]
@@ -85790,6 +88130,11 @@
     20261115,
     215.0,
     215.0
+   ],
+   [
+    20261116,
+    215.0,
+    215.0
    ]
   ],
   "B0H741D676": [
@@ -85810,6 +88155,11 @@
    ],
    [
     20261115,
+    45.99,
+    45.99
+   ],
+   [
+    20261116,
     45.99,
     45.99
    ]
@@ -85851,6 +88201,11 @@
     20261115,
     49.99,
     49.99
+   ],
+   [
+    20261116,
+    49.99,
+    49.99
    ]
   ],
   "B0H7WKWCMQ": [
@@ -85871,6 +88226,11 @@
    ],
    [
     20261115,
+    55.99,
+    55.99
+   ],
+   [
+    20261116,
     55.99,
     55.99
    ]
@@ -85895,6 +88255,11 @@
     20261115,
     189.0,
     189.0
+   ],
+   [
+    20261116,
+    189.0,
+    189.0
    ]
   ],
   "B07BRS1KXS": [
@@ -85915,6 +88280,11 @@
    ],
    [
     20261115,
+    69.0,
+    69.0
+   ],
+   [
+    20261116,
     69.0,
     69.0
    ]
@@ -85939,6 +88309,11 @@
     20261115,
     22.95,
     22.95
+   ],
+   [
+    20261116,
+    22.95,
+    22.95
    ]
   ],
   "B07CTW8TF7": [
@@ -85959,6 +88334,11 @@
    ],
    [
     20261115,
+    44.45,
+    44.45
+   ],
+   [
+    20261116,
     44.45,
     44.45
    ]
@@ -85988,6 +88368,11 @@
    ],
    [
     20261115,
+    172.99,
+    172.99
+   ],
+   [
+    20261116,
     172.99,
     172.99
    ]
@@ -86029,6 +88414,11 @@
     20261115,
     147.0,
     147.0
+   ],
+   [
+    20261116,
+    147.0,
+    147.0
    ]
   ],
   "B0GJ4QGS79": [
@@ -86049,6 +88439,11 @@
    ],
    [
     20261115,
+    49.99,
+    49.99
+   ],
+   [
+    20261116,
     49.99,
     49.99
    ]
@@ -86107,6 +88502,11 @@
     20261115,
     152.46,
     154.0
+   ],
+   [
+    20261116,
+    154.0,
+    154.0
    ]
   ],
   "B00E5YPRAA": [
@@ -86141,6 +88541,11 @@
     20261115,
     32.78,
     32.78
+   ],
+   [
+    20261116,
+    32.78,
+    32.78
    ]
   ],
   "B00H495X2U": [
@@ -86163,6 +88568,11 @@
     20261115,
     119.34,
     126.94
+   ],
+   [
+    20261116,
+    123.19,
+    123.19
    ]
   ],
   "B0BX9DNN6K": [
@@ -86209,6 +88619,11 @@
     20261113,
     315.0,
     326.16
+   ],
+   [
+    20261116,
+    322.02,
+    322.02
    ]
   ],
   "B096VCR9D4": [
@@ -86231,6 +88646,11 @@
     20261115,
     103.82,
     104.12
+   ],
+   [
+    20261116,
+    98.41,
+    98.41
    ]
   ],
   "B00UG59I5C": [
@@ -86253,6 +88673,11 @@
     20261115,
     156.9,
     156.9
+   ],
+   [
+    20261116,
+    156.9,
+    156.9
    ]
   ],
   "B002T9VRX4": [
@@ -86273,6 +88698,11 @@
    ],
    [
     20261115,
+    77.75,
+    77.75
+   ],
+   [
+    20261116,
     77.75,
     77.75
    ]
@@ -86341,6 +88771,11 @@
     20261115,
     99.0,
     99.0
+   ],
+   [
+    20261116,
+    99.0,
+    99.0
    ]
   ],
   "B00IRA7GTS": [
@@ -86361,6 +88796,11 @@
    ],
    [
     20261115,
+    110.61,
+    110.61
+   ],
+   [
+    20261116,
     110.61,
     110.61
    ]
@@ -86385,6 +88825,11 @@
     20261115,
     140.7,
     140.7
+   ],
+   [
+    20261116,
+    136.44,
+    136.44
    ]
   ],
   "B08QS12SHT": [
@@ -86405,6 +88850,11 @@
    ],
    [
     20261115,
+    51.61,
+    51.61
+   ],
+   [
+    20261116,
     51.61,
     51.61
    ]
@@ -86429,6 +88879,11 @@
     20261115,
     645.94,
     645.94
+   ],
+   [
+    20261116,
+    645.94,
+    645.94
    ]
   ],
   "B0BV78FRDQ": [
@@ -86451,6 +88906,11 @@
     20261115,
     134.9,
     134.9
+   ],
+   [
+    20261116,
+    134.9,
+    134.9
    ]
   ],
   "B077TZYQRT": [
@@ -86471,6 +88931,11 @@
    ],
    [
     20261115,
+    109.9,
+    109.9
+   ],
+   [
+    20261116,
     109.9,
     109.9
    ]
@@ -86502,6 +88967,11 @@
     20261115,
     289.95,
     289.95
+   ],
+   [
+    20261116,
+    289.95,
+    289.95
    ]
   ],
   "B08X255QL2": [
@@ -86522,6 +88992,11 @@
    ],
    [
     20261115,
+    165.74,
+    165.74
+   ],
+   [
+    20261116,
     165.74,
     165.74
    ]
@@ -86546,6 +89021,11 @@
     20261115,
     449.89,
     449.89
+   ],
+   [
+    20261116,
+    449.89,
+    449.89
    ]
   ],
   "B06WGYYLP8": [
@@ -86566,6 +89046,11 @@
    ],
    [
     20261115,
+    219.99,
+    219.99
+   ],
+   [
+    20261116,
     219.99,
     219.99
    ]
@@ -86590,6 +89075,11 @@
     20261115,
     226.24,
     226.24
+   ],
+   [
+    20261116,
+    226.24,
+    226.24
    ]
   ],
   "B0GJ519CND": [
@@ -86612,6 +89102,11 @@
     20261115,
     799.0,
     799.0
+   ],
+   [
+    20261116,
+    799.0,
+    799.0
    ]
   ],
   "B0GHS74187": [
@@ -86632,6 +89127,11 @@
    ],
    [
     20261115,
+    436.02,
+    436.02
+   ],
+   [
+    20261116,
     436.02,
     436.02
    ]
@@ -86668,6 +89168,11 @@
     20261115,
     129.99,
     129.99
+   ],
+   [
+    20261116,
+    129.99,
+    129.99
    ]
   ],
   "B01AI2PJQY": [
@@ -86688,6 +89193,11 @@
    ],
    [
     20261115,
+    129.1,
+    129.1
+   ],
+   [
+    20261116,
     129.1,
     129.1
    ]
@@ -86712,6 +89222,11 @@
     20261115,
     59.99,
     59.99
+   ],
+   [
+    20261116,
+    59.99,
+    59.99
    ]
   ],
   "B018F0A55G": [
@@ -86732,6 +89247,11 @@
    ],
    [
     20261115,
+    130.0,
+    130.0
+   ],
+   [
+    20261116,
     130.0,
     130.0
    ]
@@ -86778,6 +89298,11 @@
     20261115,
     89.99,
     89.99
+   ],
+   [
+    20261116,
+    89.99,
+    89.99
    ]
   ],
   "B0G8DFNCLL": [
@@ -86798,6 +89323,11 @@
    ],
    [
     20261115,
+    119.98,
+    119.98
+   ],
+   [
+    20261116,
     119.98,
     119.98
    ]
@@ -86822,6 +89352,11 @@
     20261115,
     62.99,
     62.99
+   ],
+   [
+    20261116,
+    62.99,
+    62.99
    ]
   ],
   "B0FFHCKGN2": [
@@ -86842,6 +89377,11 @@
    ],
    [
     20261115,
+    89.24,
+    89.24
+   ],
+   [
+    20261116,
     89.24,
     89.24
    ]
@@ -86866,6 +89406,11 @@
     20261115,
     59.99,
     59.99
+   ],
+   [
+    20261116,
+    59.99,
+    59.99
    ]
   ],
   "B0FZVH4TXT": [
@@ -86886,6 +89431,11 @@
    ],
    [
     20261115,
+    135.99,
+    135.99
+   ],
+   [
+    20261116,
     135.99,
     135.99
    ]
@@ -86932,6 +89482,11 @@
     20261115,
     49.99,
     49.99
+   ],
+   [
+    20261116,
+    49.99,
+    49.99
    ]
   ],
   "B0F9FN228S": [
@@ -86954,6 +89509,11 @@
     20261115,
     198.55,
     198.55
+   ],
+   [
+    20261116,
+    198.55,
+    198.55
    ]
   ],
   "B0F9PKNWS1": [
@@ -86974,6 +89534,11 @@
    ],
    [
     20261115,
+    499.0,
+    499.0
+   ],
+   [
+    20261116,
     499.0,
     499.0
    ]
@@ -87037,6 +89602,11 @@
     20261115,
     119.99,
     119.99
+   ],
+   [
+    20261116,
+    107.99,
+    107.99
    ]
   ],
   "B0FXDR9YC1": [
@@ -87057,6 +89627,11 @@
    ],
    [
     20261115,
+    949.0,
+    949.0
+   ],
+   [
+    20261116,
     949.0,
     949.0
    ]
@@ -87098,6 +89673,11 @@
     20261115,
     1049.0,
     1049.0
+   ],
+   [
+    20261116,
+    1049.0,
+    1049.0
    ]
   ],
   "B0DKFMVRKW": [
@@ -87118,6 +89698,11 @@
    ],
    [
     20261115,
+    675.0,
+    675.0
+   ],
+   [
+    20261116,
     675.0,
     675.0
    ]
@@ -87142,6 +89727,11 @@
     20261115,
     42.0,
     42.0
+   ],
+   [
+    20261116,
+    42.0,
+    42.0
    ]
   ],
   "B0FR27WFXY": [
@@ -87162,6 +89752,11 @@
    ],
    [
     20261115,
+    36.99,
+    36.99
+   ],
+   [
+    20261116,
     36.99,
     36.99
    ]
@@ -87186,6 +89781,11 @@
     20261115,
     31.34,
     31.34
+   ],
+   [
+    20261116,
+    31.34,
+    31.34
    ]
   ],
   "B0FR28GGL2": [
@@ -87206,6 +89806,11 @@
    ],
    [
     20261115,
+    36.99,
+    36.99
+   ],
+   [
+    20261116,
     36.99,
     36.99
    ]
@@ -87230,6 +89835,11 @@
     20261115,
     27.07,
     27.07
+   ],
+   [
+    20261116,
+    27.07,
+    27.07
    ]
   ],
   "B0F99BJ16R": [
@@ -87252,6 +89862,11 @@
     20261115,
     99.99,
     99.99
+   ],
+   [
+    20261116,
+    99.99,
+    99.99
    ]
   ],
   "B0HDPDK6PP": [
@@ -87267,6 +89882,11 @@
    ],
    [
     20261115,
+    36.86,
+    36.86
+   ],
+   [
+    20261116,
     36.86,
     36.86
    ]
@@ -87289,6 +89909,11 @@
    ],
    [
     20261115,
+    59.99,
+    59.99
+   ],
+   [
+    20261116,
     59.99,
     59.99
    ]
@@ -87335,6 +89960,11 @@
     20261115,
     35.99,
     35.99
+   ],
+   [
+    20261116,
+    35.99,
+    35.99
    ]
   ],
   "B0DKTWG9V6": [
@@ -87355,6 +89985,11 @@
    ],
    [
     20261115,
+    699.0,
+    699.0
+   ],
+   [
+    20261116,
     699.0,
     699.0
    ]
@@ -87379,6 +90014,11 @@
     20261115,
     849.0,
     849.0
+   ],
+   [
+    20261116,
+    849.0,
+    849.0
    ]
   ],
   "B0H1XD999S": [
@@ -87399,6 +90039,11 @@
    ],
    [
     20261115,
+    759.0,
+    759.0
+   ],
+   [
+    20261116,
     759.0,
     759.0
    ]
@@ -87423,6 +90068,11 @@
     20261115,
     1899.0,
     1899.0
+   ],
+   [
+    20261116,
+    1899.0,
+    1899.0
    ]
   ],
   "B0H9V64VGY": [
@@ -87445,6 +90095,11 @@
     20261115,
     759.0,
     759.0
+   ],
+   [
+    20261116,
+    759.0,
+    759.0
    ]
   ],
   "B0HN2QMGQ2": [
@@ -87465,6 +90120,11 @@
    ],
    [
     20261115,
+    599.0,
+    599.0
+   ],
+   [
+    20261116,
     599.0,
     599.0
    ]
@@ -87518,6 +90178,11 @@
     20261115,
     530.9,
     530.9
+   ],
+   [
+    20261116,
+    530.9,
+    530.9
    ]
   ],
   "B0D5QF82WF": [
@@ -87547,6 +90212,11 @@
     20261115,
     219.99,
     219.99
+   ],
+   [
+    20261116,
+    219.99,
+    219.99
    ]
   ],
   "B0HLYLC32T": [
@@ -87567,6 +90237,11 @@
    ],
    [
     20261115,
+    499.0,
+    499.0
+   ],
+   [
+    20261116,
     499.0,
     499.0
    ]
@@ -87603,6 +90278,11 @@
     20261115,
     699.99,
     699.99
+   ],
+   [
+    20261116,
+    699.99,
+    699.99
    ]
   ],
   "B0DD4J198Q": [
@@ -87623,6 +90303,11 @@
    ],
    [
     20261115,
+    209.99,
+    209.99
+   ],
+   [
+    20261116,
     209.99,
     209.99
    ]
@@ -87659,6 +90344,11 @@
     20261115,
     294.84,
     294.84
+   ],
+   [
+    20261116,
+    294.84,
+    294.84
    ]
   ],
   "B0HD6RHWPR": [
@@ -87679,6 +90369,11 @@
    ],
    [
     20261115,
+    659.0,
+    659.0
+   ],
+   [
+    20261116,
     659.0,
     659.0
    ]
@@ -87715,6 +90410,11 @@
     20261115,
     899.0,
     899.0
+   ],
+   [
+    20261116,
+    899.0,
+    899.0
    ]
   ],
   "B0HD6VB5LW": [
@@ -87735,6 +90435,11 @@
    ],
    [
     20261115,
+    659.0,
+    659.0
+   ],
+   [
+    20261116,
     659.0,
     659.0
    ]
@@ -87759,6 +90464,11 @@
     20261115,
     189.99,
     189.99
+   ],
+   [
+    20261116,
+    189.99,
+    189.99
    ]
   ],
   "B0FX9J97YG": [
@@ -87779,6 +90489,11 @@
    ],
    [
     20261115,
+    249.99,
+    249.99
+   ],
+   [
+    20261116,
     249.99,
     249.99
    ]
@@ -87803,6 +90518,11 @@
     20261115,
     99.99,
     99.99
+   ],
+   [
+    20261116,
+    99.99,
+    99.99
    ]
   ],
   "B0H6JLS81K": [
@@ -87823,6 +90543,11 @@
    ],
    [
     20261115,
+    129.99,
+    129.99
+   ],
+   [
+    20261116,
     129.99,
     129.99
    ]
@@ -87847,6 +90572,11 @@
     20261115,
     149.99,
     149.99
+   ],
+   [
+    20261116,
+    149.99,
+    149.99
    ]
   ],
   "B0FN3XDNNN": [
@@ -87867,6 +90597,11 @@
    ],
    [
     20261115,
+    139.99,
+    139.99
+   ],
+   [
+    20261116,
     139.99,
     139.99
    ]
@@ -87925,6 +90660,11 @@
     20261115,
     217.99,
     217.99
+   ],
+   [
+    20261116,
+    217.99,
+    217.99
    ]
   ],
   "B0CHPBR49Z": [
@@ -87945,6 +90685,11 @@
    ],
    [
     20261115,
+    149.99,
+    149.99
+   ],
+   [
+    20261116,
     149.99,
     149.99
    ]
@@ -87969,6 +90714,11 @@
     20261115,
     369.99,
     369.99
+   ],
+   [
+    20261116,
+    369.99,
+    369.99
    ]
   ],
   "B0G7F89X33": [
@@ -87989,6 +90739,11 @@
    ],
    [
     20261115,
+    239.99,
+    239.99
+   ],
+   [
+    20261116,
     239.99,
     239.99
    ]
@@ -88013,6 +90768,11 @@
     20261115,
     104.04,
     104.04
+   ],
+   [
+    20261116,
+    104.04,
+    104.04
    ]
   ],
   "B0H5K3XK74": [
@@ -88033,6 +90793,11 @@
    ],
    [
     20261115,
+    179.99,
+    179.99
+   ],
+   [
+    20261116,
     179.99,
     179.99
    ]
@@ -88079,6 +90844,11 @@
     20261115,
     29.66,
     29.66
+   ],
+   [
+    20261116,
+    29.66,
+    29.66
    ]
   ],
   "B0DQK1KB18": [
@@ -88099,6 +90869,11 @@
    ],
    [
     20261115,
+    19.9,
+    19.9
+   ],
+   [
+    20261116,
     19.9,
     19.9
    ]
@@ -88123,6 +90898,11 @@
     20261115,
     39.86,
     39.86
+   ],
+   [
+    20261116,
+    39.86,
+    39.86
    ]
   ],
   "B0DG3TJ356": [
@@ -88143,6 +90923,11 @@
    ],
    [
     20261115,
+    34.18,
+    34.18
+   ],
+   [
+    20261116,
     34.18,
     34.18
    ]
@@ -88167,6 +90952,11 @@
     20261115,
     79.99,
     79.99
+   ],
+   [
+    20261116,
+    79.99,
+    79.99
    ]
   ],
   "B0DKNPLKXV": [
@@ -88187,6 +90977,11 @@
    ],
    [
     20261115,
+    59.9,
+    59.9
+   ],
+   [
+    20261116,
     59.9,
     59.9
    ]
@@ -88211,6 +91006,11 @@
     20261115,
     189.99,
     189.99
+   ],
+   [
+    20261116,
+    189.99,
+    189.99
    ]
   ],
   "B0DGX9TP6H": [
@@ -88233,6 +91033,11 @@
     20261115,
     70.29,
     70.29
+   ],
+   [
+    20261116,
+    70.29,
+    70.29
    ]
   ],
   "B09V2CS1CY": [
@@ -88253,6 +91058,11 @@
    ],
    [
     20261115,
+    199.99,
+    199.99
+   ],
+   [
+    20261116,
     199.99,
     199.99
    ]
@@ -88294,6 +91104,11 @@
    ],
    [
     20261115,
+    84.91,
+    84.91
+   ],
+   [
+    20261116,
     84.91,
     84.91
    ]
@@ -88359,6 +91174,11 @@
     20261115,
     30.95,
     30.95
+   ],
+   [
+    20261116,
+    30.95,
+    30.95
    ]
   ],
   "B0BZPS72TT": [
@@ -88396,6 +91216,11 @@
    ],
    [
     20261115,
+    33.79,
+    33.79
+   ],
+   [
+    20261116,
     33.79,
     33.79
    ]
@@ -88437,6 +91262,11 @@
     20261115,
     16.32,
     16.32
+   ],
+   [
+    20261116,
+    16.32,
+    16.32
    ]
   ],
   "B0CRZ9P3NS": [
@@ -88457,6 +91287,11 @@
    ],
    [
     20261115,
+    29.99,
+    29.99
+   ],
+   [
+    20261116,
     29.99,
     29.99
    ]
@@ -88512,6 +91347,11 @@
     20261115,
     29.02,
     29.02
+   ],
+   [
+    20261116,
+    29.02,
+    29.02
    ]
   ],
   "B0F9X7H8W6": [
@@ -88532,6 +91372,11 @@
    ],
    [
     20261115,
+    59.99,
+    59.99
+   ],
+   [
+    20261116,
     59.99,
     59.99
    ]
@@ -88568,6 +91413,11 @@
     20261115,
     32.7,
     32.7
+   ],
+   [
+    20261116,
+    32.7,
+    32.7
    ]
   ],
   "B0BPZRQYH3": [
@@ -88590,6 +91440,11 @@
     20261115,
     17.9,
     17.9
+   ],
+   [
+    20261116,
+    17.9,
+    17.9
    ]
   ],
   "B0D6YPGQ8D": [
@@ -88610,6 +91465,11 @@
    ],
    [
     20261115,
+    20.99,
+    20.99
+   ],
+   [
+    20261116,
     20.99,
     20.99
    ]
@@ -88656,6 +91516,11 @@
     20261115,
     24.99,
     24.99
+   ],
+   [
+    20261116,
+    24.99,
+    24.99
    ]
   ],
   "B07TMP2TP5": [
@@ -88678,6 +91543,11 @@
     20261115,
     45.2,
     45.2
+   ],
+   [
+    20261116,
+    45.2,
+    45.2
    ]
   ],
   "B0G4CNQBVG": [
@@ -88698,6 +91568,11 @@
    ],
    [
     20261115,
+    59.9,
+    59.9
+   ],
+   [
+    20261116,
     59.9,
     59.9
    ]
@@ -88729,6 +91604,11 @@
     20261115,
     18.99,
     18.99
+   ],
+   [
+    20261116,
+    18.99,
+    18.99
    ]
   ],
   "B09QQS92GP": [
@@ -88749,6 +91629,11 @@
    ],
    [
     20261115,
+    299.99,
+    299.99
+   ],
+   [
+    20261116,
     299.99,
     299.99
    ]
@@ -88793,6 +91678,11 @@
    ],
    [
     20261115,
+    94.99,
+    94.99
+   ],
+   [
+    20261116,
     94.99,
     94.99
    ]
@@ -88841,6 +91731,11 @@
     20261112,
     27.99,
     27.99
+   ],
+   [
+    20261116,
+    19.99,
+    19.99
    ]
   ],
   "B0GGCM8J67": [
@@ -88885,6 +91780,11 @@
     20261115,
     164.0,
     164.0
+   ],
+   [
+    20261116,
+    164.0,
+    164.0
    ]
   ],
   "B0CCYPKJHL": [
@@ -88905,6 +91805,11 @@
    ],
    [
     20261115,
+    113.0,
+    113.0
+   ],
+   [
+    20261116,
     113.0,
     113.0
    ]
@@ -88946,6 +91851,11 @@
     20261115,
     41.9,
     41.9
+   ],
+   [
+    20261116,
+    34.9,
+    34.9
    ]
   ],
   "B0DDQCPY72": [
@@ -88990,6 +91900,11 @@
     20261115,
     52.48,
     52.48
+   ],
+   [
+    20261116,
+    50.65,
+    50.65
    ]
   ],
   "B0B5FJDC3T": [
@@ -89068,6 +91983,11 @@
     20261115,
     26.99,
     26.99
+   ],
+   [
+    20261116,
+    26.99,
+    26.99
    ]
   ],
   "B01MR85W6K": [
@@ -89090,6 +92010,11 @@
     20261115,
     49.5,
     49.5
+   ],
+   [
+    20261116,
+    49.5,
+    49.5
    ]
   ],
   "B0F8V9TXFR": [
@@ -89110,6 +92035,11 @@
    ],
    [
     20261115,
+    19.99,
+    19.99
+   ],
+   [
+    20261116,
     19.99,
     19.99
    ]
@@ -89178,6 +92108,11 @@
     20261115,
     79.98,
     79.98
+   ],
+   [
+    20261116,
+    79.98,
+    79.98
    ]
   ],
   "B0DK92XJSJ": [
@@ -89198,6 +92133,11 @@
    ],
    [
     20261115,
+    12.99,
+    12.99
+   ],
+   [
+    20261116,
     12.99,
     12.99
    ]
@@ -89222,6 +92162,11 @@
     20261115,
     22.04,
     22.04
+   ],
+   [
+    20261116,
+    22.04,
+    22.04
    ]
   ],
   "B0BBVJV354": [
@@ -89244,6 +92189,11 @@
     20261115,
     79.95,
     79.95
+   ],
+   [
+    20261116,
+    79.95,
+    79.95
    ]
   ],
   "B09LV2K716": [
@@ -89264,6 +92214,11 @@
    ],
    [
     20261115,
+    34.99,
+    34.99
+   ],
+   [
+    20261116,
     34.99,
     34.99
    ]
@@ -92693,6 +95648,11 @@
     20261115,
     249.0,
     249.0
+   ],
+   [
+    20261116,
+    242.5,
+    242.5
    ]
   ],
   "B0HMRD2QDL": [
@@ -92897,6 +95857,11 @@
     20261115,
     209.99,
     209.99
+   ],
+   [
+    20261116,
+    209.99,
+    209.99
    ]
   ],
   "B06Y5VBFNB": [
@@ -93016,6 +95981,11 @@
     20261115,
     24.99,
     24.99
+   ],
+   [
+    20261116,
+    24.99,
+    24.99
    ]
   ],
   "B00UMH2CA2": [
@@ -93026,6 +95996,11 @@
    ],
    [
     20261115,
+    108.01,
+    108.01
+   ],
+   [
+    20261116,
     108.01,
     108.01
    ]
@@ -93045,6 +96020,11 @@
     20261115,
     113.8,
     113.8
+   ],
+   [
+    20261116,
+    113.8,
+    113.8
    ]
   ],
   "B0764DCZBX": [
@@ -93062,11 +96042,21 @@
     20261115,
     849.0,
     849.0
+   ],
+   [
+    20261116,
+    849.0,
+    849.0
    ]
   ],
   "B003TOG4D6": [
    [
     20261113,
+    191.7,
+    191.7
+   ],
+   [
+    20261116,
     191.7,
     191.7
    ]
@@ -93098,6 +96088,11 @@
     20261115,
     899.0,
     899.0
+   ],
+   [
+    20261116,
+    899.0,
+    899.0
    ]
   ],
   "B0H1XD38B2": [
@@ -93113,6 +96108,11 @@
    ],
    [
     20261115,
+    939.0,
+    939.0
+   ],
+   [
+    20261116,
     939.0,
     939.0
    ]
@@ -93132,6 +96132,11 @@
     20261115,
     491.14,
     491.14
+   ],
+   [
+    20261116,
+    491.14,
+    491.14
    ]
   ],
   "B0GKG2LN1L": [
@@ -93147,6 +96152,11 @@
    ],
    [
     20261115,
+    169.99,
+    169.99
+   ],
+   [
+    20261116,
     169.99,
     169.99
    ]
@@ -93166,6 +96176,11 @@
     20261115,
     43.69,
     43.69
+   ],
+   [
+    20261116,
+    43.69,
+    43.69
    ]
   ],
   "B07DNYSJ8W": [
@@ -93181,6 +96196,11 @@
    ],
    [
     20261115,
+    104.68,
+    104.68
+   ],
+   [
+    20261116,
     104.68,
     104.68
    ]
@@ -93212,6 +96232,11 @@
     20261115,
     73.99,
     73.99
+   ],
+   [
+    20261116,
+    73.99,
+    73.99
    ]
   ],
   "B0GKQCXD1K": [
@@ -93227,6 +96252,11 @@
    ],
    [
     20261115,
+    55.99,
+    55.99
+   ],
+   [
+    20261116,
     55.99,
     55.99
    ]
@@ -93256,6 +96286,11 @@
    ],
    [
     20261115,
+    23.3,
+    23.3
+   ],
+   [
+    20261116,
     23.3,
     23.3
    ]
@@ -94005,6 +97040,11 @@
     20261114,
     135.21,
     145.0
+   ],
+   [
+    20261116,
+    131.07,
+    131.07
    ]
   ],
   "B08N64CBKG": [
@@ -94824,6 +97864,11 @@
     20261115,
     452.37,
     452.37
+   ],
+   [
+    20261116,
+    587.89,
+    587.89
    ]
   ],
   "B0DJT96GZG": [
@@ -94846,6 +97891,11 @@
   "B09XVK2C34": [
    [
     20261113,
+    1494.99,
+    1494.99
+   ],
+   [
+    20261116,
     1494.99,
     1494.99
    ]
@@ -94942,6 +97992,11 @@
     20261115,
     56.14,
     56.14
+   ],
+   [
+    20261116,
+    56.14,
+    56.14
    ]
   ],
   "B0F29Z1MK9": [
@@ -95014,6 +98069,11 @@
     20261115,
     59.9,
     59.9
+   ],
+   [
+    20261116,
+    59.9,
+    59.9
    ]
   ],
   "B00X8MRBCW": [
@@ -95041,6 +98101,11 @@
    ],
    [
     20261115,
+    23.74,
+    23.74
+   ],
+   [
+    20261116,
     23.74,
     23.74
    ]
@@ -95250,6 +98315,11 @@
     20261115,
     78.0,
     78.0
+   ],
+   [
+    20261116,
+    78.0,
+    78.0
    ]
   ],
   "B088NFQDTH": [
@@ -95330,6 +98400,11 @@
     20261115,
     69.99,
     69.99
+   ],
+   [
+    20261116,
+    69.99,
+    69.99
    ]
   ],
   "B0BS9689S9": [
@@ -95345,6 +98420,11 @@
    ],
    [
     20261115,
+    34.0,
+    34.0
+   ],
+   [
+    20261116,
     34.0,
     34.0
    ]
@@ -95743,6 +98823,11 @@
     20261115,
     1199.0,
     1199.0
+   ],
+   [
+    20261116,
+    1199.0,
+    1199.0
    ]
   ],
   "B0F8JG65Q8": [
@@ -95805,11 +98890,21 @@
     20261115,
     269.0,
     269.0
+   ],
+   [
+    20261116,
+    269.0,
+    269.0
    ]
   ],
   "B0GZVL7261": [
    [
     20261113,
+    119.99,
+    119.99
+   ],
+   [
+    20261116,
     119.99,
     119.99
    ]
@@ -95827,6 +98922,11 @@
    ],
    [
     20261115,
+    74.99,
+    74.99
+   ],
+   [
+    20261116,
     74.99,
     74.99
    ]
@@ -96139,6 +99239,11 @@
     20261115,
     24.69,
     24.69
+   ],
+   [
+    20261116,
+    24.69,
+    24.69
    ]
   ],
   "B0FR4P3QFN": [
@@ -96187,6 +99292,11 @@
     20261115,
     2099.0,
     2099.0
+   ],
+   [
+    20261116,
+    2099.0,
+    2099.0
    ]
   ],
   "B07RVNMZJH": [
@@ -96202,6 +99312,11 @@
    ],
    [
     20261115,
+    445.44,
+    445.44
+   ],
+   [
+    20261116,
     445.44,
     445.44
    ]
@@ -96221,6 +99336,11 @@
     20261115,
     189.99,
     189.99
+   ],
+   [
+    20261116,
+    189.99,
+    189.99
    ]
   ],
   "B07V25CN6C": [
@@ -96236,6 +99356,11 @@
    ],
    [
     20261115,
+    7.87,
+    7.87
+   ],
+   [
+    20261116,
     7.87,
     7.87
    ]
@@ -96948,7 +100073,7 @@
    [
     20261116,
     447.71,
-    447.71
+    448.01
    ]
   ],
   "B0GWHKYKKB": [
@@ -96981,6 +100106,11 @@
    ],
    [
     20261115,
+    71.21,
+    71.21
+   ],
+   [
+    20261116,
     71.21,
     71.21
    ]
@@ -97212,6 +100342,11 @@
     20261115,
     115.01,
     115.01
+   ],
+   [
+    20261116,
+    115.01,
+    115.01
    ]
   ],
   "B0C9DX9PJL": [
@@ -97227,6 +100362,11 @@
    ],
    [
     20261115,
+    17.0,
+    17.0
+   ],
+   [
+    20261116,
     17.0,
     17.0
    ]
@@ -97390,6 +100530,11 @@
    ],
    [
     20261115,
+    75.99,
+    75.99
+   ],
+   [
+    20261116,
     75.99,
     75.99
    ]
@@ -97624,6 +100769,11 @@
     20261114,
     55.99,
     55.99
+   ],
+   [
+    20261116,
+    55.99,
+    55.99
    ]
   ],
   "B0DZMBQK8C": [
@@ -97799,6 +100949,11 @@
     20261115,
     558.99,
     558.99
+   ],
+   [
+    20261116,
+    541.22,
+    541.22
    ]
   ],
   "B08GBTM2GT": [
@@ -97857,6 +101012,11 @@
    ],
    [
     20261115,
+    169.99,
+    169.99
+   ],
+   [
+    20261116,
     169.99,
     169.99
    ]
@@ -97994,6 +101154,11 @@
    ],
    [
     20261115,
+    224.39,
+    224.39
+   ],
+   [
+    20261116,
     224.39,
     224.39
    ]
@@ -98395,6 +101560,11 @@
     20261115,
     736.99,
     736.99
+   ],
+   [
+    20261116,
+    736.99,
+    736.99
    ]
   ],
   "B071WPLVGZ": [
@@ -98446,6 +101616,11 @@
     20261115,
     24.36,
     24.36
+   ],
+   [
+    20261116,
+    24.36,
+    24.36
    ]
   ],
   "B0FX5FXFRX": [
@@ -98478,6 +101653,11 @@
    ],
    [
     20261115,
+    398.34,
+    398.34
+   ],
+   [
+    20261116,
     398.34,
     398.34
    ]
@@ -98641,6 +101821,11 @@
     20261115,
     20.89,
     20.89
+   ],
+   [
+    20261116,
+    20.89,
+    20.89
    ]
   ],
   "B09X7MPX8L": [
@@ -98672,6 +101857,11 @@
     20261115,
     61.36,
     61.36
+   ],
+   [
+    20261116,
+    61.36,
+    61.36
    ]
   ],
   "B0FNRQQTZR": [
@@ -98701,6 +101891,11 @@
    ],
    [
     20261115,
+    26.5,
+    26.5
+   ],
+   [
+    20261116,
     26.5,
     26.5
    ]
@@ -98952,6 +102147,11 @@
     20261115,
     209.0,
     209.0
+   ],
+   [
+    20261116,
+    209.0,
+    209.0
    ]
   ],
   "B0D4VSBD2Z": [
@@ -98962,6 +102162,11 @@
    ],
    [
     20261115,
+    137.09,
+    137.09
+   ],
+   [
+    20261116,
     137.09,
     137.09
    ]
@@ -99082,6 +102287,11 @@
     20261115,
     96.99,
     96.99
+   ],
+   [
+    20261116,
+    96.99,
+    96.99
    ]
   ],
   "B0HHSJ75G5": [
@@ -99092,6 +102302,11 @@
    ],
    [
     20261115,
+    39.99,
+    39.99
+   ],
+   [
+    20261116,
     39.99,
     39.99
    ]
@@ -99111,6 +102326,11 @@
    ],
    [
     20261115,
+    104.49,
+    104.49
+   ],
+   [
+    20261116,
     104.49,
     104.49
    ]
@@ -99243,6 +102463,11 @@
     20261115,
     30.17,
     30.17
+   ],
+   [
+    20261116,
+    23.46,
+    23.46
    ]
   ],
   "B0GPFN28TP": [
@@ -99328,6 +102553,11 @@
     20261115,
     114.18,
     114.18
+   ],
+   [
+    20261116,
+    114.18,
+    114.18
    ]
   ],
   "B0FQ5HNW16": [
@@ -99397,6 +102627,11 @@
     20261115,
     29.99,
     29.99
+   ],
+   [
+    20261116,
+    29.99,
+    29.99
    ]
   ],
   "B0HHS4V9NJ": [
@@ -99447,6 +102682,11 @@
     20261115,
     45.69,
     45.69
+   ],
+   [
+    20261116,
+    45.69,
+    45.69
    ]
   ],
   "B0FFBHP9W2": [
@@ -99495,6 +102735,11 @@
    ],
    [
     20261115,
+    107.4,
+    107.4
+   ],
+   [
+    20261116,
     107.4,
     107.4
    ]
@@ -99696,6 +102941,11 @@
     20261115,
     139.9,
     139.9
+   ],
+   [
+    20261116,
+    139.9,
+    139.9
    ]
   ],
   "B0CKLKYJTR": [
@@ -99830,6 +103080,11 @@
     20261115,
     39.98,
     39.98
+   ],
+   [
+    20261116,
+    39.98,
+    39.98
    ]
   ],
   "B0D4VZ7MSS": [
@@ -99945,6 +103200,11 @@
     20261115,
     24.5,
     24.5
+   ],
+   [
+    20261116,
+    24.5,
+    24.5
    ]
   ],
   "B0GYSKG6R2": [
@@ -99998,6 +103258,11 @@
    ],
    [
     20261115,
+    217.75,
+    217.75
+   ],
+   [
+    20261116,
     217.75,
     217.75
    ]
@@ -100087,6 +103352,11 @@
    ],
    [
     20261115,
+    329.0,
+    329.0
+   ],
+   [
+    20261116,
     329.0,
     329.0
    ]
@@ -100307,6 +103577,11 @@
     20261115,
     183.0,
     183.0
+   ],
+   [
+    20261116,
+    183.0,
+    183.0
    ]
   ],
   "B0CG2CDY5D": [
@@ -100343,6 +103618,11 @@
     20261115,
     100.19,
     100.75
+   ],
+   [
+    20261116,
+    100.75,
+    100.75
    ]
   ],
   "B0G92NRF52": [
@@ -100353,6 +103633,11 @@
    ],
    [
     20261115,
+    29.05,
+    29.05
+   ],
+   [
+    20261116,
     29.05,
     29.05
    ]
@@ -100812,11 +104097,21 @@
     20261115,
     29.61,
     29.61
+   ],
+   [
+    20261116,
+    29.61,
+    29.61
    ]
   ],
   "B09KZPGM77": [
    [
     20261115,
+    70.8,
+    70.8
+   ],
+   [
+    20261116,
     70.8,
     70.8
    ]
@@ -100845,6 +104140,11 @@
   "B0HG13PG1J": [
    [
     20261115,
+    39.99,
+    39.99
+   ],
+   [
+    20261116,
     39.99,
     39.99
    ]
@@ -100906,6 +104206,11 @@
   "B0CK84VH9H": [
    [
     20261115,
+    120.46,
+    120.46
+   ],
+   [
+    20261116,
     120.46,
     120.46
    ]
@@ -101005,6 +104310,11 @@
   "B0DN5ZR364": [
    [
     20261115,
+    133.0,
+    133.0
+   ],
+   [
+    20261116,
     133.0,
     133.0
    ]
@@ -101196,6 +104506,11 @@
     20261115,
     110.99,
     110.99
+   ],
+   [
+    20261116,
+    110.99,
+    110.99
    ]
   ],
   "B0GKNSPMJM": [
@@ -101208,6 +104523,11 @@
   "B0H41HHV6M": [
    [
     20261115,
+    19.33,
+    19.33
+   ],
+   [
+    20261116,
     19.33,
     19.33
    ]
@@ -101377,6 +104697,11 @@
     20261115,
     27.08,
     27.08
+   ],
+   [
+    20261116,
+    27.08,
+    27.08
    ]
   ],
   "B01BU0HR5Y": [
@@ -101417,6 +104742,11 @@
     20261115,
     152.99,
     152.99
+   ],
+   [
+    20261116,
+    152.99,
+    152.99
    ]
   ],
   "B09Z2CMT2Y": [
@@ -101431,11 +104761,21 @@
     20261115,
     1899.0,
     1899.0
+   ],
+   [
+    20261116,
+    1199.0,
+    1199.0
    ]
   ],
   "B0GH2G2D7B": [
    [
     20261115,
+    20.9,
+    20.9
+   ],
+   [
+    20261116,
     20.9,
     20.9
    ]
@@ -102256,6 +105596,664 @@
     20261116,
     49.0,
     49.0
+   ]
+  ],
+  "B0GQYZ39SV": [
+   [
+    20261116,
+    599.0,
+    599.0
+   ]
+  ],
+  "B0GNN5GMWY": [
+   [
+    20261116,
+    656.0,
+    656.0
+   ]
+  ],
+  "B0F1DMN5HW": [
+   [
+    20261116,
+    592.5,
+    592.5
+   ]
+  ],
+  "B0H7959ZGC": [
+   [
+    20261116,
+    158.7,
+    158.7
+   ]
+  ],
+  "B08FMWY2QZ": [
+   [
+    20261116,
+    141.99,
+    141.99
+   ]
+  ],
+  "B0CY2QDCGR": [
+   [
+    20261116,
+    144.53,
+    144.53
+   ]
+  ],
+  "B0GQZ67HHZ": [
+   [
+    20261116,
+    699.0,
+    699.0
+   ]
+  ],
+  "B0H8YRFL38": [
+   [
+    20261116,
+    659.0,
+    659.0
+   ]
+  ],
+  "B0GXZQH1G6": [
+   [
+    20261116,
+    159.0,
+    159.0
+   ]
+  ],
+  "B07TH6YFPY": [
+   [
+    20261116,
+    126.43,
+    126.43
+   ]
+  ],
+  "B0F1DMQHP3": [
+   [
+    20261116,
+    269.0,
+    269.0
+   ]
+  ],
+  "B0FKBRLWNW": [
+   [
+    20261116,
+    219.0,
+    219.0
+   ]
+  ],
+  "B0GXZSGDQ7": [
+   [
+    20261116,
+    219.0,
+    219.0
+   ]
+  ],
+  "B0GX17LLKH": [
+   [
+    20261116,
+    149.0,
+    149.0
+   ]
+  ],
+  "B0F5BTQHGM": [
+   [
+    20261116,
+    186.33,
+    186.33
+   ]
+  ],
+  "B07CRG7BBH": [
+   [
+    20261116,
+    133.82,
+    133.82
+   ]
+  ],
+  "B01N7BN0YF": [
+   [
+    20261116,
+    113.99,
+    113.99
+   ]
+  ],
+  "B0GQCJ2D3D": [
+   [
+    20261116,
+    279.99,
+    279.99
+   ]
+  ],
+  "B0HC453DG1": [
+   [
+    20261116,
+    529.99,
+    529.99
+   ]
+  ],
+  "B0F1Z5982Y": [
+   [
+    20261116,
+    139.99,
+    139.99
+   ]
+  ],
+  "B089HFR9CX": [
+   [
+    20261116,
+    143.99,
+    143.99
+   ]
+  ],
+  "B0DJDFTS7R": [
+   [
+    20261116,
+    169.99,
+    169.99
+   ]
+  ],
+  "B089HG351D": [
+   [
+    20261116,
+    122.99,
+    122.99
+   ]
+  ],
+  "B09KB8GGN1": [
+   [
+    20261116,
+    378.99,
+    378.99
+   ]
+  ],
+  "B0F1Z3YZN4": [
+   [
+    20261116,
+    166.99,
+    166.99
+   ]
+  ],
+  "B0FB43WPJC": [
+   [
+    20261116,
+    84.9,
+    84.9
+   ]
+  ],
+  "B0DCZJSJ7Z": [
+   [
+    20261116,
+    66.59,
+    66.59
+   ]
+  ],
+  "B08BKPQQDD": [
+   [
+    20261116,
+    45.9,
+    45.9
+   ]
+  ],
+  "B0DNZCT6ML": [
+   [
+    20261116,
+    74.0,
+    74.0
+   ]
+  ],
+  "B0BK541686": [
+   [
+    20261116,
+    96.99,
+    96.99
+   ]
+  ],
+  "B0BV2D4FN1": [
+   [
+    20261116,
+    75.9,
+    75.9
+   ]
+  ],
+  "B0GFXBW7YX": [
+   [
+    20261116,
+    85.99,
+    85.99
+   ]
+  ],
+  "B0DK579HVY": [
+   [
+    20261116,
+    24.75,
+    24.75
+   ]
+  ],
+  "B0GVNTCQFR": [
+   [
+    20261116,
+    12.21,
+    12.21
+   ]
+  ],
+  "B0DRBMB5PM": [
+   [
+    20261116,
+    22.55,
+    22.55
+   ]
+  ],
+  "B0DQQ87W32": [
+   [
+    20261116,
+    29.99,
+    29.99
+   ]
+  ],
+  "B0FTZG6BTG": [
+   [
+    20261116,
+    129.99,
+    129.99
+   ]
+  ],
+  "B097F8H1MC": [
+   [
+    20261116,
+    34.99,
+    34.99
+   ]
+  ],
+  "B0FL2RBW99": [
+   [
+    20261116,
+    34.99,
+    34.99
+   ]
+  ],
+  "B07W5JKKFJ": [
+   [
+    20261116,
+    64.97,
+    64.97
+   ]
+  ],
+  "B0DTQ35NH6": [
+   [
+    20261116,
+    119.9,
+    119.9
+   ]
+  ],
+  "B0DFQKQ9CB": [
+   [
+    20261116,
+    46.76,
+    46.76
+   ]
+  ],
+  "B0GMRS65SD": [
+   [
+    20261116,
+    105.75,
+    105.75
+   ]
+  ],
+  "B07YYJRXQR": [
+   [
+    20261116,
+    20.99,
+    20.99
+   ]
+  ],
+  "B0G1BC4THX": [
+   [
+    20261116,
+    599.99,
+    599.99
+   ]
+  ],
+  "B0G5NC4FNR": [
+   [
+    20261116,
+    115.51,
+    115.51
+   ]
+  ],
+  "B0BF8NHH2P": [
+   [
+    20261116,
+    54.99,
+    54.99
+   ]
+  ],
+  "B0DSWJBFM2": [
+   [
+    20261116,
+    32.99,
+    32.99
+   ]
+  ],
+  "B0D9HGJ1ZB": [
+   [
+    20261116,
+    24.15,
+    24.15
+   ]
+  ],
+  "B0G72Q8QJ5": [
+   [
+    20261116,
+    39.95,
+    39.95
+   ]
+  ],
+  "B0CP7JSC7J": [
+   [
+    20261116,
+    28.99,
+    28.99
+   ]
+  ],
+  "B0GSW8D7HP": [
+   [
+    20261116,
+    34.9,
+    34.9
+   ]
+  ],
+  "B0CXDYCKVS": [
+   [
+    20261116,
+    15.85,
+    15.85
+   ]
+  ],
+  "B0H762J2LT": [
+   [
+    20261116,
+    48.45,
+    48.45
+   ]
+  ],
+  "B07VSMGN9H": [
+   [
+    20261116,
+    48.45,
+    48.45
+   ]
+  ],
+  "B07W1PC52K": [
+   [
+    20261116,
+    48.45,
+    48.45
+   ]
+  ],
+  "B0H3BPN6RR": [
+   [
+    20261116,
+    79.99,
+    79.99
+   ]
+  ],
+  "B0DQWZQFZW": [
+   [
+    20261116,
+    81.21,
+    81.21
+   ]
+  ],
+  "B0DP8K22HP": [
+   [
+    20261116,
+    8.39,
+    8.39
+   ]
+  ],
+  "B0DP8LHZFJ": [
+   [
+    20261116,
+    26.64,
+    26.64
+   ]
+  ],
+  "B0DX1QL96S": [
+   [
+    20261116,
+    20.39,
+    20.39
+   ]
+  ],
+  "B0D34VK962": [
+   [
+    20261116,
+    8.07,
+    8.07
+   ]
+  ],
+  "B07YDYNSB3": [
+   [
+    20261116,
+    84.95,
+    84.95
+   ]
+  ],
+  "B0DSK6QFXZ": [
+   [
+    20261116,
+    39.99,
+    39.99
+   ]
+  ],
+  "B0B2546NHR": [
+   [
+    20261116,
+    18.72,
+    18.72
+   ]
+  ],
+  "B001IBSIMW": [
+   [
+    20261116,
+    102.69,
+    102.69
+   ]
+  ],
+  "B0BX9F28BC": [
+   [
+    20261116,
+    56.89,
+    56.89
+   ]
+  ],
+  "B0GGY4KMF5": [
+   [
+    20261116,
+    135.36,
+    135.36
+   ]
+  ],
+  "B0DXV8WPYT": [
+   [
+    20261116,
+    132.84,
+    132.84
+   ]
+  ],
+  "B0DH21GT8R": [
+   [
+    20261116,
+    189.99,
+    189.99
+   ]
+  ],
+  "B0H7SKZXF4": [
+   [
+    20261116,
+    106.69,
+    106.69
+   ]
+  ],
+  "B0DF37NP7X": [
+   [
+    20261116,
+    36.64,
+    36.64
+   ]
+  ],
+  "B0DXFGTS92": [
+   [
+    20261116,
+    118.11,
+    118.11
+   ]
+  ],
+  "B09PNY1TXV": [
+   [
+    20261116,
+    60.4,
+    60.4
+   ]
+  ],
+  "B0CVY1696Z": [
+   [
+    20261116,
+    14.99,
+    14.99
+   ]
+  ],
+  "B0F9X92FQH": [
+   [
+    20261116,
+    59.99,
+    59.99
+   ]
+  ],
+  "B0DQWQJ1MY": [
+   [
+    20261116,
+    39.99,
+    39.99
+   ]
+  ],
+  "B013GH0AE4": [
+   [
+    20261116,
+    15.99,
+    15.99
+   ]
+  ],
+  "B0FZW7VT6J": [
+   [
+    20261116,
+    99.99,
+    99.99
+   ]
+  ],
+  "B0BLP5TYWG": [
+   [
+    20261116,
+    59.0,
+    59.0
+   ]
+  ],
+  "B0FZVJGG4S": [
+   [
+    20261116,
+    59.99,
+    59.99
+   ]
+  ],
+  "B08DJ18C85": [
+   [
+    20261116,
+    17.99,
+    17.99
+   ]
+  ],
+  "B0BLZT677G": [
+   [
+    20261116,
+    17.99,
+    17.99
+   ]
+  ],
+  "B00ECBKODQ": [
+   [
+    20261116,
+    17.99,
+    17.99
+   ]
+  ],
+  "B09RN8Q4CW": [
+   [
+    20261116,
+    27.99,
+    27.99
+   ]
+  ],
+  "B08WMTXJVF": [
+   [
+    20261116,
+    49.9,
+    49.9
+   ]
+  ],
+  "B09SLXH2CQ": [
+   [
+    20261116,
+    29.99,
+    29.99
+   ]
+  ],
+  "B0DDQF57MQ": [
+   [
+    20261116,
+    124.95,
+    124.95
+   ]
+  ],
+  "B0B5XPR45B": [
+   [
+    20261116,
+    99.95,
+    99.95
+   ]
+  ],
+  "B0HF4TSHST": [
+   [
+    20261116,
+    99.95,
+    99.95
+   ]
+  ],
+  "B0HH8Q526W": [
+   [
+    20261116,
+    59.99,
+    59.99
+   ]
+  ],
+  "B01N1UX8RW": [
+   [
+    20261116,
+    20.99,
+    20.99
+   ]
+  ],
+  "B09W2K62Z6": [
+   [
+    20261116,
+    20.89,
+    20.89
+   ]
+  ],
+  "B07S9PTLNZ": [
+   [
+    20261116,
+    8.85,
+    8.85
    ]
   ]
  },
