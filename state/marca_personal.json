@@ -10,7 +10,8 @@
    0,
    1,
    2,
-   3
+   3,
+   4
   ],
   "dia": [
    0,
@@ -111,6 +112,11 @@
   {
    "t": 1794770507,
    "slot": "tarde",
+   "topic": "Ahorro y promos"
+  },
+  {
+   "t": 1794824649,
+   "slot": "manana",
    "topic": "Ahorro y promos"
   }
  ]
