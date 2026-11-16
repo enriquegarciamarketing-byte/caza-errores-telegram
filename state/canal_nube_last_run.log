@@ -1,511 +1,562 @@
-== 2026-11-16 07:52 ==
+== 2026-11-16 10:33 ==
 Precios: comprobados con la API de Amazon antes de publicar
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-No publico: cupo de la hora cubierto.
-== pasada 2 · 07:54 ==
   Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
   Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-No publico: cupo de la hora cubierto.
-== pasada 3 · 07:56 ==
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-No publico: cupo de la hora cubierto.
-== pasada 4 · 07:58 ==
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-No publico: cupo de la hora cubierto.
-== pasada 5 · 08:00 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-No publico: cupo de la hora cubierto.
-== pasada 6 · 08:02 ==
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  ✗ amz-B0DYF1ZLHM Microsoft Surface Laptop, 13": solo -17% frente a su precio habitual de 1199.00 € (historial de 5 días)
-  ✗ amz-B09HTR3PJD SPC DICKENS LIGHT 2 - Libro electrónico 6" con luz: no es ninguna bajada: hace menos de una semana ya estaba a 89.90 € (historial propio de 4 días)
-  ✗ amz-B081ZNCP9D FitPro Tonic Pulsera de Actividad Inteligente con…: no es ninguna bajada: hace menos de una semana ya estaba a 7.27 € (historial propio de 5 días)
-  ✗ amz-B0HBJFS1D8 Reloj Inteligente Mujer, 1,96" HD: no es ninguna bajada: hace menos de una semana ya estaba a 19.99 € (historial propio de 5 días)
-  ✗ amz-B0FWCPNPCV MSI mag 276CFA E20 Monitor Gaming de 27" FHD 1500R: precio anterior inflado: lo ponen a 151.99 € pero su precio habitual es 109.00 € (solo -9%, historial de 4 días)
-  ✗ amz-B0CS3W1DMF MSI mag 27C6F Monitor Curvo Gaming FHD de 27": solo -6% frente a su precio habitual de 105.00 € (historial de 4 días)
-  ✗ amz-B0DPHGY8VB KOORUI Gaming Monitor 24" 180Hz PC Pantalla FHD…: solo -10% frente a su precio habitual de 82.99 € (historial de 3 días)
-  ✗ amz-B0C23M7Y9V KOORUI Monitor Gaming 24 Pulgadas Curvo 180Hz 1ms…: solo -14% frente a su precio habitual de 109.99 € (historial de 5 días)
-  ✗ amz-B0FWCTSGL9 MSI mag 275FA E20 Monitor Gaming de 27" FHD: solo -9% frente a su precio habitual de 109.00 € (historial de 4 días)
-  Amazon (API): 107 con descuento grande, 22 con precio anterior y stock
-Candidatos a revisar: 16
-  ✗ amz-B0FLQ8KQC7 Lenovo Legion 24-10- Monitor Gaming FHD 23.8": ya publicado hace poco y no ha bajado más
-  ✓ B07W7KMK4W Logitech G G413 TKL SE Teclado Mecánico Gaming: 41,79 € (-40% vs 69,99 €)
-  ✓ B0C3D2DGYP Oral-B iO 3 Cepillo de Dientes Eléctrico con 3 Cabezales: 59,95 € (-45% vs 109,95 €)
-  ✗ amz-B0H6XTP3WL POCO X8, Smartphone 8G+256GB: solo -30% frente a su PVP recomendado (399,90 €)
-  ✗ amz-B0GNN5GMWY Samsung Galaxy A57 5G, 512GB: solo -27% frente a su PVP recomendado (899,00 €)
-  ✗ amz-B0H79Q2ZKJ REDMI 17, 4+128GB, Negro, 7500mAh: solo -28% frente a su PVP recomendado (219,90 €)
-  ✗ amz-B0H7959ZGC REDMI 17, 4+128GB, Verde Roble: solo -28% frente a su PVP recomendado (219,90 €)
-  ✗ amz-B0H79Q6WQC REDMI 17, 4+128GB, Azul Profundo: solo -28% frente a su PVP recomendado (219,90 €)
-  ✗ amz-B0H4H1SZ8K REDMI Note 17 5G, Smartphone 6+128GB: solo -28% frente a su PVP recomendado (349,90 €)
-  ✗ amz-B0GQZ67HHZ HP OmniBook 3 Ordenador Portátil 16" Core 5: solo -22% frente a su PVP recomendado (899,00 €)
-  ✗ amz-B0D1YMN8CN Microsoft Surface Laptop, 13.8": solo -20% frente a su mínimo de los 30 días anteriores (1.499,00 €)
-  ✗ amz-B0H8YRFL38 Lenovo IdeaPad Slim 3, Ordenador Portátil: solo -27% frente a su PVP recomendado (899,00 €)
-  ✗ amz-B0G4N31XVY AOC Q27B36X Gaming Monitor 27 Pulgadas 144Hz Panel IPS: solo -19% frente a su precio mediano de los 90 días (129,00 €)
-  ✗ amz-B0F1DMN5HW Samsung Galaxy S25 Edge 256GB Teléfono Móvil Fino con IA: solo -7% frente a su precio mediano de los 90 días (639,99 €)
-  ✗ amz-B0FHL7TPXC Google Pixel 10 Pro XL - Smartphone Android Libre con Gemini: solo -8% frente a su PVP recomendado (1.299,00 €)
-  ✗ amz-B0HBXCF2HS Lenovo LOQ | Portátil Gaming| AMD Ryzen 7| RTX 3050| 16GB: solo -9% frente a su precio mediano de los 90 días (1.099,00 €)
-  ⏸ B07W7KMK4W variedad: ya salió un «teclado y raton» de Logitech G hace 2 días; espera en la cola
-  ⏸ B0C3D2DGYP variedad: ya salió algo de Oral-B hace 38 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 7 · 08:04 ==
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  ✗ amz-B0FWCPC442 MSI mag 275UPDA E14 Monitor Gaming de 27": precio anterior inflado: lo ponen a 352.99 € pero su precio habitual es 249.00 € (solo -8%, historial de 4 días)
-  ✗ amz-B0GK1FMZWB SANDISK Optimus GX 7100 NVMe SSD 500 GB (hasta…: solo -17% frente a su precio habitual de 130.98 € (historial de 4 días)
-  ✗ amz-B0815XFSGK AMD Ryzen 7 5800X Procesador: no es ninguna bajada: hace menos de una semana ya estaba a 202.95 € (historial propio de 5 días)
-  ✗ amz-B0815XFSGK AMD Ryzen 7 5800X Procesador: no es ninguna bajada: hace menos de una semana ya estaba a 202.95 € (historial propio de 5 días)
-  ✗ amz-B0DZ32G7XY Mercusys MB115-4G - Router 4G LTE SIM: no es ninguna bajada: hace menos de una semana ya estaba a 33.16 € (historial propio de 4 días)
-  ✗ amz-B06WWHJZF6 Extensor de alcance Wi-Fi universal Tenda A9 N300: precio anterior inflado: lo ponen a 29.00 € pero su precio habitual es 11.99 € (solo -8%, historial de 5 días)
-  ✗ amz-B0FHJNBF75 Mercusys ME12 Repetidor WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 11.99 € (historial propio de 5 días)
-  ✗ amz-B0GW975FZ3 STRONG Repetidor WiFi AC1200: precio anterior inflado: lo ponen a 29.99 € pero su precio habitual es 18.99 € (solo -5%, historial de 5 días)
-  ✗ amz-B0FCFRKLLM Tenda A18 AC1200 Repetidor WiFi: precio anterior inflado: lo ponen a 35.99 € pero su precio habitual es 23.99 € (solo -15%, historial de 5 días)
-  ✗ amz-B08NCL135Q Impresora multifunción EcoTank ET-5150 A4 con…: no es ninguna bajada: hace menos de una semana ya estaba a 374.00 € (historial propio de 3 días)
-  Amazon (API): 107 con descuento grande, 36 con precio anterior y stock
-Candidatos a revisar: 36
-  ✗ amz-B08BKPQQDD Cooler Master MWE 750 Gold V2: marca poco conocida (Cooler Master): su precio anterior no es fiable
-  ✓ B07W7KMK4W Logitech G G413 TKL SE Teclado Mecánico Gaming: 41,79 € (-40% vs 69,99 €)
-  ✓ B0C3D2DGYP Oral-B iO 3 Cepillo de Dientes Eléctrico con 3 Cabezales: 59,95 € (-45% vs 109,95 €)
-  ✗ amz-B0DNZCT6ML Thermaltake Toughpower GT 850W: marca poco conocida (Thermaltake): su precio anterior no es fiable
-  ✗ amz-B0BV2D4FN1 MSI mag A750GLS PCIe 5 – Fuente de Alimentación 750W 80…: solo -43% frente a su PVP recomendado (133,99 €)
-  ✗ amz-B0F1Z5982Y ASUS TUF Gaming B650E-PLUS WiFi: solo -44% frente a su PVP recomendado (249,99 €)
-  ✗ amz-B0FB43WPJC MSI mag A850GLS PCIE5, Fuente de alimentación: solo -41% frente a su PVP recomendado (144,99 €)
-  ✗ amz-B0CS3FD17C TP-Link TL-MR110 - Router 4G LTE SIM: solo -32% frente a su PVP recomendado (65,99 €)
-  ✗ amz-B0DK579HVY Tenda RX2L Pro - AX1500 Router WiFi 6: marca poco conocida (Tenda): su precio anterior no es fiable
-  ✗ amz-B0GJTBKGDV Epson EcoTank ET-2955 Impresora de Depósito de Tinta: solo -35% frente a su PVP recomendado (369,34 €)
-  ✗ amz-B08XNJB8TM HP LaserJet M234sdw 6GX01F, Impresora Multifunción A4: solo -39% frente a su PVP recomendado (249,90 €)
-  ✗ amz-B0DCZJSJ7Z Thermaltake Toughpower GT 850W: marca poco conocida (Thermaltake): su precio anterior no es fiable
-  ✗ amz-B0DRBMB5PM Tenda A18 Pro AC1200 Repetidor WiFi con Puerto Gigabit: marca poco conocida (Tenda): su precio anterior no es fiable
-  ✗ amz-B0GXZQH1G6 LG 27US50Z-W - Monitor UltraFine: solo -27% frente a su PVP recomendado (219,00 €)
-  ✗ amz-B0GXZSGDQ7 LG Monitor Ultrafine 32UR55ZK-B: solo -27% frente a su PVP recomendado (299,00 €)
-  ✗ amz-B01N7BN0YF LaCie 1TB Rugged Disco Duro Portátil: marca poco conocida (LaCie): su precio anterior no es fiable
-  ✗ amz-B0FWCLJ51V MSI Pro MP275QA E14 de 27" WQHD: solo -25% frente a su PVP recomendado (171,99 €)
-  ✗ amz-B09T9P4MSL ASUS ROG Strix 1200W Platinum: solo -25% frente a su PVP recomendado (259,90 €)
-  ✗ amz-B09KB8GGN1 ASUS ProArt X870E-Creator WiFi: solo -25% frente a su precio mediano de los 90 días (504,80 €)
-  ✗ amz-B0F1Z3YZN4 ASUS TUF Gaming B850-E WiFi - Placa Base AMD ATX: solo -25% frente a su precio mediano de los 90 días (222,90 €)
-  ✗ amz-B0BK541686 ASUS TUF Gaming 850W Gold - Fuente de Alimentación Modular…: solo -25% frente a su PVP recomendado (129,90 €)
-  ✗ amz-B0GVNTCQFR STRONG Repetidor WiFi N300, Amplificador WiFi Largo Alcance: precio fuera de rango (12.21 €)
-  ✗ amz-B07TH6YFPY Acer Nitro Monitor Gaming 27" 4K UHD IPS: solo -19% frente a su precio mediano de los 90 días (156,63 €)
-  ✗ amz-B0FKBRLWNW LG Monitor Ultrafine 27U730A-B: solo -15% frente a su precio mediano de los 90 días (259,00 €)
-  ✗ amz-B0DFQ9S6KS TP-Link Archer BE3600–Router WiFi 7 BE3600 de doble banda: solo -12% frente a su PVP recomendado (89,99 €)
-  ✗ amz-B089HFR9CX ASUS ROG Strix B550-F Gaming: solo -15% frente a su precio mediano de los 90 días (169,99 €)
-  ✗ amz-B089HG351D ASUS Placa ASUS TUF B550-PLUS Gaming AMD AM4 PCIE3.0 M.2…: solo -17% frente a su precio mediano de los 90 días (148,56 €)
-  ✗ amz-B095SYK1R9 TP-Link RE500X Repetidor WiFi 6 AX1500 Doble Banda: solo -10% frente a su precio mediano de los 90 días (49,99 €)
-  ✗ amz-B0HGM7RC3L Strong Repetidor WiFi AC1200: marca poco conocida (Strong): su precio anterior no es fiable
-  ✗ amz-B0FCSVV6X7 HP DeskJet 4320, Impresora Multifunción de inyección de…: solo -3% frente a su precio mediano de los 90 días (57,90 €)
-  ✗ amz-B0DHW558TP HP Envy 6520e 714N9B, Impresora multifunción de inyección…: solo -4% frente a su precio mediano de los 90 días (79,71 €)
-  ✗ amz-B0F6LB6Y9N HUAWEI AX3 New Enrutador, Wi-Fi 6 Plus de Banda Dual 3000…: solo -5% frente a su precio mediano de los 90 días (36,99 €)
-  ✗ amz-B0GQCJ2D3D CORSAIR Vengeance RGB RS DDR5 16GB (2 x 8GB) hasta 5200MHz…: solo -8% frente a su precio mediano de los 90 días (304,99 €)
-  ✗ amz-B0HC453DG1 CORSAIR Vengeance RGB RS DDR5 32GB (2 x 16GB) hasta 6000MHz…: solo -5% frente a su precio mediano de los 90 días (554,99 €)
-  ✗ amz-B0DGVC3DDW GIGABYTE X870 AORUS Elite WIFI7 Placa Base: solo -3% frente a su precio mediano de los 90 días (273,74 €)
-  ✗ amz-B0C1N8CWZ4 GIGABYTE H610M K DDR4 Placa Base: solo -6% frente a su PVP recomendado (59,59 €)
-  ⏸ B07W7KMK4W variedad: ya salió un «teclado y raton» de Logitech G hace 2 días; espera en la cola
-  ⏸ B0C3D2DGYP variedad: ya salió algo de Oral-B hace 40 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 8 · 08:06 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  ✗ amz-B01L6L44NU Logitech G G213 Prodigy Teclado Gaming: precio anterior inflado: lo ponen a 69.99 € pero su precio habitual es 39.99 € (solo -13%, historial de 5 días)
-  ✗ amz-B0CJVJ2MSN NEWSKILL Serike V2 Teclado Mecánico Gaming Switch…: no es ninguna bajada: hace menos de una semana ya estaba a 84.95 € (historial propio de 5 días)
-  ✗ amz-B0H2WMGBPK Keychron C2 Pro 8K Teclado Mecánico con Cable: no es ninguna bajada: hace menos de una semana ya estaba a 55.99 € (historial propio de 4 días)
-  ✗ amz-B0GTZQZZ9Q GXTrust Revyn Teclado Mecánico Inalámbrico 60%…: no es ninguna bajada: hace menos de una semana ya estaba a 39.89 € (historial propio de 5 días)
-  ✗ amz-B0GTW78BS4 GXTrust Dothix Teclado Inalámbrico TKL 80% QWERTY…: no es ninguna bajada: hace menos de una semana ya estaba a 23.69 € (historial propio de 5 días)
-  ✗ amz-B07GS6ZB7T Logitech G G502 Hero Ratón Gaming con Cable: no es ninguna bajada: hace menos de una semana ya estaba a 28.78 € (historial propio de 5 días)
-  ✗ amz-B07W5JKFQC Logitech G G203 LIGHTSYNC Ratón Gaming Negro: precio anterior inflado: lo ponen a 34.99 € pero su precio habitual es 19.90 € (solo -5%, historial de 5 días)
-  ✗ amz-B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming…: precio anterior inflado: lo ponen a 59.99 € pero su precio habitual es 34.42 € (solo -4%, historial de 5 días)
-  ✗ amz-B07GS6ZS8J Logitech G G502 Hero Ratón Gaming con Cable: no es ninguna bajada: hace menos de una semana ya estaba a 29.98 € (historial propio de 5 días)
-  ✗ amz-B07W5JKP66 Logitech G PRO X SUPERLIGHT 2: no es ninguna bajada: hace menos de una semana ya estaba a 84.99 € (historial propio de 5 días)
-  ✗ amz-B07W6JN8N7 Logitech G G203 LIGHTSYNC Ratón Gaming Blanco: precio anterior inflado: lo ponen a 34.99 € pero su precio habitual es 24.99 € (solo -24%, historial de 5 días)
+Modo sin silencios: 128 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
+Hora garantizada: 128 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
+Aviso por privado: ⚠️ El canal free lleva 128 min sin publicar: la API de Amazon está saturada. Sigo buscando en cada pasada.
+  ✗ amz-B0HML1LVYQ Vipbear Sofá cama convertible de 200 cm con…: no es ninguna bajada: hace menos de una semana ya estaba a 221.34 € (historial propio de 4 días)
+  ✗ amz-B0DLJTQJVL Yicensen Cama Doble 135x190cm Metal Listones…: no es ninguna bajada: hace menos de una semana ya estaba a 89.99 € (historial propio de 4 días)
+  ✗ amz-B0GGZYPKNS DWR Almohada 50x75 cm de Espuma Viscoelástica: no es ninguna bajada: hace menos de una semana ya estaba a 38.76 € (historial propio de 4 días)
+  ✗ amz-B0C8KBVW16 JUPPLIES Silla Escritorio Ergonomica: no es ninguna bajada: hace menos de una semana ya estaba a 52.23 € (historial propio de 3 días)
+  ✗ amz-B0D17RR22L JUPPLIES Silla Escritorio Ergonomica: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 3 días)
   ✗ amz-B0D548X9DJ JUPPLIES Silla Escritorio Ergonómica con Soporte…: no es ninguna bajada: hace menos de una semana ya estaba a 79.99 € (historial propio de 3 días)
-  ✗ amz-B0G1T6LT3F DRIFT GAMING DRAIR35 – Silla Escritorio…: no es ninguna bajada: hace menos de una semana ya estaba a 75.00 € (historial propio de 4 días)
-  ✗ amz-B0C76ZD7KV UGREEN Webcam Full HD 1080P 30FPS USB A PC Cámara…: no es ninguna bajada: hace menos de una semana ya estaba a 17.13 € (historial propio de 4 días)
-  ✗ amz-B01BGBJ8Y0 Logitech C270 Webcam HD, Camara para PC: no es ninguna bajada: hace menos de una semana ya estaba a 14.99 € (historial propio de 4 días)
-  ✗ amz-B0F1SJR713 UGREEN Webcam Full HD 1080P 30FPS USB A PC Cámara…: no es ninguna bajada: hace menos de una semana ya estaba a 18.51 € (historial propio de 4 días)
-  ✗ amz-B07MM4V7NR Logitech Webcam C920S Pro HD: precio anterior inflado: lo ponen a 99.99 € pero su precio habitual es 58.95 € (solo -5%, historial de 4 días)
-  ✗ amz-B006A2Q81M Logitech C920 HD Pro Webcam 1080p: precio anterior inflado: lo ponen a 94.99 € pero su precio habitual es 67.95 € (solo -19%, historial de 4 días)
-  ✗ amz-B004919FY8 NGS XPRESSCAM 300 - Webcam con Micrófono para PC: no es ninguna bajada: hace menos de una semana ya estaba a 5.59 € (historial propio de 5 días)
-  ✗ amz-B0D5QTQTV1 UGREEN Webcam 2K 30FPS Full HD Cámara USB A PC…: no es ninguna bajada: hace menos de una semana ya estaba a 24.69 € (historial propio de 3 días)
-  ✗ amz-B08GTYFC37 SANDISK Extreme SSD Externo Portátil 1TB (Disco…: solo -5% frente a su precio habitual de 169.00 € (historial de 4 días)
-  ✗ amz-B0DX65SQXF Amazon Basics Unidad de Estado Sólido Externa…: no es ninguna bajada: hace menos de una semana ya estaba a 183.35 € (historial propio de 4 días)
-  ✗ amz-B0DHGG9DDB ORICO 1TB SSD Externo Portátil con Cable USB-C 2…: solo -8% frente a su precio habitual de 129.99 € (historial de 4 días)
-  ✗ amz-B00FMB9A30 Intenso 3413490 - Adaptador para tarjeta Micro…: no es ninguna bajada: hace menos de una semana ya estaba a 10.95 € (historial propio de 5 días)
-  ✗ amz-B0C5MB5MTS Asustor AS5402T Nimbustor 2 Gen2: solo -8% frente a su precio habitual de 452.00 € (historial de 4 días)
-  ✗ amz-B0FFP61L6C Turtle Beach Victrix Gambit Prime Mando de juegos…: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 4 días)
-  ✗ amz-B0C3BSZ56D HyperX Cloud III wired Auriculares para Juegos…: solo -20% frente a su precio habitual de 74.99 € (historial de 4 días)
-  ✗ amz-B07SWSCBJJ Just Dance 2020 - Nintendo Switch [Importación…: no es ninguna bajada: hace menos de una semana ya estaba a 15.83 € (historial propio de 5 días)
-  ✗ amz-B0FRFRMDRP EasySMX X05 Pro Mando Inalámbrico para PC: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 4 días)
-  ✗ amz-B0CQ3PJKRV PDP Mando Gaming Inalámbrico Victrix Pro BFG: no es ninguna bajada: hace menos de una semana ya estaba a 108.71 € (historial propio de 4 días)
-  ✗ amz-B0C7X5Q6R1 Marvel's Spiderman 2 para PS5: solo -20% frente a su precio habitual de 49.99 € (historial de 4 días)
-  ✗ amz-B0FJXWB78M Battlefield 6 Standard Edition PS5: precio anterior inflado: lo ponen a 59.99 € pero su precio habitual es 32.99 € (solo -21%, historial de 5 días)
-  Amazon (API): 116 con descuento grande, 28 con precio anterior y stock
-Candidatos a revisar: 18
-  ✓ B07W5JKKFJ Logitech Brio 500 HD Webcam Cámara USB C: 64,97 € (-46% vs 119,99 €)
-  ✓ B0CP7JSC7J PlayStation 5 The Last of Us: Parte II Remastered: 28,99 € (-42% vs 49,99 €)
-  ✓ B07W7KMK4W Logitech G G413 TKL SE Teclado Mecánico Gaming: 41,79 € (-40% vs 69,99 €)
-  ✓ B0C3D2DGYP Oral-B iO 3 Cepillo de Dientes Eléctrico con 3 Cabezales: 59,95 € (-45% vs 109,95 €)
-  ✗ amz-B0F5QBSRDR SteelSeries Rival 3 Gen 2 - Raton Gaming: precio fuera de rango (14.96 €)
-  ✗ amz-B0G92NRF52 UGREEN FineCam 1080P Webcam 60FPS Full HD USB A C PC Cámara…: marca poco conocida (UGREEN): su precio anterior no es fiable
-  ✗ amz-B0GSW8D7HP Resonance : A Plague Tale Legacy: marca poco conocida (Happy Mom): su precio anterior no es fiable
-  ✗ amz-B07YYJRXQR SANDISK Ultra Dual Drive Go, Memoria Flash 128 GB (con…: solo -34% frente a su PVP recomendado (31,99 €)
-  ✗ amz-B07QBNYJ6X SanDisk 32GB Cruzer Blade USB Flash Drive: solo -38% frente a su PVP recomendado (36,99 €)
-  ✗ amz-B07W4DG81W Logitech G G923 volante y pedales de carrera para Xbox & PC: calidad: solo -28% (mínimo -35%)
-  ✗ amz-B0BF8NHH2P PlayStation - Mando Inalámbrico DualSense Grey Camo: solo -27% frente a su PVP recomendado (74,99 €)
-  ✗ amz-B0G72Q8QJ5 LEGO Batman: El Legado del Caballero Oscuro: marca poco conocida (Warner): su precio anterior no es fiable
-  ✗ amz-B0DFQKQ9CB SanDisk microSD Express, 128 GB Tarjeta Micro SD: solo -28% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0G1BC4THX UGREEN NASync DXP4800 Pro NAS de Escritorio 4 bahías: marca poco conocida (UGREEN): su precio anterior no es fiable
-  ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
-  ✗ amz-B08K9SBMJR Logitech G G923 Volante de Carreras y Pedales: solo -13% frente a su PVP recomendado (263,99 €)
-  ✗ amz-B09GWK2WZ1 Andaseat Dark Demon Dragon: marca poco conocida (Anda Seat): su precio anterior no es fiable
-  ✗ amz-B0DTQ35NH6 SanDisk Tarjeta microSD Express de 512 GB: solo -19% frente a su precio mediano de los 90 días (147,14 €)
-  API de Amazon: B07W5JKKFJ confirmado a 64,97 €
-  Enviado a @cazachollos_com (mensaje 612): Logitech Brio 500 HD Webcam Cámara USB C
-== pasada 9 · 08:07 ==
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-No publico: cupo de la hora cubierto.
-== pasada 10 · 08:08 ==
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-No publico: cupo de la hora cubierto.
-== pasada 11 · 08:09 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 12 · 08:10 ==
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-No publico: cupo de la hora cubierto.
-== pasada 13 · 08:11 ==
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 14 · 08:12 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-No publico: cupo de la hora cubierto.
-== pasada 15 · 08:13 ==
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 16 · 08:14 ==
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-No publico: cupo de la hora cubierto.
-== pasada 17 · 08:15 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 18 · 08:16 ==
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-No publico: cupo de la hora cubierto.
-== pasada 19 · 08:17 ==
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 20 · 08:18 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-No publico: cupo de la hora cubierto.
-== pasada 21 · 08:19 ==
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 22 · 08:20 ==
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-No publico: cupo de la hora cubierto.
-== pasada 23 · 08:21 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 24 · 08:22 ==
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-No publico: cupo de la hora cubierto.
-== pasada 25 · 08:23 ==
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 26 · 08:24 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  ✗ amz-B0DKK3W82F BYE SWEET CAROLE - NINTENDO SWITCH: no es ninguna bajada: hace menos de una semana ya estaba a 23.95 € (historial propio de 4 días)
-  ✗ amz-B0F2HLR2S8 Terrifier The Artcade Game - NSW: no es ninguna bajada: hace menos de una semana ya estaba a 19.90 € (historial propio de 4 días)
-  ✗ amz-B087JX7KB2 Lexibook, Consola de Juegos portátil Compact…: no es ninguna bajada: hace menos de una semana ya estaba a 36.50 € (historial propio de 4 días)
-  ✗ amz-B0G7LBB2F4 ARNSSIEN Camara Digital 4K Cámara Compacta…: no es ninguna bajada: hace menos de una semana ya estaba a 39.99 € (historial propio de 5 días)
-  ✗ amz-B095CLQ1PT Tapo C210 - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 22.99 € (historial propio de 4 días)
-  ✗ amz-B0D9MDV5L5 Tapo C200C - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 18.99 € (historial propio de 4 días)
-  ✗ amz-B0CDCL38KZ Tapo C200P2 - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 39.99 € (historial propio de 4 días)
-  ✗ amz-B0DQ5NTHB8 Tapo C51A - Cámara de Vigilancia WiFi Exterior…: no es ninguna bajada: hace menos de una semana ya estaba a 38.99 € (historial propio de 4 días)
-  ✗ amz-B0DSW6SF34 Tapo C230 - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 32.99 € (historial propio de 4 días)
-  ✗ amz-B0FC2XLSP4 Tapo C113-Cámara vigilancia WiFi interior/exterior: no es ninguna bajada: hace menos de una semana ya estaba a 23.74 € (historial propio de 3 días)
-  ✗ amz-B0HB43Y11Z SwitchBot 2K Videoportero Wifi: no es ninguna bajada: hace menos de una semana ya estaba a 99.99 € (historial propio de 4 días)
-  ✗ amz-B0DLNXY81N EZVIZ Timbre Inalámbrico con Cámara de Panel…: no es ninguna bajada: hace menos de una semana ya estaba a 69.99 € (historial propio de 3 días)
-  ✗ amz-B0GVS83X4G Imou 3K Videoportero, Timbre Video Sistema…: no es ninguna bajada: hace menos de una semana ya estaba a 189.00 € (historial propio de 4 días)
-  ✗ amz-B0B7NKLDXW Tapo P110 (4-Pack) - Enchufe Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 34.99 € (historial propio de 4 días)
-  ✗ amz-B083FF167K Tapo P100 (4-Pack) - Enchufe Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 32.99 € (historial propio de 4 días)
-  ✗ amz-B0CJ9R466Z Tapo P110M-Enchufe inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 12.99 € (historial propio de 4 días)
-  ✗ amz-B0F9W4946B SwitchBot Matter Plug Mini paquete de 4 con…: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 5 días)
-  ✗ amz-B08QRQQ53T Tapo L530E (2-Pack) - Bombilla Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 14.99 € (historial propio de 5 días)
-  ✗ amz-B09MM39P84 Tapo L530E (4-Pack) - Bombilla Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 25.90 € (historial propio de 5 días)
-  ✗ amz-B09KRVN7XG Tapo L520E-Bombilla inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 8.54 € (historial propio de 4 días)
-  ✗ amz-B0DZGLMFTS Tapo L430C(2-Pack) - Bombilla inteligente…: no es ninguna bajada: hace menos de una semana ya estaba a 17.99 € (historial propio de 4 días)
-  ✗ amz-B0DZH7RZPG Tapo L430C(4-Pack) - Bombilla inteligente…: no es ninguna bajada: hace menos de una semana ya estaba a 31.34 € (historial propio de 4 días)
-  ✗ amz-B0BFJKTDJW Tapo L610(4-Pack)-Bombilla LED Inteligente: no es ninguna bajada: hace menos de una semana ya estaba a 29.99 € (historial propio de 4 días)
-  ✗ amz-B0FP2KTYVL SwitchBot Hub Mini Matter, Hub Domótico Casa & IR…: no es ninguna bajada: hace menos de una semana ya estaba a 41.69 € (historial propio de 4 días)
-  Amazon (API): 117 con descuento grande, 10 con precio anterior y stock
-Candidatos a revisar: 10
-  ✗ amz-B086QKXW1M Ring videotimbre cableado Pro (anteriormente Video Doorbell…: ya publicado hace poco y no ha bajado más
-  ✓ B0CP7JSC7J PlayStation 5 The Last of Us: Parte II Remastered: 28,99 € (-42% vs 49,99 €)
-  ✗ amz-B0CG19QXWD DJI Osmo Pocket 3, cámara con CMOS 1'' y vídeo 4K/120 fps: solo -37% frente a su PVP recomendado (429,00 €)
-  ✗ amz-B0HDCKCY39 SwitchBot 2K Timbre con cámara: solo -25% frente a su mínimo de los 30 días anteriores (199,99 €)
-  ✗ amz-B0CXDYCKVS Teenage Mutant Ninja Turtles: Mutantes desencadenados: marca poco conocida (Outright Games): su precio anterior no es fiable
-  ✗ amz-B0DQWZQFZW NIVIAN Videoportero 2 Hilos Analógico con Monitor 7” HQ…: marca poco conocida (NIVIAN): su precio anterior no es fiable
-  ✗ amz-B0DP8K22HP Amazon Basics Enchufe inteligente: precio fuera de rango (8.39 €)
-  ✗ amz-B0DP8LHZFJ Amazon Basics Enchufe inteligente: solo -11% frente a su precio mediano de los 90 días (30,00 €)
-  ✗ amz-B0D34VK962 Amazon Basics Smart Bombilla led multicolor: precio fuera de rango (8.07 €)
-  ✗ amz-B0DX1QL96S Refoss Enchufe Conectado con Monitoreo de Energía: marca poco conocida (Refoss): su precio anterior no es fiable
-  API de Amazon: B0CP7JSC7J confirmado a 28,99 €
-  Enviado a @cazachollos_com (mensaje 613): PlayStation 5 The Last of Us: Parte II Remastered
-  X: no te lo paso (muy seguido del anterior post de X)
-== pasada 27 · 08:26 ==
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-No publico: cupo de la hora cubierto.
-== pasada 28 · 08:28 ==
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-No publico: cupo de la hora cubierto.
-== pasada 29 · 08:30 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-No publico: cupo de la hora cubierto.
-== pasada 30 · 08:32 ==
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-No publico: cupo de la hora cubierto.
-== pasada 31 · 08:34 ==
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-No publico: cupo de la hora cubierto.
-== pasada 32 · 08:36 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-No publico: cupo de la hora cubierto.
-== pasada 33 · 08:38 ==
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-No publico: cupo de la hora cubierto.
-== pasada 34 · 08:40 ==
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-No publico: cupo de la hora cubierto.
-== pasada 35 · 08:42 ==
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  ✗ amz-B0H99D4R2X SwitchBot Termostato Smart para Radiador: no es ninguna bajada: hace menos de una semana ya estaba a 28.99 € (historial propio de 4 días)
-  ✗ amz-B0FMXW27LS SwitchBot Termostato Inteligente para Radiador: no es ninguna bajada: hace menos de una semana ya estaba a 29.99 € (historial propio de 4 días)
-  ✗ amz-B0FMRQGF4P SwitchBot Termostato Inteligente para Radiador…: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 4 días)
-  ✗ amz-B0H99Q9SXG SwitchBot Termostato Inteligente para Radiador…: no es ninguna bajada: hace menos de una semana ya estaba a 52.39 € (historial propio de 4 días)
-  ✗ amz-B0DHK57W3M Ginour Taladro Percutor a Bateria sin escobillas…: no es ninguna bajada: hace menos de una semana ya estaba a 61.99 € (historial propio de 4 días)
-  ✗ amz-B0DHK57W3M Ginour Taladro Percutor a Bateria sin escobillas…: no es ninguna bajada: hace menos de una semana ya estaba a 61.99 € (historial propio de 4 días)
-  ✗ amz-B01L31KAGI DEWALT Juego de taladro mixto (100 piezas): no es ninguna bajada: hace menos de una semana ya estaba a 29.08 € (historial propio de 4 días)
-  ✗ amz-B0D7MKFLQD Stanley Hidrolimpiadora SXPW19BX: no es ninguna bajada: hace menos de una semana ya estaba a 116.47 € (historial propio de 4 días)
-  ✗ amz-B0BV78FRDQ Stanley Hidrolimpiadora de Alta Presión SXPW25E…: no es ninguna bajada: hace menos de una semana ya estaba a 134.90 € (historial propio de 4 días)
-  ✗ amz-B0H2LFV9GY Hidrolimpiadora Inalámbrica Portátil: no es ninguna bajada: hace menos de una semana ya estaba a 47.49 € (historial propio de 3 días)
-  ✗ amz-B08X255QL2 LawnMaster Cortacésped batería 24V 34cm: no es ninguna bajada: hace menos de una semana ya estaba a 165.74 € (historial propio de 4 días)
-  ✗ amz-B0GJ519CND MAMMOTION YUKA mini 2 800 LiDAR Robot Cortacésped…: no es ninguna bajada: hace menos de una semana ya estaba a 799.00 € (historial propio de 4 días)
-  Amazon (API): 115 con descuento grande, 18 con precio anterior y stock
-Candidatos a revisar: 12
-  ✗ amz-B0DSK6QFXZ Meross Termostato Calefaccion WiFi por Suelo Radiante…: marca poco conocida (meross): su precio anterior no es fiable
-  ✗ amz-B0FS781V14 SwitchBot Kit Termostato de Radiador Inteligente con Home…: marca poco conocida (SwitchBot): su precio anterior no es fiable
-  ✗ amz-B00IPL6EV0 Bosch Professional 12V System taladro angular a batería GWB…: solo -25% frente a su precio mediano de los 90 días (119,00 €)
-  ✗ amz-B077TZYQRT Black+Decker Hidrolimpiadora de Alta Presión BXPW2000PE con…: solo -21% frente a su PVP recomendado (139,90 €)
-  ✗ amz-B0DK14G8Z2 WORKPRO X Series Cortabordes Inalámbrica 20V: solo -20% frente a su mínimo de los 30 días anteriores (69,99 €)
-  ✗ amz-B07BRS1KXS Bosch PRO Amoladora GWS 880 | Nivel superior de control de…: solo -20% frente a su PVP recomendado (85,91 €)
-  ✗ amz-B017AWGGL2 DEWALT DWE4233-QS - Mini-Amoladora 125 mm: solo -6% frente a su precio mediano de los 90 días (119,48 €)
-  ✗ amz-B0BX9F28BC Bosch Universal Juego de herramientas manuales: solo -8% frente a su precio mediano de los 90 días (61,57 €)
-  ✗ amz-B07RB6CQVS Makita HP333DSAX1 Taladro atornillador inalámbrico 12 V…: solo -7% frente a su precio mediano de los 90 días (204,23 €)
-  ✗ amz-B008LAFV32 DEWALT Batería carril 18V XR 4Ah: solo -9% frente a su precio mediano de los 90 días (64,95 €)
-  ✗ amz-B0DQ93HX2L Kärcher Hidrolimpiadora K 5 FJ: solo -9% frente a su PVP recomendado (319,95 €)
-  ✗ amz-B01AI2PJQY Bosch AFS 23-37 - Desbrozadora: solo -6% frente a su precio mediano de los 90 días (137,64 €)
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 36 · 08:44 ==
-  Seguimiento B09DRCXV4C: sigue a 109,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0F9X7H8W6: sigue a 59,99 €
-  ✗ amz-B0F9FN228S BLUETTI Elite 30 V2 Estación de Energía Portátil…: no es ninguna bajada: hace menos de una semana ya estaba a 198.55 € (historial propio de 4 días)
-  ✗ amz-B0F9PKNWS1 BLUETTI Elite 100 V2 Estación de Energía Portátil…: no es ninguna bajada: hace menos de una semana ya estaba a 499.00 € (historial propio de 4 días)
-  ✗ amz-B0DRFZ8C31 BLUETTI Elite 200 V2 Estación de Energía Portátil…: no es ninguna bajada: hace menos de una semana ya estaba a 899.00 € (historial propio de 3 días)
-  ✗ amz-B09G9FZ4LR FlashFish estacion de energia portatil 200W: solo -10% frente a su precio habitual de 119.99 € (historial de 4 días)
-  ✗ amz-B0DKFMVRKW Jackery Explorer 1000 v2 Estación de Energía…: no es ninguna bajada: hace menos de una semana ya estaba a 675.00 € (historial propio de 4 días)
-  ✗ amz-B07RVNMZJH SMARTGYRO Speedway - Patinete Eléctrico para…: no es ninguna bajada: hace menos de una semana ya estaba a 445.44 € (historial propio de 3 días)
-  ✗ amz-B08P253ZL8 smartGyro Speedway Pro - Patinete Eléctrico de 48V: no es ninguna bajada: hace menos de una semana ya estaba a 491.14 € (historial propio de 3 días)
-  ✗ amz-B0H3KKDMFC F.lli Schiano Bicicleta Electrica Trekking 28": no es ninguna bajada: hace menos de una semana ya estaba a 736.99 € (historial propio de 3 días)
-  ✗ amz-B0FN3XDNNN LONTEK Cinta de Correr Plegable con Inclinación…: no es ninguna bajada: hace menos de una semana ya estaba a 139.99 € (historial propio de 4 días)
-  ✗ amz-B09S3YG8FY SportPlus Ergo-Heimtrainer/Hometrainer: no es ninguna bajada: hace menos de una semana ya estaba a 93.71 € (historial propio de 5 días)
-  ✗ amz-B0GKG2LN1L YOSUDA Bicicleta Estática con Resistencia…: no es ninguna bajada: hace menos de una semana ya estaba a 169.99 € (historial propio de 3 días)
-  ✗ amz-B0H5K3XK74 2026 YOSUDA Bicicleta Estática: no es ninguna bajada: hace menos de una semana ya estaba a 179.99 € (historial propio de 4 días)
-  ✗ amz-B0GL1TPMQ6 FEIERDUN 10kg-40kg Juego de Pesas y Mancuernas…: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 4 días)
-  ✗ amz-B0DNHRW9CR Amazon Basics Neoprene Dumbbell Weights Set with…: no es ninguna bajada: hace menos de una semana ya estaba a 29.66 € (historial propio de 4 días)
-  ✗ amz-B0DG3TJ356 JUPPLIES Juego de Mancuernas Ajustables 4 en 1 +…: no es ninguna bajada: hace menos de una semana ya estaba a 34.18 € (historial propio de 4 días)
-  ✗ amz-B08224FZKW ZERRO Juego de pesas ajustable 2 en 1: no es ninguna bajada: hace menos de una semana ya estaba a 43.69 € (historial propio de 3 días)
-  ✗ amz-B0GSYX9T71 Banco de pesas regulable para gimnasio en casa: no es ninguna bajada: hace menos de una semana ya estaba a 63.17 € (historial propio de 5 días)
-  ✗ amz-B0FH4VJG33 JUPPLIES Banco de Musculación Plegable…: no es ninguna bajada: hace menos de una semana ya estaba a 56.99 € (historial propio de 5 días)
-  ✗ amz-B07DNYSJ8W FLYBIRD Banco de pesas regulable,profesional: no es ninguna bajada: hace menos de una semana ya estaba a 104.68 € (historial propio de 3 días)
-  ✗ amz-B0BQRKM4SC Coleman Bedrock 2 - Tienda de campaña compacta…: no es ninguna bajada: hace menos de una semana ya estaba a 73.99 € (historial propio de 3 días)
-  ✗ amz-B0DDSCP32R Amazon Basics - Tienda de campaña instantánea con…: no es ninguna bajada: hace menos de una semana ya estaba a 84.91 € (historial propio de 4 días)
-  ✗ amz-B0GKQCXD1K Trinordic Tienda Ligera 1-2 Personas: no es ninguna bajada: hace menos de una semana ya estaba a 55.99 € (historial propio de 3 días)
-  ✗ amz-B07MV5HZ8B ZOMAKE Mochila Plegable Ultraligera: no es ninguna bajada: hace menos de una semana ya estaba a 16.32 € (historial propio de 4 días)
-  Amazon (API): 119 con descuento grande, 9 con precio anterior y stock
-Candidatos a revisar: 9
-  ✗ amz-B0BHJFV7DF Cecotec Patinete Eléctrico Bongo Serie S+ MAX Infinity. 750…: solo -41% frente a su PVP recomendado (497,90 €)
-  ✗ amz-B09KZPGM77 Mammut Litio 30 negro 30 L: marca poco conocida (Mammut): su precio anterior no es fiable
-  ✗ amz-B0H2TMCY8F FLYBIRD Banco de pesas ajustable: calidad: solo -30% (mínimo -35%)
-  ✗ amz-B0BQ1KV15R Cecotec Patinete Eléctrico Bongo V55 2x2 Connected: solo -21% frente a su PVP recomendado (673,90 €)
-  ✗ amz-B083HVJBVR SONGMICS Juego de Mancuernas Hexagonales con Soporte: marca poco conocida (SONGMICS): su precio anterior no es fiable
-  ✗ amz-B0DMD4G5XH Amazon Basics Set de mancuernas hexagonales con…: solo -13% frente a su precio mediano de los 90 días (45,99 €)
-  ✗ amz-B0DP7D8RWC Millet GRAVIC - Mochila de senderismo (50 +10 L): marca poco conocida (MILLET): su precio anterior no es fiable
-  ✗ amz-B0D4VSBD2Z deuter Aircontact Lite 45 + 10 SL Mochila de trekking…: solo -5% frente a su mínimo de los 30 días anteriores (144,34 €)
-  ✗ amz-B09PNY1TXV Helly Hansen Unisex Mochila Generator: marca poco conocida (Helly Hansen): su precio anterior no es fiable
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 37 · 08:46 ==
-  Seguimiento B0GKP7R5P6: sigue a 170,99 €
-  Seguimiento B07W6FQ658: sigue a 65,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B00CHHDY66: sigue a 17,85 €
-  ✗ amz-B09VN62HF3 Azzaro, The Most Wanted, Parfum: no es ninguna bajada: hace menos de una semana ya estaba a 51.27 € (historial propio de 4 días)
-  ✗ amz-B01F2LAUGU HUGO BOSS Bottled Eau de Toilette para hombre…: no es ninguna bajada: hace menos de una semana ya estaba a 52.36 € (historial propio de 4 días)
-  ✗ amz-B000P275F6 Náutica, Set de fragancias para hombres: no es ninguna bajada: hace menos de una semana ya estaba a 11.27 € (historial propio de 4 días)
-  ✗ amz-B0D4R3PLQ9 DKNY 24/7, Eau de Parfum para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 17.89 € (historial propio de 5 días)
-  ✗ amz-B01N4CSJ0W DKNY Be Delicious Fresh Blossom: no es ninguna bajada: hace menos de una semana ya estaba a 18.92 € (historial propio de 4 días)
-  ✗ amz-B07V25CN6C GUESS Seductive, Bruma Corporal para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 7.87 € (historial propio de 3 días)
-  ✗ amz-B001JZLT5U Tous, TOUCH The Original Gold: no es ninguna bajada: hace menos de una semana ya estaba a 28.99 € (historial propio de 5 días)
-  ✗ amz-B000XE0DS2 Cacharel Anaïs Anaïs, Agua de Colonia para mujer…: no es ninguna bajada: hace menos de una semana ya estaba a 29.02 € (historial propio de 4 días)
-  ✗ amz-B000CNP4F6 Ralph Lauren Ralph Eau de Toilette: no es ninguna bajada: hace menos de una semana ya estaba a 26.90 € (historial propio de 5 días)
-  ✗ amz-B0H83BSN2R Afeitadora Eléctrica Mujer, MAXGROOM 3 en 1…: no es ninguna bajada: hace menos de una semana ya estaba a 23.20 € (historial propio de 5 días)
-  ✗ amz-B01KLXFBVI Remington Secador de Pelo Profesional PROluxe: solo -22% frente a su precio habitual de 35.90 € (historial de 5 días)
-  ✗ amz-B0FR8M9ZXM Romon Secador De Pelo Iónico Profesional 1600W: no es ninguna bajada: hace menos de una semana ya estaba a 13.20 € (historial propio de 4 días)
-  ✗ amz-B005EFZUO2 Remington Plancha de Pelo Ceramic Slim: solo -24% frente a su precio habitual de 20.99 € (historial de 5 días)
-  ✗ amz-B0CCYSB19S ghd Platinum+ - Plancha de Pelo Profesional…: no es ninguna bajada: hace menos de una semana ya estaba a 164.00 € (historial propio de 4 días)
-  ✗ amz-B0CCYPKJHL ghd Original Styler - Plancha de Pelo Profesional: no es ninguna bajada: hace menos de una semana ya estaba a 113.00 € (historial propio de 4 días)
-  ✗ amz-B07W864798 BaByliss Plancha de Pelo Super Smooth: precio anterior inflado: lo ponen a 69.90 € pero su precio habitual es 41.90 € (solo -17%, historial de 4 días)
-  ✗ amz-B0GJRTQMVK Báscula de Baño, Bascula Grasa Corporal y…: no es ninguna bajada: hace menos de una semana ya estaba a 22.04 € (historial propio de 4 días)
-  ✗ amz-B0DMT8DN76 Matnature | Essential | Colchón Viscoelástico: no es ninguna bajada: hace menos de una semana ya estaba a 96.40 € (historial propio de 4 días)
-  ✗ amz-B09YVRJSH9 Matnature | EcoNature | Colchón Antibacterial: no es ninguna bajada: hace menos de una semana ya estaba a 54.40 € (historial propio de 4 días)
-  ✗ amz-B085RHCM72 Matnature | MatFoam | Colchón Viscosoft Reversible: no es ninguna bajada: hace menos de una semana ya estaba a 94.76 € (historial propio de 3 días)
-  Amazon (API): 119 con descuento grande, 53 con precio anterior y stock
-Candidatos a revisar: 33
-  ✗ amz-B0F9X92FQH Braun Series 5 Afeitadora Eléctrica Hombre: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0F6YG5P11 Braun Series 5 Afeitadora Eléctrica Hombre: ya publicado hace poco y no ha bajado más
+  ✗ amz-B0F9LHB49Y JUPPLIES Silla Escritorio Ergonómica: no es ninguna bajada: hace menos de una semana ya estaba a 79.99 € (historial propio de 3 días)
+  ✗ amz-B08RFDPJL3 Amazon Basics Estantería con 7 Cubos para Libros…: no es ninguna bajada: hace menos de una semana ya estaba a 33.99 € (historial propio de 5 días)
+  ✗ amz-B0FS25HSWN Bebeconfort EverFix Plus i-Size: no es ninguna bajada: hace menos de una semana ya estaba a 89.99 € (historial propio de 4 días)
+  ✗ amz-B0BMGN89G3 Graco - SlimFit R129 Silla de coche evolutiva 2…: no es ninguna bajada: hace menos de una semana ya estaba a 129.00 € (historial propio de 5 días)
+  ✗ amz-B0976XNCQ5 Dodot Pañales Bebé Sensitive: no es ninguna bajada: hace menos de una semana ya estaba a 48.69 € (historial propio de 5 días)
+  ✗ amz-B082N3H868 Dodot Pañales Bebé Sensitive: no es ninguna bajada: hace menos de una semana ya estaba a 52.59 € (historial propio de 5 días)
+  ✗ amz-B07M98CL6Y Dodot Pañales Bebé Sensitive: no es ninguna bajada: hace menos de una semana ya estaba a 60.99 € (historial propio de 5 días)
+  ✗ amz-B0FLX1D8G5 Dodot Pañal-Braguita Bebé Activity Talla 5…: no es ninguna bajada: hace menos de una semana ya estaba a 37.49 € (historial propio de 4 días)
+  ✗ amz-B0FLX33BHH Dodot Bebé Pants Pañales, Talla 4: no es ninguna bajada: hace menos de una semana ya estaba a 37.49 € (historial propio de 4 días)
+  ✗ amz-B0976XRMGM Dodot Pañales Bebé Activity Talla 6: no es ninguna bajada: hace menos de una semana ya estaba a 46.39 € (historial propio de 5 días)
+  ✗ amz-B084N3TWGJ By Amazon Pañales Ultrasecos: no es ninguna bajada: hace menos de una semana ya estaba a 22.71 € (historial propio de 3 días)
+  ✗ amz-B0F8BC88D1 Naty BioEmbrace Pañales Recién Nacido: no es ninguna bajada: hace menos de una semana ya estaba a 38.99 € (historial propio de 4 días)
+  ✗ amz-B09TB43W7M Almirón Profutura 3 - Leche de Crecimiento en…: no es ninguna bajada: hace menos de una semana ya estaba a 15.33 € (historial propio de 4 días)
+  ✗ amz-B08641KML3 Almirón Advance 2 Leche De Continuación En Polvo: no es ninguna bajada: hace menos de una semana ya estaba a 18.36 € (historial propio de 4 días)
+  ✗ amz-B09TB2JYMT Almirón Profutura 3 - Leche de Crecimiento en…: no es ninguna bajada: hace menos de una semana ya estaba a 56.58 € (historial propio de 4 días)
+  ✗ amz-B085F55TSD Almirón Advance 3, Leche de Crecimiento en Polvo…: no es ninguna bajada: hace menos de una semana ya estaba a 16.08 € (historial propio de 6 días)
+  ✗ amz-B0F5HWZ6G8 Almirón Advance 3, Leche de Crecimiento en Polvo…: no es ninguna bajada: hace menos de una semana ya estaba a 32.16 € (historial propio de 5 días)
+  ✗ amz-B07PLT76XH Clementoni - Mechanics - Monster Truck: no es ninguna bajada: hace menos de una semana ya estaba a 15.00 € (historial propio de 4 días)
+  ✗ amz-B0DPQGBT1G Barbie Twinning Looks Muñeca con perrito y ropa…: no es ninguna bajada: hace menos de una semana ya estaba a 17.95 € (historial propio de 4 días)
+  ✗ amz-B0DPQGS55Z Barbie Twinning Looks Muñeca y perrito con…: no es ninguna bajada: hace menos de una semana ya estaba a 17.95 € (historial propio de 5 días)
+  ✗ amz-B0G43VVHBP Barbie Style Muñeco Ken Fashionistas 252: no es ninguna bajada: hace menos de una semana ya estaba a 9.99 € (historial propio de 4 días)
+  ✗ amz-B0DMWK534S Barbie Muñeca Sirena Color Reveal y Accesorios…: no es ninguna bajada: hace menos de una semana ya estaba a 14.90 € (historial propio de 4 días)
+  ✗ amz-B0FDGZTQTK Barbie Deluxe Style n.º 12 Muñeca con Top Corto…: no es ninguna bajada: hace menos de una semana ya estaba a 17.99 € (historial propio de 5 días)
+  ✗ amz-B0DMWLY3V6 Barbie Fashionistas #242 Muñeca con Diabetes Tipo…: no es ninguna bajada: hace menos de una semana ya estaba a 10.99 € (historial propio de 3 días)
+  ✗ amz-B0DFX5GYS9 Pelusas Revolution | Juego de Cartas Rápido y…: solo -8% frente a su precio habitual de 12.98 € (historial de 4 días)
+  ✗ amz-B0FRXXYTKB Play Fun Capybara Juego de Cartas para familias y…: no es ninguna bajada: hace menos de una semana ya estaba a 10.96 € (historial propio de 3 días)
+  ✗ amz-B0CX9R8D4P Roll Road Flex Maleta de Cabina Azul 38x55x20 cms…: no es ninguna bajada: hace menos de una semana ya estaba a 29.79 € (historial propio de 3 días)
+  ✗ amz-B0CLB4XMXC American Tourister Flashline Maleta trolley de…: no es ninguna bajada: hace menos de una semana ya estaba a 67.44 € (historial propio de 5 días)
+  ✗ amz-B0CLB7JTKQ American Tourister Flashline Maleta trolley de…: no es ninguna bajada: hace menos de una semana ya estaba a 66.06 € (historial propio de 4 días)
+  ✗ amz-B06Y3FD2KQ American Tourister Soundbox Maleta Trolley Grande: no es ninguna bajada: hace menos de una semana ya estaba a 121.59 € (historial propio de 4 días)
+  ✗ amz-B003BFE2RI paklite Maleta de Viaje con 2 Ruedas: no es ninguna bajada: hace menos de una semana ya estaba a 60.75 € (historial propio de 3 días)
+  ✗ amz-B0771NNH66 Eastpak TRANVERZ L Maleta, 79 x 40 x 33 cm: no es ninguna bajada: hace menos de una semana ya estaba a 94.00 € (historial propio de 5 días)
+  ✗ amz-B0F4DWJGY7 Roll Road Orbit Maleta de Cabina: no es ninguna bajada: hace menos de una semana ya estaba a 37.59 € (historial propio de 3 días)
+  ✗ amz-B07DNZFNKW Eastpak TRANVERZ L Maleta, 79 x 40 x 33 cm: no es ninguna bajada: hace menos de una semana ya estaba a 94.00 € (historial propio de 3 días)
+  ✗ amz-B0DXVN5PWF Samsonite GUARDIT 3.0 - Mochila para portátil…: no es ninguna bajada: hace menos de una semana ya estaba a 49.79 € (historial propio de 4 días)
+  ✗ amz-B00708ZNK2 Marcilla Gran Aroma Café en Grano Natural: no es ninguna bajada: hace menos de una semana ya estaba a 14.62 € (historial propio de 5 días)
+  ✗ amz-B003XUCSNQ Marcilla Gran Aroma Café en Grano Mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 14.62 € (historial propio de 4 días)
+  ✗ amz-B08KJ7MLJR STARBUCKS Holiday Blend Café De Grano Entero De…: no es ninguna bajada: hace menos de una semana ya estaba a 5.19 € (historial propio de 5 días)
+  ✗ amz-B00XA1QUGE Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 18.82 € (historial propio de 6 días)
+  ✗ amz-B0CZFDCV69 Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 37.64 € (historial propio de 6 días)
+  ✗ amz-B0B4WNVXG2 Caffè Borbone Kit Degustación 90 cápsulas de…: no es ninguna bajada: hace menos de una semana ya estaba a 14.24 € (historial propio de 5 días)
+  ✗ amz-B0D6YM4FCS by Amazon Cápsulas de Aluminio de Café Sabor…: no es ninguna bajada: hace menos de una semana ya estaba a 2.76 € (historial propio de 5 días)
+  ✗ amz-B09YMPSXFS Caffè Borbone Mezcla de Café "Magica Palermo": no es ninguna bajada: hace menos de una semana ya estaba a 16.13 € (historial propio de 5 días)
+  ✗ amz-B0B1LPQFRP Lavazza, Espresso Maestro Ristretto: no es ninguna bajada: hace menos de una semana ya estaba a 7.85 € (historial propio de 5 días)
+  ✗ amz-B09YMQ9FFJ Caffè Borbone Mezcla de Café "Ciao Venezia": no es ninguna bajada: hace menos de una semana ya estaba a 18.12 € (historial propio de 5 días)
+  ✗ amz-B09C1ZY9RB Segafredo Zanetti 100 Cápsulas de Aluminio…: no es ninguna bajada: hace menos de una semana ya estaba a 21.45 € (historial propio de 5 días)
+  ✗ amz-B0GXF7X194 Caffè Borbone Ristretto - 50 Cápsulas Compatibles…: no es ninguna bajada: hace menos de una semana ya estaba a 12.80 € (historial propio de 4 días)
+  ✗ amz-B00I9UVSNG L'OR Espresso Cápsulas de Café Delizioso: no es ninguna bajada: hace menos de una semana ya estaba a 49.61 € (historial propio de 3 días)
+  ✗ amz-B07GP5Q6QT Caffè Corsini - Clásico Italiano. Mezcla de café…: no es ninguna bajada: hace menos de una semana ya estaba a 14.00 € (historial propio de 5 días)
+  ✗ amz-B09C1YM5Z2 Segafredo Zanetti 100 Cápsulas de Aluminio…: no es ninguna bajada: hace menos de una semana ya estaba a 23.32 € (historial propio de 5 días)
+  Amazon (API): 236 con descuento grande, 45 con precio anterior y stock
+Candidatos a revisar: 28
+  ✗ amz-B01C8ONOPS PIKOLIN Edredón Nórdico Cama 150 220x240cm 300gr Antiacaros…: marca poco conocida (PIKOLIN): su precio anterior no es fiable
+  ✗ amz-B07BN1NG4C PIKOLIN Edredón Nórdico Cama 80/90 140x200cm 300gr…: marca poco conocida (PIKOLIN): su precio anterior no es fiable
   ✓ B0DQWQJ1MY Braun Recortadora Todo en Uno Series 5: 39,99 € (-50% vs 79,99 €)
   ✓ B0B5FGHCKR Oral-B iO 5N Cepillos de Dientes Eléctricos: 144,95 € (-52% vs 299,95 €)
-  ✗ amz-B08WMTXJVF BaByliss Plancha Straight And Curl Brilliance: marca poco conocida (BaByliss): su precio anterior no es fiable
-  ✗ amz-B0B3JBYXG8 Braun Series 5 Afeitadora Eléctrica Hombre: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0F9X7H8W6 Braun Series 5 Afeitadora Eléctrica Hombre: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0GJ4T4S7K Braun Series 9 Pro+ Afeitadora Eléctrica Hombre: solo -43% frente a su PVP recomendado (439,99 €)
-  ✗ amz-B08DJ18C85 Remington Secador de Pelo Ionic Dry 2200: solo -40% frente a su PVP recomendado (29,99 €)
-  ✗ amz-B0BLZT677G Remington Secador de Pelo Ionic Dry 2200: solo -40% frente a su PVP recomendado (29,99 €)
-  ✗ amz-B00ECBKODQ Remington Secador de Pelo Pro-Air: solo -40% frente a su PVP recomendado (29,99 €)
   ✓ B0C3D2DGYP Oral-B iO 3 Cepillo de Dientes Eléctrico con 3 Cabezales: 59,95 € (-45% vs 109,95 €)
-  ✗ amz-B0DBM7PY4J Oral-B iO 9 Cepillos de Dientes Eléctricos: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0DDQF57MQ Oral-B iO 6 Cepillo de Dientes Eléctrico con 3 Cabezales Y…: solo -40% frente a su PVP recomendado (209,95 €)
-  ✗ amz-B0HF4TSHST Oral-B iO 3 Cepillos de Dientes Eléctricos Negros: solo -44% frente a su PVP recomendado (179,95 €)
-  ✗ amz-B0DQWHNRH6 Braun Recortadora Todo en Uno Series 3: solo -38% frente a su PVP recomendado (39,99 €)
-  ✗ amz-B0HG13PG1J Philips Cortapelos Serie 5000: calidad: solo -33% (mínimo -35%)
-  ✗ amz-B0FZW81W7X Braun Silk·épil 7 Depiladora Eléctrica Mujer: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0C9DX9PJL Taurus - Secador de Pelo 2400W: solo -37% frente a su PVP recomendado (26,99 €)
-  ✗ amz-B01N1UX8RW RENPHO Bascula Grasa Corporal y Muscular con App: marca poco conocida (RENPHO): su precio anterior no es fiable
-  ✗ amz-B09RN8Q4CW Remington Plancha Pelo pantalla digital: solo -38% frente a su PVP recomendado (44,99 €)
-  ✗ amz-B01KLXFBFE Remington Plancha Pelo 150 °C-230 °C: solo -37% frente a su precio mediano de los 90 días (53,55 €)
-  ✗ amz-B0CVY1696Z Wahl Gold Edition Travel Shaver Afeitadora de Láminas para…: precio fuera de rango (14.99 €)
-  ✗ amz-B0G4CNQBVG Braun Silk·épil 7 Depiladora Eléctrica Mujer: solo -24% frente a su precio mediano de los 90 días (79,00 €)
-  ✗ amz-B00MCSW96Q Remington Secador Pelo Iónico ligero: solo -29% frente a su precio mediano de los 90 días (27,99 €)
-  ✗ amz-B01N39SZ87 Remington Secador de Pelo Pequeño Compacto: precio fuera de rango (12.92 €)
-  ✗ amz-B09SLXH2CQ Philips Plancha de pelo serie 5000 con Tecnología…: solo -27% frente a su precio mediano de los 90 días (40,90 €)
-  ✗ amz-B09W2K62Z6 RENPHO Báscula Inteligente Bluetooth: marca poco conocida (RENPHO): su precio anterior no es fiable
-  ✗ amz-B00MCSW8VC Remington Plancha Pelo tecnología iónica triple: menos…: solo -26% frente a su precio mediano de los 90 días (28,09 €)
-  ✗ amz-B0B5XPR45B Oral-B iO 5N Cepillo de Dientes Eléctrico con 1 Cabezal: solo -17% frente a su precio mediano de los 90 días (120,00 €)
-  ✗ amz-B0D8J5CVPK CALVIN KLEIN CK One Essence Parfum Intense Unisex: solo -20% frente a su precio mediano de los 90 días (21,99 €)
-  ✗ amz-B0DV96SRRF Cepillo de Dientes Eléctrico Oral-B IO2: solo -8% frente a su precio mediano de los 90 días (49,00 €)
-  ✗ amz-B0D4R175FB DKNY 24/7, Eau de Parfum para Mujer: marca poco conocida (DKNY): su precio anterior no es fiable
-  ⏸ B0DQWQJ1MY variedad: ya salió un «afeitado» de Braun hace 2 días; espera en la cola
-  ⏸ B0B5FGHCKR variedad: ya salió algo de Oral-B hace 82 min; espera en la cola
-  ⏸ B0C3D2DGYP variedad: ya salió algo de Oral-B hace 82 min; espera en la cola
+  ✗ amz-B0FPXFBL13 LEGO Editions Lionel Messi: Fenómenos del Fútbol 43011: solo -41% frente a su PVP recomendado (29,99 €)
+  ✗ amz-B0DWDR1DBS LEGO One Piece Carpa de Circo de Buggy el Payaso 75637: solo -41% frente a su PVP recomendado (49,99 €)
+  ✗ amz-B0CNCNJ1RS Roll Road Flex Maleta de Cabina Azul 35x55x20 cms Equipaje…: marca poco conocida (ROLL ROAD): su precio anterior no es fiable
+  ✗ amz-B01C8ONNPE PIKOLIN Edredón Nórdico Cama 90 150x220cm 300gr Antiacaros…: marca poco conocida (PIKOLIN): su precio anterior no es fiable
+  ✗ amz-B0FGQ5NPCP Jardin202 - Silla Oficina Ergonómica Giratoria 360° con…: marca poco conocida (Jardin202): su precio anterior no es fiable
+  ✗ amz-B0F6NT6SG1 Dodot Pañal-Braguita Pants, Talla 7 (+17kg): marca poco conocida (DODOT): su precio anterior no es fiable
+  ✗ amz-B01M0A4B9M Amazon Basics - Unidad de Almacenamiento de 5 baldas con…: solo -32% frente a su precio mediano de los 90 días (59,99 €)
+  ✗ amz-B0GT9GHVYM PIKOLIN - Almohada Viscoelástica 70 cm con Memory Gel…: marca poco conocida (PIKOLIN): su precio anterior no es fiable
+  ✗ amz-B0GT9B1RCJ PIKOLIN - Almohada Viscoelástica 150 cm con Memory Gel…: marca poco conocida (PIKOLIN): su precio anterior no es fiable
+  ✗ amz-B0GT9GH5LH PIKOLIN - Almohada Viscoelástica 135 cm con Memory Gel…: marca poco conocida (PIKOLIN): su precio anterior no es fiable
+  ✗ amz-B075MGGDG6 PIKOLIN Edredón Nórdico 500gr Cama 150/160 240x220cm Aloe…: marca poco conocida (PIKOLIN): su precio anterior no es fiable
+  ✗ amz-B09B83Y8S1 Amazon Basics Silla Ejecutiva Ergonómica de Malla…: solo -22% frente a su precio mediano de los 90 días (134,00 €)
+  ✗ amz-B0FPXDNJ1T LEGO Marvel Iron Man Mark 3: Edición para Coleccionistas…: solo -27% frente a su PVP recomendado (129,99 €)
+  ✗ amz-B0CWH3TBGB LEGO Technic McLaren P1 42172: solo -27% frente a su PVP recomendado (449,99 €)
+  ✗ amz-B0FPXFKGQR LEGO Technic Coche de Carreras BMW M4 GT3 EVO 42226: solo -29% frente a su PVP recomendado (64,99 €)
+  ✗ amz-B0FPXFZXC2 LEGO Technic Coche Porsche 911 GT3 R Rexy AO Racing 42224: solo -29% frente a su PVP recomendado (139,99 €)
+  ✗ amz-B01N10IAFG LEGO Icons Bici de Carretera 11380: solo -25% frente a su PVP recomendado (119,99 €)
+  ✗ amz-B07JLFJKPQ PLAYMOBIL Family Fun 70088 Caravana de Verano: solo -26% frente a su PVP recomendado (62,99 €)
+  ✗ amz-B07BDMGFGW American Tourister Sunside Maleta Trolley Grande: solo -20% frente a su mínimo de los 30 días anteriores (114,88 €)
+  ✗ amz-B00NUS53CY Amazon Basics Unidad de almacenamiento de 4 baldas con…: solo -28% frente a su precio mediano de los 90 días (53,99 €)
+  ✗ amz-B0BY2PKY5X Amazon Basics Estantes apilables de rejilla de alambre…: solo -25% frente a su precio mediano de los 90 días (26,06 €)
+  ✗ amz-B0G7LG7HZK PLAYMOBIL My Life Estadio de Fútbol: solo -18% frente a su precio mediano de los 90 días (30,99 €)
+  ✗ amz-B075Y7H8V6 Lenovo Mochila Lenovo casual para equipos portátiles de…: solo -10% frente a su precio mediano de los 90 días (17,00 €)
+  API de Amazon: B0DQWQJ1MY confirmado a 39,99 €
+  Enviado a @cazachollos_com (mensaje 614): Braun Recortadora Todo en Uno Series 5
+  X: no te lo paso (categoría poco interesante para X (Cuidado personal))
+== pasada 2 · 10:34 ==
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 3 · 10:35 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0F9X7H8W6: sigue a 59,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+No publico: menos de 15 min desde el último post.
+== pasada 4 · 10:36 ==
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 5 · 10:37 ==
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0F9X7H8W6: sigue a 59,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 6 · 10:38 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 7 · 10:39 ==
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B0F9X7H8W6: sigue a 59,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 8 · 10:40 ==
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 9 · 10:41 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B0F9X7H8W6: sigue a 59,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 10 · 10:42 ==
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 11 · 10:43 ==
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0F9X7H8W6: sigue a 59,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 12 · 10:44 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 13 · 10:45 ==
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B0F9X7H8W6: sigue a 59,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 14 · 10:46 ==
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 15 · 10:47 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+No publico: menos de 15 min desde el último post.
+== pasada 16 · 10:48 ==
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  ✗ amz-B01AGF8NT8 Voll-Damm Cerveza Doble Malta 7,2%: no es ninguna bajada: hace menos de una semana ya estaba a 14.99 € (historial propio de 4 días)
+  ✗ amz-B01AY3JJP4 Estrella Damm Cerveza 5,4%, Caja de 24 Latas 33 cl: no es ninguna bajada: hace menos de una semana ya estaba a 12.29 € (historial propio de 4 días)
+  ✗ amz-B07898FGFM Estrella Galicia - Especial, Cerveza Lager: no es ninguna bajada: hace menos de una semana ya estaba a 10.99 € (historial propio de 4 días)
+  ✗ amz-B07CQ3CTQD Estrella Galicia - La Estrella: no es ninguna bajada: hace menos de una semana ya estaba a 15.99 € (historial propio de 5 días)
+  ✗ amz-B08NCP8MFH El Aguila Dorada Cerveza Lager Especial Pack Lata: no es ninguna bajada: hace menos de una semana ya estaba a 11.25 € (historial propio de 4 días)
+  ✗ amz-B08MLFXS29 1906 - Red Vintage, Cerveza Lager Extra: no es ninguna bajada: hace menos de una semana ya estaba a 17.99 € (historial propio de 5 días)
+  ✗ amz-B0BLK7G2FK La Sagra - Pack Degustación 4 Cervezas de 330 ml…: no es ninguna bajada: hace menos de una semana ya estaba a 5.54 € (historial propio de 5 días)
+  ✗ amz-B0GX2KM89Y Mahou 0,0 Rubia, Cerveza Lager Dorada Sin Alcohol: no es ninguna bajada: hace menos de una semana ya estaba a 6.40 € (historial propio de 4 días)
+  ✗ amz-B0BLK8NHRJ Pack Cerveza Lagers del Mundo: no es ninguna bajada: hace menos de una semana ya estaba a 6.26 € (historial propio de 4 días)
+  ✗ amz-B0DTY7GMVQ Red Bull Bebida Energética, Ice Vanilla y berry…: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 5 días)
+  ✗ amz-B0C4FLRLYT Red Bull Bebida Energética, Albaricoque y Fresa: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 5 días)
+  ✗ amz-B0CLPJFC12 Powerade Blood Orange, Bebida Isotónica Sin Gluten: no es ninguna bajada: hace menos de una semana ya estaba a 11.39 € (historial propio de 4 días)
+  ✗ amz-B0H1SBNF4W Red Bull Sin Azúcar Bebida Energética…: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 5 días)
+  ✗ amz-B0BRY42D97 Red Bull Bebida Energética, Coco y Arándanos: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 4 días)
+  ✗ amz-B0C2Q893W5 Red Bull Bebida Energética, Baya de Junio: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 5 días)
+  ✗ amz-B086KFZT51 Red Bull Bebida energética, Sin Azúcar Sugarfree: no es ninguna bajada: hace menos de una semana ya estaba a 35.19 € (historial propio de 4 días)
+  ✗ amz-B0H1SGMSN3 Red Bull Bebida Energética Sabor Pomelo Sin…: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 5 días)
+  ✗ amz-B0DVC7F9N7 Lipton Mango maracuyá 330ml, Refresco de Té: no es ninguna bajada: hace menos de una semana ya estaba a 12.00 € (historial propio de 5 días)
+  ✗ amz-B0BZ553DZW Dixan Trio Caps Total 4 en 1: no es ninguna bajada: hace menos de una semana ya estaba a 8.83 € (historial propio de 5 días)
+  ✗ amz-B0BZ94Q8QB Dixan Adiós al Separar 4 en 1: no es ninguna bajada: hace menos de una semana ya estaba a 6.33 € (historial propio de 5 días)
+  ✗ amz-B0BZ949HW8 Dixan Gel Total 4 en 1, Detergente Lavadora…: no es ninguna bajada: hace menos de una semana ya estaba a 10.06 € (historial propio de 5 días)
+  ✗ amz-B08JDHYVM9 Botanical Origins Detergente para Lavadora apto…: no es ninguna bajada: hace menos de una semana ya estaba a 8.00 € (historial propio de 5 días)
+  ✗ amz-B0F14SG6SH Skip Detergente Ciclos Cortos Eficacia Express 37…: no es ninguna bajada: hace menos de una semana ya estaba a 6.59 € (historial propio de 3 días)
+  ✗ amz-B081CVWMDX Botanical Origin Detergente para lavadora apto…: no es ninguna bajada: hace menos de una semana ya estaba a 16.99 € (historial propio de 4 días)
+  ✗ amz-B07L3DG8DK Scottex Original Papel higiénico: no es ninguna bajada: hace menos de una semana ya estaba a 22.90 € (historial propio de 5 días)
+  ✗ amz-B07CCVMSKV Scottex Acolchado Papel Higiénico: no es ninguna bajada: hace menos de una semana ya estaba a 21.99 € (historial propio de 5 días)
+  ✗ amz-B07BQD5J18 Scottex Papel Higiénico Sensitive 42 rollos con 3…: no es ninguna bajada: hace menos de una semana ya estaba a 14.39 € (historial propio de 5 días)
+  ✗ amz-B07NMGQW67 by Amazon Papel Higiénico Supersuave de 3 Capas: no es ninguna bajada: hace menos de una semana ya estaba a 11.70 € (historial propio de 5 días)
+  ✗ amz-B08C879K4S Renova Papel Higiénico Super: no es ninguna bajada: hace menos de una semana ya estaba a 24.63 € (historial propio de 5 días)
+  ✗ amz-B079YLDCG2 RENOVA Papel Higiénico Love & Action: no es ninguna bajada: hace menos de una semana ya estaba a 23.61 € (historial propio de 4 días)
+  ✗ amz-B08QP7XNCB Pack Regalo Vino Tinto Prix Plaisir Vino de…: no es ninguna bajada: hace menos de una semana ya estaba a 22.15 € (historial propio de 4 días)
+  ✗ amz-B08BMC2BBY Combes Saint Sauveur Vino Tinto DOP Côtes du…: no es ninguna bajada: hace menos de una semana ya estaba a 29.10 € (historial propio de 5 días)
+  ✗ amz-B07D4VD2TC Mayor de Castilla Roble Vino Tinto D.O Ribera del…: no es ninguna bajada: hace menos de una semana ya estaba a 23.10 € (historial propio de 3 días)
+  ✗ amz-B01K7S9LP4 Legaris Roble - Vino tinto D.O Ribera del Duero: no es ninguna bajada: hace menos de una semana ya estaba a 6.60 € (historial propio de 4 días)
+  ✗ amz-B00XA5AC82 Pata Negra Ribera Del Duero Vino Tinto: no es ninguna bajada: hace menos de una semana ya estaba a 3.15 € (historial propio de 5 días)
+  ✗ amz-B0C43ZQ5RQ Estuche de madera - Château Arcins: no es ninguna bajada: hace menos de una semana ya estaba a 17.00 € (historial propio de 5 días)
+  ✗ amz-B08QPHTLBT Vino tinto D.O. Tierra de Castilla Solaz Bag In…: no es ninguna bajada: hace menos de una semana ya estaba a 8.98 € (historial propio de 5 días)
+  ✗ amz-B09DGC1GZY Combes Saint Sauveur Vino Tinto DOP Côtes du Rhône: no es ninguna bajada: hace menos de una semana ya estaba a 26.50 € (historial propio de 4 días)
+  ✗ amz-B01CE1NM98 Johnnie Walker, Green label, Whisky escocés…: no es ninguna bajada: hace menos de una semana ya estaba a 35.99 € (historial propio de 4 días)
+  ✗ amz-B001P4YYH0 Woodford Reserve Kentucky Straight Bourbon Whiskey: no es ninguna bajada: hace menos de una semana ya estaba a 23.66 € (historial propio de 5 días)
+  ✗ amz-B012DC0OHQ HIBIKI Japanese Harmony Whisky Blended Japonés…: no es ninguna bajada: hace menos de una semana ya estaba a 66.49 € (historial propio de 5 días)
+  ✗ amz-B00GK9JDIU ABERFELDY 12YO Scotch Whisky Single Malt Highland…: no es ninguna bajada: hace menos de una semana ya estaba a 29.99 € (historial propio de 5 días)
+  ✗ amz-B00MTFL71A J&B Reserve Aged 15 Years, whisky escocés blended: no es ninguna bajada: hace menos de una semana ya estaba a 19.89 € (historial propio de 5 días)
+  ✗ amz-B008HP9F7Y Jameson Black Barrel Whiskey Irlandés: no es ninguna bajada: hace menos de una semana ya estaba a 26.61 € (historial propio de 4 días)
+  ✗ amz-B0049O2GAA Cragganmore 12 años, Whishy puro de malta: no es ninguna bajada: hace menos de una semana ya estaba a 29.39 € (historial propio de 5 días)
+  ✗ amz-B0BYHX1VK4 Ginebra Premium Nordés con Vaso Bajo de Regalo: no es ninguna bajada: hace menos de una semana ya estaba a 20.24 € (historial propio de 4 días)
+  ✗ amz-B009T4BY3U Gin Master´s 0,7: no es ninguna bajada: hace menos de una semana ya estaba a 10.99 € (historial propio de 5 días)
+  ✗ amz-B00BBTIONE BOMBAY SAPPHIRE London Dry Gin con 10 botánicos: no es ninguna bajada: hace menos de una semana ya estaba a 19.40 € (historial propio de 3 días)
+  ✗ amz-B0143OWZXI Ampersand CITRUS FLAVOUR London Dry Gin 40% Vol.…: no es ninguna bajada: hace menos de una semana ya estaba a 9.99 € (historial propio de 5 días)
+  ✗ amz-B019QPCR4Q MOM GOD SAVE THE GIN - Ginebra Premium: no es ninguna bajada: hace menos de una semana ya estaba a 20.32 € (historial propio de 4 días)
+  ✗ amz-B0HGB14MTM BOTSLAB Dashcam Cámara Coche 4K Mini: no es ninguna bajada: hace menos de una semana ya estaba a 69.99 € (historial propio de 5 días)
+  ✗ amz-B0DD45976Z 70mai Dash CAM M310 Plus 3K, 1620P Dashcam Auto: no es ninguna bajada: hace menos de una semana ya estaba a 44.99 € (historial propio de 4 días)
+  ✗ amz-B0H3Z8M52C DDPAI Mini Pro 4K Dash CAM Coche: no es ninguna bajada: hace menos de una semana ya estaba a 54.99 € (historial propio de 4 días)
+  ✗ amz-B0GKGSBWWH 70mai M310 Plus 4K - Cámara de salpicadero…: no es ninguna bajada: hace menos de una semana ya estaba a 45.99 € (historial propio de 4 días)
+  ✗ amz-B0H7G7X6V2 Aspirador de Mano sin Cable Potente: no es ninguna bajada: hace menos de una semana ya estaba a 34.29 € (historial propio de 5 días)
+  ✗ amz-B0GYSHD9JL HOTO Aspirador de mano para coche: no es ninguna bajada: hace menos de una semana ya estaba a 71.99 € (historial propio de 5 días)
+  ✗ amz-B0F67GMXPC HOTO Aspirador de Mano para Coche: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 5 días)
+  Amazon (API): 119 con descuento grande, 13 con precio anterior y stock
+Candidatos a revisar: 3
+  ✓ B0B5FGHCKR Oral-B iO 5N Cepillos de Dientes Eléctricos: 144,95 € (-52% vs 299,95 €)
+  ✓ B0C3D2DGYP Oral-B iO 3 Cepillo de Dientes Eléctrico con 3 Cabezales: 59,95 € (-45% vs 109,95 €)
+  ✗ amz-B07KQHVQB2 LEGRAND Cargador Coche Eléctrico Green up + Diferential: marca poco conocida (Legrand): su precio anterior no es fiable
+  ⏸ B0B5FGHCKR variedad: ya salió algo de Oral-B hace 204 min; espera en la cola
+  ⏸ B0C3D2DGYP variedad: ya salió algo de Oral-B hace 204 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
+== pasada 17 · 10:50 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  ✗ amz-B0GYKJNXF9 Rowenta Intense Comfort, Radiador de refuerzo: no es ninguna bajada: hace menos de una semana ya estaba a 39.77 € (historial propio de 4 días)
+  ✗ amz-B0FRRS6VRR KNKA Purificador de Aire Filtro HEPA sensor…: no es ninguna bajada: hace menos de una semana ya estaba a 119.99 € (historial propio de 4 días)
+  ✗ amz-B098MPSQS5 Toshiba Purificador de aire CAF-Z45FR 3 en 1 Air…: no es ninguna bajada: hace menos de una semana ya estaba a 36.11 € (historial propio de 5 días)
+  ✗ amz-B0H8ZB3RW9 KNKA Purificador de Aire HEPA: no es ninguna bajada: hace menos de una semana ya estaba a 47.49 € (historial propio de 5 días)
+  ✗ amz-B0H8Z8VMQ2 KNKA Purificador de Aire HEPA: no es ninguna bajada: hace menos de una semana ya estaba a 47.49 € (historial propio de 5 días)
+  ✗ amz-B0H8Z86BY4 KNKA Purificador de Aire HEPA: no es ninguna bajada: hace menos de una semana ya estaba a 47.49 € (historial propio de 5 días)
+  ✗ amz-B07DLHY5F7 Cecotec Hervidor de Agua Eléctrico ThermoSense…: precio anterior inflado: lo ponen a 37.90 € pero su precio habitual es 26.90 € (solo -15%, historial de 3 días)
+  ✗ amz-B08CHFWHYV SEVERIN - Mini hervidor de agua 0,5 l: precio anterior inflado: lo ponen a 39.99 € pero su precio habitual es 28.49 € (solo -9%, historial de 4 días)
+  ✗ amz-B0F844899K Hervidor Cuello de Cisne 1,0 L: no es ninguna bajada: hace menos de una semana ya estaba a 19.99 € (historial propio de 5 días)
+  ✗ amz-B0FDKX7VBX Tristar Tostadora, 2 Ranuras: no es ninguna bajada: hace menos de una semana ya estaba a 15.49 € (historial propio de 4 días)
+  ✗ amz-B0D2L53YV2 Amazon Basics Tostadora 4 Rebanadas con 7 Niveles…: solo -12% frente a su precio habitual de 31.04 € (historial de 4 días)
+  ✗ amz-B00R3Z49G6 Amazon Basics Juego de Cuchillos de Cocina y…: solo -6% frente a su precio habitual de 20.99 € (historial de 4 días)
+  ✗ amz-B0GH7365SW SANMEIHO Set Cuchillos de Cocina Acero en Polvo 3…: no es ninguna bajada: hace menos de una semana ya estaba a 51.98 € (historial propio de 4 días)
+  ✗ amz-B0D6TZL1Q4 RAXCO Juego de cuchillos de cocina de acero…: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 4 días)
+  ✗ amz-B0GH765JFN SANMEIHO Cuchillo de Chef de Acero en Polvo 20cm: no es ninguna bajada: hace menos de una semana ya estaba a 25.77 € (historial propio de 4 días)
+  ✗ amz-B0GJ35MW7V SANMEIHO Juego de 5 Cuchillos de Cocina Japoneses…: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 4 días)
+  ✗ amz-B0D9HRP7GV Contigo Botella Termo 1200ml con Asa y Pajita: no es ninguna bajada: hace menos de una semana ya estaba a 17.89 € (historial propio de 3 días)
+  ✗ amz-B0D9HPLRML Contigo Botella Termo 1200ml con Asa y Pajita: no es ninguna bajada: hace menos de una semana ya estaba a 16.39 € (historial propio de 3 días)
+  ✗ amz-B0BB3FCM6G ion8 Botella De Agua, Acero Aislada Al Vacío: no es ninguna bajada: hace menos de una semana ya estaba a 15.00 € (historial propio de 3 días)
+  Amazon (API): 112 con descuento grande, 40 con precio anterior y stock
+Candidatos a revisar: 21
+  ✓ B0B5FGHCKR Oral-B iO 5N Cepillos de Dientes Eléctricos: 144,95 € (-52% vs 299,95 €)
+  ✓ B0C3D2DGYP Oral-B iO 3 Cepillo de Dientes Eléctrico con 3 Cabezales: 59,95 € (-45% vs 109,95 €)
+  ✗ amz-B0CGD77CLW JBL PartyBox Ultimate, altavoz portátil para fiestas con…: solo -33% frente a su PVP recomendado (1.499,00 €)
+  ✗ amz-B01J5FFW9Y Philips Viva Collection Tostadora: calidad: solo -32% (mínimo -35%)
+  ✗ amz-B0CF2Q9NWM Bosch - Tostadora, MyMoment, 2 ranuras: solo -35% frente a su PVP recomendado (39,99 €)
+  ✗ amz-B078JQ8XST Arcos Serie Riviera, Juego Cuchillos Cocina: marca poco conocida (Arcos): su precio anterior no es fiable
+  ✗ amz-B0FF9SCJHD Rowenta Compact Power, calefactor: solo -38% frente a su PVP recomendado (47,99 €)
+  ✗ amz-B0BQ118P2R Cecotec Calefactor Eléctrico Bajo Consumo ReadyWarm 2070…: solo -38% frente a su PVP recomendado (36,90 €)
+  ✓ B0CCF2NKCW Philips 600 Purificador de Aire HEPA: 79,99 € (-36% vs 124,35 €)
+  ✗ amz-B0BX49FQF8 Philips Purificador de Aire Serie 600 Ultrasilencioso y de…: solo -36% frente a su PVP recomendado (99,99 €)
+  ✗ amz-B0FJSDH17B Tefal, Hervidor Acero Inoxidable 1,7L 2200W con Apagado…: solo -29% frente a su PVP recomendado (34,99 €)
+  ✗ amz-B078JNZS9T Arcos Estuche de 3 Cuchillos Básicos Acero Inoxidable: marca poco conocida (Arcos): su precio anterior no es fiable
+  ✗ amz-B0H5R62L3H DREO Purificador de Aire Filtro HEPA 3 en 1: marca poco conocida (DREO): su precio anterior no es fiable
+  ✗ amz-B0044R87QE Arcos Cuchillo Cocina Acero Inoxidable 200 mm: marca poco conocida (Arcos): su precio anterior no es fiable
+  ✗ amz-B007TS67Q2 Arcos Cuchillo Chef Acero Inoxidable 120 mm: precio fuera de rango (9.39 €)
+  ✗ amz-B006FXAFF6 BRA Vitesse Olla Express de 4 Litros: marca poco conocida (BRA): su precio anterior no es fiable
+  ✗ amz-B008KO2C1I MONIX Veloce | Olla a presión rápida de 4 litros: marca poco conocida (Monix): su precio anterior no es fiable
+  ✗ amz-B0F19DK7W8 Severin Tostadora de ranura larga: solo -15% frente a su precio mediano de los 90 días (34,99 €)
+  ✗ amz-B0GYDB2CTB Cecotec Ventilador Portátil con Mando 800 FoldAir Portable…: solo -7% frente a su precio mediano de los 90 días (28,90 €)
+  ✗ amz-B0GPWQL6DS CREATE / WINDCALM S/Ventilador de techo ABS blanco aspas…: marca poco conocida (CREATE): su precio anterior no es fiable
+  ✗ amz-B008KO2CF4 MONIX Veloce | Set de Ollas a Presión Rápidas de 4 y 6…: marca poco conocida (Monix): su precio anterior no es fiable
+  API de Amazon: B0CCF2NKCW confirmado a 79,99 €
+  Enviado a @cazachollos_com (mensaje 615): Philips 600 Purificador de Aire HEPA
+  X: no te lo paso (categoría poco interesante para X (Clima))
+== pasada 18 · 10:51 ==
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 19 · 10:52 ==
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 20 · 10:53 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0CCF2NKCW: sigue a 79,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 21 · 10:54 ==
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B07W6FQ658: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
+No publico: menos de 15 min desde el último post.
+== pasada 22 · 10:55 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 23 · 10:56 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0CCF2NKCW: terminado (ahora 79.99, stock False)
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 24 · 10:57 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 25 · 10:58 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 26 · 10:59 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 27 · 11:00 ==
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 28 · 11:01 ==
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 29 · 11:02 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 30 · 11:03 ==
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 31 · 11:04 ==
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 32 · 11:05 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  ✗ amz-B0GLNSFSTX Auriculares inalámbricos Bluetooth Deportivos: no es ninguna bajada: hace menos de una semana ya estaba a 19.85 € (historial propio de 4 días)
+  ✗ amz-B0HPXNQJGK 2026 Auriculares Inalámbricos Deportivos 5.4: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 6 días)
+  ✗ amz-B0HPFRXGJW Auriculares Inalámbricos Deportivos Nuevo: no es ninguna bajada: hace menos de una semana ya estaba a 19.99 € (historial propio de 5 días)
+  ✗ amz-B09TFJJY3W Auriculares Inalambricos, Auriculares Bluetooth…: no es ninguna bajada: hace menos de una semana ya estaba a 32.99 € (historial propio de 5 días)
+  ✗ amz-B0FGD2QKNF Gofunly Camara Fotos Infantil Instantanea con…: no es ninguna bajada: hace menos de una semana ya estaba a 25.98 € (historial propio de 4 días)
+  ✗ amz-B0D9VG3NV2 ARNSSIEN Camara Fotos Infantil Instantanea con 7…: no es ninguna bajada: hace menos de una semana ya estaba a 30.00 € (historial propio de 4 días)
+  ✗ amz-B084ZNZV3S Coleman Performance 60QT Nevera Portátil Rígida…: no es ninguna bajada: hace menos de una semana ya estaba a 82.99 € (historial propio de 3 días)
+  ✗ amz-B09MKPWQ31 CAMPINGAZ Unisex Adulto Coleman Xtreme 70 QT…: no es ninguna bajada: hace menos de una semana ya estaba a 102.49 € (historial propio de 3 días)
+  ✗ amz-B0DMW45183 Coleman PRO - Hielera rígida aislada de alta…: no es ninguna bajada: hace menos de una semana ya estaba a 83.39 € (historial propio de 3 días)
+  ✗ amz-B0G13SYR3N Coleman Hielera Plegable Snap 'N Go 35QT: no es ninguna bajada: hace menos de una semana ya estaba a 117.39 € (historial propio de 3 días)
+  ✗ amz-B0BY93HZHR Rowenta Pure Pop, Plancha de Vapor 1300 W para…: solo -14% frente a su precio habitual de 34.99 € (historial de 4 días)
+  ✗ amz-B0GNMR2J1J Rowenta Force Pro 300, Centro de planchado: no es ninguna bajada: hace menos de una semana ya estaba a 89.99 € (historial propio de 4 días)
+  ✗ amz-B0G7V5G5NR Lefant M210 Omni Robot Aspirador y Fregasuelos: precio anterior inflado: lo ponen a 599.00 € pero su precio habitual es 199.99 € (solo -5%, historial de 5 días)
+  ✗ amz-B0GVDVBZT8 LG 55QNED82B6B - Smart TV QNED EVO AI 55" 4K Sin…: precio anterior inflado: lo ponen a 829.00 € pero su precio habitual es 529.00 € (solo -8%, historial de 4 días)
+  ✗ amz-B0GTRQQYVC LG 50QNED70B6C - Smart TV QNED MiniLED AI 50" 4K…: solo -10% frente a su precio habitual de 389.00 € (historial de 4 días)
+  ✗ amz-B00PLS482W BRA Prior | Set 3 Sartenes 18-22: solo -24% frente a su precio habitual de 60.15 € (historial de 4 días)
+  ✗ amz-B0H1V7X3L1 TABWEE Tablet 12 Pulgadas con Teclado y Lapiz: solo -15% frente a su precio habitual de 259.99 € (historial de 4 días)
+  ✗ amz-B0CDCM3J5G De'Longhi Rivelia - Cafetera Superautomática 16…: solo -16% frente a su precio habitual de 699.90 € (historial de 5 días)
+  Amazon (API): 114 con descuento grande, 53 con precio anterior y stock
+Candidatos a revisar: 17
+  ✗ amz-B0H6DZJX44 FAMIVAC R10 Robot Aspirador con Fregona,6000Pa Succión…: marca poco conocida (FAMIVAC): su precio anterior no es fiable
+  ✓ B0B5FGHCKR Oral-B iO 5N Cepillos de Dientes Eléctricos: 144,95 € (-52% vs 299,95 €)
+  ✓ B0H9YW4LLT Roomba Plus 676 Robot Aspirador 2 en 1 + Base AutoWash: 499,00 € (-41% vs 849,00 €)
+  ✗ amz-B0FX5RWJ6V Tefal Daily Cook - Juego de 3 Sartenes 24/26/30 cm: solo -40% frente a su PVP recomendado (99,99 €)
+  ✗ amz-B00NUC0C1C Tefal Duetto - Sartén 24 cm, Acero inoxidable: solo -40% frente a su PVP recomendado (39,99 €)
+  ✓ B0C3D2DGYP Oral-B iO 3 Cepillo de Dientes Eléctrico con 3 Cabezales: 59,95 € (-45% vs 109,95 €)
+  ✗ amz-B0B7K88MBF Philips Azur 8000 Plancha de Vapor: solo -44% frente a su PVP recomendado (159,99 €)
+  ✗ amz-B0D4ZNSQ6L De'Longhi Magnifica Evo Next: calidad: solo -31% (mínimo -35%)
+  ✗ amz-B092VZL9WH Tefal Comfort Max - Juego de 2 Sartenes: solo -31% frente a su PVP recomendado (57,99 €)
+  ✗ amz-B00NUC0HE4 Tefal Duetto - Sartén 32 cm, Acero inoxidable: solo -37% frente a su PVP recomendado (50,99 €)
+  ✓ B0CZHXHLDJ Tefal Jamie Oliver - Sartén 28 cm: 34,99 € (-36% vs 54,99 €)
+  ✗ amz-B0BLM4S8SZ Philips Serie 3000 Plancha vertical: solo -31% frente a su PVP recomendado (41,99 €)
+  ✗ amz-B0B9HQ7T6G Rowenta Access Steam, Plancha de vapor: solo -31% frente a su precio mediano de los 90 días (44,99 €)
+  ✗ amz-B0FGY45H19 Tefal Ingenio Serenity - Juego de 5 Piezas + 6 Accesorios: solo -29% frente a su PVP recomendado (139,99 €)
+  ✗ amz-B086WQWSNT Tefal Duetto - Juego de 3 sartenes: solo -29% frente a su precio mediano de los 90 días (77,90 €)
+  ✗ amz-B0FCSDRK89 Tefal Duetto On - Juego de 2 Sartenes: solo -25% frente a su PVP recomendado (59,99 €)
+  ✗ amz-B0BTZ9BPPL De'Longhi Eletta Explore - Cafetera Superautomática 50+…: solo -16% frente a su precio mediano de los 90 días (949,00 €)
+  API de Amazon: B0H9YW4LLT confirmado a 499,00 €
+  Enviado a @cazachollos_com (mensaje 616): Roomba Plus 676 Robot Aspirador 2 en 1 + Base AutoWash
+== pasada 33 · 11:06 ==
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+  Seguimiento B0GMH56TRH: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
+No publico: cupo de la hora cubierto.
+== pasada 34 · 11:07 ==
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+No publico: cupo de la hora cubierto.
+== pasada 35 · 11:08 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 36 · 11:09 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 37 · 11:10 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 38 · 11:11 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 39 · 11:12 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 40 · 11:13 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 41 · 11:14 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 42 · 11:15 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 43 · 11:16 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 44 · 11:17 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 45 · 11:18 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 46 · 11:19 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 47 · 11:20 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 48 · 11:21 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 49 · 11:22 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 50 · 11:23 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 51 · 11:24 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 52 · 11:25 ==
+  Seguimiento B07W6FQ658: sigue a 65,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
+== pasada 53 · 11:26 ==
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B0GKP7R5P6: sigue a 170,99 €
+No publico: cupo de la hora cubierto.
+== pasada 54 · 11:27 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+  Seguimiento B09DRCXV4C: sigue a 109,99 €
+No publico: cupo de la hora cubierto.
