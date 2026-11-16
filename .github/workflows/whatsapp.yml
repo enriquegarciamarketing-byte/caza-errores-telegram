@@ -1,0 +1,33 @@
+name: WhatsApp · comprobar conexión
+
+# Botón a mano para ver que Whapi y el canal de WhatsApp están bien conectados.
+# "comprobar" no publica nada; "prueba" manda un resumen de ejemplo a WHATSAPP_TEST_TO (nunca al canal).
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "Qué hacer"
+        required: true
+        type: choice
+        options: [comprobar, prueba]
+        default: comprobar
+
+permissions:
+  contents: read
+
+jobs:
+  whatsapp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Conexión con el canal
+        env:
+          WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
+          WHATSAPP_CHANNEL_ID: ${{ secrets.WHATSAPP_CHANNEL_ID }}
+          WHATSAPP_TEST_TO: ${{ secrets.WHATSAPP_TEST_TO }}
+        run: |
+          if [ "${{ inputs.modo }}" = "prueba" ]; then python -u whatsapp.py --prueba; else python -u whatsapp.py --comprobar; fi

@@ -686,6 +686,13 @@
     "summary_time": "23:59",
     "summary_size": 10,
     "summary_min_items": 3,
+    "_nota_whatsapp": "Desde el 16/11/2026 el resumen de la noche sale también en el canal de WhatsApp (whatsapp.py, vía Whapi). El token va en el secreto WHAPI_TOKEN.",
+    "whatsapp_invite": "0029VbE063mEwEk5M7m9Xe17",
+    "whatsapp_size": 8,
+    "_nota_whatsapp_cupo": "Plan gratis de Whapi: 1.000 peticiones al mes. Cada chollo gasta 1 y el resumen 2. Como mucho whatsapp_daily_max chollos al día, separados whatsapp_min_gap_minutes (los manuales no esperan), y nunca más de whatsapp_monthly_budget al mes, guardando hueco para los resúmenes.",
+    "whatsapp_daily_max": 25,
+    "whatsapp_min_gap_minutes": 35,
+    "whatsapp_monthly_budget": 950,
     "block_keywords": [
       "funda",
       "protector de pantalla",

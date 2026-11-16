@@ -151,6 +151,9 @@ def merge_states(local: dict, remote: dict) -> dict:
     sent = [x for x in ((local or {}).get("summary_sent"), (remote or {}).get("summary_sent")) if x]
     if sent:
         merged["summary_sent"] = max(sent)
+    if (local or {}).get("whatsapp") or (remote or {}).get("whatsapp"):
+        import whatsapp  # cupo del plan gratis de Whapi: que dos ejecuciones a la vez no lo descuenten de menos
+        merged["whatsapp"] = whatsapp.merge((local or {}).get("whatsapp"), (remote or {}).get("whatsapp"))
     return merged
 
 
@@ -1522,6 +1525,30 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
     return tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
 
 
+def mirror_whatsapp(deal: dict, caption: str, rules: dict, state: dict, now: datetime, test: bool = False,
+                    manual: bool = False, log=print) -> bool:
+    """El mismo chollo en el canal de WhatsApp (16/11/2026), con la misma foto que en Telegram y el mismo copy.
+    Sin WHAPI_TOKEN no hace nada; si falla, solo se apunta en el log (Telegram ya ha salido)."""
+    if not os.environ.get("WHAPI_TOKEN"):
+        return False
+    try:
+        import whatsapp
+        if not test and whatsapp.deal_quota_reason(state, now, rules, manual):
+            return whatsapp.publish_deal(caption, None, state, now, rules, test, manual, log)  # solo lo apunta
+        image = str(deal.get("image") or "")
+        photo = None
+        if image and (deal.get("white_canvas") or rules.get("fondo_blanco")):
+            photo = white_canvas_photo(image, deal["asin"])
+        if photo is None and image:
+            photo = full_size(image) if image.startswith("http") else ROOT / image
+        if photo is None:
+            photo = make_card(deal, rules)
+        return whatsapp.publish_deal(caption, photo, state, now, rules, test, manual, log)
+    except Exception as exc:
+        log(f"  WhatsApp: no he podido prepararlo ({exc})")
+        return False
+
+
 def make_card_clasica(deal: dict, rules: dict) -> Path:
     import photos
     from publisher import DEAL_LOGO, create_price_card
@@ -1845,6 +1872,7 @@ def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolv
         log(f"  Enviado a {target} (mensaje {message['message_id']}){origin}: {clean_title(deal['title'], 70)}")
         sent += 1
         send_x_draft(tg, state, rules, deal, url, log, test=bool(args.test_private))
+        mirror_whatsapp(deal, caption, rules, state, now, test=bool(args.test_private), log=log)
         if not args.test_private:
             record = {
                 "asin": deal["asin"], "jl_id": deal["jl_id"], "price": deal["price"],
@@ -2426,6 +2454,7 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
                                       "disable_web_page_preview": True})
     log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos.")
     # Al final del todo, la imagen con los mejores del día y el logo. Si falla, el resumen ya ha salido.
+    collage = None
     try:
         collage = make_summary_collage(items)
         if collage:
@@ -2437,6 +2466,15 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
         log(f"Resumen: no he podido mandar la imagen de cierre ({exc})")
     if not args.test_private:
         state["summary_sent"] = day.isoformat()
+    # Canal de WhatsApp (16/11/2026): el mismo top del día. Nunca bloquea ni repite el de Telegram.
+    try:
+        import whatsapp
+        whatsapp.publish_summary(items[:int(rules.get("whatsapp_size") or whatsapp.MAX_ITEMS)], collage, now,
+                                 test=bool(args.test_private), tag=rules.get("tag") or whatsapp.DEFAULT_TAG,
+                                 invite=rules.get("whatsapp_invite") or whatsapp.DEFAULT_INVITE, log=log,
+                                 state=state, budget=int(rules.get("whatsapp_monthly_budget") or 950))
+    except Exception as exc:
+        log(f"Resumen: WhatsApp falló ({exc}); Telegram ya ha salido")
     return 0
 
 
@@ -2581,6 +2619,12 @@ def run_manual_summary(args, spec: dict, rules: dict, state: dict, now: datetime
                                       "disable_web_page_preview": True})
     where = "tu chat (prueba)" if args.test_private else target
     log(f"Post manual enviado a {where} (mensaje {message.get('message_id')}): resumen con {len(items)} chollos")
+    if os.environ.get("WHAPI_TOKEN"):
+        try:
+            import whatsapp
+            whatsapp.publish_text(text, state, now, rules, test=bool(args.test_private), log=log)
+        except Exception as exc:
+            log(f"  WhatsApp: falló ({exc}); Telegram ya ha salido")
     return 0
 
 def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) -> int:
@@ -2609,6 +2653,7 @@ def run_manual(args, cfg: dict, state: dict, now: datetime, tg=None, log=print) 
         return 0
     message = publish(tg, target, deal, rules, caption, url, log)
     send_x_draft(tg, state, rules, deal, url, log, test=bool(args.test_private), manual=True)
+    mirror_whatsapp(deal, caption, rules, state, now, test=bool(args.test_private), manual=True, log=log)
     where = "tu chat (prueba)" if args.test_private else target
     log(f"Post manual enviado a {where} (mensaje {message['message_id']}): {clean_title(deal['title'], 70)}")
     if not args.test_private:

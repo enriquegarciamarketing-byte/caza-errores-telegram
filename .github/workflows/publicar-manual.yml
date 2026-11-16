@@ -40,6 +40,10 @@ jobs:
       - name: Publicar el post manual
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          # El mismo post también en el canal de WhatsApp (sin WHAPI_TOKEN no hace nada).
+          WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
+          WHATSAPP_CHANNEL_ID: ${{ secrets.WHATSAPP_CHANNEL_ID }}
+          WHATSAPP_TEST_TO: ${{ secrets.WHATSAPP_TEST_TO }}
           DATOS: ${{ inputs.datos }}
         run: |
           ARGS=(--manual "$DATOS")

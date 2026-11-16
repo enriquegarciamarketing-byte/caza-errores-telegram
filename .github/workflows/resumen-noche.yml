@@ -46,6 +46,10 @@ jobs:
           # Para releer los precios del día con la API de Amazon (jimmyleaks bloquea a GitHub).
           AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID }}
           AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET }}
+          # Canal de WhatsApp (resumen de la noche). Sin WHAPI_TOKEN no hace nada y Telegram sale igual.
+          WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
+          WHATSAPP_CHANNEL_ID: ${{ secrets.WHATSAPP_CHANNEL_ID }}
+          WHATSAPP_TEST_TO: ${{ secrets.WHATSAPP_TEST_TO }}
         run: |
           ARGS=(--resumen)
           if [ "${{ inputs.test_private }}" = "true" ]; then ARGS+=(--test-private --ignore-limits); fi
