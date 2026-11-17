@@ -1,5 +1,5 @@
 {
- "ultimo": 215,
+ "ultimo": 221,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -94,7 +94,7 @@
    "cupon": false,
    "fecha": 1794592372,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 10.9
   },
   "174": {
@@ -129,7 +129,7 @@
    "cupon": false,
    "fecha": 1794612577,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 224.99
   },
   "180": {
@@ -151,9 +151,10 @@
    "titulo": "Sudadera de mujer cuello redondo en rojo claro",
    "cupon": false,
    "fecha": 1794697260,
-   "estado": "vivo",
-   "comprobado": 1794921203,
-   "ultimo_precio": 21.18
+   "estado": "terminada",
+   "comprobado": 1794952150,
+   "ultimo_precio": 63.79,
+   "sellado": 1794952215
   },
   "182": {
    "tipo": "otro"
@@ -190,7 +191,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -201,7 +202,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -212,7 +213,7 @@
    "cupon": false,
    "fecha": 1794823031,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 89.9
   },
   "193": {
@@ -235,7 +236,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -270,7 +271,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1794921203,
+   "comprobado": 1794952150,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -310,9 +311,55 @@
    "titulo": "Krups Nescafé Dolce Gusto Mini",
    "cupon": false,
    "fecha": 1794913219,
+   "estado": "terminada",
+   "comprobado": 1794952150,
+   "ultimo_precio": 57.23,
+   "sellado": 1794952221
+  },
+  "217": {
+   "tipo": "tarjeta",
+   "asin": "B0D2RYP973",
+   "precio": 27.92,
+   "titulo": "Vera Bradley Original Hipster bolso cruzado Moonless Night",
+   "cupon": false,
+   "fecha": 1794921557,
+   "estado": "agotado",
+   "comprobado": 1794952150,
+   "ultimo_precio": null,
+   "sellado": 1794952224
+  },
+  "219": {
+   "tipo": "tarjeta",
+   "asin": "B001FS0AZG",
+   "precio": 15.9,
+   "titulo": "Wrangler Texas Jeans Hombre Corte Recto Azul Negro",
+   "cupon": false,
+   "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1794921203,
-   "ultimo_precio": 35.5
+   "comprobado": 1794952150,
+   "ultimo_precio": 15.9
+  },
+  "220": {
+   "tipo": "tarjeta",
+   "asin": "B08HH5YL17",
+   "precio": 4.8,
+   "titulo": "Funko POP! Fallout Hank MacLean con Servoarmadura",
+   "cupon": false,
+   "fecha": 1794929682,
+   "estado": "vivo",
+   "comprobado": 1794952150,
+   "ultimo_precio": 4.8
+  },
+  "221": {
+   "tipo": "tarjeta",
+   "asin": "B0HKVNFB73",
+   "precio": 28.79,
+   "titulo": "Dekuri Plancha de Pelo Profesional 42 mm, Cerámica, 120-230°C (Ciclama",
+   "cupon": false,
+   "fecha": 1794930303,
+   "estado": "vivo",
+   "comprobado": 1794952150,
+   "ultimo_precio": 28.79
   }
  }
 }
