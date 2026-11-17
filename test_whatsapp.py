@@ -163,5 +163,23 @@ class TestPostsSueltos(unittest.TestCase):
         self.assertEqual(m["channel"], "1@newsletter")
 
 
+class TestBotonWhatsApp(unittest.TestCase):
+    def test_boton_debajo_de_comprar(self):
+        import json
+        import canal_nube
+        rules = canal_nube.rules_from(json.loads(Path("config.json").read_text("utf-8")))
+        markup = canal_nube.buttons("https://www.amazon.es/dp/B0TEST1234?tag=cazachollos0c-21", "success",
+                                    canal_nube.whatsapp_button(rules))
+        rows = markup["inline_keyboard"]
+        self.assertEqual(rows[0][0]["text"], "🛒 Comprar en Amazon")
+        self.assertEqual(rows[1][0]["url"], "https://whatsapp.com/channel/0029VbE063mEwEk5M7m9Xe17")
+        self.assertIn("WhatsApp", rows[1][0]["text"])
+
+    def test_sin_config_no_hay_boton(self):
+        import canal_nube
+        self.assertIsNone(canal_nube.whatsapp_button({}))
+        self.assertEqual(len(canal_nube.buttons("https://x", "success", None)["inline_keyboard"]), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

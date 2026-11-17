@@ -45,7 +45,7 @@ def main() -> int:
         if caption == post["caption"]:
             print(f"Mensaje {mid}: el enlace ya lleva tu etiqueta.")
             continue
-        markup = canal_nube.buttons(url, rules.get("button_style", "success"))
+        markup = canal_nube.buttons(url, rules.get("button_style", "success"), canal_nube.whatsapp_button(rules))
         try:
             if post.get("slides"):
                 keys = [f"s{n}" for n in range(len(post["slides"]))]

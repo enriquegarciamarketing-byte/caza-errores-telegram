@@ -1171,13 +1171,25 @@ def hashtags(deal: dict, rules: dict) -> str:
     return TAGS[badge_for(deal["discount"], rules, real_drop(deal))]
 
 
-def buttons(url: str, style: str = "success") -> dict:
+def buttons(url: str, style: str = "success", extra: dict | None = None) -> dict:
     """Botón del post. Telegram solo admite tres colores ("success" verde, "danger" rojo, "primary" azul); no hay
-    amarillo, así que va en verde, el de comprar. Cámbialo con "button_style" en config.json."""
+    amarillo, así que va en verde, el de comprar. Cámbialo con "button_style" en config.json.
+    `extra` va debajo, en su propia fila (desde el 17/11/2026, el de unirse al canal de WhatsApp)."""
     button = {"text": "🛒 Comprar en Amazon", "url": url}
     if style:
         button["style"] = style
-    return {"inline_keyboard": [[button]]}
+    rows = [[button]]
+    if extra:
+        rows.append([extra])
+    return {"inline_keyboard": rows}
+
+
+def whatsapp_button(rules: dict) -> dict | None:
+    """Botón para ganar seguidores en el canal de WhatsApp (config: amazon_channel.whatsapp_button)."""
+    spec = rules.get("whatsapp_button") or {}
+    if spec.get("text") and str(spec.get("url") or "").startswith("https://"):
+        return {"text": str(spec["text"]), "url": str(spec["url"])}
+    return None
 
 
 def x_text(deal: dict, url: str, rules: dict, state: dict | None = None) -> str:
@@ -1482,26 +1494,26 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
                     if graph:
                         try:
                             return send_rich_carousel(tg, target, [("foto", padded), ("keepa", graph)], caption,
-                                                      buttons(url, rules.get("button_style", "success")))
+                                                      buttons(url, rules.get("button_style", "success"), whatsapp_button(rules)))
                         except (RuntimeError, OSError) as exc:
                             log(f"  No ha salido el carrusel ({exc}); mando solo la foto")
                     else:
                         log("  No he podido bajar la gráfica de Keepa; mando solo la foto")
                 if padded:
-                    return tg.send_photo(target, padded, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
+                    return tg.send_photo(target, padded, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"), whatsapp_button(rules))})
                 log("  No he podido preparar el fondo blanco; mando la foto tal cual")
             if image.startswith("http"):
                 return tg.call("sendPhoto", {"chat_id": target, "photo": full_size(image), "caption": caption,
-                                             "parse_mode": "HTML", "reply_markup": buttons(url, rules.get("button_style", "success"))})
+                                             "parse_mode": "HTML", "reply_markup": buttons(url, rules.get("button_style", "success"), whatsapp_button(rules))})
             local = ROOT / image
             if local.is_file():
-                return tg.send_photo(target, local, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
+                return tg.send_photo(target, local, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"), whatsapp_button(rules))})
         except (RuntimeError, OSError, urllib.error.URLError) as exc:
             log(f"  No he podido mandar la foto del producto ({exc}); mando la tarjeta")
     if style == "separadas" and image:
         try:
             photo = send_product_photo(tg, target, image)
-            message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
+            message = tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"), whatsapp_button(rules))})
             message["photo_message_id"] = photo.get("message_id")
             return message
         except (RuntimeError, OSError, urllib.error.URLError) as exc:
@@ -1522,7 +1534,7 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
             return sent[0]
         except (RuntimeError, OSError, urllib.error.URLError) as exc:
             log(f"  No he podido mandar el álbum ({exc}); mando solo la tarjeta")
-    return tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"))})
+    return tg.send_photo(target, card, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"), whatsapp_button(rules))})
 
 
 def mirror_whatsapp(deal: dict, caption: str, rules: dict, state: dict, now: datetime, test: bool = False,
@@ -1661,18 +1673,21 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
         # Sin stock (o sin precio): AGOTADO. En stock pero más caro que lo publicado: YA NO ESTÁ A ESTE PRECIO.
         notice = SOLD_OUT if (not detail.get("in_stock") or price is None) else ENDED
         caption = notice.format(hour=f"{now.astimezone(MADRID):%H:%M}") + "\n\n" + ended_caption(post["caption"])
+        # Sin el de Amazon (un chollo terminado deja de enlazar a Amazon), pero se queda el de unirse a WhatsApp.
+        wa = whatsapp_button(rules)
+        keep = {"reply_markup": {"inline_keyboard": [[wa]]}} if wa else {}
         try:
-            # Sin reply_markup Telegram quita el botón: un chollo terminado deja de enlazar a Amazon.
             if post.get("slides"):
                 # Post en carrusel (mensaje enriquecido): se reescribe con las mismas fotos, ya subidas a Telegram.
                 ids = [f"s{n}" for n in range(len(post["slides"]))]
                 slides = "".join(f'<img src="tg://photo?id={i}"/>' for i in ids)
                 tg.call("editMessageText", {"chat_id": post["chat"], "message_id": post["message_id"], "rich_message": {
                     "html": f"<tg-slideshow>{slides}</tg-slideshow>" + caption_to_rich_html(caption),
-                    "media": [{"id": i, "media": {"type": "photo", "media": f}} for i, f in zip(ids, post["slides"])]}})
+                    "media": [{"id": i, "media": {"type": "photo", "media": f}} for i, f in zip(ids, post["slides"])]},
+                    **keep})
             else:
                 tg.call("editMessageCaption", {"chat_id": post["chat"], "message_id": post["message_id"],
-                                               "caption": caption[:1024], "parse_mode": "HTML"})
+                                               "caption": caption[:1024], "parse_mode": "HTML", **keep})
             post["ended"] = int(now.timestamp())
         except RuntimeError as exc:
             log(f"  No he podido marcar el post {post['message_id']}: {exc}")

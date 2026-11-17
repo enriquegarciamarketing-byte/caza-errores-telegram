@@ -694,6 +694,8 @@
     "whatsapp_min_gap_minutes": 35,
     "whatsapp_monthly_budget": 950,
     "whatsapp_ai_label": "",
+    "_nota_whatsapp_button": "17/11/2026: debajo de Comprar en Amazon, en cada post del canal, un botón para unirse al canal de WhatsApp (se queda también cuando el chollo termina). Vacío = sin botón.",
+    "whatsapp_button": {"text": "📲 Chollos también en WhatsApp · Únete", "url": "https://whatsapp.com/channel/0029VbE063mEwEk5M7m9Xe17"},
     "block_keywords": [
       "funda",
       "protector de pantalla",
