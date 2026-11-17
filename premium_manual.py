@@ -35,7 +35,8 @@ ROOT = Path(__file__).resolve().parent
 STATE = ROOT / "state" / "premium_manual.json"
 OUT = ROOT / "output" / "premium_manual"
 TAG = "cazachollos0c-21"
-PRICE = r"\d{1,3}(?:\.\d{3})*,\d{2} ?€"
+PRICE = r"\d{1,3}(?:\.\d{3})*,\d{2}€"
+JOIN = re.compile(r"(\d) +(€|%)")  # Enrique: el € y el % siempre pegados al número
 
 
 def caption_html(copy: str) -> str:
@@ -44,6 +45,7 @@ def caption_html(copy: str) -> str:
     texts = [i for i, line in enumerate(copy.strip().splitlines()) if line.strip()]
     title = texts[1] if len(texts) > 1 else -1  # la línea tras la cabecera (💎/❗️) es el título: en negrita
     for i, line in enumerate(copy.strip().splitlines()):
+        line = JOIN.sub(r"\1\2", line)
         safe = html.escape(line, quote=False)
         if i == title:
             safe = f"<b>{safe.strip()}</b>"
@@ -128,7 +130,7 @@ def publish(spec: dict, private: bool, token: str) -> int:
     caption = caption_html(spec["copy"])
     msg = Telegram(token).send_photo(chat, card, caption)
     where = "tu chat privado (prueba)" if private else "el canal premium"
-    print(f"Post manual premium enviado a {where} (mensaje {msg['message_id']}) · -{round((reference - current) / reference * 100)} %")
+    print(f"Post manual premium enviado a {where} (mensaje {msg['message_id']}) · -{round((reference - current) / reference * 100)}%")
     if not private:
         state = load_state()
         state["posts"].append({"message_id": msg["message_id"], "asin": spec.get("asin"), "link": spec["link"],

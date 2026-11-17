@@ -28,9 +28,9 @@ def _font(size: int, weight: bytes) -> ImageFont.FreeTypeFont:
     return f
 
 
-def eur(value: float, space: bool = True) -> str:
+def eur(value: float, space: bool = False) -> str:
     text = f"{value:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
-    return text + (" €" if space else "€")
+    return text + (" €" if space else "€")  # Enrique: el € siempre pegado al número
 
 
 def _product_on_white(src: Image.Image) -> Image.Image:
@@ -66,7 +66,7 @@ def crear_tarjeta(photo: Path, reference: float, current: float, when: str, out:
     d.text((92 + ft.getlength("PRECIO EN AMAZON") + 14, 509), "· recomendado vs. hoy",
            font=_font(22, b"Medium"), fill=(140, 140, 140), anchor="lm")
     fb = _font(28, b"ExtraBold")
-    badge = f"-{pct} %"
+    badge = f"-{pct}%"
     tw = fb.getlength(badge)
     d.rounded_rectangle((910 - tw - 40, 486, 910, 528), 21, fill=ORANGE)
     d.text((910 - tw / 2 - 20, 507), badge, font=fb, fill="white", anchor="mm")
