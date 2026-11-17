@@ -7975,6 +7975,25 @@
    "title": "Amoladora Bosch Professional GWS 880 de 880 W y Disco de 125 mm",
    "manual": true,
    "brand": "bosch"
+  },
+  {
+   "asin": "B0DHVW3LPW",
+   "jl_id": "",
+   "price": 44.95,
+   "reference": 75.0,
+   "t": 1794931184,
+   "url": "https://www.amazon.es/dp/B0DHVW3LPW?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 657,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavx59X2cUYD-QDlTBNYV1y03XMUAAlIRaxsZTOhTPW5wRA2m9nkBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavx59Ri0mL0KhCOamhRBFvnIVY0AAlERaxsZTOhTBpgM-vAMp60BAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Zapatillas de Senderismo adidas Terrex Anylander para Hombre</b>\n\n💶 PRECIO: <b>44,95€</b>\n❌ (Antes: <s>75€</s>)\n🔥 ¡Te ahorras <b>30,05€</b>! (40 % dto.)\nℹ️ Precio en color beige (Cardboard) y talla 42 EU\n\n🕒 Precio a las 16:58 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0DHVW3LPW?tag=cazachollos0c-21\">amazon.es/dp/B0DHVW3LPW</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Zapatillas de Senderismo adidas Terrex Anylander para Hombre",
+   "manual": true,
+   "brand": "adidas"
   }
  ],
  "seen": {
@@ -25491,7 +25510,6 @@
   }
  ],
  "x_drafts": [
-  1794477610,
   1794478629,
   1794478665,
   1794479087,
@@ -25540,17 +25558,18 @@
   1794929396,
   1794929490,
   1794929570,
-  1794929913
+  1794929913,
+  1794931190
  ],
  "x_recent": [
-  "regla",
   "guarda",
   "chivatazo",
   "telegram",
   "filtro",
   "pregunta",
   "bot-aviso",
-  "comprado"
+  "comprado",
+  "black-friday"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 138,
@@ -121393,13 +121412,13 @@
  "silence_alert_t": 1794918354,
  "whatsapp": {
   "requests": {
-   "2026-11-17": 12
+   "2026-11-17": 13
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
-   "2026-11-17": 11
+   "2026-11-17": 12
   },
-  "last_deal": 1794929908
+  "last_deal": 1794931184
  }
 }
