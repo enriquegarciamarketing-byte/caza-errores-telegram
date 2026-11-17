@@ -143,7 +143,7 @@ def title_of(caption: str) -> str:
     """El nombre del producto: la primera línea sin hashtags, enlaces ni las líneas de datos (💸 ♻️ 📈 👀 🌟)."""
     for line in caption.splitlines():
         line = line.strip()
-        if line and "#" not in line and "http" not in line and not line.startswith(("💸", "♻️", "📈", "👀", "🌟", "🛒")):
+        if line and "#" not in line and "http" not in line and not line.startswith(("💸", "♻️", "📈", "👀", "🌟", "🛒", "⛔", "🚫")):
             return line[:70]
     return ""
 
@@ -278,7 +278,10 @@ def verdict(post: dict, live: dict | None) -> str | None:
     if live is None:
         return None  # Amazon no devuelve el producto: no se marca nada por si acaso
     price = live.get("price")
-    if not live.get("in_stock") or price is None:
+    avail = str(live.get("availability") or "").upper()
+    # Solo es AGOTADO si Amazon no da precio o lo da como no disponible. «Envío en X días», reserva,
+    # pocas unidades… con precio se pueden comprar (el 17/11 la API daba así el Citizen y el Garmin, activos).
+    if price is None or any(k in avail for k in ("OUT_OF_STOCK", "UNAVAILABLE", "DISCONTINUED")):
         return "agotado"
     if post.get("cupon") or post.get("precio") is None:
         return None
@@ -341,7 +344,8 @@ def main() -> int:
         if live:
             p["ultimo_precio"] = live.get("price")
         if not v:
-            log(f"  {mid} {p['titulo']}: sigue ({live.get('price') if live else 'sin datos'}€ vs {p['precio']}€)")
+            log(f"  {mid} {p['titulo']}: sigue ({live.get('price') if live else 'sin datos'}€ vs {p['precio']}€, "
+                f"{live.get('availability') if live else '-'})")
 
     if suspects:
         log(f"{len(suspects)} parecen terminadas; lo confirmo dentro de {RECHECK_WAIT}s")
@@ -360,7 +364,7 @@ def main() -> int:
             sello = "AGOTADO" if v == "agotado" else "OFERTA TERMINADA"
             now_txt = datetime.now(timezone.utc).astimezone(MADRID).strftime("%H:%M")
             log(f"  {mid} {p['titulo']}: {sello} (ahora {live.get('price') if live else '-'}€, "
-                f"stock {live.get('in_stock') if live else '-'}; publicado a {p['precio']}€)")
+                f"disponibilidad {live.get('availability') if live else '-'}; publicado a {p['precio']}€)")
             if args.prueba:
                 continue
             try:
