@@ -7956,6 +7956,25 @@
    "title": "LEGO Minecraft 21273 Ataque a la Aldea del Globo de Ghast",
    "manual": true,
    "brand": "lego"
+  },
+  {
+   "asin": "B07BRS1KXS",
+   "jl_id": "",
+   "price": 50.98,
+   "reference": 85.91,
+   "t": 1794929908,
+   "url": "https://www.amazon.es/dp/B07BRS1KXS?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 655,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavx0-Kk4wA8aSw0h8KZ9AAFWulghAAJJEWsbGUzoUzkKFARmSOlEAQADAgADdwADPQQ",
+    "AgACAgQAAxUHavx0-MnLz1eOd6rgI-gM-xlVog4AAkoRaxsZTOhTuw-KjsLMe9EBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Amoladora Bosch Professional GWS 880 de 880 W y Disco de 125 mm</b>\n\n💶 PRECIO: <b>50,98€</b>\n❌ (Antes: <s>85,91€</s>)\n🔥 ¡Te ahorras <b>34,93€</b>! (41 % dto.)\nℹ️ Precio en la versión de 125 mm (la de 115 mm va más cara)\n\n🕒 Precio a las 16:37 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B07BRS1KXS?tag=cazachollos0c-21\">amazon.es/dp/B07BRS1KXS</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Amoladora Bosch Professional GWS 880 de 880 W y Disco de 125 mm",
+   "manual": true,
+   "brand": "bosch"
   }
  ],
  "seen": {
@@ -25472,7 +25491,6 @@
   }
  ],
  "x_drafts": [
-  1794476036,
   1794477610,
   1794478629,
   1794478665,
@@ -25521,17 +25539,18 @@
   1794922758,
   1794929396,
   1794929490,
-  1794929570
+  1794929570,
+  1794929913
  ],
  "x_recent": [
-  "black-friday",
   "regla",
   "guarda",
   "chivatazo",
   "telegram",
   "filtro",
   "pregunta",
-  "bot-aviso"
+  "bot-aviso",
+  "comprado"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 138,
@@ -121374,13 +121393,13 @@
  "silence_alert_t": 1794918354,
  "whatsapp": {
   "requests": {
-   "2026-11-17": 11
+   "2026-11-17": 12
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
-   "2026-11-17": 10
+   "2026-11-17": 11
   },
-  "last_deal": 1794929565
+  "last_deal": 1794929908
  }
 }
