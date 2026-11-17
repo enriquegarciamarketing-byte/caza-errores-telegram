@@ -4,7 +4,8 @@
    0,
    1,
    2,
-   3
+   3,
+   4
   ],
   "ahorro": [
    0,
@@ -124,6 +125,11 @@
    "t": 1794857508,
    "slot": "tarde",
    "topic": "Tu día a día"
+  },
+  {
+   "t": 1794937774,
+   "slot": "tarde",
+   "topic": "Finanzas e inversión"
   }
  ]
 }
