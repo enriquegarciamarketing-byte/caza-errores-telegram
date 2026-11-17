@@ -53,4 +53,4 @@ jobs:
           esac
       - name: Guardar memoria (cupo de WhatsApp)
         if: always() && inputs.modo == 'ultimo-chollo'
-        run: tools/guardar_memoria.sh "WhatsApp: prueba con el último chollo" state/canal_nube.json
+        run: tools/guardar_memoria.sh "WhatsApp - prueba con el último chollo" state/canal_nube.json
