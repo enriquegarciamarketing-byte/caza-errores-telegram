@@ -494,7 +494,7 @@ def community_profile(state: dict, rules: dict, now: datetime) -> dict:
     if conf.get("enabled") is False:
         return {}
     tastes = votos.community_tastes(
-        load_json(PREMIUM_STATE, {}).get("votos"), state.get("posts") or [], now.timestamp(), product_kind,
+        votos.load_store().get("votos"), state.get("posts") or [], now.timestamp(), product_kind,
         lambda post: fold(str(post.get("brand") or "")) or known_brand(post.get("title") or "", rules),
         days=float(conf.get("dias", 90)), chat=str(rules.get("chat_id") or "@cazachollos_com"))
     if not tastes["kinds"] and not tastes["brands"]:
@@ -1229,9 +1229,9 @@ def buttons(url: str, style: str = "success", extra: dict | None = None,
 
 
 def vote_counts(post: dict) -> tuple[int, int]:
-    """👍 y 👎 que lleva ya un post (de la memoria del escáner, que es quien los recoge)."""
+    """👍 y 👎 que lleva ya un post (state/votos.json)."""
     import votos
-    return votos.counts_for(load_json(PREMIUM_STATE, {}).get("votos"), post.get("chat") or "", post.get("message_id") or 0)
+    return votos.counts_for(votos.load_store().get("votos"), post.get("chat") or "", post.get("message_id") or 0)
 
 
 def ended_markup(rules: dict, post: dict) -> dict:

@@ -734,7 +734,9 @@ def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool
     if votes:
         import votos
         try:
-            votos.handle(tg, state, votes, dry)
+            store = votos.load_store()
+            if votos.handle(tg, store, votes, dry) and not dry:
+                votos.save_store(store)
         except Exception as exc:  # un fallo con los votos nunca para el premium
             print(f"Aviso: no he podido apuntar los votos ({exc!r})")
     for upd in updates:

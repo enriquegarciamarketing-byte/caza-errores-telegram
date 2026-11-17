@@ -17,7 +17,7 @@ class RevisionTest(unittest.TestCase):
                 "learning": {"brand": {"faszin": {"ok": 0, "no": 2, "name": "Faszin"}}}}
         free = {"posts": [{"t": now - 60, "price": 50, "reference": 100, "label": "Aspiradoras"}] * 3,
                 "seen": {"amz-B0AAAAAAA3": {"t": now - 50, "why": "marca poco conocida (UJJ): ..."}}}
-        files = {"scanner.json": prem, "canal_nube.json": free, "ventas.json": {}}
+        files = {"scanner.json": prem, "canal_nube.json": free, "ventas.json": {}, "votos.json": {}}
         with mock.patch.object(rs, "load", side_effect=lambda name: files[name]):
             s = rs.gather(now)
         self.assertEqual((s["ok"], s["no"], s["expired"]), (1, 1, 2))

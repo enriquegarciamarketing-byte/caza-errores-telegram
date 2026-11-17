@@ -57,7 +57,7 @@ class Botones(unittest.TestCase):
 
     def test_chollo_terminado_conserva_votos_y_whatsapp_sin_amazon(self):
         rules = {"whatsapp_button": {"text": WA[0]["text"], "url": WA[0]["url"]}}
-        with mock.patch.object(canal_nube, "load_json", return_value={"votos": {
+        with mock.patch.object(votos, "load_store", return_value={"votos": {
                 "@cazachollos_com:655": {"t": 1, "u": {"a": 1, "b": 1, "c": -1}}}}):
             markup = canal_nube.ended_markup(rules, {"chat": "@cazachollos_com", "message_id": 655})
         self.assertEqual([b["text"] for b in markup["inline_keyboard"][0]], ["👍 2", "👎 1"])
@@ -74,6 +74,10 @@ class Pulsaciones(unittest.TestCase):
         patcher = mock.patch.object(votos, "FREE_STATE", Path(tmp.name))
         patcher.start()
         self.addCleanup(patcher.stop)
+        self.store_path = Path(tempfile.mkdtemp()) / "votos.json"
+        store = mock.patch.object(votos, "STORE", self.store_path)
+        store.start()
+        self.addCleanup(store.stop)
 
     def test_un_voto_por_persona_cambiar_y_quitar(self):
         tg, state = FakeTg(), {}
@@ -118,8 +122,52 @@ class Pulsaciones(unittest.TestCase):
         state = {"tg_offset": 5}
         scanner.handle_updates(tg, {}, state, "@caza_errores", False)
         self.assertEqual(state["tg_offset"], 12)
-        self.assertEqual(votos.counts(state["votos"]["@cazachollos_com:655"]), (1, 1))
+        self.assertNotIn("votos", state)  # van a state/votos.json, no a la memoria del premium
         self.assertIn("callback_query", tg.calls[0][1]["allowed_updates"])
+        self.assertEqual(votos.counts(votos.load_store()["votos"]["@cazachollos_com:655"]), (1, 1))
+
+    def test_el_aviso_dice_que_el_voto_esta_apuntado_con_el_recuento(self):
+        class Tg(FakeTg):
+            def call(self, method, params=None):
+                self.calls.append((method, params))
+                return True
+        tg = Tg()
+        votos.handle(tg, {}, [cb(1, votos.UP, qid="a"), cb(2, votos.DOWN, qid="b")], log=lambda *_: None)
+        notes = [p["text"] for m, p in tg.calls if m == "answerCallbackQuery"]
+        self.assertIn("Apuntado", notes[0])
+        self.assertTrue(notes[0].endswith("👍 1 · 👎 0"))
+        self.assertTrue(notes[1].endswith("👍 1 · 👎 1"))
+
+    def test_escucha_contesta_al_momento_y_guarda(self):
+        updates = [[{"update_id": 1, "callback_query": cb(1, votos.UP)}], []]
+        calls = []
+
+        class Tg:
+            def __init__(self, token):
+                pass
+
+            def call(self, method, params=None, timeout=30):
+                calls.append((method, params))
+                if method == "getUpdates":
+                    return updates.pop(0) if updates else []
+                return True
+        clock = iter([0, 0, 0, 1, 2, 3, 99999, 99999, 99999])
+        with mock.patch.object(votos, "premium_paused", return_value=True), \
+                mock.patch.object(votos, "_Telegram", Tg), mock.patch.object(votos, "commit_store") as commit, \
+                mock.patch.dict("os.environ", {"TELEGRAM_BOT_TOKEN": "t"}), \
+                mock.patch.object(votos.time, "time", side_effect=lambda: next(clock, 99999)):
+            votos.listen(1, log=lambda *_: None)
+        self.assertIn("answerCallbackQuery", [m for m, _ in calls])
+        self.assertIn("editMessageReplyMarkup", [m for m, _ in calls])
+        self.assertEqual(votos.counts(votos.load_store()["votos"]["@cazachollos_com:655"]), (1, 0))
+        commit.assert_called()
+        self.assertEqual(calls[-1][1]["offset"], 2)  # deja leído lo último
+
+    def test_con_el_premium_en_marcha_no_escucha(self):
+        with mock.patch.object(votos, "premium_paused", return_value=False), \
+                mock.patch.object(votos, "_Telegram") as tg:
+            self.assertEqual(votos.listen(1, log=lambda *_: None), 0)
+        tg.assert_not_called()
 
 
 class Aprendizaje(unittest.TestCase):
@@ -134,7 +182,7 @@ class Aprendizaje(unittest.TestCase):
                  {"chat": "@cazachollos_com", "message_id": 2, "title": "Zapatillas Pepe Jeans Joe Basic", "brand": "pepe jeans"}]
         prem = {"votos": {"@cazachollos_com:1": self.entry(6, 0), "@cazachollos_com:2": self.entry(0, 5)}}
         rules = {"chat_id": "@cazachollos_com", "gustos": {"enabled": False}}
-        with mock.patch.object(canal_nube, "load_json", return_value=prem):
+        with mock.patch.object(votos, "load_store", return_value=prem):
             tastes = canal_nube.taste_profile({"posts": posts}, rules, self.NOW)
         liked = {"title": "Freidora de aire Cosori Pro 6 L", "brand": "cosori", "discount": 50, "price": 60, "reference": 120}
         disliked = {"title": "Zapatillas Pepe Jeans Kenton", "brand": "pepe jeans", "discount": 50, "price": 60, "reference": 120}

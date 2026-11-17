@@ -79,17 +79,17 @@ def gather(now: float) -> dict:
         "ok": sum(1 for p in asks if p.get("approved")), "no": sum(1 for p in asks if p.get("rejected")),
         "expired": sum(1 for p in asks if p.get("expired") and not p.get("approved")),
         "checked": checked, "kinds": dict(kinds), "blocked": [b for b in blocked if b],
-        "history": len(hist), "ventas": ventas, "votos": weekly_votes(prem, free, since),
+        "history": len(hist), "ventas": ventas, "votos": weekly_votes(load("votos.json"), free, since),
     }
 
 
-def weekly_votes(prem: dict, free: dict, since: float) -> dict:
+def weekly_votes(store: dict, free: dict, since: float) -> dict:
     """👍/👎 de la comunidad de esta semana (votos.py): totales y los posts que más y menos han gustado."""
     import votos
     titles = {votos.entry_key(p.get("chat") or "", p["message_id"]): p.get("title") or ""
               for p in free.get("posts") or [] if p.get("message_id")}
     rows = []
-    for k, entry in (prem.get("votos") or {}).items():
+    for k, entry in (store.get("votos") or {}).items():
         if float(entry.get("last") or entry.get("t") or 0) < since:
             continue
         up, down = votos.counts(entry)

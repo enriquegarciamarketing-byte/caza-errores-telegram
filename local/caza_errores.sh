@@ -67,7 +67,7 @@ latido() {
 }
 
 guardar_memoria() {
-  git add state/scanner.json state/latido_mac.json 2>/dev/null || true
+  git add state/scanner.json state/latido_mac.json state/votos.json 2>/dev/null || true
   if git diff --cached --quiet; then
     return 0
   fi
