@@ -140,24 +140,42 @@ def resolve_asin(url: str) -> str | None:
 
 
 def title_of(caption: str) -> str:
-    lines = [l.strip() for l in caption.splitlines() if l.strip()]
-    return (lines[1] if len(lines) > 1 else lines[0] if lines else "")[:70]
+    """El nombre del producto: la primera línea sin hashtags, enlaces ni las líneas de datos (💸 ♻️ 📈 👀 🌟)."""
+    for line in caption.splitlines():
+        line = line.strip()
+        if line and "#" not in line and "http" not in line and not line.startswith(("💸", "♻️", "📈", "👀", "🌟", "🛒")):
+            return line[:70]
+    return ""
 
 
 # ------------------------------------------------------------------ leer el canal
 
+def call_retry(tg: Telegram, method: str, params: dict) -> dict:
+    """Llamada a Telegram con hasta 3 reintentos si se corta la conexión o pide esperar."""
+    for attempt in range(4):
+        try:
+            return tg.call(method, params)
+        except RuntimeError as exc:
+            text = str(exc).lower()
+            wait = re.search(r"retry after (\d+)", text)
+            if attempt == 3 or not ("sin conexión" in text or wait):
+                raise
+            time.sleep(int(wait.group(1)) + 1 if wait else 3 * (attempt + 1))
+    raise RuntimeError("inalcanzable")
+
+
 def read_post(tg: Telegram, admin: int, message_id: int) -> dict | None:
     """Reenvía el post a tu chat en silencio, lo lee y borra el reenvío. None si ese mensaje no existe."""
     try:
-        fwd = tg.call("forwardMessage", {"chat_id": admin, "from_chat_id": PREMIUM, "message_id": message_id,
-                                         "disable_notification": True})
+        fwd = call_retry(tg, "forwardMessage", {"chat_id": admin, "from_chat_id": PREMIUM, "message_id": message_id,
+                                                "disable_notification": True})
     except RuntimeError as exc:
         text = str(exc).lower()
         if "not found" in text or "can't be forwarded" in text or "message to forward" in text:
             return None
         raise
     try:
-        tg.call("deleteMessage", {"chat_id": admin, "message_id": fwd["message_id"]})
+        call_retry(tg, "deleteMessage", {"chat_id": admin, "message_id": fwd["message_id"]})
     except RuntimeError as exc:
         log(f"  (no he podido borrar el reenvío de prueba {fwd['message_id']}: {exc})")
     return fwd
@@ -192,7 +210,11 @@ def discover(tg: Telegram, admin: int, state: dict) -> None:
     limit = MISSES_SEED if first else MISSES
     mid, misses = int(state["ultimo"]) + 1, 0
     while misses < limit:
-        fwd = read_post(tg, admin, mid)
+        try:
+            fwd = read_post(tg, admin, mid)
+        except RuntimeError as exc:
+            log(f"  Telegram falla leyendo el post {mid} ({exc}); sigo en la próxima pasada")
+            return
         if fwd is None:
             misses += 1
         else:
