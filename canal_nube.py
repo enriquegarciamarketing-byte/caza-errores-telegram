@@ -172,7 +172,7 @@ def admin_chat_id(state: dict, rules: dict | None = None, tg=None, log=print) ->
         (load_json(PREMIUM_STATE, {}).get("private_chats") or {}).get(username)
     if not known and tg is not None:
         try:
-            for upd in tg.call("getUpdates", {"timeout": 0, "allowed_updates": ["message"]}):
+            for upd in tg.call("getUpdates", {"timeout": 0, "allowed_updates": scanner.ALLOWED_UPDATES}):
                 chat = (upd.get("message") or {}).get("chat") or {}
                 if chat.get("type") == "private" and str(chat.get("username") or "").lower() == username:
                     known = chat["id"]
@@ -449,8 +449,9 @@ def known_brand(title: str, rules: dict) -> str:
 def taste_profile(state: dict, rules: dict, now: datetime) -> dict:
     """Tipos de producto y marcas de los posts a mano de los últimos «dias» días, con cuántas veces."""
     conf = rules.get("gustos") or {}
+    community = community_profile(state, rules, now)
     if conf.get("enabled") is False:
-        return {}
+        return {"community": community} if community else {}
     days = float(conf.get("dias", 60))
     kinds: dict[str, int] = {}
     brands: dict[str, int] = {}
@@ -469,7 +470,37 @@ def taste_profile(state: dict, rules: dict, now: datetime) -> dict:
         query = " ".join(w for w in (word, brand) if w)
         if query and (kind not in TIPOS_GENERICOS or brand) and query not in searches:
             searches.append(query)
-    return {"kinds": kinds, "brands": brands, "searches": searches[: int(conf.get("max_busquedas", 12))]}
+    if community:
+        # Lo que la comunidad vota a favor también se busca en Amazon, detrás de lo tuyo y dentro del mismo tope.
+        import votos
+        liked = sorted(((votos.net_score(t, community.get("min", 3)), k) for k, t in (community.get("kinds") or {}).items()),
+                       reverse=True)
+        for score, kind in liked:
+            word = BUSQUEDA_TIPO.get(kind, kind)
+            if score >= 0.3 and kind not in TIPOS_GENERICOS and word not in searches:
+                searches.append(word)
+    return {"kinds": kinds, "brands": brands, "searches": searches[: int(conf.get("max_busquedas", 12))],
+            "community": community}
+
+
+# ------------------------------------------------------------------ lo que le gusta a la comunidad (17/11/2026)
+# Los 👍/👎 de los posts del free (votos.py). Tipos de producto y marcas con saldo positivo suben en el orden de
+# publicación; los que la comunidad vota en contra bajan. Hacen falta unos cuantos votos (min_votos) para que
+# cuente, y nunca se salta una regla de calidad ni deja de publicar un chollo bueno: solo cambia el orden.
+# Config: amazon_channel.votos = {"enabled", "dias", "min_votos", "peso_tipo", "peso_marca"}.
+def community_profile(state: dict, rules: dict, now: datetime) -> dict:
+    import votos
+    conf = rules.get("votos") or {}
+    if conf.get("enabled") is False:
+        return {}
+    tastes = votos.community_tastes(
+        load_json(PREMIUM_STATE, {}).get("votos"), state.get("posts") or [], now.timestamp(), product_kind,
+        lambda post: fold(str(post.get("brand") or "")) or known_brand(post.get("title") or "", rules),
+        days=float(conf.get("dias", 90)), chat=str(rules.get("chat_id") or "@cazachollos_com"))
+    if not tastes["kinds"] and not tastes["brands"]:
+        return {}
+    return {**tastes, "min": int(conf.get("min_votos", 3)),
+            "w_kind": float(conf.get("peso_tipo", 15)), "w_brand": float(conf.get("peso_marca", 10))}
 
 
 def taste_bonus(deal: dict, tastes: dict | None) -> float:
@@ -479,6 +510,14 @@ def taste_bonus(deal: dict, tastes: dict | None) -> float:
     brand = fold(str(deal.get("brand") or ""))
     bonus = 6.0 * min(int((tastes.get("kinds") or {}).get(kind, 0)), 3) if kind else 0.0
     bonus += 5.0 * min(int((tastes.get("brands") or {}).get(brand, 0)), 2) if brand else 0.0
+    community = tastes.get("community") or {}
+    if community:
+        import votos
+        least = int(community.get("min", 3))
+        if kind:
+            bonus += float(community.get("w_kind", 15)) * votos.net_score((community.get("kinds") or {}).get(kind), least)
+        if brand:
+            bonus += float(community.get("w_brand", 10)) * votos.net_score((community.get("brands") or {}).get(brand), least)
     return bonus
 
 
@@ -1171,17 +1210,35 @@ def hashtags(deal: dict, rules: dict) -> str:
     return TAGS[badge_for(deal["discount"], rules, real_drop(deal))]
 
 
-def buttons(url: str, style: str = "success", extra: dict | None = None) -> dict:
+def buttons(url: str, style: str = "success", extra: dict | None = None,
+            votes: tuple[int, int] | None = (0, 0)) -> dict:
     """Botón del post. Telegram solo admite tres colores ("success" verde, "danger" rojo, "primary" azul); no hay
     amarillo, así que va en verde, el de comprar. Cámbialo con "button_style" en config.json.
-    `extra` va debajo, en su propia fila (desde el 17/11/2026, el de unirse al canal de WhatsApp)."""
+    Debajo, la fila 👍 · 👎 de la comunidad (votos.py, 17/11/2026; votes=None la quita) y, en su propia fila,
+    `extra` (desde el 17/11/2026, el de unirse al canal de WhatsApp)."""
+    import votos
     button = {"text": "🛒 Comprar en Amazon", "url": url}
     if style:
         button["style"] = style
     rows = [[button]]
+    if votes is not None:
+        rows.append(votos.row(*votes))
     if extra:
         rows.append([extra])
     return {"inline_keyboard": rows}
+
+
+def vote_counts(post: dict) -> tuple[int, int]:
+    """👍 y 👎 que lleva ya un post (de la memoria del escáner, que es quien los recoge)."""
+    import votos
+    return votos.counts_for(load_json(PREMIUM_STATE, {}).get("votos"), post.get("chat") or "", post.get("message_id") or 0)
+
+
+def ended_markup(rules: dict, post: dict) -> dict:
+    """Teclado de un chollo terminado: sin el botón de Amazon, pero con sus votos y el de WhatsApp."""
+    import votos
+    wa = whatsapp_button(rules)
+    return {"inline_keyboard": [votos.row(*vote_counts(post))] + ([[wa]] if wa else [])}
 
 
 def whatsapp_button(rules: dict) -> dict | None:
@@ -1673,9 +1730,8 @@ def track_posts(tg, state: dict, now: datetime, rules: dict, log, dry: bool, fet
         # Sin stock (o sin precio): AGOTADO. En stock pero más caro que lo publicado: YA NO ESTÁ A ESTE PRECIO.
         notice = SOLD_OUT if (not detail.get("in_stock") or price is None) else ENDED
         caption = notice.format(hour=f"{now.astimezone(MADRID):%H:%M}") + "\n\n" + ended_caption(post["caption"])
-        # Sin el de Amazon (un chollo terminado deja de enlazar a Amazon), pero se queda el de unirse a WhatsApp.
-        wa = whatsapp_button(rules)
-        keep = {"reply_markup": {"inline_keyboard": [[wa]]}} if wa else {}
+        # Sin el de Amazon (un chollo terminado deja de enlazar a Amazon), pero se quedan los votos y WhatsApp.
+        keep = {"reply_markup": ended_markup(rules, post)}
         try:
             if post.get("slides"):
                 # Post en carrusel (mensaje enriquecido): se reescribe con las mismas fotos, ya subidas a Telegram.

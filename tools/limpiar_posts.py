@@ -74,8 +74,8 @@ def limpiar(tg, state: dict, rules: dict, ids: set[int], dry: bool, log=print) -
         caption = formato_corto(cn.sin_historial(post.get("caption") or ""), post, rules)
         caption = con_enlace(caption, post["url"], bool(post.get("ended")))[:1024]
         wa = cn.whatsapp_button(rules)
-        markup = ({"inline_keyboard": [[wa]]} if wa else None) if post.get("ended") else \
-            cn.buttons(post["url"], rules.get("button_style", "success"), wa)
+        markup = cn.ended_markup(rules, post) if post.get("ended") else \
+            cn.buttons(post["url"], rules.get("button_style", "success"), wa, cn.vote_counts(post))
         log(f"Post {mid}{f' (foto suelta {photo_mid})' if photo_mid else ''}: {cn.clean_title(post.get('title') or '', 60)}")
         if dry or tg is None:
             log("  [prueba] texto nuevo:\n" + caption)

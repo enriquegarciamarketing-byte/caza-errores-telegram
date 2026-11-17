@@ -172,13 +172,14 @@ class TestBotonWhatsApp(unittest.TestCase):
                                     canal_nube.whatsapp_button(rules))
         rows = markup["inline_keyboard"]
         self.assertEqual(rows[0][0]["text"], "🛒 Comprar en Amazon")
-        self.assertEqual(rows[1][0]["url"], "https://whatsapp.com/channel/0029VbE063mEwEk5M7m9Xe17")
-        self.assertIn("WhatsApp", rows[1][0]["text"])
+        self.assertEqual([b["text"] for b in rows[1]], ["👍", "👎"])  # votos de la comunidad (17/11/2026)
+        self.assertEqual(rows[2][0]["url"], "https://whatsapp.com/channel/0029VbE063mEwEk5M7m9Xe17")
+        self.assertIn("WhatsApp", rows[2][0]["text"])
 
     def test_sin_config_no_hay_boton(self):
         import canal_nube
         self.assertIsNone(canal_nube.whatsapp_button({}))
-        self.assertEqual(len(canal_nube.buttons("https://x", "success", None)["inline_keyboard"]), 1)
+        self.assertEqual(len(canal_nube.buttons("https://x", "success", None, None)["inline_keyboard"]), 1)
 
 
 if __name__ == "__main__":

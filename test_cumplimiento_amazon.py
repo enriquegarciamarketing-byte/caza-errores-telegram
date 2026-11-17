@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Normas de Amazon Afiliados en el canal normal: lo que nunca debe volver a salir."""
 
+import json
 import unittest
 from datetime import datetime, timezone
 
@@ -101,7 +102,9 @@ class PostTerminado(unittest.TestCase):
         self.assertEqual(len(tg.calls), 1)
         method, params = tg.calls[0]
         self.assertEqual(method, "editMessageCaption")
-        self.assertNotIn("reply_markup", params)
+        # Sin el botón de Amazon; solo se queda la fila de votos de la comunidad (17/11/2026).
+        self.assertNotIn("url", json.dumps(params.get("reply_markup") or {}))
+        self.assertEqual(params["reply_markup"]["inline_keyboard"][0][0]["callback_data"], "voto:up")
         self.assertNotIn("🔗", params["caption"])
 
 
