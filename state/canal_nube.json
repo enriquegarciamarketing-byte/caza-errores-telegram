@@ -110951,5 +110951,16 @@
  },
  "api_error": "HTTP 429 en searchItems: {\"message\":\"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates\",\"type\":\"ThrottleException\"}",
  "amazon_search_lap": 173,
- "silence_alert_t": 1794842939
+ "silence_alert_t": 1794842939,
+ "whatsapp": {
+  "requests": {
+   "2026-11-17": 2
+  },
+  "channel": "120363432803344106@newsletter",
+  "invite": "0029VbE063mEwEk5M7m9Xe17",
+  "deals": {
+   "2026-11-17": 1
+  },
+  "last_deal": 1794900925
+ }
 }
