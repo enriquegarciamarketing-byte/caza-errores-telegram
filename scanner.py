@@ -716,14 +716,27 @@ def use_amazon_link(url: str | None, cfg: dict, state: dict, tg, *, asin: str | 
     return prepared
 
 
+# Lo que el bot quiere recibir de Telegram. Cualquier getUpdates con otra lista cambia la suscripción para todos,
+# así que canal_nube.py y canal_aliexpress.py usan esta misma (si no, se perderían los votos).
+ALLOWED_UPDATES = ["message", "callback_query"]
+
+
 def handle_updates(tg: Telegram, cfg: dict, state: dict, channel: str, dry: bool) -> None:
     try:
+        # callback_query: los 👍/👎 de la comunidad en los posts del free (votos.py, 17/11/2026).
         updates = tg.call("getUpdates", {"offset": state.get("tg_offset", 0), "timeout": 0,
-                                          "allowed_updates": ["message"]})
+                                          "allowed_updates": ALLOWED_UPDATES})
     except RuntimeError as exc:
         print(f"Aviso: no se pudieron leer mensajes del bot ({exc})")
         return
     admin = state.get("admin_chat_id")
+    votes = [upd["callback_query"] for upd in updates if upd.get("callback_query")]
+    if votes:
+        import votos
+        try:
+            votos.handle(tg, state, votes, dry)
+        except Exception as exc:  # un fallo con los votos nunca para el premium
+            print(f"Aviso: no he podido apuntar los votos ({exc!r})")
     for upd in updates:
         state["tg_offset"] = upd["update_id"] + 1
         msg = upd.get("message") or {}

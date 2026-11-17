@@ -79,8 +79,25 @@ def gather(now: float) -> dict:
         "ok": sum(1 for p in asks if p.get("approved")), "no": sum(1 for p in asks if p.get("rejected")),
         "expired": sum(1 for p in asks if p.get("expired") and not p.get("approved")),
         "checked": checked, "kinds": dict(kinds), "blocked": [b for b in blocked if b],
-        "history": len(hist), "ventas": ventas,
+        "history": len(hist), "ventas": ventas, "votos": weekly_votes(prem, free, since),
     }
+
+
+def weekly_votes(prem: dict, free: dict, since: float) -> dict:
+    """👍/👎 de la comunidad de esta semana (votos.py): totales y los posts que más y menos han gustado."""
+    import votos
+    titles = {votos.entry_key(p.get("chat") or "", p["message_id"]): p.get("title") or ""
+              for p in free.get("posts") or [] if p.get("message_id")}
+    rows = []
+    for k, entry in (prem.get("votos") or {}).items():
+        if float(entry.get("last") or entry.get("t") or 0) < since:
+            continue
+        up, down = votos.counts(entry)
+        if up or down:
+            rows.append((up - down, up, down, titles.get(k) or entry.get("title") or k))
+    rows.sort(reverse=True)
+    return {"up": sum(r[1] for r in rows), "down": sum(r[2] for r in rows), "posts": len(rows),
+            "best": [r for r in rows if r[0] > 0][:3], "worst": [r for r in reversed(rows) if r[0] < 0][:3]}
 
 
 def proposals(s: dict, now: float) -> list[str]:
@@ -117,6 +134,12 @@ def summary_text(s: dict) -> str:
         lines.append("   Lo que más ha salido: " + ", ".join(f"{e(str(l))} ({n})" for l, n in s["free_labels"]))
     lines.append(f"🚨 <b>Premium</b>: {s['prem_published']} errores publicados · te pedí OK {s['asks']} veces "
                  f"({s['ok']} OK, {s['no']} NO, {s['expired']} caducados)")
+    v = s.get("votos") or {}
+    if v.get("posts"):
+        lines.append(f"🗳️ <b>Votos de la comunidad</b>: 👍 {v['up']} · 👎 {v['down']} en {v['posts']} posts")
+        for icon, items in (("💚 Lo que más ha gustado", v["best"]), ("💔 Lo que menos", v["worst"])):
+            if items:
+                lines.append(f"   {icon}: " + "; ".join(f"{e(t[:45])} ({u}👍 {d}👎)" for _, u, d, t in items))
     lines.append("")
     lines.append(f"🔎 Productos revisados a fondo: <b>{s['checked']}</b>. Algunos motivos para dejarlos fuera:")
     for kind, label in (("vendedor", "los vendía un tercero, no Amazon ni la marca"),

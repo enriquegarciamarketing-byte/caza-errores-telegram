@@ -58,7 +58,9 @@ class Limpieza(unittest.TestCase):
         tg, state = FakeTG(), {"posts": [self.post(photo_message_id=None, ended=1)]}
         lp.limpiar(tg, state, RULES, {356}, dry=False, log=lambda *_: None)
         self.assertEqual([m for m, _ in tg.calls], ["editMessageCaption"])
-        self.assertNotIn("reply_markup", tg.calls[0][1])
+        # Terminado: sin botón de Amazon, solo los votos de la comunidad (17/11/2026).
+        self.assertEqual([[b.get("callback_data") for b in r] for r in tg.calls[0][1]["reply_markup"]["inline_keyboard"]],
+                         [["voto:up", "voto:down"]])
 
     def test_texto_largo_pasa_al_corto(self):
         largo = ("💥 <b>CHOLLO EN AMAZON</b>\n\n<b>PHILIPS Lumea</b>\n\n💰 <b>299,95 €</b>   <s>559,99 €</s>\n"

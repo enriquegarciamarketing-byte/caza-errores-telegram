@@ -448,7 +448,7 @@ def admin_chat_id(state: dict, rules: dict, tg: Telegram | None, log=print) -> i
         known = known or (load_json(path, {}).get("private_chats") or {}).get(username)
     if not known and tg is not None:
         try:
-            for upd in tg.call("getUpdates", {"timeout": 0, "allowed_updates": ["message"]}):
+            for upd in tg.call("getUpdates", {"timeout": 0, "allowed_updates": ["message", "callback_query"]}):  # igual que scanner.ALLOWED_UPDATES (votos)
                 chat = (upd.get("message") or {}).get("chat") or {}
                 if chat.get("type") == "private" and str(chat.get("username") or "").lower() == username:
                     known = chat["id"]
