@@ -126,7 +126,8 @@ def publish(spec: dict, private: bool, token: str) -> int:
         print("Falta ADMIN_CHAT_ID" if private else "Falta TELEGRAM_CHAT_ID (canal premium)", file=sys.stderr)
         return 2
     name = re.sub(r"[^A-Za-z0-9]", "", spec.get("asin") or "") or f"p{int(time.time())}"
-    card = crear_tarjeta(photo_for(spec, name), reference, current, spec["when"], OUT / f"{name}.jpg")
+    card = crear_tarjeta(photo_for(spec, name), reference, current, spec["when"], OUT / f"{name}.jpg",
+                        ref_label=spec.get("ref_label", "recomendado"))
     caption = caption_html(spec["copy"])
     msg = Telegram(token).send_photo(chat, card, caption)
     where = "tu chat privado (prueba)" if private else "el canal premium"
@@ -135,7 +136,8 @@ def publish(spec: dict, private: bool, token: str) -> int:
         state = load_state()
         state["posts"].append({"message_id": msg["message_id"], "asin": spec.get("asin"), "link": spec["link"],
                                "image": spec["image"], "reference": reference, "current": current,
-                               "when": spec["when"], "caption": caption, "t": int(time.time())})
+                               "when": spec["when"], "ref_label": spec.get("ref_label", "recomendado"),
+                               "caption": caption, "t": int(time.time())})
         save_state(state)
     return 0
 
@@ -149,7 +151,8 @@ def sold_out(message_id: int, token: str) -> int:
     chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     name = re.sub(r"[^A-Za-z0-9]", "", post.get("asin") or "") or str(message_id)
     card = crear_tarjeta(photo_for(post, name), post["reference"], post["current"], post["when"],
-                         OUT / f"{name}_agotado.jpg", agotado=True)
+                         OUT / f"{name}_agotado.jpg", agotado=True,
+                         ref_label=post.get("ref_label", "recomendado"))
     edit_media(token, chat, message_id, card, post["caption"])
     post["agotado"] = int(time.time())
     save_state(state)

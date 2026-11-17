@@ -77,7 +77,8 @@ def es_blanco_y_negro(im: Image.Image) -> bool:
 
 
 def crear_tarjeta(photo: Path, reference: float, current: float, when: str, out: Path,
-                  agotado: bool = False) -> Path:
+                  agotado: bool = False, ref_label: str = "recomendado") -> Path:
+    # ref_label: «recomendado» (PVP de la ficha) o «mediano» cuando la ficha solo da «Precio mediano».
     pct = round((reference - current) / reference * 100)
     product = _product_on_white(Image.open(photo))
 
@@ -98,14 +99,14 @@ def crear_tarjeta(photo: Path, reference: float, current: float, when: str, out:
     d.rounded_rectangle((60, 470, 940, 698), 26, fill="white", outline=BORDER, width=2)
     ft = _font(25, b"ExtraBold")
     d.text((92, 508), "PRECIO EN AMAZON", font=ft, fill=(40, 40, 40), anchor="lm")
-    d.text((92 + ft.getlength("PRECIO EN AMAZON") + 14, 509), "· recomendado vs. hoy",
+    d.text((92 + ft.getlength("PRECIO EN AMAZON") + 14, 509), f"· {ref_label} vs. hoy",
            font=_font(22, b"Medium"), fill=(140, 140, 140), anchor="lm")
     fb = _font(28, b"ExtraBold")
     badge = f"-{pct}%"
     tw = fb.getlength(badge)
     d.rounded_rectangle((910 - tw - 40, 486, 910, 528), 21, fill=ORANGE)
     d.text((910 - tw / 2 - 20, 507), badge, font=fb, fill="white", anchor="mm")
-    d.text((106, 546), f"Precio recomendado: {eur(reference)}", font=_font(24, b"Bold"), fill=(90, 90, 90),
+    d.text((106, 546), f"Precio {ref_label}: {eur(reference)}", font=_font(24, b"Bold"), fill=(90, 90, 90),
            anchor="lm")
     for y in (585, 608, 632, 656):
         d.rectangle((100, y, 790, y + 1), fill=GRID)
