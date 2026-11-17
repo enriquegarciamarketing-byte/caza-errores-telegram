@@ -7918,6 +7918,25 @@
    "title": "Vaporizador Philips 3000 de Mano Vertical 1000 W y Depósito de 120 ml",
    "manual": true,
    "brand": "philips"
+  },
+  {
+   "asin": "B0D87DYVWT",
+   "jl_id": "",
+   "price": 27.96,
+   "reference": 69.9,
+   "t": 1794929485,
+   "url": "https://www.amazon.es/dp/B0D87DYVWT?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 653,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavxzUXpIU_4FJ-pmpguCBTNdfA8AAkURaxsZTOhTqq_Lhtvq8tcBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavxzUTZpH0W5MC9YE1MMSE4rnzAAAkYRaxsZTOhT3gad_zBMhc8BAAMCAAN3AAM9BA"
+   ],
+   "caption": "🔥 <b>CHOLLAZO EN AMAZON</b>\n\n<b>Zapatillas Pepe Jeans Joe Basic Blancas para Hombre</b>\n\n💶 PRECIO: <b>27,96€</b>\n❌ (Antes: <s>69,90€</s>)\n🔥 ¡Te ahorras <b>41,94€</b>! (60 % dto.)\nℹ️ Precio en la talla 43 EU · mínimo de los últimos 90 días\n\n🕒 Precio a las 16:29 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0D87DYVWT?tag=cazachollos0c-21\">amazon.es/dp/B0D87DYVWT</a>\n\nVisto en @cazachollos_com #Publicidad #Chollazo",
+   "title": "Zapatillas Pepe Jeans Joe Basic Blancas para Hombre",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -25434,7 +25453,6 @@
   }
  ],
  "x_drafts": [
-  1794474921,
   1794475475,
   1794476036,
   1794477610,
@@ -25483,17 +25501,18 @@
   1794903850,
   1794919365,
   1794922758,
-  1794929396
+  1794929396,
+  1794929490
  ],
  "x_recent": [
-  "cabeza",
   "rapido",
   "black-friday",
   "regla",
   "guarda",
   "chivatazo",
   "telegram",
-  "filtro"
+  "filtro",
+  "pregunta"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 138,
@@ -121336,13 +121355,13 @@
  "silence_alert_t": 1794918354,
  "whatsapp": {
   "requests": {
-   "2026-11-17": 9
+   "2026-11-17": 10
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
-   "2026-11-17": 8
+   "2026-11-17": 9
   },
-  "last_deal": 1794929391
+  "last_deal": 1794929485
  }
 }
