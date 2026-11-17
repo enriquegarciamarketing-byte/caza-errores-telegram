@@ -41,6 +41,41 @@ def _product_on_white(src: Image.Image) -> Image.Image:
     return src.crop(box) if box else src
 
 
+def sellar(im: Image.Image, motivo: str = "agotado") -> Image.Image:
+    """Tarjeta terminada: en blanco y negro con el sello rojo en medio de la foto del producto.
+
+    motivo «agotado» → AGOTADO (no se puede comprar a ningún precio); «terminada» → OFERTA TERMINADA
+    (sigue a la venta pero más cara). Mismo sello que las tarjetas marcadas a mano el 17/11/2026."""
+    k = im.width / 1000
+    gray = ImageOps.grayscale(im.convert("RGB")).point(lambda v: int(v * 0.9 + 25))
+    out = gray.convert("RGB")
+    lines = ["AGOTADO"] if motivo == "agotado" else ["OFERTA", "TERMINADA"]
+    font = _font(int((120 if len(lines) == 1 else 92) * k), b"Black")
+    mw = max(font.getlength(t) for t in lines)
+    bw, bh = int(mw + 90 * k), int((180 if len(lines) == 1 else 250) * k)
+    red = (220, 38, 38, 255)
+    stamp = Image.new("RGBA", (bw + 4, bh + 4), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(stamp)
+    sd.rounded_rectangle((2, 2, bw + 1, bh + 1), int(28 * k), fill=(255, 255, 255, 235))
+    inset, width = int(12 * k), max(2, int(14 * k))
+    sd.rounded_rectangle((2 + inset, 2 + inset, bw + 1 - inset, bh + 1 - inset), int(20 * k), outline=red, width=width)
+    for i, text in enumerate(lines):
+        y = bh / 2 + 2 + ((i - (len(lines) - 1) / 2) * 96 + 6) * k
+        sd.text((bw / 2 + 2, y), text, font=font, fill=red, anchor="mm")
+    stamp = stamp.rotate(12, resample=Image.BICUBIC, expand=True)
+    cx, cy = int(500 * k), int(245 * im.height / 1000)
+    out.paste(stamp, (cx - stamp.width // 2, cy - stamp.height // 2), stamp)
+    return out
+
+
+def es_blanco_y_negro(im: Image.Image) -> bool:
+    """True si la tarjeta ya está en blanco y negro (ya marcada como terminada): no se vuelve a sellar.
+    Mira la píldora del precio (abajo a la derecha), que en color es naranja y lejos del sello."""
+    w, h = im.size
+    pill = im.convert("RGB").crop((int(w * 0.6), int(h * 0.85), int(w * 0.9), int(h * 0.93))).resize((60, 16))
+    return sum(1 for px in pill.getdata() if max(px) - min(px) > 40) < 50
+
+
 def crear_tarjeta(photo: Path, reference: float, current: float, when: str, out: Path,
                   agotado: bool = False) -> Path:
     pct = round((reference - current) / reference * 100)
@@ -122,13 +157,7 @@ def crear_tarjeta(photo: Path, reference: float, current: float, when: str, out:
     d.line((500 + aw / 2 + 16, 980, 960, 980), fill=(170, 170, 170), width=1)
 
     if agotado:
-        im = ImageOps.grayscale(im).convert("RGB")
-        stamp = Image.new("RGBA", (620, 170), (0, 0, 0, 0))
-        sd = ImageDraw.Draw(stamp)
-        sd.rounded_rectangle((6, 6, 614, 164), 30, fill=(255, 255, 255, 235), outline=(200, 30, 30, 255), width=10)
-        sd.text((310, 88), "AGOTADO", font=_font(104, b"Black"), fill=(200, 30, 30, 255), anchor="mm")
-        stamp = stamp.rotate(-12, resample=Image.BICUBIC, expand=True)
-        im.paste(stamp, (500 - stamp.width // 2, 470 - stamp.height // 2), stamp)
+        im = sellar(im, "agotado")
 
     out.parent.mkdir(parents=True, exist_ok=True)
     im.save(out, quality=95)

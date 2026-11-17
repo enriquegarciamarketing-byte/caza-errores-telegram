@@ -1,0 +1,63 @@
+name: Vigilar premium @caza_errores (cada hora)
+
+# Cada hora mira en Amazon si los errores y chollos del premium siguen vivos.
+# Si se agotan o suben de precio, la tarjeta pasa a blanco y negro con el sello AGOTADO / OFERTA TERMINADA.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "normal · prueba (mira todo pero no edita) · diagnostico (permisos del bot)"
+        required: false
+        default: normal
+        type: choice
+        options: [normal, prueba, diagnostico]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vigilar-premium
+  cancel-in-progress: false
+
+env:
+  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Pasada por el premium
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET }}
+          PREMIUM_CHAT_ID: ${{ vars.PREMIUM_CHAT_ID }}
+        run: |
+          MODO="${{ inputs.modo || 'normal' }}"
+          ARGS=()
+          if [ "$MODO" = "prueba" ]; then ARGS+=(--prueba); fi
+          if [ "$MODO" = "diagnostico" ]; then ARGS+=(--diagnostico); fi
+          python -u premium_vigilar.py "${ARGS[@]}"
+      - name: Guardar memoria de la vigilancia
+        if: always() && (inputs.modo || 'normal') != 'diagnostico'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            git add state/premium_vigilancia.json 2>/dev/null || exit 0
+            git diff --cached --quiet && exit 0
+            git commit -qm "Memoria vigilancia premium [skip ci]"
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            sleep 3
+          done
