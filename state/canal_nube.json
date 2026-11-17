@@ -8055,6 +8055,25 @@
    "label": "Electrodomésticos",
    "brand": "Bosch",
    "checked": 1794937700
+  },
+  {
+   "asin": "B0CVH62JZ4",
+   "jl_id": "",
+   "price": 95.99,
+   "reference": 119.99,
+   "t": 1794939989,
+   "url": "https://www.amazon.es/dp/B0CVH62JZ4?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 663,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavyb-bXPhcluZDi-mB9Jb6PV908AAsMQaxs8meBTmCeU1CxwvX0BAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavyb-bicu4VD1gZo7Y2MSYheU70AAsQQaxs8meBTgy_fIoMU1sIBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Aspiradora escoba sin cable Xpert 7.60 Negra</b>\n\n💶 PRECIO: <b>95,99€</b>\n❌ (Antes: <s>119,99€</s>)\n🔥 ¡Te ahorras <b>24€</b>! (20 % dto.)\n🧹 5 en 1 · Suelos, tejidos, techo, mano y ranuras\nℹ️ Black Friday anticipado · Vendido y enviado por Amazon · Prime\n\n🕒 Precio a las 19:23 · puede cambiar\n\n🛒 <a href=\"https://link.amazon/B0eYjglrb\">https://link.amazon/B0eYjglrb</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Aspiradora escoba sin cable Xpert 7.60 Negra",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -25726,7 +25745,6 @@
   }
  ],
  "x_drafts": [
-  1794478629,
   1794478665,
   1794479087,
   1794479720,
@@ -25775,17 +25793,18 @@
   1794929490,
   1794929570,
   1794929913,
-  1794931190
+  1794931190,
+  1794939995
  ],
  "x_recent": [
-  "comprado",
   "cabeza",
   "rapido",
   "black-friday",
   "regla",
   "guarda",
   "chivatazo",
-  "telegram"
+  "telegram",
+  "filtro"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 47,
@@ -122433,13 +122452,13 @@
  "silence_alert_t": 1794918354,
  "whatsapp": {
   "requests": {
-   "2026-11-17": 15
+   "2026-11-17": 16
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
-   "2026-11-17": 14
+   "2026-11-17": 15
   },
-  "last_deal": 1794936437
+  "last_deal": 1794939989
  }
 }
