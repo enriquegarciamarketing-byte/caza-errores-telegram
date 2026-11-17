@@ -108,6 +108,8 @@ def _request(method: str, path: str, token: str, body: bytes | None = None, ctyp
     req = urllib.request.Request(GATE + path, data=body, method=method)
     req.add_header("Authorization", f"Bearer {token}")
     req.add_header("Accept", "application/json")
+    # Cloudflare de Whapi corta el "Python-urllib" por defecto con un error 1010 (visto el 17/11/2026).
+    req.add_header("User-Agent", "CazaChollosBot/1.0 (+https://t.me/cazachollos_com)")
     if ctype:
         req.add_header("Content-Type", ctype)
     try:
