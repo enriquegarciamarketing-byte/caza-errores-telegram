@@ -27,6 +27,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # para el relevo: cada ejecución lanza la siguiente
 
 concurrency:
   group: telegram-canal-normal
@@ -83,3 +84,13 @@ jobs:
       - name: Guardar memoria del canal normal
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.test_private != true)
         run: tools/guardar_memoria.sh "Actualizar memoria del canal normal" state/canal_nube.json state/canal_nube_last_run.log
+
+      # Relevo: GitHub se salta a veces el cron durante horas (17/11/2026: ni una ejecución de 5:42 a 13:20).
+      # Cada ejecución real lanza la siguiente al acabar; de noche pasa a "Relevo de noche", que despierta el canal a las 6:30. El cron queda de reserva.
+      - name: Lanzar la siguiente ejecución (relevo)
+        if: >-
+          !cancelled() && (github.event_name == 'schedule' ||
+          (github.event_name == 'workflow_dispatch' && inputs.minutes != '' && !inputs.dry_run && !inputs.test_private))
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: tools/relevo_canal.sh "${{ job.status }}"
