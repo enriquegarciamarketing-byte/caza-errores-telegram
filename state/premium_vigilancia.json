@@ -8,9 +8,10 @@
    "titulo": "⛔ AGOTADO",
    "cupon": false,
    "fecha": 1794562452,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": null
+   "estado": "agotado",
+   "comprobado": 1794921203,
+   "ultimo_precio": null,
+   "sellado": 1794921272
   },
   "160": {
    "tipo": "tarjeta",
@@ -19,9 +20,10 @@
    "titulo": "⛔ AGOTADO",
    "cupon": false,
    "fecha": 1794564251,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": null
+   "estado": "agotado",
+   "comprobado": 1794921203,
+   "ultimo_precio": null,
+   "sellado": 1794921274
   },
   "162": {
    "tipo": "otro"
@@ -34,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -44,9 +46,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794566527,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": null
+   "estado": "agotado",
+   "comprobado": 1794921203,
+   "ultimo_precio": null,
+   "sellado": 1794921280
   },
   "165": {
    "tipo": "tarjeta",
@@ -55,9 +58,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794566767,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 194.99
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 194.99,
+   "sellado": 1794921283
   },
   "166": {
    "tipo": "tarjeta",
@@ -67,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -77,9 +81,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794582296,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 365.99
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 365.99,
+   "sellado": 1794921289
   },
   "173": {
    "tipo": "tarjeta",
@@ -89,7 +94,7 @@
    "cupon": false,
    "fecha": 1794592372,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 10.9
   },
   "174": {
@@ -99,9 +104,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794597870,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 21.65
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 21.65,
+   "sellado": 1794921291
   },
   "176": {
    "tipo": "tarjeta",
@@ -110,9 +116,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794603568,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": null
+   "estado": "agotado",
+   "comprobado": 1794921203,
+   "ultimo_precio": null,
+   "sellado": 1794921295
   },
   "178": {
    "tipo": "tarjeta",
@@ -122,7 +129,7 @@
    "cupon": false,
    "fecha": 1794612577,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 224.99
   },
   "180": {
@@ -132,9 +139,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794647009,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 77.68
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 77.68,
+   "sellado": 1794921297
   },
   "181": {
    "tipo": "tarjeta",
@@ -144,7 +152,7 @@
    "cupon": false,
    "fecha": 1794697260,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 21.18
   },
   "182": {
@@ -157,9 +165,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794758596,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 49.35
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 49.35,
+   "sellado": 1794921299
   },
   "189": {
    "tipo": "tarjeta",
@@ -168,9 +177,10 @@
    "titulo": "⛔ AGOTADO",
    "cupon": false,
    "fecha": 1794812933,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": null
+   "estado": "agotado",
+   "comprobado": 1794921203,
+   "ultimo_precio": null,
+   "sellado": 1794921309
   },
   "190": {
    "tipo": "tarjeta",
@@ -180,7 +190,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -191,7 +201,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -202,7 +212,7 @@
    "cupon": false,
    "fecha": 1794823031,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 89.9
   },
   "193": {
@@ -212,9 +222,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794823607,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 55.31
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 55.31,
+   "sellado": 1794921314
   },
   "194": {
    "tipo": "tarjeta",
@@ -224,7 +235,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -234,9 +245,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794825359,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 215.82
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 215.82,
+   "sellado": 1794921316
   },
   "201": {
    "tipo": "tarjeta",
@@ -245,9 +257,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794826098,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 52.5
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 52.5,
+   "sellado": 1794921320
   },
   "203": {
    "tipo": "tarjeta",
@@ -257,7 +270,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -267,9 +280,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794845836,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 181.08
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 181.08,
+   "sellado": 1794921323
   },
   "207": {
    "tipo": "otro"
@@ -281,9 +295,10 @@
    "titulo": "⛔ OFERTA TERMINADA",
    "cupon": false,
    "fecha": 1794852751,
-   "estado": "vivo",
-   "comprobado": 1794920458,
-   "ultimo_precio": 45.07
+   "estado": "terminada",
+   "comprobado": 1794921203,
+   "ultimo_precio": 45.07,
+   "sellado": 1794921326
   },
   "211": {
    "tipo": "otro"
@@ -296,7 +311,7 @@
    "cupon": false,
    "fecha": 1794913219,
    "estado": "vivo",
-   "comprobado": 1794920458,
+   "comprobado": 1794921203,
    "ultimo_precio": 35.5
   }
  }
