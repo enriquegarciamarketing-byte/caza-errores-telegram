@@ -7899,6 +7899,25 @@
    ],
    "label": "Informática",
    "brand": "Logitech"
+  },
+  {
+   "asin": "B0CTS1WBTH",
+   "jl_id": "",
+   "price": 28.8,
+   "reference": 52.99,
+   "t": 1794929391,
+   "url": "https://www.amazon.es/dp/B0CTS1WBTH?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 652,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHavxy8_wEmlX824_EYVlQ6GYppWQAAkMRaxsZTOhTxPLKjsSOd3sBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHavxy83ciaMHYT3aLwICFmuY8x_MAAkQRaxsZTOhT3O6jOQ7wrA8BAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Vaporizador Philips 3000 de Mano Vertical 1000 W y Depósito de 120 ml</b>\n\n💶 PRECIO: <b>28,80€</b>\n❌ (Antes: <s>52,99€</s>)\n🔥 ¡Te ahorras <b>24,19€</b>! (46 % dto.)\nℹ️ Listo en 30 s, plegable y con bolsa de viaje incluida\n\n🕒 Precio a las 16:28 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CTS1WBTH?tag=cazachollos0c-21\">amazon.es/dp/B0CTS1WBTH</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Vaporizador Philips 3000 de Mano Vertical 1000 W y Depósito de 120 ml",
+   "manual": true,
+   "brand": "philips"
   }
  ],
  "seen": {
@@ -25415,7 +25434,6 @@
   }
  ],
  "x_drafts": [
-  1794472976,
   1794474921,
   1794475475,
   1794476036,
@@ -25464,17 +25482,18 @@
   1794861582,
   1794903850,
   1794919365,
-  1794922758
+  1794922758,
+  1794929396
  ],
  "x_recent": [
-  "comprado",
   "cabeza",
   "rapido",
   "black-friday",
   "regla",
   "guarda",
   "chivatazo",
-  "telegram"
+  "telegram",
+  "filtro"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 138,
@@ -121317,13 +121336,13 @@
  "silence_alert_t": 1794918354,
  "whatsapp": {
   "requests": {
-   "2026-11-17": 8
+   "2026-11-17": 9
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
-   "2026-11-17": 7
+   "2026-11-17": 8
   },
-  "last_deal": 1794928169
+  "last_deal": 1794929391
  }
 }
