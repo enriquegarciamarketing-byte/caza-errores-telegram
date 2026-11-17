@@ -25,7 +25,7 @@ class TestWhatsApp(unittest.TestCase):
         self.assertIn("*129,99 €*  ~299,99 €~  📉 *-57 %*", text)
         self.assertIn("*Robot aspirador Roborock*", text)
         self.assertIn("https://t.me/cazachollos_com", text)
-        self.assertTrue(text.endswith("#Publicidad\n🤖 Contenido generado con IA"))
+        self.assertTrue(text.endswith("#Publicidad"))
         self.assertIn("23:59", text)
 
     def test_maximo_ocho(self):
@@ -148,7 +148,7 @@ class TestPostsSueltos(unittest.TestCase):
             self.assertTrue(whatsapp.publish_deal(CAPTION, "https://m.media-amazon.com/y.jpg", state,
                                                   now.replace(hour=11), RULES))
         self.assertEqual(calls.count("/messages/image"), 2)
-        self.assertIn(b"Contenido generado con IA", bodies[-1])
+        self.assertNotIn("con IA".encode(), bodies[-1])
         self.assertEqual(sum(c.startswith("/newsletters/link/") for c in calls), 1)  # el canal se busca una vez
         self.assertEqual(whatsapp.used_this_month(state, now), 3)
         self.assertEqual(state["whatsapp"]["deals"]["2026-11-17"], 2)

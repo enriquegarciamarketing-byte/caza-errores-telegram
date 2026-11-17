@@ -47,9 +47,10 @@ DEFAULT_INVITE = "0029VbE063mEwEk5M7m9Xe17"
 DEFAULT_TAG = "cazachollos0c-21"
 NUMBERS = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 MAX_ITEMS = 8  # con más, en el móvil se hace eterno
-# 17/11/2026: Enrique quiere todo lo de WhatsApp etiquetado como IA. La etiqueta nativa de WhatsApp solo se pone
-# a mano desde el móvil (no hay API), así que va como línea fija al final (config: amazon_channel.whatsapp_ai_label).
-AI_LABEL = "🤖 Contenido generado con IA"
+# Línea de etiqueta de IA al final de cada mensaje (config: amazon_channel.whatsapp_ai_label). El 17/11/2026
+# Enrique la probó y la quitó porque queda mal en el texto: vacía = sin línea. La etiqueta nativa de WhatsApp
+# solo se pone a mano desde el móvil (no hay API).
+AI_LABEL = ""
 ASIN_RE = re.compile(r"/(?:dp|gp/product)/([A-Z0-9]{10})", re.I)
 
 
@@ -104,8 +105,7 @@ def build_text(items: list[dict], now: datetime, tag: str = DEFAULT_TAG, test: b
     lines.append(f"📲 Cada día desde las 7:00 más chollos en Telegram 👉 {TELEGRAM}")
     lines.append("")
     lines.append("#Publicidad")
-    lines.append(AI_LABEL)
-    return "\n".join(lines)
+    return with_ai_label("\n".join(lines))
 
 
 # ---------------------------------------------------------------- Whapi
