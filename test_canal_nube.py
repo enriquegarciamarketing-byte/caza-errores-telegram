@@ -962,6 +962,17 @@ class HoraGarantizadaYGustos(unittest.TestCase):
         self.assertEqual(cn.variety_reason(state, deal, NOW, REAL, urgent=True, family_from=t - 3 * 3600,
                                            last_resort=True), "")
 
+    def test_ring_echo_y_fire_tv_cuentan_como_amazon(self):
+        # 17/11/2026: salieron Echo Spot, Echo Dot Max, mando Fire TV y tres Ring el mismo día.
+        t = int(NOW.timestamp())
+        state = {"posts": [{"t": t - 8 * 3600, "title": "Amazon Echo Spot Despertador", "brand": "Amazon"},
+                           {"t": t - 6 * 3600, "title": "Ring Cámara exterior Plus", "brand": "Ring"}]}
+        deal = {"title": "Ring Videotimbre 2K con batería", "brand": "Ring"}
+        for urgent, last in ((False, False), (True, False), (True, True)):
+            self.assertIn("Amazon", cn.variety_reason(state, deal, NOW, REAL, urgent=urgent, last_resort=last))
+        basics = {"title": "Amazon Basics Pilas AA", "brand": "Amazon Basics"}
+        self.assertNotIn("Amazon (", cn.variety_reason(state, basics, NOW, REAL))
+
     def test_nunca_repite_producto_aunque_baje(self):
         state = {"posts": [{"asin": "B0BTDT8V59", "price": 67.0, "t": int(NOW.timestamp()) - 20 * 86400,
                             "title": "Sony WH-CH720N Auriculares Inalámbricos"}]}

@@ -1010,6 +1010,48 @@ def brand_of(post: dict) -> str:
     return first if len(first) >= 3 and first.isalpha() else ""
 
 
+def brand_group(post: dict, rules: dict) -> str:
+    """Grupo de marcas que cuentan como una sola (17/11/2026: el free se llenó de Ring, Echo, Fire TV y Kindle;
+    son marcas distintas para Amazon pero para la gente es «otra vez lo de Amazon»)."""
+    groups = (rules.get("variedad") or {}).get("grupos_marca") or {}
+    brand = brand_of(post)
+    head = fold(title_head(post.get("title") or ""))
+    if "amazon basics" in brand or "amazon basics" in head:
+        return ""  # pilas, cables, enchufes genéricos: no es «lo de Amazon» que satura
+    for name, words in groups.items():
+        for word in words:
+            w = fold(word)
+            if brand == w or re.search(r"(?<![a-z0-9])" + re.escape(w) + r"(?![a-z0-9])", head):
+                return name
+    return ""
+
+
+def group_reason(state: dict, deal: dict, now: datetime, rules: dict, last_resort: bool = False) -> str:
+    """Tope por grupo de marcas: vale también con la hora garantizada (manuales aparte)."""
+    conf = rules.get("variedad") or {}
+    group = brand_group(deal, rules)
+    if not group:
+        return ""
+    posts = [p for p in state.get("posts") or [] if not p.get("manual")]
+    today = now.astimezone(MADRID).date()
+    day_max = int((conf.get("grupo_dia_max") or {}).get(group, 0))
+    if day_max > 0:
+        same = sum(1 for p in posts if datetime.fromtimestamp(p.get("t") or 0, MADRID).date() == today
+                   and brand_group(p, rules) == group)
+        if same >= day_max:
+            return f"variedad: hoy ya han salido {same} productos de {group.title()} (máx. {day_max} al día)"
+    hours = float((conf.get("grupo_horas") or {}).get(group, 0))
+    if hours > 0 and not last_resort:
+        for post in reversed(posts):
+            ago = now.timestamp() - (post.get("t") or 0)
+            if ago >= hours * 3600:
+                break
+            if brand_group(post, rules) == group:
+                return (f"variedad: ya salió algo de {group.title()} ({brand_of(post).title() or 'Amazon'}) "
+                        f"hace {int(ago // 60)} min")
+    return ""
+
+
 def times_today(state: dict, deal: dict, now: datetime) -> int:
     """Cuántos posts de hoy son del mismo tipo o de la misma marca: los que aún no han salido van antes
     (relojes, maletas, herramientas... no siempre lo mismo)."""
@@ -1032,6 +1074,9 @@ def variety_reason(state: dict, deal: dict, now: datetime, rules: dict, urgent: 
     - como mucho «mismo_tipo_dia» productos del mismo tipo al día (dos auriculares al día, no cinco);
     - como mucho «misma_marca_dia» de la misma marca al día y ninguno de esa marca en «misma_marca_horas»."""
     conf = rules.get("variedad") or {}
+    why = group_reason(state, deal, now, rules, last_resort=last_resort)
+    if why:
+        return why
     minutes = float(conf.get("misma_clase_minutos", 180))
     last_n = int(conf.get("misma_clase_ultimos_posts", 3))
     kind_day = int(conf.get("mismo_tipo_dia", 2))
