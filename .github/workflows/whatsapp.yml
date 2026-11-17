@@ -1,7 +1,9 @@
 name: WhatsApp · comprobar conexión
 
-# Botón a mano para ver que Whapi y el canal de WhatsApp están bien conectados.
-# "comprobar" no publica nada; "prueba" manda un resumen de ejemplo a WHATSAPP_TEST_TO (nunca al canal).
+# Botón a mano para el canal de WhatsApp.
+# - comprobar: ve el canal y el rol del número vinculado, sin publicar nada.
+# - ultimo-chollo: manda al canal de WhatsApp el último chollo de Telegram que sigue activo (precio recomprobado).
+# - prueba: manda un resumen de ejemplo a WHATSAPP_TEST_TO (nunca al canal).
 on:
   workflow_dispatch:
     inputs:
@@ -9,25 +11,46 @@ on:
         description: "Qué hacer"
         required: true
         type: choice
-        options: [comprobar, prueba]
+        options: [comprobar, ultimo-chollo, prueba]
         default: comprobar
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: whatsapp-manual
+  cancel-in-progress: false
+
+env:
+  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
 
 jobs:
   whatsapp:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Conexión con el canal
+          cache: pip
+      - if: inputs.modo == 'ultimo-chollo'
+        run: python -m pip install -r requirements.txt
+      - name: Canal de WhatsApp
         env:
           WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
           WHATSAPP_CHANNEL_ID: ${{ secrets.WHATSAPP_CHANNEL_ID }}
           WHATSAPP_TEST_TO: ${{ secrets.WHATSAPP_TEST_TO }}
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET }}
         run: |
-          if [ "${{ inputs.modo }}" = "prueba" ]; then python -u whatsapp.py --prueba; else python -u whatsapp.py --comprobar; fi
+          case "${{ inputs.modo }}" in
+            prueba) python -u whatsapp.py --prueba ;;
+            ultimo-chollo) python -u canal_nube.py --whatsapp-ultimo ;;
+            *) python -u whatsapp.py --comprobar ;;
+          esac
+      - name: Guardar memoria (cupo de WhatsApp)
+        if: always() && inputs.modo == 'ultimo-chollo'
+        run: tools/guardar_memoria.sh "WhatsApp: prueba con el último chollo" state/canal_nube.json

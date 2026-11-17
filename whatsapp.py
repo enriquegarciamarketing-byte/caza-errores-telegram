@@ -47,6 +47,9 @@ DEFAULT_INVITE = "0029VbE063mEwEk5M7m9Xe17"
 DEFAULT_TAG = "cazachollos0c-21"
 NUMBERS = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 MAX_ITEMS = 8  # con más, en el móvil se hace eterno
+# 17/11/2026: Enrique quiere todo lo de WhatsApp etiquetado como IA. La etiqueta nativa de WhatsApp solo se pone
+# a mano desde el móvil (no hay API), así que va como línea fija al final (config: amazon_channel.whatsapp_ai_label).
+AI_LABEL = "🤖 Contenido generado con IA"
 ASIN_RE = re.compile(r"/(?:dp|gp/product)/([A-Z0-9]{10})", re.I)
 
 
@@ -56,6 +59,10 @@ class WhapiError(RuntimeError):
 
 def euro(amount: float) -> str:
     return f"{amount:,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def with_ai_label(text: str, label: str | None = AI_LABEL) -> str:
+    return f"{text.rstrip()}\n{label}" if label else text
 
 
 def short_title(title: str, limit: int = 70) -> str:
@@ -97,6 +104,7 @@ def build_text(items: list[dict], now: datetime, tag: str = DEFAULT_TAG, test: b
     lines.append(f"📲 Cada día desde las 7:00 más chollos en Telegram 👉 {TELEGRAM}")
     lines.append("")
     lines.append("#Publicidad")
+    lines.append(AI_LABEL)
     return "\n".join(lines)
 
 
@@ -306,7 +314,7 @@ def publish_deal(caption_html: str, image, state: dict | None, now: datetime, ru
             log(f"  WhatsApp: este no va ({why})")
             return False
         to = target(token, state, now, str(rules.get("whatsapp_invite") or DEFAULT_INVITE), test, log)
-        caption = html_to_whatsapp(caption_html)
+        caption = with_ai_label(html_to_whatsapp(caption_html), rules.get("whatsapp_ai_label", AI_LABEL))
         if test:
             caption = "🧪 *PRUEBA* · así saldría en el canal de WhatsApp\n\n" + caption
         note_requests(state, now, 1)
@@ -338,7 +346,7 @@ def publish_text(text_html: str, state: dict | None, now: datetime, rules: dict,
             return False
         to = target(token, state, now, str(rules.get("whatsapp_invite") or DEFAULT_INVITE), test, log)
         note_requests(state, now, 1)
-        send_text(token, to, html_to_whatsapp(text_html))
+        send_text(token, to, with_ai_label(html_to_whatsapp(text_html), rules.get("whatsapp_ai_label", AI_LABEL)))
         log(f"  WhatsApp: enviado {'a tu número de pruebas' if test else 'al canal'}")
         return True
     except Exception as exc:

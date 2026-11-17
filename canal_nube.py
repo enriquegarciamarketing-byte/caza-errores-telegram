@@ -1549,6 +1549,32 @@ def mirror_whatsapp(deal: dict, caption: str, rules: dict, state: dict, now: dat
         return False
 
 
+def run_whatsapp_last(cfg: dict, state: dict, now: datetime, fetch=None, log=print) -> int:
+    """Prueba del canal de WhatsApp: manda allí el último chollo de Telegram que sigue activo y al mismo precio
+    (o más barato), con el precio recomprobado ahora. Cuenta como post manual: no espera, pero gasta cupo."""
+    rules = rules_from(cfg)
+    fetch = fetch or http_get
+    posts = [p for p in state.get("posts") or [] if not p.get("ended") and p.get("caption") and p.get("asin")]
+    for post in reversed(posts[-15:]):
+        try:
+            detail = live_check(post, fetch)
+        except Exception as exc:
+            log(f"  {post['asin']}: no he podido comprobar el precio ({exc})")
+            continue
+        price = detail.get("price")
+        if not detail.get("in_stock") or price is None or float(price) > float(post["price"]) + 0.009:
+            log(f"  {post['asin']}: ya no está a {post['price']} €; pruebo el anterior")
+            continue
+        caption = re.sub(r"Precio a las \d{1,2}:\d{2}", f"Precio a las {now.astimezone(MADRID):%H:%M}", post["caption"])
+        deal = {"asin": post["asin"], "image": detail.get("image") or post.get("image") or "",
+                "title": post.get("title") or "", "price": float(price), "reference": float(post["reference"]),
+                "discount": discount_pct(float(price), float(post["reference"]))}
+        log(f"WhatsApp: pruebo con {clean_title(deal['title'], 70)} a {euro(deal['price'])}")
+        return 0 if mirror_whatsapp(deal, caption, rules, state, now, manual=True, log=log) else 1
+    log("WhatsApp: ningún chollo reciente sigue activo para la prueba.")
+    return 1
+
+
 def make_card_clasica(deal: dict, rules: dict) -> Path:
     import photos
     from publisher import DEAL_LOGO, create_price_card
@@ -2676,6 +2702,8 @@ def main() -> int:
     parser.add_argument("--manual", default="", help="Post hecho a mano (JSON con asin, title, price, reference…)")
     parser.add_argument("--x-texto", default="", help="Solo te manda por privado este texto listo para X")
     parser.add_argument("--x-url", default="", help="Enlace para la vista previa del texto de X")
+    parser.add_argument("--whatsapp-ultimo", action="store_true",
+                        help="Prueba: manda al canal de WhatsApp el último chollo de Telegram que sigue activo")
     parser.add_argument("--merge-state", default="", help="Junta la memoria local con la de este fichero y sale")
     parser.add_argument("--loop", type=int, default=1, help="Pasadas seguidas en esta ejecución")
     parser.add_argument("--every", type=int, default=300, help="Segundos entre pasadas con --loop")
@@ -2704,6 +2732,9 @@ def main() -> int:
         code = send_x_text(tg, cfg, state, args.x_texto, args.x_url)
     elif args.manual:
         code = run_manual(args, cfg, state, now, tg=tg)
+    elif args.whatsapp_ultimo:
+        API = CreatorsAPI.from_env(rules_from(cfg).get("tag") or "")
+        code = run_whatsapp_last(cfg, state, now)
     elif args.resumen:
         API = CreatorsAPI.from_env(rules_from(cfg).get("tag") or "")
         print("Resumen: precios releídos " + ("con la API de Amazon" if API else "sin la API de Amazon (faltan secretos)"))

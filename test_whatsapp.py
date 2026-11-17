@@ -25,7 +25,7 @@ class TestWhatsApp(unittest.TestCase):
         self.assertIn("*129,99 €*  ~299,99 €~  📉 *-57 %*", text)
         self.assertIn("*Robot aspirador Roborock*", text)
         self.assertIn("https://t.me/cazachollos_com", text)
-        self.assertTrue(text.endswith("#Publicidad"))
+        self.assertTrue(text.endswith("#Publicidad\n🤖 Contenido generado con IA"))
         self.assertIn("23:59", text)
 
     def test_maximo_ocho(self):
@@ -134,9 +134,10 @@ class TestPostsSueltos(unittest.TestCase):
         self.assertEqual(whatsapp.deal_quota_reason(state, now, RULES), "")
 
     def test_post_con_foto_y_canal_guardado(self):
-        calls = []
+        calls, bodies = [], []
         def fake(method, path, token, body=None, ctype="", **kw):
             calls.append(path)
+            bodies.append(body or b"")
             if path.startswith("/newsletters/link/"):
                 return {"id": "120363000000000001@newsletter", "role": "admin"}
             return {"sent": True}
@@ -147,6 +148,7 @@ class TestPostsSueltos(unittest.TestCase):
             self.assertTrue(whatsapp.publish_deal(CAPTION, "https://m.media-amazon.com/y.jpg", state,
                                                   now.replace(hour=11), RULES))
         self.assertEqual(calls.count("/messages/image"), 2)
+        self.assertIn(b"Contenido generado con IA", bodies[-1])
         self.assertEqual(sum(c.startswith("/newsletters/link/") for c in calls), 1)  # el canal se busca una vez
         self.assertEqual(whatsapp.used_this_month(state, now), 3)
         self.assertEqual(state["whatsapp"]["deals"]["2026-11-17"], 2)

@@ -693,6 +693,7 @@
     "whatsapp_daily_max": 25,
     "whatsapp_min_gap_minutes": 35,
     "whatsapp_monthly_budget": 950,
+    "whatsapp_ai_label": "🤖 Contenido generado con IA",
     "block_keywords": [
       "funda",
       "protector de pantalla",
