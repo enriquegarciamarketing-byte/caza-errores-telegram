@@ -8094,6 +8094,22 @@
    "title": "Aspiradora escoba sin cable Xpert 7.60 Negra",
    "manual": true,
    "brand": ""
+  },
+  {
+   "asin": "B0H2HVGYQS",
+   "jl_id": "",
+   "price": 25.99,
+   "reference": 47.94,
+   "t": 1794942777,
+   "url": "https://www.amazon.es/dp/B0H2HVGYQS?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 665,
+   "photo_message_id": null,
+   "slides": [],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Ariel Pods Poderoso Frescor Alpino Pack de 84 Cápsulas (6x14)</b>\n\n💶 PRECIO: <b>25,99€</b>\n❌ (Antes: <s>47,94€</s>)\n🔥 ¡Te ahorras <b>21,95€</b>! (46 % dto.)\nℹ️ 6 cajas de 14 cápsulas a 0,31€ cada una\n\n🕒 Precio a las 20:11 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0H2HVGYQS?tag=cazachollos0c-21\">amazon.es/dp/B0H2HVGYQS</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Ariel Pods Poderoso Frescor Alpino Pack de 84 Cápsulas (6x14)",
+   "manual": true,
+   "brand": "ariel"
   }
  ],
  "seen": {
@@ -25815,7 +25831,6 @@
   }
  ],
  "x_drafts": [
-  1794478665,
   1794479087,
   1794479720,
   1794479855,
@@ -25864,17 +25879,18 @@
   1794929570,
   1794929913,
   1794931190,
-  1794939995
+  1794939995,
+  1794942782
  ],
  "x_recent": [
-  "comprado",
   "cabeza",
   "rapido",
   "black-friday",
   "regla",
   "guarda",
   "chivatazo",
-  "telegram"
+  "telegram",
+  "pregunta"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 112,
@@ -122698,13 +122714,13 @@
  "silence_alert_t": 1794918354,
  "whatsapp": {
   "requests": {
-   "2026-11-17": 16
+   "2026-11-17": 17
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
-   "2026-11-17": 15
+   "2026-11-17": 16
   },
-  "last_deal": 1794939989
+  "last_deal": 1794942777
  }
 }
