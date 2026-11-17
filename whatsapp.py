@@ -134,6 +134,15 @@ def channel_info(token: str, invite: str = DEFAULT_INVITE) -> dict:
     return _json("GET", f"/newsletters/link/{code}", token)
 
 
+def own_role(token: str, channel: str) -> str:
+    """Rol del número vinculado en el canal (owner/admin/subscriber). El enlace no lo trae; la lista sí."""
+    data = _json("GET", "/newsletters?count=100", token)
+    for item in data.get("newsletters") or []:
+        if item.get("id") == channel:
+            return str(item.get("role") or "")
+    return ""
+
+
 def resolve_channel(token: str, invite: str = DEFAULT_INVITE, log=print) -> str:
     fixed = (os.environ.get("WHATSAPP_CHANNEL_ID") or "").strip()
     if fixed:
@@ -392,7 +401,10 @@ def main() -> int:
         print(f"No conecto con el canal: {exc}")
         print("Revisa que el número esté vinculado en Whapi (QR) y que el token sea el de esa instancia.")
         return 1
-    role = info.get("role") or "?"
+    try:
+        role = own_role(token, str(info.get("id") or "")) or info.get("role") or "?"
+    except WhapiError:
+        role = info.get("role") or "?"
     print(f"Canal: {info.get('name')} · {info.get('id')} · seguidores: {info.get('subscribers_count', '?')}")
     print(f"El número vinculado es «{role}» del canal: "
           + ("puede publicar ✅" if role in ("owner", "admin") else "NO puede publicar ❌ (hazlo administrador)"))
