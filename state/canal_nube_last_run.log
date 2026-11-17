@@ -1,403 +1,45 @@
-== 2026-11-17 15:18 ==
+== 2026-11-17 16:12 ==
 Precios: comprobados con la API de Amazon antes de publicar
-  Seguimiento B0CN41GMDK: sigue a 27,99 €
-  Seguimiento B0GKHPCM7X: sigue a 44,99 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
-Modo sin silencios: 39 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  ✗ amz-B0GK1FMZWB SANDISK Optimus GX 7100 NVMe SSD 500 GB (hasta…: no es ninguna bajada: hace menos de una semana ya estaba a 108.56 € (historial propio de 5 días)
-  ✗ amz-B094MP72KM Sonnics 500GB USB 3.0 Externos Portátil Duros…: no es ninguna bajada: hace menos de una semana ya estaba a 31.75 € (historial propio de 5 días)
-  ✗ amz-B0815XFSGK AMD Ryzen 7 5800X Procesador: no es ninguna bajada: hace menos de una semana ya estaba a 202.95 € (historial propio de 6 días)
-  ✗ amz-B0815XFSGK AMD Ryzen 7 5800X Procesador: no es ninguna bajada: hace menos de una semana ya estaba a 202.95 € (historial propio de 6 días)
-  ✗ amz-B0DZ32G7XY Mercusys MB115-4G - Router 4G LTE SIM: no es ninguna bajada: hace menos de una semana ya estaba a 33.16 € (historial propio de 5 días)
-  ✗ amz-B06WWHJZF6 Extensor de alcance Wi-Fi universal Tenda A9 N300: no es ninguna bajada: hace menos de una semana ya estaba a 10.99 € (historial propio de 6 días)
-  ✗ amz-B0FHJNBF75 Mercusys ME12 Repetidor WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 11.99 € (historial propio de 6 días)
-  ✗ amz-B0HGM7RC3L Strong Repetidor WiFi AC1200: no es ninguna bajada: hace menos de una semana ya estaba a 20.89 € (historial propio de 3 días)
-  ✗ amz-B0GW975FZ3 STRONG Repetidor WiFi AC1200: no es ninguna bajada: hace menos de una semana ya estaba a 18.04 € (historial propio de 6 días)
-  ✗ amz-B0FCFRKLLM Tenda A18 AC1200 Repetidor WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 20.34 € (historial propio de 6 días)
-  Amazon (API): 108 con descuento grande, 32 con precio anterior y stock
-Candidatos a revisar: 37
-  ✓ B0D23VW9VB Ring | Cámara exterior Plus con enchufe (Outdoor Camera…: 39,99 € (-60% vs 99,99 €)
-  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
-  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0F1Z5982Y ASUS TUF Gaming B650E-PLUS WiFi: solo -44% frente a su PVP recomendado (249,99 €)
-  ✗ amz-B0FB43WPJC MSI mag A850GLS PCIE5, Fuente de alimentación: solo -41% frente a su PVP recomendado (144,99 €)
-  ✗ amz-B0FWCPC442 MSI mag 275UPDA E14 Monitor Gaming de 27": solo -35% frente a su PVP recomendado (352,99 €)
-  ✗ amz-B0F5BTWP9T AOC U27G4R Gaming Monitor 27 Pulgadas: solo -34% frente a su PVP recomendado (349,00 €)
-  ✗ amz-B0CS3FD17C TP-Link TL-MR110 - Router 4G LTE SIM: solo -32% frente a su PVP recomendado (65,99 €)
-  ✗ amz-B0GJTBKGDV Epson EcoTank ET-2955 Impresora de Depósito de Tinta: solo -35% frente a su PVP recomendado (369,34 €)
-  ✗ amz-B0GFXFKSR1 ASUS Prime 750W Gold Black Edition: solo -31% frente a su PVP recomendado (109,90 €)
-  ✗ amz-B0GXZQH1G6 LG 27US50Z-W - Monitor UltraFine: solo -27% frente a su PVP recomendado (219,00 €)
-  ✗ amz-B0GXZSGDQ7 LG Monitor Ultrafine 32UR55ZK-B: solo -27% frente a su PVP recomendado (299,00 €)
-  ✗ amz-B0FN549BVL LG 32U721SA-W - Smart Monitor: solo -25% frente a su precio mediano de los 90 días (278,07 €)
-  ✗ amz-B0FWCLJ51V MSI Pro MP275QA E14 de 27" WQHD: solo -25% frente a su PVP recomendado (171,99 €)
-  ✗ amz-B0F1Z3YZN4 ASUS TUF Gaming B850-E WiFi - Placa Base AMD ATX: solo -25% frente a su precio mediano de los 90 días (222,90 €)
-  ✗ amz-B0BK541686 ASUS TUF Gaming 850W Gold - Fuente de Alimentación Modular…: solo -25% frente a su PVP recomendado (129,90 €)
-  ✗ amz-B07TH6YFPY Acer Nitro Monitor Gaming 27" 4K UHD IPS: solo -19% frente a su precio mediano de los 90 días (156,63 €)
-  ✗ amz-B0FKBRLWNW LG Monitor Ultrafine 27U730A-B: solo -15% frente a su precio mediano de los 90 días (259,00 €)
-  ✗ amz-B0DFQCTYT6 GIGABYTE Placa Base X870 AORUS Elite WIFI7 Ice: solo -13% frente a su precio mediano de los 90 días (279,95 €)
-  ✗ amz-B095SYK1R9 TP-Link RE500X Repetidor WiFi 6 AX1500 Doble Banda: solo -10% frente a su precio mediano de los 90 días (49,99 €)
-  ✗ amz-B00K11UHVA TP-Link TL-WA860RE - Repetidor WiFi 4: solo -15% frente a su PVP recomendado (24,99 €)
-  ✗ amz-B0FCSVV6X7 HP DeskJet 4320, Impresora Multifunción de inyección de…: solo -3% frente a su precio mediano de los 90 días (57,90 €)
-  ✗ amz-B0DHW558TP HP Envy 6520e 714N9B, Impresora multifunción de inyección…: solo -4% frente a su precio mediano de los 90 días (79,71 €)
-  ✗ amz-B0F6LB6Y9N HUAWEI AX3 New Enrutador, Wi-Fi 6 Plus de Banda Dual 3000…: solo -5% frente a su precio mediano de los 90 días (36,99 €)
-  ✗ amz-B0GQCJ2D3D CORSAIR Vengeance RGB RS DDR5 16GB (2 x 8GB) hasta 5200MHz…: solo -8% frente a su precio mediano de los 90 días (304,99 €)
-  ✗ amz-B0HC453DG1 CORSAIR Vengeance RGB RS DDR5 32GB (2 x 16GB) hasta 6000MHz…: solo -5% frente a su precio mediano de los 90 días (554,99 €)
-  ✗ amz-B0HC4JGQJ8 CORSAIR Vengeance RGB RS DDR5 32GB (2 x 16GB) hasta 6000MHz…: solo -8% frente a su precio mediano de los 90 días (573,99 €)
-  ✗ amz-B0C1N8CWZ4 GIGABYTE H610M K DDR4 Placa Base: solo -6% frente a su PVP recomendado (59,59 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0D23VW9VB variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0F6436L5P variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FHJ91JY5 variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FJJM9R3Z variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 19 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 2 · 15:20 ==
-  Seguimiento B0CL5KN4KD: sigue a 34,99 €
-  Seguimiento B0DXQ67BW4: sigue a 44,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0H9YW4LLT: sigue a 499,00 €
-Modo sin silencios: 41 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  ✗ amz-B0CJVJ2MSN NEWSKILL Serike V2 Teclado Mecánico Gaming Switch…: no es ninguna bajada: hace menos de una semana ya estaba a 84.95 € (historial propio de 6 días)
-  ✗ amz-B082YRCL4T SteelSeries Apex 3 - Teclado Gaming: precio anterior inflado: lo ponen a 79.99 € pero su precio habitual es 46.79 € (solo -6%, historial de 3 días)
-  ✗ amz-B0D3HK2372 Logitech G G515 Lightspeed TKL Teclado para…: no es ninguna bajada: hace menos de una semana ya estaba a 94.99 € (historial propio de 5 días)
-  ✗ amz-B07GS6ZS8J Logitech G G502 Hero Ratón Gaming con Cable: no es ninguna bajada: hace menos de una semana ya estaba a 29.98 € (historial propio de 6 días)
-  ✗ amz-B07GS6ZB7T Logitech G G502 Hero Ratón Gaming con Cable: no es ninguna bajada: hace menos de una semana ya estaba a 28.78 € (historial propio de 6 días)
-  ✗ amz-B07CGPZ3ZQ Logitech G G305 Lightspeed Ratón Gaming…: no es ninguna bajada: hace menos de una semana ya estaba a 32.99 € (historial propio de 6 días)
-  ✗ amz-B07W5JKP66 Logitech G PRO X SUPERLIGHT 2: no es ninguna bajada: hace menos de una semana ya estaba a 84.99 € (historial propio de 6 días)
-  ✗ amz-B07W7LW3VV Logitech G G502 X Ratón Gaming con Cable: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 5 días)
-  ✗ amz-B07W6JN8N7 Logitech G G203 LIGHTSYNC Ratón Gaming Blanco: no es ninguna bajada: hace menos de una semana ya estaba a 18.89 € (historial propio de 6 días)
-  ✗ amz-B0F63WRQCX GXTrust Vylax Ratón Inalámbrico Gaming Recargable: no es ninguna bajada: hace menos de una semana ya estaba a 15.09 € (historial propio de 4 días)
-  ✗ amz-B09GWK2WZ1 Andaseat Dark Demon Dragon: no es ninguna bajada: hace menos de una semana ya estaba a 217.75 € (historial propio de 3 días)
-  ✗ amz-B0D548X9DJ JUPPLIES Silla Escritorio Ergonómica con Soporte…: no es ninguna bajada: hace menos de una semana ya estaba a 79.99 € (historial propio de 4 días)
-  ✗ amz-B0G1T6LT3F DRIFT GAMING DRAIR35 – Silla Escritorio…: no es ninguna bajada: hace menos de una semana ya estaba a 75.00 € (historial propio de 5 días)
-  ✗ amz-B0C76ZD7KV UGREEN Webcam Full HD 1080P 30FPS USB A PC Cámara…: no es ninguna bajada: hace menos de una semana ya estaba a 17.13 € (historial propio de 5 días)
-  ✗ amz-B01BGBJ8Y0 Logitech C270 Webcam HD, Camara para PC: no es ninguna bajada: hace menos de una semana ya estaba a 14.99 € (historial propio de 5 días)
-  ✗ amz-B0F1SJR713 UGREEN Webcam Full HD 1080P 30FPS USB A PC Cámara…: no es ninguna bajada: hace menos de una semana ya estaba a 18.51 € (historial propio de 5 días)
-  ✗ amz-B006A2Q81M Logitech C920 HD Pro Webcam 1080p: no es ninguna bajada: hace menos de una semana ya estaba a 54.99 € (historial propio de 5 días)
-  ✗ amz-B0D5QTQTV1 UGREEN Webcam 2K 30FPS Full HD Cámara USB A PC…: no es ninguna bajada: hace menos de una semana ya estaba a 24.69 € (historial propio de 4 días)
-  ✗ amz-B0G92NRF52 UGREEN FineCam 1080P Webcam 60FPS Full HD USB A C…: no es ninguna bajada: hace menos de una semana ya estaba a 29.05 € (historial propio de 3 días)
-  ✗ amz-B004919FY8 NGS XPRESSCAM 300 - Webcam con Micrófono para PC: no es ninguna bajada: hace menos de una semana ya estaba a 5.59 € (historial propio de 6 días)
-  ✗ amz-B0DHGG9DDB ORICO 1TB SSD Externo Portátil con Cable USB-C 2…: no es ninguna bajada: hace menos de una semana ya estaba a 119.99 € (historial propio de 5 días)
-  ✗ amz-B00FMB9A30 Intenso 3413490 - Adaptador para tarjeta Micro…: no es ninguna bajada: hace menos de una semana ya estaba a 10.95 € (historial propio de 6 días)
-  ✗ amz-B0C5MB5MTS Asustor AS5402T Nimbustor 2 Gen2: no es ninguna bajada: hace menos de una semana ya estaba a 415.00 € (historial propio de 5 días)
-  ✗ amz-B0C3BSZ56D HyperX Cloud III wired Auriculares para Juegos…: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 5 días)
-  ✗ amz-B0FFP61L6C Turtle Beach Victrix Gambit Prime bedrade…: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 5 días)
-  ✗ amz-B07SWSCBJJ Just Dance 2020 - Nintendo Switch [Importación…: no es ninguna bajada: hace menos de una semana ya estaba a 15.83 € (historial propio de 6 días)
-  ✗ amz-B0CQ3PJKRV PDP Mando Gaming Inalámbrico Victrix Pro BFG: no es ninguna bajada: hace menos de una semana ya estaba a 107.20 € (historial propio de 5 días)
-  ✗ amz-B0DKT21XWR Turtle Beach Victrix Pro KO Leverless All Button…: no es ninguna bajada: hace menos de una semana ya estaba a 199.00 € (historial propio de 5 días)
-  ✗ amz-B0FRFRMDRP EasySMX X05 Pro Mando Inalámbrico para PC: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 5 días)
-  ✗ amz-B0D7Q2VFQJ EasySMX X05 Mando Inalámbrico para PC: no es ninguna bajada: hace menos de una semana ya estaba a 22.49 € (historial propio de 5 días)
-  ✗ amz-B0FJXWB78M Battlefield 6 Standard Edition PS5: no es ninguna bajada: hace menos de una semana ya estaba a 25.99 € (historial propio de 6 días)
-  Amazon (API): 116 con descuento grande, 28 con precio anterior y stock
-Candidatos a revisar: 19
-  ✓ B0D23VW9VB Ring | Cámara exterior Plus con enchufe (Outdoor Camera…: 39,99 € (-60% vs 99,99 €)
-  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
-  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B07YYJRXQR SANDISK Ultra Dual Drive Go, Memoria Flash 128 GB (con…: solo -34% frente a su PVP recomendado (31,99 €)
-  ✗ amz-B07QBNYJ6X SanDisk 32GB Cruzer Blade USB Flash Drive: solo -38% frente a su PVP recomendado (36,99 €)
-  ✗ amz-B0DFQKQ9CB SanDisk microSD Express, 128 GB Tarjeta Micro SD: solo -28% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
-  ✗ amz-B0CTTNWZCM PlayStation 5- Stellar Blade™: solo -18% frente a su precio mediano de los 90 días (44,90 €)
-  ✗ amz-B0DTQ35NH6 SanDisk Tarjeta microSD Express de 512 GB: solo -19% frente a su precio mediano de los 90 días (147,14 €)
-  ✗ amz-B08GTYFC37 SANDISK Extreme SSD Externo Portátil 1TB (Disco duro…: solo -5% frente a su precio mediano de los 90 días (169,15 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0D23VW9VB variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0F6436L5P variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FHJ91JY5 variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FJJM9R3Z variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 19 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 3 · 15:22 ==
-  Seguimiento B0CWP7M17B: sigue a 65,99 €
-  Seguimiento B0CX8MQF7R: sigue a 164,00 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0CZHXHLDJ: sigue a 34,99 €
-Modo sin silencios: 43 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  ✗ amz-B0DKK3W82F BYE SWEET CAROLE - NINTENDO SWITCH: no es ninguna bajada: hace menos de una semana ya estaba a 23.95 € (historial propio de 5 días)
-  ✗ amz-B07SWSCBJJ Just Dance 2020 - Nintendo Switch [Importación…: no es ninguna bajada: hace menos de una semana ya estaba a 15.83 € (historial propio de 6 días)
-  ✗ amz-B0FR4P3QFN Dragon Quest VII: Reimagined: no es ninguna bajada: hace menos de una semana ya estaba a 37.77 € (historial propio de 3 días)
-  ✗ amz-B0F2HLR2S8 Terrifier The Artcade Game - NSW: no es ninguna bajada: hace menos de una semana ya estaba a 19.90 € (historial propio de 5 días)
-  ✗ amz-B0BX9H2JLB PlayStation®VR2: solo -22% frente a su precio habitual de 447.98 € (historial de 7 días)
-  ✗ amz-B087JX7KB2 Lexibook, Consola de Juegos portátil Compact…: no es ninguna bajada: hace menos de una semana ya estaba a 36.50 € (historial propio de 5 días)
-  ✗ amz-B0G7LBB2F4 ARNSSIEN Camara Digital 4K Cámara Compacta…: no es ninguna bajada: hace menos de una semana ya estaba a 39.99 € (historial propio de 6 días)
-  ✗ amz-B095CLQ1PT Tapo C210 - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 22.99 € (historial propio de 5 días)
-  ✗ amz-B0CDCL38KZ Tapo C200P2 - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 39.99 € (historial propio de 5 días)
-  ✗ amz-B0D9MDV5L5 Tapo C200C - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 18.99 € (historial propio de 5 días)
-  ✗ amz-B0DQ5NTHB8 Tapo C51A - Cámara de Vigilancia WiFi Exterior…: no es ninguna bajada: hace menos de una semana ya estaba a 38.99 € (historial propio de 5 días)
-  ✗ amz-B0DSW6SF34 Tapo C230 - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 32.99 € (historial propio de 5 días)
-  ✗ amz-B0B7NKLDXW Tapo P110 (4-Pack) - Enchufe Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 34.99 € (historial propio de 5 días)
-  ✗ amz-B083FF167K Tapo P100 (4-Pack) - Enchufe Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 32.99 € (historial propio de 5 días)
-  ✗ amz-B0B7NK25BJ Tapo P110 (2-Pack) - Enchufe Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 18.99 € (historial propio de 5 días)
-  ✗ amz-B0CJ9R466Z Tapo P110M-Enchufe inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 12.99 € (historial propio de 5 días)
-  ✗ amz-B0F9W4946B SwitchBot Matter Plug Mini paquete de 4 con…: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 6 días)
-  ✗ amz-B08QRQQ53T Tapo L530E (2-Pack) - Bombilla Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 14.99 € (historial propio de 6 días)
-  ✗ amz-B09MM39P84 Tapo L530E (4-Pack) - Bombilla Inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 25.90 € (historial propio de 6 días)
-  ✗ amz-B09KRVN7XG Tapo L520E-Bombilla inteligente WiFi: no es ninguna bajada: hace menos de una semana ya estaba a 8.54 € (historial propio de 5 días)
-  ✗ amz-B0DZGLMFTS Tapo L430C(2-Pack) - Bombilla inteligente…: no es ninguna bajada: hace menos de una semana ya estaba a 17.99 € (historial propio de 5 días)
-  ✗ amz-B0DZH7RZPG Tapo L430C(4-Pack) - Bombilla inteligente…: no es ninguna bajada: hace menos de una semana ya estaba a 31.34 € (historial propio de 5 días)
-  Amazon (API): 119 con descuento grande, 30 con precio anterior y stock
-Candidatos a revisar: 16
-  ✓ B0D23VW9VB Ring | Cámara exterior Plus con enchufe (Outdoor Camera…: 39,99 € (-60% vs 99,99 €)
-  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
-  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B0DKLFHZDH Amazon Echo Dot Max (última generación): altavoz con sonido…: ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✗ amz-B0DTQWYZFF Amazon Echo Show 8 (última generación): pantalla HD de 8,7"…: solo -41% frente a su PVP recomendado (219,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0CG19QXWD DJI Osmo Pocket 3, cámara con CMOS 1'' y vídeo 4K/120 fps: solo -37% frente a su PVP recomendado (429,00 €)
-  ✗ amz-B0DP8LHZFJ Amazon Basics Enchufe inteligente: solo -11% frente a su precio mediano de los 90 días (30,00 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0D23VW9VB variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0F6436L5P variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FHJ91JY5 variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FJJM9R3Z variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió un «camara» de Ring hace 21 h; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 19 h; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 4 · 15:24 ==
-  Seguimiento B0DMTVGZL3: sigue a 47,99 €
-  Seguimiento B0C2S2J7JP: sigue a 59,99 €
-  Seguimiento B0BVRMW1XF: sigue a 49,90 €
-  Seguimiento B0B5FGHCKR: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
-Modo sin silencios: 45 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-Hora garantizada: 45 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  ✗ amz-B0FMXW27LS SwitchBot Termostato Inteligente para Radiador: no es ninguna bajada: hace menos de una semana ya estaba a 29.99 € (historial propio de 5 días)
-  ✗ amz-B0FMRQGF4P SwitchBot Termostato Inteligente para Radiador…: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 5 días)
-  ✗ amz-B0DHK57W3M Ginour Taladro Percutor a Bateria sin escobillas…: no es ninguna bajada: hace menos de una semana ya estaba a 61.99 € (historial propio de 5 días)
-  ✗ amz-B000K2NPE6 Brüder Mannesmann Werkzeug M12507: no es ninguna bajada: hace menos de una semana ya estaba a 18.99 € (historial propio de 5 días)
-  ✗ amz-B0DHK57W3M Ginour Taladro Percutor a Bateria sin escobillas…: no es ninguna bajada: hace menos de una semana ya estaba a 61.99 € (historial propio de 5 días)
-  ✗ amz-B018YPAKS4 Bosch PRO Amoladora GWS 7-125: no es ninguna bajada: hace menos de una semana ya estaba a 44.99 € (historial propio de 5 días)
-  ✗ amz-B07BRS1KXS Bosch PRO Amoladora GWS 880 | Nivel superior de…: no es ninguna bajada: hace menos de una semana ya estaba a 50.98 € (historial propio de 5 días)
-  ✗ amz-B002EX2Y6E Bosch Sierra circular PKS 55 A: no es ninguna bajada: hace menos de una semana ya estaba a 78.99 € (historial propio de 4 días)
-  ✗ amz-B0851TSZJN DEWALT Kit 4 herramientas no escobillas 18V XR 3…: no es ninguna bajada: hace menos de una semana ya estaba a 659.31 € (historial propio de 6 días)
-  ✗ amz-B00IM7BIY0 Bosch Professional 32 uds. Set de puntas de…: no es ninguna bajada: hace menos de una semana ya estaba a 9.39 € (historial propio de 3 días)
-  ✗ amz-B0851TSZJN DEWALT Kit 4 herramientas no escobillas 18V XR 3…: no es ninguna bajada: hace menos de una semana ya estaba a 659.31 € (historial propio de 6 días)
-  ✗ amz-B0851TSZJN DEWALT Kit 4 herramientas no escobillas 18V XR 3…: no es ninguna bajada: hace menos de una semana ya estaba a 659.31 € (historial propio de 6 días)
-  ✗ amz-B007MMG4YK DEWALT Estuche XS puntas atornillar 25 mm 32 pzs…: no es ninguna bajada: hace menos de una semana ya estaba a 10.99 € (historial propio de 6 días)
-  ✗ amz-B01L31KAGI DEWALT Juego de taladro mixto (100 piezas): no es ninguna bajada: hace menos de una semana ya estaba a 29.08 € (historial propio de 5 días)
-  ✗ amz-B0D7MKFLQD Stanley Hidrolimpiadora SXPW19BX: no es ninguna bajada: hace menos de una semana ya estaba a 116.47 € (historial propio de 5 días)
-  ✗ amz-B0DQ93HX2L Kärcher Hidrolimpiadora K 5 FJ: no es ninguna bajada: hace menos de una semana ya estaba a 245.99 € (historial propio de 5 días)
-  ✗ amz-B08X255QL2 LawnMaster Cortacésped batería 24V 34cm: no es ninguna bajada: hace menos de una semana ya estaba a 165.74 € (historial propio de 5 días)
-  ✗ amz-B0GJ519CND MAMMOTION YUKA mini 2 800 LiDAR Robot Cortacésped…: no es ninguna bajada: hace menos de una semana ya estaba a 799.00 € (historial propio de 5 días)
-  ✗ amz-B01AI2PJQY Bosch AFS 23-37 - Desbrozadora (Cuchilla de 3…: no es ninguna bajada: hace menos de una semana ya estaba a 97.99 € (historial propio de 5 días)
-  ✗ amz-B00BSVO556 BLACK+DECKER Cortabordes eléctrico de 900 W y 35…: no es ninguna bajada: hace menos de una semana ya estaba a 87.76 € (historial propio de 5 días)
-  ✗ amz-B018F0A55G BLACK+DECKER Cortabordes POWERCONNECT 18 V: solo -16% frente a su precio habitual de 130.00 € (historial de 5 días)
-  ✗ amz-B0G3WDRD93 SEESII 8 Pulgadas Motosierra Telescopica con…: no es ninguna bajada: hace menos de una semana ya estaba a 119.99 € (historial propio de 4 días)
-  ✗ amz-B0F9FN228S BLUETTI Elite 30 V2 Estación de Energía Portátil…: no es ninguna bajada: hace menos de una semana ya estaba a 198.55 € (historial propio de 5 días)
-  ✗ amz-B0F9PKNWS1 BLUETTI Elite 100 V2 Estación de Energía Portátil…: no es ninguna bajada: hace menos de una semana ya estaba a 499.00 € (historial propio de 5 días)
-  ✗ amz-B0DRFZ8C31 BLUETTI Elite 200 V2 Estación de Energía Portátil…: no es ninguna bajada: hace menos de una semana ya estaba a 899.00 € (historial propio de 4 días)
-  ✗ amz-B09G9FZ4LR FlashFish estacion de energia portatil 200W: no es ninguna bajada: hace menos de una semana ya estaba a 107.99 € (historial propio de 5 días)
-  ✗ amz-B0DKFMVRKW Jackery Explorer 1000 v2 Estación de Energía…: no es ninguna bajada: hace menos de una semana ya estaba a 675.00 € (historial propio de 5 días)
-  ✗ amz-B07RVNMZJH SMARTGYRO Speedway - Patinete Eléctrico para…: no es ninguna bajada: hace menos de una semana ya estaba a 445.44 € (historial propio de 4 días)
-  ✗ amz-B08P253ZL8 smartGyro Speedway Pro - Patinete Eléctrico de 48V: no es ninguna bajada: hace menos de una semana ya estaba a 491.14 € (historial propio de 4 días)
-  ✗ amz-B0H3KKDMFC F.lli Schiano Bicicleta Electrica Trekking 28": no es ninguna bajada: hace menos de una semana ya estaba a 736.99 € (historial propio de 4 días)
-  ✗ amz-B09S3YG8FY SportPlus Ergo-Heimtrainer/Hometrainer: no es ninguna bajada: hace menos de una semana ya estaba a 93.71 € (historial propio de 6 días)
-  ✗ amz-B0GKG2LN1L YOSUDA Bicicleta Estática con Resistencia…: no es ninguna bajada: hace menos de una semana ya estaba a 169.99 € (historial propio de 4 días)
-  ✗ amz-B0H5K3XK74 2026 YOSUDA Bicicleta Estática: no es ninguna bajada: hace menos de una semana ya estaba a 179.99 € (historial propio de 5 días)
-  ✗ amz-B0GL1TPMQ6 FEIERDUN 10kg-40kg Juego de Pesas y Mancuernas…: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 5 días)
-  ✗ amz-B0DNHRW9CR Amazon Basics Neoprene Dumbbell Weights Set with…: no es ninguna bajada: hace menos de una semana ya estaba a 29.66 € (historial propio de 5 días)
-  ✗ amz-B0DG3TJ356 JUPPLIES Juego de Mancuernas Ajustables 4 en 1 +…: no es ninguna bajada: hace menos de una semana ya estaba a 34.18 € (historial propio de 5 días)
-  ✗ amz-B08224FZKW ZERRO Juego de pesas ajustable 2 en 1: no es ninguna bajada: hace menos de una semana ya estaba a 43.69 € (historial propio de 4 días)
-  ✗ amz-B0GSYX9T71 Banco de pesas regulable para gimnasio en casa: no es ninguna bajada: hace menos de una semana ya estaba a 63.17 € (historial propio de 6 días)
-  ✗ amz-B07DNYSJ8W FLYBIRD Banco de pesas regulable,profesional: no es ninguna bajada: hace menos de una semana ya estaba a 104.68 € (historial propio de 4 días)
-  ✗ amz-B0FH4VJG33 JUPPLIES Banco de Musculación Plegable…: no es ninguna bajada: hace menos de una semana ya estaba a 56.99 € (historial propio de 6 días)
-  ✗ amz-B0DDSCP32R Amazon Basics - Tienda de campaña instantánea con…: no es ninguna bajada: hace menos de una semana ya estaba a 84.91 € (historial propio de 5 días)
-  ✗ amz-B0BQRKM4SC Coleman Bedrock 2 - Tienda de campaña compacta…: no es ninguna bajada: hace menos de una semana ya estaba a 73.99 € (historial propio de 4 días)
-  ✗ amz-B0GKQCXD1K Trinordic Tienda Ligera 1-2 Personas: no es ninguna bajada: hace menos de una semana ya estaba a 55.99 € (historial propio de 4 días)
-  ✗ amz-B0G534F8T8 Columbia Unisex adulto Trail Traveler II 28L…: no es ninguna bajada: hace menos de una semana ya estaba a 39.88 € (historial propio de 3 días)
-  ✗ amz-B0DP7D8RWC Millet GRAVIC - Mochila de senderismo (50 +10 L): no es ninguna bajada: hace menos de una semana ya estaba a 107.40 € (historial propio de 3 días)
-  ✗ amz-B0D4VSBD2Z deuter Aircontact Lite 45 + 10 SL Mochila de…: no es ninguna bajada: hace menos de una semana ya estaba a 137.09 € (historial propio de 3 días)
-  Amazon (API): 236 con descuento grande, 56 con precio anterior y stock
-Candidatos a revisar: 43
-  ✓ B0D23VW9VB Ring | Cámara exterior Plus con enchufe (Outdoor Camera…: 39,99 € (-60% vs 99,99 €)
-  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
-  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B098JXS6HC Bosch Taladro percutor eléctrico EasyImpact 630: solo -40% frente a su PVP recomendado (69,99 €)
-  ✗ amz-B06XR5FVW3 Bosch Taladro percutor UniversalImpact 800: solo -31% frente a su PVP recomendado (99,99 €)
-  ✗ amz-B0BLZNZSYM Bosch amoladora pequeña UniversalGrind 7-125: solo -34% frente a su PVP recomendado (60,49 €)
-  ✗ amz-B0DDY6HJ4N Greenworks 24V Cortacésped de batería Li-Ion 24V 33cm Ancho…: solo -36% frente a su mínimo de los 30 días anteriores (249,99 €)
-  ✗ amz-B0BQ1KV15R Cecotec Patinete Eléctrico Bongo V55 2x2 Connected: solo -21% frente a su PVP recomendado (673,90 €)
-  ✗ amz-B00HT94XF8 Einhell Taladro percutor TC-ID 1000 E: solo -25% frente a su PVP recomendado (54,95 €)
-  ✗ amz-B00V3HTTWO Einhell Taladro percutor TC-ID 650 E: solo -27% frente a su PVP recomendado (36,95 €)
-  ✗ amz-B07TFHGZXF Black+Decker BCF611CK-QW - Atornillador a Batería 3.6 V…: solo -24% frente a su precio mediano de los 90 días (33,23 €)
-  ✗ amz-B01NCXCY4L Bosch Juego de 103 piezas mixtas de brocas y puntas de…: solo -28% frente a su precio mediano de los 90 días (29,16 €)
-  ✗ amz-B00YYBBUBY Bosch Professional 12V System taladro percusión batería GSB…: solo -28% frente a su precio mediano de los 90 días (159,38 €)
-  ✗ amz-B07NSF8FNY DEWALT EXTREME FLEXTORQ juego puntas atornillar 37 piezas: solo -21% frente a su precio mediano de los 90 días (31,60 €)
-  ✗ amz-B077TZYQRT Black+Decker Hidrolimpiadora de Alta Presión BXPW2000PE con…: solo -21% frente a su PVP recomendado (139,90 €)
-  ✗ amz-B078GWJ2N8 Einhell Cortacésped con batería City GE-CM 18/30 Li-Solo: solo -28% frente a su precio mediano de los 90 días (118,00 €)
-  ✗ amz-B0F3842YBC Einhell Professional Desbrozadora con batería GP-BC 36/430…: solo -20% frente a su precio mediano de los 90 días (244,80 €)
-  ✗ amz-B09LM6WK5M Bosch Cortabordes con batería EasyGrassCut 18V-230: solo -29% frente a su PVP recomendado (119,99 €)
-  ✗ amz-B07FD8BK2D Einhell Professional Motosierra con batería GP-LC 36/35…: solo -22% frente a su precio mediano de los 90 días (159,00 €)
-  ✗ amz-B0FHVLX995 Einhell Professional Sierra de poda a batería GP-PS 18/20…: solo -25% frente a su PVP recomendado (129,95 €)
-  ✗ amz-B0DNHY2J5P Amazon Basics Neoprene Dumbbell Weights Set with Stand: solo -25% frente a su precio mediano de los 90 días (39,49 €)
-  ✗ amz-B003A5ZBY2 BLACK+DECKER Compresor portátil 11 bar: solo -14% frente a su precio mediano de los 90 días (74,99 €)
-  ✗ amz-B0CL7PLZR9 Cecotec Cinta de Correr Plegable DrumFit WayHome 1400…: solo -14% frente a su PVP recomendado (252,90 €)
-  ✗ amz-B0DMD4G5XH Amazon Basics Set de mancuernas hexagonales con…: solo -13% frente a su precio mediano de los 90 días (45,99 €)
-  ✗ amz-B00R8CS5H8 Bosch PRO Sierra circular a batería GKS 12V-26: solo -19% frente a su precio mediano de los 90 días (139,00 €)
-  ✗ amz-B01EWNGZ4U DEWALT Kit combo sin escobillas 18V XR con 2 baterías 5Ah: solo -13% frente a su precio mediano de los 90 días (346,88 €)
-  ✗ amz-B08FMX9LFX DEWALT DWST83402-1, Taller modular 3en1 TOUGHSYSTEM 2.0: solo -14% frente a su precio mediano de los 90 días (232,50 €)
-  ✗ amz-B01D4J5JMC DEWALT DCF887N-XJ - Atornillador de impacto: solo -13% frente a su precio mediano de los 90 días (102,21 €)
-  ✗ amz-B012DG4ZU4 DEWALT Juego de Puntas y Brocas de Alto Rendimiento (100…: solo -19% frente a su precio mediano de los 90 días (58,72 €)
-  ✗ amz-B0721LYLZK Greenworks G40LM35K2X Cortacésped de Batería para Céspedes…: solo -18% frente a su mínimo de los 30 días anteriores (244,57 €)
-  ✗ amz-B017AWGGL2 DEWALT DWE4233-QS - Mini-Amoladora 125 mm: solo -6% frente a su precio mediano de los 90 días (119,48 €)
-  ✗ amz-B07RB6CQVS Makita HP333DSAX1 Taladro atornillador inalámbrico 12 V…: solo -8% frente a su precio mediano de los 90 días (204,62 €)
-  ✗ amz-B00HER8E5A DEWALT Multiherramienta Oscilante Sin Escobillas 18V XR: solo -10% frente a su precio mediano de los 90 días (133,03 €)
-  ✗ amz-B09LM833D1 Bosch cortacésped a batería CityMower 18V-32-300: solo -5% frente a su precio mediano de los 90 días (209,99 €)
-  API de Amazon: B0D23VW9VB confirmado a 39,99 €
-  Enviado a @cazachollos_com (mensaje 650): Ring | Cámara exterior Plus con enchufe (Outdoor Camera Plus última…
-  X: no te lo paso (categoría poco interesante para X (Cámaras y drones))
-  WhatsApp: enviado al canal
-== pasada 5 · 15:25 ==
-  Seguimiento B07W7KMK4W: sigue a 40,74 €
-  Seguimiento B0DKLFHZDH: sigue a 74,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B01B7HVRC4: sigue a 189,99 €
-No publico: menos de 15 min desde el último post.
-== pasada 6 · 15:26 ==
   Seguimiento B0CX4YZCHS: sigue a 143,89 €
   Seguimiento B0HG82D9PQ: sigue a 399,95 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B0DJGCX6Q2: sigue a 23,99 €
-No publico: menos de 15 min desde el último post.
-== pasada 7 · 15:27 ==
-  Seguimiento B0FGXYSTLD: sigue a 46,99 €
-  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B09B94956P: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
-No publico: menos de 15 min desde el último post.
-== pasada 8 · 15:28 ==
-  Seguimiento B00XYTTEAQ: sigue a 24,24 €
-  Seguimiento B0C3D2DGYP: sigue a 59,95 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
-No publico: menos de 15 min desde el último post.
-== pasada 9 · 15:29 ==
-  Seguimiento B0CN41GMDK: sigue a 27,99 €
-  Seguimiento B0GKHPCM7X: sigue a 44,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
   Seguimiento B0H9YW4LLT: sigue a 499,00 €
 No publico: menos de 15 min desde el último post.
-== pasada 10 · 15:30 ==
-  Seguimiento B0CL5KN4KD: sigue a 34,99 €
-  Seguimiento B0DXQ67BW4: sigue a 44,99 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+== pasada 2 · 16:14 ==
+  Seguimiento B0FGXYSTLD: sigue a 46,99 €
+  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
   Seguimiento B0CZHXHLDJ: sigue a 34,99 €
-No publico: menos de 15 min desde el último post.
-== pasada 11 · 15:31 ==
-  Seguimiento B0CWP7M17B: sigue a 65,99 €
-  Seguimiento B0CX8MQF7R: sigue a 164,00 €
   Seguimiento B0BVRMW1XF: sigue a 49,90 €
+No publico: menos de 15 min desde el último post.
+== pasada 3 · 16:16 ==
+  Seguimiento B00XYTTEAQ: sigue a 24,24 €
+  Seguimiento B0C3D2DGYP: sigue a 59,95 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
   Seguimiento B0DMTVGZL3: sigue a 47,99 €
 No publico: menos de 15 min desde el último post.
-== pasada 12 · 15:32 ==
+== pasada 4 · 16:18 ==
+  Seguimiento B0CN41GMDK: sigue a 27,99 €
+  Seguimiento B0GKHPCM7X: sigue a 44,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B01B7HVRC4: sigue a 189,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 5 · 16:20 ==
+  Seguimiento B0CL5KN4KD: sigue a 34,99 €
+  Seguimiento B0DXQ67BW4: sigue a 44,99 €
+  Seguimiento B0797LMGXH: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+No publico: menos de 15 min desde el último post.
+== pasada 6 · 16:22 ==
   Seguimiento B0B5FGHCKR: sigue a 144,95 €
-  Seguimiento B0C2S2J7JP: sigue a 59,99 €
-  Seguimiento B0D23VW9VB: terminado (ahora 39.99, stock False)
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-No publico: menos de 15 min desde el último post.
-== pasada 13 · 15:33 ==
-  Seguimiento B01B7HVRC4: sigue a 189,99 €
-  Seguimiento B07W7KMK4W: sigue a 40,74 €
-  Seguimiento B0DKLFHZDH: sigue a 74,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-No publico: menos de 15 min desde el último post.
-== pasada 14 · 15:34 ==
-  Seguimiento B0DJGCX6Q2: sigue a 23,99 €
-  Seguimiento B0CX4YZCHS: sigue a 143,89 €
-  Seguimiento B0HG82D9PQ: sigue a 399,95 €
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-No publico: menos de 15 min desde el último post.
-== pasada 15 · 15:35 ==
-  Seguimiento B09B94956P: sigue a 39,99 €
-  Seguimiento B0FGXYSTLD: sigue a 46,99 €
-  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-No publico: menos de 15 min desde el último post.
-== pasada 16 · 15:36 ==
-  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
-  Seguimiento B00XYTTEAQ: sigue a 24,24 €
-  Seguimiento B0C3D2DGYP: sigue a 59,95 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-No publico: menos de 15 min desde el último post.
-== pasada 17 · 15:37 ==
-  Seguimiento B0H9YW4LLT: sigue a 499,00 €
-  Seguimiento B0CN41GMDK: sigue a 27,99 €
-  Seguimiento B0GKHPCM7X: sigue a 44,99 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-No publico: menos de 15 min desde el último post.
-== pasada 18 · 15:38 ==
-  Seguimiento B0CZHXHLDJ: sigue a 34,99 €
-  Seguimiento B0CL5KN4KD: sigue a 34,99 €
-  Seguimiento B0DXQ67BW4: sigue a 44,99 €
-  Seguimiento B0BVRMW1XF: sigue a 49,90 €
-No publico: menos de 15 min desde el último post.
-== pasada 19 · 15:39 ==
-  Seguimiento B0DMTVGZL3: sigue a 47,99 €
   Seguimiento B0CWP7M17B: sigue a 65,99 €
   Seguimiento B0CX8MQF7R: sigue a 164,00 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  ✗ amz-B01F2LAUGU HUGO BOSS Bottled Eau de Toilette para hombre…: no es ninguna bajada: hace menos de una semana ya estaba a 52.36 € (historial propio de 5 días)
-  ✗ amz-B000P275F6 Náutica, Set de fragancias para hombres: no es ninguna bajada: hace menos de una semana ya estaba a 11.27 € (historial propio de 5 días)
-  ✗ amz-B09KR2VN6S GUESS Seductive Red, Eau de Toilette: no es ninguna bajada: hace menos de una semana ya estaba a 13.82 € (historial propio de 3 días)
-  ✗ amz-B0D4R3PLQ9 DKNY 24/7, Eau de Parfum para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 17.89 € (historial propio de 6 días)
-  ✗ amz-B01N4CSJ0W DKNY Be Delicious Fresh Blossom: no es ninguna bajada: hace menos de una semana ya estaba a 18.92 € (historial propio de 5 días)
-  ✗ amz-B07V25CN6C GUESS Seductive, Bruma Corporal para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 7.87 € (historial propio de 4 días)
-  ✗ amz-B000CNP4F6 Ralph Lauren Ralph Eau de Toilette: no es ninguna bajada: hace menos de una semana ya estaba a 26.90 € (historial propio de 6 días)
-  ✗ amz-B001JZLT5U Tous, TOUCH The Original Gold: no es ninguna bajada: hace menos de una semana ya estaba a 28.99 € (historial propio de 6 días)
-  ✗ amz-B000XE0DS2 Cacharel Anaïs Anaïs, Agua de Colonia para mujer…: no es ninguna bajada: hace menos de una semana ya estaba a 29.02 € (historial propio de 5 días)
-  ✗ amz-B0D4R175FB DKNY 24/7, Eau de Parfum para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 26.50 € (historial propio de 3 días)
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 7 · 16:24 ==
+  Seguimiento B09B94956P: sigue a 39,99 €
+  Seguimiento B0DJGCX6Q2: sigue a 23,99 €
+  Seguimiento B0C2S2J7JP: sigue a 59,99 €
+  Seguimiento B0GL3FXQ5B: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
   ✗ amz-B07TMP2TP5 Philips Cortapelos con cuchillas de titanio: no es ninguna bajada: hace menos de una semana ya estaba a 44.77 € (historial propio de 5 días)
   ✗ amz-B0H83BSN2R Afeitadora Eléctrica Mujer, MAXGROOM 3 en 1…: no es ninguna bajada: hace menos de una semana ya estaba a 23.20 € (historial propio de 6 días)
   ✗ amz-B01KLXFBVI Remington Secador de Pelo Profesional PROluxe: no es ninguna bajada: hace menos de una semana ya estaba a 27.99 € (historial propio de 6 días)
@@ -408,38 +50,31 @@ No publico: menos de 15 min desde el último post.
   ✗ amz-B00MCSW8X0 Remington Plancha de Pelo Ancha Pro-Ceramic Extra: no es ninguna bajada: hace menos de una semana ya estaba a 22.99 € (historial propio de 6 días)
   ✗ amz-B01KLXFBFE Remington Plancha Pelo 150 °C-230 °C: no es ninguna bajada: hace menos de una semana ya estaba a 33.99 € (historial propio de 6 días)
   ✗ amz-B0CCYSB19S ghd Platinum+ - Plancha de Pelo Profesional…: no es ninguna bajada: hace menos de una semana ya estaba a 164.00 € (historial propio de 5 días)
-  ✗ amz-B0CCYPKJHL ghd Original Styler - Plancha de Pelo Profesional: no es ninguna bajada: hace menos de una semana ya estaba a 113.00 € (historial propio de 5 días)
+  ✗ amz-B0CCYPDLCQ ghd Gold - Plancha de Pelo Profesional Avanzada: no es ninguna bajada: hace menos de una semana ya estaba a 139.99 € (historial propio de 4 días)
   ✗ amz-B0GJRTQMVK Báscula de Baño, Bascula Grasa Corporal y…: no es ninguna bajada: hace menos de una semana ya estaba a 22.04 € (historial propio de 5 días)
-  ✗ amz-B0BM4BBFHJ Beurer BF 500 báscula de baño digital con…: precio anterior inflado: lo ponen a 49.99 € pero su precio habitual es 35.62 € (solo -19%, historial de 3 días)
   ✗ amz-B0DMT8DN76 Matnature | Essential | Colchón Viscoelástico: no es ninguna bajada: hace menos de una semana ya estaba a 96.40 € (historial propio de 5 días)
   ✗ amz-B09YVRJSH9 Matnature | EcoNature | Colchón Antibacterial: no es ninguna bajada: hace menos de una semana ya estaba a 54.40 € (historial propio de 5 días)
   ✗ amz-B085RHCM72 Matnature | MatFoam | Colchón Viscosoft Reversible: no es ninguna bajada: hace menos de una semana ya estaba a 94.76 € (historial propio de 4 días)
   ✗ amz-B0937L8X21 Matnature | Platinum | Colchón Gran Confort Pro…: no es ninguna bajada: hace menos de una semana ya estaba a 208.54 € (historial propio de 3 días)
-  Amazon (API): 118 con descuento grande, 46 con precio anterior y stock
-Candidatos a revisar: 8
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 15 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 15 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 15 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 15 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 15 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 15 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 20 · 15:41 ==
-  Seguimiento B0B5FGHCKR: sigue a 144,95 €
-  Seguimiento B0C2S2J7JP: sigue a 59,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B01B7HVRC4: sigue a 189,99 €
   ✗ amz-B0HML1LVYQ Vipbear Sofá cama convertible de 200 cm con…: no es ninguna bajada: hace menos de una semana ya estaba a 221.34 € (historial propio de 5 días)
+  Amazon (API): 118 con descuento grande, 45 con precio anterior y stock
+Candidatos a revisar: 6
+  ✗ amz-B0DT6NDW4L Philips i9000 Prestige, Afeitadora Eléctrica Hombre: ya publicado hace poco y no ha bajado más
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✗ amz-B07CLRK7Y8 OMRON VIVA Báscula de composición corporal con Bluetooth: marca poco conocida (OMRON): su precio anterior no es fiable
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 60 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 60 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 60 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 60 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 8 · 16:26 ==
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B07W7KMK4W: sigue a 40,74 €
+  Seguimiento B0DKLFHZDH: sigue a 74,99 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
   ✗ amz-B0C8KBVW16 JUPPLIES Silla Escritorio Ergonomica: no es ninguna bajada: hace menos de una semana ya estaba a 52.23 € (historial propio de 4 días)
   ✗ amz-B0D548X9DJ JUPPLIES Silla Escritorio Ergonómica con Soporte…: no es ninguna bajada: hace menos de una semana ya estaba a 79.99 € (historial propio de 4 días)
   ✗ amz-B0D17RR22L JUPPLIES Silla Escritorio Ergonomica: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 4 días)
@@ -454,42 +89,34 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B084N3TWGJ By Amazon Pañales Ultrasecos: no es ninguna bajada: hace menos de una semana ya estaba a 22.71 € (historial propio de 4 días)
   ✗ amz-B0976XRMGM Dodot Pañales Bebé Activity Talla 6: no es ninguna bajada: hace menos de una semana ya estaba a 46.39 € (historial propio de 6 días)
   ✗ amz-B0F8BC88D1 Naty BioEmbrace Pañales Recién Nacido: no es ninguna bajada: hace menos de una semana ya estaba a 38.99 € (historial propio de 5 días)
-  Amazon (API): 118 con descuento grande, 17 con precio anterior y stock
-Candidatos a revisar: 8
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 17 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 17 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 17 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 17 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 17 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 17 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 21 · 15:43 ==
-  Seguimiento B07W7KMK4W: sigue a 40,74 €
-  Seguimiento B0DKLFHZDH: sigue a 74,99 €
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B0DJGCX6Q2: sigue a 23,99 €
   ✗ amz-B08641KML3 Almirón Advance 2 Leche De Continuación En Polvo: no es ninguna bajada: hace menos de una semana ya estaba a 18.36 € (historial propio de 5 días)
   ✗ amz-B09TB43W7M Almirón Profutura 3 - Leche de Crecimiento en…: no es ninguna bajada: hace menos de una semana ya estaba a 15.33 € (historial propio de 5 días)
   ✗ amz-B085F55TSD Almirón Advance 3, Leche de Crecimiento en Polvo…: no es ninguna bajada: hace menos de una semana ya estaba a 16.08 € (historial propio de 7 días)
   ✗ amz-B09TB2JYMT Almirón Profutura 3 - Leche de Crecimiento en…: no es ninguna bajada: hace menos de una semana ya estaba a 56.58 € (historial propio de 5 días)
   ✗ amz-B0F5HWZ6G8 Almirón Advance 3, Leche de Crecimiento en Polvo…: no es ninguna bajada: hace menos de una semana ya estaba a 32.16 € (historial propio de 6 días)
   ✗ amz-B01HTBC6UE Puleva Original Leche Entera con Vitaminas A y D: no es ninguna bajada: hace menos de una semana ya estaba a 5.70 € (historial propio de 5 días)
+  Amazon (API): 118 con descuento grande, 20 con precio anterior y stock
+Candidatos a revisar: 4
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 62 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 62 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 62 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 62 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 9 · 16:28 ==
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B0CX4YZCHS: sigue a 143,89 €
+  Seguimiento B0HG82D9PQ: sigue a 399,95 €
+  Seguimiento B0CZHXHLDJ: sigue a 34,99 €
   ✗ amz-B07PLT76XH Clementoni - Mechanics - Monster Truck: no es ninguna bajada: hace menos de una semana ya estaba a 15.00 € (historial propio de 5 días)
   ✗ amz-B0DPQGBT1G Barbie Twinning Looks Muñeca con perrito y ropa…: no es ninguna bajada: hace menos de una semana ya estaba a 17.95 € (historial propio de 5 días)
   ✗ amz-B0DPQGS55Z Barbie Twinning Looks Muñeca y perrito con…: no es ninguna bajada: hace menos de una semana ya estaba a 17.95 € (historial propio de 6 días)
   ✗ amz-B0G43VVHBP Barbie Style Muñeco Ken Fashionistas 252: no es ninguna bajada: hace menos de una semana ya estaba a 9.99 € (historial propio de 5 días)
-  ✗ amz-B0D7PV8N3X Barbie Fashionistas muñeco Ken con pelo negro n.º…: no es ninguna bajada: hace menos de una semana ya estaba a 9.99 € (historial propio de 3 días)
   ✗ amz-B0FDGZTQTK Barbie Deluxe Style n.º 12 Muñeca con Top Corto…: no es ninguna bajada: hace menos de una semana ya estaba a 17.99 € (historial propio de 6 días)
+  ✗ amz-B0D7PV8N3X Barbie Fashionistas muñeco Ken con pelo negro n.º…: no es ninguna bajada: hace menos de una semana ya estaba a 9.99 € (historial propio de 3 días)
   ✗ amz-B0G43VCRD4 Barbie Muñeca Deluxe Style n.º 15 con vestido…: no es ninguna bajada: hace menos de una semana ya estaba a 18.99 € (historial propio de 4 días)
   ✗ amz-B0DMWLY3V6 Barbie Fashionistas #242 Muñeca con Diabetes Tipo…: no es ninguna bajada: hace menos de una semana ya estaba a 10.99 € (historial propio de 4 días)
   ✗ amz-B0DFX5GYS9 Pelusas Revolution | Juego de Cartas Rápido y…: no es ninguna bajada: hace menos de una semana ya estaba a 11.99 € (historial propio de 5 días)
@@ -505,9 +132,9 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B0F4DWJGY7 Roll Road Orbit Maleta de Cabina: no es ninguna bajada: hace menos de una semana ya estaba a 37.59 € (historial propio de 4 días)
   ✗ amz-B0771NNH66 Eastpak TRANVERZ L Maleta, 79 x 40 x 33 cm: no es ninguna bajada: hace menos de una semana ya estaba a 94.00 € (historial propio de 6 días)
   ✗ amz-B0DXVN5PWF Samsonite GUARDIT 3.0 - Mochila para portátil…: no es ninguna bajada: hace menos de una semana ya estaba a 49.79 € (historial propio de 5 días)
+  ✗ amz-B06XPJ5432 Café Corsini en Granos, Súper Cremoso. Envase de…: no es ninguna bajada: hace menos de una semana ya estaba a 12.97 € (historial propio de 3 días)
   ✗ amz-B003XUCSNQ Marcilla Gran Aroma Café en Grano Mezcla: precio anterior inflado: lo ponen a 20.49 € pero su precio habitual es 14.62 € (solo -5%, historial de 5 días)
   ✗ amz-B08KJ7MLJR STARBUCKS Holiday Blend Café De Grano Entero De…: no es ninguna bajada: hace menos de una semana ya estaba a 5.19 € (historial propio de 6 días)
-  ✗ amz-B06XPJ5432 Café Corsini en Granos, Súper Cremoso. Envase de…: no es ninguna bajada: hace menos de una semana ya estaba a 12.97 € (historial propio de 3 días)
   ✗ amz-B00XA1QUGE Bonka café tostado en grano para hostelería mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 18.82 € (historial propio de 7 días)
   ✗ amz-B0B4WNVXG2 Caffè Borbone Kit Degustación 90 cápsulas de…: no es ninguna bajada: hace menos de una semana ya estaba a 14.24 € (historial propio de 6 días)
   ✗ amz-B0D6YM4FCS by Amazon Cápsulas de Aluminio de Café Sabor…: no es ninguna bajada: hace menos de una semana ya estaba a 2.76 € (historial propio de 6 días)
@@ -515,34 +142,6 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B0B1LPQFRP Lavazza, Espresso Maestro Ristretto: precio anterior inflado: lo ponen a 10.90 € pero su precio habitual es 7.85 € (solo -10%, historial de 6 días)
   ✗ amz-B09C1ZY9RB Segafredo Zanetti 100 Cápsulas de Aluminio…: no es ninguna bajada: hace menos de una semana ya estaba a 21.45 € (historial propio de 6 días)
   ✗ amz-B09YMQ9FFJ Caffè Borbone Mezcla de Café "Ciao Venezia": no es ninguna bajada: hace menos de una semana ya estaba a 18.12 € (historial propio de 6 días)
-  Amazon (API): 119 con descuento grande, 33 con precio anterior y stock
-Candidatos a revisar: 12
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0FPXFBL13 LEGO Editions Lionel Messi: Fenómenos del Fútbol 43011: solo -41% frente a su PVP recomendado (29,99 €)
-  ✗ amz-B0FPXFKGQR LEGO Technic Coche de Carreras BMW M4 GT3 EVO 42226: solo -29% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0CWH3TBGB LEGO Technic McLaren P1 42172: solo -27% frente a su PVP recomendado (449,99 €)
-  ✗ amz-B0FPXFZXC2 LEGO Technic Coche Porsche 911 GT3 R Rexy AO Racing 42224: solo -29% frente a su PVP recomendado (139,99 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 19 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 19 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 19 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 19 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 19 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 19 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 22 · 15:45 ==
-  Seguimiento B0CX4YZCHS: sigue a 143,89 €
-  Seguimiento B0HG82D9PQ: sigue a 399,95 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-  Seguimiento B09B94956P: sigue a 39,99 €
   ✗ amz-B01AY3JJP4 Estrella Damm Cerveza 5,4%, Caja de 24 Latas 33 cl: no es ninguna bajada: hace menos de una semana ya estaba a 12.29 € (historial propio de 5 días)
   ✗ amz-B01AGF8NT8 Voll-Damm Cerveza Doble Malta 7,2%: no es ninguna bajada: hace menos de una semana ya estaba a 14.99 € (historial propio de 5 días)
   ✗ amz-B08NCP8MFH El Aguila Dorada Cerveza Lager Especial Pack Lata: no es ninguna bajada: hace menos de una semana ya estaba a 11.25 € (historial propio de 5 días)
@@ -557,13 +156,29 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B086KFZT51 Red Bull Bebida energética, Sin Azúcar Sugarfree: no es ninguna bajada: hace menos de una semana ya estaba a 35.19 € (historial propio de 5 días)
   ✗ amz-B0C2Q893W5 Red Bull Bebida Energética, Baya de Junio: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 6 días)
   ✗ amz-B0DVC7F9N7 Lipton Mango maracuyá 330ml, Refresco de Té: no es ninguna bajada: hace menos de una semana ya estaba a 12.00 € (historial propio de 6 días)
+  Amazon (API): 119 con descuento grande, 33 con precio anterior y stock
+Candidatos a revisar: 4
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 64 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 64 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 64 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 64 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 10 · 16:30 ==
+  Seguimiento B0BVRMW1XF: sigue a 49,90 €
+  Seguimiento B0FGXYSTLD: sigue a 46,99 €
+  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
   ✗ amz-B01BMCT1ZY Colon - Detergente para lavadora profesional: no es ninguna bajada: hace menos de una semana ya estaba a 14.99 € (historial propio de 4 días)
   ✗ amz-B0BZ553DZW Dixan Trio Caps Total 4 en 1: no es ninguna bajada: hace menos de una semana ya estaba a 8.83 € (historial propio de 6 días)
   ✗ amz-B0BZ94Q8QB Dixan Adiós al Separar 4 en 1: no es ninguna bajada: hace menos de una semana ya estaba a 6.33 € (historial propio de 6 días)
   ✗ amz-B0BZ949HW8 Dixan Gel Total 4 en 1, Detergente Lavadora…: no es ninguna bajada: hace menos de una semana ya estaba a 10.06 € (historial propio de 6 días)
   ✗ amz-B08JDHYVM9 Botanical Origins Detergente para Lavadora apto…: no es ninguna bajada: hace menos de una semana ya estaba a 8.00 € (historial propio de 6 días)
-  ✗ amz-B0F14SG6SH Skip Detergente Ciclos Cortos Eficacia Express 37…: no es ninguna bajada: hace menos de una semana ya estaba a 6.59 € (historial propio de 4 días)
   ✗ amz-B081CVWMDX Botanical Origin Detergente para lavadora apto…: no es ninguna bajada: hace menos de una semana ya estaba a 16.99 € (historial propio de 5 días)
+  ✗ amz-B0F14SG6SH Skip Detergente Ciclos Cortos Eficacia Express 37…: no es ninguna bajada: hace menos de una semana ya estaba a 6.59 € (historial propio de 4 días)
   ✗ amz-B07L3DG8DK Scottex Original Papel higiénico: no es ninguna bajada: hace menos de una semana ya estaba a 22.90 € (historial propio de 6 días)
   ✗ amz-B07CCVMSKV Scottex Acolchado Papel Higiénico: no es ninguna bajada: hace menos de una semana ya estaba a 21.99 € (historial propio de 6 días)
   ✗ amz-B07BQD5J18 Scottex Papel Higiénico Sensitive 42 rollos con 3…: no es ninguna bajada: hace menos de una semana ya estaba a 14.39 € (historial propio de 6 días)
@@ -585,9 +200,9 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B00MTFL71A J&B Reserve Aged 15 Years, whisky escocés blended: no es ninguna bajada: hace menos de una semana ya estaba a 19.89 € (historial propio de 6 días)
   ✗ amz-B002E2K2E6 Jameson Original Whiskey Irlandés: no es ninguna bajada: hace menos de una semana ya estaba a 18.75 € (historial propio de 4 días)
   ✗ amz-B0049O2GAA Cragganmore 12 años, Whishy puro de malta: no es ninguna bajada: hace menos de una semana ya estaba a 29.39 € (historial propio de 6 días)
-  ✗ amz-B008HP9F7Y Jameson Black Barrel Whiskey Irlandés: no es ninguna bajada: hace menos de una semana ya estaba a 26.61 € (historial propio de 5 días)
-  ✗ amz-B009T4BY3U Gin Master´s 0,7: no es ninguna bajada: hace menos de una semana ya estaba a 10.99 € (historial propio de 6 días)
+  ✗ amz-B07L5MTD5Y Chivas Regal 12 años Whisky Escocés de Mezcla: no es ninguna bajada: hace menos de una semana ya estaba a 10.27 € (historial propio de 3 días)
   ✗ amz-B0BYHX1VK4 Ginebra Premium Nordés con Vaso Bajo de Regalo: no es ninguna bajada: hace menos de una semana ya estaba a 20.24 € (historial propio de 5 días)
+  ✗ amz-B009T4BY3U Gin Master´s 0,7: no es ninguna bajada: hace menos de una semana ya estaba a 10.99 € (historial propio de 6 días)
   ✗ amz-B00BBTIONE BOMBAY SAPPHIRE London Dry Gin con 10 botánicos: no es ninguna bajada: hace menos de una semana ya estaba a 19.40 € (historial propio de 4 días)
   ✗ amz-B0143OWZXI Ampersand CITRUS FLAVOUR London Dry Gin 40% Vol.…: no es ninguna bajada: hace menos de una semana ya estaba a 9.99 € (historial propio de 6 días)
   ✗ amz-B019QPCR4Q MOM GOD SAVE THE GIN - Ginebra Premium: no es ninguna bajada: hace menos de una semana ya estaba a 20.32 € (historial propio de 5 días)
@@ -602,31 +217,24 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B0H7G7X6V2 Aspirador de Mano sin Cable Potente: no es ninguna bajada: hace menos de una semana ya estaba a 34.29 € (historial propio de 6 días)
   ✗ amz-B0F67GMXPC HOTO Aspirador de Mano para Coche: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 6 días)
   ✗ amz-B0GHZH3WT1 JUPPLIES Aspirador de Mano Inalámbrico Potente: no es ninguna bajada: hace menos de una semana ya estaba a 29.99 € (historial propio de 5 días)
-  Amazon (API): 119 con descuento grande, 15 con precio anterior y stock
-Candidatos a revisar: 8
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 21 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 21 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 21 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 21 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 21 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 21 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 23 · 15:47 ==
-  Seguimiento B0FGXYSTLD: sigue a 46,99 €
-  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
   ✗ amz-B0GYKJNXF9 Rowenta Intense Comfort, Radiador de refuerzo: no es ninguna bajada: hace menos de una semana ya estaba a 39.77 € (historial propio de 5 días)
+  Amazon (API): 117 con descuento grande, 15 con precio anterior y stock
+Candidatos a revisar: 5
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✗ amz-B0FKMK1GM3 CIARRA Radiador de Inercia 1000W con Cerámica y Película…: marca poco conocida (CIARRA): su precio anterior no es fiable
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 66 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 66 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 66 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 66 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 11 · 16:32 ==
+  Seguimiento B0DMTVGZL3: sigue a 47,99 €
+  Seguimiento B00XYTTEAQ: sigue a 24,24 €
+  Seguimiento B0C3D2DGYP: sigue a 59,95 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
   ✗ amz-B098MPSQS5 Toshiba Purificador de aire CAF-Z45FR 3 en 1 Air…: no es ninguna bajada: hace menos de una semana ya estaba a 36.11 € (historial propio de 6 días)
   ✗ amz-B0H8Z86BY4 KNKA Purificador de Aire HEPA: no es ninguna bajada: hace menos de una semana ya estaba a 47.49 € (historial propio de 6 días)
   ✗ amz-B0H8ZB3RW9 KNKA Purificador de Aire HEPA: no es ninguna bajada: hace menos de una semana ya estaba a 47.49 € (historial propio de 6 días)
@@ -645,41 +253,30 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B0D9HRP7GV Contigo Botella Termo 1200ml con Asa y Pajita: no es ninguna bajada: hace menos de una semana ya estaba a 17.89 € (historial propio de 4 días)
   ✗ amz-B0F2SH7WKL Amazon Basics Botella de Agua Aislante de Acero…: no es ninguna bajada: hace menos de una semana ya estaba a 11.10 € (historial propio de 5 días)
   ✗ amz-B0BB3FCM6G ion8 Botella De Agua, Acero Aislada Al Vacío: no es ninguna bajada: hace menos de una semana ya estaba a 15.00 € (historial propio de 4 días)
-  Amazon (API): 112 con descuento grande, 39 con precio anterior y stock
-Candidatos a revisar: 12
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0FF9SCJHD Rowenta Compact Power, calefactor: solo -38% frente a su PVP recomendado (47,99 €)
-  ✗ amz-B0BPYVWS6Y Cecotec Calefactor Cerámico de Sobremesa ReadyWarm 1500 Max…: solo -40% frente a su PVP recomendado (29,83 €)
-  ✗ amz-B0CX9YLXGC bella Tostadora de 2 Rebanadas con Apagado Automático: precio fuera de rango (13.3 €)
-  ✗ amz-B0935WKVFY Taurus New Dakar 1500 Radiador de Aceite 1500W: solo -8% frente a su precio mediano de los 90 días (61,90 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 23 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 23 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 23 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 23 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 23 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 23 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 24 · 15:49 ==
-  Seguimiento B00XYTTEAQ: sigue a 24,24 €
-  Seguimiento B0C3D2DGYP: sigue a 59,95 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  ✗ amz-B0D9HPLRML Contigo Botella Termo 1200ml con Asa y Pajita: no es ninguna bajada: hace menos de una semana ya estaba a 16.39 € (historial propio de 4 días)
   ✗ amz-B0GLNSFSTX Auriculares inalámbricos Bluetooth Deportivos: no es ninguna bajada: hace menos de una semana ya estaba a 19.85 € (historial propio de 5 días)
   ✗ amz-B0HPXNQJGK 2026 Auriculares Inalámbricos Deportivos 5.4: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 7 días)
   ✗ amz-B09TFJJY3W Auriculares Inalambricos, Auriculares Bluetooth…: no es ninguna bajada: hace menos de una semana ya estaba a 32.99 € (historial propio de 6 días)
   ✗ amz-B0HJ76FDCX [1500 ANSI] Proyector Inteligente 1080P Nativo: no es ninguna bajada: hace menos de una semana ya estaba a 139.99 € (historial propio de 5 días)
   ✗ amz-B0H699DYHF QVWI Proyector 1080P HDR10+, Memoria de 32…: no es ninguna bajada: hace menos de una semana ya estaba a 161.49 € (historial propio de 3 días)
-  ✗ amz-B0FGD2QKNF Gofunly Camara Fotos Infantil Instantanea con…: no es ninguna bajada: hace menos de una semana ya estaba a 25.98 € (historial propio de 5 días)
+  Amazon (API): 115 con descuento grande, 36 con precio anterior y stock
+Candidatos a revisar: 4
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 68 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 68 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 68 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 68 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 12 · 16:34 ==
+  Seguimiento B01B7HVRC4: sigue a 189,99 €
+  Seguimiento B0CN41GMDK: sigue a 27,99 €
+  Seguimiento B0GKHPCM7X: sigue a 44,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
   ✗ amz-B0D9VG3NV2 ARNSSIEN Camara Fotos Infantil Instantanea con 7…: no es ninguna bajada: hace menos de una semana ya estaba a 30.00 € (historial propio de 5 días)
+  ✗ amz-B0FGD2QKNF Gofunly Camara Fotos Infantil Instantanea con…: no es ninguna bajada: hace menos de una semana ya estaba a 25.98 € (historial propio de 5 días)
   ✗ amz-B084ZNZV3S Coleman Performance 60QT Nevera Portátil Rígida…: no es ninguna bajada: hace menos de una semana ya estaba a 82.99 € (historial propio de 4 días)
   ✗ amz-B09MKPWQ31 CAMPINGAZ Unisex Adulto Coleman Xtreme 70 QT…: no es ninguna bajada: hace menos de una semana ya estaba a 102.49 € (historial propio de 4 días)
   ✗ amz-B0DMW45183 Coleman PRO - Hielera rígida aislada de alta…: no es ninguna bajada: hace menos de una semana ya estaba a 83.39 € (historial propio de 4 días)
@@ -690,57 +287,26 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B0H1V7X3L1 TABWEE Tablet 12 Pulgadas con Teclado y Lapiz: no es ninguna bajada: hace menos de una semana ya estaba a 220.99 € (historial propio de 5 días)
   ✗ amz-B0BX9H2JLB PlayStation®VR2: solo -22% frente a su precio habitual de 447.98 € (historial de 7 días)
   ✗ amz-B0CDCM3J5G De'Longhi Rivelia - Cafetera Superautomática 16…: no es ninguna bajada: hace menos de una semana ya estaba a 589.00 € (historial propio de 6 días)
-  Amazon (API): 115 con descuento grande, 50 con precio anterior y stock
-Candidatos a revisar: 35
-  ✗ amz-B0G7V5G5NR Lefant M210 Omni Robot Aspirador y Fregasuelos: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0GZZHY5MC roborock Qrevo 2 Pro Set Robot Aspirador Succión Extrema de…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0H6DZJX44 FAMIVAC R10 Robot Aspirador con Fregona,6000Pa Succión…: marca poco conocida (FAMIVAC): su precio anterior no es fiable
-  ✗ amz-B0FNWFTJKQ Lefant M210P Robot Aspirador,Control Mediante WiFi: ya publicado hace poco y no ha bajado más
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B0GVDVBZT8 LG 55QNED82B6B - Smart TV QNED EVO AI 55" 4K Sin Reflejos…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0D78D88Y8 SteelSeries Arctis Nova 5 Blanco Cascos gaming inalámbricos…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0DBJ5PBLT Logitech G Astro A50 LIGHTSPEED auriculares inalámbricos de…: ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✗ amz-B00NUC0C1C Tefal Duetto - Sartén 24 cm, Acero inoxidable: solo -40% frente a su PVP recomendado (39,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B092VZL9WH Tefal Comfort Max - Juego de 2 Sartenes: solo -31% frente a su PVP recomendado (57,99 €)
-  ✗ amz-B00NUC0HE4 Tefal Duetto - Sartén 32 cm, Acero inoxidable: solo -37% frente a su PVP recomendado (50,99 €)
-  ✗ amz-B0FL2JGPYH Cecotec Robot Aspirador Navegación Giroscópica Conga M10…: solo -28% frente a su PVP recomendado (118,29 €)
-  ✗ amz-B0GRWCXP1F GXTrust Forta Cascos Inalámbricos Licencia PlayStation 5: marca poco conocida (GXTrust): su precio anterior no es fiable
-  ✗ amz-B0FGY45H19 Tefal Ingenio Serenity - Juego de 5 Piezas + 6 Accesorios: solo -29% frente a su PVP recomendado (139,99 €)
-  ✗ amz-B086WQWSNT Tefal Duetto - Juego de 3 sartenes: solo -29% frente a su precio mediano de los 90 días (77,90 €)
-  ✗ amz-B0FCSDRK89 Tefal Duetto On - Juego de 2 Sartenes: solo -25% frente a su PVP recomendado (59,99 €)
-  ✗ amz-B0F4K1H6X5 XIAOMI S40C Robot Aspirador con Fregado: solo -12% frente a su PVP recomendado (159,99 €)
-  ✗ amz-B0BWSFGQ49 De'Longhi Magnifica S - Cafetera Superautomática 2 Bebidas…: solo -14% frente a su precio mediano de los 90 días (299,99 €)
-  ✗ amz-B0FDGFJDZH De'Longhi Magnifica Start - Cafetera Superautomática 4…: solo -15% frente a su precio mediano de los 90 días (419,99 €)
-  ✗ amz-B09CGRQ965 De'Longhi Magnifica Evo - Cafetera Superautomática 7…: solo -17% frente a su precio mediano de los 90 días (479,99 €)
-  ✗ amz-B0BTZ9BPPL De'Longhi Eletta Explore - Cafetera Superautomática 50+…: solo -16% frente a su precio mediano de los 90 días (949,00 €)
-  ✗ amz-B0FNRC5YWQ TCL 55PF650A 55 Pulgadas 4K Ultra HD Smart TV con Fire TV: solo -12% frente a su precio mediano de los 90 días (339,00 €)
-  ✗ amz-B0GR9JWH4T TCL 55T8D 55 Pulgadas QD-Mini LED 4K HDR10+ Smart TV Gaming…: solo -18% frente a su precio mediano de los 90 días (549,00 €)
-  ✗ amz-B06X3Z9MF3 De’Longhi Dedica Style – Perfetto Cafetera Espresso Manual…: solo -18% frente a su PVP recomendado (159,00 €)
-  ✗ amz-B0F4JZNGT8 XIAOMI H40 Robot Aspirador con Auto-Vaciado: solo -4% frente a su precio mediano de los 90 días (209,00 €)
-  ✗ amz-B0GTRP9673 LG 55NU800B6LA - Smart TV Nano UHD AI 55" 4K Sin Reflejos…: solo -8% frente a su precio mediano de los 90 días (390,00 €)
-  ✗ amz-B0GTRRKHGJ LG 55QNED70B6C - Smart TV QNED MiniLED AI 55" 4K Sin…: solo -4% frente a su precio mediano de los 90 días (459,00 €)
-  ✗ amz-B078XXNP69 Monix Martín Berasategui | Set de 3 Sartenes 18-22-26 cm: marca poco conocida (Monix): su precio anterior no es fiable
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 25 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 25 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 25 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 25 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 25 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 25 min; espera en la cola
+  Amazon (API): 115 con descuento grande, 64 con precio anterior y stock
+Candidatos a revisar: 8
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✗ amz-B09D9HBKFJ Philips 3000 Vaporizador de Mano Vertical: solo -42% frente a su PVP recomendado (47,99 €)
+  ✗ amz-B0DYK9LK3D Bosch, Freidora de aire Serie 6: solo -38% frente a su PVP recomendado (159,99 €)
+  ✗ amz-B0F8NSX4HV Gofunly Camara Fotos Infantil Instantanea con Papel de Foto…: marca poco conocida (Gofunly): su precio anterior no es fiable
+  ✗ amz-B00YUIM2J0 Logitech G G29, Driving Force Volante y Pedales para…: solo -10% frente a su precio mediano de los 90 días (209,05 €)
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 70 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 70 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 70 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 70 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 25 · 15:51 ==
-  Seguimiento B0CN41GMDK: sigue a 27,99 €
-  Seguimiento B0GKHPCM7X: sigue a 44,99 €
-  Seguimiento B0CZHXHLDJ: sigue a 34,99 €
-  Seguimiento B0BVRMW1XF: sigue a 49,90 €
+== pasada 13 · 16:36 ==
+  Seguimiento B0CL5KN4KD: sigue a 34,99 €
+  Seguimiento B0DXQ67BW4: sigue a 44,99 €
+  Seguimiento B0797LMGXH: sigue a 34,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
   ✗ amz-B09HTR3PJD SPC DICKENS LIGHT 2 - Libro electrónico 6" con luz: no es ninguna bajada: hace menos de una semana ya estaba a 89.90 € (historial propio de 5 días)
   ✗ amz-B0DPNBNJVS Protector de pantalla antirreflejos (paquete de…: no es ninguna bajada: hace menos de una semana ya estaba a 13.99 € (historial propio de 5 días)
   ✗ amz-B0D693NPQJ Protector de pantalla antirreflejos (paquete de…: no es ninguna bajada: hace menos de una semana ya estaba a 13.29 € (historial propio de 6 días)
@@ -748,59 +314,27 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B0FGKFFCJP EA SPORTS FC 26 Standard Edition Switch 2: no es ninguna bajada: hace menos de una semana ya estaba a 18.79 € (historial propio de 5 días)
   ✗ amz-B0FR4TDZX3 Final Fantasy VII Remake Intergrade: no es ninguna bajada: hace menos de una semana ya estaba a 44.95 € (historial propio de 3 días)
   ✗ amz-B0FJ8JD13T Fitabok Calefactor Cerámico PTC 2000W: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 6 días)
-  ✗ amz-B0GYKJNXF9 Rowenta Intense Comfort, Radiador de refuerzo: no es ninguna bajada: hace menos de una semana ya estaba a 39.77 € (historial propio de 5 días)
-  Amazon (API): 114 con descuento grande, 50 con precio anterior y stock
-Candidatos a revisar: 31
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B0CWP7M17B Philips 2000 Airfryer - Freidora de Aire 6,2L: ya publicado hace poco y no ha bajado más
-  ✗ amz-B09ZYLM43B Ninja Foodi MAX, Freidora de Aire 6 en 1 con Compartimento…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0DBJ5YPXZ Logitech G Astro A50 LIGHTSPEED auriculares inalámbricos de…: ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✗ amz-B0CX8MQF7R Kindle Colorsoft de Amazon 16 GB (modelo de 2024): con…: ya publicado hace poco y no ha bajado más
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0GSS73FLQ Ninja MAX PRO, Freidora de Aire sin Aceite: solo -37% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0CJVNGMFL Ninja Foodi FlexDrawer, Freidora de Aire Dual Zone: solo -36% frente a su PVP recomendado (279,99 €)
-  ✗ amz-B0HHN8SJPF Cecotec Freidora de Aire 8L Cecofry&Crunch 8500: solo -36% frente a su PVP recomendado (139,90 €)
-  ✗ amz-B0FCG57NNL Samsung Galaxy Watch8, 44 mm: solo -39% frente a su PVP recomendado (409,00 €)
-  ✗ amz-B0FCG61JVM Samsung Galaxy Watch8, 44 mm: solo -38% frente a su PVP recomendado (459,00 €)
-  ✗ amz-B0DSG5RYZ2 Samsung Monitor Essential S3 S30GD Full HD 24" con 100Hz y…: solo -34% frente a su PVP recomendado (89,00 €)
-  ✗ amz-B0HK11FH9N Lenovo L27-4e, Monitor IPS Full HD de 27": solo -36% frente a su PVP recomendado (139,99 €)
-  ✗ amz-B0H9558S91 Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -28% frente a su PVP recomendado (179,99 €)
-  ✗ amz-B0HF1PK3TW Dyson R1 Nurovi Dry Robot Aspirador con Autovaciado: solo -27% frente a su PVP recomendado (549,00 €)
-  ✗ amz-B09C6J3Z9F Aspirador de escoba inalámbrico Rowenta X-Pert 6.60…: calidad: solo -25% (mínimo -35%)
-  ✗ amz-B01N10IAFG LEGO Icons Bici de Carretera 11380: solo -25% frente a su PVP recomendado (119,99 €)
-  ✗ amz-B0FPXFTQ9S LEGO Star Wars The Razor Crest 75447: solo -27% frente a su PVP recomendado (149,99 €)
-  ✗ amz-B0FPXBMXFN LEGO Star Wars Crucero de Ataque Clase Venator 75441: solo -25% frente a su PVP recomendado (79,99 €)
-  ✗ amz-B0FJ2DJLQL Samsung Smart Monitor M5 M50F 32" con 60Hz y Modo Eye Saver: solo -20% frente a su precio mediano de los 90 días (222,62 €)
-  ✗ amz-B09PLLHS2P Bosch Home and Garden, atornillador a batería EasyDrill…: solo -18% frente a su precio mediano de los 90 días (93,73 €)
-  ✗ amz-B0FQV2HM8Q Bosch Professional 12V System Taladro/atornillador GSR…: solo -19% frente a su precio mediano de los 90 días (178,80 €)
-  ✗ amz-B0H2MVSDY6 ASUS Chromebook CM1505CM4A-S70064: solo -8% frente a su precio mediano de los 90 días (259,99 €)
-  ✗ amz-B0DJD4SX35 PHILIPS Evnia 34M2C5501A Gaming Monitor 34 Pulgadas 180Hz…: solo -8% frente a su precio mediano de los 90 días (260,00 €)
-  ✗ amz-B0D79G6RDY Cecotec Cepillo de Aire 14 Cabezales CeramicCare 14in1…: solo -6% frente a su precio mediano de los 90 días (99,90 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 27 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 27 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 27 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 27 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 27 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 27 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 26 · 15:53 ==
-  Seguimiento B0CL5KN4KD: sigue a 34,99 €
-  Seguimiento B0DXQ67BW4: sigue a 44,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0DMTVGZL3: sigue a 47,99 €
   ✗ amz-B08G1HWSW7 Mia&Coco Manta Electrica Grande Termica Cama…: no es ninguna bajada: hace menos de una semana ya estaba a 47.99 € (historial propio de 5 días)
   ✗ amz-B08FXJFT6G Almohadilla Térmica para Espalda y Cuello 60×100cm: no es ninguna bajada: hace menos de una semana ya estaba a 34.99 € (historial propio de 6 días)
   ✗ amz-B00N5TOVAS medisana HU 665 calefacción bajo la cama: no es ninguna bajada: hace menos de una semana ya estaba a 24.99 € (historial propio de 6 días)
   ✗ amz-B0DZXKLNVL KNKA Deshumidificador 16L/d Deshumificador de…: no es ninguna bajada: hace menos de una semana ya estaba a 119.99 € (historial propio de 5 días)
   ✗ amz-B0H5MMVQGB KNKA Deshumidificador 25L/día Desumidifador Tres…: no es ninguna bajada: hace menos de una semana ya estaba a 149.99 € (historial propio de 6 días)
+  Amazon (API): 113 con descuento grande, 42 con precio anterior y stock
+Candidatos a revisar: 4
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 72 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 72 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 72 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 72 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 14 · 16:38 ==
+  Seguimiento B0B5FGHCKR: sigue a 144,95 €
+  Seguimiento B0CWP7M17B: sigue a 65,99 €
+  Seguimiento B0CX8MQF7R: sigue a 164,00 €
+  Seguimiento B0GL3FXQ5B: HTTP 429 en getItems: {"message":"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates","type":"ThrottleException"}
   ✗ amz-B0FRFRMDRP EasySMX X05 Pro Mando Inalámbrico para PC: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 5 días)
   ✗ amz-B0D7Q2VFQJ EasySMX X05 Mando Inalámbrico para PC: no es ninguna bajada: hace menos de una semana ya estaba a 22.49 € (historial propio de 5 días)
   ✗ amz-B0D7Q2VFQJ EasySMX X05 Mando Inalámbrico para PC: no es ninguna bajada: hace menos de una semana ya estaba a 22.49 € (historial propio de 5 días)
@@ -810,112 +344,85 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B00NBR70DO Sony MDR-ZX110 - Auriculares cerrados: no es ninguna bajada: hace menos de una semana ya estaba a 9.20 € (historial propio de 5 días)
   ✗ amz-B000P275F6 Náutica, Set de fragancias para hombres: no es ninguna bajada: hace menos de una semana ya estaba a 11.27 € (historial propio de 5 días)
   ✗ amz-B0D4R3PLQ9 DKNY 24/7, Eau de Parfum para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 17.89 € (historial propio de 6 días)
-  Amazon (API): 116 con descuento grande, 48 con precio anterior y stock
-Candidatos a revisar: 33
-  ✗ amz-B0CL5KN4KD Ring Cámara exterior con batería (Stick Up Cam) y Cámara…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0DJGCX6Q2 Amazon Fire TV Stick HD (última generación): ya publicado hace poco y no ha bajado más
-  ✗ amz-B0CN41GMDK Amazon Fire TV Stick 4K Select: comienza a reproducir…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0BTJD6LCL Sony WH-CH520, Auriculares de diadema inalámbricos Bluetooth: ya publicado hace poco y no ha bajado más
-  ✗ amz-B01L6L44NU Logitech G G213 Prodigy Teclado Gaming: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0F7ZFWVTC Amazon Fire TV Stick 4K Plus: ya publicado hace poco y no ha bajado más
-  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  Amazon (API): 117 con descuento grande, 57 con precio anterior y stock
+Candidatos a revisar: 15
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
   ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
   ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
+  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
   ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B016DTHD92 Fossil Reloj para hombre Grant: moda: solo -55% (la ropa necesita -65%)
-  ✗ amz-B00CHHDY66 Logitech MK270 Combo Teclado y Ratón Inalámbrico para…: ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✗ amz-B0CL6KNT72 Govee TV Backlight 3 Lite, 3,6m para TVs 55-65 pulgadas: marca poco conocida (Govee): su precio anterior no es fiable
+  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✗ amz-B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: ya publicado hace poco y no ha bajado más
   ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B008MXO0EE Armani Exchange Relojes de hombre: marca poco conocida (Armani Exchange): su precio anterior no es fiable
-  ✗ amz-B07W7L1V68 Logitech MK295 Silent, QWERTY Español: solo -35% frente a su PVP recomendado (34,99 €)
-  ✗ amz-B0FKTR94BR Cecotec Manta Eléctrica 180x200 cm HeatConfort Weighted 9…: calidad: solo -30% (mínimo -35%)
-  ✗ amz-B0DJ31QDGL Cecotec Almohadilla Eléctrica HeatConfort 6000 ThermalPad.…: solo -38% frente a su PVP recomendado (28,80 €)
-  ✗ amz-B0DJ2PCZKH Beurer TS 17 Calientacamas eléctrico: marca poco conocida (Beurer): su precio anterior no es fiable
-  ✗ amz-B01MU77FQQ Logitech MK850 Combo Teclado y Ratón Multidispositivo: solo -27% frente a su PVP recomendado (109,99 €)
-  ✗ amz-B0FXMNMTL2 Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -29% frente a su precio mediano de los 90 días (69,99 €)
-  ✗ amz-B0FXMP9W5H Calvin Klein Euphoria Bold Elixir Parfum Intense para Mujer: solo -24% frente a su precio mediano de los 90 días (55,90 €)
-  ✗ amz-B084G8WZFS CALVIN KLEIN CK Everyone Eau de Toilette unisex |Fragancia…: solo -25% frente a su precio mediano de los 90 días (25,50 €)
-  ✗ amz-B0FXM2SN8L Calvin Klein Euphoria Solar Elixir Parfum Intense para Mujer: solo -23% frente a su precio mediano de los 90 días (58,80 €)
-  ✗ amz-B07X5DZ8QS The G-Lab K-Pad Thorium Mando Gaming PC & PS3 con USB: marca poco conocida (The G-Lab): su precio anterior no es fiable
-  ✗ amz-B0DJTJDN73 Turtle Beach Stealth Pivot draadloze: marca poco conocida (Turtle Beach): su precio anterior no es fiable
-  ✗ amz-B0F8VXLZ7Z Koomando Mando universal para TV LG original: precio fuera de rango (9.31 €)
-  ✗ amz-B081JTVYVP Cecotec BigDry 2500 Pure Light Deshumidificador: solo -18% frente a su PVP recomendado (89,90 €)
-  ✗ amz-B0FZKDR6R4 Kambo Plafón LED Redondo de Madera 24W 4500K 2400LM 30cm: marca poco conocida (Kambo): su precio anterior no es fiable
+  ✗ amz-B0GSS34ZYM Ninja Foodi FlexDrawer, Freidora de Aire con Compartimento…: solo -37% frente a su PVP recomendado (269,99 €)
+  ✗ amz-B009KZO3PY Logitech MK330 Combo Teclado y Ratón Inalámbrico parta…: solo -38% frente a su PVP recomendado (49,99 €)
   ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 29 min; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 29 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 29 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 29 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 29 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 29 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 29 min; espera en la cola
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
+  ⏸ B0DXMP9CGT variedad: ya salió otro producto de tipo «camara» hace 74 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 27 · 15:55 ==
-  Seguimiento B0CWP7M17B: sigue a 65,99 €
-  Seguimiento B0CX8MQF7R: sigue a 164,00 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B01B7HVRC4: sigue a 189,99 €
-  ✗ amz-B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: no es ninguna bajada: hace menos de una semana ya estaba a 96.22 € (historial propio de 6 días)
+== pasada 15 · 16:40 ==
+  Seguimiento B09B94956P: sigue a 39,99 €
+  Seguimiento B0DJGCX6Q2: sigue a 23,99 €
+  Seguimiento B0C2S2J7JP: sigue a 59,99 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
   ✗ amz-B0FWJSXX58 2026 Robot Aspirador y Fregasuelos con Mapeo…: no es ninguna bajada: hace menos de una semana ya estaba a 89.99 € (historial propio de 5 días)
   ✗ amz-B0GRBNJVWY M mimotec - Twist Aspiradora Sin Cable…: no es ninguna bajada: hace menos de una semana ya estaba a 41.00 € (historial propio de 6 días)
-  ✗ amz-B0F99K7DS9 Ninja CRISPi, Freidora de Aire Portátil 4 en 1: no es ninguna bajada: hace menos de una semana ya estaba a 96.22 € (historial propio de 6 días)
   ✗ amz-B00U0AEL7I Severin Cafetera Espresso con espumador de leche: solo -13% frente a su precio habitual de 39.90 € (historial de 6 días)
   ✗ amz-B0FNWRWSLS KRUPS Dolce Gusto Piccolo XS: no es ninguna bajada: hace menos de una semana ya estaba a 73.94 € (historial propio de 3 días)
+  ✗ amz-B0FT28VCTL Moulinex Blend Up, Batidora Vaso 1000W 8…: no es ninguna bajada: hace menos de una semana ya estaba a 74.99 € (historial propio de 6 días)
   ✗ amz-B00U65CWOG Russell Hobbs Robot de Cocina Cook@Home: no es ninguna bajada: hace menos de una semana ya estaba a 77.99 € (historial propio de 6 días)
   ✗ amz-B09MWMJG76 Ufesa TotalChef RK7 Robot de Cocina Inteligente…: no es ninguna bajada: hace menos de una semana ya estaba a 319.99 € (historial propio de 4 días)
   ✗ amz-B0FKT6CZPN Ufesa TotalChef RK10 Robot Cocina Multifunción…: no es ninguna bajada: hace menos de una semana ya estaba a 549.99 € (historial propio de 5 días)
-  Amazon (API): 106 con descuento grande, 57 con precio anterior y stock
-Candidatos a revisar: 28
-  ✗ amz-B0GZZ96X7N roborock Qrevo 2 Pro Set Robot Aspirador Succión Extrema de…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0FRS4CNYF Nespresso De'Longhi Vertuo Pop: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0D7K22T5R Taurus - Batidora de Vaso Potente Prior Inox 1500W: ya publicado hace poco y no ha bajado más
-  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✗ amz-B08CKWXL6H Swan Horno microondas digital nórdico de 20 L: no es ninguna bajada: hace menos de una semana ya estaba a 99.90 € (historial propio de 5 días)
+  ✗ amz-B09XDY8MJ8 Corberó - Microondas con grill: no es ninguna bajada: hace menos de una semana ya estaba a 79.99 € (historial propio de 5 días)
+  ✗ amz-B01HXN8PCQ Cata ME 4006 X, Horno Limpieza Aquasmart…: solo -15% frente a su precio habitual de 226.00 € (historial de 5 días)
+  Amazon (API): 102 con descuento grande, 57 con precio anterior y stock
+Candidatos a revisar: 13
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
   ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
   ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
   ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
   ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B01B7HVRC4 Bosch - Robot de cocina, Serie 4: ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✗ amz-B0BPZV534P Cecotec Batidora de Vaso Retro RetroTwist Red. 800W de…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0DQLLMWTQ Ufesa Coral Black Batidora de Vaso: marca poco conocida (Ufesa): su precio anterior no es fiable
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
   ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0H95PYTXM Ninja CRISPi Freidora de aire 4 en 1 de 3,8 l: solo -33% frente a su PVP recomendado (179,99 €)
-  ✗ amz-B0GHS9HSPN Cecotec Robot Aspirador y Friegasuelos con Base Autovaciado…: calidad: solo -30% (mínimo -35%)
-  ✗ amz-B08CBJCQ39 PHILIPS Serie 5400 Cafetera Superautomática: solo -38% frente a su PVP recomendado (669,99 €)
-  ✗ amz-B08CBJ8W9W Philips Serie 5400 Cafetera Superautomática: solo -37% frente a su PVP recomendado (669,99 €)
-  ✗ amz-B0D92CZC7Z KRUPS Authentic, Cafetera Espresso Manual: solo -38% frente a su PVP recomendado (129,99 €)
-  ✗ amz-B0CZY23DYB Ninja Double Stack XL, Freidora de Aire de Doble Cajón: solo -37% frente a su PVP recomendado (269,99 €)
-  ✗ amz-B0CX23H3G6 Philips 5000 Batidora de Vaso ProBlend Plus: calidad: solo -33% (mínimo -35%)
-  ✗ amz-B0BQ1TCC6F Cecotec Cafetera Express Power Espresso Touch ColdBrew.…: solo -22% frente a su PVP recomendado (89,90 €)
-  ✗ amz-B0DK5VPTS1 Cecotec Cafetera express para café espresso y cappuccino…: solo -21% frente a su PVP recomendado (94,90 €)
-  ✗ amz-B0CG6BLJ37 KRUPS Dolce Gusto Genio S, Cafetera Cápsulas + Café: solo -30% frente a su PVP recomendado (104,99 €)
-  ✗ amz-B0F8VJX8CW YASHE Procesador de Alimentos: marca poco conocida (YASHE): su precio anterior no es fiable
-  ✗ amz-B0BQ1SQ6DQ Cecotec Cafetera Espresso Compacta Power Espresso 20 Retro…: solo -14% frente a su PVP recomendado (103,99 €)
-  ✗ amz-B09M8ZSM4W De'Longhi Stilosa - Cafetera Espresso Manual con Espumador…: solo -7% frente a su precio mediano de los 90 días (99,90 €)
+  ✗ amz-B0BPYQ51KL Cecotec Horno Convección de Sobremesa de 60 Litros…: solo -34% frente a su PVP recomendado (139,90 €)
   ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 31 min; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 31 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 31 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 31 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 31 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 31 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 31 min; espera en la cola
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
+  ⏸ B0DXMP9CGT variedad: ya salió otro producto de tipo «camara» hace 76 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 28 · 15:57 ==
-  Seguimiento B0B5FGHCKR: sigue a 144,95 €
-  Seguimiento B0C2S2J7JP: sigue a 59,99 €
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B0DJGCX6Q2: sigue a 23,99 €
-  ✗ amz-B08CKWXL6H Swan Horno microondas digital nórdico de 20 L: no es ninguna bajada: hace menos de una semana ya estaba a 99.90 € (historial propio de 5 días)
-  ✗ amz-B09XDY8MJ8 Corberó - Microondas con grill: no es ninguna bajada: hace menos de una semana ya estaba a 79.99 € (historial propio de 5 días)
+== pasada 16 · 16:42 ==
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B07W7KMK4W: sigue a 40,74 €
+  Seguimiento B0DKLFHZDH: sigue a 74,99 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
   ✗ amz-B08P27DYFX Electrolux Placa de Inducción: no es ninguna bajada: hace menos de una semana ya estaba a 299.00 € (historial propio de 4 días)
   ✗ amz-B0BV76YQ57 CATA Placa de Inducción ISB 3102 BK: solo -15% frente a su precio habitual de 120.00 € (historial de 6 días)
   ✗ amz-B08DMSL5Z1 Hisense WF1Q9041BW - Lavadora: no es ninguna bajada: hace menos de una semana ya estaba a 265.99 € (historial propio de 5 días)
@@ -929,54 +436,46 @@ Nada que cumpla todas las reglas en esta pasada.
   ✗ amz-B08145SDBQ Campingaz Camping Kitchen 2 CV Gas Stove: no es ninguna bajada: hace menos de una semana ya estaba a 57.49 € (historial propio de 6 días)
   ✗ amz-B07BXDF2CJ Cata Placa Cristal Gas LCIB 6021 BK: no es ninguna bajada: hace menos de una semana ya estaba a 108.99 € (historial propio de 5 días)
   ✗ amz-B0GTRP6G9Y LG 43QNED70B6C - Smart TV QNED MiniLED AI 43" 4K…: no es ninguna bajada: hace menos de una semana ya estaba a 329.00 € (historial propio de 5 días)
-  Amazon (API): 110 con descuento grande, 67 con precio anterior y stock
-Candidatos a revisar: 25
-  ✗ amz-B0BVRMW1XF Severin Microondas 17 l, 700 W: ya publicado hace poco y no ha bajado más
-  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✗ amz-B08Z4H7L2L Sony HT-S40R - Barra de Sonido 5.1 (Sistema de…: no es ninguna bajada: hace menos de una semana ya estaba a 183.35 € (historial propio de 5 días)
+  ✗ amz-B09GFW6SK2 GXTrust Axon Barra de Sonido con Iluminación RGB…: no es ninguna bajada: hace menos de una semana ya estaba a 17.09 € (historial propio de 6 días)
+  ✗ amz-B0HBP3MDJP GarageRock 31″ Barra de Sonido: no es ninguna bajada: hace menos de una semana ya estaba a 64.99 € (historial propio de 5 días)
+  ✗ amz-B0DDY4LY35 Trust Liro Barra de Sonido PC 12W: no es ninguna bajada: hace menos de una semana ya estaba a 19.89 € (historial propio de 5 días)
+  ✗ amz-B0CVGZBYBQ GXTrust Rhox Barra de Sonido con Iluminación RGB…: no es ninguna bajada: hace menos de una semana ya estaba a 27.99 € (historial propio de 4 días)
+  Amazon (API): 109 con descuento grande, 67 con precio anterior y stock
+Candidatos a revisar: 14
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
   ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
   ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
   ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
   ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B0FL7K9LLT Cecotec Placa de Inducción 4 zonas de fuego Placa Bolero…: ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
   ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0DHY5YD1C COMFEE' CDWPF1201PW Lavavajillas 60cm Libre Instalación: marca poco conocida (Comfee): su precio anterior no es fiable
-  ✗ amz-B09FKD6Q4W Lavadora de carga frontal AEG L6FBI147P Serie 6000: marca poco conocida (AEG): su precio anterior no es fiable
-  ✗ amz-B0D4TDSDDK Secadora Electrolux 8kg Cuid. Avanzado S600 EDI618A5BO: marca poco conocida (Electrolux): su precio anterior no es fiable
-  ✗ amz-B01LXWYSOO TEKA Campana Extractora Integrada 60 cm: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0F222TW2K Samsung TV 48 Pulgadas OLED S93F 4K Smart TV: calidad: solo -30% (mínimo -35%)
-  ✗ amz-B096VVGCH4 COMFEE' SLIF17B-60, Campana Extractora 60 cm: marca poco conocida (Comfee): su precio anterior no es fiable
-  ✗ amz-B0DXYV6TXJ COMFEE' CBO60M80M1-BK Horno empotrable de 60 cm y 60 litros…: marca poco conocida (Comfee): su precio anterior no es fiable
-  ✗ amz-B0G2YR3LS9 COMFEE' Horno Pizza Eléctrico Empotrable Multifunción: marca poco conocida (Comfee): su precio anterior no es fiable
-  ✗ amz-B0GCD4C8GH COMFEE' 88L Congelador Vertical Independiente: marca poco conocida (Comfee): su precio anterior no es fiable
-  ✗ amz-B0D2QTJHGB CIARRA CBCS6762A Campana Extractora 60cm A+++ 650m³/h…: marca poco conocida (CIARRA): su precio anterior no es fiable
-  ✗ amz-B0H4ZV6M7S Haier H6 QLED 4K 43" 43H6GUX: calidad: solo -26% (mínimo -35%)
-  ✗ amz-B0FCY9BLXG Candy ProWash&Dry 500 - BWR 4128BL8-S Lavasecadora: solo -24% frente a su PVP recomendado (628,15 €)
-  ✗ amz-B08PPG3TGZ CATA CCI 5003 BK Placa Gas 59 cm: marca poco conocida (Cata): su precio anterior no es fiable
-  ✗ amz-B0DYJTPM69 Hisense HV16A - Lavavajillas 60cm: solo -8% frente a su precio mediano de los 90 días (431,82 €)
+  ✗ amz-B0BLNSPYWP Hisense RB329N4ACE - Frigorífico Combi 2 Puertas: solo -22% frente a su precio mediano de los 90 días (409,99 €)
+  ✗ amz-B0G7WZTR4K Hisense FT3K310SEWE1 - Congelador Una Puerta Total No Frost…: solo -3% frente a su precio mediano de los 90 días (599,00 €)
   ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 33 min; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 33 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 33 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 33 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 33 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 33 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 33 min; espera en la cola
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
+  ⏸ B0DXMP9CGT variedad: ya salió otro producto de tipo «camara» hace 78 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 29 · 15:59 ==
-  Seguimiento B07W7KMK4W: sigue a 40,74 €
-  Seguimiento B0DKLFHZDH: sigue a 74,99 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-  Seguimiento B09B94956P: sigue a 39,99 €
+== pasada 17 · 16:44 ==
+  Seguimiento B0CZHXHLDJ: sigue a 34,99 €
+  Seguimiento B0CX4YZCHS: sigue a 143,89 €
+  Seguimiento B0HG82D9PQ: sigue a 399,95 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
 Modo sin silencios: 35 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  ✗ amz-B08Z4H7L2L Sony HT-S40R - Barra de Sonido 5.1 (Sistema de…: no es ninguna bajada: hace menos de una semana ya estaba a 183.35 € (historial propio de 5 días)
-  ✗ amz-B09GFW6SK2 GXTrust Axon Barra de Sonido con Iluminación RGB…: no es ninguna bajada: hace menos de una semana ya estaba a 17.09 € (historial propio de 6 días)
-  ✗ amz-B0HBP3MDJP GarageRock 31″ Barra de Sonido: no es ninguna bajada: hace menos de una semana ya estaba a 64.99 € (historial propio de 5 días)
-  ✗ amz-B0DDY4LY35 Trust Liro Barra de Sonido PC 12W: no es ninguna bajada: hace menos de una semana ya estaba a 19.89 € (historial propio de 5 días)
-  ✗ amz-B0CVGZBYBQ GXTrust Rhox Barra de Sonido con Iluminación RGB…: no es ninguna bajada: hace menos de una semana ya estaba a 27.99 € (historial propio de 4 días)
   ✗ amz-B0HN1ZV5JS Auriculares Inalambricos Bluetooth 5.4 HiFi…: no es ninguna bajada: hace menos de una semana ya estaba a 21.99 € (historial propio de 7 días)
   ✗ amz-B0HPS3DNNF Auriculares Inalambricos Bluetooth 5.4 HiFi…: no es ninguna bajada: hace menos de una semana ya estaba a 23.99 € (historial propio de 7 días)
   ✗ amz-B0FLJ5YX1Z Baseus Inspire XC1 Auriculares Open-Ear: no es ninguna bajada: hace menos de una semana ya estaba a 119.99 € (historial propio de 5 días)
@@ -984,19 +483,21 @@ Modo sin silencios: 35 min sin publicar; admito desde -30 % en categorías estre
   ✗ amz-B0BTDX26B2 Sony WH-CH720N Auriculares Inalámbricos Diadema…: precio anterior inflado: lo ponen a 149.99 € pero su precio habitual es 67.00 € (solo -16%, historial de 6 días)
   ✗ amz-B0CQK8TZCF RUIMEN Reloj Inteligente Mujer Hombre con…: no es ninguna bajada: hace menos de una semana ya estaba a 28.49 € (historial propio de 6 días)
   ✗ amz-B0DYF1ZLHM Microsoft Surface Laptop, 13": no es ninguna bajada: hace menos de una semana ya estaba a 995.99 € (historial propio de 6 días)
-  ✗ amz-B0DCHHY728 DELL Inspiron 7441 Laptop 14 QHD+ Touchscreen…: no es ninguna bajada: hace menos de una semana ya estaba a 575.66 € (historial propio de 6 días)
-  Amazon (API): 110 con descuento grande, 27 con precio anterior y stock
-Candidatos a revisar: 30
-  ✗ amz-B09B94956P Echo Dot (modelo de 2022) | Altavoz inteligente wifi y…: ya publicado hace poco y no ha bajado más
-  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  Amazon (API): 108 con descuento grande, 26 con precio anterior y stock
+Candidatos a revisar: 31
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
   ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
   ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
   ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
   ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
   ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
+  ✗ amz-B0H6XTP3WL POCO X8, Smartphone 8G+256GB: solo -30% frente a su PVP recomendado (399,90 €)
   ✗ amz-B0DXKMXPXW JBL Flip 7, Altavoz Bluetooth portátil inalámbrico Potente: solo -37% frente a su PVP recomendado (149,99 €)
   ✗ amz-B0DHL93XCN JBL Wave Beam 2, Auriculares Wireless con Cancelación de…: solo -38% frente a su PVP recomendado (79,99 €)
   ✗ amz-B0FDKQZ18F Bose QuietComfort Ultra Bluetooth (2.ª generación)…: solo -33% frente a su PVP recomendado (449,95 €)
@@ -1005,33 +506,34 @@ Candidatos a revisar: 30
   ✗ amz-B0FQGPHDT7 Apple iPhone Air 256 GB - Negro espacial: solo -26% frente a su PVP recomendado (1.319,00 €)
   ✗ amz-B0GX9SBDKC XIAOMI REDMI Pad 2 4+256GB Tablet de 11" 2.5K Gris Batería…: solo -29% frente a su PVP recomendado (279,90 €)
   ✗ amz-B0GNN5GMWY Samsung Galaxy A57 5G, 512GB: solo -27% frente a su PVP recomendado (899,00 €)
-  ✗ amz-B0D96Q5P49 TCL S55HE Barra de Sonido 2.1: solo -23% frente a su PVP recomendado (129,00 €)
+  ✗ amz-B0H7959ZGC REDMI 17, 4+128GB, Verde Roble: solo -28% frente a su PVP recomendado (219,90 €)
+  ✗ amz-B0H79Q2ZKJ REDMI 17, 4+128GB, Negro, 7500mAh: solo -28% frente a su PVP recomendado (219,90 €)
+  ✗ amz-B0H4H886FD REDMI Note 17 5G, Smartphone 6+128GB: solo -28% frente a su PVP recomendado (349,90 €)
+  ✗ amz-B0H79Q6WQC REDMI 17, 4+128GB, Azul Profundo: solo -28% frente a su PVP recomendado (219,90 €)
   ✗ amz-B0FGYFDPNP Bose Ultra Open Earbuds, Auriculares inalámbricos de botón…: solo -21% frente a su precio mediano de los 90 días (254,00 €)
   ✗ amz-B0CX1TJXKV Sony ULT Wear Auriculares inalambricos Bluetooth con…: solo -29% frente a su PVP recomendado (149,00 €)
-  ✗ amz-B0GQZ67HHZ HP OmniBook 3 Ordenador Portátil 16" Core 5: solo -22% frente a su PVP recomendado (899,00 €)
-  ✗ amz-B0F8QFTXW9 TCL 43T69C 43 Pulgadas QLED 4K HDR10+ Smart TV: solo -18% frente a su PVP recomendado (329,00 €)
   ✗ amz-B0FRRMD96F Anker soundcore 2 Altavoz Bluetooth Portátil 12 W: solo -18% frente a su precio mediano de los 90 días (33,99 €)
-  ✗ amz-B0H44KWKRS XIAOMI TV 32 Pulgadas (81 cm) 2026: solo -14% frente a su precio mediano de los 90 días (139,00 €)
-  ✗ amz-B078Y5Q6W9 Sony HT-S150 Barra sonido TV compacta con Bluetooth 2…: solo -15% frente a su precio mediano de los 90 días (96,90 €)
-  ✗ amz-B0GKBFPSJ6 Samsung TV Neo QLED QN73H 43" 4K Smart TV con IA: solo -4% frente a su precio mediano de los 90 días (449,00 €)
-  ✗ amz-B0GTRJ4LRS LG 43NU800B6LC - Smart TV Nano UHD AI 43" 4K Sin Reflejos…: solo -10% frente a su precio mediano de los 90 días (297,99 €)
-  ✗ amz-B0DX2D8XPM Hisense AX5100Q - Barra de Sonido 5.1: solo -8% frente a su precio mediano de los 90 días (193,57 €)
-  ✗ amz-B0H7BF91XG XIAOMI TV Pro 32 Pulgadas 2026: solo -7% frente a su precio mediano de los 90 días (139,00 €)
+  ✗ amz-B0GYQ9SJT7 HP OmniBook 5 Ordenador Portátil 14” OLED: solo -12% frente a su precio mediano de los 90 días (849,00 €)
+  ✗ amz-B0FHJNDQBR Google Pixel 10 - Smartphone Android Libre con Gemini: solo -9% frente a su precio mediano de los 90 días (549,00 €)
+  ✗ amz-B0FHL7TPXC Google Pixel 10 Pro XL - Smartphone Android Libre con Gemini: solo -8% frente a su PVP recomendado (1.299,00 €)
   ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 35 min; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 35 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 35 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 35 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 35 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 35 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 35 min; espera en la cola
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
+  ⏸ B0DXMP9CGT variedad: ya salió otro producto de tipo «camara» hace 80 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 30 · 16:01 ==
-  Seguimiento B0CX4YZCHS: sigue a 143,89 €
-  Seguimiento B0HG82D9PQ: sigue a 399,95 €
-  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
-  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+== pasada 18 · 16:46 ==
+  Seguimiento B0BVRMW1XF: sigue a 49,90 €
+  Seguimiento B0FGXYSTLD: sigue a 46,99 €
+  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
 Modo sin silencios: 37 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
   ✗ amz-B09HTR3PJD SPC DICKENS LIGHT 2 - Libro electrónico 6" con luz: no es ninguna bajada: hace menos de una semana ya estaba a 89.90 € (historial propio de 5 días)
   ✗ amz-B0D693NPQJ Protector de pantalla antirreflejos (paquete de…: no es ninguna bajada: hace menos de una semana ya estaba a 13.29 € (historial propio de 6 días)
@@ -1041,19 +543,21 @@ Modo sin silencios: 37 min sin publicar; admito desde -30 % en categorías estre
   ✗ amz-B0C23M7Y9V KOORUI Monitor Gaming 24 Pulgadas Curvo 180Hz 1ms…: no es ninguna bajada: hace menos de una semana ya estaba a 94.98 € (historial propio de 6 días)
   ✗ amz-B0DPHGY8VB KOORUI Gaming Monitor 24" 180Hz PC Pantalla FHD…: no es ninguna bajada: hace menos de una semana ya estaba a 74.99 € (historial propio de 4 días)
   ✗ amz-B0GK1FMZWB SANDISK Optimus GX 7100 NVMe SSD 500 GB (hasta…: no es ninguna bajada: hace menos de una semana ya estaba a 108.56 € (historial propio de 5 días)
-  Amazon (API): 111 con descuento grande, 33 con precio anterior y stock
-Candidatos a revisar: 37
-  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✗ amz-B094MP72KM Sonnics 500GB USB 3.0 Externos Portátil Duros…: no es ninguna bajada: hace menos de una semana ya estaba a 31.75 € (historial propio de 5 días)
+  Amazon (API): 112 con descuento grande, 29 con precio anterior y stock
+Candidatos a revisar: 35
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
   ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
   ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
   ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
   ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B0FLQ8KQC7 Lenovo Legion 24-10- Monitor Gaming FHD 23.8": ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
   ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0H6XTP3WL POCO X8, Smartphone 8G+256GB: solo -30% frente a su PVP recomendado (399,90 €)
   ✗ amz-B0GN5JQPVM ASUS V16 V3607VH-TK214 - Ordenador Portátil Gaming de 16"…: solo -33% frente a su PVP recomendado (1.199,99 €)
   ✗ amz-B0FWCPNPCV MSI mag 276CFA E20 Monitor Gaming de 27" FHD 1500R: solo -35% frente a su PVP recomendado (151,99 €)
   ✗ amz-B0F5BTWP9T AOC U27G4R Gaming Monitor 27 Pulgadas: solo -34% frente a su PVP recomendado (349,00 €)
@@ -1061,10 +565,7 @@ Candidatos a revisar: 37
   ✗ amz-B0CFPN47NY Kindle Paperwhite Signature Edition 32 GB de Amazon (modelo…: solo -39% frente a su PVP recomendado (259,99 €)
   ✗ amz-B0CFPN5PRF Kindle Paperwhite Signature Edition 32 GB de Amazon (modelo…: solo -39% frente a su PVP recomendado (259,99 €)
   ✗ amz-B0CX8YKQ2H Kindle Colorsoft Signature Edition (32 GB) de Amazon…: solo -40% frente a su PVP recomendado (329,99 €)
-  ✗ amz-B0H4H1SZ8K REDMI Note 17 5G, Smartphone 6+128GB: solo -28% frente a su PVP recomendado (349,90 €)
-  ✗ amz-B0H79Q6WQC REDMI 17, 4+128GB, Azul Profundo: solo -28% frente a su PVP recomendado (219,90 €)
-  ✗ amz-B0H4H886FD REDMI Note 17 5G, Smartphone 6+128GB: solo -28% frente a su PVP recomendado (349,90 €)
-  ✗ amz-B0H4H8TVL4 REDMI Note 17 5G, Smartphone 6+128GB: solo -28% frente a su PVP recomendado (349,90 €)
+  ✗ amz-B0GX9SBDKC XIAOMI REDMI Pad 2 4+256GB Tablet de 11" 2.5K Gris Batería…: solo -29% frente a su PVP recomendado (279,90 €)
   ✗ amz-B0836PMQ5K Acer Aspire 14 AI | Portátil: solo -27% frente a su PVP recomendado (899,00 €)
   ✗ amz-B0GXZQH1G6 LG 27US50Z-W - Monitor UltraFine: solo -27% frente a su PVP recomendado (219,00 €)
   ✗ amz-B0GXZSGDQ7 LG Monitor Ultrafine 32UR55ZK-B: solo -27% frente a su PVP recomendado (299,00 €)
@@ -1073,30 +574,32 @@ Candidatos a revisar: 37
   ✗ amz-B0H8YRFL38 Lenovo IdeaPad Slim 3, Ordenador Portátil: solo -27% frente a su PVP recomendado (899,00 €)
   ✗ amz-B0FWCLJ51V MSI Pro MP275QA E14 de 27" WQHD: solo -25% frente a su PVP recomendado (171,99 €)
   ✗ amz-B0GPFN28TP ASUS V16 V3607VM-TK150 - Ordenador Portátil Gaming de 16"…: solo -13% frente a su precio mediano de los 90 días (1.091,87 €)
-  ✗ amz-B0H2W9K92R HP OmniBook 3 Ordenador Portátil 16": solo -11% frente a su mínimo de los 30 días anteriores (449,00 €)
   ✗ amz-B07TH6YFPY Acer Nitro Monitor Gaming 27" 4K UHD IPS: solo -19% frente a su precio mediano de los 90 días (156,63 €)
   ✗ amz-B0FKBRLWNW LG Monitor Ultrafine 27U730A-B: solo -15% frente a su precio mediano de los 90 días (259,00 €)
-  ✗ amz-B0FHJNDQBR Google Pixel 10 - Smartphone Android Libre con Gemini: solo -9% frente a su precio mediano de los 90 días (549,00 €)
-  ✗ amz-B0FHL7TPXC Google Pixel 10 Pro XL - Smartphone Android Libre con Gemini: solo -8% frente a su PVP recomendado (1.299,00 €)
   ✗ amz-B0CS3W1DMF MSI mag 27C6F Monitor Curvo Gaming FHD de 27": solo -9% frente a su precio mediano de los 90 días (109,00 €)
   ✗ amz-B0FWCTSGL9 MSI mag 275FA E20 Monitor Gaming de 27" FHD: solo -9% frente a su precio mediano de los 90 días (109,00 €)
+  ✗ amz-B0GQCJ2D3D CORSAIR Vengeance RGB RS DDR5 16GB (2 x 8GB) hasta 5200MHz…: solo -8% frente a su precio mediano de los 90 días (304,99 €)
+  ✗ amz-B0HC453DG1 CORSAIR Vengeance RGB RS DDR5 32GB (2 x 16GB) hasta 6000MHz…: solo -5% frente a su precio mediano de los 90 días (554,99 €)
+  ✗ amz-B0HC4JGQJ8 CORSAIR Vengeance RGB RS DDR5 32GB (2 x 16GB) hasta 6000MHz…: solo -8% frente a su precio mediano de los 90 días (573,99 €)
   ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 37 min; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 37 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 37 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 37 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 37 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 37 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 37 min; espera en la cola
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
+  ⏸ B0DXMP9CGT variedad: ya salió otro producto de tipo «camara» hace 82 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 31 · 16:03 ==
-  Seguimiento B0FGXYSTLD: sigue a 46,99 €
-  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
-  Seguimiento B07W5JKKFJ: sigue a 64,97 €
-  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+== pasada 19 · 16:48 ==
+  Seguimiento B0DMTVGZL3: sigue a 47,99 €
+  Seguimiento B00XYTTEAQ: sigue a 24,24 €
+  Seguimiento B0C3D2DGYP: sigue a 59,95 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
 Modo sin silencios: 39 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  ✗ amz-B094MP72KM Sonnics 500GB USB 3.0 Externos Portátil Duros…: no es ninguna bajada: hace menos de una semana ya estaba a 31.75 € (historial propio de 5 días)
   ✗ amz-B0815XFSGK AMD Ryzen 7 5800X Procesador: no es ninguna bajada: hace menos de una semana ya estaba a 202.95 € (historial propio de 6 días)
   ✗ amz-B0815XFSGK AMD Ryzen 7 5800X Procesador: no es ninguna bajada: hace menos de una semana ya estaba a 202.95 € (historial propio de 6 días)
   ✗ amz-B0DZ32G7XY Mercusys MB115-4G - Router 4G LTE SIM: no es ninguna bajada: hace menos de una semana ya estaba a 33.16 € (historial propio de 5 días)
@@ -1115,56 +618,6 @@ Modo sin silencios: 39 min sin publicar; admito desde -30 % en categorías estre
   ✗ amz-B07W7LW3VV Logitech G G502 X Ratón Gaming con Cable: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 5 días)
   ✗ amz-B07W6JN8N7 Logitech G G203 LIGHTSYNC Ratón Gaming Blanco: no es ninguna bajada: hace menos de una semana ya estaba a 18.89 € (historial propio de 6 días)
   ✗ amz-B0F63WRQCX GXTrust Vylax Ratón Inalámbrico Gaming Recargable: no es ninguna bajada: hace menos de una semana ya estaba a 15.09 € (historial propio de 4 días)
-  Amazon (API): 110 con descuento grande, 32 con precio anterior y stock
-Candidatos a revisar: 32
-  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
-  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
-  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
-  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
-  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
-  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
-  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0DNZCT6ML Thermaltake Toughpower GT 850W: marca poco conocida (Thermaltake): su precio anterior no es fiable
-  ✗ amz-B0F1Z5982Y ASUS TUF Gaming B650E-PLUS WiFi: solo -44% frente a su PVP recomendado (249,99 €)
-  ✗ amz-B0FB43WPJC MSI mag A850GLS PCIE5, Fuente de alimentación: solo -41% frente a su PVP recomendado (144,99 €)
-  ✗ amz-B0CS3FD17C TP-Link TL-MR110 - Router 4G LTE SIM: solo -32% frente a su PVP recomendado (65,99 €)
-  ✗ amz-B0GJTBKGDV Epson EcoTank ET-2955 Impresora de Depósito de Tinta: solo -35% frente a su PVP recomendado (369,34 €)
-  ✗ amz-B08H21YHQX ASUS ROG Thor 1200W Platinum III: solo -35% frente a su PVP recomendado (439,90 €)
-  ✗ amz-B0DCZJSJ7Z Thermaltake Toughpower GT 850W: marca poco conocida (Thermaltake): su precio anterior no es fiable
-  ✗ amz-B0GFXFKSR1 ASUS Prime 750W Gold Black Edition: solo -31% frente a su PVP recomendado (109,90 €)
-  ✗ amz-B0DRBMB5PM Tenda A18 Pro AC1200 Repetidor WiFi con Puerto Gigabit: marca poco conocida (Tenda): su precio anterior no es fiable
-  ✗ amz-B01N7BN0YF LaCie 1TB Rugged Disco Duro Portátil: marca poco conocida (LaCie): su precio anterior no es fiable
-  ✗ amz-B0F1Z3YZN4 ASUS TUF Gaming B850-E WiFi - Placa Base AMD ATX: solo -25% frente a su precio mediano de los 90 días (222,90 €)
-  ✗ amz-B0BK541686 ASUS TUF Gaming 850W Gold - Fuente de Alimentación Modular…: solo -25% frente a su PVP recomendado (129,90 €)
-  ✗ amz-B0DK579HVY Tenda RX2L Pro - AX1500 Router WiFi 6: marca poco conocida (Tenda): su precio anterior no es fiable
-  ✗ amz-B0DFQCTYT6 GIGABYTE Placa Base X870 AORUS Elite WIFI7 Ice: solo -13% frente a su precio mediano de los 90 días (279,95 €)
-  ✗ amz-B095SYK1R9 TP-Link RE500X Repetidor WiFi 6 AX1500 Doble Banda: solo -10% frente a su precio mediano de los 90 días (49,99 €)
-  ✗ amz-B00K11UHVA TP-Link TL-WA860RE - Repetidor WiFi 4: solo -15% frente a su PVP recomendado (24,99 €)
-  ✗ amz-B0FCSVV6X7 HP DeskJet 4320, Impresora Multifunción de inyección de…: solo -3% frente a su precio mediano de los 90 días (57,90 €)
-  ✗ amz-B0DHW558TP HP Envy 6520e 714N9B, Impresora multifunción de inyección…: solo -4% frente a su precio mediano de los 90 días (79,71 €)
-  ✗ amz-B0F6LB6Y9N HUAWEI AX3 New Enrutador, Wi-Fi 6 Plus de Banda Dual 3000…: solo -5% frente a su precio mediano de los 90 días (36,99 €)
-  ✗ amz-B0GQCJ2D3D CORSAIR Vengeance RGB RS DDR5 16GB (2 x 8GB) hasta 5200MHz…: solo -8% frente a su precio mediano de los 90 días (304,99 €)
-  ✗ amz-B0HC453DG1 CORSAIR Vengeance RGB RS DDR5 32GB (2 x 16GB) hasta 6000MHz…: solo -5% frente a su precio mediano de los 90 días (554,99 €)
-  ✗ amz-B0HC4JGQJ8 CORSAIR Vengeance RGB RS DDR5 32GB (2 x 16GB) hasta 6000MHz…: solo -8% frente a su precio mediano de los 90 días (573,99 €)
-  ✗ amz-B0C1N8CWZ4 GIGABYTE H610M K DDR4 Placa Base: solo -6% frente a su PVP recomendado (59,59 €)
-  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 39 min; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 39 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 39 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 39 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 39 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 39 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 39 min; espera en la cola
-Nada que cumpla todas las reglas en esta pasada.
-== pasada 32 · 16:05 ==
-  Seguimiento B00XYTTEAQ: sigue a 24,24 €
-  Seguimiento B0C3D2DGYP: sigue a 59,95 €
-  Seguimiento B0CZHXHLDJ: sigue a 34,99 €
-  Seguimiento B0BVRMW1XF: sigue a 49,90 €
-Modo sin silencios: 41 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
   ✗ amz-B09GWK2WZ1 Andaseat Dark Demon Dragon: no es ninguna bajada: hace menos de una semana ya estaba a 217.75 € (historial propio de 3 días)
   ✗ amz-B0D548X9DJ JUPPLIES Silla Escritorio Ergonómica con Soporte…: no es ninguna bajada: hace menos de una semana ya estaba a 79.99 € (historial propio de 4 días)
   ✗ amz-B0G1T6LT3F DRIFT GAMING DRAIR35 – Silla Escritorio…: no es ninguna bajada: hace menos de una semana ya estaba a 75.00 € (historial propio de 5 días)
@@ -1175,14 +628,62 @@ Modo sin silencios: 41 min sin publicar; admito desde -30 % en categorías estre
   ✗ amz-B0D5QTQTV1 UGREEN Webcam 2K 30FPS Full HD Cámara USB A PC…: no es ninguna bajada: hace menos de una semana ya estaba a 24.69 € (historial propio de 4 días)
   ✗ amz-B0G92NRF52 UGREEN FineCam 1080P Webcam 60FPS Full HD USB A C…: no es ninguna bajada: hace menos de una semana ya estaba a 29.05 € (historial propio de 3 días)
   ✗ amz-B004919FY8 NGS XPRESSCAM 300 - Webcam con Micrófono para PC: no es ninguna bajada: hace menos de una semana ya estaba a 5.59 € (historial propio de 6 días)
+  Amazon (API): 113 con descuento grande, 30 con precio anterior y stock
+Candidatos a revisar: 27
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
+  ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
+  ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
+  ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
+  ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
+  ✗ amz-B0F1Z5982Y ASUS TUF Gaming B650E-PLUS WiFi: solo -44% frente a su PVP recomendado (249,99 €)
+  ✗ amz-B0FB43WPJC MSI mag A850GLS PCIE5, Fuente de alimentación: solo -41% frente a su PVP recomendado (144,99 €)
+  ✗ amz-B0CS3FD17C TP-Link TL-MR110 - Router 4G LTE SIM: solo -32% frente a su PVP recomendado (65,99 €)
+  ✗ amz-B0GJTBKGDV Epson EcoTank ET-2955 Impresora de Depósito de Tinta: solo -35% frente a su PVP recomendado (369,34 €)
+  ✗ amz-B08H21YHQX ASUS ROG Thor 1200W Platinum III: solo -35% frente a su PVP recomendado (439,90 €)
+  ✗ amz-B0GFXFKSR1 ASUS Prime 750W Gold Black Edition: solo -31% frente a su PVP recomendado (109,90 €)
+  ✗ amz-B0F1Z3YZN4 ASUS TUF Gaming B850-E WiFi - Placa Base AMD ATX: solo -25% frente a su precio mediano de los 90 días (222,90 €)
+  ✗ amz-B0BK541686 ASUS TUF Gaming 850W Gold - Fuente de Alimentación Modular…: solo -25% frente a su PVP recomendado (129,90 €)
+  ✗ amz-B0DFQCTYT6 GIGABYTE Placa Base X870 AORUS Elite WIFI7 Ice: solo -13% frente a su precio mediano de los 90 días (279,95 €)
+  ✗ amz-B095SYK1R9 TP-Link RE500X Repetidor WiFi 6 AX1500 Doble Banda: solo -10% frente a su precio mediano de los 90 días (49,99 €)
+  ✗ amz-B00K11UHVA TP-Link TL-WA860RE - Repetidor WiFi 4: solo -15% frente a su PVP recomendado (24,99 €)
+  ✗ amz-B0FCSVV6X7 HP DeskJet 4320, Impresora Multifunción de inyección de…: solo -3% frente a su precio mediano de los 90 días (57,90 €)
+  ✗ amz-B0DHW558TP HP Envy 6520e 714N9B, Impresora multifunción de inyección…: solo -4% frente a su precio mediano de los 90 días (79,71 €)
+  ✗ amz-B0F6LB6Y9N HUAWEI AX3 New Enrutador, Wi-Fi 6 Plus de Banda Dual 3000…: solo -5% frente a su precio mediano de los 90 días (36,99 €)
+  ✗ amz-B0C1N8CWZ4 GIGABYTE H610M K DDR4 Placa Base: solo -6% frente a su PVP recomendado (59,59 €)
+  ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+  ⏸ B0DXMP9CGT variedad: ya salió otro producto de tipo «camara» hace 84 min; espera en la cola
+Nada que cumpla todas las reglas en esta pasada.
+== pasada 20 · 16:50 ==
+  Seguimiento B01B7HVRC4: sigue a 189,99 €
+  Seguimiento B0CN41GMDK: sigue a 27,99 €
+  Seguimiento B0GKHPCM7X: sigue a 44,99 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+Modo sin silencios: 41 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
   ✗ amz-B0DHGG9DDB ORICO 1TB SSD Externo Portátil con Cable USB-C 2…: no es ninguna bajada: hace menos de una semana ya estaba a 119.99 € (historial propio de 5 días)
   ✗ amz-B00FMB9A30 Intenso 3413490 - Adaptador para tarjeta Micro…: no es ninguna bajada: hace menos de una semana ya estaba a 10.95 € (historial propio de 6 días)
   ✗ amz-B0C5MB5MTS Asustor AS5402T Nimbustor 2 Gen2: no es ninguna bajada: hace menos de una semana ya estaba a 415.00 € (historial propio de 5 días)
   ✗ amz-B0C3BSZ56D HyperX Cloud III wired Auriculares para Juegos…: no es ninguna bajada: hace menos de una semana ya estaba a 59.99 € (historial propio de 5 días)
   ✗ amz-B0FFP61L6C Turtle Beach Victrix Gambit Prime bedrade…: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 5 días)
   ✗ amz-B07SWSCBJJ Just Dance 2020 - Nintendo Switch [Importación…: no es ninguna bajada: hace menos de una semana ya estaba a 15.83 € (historial propio de 6 días)
-  ✗ amz-B0CQ3PJKRV PDP Mando Gaming Inalámbrico Victrix Pro BFG: no es ninguna bajada: hace menos de una semana ya estaba a 107.20 € (historial propio de 5 días)
   ✗ amz-B0DKT21XWR Turtle Beach Victrix Pro KO Leverless All Button…: no es ninguna bajada: hace menos de una semana ya estaba a 199.00 € (historial propio de 5 días)
+  ✗ amz-B0CQ3PJKRV PDP Mando Gaming Inalámbrico Victrix Pro BFG: no es ninguna bajada: hace menos de una semana ya estaba a 107.20 € (historial propio de 5 días)
   ✗ amz-B0FRFRMDRP EasySMX X05 Pro Mando Inalámbrico para PC: no es ninguna bajada: hace menos de una semana ya estaba a 26.99 € (historial propio de 5 días)
   ✗ amz-B0D7Q2VFQJ EasySMX X05 Mando Inalámbrico para PC: no es ninguna bajada: hace menos de una semana ya estaba a 22.49 € (historial propio de 5 días)
   ✗ amz-B0FJXWB78M Battlefield 6 Standard Edition PS5: no es ninguna bajada: hace menos de una semana ya estaba a 25.99 € (historial propio de 6 días)
@@ -1191,53 +692,47 @@ Modo sin silencios: 41 min sin publicar; admito desde -30 % en categorías estre
   ✗ amz-B0FR4P3QFN Dragon Quest VII: Reimagined: no es ninguna bajada: hace menos de una semana ya estaba a 37.77 € (historial propio de 3 días)
   ✗ amz-B0F2HLR2S8 Terrifier The Artcade Game - NSW: no es ninguna bajada: hace menos de una semana ya estaba a 19.90 € (historial propio de 5 días)
   ✗ amz-B0BX9H2JLB PlayStation®VR2: solo -22% frente a su precio habitual de 447.98 € (historial de 7 días)
-  Amazon (API): 117 con descuento grande, 23 con precio anterior y stock
-Candidatos a revisar: 27
-  ✗ amz-B015CH1NAQ SanDisk Ultra Flair Memoria flash USB 3.0 de 64 GB: precio fuera de rango (7.44 €)
-  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✗ amz-B087JX7KB2 Lexibook, Consola de Juegos portátil Compact…: no es ninguna bajada: hace menos de una semana ya estaba a 36.50 € (historial propio de 5 días)
+  ✗ amz-B0G7LBB2F4 ARNSSIEN Camara Digital 4K Cámara Compacta…: no es ninguna bajada: hace menos de una semana ya estaba a 39.99 € (historial propio de 6 días)
+  Amazon (API): 117 con descuento grande, 21 con precio anterior y stock
+Candidatos a revisar: 18
+  ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
   ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
   ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
   ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
   ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B07MM4V7NR Logitech Webcam C920S Pro HD: ya publicado hace poco y no ha bajado más
-  ✗ amz-B07W5JKKFJ Logitech Brio 500 HD Webcam Cámara USB C: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0CP7JSC7J PlayStation 5 The Last of Us: Parte II Remastered: ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
   ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0GSW8D7HP Resonance : A Plague Tale Legacy: marca poco conocida (Happy Mom): su precio anterior no es fiable
   ✗ amz-B07YYJRXQR SANDISK Ultra Dual Drive Go, Memoria Flash 128 GB (con…: solo -34% frente a su PVP recomendado (31,99 €)
-  ✗ amz-B00BX5FOCK SanDisk 64 GB Cruzer Blade USB 2.0 Flash Drive: precio fuera de rango (10.99 €)
   ✗ amz-B07QBNYJ6X SanDisk 32GB Cruzer Blade USB Flash Drive: solo -38% frente a su PVP recomendado (36,99 €)
-  ✗ amz-B07W4DG81W Logitech G G923 volante y pedales de carrera para Xbox & PC: calidad: solo -29% (mínimo -35%)
-  ✗ amz-B0GFF8KY1Z Scuf VALOR PRO WIRELESS Mando Xbox Performance: marca poco conocida (Scuf): su precio anterior no es fiable
-  ✗ amz-B0G72Q8QJ5 LEGO Batman: El Legado del Caballero Oscuro: marca poco conocida (Warner): su precio anterior no es fiable
   ✗ amz-B0DFQKQ9CB SanDisk microSD Express, 128 GB Tarjeta Micro SD: solo -28% frente a su PVP recomendado (64,99 €)
-  ✗ amz-B0CXDYCKVS Teenage Mutant Ninja Turtles: Mutantes desencadenados: marca poco conocida (Outright Games): su precio anterior no es fiable
-  ✗ amz-B0G1BC4THX UGREEN NASync DXP4800 Pro NAS de Escritorio 4 bahías: marca poco conocida (UGREEN): su precio anterior no es fiable
   ✗ amz-B07KXQX3S3 SANDISK Tarjeta microSD con licencia oficial para Nintendo…: solo -19% frente a su PVP recomendado (42,99 €)
   ✗ amz-B0CTTNWZCM PlayStation 5- Stellar Blade™: solo -18% frente a su precio mediano de los 90 días (44,90 €)
   ✗ amz-B0DTQ35NH6 SanDisk Tarjeta microSD Express de 512 GB: solo -19% frente a su precio mediano de los 90 días (147,14 €)
-  ✗ amz-B08GTYFC37 SANDISK Extreme SSD Externo Portátil 1TB (Disco duro…: solo -5% frente a su precio mediano de los 90 días (169,15 €)
   ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 41 min; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 41 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 41 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 41 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 41 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 41 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 41 min; espera en la cola
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
+  ⏸ B0DXMP9CGT variedad: ya salió otro producto de tipo «camara» hace 86 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 33 · 16:07 ==
-  Seguimiento B0CN41GMDK: sigue a 27,99 €
-  Seguimiento B0GKHPCM7X: sigue a 44,99 €
-  Seguimiento B0GMH56TRH: sigue a 499,99 €
-  Seguimiento B0DMTVGZL3: sigue a 47,99 €
+== pasada 21 · 16:52 ==
+  Seguimiento B0CL5KN4KD: sigue a 34,99 €
+  Seguimiento B0DXQ67BW4: sigue a 44,99 €
+  Seguimiento B0797LMGXH: sigue a 34,99 €
+  Seguimiento B0GL3FXQ5B: sigue a 74,99 €
 Modo sin silencios: 43 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
-  ✗ amz-B087JX7KB2 Lexibook, Consola de Juegos portátil Compact…: no es ninguna bajada: hace menos de una semana ya estaba a 36.50 € (historial propio de 5 días)
-  ✗ amz-B0G7LBB2F4 ARNSSIEN Camara Digital 4K Cámara Compacta…: no es ninguna bajada: hace menos de una semana ya estaba a 39.99 € (historial propio de 6 días)
   ✗ amz-B095CLQ1PT Tapo C210 - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 22.99 € (historial propio de 5 días)
   ✗ amz-B0CDCL38KZ Tapo C200P2 - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 39.99 € (historial propio de 5 días)
   ✗ amz-B0D9MDV5L5 Tapo C200C - Cámara de Vigilancia WiFi Interior…: no es ninguna bajada: hace menos de una semana ya estaba a 18.99 € (historial propio de 5 días)
@@ -1258,64 +753,54 @@ Modo sin silencios: 43 min sin publicar; admito desde -30 % en categorías estre
   ✗ amz-B0FMRQGF4P SwitchBot Termostato Inteligente para Radiador…: no es ninguna bajada: hace menos de una semana ya estaba a 49.99 € (historial propio de 5 días)
   ✗ amz-B0DHK57W3M Ginour Taladro Percutor a Bateria sin escobillas…: no es ninguna bajada: hace menos de una semana ya estaba a 61.99 € (historial propio de 5 días)
   ✗ amz-B000K2NPE6 Brüder Mannesmann Werkzeug M12507: no es ninguna bajada: hace menos de una semana ya estaba a 18.99 € (historial propio de 5 días)
-  Amazon (API): 119 con descuento grande, 37 con precio anterior y stock
-Candidatos a revisar: 33
-  ✗ amz-B0G62D7D84 Blink Videotimbre cableado 2K+ (últ. generación): marca poco conocida (Blink): su precio anterior no es fiable
-  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
-  ✗ amz-B0G622CJGL Blink Videotimbre cableado 2K+ (últ. generación): marca poco conocida (Blink): su precio anterior no es fiable
-  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
+  ✗ amz-B0DHK57W3M Ginour Taladro Percutor a Bateria sin escobillas…: no es ninguna bajada: hace menos de una semana ya estaba a 61.99 € (historial propio de 5 días)
+  ✗ amz-B018YPAKS4 Bosch PRO Amoladora GWS 7-125: no es ninguna bajada: hace menos de una semana ya estaba a 44.99 € (historial propio de 5 días)
+  ✗ amz-B07BRS1KXS Bosch PRO Amoladora GWS 880 | Nivel superior de…: no es ninguna bajada: hace menos de una semana ya estaba a 50.98 € (historial propio de 5 días)
+  Amazon (API): 119 con descuento grande, 42 con precio anterior y stock
+Candidatos a revisar: 23
   ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
-  ✗ amz-B09B8X9RGM Echo Dot (modelo de 2022) | Altavoz inteligente wifi y…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B09B8RF4PY Echo Dot (modelo de 2022) | Altavoz inteligente wifi y…: ya publicado hace poco y no ha bajado más
-  ✗ amz-B0DXQ67BW4 Echo Dot (5.ª generación) | Antracita + Tapo L530EA…: ya publicado hace poco y no ha bajado más
-  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
+  ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
+  ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
   ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
   ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
   ✓ B0FZPRQ9KS Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
   ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✗ amz-B0DMTVGZL3 Ring Intercom Video (última gen.): ya publicado hace poco y no ha bajado más
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
+  ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
   ✗ amz-B0DTQWYZFF Amazon Echo Show 8 (última generación): pantalla HD de 8,7"…: solo -41% frente a su PVP recomendado (219,99 €)
   ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
   ✗ amz-B098JXS6HC Bosch Taladro percutor eléctrico EasyImpact 630: solo -40% frente a su PVP recomendado (69,99 €)
-  ✗ amz-B0DX1QL96S Refoss Enchufe Conectado con Monitoreo de Energía: precio fuera de rango (14.61 €)
-  ✗ amz-B0FLX33KD3 WiZ Bombilla LED Inteligente A60: precio fuera de rango (11.99 €)
   ✗ amz-B0CG19QXWD DJI Osmo Pocket 3, cámara con CMOS 1'' y vídeo 4K/120 fps: solo -37% frente a su PVP recomendado (429,00 €)
   ✗ amz-B06XR5FVW3 Bosch Taladro percutor UniversalImpact 800: solo -31% frente a su PVP recomendado (99,99 €)
-  ✗ amz-B0H2Z7HSNP tado° Termostato Inteligente Inalámbrico X (2ª gen.): marca poco conocida (tado): su precio anterior no es fiable
-  ✗ amz-B0DX1QC3L8 Refoss Enchufe Inteligente WiFi con Monitoreo de Energía y…: marca poco conocida (Refoss): su precio anterior no es fiable
-  ✗ amz-B0DSK6QFXZ Meross Termostato Calefaccion WiFi por Suelo Radiante…: marca poco conocida (meross): su precio anterior no es fiable
-  ✗ amz-B0H9X1H628 Reobiux camara vigilancia wifi exterior: marca poco conocida (Reobiux): su precio anterior no es fiable
+  ✗ amz-B0BLZNZSYM Bosch amoladora pequeña UniversalGrind 7-125: solo -34% frente a su PVP recomendado (60,49 €)
   ✗ amz-B00HT94XF8 Einhell Taladro percutor TC-ID 1000 E: solo -25% frente a su PVP recomendado (54,95 €)
   ✗ amz-B00V3HTTWO Einhell Taladro percutor TC-ID 650 E: solo -27% frente a su PVP recomendado (36,95 €)
+  ✗ amz-B07TFHGZXF Black+Decker BCF611CK-QW - Atornillador a Batería 3.6 V…: solo -24% frente a su precio mediano de los 90 días (33,23 €)
   ✗ amz-B0DP8LHZFJ Amazon Basics Enchufe inteligente: solo -11% frente a su precio mediano de los 90 días (30,00 €)
-  ✗ amz-B0DP8K22HP Amazon Basics Enchufe inteligente: precio fuera de rango (8.39 €)
-  ✗ amz-B0BG6DQRL9 Tapo L630(2-Pack) - Bombilla inteligente WiFi: marca poco conocida (Tapo): su precio anterior no es fiable
+  ✗ amz-B07CSQX2P4 DEWALT Taladro percutor atornillador XR Brushless 18V: solo -12% frente a su precio mediano de los 90 días (203,17 €)
+  ✗ amz-B017AWGGL2 DEWALT DWE4233-QS - Mini-Amoladora 125 mm: solo -6% frente a su precio mediano de los 90 días (119,48 €)
   ⏸ B09SVVVG16 variedad: ya salió un «mando» de Amazon hace 1 días; espera en la cola
-  ⏸ B0797LMGXH variedad: ya salió un «teclado y raton» de Logitech hace 20 h; espera en la cola
-  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
-  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 43 min; espera en la cola
+  ⏸ B08F6M24HK variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0C5QXCP7Z variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B09K1LWPRK variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0F6436L5P variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0FHJ91JY5 variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0FJJM9R3Z variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0FZPRQ9KS variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0FZPWYP5Q variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0GZLRLYWZ variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0DXMVFPYR variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
+  ⏸ B0DXMP9CGT variedad: ya salió otro producto de tipo «camara» hace 88 min; espera en la cola
 Nada que cumpla todas las reglas en esta pasada.
-== pasada 34 · 16:09 ==
-  Seguimiento B0CL5KN4KD: sigue a 34,99 €
-  Seguimiento B0DXQ67BW4: sigue a 44,99 €
-  Seguimiento B0DBM7PY4J: sigue a 289,95 €
-  Seguimiento B01B7HVRC4: sigue a 189,99 €
+== pasada 22 · 16:54 ==
+  Seguimiento B0B5FGHCKR: sigue a 144,95 €
+  Seguimiento B0CWP7M17B: sigue a 65,99 €
+  Seguimiento B0CX8MQF7R: sigue a 164,00 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
 Modo sin silencios: 45 min sin publicar; admito desde -30 % en categorías estrella, -45 % en cualquier categoría y -35 % en el resto de las top.
 Hora garantizada: 45 min sin publicar. Sale el mejor chollo que haya aunque repita tipo o marca de hoy (nunca un producto ya publicado ni morralla).
-  ✗ amz-B0DHK57W3M Ginour Taladro Percutor a Bateria sin escobillas…: no es ninguna bajada: hace menos de una semana ya estaba a 61.99 € (historial propio de 5 días)
-  ✗ amz-B018YPAKS4 Bosch PRO Amoladora GWS 7-125: no es ninguna bajada: hace menos de una semana ya estaba a 44.99 € (historial propio de 5 días)
-  ✗ amz-B07BRS1KXS Bosch PRO Amoladora GWS 880 | Nivel superior de…: no es ninguna bajada: hace menos de una semana ya estaba a 50.98 € (historial propio de 5 días)
   ✗ amz-B002EX2Y6E Bosch Sierra circular PKS 55 A: no es ninguna bajada: hace menos de una semana ya estaba a 78.99 € (historial propio de 4 días)
   ✗ amz-B0851TSZJN DEWALT Kit 4 herramientas no escobillas 18V XR 3…: no es ninguna bajada: hace menos de una semana ya estaba a 659.31 € (historial propio de 6 días)
   ✗ amz-B0851TSZJN DEWALT Kit 4 herramientas no escobillas 18V XR 3…: no es ninguna bajada: hace menos de una semana ya estaba a 659.31 € (historial propio de 6 días)
@@ -1357,18 +842,18 @@ Hora garantizada: 45 min sin publicar. Sale el mejor chollo que haya aunque repi
   ✗ amz-B000P275F6 Náutica, Set de fragancias para hombres: no es ninguna bajada: hace menos de una semana ya estaba a 11.27 € (historial propio de 5 días)
   ✗ amz-B09KR2VN6S GUESS Seductive Red, Eau de Toilette: no es ninguna bajada: hace menos de una semana ya estaba a 13.82 € (historial propio de 3 días)
   ✗ amz-B0D4R3PLQ9 DKNY 24/7, Eau de Parfum para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 17.89 € (historial propio de 6 días)
-  ✗ amz-B01N4CSJ0W DKNY Be Delicious Fresh Blossom: no es ninguna bajada: hace menos de una semana ya estaba a 18.92 € (historial propio de 5 días)
   ✗ amz-B07V25CN6C GUESS Seductive, Bruma Corporal para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 7.87 € (historial propio de 4 días)
+  ✗ amz-B01N4CSJ0W DKNY Be Delicious Fresh Blossom: no es ninguna bajada: hace menos de una semana ya estaba a 18.92 € (historial propio de 5 días)
   ✗ amz-B000CNP4F6 Ralph Lauren Ralph Eau de Toilette: no es ninguna bajada: hace menos de una semana ya estaba a 26.90 € (historial propio de 6 días)
   ✗ amz-B001JZLT5U Tous, TOUCH The Original Gold: no es ninguna bajada: hace menos de una semana ya estaba a 28.99 € (historial propio de 6 días)
   ✗ amz-B000XE0DS2 Cacharel Anaïs Anaïs, Agua de Colonia para mujer…: no es ninguna bajada: hace menos de una semana ya estaba a 29.02 € (historial propio de 5 días)
   ✗ amz-B0D4R175FB DKNY 24/7, Eau de Parfum para Mujer: no es ninguna bajada: hace menos de una semana ya estaba a 26.50 € (historial propio de 3 días)
-  Amazon (API): 236 con descuento grande, 51 con precio anterior y stock
-Candidatos a revisar: 45
+  ✗ amz-B07TMP2TP5 Philips Cortapelos con cuchillas de titanio: no es ninguna bajada: hace menos de una semana ya estaba a 44.77 € (historial propio de 5 días)
+  Amazon (API): 236 con descuento grande, 63 con precio anterior y stock
+Candidatos a revisar: 42
   ✓ B0F6436L5P Ring Videotimbre 2K Plus con batería (Battery Video…: 89,99 € (-50% vs 179,99 €)
   ✓ B0FHJ91JY5 Ring Videotimbre 2K con batería: 49,99 € (-50% vs 99,99 €)
   ✓ B0FJJM9R3Z Ring Videotimbre 2K cableado: 39,99 € (-50% vs 79,99 €)
-  ✗ amz-B0071IK9CI Bosch Profesional Pack Unidades para Atornillar: precio fuera de rango (14.99 €)
   ✓ B08F6M24HK Ring cámara Plus con focos cableada (Floodlight Cam Wired…: 79,99 € (-56% vs 179,99 €)
   ✓ B0C5QXCP7Z Ring Cámara exterior con batería (Stick Up Cam): 34,99 € (-56% vs 79,99 €)
   ✓ B09K1LWPRK Ring cámara Plus con luces y batería (Spotlight Cam Plus): 69,99 € (-53% vs 149,99 €)
@@ -1376,14 +861,14 @@ Candidatos a revisar: 45
   ✓ B0FZPWYP5Q Ring Cámara exterior 2K: 49,99 € (-50% vs 99,99 €)
   ✓ B0GZLRLYWZ Ring Cámara interior orientable 2K (Pan-Tilt Indoor Camera…: 34,99 € (-50% vs 69,99 €)
   ✓ B0DXMVFPYR Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
-  ✓ B0797LMGXH Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico: 34,99 € (-42% vs 59,99 €)
+  ✓ B0DXMP9CGT Ring Cámara interior Plus: 29,99 € (-50% vs 59,99 €)
   ✓ B09SVVVG16 Mando por voz Alexa Pro para el Fire TV de Amazon con…: 21,99 € (-45% vs 39,99 €)
-  ✗ amz-B0BLZNZSYM Bosch amoladora pequeña UniversalGrind 7-125: solo -34% frente a su PVP recomendado (60,49 €)
+  ✗ amz-B0FDL1XP3J Philips Recortadora Todo En Uno series 3000: solo -33% frente a su PVP recomendado (44,99 €)
+  ✗ amz-B0DQWHNRH6 Braun Recortadora Todo en Uno Series 3: solo -38% frente a su PVP recomendado (39,99 €)
   ✗ amz-B0DDY6HJ4N Greenworks 24V Cortacésped de batería Li-Ion 24V 33cm Ancho…: solo -36% frente a su mínimo de los 30 días anteriores (249,99 €)
+  ✗ amz-B0CHMPJB3Y Philips Serie 3000 Afeitadora Eléctrica Hombre: solo -29% frente a su PVP recomendado (69,99 €)
   ✗ amz-B0BQ1KV15R Cecotec Patinete Eléctrico Bongo V55 2x2 Connected: solo -21% frente a su PVP recomendado (673,90 €)
-  ✗ amz-B07TFHGZXF Black+Decker BCF611CK-QW - Atornillador a Batería 3.6 V…: solo -24% frente a su precio mediano de los 90 días (33,23 €)
   ✗ amz-B01NCXCY4L Bosch Juego de 103 piezas mixtas de brocas y puntas de…: solo -28% frente a su precio mediano de los 90 días (29,16 €)
-  ✗ amz-B07J25Z7KC Bosch Professional navaja plegable universal con…: precio fuera de rango (13.49 €)
   ✗ amz-B00YYBBUBY Bosch Professional 12V System taladro percusión batería GSB…: solo -28% frente a su precio mediano de los 90 días (159,38 €)
   ✗ amz-B01GULTSSW Bosch Profesional Set de brocas y puntas de atornillar de…: solo -28% frente a su precio mediano de los 90 días (30,35 €)
   ✗ amz-B07NSF8FNY DEWALT EXTREME FLEXTORQ juego puntas atornillar 37 piezas: solo -21% frente a su precio mediano de los 90 días (31,60 €)
@@ -1396,8 +881,6 @@ Candidatos a revisar: 45
   ✗ amz-B0DNHY2J5P Amazon Basics Neoprene Dumbbell Weights Set with Stand: solo -25% frente a su precio mediano de los 90 días (39,49 €)
   ✗ amz-B003A5ZBY2 BLACK+DECKER Compresor portátil 11 bar: solo -14% frente a su precio mediano de los 90 días (74,99 €)
   ✗ amz-B0CL7PLZR9 Cecotec Cinta de Correr Plegable DrumFit WayHome 1400…: solo -14% frente a su PVP recomendado (252,90 €)
-  ✗ amz-B0DMD4G5XH Amazon Basics Set de mancuernas hexagonales con…: solo -13% frente a su precio mediano de los 90 días (45,99 €)
-  ✗ amz-B098XPMJTX WORX WX437 Sierra Circular XL 800 W con Guía Láser y…: marca poco conocida (WORX): su precio anterior no es fiable
   ✗ amz-B00R8CS5H8 Bosch PRO Sierra circular a batería GKS 12V-26: solo -19% frente a su precio mediano de los 90 días (139,00 €)
   ✗ amz-B01EWNGZ4U DEWALT Kit combo sin escobillas 18V XR con 2 baterías 5Ah: solo -13% frente a su precio mediano de los 90 días (346,88 €)
   ✗ amz-B08FMX9LFX DEWALT DWST83402-1, Taller modular 3en1 TOUGHSYSTEM 2.0: solo -14% frente a su precio mediano de los 90 días (232,50 €)
@@ -1406,29 +889,83 @@ Candidatos a revisar: 45
   ✗ amz-B000273HTW Tommy Hilfiger Tommy 100 ml, Eau de Toilette para Hombre: solo -18% frente a su precio mediano de los 90 días (30,95 €)
   ✗ amz-B0D8J5CVPK CALVIN KLEIN CK One Essence Parfum Intense Unisex: solo -20% frente a su precio mediano de los 90 días (21,99 €)
   ✗ amz-B0721LYLZK Greenworks G40LM35K2X Cortacésped de Batería para Céspedes…: solo -18% frente a su mínimo de los 30 días anteriores (244,57 €)
-  ✗ amz-B017AWGGL2 DEWALT DWE4233-QS - Mini-Amoladora 125 mm: solo -6% frente a su precio mediano de los 90 días (119,48 €)
+  ✗ amz-B0FLDYTNPS Cecotec Afeitadora Multigrooming 5 en 1 PrecisionCare…: solo -7% frente a su precio mediano de los 90 días (27,90 €)
   ✗ amz-B07RB6CQVS Makita HP333DSAX1 Taladro atornillador inalámbrico 12 V…: solo -8% frente a su precio mediano de los 90 días (204,62 €)
   ✗ amz-B00HER8E5A DEWALT Multiherramienta Oscilante Sin Escobillas 18V XR: solo -10% frente a su precio mediano de los 90 días (133,03 €)
   ✗ amz-B09LM833D1 Bosch cortacésped a batería CityMower 18V-32-300: solo -5% frente a su precio mediano de los 90 días (209,99 €)
-  API de Amazon: B0797LMGXH confirmado a 34,99 €
-  Enviado a @cazachollos_com (mensaje 651): Logitech MK540 Advanced Combo Teclado y Ratón Inalámbrico
-  No he podido mandarte el texto de X (Telegram sendMessage: sin conexión (<urlopen error [Errno 104] Connection reset by peer>))
+  API de Amazon: B09SVVVG16 confirmado a 21,99 €
+  Enviado a @cazachollos_com (mensaje 656): Mando por voz Alexa Pro para el Fire TV de Amazon con búsqueda del…
+  X: no te lo paso (categoría poco interesante para X (Hogar inteligente))
   WhatsApp: enviado al canal
-== pasada 35 · 16:10 ==
-  Seguimiento B0CWP7M17B: sigue a 65,99 €
-  Seguimiento B0CX8MQF7R: sigue a 164,00 €
-  Seguimiento B0D3JFVGFV: sigue a 49,00 €
-  Seguimiento B0B5FGHCKR: sigue a 144,95 €
-No publico: menos de 15 min desde el último post.
-== pasada 36 · 16:11 ==
+== pasada 23 · 16:56 ==
+  Seguimiento B09B94956P: sigue a 39,99 €
   Seguimiento B0DJGCX6Q2: sigue a 23,99 €
   Seguimiento B0C2S2J7JP: sigue a 59,99 €
-  Seguimiento B0CP7JSC7J: sigue a 28,99 €
-  Seguimiento B09B94956P: sigue a 39,99 €
+  Seguimiento B0DQWQJ1MY: sigue a 39,99 €
 No publico: menos de 15 min desde el último post.
-== pasada 37 · 16:12 ==
+== pasada 24 · 16:57 ==
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
   Seguimiento B07W7KMK4W: sigue a 40,74 €
   Seguimiento B0DKLFHZDH: sigue a 74,99 €
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 25 · 16:58 ==
+  Seguimiento B0CZHXHLDJ: sigue a 34,99 €
+  Seguimiento B0CX4YZCHS: sigue a 143,89 €
+  Seguimiento B0HG82D9PQ: sigue a 399,95 €
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+No publico: menos de 15 min desde el último post.
+== pasada 26 · 16:59 ==
+  Seguimiento B0BVRMW1XF: sigue a 49,90 €
+  Seguimiento B0FGXYSTLD: sigue a 46,99 €
+  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+No publico: menos de 15 min desde el último post.
+== pasada 27 · 17:00 ==
+  Seguimiento B0DMTVGZL3: sigue a 47,99 €
+  Seguimiento B00XYTTEAQ: sigue a 24,24 €
+  Seguimiento B0C3D2DGYP: sigue a 59,95 €
+  Seguimiento B0CP7JSC7J: sigue a 28,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 28 · 17:01 ==
+  Seguimiento B01B7HVRC4: sigue a 189,99 €
+  Seguimiento B0CN41GMDK: sigue a 27,99 €
+  Seguimiento B0GKHPCM7X: sigue a 44,99 €
   Seguimiento B0GL3FXQ5B: sigue a 74,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 29 · 17:02 ==
+  Seguimiento B0CL5KN4KD: sigue a 34,99 €
+  Seguimiento B0DXQ67BW4: sigue a 44,99 €
+  Seguimiento B0797LMGXH: sigue a 34,99 €
+  Seguimiento B07W5JKKFJ: sigue a 64,97 €
+No publico: menos de 15 min desde el último post.
+== pasada 30 · 17:03 ==
+  Seguimiento B0B5FGHCKR: sigue a 144,95 €
+  Seguimiento B0CWP7M17B: sigue a 65,99 €
+  Seguimiento B0CX8MQF7R: sigue a 164,00 €
+  Seguimiento B09SVVVG16: sigue a 21,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 31 · 17:04 ==
   Seguimiento B0DQWQJ1MY: sigue a 39,99 €
+  Seguimiento B09B94956P: sigue a 39,99 €
+  Seguimiento B0DJGCX6Q2: sigue a 23,99 €
+  Seguimiento B0C2S2J7JP: sigue a 59,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 32 · 17:05 ==
+  Seguimiento B0GMH56TRH: sigue a 499,99 €
+  Seguimiento B0H9YW4LLT: sigue a 499,00 €
+  Seguimiento B07W7KMK4W: sigue a 40,74 €
+  Seguimiento B0DKLFHZDH: sigue a 74,99 €
+No publico: menos de 15 min desde el último post.
+== pasada 33 · 17:06 ==
+  Seguimiento B0DBM7PY4J: sigue a 289,95 €
+  Seguimiento B0CZHXHLDJ: sigue a 34,99 €
+  Seguimiento B0CX4YZCHS: sigue a 143,89 €
+  Seguimiento B0HG82D9PQ: sigue a 399,95 €
+No publico: menos de 15 min desde el último post.
+== pasada 34 · 17:07 ==
+  Seguimiento B0D3JFVGFV: sigue a 49,00 €
+  Seguimiento B0BVRMW1XF: sigue a 49,90 €
+  Seguimiento B0FGXYSTLD: sigue a 46,99 €
+  Seguimiento B0DWSLJ7HQ: sigue a 59,99 €
 No publico: menos de 15 min desde el último post.
