@@ -39,10 +39,14 @@ PRICE = r"\d{1,3}(?:\.\d{3})*,\d{2} ?€"
 
 
 def caption_html(copy: str) -> str:
-    """El copy de Enrique en HTML de Telegram: escapado y con el precio de antes tachado en la línea 💸."""
+    """El copy de Enrique en HTML de Telegram: título en negrita y el precio de antes tachado en la línea 💸."""
     lines = []
-    for line in copy.strip().splitlines():
+    texts = [i for i, line in enumerate(copy.strip().splitlines()) if line.strip()]
+    title = texts[1] if len(texts) > 1 else -1  # la línea tras la cabecera (💎/❗️) es el título: en negrita
+    for i, line in enumerate(copy.strip().splitlines()):
         safe = html.escape(line, quote=False)
+        if i == title:
+            safe = f"<b>{safe.strip()}</b>"
         if line.lstrip().startswith("💸"):
             prices = list(re.finditer(PRICE, safe))
             if len(prices) >= 2:
