@@ -302,8 +302,8 @@ def buttons_for(url: str, check_tag: bool = True) -> dict:
     check_tag=False solo para marcar como agotado un post viejo, que no se vuelve a lanzar."""
     if check_tag:
         tag = load_json(CONFIG_PATH, {}).get("affiliate_tag", "")
-        if tag and affiliate.is_amazon_es(url):
-            url = affiliate.force_tag(url, tag)  # subtags de otros fuera, solo tu tag, y se publica
+        if tag and affiliate.is_amazon_es(url) and tag in affiliate.tag_values(url):
+            url = affiliate.force_tag(url, tag)  # lleva tu tag: subtags de otros fuera y se publica
         affiliate.require_tag(url, tag)
     shop = premium.store_of(url)[1]
     return {"inline_keyboard": [[{"text": f"🛒 Ver en {shop}", "url": url}]]}

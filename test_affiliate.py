@@ -156,3 +156,11 @@ class SinSubtagsAjenos(unittest.TestCase):
         self.assertNotIn("ppr-es", out)
         with self.assertRaises(ValueError):
             pm.clean_link("https://link.amazon/x", "B0OTROPROD", resolve=lambda u: self.PEPPER)
+
+
+class BotonConSubtags(unittest.TestCase):
+    def test_el_boton_limpia_subtags_y_publica(self):
+        import scanner
+        url = SinSubtagsAjenos.PEPPER
+        button = scanner.buttons_for(url)["inline_keyboard"][0][0]["url"]
+        self.assertEqual(button, "https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21")
