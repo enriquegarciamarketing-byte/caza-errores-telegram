@@ -157,6 +157,15 @@ class SinSubtagsAjenos(unittest.TestCase):
         with self.assertRaises(ValueError):
             pm.clean_link("https://link.amazon/x", "B0OTROPROD", resolve=lambda u: self.PEPPER)
 
+    def test_premium_se_ve_el_corto_y_se_pincha_el_limpio(self):
+        import premium_manual as pm
+        copy = "💎 #Chollo\n\nGTA\n\n🌟https://link.amazon/B00LIWK2g"
+        links = pm.copy_links(copy, "B0HPL85XWH", resolve=lambda u: self.PEPPER)
+        cap = pm.caption_html(copy, links)
+        self.assertTrue(cap.endswith('🌟<a href="https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21">'
+                                     'https://link.amazon/B00LIWK2g</a>'))
+        self.assertNotIn("ppr-es", cap)
+
 
 class BotonConSubtags(unittest.TestCase):
     def test_el_boton_limpia_subtags_y_publica(self):

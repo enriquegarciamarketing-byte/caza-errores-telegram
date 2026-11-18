@@ -39,8 +39,9 @@ PRICE = r"\d{1,3}(?:\.\d{3})*,\d{2}€"
 JOIN = re.compile(r"(\d) +(€|%)")  # Enrique: el € y el % siempre pegados al número
 
 
-def caption_html(copy: str) -> str:
-    """El copy de Enrique en HTML de Telegram: título en negrita y el precio de antes tachado en la línea 💸."""
+def caption_html(copy: str, links: dict[str, str] | None = None) -> str:
+    """El copy de Enrique en HTML de Telegram: título en negrita y el precio de antes tachado en la línea 💸.
+    Con `links`, cada enlace se ve tal cual lo escribió y al pinchar lleva al enlace limpio con su tag."""
     lines = []
     texts = [i for i, line in enumerate(copy.strip().splitlines()) if line.strip()]
     title = texts[1] if len(texts) > 1 else -1  # la línea tras la cabecera (💎/❗️) es el título: en negrita
@@ -54,6 +55,10 @@ def caption_html(copy: str) -> str:
             if len(prices) >= 2:
                 last = prices[-1]
                 safe = f"{safe[:last.start()]}<s>{last.group(0)}</s>{safe[last.end():]}"
+        for shown, target in (links or {}).items():
+            seen = html.escape(shown, quote=False)
+            if seen in safe and shown != target:
+                safe = safe.replace(seen, f'<a href="{html.escape(target)}">{seen}</a>')
         lines.append(safe)
     return "\n".join(lines)
 
@@ -87,6 +92,12 @@ def clean_link(link: str, asin: str | None = None, resolve=None) -> str:
 def clean_copy(copy: str, asin: str | None = None, resolve=None) -> str:
     """Los enlaces de Amazon que vayan dentro del copy salen limpios, solo con tu tag."""
     return URL_IN_TEXT.sub(lambda m: clean_link(m.group(0), asin, resolve), copy)
+
+
+def copy_links(copy: str, asin: str | None = None, resolve=None) -> dict[str, str]:
+    """Enlace visible del copy → enlace limpio al que lleva el clic (18/11/2026: Enrique quiere ver el corto
+    link.amazon en el post, pero que al pinchar vaya a amazon.es/dp/ASIN?tag=TAG sin subtags)."""
+    return {url: clean_link(url, asin, resolve) for url in dict.fromkeys(URL_IN_TEXT.findall(copy))}
 
 
 def check_link(link: str) -> str | None:
@@ -147,7 +158,7 @@ def publish(spec: dict, private: bool, token: str) -> int:
     try:
         spec = dict(spec, link=clean_link(spec["link"], spec.get("asin")))
         spec["asin"] = spec.get("asin") or (re.search(r"/dp/([A-Z0-9]{10})", spec["link"]) or [None, None])[1]
-        spec["copy"] = clean_copy(spec["copy"], spec.get("asin"))
+        links = copy_links(spec["copy"], spec.get("asin"))  # el copy no cambia: se ve el corto, se pincha el limpio
     except ValueError as exc:
         print(f"No publico: {exc}.", file=sys.stderr)
         return 2
@@ -168,7 +179,7 @@ def publish(spec: dict, private: bool, token: str) -> int:
     name = re.sub(r"[^A-Za-z0-9]", "", spec.get("asin") or "") or f"p{int(time.time())}"
     card = crear_tarjeta(photo_for(spec, name), reference, current, spec["when"], OUT / f"{name}.jpg",
                         ref_label=spec.get("ref_label", "recomendado"))
-    caption = caption_html(spec["copy"])
+    caption = caption_html(spec["copy"], links)
     msg = Telegram(token).send_photo(chat, card, caption)
     where = "tu chat privado (prueba)" if private else "el canal premium"
     pct = f" · -{round((reference - current) / reference * 100)}%" if reference else " · sin precio de referencia"
