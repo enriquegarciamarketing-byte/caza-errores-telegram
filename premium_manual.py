@@ -140,7 +140,7 @@ def photo_for(spec: dict, name: str) -> Path:
 
 
 def publish(spec: dict, private: bool, token: str) -> int:
-    for key in ("link", "image", "reference", "current", "when", "copy"):
+    for key in ("link", "image", "current", "when", "copy"):
         if not spec.get(key):
             print(f"Falta «{key}» en los datos.", file=sys.stderr)
             return 2
@@ -155,8 +155,10 @@ def publish(spec: dict, private: bool, token: str) -> int:
     if problem:
         print(f"No publico: {problem}.", file=sys.stderr)
         return 2
-    reference, current = float(spec["reference"]), float(spec["current"])
-    if not 0 < current < reference:
+    # Sin «reference» (la ficha no da precio de referencia): tarjeta sin tachado ni %, solo el precio de hoy.
+    reference = float(spec["reference"]) if spec.get("reference") else None
+    current = float(spec["current"])
+    if not (0 < current and (reference is None or current < reference)):
         print("No publico: el precio actual tiene que ser menor que el recomendado.", file=sys.stderr)
         return 2
     chat = privado.admin_id() if private else os.environ.get("TELEGRAM_CHAT_ID", "").strip()
@@ -169,7 +171,8 @@ def publish(spec: dict, private: bool, token: str) -> int:
     caption = caption_html(spec["copy"])
     msg = Telegram(token).send_photo(chat, card, caption)
     where = "tu chat privado (prueba)" if private else "el canal premium"
-    print(f"Post manual premium enviado a {where} (mensaje {msg['message_id']}) · -{round((reference - current) / reference * 100)}%")
+    pct = f" · -{round((reference - current) / reference * 100)}%" if reference else " · sin precio de referencia"
+    print(f"Post manual premium enviado a {where} (mensaje {msg['message_id']}){pct}")
     if not private:
         state = load_state()
         state["posts"].append({"message_id": msg["message_id"], "asin": spec.get("asin"), "link": spec["link"],
@@ -188,7 +191,7 @@ def sold_out(message_id: int, token: str) -> int:
         return 2
     chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     name = re.sub(r"[^A-Za-z0-9]", "", post.get("asin") or "") or str(message_id)
-    card = crear_tarjeta(photo_for(post, name), post["reference"], post["current"], post["when"],
+    card = crear_tarjeta(photo_for(post, name), post.get("reference"), post["current"], post["when"],
                          OUT / f"{name}_agotado.jpg", agotado=True,
                          ref_label=post.get("ref_label", "recomendado"))
     edit_media(token, chat, message_id, card, post["caption"])

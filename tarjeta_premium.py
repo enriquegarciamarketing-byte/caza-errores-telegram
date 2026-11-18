@@ -76,22 +76,43 @@ def es_blanco_y_negro(im: Image.Image) -> bool:
     return sum(1 for px in pill.getdata() if max(px) - min(px) > 40) < 50
 
 
-def crear_tarjeta(photo: Path, reference: float, current: float, when: str, out: Path,
+def crear_tarjeta(photo: Path, reference: float | None, current: float, when: str, out: Path,
                   agotado: bool = False, ref_label: str = "recomendado") -> Path:
     # ref_label: «recomendado» (PVP de la ficha) o «mediano» cuando la ficha solo da «Precio mediano».
-    pct = round((reference - current) / reference * 100)
+    # reference None: la ficha no da precio de referencia → tarjeta sin panel ni tachado, solo el precio de hoy.
+    pct = round((reference - current) / reference * 100) if reference else None
     product = _product_on_white(Image.open(photo))
 
     im = Image.new("RGB", (1000, 1000), "white")
     d = ImageDraw.Draw(im)
     d.polygon([(x, 712 + 118 * (1 - x / 1000) ** 2) for x in range(0, 1001, 5)] + [(1000, 1000), (0, 1000)],
               fill=BEIGE)
-    bw, bh = 640, 415
+    bw, bh = (640, 415) if reference else (700, 640)
     s = min(bw / product.width, bh / product.height)
     product = product.resize((max(1, int(product.width * s)), max(1, int(product.height * s))), Image.LANCZOS)
     im.paste(product, (500 - product.width // 2, 30 + (bh - product.height) // 2))
 
     # Panel: precio recomendado de Amazon frente al de hoy (sin afirmar historial).
+    if reference:
+        _panel(im, reference, current, pct, ref_label)
+    d = ImageDraw.Draw(im)
+
+    # Fecha y hora del precio (lo pide Amazon).
+    d.text((60, 878), f"Precio a {when}", font=_font(30, b"Bold"), fill=(110, 110, 110), anchor="ls")
+    d.text((60, 916), "puede cambiar", font=_font(26, b"Medium"), fill=(150, 150, 150), anchor="ls")
+
+    # Precio recomendado tachado.
+    if reference:
+        fs = _font(68, b"ExtraBold")
+        text = eur(reference, False)
+        w = fs.getlength(text)
+        d.text((949, 812), text, font=fs, fill=(85, 85, 85), anchor="rs")
+        d.line((949 - w - 4, 788, 953, 787), fill=(85, 85, 85), width=7)
+    _resto(im, current, agotado, out)
+    return out
+
+
+def _panel(im, reference, current, pct, ref_label):
     shadow = Image.new("L", (1000, 1000), 0)
     ImageDraw.Draw(shadow).rounded_rectangle((62, 476, 938, 702), 26, fill=40)
     im.paste(Image.new("RGB", (1000, 1000), (90, 90, 90)), (0, 0), shadow.filter(ImageFilter.GaussianBlur(9)))
@@ -123,17 +144,10 @@ def crear_tarjeta(photo: Path, reference: float, current: float, when: str, out:
     d.text((811, 642), eur(current), font=_font(size, b"Bold"), fill=ORANGE, anchor="lm")
     d.text((773, 683), "hoy", font=_font(19, b"Bold"), fill=(150, 150, 150), anchor="lm")
 
-    # Fecha y hora del precio (lo pide Amazon).
-    d.text((60, 878), f"Precio a {when}", font=_font(30, b"Bold"), fill=(110, 110, 110), anchor="ls")
-    d.text((60, 916), "puede cambiar", font=_font(26, b"Medium"), fill=(150, 150, 150), anchor="ls")
 
-    # Precio recomendado tachado.
-    fs = _font(68, b"ExtraBold")
-    text = eur(reference, False)
-    w = fs.getlength(text)
-    d.text((949, 812), text, font=fs, fill=(85, 85, 85), anchor="rs")
-    d.line((949 - w - 4, 788, 953, 787), fill=(85, 85, 85), width=7)
 
+def _resto(im, current, agotado, out):
+    d = ImageDraw.Draw(im)
     # Píldora naranja con el precio actual.
     pill = Image.new("RGB", (500, 125))
     pd = ImageDraw.Draw(pill)
@@ -162,7 +176,6 @@ def crear_tarjeta(photo: Path, reference: float, current: float, when: str, out:
 
     out.parent.mkdir(parents=True, exist_ok=True)
     im.save(out, quality=95)
-    return out
 
 
 if __name__ == "__main__":
