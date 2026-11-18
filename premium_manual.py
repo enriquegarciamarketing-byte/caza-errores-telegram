@@ -58,6 +58,37 @@ def caption_html(copy: str) -> str:
     return "\n".join(lines)
 
 
+URL_IN_TEXT = re.compile(r"https?://[^\s<>\"']+")
+
+
+def clean_link(link: str, asin: str | None = None, resolve=None) -> str:
+    """Cualquier enlace de Amazon (corto o largo) → https://www.amazon.es/dp/ASIN?tag=TAG, sin subtags de nadie
+    (18/11/2026: el corto de SiteStripe arrastraba el ascsubtag=ppr-es-… de Pepper). Si no es de Amazon, igual."""
+    import affiliate
+    link = (link or "").strip()
+    if not (affiliate.is_short_link(link) or "amazon." in urllib.parse.urlparse(link).netloc.lower()):
+        return link
+    final = link
+    if affiliate.is_short_link(link):
+        try:
+            final = (resolve or affiliate.resolve_redirects)(link)
+        except (urllib.error.URLError, TimeoutError, ValueError):
+            final = ""
+    got = affiliate.extract_asin(final) or ""
+    wanted = (asin or "").strip().upper()
+    if wanted and got and got != wanted:
+        raise ValueError(f"el enlace lleva al producto {got} y no a {wanted}")
+    asin = got or wanted
+    if not asin:
+        raise ValueError(f"no saco el ASIN del enlace {link}")
+    return f"https://www.amazon.es/dp/{asin}?tag={TAG}"
+
+
+def clean_copy(copy: str, asin: str | None = None, resolve=None) -> str:
+    """Los enlaces de Amazon que vayan dentro del copy salen limpios, solo con tu tag."""
+    return URL_IN_TEXT.sub(lambda m: clean_link(m.group(0), asin, resolve), copy)
+
+
 def check_link(link: str) -> str | None:
     host = urllib.parse.urlparse(link).netloc.lower()
     if not host:
@@ -113,6 +144,13 @@ def publish(spec: dict, private: bool, token: str) -> int:
         if not spec.get(key):
             print(f"Falta «{key}» en los datos.", file=sys.stderr)
             return 2
+    try:
+        spec = dict(spec, link=clean_link(spec["link"], spec.get("asin")))
+        spec["asin"] = spec.get("asin") or (re.search(r"/dp/([A-Z0-9]{10})", spec["link"]) or [None, None])[1]
+        spec["copy"] = clean_copy(spec["copy"], spec.get("asin"))
+    except ValueError as exc:
+        print(f"No publico: {exc}.", file=sys.stderr)
+        return 2
     problem = check_link(spec["link"])
     if problem:
         print(f"No publico: {problem}.", file=sys.stderr)

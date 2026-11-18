@@ -118,7 +118,7 @@ class SinEtiqueta(unittest.TestCase):
     def test_sin_tag_el_enlace_sale_limpio(self):
         import affiliate
         self.assertEqual(affiliate.force_tag("https://www.amazon.es/dp/B0H8T5GC4W?tag=otro-21&th=1", ""),
-                         "https://www.amazon.es/dp/B0H8T5GC4W?th=1")
+                         "https://www.amazon.es/dp/B0H8T5GC4W")
         self.assertEqual(affiliate.fallback_link("", asin="B0H8T5GC4W"), "https://www.amazon.es/dp/B0H8T5GC4W")
         self.assertEqual(affiliate.clean_store_url("https://www.amazon.es/dp/B0H8T5GC4W?tag=otro-21", {},
                                                    expected_asin="B0H8T5GC4W"),
@@ -126,3 +126,33 @@ class SinEtiqueta(unittest.TestCase):
         tagged = affiliate.clean_store_url("https://www.amazon.es/dp/B0H8T5GC4W?tag=otro-21",
                                            {"affiliate_tag": "mio-21"}, expected_asin="B0H8T5GC4W")
         self.assertIn("tag=mio-21", tagged)
+
+
+class SinSubtagsAjenos(unittest.TestCase):
+    """18/11/2026: el corto de SiteStripe arrastraba el ascsubtag=ppr-es-… de Pepper (Chollometro)."""
+    PEPPER = ("https://www.amazon.es/dp/B0HPL85XWH?smid=A1AT7YVPFBWXBL&ascsubtag=ppr-es-1042581112&linkCode=sl2"
+              "&tag=cazachollos0c-21&linkId=f63be5cb8164a24ffa0319b80c786d33&gaOptInStatus=true&ref_=as_li_ss_tl"
+              "&btn_type=ss&btn_ref=srctok-3129ae5e6175c956")
+
+    def test_force_tag_deja_solo_el_dp_con_tu_tag(self):
+        self.assertEqual(affiliate.force_tag(self.PEPPER, "cazachollos0c-21"),
+                         "https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21")
+
+    def test_el_corto_resuelto_sale_limpio(self):
+        url, _ = affiliate.prepare_amazon_link("https://link.amazon/B00LIWK2g", "cazachollos0c-21",
+                                               resolve=lambda u: self.PEPPER)
+        self.assertEqual(url, "https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21")
+
+    def test_require_tag_rechaza_subtags(self):
+        with self.assertRaises(affiliate.MissingTag):
+            affiliate.require_tag(self.PEPPER, "cazachollos0c-21")
+        affiliate.require_tag("https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21", "cazachollos0c-21")
+
+    def test_premium_limpia_el_copy_y_el_link(self):
+        import premium_manual as pm
+        copy = "💎 #Chollo\n\nGTA\n🌟https://link.amazon/B00LIWK2g"
+        out = pm.clean_copy(copy, "B0HPL85XWH", resolve=lambda u: self.PEPPER)
+        self.assertTrue(out.endswith("🌟https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21"))
+        self.assertNotIn("ppr-es", out)
+        with self.assertRaises(ValueError):
+            pm.clean_link("https://link.amazon/x", "B0OTROPROD", resolve=lambda u: self.PEPPER)

@@ -76,13 +76,36 @@ def require_tag(url: str, tag: str) -> None:
     tags = [value for key, value in query if key.lower() == "tag"]
     if tags != [tag]:
         raise MissingTag(f"el enlace de Amazon no lleva tu tag {tag} ({url})")
+    if has_foreign_tracking(url):
+        raise MissingTag(f"el enlace de Amazon lleva subtag o rastro de otro afiliado ({url})")
+
+
+# Rastro de otros afiliados o de SiteStripe que nunca sale en un enlace de Amazon (18/11/2026): p. ej. el
+# ascsubtag=ppr-es-… de Pepper/Chollometro que se cuela en el enlace corto si la ficha se abrió desde allí.
+AMAZON_TRACKING_KEYS = {
+    "tag", "ascsubtag", "linkcode", "linkid", "ref_", "btn_type", "btn_ref", "gaoptinstatus",
+    "creative", "creativeasin", "camp", "smid", "pd_rd_w", "pd_rd_r", "pd_rd_wg", "pd_rd_i",
+    "pf_rd_p", "pf_rd_r", "content-id", "qid", "sr", "crid", "sprefix", "dib", "dib_tag",
+}
+
+
+def has_foreign_tracking(url: str) -> bool:
+    """True si un enlace de Amazon lleva subtag u otro rastro de afiliado además del tag."""
+    query = urllib.parse.parse_qsl(urllib.parse.urlsplit(url or "").query, keep_blank_values=True)
+    return any(key.lower() in AMAZON_TRACKING_KEYS - {"tag"} or key.lower().startswith(("utm_", "aff_"))
+               for key, _ in query)
 
 
 def force_tag(url: str, tag: str) -> str:
-    """Deja un solo parámetro tag, el del canal, y conserva el resto de la consulta."""
+    """Enlace de Amazon con un solo parámetro: el tag del canal. Una ficha sale siempre como amazon.es/dp/ASIN?tag=…,
+    sin subtags ni rastro de otros afiliados; una búsqueda conserva solo sus términos."""
     parts = urllib.parse.urlsplit(url.strip())
+    suffix = urllib.parse.urlencode([("tag", tag)]) if tag else ""
+    asin = extract_asin(url)
+    if asin and is_amazon_es(url):
+        return f"https://www.amazon.es/dp/{asin}" + (f"?{suffix}" if suffix else "")
     query = [(key, value) for key, value in urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
-             if key.lower() != "tag"]
+             if key.lower() not in AMAZON_TRACKING_KEYS and not key.lower().startswith(("utm_", "aff_"))]
     if tag:  # sin etiqueta (premium de momento) el enlace sale limpio, sin tag de nadie
         query.append(("tag", tag))
     return urllib.parse.urlunsplit((parts.scheme or "https", parts.netloc, parts.path,

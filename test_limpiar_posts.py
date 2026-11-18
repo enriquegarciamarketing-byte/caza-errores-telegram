@@ -104,7 +104,9 @@ class EnlaceCorto(unittest.TestCase):
                               resolve=lambda u: "https://www.amazon.es/dp/B0CWH4ND6V?tag=cazachollos0c-21")
         from test_canal_nube import RULES as FULL
         text = cn.build_caption(deal, "https://www.amazon.es/dp/B0CWH4ND6V?tag=cazachollos0c-21", FULL)
-        self.assertIn('🛒 <a href="https://link.amazon/B02KRwXLs">https://link.amazon/B02KRwXLs</a>', text)
+        # 18/11/2026: el corto ya no sale tal cual (arrastraba subtags ajenos); siempre /dp/ASIN con tu tag.
+        self.assertIn('🛒 <a href="https://www.amazon.es/dp/B0CWH4ND6V?tag=cazachollos0c-21">amazon.es/dp/B0CWH4ND6V</a>', text)
+        self.assertNotIn("link.amazon", text)
 
 
 if __name__ == "__main__":

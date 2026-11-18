@@ -2661,7 +2661,8 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
         "historical_low": bool(spec.get("historical_low")), "rating": spec.get("rating"),
         "reviews": spec.get("reviews"), "image": spec.get("image") or "", "seen_ts": int(time.time()),
         "seen_hhmm": spec.get("seen_at") or "", "extra_lines": list(spec.get("lines") or []),
-        "short_url": url if url and affiliate.is_short_link(url) else "",
+        # Nunca el enlace corto tal cual: puede llevar dentro el subtag de otro (ppr-es-… de Pepper). Sale /dp/ASIN?tag=.
+        "short_url": "",
         "interest": 0, "interest_label": "", "ref_kind": spec.get("ref_kind") or "",
         "white_canvas": bool(spec.get("fondo_blanco")),
         "keepa": bool(spec.get("keepa")),
