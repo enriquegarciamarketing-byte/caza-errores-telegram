@@ -1,5 +1,5 @@
 {
- "ultimo": 243,
+ "ultimo": 253,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -94,7 +94,7 @@
    "cupon": false,
    "fecha": 1794592372,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 10.9
   },
   "174": {
@@ -129,7 +129,7 @@
    "cupon": false,
    "fecha": 1794612577,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 224.99
   },
   "180": {
@@ -191,7 +191,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -202,7 +202,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -213,7 +213,7 @@
    "cupon": false,
    "fecha": 1794823031,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 89.9
   },
   "193": {
@@ -236,7 +236,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -271,7 +271,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -336,7 +336,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -347,7 +347,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -358,7 +358,7 @@
    "cupon": false,
    "fecha": 1794930303,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 28.79
   },
   "223": {
@@ -393,7 +393,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 255.0
   },
   "228": {
@@ -404,7 +404,7 @@
    "cupon": false,
    "fecha": 1794991481,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 25.97
   },
   "229": {
@@ -424,7 +424,7 @@
    "cupon": false,
    "fecha": 1795002176,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 214.37
   },
   "237": {
@@ -438,7 +438,7 @@
    "cupon": false,
    "fecha": 1795003086,
    "estado": "vivo",
-   "comprobado": 1795011877,
+   "comprobado": 1795033977,
    "ultimo_precio": 2991.65
   },
   "239": {
@@ -461,6 +461,57 @@
   },
   "243": {
    "tipo": "otro"
+  },
+  "244": {
+   "tipo": "otro"
+  },
+  "247": {
+   "tipo": "tarjeta",
+   "asin": "B0D1ZS6SLK",
+   "precio": 12.0,
+   "titulo": "Chilly's Switch vaso térmico con pajita 500ml Abyss Black",
+   "cupon": false,
+   "fecha": 1795016811,
+   "estado": "vivo",
+   "comprobado": 1795033977,
+   "ultimo_precio": 12.0
+  },
+  "249": {
+   "tipo": "tarjeta",
+   "asin": "B0FL9PTJJZ",
+   "precio": 139.99,
+   "titulo": "Amazon Alexa Tablet 8 de 128GB y 4GB de RAM Rosa",
+   "cupon": false,
+   "fecha": 1795016886,
+   "estado": "vivo",
+   "comprobado": 1795033977,
+   "ultimo_precio": 139.99
+  },
+  "250": {
+   "tipo": "otro"
+  },
+  "252": {
+   "tipo": "tarjeta",
+   "asin": "B0FVX4L2KW",
+   "precio": 29.18,
+   "titulo": "Sudadera Tommy Hilfiger Script Flag beige (talla S)",
+   "cupon": false,
+   "fecha": 1795029258,
+   "estado": "terminada",
+   "comprobado": 1795033977,
+   "ultimo_precio": 37.97,
+   "sellado": 1795034043
+  },
+  "253": {
+   "tipo": "tarjeta",
+   "asin": "B0FTSRBW2L",
+   "precio": 66.99,
+   "titulo": "Blink Outdoor 4 pack de 3 cámaras + Blink Mini 2K+ + Sync Module Core",
+   "cupon": false,
+   "fecha": 1795030392,
+   "estado": "vivo",
+   "comprobado": 1795033977,
+   "ultimo_precio": 66.99
   }
  }
 }
