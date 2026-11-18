@@ -8486,6 +8486,25 @@
    "title": "Crema Reafirmante Corporal Babaria con Aloe Vera y Vitamina E 400 ml",
    "manual": true,
    "brand": ""
+  },
+  {
+   "asin": "B0HJWQ2627",
+   "jl_id": "",
+   "price": 49.0,
+   "reference": 79.0,
+   "t": 1794998207,
+   "url": "https://www.amazon.es/dp/B0HJWQ2627?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 686,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHav1_w7QD6Hytukmc9S1DskDkBnMAAhgRaxsuz_BTY4gUjplR0QUBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHav1_w1EaMyB3u2lj5iG21bFH2MwAAhcRaxsuz_BT4d4FZf7IrUcBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Auriculares HUAWEI FreeBuds SE 5 MAX con Cancelación de Ruido y 80 h de Batería</b>\n\n💶 PRECIO: <b>49€</b>\n❌ (Antes: <s>79€</s>)\n🔥 ¡Te ahorras <b>30€</b>! (38 % dto.)\n🎟️ Con el código HUAWEIES10 te ahorras 10€ más (canjéalo en la ficha)\n\n🕒 Precio a las 11:35 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0HJWQ2627?tag=cazachollos0c-21\">amazon.es/dp/B0HJWQ2627</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Auriculares HUAWEI FreeBuds SE 5 MAX con Cancelación de Ruido y 80 h de Batería",
+   "manual": true,
+   "brand": "huawei"
   }
  ],
  "seen": {
@@ -26247,7 +26266,6 @@
   }
  ],
  "x_drafts": [
-  1794488523,
   1794488596,
   1794489109,
   1794490531,
@@ -26296,17 +26314,18 @@
   1794996682,
   1794996776,
   1794996982,
-  1794997105
+  1794997105,
+  1794998212
  ],
  "x_recent": [
-  "rapido",
   "black-friday",
   "regla",
   "guarda",
   "chivatazo",
   "telegram",
   "alguien",
-  "no-dura"
+  "no-dura",
+  "filtro"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 112,
@@ -132638,14 +132657,14 @@
  "whatsapp": {
   "requests": {
    "2026-11-17": 23,
-   "2026-11-18": 10
+   "2026-11-18": 11
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
    "2026-11-17": 20,
-   "2026-11-18": 10
+   "2026-11-18": 11
   },
-  "last_deal": 1794997100
+  "last_deal": 1794998207
  }
 }
