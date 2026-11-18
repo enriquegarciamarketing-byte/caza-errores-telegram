@@ -12,7 +12,8 @@
    1,
    2,
    3,
-   4
+   4,
+   5
   ],
   "dia": [
    0,
@@ -135,6 +136,11 @@
    "t": 1794964449,
    "slot": "manana",
    "topic": "El bot por dentro"
+  },
+  {
+   "t": 1795022977,
+   "slot": "tarde",
+   "topic": "Ahorro y promos"
   }
  ]
 }
