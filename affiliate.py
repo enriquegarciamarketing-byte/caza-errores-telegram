@@ -76,8 +76,6 @@ def require_tag(url: str, tag: str) -> None:
     tags = [value for key, value in query if key.lower() == "tag"]
     if tags != [tag]:
         raise MissingTag(f"el enlace de Amazon no lleva tu tag {tag} ({url})")
-    if has_foreign_tracking(url):
-        raise MissingTag(f"el enlace de Amazon lleva subtag o rastro de otro afiliado ({url})")
 
 
 # Rastro de otros afiliados o de SiteStripe que nunca sale en un enlace de Amazon (18/11/2026): p. ej. el

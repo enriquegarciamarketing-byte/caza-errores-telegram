@@ -143,10 +143,10 @@ class SinSubtagsAjenos(unittest.TestCase):
                                                resolve=lambda u: self.PEPPER)
         self.assertEqual(url, "https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21")
 
-    def test_require_tag_rechaza_subtags(self):
-        with self.assertRaises(affiliate.MissingTag):
-            affiliate.require_tag(self.PEPPER, "cazachollos0c-21")
-        affiliate.require_tag("https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21", "cazachollos0c-21")
+    def test_un_enlace_con_subtags_se_limpia_y_se_publica(self):
+        clean = affiliate.force_tag(self.PEPPER, "cazachollos0c-21")
+        affiliate.require_tag(clean, "cazachollos0c-21")  # no bloquea: sale limpio con tu tag
+        self.assertNotIn("ascsubtag", clean)
 
     def test_premium_limpia_el_copy_y_el_link(self):
         import premium_manual as pm

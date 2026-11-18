@@ -301,7 +301,10 @@ def buttons_for(url: str, check_tag: bool = True) -> dict:
     """Botón de compra. Todo post nuevo pasa por aquí: sin tu tag no sale nada (MissingTag).
     check_tag=False solo para marcar como agotado un post viejo, que no se vuelve a lanzar."""
     if check_tag:
-        affiliate.require_tag(url, load_json(CONFIG_PATH, {}).get("affiliate_tag", ""))
+        tag = load_json(CONFIG_PATH, {}).get("affiliate_tag", "")
+        if tag and affiliate.is_amazon_es(url):
+            url = affiliate.force_tag(url, tag)  # subtags de otros fuera, solo tu tag, y se publica
+        affiliate.require_tag(url, tag)
     shop = premium.store_of(url)[1]
     return {"inline_keyboard": [[{"text": f"🛒 Ver en {shop}", "url": url}]]}
 
