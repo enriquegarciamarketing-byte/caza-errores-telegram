@@ -1,5 +1,5 @@
 {
- "ultimo": 221,
+ "ultimo": 223,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -94,7 +94,7 @@
    "cupon": false,
    "fecha": 1794592372,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 10.9
   },
   "174": {
@@ -129,7 +129,7 @@
    "cupon": false,
    "fecha": 1794612577,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 224.99
   },
   "180": {
@@ -191,7 +191,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -202,7 +202,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -213,7 +213,7 @@
    "cupon": false,
    "fecha": 1794823031,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 89.9
   },
   "193": {
@@ -236,7 +236,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -271,7 +271,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -336,7 +336,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -347,7 +347,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -358,8 +358,20 @@
    "cupon": false,
    "fecha": 1794930303,
    "estado": "vivo",
-   "comprobado": 1794952150,
+   "comprobado": 1794973471,
    "ultimo_precio": 28.79
+  },
+  "223": {
+   "tipo": "tarjeta",
+   "asin": "B0CVBDPDTP",
+   "precio": 29.3,
+   "titulo": "Batidora de mano Moulinex 1000W con picadora, varillas, vaso y jarra",
+   "cupon": false,
+   "fecha": 1794955811,
+   "estado": "terminada",
+   "comprobado": 1794973471,
+   "ultimo_precio": 65.98,
+   "sellado": 1794973537
   }
  }
 }
