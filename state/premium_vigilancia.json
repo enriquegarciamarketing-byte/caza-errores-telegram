@@ -1,5 +1,5 @@
 {
- "ultimo": 239,
+ "ultimo": 243,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -94,7 +94,7 @@
    "cupon": false,
    "fecha": 1794592372,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 10.9
   },
   "174": {
@@ -129,7 +129,7 @@
    "cupon": false,
    "fecha": 1794612577,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 224.99
   },
   "180": {
@@ -191,7 +191,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -202,7 +202,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -213,7 +213,7 @@
    "cupon": false,
    "fecha": 1794823031,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 89.9
   },
   "193": {
@@ -236,7 +236,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -271,7 +271,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -336,7 +336,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -347,7 +347,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -358,7 +358,7 @@
    "cupon": false,
    "fecha": 1794930303,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 28.79
   },
   "223": {
@@ -393,7 +393,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 255.0
   },
   "228": {
@@ -404,7 +404,7 @@
    "cupon": false,
    "fecha": 1794991481,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 25.97
   },
   "229": {
@@ -424,7 +424,7 @@
    "cupon": false,
    "fecha": 1795002176,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 214.37
   },
   "237": {
@@ -438,10 +438,28 @@
    "cupon": false,
    "fecha": 1795003086,
    "estado": "vivo",
-   "comprobado": 1795007377,
+   "comprobado": 1795011877,
    "ultimo_precio": 2991.65
   },
   "239": {
+   "tipo": "otro"
+  },
+  "241": {
+   "tipo": "tarjeta",
+   "asin": "B083GD9R9D",
+   "precio": 19.1,
+   "titulo": "Echtwerk Bloque de Cuchillos Damasco magnéticos 7 piezas",
+   "cupon": false,
+   "fecha": 1795010283,
+   "estado": "agotado",
+   "comprobado": 1795011877,
+   "ultimo_precio": null,
+   "sellado": 1795011943
+  },
+  "242": {
+   "tipo": "otro"
+  },
+  "243": {
    "tipo": "otro"
   }
  }
