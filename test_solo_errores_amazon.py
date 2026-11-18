@@ -207,11 +207,11 @@ class TagGuardTest(unittest.TestCase):
     def test_el_boton_del_premium_y_el_post_del_free_lo_comprueban(self):
         import affiliate
         import canal_nube
-        with self.assertRaises(affiliate.MissingTag):
-            scanner.buttons_for("https://www.amazon.es/dp/B0TEST1234")
-        self.assertIn("inline_keyboard", scanner.buttons_for("https://www.amazon.es/dp/B0TEST1234?tag=cazachollos0c-21"))
-        with self.assertRaises(affiliate.MissingTag):
-            canal_nube.publish(None, "@c", {"asin": "B0TEST1234"}, {"tag": self.TAG}, "", "https://www.amazon.es/dp/B0TEST1234")
+        # 18/11/2026: sin tu tag no se bloquea, se le pone tu tag (cazachollos0c-21) y sale.
+        button = scanner.buttons_for("https://www.amazon.es/dp/B0TEST1234")["inline_keyboard"][0][0]["url"]
+        self.assertEqual(button, "https://www.amazon.es/dp/B0TEST1234?tag=cazachollos0c-21")
+        button = scanner.buttons_for("https://www.amazon.es/dp/B0TEST1234?tag=otro-21")["inline_keyboard"][0][0]["url"]
+        self.assertEqual(button, "https://www.amazon.es/dp/B0TEST1234?tag=cazachollos0c-21")
 
 
 def api_item(asin, title, brand, price, basis, basis_type, avail="IN_STOCK", seller="Amazon", seller_id="A1AT7YVPFBWXBL"):
