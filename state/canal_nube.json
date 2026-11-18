@@ -8447,6 +8447,25 @@
    "title": "Cámara Panasonic Lumix GH5 II con Objetivo Leica 12-60 mm y Vídeo 4K",
    "manual": true,
    "brand": "panasonic"
+  },
+  {
+   "asin": "B09C8QL7P3",
+   "jl_id": "",
+   "price": 1.54,
+   "reference": 2.99,
+   "t": 1794997100,
+   "url": "https://www.amazon.es/dp/B09C8QL7P3?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 685,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHav17cCafGAMMUTCnc-E6jP9vSjQAAg8Raxsuz_BTZovQsEAflPoBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHav17cK5eya5L3DmLgKMEvAL_9CgAAhARaxsuz_BTZWiqCGaDKm0BAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Crema Reafirmante Corporal Babaria con Aloe Vera y Vitamina E 400 ml</b>\n\n💶 PRECIO: <b>1,54€</b>\n❌ (Antes: <s>2,99€</s>)\n🔥 ¡Te ahorras <b>1,45€</b>! (48 % dto.)\nℹ️ Si compras 2 la segunda sale al 50 %\n\n🕒 Precio a las 11:17 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B09C8QL7P3?tag=cazachollos0c-21\">amazon.es/dp/B09C8QL7P3</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Crema Reafirmante Corporal Babaria con Aloe Vera y Vitamina E 400 ml",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -26228,7 +26247,6 @@
   }
  ],
  "x_drafts": [
-  1794488443,
   1794488523,
   1794488596,
   1794489109,
@@ -26277,17 +26295,18 @@
   1794996593,
   1794996682,
   1794996776,
-  1794996982
+  1794996982,
+  1794997105
  ],
  "x_recent": [
-  "chivatazo",
   "telegram",
   "alguien",
   "no-dura",
   "comprado",
   "cartera",
   "cabeza",
-  "filtro"
+  "filtro",
+  "guarda"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 47,
@@ -132423,14 +132442,14 @@
  "whatsapp": {
   "requests": {
    "2026-11-17": 23,
-   "2026-11-18": 9
+   "2026-11-18": 10
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
    "2026-11-17": 20,
-   "2026-11-18": 9
+   "2026-11-18": 10
   },
-  "last_deal": 1794996976
+  "last_deal": 1794997100
  }
 }
