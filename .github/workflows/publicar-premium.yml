@@ -45,6 +45,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DATOS: ${{ inputs.datos }}
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID || secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET || secrets.AMAZON_CREATORS_CLIENT_SECRET }}
         run: |
           ARGS=("$DATOS")
           if [ "${{ inputs.privado }}" = "true" ]; then ARGS+=(--privado); fi

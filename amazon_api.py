@@ -105,12 +105,14 @@ class CreatorsAPI:
         money = _get(listing, "price", "money", default=None) or _get(listing, "price", default={}) or {}
         basis = (_get(listing, "price", "savingBasis", "money", default=None)
                  or _get(listing, "price", "savingBasis", default={}) or {})
+        basis_type = str(_get(listing, "price", "savingBasis", "savingBasisType", default="") or "")
         avail = str(_get(listing, "availability", "type", default="") or "")
         amount = _get(money, "amount")
         basis_amount = _get(basis, "amount")
         return {
             "price": float(amount) if isinstance(amount, (int, float, str)) and str(amount) else None,
             "saving_basis": float(basis_amount) if isinstance(basis_amount, (int, float, str)) and str(basis_amount) else None,
+            "saving_basis_type": basis_type.upper(),
             "in_stock": avail.upper() in {"IN_STOCK", "INSTOCK", "AVAILABLE"},
             "availability": avail.upper(),
         }

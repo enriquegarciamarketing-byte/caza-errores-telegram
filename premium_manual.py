@@ -198,6 +198,17 @@ def sold_out(message_id: int, token: str) -> int:
     return 0
 
 
+def consultar(asin: str) -> int:
+    """Solo lee la ficha en la API oficial (precio, precio de referencia de Amazon y stock); no publica nada."""
+    from amazon_api import CreatorsAPI
+    api = CreatorsAPI.from_env(TAG)
+    if api is None:
+        print("Faltan las credenciales de la Creators API", file=sys.stderr)
+        return 2
+    print("API Amazon:", json.dumps(api.get_item(asin.strip().upper()), ensure_ascii=False))
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("datos", help="JSON del post (ver la cabecera del fichero)")
@@ -208,6 +219,8 @@ def main() -> int:
         print("Falta TELEGRAM_BOT_TOKEN", file=sys.stderr)
         return 2
     spec = json.loads(args.datos)
+    if spec.get("consultar"):
+        return consultar(str(spec["consultar"]))
     if spec.get("agotado"):
         return sold_out(int(spec["agotado"]), token)
     return publish(spec, args.privado, token)
