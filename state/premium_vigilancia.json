@@ -1,5 +1,5 @@
 {
- "ultimo": 257,
+ "ultimo": 276,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -94,7 +94,7 @@
    "cupon": false,
    "fecha": 1794592372,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 10.9
   },
   "174": {
@@ -129,7 +129,7 @@
    "cupon": false,
    "fecha": 1794612577,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 224.99
   },
   "180": {
@@ -191,7 +191,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -202,7 +202,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -213,7 +213,7 @@
    "cupon": false,
    "fecha": 1794823031,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 89.9
   },
   "193": {
@@ -236,7 +236,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -271,7 +271,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -336,7 +336,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -347,7 +347,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -358,7 +358,7 @@
    "cupon": false,
    "fecha": 1794930303,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 19.99
   },
   "223": {
@@ -393,7 +393,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 255.0
   },
   "228": {
@@ -424,9 +424,10 @@
    "titulo": "Lexar SODIMM RAM DDR4 32GB Kit (2x16GB) 3200 MHz",
    "cupon": false,
    "fecha": 1795002176,
-   "estado": "vivo",
-   "comprobado": 1795059390,
-   "ultimo_precio": 214.37
+   "estado": "terminada",
+   "comprobado": 1795094505,
+   "ultimo_precio": 224.6,
+   "sellado": 1795094571
   },
   "237": {
    "tipo": "otro"
@@ -439,7 +440,7 @@
    "cupon": false,
    "fecha": 1795003086,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 2991.65
   },
   "239": {
@@ -473,9 +474,10 @@
    "titulo": "Chilly's Switch vaso térmico con pajita 500ml Abyss Black",
    "cupon": false,
    "fecha": 1795016811,
-   "estado": "vivo",
-   "comprobado": 1795059390,
-   "ultimo_precio": 12.0
+   "estado": "agotado",
+   "comprobado": 1795094505,
+   "ultimo_precio": null,
+   "sellado": 1795094577
   },
   "249": {
    "tipo": "tarjeta",
@@ -485,7 +487,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 139.99
   },
   "250": {
@@ -511,7 +513,7 @@
    "cupon": false,
    "fecha": 1795030392,
    "estado": "vivo",
-   "comprobado": 1795059390,
+   "comprobado": 1795094505,
    "ultimo_precio": 66.99
   },
   "254": {
@@ -543,6 +545,113 @@
    "comprobado": 1795059390,
    "ultimo_precio": 215.23,
    "sellado": 1795059455
+  },
+  "259": {
+   "tipo": "tarjeta",
+   "asin": "B0B3VQKGHW",
+   "precio": 164.46,
+   "titulo": "PDP Victrix PS5 Pro FS-12 Fightstick Purple",
+   "cupon": false,
+   "fecha": 1795074640,
+   "estado": "vivo",
+   "comprobado": 1795094505,
+   "ultimo_precio": 164.46
+  },
+  "261": {
+   "tipo": "tarjeta",
+   "asin": "B0HFP75HKB",
+   "precio": 825.62,
+   "titulo": "Garmin Fénix 9 47 mm",
+   "cupon": false,
+   "fecha": 1795076483,
+   "estado": "vivo",
+   "comprobado": 1795094505,
+   "ultimo_precio": 825.62
+  },
+  "262": {
+   "tipo": "otro"
+  },
+  "264": {
+   "tipo": "tarjeta",
+   "asin": "B08Q4HZRCD",
+   "precio": 5.0,
+   "titulo": "Ferretelix Kit reposición botiquín primeros auxilios con productos hom",
+   "cupon": false,
+   "fecha": 1795078825,
+   "estado": "terminada",
+   "comprobado": 1795094505,
+   "ultimo_precio": 14.9,
+   "sellado": 1795094582
+  },
+  "265": {
+   "tipo": "tarjeta",
+   "asin": "B0FTR9Q2VD",
+   "precio": 61.6,
+   "titulo": "Caja Thermaltake View 380 WS ARGB",
+   "cupon": false,
+   "fecha": 1795081436,
+   "estado": "vivo",
+   "comprobado": 1795094505,
+   "ultimo_precio": 61.6
+  },
+  "266": {
+   "tipo": "otro"
+  },
+  "268": {
+   "tipo": "otro"
+  },
+  "270": {
+   "tipo": "tarjeta",
+   "asin": "B0HHS9GMBG",
+   "precio": 69.9,
+   "titulo": "Cecotec Conga 6000 Carpet&Spot Clean Pro X-Treme",
+   "cupon": false,
+   "fecha": 1795082564,
+   "estado": "vivo",
+   "comprobado": 1795094505,
+   "ultimo_precio": 69.9
+  },
+  "271": {
+   "tipo": "tarjeta",
+   "asin": "B0DJRJKCDS",
+   "precio": 23.05,
+   "titulo": "Caroll 251v-valerie Blazer Mujer",
+   "cupon": false,
+   "fecha": 1795084750,
+   "estado": "vivo",
+   "comprobado": 1795094505,
+   "ultimo_precio": 23.05
+  },
+  "272": {
+   "tipo": "tarjeta",
+   "asin": "B005OQB6VM",
+   "precio": 10.4,
+   "titulo": "Borras Magia Disney Edición Mickey Magic",
+   "cupon": false,
+   "fecha": 1795084855,
+   "estado": "vivo",
+   "comprobado": 1795094505,
+   "ultimo_precio": 10.4
+  },
+  "273": {
+   "tipo": "otro"
+  },
+  "274": {
+   "tipo": "otro"
+  },
+  "275": {
+   "tipo": "tarjeta",
+   "asin": "B0D1CSLKMY",
+   "precio": 79.95,
+   "titulo": "Samsung Galaxy Watch 6 40mm GPS Gold (Reacondicionado)",
+   "cupon": false,
+   "fecha": 1795092470,
+   "estado": "vivo",
+   "comprobado": 1795094505,
+   "ultimo_precio": 79.95
+  },
+  "276": {
+   "tipo": "otro"
   }
  }
 }
