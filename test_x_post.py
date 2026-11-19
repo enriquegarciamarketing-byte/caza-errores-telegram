@@ -50,6 +50,30 @@ class XPost(unittest.TestCase):
         self.assertIn("49€", text)
         self.assertIn("50%", text)
 
+    def test_price_format(self):
+        text = x_post.build_x_post("XIAOMI TV Pro 32 Pulgadas 2026, QLED Smart TV", "Xiaomi",
+                                   "https://www.amazon.es/dp/B1?tag=t-21", seed="a", price=149.0, reference=229.0,
+                                   numbers=True, ref_kind="pvp")
+        lines = text.split("\n\n")
+        self.assertEqual(lines[0], "XIAOMI TV PRO 32 PULGADAS 2026 DE 229€ A 149€")
+        self.assertIn("80€", lines[1])
+        self.assertIn("esta tv", lines[1])
+        self.assertEqual(lines[2], "Amazon 👉🏼 https://www.amazon.es/dp/B1?tag=t-21")
+        self.assertEqual(lines[3], "Un -35% sobre su precio recomendado")
+        self.assertEqual(lines[-1], "#publi")
+        for banned in (":", "—", "!", "⭐"):
+            self.assertNotIn(banned, text.replace("https://", ""))
+        self.assertLessEqual(x_post.x_length(text), 280)
+
+    def test_price_format_context(self):
+        low = x_post.build_price_post("Cecotec Conga 2290", "https://a.es/x", 99.0, 199.0, historical_low=True)
+        self.assertIn("Es el precio más bajo de su historial", low)
+        err = x_post.build_price_post("Cecotec Conga 2290", "https://a.es/x", 9.0, 199.0, badge="ERROR DE PRECIO")
+        self.assertIn("error de precio", err)
+        bare = x_post.build_price_post("Cosa rara", "https://a.es/x", 9.0)
+        self.assertTrue(bare.startswith("COSA RARA A 9€"))
+        self.assertLessEqual(x_post.x_length(x_post.build_price_post("Producto " * 80, "https://a.es/x", 9.0, 20.0)), 280)
+
     def test_amazon_compliant(self):
         deal = {"title": "Gillette Fusion5 Cuchillas de Afeitar Hombre", "brand": "Gillette", "asin": "B04",
                 "price": 34.99, "reference": 54.33}

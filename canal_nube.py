@@ -1295,7 +1295,7 @@ def whatsapp_button(rules: dict) -> dict | None:
 
 
 def x_text(deal: dict, url: str, rules: dict, state: dict | None = None) -> str:
-    """Post para X con la voz de x_post.py: sin la palabra Amazon y, hasta tener la API, sin precio ni %."""
+    """Post para X de x_post.py: con "x_prices" (API de Amazon) el formato con precios; sin él, sin cifras."""
     from x_post import build_x_post
     now = datetime.now(MADRID)
     # El ID de la cuenta nueva de afiliados solo va en X (único sitio dado de alta); el canal sigue con el suyo.
@@ -1306,7 +1306,8 @@ def x_text(deal: dict, url: str, rules: dict, state: dict | None = None) -> str:
     return build_x_post(deal.get("title") or "", deal.get("brand") or "", url, seed=deal.get("asin") or url,
                         extra_handles=rules.get("x_brand_handles"), badge=badge, price=deal.get("price"),
                         reference=deal.get("reference"), numbers=bool(rules.get("x_prices")),
-                        hour=now.hour, month=now.month, day=now.day,
+                        ref_kind=deal.get("ref_kind") or "", historical_low=bool(deal.get("historical_low")),
+                        min_30=deal.get("min_30"), hour=now.hour, month=now.month, day=now.day,
                         recent=state.setdefault("x_recent", []) if state is not None else None)
 
 

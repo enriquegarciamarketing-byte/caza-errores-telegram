@@ -12,10 +12,13 @@ cierre en 👇🏼 con el enlace debajo, para que X pinte la foto del producto e
 
     https://link...
 
+Desde el 19/11/2026, con precios (API de Amazon, "x_prices": true, y AliExpress) sale el formato seco de
+build_price_post: titular en mayúsculas DE antes A ahora, cuánto ha bajado, tienda 👉🏼 enlace, un dato de
+contexto real y #publi. Sin precios queda la voz de las plantillas de abajo.
+
 Reglas para Amazon Afiliados:
-- Sin precio, sin % y sin valoraciones: Amazon solo deja mostrarlos si salen de su API. En AliExpress sí
-  van (numbers=True), porque su programa lo permite.
-- Sin la palabra Amazon ni capturas: la foto la pone la tarjeta automática del enlace.
+- Sin valoraciones nunca. Precio y % solo si salen de su API ("x_prices"). En AliExpress sí van.
+- Sin capturas: la foto la pone la tarjeta automática del enlace.
 - El aviso es la etiqueta Paid partnership de X, que Enrique activa en cada post.
 - Solo se etiqueta a la marca si su cuenta oficial está en X_HANDLES o en config.json
   ("x_brand_handles"); si no, va el nombre en texto, para no etiquetar cuentas falsas.
@@ -253,10 +256,83 @@ def choose_template(seed: str, badge: str, kind: str, hour: int | None = None, m
     return chosen
 
 
+# Formato con precios (19/11/2026), estilo cuentas grandes de deals: titular en mayúsculas con el antes y el
+# ahora, cuánto ha bajado, la tienda con el enlace, un dato de contexto real y #publi.
+#
+#     LOGITECH G502 X DE 169,98€ A 79,98€
+#
+#     Amazon acaba de bajar 90€ este ratón
+#
+#     Amazon 👉🏼 https://www.amazon.es/dp/...
+#
+#     Es el precio más bajo de su historial
+#
+#     #publi
+DROP_LINES = ["{store} acaba de bajar {saving} {what}", "{store} le ha quitado {saving} a {what}",
+              "Bajada de {saving} en {store} para {what}"]
+DROP_LINES_NO_KIND = ["{store} lo acaba de bajar {saving}", "{store} le ha quitado {saving}",
+                      "Bajada de {saving} en {store}"]
+DISCLOSURE = "#publi"
+
+
+def _context_line(price: float, reference: float | None, badge: str, ref_kind: str, historical_low: bool,
+                  min_30: float | None) -> str:
+    """Un solo dato real que refuerce el chollo, sacado de lo que ya sabe el bot (nunca inventado)."""
+    if badge == "ERROR DE PRECIO":
+        return "Tiene toda la pinta de error de precio, puede que lo cancelen"
+    if historical_low:
+        return "Es el precio más bajo de su historial"
+    if min_30 and min_30 > price + 0.009:
+        return f"Lo más barato que había estado este último mes era {_euro(min_30)}"
+    if reference and reference > price:
+        pct = round((reference - price) / reference * 100)
+        if ref_kind == "media90":
+            return f"Un -{pct}% frente a lo que ha costado de media estos 3 meses"
+        if ref_kind == "pvp":
+            return f"Un -{pct}% sobre su precio recomendado"
+        return f"Un -{pct}% sobre su precio habitual"
+    return ""
+
+
+def build_price_post(title: str, link: str, price: float, reference: float | None = None, seed: str = "",
+                     store: str = "Amazon", badge: str = "CHOLLO", ref_kind: str = "",
+                     historical_low: bool = False, min_30: float | None = None, extra_line: str = "") -> str:
+    seed = seed or link
+    kind = product_kind(title)
+    has_drop = bool(reference and reference > price + 0.009)
+    context = extra_line or _context_line(price, reference, badge, ref_kind, historical_low, min_30)
+    for words in (6, 5, 4, 3, 2):
+        cut = short_name(title, words).split()
+        while cut and cut[-1].lower().strip(",.") in {"de", "con", "para", "y", "e", "a", "en", "sin", "del", "la", "el"}:
+            cut.pop()
+        name = " ".join(cut).upper() or "ESTO"
+        head = f"{name} DE {_euro(reference)} A {_euro(price)}" if has_drop else f"{name} A {_euro(price)}"
+        lines = [head]
+        if has_drop:
+            saving = _euro(reference - price)
+            pool = DROP_LINES if kind else DROP_LINES_NO_KIND
+            lines.append(_pick(pool, seed, "drop").format(store=store, saving=saving, what=kind))
+        lines.append(f"{store} 👉🏼 {link}")
+        for extra in ([context] if context else []):
+            if x_length("\n\n".join([*lines, extra, DISCLOSURE])) <= X_LIMIT:
+                lines.append(extra)
+        text = "\n\n".join([*lines, DISCLOSURE])
+        if x_length(text) <= X_LIMIT:
+            return text
+    return text
+
+
 def build_x_post(title: str, brand: str, link: str, seed: str = "", extra_handles: dict | None = None,
                  extra_line: str = "", badge: str = "CHOLLO", price: float | None = None,
                  reference: float | None = None, numbers: bool = False, hour: int | None = None,
-                 month: int | None = None, day: int | None = None, recent: list | None = None) -> str:
+                 month: int | None = None, day: int | None = None, recent: list | None = None,
+                 store: str = "Amazon", ref_kind: str = "", historical_low: bool = False,
+                 min_30: float | None = None) -> str:
+    if numbers and price:
+        return build_price_post(title, link, price, reference, seed=seed, store=store, badge=badge,
+                                ref_kind=ref_kind or "", historical_low=historical_low, min_30=min_30,
+                                extra_line=extra_line)
+    # Sin precios permitidos: la voz de siempre, con gancho y sin cifras.
     seed = seed or link
     badge = badge if badge in WHY else ("CHOLLAZO" if badge == "TOP VENTAS" else "CHOLLO")
     kind = product_kind(title)
