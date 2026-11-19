@@ -9024,6 +9024,25 @@
    "label": "Cuidado personal",
    "brand": "PHILIPS",
    "checked": 1795097487
+  },
+  {
+   "asin": "B0GZPGYFD2",
+   "jl_id": "",
+   "price": 1497.0,
+   "reference": 2199.0,
+   "t": 1795099262,
+   "url": "https://www.amazon.es/dp/B0GZPGYFD2?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 716,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHav8Kgh7l5YOLxZUsXUCWQ4PuiBoAAjYVaxtuUPlT6XhfcCEbfPUBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHav8KglELAgbV8ALWSxMMWJaLbBkAAjUVaxtuUPlTAAHCVG6P-KFCAQADAgADdwADPQQ"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Samsung Galaxy Z Fold 8 de 512 GB en color Graphite</b>\n\n💶 PRECIO: <b>1.497€</b>\n❌ (Antes: <s>2.199€</s>)\n🔥 ¡Te ahorras <b>702€</b>! (32 % dto.)\nℹ️ Versión europea (España) · Solo quedan 3\n\n🕒 Precio a las 15:40 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0GZPGYFD2?tag=cazachollos0c-21\">amazon.es/dp/B0GZPGYFD2</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Samsung Galaxy Z Fold 8 de 512 GB en color Graphite",
+   "manual": true,
+   "brand": "samsung"
   }
  ],
  "seen": {
@@ -28364,7 +28383,6 @@
  "rotation": 3103,
  "backlog": [],
  "x_drafts": [
-  1794519166,
   1794553500,
   1794558270,
   1794559985,
@@ -28413,17 +28431,18 @@
   1795079699,
   1795083103,
   1795087827,
-  1795088293
+  1795088293,
+  1795099267
  ],
  "x_recent": [
-  "chivatazo",
   "telegram",
   "alguien",
   "no-dura",
   "bot-aviso",
   "pregunta",
   "black-friday",
-  "cartera"
+  "cartera",
+  "guarda"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 48,
@@ -147980,15 +147999,15 @@
   "requests": {
    "2026-11-17": 23,
    "2026-11-18": 25,
-   "2026-11-19": 7
+   "2026-11-19": 8
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
    "2026-11-17": 20,
    "2026-11-18": 23,
-   "2026-11-19": 7
+   "2026-11-19": 8
   },
-  "last_deal": 1795096167
+  "last_deal": 1795099262
  }
 }
