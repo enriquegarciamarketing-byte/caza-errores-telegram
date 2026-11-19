@@ -9099,6 +9099,25 @@
    ],
    "label": "Electrodomésticos",
    "brand": "Ninja"
+  },
+  {
+   "asin": "B0CPZP48ZT",
+   "jl_id": "",
+   "price": 28.29,
+   "reference": 29.88,
+   "t": 1795113870,
+   "url": "https://www.amazon.es/dp/B0CPZP48ZT?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 719,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHav9DksfyWYYQIn6Fro5zi_K_eBYAAscVaxtuUPlTp1t9lZo185UBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHav9Dkk6Z7v1YF5K7SCidYfIe_gwAAsYVaxtuUPlTuZ7fRZ4z_uMBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Papel Higiénico Colhogar Ultra Suave 108 Rollos de 2 Capas</b>\n\n💶 PRECIO: <b>28,29€</b>\n❌ (Antes: <s>29,88€</s>)\n🔥 ¡Te ahorras <b>1,59€</b>! (5 % dto.)\n🎟️ Marca el cupón del 35% de la ficha y se queda en 18,39€ (0,17€ el rollo)\nℹ️ 9 paquetes de 12 rollos sin perfume\n\n🕒 Precio a las 19:43 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CPZP48ZT?tag=cazachollos0c-21\">amazon.es/dp/B0CPZP48ZT</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Papel Higiénico Colhogar Ultra Suave 108 Rollos de 2 Capas",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -28599,7 +28618,6 @@
  "rotation": 3103,
  "backlog": [],
  "x_drafts": [
-  1794553500,
   1794558270,
   1794559985,
   1794567984,
@@ -28648,17 +28666,18 @@
   1795083103,
   1795087827,
   1795088293,
-  1795099267
+  1795099267,
+  1795113875
  ],
  "x_recent": [
-  "chivatazo",
   "telegram",
   "alguien",
   "no-dura",
   "bot-aviso",
   "pregunta",
   "black-friday",
-  "cartera"
+  "cartera",
+  "cabeza"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 48,
@@ -148877,15 +148896,15 @@
   "requests": {
    "2026-11-17": 23,
    "2026-11-18": 25,
-   "2026-11-19": 10
+   "2026-11-19": 11
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
    "2026-11-17": 20,
    "2026-11-18": 23,
-   "2026-11-19": 10
+   "2026-11-19": 11
   },
-  "last_deal": 1795110554
+  "last_deal": 1795113870
  }
 }
