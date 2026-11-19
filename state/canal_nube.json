@@ -9119,6 +9119,25 @@
    "title": "Papel Higiénico Colhogar Ultra Suave 108 Rollos de 2 Capas",
    "manual": true,
    "brand": ""
+  },
+  {
+   "asin": "B0CPZP48ZT",
+   "jl_id": "",
+   "price": 18.39,
+   "reference": 29.88,
+   "t": 1795113984,
+   "url": "https://www.amazon.es/dp/B0CPZP48ZT?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 720,
+   "photo_message_id": null,
+   "slides": [
+    "AgACAgQAAxUHav9DksfyWYYQIn6Fro5zi_K_eBYAAscVaxtuUPlTp1t9lZo185UBAAMCAAN3AAM9BA",
+    "AgACAgQAAxUHav9Dkk6Z7v1YF5K7SCidYfIe_gwAAsYVaxtuUPlTuZ7fRZ4z_uMBAAMCAAN3AAM9BA"
+   ],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Papel Higiénico Colhogar Ultra Suave 108 Rollos de 2 Capas</b>\n\n💶 PRECIO: <b>18,39€</b>\n❌ (Antes: <s>29,88€</s>)\n🔥 ¡Te ahorras <b>11,49€</b>! (38 % dto.)\n🎟️ -5% de oferta + 35% extra con el cupón de la ficha\nℹ️ 9 paquetes de 12 rollos sin perfume · 0,17€ el rollo\n\n🕒 Precio a las 19:46 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0CPZP48ZT?tag=cazachollos0c-21\">amazon.es/dp/B0CPZP48ZT</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Papel Higiénico Colhogar Ultra Suave 108 Rollos de 2 Capas",
+   "manual": true,
+   "brand": ""
   }
  ],
  "seen": {
@@ -28639,7 +28658,6 @@
  "rotation": 3103,
  "backlog": [],
  "x_drafts": [
-  1794558270,
   1794559985,
   1794567984,
   1794568017,
@@ -28688,22 +28706,23 @@
   1795087827,
   1795088293,
   1795099267,
-  1795113875
+  1795113875,
+  1795113988
  ],
  "x_recent": [
-  "chivatazo",
-  "telegram",
   "alguien",
   "no-dura",
   "bot-aviso",
   "pregunta",
   "black-friday",
-  "cartera"
+  "cartera",
+  "cabeza",
+  "rapido"
  ],
  "jl_paused_until": 1794513122.695286,
- "amazon_search_index": 172,
+ "amazon_search_index": 48,
  "api_calls": {
-  "2026-11-19": 5172
+  "2026-11-19": 4848
  },
  "price_history": {
   "B0CRTYZG5C": [
@@ -29859,11 +29878,6 @@
     20261118,
     304.38,
     363.0
-   ],
-   [
-    20261119,
-    320.0,
-    320.0
    ]
   ],
   "B09MJRCYYB": [
@@ -83600,7 +83614,7 @@
    ],
    [
     20261119,
-    290.91,
+    290.97,
     292.54
    ]
   ],
@@ -85162,11 +85176,6 @@
     20261117,
     63.79,
     63.79
-   ],
-   [
-    20261119,
-    109.99,
-    109.99
    ]
   ],
   "B06XVRWMS9": [
@@ -89480,7 +89489,7 @@
    ],
    [
     20261119,
-    18.0,
+    18.93,
     18.94
    ]
   ],
@@ -89744,11 +89753,6 @@
    ],
    [
     20261117,
-    20.15,
-    20.15
-   ],
-   [
-    20261119,
     20.15,
     20.15
    ]
@@ -90760,7 +90764,7 @@
    ],
    [
     20261119,
-    40.41,
+    42.8,
     42.8
    ]
   ],
@@ -109783,7 +109787,7 @@
    [
     20261119,
     103.55,
-    103.76
+    103.74
    ]
   ],
   "B00UG59I5C": [
@@ -109899,7 +109903,7 @@
    [
     20261119,
     86.22,
-    86.44
+    86.42
    ]
   ],
   "B003AJE4S2": [
@@ -115734,11 +115738,6 @@
     20261118,
     36.9,
     36.9
-   ],
-   [
-    20261119,
-    36.9,
-    36.9
    ]
   ],
   "B075JJ5615": [
@@ -117601,11 +117600,6 @@
     20261114,
     8.8,
     8.91
-   ],
-   [
-    20261119,
-    7.32,
-    7.32
    ]
   ],
   "B0DFX5GYS9": [
@@ -122922,11 +122916,6 @@
     20261117,
     179.0,
     179.0
-   ],
-   [
-    20261119,
-    172.73,
-    172.73
    ]
   ],
   "B082R5CBL1": [
@@ -123134,11 +123123,6 @@
     20261117,
     142.1,
     142.1
-   ],
-   [
-    20261119,
-    139.58,
-    139.58
    ]
   ],
   "B0FC2XLSP4": [
@@ -135049,11 +135033,6 @@
     20261118,
     166.99,
     166.99
-   ],
-   [
-    20261119,
-    166.99,
-    166.99
    ]
   ],
   "B0FB43WPJC": [
@@ -138233,7 +138212,7 @@
    ],
    [
     20261119,
-    589.0,
+    615.0,
     615.0
    ]
   ],
@@ -142656,11 +142635,6 @@
     20261117,
     149.99,
     149.99
-   ],
-   [
-    20261119,
-    149.99,
-    149.99
    ]
   ],
   "B09GG96C78": [
@@ -144360,11 +144334,6 @@
     20261118,
     27.65,
     27.65
-   ],
-   [
-    20261119,
-    29.11,
-    29.11
    ]
   ],
   "B0FZW8NGR5": [
@@ -145745,7 +145714,7 @@
    [
     20261119,
     301.51,
-    328.29
+    301.51
    ]
   ],
   "B0HKKDDX16": [
@@ -145769,7 +145738,7 @@
    [
     20261119,
     416.94,
-    471.28
+    425.68
    ]
   ],
   "B0HKKPYVV4": [
@@ -145781,7 +145750,7 @@
    [
     20261119,
     605.13,
-    648.88
+    605.13
    ]
   ],
   "B0F5FDF1D8": [
@@ -145804,7 +145773,7 @@
    ],
    [
     20261119,
-    199.0,
+    199.99,
     199.99
    ]
   ],
@@ -148571,7 +148540,7 @@
    [
     20261119,
     403.37,
-    495.42
+    403.37
    ]
   ],
   "B0CSG5QYD5": [
@@ -148816,7 +148785,7 @@
    [
     20261119,
     1678.35,
-    1683.88
+    1678.35
    ]
   ],
   "B08DGK825Q": [
@@ -148958,59 +148927,24 @@
     165.35,
     165.35
    ]
-  ],
-  "B0HPSX2KTB": [
-   [
-    20261119,
-    779.99,
-    779.99
-   ]
-  ],
-  "B0CKTFYX7D": [
-   [
-    20261119,
-    89.9,
-    89.9
-   ]
-  ],
-  "B0GX9JNFGJ": [
-   [
-    20261119,
-    718.18,
-    718.18
-   ]
-  ],
-  "B0BT1VYBXF": [
-   [
-    20261119,
-    54.13,
-    54.13
-   ]
-  ],
-  "B0CWQVZ9BK": [
-   [
-    20261119,
-    62.49,
-    62.49
-   ]
   ]
  },
  "api_error": "HTTP 429 en searchItems: {\"message\":\"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates\",\"type\":\"ThrottleException\"}",
- "amazon_search_lap": 241,
+ "amazon_search_lap": 240,
  "silence_alert_t": 1795106400,
  "whatsapp": {
   "requests": {
    "2026-11-17": 23,
    "2026-11-18": 25,
-   "2026-11-19": 11
+   "2026-11-19": 12
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
   "deals": {
    "2026-11-17": 20,
    "2026-11-18": 23,
-   "2026-11-19": 11
+   "2026-11-19": 12
   },
-  "last_deal": 1795113870
+  "last_deal": 1795113984
  }
 }
