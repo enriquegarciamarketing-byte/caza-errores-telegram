@@ -23,6 +23,7 @@ Reglas para Amazon Afiliados:
 from __future__ import annotations
 
 import hashlib
+import math
 import re
 
 # Cuentas oficiales verificadas. Añade más en config.json -> "x_brand_handles": {"marca": "@Cuenta"}.
@@ -283,3 +284,129 @@ def build_x_post(title: str, brand: str, link: str, seed: str = "", extra_handle
         if x_length(text) <= X_LIMIT or not optional:
             return text
         lines.pop(optional.pop())  # si no cabe, cae la línea de contexto antes que el gancho o el cierre
+
+
+# ------------------------------------------------------------------ estilo «alerta de bajada» (19/11/2026)
+# Formato seco de cuenta de alertas, el que Enrique quiere ahora para X ("x_style": "alerta" en config):
+#
+#     ¡DYSON PENCILWASH FREGONA ELÉCTRICA BAJA DE 200 €!
+#
+#     Baja de 349 € a 199 €
+#
+#     Amazon: https://www.amazon.es/dp/B0GJT26L7Z?tag=cazachollos0c-21
+#
+#     Fregona eléctrica ultraligera con 30 minutos de autonomía y mango ultrafino y ligero
+#
+#     Precio solo para Prime        (solo si hay condición)
+#
+#     #ad
+#
+# En Amazon los precios solo salen si vienen de su API (normas de Afiliados).
+ALERT_NAME_WORDS = 5
+ALERT_NAME_CHARS = 42
+ALERT_DESC_CHARS = 95
+SMALL_WORDS = {"de", "del", "la", "el", "los", "las", "y", "e", "o", "u", "con", "sin", "para", "por", "en", "a", "al"}
+
+
+def euros(amount: float) -> str:
+    """169.99 → '169,99 €', 199.0 → '199 €'."""
+    text = f"{amount:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    return (text[:-3] if text.endswith(",00") else text) + " €"
+
+
+def price_threshold(price: float) -> int:
+    """Número redondo justo por encima del precio: 169,99 → 170; 199 → 200; 47,90 → 50; 9,99 → 10."""
+    step = 1 if price < 20 else 5 if price < 50 else 10 if price < 300 else 50 if price < 1000 else 100
+    value = math.ceil(price / step) * step
+    return int(value + step if value <= price else value)
+
+
+def alert_name(title: str) -> str:
+    """Nombre corto del producto para el titular, sin cortar en una palabra de enlace."""
+    head = re.split(r",| - | – |\(|\|", title or "")[0]
+    words = re.sub(r"\s+", " ", head).strip().split()[:ALERT_NAME_WORDS]
+    while words and len(" ".join(words)) > ALERT_NAME_CHARS:
+        words.pop()
+    while words and words[-1].lower() in SMALL_WORDS:
+        words.pop()
+    return " ".join(words) or (title or "").strip()[:ALERT_NAME_CHARS]
+
+
+# Nombres propios que no se pasan a minúscula en la descripción.
+KEEP_CAPS = {"google", "dolby", "vision", "atmos", "alexa", "android", "bluetooth", "wifi", "wi-fi", "apple",
+             "windows", "intel", "amd", "nvidia", "ryzen", "core", "geforce", "radeon", "samsung", "sony", "lg",
+             "philips", "bosch", "xiaomi", "dyson", "cecotec", "lego", "nintendo", "playstation", "xbox", "gopro",
+             "magsafe", "airpods", "iphone", "ipad", "macbook", "galaxy", "pixel", "kindle", "fire", "echo",
+             "chromecast", "netflix", "spotify", "thunderbolt", "hdmi", "usb", "gorilla", "glass"}
+
+
+def _calm(word: str) -> str:
+    """'Autonomía' → 'autonomía', pero deja siglas, modelos y marcas (4K60, USB-C, QLED, PencilWash, Google)."""
+    letters = [c for c in word if c.isalpha()]
+    if not letters or any(c.isdigit() for c in word) or word.isupper() or sum(c.isupper() for c in letters) > 1:
+        return word
+    if word.lower().strip(".,:") in KEEP_CAPS:
+        return word
+    return word.lower()
+
+
+def _kind_words(name: str) -> str:
+    """Tipo de producto al final del nombre: 'Dyson PencilWash Fregona Eléctrica' → 'fregona eléctrica'.
+    Se queda con las palabras finales normales (sin cifras ni siglas) y nunca con la primera, que es la marca."""
+    words = name.split()
+    kind = []
+    for word in reversed(words[1:]):
+        letters = [c for c in word if c.isalpha()]
+        if not letters or any(c.isdigit() for c in word) or sum(c.isupper() for c in letters) > 1 \
+                or word.lower() in KEEP_CAPS:
+            break
+        kind.insert(0, word.lower())
+    return " ".join(kind)
+
+
+def alert_description(title: str) -> str:
+    """Una línea con lo que es: el resto del título de Amazon, sin gritos ni segmentos de una palabra (colores)."""
+    parts = [p.strip() for p in re.split(r",|\||·|;| - | – ", title or "")]
+    name = parts[0] if parts else ""
+    kept, total = [], 0
+    for part in parts[1:]:
+        part = re.sub(r"[\(\)\[\]]", "", part).strip()
+        if len(part.split()) < 2:
+            continue
+        part = " ".join(_calm(w) for w in part.split())
+        if total + len(part) + 2 > ALERT_DESC_CHARS or len(kept) == 3:
+            break
+        kept.append(part)
+        total += len(part) + 2
+    kind = _kind_words(name)
+    body = ", ".join(kept)
+    if kind and body:
+        text = f"{kind} con {body}"
+    else:
+        text = kind or body
+    if " y " not in text and text.count(", ") >= 1:
+        head, _, tail = text.rpartition(", ")
+        text = f"{head} y {tail}"
+    return (text[:1].upper() + text[1:]) if text else ""
+
+
+def build_alert_post(title: str, link: str, price: float, reference: float | None = None, store: str = "Amazon",
+                     condition: str = "", description: str | None = None) -> str:
+    """Post de X en formato alerta. Si no cabe en 280, primero cae la descripción y luego se acorta el nombre."""
+    name = alert_name(title)
+    desc = alert_description(title) if description is None else description
+    drop = f"Baja de {euros(reference)} a {euros(price)}" if reference and reference > price + 0.009 \
+        else f"Ahora a {euros(price)}"
+    while True:
+        blocks = [f"¡{name.upper()} BAJA DE {price_threshold(price)} €!", drop, f"{store}: {link}"]
+        blocks += [b for b in (desc, condition) if b]
+        blocks.append("#ad")
+        text = "\n\n".join(blocks)
+        if x_length(text) <= X_LIMIT:
+            return text
+        if desc:
+            desc = ""
+        elif len(name.split()) > 2:
+            name = " ".join(name.split()[:-1])
+        else:
+            return text

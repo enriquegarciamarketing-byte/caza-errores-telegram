@@ -1301,6 +1301,12 @@ def x_text(deal: dict, url: str, rules: dict, state: dict | None = None) -> str:
     # El ID de la cuenta nueva de afiliados solo va en X (único sitio dado de alta); el canal sigue con el suyo.
     if rules.get("x_affiliate_tag") and deal.get("asin"):
         url = f"https://www.amazon.es/dp/{deal['asin']}?tag={rules['x_affiliate_tag']}"
+    # Estilo alerta ("x_style": "alerta", 19/11/2026): titular con el umbral, precio antes y ahora, enlace, qué es
+    # y #ad. Solo con precio confirmado por la API de Amazon (o "x_prices": true); si no, la voz de siempre.
+    if rules.get("x_style") == "alerta" and deal.get("price") and (deal.get("api_price") or rules.get("x_prices")):
+        from x_post import build_alert_post
+        return build_alert_post(deal.get("title") or "", url, float(deal["price"]),
+                                float(deal["reference"]) if deal.get("reference") else None)
     badge = badge_for(deal["discount"], rules, real_drop(deal)) if deal.get("discount") is not None else "CHOLLO"
     # Con la API de Amazon ("x_prices": true en config) ya se pueden poner precio y %.
     return build_x_post(deal.get("title") or "", deal.get("brand") or "", url, seed=deal.get("asin") or url,
@@ -1370,6 +1376,34 @@ def send_x_draft(tg, state: dict, rules: dict, deal: dict, url: str, log=print, 
             state["x_drafts"] = state["x_drafts"][-50:]
     except Exception as exc:  # el post del canal ya ha salido; esto nunca debe tumbar la pasada
         log(f"  No he podido mandarte el texto de X ({exc})")
+
+
+def x_auto_text(link: str, rules: dict, log=print) -> tuple[str, str]:
+    """Post de X en estilo alerta a partir de un enlace o ASIN de Amazon, con precio y PVP de la API oficial.
+    Devuelve (texto, enlace con el tag de X) o ("", motivo) si no se puede montar."""
+    from affiliate import extract_asin
+    from premium_vigilar import resolve_asin
+    from x_post import build_alert_post
+    link = (link or "").strip()
+    asin = link.upper() if re.fullmatch(r"[A-Za-z0-9]{10}", link) else (extract_asin(link) or resolve_asin(link))
+    if not asin:
+        return "", f"no saco el ASIN de {link}"
+    api = API or CreatorsAPI.from_env(rules.get("tag") or "")
+    if api is None:
+        return "", "faltan los secretos de la API de Amazon"
+    try:
+        live = api.get_item(asin)
+    except ApiError as exc:
+        return "", f"la API de Amazon no responde ({str(exc)[:80]})"
+    if not live or live.get("price") is None:
+        return "", f"Amazon no da precio para {asin}"
+    if not live.get("in_stock"):
+        log(f"Ojo: Amazon da {asin} como {live.get('availability') or 'sin stock'}")
+    tag = rules.get("x_affiliate_tag") or rules.get("tag") or ""
+    url = f"https://www.amazon.es/dp/{asin}" + (f"?tag={tag}" if tag else "")
+    log(f"API Amazon: {asin} a {euro(live['price'])}, referencia {live.get('saving_basis')} "
+        f"({live.get('saving_basis_type') or 'sin tipo'})")
+    return build_alert_post(live.get("title") or "", url, float(live["price"]), live.get("saving_basis")), url
 
 
 def send_x_text(tg, cfg: dict, state: dict, text: str, url: str = "", log=print) -> int:
@@ -2821,6 +2855,8 @@ def main() -> int:
     parser.add_argument("--manual", default="", help="Post hecho a mano (JSON con asin, title, price, reference…)")
     parser.add_argument("--x-texto", default="", help="Solo te manda por privado este texto listo para X")
     parser.add_argument("--x-url", default="", help="Enlace para la vista previa del texto de X")
+    parser.add_argument("--x-auto", default="", help="Enlace o ASIN de Amazon: monta el post de X (estilo alerta) "
+                                                     "con el precio de la API y te lo manda por privado")
     parser.add_argument("--whatsapp-ultimo", action="store_true",
                         help="Prueba: manda al canal de WhatsApp el último chollo de Telegram que sigue activo")
     parser.add_argument("--merge-state", default="", help="Junta la memoria local con la de este fichero y sale")
@@ -2849,6 +2885,14 @@ def main() -> int:
     print(f"== {now.astimezone(MADRID):%Y-%m-%d %H:%M} ==")
     if args.x_texto:
         code = send_x_text(tg, cfg, state, args.x_texto, args.x_url)
+    elif args.x_auto:
+        text, url = x_auto_text(args.x_auto, rules_from(cfg))
+        if not text:
+            print(f"No he podido montar el post de X: {url}", file=sys.stderr)
+            code = 1
+        else:
+            print(text)
+            code = 0 if args.dry_run else send_x_text(tg, cfg, state, text, url)
     elif args.manual:
         code = run_manual(args, cfg, state, now, tg=tg)
     elif args.whatsapp_ultimo:

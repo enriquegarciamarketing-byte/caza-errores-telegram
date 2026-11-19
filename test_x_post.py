@@ -88,6 +88,35 @@ class XPost(unittest.TestCase):
         self.assertEqual(tg.sent, [])
 
 
+
+class AlertStyleTest(unittest.TestCase):
+    DYSON = ("Dyson PencilWash Fregona Eléctrica, Copper, 30 Minutos de Autonomía | Mango Ultrafino y Ligero, "
+             "Rodillo Motorizado Autopropulsado, Limpieza Higiénica")
+
+    def test_formato_alerta(self):
+        text = x_post.build_alert_post(self.DYSON, "https://www.amazon.es/dp/B0GJT26L7Z?tag=t-21", 199.0, 349.0)
+        blocks = text.split("\n\n")
+        self.assertEqual(blocks[0], "¡DYSON PENCILWASH FREGONA ELÉCTRICA BAJA DE 200 €!")
+        self.assertEqual(blocks[1], "Baja de 349 € a 199 €")
+        self.assertEqual(blocks[2], "Amazon: https://www.amazon.es/dp/B0GJT26L7Z?tag=t-21")
+        self.assertTrue(blocks[3].startswith("Fregona eléctrica con 30 minutos de autonomía"))
+        self.assertEqual(blocks[-1], "#ad")
+        self.assertLessEqual(x_post.x_length(text), 280)
+
+    def test_condicion_y_sin_referencia(self):
+        text = x_post.build_alert_post("GoPro HERO, 4K60", "https://a.example/x", 169.99, None,
+                                       condition="Precio solo para Prime")
+        self.assertIn("Ahora a 169,99 €", text)
+        self.assertIn("\n\nPrecio solo para Prime\n\n#ad", text)
+
+    def test_umbral(self):
+        self.assertEqual([x_post.price_threshold(v) for v in (169.99, 199, 47.9, 9.99, 200)], [170, 200, 50, 10, 210])
+
+    def test_no_pasa_de_280(self):
+        title = "Marca " + " ".join(["Palabra"] * 30) + ", " + ", ".join(["Dato Largo Muy Largo De Verdad"] * 10)
+        text = x_post.build_alert_post(title, "https://a.example/x", 49.99, 99.99, condition="Con cupón en la ficha")
+        self.assertLessEqual(x_post.x_length(text), 280)
+
 if __name__ == "__main__":
     unittest.main()
 

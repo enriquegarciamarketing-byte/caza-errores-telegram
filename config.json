@@ -604,6 +604,8 @@
       "trusted_brands": ["Cecotec", "Jata", "Moulinex", "Tefal", "Rowenta", "Krups", "Taurus", "Orbegozo", "Braun", "Oral-B", "Remington", "Rowenta", "Severin", "Russell Hobbs", "Princess", "Mellerware", "Siemens", "Balay", "Teka", "Whirlpool", "Beko", "Candy", "Haier", "Panasonic", "Sharp", "Nespresso", "Dolce Gusto", "Smeg", "KitchenAid", "Lefant", "Conga", "Rowenta", "Karcher", "Kärcher", "Nike", "Adidas", "Puma", "New Balance", "Asics", "Skechers", "Levi's", "Tommy Hilfiger", "Calvin Klein", "Ray-Ban", "Casio", "Fossil", "Samsonite", "Playmobil", "Hasbro", "Mattel", "Chicco", "Bugaboo", "Medela", "Philips Avent", "Nivea", "L'Oréal", "Garnier", "Gillette", "Fairy", "Ariel", "Finish", "Colgate"]
     },
     "x_prices": false,
+    "_nota_x_style": "Desde el 19/11/2026 los borradores de X salen en estilo alerta: «¡PRODUCTO BAJA DE 200 €!», precio antes y ahora, «Amazon: enlace», qué es y #ad. Solo si la API de Amazon ha confirmado el precio; si no, la voz de siempre sin cifras. Vacío = voz de siempre.",
+    "x_style": "alerta",
     "x_affiliate_tag": "cazachollos0c-21",
     "amazon_photo": true,
     "_nota_fondo_blanco": "Desde el 10/11/2026 todas las fotos de producto del canal salen centradas en un lienzo blanco de 1600x1600 (como /chollo-free) para que todas midan lo mismo. false = foto tal cual.",
@@ -1437,6 +1439,7 @@
     "live": false,
     "chat_id": "@cazachollos_com",
     "x_drafts": true,
+    "x_style": "alerta",
     "queries": [
       {
         "kind": "hot",

@@ -346,10 +346,15 @@ def x_length(text: str) -> int:
     return sum(2 if ord(ch) > 0x2000 else 1 for ch in text)
 
 
-def build_x_text(deal: dict, link: str, handles: dict | None = None) -> str:
-    """Voz de x_post.py; en AliExpress sí van precio y %, y el cupón si lo hay."""
-    from x_post import build_x_post
+def build_x_text(deal: dict, link: str, handles: dict | None = None, style: str = "") -> str:
+    """Voz de x_post.py; en AliExpress sí van precio y %, y el cupón si lo hay. Con style="alerta" (config
+    "x_style"), el formato alerta: titular con el umbral, precio antes y ahora, enlace, qué es, cupón y #ad."""
+    from x_post import build_alert_post, build_x_post
     coupon = deal.get("coupon") or {}
+    if style == "alerta" and deal.get("price"):
+        return build_alert_post(deal.get("title") or "", link, float(deal["price"]),
+                                float(deal["reference"]) if deal.get("reference") else None, store="AliExpress",
+                                condition=f"Con el cupón {coupon['code']}" if coupon.get("code") else "")
     extra = f"Con el cupón {coupon['code']} sale aún mejor." if coupon.get("code") else ""
     return build_x_post(deal.get("title") or "", deal.get("brand") or "", link, seed=str(deal.get("id") or link),
                         extra_handles=handles, extra_line=extra, badge=deal.get("badge") or "CHOLLO",
@@ -610,7 +615,8 @@ def run_pass(args, rules: dict, state: dict, now: datetime, api, tg, log=print) 
                 except AliExpressError as exc:
                     log(f"  No he podido sacar el enlace de X ({exc}); uso el de Telegram")
             try:
-                send_x_draft(tg, admin, deal["image"], build_x_text(deal, link, rules.get("x_brand_handles")), test)
+                send_x_draft(tg, admin, deal["image"], build_x_text(deal, link, rules.get("x_brand_handles"),
+                                                                    rules.get("x_style") or ""), test)
             except RuntimeError as exc:
                 log(f"  No he podido mandarte el texto de X ({exc})")
     state["posts"] = [p for p in state.get("posts") or []
@@ -675,13 +681,13 @@ def run_manual(spec, rules: dict, tg, args, now: datetime, log=print) -> int:
         if args.dry_run:
             print(caption)
             print("---- X ----")
-            print(build_x_text(deal, deal["link"]))
+            print(build_x_text(deal, deal["link"], style=rules.get("x_style") or ""))
             continue
         note = str(raw.get("note") or "")
         head = "🧪 <b>PRUEBA</b> · solo te llega a ti" + (f" · {html.escape(note)}" if note else "") + "\n\n"
         send_post(tg, admin, deal["image"], card, head + caption, log)
         if rules.get("x_drafts"):
-            send_x_draft(tg, admin, deal["image"], build_x_text(deal, deal["link"]), test=True)
+            send_x_draft(tg, admin, deal["image"], build_x_text(deal, deal["link"], style=rules.get("x_style") or ""), test=True)
         sent += 1
     log(f"Enviadas {sent} pruebas a tu chat privado.")
     return 0
