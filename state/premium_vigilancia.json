@@ -1,5 +1,5 @@
 {
- "ultimo": 298,
+ "ultimo": 305,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -93,9 +93,10 @@
    "titulo": "Apple Funda transparente con MagSafe para iPhone 16 Plus",
    "cupon": false,
    "fecha": 1794592372,
-   "estado": "vivo",
-   "comprobado": 1795145276,
-   "ultimo_precio": 10.9
+   "estado": "terminada",
+   "comprobado": 1795179736,
+   "ultimo_precio": 28.99,
+   "sellado": 1795179803
   },
   "174": {
    "tipo": "tarjeta",
@@ -192,7 +193,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -203,7 +204,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -214,7 +215,7 @@
    "cupon": false,
    "fecha": 1794823031,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 89.9
   },
   "193": {
@@ -237,7 +238,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -272,7 +273,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -337,7 +338,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -348,7 +349,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -395,7 +396,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 255.0
   },
   "228": {
@@ -442,7 +443,7 @@
    "cupon": false,
    "fecha": 1795003086,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 2991.65
   },
   "239": {
@@ -489,7 +490,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 139.0
   },
   "250": {
@@ -515,7 +516,7 @@
    "cupon": false,
    "fecha": 1795030392,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 66.99
   },
   "254": {
@@ -555,9 +556,10 @@
    "titulo": "PDP Victrix PS5 Pro FS-12 Fightstick Purple",
    "cupon": false,
    "fecha": 1795074640,
-   "estado": "vivo",
-   "comprobado": 1795145276,
-   "ultimo_precio": 164.46
+   "estado": "terminada",
+   "comprobado": 1795179736,
+   "ultimo_precio": 199.0,
+   "sellado": 1795179810
   },
   "261": {
    "tipo": "tarjeta",
@@ -566,9 +568,10 @@
    "titulo": "Garmin Fénix 9 47 mm",
    "cupon": false,
    "fecha": 1795076483,
-   "estado": "vivo",
-   "comprobado": 1795145276,
-   "ultimo_precio": 825.62
+   "estado": "terminada",
+   "comprobado": 1795179736,
+   "ultimo_precio": 937.08,
+   "sellado": 1795179819
   },
   "262": {
    "tipo": "otro"
@@ -611,7 +614,7 @@
    "cupon": false,
    "fecha": 1795082564,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 69.9
   },
   "271": {
@@ -622,7 +625,7 @@
    "cupon": false,
    "fecha": 1795084750,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 23.05
   },
   "272": {
@@ -633,7 +636,7 @@
    "cupon": false,
    "fecha": 1795084855,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 10.4
   },
   "273": {
@@ -650,7 +653,7 @@
    "cupon": false,
    "fecha": 1795092470,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 79.95
   },
   "276": {
@@ -667,7 +670,7 @@
    "cupon": false,
    "fecha": 1795099977,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 100.0
   },
   "281": {
@@ -699,7 +702,7 @@
    "cupon": false,
    "fecha": 1795114353,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 17.99
   },
   "287": {
@@ -710,7 +713,7 @@
    "cupon": false,
    "fecha": 1795117100,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 49.99
   },
   "291": {
@@ -760,8 +763,51 @@
    "cupon": false,
    "fecha": 1795129868,
    "estado": "vivo",
-   "comprobado": 1795145276,
+   "comprobado": 1795179736,
    "ultimo_precio": 65.0
+  },
+  "299": {
+   "tipo": "otro"
+  },
+  "300": {
+   "tipo": "tarjeta",
+   "asin": "B0FYQW9NGR",
+   "precio": 65.99,
+   "titulo": "Swarovski Colgante Hyperbola Infinity y corazón rosa",
+   "cupon": false,
+   "fecha": 1795168317,
+   "estado": "vivo",
+   "comprobado": 1795179736,
+   "ultimo_precio": 65.99
+  },
+  "301": {
+   "tipo": "otro"
+  },
+  "302": {
+   "tipo": "otro"
+  },
+  "303": {
+   "tipo": "tarjeta",
+   "asin": "B0HJB44KZS",
+   "precio": 225.0,
+   "titulo": "Apple Watch SE 3 GPS 40 mm, Caja de Aluminio en Blanco Estrella",
+   "cupon": false,
+   "fecha": 1795169652,
+   "estado": "vivo",
+   "comprobado": 1795179736,
+   "ultimo_precio": 225.0
+  },
+  "305": {
+   "tipo": "tarjeta",
+   "asin": "B0DMDTRY8V",
+   "precio": 9.99,
+   "titulo": "Guantes de boxeo Dripex de cuero PU (8 oz, negro)",
+   "cupon": false,
+   "fecha": 1795173414,
+   "estado": "terminada",
+   "comprobado": 1795179736,
+   "ultimo_precio": 25.99,
+   "sellado": 1795179825
   }
  }
 }
