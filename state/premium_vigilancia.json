@@ -1,5 +1,5 @@
 {
- "ultimo": 305,
+ "ultimo": 318,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -193,7 +193,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -204,7 +204,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -215,7 +215,7 @@
    "cupon": false,
    "fecha": 1794823031,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 89.9
   },
   "193": {
@@ -238,7 +238,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -273,7 +273,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -338,7 +338,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -349,7 +349,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -396,7 +396,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 255.0
   },
   "228": {
@@ -442,9 +442,10 @@
    "titulo": "Apple MacBook Pro de 14,2 pulgadas con chip M5 Pro, 24 GB y 2 TB de SS",
    "cupon": false,
    "fecha": 1795003086,
-   "estado": "vivo",
-   "comprobado": 1795179736,
-   "ultimo_precio": 2991.65
+   "estado": "terminada",
+   "comprobado": 1795209226,
+   "ultimo_precio": 3499.0,
+   "sellado": 1795209293
   },
   "239": {
    "tipo": "otro"
@@ -490,7 +491,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 139.0
   },
   "250": {
@@ -516,7 +517,7 @@
    "cupon": false,
    "fecha": 1795030392,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 66.99
   },
   "254": {
@@ -614,7 +615,7 @@
    "cupon": false,
    "fecha": 1795082564,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 69.9
   },
   "271": {
@@ -625,7 +626,7 @@
    "cupon": false,
    "fecha": 1795084750,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 23.05
   },
   "272": {
@@ -636,7 +637,7 @@
    "cupon": false,
    "fecha": 1795084855,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 10.4
   },
   "273": {
@@ -653,7 +654,7 @@
    "cupon": false,
    "fecha": 1795092470,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 79.95
   },
   "276": {
@@ -670,7 +671,7 @@
    "cupon": false,
    "fecha": 1795099977,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 100.0
   },
   "281": {
@@ -702,7 +703,7 @@
    "cupon": false,
    "fecha": 1795114353,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 17.99
   },
   "287": {
@@ -713,7 +714,7 @@
    "cupon": false,
    "fecha": 1795117100,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 49.99
   },
   "291": {
@@ -763,7 +764,7 @@
    "cupon": false,
    "fecha": 1795129868,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 65.0
   },
   "299": {
@@ -777,7 +778,7 @@
    "cupon": false,
    "fecha": 1795168317,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 65.99
   },
   "301": {
@@ -794,7 +795,7 @@
    "cupon": false,
    "fecha": 1795169652,
    "estado": "vivo",
-   "comprobado": 1795179736,
+   "comprobado": 1795209226,
    "ultimo_precio": 225.0
   },
   "305": {
@@ -808,6 +809,84 @@
    "comprobado": 1795179736,
    "ultimo_precio": 25.99,
    "sellado": 1795179825
+  },
+  "308": {
+   "tipo": "tarjeta",
+   "asin": "B0FDH2FCTZ",
+   "precio": 15.34,
+   "titulo": "Tommy Hilfiger Track Short Hombre",
+   "cupon": false,
+   "fecha": 1795187701,
+   "estado": "vivo",
+   "comprobado": 1795209226,
+   "ultimo_precio": 15.34
+  },
+  "309": {
+   "tipo": "tarjeta",
+   "asin": "B0F3B6MZM9",
+   "precio": 505.75,
+   "titulo": "WD_Black SN8100 NVMe SSD PCIe Gen 5 4TB",
+   "cupon": false,
+   "fecha": 1795187826,
+   "estado": "terminada",
+   "comprobado": 1795209226,
+   "ultimo_precio": 879.0,
+   "sellado": 1795209299
+  },
+  "310": {
+   "tipo": "otro"
+  },
+  "311": {
+   "tipo": "otro"
+  },
+  "312": {
+   "tipo": "tarjeta",
+   "asin": "B0BX56JJSN",
+   "precio": 23.12,
+   "titulo": "C.A.M.P. Outback 20 Mochila 20 L Azul",
+   "cupon": false,
+   "fecha": 1795190543,
+   "estado": "terminada",
+   "comprobado": 1795209226,
+   "ultimo_precio": 47.14,
+   "sellado": 1795209305
+  },
+  "314": {
+   "tipo": "tarjeta",
+   "asin": "B0BGNP7WM2",
+   "precio": 82.35,
+   "titulo": "SPYCO Fuente de alimentación gaming 1000W 80 Plus Platinum totalmente ",
+   "cupon": false,
+   "fecha": 1795192802,
+   "estado": "vivo",
+   "comprobado": 1795209226,
+   "ultimo_precio": 82.35
+  },
+  "315": {
+   "tipo": "tarjeta",
+   "asin": "B0BQ48S6C9",
+   "precio": 47.89,
+   "titulo": "Samsung Galaxy A23 5G 64GB Dual SIM Black (Reacondicionado)",
+   "cupon": false,
+   "fecha": 1795199361,
+   "estado": "terminada",
+   "comprobado": 1795209226,
+   "ultimo_precio": 166.89,
+   "sellado": 1795209312
+  },
+  "316": {
+   "tipo": "tarjeta",
+   "asin": "B0HHMVKJ2C",
+   "precio": 79.9,
+   "titulo": "Cecotec Freidora de Aire con Cesta de Cristal Cecofry&Glass Crunchy M ",
+   "cupon": false,
+   "fecha": 1795200646,
+   "estado": "vivo",
+   "comprobado": 1795209226,
+   "ultimo_precio": 79.9
+  },
+  "318": {
+   "tipo": "otro"
   }
  }
 }
