@@ -1,6 +1,6 @@
 {
  "ultimo": {
-  "erroresychollos": 102,
+  "erroresychollos": 103,
   "erroresycholloswarehouse": 10
  },
  "publicados": [
@@ -9,6 +9,12 @@
    "origen": "https://t.me/erroresychollos/103",
    "message_id": 332,
    "t": 1795286178
+  },
+  {
+   "asin": "B0FFNCN5FL",
+   "origen": "https://t.me/erroresychollos/104",
+   "message_id": 335,
+   "t": 1795296218
   }
  ]
 }
