@@ -8864,7 +8864,7 @@
    ],
    "label": "Cafeteras",
    "brand": "De'Longhi",
-   "checked": 1795246786
+   "checked": 1795248518
   },
   {
    "asin": "B0FR4VXQMV",
@@ -8884,7 +8884,7 @@
    ],
    "label": "Informática",
    "brand": "AOC",
-   "checked": 1795246906
+   "checked": 1795250558
   },
   {
    "asin": "B0GJT26L7Z",
@@ -8904,7 +8904,7 @@
    ],
    "label": "Aspiradoras",
    "brand": "Dyson",
-   "checked": 1795247146
+   "checked": 1795250198
   },
   {
    "asin": "B0BBH21XGR",
@@ -8924,7 +8924,7 @@
    ],
    "label": "Cuidado personal",
    "brand": "Braun",
-   "checked": 1795247266
+   "checked": 1795250318
   },
   {
    "asin": "B0CGDW249K",
@@ -8944,7 +8944,7 @@
    ],
    "label": "Electrodomésticos",
    "brand": "Hisense",
-   "checked": 1795247266
+   "checked": 1795250438
   },
   {
    "asin": "B0F6CBYQD8",
@@ -8964,7 +8964,7 @@
    ],
    "label": "TV y sonido",
    "brand": "TCL",
-   "checked": 1795246786
+   "checked": 1795250438
   },
   {
    "asin": "B009I4HRDW",
@@ -9003,7 +9003,7 @@
    ],
    "label": "Muebles y descanso",
    "brand": "DEKIT GRUPO RIMOBEL",
-   "checked": 1795246786
+   "checked": 1795250558
   },
   {
    "asin": "B0DCFX4WNB",
@@ -9023,7 +9023,7 @@
    ],
    "label": "Cuidado personal",
    "brand": "PHILIPS",
-   "checked": 1795246906
+   "checked": 1795250198
   },
   {
    "asin": "B0GPYB7T5R",
@@ -9040,7 +9040,7 @@
    "slides": [],
    "label": "Hogar inteligente",
    "brand": "Ring",
-   "checked": 1795246906
+   "checked": 1795250318
   },
   {
    "asin": "B0GZPGYFD2",
@@ -9079,7 +9079,7 @@
    ],
    "label": "Cuidado personal",
    "brand": "PHILIPS",
-   "checked": 1795247026
+   "checked": 1795250318
   },
   {
    "asin": "B0F99K7DS9",
@@ -9196,7 +9196,7 @@
    ],
    "label": "Móviles y tablets",
    "brand": "Amazon",
-   "checked": 1795247146
+   "checked": 1795250438
   },
   {
    "asin": "B0FQPD78WL",
@@ -9216,7 +9216,7 @@
    ],
    "label": "Aspiradoras",
    "brand": "Lefant",
-   "checked": 1795247146
+   "checked": 1795250078
   },
   {
    "asin": "B0DXQ84G65",
@@ -9233,7 +9233,7 @@
    "slides": [],
    "label": "Hogar inteligente",
    "brand": "Amazon",
-   "checked": 1795247026
+   "checked": 1795250558
   },
   {
    "asin": "B0FB9NLXXZ",
@@ -9253,7 +9253,7 @@
    ],
    "label": "TV y sonido",
    "brand": "LG",
-   "checked": 1795247146
+   "checked": 1795250078
   },
   {
    "asin": "B0H6KGHK2H",
@@ -9273,7 +9273,7 @@
    ],
    "label": "Electrodomésticos",
    "brand": "Haier",
-   "checked": 1795246786
+   "checked": 1795250318
   },
   {
    "asin": "B0CKFKTBZH",
@@ -9314,7 +9314,7 @@
    ],
    "label": "TV y sonido",
    "brand": "JBL",
-   "checked": 1795247266
+   "checked": 1795250198
   },
   {
    "asin": "B0GPYD8LXN",
@@ -9331,7 +9331,7 @@
    "slides": [],
    "label": "Hogar inteligente",
    "brand": "Ring",
-   "checked": 1795247266
+   "checked": 1795250198
   },
   {
    "asin": "B0GHS9HSPN",
@@ -9351,7 +9351,8 @@
    ],
    "label": "Aspiradoras",
    "brand": "Cecotec",
-   "checked": 1795247026
+   "checked": 1795248158,
+   "ended": 1795248158
   },
   {
    "asin": "B0D7CX78ZD",
@@ -9371,7 +9372,7 @@
    ],
    "label": "TV y sonido",
    "brand": "Hisense",
-   "checked": 1795246906
+   "checked": 1795250438
   },
   {
    "asin": "B0H7Z68Y76",
@@ -9391,7 +9392,7 @@
    ],
    "label": "TV y sonido",
    "brand": "Beats",
-   "checked": 1795247026
+   "checked": 1795250558
   }
  ],
  "seen": {
@@ -18278,7 +18279,7 @@
    "price": 58.95
   },
   "amz-B0DWFYRPFN": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -24% frente a su PVP recomendado (147,60 €)",
    "price": 112.9
   },
@@ -18353,7 +18354,7 @@
    "price": 413.0
   },
   "amz-B0GTWGJTP7": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -32% frente a su PVP recomendado (749,00 €)",
    "price": 510.83
   },
@@ -18713,12 +18714,12 @@
    "price": 1499.0
   },
   "amz-B0H79Q2ZKJ": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -28% frente a su PVP recomendado (219,90 €)",
    "price": 158.7
   },
   "amz-B0H79Q6WQC": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -28% frente a su PVP recomendado (219,90 €)",
    "price": 158.7
   },
@@ -18738,7 +18739,7 @@
    "price": 104.4
   },
   "amz-B0H6XTP3WL": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -30% frente a su PVP recomendado (399,90 €)",
    "price": 279.9
   },
@@ -18763,7 +18764,7 @@
    "price": 214.95
   },
   "amz-B0CS3W1DMF": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -9% frente a su precio mediano de los 90 días (109,00 €)",
    "price": 98.8
   },
@@ -18773,7 +18774,7 @@
    "price": 179.99
   },
   "amz-B0DJD4SX35": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -8% frente a su precio mediano de los 90 días (260,00 €)",
    "price": 238.84
   },
@@ -18848,7 +18849,7 @@
    "price": 248.82
   },
   "amz-B095SYK1R9": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -10% frente a su precio mediano de los 90 días (49,99 €)",
    "price": 44.99
   },
@@ -18913,7 +18914,7 @@
    "price": 25.98
   },
   "amz-B0GJTBKGDV": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -35% frente a su PVP recomendado (369,34 €)",
    "price": 239.0
   },
@@ -18923,7 +18924,7 @@
    "price": 32.99
   },
   "amz-B0CS3FD17C": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -32% frente a su PVP recomendado (65,99 €)",
    "price": 44.99
   },
@@ -19113,7 +19114,7 @@
    "price": 33.16
   },
   "amz-B00S2WDIGG": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -25% frente a su precio mediano de los 90 días (35,36 €)",
    "price": 26.54
   },
@@ -19123,7 +19124,7 @@
    "price": 15.78
   },
   "amz-B000273HTW": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -18% frente a su precio mediano de los 90 días (30,95 €)",
    "price": 25.46
   },
@@ -19433,7 +19434,7 @@
    "price": 16.13
   },
   "amz-B0FFTHTYX8": {
-   "t": 1795244986,
+   "t": 1795250558,
    "why": "solo -18% frente a su precio mediano de los 90 días (28,08 €)",
    "price": 22.99
   },
@@ -19558,7 +19559,7 @@
    "price": 62.99
   },
   "amz-B0FKTR94BR": {
-   "t": 1795244866,
+   "t": 1795249718,
    "why": "solo -22% frente a su precio mediano de los 90 días (79,90 €)",
    "price": 62.3
   },
@@ -19613,7 +19614,7 @@
    "price": 42.85
   },
   "amz-B01EWNGZ4U": {
-   "t": 1795240805,
+   "t": 1795250318,
    "why": "solo -13% frente a su precio mediano de los 90 días (346,88 €)",
    "price": 301.49
   },
@@ -19638,7 +19639,7 @@
    "price": 32.84
   },
   "amz-B0BWSFGQ49": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -14% frente a su precio mediano de los 90 días (299,99 €)",
    "price": 259.0
   },
@@ -19688,12 +19689,12 @@
    "price": 7.27
   },
   "amz-B0FJ8TNGLF": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -3% frente a su precio mediano de los 90 días (309,00 €)",
    "price": 299.0
   },
   "amz-B0FHJNDQBR": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -10% frente a su precio mediano de los 90 días (549,00 €)",
    "price": 495.04
   },
@@ -19933,7 +19934,7 @@
    "price": 17.99
   },
   "amz-B0BK1N7B9B": {
-   "t": 1795244986,
+   "t": 1795250558,
    "why": "solo -36% frente a su PVP recomendado (35,99 €)",
    "price": 22.99
   },
@@ -20028,12 +20029,12 @@
    "price": 9.5
   },
   "amz-B07DHM5XHF": {
-   "t": 1795241165,
+   "t": 1795249598,
    "why": "solo -36% frente a su PVP recomendado (30,90 €)",
    "price": 19.9
   },
   "amz-B07DLHY5F7": {
-   "t": 1795241165,
+   "t": 1795249598,
    "why": "solo -40% frente a su PVP recomendado (37,90 €)",
    "price": 22.9
   },
@@ -20178,12 +20179,12 @@
    "price": 32.9
   },
   "amz-B0GYPZ5CZD": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -13% frente a su precio mediano de los 90 días (949,00 €)",
    "price": 829.0
   },
   "amz-B0GYPYSKH1": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -10% frente a su precio mediano de los 90 días (1.199,00 €)",
    "price": 1073.55
   },
@@ -20213,7 +20214,7 @@
    "price": 89.0
   },
   "amz-B0D79G6RDY": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -6% frente a su precio mediano de los 90 días (99,90 €)",
    "price": 93.9
   },
@@ -20253,7 +20254,7 @@
    "price": 92.61
   },
   "amz-B0FQGGLM4C": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -22% frente a su PVP recomendado (1.569,00 €)",
    "price": 1229.0
   },
@@ -20333,9 +20334,9 @@
    "price": 299.0
   },
   "amz-B0DBJ5PBLT": {
-   "t": 1795241285,
+   "t": 1795249718,
    "why": "ya publicado hace poco y no ha bajado más",
-   "price": 169.49
+   "price": 169.0
   },
   "amz-B0DZ75JCD8": {
    "t": 1794489865,
@@ -20473,7 +20474,7 @@
    "price": 11.9
   },
   "amz-B0G7LG7HZK": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -18% frente a su precio mediano de los 90 días (30,99 €)",
    "price": 25.49
   },
@@ -20773,7 +20774,7 @@
    "price": 129.99
   },
   "amz-B0CVLZN7H5": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -13% frente a su PVP recomendado (424,15 €)",
    "price": 369.99
   },
@@ -20798,12 +20799,12 @@
    "price": 82.02
   },
   "amz-B0FL7MGH1S": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -16% frente a su precio mediano de los 90 días (129,00 €)",
    "price": 109.0
   },
   "amz-B0DYJTPM69": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -8% frente a su precio mediano de los 90 días (431,82 €)",
    "price": 399.0
   },
@@ -20813,7 +20814,7 @@
    "price": 92.04
   },
   "amz-B0FHW6BXYC": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -18% frente a su precio mediano de los 90 días (79,90 €)",
    "price": 65.9
   },
@@ -20833,7 +20834,7 @@
    "price": 20.7
   },
   "amz-B06X3Z9MF3": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -19% frente a su PVP recomendado (159,00 €)",
    "price": 128.1
   },
@@ -21213,7 +21214,7 @@
    "price": 63.79
   },
   "amz-B017AWGGL2": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -11% frente a su precio mediano de los 90 días (126,99 €)",
    "price": 112.83
   },
@@ -21523,7 +21524,7 @@
    "price": 30.0
   },
   "amz-B0FDGFJDZH": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -15% frente a su precio mediano de los 90 días (419,99 €)",
    "price": 358.98
   },
@@ -21703,7 +21704,7 @@
    "price": 38.21
   },
   "amz-B0DXKMXPXW": {
-   "t": 1795245226,
+   "t": 1795250558,
    "why": "solo -37% frente a su PVP recomendado (149,99 €)",
    "price": 94.99
   },
@@ -21713,7 +21714,7 @@
    "price": 94.99
   },
   "amz-B0DXKNXT7F": {
-   "t": 1795241165,
+   "t": 1795250558,
    "why": "solo -30% frente a su PVP recomendado (199,99 €)",
    "price": 139.0
   },
@@ -21733,7 +21734,7 @@
    "price": 19.85
   },
   "amz-B0FG2SM3P4": {
-   "t": 1795244626,
+   "t": 1795249598,
    "why": "solo -35% frente a su PVP recomendado (99,99 €)",
    "price": 64.99
   },
@@ -21758,7 +21759,7 @@
    "price": 29.99
   },
   "amz-B091B7KX55": {
-   "t": 1795241285,
+   "t": 1795249598,
    "why": "solo -37% frente a su PVP recomendado (45,90 €)",
    "price": 28.85
   },
@@ -21778,7 +21779,7 @@
    "price": 34.99
   },
   "amz-B0FDL1XP3J": {
-   "t": 1795244626,
+   "t": 1795250318,
    "why": "solo -33% frente a su PVP recomendado (44,99 €)",
    "price": 29.99
   },
@@ -21793,12 +21794,12 @@
    "price": 44.99
   },
   "amz-B0BPYVWS6Y": {
-   "t": 1795244866,
+   "t": 1795250558,
    "why": "solo -40% frente a su PVP recomendado (29,83 €)",
    "price": 17.93
   },
   "amz-B0GJTJHBR6": {
-   "t": 1795241165,
+   "t": 1795250558,
    "why": "solo -39% frente a su PVP recomendado (74,99 €)",
    "price": 45.9
   },
@@ -21828,7 +21829,7 @@
    "price": 379.0
   },
   "amz-B0HD8TJTZH": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -7% frente a su precio mediano de los 90 días (999,00 €)",
    "price": 933.06
   },
@@ -21923,17 +21924,17 @@
    "price": 36.9
   },
   "amz-B0HCBHKRGV": {
-   "t": 1795241165,
+   "t": 1795250558,
    "why": "solo -7% frente a su precio mediano de los 90 días (26,90 €)",
    "price": 24.9
   },
   "amz-B00R3Z49G6": {
-   "t": 1795241285,
+   "t": 1795249598,
    "why": "solo -15% frente a su precio mediano de los 90 días (23,09 €)",
    "price": 19.63
   },
   "amz-B0935WKVFY": {
-   "t": 1795244746,
+   "t": 1795250558,
    "why": "solo -8% frente a su precio mediano de los 90 días (61,90 €)",
    "price": 57.0
   },
@@ -21993,22 +21994,22 @@
    "price": 94.99
   },
   "amz-B0CWH3TBGB": {
-   "t": 1795244746,
+   "t": 1795250438,
    "why": "solo -27% frente a su PVP recomendado (449,99 €)",
    "price": 329.99
   },
   "amz-B0FPXFKGQR": {
-   "t": 1795244746,
+   "t": 1795250438,
    "why": "solo -37% frente a su PVP recomendado (64,99 €)",
    "price": 40.99
   },
   "amz-B0FPXFZXC2": {
-   "t": 1795244746,
+   "t": 1795250438,
    "why": "solo -29% frente a su PVP recomendado (139,99 €)",
    "price": 99.99
   },
   "amz-B09CGRQ965": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -17% frente a su precio mediano de los 90 días (479,99 €)",
    "price": 398.97
   },
@@ -22023,7 +22024,7 @@
    "price": 229.0
   },
   "amz-B01N10IAFG": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -25% frente a su PVP recomendado (119,99 €)",
    "price": 89.99
   },
@@ -22053,12 +22054,12 @@
    "price": 32.9
   },
   "amz-B0H9558S91": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -28% frente a su PVP recomendado (179,99 €)",
    "price": 129.99
   },
   "amz-B0FQGPHDT7": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -26% frente a su PVP recomendado (1.319,00 €)",
    "price": 979.0
   },
@@ -22098,7 +22099,7 @@
    "price": 18.92
   },
   "amz-B0FSS3NJNF": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -4% frente a su precio mediano de los 90 días (134,90 €)",
    "price": 129.98
   },
@@ -22208,7 +22209,7 @@
    "price": 56.86
   },
   "amz-B0BQ1JSZSN": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -38% frente a su PVP recomendado (66,90 €)",
    "price": 41.33
   },
@@ -22258,7 +22259,7 @@
    "price": 229.0
   },
   "amz-B01LWAJQNU": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -25% frente a su PVP recomendado (358,23 €)",
    "price": 269.0
   },
@@ -22333,12 +22334,12 @@
    "price": 64.99
   },
   "amz-B08DRDVL2W": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -31% frente a su PVP recomendado (489,00 €)",
    "price": 339.0
   },
   "amz-B0FRGFVJDW": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -39% frente a su PVP recomendado (139,00 €)",
    "price": 84.9
   },
@@ -22393,12 +22394,12 @@
    "price": 528.1
   },
   "amz-B0FRRMD96F": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -18% frente a su precio mediano de los 90 días (33,99 €)",
    "price": 27.99
   },
   "amz-B07MHR5BJV": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -25% frente a su precio mediano de los 90 días (61,99 €)",
    "price": 46.54
   },
@@ -22438,12 +22439,12 @@
    "price": 179.9
   },
   "amz-B0GX9SBDKC": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -36% frente a su PVP recomendado (279,90 €)",
    "price": 179.9
   },
   "amz-B0H4H1SZ8K": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -31% frente a su PVP recomendado (349,90 €)",
    "price": 239.9
   },
@@ -22453,22 +22454,22 @@
    "price": 21.99
   },
   "amz-B0F5BTWP9T": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -35% frente a su PVP recomendado (349,00 €)",
    "price": 227.27
   },
   "amz-B0FWCPNPCV": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -35% frente a su PVP recomendado (151,99 €)",
    "price": 98.35
   },
   "amz-B0FWCPC442": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -35% frente a su PVP recomendado (352,99 €)",
    "price": 229.0
   },
   "amz-B0FWCLJ51V": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -25% frente a su PVP recomendado (171,99 €)",
    "price": 129.0
   },
@@ -22493,7 +22494,7 @@
    "price": 999.0
   },
   "amz-B0FWCTSGL9": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -9% frente a su precio mediano de los 90 días (109,00 €)",
    "price": 99.0
   },
@@ -22523,7 +22524,7 @@
    "price": 18.51
   },
   "amz-B07QBNYJ6X": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -38% frente a su PVP recomendado (36,99 €)",
    "price": 22.9
   },
@@ -22563,7 +22564,7 @@
    "price": 6.95
   },
   "amz-B0FCSSNXT4": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -11% frente a su precio mediano de los 90 días (49,90 €)",
    "price": 44.5
   },
@@ -22718,7 +22719,7 @@
    "price": 32.99
   },
   "amz-B07RB6CQVS": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -7% frente a su precio mediano de los 90 días (204,23 €)",
    "price": 189.0
   },
@@ -22768,7 +22769,7 @@
    "price": 675.0
   },
   "amz-B0BQ1KV15R": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -21% frente a su PVP recomendado (673,90 €)",
    "price": 530.9
   },
@@ -22778,7 +22779,7 @@
    "price": 134.9
   },
   "amz-B077TZYQRT": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -21% frente a su PVP recomendado (139,90 €)",
    "price": 109.9
   },
@@ -22798,7 +22799,7 @@
    "price": 139.99
   },
   "amz-B0DMD4G5XH": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -13% frente a su precio mediano de los 90 días (45,99 €)",
    "price": 39.86
   },
@@ -22833,7 +22834,7 @@
    "price": 124.95
   },
   "amz-B0DQWHNRH6": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -38% frente a su PVP recomendado (39,99 €)",
    "price": 24.99
   },
@@ -23003,7 +23004,7 @@
    "price": 37.49
   },
   "amz-B08KTNQT5D": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -33% frente a su PVP recomendado (34,99 €)",
    "price": 23.59
   },
@@ -23093,7 +23094,7 @@
    "price": 29.99
   },
   "amz-B0DMV3BMGP": {
-   "t": 1795241165,
+   "t": 1795250558,
    "why": "solo -10% frente a su precio mediano de los 90 días (106,00 €)",
    "price": 94.99
   },
@@ -23173,7 +23174,7 @@
    "price": 145.99
   },
   "amz-B0DDSCP32R": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -20% frente a su precio mediano de los 90 días (99,90 €)",
    "price": 79.9
   },
@@ -23293,7 +23294,7 @@
    "price": 41.29
   },
   "amz-B0DXVN5PWF": {
-   "t": 1795241045,
+   "t": 1795250558,
    "why": "solo -20% frente a su precio mediano de los 90 días (62,30 €)",
    "price": 49.79
   },
@@ -23373,7 +23374,7 @@
    "price": 117.39
   },
   "amz-B0F4K1H6X5": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -12% frente a su PVP recomendado (159,99 €)",
    "price": 141.5
   },
@@ -23443,7 +23444,7 @@
    "price": 299.0
   },
   "amz-B0BPYVJ7YD": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -21% frente a su PVP recomendado (379,90 €)",
    "price": 299.0
   },
@@ -23518,7 +23519,7 @@
    "price": 26.66
   },
   "amz-B0FCSVV6X7": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -8% frente a su precio mediano de los 90 días (57,90 €)",
    "price": 53.32
   },
@@ -23548,7 +23549,7 @@
    "price": 106.72
   },
   "amz-B075Y7H8V6": {
-   "t": 1795241045,
+   "t": 1795250558,
    "why": "solo -10% frente a su precio mediano de los 90 días (17,00 €)",
    "price": 15.29
   },
@@ -23588,7 +23589,7 @@
    "price": 179.0
   },
   "amz-B09LD46DWY": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -38% frente a su PVP recomendado (64,99 €)",
    "price": 40.48
   },
@@ -23648,7 +23649,7 @@
    "price": 12.06
   },
   "amz-B0FHL7TPXC": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -8% frente a su PVP recomendado (1.299,00 €)",
    "price": 1199.0
   },
@@ -23698,7 +23699,7 @@
    "price": 23.16
   },
   "amz-B0FPXFTQ9S": {
-   "t": 1795244746,
+   "t": 1795250438,
    "why": "solo -27% frente a su PVP recomendado (149,99 €)",
    "price": 109.99
   },
@@ -23713,7 +23714,7 @@
    "price": 579.0
   },
   "amz-B0DHCK2JND": {
-   "t": 1795244866,
+   "t": 1795249718,
    "why": "solo -27% frente a su PVP recomendado (109,00 €)",
    "price": 79.99
   },
@@ -23838,7 +23839,7 @@
    "price": 119.99
   },
   "amz-B0C9DX9PJL": {
-   "t": 1795246786,
+   "t": 1795250318,
    "why": "solo -37% frente a su PVP recomendado (26,99 €)",
    "price": 17.0
   },
@@ -23933,7 +23934,7 @@
    "price": 50.99
   },
   "amz-B07W7KGYN1": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -36% frente a su PVP recomendado (34,99 €)",
    "price": 22.23
   },
@@ -24008,9 +24009,9 @@
    "price": 89.93
   },
   "amz-B08PC3H4WR": {
-   "t": 1795081968,
-   "why": "solo -22% frente a su PVP recomendado (101,90 €)",
-   "price": 79.9
+   "t": 1795248758,
+   "why": "solo -27% frente a su PVP recomendado (101,90 €)",
+   "price": 74.3
   },
   "amz-B07P5FNDK1": {
    "t": 1794656128,
@@ -24213,7 +24214,7 @@
    "price": 299.99
   },
   "amz-B0GTRPVDL7": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -9% frente a su precio mediano de los 90 días (348,99 €)",
    "price": 319.0
   },
@@ -24288,7 +24289,7 @@
    "price": 123.0
   },
   "amz-B0CKPVMVMT": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -22% frente a su PVP recomendado (229,99 €)",
    "price": 179.99
   },
@@ -24308,7 +24309,7 @@
    "price": 146.25
   },
   "amz-B0DMWH4VQJ": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -18% frente a su PVP recomendado (394,99 €)",
    "price": 322.1
   },
@@ -24338,7 +24339,7 @@
    "price": 398.34
   },
   "amz-B09B83Y8S1": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -22% frente a su precio mediano de los 90 días (134,00 €)",
    "price": 104.99
   },
@@ -24508,7 +24509,7 @@
    "price": 63.55
   },
   "amz-B0HJWWYMJT": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -38% frente a su PVP recomendado (79,00 €)",
    "price": 49.0
   },
@@ -24548,9 +24549,9 @@
    "price": 139.99
   },
   "amz-B0CCYWDQQ5": {
-   "t": 1795207405,
+   "t": 1795250558,
    "why": "solo -31% frente a su PVP recomendado (329,99 €)",
-   "price": 228.99
+   "price": 228.0
   },
   "amz-B0BT2WLS86": {
    "t": 1794779704,
@@ -24663,7 +24664,7 @@
    "price": 279.04
   },
   "amz-B01M0A4B9M": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -32% frente a su precio mediano de los 90 días (59,99 €)",
    "price": 40.79
   },
@@ -24678,12 +24679,12 @@
    "price": 14.93
   },
   "amz-B00NUS53CY": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -28% frente a su precio mediano de los 90 días (53,99 €)",
    "price": 39.14
   },
   "amz-B0BY2PKY5X": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -26% frente a su precio mediano de los 90 días (26,36 €)",
    "price": 19.54
   },
@@ -24743,17 +24744,17 @@
    "price": 279.99
   },
   "amz-B0FK5XZMGV": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -40% frente a su PVP recomendado (99,99 €)",
    "price": 59.99
   },
   "amz-B0BWKC7QRB": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -32% frente a su PVP recomendado (189,99 €)",
    "price": 129.99
   },
   "amz-B0CHMPJB3Y": {
-   "t": 1795244626,
+   "t": 1795250318,
    "why": "solo -29% frente a su PVP recomendado (69,99 €)",
    "price": 49.99
   },
@@ -24763,12 +24764,12 @@
    "price": 25.49
   },
   "amz-B0FNRC5YWQ": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -12% frente a su precio mediano de los 90 días (339,00 €)",
    "price": 299.0
   },
   "amz-B0GR9JWH4T": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -18% frente a su precio mediano de los 90 días (549,00 €)",
    "price": 449.0
   },
@@ -24783,12 +24784,12 @@
    "price": 30.52
   },
   "amz-B0GTRP9673": {
-   "t": 1795244866,
+   "t": 1795249718,
    "why": "solo -8% frente a su precio mediano de los 90 días (390,00 €)",
    "price": 359.0
   },
   "amz-B0GTRRKHGJ": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -13% frente a su precio mediano de los 90 días (459,00 €)",
    "price": 399.0
   },
@@ -24813,7 +24814,7 @@
    "price": 549.0
   },
   "amz-B0GN5JQPVM": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -33% frente a su PVP recomendado (1.199,99 €)",
    "price": 806.66
   },
@@ -24878,7 +24879,7 @@
    "price": 169.99
   },
   "amz-B0DJ31QDGL": {
-   "t": 1795244866,
+   "t": 1795249718,
    "why": "solo -38% frente a su PVP recomendado (28,80 €)",
    "price": 17.88
   },
@@ -24938,7 +24939,7 @@
    "price": 142.49
   },
   "amz-B0DBPZJ7MH": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -25% frente a su precio mediano de los 90 días (28,48 €)",
    "price": 21.38
   },
@@ -24963,32 +24964,32 @@
    "price": 249.0
   },
   "amz-B0H44KWKRS": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -14% frente a su precio mediano de los 90 días (139,00 €)",
    "price": 119.0
   },
   "amz-B0GTRJ4LRS": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -10% frente a su precio mediano de los 90 días (297,99 €)",
    "price": 269.0
   },
   "amz-B0F33QY8R5": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -6% frente a su precio mediano de los 90 días (649,00 €)",
    "price": 609.0
   },
   "amz-B0GKBFPSJ6": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -12% frente a su precio mediano de los 90 días (449,00 €)",
    "price": 395.0
   },
   "amz-B0FQP2W4Z4": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -7% frente a su precio mediano de los 90 días (849,00 €)",
    "price": 789.0
   },
   "amz-B0GNN5GMWY": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -27% frente a su PVP recomendado (899,00 €)",
    "price": 656.0
   },
@@ -25008,7 +25009,7 @@
    "price": 1199.0
   },
   "amz-B0H8YRFL38": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -27% frente a su PVP recomendado (899,00 €)",
    "price": 659.0
   },
@@ -25028,7 +25029,7 @@
    "price": 74.0
   },
   "amz-B0BV2D4FN1": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -43% frente a su PVP recomendado (133,99 €)",
    "price": 75.9
   },
@@ -25038,7 +25039,7 @@
    "price": 139.99
   },
   "amz-B0FB43WPJC": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -41% frente a su PVP recomendado (144,99 €)",
    "price": 84.9
   },
@@ -25083,7 +25084,7 @@
    "price": 166.99
   },
   "amz-B0BK541686": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -25% frente a su PVP recomendado (129,90 €)",
    "price": 96.99
   },
@@ -25098,7 +25099,7 @@
    "price": 126.43
   },
   "amz-B0FKBRLWNW": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -15% frente a su precio mediano de los 90 días (259,00 €)",
    "price": 219.0
   },
@@ -25113,12 +25114,12 @@
    "price": 122.99
   },
   "amz-B0GQCJ2D3D": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -8% frente a su precio mediano de los 90 días (304,99 €)",
    "price": 279.99
   },
   "amz-B0HC453DG1": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -5% frente a su precio mediano de los 90 días (554,99 €)",
    "price": 529.99
   },
@@ -25143,7 +25144,7 @@
    "price": 39.95
   },
   "amz-B0DFQKQ9CB": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -28% frente a su PVP recomendado (64,99 €)",
    "price": 46.76
   },
@@ -25153,7 +25154,7 @@
    "price": 599.99
   },
   "amz-B0DTQ35NH6": {
-   "t": 1795085732,
+   "t": 1795249118,
    "why": "solo -19% frente a su precio mediano de los 90 días (147,14 €)",
    "price": 119.9
   },
@@ -25213,17 +25214,17 @@
    "price": 49.9
   },
   "amz-B08DJ18C85": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -40% frente a su PVP recomendado (29,99 €)",
    "price": 17.99
   },
   "amz-B0BLZT677G": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -40% frente a su PVP recomendado (29,99 €)",
    "price": 17.99
   },
   "amz-B00ECBKODQ": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -40% frente a su PVP recomendado (29,99 €)",
    "price": 17.99
   },
@@ -25233,12 +25234,12 @@
    "price": 289.95
   },
   "amz-B0DDQF57MQ": {
-   "t": 1795240925,
+   "t": 1795250438,
    "why": "solo -40% frente a su PVP recomendado (209,95 €)",
    "price": 124.95
   },
   "amz-B0HF4TSHST": {
-   "t": 1795240925,
+   "t": 1795250438,
    "why": "solo -44% frente a su PVP recomendado (179,95 €)",
    "price": 99.95
   },
@@ -25248,7 +25249,7 @@
    "price": 20.99
   },
   "amz-B09RN8Q4CW": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -38% frente a su PVP recomendado (44,99 €)",
    "price": 27.99
   },
@@ -25263,7 +25264,7 @@
    "price": 14.99
   },
   "amz-B00MCSW96Q": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -29% frente a su precio mediano de los 90 días (27,99 €)",
    "price": 19.99
   },
@@ -25348,7 +25349,7 @@
    "price": 26.99
   },
   "amz-B0CF2Q9NWM": {
-   "t": 1795241285,
+   "t": 1795249598,
    "why": "solo -35% frente a su PVP recomendado (39,99 €)",
    "price": 25.99
   },
@@ -25358,12 +25359,12 @@
    "price": 44.79
   },
   "amz-B0FF9SCJHD": {
-   "t": 1795244866,
+   "t": 1795250558,
    "why": "solo -38% frente a su PVP recomendado (47,99 €)",
    "price": 29.99
   },
   "amz-B0BQ118P2R": {
-   "t": 1795241165,
+   "t": 1795250558,
    "why": "solo -38% frente a su PVP recomendado (36,90 €)",
    "price": 22.9
   },
@@ -25373,7 +25374,7 @@
    "price": 63.56
   },
   "amz-B0FJSDH17B": {
-   "t": 1795241165,
+   "t": 1795249598,
    "why": "solo -29% frente a su PVP recomendado (34,99 €)",
    "price": 24.99
   },
@@ -25438,7 +25439,7 @@
    "price": 23.99
   },
   "amz-B0B7K88MBF": {
-   "t": 1795244626,
+   "t": 1795249598,
    "why": "solo -44% frente a su PVP recomendado (159,99 €)",
    "price": 89.98
   },
@@ -25448,12 +25449,12 @@
    "price": 479.0
   },
   "amz-B092VZL9WH": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -31% frente a su PVP recomendado (57,99 €)",
    "price": 39.99
   },
   "amz-B00NUC0HE4": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -37% frente a su PVP recomendado (50,99 €)",
    "price": 31.99
   },
@@ -25468,22 +25469,22 @@
    "price": 30.98
   },
   "amz-B0FGY45H19": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -29% frente a su PVP recomendado (139,99 €)",
    "price": 99.99
   },
   "amz-B086WQWSNT": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -29% frente a su precio mediano de los 90 días (77,90 €)",
    "price": 54.99
   },
   "amz-B0FCSDRK89": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -25% frente a su PVP recomendado (59,99 €)",
    "price": 44.99
   },
   "amz-B0BTZ9BPPL": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -16% frente a su precio mediano de los 90 días (949,00 €)",
    "price": 798.98
   },
@@ -25493,12 +25494,12 @@
    "price": 37.99
   },
   "amz-B098JXS6HC": {
-   "t": 1795244746,
+   "t": 1795250198,
    "why": "solo -40% frente a su PVP recomendado (69,99 €)",
    "price": 41.89
   },
   "amz-B0DYK9LK3D": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -38% frente a su PVP recomendado (159,99 €)",
    "price": 99.0
   },
@@ -25518,12 +25519,12 @@
    "price": 156.2
   },
   "amz-B0CX8YKQ2H": {
-   "t": 1795244746,
+   "t": 1795249958,
    "why": "solo -40% frente a su PVP recomendado (329,99 €)",
    "price": 199.0
   },
   "amz-B06XR5FVW3": {
-   "t": 1795244746,
+   "t": 1795250198,
    "why": "solo -31% frente a su PVP recomendado (99,99 €)",
    "price": 68.99
   },
@@ -25538,7 +25539,7 @@
    "price": 79.99
   },
   "amz-B00YYBBUBY": {
-   "t": 1795244746,
+   "t": 1795250198,
    "why": "solo -28% frente a su precio mediano de los 90 días (159,38 €)",
    "price": 114.99
   },
@@ -25568,7 +25569,7 @@
    "price": 76.99
   },
   "amz-B0FQV2HM8Q": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -19% frente a su precio mediano de los 90 días (178,80 €)",
    "price": 144.28
   },
@@ -25578,27 +25579,27 @@
    "price": 143.99
   },
   "amz-B0H2MVSDY6": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -8% frente a su precio mediano de los 90 días (259,99 €)",
    "price": 239.0
   },
   "amz-B08CBJ8W9W": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -37% frente a su PVP recomendado (669,99 €)",
    "price": 419.0
   },
   "amz-B08CBJCQ39": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -38% frente a su PVP recomendado (669,99 €)",
    "price": 415.06
   },
   "amz-B0D92CZC7Z": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -38% frente a su PVP recomendado (129,99 €)",
    "price": 79.99
   },
   "amz-B07TPFW4BG": {
-   "t": 1795210721,
+   "t": 1795249838,
    "why": "solo -37% frente a su PVP recomendado (124,99 €)",
    "price": 78.73
   },
@@ -25638,7 +25639,7 @@
    "price": 43.99
   },
   "amz-B0BKQXR42G": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -35% frente a su PVP recomendado (229,00 €)",
    "price": 148.5
   },
@@ -25668,7 +25669,7 @@
    "price": 169.99
   },
   "amz-B0GT1MZPPQ": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -26% frente a su PVP recomendado (123,49 €)",
    "price": 90.99
   },
@@ -25773,12 +25774,12 @@
    "price": 39.59
   },
   "amz-B0DTQF1MQT": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -42% frente a su PVP recomendado (219,99 €)",
    "price": 128.0
   },
   "amz-B0FJ8X8D1R": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -36% frente a su PVP recomendado (69,99 €)",
    "price": 44.99
   },
@@ -25798,12 +25799,12 @@
    "price": 29.99
   },
   "amz-B00HT94XF8": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -25% frente a su PVP recomendado (54,95 €)",
    "price": 40.99
   },
   "amz-B00V3HTTWO": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -27% frente a su PVP recomendado (36,95 €)",
    "price": 26.99
   },
@@ -25818,7 +25819,7 @@
    "price": 44.99
   },
   "amz-B0BLZNZSYM": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -34% frente a su PVP recomendado (60,49 €)",
    "price": 39.99
   },
@@ -25843,7 +25844,7 @@
    "price": 159.99
   },
   "amz-B07TFHGZXF": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -24% frente a su precio mediano de los 90 días (33,23 €)",
    "price": 25.24
   },
@@ -25863,22 +25864,22 @@
    "price": 31.99
   },
   "amz-B01GULTSSW": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -28% frente a su precio mediano de los 90 días (30,35 €)",
    "price": 21.99
   },
   "amz-B07NSF8FNY": {
-   "t": 1795240805,
+   "t": 1795250318,
    "why": "solo -21% frente a su precio mediano de los 90 días (31,60 €)",
    "price": 24.99
   },
   "amz-B078GWJ2N8": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -28% frente a su precio mediano de los 90 días (118,00 €)",
    "price": 84.99
   },
   "amz-B0F3842YBC": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -20% frente a su precio mediano de los 90 días (244,80 €)",
    "price": 194.99
   },
@@ -25888,7 +25889,7 @@
    "price": 84.79
   },
   "amz-B07FD8BK2D": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -22% frente a su precio mediano de los 90 días (159,00 €)",
    "price": 123.99
   },
@@ -25903,12 +25904,12 @@
    "price": 74.99
   },
   "amz-B096M1WSN6": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -19% frente a su precio mediano de los 90 días (75,97 €)",
    "price": 61.49
   },
   "amz-B00UMH2CA2": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -17% frente a su precio mediano de los 90 días (113,00 €)",
    "price": 93.99
   },
@@ -25918,12 +25919,12 @@
    "price": 91.83
   },
   "amz-B00R8CS5H8": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -19% frente a su precio mediano de los 90 días (139,00 €)",
    "price": 112.84
   },
   "amz-B00HER8E5A": {
-   "t": 1795240805,
+   "t": 1795250318,
    "why": "solo -10% frente a su precio mediano de los 90 días (133,03 €)",
    "price": 119.85
   },
@@ -25933,7 +25934,7 @@
    "price": 199.99
   },
   "amz-B09LM833D1": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -5% frente a su precio mediano de los 90 días (209,99 €)",
    "price": 199.49
   },
@@ -25993,7 +25994,7 @@
    "price": 27.84
   },
   "amz-B0D3VDV73J": {
-   "t": 1795241165,
+   "t": 1795250558,
    "why": "solo -39% frente a su PVP recomendado (179,99 €)",
    "price": 110.19
   },
@@ -26013,7 +26014,7 @@
    "price": 6.89
   },
   "amz-B0DCFYXPR1": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -38% frente a su PVP recomendado (119,99 €)",
    "price": 74.99
   },
@@ -26023,7 +26024,7 @@
    "price": 34.99
   },
   "amz-B0HF1PK3TW": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -27% frente a su PVP recomendado (549,00 €)",
    "price": 399.0
   },
@@ -26063,7 +26064,7 @@
    "price": 189.99
   },
   "amz-B08LNJVDRB": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -30% frente a su PVP recomendado (99,99 €)",
    "price": 69.9
   },
@@ -26088,7 +26089,7 @@
    "price": 655.0
   },
   "amz-B0FN549BVL": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -25% frente a su precio mediano de los 90 días (278,07 €)",
    "price": 209.0
   },
@@ -26118,9 +26119,9 @@
    "price": 11.99
   },
   "amz-B0CG19FGQ5": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -41% frente a su PVP recomendado (549,00 €)",
-   "price": 326.45
+   "price": 326.0
   },
   "amz-B084TM74TP": {
    "t": 1794849745,
@@ -26223,7 +26224,7 @@
    "price": 14.9
   },
   "amz-B0G5Q7465Y": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -27% frente a su PVP recomendado (100,99 €)",
    "price": 74.0
   },
@@ -26238,7 +26239,7 @@
    "price": 27.99
   },
   "amz-B0GFXFKSR1": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -31% frente a su PVP recomendado (109,90 €)",
    "price": 75.99
   },
@@ -26318,7 +26319,7 @@
    "price": 95.21
   },
   "amz-B0GTRQQYVC": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -12% frente a su precio mediano de los 90 días (395,00 €)",
    "price": 349.0
   },
@@ -26328,12 +26329,12 @@
    "price": 28.99
   },
   "amz-B0CG6BLJ37": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -30% frente a su PVP recomendado (104,99 €)",
    "price": 74.0
   },
   "amz-B09M8ZSM4W": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -7% frente a su precio mediano de los 90 días (99,90 €)",
    "price": 92.9
   },
@@ -26343,12 +26344,12 @@
    "price": 216.99
   },
   "amz-B08DMSRJMB": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -8% frente a su precio mediano de los 90 días (309,99 €)",
    "price": 284.99
   },
   "amz-B0BWK9VW5S": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -13% frente a su precio mediano de los 90 días (309,90 €)",
    "price": 269.99
   },
@@ -26373,7 +26374,7 @@
    "price": 159.99
   },
   "amz-B01D4J5JMC": {
-   "t": 1795240805,
+   "t": 1795250318,
    "why": "solo -13% frente a su precio mediano de los 90 días (102,01 €)",
    "price": 88.99
   },
@@ -26488,7 +26489,7 @@
    "price": 46.9
   },
   "amz-B0HJWNKM3S": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -38% frente a su PVP recomendado (79,00 €)",
    "price": 49.0
   },
@@ -26508,7 +26509,7 @@
    "price": 89.0
   },
   "amz-B0H2W9K92R": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -11% frente a su mínimo de los 30 días anteriores (449,00 €)",
    "price": 399.0
   },
@@ -26618,7 +26619,7 @@
    "price": 73.9
   },
   "amz-B08H21YHQX": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -35% frente a su PVP recomendado (439,90 €)",
    "price": 285.99
   },
@@ -26658,7 +26659,7 @@
    "price": 92.82
   },
   "amz-B0BLNSPYWP": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -22% frente a su precio mediano de los 90 días (409,99 €)",
    "price": 319.99
   },
@@ -26713,7 +26714,7 @@
    "price": 40.5
   },
   "amz-B07J24M6WX": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -25% frente a su precio mediano de los 90 días (86,92 €)",
    "price": 64.99
   },
@@ -26738,7 +26739,7 @@
    "price": 21.99
   },
   "amz-B0GQHFQC2X": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -15% frente a su precio mediano de los 90 días (339,00 €)",
    "price": 289.0
   },
@@ -26778,12 +26779,12 @@
    "price": 35.19
   },
   "amz-B0BQ1KH2QN": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -30% frente a su PVP recomendado (85,71 €)",
    "price": 59.9
   },
   "amz-B0HFP3NJVY": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -22% frente a su precio mediano de los 90 días (153,80 €)",
    "price": 119.99
   },
@@ -26813,7 +26814,7 @@
    "price": 28.49
   },
   "amz-B0FC6XPQL1": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -42% frente a su PVP recomendado (96,79 €)",
    "price": 56.09
   },
@@ -26823,7 +26824,7 @@
    "price": 9.99
   },
   "amz-B09NQH9B43": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -28% frente a su PVP recomendado (136,95 €)",
    "price": 98.99
   },
@@ -26953,7 +26954,7 @@
    "price": 28.8
   },
   "amz-B0DT6FK384": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -26% frente a su precio mediano de los 90 días (229,99 €)",
    "price": 169.99
   },
@@ -26998,7 +26999,7 @@
    "price": 190.0
   },
   "amz-B0H6M28M2R": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -34% frente a su PVP recomendado (397,99 €)",
    "price": 263.13
   },
@@ -27008,7 +27009,7 @@
    "price": 35.01
   },
   "amz-B0H29W23YC": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -13% frente a su precio mediano de los 90 días (459,00 €)",
    "price": 399.0
   },
@@ -27023,7 +27024,7 @@
    "price": 85.39
   },
   "amz-B0CSFPSWW1": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -11% frente a su precio mediano de los 90 días (156,99 €)",
    "price": 139.99
   },
@@ -27033,17 +27034,17 @@
    "price": 18.0
   },
   "amz-B0D46QMS2T": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -25% frente a su PVP recomendado (149,95 €)",
    "price": 111.99
   },
   "amz-B0853SS8N3": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -26% frente a su PVP recomendado (99,95 €)",
    "price": 73.99
   },
   "amz-B0DHRVYB8Z": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -25% frente a su PVP recomendado (249,95 €)",
    "price": 186.99
   },
@@ -27148,7 +27149,7 @@
    "price": 44.09
   },
   "amz-B0D6MZL2XW": {
-   "t": 1795244866,
+   "t": 1795250558,
    "why": "solo -32% frente a su PVP recomendado (84,99 €)",
    "price": 57.99
   },
@@ -27253,12 +27254,12 @@
    "price": 36.95
   },
   "amz-B0GQVBH6XM": {
-   "t": 1795244866,
+   "t": 1795249718,
    "why": "solo -32% frente a su PVP recomendado (249,00 €)",
    "price": 169.0
   },
   "amz-B0HJWQ2627": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -38% frente a su PVP recomendado (79,00 €)",
    "price": 49.0
   },
@@ -27268,7 +27269,7 @@
    "price": 54.9
   },
   "amz-B0CBVP9L1W": {
-   "t": 1795214681,
+   "t": 1795249958,
    "why": "solo -14% frente a su precio mediano de los 90 días (499,99 €)",
    "price": 429.99
   },
@@ -27343,12 +27344,12 @@
    "price": 99.0
   },
   "amz-B0FHWM1D2Y": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -6% frente a su precio mediano de los 90 días (116,00 €)",
    "price": 109.0
   },
   "amz-B0FHWNZLKT": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -9% frente a su precio mediano de los 90 días (119,99 €)",
    "price": 109.0
   },
@@ -27363,7 +27364,7 @@
    "price": 409.0
   },
   "amz-B0FFN589X6": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -14% frente a su precio mediano de los 90 días (98,83 €)",
    "price": 84.9
   },
@@ -27378,7 +27379,7 @@
    "price": 99.9
   },
   "amz-B098FJCBQ4": {
-   "t": 1795244626,
+   "t": 1795249598,
    "why": "solo -30% frente a su PVP recomendado (49,99 €)",
    "price": 34.99
   },
@@ -27428,12 +27429,12 @@
    "price": 225.41
   },
   "amz-B0F5FDF1D8": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -40% frente a su PVP recomendado (379,99 €)",
    "price": 229.0
   },
   "amz-B0F5FKXFDH": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -40% frente a su PVP recomendado (329,99 €)",
    "price": 199.0
   },
@@ -27443,7 +27444,7 @@
    "price": 52.99
   },
   "amz-B0CF2S646P": {
-   "t": 1795241165,
+   "t": 1795249598,
    "why": "solo -40% frente a su PVP recomendado (39,99 €)",
    "price": 23.99
   },
@@ -27453,7 +27454,7 @@
    "price": 649.0
   },
   "amz-B0G6LGJW6D": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -38% frente a su PVP recomendado (159,00 €)",
    "price": 99.0
   },
@@ -27478,7 +27479,7 @@
    "price": 27.95
   },
   "amz-B0GNNTX269": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -31% frente a su PVP recomendado (659,00 €)",
    "price": 455.0
   },
@@ -27503,7 +27504,7 @@
    "price": 158.99
   },
   "amz-B0G7HYYBTB": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -6% frente a su precio mediano de los 90 días (69,90 €)",
    "price": 65.9
   },
@@ -27518,7 +27519,7 @@
    "price": 39.99
   },
   "amz-B07X5DGGMQ": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -35% frente a su PVP recomendado (900,00 €)",
    "price": 589.0
   },
@@ -27578,12 +27579,12 @@
    "price": 19.49
   },
   "amz-B0DGM8MKZB": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -37% frente a su PVP recomendado (149,99 €)",
    "price": 94.99
   },
   "amz-B0987W5VK6": {
-   "t": 1795244746,
+   "t": 1795250198,
    "why": "solo -33% frente a su PVP recomendado (139,95 €)",
    "price": 93.99
   },
@@ -27603,7 +27604,7 @@
    "price": 66.49
   },
   "amz-B0CDLCV626": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -20% frente a su precio mediano de los 90 días (25,00 €)",
    "price": 19.99
   },
@@ -27648,7 +27649,7 @@
    "price": 170.0
   },
   "amz-B0DH51BPZD": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -6% frente a su precio mediano de los 90 días (175,00 €)",
    "price": 164.46
   },
@@ -27678,12 +27679,12 @@
    "price": 499.0
   },
   "amz-B0GVGPK7Q7": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -10% frente a su precio mediano de los 90 días (499,00 €)",
    "price": 449.0
   },
   "amz-B0BRKYR8HD": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -8% frente a su precio mediano de los 90 días (59,99 €)",
    "price": 54.99
   },
@@ -27698,7 +27699,7 @@
    "price": 169.9
   },
   "amz-B0HF8WFYCW": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -15% frente a su PVP recomendado (199,95 €)",
    "price": 169.95
   },
@@ -27713,7 +27714,7 @@
    "price": 229.0
   },
   "amz-B0GNNJW3WY": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -31% frente a su PVP recomendado (659,00 €)",
    "price": 455.0
   },
@@ -27723,17 +27724,17 @@
    "price": 18.99
   },
   "amz-B0HBXLHWKC": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -14% frente a su precio mediano de los 90 días (699,00 €)",
    "price": 599.0
   },
   "amz-B0D9JX82RZ": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -19% frente a su precio mediano de los 90 días (159,00 €)",
    "price": 129.0
   },
   "amz-B0GGHLQGKB": {
-   "t": 1795245226,
+   "t": 1795250558,
    "why": "solo -11% frente a su precio mediano de los 90 días (44,90 €)",
    "price": 39.9
   },
@@ -27783,7 +27784,7 @@
    "price": 18.99
   },
   "amz-B0GX1B795Q": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -24% frente a su PVP recomendado (249,99 €)",
    "price": 189.99
   },
@@ -27798,12 +27799,12 @@
    "price": 79.99
   },
   "amz-B0FFN7CBCR": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -17% frente a su precio mediano de los 90 días (96,41 €)",
    "price": 79.9
   },
   "amz-B0GT28CL51": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -5% frente a su precio mediano de los 90 días (59,99 €)",
    "price": 56.99
   },
@@ -27908,7 +27909,7 @@
    "price": 22.03
   },
   "amz-B0853SGR52": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -26% frente a su PVP recomendado (69,95 €)",
    "price": 51.99
   },
@@ -28088,7 +28089,7 @@
    "price": 108.99
   },
   "amz-B0BPZQZWR4": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -5% frente a su precio mediano de los 90 días (149,00 €)",
    "price": 140.9
   },
@@ -28143,7 +28144,7 @@
    "price": 44.99
   },
   "amz-B0BKQP7DSS": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -42% frente a su PVP recomendado (59,99 €)",
    "price": 35.09
   },
@@ -28173,7 +28174,7 @@
    "price": 36.69
   },
   "amz-B0DPJ86GWS": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -36% frente a su PVP recomendado (24,99 €)",
    "price": 15.99
   },
@@ -28278,7 +28279,7 @@
    "price": 98.95
   },
   "amz-B0B6FHKKHP": {
-   "t": 1795241165,
+   "t": 1795250558,
    "why": "solo -16% frente a su precio mediano de los 90 días (89,00 €)",
    "price": 74.99
   },
@@ -28338,17 +28339,17 @@
    "price": 45.0
   },
   "amz-B0DLLGXT2Z": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -22% frente a su PVP recomendado (71,90 €)",
    "price": 55.9
   },
   "amz-B0CLDWB3QV": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -25% frente a su PVP recomendado (199,95 €)",
    "price": 150.9
   },
   "amz-B0B97DXJ25": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -8% frente a su precio mediano de los 90 días (399,99 €)",
    "price": 368.99
   },
@@ -28378,7 +28379,7 @@
    "price": 46.53
   },
   "amz-B0GTZGKH4B": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -12% frente a su precio mediano de los 90 días (384,26 €)",
    "price": 339.0
   },
@@ -28398,7 +28399,7 @@
    "price": 66.49
   },
   "amz-B0DNHW66PF": {
-   "t": 1795240925,
+   "t": 1795250318,
    "why": "solo -10% frente a su precio mediano de los 90 días (27,90 €)",
    "price": 25.22
   },
@@ -28443,7 +28444,7 @@
    "price": 439.0
   },
   "amz-B0HD87B246": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -11% frente a su precio mediano de los 90 días (1.399,00 €)",
    "price": 1238.84
   },
@@ -28458,7 +28459,7 @@
    "price": 13.42
   },
   "amz-B0DWDW7RK6": {
-   "t": 1795244746,
+   "t": 1795250438,
    "why": "solo -29% frente a su PVP recomendado (49,99 €)",
    "price": 35.62
   },
@@ -28488,7 +28489,7 @@
    "price": 39.9
   },
   "amz-B0G7JF3V25": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -6% frente a su precio mediano de los 90 días (27,90 €)",
    "price": 26.36
   },
@@ -28498,7 +28499,7 @@
    "price": 44.2
   },
   "amz-B0F1G3TFQ5": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -37% frente a su PVP recomendado (119,00 €)",
    "price": 74.99
   },
@@ -28513,7 +28514,7 @@
    "price": 14.99
   },
   "amz-B0D1Y1WBY3": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -32% frente a su PVP recomendado (24,99 €)",
    "price": 16.89
   },
@@ -28543,7 +28544,7 @@
    "price": 79.9
   },
   "amz-B0D3KRV165": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -43% frente a su PVP recomendado (99,00 €)",
    "price": 56.05
   },
@@ -28558,7 +28559,7 @@
    "price": 12.99
   },
   "amz-B07JZD2KGH": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -37% frente a su PVP recomendado (71,90 €)",
    "price": 45.37
   },
@@ -28573,7 +28574,7 @@
    "price": 143.99
   },
   "amz-B0H4GYBRQL": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -29% frente a su PVP recomendado (279,90 €)",
    "price": 199.9
   },
@@ -28653,12 +28654,12 @@
    "price": 399.9
   },
   "amz-B0CGDW249K": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -20% frente a su precio mediano de los 90 días (161,30 €)",
    "price": 128.99
   },
   "amz-B0CXY7NR72": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -17% frente a su precio mediano de los 90 días (733,13 €)",
    "price": 609.0
   },
@@ -28688,7 +28689,7 @@
    "price": 59.99
   },
   "amz-B0DJVY1JBN": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -30% frente a su PVP recomendado (296,06 €)",
    "price": 205.79
   },
@@ -28718,17 +28719,17 @@
    "price": 35.14
   },
   "amz-B0GTRQSFTW": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -30% frente a su PVP recomendado (999,00 €)",
    "price": 699.0
   },
   "amz-B0GVGQ9V96": {
-   "t": 1795245226,
+   "t": 1795249958,
    "why": "solo -25% frente a su PVP recomendado (799,00 €)",
    "price": 599.0
   },
   "amz-B0H2W9K92F": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -18% frente a su mínimo de los 30 días anteriores (1.699,00 €)",
    "price": 1399.0
   },
@@ -28748,12 +28749,12 @@
    "price": 20.58
   },
   "amz-B0GHYP83VZ": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -5% frente a su precio mediano de los 90 días (259,00 €)",
    "price": 245.9
   },
   "amz-B0FJSLRQMK": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -29% frente a su PVP recomendado (85,00 €)",
    "price": 59.99
   },
@@ -28773,7 +28774,7 @@
    "price": 27.98
   },
   "amz-B0BPZSKGBJ": {
-   "t": 1795244986,
+   "t": 1795249838,
    "why": "solo -34% frente a su PVP recomendado (107,00 €)",
    "price": 70.12
   },
@@ -28783,7 +28784,7 @@
    "price": 454.9
   },
   "amz-B0GK1M1N4V": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -17% frente a su precio mediano de los 90 días (241,99 €)",
    "price": 200.99
   },
@@ -28823,7 +28824,7 @@
    "price": 117.99
   },
   "amz-B0C59742LX": {
-   "t": 1795244866,
+   "t": 1795249838,
    "why": "solo -5% frente a su precio mediano de los 90 días (1.699,00 €)",
    "price": 1614.0
   },
@@ -28848,7 +28849,7 @@
    "price": 529.0
   },
   "amz-B0FPBT8J66": {
-   "t": 1795244746,
+   "t": 1795250558,
    "why": "solo -36% frente a su PVP recomendado (69,99 €)",
    "price": 44.55
   },
@@ -28858,7 +28859,7 @@
    "price": 189.26
   },
   "amz-B0FJ22QGW5": {
-   "t": 1795245106,
+   "t": 1795249958,
    "why": "solo -15% frente a su precio mediano de los 90 días (764,15 €)",
    "price": 652.07
   },
@@ -28918,7 +28919,7 @@
    "price": 22.23
   },
   "amz-B0FHKZJXKM": {
-   "t": 1795244866,
+   "t": 1795249718,
    "why": "solo -14% frente a su PVP recomendado (119,90 €)",
    "price": 102.9
   },
@@ -28928,7 +28929,7 @@
    "price": 89.0
   },
   "amz-B007WQJSGM": {
-   "t": 1795241045,
+   "t": 1795250558,
    "why": "solo -16% frente a su precio mediano de los 90 días (149,99 €)",
    "price": 126.59
   },
@@ -28943,7 +28944,7 @@
    "price": 9.77
   },
   "amz-B0G7FVV9GF": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -19% frente a su PVP recomendado (339,00 €)",
    "price": 273.9
   },
@@ -28973,7 +28974,7 @@
    "price": 25.51
   },
   "amz-B00NUC0EGA": {
-   "t": 1795244626,
+   "t": 1795249718,
    "why": "solo -37% frente a su PVP recomendado (45,99 €)",
    "price": 28.99
   },
@@ -28983,7 +28984,7 @@
    "price": 37.99
   },
   "amz-B0FJG53ZS4": {
-   "t": 1795244866,
+   "t": 1795249718,
    "why": "solo -26% frente a su PVP recomendado (239,90 €)",
    "price": 176.83
   },
@@ -29008,7 +29009,7 @@
    "price": 999.0
   },
   "amz-B0BNQFRNJL": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -12% frente a su precio mediano de los 90 días (94,95 €)",
    "price": 83.99
   },
@@ -29048,7 +29049,7 @@
    "price": 34.99
   },
   "amz-B0D2L4M588": {
-   "t": 1795241285,
+   "t": 1795249598,
    "why": "solo -11% frente a su precio mediano de los 90 días (18,94 €)",
    "price": 16.82
   },
@@ -29063,7 +29064,7 @@
    "price": 230.58
   },
   "amz-B075GX8VWW": {
-   "t": 1795245106,
+   "t": 1795249838,
    "why": "solo -5% frente a su precio mediano de los 90 días (354,55 €)",
    "price": 336.0
   },
@@ -29143,7 +29144,7 @@
    "price": 58.19
   },
   "amz-B0GSHFHM74": {
-   "t": 1795241045,
+   "t": 1795250438,
    "why": "solo -34% frente a su PVP recomendado (79,99 €)",
    "price": 53.09
   },
@@ -29203,7 +29204,7 @@
    "price": 32.41
   },
   "amz-B0BY9592V9": {
-   "t": 1795244626,
+   "t": 1795249598,
    "why": "solo -12% frente a su precio mediano de los 90 días (31,90 €)",
    "price": 28.0
   },
@@ -29278,7 +29279,7 @@
    "price": 26.99
   },
   "amz-B0DT4CT26H": {
-   "t": 1795214681,
+   "t": 1795249718,
    "why": "solo -13% frente a su precio mediano de los 90 días (159,99 €)",
    "price": 139.99
   },
@@ -29313,7 +29314,7 @@
    "price": 698.1
   },
   "amz-B0H6CTV2HT": {
-   "t": 1795245226,
+   "t": 1795250078,
    "why": "solo -6% frente a su precio mediano de los 90 días (479,00 €)",
    "price": 449.0
   },
@@ -29328,7 +29329,7 @@
    "price": 246.99
   },
   "amz-B08K16S4K1": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -7% frente a su precio mediano de los 90 días (111,95 €)",
    "price": 103.99
   },
@@ -29458,7 +29459,7 @@
    "price": 136.99
   },
   "amz-B06VTFTZ17": {
-   "t": 1795240805,
+   "t": 1795250198,
    "why": "solo -16% frente a su precio mediano de los 90 días (449,90 €)",
    "price": 379.05
   },
@@ -29513,12 +29514,12 @@
    "price": 36.9
   },
   "amz-B01GZ1TINM": {
-   "t": 1795243625,
+   "t": 1795250078,
    "why": "solo -10% frente a su precio mediano de los 90 días (138,00 €)",
    "price": 124.27
   },
   "amz-B09XFR6N12": {
-   "t": 1795202093,
+   "t": 1795250198,
    "why": "solo -31% frente a su PVP recomendado (99,95 €)",
    "price": 68.99
   },
@@ -29538,7 +29539,7 @@
    "price": 18.58
   },
   "amz-B0HC86VQ7B": {
-   "t": 1795243505,
+   "t": 1795250078,
    "why": "solo -22% frente a su mínimo de los 30 días anteriores (669,09 €)",
    "price": 519.99
   },
@@ -29608,7 +29609,7 @@
    "price": 27.48
   },
   "amz-B0H7LBJK7F": {
-   "t": 1795244746,
+   "t": 1795249718,
    "why": "solo -33% frente a su PVP recomendado (369,00 €)",
    "price": 249.0
   },
@@ -29616,6 +29617,21 @@
    "t": 1795245226,
    "why": "ya publicado hace poco y no ha bajado más",
    "price": 947.14
+  },
+  "amz-B0CWHHSXP3": {
+   "t": 1795247798,
+   "why": "marca poco conocida (Electrolux): su precio anterior no es fiable",
+   "price": 204.85
+  },
+  "amz-B0F1G6CZ1C": {
+   "t": 1795247798,
+   "why": "marca poco conocida (AEG): su precio anterior no es fiable",
+   "price": 395.0
+  },
+  "amz-B0H7Z68Y76": {
+   "t": 1795248998,
+   "why": "ya publicado hace poco y no ha bajado más",
+   "price": 99.0
   }
  },
  "summary_sent": "2026-11-20",
@@ -29684,9 +29700,9 @@
   "rapido"
  ],
  "jl_paused_until": 1794513122.695286,
- "amazon_search_index": 197,
+ "amazon_search_index": 191,
  "api_calls": {
-  "2026-11-21": 504
+  "2026-11-21": 1104
  },
  "price_history": {
   "B0CRTYZG5C": [
@@ -31596,6 +31612,11 @@
    ],
    [
     20261120,
+    995.99,
+    995.99
+   ],
+   [
+    20261121,
     995.99,
     995.99
    ]
@@ -44051,7 +44072,7 @@
    ],
    [
     20261121,
-    33.99,
+    17.67,
     33.99
    ]
   ],
@@ -46206,6 +46227,11 @@
    ],
    [
     20261120,
+    99.48,
+    99.48
+   ],
+   [
+    20261121,
     99.48,
     99.48
    ]
@@ -49558,7 +49584,7 @@
    [
     20261121,
     14.99,
-    14.99
+    36.99
    ]
   ],
   "B0BZ553DZW": [
@@ -61319,7 +61345,7 @@
    [
     20261121,
     686.99,
-    693.86
+    700.8
    ]
   ],
   "B0CXJ9XSVZ": [
@@ -61964,6 +61990,11 @@
    ],
    [
     20261120,
+    92.05,
+    92.05
+   ],
+   [
+    20261121,
     92.05,
     92.05
    ]
@@ -73860,7 +73891,7 @@
    ],
    [
     20261121,
-    169.49,
+    169.0,
     169.49
    ]
   ],
@@ -74273,7 +74304,7 @@
    ],
    [
     20261121,
-    399.0,
+    383.72,
     399.0
    ]
   ],
@@ -75681,7 +75712,7 @@
    ],
    [
     20261121,
-    289.0,
+    272.0,
     289.0
    ]
   ],
@@ -89213,7 +89244,7 @@
    ],
    [
     20261121,
-    272.72,
+    272.69,
     273.29
    ]
   ],
@@ -105323,6 +105354,11 @@
     20261120,
     18.92,
     22.0
+   ],
+   [
+    20261121,
+    22.0,
+    22.0
    ]
   ],
   "B0F4KHWH9M": [
@@ -108726,6 +108762,11 @@
     20261120,
     211.9,
     211.9
+   ],
+   [
+    20261121,
+    211.9,
+    211.9
    ]
   ],
   "B0F3DDC9MS": [
@@ -110658,6 +110699,11 @@
     20261120,
     327.08,
     327.08
+   ],
+   [
+    20261121,
+    327.08,
+    327.08
    ]
   ],
   "B0DJB5K2Z2": [
@@ -110915,6 +110961,11 @@
    ],
    [
     20261120,
+    43.08,
+    43.08
+   ],
+   [
+    20261121,
     43.08,
     43.08
    ]
@@ -113863,7 +113914,7 @@
    ],
    [
     20261121,
-    25.99,
+    25.21,
     25.99
    ]
   ],
@@ -118114,6 +118165,11 @@
     20261118,
     55.99,
     55.99
+   ],
+   [
+    20261121,
+    45.99,
+    45.99
    ]
   ],
   "B07RB6CQVS": [
@@ -118967,7 +119023,7 @@
    [
     20261121,
     85.39,
-    85.42
+    85.44
    ]
   ],
   "B003AJE4S2": [
@@ -137003,7 +137059,7 @@
    ],
    [
     20261121,
-    427.69,
+    426.41,
     432.29
    ]
   ],
@@ -139468,6 +139524,11 @@
    ],
    [
     20261120,
+    74.3,
+    74.3
+   ],
+   [
+    20261121,
     74.3,
     74.3
    ]
@@ -142273,7 +142334,7 @@
    ],
    [
     20261121,
-    98.85,
+    98.81,
     98.94
    ]
   ],
@@ -144419,6 +144480,11 @@
     20261120,
     224.99,
     228.99
+   ],
+   [
+    20261121,
+    228.0,
+    228.0
    ]
   ],
   "B07BDMGFGW": [
@@ -148224,6 +148290,11 @@
     20261119,
     119.9,
     119.9
+   ],
+   [
+    20261121,
+    119.9,
+    119.9
    ]
   ],
   "B0DFQKQ9CB": [
@@ -148543,6 +148614,11 @@
     20261120,
     16.45,
     16.45
+   ],
+   [
+    20261121,
+    17.99,
+    17.99
    ]
   ],
   "B0H762J2LT": [
@@ -151678,6 +151754,11 @@
    ],
    [
     20261120,
+    78.73,
+    78.73
+   ],
+   [
+    20261121,
     78.73,
     78.73
    ]
@@ -155040,7 +155121,7 @@
    ],
    [
     20261121,
-    326.45,
+    326.0,
     326.45
    ]
   ],
@@ -158432,7 +158513,7 @@
    ],
    [
     20261121,
-    450.28,
+    449.28,
     450.28
    ]
   ],
@@ -158886,6 +158967,11 @@
    ],
    [
     20261120,
+    99.9,
+    99.9
+   ],
+   [
+    20261121,
     99.9,
     99.9
    ]
@@ -161269,6 +161355,11 @@
     20261120,
     429.99,
     429.99
+   ],
+   [
+    20261121,
+    429.99,
+    429.99
    ]
   ],
   "B0DKP1WH7Y": [
@@ -161397,6 +161488,11 @@
     20261120,
     9.99,
     9.99
+   ],
+   [
+    20261121,
+    9.99,
+    9.99
    ]
   ],
   "B08GV9M64L": [
@@ -161522,7 +161618,7 @@
    [
     20261121,
     87.44,
-    88.39
+    95.04
    ]
   ],
   "B0G6LCC42J": [
@@ -162439,6 +162535,11 @@
    [
     20261120,
     441.35,
+    455.0
+   ],
+   [
+    20261121,
+    455.0,
     455.0
    ]
   ],
@@ -164060,7 +164161,7 @@
    ],
    [
     20261121,
-    94.99,
+    89.29,
     94.99
    ]
   ],
@@ -164077,7 +164178,7 @@
    ],
    [
     20261121,
-    94.99,
+    89.99,
     94.99
    ]
   ],
@@ -168680,6 +168781,11 @@
     20261120,
     206.44,
     213.32
+   ],
+   [
+    20261121,
+    213.32,
+    213.32
    ]
   ],
   "B0GXKZT1Z4": [
@@ -169406,6 +169512,11 @@
   "B0DT4CT26H": [
    [
     20261120,
+    139.99,
+    139.99
+   ],
+   [
+    20261121,
     139.99,
     139.99
    ]
@@ -170148,6 +170259,11 @@
     20261120,
     11.0,
     11.0
+   ],
+   [
+    20261121,
+    11.0,
+    11.0
    ]
   ],
   "B0D17WKHPC": [
@@ -170198,6 +170314,11 @@
   "B09XFR6N12": [
    [
     20261120,
+    68.99,
+    68.99
+   ],
+   [
+    20261121,
     68.99,
     68.99
    ]
@@ -170508,11 +170629,39 @@
     38.99,
     38.99
    ]
+  ],
+  "B0DYK5NCP5": [
+   [
+    20261121,
+    100.49,
+    100.49
+   ]
+  ],
+  "B0CWHHSXP3": [
+   [
+    20261121,
+    204.85,
+    204.85
+   ]
+  ],
+  "B0F1G6CZ1C": [
+   [
+    20261121,
+    395.0,
+    395.0
+   ]
+  ],
+  "B0DJF2D1SM": [
+   [
+    20261121,
+    30.11,
+    30.11
+   ]
   ]
  },
  "api_error": "HTTP 429 en searchItems: {\"message\":\"Request rate limit exceeded. Learn more: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/concepts/api-rates\",\"type\":\"ThrottleException\"}",
- "amazon_search_lap": 304,
- "silence_alert_t": 1795201853,
+ "amazon_search_lap": 307,
+ "silence_alert_t": 1795249838,
  "whatsapp": {
   "requests": {
    "2026-11-17": 23,
