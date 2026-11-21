@@ -299,7 +299,14 @@ def vuelta(api, tg, state: dict, privado_: bool, seco: bool) -> None:
             log(f"{canal}: no responde ({exc})")
             continue
         if not posts:
+            if canal not in state.setdefault("sin_vista", []):  # avisa una vez: la web t.me/s/ no enseña sus posts
+                state["sin_vista"].append(canal)
+                log(f"{canal}: la vista web t.me/s/{canal} no muestra posts, no puedo vigilarlo")
+                avisar(tg, f"⚠️ Vigía: no veo los posts de t.me/s/{canal} (sin vista web pública), ese canal no se está copiando.")
+                guardar_estado(state)
             continue
+        if canal in state.get("sin_vista", []):
+            state["sin_vista"].remove(canal)
         ultimo = state["ultimo"].get(canal)
         top = max(p["id"] for p in posts)
         if ultimo is None:  # primera vez: solo apunto por dónde va
