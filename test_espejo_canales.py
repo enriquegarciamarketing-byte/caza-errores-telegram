@@ -51,6 +51,23 @@ class Espejo(unittest.TestCase):
         self.assertEqual(d["nombre"], "GNCC Cámara Vigilancia Solar 2K")
         self.assertEqual(d["vendedor"], "Vendido por Kalado y enviado por Amazon")
 
+    def test_segunda_mano(self):
+        texto = ("🆔 SEGUNDA MANO\n\n🛍️ INSTA360 ACE PRO\n\n📦 Estado: Como nuevo\n⚠️ El embalaje llegará dañado\n"
+                 "🅰️ Vendido por Amazon Segunda mano\n\nPrecio en Amazon.es a las 23:06 del 21/11 (hora de Madrid).")
+        d = ec.datos_post(texto)
+        self.assertEqual(d["nombre"], "INSTA360 ACE PRO")
+        copy = ec.hacer_copy(d["nombre"], {"price": 191.2, "reference": None}, d, "warehouse",
+                             "https://www.amazon.es/dp/B0CNGQYF5Z?tag=cazachollos0c-21")
+        self.assertIn("INSTA360 ACE PRO · segunda mano", copy)
+        self.assertIn("estado como nuevo", copy)
+        self.assertIn("⚠️ El embalaje llegará dañado", copy)
+        self.assertNotIn("🏷️", copy)
+
+        class API:  # sin stock nuevo: tira de la oferta usada
+            def get_item(self, asin, condition=None):
+                return {"price": 191.2, "in_stock": True} if condition == "Used" else {"price": None, "in_stock": False}
+        self.assertEqual(ec.segunda_mano(API(), "B0CNGQYF5Z")["price"], 191.2)
+
     def test_copy(self):
         live = {"price": 27.92, "reference": 105.62}
         copy = ec.hacer_copy("Bolso X", live, {"vendedor": "Vendido por Kalado y enviado por Amazon"}, "general",

@@ -102,7 +102,7 @@ def enlace_amazon(post: dict) -> str | None:
 
 # ------------------------------------------------------------------ datos que aporta su post
 
-ETIQUETAS = re.compile(r"(SUPER ?OFERTA|PRECIAZO|ERROR(?: DE PRECIO)?|CHOLLAZO|CHOLLO|OFERTA FLASH|MÍNIMO HISTÓRICO)", re.I)
+ETIQUETAS = re.compile(r"(SEGUNDA MANO|SUPER ?OFERTA|PRECIAZO|ERROR(?: DE PRECIO)?|CHOLLAZO|CHOLLO|OFERTA FLASH|MÍNIMO HISTÓRICO)", re.I)
 
 
 def _sin_emoji_inicial(line: str) -> str:
@@ -121,7 +121,9 @@ def datos_post(texto: str) -> dict:
             continue
         if low.startswith("precio en amazon") or "puede cambiar" in low or low.startswith("en calidad de"):
             continue
-        if "vendido por" in low or "enviado por" in low:
+        if line.startswith("⚠") or "embalaje" in low:
+            out.setdefault("aviso", clean)
+        elif "vendido por" in low or "enviado por" in low:
             out.setdefault("vendedor", clean)
         elif re.match(r"(estado|condici[oó]n)\b", low) or "reacondicionado" in low or "como nuevo" in low:
             out.setdefault("estado", re.sub(r"^(estado|condici[oó]n)\s*:?\s*", "", clean, flags=re.I))
@@ -176,7 +178,11 @@ def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str) -> st
     gancho += " 👀"
 
     precio = f"💸 Lo pillas a {eur(current)}" + (f" {eur(reference)}" if reference else "")
+    if tipo == "warehouse":
+        nombre = f"{nombre} · segunda mano"
     lines = [cabecera, "", nombre, "", gancho, "", precio]
+    if extra.get("aviso"):
+        lines.append(f"⚠️ {extra['aviso']}")
     vendedor = extra.get("vendedor") or ""
     if vendedor and not re.search(r"vendido (y enviado )?por amazon\b", vendedor, re.I):
         lines.append(f"🏷️ {vendedor}")
@@ -225,6 +231,25 @@ def avisar(tg, texto: str) -> None:
         log(f"  No he podido avisarte: {exc}")
 
 
+def segunda_mano(api, asin: str) -> dict | None:
+    """Canal warehouse (21/11/2026, Enrique): son cosas de segunda mano, así que vale la oferta usada de Amazon
+    aunque no haya stock nuevo. Primero la oferta normal (si Amazon solo tiene la usada, es la que sale);
+    si no, se la pido expresamente a la API como segunda mano."""
+    from amazon_api import ApiError
+    first = api.get_item(asin)
+    if first and first.get("in_stock") and first.get("price"):
+        return first
+    try:
+        used = api.get_item(asin, condition="Used")
+    except ApiError as exc:
+        log(f"  {asin}: la API no me da la oferta de segunda mano ({exc})")
+        return first
+    if used and used.get("in_stock") and used.get("price"):
+        log(f"  {asin}: oferta de segunda mano {used.get('condition') or '?'} a {used['price']}")
+        return used
+    return first
+
+
 def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: bool) -> None:
     from premium_manual import clean_link, caption_html, load_state, save_state, photo_for, OUT
     from tarjeta_premium import crear_tarjeta
@@ -248,7 +273,7 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
         log(f"  {origen}: {asin} ya está en el premium, lo salto")
         return
 
-    live = api.get_item(asin) if api else None
+    live = segunda_mano(api, asin) if (api and tipo == "warehouse") else (api.get_item(asin) if api else None)
     if not live or not live.get("price") or not live.get("in_stock"):
         motivo = "sin datos en la API" if not live else ("agotado" if not live.get("in_stock") else "sin precio")
         log(f"  {origen}: {asin} {motivo}, no lo publico")

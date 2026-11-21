@@ -115,11 +115,17 @@ class CreatorsAPI:
             "saving_basis_type": basis_type.upper(),
             "in_stock": avail.upper() in {"IN_STOCK", "INSTOCK", "AVAILABLE"},
             "availability": avail.upper(),
+            "condition": str(_get(listing, "condition", "value", default="") or ""),
         }
 
-    def get_item(self, asin: str) -> dict | None:
-        """Precio y stock en vivo de un ASIN concreto. None si Amazon no devuelve ese producto."""
-        data = self.call("getItems", {"itemIds": [asin], "itemIdType": "ASIN", "resources": PRICE_RESOURCES})
+    def get_item(self, asin: str, condition: str | None = None) -> dict | None:
+        """Precio y stock en vivo de un ASIN concreto. None si Amazon no devuelve ese producto.
+        condition="Used" (21/11/2026): pide la oferta de segunda mano (Amazon Segunda mano / Warehouse)."""
+        body = {"itemIds": [asin], "itemIdType": "ASIN",
+                "resources": PRICE_RESOURCES + ["offersV2.listings.condition"]}
+        if condition:
+            body["condition"] = condition
+        data = self.call("getItems", body)
         items = _get(data, "itemsResult", "items", default=[]) or []
         item = next((i for i in items if str(_get(i, "asin", default="")).upper() == asin.upper()), None)
         if item is None:

@@ -200,6 +200,7 @@ def register(post_id: int, fwd: dict) -> dict | None:
         "precio": posted_price(caption),
         "titulo": title_of(caption),
         "cupon": bool(COUPON.search(caption)),
+        "segunda": bool(re.search(r"segunda mano", caption, re.I)),
         "fecha": int(origin.get("date") or fwd.get("date") or time.time()),
         "estado": "vivo",
     }
@@ -291,7 +292,21 @@ def verdict(post: dict, live: dict | None) -> str | None:
 def check(api: CreatorsAPI, posts: dict[str, dict]) -> dict[str, tuple[str | None, dict | None]]:
     asins = [p["asin"] for p in posts.values()]
     live = api.get_items(asins)
-    return {mid: (verdict(p, live.get(p["asin"].upper())), live.get(p["asin"].upper())) for mid, p in posts.items()}
+    out = {}
+    for mid, p in posts.items():
+        item = live.get(p["asin"].upper())
+        result = verdict(p, item)
+        # Segunda mano (21/11/2026): la oferta normal puede ser la nueva; antes de sellar, mira la usada.
+        if result and (p.get("segunda") or "segunda mano" in (p.get("titulo") or "").lower()):
+            try:
+                used = api.get_item(p["asin"], condition="Used")
+            except Exception as exc:  # sin oferta usada clara no se sella nada por si acaso
+                log(f"  {p['asin']}: no compruebo la oferta de segunda mano ({exc}), no lo sello")
+                used, result = None, None
+            if used is not None:
+                item, result = used, verdict(p, used)
+        out[mid] = (result, item)
+    return out
 
 
 def main() -> int:
