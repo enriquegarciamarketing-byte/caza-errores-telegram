@@ -1,0 +1,73 @@
+name: Vigía canales → premium @caza_errores
+
+# 21/11/2026: lo que publiquen t.me/erroresychollos, t.me/erroresycholloswarehouse y t.me/erroresychollosropa
+# sale al momento en el premium con la tarjeta y el copy de Enrique (precio y foto de la API de Amazon, su tag).
+# Mira los canales cada ~20 s durante casi 6 h y al acabar lanza la siguiente ejecución (relevo, 24/7).
+# El cron de cada 30 min es solo de reserva por si el relevo falla: si ya hay una en marcha, espera en cola.
+on:
+  schedule:
+    - cron: "11,41 * * * *"
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "canal (publica en @caza_errores) · privado (te llegan a tu chat) · seco (solo lee)"
+        required: false
+        default: canal
+        type: choice
+        options: [canal, privado, seco]
+      minutos:
+        description: "Minutos de vigilancia de esta ejecución"
+        required: false
+        default: "345"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: vigia-canales
+  cancel-in-progress: false
+
+env:
+  ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 358
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Vigilar los canales
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID || secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET || secrets.AMAZON_CREATORS_CLIENT_SECRET }}
+          PREMIUM_CHAT_ID: ${{ vars.PREMIUM_CHAT_ID }}
+        run: |
+          MODO="${{ inputs.modo || 'canal' }}"
+          ARGS=(--minutos "${{ inputs.minutos || '345' }}")
+          if [ "$MODO" = "privado" ]; then ARGS+=(--privado); fi
+          if [ "$MODO" = "seco" ]; then ARGS+=(--seco); fi
+          python -u espejo_canales.py "${ARGS[@]}"
+      - name: Guardar memoria
+        if: always() && (inputs.modo || 'canal') != 'seco'
+        run: bash tools/guardar_espejo.sh "Memoria vigía"
+      - name: Relevo (lanza la siguiente)
+        if: always() && (inputs.modo || 'canal') == 'canal'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ "${{ job.status }}" = "success" ] || sleep 120
+          for i in 1 2 3; do
+            gh api -X POST "repos/${GITHUB_REPOSITORY}/actions/workflows/vigia-canales.yml/dispatches" -f ref=main \
+              && { echo "Relevo lanzado."; exit 0; }
+            sleep $((10 * i))
+          done
+          echo "No he podido lanzar el relevo (queda el cron de reserva)."
