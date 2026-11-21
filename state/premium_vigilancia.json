@@ -1,5 +1,5 @@
 {
- "ultimo": 331,
+ "ultimo": 338,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -193,7 +193,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -204,7 +204,7 @@
    "cupon": false,
    "fecha": 1794816667,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 29.99
   },
   "192": {
@@ -214,9 +214,10 @@
    "titulo": "Cecotec Cecofry&Glass Crunchy Pro 4L + 2,5L",
    "cupon": false,
    "fecha": 1794823031,
-   "estado": "vivo",
-   "comprobado": 1795284321,
-   "ultimo_precio": 89.9
+   "estado": "terminada",
+   "comprobado": 1795303525,
+   "ultimo_precio": 273.9,
+   "sellado": 1795303594
   },
   "193": {
    "tipo": "tarjeta",
@@ -238,7 +239,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -273,7 +274,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -338,7 +339,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -349,7 +350,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -396,7 +397,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 255.0
   },
   "228": {
@@ -491,7 +492,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 139.0
   },
   "250": {
@@ -516,9 +517,10 @@
    "titulo": "Blink Outdoor 4 pack de 3 cámaras + Blink Mini 2K+ + Sync Module Core",
    "cupon": false,
    "fecha": 1795030392,
-   "estado": "vivo",
-   "comprobado": 1795284321,
-   "ultimo_precio": 66.99
+   "estado": "agotado",
+   "comprobado": 1795303525,
+   "ultimo_precio": null,
+   "sellado": 1795303600
   },
   "254": {
    "tipo": "tarjeta",
@@ -615,7 +617,7 @@
    "cupon": false,
    "fecha": 1795082564,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 69.9
   },
   "271": {
@@ -625,9 +627,10 @@
    "titulo": "Caroll 251v-valerie Blazer Mujer",
    "cupon": false,
    "fecha": 1795084750,
-   "estado": "vivo",
-   "comprobado": 1795284321,
-   "ultimo_precio": 23.05
+   "estado": "agotado",
+   "comprobado": 1795303525,
+   "ultimo_precio": null,
+   "sellado": 1795303606
   },
   "272": {
    "tipo": "tarjeta",
@@ -637,7 +640,7 @@
    "cupon": false,
    "fecha": 1795084855,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 10.4
   },
   "273": {
@@ -654,7 +657,7 @@
    "cupon": false,
    "fecha": 1795092470,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 79.95
   },
   "276": {
@@ -671,7 +674,7 @@
    "cupon": false,
    "fecha": 1795099977,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 100.0
   },
   "281": {
@@ -703,7 +706,7 @@
    "cupon": false,
    "fecha": 1795114353,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 17.99
   },
   "287": {
@@ -714,7 +717,7 @@
    "cupon": false,
    "fecha": 1795117100,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 49.99
   },
   "291": {
@@ -764,7 +767,7 @@
    "cupon": false,
    "fecha": 1795129868,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 65.0
   },
   "299": {
@@ -777,9 +780,10 @@
    "titulo": "Swarovski Colgante Hyperbola Infinity y corazón rosa",
    "cupon": false,
    "fecha": 1795168317,
-   "estado": "vivo",
-   "comprobado": 1795284321,
-   "ultimo_precio": 65.99
+   "estado": "terminada",
+   "comprobado": 1795303525,
+   "ultimo_precio": 113.59,
+   "sellado": 1795303612
   },
   "301": {
    "tipo": "otro"
@@ -795,7 +799,7 @@
    "cupon": false,
    "fecha": 1795169652,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 225.0
   },
   "305": {
@@ -860,7 +864,7 @@
    "cupon": false,
    "fecha": 1795192802,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 82.35
   },
   "315": {
@@ -883,7 +887,7 @@
    "cupon": false,
    "fecha": 1795200646,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 79.9
   },
   "318": {
@@ -912,7 +916,7 @@
    "cupon": false,
    "fecha": 1795248262,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 18.86
   },
   "324": {
@@ -935,7 +939,7 @@
    "cupon": false,
    "fecha": 1795248316,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 4.89
   },
   "326": {
@@ -976,7 +980,7 @@
    "cupon": false,
    "fecha": 1795279764,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 170.0
   },
   "331": {
@@ -987,8 +991,92 @@
    "cupon": false,
    "fecha": 1795280069,
    "estado": "vivo",
-   "comprobado": 1795284321,
+   "comprobado": 1795303525,
    "ultimo_precio": 79.9
+  },
+  "332": {
+   "tipo": "tarjeta",
+   "asin": "B0BX49FQF8",
+   "precio": 52.99,
+   "titulo": "Philips Purificador de Aire Serie 600 Ultrasilencioso y de bajo consum",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795286177,
+   "estado": "vivo",
+   "comprobado": 1795303525,
+   "ultimo_precio": 52.99
+  },
+  "333": {
+   "tipo": "tarjeta",
+   "asin": "B0DJDPRMCQ",
+   "precio": 6.93,
+   "titulo": "PUMA Camiseta Holgada CLOUDSPUN Mujer",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795289968,
+   "estado": "vivo",
+   "comprobado": 1795303525,
+   "ultimo_precio": 6.93
+  },
+  "334": {
+   "tipo": "tarjeta",
+   "asin": "B0HBW5SM2M",
+   "precio": 26.17,
+   "titulo": "Reloj inteligente 1,96\" con llamadas Bluetooth",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795295517,
+   "estado": "vivo",
+   "comprobado": 1795303525,
+   "ultimo_precio": 26.17
+  },
+  "335": {
+   "tipo": "tarjeta",
+   "asin": "B0FFNCN5FL",
+   "precio": 139.0,
+   "titulo": "Panasonic NF-GM600 Multi Cooker 6 en 1 1400W",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795296218,
+   "estado": "vivo",
+   "comprobado": 1795303525,
+   "ultimo_precio": 139.0
+  },
+  "336": {
+   "tipo": "tarjeta",
+   "asin": "B0DHHKCSK2",
+   "precio": 17.24,
+   "titulo": "GANT Pack de 2 camisetas de cuello redondo negras",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795298673,
+   "estado": "vivo",
+   "comprobado": 1795303525,
+   "ultimo_precio": 17.24
+  },
+  "337": {
+   "tipo": "tarjeta",
+   "asin": "B0CNGQYF5Z",
+   "precio": 191.2,
+   "titulo": "Insta360 Ace Pro · segunda mano como nuevo",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795298925,
+   "estado": "vivo",
+   "comprobado": 1795303525,
+   "ultimo_precio": 191.2
+  },
+  "338": {
+   "tipo": "tarjeta",
+   "asin": "B0CYKFFX4V",
+   "precio": 155.85,
+   "titulo": "Reloj automático Citizen Tsuyosa Small Second",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795302992,
+   "estado": "vivo",
+   "comprobado": 1795303525,
+   "ultimo_precio": 155.85
   }
  }
 }
