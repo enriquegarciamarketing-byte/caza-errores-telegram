@@ -147,6 +147,13 @@ def titulo_corto(title: str, limite: int = 75) -> str:
     return cut.rstrip(" ,;-–|(")
 
 
+def enlace_visible(link: str) -> str:
+    """Lo que se ve en el copy: el enlace corto amazon.es/dp/ASIN, sin https ni tag (21/11/2026, Enrique).
+    Al pinchar lleva al enlace largo con su tag (caption_html lo convierte en hipervínculo)."""
+    m = re.search(r"/dp/([A-Z0-9]{10})", link or "")
+    return f"amazon.es/dp/{m.group(1)}" if m else link
+
+
 def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str) -> str:
     current, reference = live["price"], live.get("reference")
     pct = round((reference - current) / reference * 100) if reference else None
@@ -173,7 +180,7 @@ def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str) -> st
     vendedor = extra.get("vendedor") or ""
     if vendedor and not re.search(r"vendido (y enviado )?por amazon\b", vendedor, re.I):
         lines.append(f"🏷️ {vendedor}")
-    lines += ["", f"🌟{link}"]
+    lines += ["", f"🌟{enlace_visible(link)}"]
     return "\n".join(lines)
 
 
@@ -264,7 +271,7 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
         return
     spec = {"asin": asin, "image": image}
     card = crear_tarjeta(photo_for(spec, asin), live["reference"], live["price"], when, OUT / f"{asin}.jpg")
-    caption = caption_html(copy)
+    caption = caption_html(copy, {enlace_visible(link): link})
     import privado
     chat = privado.admin_id() if privado_ else PREMIUM
     msg = tg.send_photo(chat, card, caption)

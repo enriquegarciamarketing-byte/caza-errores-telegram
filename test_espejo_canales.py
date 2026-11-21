@@ -58,7 +58,8 @@ class Espejo(unittest.TestCase):
         self.assertTrue(copy.startswith("❗️ #ErrorDePrecio · -74%"))
         self.assertIn("💸 Lo pillas a 27,92€ 105,62€", copy)
         self.assertIn("🏷️ Vendido por Kalado", copy)
-        self.assertIn("🌟https://www.amazon.es/dp/B0D2RYP973?tag=cazachollos0c-21", copy)
+        self.assertIn("🌟amazon.es/dp/B0D2RYP973", copy)
+        self.assertNotIn("tag=", copy)
         copy2 = ec.hacer_copy("X", {"price": 60.0, "reference": 100.0}, {"vendedor": "Vendido por Amazon"},
                               "general", "L")
         self.assertTrue(copy2.startswith("💎 #Chollo · -40%"))
@@ -90,6 +91,7 @@ class Espejo(unittest.TestCase):
                     chat, caption = tg.sent[0]
                     self.assertEqual(chat, ec.PREMIUM)
                     self.assertIn("tag=cazachollos0c-21", caption)
+                    self.assertRegex(caption, r'🌟<a href="https://www\.amazon\.es/dp/\w{10}\?tag=cazachollos0c-21">amazon\.es/dp/\w{10}</a>')
                     self.assertNotIn("kevincrestt", caption)
                     self.assertIn("<b>Cecotec Freidora de Aire</b>", caption)
                     self.assertIn("<s>89,99€</s>", caption)
