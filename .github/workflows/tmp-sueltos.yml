@@ -1,0 +1,45 @@
+name: tmp sueltos premium
+on:
+  push:
+    branches: [tmp-sueltos-premium]
+jobs:
+  r:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python -m pip install -q -r requirements.txt
+      - env:
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID || secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET || secrets.AMAZON_CREATORS_CLIENT_SECRET }}
+        run: |
+          for c in B07HTMeHi B0bpHqQlC B01ITblH0 B00myDKzN; do
+            u=$(curl -s -o /dev/null -w '%{url_effective}' -L --max-redirs 8 -A 'Mozilla/5.0' "https://link.amazon/$c")
+            echo "RES $c $u"
+            echo "$u" >> urls.txt
+          done
+          python - <<'PY'
+          import json, re, urllib.request
+          from amazon_api import CreatorsAPI
+          import affiliate
+          urls = open('urls.txt').read().split()
+          asins = [affiliate.extract_asin(u) for u in urls]
+          print("ASINS", asins)
+          api = CreatorsAPI.from_env("cazachollos0c-21")
+          print("API", json.dumps(api.get_items([a for a in asins if a]), ensure_ascii=False))
+          for a in asins:
+              if not a: continue
+              try:
+                  req = urllib.request.Request(f"https://www.amazon.es/dp/{a}", headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36", "Accept-Language": "es-ES,es;q=0.9"})
+                  h = urllib.request.urlopen(req, timeout=20).read().decode('utf-8', 'ignore')
+                  hi = re.search(r'data-old-hires="([^"]+)"', h)
+                  title = re.search(r'id="productTitle"[^>]*>\s*([^<]+)', h)
+                  rrp = re.findall(r'(?:Precio recomendado|PVPR|Precio anterior)[^€]{0,300}?([\d\.]+,\d{2})\s*€', h)
+                  price = re.search(r'class="a-offscreen">([\d\.]+,\d{2})\s*€', h)
+                  avail = re.search(r'id="availability"[\s\S]{0,400}?<span[^>]*>\s*([^<]+)', h)
+                  print("PAGE", a, json.dumps({"title": title and title.group(1).strip(), "hires": hi and hi.group(1), "price": price and price.group(1), "rrp": rrp[:3], "avail": avail and avail.group(1).strip(), "len": len(h)}, ensure_ascii=False))
+              except Exception as e:
+                  print("PAGE", a, "ERR", e)
+          PY
