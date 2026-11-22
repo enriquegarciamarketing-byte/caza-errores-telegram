@@ -259,7 +259,20 @@ def consultar(asin: str) -> int:
     if api is None:
         print("Faltan las credenciales de la Creators API", file=sys.stderr)
         return 2
-    print("API Amazon:", json.dumps(api.get_item(asin.strip().upper()), ensure_ascii=False))
+    asin = asin.strip()
+    if asin.startswith("http"):  # 22/11/2026: también un enlace (corto o largo) → ASIN y tag de destino
+        import affiliate
+        final = affiliate.resolve_redirects(asin) if affiliate.is_short_link(asin) else asin
+        print("Destino:", re.sub(r"(linkId|ref_|ascsubtag|btn_ref)=[^&]*", r"\1=…", final))
+        print("Lleva tu tag:", f"tag={TAG}" in final)
+        asin = affiliate.extract_asin(final) or ""
+    asin = asin.upper()
+    print("ASIN:", asin)
+    print("API Amazon:", json.dumps(api.get_item(asin), ensure_ascii=False))
+    try:
+        print("API Amazon (segunda mano):", json.dumps(api.get_item(asin, condition="Used"), ensure_ascii=False))
+    except Exception as exc:  # noqa: BLE001
+        print("API Amazon (segunda mano): sin datos", exc)
     return 0
 
 
