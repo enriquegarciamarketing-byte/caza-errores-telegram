@@ -100,8 +100,17 @@ class CreatorsAPI:
     # ------------------------------------------------------------ ayudas
 
     @staticmethod
-    def _offer(item: dict) -> dict:
-        listing = _get(item, "offersV2", "listings", 0, default={}) or {}
+    def _offer(item: dict, used: bool = False) -> dict:
+        listings = _get(item, "offersV2", "listings", default=[]) or []
+        listing = listings[0] if listings else {}
+        if used:  # la oferta de segunda mano más barata (Amazon Segunda mano / Warehouse)
+            usadas = [li for li in listings
+                      if str(_get(li, "condition", "value", default="") or "").lower() not in ("", "new")]
+            def _amount(li):
+                m = _get(li, "price", "money", default=None) or _get(li, "price", default={}) or {}
+                a = _get(m, "amount")
+                return float(a) if isinstance(a, (int, float, str)) and str(a) else 1e12
+            listing = min(usadas, key=_amount) if usadas else {}
         money = _get(listing, "price", "money", default=None) or _get(listing, "price", default={}) or {}
         basis = (_get(listing, "price", "savingBasis", "money", default=None)
                  or _get(listing, "price", "savingBasis", default={}) or {})
@@ -120,11 +129,13 @@ class CreatorsAPI:
 
     def get_item(self, asin: str, condition: str | None = None) -> dict | None:
         """Precio y stock en vivo de un ASIN concreto. None si Amazon no devuelve ese producto.
-        condition="Used" (21/11/2026): pide la oferta de segunda mano (Amazon Segunda mano / Warehouse)."""
+        condition="Used": la oferta de segunda mano (Amazon Segunda mano / Warehouse). La API solo admite
+        New o Any (22/11/2026: con "Used" daba HTTP 400), así que se pide Any y se elige la oferta usada."""
+        used = (condition or "").lower() == "used"
         body = {"itemIds": [asin], "itemIdType": "ASIN",
                 "resources": PRICE_RESOURCES + ["offersV2.listings.condition"]}
         if condition:
-            body["condition"] = condition
+            body["condition"] = "Any" if used else condition
         data = self.call("getItems", body)
         items = _get(data, "itemsResult", "items", default=[]) or []
         item = next((i for i in items if str(_get(i, "asin", default="")).upper() == asin.upper()), None)
@@ -134,7 +145,7 @@ class CreatorsAPI:
             "asin": asin,
             "title": _get(item, "itemInfo", "title", "displayValue", default=""),
             "image": _get(item, "images", "primary", "large", "url"),
-            **self._offer(item),
+            **self._offer(item, used=used),
         }
 
     def get_items(self, asins: list[str], pause: float = 1.1) -> dict[str, dict]:
