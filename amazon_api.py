@@ -122,7 +122,7 @@ class CreatorsAPI:
             "price": float(amount) if isinstance(amount, (int, float, str)) and str(amount) else None,
             "saving_basis": float(basis_amount) if isinstance(basis_amount, (int, float, str)) and str(basis_amount) else None,
             "saving_basis_type": basis_type.upper(),
-            "in_stock": avail.upper() in {"IN_STOCK", "INSTOCK", "AVAILABLE"},
+            "in_stock": avail.upper() in {"IN_STOCK", "INSTOCK", "AVAILABLE", "IN_STOCK_SCARCE"},  # SCARCE = «Sólo queda(n) N»
             "availability": avail.upper(),
             "condition": str(_get(listing, "condition", "value", default="") or ""),
         }
