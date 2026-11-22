@@ -1,5 +1,5 @@
 {
- "ultimo": 340,
+ "ultimo": 345,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -193,7 +193,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -203,9 +203,10 @@
    "titulo": "Ring Intercom Audio + Ring Peephole Cam (mirilla digital HD)",
    "cupon": false,
    "fecha": 1794816667,
-   "estado": "vivo",
-   "comprobado": 1795330742,
-   "ultimo_precio": 29.99
+   "estado": "agotado",
+   "comprobado": 1795361190,
+   "ultimo_precio": null,
+   "sellado": 1795361261
   },
   "192": {
    "tipo": "tarjeta",
@@ -239,7 +240,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -274,7 +275,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -339,7 +340,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -350,7 +351,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -397,7 +398,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 255.0
   },
   "228": {
@@ -492,7 +493,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 139.0
   },
   "250": {
@@ -617,7 +618,7 @@
    "cupon": false,
    "fecha": 1795082564,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 69.9
   },
   "271": {
@@ -640,7 +641,7 @@
    "cupon": false,
    "fecha": 1795084855,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 10.4
   },
   "273": {
@@ -657,7 +658,7 @@
    "cupon": false,
    "fecha": 1795092470,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 79.95
   },
   "276": {
@@ -674,7 +675,7 @@
    "cupon": false,
    "fecha": 1795099977,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 100.0
   },
   "281": {
@@ -706,7 +707,7 @@
    "cupon": false,
    "fecha": 1795114353,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 17.99
   },
   "287": {
@@ -717,7 +718,7 @@
    "cupon": false,
    "fecha": 1795117100,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 49.99
   },
   "291": {
@@ -767,7 +768,7 @@
    "cupon": false,
    "fecha": 1795129868,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 65.0
   },
   "299": {
@@ -799,7 +800,7 @@
    "cupon": false,
    "fecha": 1795169652,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 225.0
   },
   "305": {
@@ -864,7 +865,7 @@
    "cupon": false,
    "fecha": 1795192802,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 82.35
   },
   "315": {
@@ -887,7 +888,7 @@
    "cupon": false,
    "fecha": 1795200646,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 79.9
   },
   "318": {
@@ -916,7 +917,7 @@
    "cupon": false,
    "fecha": 1795248262,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 18.86
   },
   "324": {
@@ -939,7 +940,7 @@
    "cupon": false,
    "fecha": 1795248316,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 4.89
   },
   "326": {
@@ -980,7 +981,7 @@
    "cupon": false,
    "fecha": 1795279764,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 170.0
   },
   "331": {
@@ -991,7 +992,7 @@
    "cupon": false,
    "fecha": 1795280069,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 79.9
   },
   "332": {
@@ -1003,7 +1004,7 @@
    "segunda": false,
    "fecha": 1795286177,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 52.99
   },
   "333": {
@@ -1015,7 +1016,7 @@
    "segunda": false,
    "fecha": 1795289968,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 6.93
   },
   "334": {
@@ -1027,7 +1028,7 @@
    "segunda": true,
    "fecha": 1795295517,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 26.17
   },
   "335": {
@@ -1039,7 +1040,7 @@
    "segunda": false,
    "fecha": 1795296218,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 139.0
   },
   "336": {
@@ -1051,8 +1052,8 @@
    "segunda": true,
    "fecha": 1795298673,
    "estado": "vivo",
-   "comprobado": 1795330742,
-   "ultimo_precio": 17.24
+   "comprobado": 1795361190,
+   "ultimo_precio": null
   },
   "337": {
    "tipo": "tarjeta",
@@ -1063,7 +1064,7 @@
    "segunda": true,
    "fecha": 1795298925,
    "estado": "vivo",
-   "comprobado": 1795330742,
+   "comprobado": 1795361190,
    "ultimo_precio": 191.2
   },
   "338": {
@@ -1075,8 +1076,8 @@
    "segunda": true,
    "fecha": 1795302992,
    "estado": "vivo",
-   "comprobado": 1795330742,
-   "ultimo_precio": 255.1
+   "comprobado": 1795361190,
+   "ultimo_precio": 255.26
   },
   "339": {
    "tipo": "tarjeta",
@@ -1087,10 +1088,58 @@
    "segunda": true,
    "fecha": 1795304542,
    "estado": "vivo",
-   "comprobado": 1795330742
+   "comprobado": 1795361190
   },
   "340": {
    "tipo": "otro"
+  },
+  "341": {
+   "tipo": "tarjeta",
+   "asin": "B0GJS98B1Q",
+   "precio": 155.99,
+   "titulo": "SanDisk Optimus 5100 NVMe SSD 1TB",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795336628,
+   "estado": "vivo",
+   "comprobado": 1795361190,
+   "ultimo_precio": 155.99
+  },
+  "342": {
+   "tipo": "tarjeta",
+   "asin": "B0CKSMMCF2",
+   "precio": 59.07,
+   "titulo": "KitchenBoss Roner Sous Vide Wi-Fi: 1100W LED termostato de inmersión r",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795341994,
+   "estado": "vivo",
+   "comprobado": 1795361190,
+   "ultimo_precio": 59.07
+  },
+  "343": {
+   "tipo": "tarjeta",
+   "asin": "B0FJXZYXS4",
+   "precio": 15.99,
+   "titulo": "Battlefield 6 Standard Edition Xbox Series X (disco)",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795346671,
+   "estado": "vivo",
+   "comprobado": 1795361190,
+   "ultimo_precio": 15.99
+  },
+  "345": {
+   "tipo": "tarjeta",
+   "asin": "B0FXWLDNPQ",
+   "precio": 214.58,
+   "titulo": "Lefant M3 MAX Robot Aspirador y Fregasuelos 3,2L · segunda mano",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795355225,
+   "estado": "vivo",
+   "comprobado": 1795361190,
+   "ultimo_precio": 899.99
   }
  }
 }
