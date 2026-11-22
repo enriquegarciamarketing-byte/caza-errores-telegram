@@ -45,6 +45,7 @@ CANALES = {
     "erroresycholloswarehouse": "warehouse",
     "erroresychollosropa": "ropa",
     "ErroresRutaYChollos": "general",  # 22/11/2026: lo pidió Enrique
+    "erroresychollosbasicos": "general",  # 23/11/2026: lo pidió Enrique (Errores y Chollos Básicos de Kevin)
 }
 CADA = 20          # segundos entre vueltas
 REPETIDO_DIAS = 3  # un mismo ASIN no se vuelve a publicar en estos días
