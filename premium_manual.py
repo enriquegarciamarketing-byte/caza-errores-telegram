@@ -165,8 +165,13 @@ def publish(spec: dict, private: bool, token: str) -> int:
         if visible:
             links[visible.group(0)] = spec["link"]
     except ValueError as exc:
-        print(f"No publico: {exc}.", file=sys.stderr)
-        return 2
+        # "tal_cual": Enrique pide publicar con su enlace corto sin tocar aunque no salga el ASIN.
+        import affiliate
+        if not (spec.get("tal_cual") and affiliate.is_short_link(spec["link"])):
+            print(f"No publico: {exc}.", file=sys.stderr)
+            return 2
+        print(f"Aviso: {exc}; publico con el enlace corto tal cual (tal_cual).")
+        links = {}
     problem = check_link(spec["link"])
     if problem:
         print(f"No publico: {problem}.", file=sys.stderr)
