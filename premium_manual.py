@@ -161,6 +161,9 @@ def publish(spec: dict, private: bool, token: str) -> int:
         spec = dict(spec, link=clean_link(spec["link"], spec.get("asin")))
         spec["asin"] = spec.get("asin") or (re.search(r"/dp/([A-Z0-9]{10})", spec["link"]) or [None, None])[1]
         links = copy_links(spec["copy"], spec.get("asin"))  # el copy no cambia: se ve el corto, se pincha el limpio
+        visible = re.search(r"(?<![/\w.])amazon\.es/dp/[A-Z0-9]{10}(?![?\w])", spec["copy"])  # formato del Vigía
+        if visible:
+            links[visible.group(0)] = spec["link"]
     except ValueError as exc:
         print(f"No publico: {exc}.", file=sys.stderr)
         return 2
