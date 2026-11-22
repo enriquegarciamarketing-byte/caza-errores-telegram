@@ -8,6 +8,7 @@ Cómo funciona
 - Mira la vista pública de cada canal (t.me/s/<canal>) cada ~20 s. No hace falta cuenta ni sesión de Telegram.
 - De cada post nuevo saca el ASIN del botón «Comprar en Amazon» (le quita el tag kevincrestt-21).
 - Precio, precio recomendado, stock y foto salen SIEMPRE de la API oficial de Amazon (nada de copiar su precio).
+  En el canal warehouse el precio es SIEMPRE el de segunda mano y el nuevo va tachado de referencia.
 - Monta la tarjeta del premium (tarjeta_premium.py) y el copy de Enrique, con su enlace cazachollos0c-21,
   y lo publica en el canal. Queda en state/premium_manual.json para que la vigilancia lo pase a AGOTADO.
 - Si algo falla (sin ASIN, sin precio, agotado), no publica y avisa a Enrique en su privado con el enlace.
@@ -233,22 +234,31 @@ def avisar(tg, texto: str) -> None:
 
 
 def segunda_mano(api, asin: str) -> dict | None:
-    """Canal warehouse (21/11/2026, Enrique): son cosas de segunda mano, así que vale la oferta usada de Amazon
-    aunque no haya stock nuevo. Primero la oferta normal (si Amazon solo tiene la usada, es la que sale);
-    si no, se la pido expresamente a la API como segunda mano."""
+    """Canal warehouse: SIEMPRE el precio de segunda mano (22/11/2026, Enrique: «de ese canal siempre pilla los
+    precios de segunda mano»). El precio nuevo de la ficha solo sirve de referencia tachada («Nuevo precio»),
+    igual que en la tarjeta de @kevincrestt (p. ej. Lefant M3 MAX: 214,58€ como nuevo frente a 899,99€ nuevo).
+    Antes se cogía la oferta nueva si había stock y salió a 899,99€."""
     from amazon_api import ApiError
-    first = api.get_item(asin)
-    if first and first.get("in_stock") and first.get("price"):
-        return first
+    nuevo = api.get_item(asin)
     try:
         used = api.get_item(asin, condition="Used")
     except ApiError as exc:
         log(f"  {asin}: la API no me da la oferta de segunda mano ({exc})")
-        return first
-    if used and used.get("in_stock") and used.get("price"):
-        log(f"  {asin}: oferta de segunda mano {used.get('condition') or '?'} a {used['price']}")
-        return used
-    return first
+        used = None
+    if not (used and used.get("in_stock") and used.get("price")):
+        log(f"  {asin}: sin oferta de segunda mano en la API, no lo publico con el precio nuevo")
+        return {**(used or {}), "price": None, "in_stock": False, "title": (nuevo or {}).get("title"),
+                "image": (nuevo or {}).get("image")}
+    out = dict(used)
+    out.setdefault("title", (nuevo or {}).get("title"))
+    out["title"] = out.get("title") or (nuevo or {}).get("title")
+    out["image"] = out.get("image") or (nuevo or {}).get("image")
+    precio_nuevo = (nuevo or {}).get("price")
+    if precio_nuevo and precio_nuevo > used["price"]:
+        out["saving_basis"] = precio_nuevo
+        out["ref_label"] = "nuevo"
+    log(f"  {asin}: segunda mano {used.get('condition') or '?'} a {used['price']} (nuevo {precio_nuevo})")
+    return out
 
 
 def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: bool) -> None:
@@ -296,7 +306,9 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
         avisar(tg, f"⚠️ Vigía: {asin} sin foto en la API, no lo he publicado.\n{link}")
         return
     spec = {"asin": asin, "image": image}
-    card = crear_tarjeta(photo_for(spec, asin), live["reference"], live["price"], when, OUT / f"{asin}.jpg")
+    ref_label = live.get("ref_label") or "recomendado"
+    card = crear_tarjeta(photo_for(spec, asin), live["reference"], live["price"], when, OUT / f"{asin}.jpg",
+                         ref_label=ref_label)
     caption = caption_html(copy, {enlace_visible(link): link})
     import privado
     chat = privado.admin_id() if privado_ else PREMIUM
@@ -311,7 +323,7 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     manual = load_state()  # así la vigilancia de cada hora y el sello AGOTADO lo tratan igual que los tuyos
     manual["posts"].append({"message_id": msg["message_id"], "asin": asin, "link": link, "image": image,
                             "reference": live["reference"], "current": live["price"], "when": when,
-                            "ref_label": "recomendado", "caption": caption, "t": int(time.time()),
+                            "ref_label": ref_label, "caption": caption, "t": int(time.time()),
                             "auto": origen})
     save_state(manual)
     subir_memoria(f"Vigía: {asin} publicado en el premium")

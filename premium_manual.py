@@ -11,6 +11,8 @@ Lo lanza el workflow «Post manual premium @caza_errores» con un JSON:
 
 Con --privado va solo a tu chat (ADMIN_CHAT_ID); sin él, al canal (TELEGRAM_CHAT_ID).
 Para marcar uno como agotado: {"agotado": <número de mensaje>} → tarjeta en blanco y negro con el sello AGOTADO.
+Para corregir uno ya publicado: {"editar": <número de mensaje>, "reference": …, "current": …, "when": …, "copy": …,
+  "ref_label": "nuevo"} → rehace tarjeta y texto del mismo mensaje (lo que no venga se queda como estaba).
 """
 from __future__ import annotations
 
@@ -212,6 +214,41 @@ def sold_out(message_id: int, token: str) -> int:
     return 0
 
 
+def editar(spec: dict, token: str) -> int:
+    """Corrige un post ya publicado (tarjeta y texto) sin borrarlo (22/11/2026: el Lefant de segunda mano salió
+    con el precio nuevo)."""
+    message_id = int(spec["editar"])
+    state = load_state()
+    post = next((p for p in state["posts"] if p.get("message_id") == message_id), None)
+    if not post:
+        print(f"No tengo guardado el mensaje {message_id} del premium.", file=sys.stderr)
+        return 2
+    for key in ("reference", "current", "when", "image", "ref_label"):
+        if key in spec:
+            post[key] = spec[key]
+    reference = float(post["reference"]) if post.get("reference") else None
+    current = float(post["current"])
+    if not (0 < current and (reference is None or current < reference)):
+        print("No edito: el precio actual tiene que ser menor que el de referencia.", file=sys.stderr)
+        return 2
+    if spec.get("copy"):
+        links = copy_links(spec["copy"], post.get("asin"))
+        m = re.search(r"amazon\.es/dp/[A-Z0-9]{10}", spec["copy"])
+        if m and m.group(0) not in links:
+            links[m.group(0)] = post["link"]
+        post["caption"] = caption_html(spec["copy"], links)
+    chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    name = re.sub(r"[^A-Za-z0-9]", "", post.get("asin") or "") or str(message_id)
+    card = crear_tarjeta(photo_for(post, name), reference, current, post["when"], OUT / f"{name}_editado.jpg",
+                         ref_label=post.get("ref_label", "recomendado"))
+    edit_media(token, chat, message_id, card, post["caption"])
+    post["editado"] = int(time.time())
+    save_state(state)
+    pct = f" · -{round((reference - current) / reference * 100)}%" if reference else ""
+    print(f"Mensaje {message_id} del premium corregido{pct}")
+    return 0
+
+
 def consultar(asin: str) -> int:
     """Solo lee la ficha en la API oficial (precio, precio de referencia de Amazon y stock); no publica nada."""
     from amazon_api import CreatorsAPI
@@ -237,6 +274,8 @@ def main() -> int:
         return consultar(str(spec["consultar"]))
     if spec.get("agotado"):
         return sold_out(int(spec["agotado"]), token)
+    if spec.get("editar"):
+        return editar(spec, token)
     return publish(spec, args.privado, token)
 
 

@@ -68,6 +68,22 @@ class Espejo(unittest.TestCase):
                 return {"price": 191.2, "in_stock": True} if condition == "Used" else {"price": None, "in_stock": False}
         self.assertEqual(ec.segunda_mano(API(), "B0CNGQYF5Z")["price"], 191.2)
 
+        class API2:  # hay stock nuevo (899,99) y usado (214,58): sale SIEMPRE el usado, con el nuevo de referencia
+            def get_item(self, asin, condition=None):
+                if condition == "Used":
+                    return {"price": 214.58, "in_stock": True, "condition": "Used"}
+                return {"price": 899.99, "in_stock": True, "title": "Lefant M3 MAX", "image": "http://img/l.jpg"}
+        live = ec.segunda_mano(API2(), "B0FXWLDNPQ")
+        self.assertEqual(live["price"], 214.58)
+        self.assertEqual(live["saving_basis"], 899.99)
+        self.assertEqual(live["ref_label"], "nuevo")
+        self.assertEqual(live["image"], "http://img/l.jpg")
+
+        class API3:  # sin oferta usada: no se publica con el precio nuevo
+            def get_item(self, asin, condition=None):
+                return {"price": None, "in_stock": False} if condition == "Used" else {"price": 899.99, "in_stock": True}
+        self.assertFalse(ec.segunda_mano(API3(), "X")["in_stock"])
+
     def test_copy(self):
         live = {"price": 27.92, "reference": 105.62}
         copy = ec.hacer_copy("Bolso X", live, {"vendedor": "Vendido por Kalado y enviado por Amazon"}, "general",
