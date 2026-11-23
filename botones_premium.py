@@ -14,7 +14,8 @@ def _whatsapp() -> dict | None:
     except (OSError, json.JSONDecodeError):
         return None
     wa = (cfg.get("amazon_channel") or {}).get("whatsapp_button") or {}
-    return {"text": wa["text"], "url": wa["url"]} if wa.get("text") and wa.get("url") else None
+    # En el premium el texto es «📲 Únete a WhatsApp» (23/11/2026, Enrique); el enlace es el del canal del free.
+    return {"text": "📲 Únete a WhatsApp", "url": wa["url"]} if wa.get("url") else None
 
 
 def teclado(link: str) -> dict:

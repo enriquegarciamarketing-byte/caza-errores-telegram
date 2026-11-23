@@ -201,3 +201,22 @@ class BotonesPremiumTest(unittest.TestCase):
         self.assertEqual(len(fin["inline_keyboard"]), 1)
         self.assertIn("whatsapp.com", fin["inline_keyboard"][0][0]["url"])
         self.assertEqual(bp.teclado_terminado(), fin)
+
+
+class SeccionesTest(unittest.TestCase):
+    def test_seccion_debajo_de_la_cabecera_y_titulo_en_negrita(self):
+        import premium_manual as pm
+        copy = ec.hacer_copy("Lefant M3 MAX Robot Aspirador", {"price": 214.58, "reference": 899.99},
+                             {"estado": "Como nuevo"}, "warehouse", "https://www.amazon.es/dp/B0FXWLDNPQ?tag=cazachollos0c-21")
+        self.assertTrue(copy.startswith("❗️ #ErrorDePrecio · -76%\n#Reacondicionado\n"))
+        html = pm.caption_html(copy)
+        self.assertIn("<b>Lefant M3 MAX Robot Aspirador</b>", html)
+        self.assertNotIn("<b>#Reacondicionado</b>", html)
+
+    def test_secciones(self):
+        import secciones as s
+        self.assertEqual(s.seccion("Hero Solo Bolsitas Yogur Desde 6 Meses", "basicos"), "#Bebé")
+        self.assertEqual(s.seccion("Neutrogena T/Gel Champú Anticaspa", "basicos"), "#Belleza")
+        self.assertEqual(s.seccion("Vaqueros 501", "ropa"), "#Moda")
+        self.assertEqual(s.seccion("Papel de cocina Renova", "basicos"), "#DelDíaADía")
+        self.assertIsNone(s.seccion("Cosa rara", "general"))

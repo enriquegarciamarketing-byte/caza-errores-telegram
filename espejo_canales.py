@@ -48,7 +48,7 @@ CANALES = {
     "erroresycholloswarehouse": "warehouse",
     "erroresychollosropa": "ropa",
     "ErroresRutaYChollos": "general",  # 22/11/2026: lo pidió Enrique
-    "erroresychollosbasicos": "general",  # 23/11/2026: lo pidió Enrique (Errores y Chollos Básicos de Kevin)
+    "erroresychollosbasicos": "basicos",  # 23/11/2026: lo pidió Enrique (Errores y Chollos Básicos de Kevin)
 }
 CADA = 20          # segundos entre vueltas
 REPETIDO_DIAS = 3  # un mismo ASIN no se vuelve a publicar en estos días
@@ -236,7 +236,9 @@ def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str) -> st
     if pct:
         cabecera += f" · -{pct}%"
 
-    lines = [cabecera, "", titulo_corto(nombre), ""]
+    import secciones
+    seccion = secciones.seccion(f"{nombre} {live.get('title') or ''}", tipo)
+    lines = [cabecera] + ([seccion] if seccion else []) + ["", titulo_corto(nombre), ""]
     lines.append(f"💸 {eur(current)}" + (f" {eur(reference)}" if reference else ""))
     if reference:
         frente = " frente al nuevo" if tipo == "warehouse" else ""

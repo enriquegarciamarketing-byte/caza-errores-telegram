@@ -46,6 +46,8 @@ def caption_html(copy: str, links: dict[str, str] | None = None) -> str:
     Con `links`, cada enlace se ve tal cual lo escribió y al pinchar lleva al enlace limpio con su tag."""
     lines = []
     texts = [i for i, line in enumerate(copy.strip().splitlines()) if line.strip()]
+    raw = copy.strip().splitlines()
+    texts = [i for i in texts if not raw[i].strip().startswith("#")]  # la línea de sección (#Moda…) no es el título
     title = texts[1] if len(texts) > 1 else -1  # la línea tras la cabecera (💎/❗️) es el título: en negrita
     for i, line in enumerate(copy.strip().splitlines()):
         line = JOIN.sub(r"\1\2", line)
