@@ -25,6 +25,25 @@ with open("state/premium_manual.json", "w", encoding="utf-8") as f:
     f.write(json.dumps(remote, ensure_ascii=False, indent=1) + "\n")
 EOF
   fi
+  if git cat-file -e origin/main:state/espejo_canales.json 2>/dev/null; then
+    # 23/11/2026: el vigía y el repaso de canales corren a la vez; se juntan publicados y se coge el último post visto.
+    git show origin/main:state/espejo_canales.json > "$RUNNER_TEMP/espejo_github.json"
+    python - "$RUNNER_TEMP/espejo_github.json" <<'EOF2'
+import json, sys
+remote = json.load(open(sys.argv[1], encoding="utf-8"))
+try:
+    local = json.load(open("state/espejo_canales.json", encoding="utf-8"))
+except (FileNotFoundError, json.JSONDecodeError):
+    sys.exit(0)
+seen = {p.get("message_id") for p in local.get("publicados", [])}
+local.setdefault("publicados", []).extend(p for p in remote.get("publicados", []) if p.get("message_id") not in seen)
+local["publicados"].sort(key=lambda p: p.get("t") or 0)
+for canal, n in (remote.get("ultimo") or {}).items():
+    local.setdefault("ultimo", {})[canal] = max(n, local["ultimo"].get(canal) or 0)
+with open("state/espejo_canales.json", "w", encoding="utf-8") as f:
+    f.write(json.dumps(local, ensure_ascii=False, indent=1) + "\n")
+EOF2
+  fi
   git reset -q --mixed origin/main
   git add -- state/espejo_canales.json state/premium_manual.json 2>/dev/null || true
   if git diff --cached --quiet; then
