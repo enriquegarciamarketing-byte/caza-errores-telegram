@@ -1,5 +1,5 @@
 {
- "ultimo": 353,
+ "ultimo": 374,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -193,7 +193,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -240,7 +240,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -275,7 +275,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -340,7 +340,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -351,7 +351,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -398,7 +398,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 255.0
   },
   "228": {
@@ -493,7 +493,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 139.0
   },
   "250": {
@@ -642,7 +642,7 @@
    "cupon": false,
    "fecha": 1795084855,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 10.4
   },
   "273": {
@@ -659,7 +659,7 @@
    "cupon": false,
    "fecha": 1795092470,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 79.95
   },
   "276": {
@@ -676,7 +676,7 @@
    "cupon": false,
    "fecha": 1795099977,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 100.0
   },
   "281": {
@@ -708,7 +708,7 @@
    "cupon": false,
    "fecha": 1795114353,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 17.99
   },
   "287": {
@@ -719,7 +719,7 @@
    "cupon": false,
    "fecha": 1795117100,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 49.99
   },
   "291": {
@@ -769,7 +769,7 @@
    "cupon": false,
    "fecha": 1795129868,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 65.0
   },
   "299": {
@@ -800,9 +800,10 @@
    "titulo": "Apple Watch SE 3 GPS 40 mm, Caja de Aluminio en Blanco Estrella",
    "cupon": false,
    "fecha": 1795169652,
-   "estado": "vivo",
-   "comprobado": 1795402398,
-   "ultimo_precio": 225.0
+   "estado": "agotado",
+   "comprobado": 1795438818,
+   "ultimo_precio": 225.0,
+   "sellado": 1795438887
   },
   "305": {
    "tipo": "tarjeta",
@@ -866,7 +867,7 @@
    "cupon": false,
    "fecha": 1795192802,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 82.35
   },
   "315": {
@@ -889,7 +890,7 @@
    "cupon": false,
    "fecha": 1795200646,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 79.9
   },
   "318": {
@@ -918,7 +919,7 @@
    "cupon": false,
    "fecha": 1795248262,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 18.86
   },
   "324": {
@@ -941,7 +942,7 @@
    "cupon": false,
    "fecha": 1795248316,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 4.89
   },
   "326": {
@@ -982,7 +983,7 @@
    "cupon": false,
    "fecha": 1795279764,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 170.0
   },
   "331": {
@@ -993,7 +994,7 @@
    "cupon": false,
    "fecha": 1795280069,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 79.9
   },
   "332": {
@@ -1005,7 +1006,7 @@
    "segunda": false,
    "fecha": 1795286177,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 52.99
   },
   "333": {
@@ -1017,7 +1018,7 @@
    "segunda": false,
    "fecha": 1795289968,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 6.93
   },
   "334": {
@@ -1029,7 +1030,7 @@
    "segunda": true,
    "fecha": 1795295517,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 26.17
   },
   "335": {
@@ -1041,7 +1042,7 @@
    "segunda": false,
    "fecha": 1795296218,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 139.0
   },
   "336": {
@@ -1066,7 +1067,7 @@
    "segunda": true,
    "fecha": 1795298925,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 191.2
   },
   "338": {
@@ -1091,7 +1092,7 @@
    "segunda": true,
    "fecha": 1795304542,
    "estado": "vivo",
-   "comprobado": 1795402398
+   "comprobado": 1795438818
   },
   "340": {
    "tipo": "otro"
@@ -1105,7 +1106,7 @@
    "segunda": true,
    "fecha": 1795336628,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 155.99
   },
   "342": {
@@ -1130,7 +1131,7 @@
    "segunda": true,
    "fecha": 1795346671,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 15.99
   },
   "345": {
@@ -1142,7 +1143,7 @@
    "segunda": true,
    "fecha": 1795355225,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 214.58
   },
   "346": {
@@ -1154,7 +1155,7 @@
    "segunda": false,
    "fecha": 1795366189,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 25.25
   },
   "347": {
@@ -1165,9 +1166,10 @@
    "cupon": false,
    "segunda": true,
    "fecha": 1795373292,
-   "estado": "vivo",
-   "comprobado": 1795402398,
-   "ultimo_precio": 44.11
+   "estado": "agotado",
+   "comprobado": 1795438818,
+   "ultimo_precio": null,
+   "sellado": 1795438893
   },
   "348": {
    "tipo": "tarjeta",
@@ -1191,7 +1193,7 @@
    "segunda": true,
    "fecha": 1795386329,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 70.77
   },
   "350": {
@@ -1209,11 +1211,194 @@
    "segunda": true,
    "fecha": 1795390226,
    "estado": "vivo",
-   "comprobado": 1795402398,
+   "comprobado": 1795438818,
    "ultimo_precio": 107.89
   },
   "353": {
    "tipo": "otro"
+  },
+  "355": {
+   "tipo": "tarjeta",
+   "asin": "B0CZ95YVDM",
+   "precio": 4.55,
+   "titulo": "4,55€",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795412420,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 4.55
+  },
+  "356": {
+   "tipo": "otro"
+  },
+  "357": {
+   "tipo": "tarjeta",
+   "asin": "B00XAOBAIY",
+   "precio": 7.02,
+   "titulo": "Nestlé Caja Roja bombones de chocolate con leche lata 250g | bombones ",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795416369,
+   "estado": "agotado",
+   "comprobado": 1795438818,
+   "ultimo_precio": null,
+   "sellado": 1795438899
+  },
+  "358": {
+   "tipo": "tarjeta",
+   "asin": "B086LX5MHW",
+   "precio": 22.5,
+   "titulo": "Hero Solo Bolsitas Yogur Plátano y Fresa Desde 6 Meses, 18 x 100 g",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795416375,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 22.5
+  },
+  "359": {
+   "tipo": "tarjeta",
+   "asin": "B01FH6YHSW",
+   "precio": 23.36,
+   "titulo": "Jack Link’s Beef Jerky Original - MrBeast Edition - Pack de 12 (12 x 2",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795416381,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 23.36
+  },
+  "360": {
+   "tipo": "tarjeta",
+   "asin": "B00LCEIMNK",
+   "precio": 9.47,
+   "titulo": "Neutrogena T/Gel Champú Anticaspa para Cabello Graso 250 ml 2 uds | Co",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795416388,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 9.47
+  },
+  "361": {
+   "tipo": "otro"
+  },
+  "362": {
+   "tipo": "tarjeta",
+   "asin": "B0FDH2K4CL",
+   "precio": 20.95,
+   "titulo": "Tommy Hilfiger Pantalón de chándal Hombre Track con Bolsillos",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795418671,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 20.95
+  },
+  "363": {
+   "tipo": "otro"
+  },
+  "364": {
+   "tipo": "tarjeta",
+   "asin": "B0F63SXZZB",
+   "precio": 51.99,
+   "titulo": "Guess Noelle II - Bolso de Hombro Mujer con llera",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795425011,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 51.99
+  },
+  "365": {
+   "tipo": "otro"
+  },
+  "366": {
+   "tipo": "tarjeta",
+   "asin": "B0742MMBNT",
+   "precio": 16.74,
+   "titulo": "Chips Ahoy Galletas Cookies Originales con Chips de Chocolate",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795425253,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 16.74
+  },
+  "367": {
+   "tipo": "tarjeta",
+   "asin": "B0H71LW1X2",
+   "precio": 4.5,
+   "titulo": "Colgate Harry Potter, Pasta de Dientes infantil, 6+ Años, Pack 4x50ml",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795428593,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 4.5
+  },
+  "370": {
+   "tipo": "tarjeta",
+   "asin": "B0DK2B48TL",
+   "precio": 20.92,
+   "titulo": "Tommy Hilfiger Pantalón de Tela Mujer Twill Straight Pants",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795429051,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 20.92
+  },
+  "371": {
+   "tipo": "tarjeta",
+   "asin": "B0FRSNYFKR",
+   "precio": 273.67,
+   "titulo": "Lenovo IdeaCentre Mini i5-13500H 16GB 2TB SSD",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795431559,
+   "estado": "terminada",
+   "comprobado": 1795438818,
+   "ultimo_precio": 2057.73,
+   "sellado": 1795438905
+  },
+  "372": {
+   "tipo": "tarjeta",
+   "asin": "B0FF7TGMD2",
+   "precio": 38.0,
+   "titulo": "MSI MAG A850GLS PCIE5 fuente 850W 80 Plus Gold",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795431585,
+   "estado": "terminada",
+   "comprobado": 1795438818,
+   "ultimo_precio": 174.62,
+   "sellado": 1795438907
+  },
+  "373": {
+   "tipo": "tarjeta",
+   "asin": "B0GXB13C86",
+   "precio": 13.91,
+   "titulo": "Sanex Derma Therapy, Gel de Ducha Purificante, Pack 6x425ml",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795434453,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 13.91
+  },
+  "374": {
+   "tipo": "tarjeta",
+   "asin": "B01MF9YDQN",
+   "precio": 8.23,
+   "titulo": "Neutrogena Hydro Boost Gel de Agua Crema Hidratante Facial ligera",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795438753,
+   "estado": "vivo",
+   "comprobado": 1795438818,
+   "ultimo_precio": 8.23
   }
  }
 }
