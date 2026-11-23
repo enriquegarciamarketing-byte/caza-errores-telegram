@@ -1,0 +1,60 @@
+name: Repasar canal → premium @caza_errores
+
+# 23/11/2026: publica en el premium lo que un canal de @kevincrestt ya tenía y siga en stock en Amazon
+# (el vigía solo copia lo nuevo). Sin avisos al privado por cada agotado. Modo seco: solo dice qué publicaría.
+on:
+  workflow_dispatch:
+    inputs:
+      canal:
+        description: "Canal a repasar (sin t.me/)"
+        required: true
+        default: erroresychollosbasicos
+      dias:
+        description: "Posts de los últimos N días"
+        required: false
+        default: "30"
+      modo:
+        description: "seco (solo lee) · canal (publica en @caza_errores) · privado (a tu chat)"
+        required: false
+        default: seco
+        type: choice
+        options: [seco, canal, privado]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repasar-canal
+  cancel-in-progress: false
+
+jobs:
+  repasar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Repasar
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+          AMAZON_CREATORS_ID: ${{ secrets.AMAZON_CREATORS_ID || secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_SECRET: ${{ secrets.AMAZON_CREATORS_SECRET || secrets.AMAZON_CREATORS_CLIENT_SECRET }}
+          PREMIUM_CHAT_ID: ${{ vars.PREMIUM_CHAT_ID }}
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          TG_SESSION: ${{ secrets.TG_SESSION }}
+        run: |
+          ARGS=(--repasar "${{ inputs.canal }}" --dias "${{ inputs.dias }}")
+          if [ "${{ inputs.modo }}" = "seco" ]; then ARGS+=(--seco); fi
+          if [ "${{ inputs.modo }}" = "privado" ]; then ARGS+=(--privado); fi
+          python -u espejo_canales.py "${ARGS[@]}"
+      - name: Guardar memoria
+        if: always() && inputs.modo == 'canal'
+        run: bash tools/guardar_espejo.sh "Memoria repaso ${{ inputs.canal }}"

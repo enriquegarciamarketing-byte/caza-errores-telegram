@@ -136,7 +136,8 @@ class LectorCuenta:
                     url = getattr(button, "url", None) or getattr(getattr(button, "type", None), "url", None)
                     if url:
                         enlaces.append(url)
-            posts.append({"canal": canal, "id": m.id, "texto": m.message or "", "enlaces": enlaces})
+            posts.append({"canal": canal, "id": m.id, "texto": m.message or "", "enlaces": enlaces,
+                          "fecha": m.date.timestamp() if getattr(m, "date", None) else None})
         return posts
 
 
@@ -428,11 +429,52 @@ def vuelta(api, tg, state: dict, privado_: bool, seco: bool, lector: "LectorCuen
             guardar_estado(state)
 
 
+class Callado:
+    """Bot de Telegram que publica pero no te manda avisos al privado (para repasar posts antiguos)."""
+
+    def __init__(self, tg):
+        self.tg = tg
+        self.saltados = 0
+
+    def call(self, method, params=None):
+        if method == "sendMessage":
+            self.saltados += 1
+            return {}
+        return self.tg.call(method, params)
+
+    def send_photo(self, *args, **kwargs):
+        return self.tg.send_photo(*args, **kwargs)
+
+
+def repasar(canal: str, dias: float, api, tg, state: dict, privado_: bool, seco: bool,
+            lector: "LectorCuenta | None") -> int:
+    """23/11/2026: publica en el premium lo que un canal ya tenía y siga en stock (sin avisos de agotados)."""
+    tipo = CANALES.get(canal, "general")
+    posts = lector.leer(canal, limite=200) if lector else leer_canal(canal)
+    desde = time.time() - dias * 86400
+    posts = sorted((p for p in posts if (p.get("fecha") or time.time()) >= desde), key=lambda p: p["id"])
+    log(f"Repaso {canal}: {len(posts)} posts de los últimos {dias:g} días")
+    callado = Callado(tg)
+    antes = len(state["publicados"])
+    for post in posts:
+        try:
+            procesar(post, tipo, api, callado, state, privado_, seco)
+        except Exception as exc:
+            log(f"  Error con {canal}/{post['id']}: {exc}")
+        if not seco:
+            time.sleep(3)  # sin ráfagas en el canal
+    nuevos = len(state["publicados"]) - antes
+    log(f"Repaso {canal} terminado: {nuevos} publicados, {callado.saltados} descartados (agotados, sin precio o sin ASIN)")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--minutos", type=float, default=345)
     parser.add_argument("--privado", action="store_true", help="Posts a tu chat privado, no al canal")
     parser.add_argument("--seco", action="store_true", help="Solo leer y decir qué publicaría")
+    parser.add_argument("--repasar", help="Canal cuyos posts ya publicados repasar (publica lo que siga en stock)")
+    parser.add_argument("--dias", type=float, default=30, help="Con --repasar: posts de los últimos N días")
     args = parser.parse_args()
 
     from scanner import Telegram
@@ -451,6 +493,8 @@ def main() -> int:
     lector = LectorCuenta.from_env()
     if lector is None:
         state["por_cuenta"] = []
+    if args.repasar:
+        return repasar(args.repasar, args.dias, api, tg, state, args.privado, args.seco, lector)
     fin = time.time() + args.minutos * 60
     log(f"Vigía en marcha {args.minutos:.0f} min sobre {', '.join(CANALES)}")
     while time.time() < fin:
