@@ -252,8 +252,10 @@ def edit_card(token: str, tg: Telegram, admin: int, message_id: int, motivo: str
     if fwd.get("show_caption_above_media"):
         media["show_caption_above_media"] = True
     fields = {"chat_id": PREMIUM, "message_id": str(message_id), "media": json.dumps(media, ensure_ascii=False)}
-    if fwd.get("reply_markup"):
-        fields["reply_markup"] = json.dumps(fwd["reply_markup"], ensure_ascii=False)
+    import botones_premium
+    markup = botones_premium.sin_amazon(fwd.get("reply_markup"))  # agotado: fuera «Comprar en Amazon», queda WhatsApp
+    if markup:
+        fields["reply_markup"] = json.dumps(markup, ensure_ascii=False)
     boundary = "----vigila" + uuid.uuid4().hex
     parts = [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
              for k, v in fields.items()]

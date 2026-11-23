@@ -125,10 +125,12 @@ def save_state(state: dict) -> None:
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
-def edit_media(token: str, chat, message_id: int, card: Path, caption: str) -> None:
+def edit_media(token: str, chat, message_id: int, card: Path, caption: str, markup: dict | None = None) -> None:
     boundary = "----premium" + uuid.uuid4().hex
     media = {"type": "photo", "media": "attach://photo", "caption": caption, "parse_mode": "HTML"}
     fields = {"chat_id": str(chat), "message_id": str(message_id), "media": json.dumps(media, ensure_ascii=False)}
+    if markup:  # sin reply_markup Telegram quita los botones del post
+        fields["reply_markup"] = json.dumps(markup, ensure_ascii=False)
     parts = [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
              for k, v in fields.items()]
     parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"card.jpg\"\r\n"
@@ -190,7 +192,8 @@ def publish(spec: dict, private: bool, token: str) -> int:
     card = crear_tarjeta(photo_for(spec, name), reference, current, spec["when"], OUT / f"{name}.jpg",
                         ref_label=spec.get("ref_label", "recomendado"))
     caption = caption_html(spec["copy"], links)
-    msg = Telegram(token).send_photo(chat, card, caption)
+    import botones_premium
+    msg = Telegram(token).send_photo(chat, card, caption, {"reply_markup": botones_premium.teclado(spec["link"])})
     where = "tu chat privado (prueba)" if private else "el canal premium"
     pct = f" · -{round((reference - current) / reference * 100)}%" if reference else " · sin precio de referencia"
     print(f"Post manual premium enviado a {where} (mensaje {msg['message_id']}){pct}")
@@ -215,7 +218,8 @@ def sold_out(message_id: int, token: str) -> int:
     card = crear_tarjeta(photo_for(post, name), post.get("reference"), post["current"], post["when"],
                          OUT / f"{name}_agotado.jpg", agotado=True,
                          ref_label=post.get("ref_label", "recomendado"))
-    edit_media(token, chat, message_id, card, post["caption"])
+    import botones_premium
+    edit_media(token, chat, message_id, card, post["caption"], botones_premium.teclado_terminado())
     post["agotado"] = int(time.time())
     save_state(state)
     print(f"Mensaje {message_id} del premium marcado como AGOTADO")
@@ -249,7 +253,9 @@ def editar(spec: dict, token: str) -> int:
     name = re.sub(r"[^A-Za-z0-9]", "", post.get("asin") or "") or str(message_id)
     card = crear_tarjeta(photo_for(post, name), reference, current, post["when"], OUT / f"{name}_editado.jpg",
                          ref_label=post.get("ref_label", "recomendado"))
-    edit_media(token, chat, message_id, card, post["caption"])
+    import botones_premium
+    markup = botones_premium.teclado_terminado() if post.get("agotado") else botones_premium.teclado(post["link"])
+    edit_media(token, chat, message_id, card, post["caption"], markup)
     post["editado"] = int(time.time())
     save_state(state)
     pct = f" · -{round((reference - current) / reference * 100)}%" if reference else ""

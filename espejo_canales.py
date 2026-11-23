@@ -205,8 +205,14 @@ def eur(value: float) -> str:
     return f"{whole.replace(',', '.')},{dec}€"
 
 
-def titulo_corto(title: str, limite: int = 75) -> str:
+def titulo_corto(title: str, limite: int = 70) -> str:
+    """Nombre limpio para el móvil: corta en el primer separador de la ficha (| - , «(») y a palabra entera."""
     title = re.sub(r"\s+", " ", title or "").strip()
+    for sep in (" | ", " - ", " – ", ", ", " ("):
+        i = title.find(sep)
+        if i >= 25:
+            title = title[:i]
+            break
     if len(title) <= limite:
         return title
     cut = title[:limite].rsplit(" ", 1)[0]
@@ -221,36 +227,35 @@ def enlace_visible(link: str) -> str:
 
 
 def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str) -> str:
+    """Copy pensado para el móvil (23/11/2026): líneas cortas, el precio solo una vez y el ahorro en euros.
+    El botón «Comprar en Amazon» y el de WhatsApp van debajo (botones_premium.py)."""
     current, reference = live["price"], live.get("reference")
     pct = round((reference - current) / reference * 100) if reference else None
     error = (pct is not None and pct >= ERROR_PCT) or "ERROR" in (extra.get("etiqueta") or "")
-    if error:
-        cabecera = f"❗️ #ErrorDePrecio · -{pct}%" if pct else "❗️ #ErrorDePrecio"
-    else:
-        cabecera = f"💎 #Chollo · -{pct}%" if pct else "💎 #Chollo"
+    cabecera = "❗️ #ErrorDePrecio" if error else "💎 #Chollo"
+    if pct:
+        cabecera += f" · -{pct}%"
 
-    if tipo == "warehouse" and extra.get("estado"):
-        gancho = f"De segunda mano de Amazon en estado {extra['estado'].replace('Reacondicionado - ', '').lower()}"
-    elif reference and pct and pct >= 50:
-        gancho = f"Te ahorras {round(reference - current)}€ frente al precio recomendado"
-    elif reference:
-        gancho = f"Baja a {eur(current)} desde {eur(reference)}, vuela rápido"
-    else:
-        gancho = "Precio que no suele durar en Amazon"
-    if tipo == "ropa" and extra.get("talla"):
-        gancho += f" en talla {extra['talla']}"
-    gancho += " 👀"
+    lines = [cabecera, "", titulo_corto(nombre), ""]
+    lines.append(f"💸 {eur(current)}" + (f" {eur(reference)}" if reference else ""))
+    if reference:
+        frente = " frente al nuevo" if tipo == "warehouse" else ""
+        lines.append(f"💰 Te ahorras {eur(reference - current)}{frente}")
 
-    precio = f"💸 Lo pillas a {eur(current)}" + (f" {eur(reference)}" if reference else "")
+    detalles = []
     if tipo == "warehouse":
-        nombre = f"{nombre} · segunda mano"
-    lines = [cabecera, "", nombre, "", gancho, "", precio]
+        estado = (extra.get("estado") or "").replace("Reacondicionado - ", "").strip()
+        detalles.append("♻️ Segunda mano" + (f" · {estado[:1].upper()}{estado[1:]}" if estado else ""))
+    if tipo == "ropa" and extra.get("talla"):
+        detalles.append(f"👕 Talla {extra['talla']}")
     if extra.get("aviso"):
-        lines.append(f"⚠️ {extra['aviso']}")
+        detalles.append(f"⚠️ {extra['aviso']}")
     vendedor = extra.get("vendedor") or ""
     if vendedor and not re.search(r"vendido (y enviado )?por amazon\b", vendedor, re.I):
-        lines.append(f"🏷️ {vendedor}")
-    lines += ["", f"🌟{enlace_visible(link)}"]
+        detalles.append(f"🏷️ {vendedor}")
+    if detalles:
+        lines += [""] + detalles
+    lines += ["", f"🛒 {enlace_visible(link)}"]
     return "\n".join(lines)
 
 
@@ -342,7 +347,7 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     if f"tag={TAG}" not in link or "kevincrestt" in link:
         avisar(tg, f"⚠️ Vigía: el enlace de {origen} no queda con tu tag, no lo publico")
         return
-    if ya_publicado(asin, state):
+    if ya_publicado(asin, state) and not privado_:  # en prueba (privado) se enseña igual
         log(f"  {origen}: {asin} ya está en el premium, lo salto")
         return
 
@@ -374,7 +379,8 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     caption = caption_html(copy, {enlace_visible(link): link})
     import privado
     chat = privado.admin_id() if privado_ else PREMIUM
-    msg = tg.send_photo(chat, card, caption)
+    import botones_premium
+    msg = tg.send_photo(chat, card, caption, {"reply_markup": botones_premium.teclado(link)})
     pct = round((live["reference"] - live["price"]) / live["reference"] * 100) if live["reference"] else 0
     log(f"  PUBLICADO {asin} ({nombre}) · {eur(live['price'])} · -{pct}% → mensaje {msg['message_id']}"
         + (" [privado]" if privado_ else ""))

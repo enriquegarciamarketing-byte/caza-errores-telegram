@@ -24,8 +24,9 @@ class FakeTG:
     def __init__(self):
         self.sent, self.msgs = [], []
 
-    def send_photo(self, chat, card, caption):
+    def send_photo(self, chat, card, caption, extra=None):
         self.sent.append((chat, caption))
+        self.markups = getattr(self, "markups", []) + [(extra or {}).get("reply_markup")]
         return {"message_id": 500 + len(self.sent)}
 
     def call(self, method, params):
@@ -58,8 +59,8 @@ class Espejo(unittest.TestCase):
         self.assertEqual(d["nombre"], "INSTA360 ACE PRO")
         copy = ec.hacer_copy(d["nombre"], {"price": 191.2, "reference": None}, d, "warehouse",
                              "https://www.amazon.es/dp/B0CNGQYF5Z?tag=cazachollos0c-21")
-        self.assertIn("INSTA360 ACE PRO · segunda mano", copy)
-        self.assertIn("estado como nuevo", copy)
+        self.assertIn("\nINSTA360 ACE PRO\n", copy)
+        self.assertIn("♻️ Segunda mano · Como nuevo", copy)
         self.assertIn("⚠️ El embalaje llegará dañado", copy)
         self.assertNotIn("🏷️", copy)
 
@@ -89,16 +90,19 @@ class Espejo(unittest.TestCase):
         copy = ec.hacer_copy("Bolso X", live, {"vendedor": "Vendido por Kalado y enviado por Amazon"}, "general",
                              "https://www.amazon.es/dp/B0D2RYP973?tag=cazachollos0c-21")
         self.assertTrue(copy.startswith("❗️ #ErrorDePrecio · -74%"))
-        self.assertIn("💸 Lo pillas a 27,92€ 105,62€", copy)
+        self.assertIn("💸 27,92€ 105,62€", copy)
+        self.assertIn("💰 Te ahorras 77,70€", copy)
         self.assertIn("🏷️ Vendido por Kalado", copy)
-        self.assertIn("🌟amazon.es/dp/B0D2RYP973", copy)
+        self.assertIn("🛒 amazon.es/dp/B0D2RYP973", copy)
         self.assertNotIn("tag=", copy)
         copy2 = ec.hacer_copy("X", {"price": 60.0, "reference": 100.0}, {"vendedor": "Vendido por Amazon"},
                               "general", "L")
         self.assertTrue(copy2.startswith("💎 #Chollo · -40%"))
         self.assertNotIn("🏷️", copy2)
         ropa = ec.hacer_copy("Vaqueros", {"price": 15.9, "reference": 89.95}, {"talla": "38W / 36L"}, "ropa", "L")
-        self.assertIn("en talla 38W / 36L 👀", ropa)
+        self.assertIn("👕 Talla 38W / 36L", ropa)
+        largo = "Neutrogena T/Gel Champú Anticaspa para Cabello Graso 250 ml 2 uds | Con extracto de alquitrán"
+        self.assertEqual(ec.titulo_corto(largo), "Neutrogena T/Gel Champú Anticaspa para Cabello Graso 250 ml 2 uds")
 
     def test_vuelta_publica_solo_lo_nuevo_con_tu_tag(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -124,7 +128,11 @@ class Espejo(unittest.TestCase):
                     chat, caption = tg.sent[0]
                     self.assertEqual(chat, ec.PREMIUM)
                     self.assertIn("tag=cazachollos0c-21", caption)
-                    self.assertRegex(caption, r'🌟<a href="https://www\.amazon\.es/dp/\w{10}\?tag=cazachollos0c-21">amazon\.es/dp/\w{10}</a>')
+                    self.assertRegex(caption, r'🛒 <a href="https://www\.amazon\.es/dp/\w{10}\?tag=cazachollos0c-21">amazon\.es/dp/\w{10}</a>')
+                    botones = tg.markups[0]["inline_keyboard"]
+                    self.assertEqual(botones[0][0]["text"], "🛒 Comprar en Amazon")
+                    self.assertIn("tag=cazachollos0c-21", botones[0][0]["url"])
+                    self.assertIn("whatsapp.com/channel/", botones[1][0]["url"])
                     self.assertNotIn("kevincrestt", caption)
                     self.assertIn("<b>Cecotec Freidora de Aire</b>", caption)
                     self.assertIn("<s>89,99€</s>", caption)
@@ -182,3 +190,14 @@ class LectorCuentaTest(unittest.TestCase):
         post = lector.leer("erroresychollosbasicos")[0]
         self.assertEqual(post["enlaces"], ["https://www.amazon.es/dp/B0AAAAAAAA", "https://amzn.eu/d/abc", "https://amzn.eu/d/xyz"])
         self.assertTrue(ec.enlace_amazon(post))
+
+
+class BotonesPremiumTest(unittest.TestCase):
+    def test_agotado_quita_amazon_y_deja_whatsapp(self):
+        import botones_premium as bp
+        t = bp.teclado("https://www.amazon.es/dp/B0AAAAAAAA?tag=cazachollos0c-21")
+        self.assertEqual(len(t["inline_keyboard"]), 2)
+        fin = bp.sin_amazon(t)
+        self.assertEqual(len(fin["inline_keyboard"]), 1)
+        self.assertIn("whatsapp.com", fin["inline_keyboard"][0][0]["url"])
+        self.assertEqual(bp.teclado_terminado(), fin)
