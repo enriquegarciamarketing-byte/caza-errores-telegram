@@ -1,0 +1,28 @@
+name: Sesión Telegram (QR) para el vigía
+
+# 23/11/2026: saca la sesión de la cuenta de Telegram que lee los canales sin vista web (ropa y básicos).
+# Te llega un QR al privado del bot; lo escaneas desde el móvil y te llega la sesión para el secreto TG_SESSION.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sesion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "telethon>=1.36,<2" "qrcode[pil]>=7"
+      - name: QR y sesión
+        env:
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          TG_2FA: ${{ secrets.TG_2FA }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+        run: python -u tools/sesion_qr.py
