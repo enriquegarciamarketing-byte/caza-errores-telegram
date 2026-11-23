@@ -39,6 +39,21 @@ def main() -> int:
     return asyncio.run(login(int(api_id), api_hash, tg, chat))
 
 
+async def rematar(client, qr) -> bool:
+    """Tras un timeout: si el QR ya se escaneó, completa el login (también si la cuenta vive en otro DC);
+    si no, deja preparado un QR nuevo."""
+    from telethon.tl import functions, types
+    resp = await client(qr._request)
+    if isinstance(resp, types.auth.LoginTokenMigrateTo):
+        await client._switch_dc(resp.dc_id)
+        resp = await client(functions.auth.ImportLoginTokenRequest(resp.token))
+    if isinstance(resp, types.auth.LoginTokenSuccess):
+        await client._on_login(resp.authorization.user)
+        return True
+    qr._resp = resp  # QR nuevo
+    return False
+
+
 async def login(api_id: int, api_hash: str, tg, chat: int) -> int:
     import qrcode
     from telethon import TelegramClient
@@ -63,7 +78,7 @@ async def login(api_id: int, api_hash: str, tg, chat: int) -> int:
                                         "los canales: Ajustes → Dispositivos → Vincular dispositivo de escritorio.\n"
                                         "Caduca en unos 30 s; si caduca te llega otro.")
         anterior = msg["message_id"]
-        espera = max(5.0, (qr.expires - datetime.now(timezone.utc)).total_seconds())
+        espera = max(5.0, (qr.expires - datetime.now(timezone.utc)).total_seconds() + 3)
         try:
             await qr.wait(timeout=espera)
             ok = True
@@ -78,7 +93,10 @@ async def login(api_id: int, api_hash: str, tg, chat: int) -> int:
             ok = True
             break
         except (asyncio.TimeoutError, TimeoutError):
-            await qr.recreate()
+            # A veces el aviso del escaneo no llega: se pregunta a Telegram si el QR ya se aceptó.
+            if await rematar(client, qr):
+                ok = True
+                break
     if anterior:
         try:
             tg.call("deleteMessage", {"chat_id": chat, "message_id": anterior})
