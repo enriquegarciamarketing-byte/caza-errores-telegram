@@ -1031,13 +1031,14 @@
    "asin": "B0BSLL86KF",
    "link": "https://www.amazon.es/dp/B0BSLL86KF?tag=cazachollos0c-21",
    "image": "https://m.media-amazon.com/images/I/41SnmHLOXZL._SL500_.jpg",
-   "reference": null,
+   "reference": 119.81,
    "current": 55.0,
    "when": "23/11 · 17:09",
-   "ref_label": "recomendado",
-   "caption": "💎 #Chollo\n#Gaming\n\n<b>MSI MPG VELOX 300R AIRFLOW PZ</b>\n\n💸 55,00€\n\n🛒 <a href=\"https://www.amazon.es/dp/B0BSLL86KF?tag=cazachollos0c-21\">amazon.es/dp/B0BSLL86KF</a>",
+   "ref_label": "normal",
+   "caption": "💎 #Chollo · -54%\n#Gaming\n\n<b>MSI MPG VELOX 300R AIRFLOW PZ</b>\n\n💸 55,00€ <s>119,81€</s>\n💰 Te ahorras 64,81€\n\n🛒 <a href=\"https://www.amazon.es/dp/B0BSLL86KF?tag=cazachollos0c-21\">amazon.es/dp/B0BSLL86KF</a>",
    "t": 1795450200,
-   "auto": "https://t.me/erroresychollos/107"
+   "auto": "https://t.me/erroresychollos/107",
+   "editado": 1795450676
   }
  ]
 }
