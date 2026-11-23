@@ -2,7 +2,7 @@
  "ultimo": {
   "erroresychollos": 107,
   "erroresycholloswarehouse": 15,
-  "ErroresRutaYChollos": 211,
+  "ErroresRutaYChollos": 212,
   "erroresychollosropa": 89,
   "erroresychollosbasicos": 143
  },
@@ -132,6 +132,12 @@
    "origen": "https://t.me/ErroresRutaYChollos/212",
    "message_id": 379,
    "t": 1795452623
+  },
+  {
+   "asin": "B08HH85WC1",
+   "origen": "https://t.me/ErroresRutaYChollos/213",
+   "message_id": 382,
+   "t": 1795455842
   }
  ],
  "sin_vista": [],
