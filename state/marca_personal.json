@@ -6,7 +6,8 @@
    2,
    3,
    4,
-   5
+   5,
+   6
   ],
   "ahorro": [
    0,
@@ -190,6 +191,11 @@
    "t": 1795391168,
    "slot": "manana",
    "topic": "El bot por dentro"
+  },
+  {
+   "t": 1795465790,
+   "slot": "tarde",
+   "topic": "Finanzas e inversión"
   }
  ]
 }
