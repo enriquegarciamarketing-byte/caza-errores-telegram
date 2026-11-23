@@ -175,10 +175,10 @@ class LectorCuentaTest(unittest.TestCase):
 
     def test_enlaces_de_botones_y_texto(self):
         from types import SimpleNamespace as NS
-        msg = NS(id=7, message="Chollo", reply_markup=NS(rows=[NS(buttons=[NS(url="https://amzn.eu/d/abc")])]),
+        msg = NS(id=7, message="Chollo", reply_markup=NS(rows=[NS(buttons=[NS(url="https://amzn.eu/d/abc"), NS(type=NS(url="https://amzn.eu/d/xyz"))])]),
                  get_entities_text=lambda: [(NS(url="https://www.amazon.es/dp/B0AAAAAAAA"), "aquí")])
         lector = ec.LectorCuenta.__new__(ec.LectorCuenta)
         lector.client = NS(get_messages=lambda canal, limit: [msg])
         post = lector.leer("erroresychollosbasicos")[0]
-        self.assertEqual(post["enlaces"], ["https://www.amazon.es/dp/B0AAAAAAAA", "https://amzn.eu/d/abc"])
+        self.assertEqual(post["enlaces"], ["https://www.amazon.es/dp/B0AAAAAAAA", "https://amzn.eu/d/abc", "https://amzn.eu/d/xyz"])
         self.assertTrue(ec.enlace_amazon(post))

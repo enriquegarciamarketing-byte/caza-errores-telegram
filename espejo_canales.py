@@ -132,9 +132,10 @@ class LectorCuenta:
                 if url:
                     enlaces.append(url)
             for row in getattr(m.reply_markup, "rows", None) or []:  # botón «Comprar en Amazon»
-                for button in row.buttons:
-                    if getattr(button, "url", None):
-                        enlaces.append(button.url)
+                for button in row.buttons:  # según la versión: button.url o button.type.url
+                    url = getattr(button, "url", None) or getattr(getattr(button, "type", None), "url", None)
+                    if url:
+                        enlaces.append(url)
             posts.append({"canal": canal, "id": m.id, "texto": m.message or "", "enlaces": enlaces})
         return posts
 
