@@ -1,3 +1,4 @@
 Pillow>=10.0,<12
 opencv-contrib-python-headless>=4.10,<4.13
 telethon>=1.36,<2
+pytesseract>=0.3.10,<0.4

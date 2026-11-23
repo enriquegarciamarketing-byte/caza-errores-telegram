@@ -44,6 +44,8 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: python -m pip install -r requirements.txt
+      # OCR para leer los precios de la tarjeta de Kevin (precios_kevin.py, 23/11/2026)
+      - run: sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-spa >/dev/null
       - name: Vigilar los canales
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

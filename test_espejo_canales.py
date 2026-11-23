@@ -113,6 +113,7 @@ class Espejo(unittest.TestCase):
                  mock.patch("premium_manual.photo_for", lambda spec, name: tmp / "foto.jpg"), \
                  mock.patch("tarjeta_premium.crear_tarjeta", lambda *a, **k: tmp / "card.jpg"), \
                  mock.patch.object(ec, "CANALES", {"erroresychollos": "general"}), \
+                 mock.patch.object(ec, "reventa", lambda *a, **k: None), \
                  mock.patch.dict(os.environ, {"ADMIN_CHAT_ID": "123"}):
                 tg = FakeTG()
                 api = FakeAPI({
@@ -143,6 +144,54 @@ class Espejo(unittest.TestCase):
                     # Otra vuelta: nada nuevo, nada repetido
                     ec.vuelta(api, tg, state, False, False)
                     self.assertEqual(len(tg.sent), 1)
+
+    def test_precios_de_la_tarjeta_de_kevin(self):
+        """23/11/2026: los precios del post son los de su tarjeta (no los de la API) y el tachado es «normal»."""
+        foto = ('<a class="tgme_widget_message_photo_wrap 5 " href="https://t.me/erroresychollos/101" '
+                'style="width:800px;background-image:url(\'https://cdn4.telesco.pe/file/abc.jpg\')"></a>')
+        page = PAGE.replace('<div class="tgme_widget_message_text js-message_text" dir="auto">⚡', foto
+                            + '<div class="tgme_widget_message_text js-message_text" dir="auto">⚡', 1)
+        posts = ec.parse_canal(page)
+        self.assertEqual(posts[0]["foto"], "https://cdn4.telesco.pe/file/abc.jpg")
+        self.assertIsNone(posts[1]["foto"])
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            tarjetas = []
+            with mock.patch.object(ec, "STATE", tmp / "espejo.json"), \
+                 mock.patch("premium_manual.STATE", tmp / "manual.json"), \
+                 mock.patch("premium_manual.OUT", tmp / "out"), \
+                 mock.patch("premium_manual.photo_for", lambda spec, name: tmp / "foto.jpg"), \
+                 mock.patch("tarjeta_premium.crear_tarjeta", lambda *a, **k: tarjetas.append((a, k)) or tmp / "c.jpg"), \
+                 mock.patch.object(ec, "reventa", lambda *a, **k: None), \
+                 mock.patch("precios_kevin.desde_post", lambda post: {"current": 55.0, "reference": 119.81,
+                                                                      "ahorro": 64.81, "pct": 54}):
+                tg = FakeTG()
+                api = FakeAPI({"B0HHMVKJ2C": {"price": 55.0, "saving_basis": None, "in_stock": True,
+                                              "title": "MSI", "image": "http://img/a.jpg"}})
+                ec.procesar(posts[0], "general", api, tg, {"ultimo": {}, "publicados": []}, False, False)
+                caption = tg.sent[0][1]
+                self.assertIn("💎 #Chollo · -54%", caption)
+                self.assertIn("💸 55,00€ <s>119,81€</s>", caption)
+                self.assertIn("💰 Te ahorras 64,81€", caption)
+                self.assertEqual(tarjetas[0][0][1:3], (119.81, 55.0))
+                self.assertEqual(tarjetas[0][1]["ref_label"], "normal")
+
+    def test_reventa_y_roi_en_el_copy(self):
+        """23/11/2026: en erroresychollos y erroresycholloswarehouse el copy lleva reventa y ROI."""
+        venta = {"precio": 77.0, "beneficio": 37.0, "roi": 93, "fuente": "x"}
+        copy = ec.hacer_copy("MSI MPG VELOX", {"price": 40.0, "reference": 120.0}, {}, "general", "L", venta)
+        self.assertIn("♻️ En segunda mano ronda los 77€\n📈 +37€ por unidad · ROI +93%", copy)
+        wh = ec.hacer_copy("Lefant M3", {"price": 40.0, "reference": 120.0}, {}, "warehouse", "L", venta)
+        self.assertIn("💶 Se revende por unos 77€", wh)
+        par = ec.hacer_copy("Nike Zapatillas Air Max", {"price": 40.0, "reference": 120.0}, {}, "general", "L", venta)
+        self.assertIn("por par", par)
+        # Sin anuncios suficientes: precio normal × factor de la categoría (0,6 por defecto)
+        with mock.patch("resale_market.lookup", side_effect=RuntimeError("Wallapop 403")):
+            v = ec.reventa("MSI MPG VELOX 300R", "", 55.0, 119.81)
+        self.assertEqual(v["precio"], 71.89)
+        self.assertEqual(v["roi"], 31)
+        with mock.patch("resale_market.lookup", return_value={"price": 50.0, "count": 6, "source_label": "WALLAPOP"}):
+            self.assertIsNone(ec.reventa("X Y Z", "", 55.0, 119.81))  # sin beneficio no se pone
 
     def test_primera_vez_no_republica_lo_antiguo(self):
         with tempfile.TemporaryDirectory() as tmp, \

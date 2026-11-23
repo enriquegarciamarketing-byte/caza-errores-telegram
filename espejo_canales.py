@@ -10,8 +10,10 @@ Cómo funciona
   con una cuenta de Telegram (Telethon) si están los secretos TG_API_ID, TG_API_HASH y TG_SESSION
   (la sesión se saca una vez en el Mac con tools/sesion_telegram.py). Sin esos secretos, esos canales no se copian.
 - De cada post nuevo saca el ASIN del botón «Comprar en Amazon» (le quita el tag kevincrestt-21).
-- Precio, precio recomendado, stock y foto salen SIEMPRE de la API oficial de Amazon (nada de copiar su precio).
-  En el canal warehouse el precio es SIEMPRE el de segunda mano y el nuevo va tachado de referencia.
+- Stock y foto salen de la API oficial de Amazon. Los precios, desde el 23/11/2026, son SIEMPRE los de la tarjeta
+  de Kevin (Enrique: «pon los datos de Kevin, tenlo en cuenta para las próximas veces»): precio actual, ahorro y
+  -% leídos con OCR (precios_kevin.py) y el normal = actual + ahorro. Si su tarjeta no se puede leer o no cuadra,
+  se usan los de la API como antes. En el canal warehouse el precio es el de segunda mano y el nuevo va tachado.
 - Monta la tarjeta del premium (tarjeta_premium.py) y el copy de Enrique, con su enlace cazachollos0c-21,
   y lo publica en el canal. Queda en state/premium_manual.json para que la vigilancia lo pase a AGOTADO.
 - Si algo falla (sin ASIN, sin precio, agotado), no publica y avisa a Enrique en su privado con el enlace.
@@ -53,6 +55,8 @@ CANALES = {
 CADA = 20          # segundos entre vueltas
 REPETIDO_DIAS = 3  # un mismo ASIN no se vuelve a publicar en estos días
 ERROR_PCT = 70     # desde -70% es #ErrorDePrecio (umbral del premium)
+# 23/11/2026: en estos dos canales el copy lleva la reventa y el ROI (Enrique los quiere para revender)
+REVENTA_CANALES = {"erroresychollos", "erroresycholloswarehouse"}
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
@@ -66,6 +70,7 @@ def log(msg: str) -> None:
 POST_RE = re.compile(r'data-post="([A-Za-z0-9_]+)/(\d+)"')
 HREF_RE = re.compile(r'href="([^"]+)"')
 TEXT_RE = re.compile(r'<div class="tgme_widget_message_text[^"]*"[^>]*>(.*?)</div>', re.S)
+FOTO_RE = re.compile(r"tgme_widget_message_photo_wrap[^>]*background-image:url\('([^']+)'\)")
 
 
 def html_a_texto(fragment: str) -> str:
@@ -86,6 +91,7 @@ def parse_canal(page: str) -> list[dict]:
             "id": int(m.group(2)),
             "texto": html_a_texto(text.group(1)) if text else "",
             "enlaces": [html.unescape(h) for h in HREF_RE.findall(chunk)],
+            "foto": (lambda f: html.unescape(f.group(1)) if f else None)(FOTO_RE.search(chunk)),  # su tarjeta
         })
     return posts
 
@@ -136,8 +142,9 @@ class LectorCuenta:
                     url = getattr(button, "url", None) or getattr(getattr(button, "type", None), "url", None)
                     if url:
                         enlaces.append(url)
+            foto = (lambda msg=m: self.client.download_media(msg, file=bytes)) if getattr(m, "photo", None) else None
             posts.append({"canal": canal, "id": m.id, "texto": m.message or "", "enlaces": enlaces,
-                          "fecha": m.date.timestamp() if getattr(m, "date", None) else None})
+                          "fecha": m.date.timestamp() if getattr(m, "date", None) else None, "foto_bytes": foto})
         return posts
 
 
@@ -226,7 +233,40 @@ def enlace_visible(link: str) -> str:
     return f"amazon.es/dp/{m.group(1)}" if m else link
 
 
-def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str) -> str:
+def reventa(nombre: str, title: str, current: float, reference: float | None) -> dict | None:
+    """Precio de reventa como un revendedor: anuncios de Wallapop/Vinted/Milanuncios (percentil 40) y, si no hay
+    suficientes, el precio normal × el factor de su categoría (config.json → resale.estimate).
+    ROI = (reventa - precio) / precio, como en sus posts a mano. Sin beneficio, no se pone nada."""
+    import resale_market
+    import premium
+    try:
+        rules = json.loads((ROOT / "config.json").read_text(encoding="utf-8")).get("resale") or {}
+    except (OSError, ValueError):
+        rules = {}
+    cand = {"brand": "", "name": nombre, "title": title or nombre, "price": current}
+    market = rules.get("wallapop") or {}
+    precio, fuente = None, ""
+    try:
+        res = resale_market.lookup(cand, rules, None)
+        if res.get("price") and int(res.get("count") or 0) >= int(market.get("min_listings", 3)):
+            precio, fuente = float(res["price"]), f"{res.get('count')} anuncios {res.get('source_label') or ''}".strip()
+    except Exception as exc:  # Wallapop caído o bloqueado: se estima
+        log(f"  reventa: sin anuncios ({exc})")
+    if precio is None and reference:
+        est = (rules.get("estimate") or {})
+        cat = premium.priority_info(cand, rules).get("id") or ""
+        factor = float((est.get("factors") or {}).get(cat, est.get("default_factor", 0.6)))
+        precio, fuente = round(reference * factor, 2), f"estimación {round(factor * 100)}% del normal"
+    if not precio:
+        return None
+    beneficio = precio - current
+    log(f"  reventa ~{precio:.0f}€ ({fuente}) · beneficio {beneficio:.0f}€")
+    if beneficio < 1:
+        return None
+    return {"precio": precio, "beneficio": beneficio, "roi": round(beneficio / current * 100), "fuente": fuente}
+
+
+def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str, venta: dict | None = None) -> str:
     """Copy pensado para el móvil (23/11/2026): líneas cortas, el precio solo una vez y el ahorro en euros.
     El botón «Comprar en Amazon» y el de WhatsApp van debajo (botones_premium.py)."""
     current, reference = live["price"], live.get("reference")
@@ -243,6 +283,13 @@ def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str) -> st
     if reference:
         frente = " frente al nuevo" if tipo == "warehouse" else ""
         lines.append(f"💰 Te ahorras {eur(reference - current)}{frente}")
+    if venta:  # 23/11/2026: reventa y ROI (canales erroresychollos y erroresycholloswarehouse)
+        texto = f"{nombre} {live.get('title') or ''}".lower()
+        unidad = "por par" if re.search(r"zapatill|zapato|bota|sandalia|deportiva|sneaker", texto) else "por unidad"
+        precio = f"{venta['precio']:.0f}€"
+        lines.append(f"💶 Se revende por unos {precio}" if tipo == "warehouse"
+                     else f"♻️ En segunda mano ronda los {precio}")
+        lines.append(f"📈 +{venta['beneficio']:.0f}€ {unidad} · ROI +{venta['roi']}%")
 
     detalles = []
     if tipo == "warehouse":
@@ -349,7 +396,7 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     if f"tag={TAG}" not in link or "kevincrestt" in link:
         avisar(tg, f"⚠️ Vigía: el enlace de {origen} no queda con tu tag, no lo publico")
         return
-    if ya_publicado(asin, state) and not privado_:  # en prueba (privado) se enseña igual
+    if ya_publicado(asin, state) and not (privado_ or seco):  # en prueba (privado o seco) se enseña igual
         log(f"  {origen}: {asin} ya está en el premium, lo salto")
         return
 
@@ -361,10 +408,22 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
         return
     basis = live.get("saving_basis")
     live["reference"] = basis if basis and basis > live["price"] else None
+    import precios_kevin
+    kevin = precios_kevin.desde_post(post)  # 23/11/2026: los precios, siempre los de la tarjeta de Kevin
+    if kevin:
+        log(f"  {asin}: precios de Kevin {kevin['current']} / {kevin['reference']} (-{kevin['pct']}%)"
+            f" · API {live['price']} / {live['reference']}")
+        live["price"], live["reference"] = kevin["current"], kevin["reference"]
+        if tipo != "warehouse":
+            live["ref_label"] = "normal"
+    else:
+        log(f"  {asin}: no leo los precios de la tarjeta de Kevin, uso los de la API")
 
     extra = datos_post(post["texto"])
     nombre = extra.get("nombre") or titulo_corto(live.get("title") or "")
-    copy = hacer_copy(nombre, live, extra, tipo, link)
+    venta = reventa(nombre, live.get("title") or "", live["price"], live["reference"]) \
+        if post["canal"] in REVENTA_CANALES else None
+    copy = hacer_copy(nombre, live, extra, tipo, link, venta)
     if seco:
         log(f"  [seco] {origen} → publicaría:\n{copy}")
         return
