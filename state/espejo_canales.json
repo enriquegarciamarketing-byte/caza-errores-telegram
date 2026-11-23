@@ -2,7 +2,9 @@
  "ultimo": {
   "erroresychollos": 106,
   "erroresycholloswarehouse": 14,
-  "ErroresRutaYChollos": 203
+  "ErroresRutaYChollos": 203,
+  "erroresychollosropa": 86,
+  "erroresychollosbasicos": 139
  },
  "publicados": [
   {
@@ -48,9 +50,9 @@
    "t": 1795412420
   }
  ],
- "sin_vista": [
+ "sin_vista": [],
+ "por_cuenta": [
   "erroresychollosropa",
   "erroresychollosbasicos"
- ],
- "por_cuenta": []
+ ]
 }
