@@ -149,3 +149,36 @@ class Espejo(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LectorCuentaTest(unittest.TestCase):
+    """23/11/2026: ropa y básicos no tienen vista web; se leen con la cuenta de Telegram."""
+
+    def test_sin_vista_web_usa_la_cuenta(self):
+        class Lector:
+            def leer(self, canal, limite=20):
+                return [{"canal": canal, "id": 50, "texto": "SEGUNDA MANO",
+                         "enlaces": ["https://www.amazon.es/dp/B0HHMVKJ2C?tag=kevincrestt-21"]}]
+        state = {"ultimo": {}, "publicados": []}
+        with mock.patch.object(ec, "leer_canal", return_value=[]):
+            posts = ec.leer_posts("erroresychollosropa", Lector(), state)
+            self.assertEqual(posts[0]["id"], 50)
+            self.assertIn("erroresychollosropa", state["por_cuenta"])
+        with mock.patch.object(ec, "leer_canal", side_effect=AssertionError("no debe ir a la web")):
+            self.assertEqual(ec.leer_posts("erroresychollosropa", Lector(), state)[0]["id"], 50)
+
+    def test_sin_cuenta_sigue_con_la_web(self):
+        with mock.patch.object(ec, "leer_canal", return_value=[]):
+            self.assertEqual(ec.leer_posts("erroresychollosropa", None, {}), [])
+        with mock.patch.dict(os.environ, {"TG_API_ID": "", "TG_API_HASH": "", "TG_SESSION": ""}):
+            self.assertIsNone(ec.LectorCuenta.from_env())
+
+    def test_enlaces_de_botones_y_texto(self):
+        from types import SimpleNamespace as NS
+        msg = NS(id=7, message="Chollo", reply_markup=NS(rows=[NS(buttons=[NS(url="https://amzn.eu/d/abc")])]),
+                 get_entities_text=lambda: [(NS(url="https://www.amazon.es/dp/B0AAAAAAAA"), "aquí")])
+        lector = ec.LectorCuenta.__new__(ec.LectorCuenta)
+        lector.client = NS(get_messages=lambda canal, limit: [msg])
+        post = lector.leer("erroresychollosbasicos")[0]
+        self.assertEqual(post["enlaces"], ["https://www.amazon.es/dp/B0AAAAAAAA", "https://amzn.eu/d/abc"])
+        self.assertTrue(ec.enlace_amazon(post))

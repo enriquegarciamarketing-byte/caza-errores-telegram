@@ -6,6 +6,9 @@ se detecten al instante y se publiquen en su premium con su formato.
 
 Cómo funciona
 - Mira la vista pública de cada canal (t.me/s/<canal>) cada ~20 s. No hace falta cuenta ni sesión de Telegram.
+  23/11/2026: los canales que tienen la vista web desactivada (erroresychollosropa, erroresychollosbasicos) se leen
+  con una cuenta de Telegram (Telethon) si están los secretos TG_API_ID, TG_API_HASH y TG_SESSION
+  (la sesión se saca una vez en el Mac con tools/sesion_telegram.py). Sin esos secretos, esos canales no se copian.
 - De cada post nuevo saca el ASIN del botón «Comprar en Amazon» (le quita el tag kevincrestt-21).
 - Precio, precio recomendado, stock y foto salen SIEMPRE de la API oficial de Amazon (nada de copiar su precio).
   En el canal warehouse el precio es SIEMPRE el de segunda mano y el nuevo va tachado de referencia.
@@ -92,6 +95,62 @@ def leer_canal(canal: str) -> list[dict]:
     with urllib.request.urlopen(req, timeout=20) as resp:
         page = resp.read().decode("utf-8", "replace")
     return [p for p in parse_canal(page) if p["canal"].lower() == canal.lower()]
+
+
+class LectorCuenta:
+    """Lee los canales sin vista web pública con una cuenta de Telegram (solo lectura, sesión en TG_SESSION)."""
+
+    def __init__(self, api_id: int, api_hash: str, session: str):
+        from telethon.sync import TelegramClient
+        from telethon.sessions import StringSession
+        self.client = TelegramClient(StringSession(session), api_id, api_hash)
+        self.client.connect()
+        if not self.client.is_user_authorized():
+            raise RuntimeError("la sesión TG_SESSION ya no vale (hay que sacarla otra vez)")
+
+    @classmethod
+    def from_env(cls) -> "LectorCuenta | None":
+        api_id = os.environ.get("TG_API_ID", "").strip()
+        api_hash = os.environ.get("TG_API_HASH", "").strip()
+        session = os.environ.get("TG_SESSION", "").strip()
+        if not (api_id and api_hash and session):
+            return None
+        try:
+            lector = cls(int(api_id), api_hash, session)
+        except Exception as exc:  # sin cuenta el vigía sigue con la vista web
+            log(f"Cuenta de Telegram no disponible ({exc})")
+            return None
+        log("Cuenta de Telegram lista para los canales sin vista web")
+        return lector
+
+    def leer(self, canal: str, limite: int = 20) -> list[dict]:
+        posts = []
+        for m in self.client.get_messages(canal, limit=limite):
+            enlaces = []
+            for ent, txt in (m.get_entities_text() or []):
+                url = getattr(ent, "url", None) or (txt if type(ent).__name__ == "MessageEntityUrl" else None)
+                if url:
+                    enlaces.append(url)
+            for row in getattr(m.reply_markup, "rows", None) or []:  # botón «Comprar en Amazon»
+                for button in row.buttons:
+                    if getattr(button, "url", None):
+                        enlaces.append(button.url)
+            posts.append({"canal": canal, "id": m.id, "texto": m.message or "", "enlaces": enlaces})
+        return posts
+
+
+def leer_posts(canal: str, lector: "LectorCuenta | None", state: dict) -> list[dict]:
+    """Vista web t.me/s/ y, si el canal la tiene desactivada, la cuenta de Telegram."""
+    if lector and canal in state.get("por_cuenta", []):
+        return lector.leer(canal)
+    posts = leer_canal(canal)
+    if posts or not lector:
+        return posts
+    posts = lector.leer(canal)
+    if posts:
+        state.setdefault("por_cuenta", []).append(canal)
+        log(f"{canal}: sin vista web, lo leo con la cuenta de Telegram")
+    return posts
 
 
 def enlace_amazon(post: dict) -> str | None:
@@ -330,18 +389,22 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     subir_memoria(f"Vigía: {asin} publicado en el premium")
 
 
-def vuelta(api, tg, state: dict, privado_: bool, seco: bool) -> None:
+def vuelta(api, tg, state: dict, privado_: bool, seco: bool, lector: "LectorCuenta | None" = None) -> None:
     for canal, tipo in CANALES.items():
         try:
-            posts = leer_canal(canal)
+            posts = leer_posts(canal, lector, state)
         except (urllib.error.URLError, TimeoutError, OSError) as exc:
             log(f"{canal}: no responde ({exc})")
+            continue
+        except Exception as exc:  # p. ej. FloodWait de la cuenta: se reintenta en la siguiente vuelta
+            log(f"{canal}: fallo leyendo con la cuenta ({exc})")
             continue
         if not posts:
             if canal not in state.setdefault("sin_vista", []):  # avisa una vez: la web t.me/s/ no enseña sus posts
                 state["sin_vista"].append(canal)
                 log(f"{canal}: la vista web t.me/s/{canal} no muestra posts, no puedo vigilarlo")
-                avisar(tg, f"⚠️ Vigía: no veo los posts de t.me/s/{canal} (sin vista web pública), ese canal no se está copiando.")
+                avisar(tg, f"⚠️ Vigía: t.me/{canal} no tiene vista web pública y no hay cuenta de Telegram "
+                           "(secretos TG_API_ID, TG_API_HASH y TG_SESSION), ese canal no se está copiando.")
                 guardar_estado(state)
             continue
         if canal in state.get("sin_vista", []):
@@ -384,11 +447,14 @@ def main() -> int:
         return 2
 
     state = cargar_estado()
+    lector = LectorCuenta.from_env()
+    if lector is None:
+        state["por_cuenta"] = []
     fin = time.time() + args.minutos * 60
     log(f"Vigía en marcha {args.minutos:.0f} min sobre {', '.join(CANALES)}")
     while time.time() < fin:
         start = time.time()
-        vuelta(api, tg, state, args.privado, args.seco)
+        vuelta(api, tg, state, args.privado, args.seco, lector)
         time.sleep(max(1.0, CADA - (time.time() - start)))
     log("Fin de la vigilancia, paso el relevo")
     return 0
