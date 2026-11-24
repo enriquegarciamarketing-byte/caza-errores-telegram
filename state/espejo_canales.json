@@ -1,6 +1,6 @@
 {
  "ultimo": {
-  "erroresychollos": 108,
+  "erroresychollos": 109,
   "erroresycholloswarehouse": 20,
   "ErroresRutaYChollos": 216,
   "erroresychollosropa": 91,
@@ -210,6 +210,12 @@
    "origen": "https://t.me/erroresychollos/109",
    "message_id": 394,
    "t": 1795515487
+  },
+  {
+   "asin": "B0B2BLL6GK",
+   "origen": "https://t.me/erroresychollosropa/92",
+   "message_id": 395,
+   "t": 1795518647
   }
  ],
  "sin_vista": [],
