@@ -415,14 +415,22 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     live["reference"] = basis if basis and basis > live["price"] else None
     import precios_kevin
     if post["canal"] in PRECIOS_EN_TEXTO:  # 25/11/2026: sus precios van en el texto, no en una tarjeta
-        # primero su tarjeta (precio real de estos meses, cuadrado con el ahorro) y, si no se lee, el texto
-        texto = precios_kevin.desde_post_ruta(post) or precios_kevin.desde_texto(post["texto"])
+        # precio actual: su tarjeta (cuadrada con el ahorro) o, si no se lee, su texto
+        tarjeta = precios_kevin.desde_post_ruta(post)
+        en_texto = precios_kevin.desde_texto(post["texto"])
+        texto = tarjeta or en_texto
         if texto:
-            ref = texto["reference"] or live["reference"]  # sin tachado en su post, el PVP de la ficha
-            log(f"  {asin}: precios del post {texto['current']} / {texto['reference']} ({texto['ref_label']})"
+            current = texto["current"]
+            # 25/11/2026 (Enrique: «quiero que llame el PVP siempre»): tachado = PVP. El «PVP ~~X~~» de su post o
+            # el recomendado de la ficha de Amazon, el más alto; sin PVP, su precio real/habitual.
+            pvps = [x for x in ((en_texto or {}).get("reference") if (en_texto or {}).get("ref_label") == "recomendado"
+                                else None, live["reference"]) if x and x > current]
+            otros = [x for x in (texto["reference"], (en_texto or {}).get("reference")) if x and x > current]
+            ref, label = (max(pvps), "recomendado") if pvps else ((max(otros), texto["ref_label"]) if otros
+                                                                  else (None, "recomendado"))
+            log(f"  {asin}: precio del post {current} · tachado {ref} ({label})"
                 f" · API {live['price']} / {live['reference']}")
-            live["price"], live["reference"] = texto["current"], ref if ref and ref > texto["current"] else None
-            live["ref_label"] = texto["ref_label"] if texto["reference"] else "recomendado"
+            live["price"], live["reference"], live["ref_label"] = current, ref, label
         else:
             log(f"  {asin}: no leo los precios del texto, uso los de la API")
         kevin = None

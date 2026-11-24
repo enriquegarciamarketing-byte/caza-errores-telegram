@@ -348,7 +348,17 @@ class TestErroresRutaYChollos(unittest.TestCase):
         texto = self.PLATOS
         with mock.patch("precios_kevin.desde_post_ruta", return_value=pk.leer_tarjeta_ruta(str(foto))):
             caption, tarjetas, _ = self._publicar(texto, item)
-        self.assertIn("💎 #Chollo · -63%", caption)
-        self.assertIn("💸 19,95€ <s>53,73€</s>", caption)
-        self.assertIn("💰 Te ahorras 33,78€", caption)
-        self.assertEqual(tarjetas[0][1]["ref_label"], "habitual")
+        # 25/11/2026: manda el PVP de su texto (79,95€), no el precio real de la tarjeta
+        self.assertIn("❗️ #ErrorDePrecio · -75%", caption)  # desde -70% es error
+        self.assertIn("💸 19,95€ <s>79,95€</s>", caption)
+        self.assertIn("💰 Te ahorras 60,00€", caption)
+        self.assertEqual(tarjetas[0][1]["ref_label"], "recomendado")
+
+    def test_pvp_de_la_ficha_si_su_post_no_lo_trae(self):
+        item = {"price": 43.5, "saving_basis": 171.0, "in_stock": True, "title": "MSI", "image": "i"}
+        caption, tarjetas, _ = self._publicar(self.MSI, item)  # su post: habitual 141,58€
+        self.assertIn("💸 43,50€ <s>171,00€</s>", caption)
+        self.assertEqual(tarjetas[0][1]["ref_label"], "recomendado")
+        item["saving_basis"] = None  # sin PVP en ningún sitio: su precio habitual
+        caption, tarjetas, _ = self._publicar(self.MSI, item)
+        self.assertIn("💸 43,50€ <s>141,58€</s>", caption)
