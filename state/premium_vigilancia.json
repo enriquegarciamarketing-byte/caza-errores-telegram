@@ -1,5 +1,5 @@
 {
- "ultimo": 374,
+ "ultimo": 388,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 59.9
   },
   "172": {
@@ -193,7 +193,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -240,7 +240,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -275,7 +275,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 59.99
   },
   "204": {
@@ -340,7 +340,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -351,7 +351,7 @@
    "cupon": false,
    "fecha": 1794929682,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 4.8
   },
   "221": {
@@ -398,8 +398,8 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795438818,
-   "ultimo_precio": 255.0
+   "comprobado": 1795481908,
+   "ultimo_precio": 254.99
   },
   "228": {
    "tipo": "tarjeta",
@@ -493,7 +493,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 139.0
   },
   "250": {
@@ -642,7 +642,7 @@
    "cupon": false,
    "fecha": 1795084855,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 10.4
   },
   "273": {
@@ -659,7 +659,7 @@
    "cupon": false,
    "fecha": 1795092470,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 79.95
   },
   "276": {
@@ -675,9 +675,10 @@
    "titulo": "Srfzluxy Sillón de Masaje con 16 rodillos, 8 airbags y calefacción lum",
    "cupon": false,
    "fecha": 1795099977,
-   "estado": "vivo",
-   "comprobado": 1795438818,
-   "ultimo_precio": 100.0
+   "estado": "agotado",
+   "comprobado": 1795481908,
+   "ultimo_precio": null,
+   "sellado": 1795481984
   },
   "281": {
    "tipo": "otro"
@@ -708,7 +709,7 @@
    "cupon": false,
    "fecha": 1795114353,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 17.99
   },
   "287": {
@@ -719,7 +720,7 @@
    "cupon": false,
    "fecha": 1795117100,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 49.99
   },
   "291": {
@@ -769,7 +770,7 @@
    "cupon": false,
    "fecha": 1795129868,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 65.0
   },
   "299": {
@@ -867,7 +868,7 @@
    "cupon": false,
    "fecha": 1795192802,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 82.35
   },
   "315": {
@@ -890,7 +891,7 @@
    "cupon": false,
    "fecha": 1795200646,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 79.9
   },
   "318": {
@@ -919,7 +920,7 @@
    "cupon": false,
    "fecha": 1795248262,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 18.86
   },
   "324": {
@@ -942,7 +943,7 @@
    "cupon": false,
    "fecha": 1795248316,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 4.89
   },
   "326": {
@@ -982,9 +983,10 @@
    "titulo": "ALTO TS12S Subwoofer PA amplificado 2500W 12\"",
    "cupon": false,
    "fecha": 1795279764,
-   "estado": "vivo",
-   "comprobado": 1795438818,
-   "ultimo_precio": 170.0
+   "estado": "terminada",
+   "comprobado": 1795481908,
+   "ultimo_precio": 453.0,
+   "sellado": 1795481990
   },
   "331": {
    "tipo": "tarjeta",
@@ -994,7 +996,7 @@
    "cupon": false,
    "fecha": 1795280069,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 79.9
   },
   "332": {
@@ -1006,7 +1008,7 @@
    "segunda": false,
    "fecha": 1795286177,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 52.99
   },
   "333": {
@@ -1018,7 +1020,7 @@
    "segunda": false,
    "fecha": 1795289968,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 6.93
   },
   "334": {
@@ -1030,7 +1032,7 @@
    "segunda": true,
    "fecha": 1795295517,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 26.17
   },
   "335": {
@@ -1042,7 +1044,7 @@
    "segunda": false,
    "fecha": 1795296218,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 139.0
   },
   "336": {
@@ -1067,7 +1069,7 @@
    "segunda": true,
    "fecha": 1795298925,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 191.2
   },
   "338": {
@@ -1092,7 +1094,7 @@
    "segunda": true,
    "fecha": 1795304542,
    "estado": "vivo",
-   "comprobado": 1795438818
+   "comprobado": 1795481908
   },
   "340": {
    "tipo": "otro"
@@ -1106,7 +1108,7 @@
    "segunda": true,
    "fecha": 1795336628,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 155.99
   },
   "342": {
@@ -1131,7 +1133,7 @@
    "segunda": true,
    "fecha": 1795346671,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 15.99
   },
   "345": {
@@ -1143,7 +1145,7 @@
    "segunda": true,
    "fecha": 1795355225,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 214.58
   },
   "346": {
@@ -1155,7 +1157,7 @@
    "segunda": false,
    "fecha": 1795366189,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 25.25
   },
   "347": {
@@ -1193,8 +1195,8 @@
    "segunda": true,
    "fecha": 1795386329,
    "estado": "vivo",
-   "comprobado": 1795438818,
-   "ultimo_precio": 70.77
+   "comprobado": 1795481908,
+   "ultimo_precio": 63.69
   },
   "350": {
    "tipo": "otro"
@@ -1211,8 +1213,8 @@
    "segunda": true,
    "fecha": 1795390226,
    "estado": "vivo",
-   "comprobado": 1795438818,
-   "ultimo_precio": 107.89
+   "comprobado": 1795481908,
+   "ultimo_precio": 106.89
   },
   "353": {
    "tipo": "otro"
@@ -1226,7 +1228,7 @@
    "segunda": false,
    "fecha": 1795412420,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 4.55
   },
   "356": {
@@ -1254,8 +1256,8 @@
    "segunda": false,
    "fecha": 1795416375,
    "estado": "vivo",
-   "comprobado": 1795438818,
-   "ultimo_precio": 22.5
+   "comprobado": 1795481908,
+   "ultimo_precio": 11.5
   },
   "359": {
    "tipo": "tarjeta",
@@ -1266,7 +1268,7 @@
    "segunda": false,
    "fecha": 1795416381,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 23.36
   },
   "360": {
@@ -1278,7 +1280,7 @@
    "segunda": false,
    "fecha": 1795416388,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 9.47
   },
   "361": {
@@ -1293,7 +1295,7 @@
    "segunda": false,
    "fecha": 1795418671,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 20.95
   },
   "363": {
@@ -1307,9 +1309,10 @@
    "cupon": false,
    "segunda": false,
    "fecha": 1795425011,
-   "estado": "vivo",
-   "comprobado": 1795438818,
-   "ultimo_precio": 51.99
+   "estado": "terminada",
+   "comprobado": 1795481908,
+   "ultimo_precio": 92.71,
+   "sellado": 1795481997
   },
   "365": {
    "tipo": "otro"
@@ -1323,7 +1326,7 @@
    "segunda": false,
    "fecha": 1795425253,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 16.74
   },
   "367": {
@@ -1335,7 +1338,7 @@
    "segunda": false,
    "fecha": 1795428593,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 4.5
   },
   "370": {
@@ -1347,7 +1350,7 @@
    "segunda": false,
    "fecha": 1795429051,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 20.92
   },
   "371": {
@@ -1385,7 +1388,7 @@
    "segunda": false,
    "fecha": 1795434453,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 13.91
   },
   "374": {
@@ -1397,8 +1400,163 @@
    "segunda": false,
    "fecha": 1795438753,
    "estado": "vivo",
-   "comprobado": 1795438818,
+   "comprobado": 1795481908,
    "ultimo_precio": 8.23
+  },
+  "375": {
+   "tipo": "tarjeta",
+   "asin": "B08LN2Z9F1",
+   "precio": 68.08,
+   "titulo": "Cecotec Radiador Eléctrico 8 Elementos Ready Warm 1200W",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795447862,
+   "estado": "agotado",
+   "comprobado": 1795481908,
+   "ultimo_precio": null,
+   "sellado": 1795482002
+  },
+  "376": {
+   "tipo": "tarjeta",
+   "asin": "B0BSLL86KF",
+   "precio": 55.0,
+   "titulo": "MSI MPG VELOX 300R AIRFLOW PZ",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795450200,
+   "estado": "vivo",
+   "comprobado": 1795481908,
+   "ultimo_precio": 55.0
+  },
+  "377": {
+   "tipo": "tarjeta",
+   "asin": "B0DT9QSFKX",
+   "precio": 99.82,
+   "titulo": "Citizen Tsuyosa automático NJ0190-51E",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795451825,
+   "estado": "agotado",
+   "comprobado": 1795481908,
+   "ultimo_precio": null,
+   "sellado": 1795482009
+  },
+  "378": {
+   "tipo": "otro"
+  },
+  "379": {
+   "tipo": "tarjeta",
+   "asin": "B00UACSXSY",
+   "precio": 2.99,
+   "titulo": "Massi Camara 18X1.75/2.125 V.Moto Bicicleta",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795452623,
+   "estado": "vivo",
+   "comprobado": 1795481908,
+   "ultimo_precio": 2.99
+  },
+  "380": {
+   "tipo": "otro"
+  },
+  "381": {
+   "tipo": "tarjeta",
+   "asin": "B0843QRBTJ",
+   "precio": 82.05,
+   "titulo": "Citizen Eco-Drive EM0500-73A de mujer en acero",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795455627,
+   "estado": "agotado",
+   "comprobado": 1795481908,
+   "ultimo_precio": null,
+   "sellado": 1795482014
+  },
+  "382": {
+   "tipo": "tarjeta",
+   "asin": "B08HH85WC1",
+   "precio": 4.8,
+   "titulo": "POP Funko Animation: Dragon Ball Daima",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795455842,
+   "estado": "agotado",
+   "comprobado": 1795481908,
+   "ultimo_precio": null,
+   "sellado": 1795482021
+  },
+  "383": {
+   "tipo": "tarjeta",
+   "asin": "B008CZ9H5E",
+   "precio": 54.39,
+   "titulo": "Horno para pizzas (A12, 1200 W, 50 Hz, 30 cm, 185 mm)",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795459182,
+   "estado": "agotado",
+   "comprobado": 1795481908,
+   "ultimo_precio": null,
+   "sellado": 1795482027
+  },
+  "384": {
+   "tipo": "tarjeta",
+   "asin": "B07JYC5XT3",
+   "precio": 13.2,
+   "titulo": "CHUPA CHUPS Caramelo con Palo",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795462494,
+   "estado": "vivo",
+   "comprobado": 1795481908,
+   "ultimo_precio": 13.2
+  },
+  "385": {
+   "tipo": "tarjeta",
+   "asin": "B0CHS6D4BD",
+   "precio": 19.95,
+   "titulo": "19,95€",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795462933,
+   "estado": "vivo",
+   "comprobado": 1795481908,
+   "ultimo_precio": 19.95
+  },
+  "386": {
+   "tipo": "tarjeta",
+   "asin": "B0FTTG6JNC",
+   "precio": 6.75,
+   "titulo": "Oral-B Pro 3D White Clinical Dentífrico Blanqueante",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795469294,
+   "estado": "vivo",
+   "comprobado": 1795481908,
+   "ultimo_precio": 6.75
+  },
+  "387": {
+   "tipo": "tarjeta",
+   "asin": "B08QR9DCK5",
+   "precio": 87.15,
+   "titulo": "Tommy Hilfiger Men Th AM0AM14855 Messenger",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795470132,
+   "estado": "vivo",
+   "comprobado": 1795481908,
+   "ultimo_precio": 87.15
+  },
+  "388": {
+   "tipo": "tarjeta",
+   "asin": "B09DLD9Q9J",
+   "precio": 27.5,
+   "titulo": "Tefal TT6931 Sense Tostadora",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795470974,
+   "estado": "vivo",
+   "comprobado": 1795481908,
+   "ultimo_precio": 27.5
   }
  }
 }
