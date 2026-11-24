@@ -55,8 +55,11 @@ CANALES = {
 CADA = 20          # segundos entre vueltas
 REPETIDO_DIAS = 3  # un mismo ASIN no se vuelve a publicar en estos días
 ERROR_PCT = 70     # desde -70% es #ErrorDePrecio (umbral del premium)
-# 23/11/2026: en estos dos canales el copy lleva la reventa y el ROI (Enrique los quiere para revender)
-REVENTA_CANALES = {"erroresychollos", "erroresycholloswarehouse"}
+# 23/11/2026: en estos canales el copy lleva la reventa y el ROI (Enrique los quiere para revender)
+# 25/11/2026: también ErroresRutaYChollos, con el mismo formato que erroresychollos
+REVENTA_CANALES = {"erroresychollos", "erroresycholloswarehouse", "ErroresRutaYChollos"}
+# 25/11/2026: canales cuyos precios van en el texto (💶 actual ~~tachado~~), no en una tarjeta como la de Kevin
+PRECIOS_EN_TEXTO = {"ErroresRutaYChollos"}
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
@@ -187,7 +190,8 @@ def datos_post(texto: str) -> dict:
     for line in lines:
         clean = _sin_emoji_inicial(line)
         low = clean.lower()
-        if "etiqueta" not in out and ETIQUETAS.fullmatch(clean.upper().strip("!¡ ")):
+        base = re.split(r"\s*·\s*", clean)[0]  # «CHOLLAZO · -60%» (ErroresRutaYChollos)
+        if "etiqueta" not in out and ETIQUETAS.fullmatch(base.upper().strip("!¡ ")):
             out["etiqueta"] = clean.upper()
             continue
         if low.startswith("precio en amazon") or "puede cambiar" in low or low.startswith("en calidad de"):
@@ -200,7 +204,8 @@ def datos_post(texto: str) -> dict:
             out.setdefault("estado", re.sub(r"^(estado|condici[oó]n)\s*:?\s*", "", clean, flags=re.I))
         elif re.match(r"tallas?\b", low):
             out.setdefault("talla", re.sub(r"^tallas?\s*:?\s*", "", clean, flags=re.I))
-        elif "nombre" not in out and "etiqueta" in out and 3 <= len(clean) <= 120:
+        elif "nombre" not in out and "etiqueta" in out and 3 <= len(clean) <= 120 \
+                and not re.search(r"\d,\d{2}\s*€", clean):  # nunca el precio como título
             out["nombre"] = clean
     return out
 
@@ -283,7 +288,7 @@ def hacer_copy(nombre: str, live: dict, extra: dict, tipo: str, link: str, venta
     if reference:
         frente = " frente al nuevo" if tipo == "warehouse" else ""
         lines.append(f"💰 Te ahorras {eur(reference - current)}{frente}")
-    if venta:  # 23/11/2026: reventa y ROI (canales erroresychollos y erroresycholloswarehouse)
+    if venta:  # 23/11/2026: reventa y ROI (REVENTA_CANALES)
         texto = f"{nombre} {live.get('title') or ''}".lower()
         unidad = "por par" if re.search(r"zapatill|zapato|bota|sandalia|deportiva|sneaker", texto) else "por unidad"
         precio = f"{venta['precio']:.0f}€"
@@ -409,14 +414,26 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     basis = live.get("saving_basis")
     live["reference"] = basis if basis and basis > live["price"] else None
     import precios_kevin
-    kevin = precios_kevin.desde_post(post)  # 23/11/2026: los precios, siempre los de la tarjeta de Kevin
+    if post["canal"] in PRECIOS_EN_TEXTO:  # 25/11/2026: sus precios van en el texto, no en una tarjeta
+        texto = precios_kevin.desde_texto(post["texto"])
+        if texto:
+            ref = texto["reference"] or live["reference"]  # sin tachado en su post, el PVP de la ficha
+            log(f"  {asin}: precios del post {texto['current']} / {texto['reference']}"
+                f" · API {live['price']} / {live['reference']}")
+            live["price"], live["reference"] = texto["current"], ref if ref and ref > texto["current"] else None
+            live["ref_label"] = texto["ref_label"] if texto["reference"] else "recomendado"
+        else:
+            log(f"  {asin}: no leo los precios del texto, uso los de la API")
+        kevin = None
+    else:
+        kevin = precios_kevin.desde_post(post)  # 23/11/2026: los precios, siempre los de la tarjeta de Kevin
     if kevin:
         log(f"  {asin}: precios de Kevin {kevin['current']} / {kevin['reference']} (-{kevin['pct']}%)"
             f" · API {live['price']} / {live['reference']}")
         live["price"], live["reference"] = kevin["current"], kevin["reference"]
         if tipo != "warehouse":
             live["ref_label"] = "normal"
-    else:
+    elif post["canal"] not in PRECIOS_EN_TEXTO:
         log(f"  {asin}: no leo los precios de la tarjeta de Kevin, uso los de la API")
 
     extra = datos_post(post["texto"])

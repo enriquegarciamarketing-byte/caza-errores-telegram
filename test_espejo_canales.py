@@ -269,3 +269,68 @@ class SeccionesTest(unittest.TestCase):
         self.assertEqual(s.seccion("Vaqueros 501", "ropa"), "#Moda")
         self.assertEqual(s.seccion("Papel de cocina Renova", "basicos"), "#DelDíaADía")
         self.assertIsNone(s.seccion("Cosa rara", "general"))
+
+
+class TestErroresRutaYChollos(unittest.TestCase):
+    """25/11/2026: ErroresRutaYChollos lleva los precios en el texto y sale con el formato de erroresychollos."""
+
+    PLATOS = ("🔥 CHOLLAZO · -75% SOBRE PVP\n"
+              "Juego de 6 Platos Grandes de Gres Ibiza - Elegantes Platos para Comida\n"
+              "💶 19,95 € PVP 79,95 €\n🚚 Envío gratis\n"
+              "🏪 Amazon España · Natureflow, enviado por Amazon · 94 % positivas, 89 valoraciones\n"
+              "📦 Quedaba 1 unidad al verificar")
+    MSI = ("🔥 CHOLLAZO · -69%\nMSI MAG 850GL PCIE 5 Blanca Fuente de alimentación 850W\n"
+           "💶 43,50 € 141,58 €\n🚚 Envío gratis\n📉 Precio habitual: 141,58 € (mediana de 30 días)\n🏪 Amazon España")
+    OBIRE = ("🔥 CHOLLAZO\nObire | Própolis Plus 400 mg | 90 Cápsulas | Pack 3 Unidades\n💶 9,44 €\n🚚 Envío gratis")
+
+    def test_precios_del_texto(self):
+        import precios_kevin as pk
+        self.assertEqual(pk.desde_texto(self.PLATOS),
+                         {"current": 19.95, "reference": 79.95, "pct": 75, "ref_label": "recomendado"})
+        self.assertEqual(pk.desde_texto(self.MSI),
+                         {"current": 43.5, "reference": 141.58, "pct": 69, "ref_label": "normal"})
+        self.assertEqual(pk.desde_texto(self.OBIRE)["reference"], None)
+        self.assertIsNone(pk.desde_texto("🔥 CHOLLAZO · -20%\nX\n💶 43,50 € 141,58 €"))  # el -% no cuadra
+        self.assertIsNone(pk.desde_texto("sin precio"))
+
+    def test_nombre_y_etiqueta(self):
+        d = ec.datos_post(self.PLATOS)
+        self.assertTrue(d["etiqueta"].startswith("CHOLLAZO"))
+        self.assertEqual(d["nombre"], "Juego de 6 Platos Grandes de Gres Ibiza - Elegantes Platos para Comida")
+        self.assertNotIn("€", ec.datos_post("🔥 CHOLLAZO\n💶 19,95 €\nCosa").get("nombre", ""))
+
+    def _publicar(self, texto, api_item):
+        post = {"canal": "ErroresRutaYChollos", "id": 300, "texto": texto,
+                "enlaces": ["https://www.amazon.es/dp/B0CHS6D4BD?tag=otro-21"]}
+        api = mock.Mock()
+        api.get_item.return_value = api_item
+        tg = mock.Mock()
+        tg.send_photo.return_value = {"message_id": 1}
+        tarjetas = []
+        with tempfile.TemporaryDirectory() as tmp, \
+             mock.patch.object(ec, "STATE", Path(tmp) / "e.json"), \
+             mock.patch("premium_manual.STATE", Path(tmp) / "m.json", create=True), \
+             mock.patch("premium_manual.load_state", return_value={"posts": []}), \
+             mock.patch("premium_manual.save_state"), \
+             mock.patch("premium_manual.photo_for", return_value="foto"), \
+             mock.patch("tarjeta_premium.crear_tarjeta", side_effect=lambda *a, **k: tarjetas.append((a, k)) or "t"), \
+             mock.patch.object(ec, "subir_memoria"), \
+             mock.patch.object(ec, "reventa", return_value={"precio": 45.0, "beneficio": 25.05, "roi": 126,
+                                                             "fuente": "x"}) as rev:
+            ec.procesar(post, "general", api, tg, {"publicados": []}, False, False)
+        return tg.send_photo.call_args[0][2], tarjetas, rev
+
+    def test_publica_con_tachado_ahorro_y_roi(self):
+        item = {"price": 19.95, "saving_basis": None, "in_stock": True, "title": "Platos Ibiza", "image": "i"}
+        caption, tarjetas, rev = self._publicar(self.PLATOS, item)
+        self.assertIn("💸 19,95€ <s>79,95€</s>", caption)
+        self.assertIn("💰 Te ahorras 60,00€", caption)
+        self.assertIn("📈 +25€ por unidad · ROI +126%", caption)
+        self.assertTrue(rev.called)
+        self.assertEqual(tarjetas[0][0][1:3], (79.95, 19.95))
+
+    def test_sin_tachado_usa_el_pvp_de_la_ficha(self):
+        item = {"price": 9.44, "saving_basis": 30.30, "in_stock": True, "title": "Obire", "image": "i"}
+        caption, tarjetas, _ = self._publicar(self.OBIRE, item)
+        self.assertIn("💸 9,44€ <s>30,30€</s>", caption)
+        self.assertEqual(tarjetas[0][1]["ref_label"], "recomendado")

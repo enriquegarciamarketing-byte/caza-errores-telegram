@@ -103,6 +103,39 @@ def desde_post(post: dict) -> dict | None:
         return None
 
 
+# ------------------------------------------------------------------ canales con los precios en el texto
+
+# 25/11/2026 (Enrique): ErroresRutaYChollos no lleva tarjeta, sus precios van en el texto del post:
+#   «💶 31,54 € ~~78,99 €~~», «💶 19,95 € PVP ~~79,95 €~~» o solo «💶 9,44 €», y a veces «📉 Precio habitual: 78,99 €».
+PRECIO_TXT = re.compile(r"(\d{1,4}(?:\.\d{3})*,\d{2})\s*€")
+PCT_TXT = re.compile(r"-\s?(\d{1,2})\s?%")
+
+
+def desde_texto(texto: str) -> dict | None:
+    """Precios del texto del post: {"current", "reference" (o None), "pct", "ref_label"} o None si no hay 💶."""
+    lines = [l.strip() for l in (texto or "").splitlines() if l.strip()]
+    linea = next((l for l in lines if "💶" in l), None)
+    if not linea:
+        return None
+    precios = [_num(x) for x in PRECIO_TXT.findall(linea)]
+    if not precios or precios[0] <= 0:
+        return None
+    current, reference = precios[0], None
+    label = "recomendado" if re.search(r"\bPVP\b", linea, re.I) else "normal"
+    if len(precios) > 1 and precios[1] > current:
+        reference = precios[1]
+    else:
+        habitual = next((l for l in lines if re.search(r"precio habitual", l, re.I)), "")
+        h = PRECIO_TXT.search(habitual)
+        if h and _num(h.group(1)) > current:
+            reference, label = _num(h.group(1)), "habitual"
+    pct = round((reference - current) / reference * 100) if reference else None
+    leido = next((int(m.group(1)) for l in lines[:2] for m in [PCT_TXT.search(l)] if m), None)
+    if pct is not None and leido is not None and abs(leido - pct) > 1:  # su -% tiene que cuadrar
+        return None
+    return {"current": current, "reference": reference, "pct": pct, "ref_label": label}
+
+
 if __name__ == "__main__":
     import json
     import sys
