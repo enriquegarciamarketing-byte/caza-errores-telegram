@@ -1,7 +1,7 @@
 {
  "ultimo": {
   "erroresychollos": 109,
-  "erroresycholloswarehouse": 20,
+  "erroresycholloswarehouse": 21,
   "ErroresRutaYChollos": 216,
   "erroresychollosropa": 92,
   "erroresychollosbasicos": 147
@@ -222,6 +222,12 @@
    "origen": "https://t.me/erroresycholloswarehouse/21",
    "message_id": 396,
    "t": 1795520209
+  },
+  {
+   "asin": "B09CLJM348",
+   "origen": "https://t.me/erroresychollosbasicos/148",
+   "message_id": 397,
+   "t": 1795521728
   }
  ],
  "sin_vista": [],
