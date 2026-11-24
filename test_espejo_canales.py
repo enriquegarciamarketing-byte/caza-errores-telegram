@@ -334,3 +334,21 @@ class TestErroresRutaYChollos(unittest.TestCase):
         caption, tarjetas, _ = self._publicar(self.OBIRE, item)
         self.assertIn("💸 9,44€ <s>30,30€</s>", caption)
         self.assertEqual(tarjetas[0][1]["ref_label"], "recomendado")
+
+    def test_tarjeta_de_ruta(self):
+        """25/11/2026: su tarjeta manda (precio real de estos meses), cuadrada con el ahorro."""
+        import shutil
+        import precios_kevin as pk
+        if not shutil.which("tesseract"):
+            self.skipTest("sin tesseract")
+        foto = Path(__file__).parent / "tests_fixtures" / "ruta_platos.jpg"
+        self.assertEqual(pk.leer_tarjeta_ruta(str(foto)),
+                         {"current": 19.95, "reference": 53.73, "ahorro": 33.78, "pct": 63, "ref_label": "habitual"})
+        item = {"price": 19.95, "saving_basis": None, "in_stock": True, "title": "Platos Ibiza", "image": "i"}
+        texto = self.PLATOS
+        with mock.patch("precios_kevin.desde_post_ruta", return_value=pk.leer_tarjeta_ruta(str(foto))):
+            caption, tarjetas, _ = self._publicar(texto, item)
+        self.assertIn("💎 #Chollo · -63%", caption)
+        self.assertIn("💸 19,95€ <s>53,73€</s>", caption)
+        self.assertIn("💰 Te ahorras 33,78€", caption)
+        self.assertEqual(tarjetas[0][1]["ref_label"], "habitual")

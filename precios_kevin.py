@@ -111,6 +111,56 @@ PRECIO_TXT = re.compile(r"(\d{1,4}(?:\.\d{3})*,\d{2})\s*€")
 PCT_TXT = re.compile(r"-\s?(\d{1,2})\s?%")
 
 
+def leer_tarjeta_ruta(imagen) -> dict | None:
+    """25/11/2026: tarjeta de ErroresRutaYChollos (@RutaYCapital): «19,95 €», «Precio real estos meses: 53,73 €» y
+    «te ahorras 33,78 €». Solo vale si cuadra: real - ahorro = actual (±0,02). Devuelve como leer_tarjeta o None."""
+    try:
+        import pytesseract
+        from PIL import Image
+    except ImportError:
+        return None
+    if isinstance(imagen, (bytes, bytearray)):
+        imagen = Image.open(io.BytesIO(imagen))
+    elif not hasattr(imagen, "size"):
+        imagen = Image.open(imagen)
+    im = imagen.convert("RGB")
+    if im.width < 1000:  # la vista web da la foto más pequeña
+        im = im.resize((1000, round(im.height * 1000 / im.width)), Image.LANCZOS)
+    zona = im.crop((int(im.width * 0.42), 0, im.width, int(im.height * 0.42)))  # bloque de precios, sin la gráfica
+    try:
+        txt = pytesseract.image_to_string(zona, lang="spa", config="--psm 6")
+    except Exception:
+        return None
+    lines = [l.strip() for l in txt.splitlines() if l.strip()]
+    real = next((l for l in lines if re.search(r"precio (real|habitual)", l, re.I) and PRICE.search(l)), None)
+    ahorro = next((l for l in lines if re.search(r"ahorr", l, re.I) and PRICE.search(l)), None)
+    actual = next((l for l in lines if PRICE.search(l) and l not in (real, ahorro)), None)
+    if not (real and ahorro and actual):
+        return None
+    reference, saving, current = (_num(PRICE.search(x).group(1)) for x in (real, ahorro, actual))
+    if saving <= 0 or abs(reference - saving - current) > 0.02:
+        return None
+    pct = round(saving / reference * 100)
+    leido = next((int(m.group(1)) for l in lines for m in [re.search(r"(\d{1,2})\s?%", l)] if m), None)
+    if leido is not None and abs(leido - pct) > 1:
+        return None
+    return {"current": current, "reference": reference, "ahorro": saving, "pct": pct, "ref_label": "habitual"}
+
+
+def desde_post_ruta(post: dict) -> dict | None:
+    """Precios de la tarjeta de un post de ErroresRutaYChollos (foto de la vista web o de la cuenta)."""
+    try:
+        if post.get("foto_bytes"):
+            data = post["foto_bytes"]()
+        elif post.get("foto"):
+            data = descargar(post["foto"])
+        else:
+            return None
+        return leer_tarjeta_ruta(data) if data else None
+    except Exception:
+        return None
+
+
 def desde_texto(texto: str) -> dict | None:
     """Precios del texto del post: {"current", "reference" (o None), "pct", "ref_label"} o None si no hay 💶."""
     lines = [l.strip() for l in (texto or "").splitlines() if l.strip()]

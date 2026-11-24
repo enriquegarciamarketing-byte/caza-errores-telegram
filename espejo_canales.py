@@ -58,7 +58,7 @@ ERROR_PCT = 70     # desde -70% es #ErrorDePrecio (umbral del premium)
 # 23/11/2026: en estos canales el copy lleva la reventa y el ROI (Enrique los quiere para revender)
 # 25/11/2026: también ErroresRutaYChollos, con el mismo formato que erroresychollos
 REVENTA_CANALES = {"erroresychollos", "erroresycholloswarehouse", "ErroresRutaYChollos"}
-# 25/11/2026: canales cuyos precios van en el texto (💶 actual ~~tachado~~), no en una tarjeta como la de Kevin
+# 25/11/2026: canales con su propia tarjeta (precio real de estos meses) y los precios también en el texto
 PRECIOS_EN_TEXTO = {"ErroresRutaYChollos"}
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
@@ -415,10 +415,11 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     live["reference"] = basis if basis and basis > live["price"] else None
     import precios_kevin
     if post["canal"] in PRECIOS_EN_TEXTO:  # 25/11/2026: sus precios van en el texto, no en una tarjeta
-        texto = precios_kevin.desde_texto(post["texto"])
+        # primero su tarjeta (precio real de estos meses, cuadrado con el ahorro) y, si no se lee, el texto
+        texto = precios_kevin.desde_post_ruta(post) or precios_kevin.desde_texto(post["texto"])
         if texto:
             ref = texto["reference"] or live["reference"]  # sin tachado en su post, el PVP de la ficha
-            log(f"  {asin}: precios del post {texto['current']} / {texto['reference']}"
+            log(f"  {asin}: precios del post {texto['current']} / {texto['reference']} ({texto['ref_label']})"
                 f" · API {live['price']} / {live['reference']}")
             live["price"], live["reference"] = texto["current"], ref if ref and ref > texto["current"] else None
             live["ref_label"] = texto["ref_label"] if texto["reference"] else "recomendado"
