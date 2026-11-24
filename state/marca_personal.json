@@ -16,7 +16,8 @@
    3,
    4,
    5,
-   6
+   6,
+   7
   ],
   "dia": [
    0,
@@ -196,6 +197,11 @@
    "t": 1795465790,
    "slot": "tarde",
    "topic": "Finanzas e inversión"
+  },
+  {
+   "t": 1795549218,
+   "slot": "tarde",
+   "topic": "Ahorro y promos"
   }
  ]
 }
