@@ -71,13 +71,13 @@ def caption_html(copy: str, links: dict[str, str] | None = None) -> str:
 
 
 def pie_premium(copy: str) -> str:
-    """Última línea de los posts de @caza_errores (25/11/2026, Enrique): «Visto en @cazachollos_com #Publicidad
-    #Chollo» para llevar gente al free; con #ErrorDePrecio si la cabecera es de error. Si ya está, no se repite."""
-    if "Visto en @" in copy:
+    """Última línea de los posts de @caza_errores (26/11/2026, Enrique): «Visto en t.me/caza_errores #Publicidad
+    #Chollo»; con #ErrorDePrecio si la cabecera es de error. Si ya está, no se repite."""
+    if "Visto en " in copy:
         return ""
     cabecera = next((l for l in copy.strip().splitlines() if l.strip()), "")
     tag = "#ErrorDePrecio" if "#ErrorDePrecio" in cabecera else "#Chollo"
-    return f"Visto en @cazachollos_com #Publicidad {tag}"
+    return f"Visto en t.me/caza_errores #Publicidad {tag}"
 
 
 URL_IN_TEXT = re.compile(r"https?://[^\s<>\"']+")
