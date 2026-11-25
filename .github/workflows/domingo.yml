@@ -1,0 +1,44 @@
+name: Repaso de canales del domingo
+
+# Imagen + copy en cada canal recordando los otros dos (funnel Caza Errores → Caza Chollos → WhatsApp).
+# A mano: «privado» manda las tres versiones a tu chat con el bot (nunca al canal).
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "privado (prueba a tu chat) · canal (publica en los tres canales)"
+        required: true
+        type: choice
+        options: [privado, canal]
+        default: privado
+
+permissions:
+  contents: read
+
+concurrency:
+  group: domingo-repaso
+  cancel-in-progress: false
+
+jobs:
+  repaso:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Publicar el repaso
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+          PREMIUM_CHAT_ID: ${{ vars.PREMIUM_CHAT_ID }}
+          WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
+          WHATSAPP_CHANNEL_ID: ${{ secrets.WHATSAPP_CHANNEL_ID }}
+        run: |
+          MODO="${{ inputs.modo || 'canal' }}"
+          if [ "$MODO" = "privado" ]; then python -u domingo.py --privado; else python -u domingo.py; fi
