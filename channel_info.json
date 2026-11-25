@@ -4,17 +4,14 @@
   {
    "name": "Caza Chollos",
    "chat_id": "@cazachollos_com",
-   "pinned_message_id": null,
+   "pinned_message_id": 774,
    "description": "Chollos de Amazon para comprar lo que necesitáis pagando menos 🛒 Cada noche el resumen con lo mejor y los errores en @caza_errores ⚡\n\nEn calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.",
    "pinned_html": "🛒 <b>Bienvenidos a Caza Chollos</b>\n\nLa idea de este canal es muy sencilla, que compréis lo que ibais a comprar igualmente pero pagando bastante menos. Hay cosas de hogar, tecnología y compra del día a día, y ahora que se acerca la Navidad también muchas ideas para regalar a la familia, a la pareja o a los amigos 🎁\n\nVamos publicando ofertas durante todo el día y a las 23:59 cierro con un resumen de lo mejor, así que aunque no tengáis tiempo de mirar el canal con ese post os basta 🌙\n\nSi además os van los errores de precio, esos que duran minutos y en los que hay que ir rápido, los tenéis en Caza Errores ⚡\n👉 t.me/caza_errores\n\nY si queréis pasarle los chollos a alguien que no tenga Telegram, el canal de WhatsApp es perfecto para eso 📲\n👉 whatsapp.com/channel/0029VbE063mEwEk5M7m9Xe17"
   },
   {
    "name": "Caza Errores",
    "chat_id": "-1004494143183",
-   "pinned_message_id": null,
-   "unpin_old": [
-    22
-   ],
+   "pinned_message_id": 450,
    "description": "Errores de precio de Amazon que duran minutos ⚡ Activad las notificaciones y el resto de chollos los tenéis en @cazachollos_com 🛒\n\nEn calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.",
    "pinned_html": "⚡ <b>Bienvenidos a Caza Errores</b>\n\nAquí salen los errores de precio de Amazon y los chollos más bestias que vamos encontrando, de esos que duran unos minutos y luego desaparecen. Por eso os recomiendo tener las notificaciones activadas, porque cuando cae uno bueno no hay tiempo para pensárselo mucho 🔔\n\nAhora bien, si lo que buscáis es comprar más barato lo que ya necesitáis, desde una cafetera hasta los regalos de Navidad, para eso tenemos Caza Chollos 🛒 Allí salen ofertas durante todo el día y cada noche os dejo un resumen con lo mejor para que no tengáis que estar pendientes\n👉 t.me/cazachollos_com\n\nY para la familia que no usa Telegram también estamos en WhatsApp, con lo mejor del día y sin llenaros el móvil de mensajes 📲\n👉 whatsapp.com/channel/0029VbE063mEwEk5M7m9Xe17"
   }
@@ -22,7 +19,7 @@
  "whatsapp": {
   "description": "Los mejores chollos de Amazon del día sin saturaros el móvil 📲 Solo lo que merece la pena y cada noche el resumen con lo mejor. Compartidlo con quien siempre anda buscando ofertas 🎁\n\nEn calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.",
   "welcome": "👋 *Bienvenidos al canal de Caza Chollos en WhatsApp*\n\nAquí os iré dejando los mejores chollos de Amazon del día, pero sin llenaros el móvil de mensajes porque solo sale lo que de verdad merece la pena. Además cada noche os dejo un resumen con lo mejor para que no se os escape nada 🌙\n\nSi tenéis que comprar algo o andáis buscando regalos para estas Navidades, pasaos antes por aquí. Y si conocéis a alguien que siempre está buscando ofertas, compartidle el canal que seguro que os lo agradece 🎁\n\nY si usáis Telegram, allí tenéis todavía más chollos y también los errores de precio que duran minutos\n🛒 t.me/cazachollos_com\n⚡ t.me/caza_errores",
-  "welcome_sent": false,
-  "description_done": false
+  "welcome_sent": true,
+  "description_done": true
  }
 }
