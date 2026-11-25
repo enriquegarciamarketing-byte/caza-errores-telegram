@@ -19,6 +19,7 @@ BEIGE = (247, 246, 242)
 ORANGE = (239, 96, 38)
 GRID = (238, 236, 232)
 BORDER = (232, 230, 226)
+SELLO_Y = 583  # 26/11/2026: el sello AGOTADO va encima del gráfico de precio, no de la foto del producto
 AVISO = "En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables."
 
 
@@ -65,7 +66,7 @@ def sellar(im: Image.Image, motivo: str = "agotado") -> Image.Image:
         y = bh / 2 + 2 + ((i - (len(lines) - 1) / 2) * 96 + 6) * k
         sd.text((bw / 2 + 2, y), text, font=font, fill=red, anchor="mm")
     stamp = stamp.rotate(12, resample=Image.BICUBIC, expand=True)
-    cx, cy = (ox + int(500 * k), oy + int(245 * k)) if caja else (int(500 * k), int(245 * im.height / 1000))
+    cx, cy = (ox + int(500 * k), oy + int(SELLO_Y * k)) if caja else (int(500 * k), int(SELLO_Y * im.height / 1000))
     out.paste(stamp, (cx - stamp.width // 2, cy - stamp.height // 2), stamp)
     return out
 
