@@ -133,7 +133,7 @@ class Espejo(unittest.TestCase):
                     botones = tg.markups[0]["inline_keyboard"]
                     self.assertEqual(botones[0][0]["text"], "🛒 Comprar en Amazon")
                     self.assertIn("tag=cazachollos0c-21", botones[0][0]["url"])
-                    self.assertIn("whatsapp.com/channel/", botones[1][0]["url"])
+                    self.assertEqual(botones[1][0]["url"], "https://t.me/cazachollos_com")
                     self.assertNotIn("kevincrestt", caption)
                     self.assertIn("<b>Cecotec Freidora de Aire</b>", caption)
                     self.assertIn("<s>89,99€</s>", caption)
@@ -242,13 +242,13 @@ class LectorCuentaTest(unittest.TestCase):
 
 
 class BotonesPremiumTest(unittest.TestCase):
-    def test_agotado_quita_amazon_y_deja_whatsapp(self):
+    def test_agotado_quita_amazon_y_deja_caza_chollos(self):
         import botones_premium as bp
         t = bp.teclado("https://www.amazon.es/dp/B0AAAAAAAA?tag=cazachollos0c-21")
         self.assertEqual(len(t["inline_keyboard"]), 2)
         fin = bp.sin_amazon(t)
         self.assertEqual(len(fin["inline_keyboard"]), 1)
-        self.assertIn("whatsapp.com", fin["inline_keyboard"][0][0]["url"])
+        self.assertEqual(fin["inline_keyboard"][0][0]["url"], "https://t.me/cazachollos_com")
         self.assertEqual(bp.teclado_terminado(), fin)
 
 
