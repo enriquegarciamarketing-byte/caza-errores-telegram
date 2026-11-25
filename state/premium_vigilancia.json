@@ -1,5 +1,5 @@
 {
- "ultimo": 410,
+ "ultimo": 440,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -36,7 +36,7 @@
    "cupon": false,
    "fecha": 1794566398,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 159.95
   },
   "164": {
@@ -71,7 +71,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 59.89
   },
   "172": {
@@ -193,7 +193,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -240,7 +240,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -275,7 +275,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 54.99
   },
   "204": {
@@ -340,7 +340,7 @@
    "cupon": false,
    "fecha": 1794926854,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 15.9
   },
   "220": {
@@ -350,9 +350,10 @@
    "titulo": "Funko POP! Fallout Hank MacLean con Servoarmadura",
    "cupon": false,
    "fecha": 1794929682,
-   "estado": "vivo",
-   "comprobado": 1795582528,
-   "ultimo_precio": 4.8
+   "estado": "agotado",
+   "comprobado": 1795621424,
+   "ultimo_precio": null,
+   "sellado": 1795621505
   },
   "221": {
    "tipo": "tarjeta",
@@ -398,7 +399,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 254.99
   },
   "228": {
@@ -493,7 +494,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 139.0
   },
   "250": {
@@ -642,7 +643,7 @@
    "cupon": false,
    "fecha": 1795084855,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 10.4
   },
   "273": {
@@ -659,7 +660,7 @@
    "cupon": false,
    "fecha": 1795092470,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 79.95
   },
   "276": {
@@ -709,7 +710,7 @@
    "cupon": false,
    "fecha": 1795114353,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 17.99
   },
   "287": {
@@ -720,7 +721,7 @@
    "cupon": false,
    "fecha": 1795117100,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 49.99
   },
   "291": {
@@ -770,7 +771,7 @@
    "cupon": false,
    "fecha": 1795129868,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 65.0
   },
   "299": {
@@ -868,7 +869,7 @@
    "cupon": false,
    "fecha": 1795192802,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 82.35
   },
   "315": {
@@ -891,7 +892,7 @@
    "cupon": false,
    "fecha": 1795200646,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 79.9
   },
   "318": {
@@ -920,7 +921,7 @@
    "cupon": false,
    "fecha": 1795248262,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 18.86
   },
   "324": {
@@ -943,7 +944,7 @@
    "cupon": false,
    "fecha": 1795248316,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 4.89
   },
   "326": {
@@ -996,7 +997,7 @@
    "cupon": false,
    "fecha": 1795280069,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 79.9
   },
   "332": {
@@ -1008,7 +1009,7 @@
    "segunda": false,
    "fecha": 1795286177,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 52.99
   },
   "333": {
@@ -1020,7 +1021,7 @@
    "segunda": false,
    "fecha": 1795289968,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 6.33
   },
   "334": {
@@ -1032,7 +1033,7 @@
    "segunda": true,
    "fecha": 1795295517,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 26.17
   },
   "335": {
@@ -1044,7 +1045,7 @@
    "segunda": false,
    "fecha": 1795296218,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 139.0
   },
   "336": {
@@ -1069,7 +1070,7 @@
    "segunda": true,
    "fecha": 1795298925,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 191.2
   },
   "338": {
@@ -1094,7 +1095,7 @@
    "segunda": true,
    "fecha": 1795304542,
    "estado": "vivo",
-   "comprobado": 1795582528
+   "comprobado": 1795621424
   },
   "340": {
    "tipo": "otro"
@@ -1108,7 +1109,7 @@
    "segunda": true,
    "fecha": 1795336628,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 155.99
   },
   "342": {
@@ -1133,7 +1134,7 @@
    "segunda": true,
    "fecha": 1795346671,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 15.9
   },
   "345": {
@@ -1158,7 +1159,7 @@
    "segunda": false,
    "fecha": 1795366189,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 25.25
   },
   "347": {
@@ -1196,7 +1197,7 @@
    "segunda": true,
    "fecha": 1795386329,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 63.69
   },
   "350": {
@@ -1214,7 +1215,7 @@
    "segunda": true,
    "fecha": 1795390226,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 106.89
   },
   "353": {
@@ -1229,7 +1230,7 @@
    "segunda": false,
    "fecha": 1795412420,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 4.55
   },
   "356": {
@@ -1257,7 +1258,7 @@
    "segunda": false,
    "fecha": 1795416375,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 22.5
   },
   "359": {
@@ -1269,7 +1270,7 @@
    "segunda": false,
    "fecha": 1795416381,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 23.36
   },
   "360": {
@@ -1281,7 +1282,7 @@
    "segunda": false,
    "fecha": 1795416388,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 9.47
   },
   "361": {
@@ -1296,7 +1297,7 @@
    "segunda": false,
    "fecha": 1795418671,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 20.95
   },
   "363": {
@@ -1327,7 +1328,7 @@
    "segunda": false,
    "fecha": 1795425253,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 16.74
   },
   "367": {
@@ -1339,7 +1340,7 @@
    "segunda": false,
    "fecha": 1795428593,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 4.5
   },
   "370": {
@@ -1351,7 +1352,7 @@
    "segunda": false,
    "fecha": 1795429051,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 18.83
   },
   "371": {
@@ -1389,7 +1390,7 @@
    "segunda": false,
    "fecha": 1795434453,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 13.91
   },
   "374": {
@@ -1401,7 +1402,7 @@
    "segunda": false,
    "fecha": 1795438753,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 8.23
   },
   "375": {
@@ -1426,7 +1427,7 @@
    "segunda": true,
    "fecha": 1795450200,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 55.0
   },
   "377": {
@@ -1454,7 +1455,7 @@
    "segunda": false,
    "fecha": 1795452623,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 2.99
   },
   "380": {
@@ -1508,7 +1509,7 @@
    "segunda": false,
    "fecha": 1795462494,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 13.2
   },
   "385": {
@@ -1533,7 +1534,7 @@
    "segunda": false,
    "fecha": 1795469294,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 6.75
   },
   "387": {
@@ -1545,7 +1546,7 @@
    "segunda": false,
    "fecha": 1795470132,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 87.15
   },
   "388": {
@@ -1583,7 +1584,7 @@
    "segunda": true,
    "fecha": 1795511528,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 23.68
   },
   "391": {
@@ -1595,7 +1596,7 @@
    "segunda": true,
    "fecha": 1795512785,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 51.99
   },
   "392": {
@@ -1620,7 +1621,7 @@
    "segunda": false,
    "fecha": 1795514605,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 18.81
   },
   "394": {
@@ -1632,7 +1633,7 @@
    "segunda": true,
    "fecha": 1795515487,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 29.99
   },
   "395": {
@@ -1644,7 +1645,7 @@
    "segunda": false,
    "fecha": 1795518647,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 35.95
   },
   "396": {
@@ -1669,7 +1670,7 @@
    "segunda": false,
    "fecha": 1795521728,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 69.99
   },
   "398": {
@@ -1707,7 +1708,7 @@
    "segunda": false,
    "fecha": 1795529577,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 29.95
   },
   "402": {
@@ -1735,7 +1736,7 @@
    "segunda": false,
    "fecha": 1795540979,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 9.44
   },
   "405": {
@@ -1747,7 +1748,7 @@
    "segunda": false,
    "fecha": 1795546189,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 14.23
   },
   "406": {
@@ -1761,9 +1762,10 @@
    "cupon": false,
    "segunda": false,
    "fecha": 1795552469,
-   "estado": "vivo",
-   "comprobado": 1795582528,
-   "ultimo_precio": 16.74
+   "estado": "terminada",
+   "comprobado": 1795621424,
+   "ultimo_precio": 43.95,
+   "sellado": 1795621511
   },
   "408": {
    "tipo": "tarjeta",
@@ -1774,7 +1776,7 @@
    "segunda": true,
    "fecha": 1795556948,
    "estado": "vivo",
-   "comprobado": 1795582528,
+   "comprobado": 1795621424,
    "ultimo_precio": 48.69
   },
   "410": {
@@ -1789,6 +1791,284 @@
    "comprobado": 1795582528,
    "ultimo_precio": null,
    "sellado": 1795582603
+  },
+  "411": {
+   "tipo": "tarjeta",
+   "asin": "B07TTD415R",
+   "precio": 14.37,
+   "titulo": "Envío gratis",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795585186,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 14.37
+  },
+  "412": {
+   "tipo": "tarjeta",
+   "asin": "B007MAUC7W",
+   "precio": 6.0,
+   "titulo": "Beretta M92 World Defender 25161",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795587767,
+   "estado": "agotado",
+   "comprobado": 1795621424,
+   "ultimo_precio": null,
+   "sellado": 1795621517
+  },
+  "413": {
+   "tipo": "tarjeta",
+   "asin": "B07L5K4MGP",
+   "precio": 5.57,
+   "titulo": "KIMISS Cubierta de panel de caja de cambios de cromo",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795587773,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 5.57
+  },
+  "414": {
+   "tipo": "tarjeta",
+   "asin": "B0FVPPTW5F",
+   "precio": 13.8,
+   "titulo": "Tommy Jeans TJM Reg Tipped Polo Ext Dm0dm22700 Pack de 1",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795588305,
+   "estado": "terminada",
+   "comprobado": 1795621424,
+   "ultimo_precio": 41.45,
+   "sellado": 1795621523
+  },
+  "415": {
+   "tipo": "tarjeta",
+   "asin": "B0CYQ5QBW2",
+   "precio": 12.89,
+   "titulo": "Nature Essential Lecitina de soja 1200 mg. 150 perlas Pack de 2",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795591928,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 12.89
+  },
+  "416": {
+   "tipo": "tarjeta",
+   "asin": "B0DSC9QT15",
+   "precio": 129.48,
+   "titulo": "Garmin Instinct E 45 mm Amarillo",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795594137,
+   "estado": "agotado",
+   "comprobado": 1795621424,
+   "ultimo_precio": null,
+   "sellado": 1795621529
+  },
+  "417": {
+   "tipo": "tarjeta",
+   "asin": "B0DYJXC4ML",
+   "precio": 4.8,
+   "titulo": "Funko POP! TV: A Knight of the Seven Kingdoms",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795597506,
+   "estado": "agotado",
+   "comprobado": 1795621424,
+   "ultimo_precio": null,
+   "sellado": 1795621535
+  },
+  "418": {
+   "tipo": "tarjeta",
+   "asin": "B0DYJYRYL1",
+   "precio": 4.8,
+   "titulo": "Funko POP! Animation: One Piece",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795598007,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 4.8
+  },
+  "419": {
+   "tipo": "tarjeta",
+   "asin": "B0FDL86BTL",
+   "precio": 27.32,
+   "titulo": "Tommy Hilfiger Pantalón Chino Hombre Harlem Poplin Tapered Fit",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795598064,
+   "estado": "terminada",
+   "comprobado": 1795621424,
+   "ultimo_precio": 63.8,
+   "sellado": 1795621542
+  },
+  "420": {
+   "tipo": "tarjeta",
+   "asin": "B0DF5RFSRD",
+   "precio": 162.07,
+   "titulo": "Sennheiser TeamConnect Bar Small",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795598163,
+   "estado": "terminada",
+   "comprobado": 1795621424,
+   "ultimo_precio": 974.0,
+   "sellado": 1795621549
+  },
+  "421": {
+   "tipo": "tarjeta",
+   "asin": "B07H6ZMZRW",
+   "precio": 7.59,
+   "titulo": "Listerine Mentol Enjuague Bucal Sabor Menta Intensa",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795599485,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 7.59
+  },
+  "422": {
+   "tipo": "tarjeta",
+   "asin": "B0FVXF38WF",
+   "precio": 27.73,
+   "titulo": "Calvin Klein Vaqueros Hombre Classic Celtic Ocean Jean Tapered Fit",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795599504,
+   "estado": "terminada",
+   "comprobado": 1795621424,
+   "ultimo_precio": 74.95,
+   "sellado": 1795621556
+  },
+  "423": {
+   "tipo": "tarjeta",
+   "asin": "B0F637TFM4",
+   "precio": 99.19,
+   "titulo": "Swarovski Una Angelic Colección Collar",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795600244,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 99.19
+  },
+  "424": {
+   "tipo": "tarjeta",
+   "asin": "B0FGFFV89L",
+   "precio": 4.8,
+   "titulo": "POP Funko Games: Baldur's Gate 3",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795600346,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 4.8
+  },
+  "425": {
+   "tipo": "tarjeta",
+   "asin": "B0FJ8TWG32",
+   "precio": 56.95,
+   "titulo": "Calvin Klein Ls Lt Wt Nylon Channeled Puffer Chaquetas",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795600824,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 56.95
+  },
+  "426": {
+   "tipo": "tarjeta",
+   "asin": "B0FG46GLPG",
+   "precio": 4.8,
+   "titulo": "Funko POP! Animation: Solo Leveling",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795601427,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 4.8
+  },
+  "427": {
+   "tipo": "tarjeta",
+   "asin": "B08HH581FF",
+   "precio": 4.8,
+   "titulo": "Funko Pop! Animation: Futurama",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795602136,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 4.8
+  },
+  "428": {
+   "tipo": "otro"
+  },
+  "429": {
+   "tipo": "otro"
+  },
+  "431": {
+   "tipo": "tarjeta",
+   "asin": "B0FVX31H3C",
+   "precio": 12.03,
+   "titulo": "Tommy Hilfiger ESS Seasonal Reg Fit Stripe tee Pack de 1",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795604234,
+   "estado": "terminada",
+   "comprobado": 1795621424,
+   "ultimo_precio": 37.65,
+   "sellado": 1795621563
+  },
+  "432": {
+   "tipo": "tarjeta",
+   "asin": "B0DVC7F9N7",
+   "precio": 12.0,
+   "titulo": "Lipton Mango maracuyá 330ml",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795606535,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 12.0
+  },
+  "437": {
+   "tipo": "tarjeta",
+   "asin": "B0FTCPY9S4",
+   "precio": 1493.99,
+   "titulo": "iPhone 17 Pro Max 2TB Naranja Cósmico",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795608575,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 1493.99
+  },
+  "439": {
+   "tipo": "tarjeta",
+   "asin": "B07GSPTGJJ",
+   "precio": 12.62,
+   "titulo": "NIVEA Aceite en Loción Flor de Cerezo & Aceite de Jojoba en pack de 6",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795610715,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": 12.62
+  },
+  "440": {
+   "tipo": "tarjeta",
+   "asin": "B0F4DQ6HYX",
+   "precio": 9.99,
+   "titulo": "CORTES PETS Cama Ortopédica para Perros 60x48x17 cm",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795611036,
+   "estado": "vivo",
+   "comprobado": 1795621424,
+   "ultimo_precio": null
   }
  }
 }
