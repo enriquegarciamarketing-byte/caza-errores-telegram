@@ -24,7 +24,8 @@
    1,
    2,
    3,
-   4
+   4,
+   5
   ]
  },
  "log": [
@@ -202,6 +203,11 @@
    "t": 1795549218,
    "slot": "tarde",
    "topic": "Ahorro y promos"
+  },
+  {
+   "t": 1795632538,
+   "slot": "tarde",
+   "topic": "Tu día a día"
   }
  ]
 }
