@@ -2487,111 +2487,20 @@ def build_summary(items: list[dict], now: datetime, test: bool = False, header: 
     return "\n".join(lines)
 
 
-def make_summary_collage(items: list[dict], download=None, max_products: int = 4) -> Path | None:
-    """Imagen de cierre del resumen: los mejores chollos con precio en naranja, descuento y nombre, y el logo.
+def make_summary_collage(items: list[dict], download=None, max_products: int = 5, now: datetime | None = None,
+                         canal: str = "cazachollos") -> Path | None:
+    """Imagen del resumen de la noche: top 5 del día con la línea gráfica de las tarjetas (marco naranja con la
+    pestaña del canal, 26/11/2026, resumen_imagen.py). Sin fotos de Amazon. None con menos de 2 chollos.
+    `download` queda por compatibilidad."""
+    import resumen_imagen
+    nombre = "resumen.jpg" if canal == "cazachollos" else f"resumen_{canal}.jpg"
+    return resumen_imagen.crear_resumen(items, (now or datetime.now(MADRID)).astimezone(MADRID), OUTPUT / nombre,
+                                        canal, max_products)
 
-    Sin fotos de Amazon (las normas de afiliados no dejan retocarlas ni componerlas en un collage); las fotos
-    tal cual ya salen en cada post. Devuelve None con menos de 2 chollos. `download` queda por compatibilidad."""
-    from PIL import Image, ImageDraw
-    from publisher import BRAND_ORANGE, DEAL_LOGO, _font
 
-    picked = [item for item in items if item.get("price") is not None][:max_products]
-    if len(picked) < 2:
-        return None
-
-    width, height, margin = 2160, 1080, 50
-    canvas = Image.new("RGB", (width, height), "white")
-    draw = ImageDraw.Draw(canvas)
-    footer_top = 760
-    column = (width - 2 * margin) // len(picked)
-    tag_h = 120
-    dark, grey = "#1A1A1A", "#8A8A8A"
-
-    def fit(text: str, size: int, limit: int, bold: bool = True):
-        font = _font(size, bold=bold)
-        while draw.textbbox((0, 0), text, font=font)[2] > limit and size > 30:
-            size -= 4
-            font = _font(size, bold=bold)
-        return font
-
-    def centered(text: str, font, y: int, x0: int, fill: str) -> int:
-        tb = draw.textbbox((0, 0), text, font=font)
-        draw.text((x0 + (column - (tb[2] - tb[0])) // 2 - tb[0], y - tb[1]), text, font=font, fill=fill)
-        return tb[3] - tb[1]
-
-    for index, item in enumerate(picked):
-        x0 = margin + index * column
-        inner = column - 80
-        if index:
-            draw.line([(x0, margin + 20), (x0, footer_top - 40)], fill="#E6E6E6", width=4)
-        # Precio en caja naranja, como las tarjetas de chollos
-        text = euro(item["price"]).replace(" €", "€")
-        font = fit(text, 92, inner - 56)
-        tb = draw.textbbox((0, 0), text, font=font)
-        tw, th = tb[2] - tb[0], tb[3] - tb[1]
-        bx, by = x0 + (column - tw - 56) // 2, margin + 10
-        draw.rounded_rectangle([bx, by, bx + tw + 56, by + tag_h], radius=18, fill=BRAND_ORANGE)
-        draw.text((bx + 28 - tb[0], by + (tag_h - th) // 2 - tb[1]), text, font=font, fill="white")
-        y = by + tag_h + 45
-        # Descuento grande y precio de antes tachado
-        y += centered(f"-{round(item.get('discount') or 0)} %", _font(120, bold=True), y, x0, dark) + 35
-        before = f"antes {euro(item['reference']).replace(' €', '€')}" if item.get("reference") else ""
-        if before:
-            bfont = fit(before, 50, inner, bold=False)
-            bb = draw.textbbox((0, 0), before, font=bfont)
-            bxl = x0 + (column - (bb[2] - bb[0])) // 2
-            centered(before, bfont, y, x0, grey)
-            mid = y + (bb[3] - bb[1]) // 2
-            draw.line([(bxl + draw.textlength("antes ", font=bfont), mid), (bxl + bb[2] - bb[0], mid)],
-                      fill=grey, width=4)
-            y += bb[3] - bb[1] + 50
-        # Nombre del producto, hasta 4 líneas
-        tfont = _font(46, bold=True)
-        words, lines, line = clean_title(item.get("title") or "", 90).split(), [], ""
-        for word in words:
-            trial = f"{line} {word}".strip()
-            if draw.textbbox((0, 0), trial, font=tfont)[2] <= inner:
-                line = trial
-            else:
-                lines.append(line)
-                line = word
-        lines.append(line)
-        if len(lines) > 4:
-            lines = lines[:4]
-            lines[3] = lines[3].rstrip(".,") + "…"
-        for text_line in lines:
-            if y + 56 > footer_top - 40:
-                break
-            centered(text_line, tfont, y, x0, dark)
-            y += 60
-
-    # Pie: logo del canal y el nombre, a la derecha
-    logo_size = 250
-    logo = Image.open(DEAL_LOGO).convert("RGB").resize((logo_size, logo_size), Image.LANCZOS)
-    name_font = _font(110, bold=True)
-    sub_font = _font(46, bold=True)
-    name, sub = "Caza Chollos", "t.me/cazachollos_com"
-    nb = draw.textbbox((0, 0), name, font=name_font)
-    sb = draw.textbbox((0, 0), sub, font=sub_font)
-    text_w = max(nb[2] - nb[0], sb[2] - sb[0])
-    block_w = logo_size + 40 + text_w
-    lx = width - margin - block_w
-    ly = height - margin - logo_size
-    canvas.paste(logo, (lx, ly))
-    tx = lx + logo_size + 40
-    name_h, sub_h = nb[3] - nb[1], sb[3] - sb[1]
-    ty = ly + (logo_size - (name_h + 24 + sub_h)) // 2
-    draw.text((tx - nb[0], ty - nb[1]), name, font=name_font, fill="#1A1A1A")
-    draw.text((tx - sb[0], ty + name_h + 24 - sb[1]), sub, font=sub_font, fill=BRAND_ORANGE)
-    # A la izquierda del pie, el titular del cierre
-    head_font = _font(64, bold=True)
-    draw.text((margin, ly + 40), "LO MEJOR DE HOY", font=head_font, fill="#1A1A1A")
-    draw.text((margin, ly + 130), "CERRAMOS EL DÍA", font=head_font, fill=BRAND_ORANGE)  # sin la marca Amazon
-
-    OUTPUT.mkdir(parents=True, exist_ok=True)
-    out = OUTPUT / "resumen.jpg"
-    canvas.save(out, "JPEG", quality=92)
-    return out
+def visible_len(text_html: str) -> int:
+    """Caracteres que cuenta Telegram en un pie de foto con HTML (máximo 1024)."""
+    return len(html.unescape(re.sub(r"<[^>]+>", "", text_html)))
 
 
 def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolve_asin=None, log=print) -> int:
@@ -2632,26 +2541,38 @@ def run_summary(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None
     if args.dry_run or tg is None:
         log("[prueba, no se envía]\n" + text)
         return 0
-    message = tg.call("sendMessage", {"chat_id": target, "text": text, "parse_mode": "HTML",
-                                      "disable_web_page_preview": True})
-    log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos.")
-    # Al final del todo, la imagen con los mejores del día y el logo. Si falla, el resumen ya ha salido.
+    # 26/11/2026: imagen (top 5 con la línea gráfica de las tarjetas) y texto en un mismo post. Si el texto no cabe
+    # en el pie de foto (1024 caracteres) o la imagen falla, sale como antes: el texto y luego la imagen.
     collage = None
     try:
-        collage = make_summary_collage(items)
-        if collage:
-            tg.send_photo(target, collage, "🔔 Mañana a las 7:00 más chollos en @cazachollos_com")
-            log("Resumen: imagen de cierre enviada.")
-        else:
-            log("Resumen: sin fotos suficientes para la imagen de cierre.")
+        collage = make_summary_collage(items, now=now)
     except Exception as exc:
-        log(f"Resumen: no he podido mandar la imagen de cierre ({exc})")
+        log(f"Resumen: no he podido hacer la imagen ({exc})")
+    if collage and visible_len(text) <= 1024:
+        message = tg.send_photo(target, collage, text)
+        log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos, "
+            "imagen y texto en el mismo post.")
+    else:
+        message = tg.call("sendMessage", {"chat_id": target, "text": text, "parse_mode": "HTML",
+                                          "disable_web_page_preview": True})
+        log(f"Resumen enviado a {target} (mensaje {message.get('message_id')}) con {len(items)} chollos.")
+        if collage:
+            try:
+                tg.send_photo(target, collage, "🔔 Mañana a las 7:00 más chollos en @cazachollos_com")
+                log("Resumen: imagen de cierre enviada aparte (el texto no cabía en el pie).")
+            except Exception as exc:
+                log(f"Resumen: no he podido mandar la imagen de cierre ({exc})")
     if not args.test_private:
         state["summary_sent"] = day.isoformat()
     # Canal de WhatsApp (16/11/2026): el mismo top del día. Nunca bloquea ni repite el de Telegram.
     try:
         import whatsapp
-        whatsapp.publish_summary(items[:int(rules.get("whatsapp_size") or whatsapp.MAX_ITEMS)], collage, now,
+        wa_items = items[:int(rules.get("whatsapp_size") or whatsapp.MAX_ITEMS)]
+        try:
+            wa_collage = make_summary_collage(wa_items, now=now, canal="whatsapp") or collage
+        except Exception:
+            wa_collage = collage
+        whatsapp.publish_summary(wa_items, wa_collage, now,
                                  test=bool(args.test_private), tag=rules.get("tag") or whatsapp.DEFAULT_TAG,
                                  invite=rules.get("whatsapp_invite") or whatsapp.DEFAULT_INVITE, log=log,
                                  state=state, budget=int(rules.get("whatsapp_monthly_budget") or 950))

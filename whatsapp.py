@@ -97,7 +97,7 @@ def build_text(items: list[dict], now: datetime, tag: str = DEFAULT_TAG, test: b
     for index, item in enumerate(items):
         num = NUMBERS[index] if index < len(NUMBERS) else f"{index + 1}."
         discount = round(float(item.get("discount") or 0))
-        lines.append(f"{num} *{short_title(item.get('title'))}*")
+        lines.append(f"{num} *{short_title(item.get('title'), 50)}*")  # 50: que quepa en el pie de la imagen
         lines.append(f"💰 *{euro(float(item['price']))}*  ~{euro(float(item['reference']))}~  📉 *-{discount} %*")
         lines.append(f"🛒 {affiliate_url(item, tag)}")
         lines.append("")
@@ -371,11 +371,17 @@ def publish_summary(items: list[dict], collage: Path | None, now: datetime, test
             log("  WhatsApp: cupo del mes de Whapi agotado; hoy no sale el resumen")
             return False
         to = target(token, state, now, invite, test, log)
-        if collage and Path(collage).exists():
+        texto = build_text(items, now, tag, test=test)
+        if collage and Path(collage).exists() and len(texto) <= 1024:
+            # 26/11/2026: imagen y texto en el mismo mensaje (una sola petición a Whapi)
             note_requests(state, now, 1)
-            send_image(token, to, Path(collage), "🔥 Lo mejor de hoy en Amazon 👇")
-        note_requests(state, now, 1)
-        send_text(token, to, build_text(items, now, tag, test=test))
+            send_image(token, to, Path(collage), texto)
+        else:
+            if collage and Path(collage).exists():
+                note_requests(state, now, 1)
+                send_image(token, to, Path(collage), "🔥 Lo mejor de hoy en Amazon 👇")
+            note_requests(state, now, 1)
+            send_text(token, to, texto)
         log(f"  WhatsApp: resumen enviado {'a tu número de pruebas' if test else 'al canal'} "
             f"con {min(len(items), MAX_ITEMS)} chollos")
         return True
