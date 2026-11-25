@@ -567,6 +567,10 @@ def block_keyword(cand: dict, rules: dict, text: str) -> str | None:
     exceptions = rules.get("reader_exceptions") or []
     device = any(keyword_in(text, item) for item in rules.get("category_keywords") or [])
     title = cand.get("name") or cand.get("title") or ""
+    import vetados
+    veto = vetados.vetado(text, title)
+    if veto:  # 25/11/2026: nada de Funko en ningún canal
+        return veto
     for keyword in rules.get("block_keywords") or []:
         if not keyword_in(text, keyword):
             continue

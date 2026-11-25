@@ -196,7 +196,8 @@ def evaluate(product: dict, state: dict, today: date, rules: dict) -> tuple[str,
         return "sin precio en euros", {}
     if not (float(rules["min_price_eur"]) <= price <= float(rules["max_price_eur"])):
         return "precio fuera de rango", {}
-    word = blocked(product.get("title") or "", rules)
+    import vetados
+    word = vetados.vetado(product.get("title") or "") or blocked(product.get("title") or "", rules)
     if word:
         return f"bloqueado ({word})", {}
     rating = product.get("rating")

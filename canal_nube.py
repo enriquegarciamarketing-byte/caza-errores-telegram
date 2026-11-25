@@ -393,6 +393,10 @@ def interest_base(title: str, rules: dict) -> dict:
     excluded = excluido_amazon(title)
     if excluded:
         return {"score": 0, "label": "", "blocked": f"excluido por Amazon: {excluded}"}
+    import vetados
+    veto = vetados.vetado(title)
+    if veto:  # 25/11/2026: nada de Funko en ningún canal
+        return {"score": 0, "label": "", "blocked": veto}
     for word in list(conf.get("block") or []) + list(rules.get("block_keywords") or []):
         if has(word):
             return {"score": 0, "label": "", "blocked": word}

@@ -388,6 +388,11 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
     import premium_manual
 
     origen = f"https://t.me/{post['canal']}/{post['id']}"
+    import vetados
+    veto = vetados.vetado(post.get("texto") or "")
+    if veto:  # 25/11/2026: nada de Funko en ningún canal
+        log(f"  {origen}: vetado («{veto}»), no lo publico")
+        return
     raw = enlace_amazon(post)
     if not raw:
         log(f"  {origen}: sin enlace de Amazon, lo salto")
@@ -410,6 +415,10 @@ def procesar(post: dict, tipo: str, api, tg, state: dict, privado_: bool, seco: 
         motivo = "sin datos en la API" if not live else ("agotado" if not live.get("in_stock") else "sin precio")
         log(f"  {origen}: {asin} {motivo}, no lo publico")
         avisar(tg, f"⚠️ Vigía: {origen} ({asin}) {motivo} en Amazon, no lo he publicado.\n{link}")
+        return
+    veto = vetados.vetado(live.get("title") or "")
+    if veto:
+        log(f"  {origen}: {asin} vetado («{veto}»), no lo publico")
         return
     basis = live.get("saving_basis")
     live["reference"] = basis if basis and basis > live["price"] else None

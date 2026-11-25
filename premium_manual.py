@@ -161,6 +161,11 @@ def publish(spec: dict, private: bool, token: str) -> int:
         if not spec.get(key):
             print(f"Falta «{key}» en los datos.", file=sys.stderr)
             return 2
+    import vetados
+    veto = vetados.vetado(spec.get("copy") or "", spec.get("title") or "")
+    if veto:  # 25/11/2026: nada de Funko en ningún canal
+        print(f"No publico: producto vetado («{veto}»).", file=sys.stderr)
+        return 2
     try:
         spec = dict(spec, link=clean_link(spec["link"], spec.get("asin")))
         spec["asin"] = spec.get("asin") or (re.search(r"/dp/([A-Z0-9]{10})", spec["link"]) or [None, None])[1]
