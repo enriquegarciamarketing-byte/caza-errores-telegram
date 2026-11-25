@@ -29,7 +29,8 @@ jobs:
       - name: Aplicar descripción y mensaje fijado
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
+          WHATSAPP_CHANNEL_ID: ${{ secrets.WHATSAPP_CHANNEL_ID }}
         run: |
           set -o pipefail
           python channel_info.py 2>&1 | tee state/channel_info.log
