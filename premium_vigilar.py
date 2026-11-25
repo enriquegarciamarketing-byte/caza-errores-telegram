@@ -244,7 +244,7 @@ def edit_card(token: str, tg: Telegram, admin: int, message_id: int, motivo: str
     if es_blanco_y_negro(im):
         return False
     buf = BytesIO()
-    sellar(im, motivo).save(buf, "JPEG", quality=93)
+    sellar(im, motivo).save(buf, "JPEG", quality=95, subsampling=0)
 
     media = {"type": "photo", "media": "attach://photo", "caption": fwd.get("caption") or ""}
     if fwd.get("caption_entities"):

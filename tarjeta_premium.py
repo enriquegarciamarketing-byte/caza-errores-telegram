@@ -46,7 +46,9 @@ def sellar(im: Image.Image, motivo: str = "agotado") -> Image.Image:
 
     motivo «agotado» → AGOTADO (no se puede comprar a ningún precio); «terminada» → OFERTA TERMINADA
     (sigue a la venta pero más cara). Mismo sello que las tarjetas marcadas a mano el 17/11/2026."""
-    k = im.width / 1000
+    import marco_canal
+    caja = marco_canal.caja_tarjeta(im.size)  # 26/11/2026: tarjeta dentro del marco naranja del canal
+    ox, oy, k = caja if caja else (0, 0, im.width / 1000)
     gray = ImageOps.grayscale(im.convert("RGB")).point(lambda v: int(v * 0.9 + 25))
     out = gray.convert("RGB")
     lines = ["AGOTADO"] if motivo == "agotado" else ["OFERTA", "TERMINADA"]
@@ -63,7 +65,7 @@ def sellar(im: Image.Image, motivo: str = "agotado") -> Image.Image:
         y = bh / 2 + 2 + ((i - (len(lines) - 1) / 2) * 96 + 6) * k
         sd.text((bw / 2 + 2, y), text, font=font, fill=red, anchor="mm")
     stamp = stamp.rotate(12, resample=Image.BICUBIC, expand=True)
-    cx, cy = int(500 * k), int(245 * im.height / 1000)
+    cx, cy = (ox + int(500 * k), oy + int(245 * k)) if caja else (int(500 * k), int(245 * im.height / 1000))
     out.paste(stamp, (cx - stamp.width // 2, cy - stamp.height // 2), stamp)
     return out
 
@@ -71,13 +73,18 @@ def sellar(im: Image.Image, motivo: str = "agotado") -> Image.Image:
 def es_blanco_y_negro(im: Image.Image) -> bool:
     """True si la tarjeta ya está en blanco y negro (ya marcada como terminada): no se vuelve a sellar.
     Mira la píldora del precio (abajo a la derecha), que en color es naranja y lejos del sello."""
+    import marco_canal
+    caja = marco_canal.caja_tarjeta(im.size)
+    if caja:  # enmarcada: se mira la píldora de la tarjeta de dentro
+        ox, oy, k = caja
+        im = im.crop((ox, oy, ox + round(1000 * k), oy + round(1000 * k)))
     w, h = im.size
     pill = im.convert("RGB").crop((int(w * 0.6), int(h * 0.85), int(w * 0.9), int(h * 0.93))).resize((60, 16))
     return sum(1 for px in pill.getdata() if max(px) - min(px) > 40) < 50
 
 
 def crear_tarjeta(photo: Path, reference: float | None, current: float, when: str, out: Path,
-                  agotado: bool = False, ref_label: str = "recomendado") -> Path:
+                  agotado: bool = False, ref_label: str = "recomendado", marco: str | None = "caza_errores") -> Path:
     # ref_label: «recomendado» (PVP de la ficha) o «mediano» cuando la ficha solo da «Precio mediano».
     # reference None: la ficha no da precio de referencia → tarjeta sin panel ni tachado, solo el precio de hoy.
     pct = round((reference - current) / reference * 100) if reference else None
@@ -108,7 +115,7 @@ def crear_tarjeta(photo: Path, reference: float | None, current: float, when: st
         w = fs.getlength(text)
         d.text((949, 812), text, font=fs, fill=(85, 85, 85), anchor="rs")
         d.line((949 - w - 4, 788, 953, 787), fill=(85, 85, 85), width=7)
-    _resto(im, current, agotado, out)
+    _resto(im, current, agotado, out, marco)
     return out
 
 
@@ -146,7 +153,7 @@ def _panel(im, reference, current, pct, ref_label):
 
 
 
-def _resto(im, current, agotado, out):
+def _resto(im, current, agotado, out, marco=None):
     d = ImageDraw.Draw(im)
     # Píldora naranja con el precio actual.
     pill = Image.new("RGB", (500, 125))
@@ -171,11 +178,14 @@ def _resto(im, current, agotado, out):
     d.line((40, 980, 500 - aw / 2 - 16, 980), fill=(170, 170, 170), width=1)
     d.line((500 + aw / 2 + 16, 980, 960, 980), fill=(170, 170, 170), width=1)
 
+    if marco:  # 26/11/2026: marco naranja con la pestaña del canal (marco_canal.py)
+        import marco_canal
+        im = marco_canal.enmarcar_canal(im, marco)
     if agotado:
         im = sellar(im, "agotado")
 
     out.parent.mkdir(parents=True, exist_ok=True)
-    im.save(out, quality=95)
+    im.save(out, quality=96, subsampling=0, optimize=True)  # 4:4:4, sin emborronar naranjas ni textos
 
 
 if __name__ == "__main__":
