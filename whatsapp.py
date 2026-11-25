@@ -409,6 +409,23 @@ def main() -> int:
         info = channel_info(token, invite)
     except WhapiError as exc:
         print(f"No conecto con el canal: {exc}")
+        # Diagnóstico: estado de la sesión de Whapi y canales que ve el número vinculado.
+        try:
+            health = _json("GET", "/health?wakeup=true", token)
+            status = health.get("status") or {}
+            user = health.get("user") or {}
+            print(f"Whapi · estado de la sesión: {status.get('text') or status} · número: {user.get('id') or '?'} "
+                  f"({user.get('name') or '?'})")
+        except WhapiError as exc2:
+            print(f"Whapi · no puedo leer el estado de la sesión: {exc2}")
+        try:
+            data = _json("GET", "/newsletters?count=100", token)
+            seen = data.get("newsletters") or []
+            print(f"Canales que ve el número vinculado: {len(seen)}")
+            for item in seen[:20]:
+                print(f"  - {item.get('name')} · {item.get('id')} · rol {item.get('role')}")
+        except WhapiError as exc3:
+            print(f"Whapi · no puedo listar canales: {exc3}")
         print("Revisa que el número esté vinculado en Whapi (QR) y que el token sea el de esa instancia.")
         return 1
     try:
