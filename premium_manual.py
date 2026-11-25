@@ -64,7 +64,20 @@ def caption_html(copy: str, links: dict[str, str] | None = None) -> str:
             if seen in safe and shown != target:
                 safe = safe.replace(seen, f'<a href="{html.escape(target)}">{seen}</a>')
         lines.append(safe)
+    pie = pie_premium(copy)
+    if pie:
+        lines += ["", pie]
     return "\n".join(lines)
+
+
+def pie_premium(copy: str) -> str:
+    """Última línea de los posts de @caza_errores (25/11/2026, Enrique): «Visto en @cazachollos_com #Publicidad
+    #Chollo» para llevar gente al free; con #ErrorDePrecio si la cabecera es de error. Si ya está, no se repite."""
+    if "Visto en @" in copy:
+        return ""
+    cabecera = next((l for l in copy.strip().splitlines() if l.strip()), "")
+    tag = "#ErrorDePrecio" if "#ErrorDePrecio" in cabecera else "#Chollo"
+    return f"Visto en @cazachollos_com #Publicidad {tag}"
 
 
 URL_IN_TEXT = re.compile(r"https?://[^\s<>\"']+")

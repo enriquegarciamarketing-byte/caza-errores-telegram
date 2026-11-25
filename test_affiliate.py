@@ -162,8 +162,9 @@ class SinSubtagsAjenos(unittest.TestCase):
         copy = "💎 #Chollo\n\nGTA\n\n🌟https://link.amazon/B00LIWK2g"
         links = pm.copy_links(copy, "B0HPL85XWH", resolve=lambda u: self.PEPPER)
         cap = pm.caption_html(copy, links)
-        self.assertTrue(cap.endswith('🌟<a href="https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21">'
-                                     'https://link.amazon/B00LIWK2g</a>'))
+        self.assertIn('🌟<a href="https://www.amazon.es/dp/B0HPL85XWH?tag=cazachollos0c-21">'
+                      'https://link.amazon/B00LIWK2g</a>', cap)
+        self.assertTrue(cap.endswith("Visto en @cazachollos_com #Publicidad #Chollo"))
         self.assertNotIn("ppr-es", cap)
 
 
