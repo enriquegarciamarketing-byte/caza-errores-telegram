@@ -164,12 +164,36 @@ def publicar(privado: bool, solo: str | None = None) -> int:
     return estado
 
 
+HORA = (20, 40)  # 26/11/2026, Enrique: cada domingo a las 20:40 (hora de Madrid)
+
+
+def programado() -> int:
+    """Lo lanza el cron del domingo hacia las 19:10 de Madrid (dos crons en UTC para cubrir invierno y verano).
+    Solo sigue la ejecución que cae entre las 18:50 y las 19:55 de Madrid (así nunca sale dos veces) y espera
+    hasta las 20:40 en punto para publicar."""
+    import time
+    from zoneinfo import ZoneInfo
+    madrid = ZoneInfo("Europe/Madrid")
+    ahora = datetime.now(madrid)
+    if ahora.weekday() != 6 or not ((18, 50) <= (ahora.hour, ahora.minute) <= (19, 55)):
+        print(f"No toca: son las {ahora:%H:%M} del {ahora:%A} en Madrid (la otra ejecución del cron publica).")
+        return 0
+    objetivo = ahora.replace(hour=HORA[0], minute=HORA[1], second=0, microsecond=0)
+    espera = (objetivo - ahora).total_seconds()
+    print(f"Espero {espera / 60:.0f} min hasta las {HORA[0]}:{HORA[1]:02d}")
+    time.sleep(max(0, espera))
+    return publicar(False)
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="Repaso de canales de cada domingo")
+    ap.add_argument("--programado", action="store_true", help="lo usa el cron: espera a las 20:40 y publica")
     ap.add_argument("--privado", action="store_true", help="las tres versiones a tu chat privado, nunca al canal")
     ap.add_argument("--canal", choices=["caza_errores", "cazachollos", "whatsapp"], help="solo este canal")
     ap.add_argument("--imagenes", help="solo generar las imágenes en esta carpeta")
     a = ap.parse_args()
+    if a.programado:
+        raise SystemExit(programado())
     if a.imagenes:
         for c in ("caza_errores", "cazachollos", "whatsapp"):
             print(imagen(c, Path(a.imagenes) / f"domingo_{c}.jpg"))

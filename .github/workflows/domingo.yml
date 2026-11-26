@@ -2,7 +2,12 @@ name: Repaso de canales del domingo
 
 # Imagen + copy en cada canal recordando los otros dos (funnel Caza Errores → Caza Chollos → WhatsApp).
 # A mano: «privado» manda las tres versiones a tu chat con el bot (nunca al canal).
+# Programado (26/11/2026): cada domingo a las 20:40 de Madrid. Los dos crons caen hacia las 19:10 de Madrid en
+# invierno y en verano; domingo.py --programado se queda solo con el que toca y espera hasta las 20:40.
 on:
+  schedule:
+    - cron: "10 17 * * 0"
+    - cron: "10 18 * * 0"
   workflow_dispatch:
     inputs:
       modo:
@@ -22,7 +27,7 @@ concurrency:
 jobs:
   repaso:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with:
@@ -40,5 +45,6 @@ jobs:
           WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
           WHATSAPP_CHANNEL_ID: ${{ secrets.WHATSAPP_CHANNEL_ID }}
         run: |
-          MODO="${{ inputs.modo || 'canal' }}"
+          if [ "${{ github.event_name }}" = "schedule" ]; then python -u domingo.py --programado; exit; fi
+          MODO="${{ inputs.modo || 'privado' }}"
           if [ "$MODO" = "privado" ]; then python -u domingo.py --privado; else python -u domingo.py; fi
