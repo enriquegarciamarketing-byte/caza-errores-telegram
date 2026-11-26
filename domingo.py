@@ -164,36 +164,78 @@ def publicar(privado: bool, solo: str | None = None) -> int:
     return estado
 
 
-HORA = (20, 40)  # 26/11/2026, Enrique: cada domingo a las 20:40 (hora de Madrid)
+HORA = (20, 40)  # 26/11/2026, Enrique: cada domingo a las 20:40 (hora de Madrid), sí o sí
+MARCA = Path(__file__).resolve().parent / "state" / "domingo.json"
 
 
-def programado() -> int:
-    """Lo lanza el cron del domingo hacia las 19:10 de Madrid (dos crons en UTC para cubrir invierno y verano).
-    Solo sigue la ejecución que cae entre las 18:50 y las 19:55 de Madrid (así nunca sale dos veces) y espera
-    hasta las 20:40 en punto para publicar."""
-    import time
+def _madrid() -> datetime:
     from zoneinfo import ZoneInfo
-    madrid = ZoneInfo("Europe/Madrid")
-    ahora = datetime.now(madrid)
-    if ahora.weekday() != 6 or not ((18, 50) <= (ahora.hour, ahora.minute) <= (19, 55)):
-        print(f"No toca: son las {ahora:%H:%M} del {ahora:%A} en Madrid (la otra ejecución del cron publica).")
+    return datetime.now(ZoneInfo("Europe/Madrid"))
+
+
+def ya_publicado(dia: str) -> bool:
+    """Mira en GitHub (no en la copia de esta ejecución, que puede ser de antes) si hoy ya salió el repaso."""
+    import json
+    import subprocess
+    try:
+        subprocess.run(["git", "fetch", "-q", "origin", "main"], check=True, timeout=60)
+        raw = subprocess.run(["git", "show", "origin/main:state/domingo.json"], capture_output=True, text=True,
+                             timeout=30).stdout
+        return json.loads(raw or "{}").get("ultimo") == dia
+    except Exception:
+        try:
+            return json.loads(MARCA.read_text(encoding="utf-8")).get("ultimo") == dia
+        except Exception:
+            return False
+
+
+def marcar(dia: str) -> None:
+    import json
+    MARCA.parent.mkdir(parents=True, exist_ok=True)
+    MARCA.write_text(json.dumps({"ultimo": dia}) + "\n", encoding="utf-8")
+
+
+def programado(reserva: bool = False) -> int:
+    """Cron del domingo (varios, por si GitHub se salta alguno) o reserva lanzada por el canal free.
+
+    - Antes de las 20:40: espera hasta las 20:40 en punto y publica.
+    - Entre las 20:40 y las 23:00, si aún no ha salido (todos los crons fallaron): publica ya.
+    - Las ejecuciones van en fila (concurrency) y antes de publicar se mira la marca en GitHub: nunca sale dos veces."""
+    import time
+    ahora = _madrid()
+    dia = ahora.date().isoformat()
+    if ahora.weekday() != 6:
+        print(f"Hoy no es domingo en Madrid ({ahora:%A %H:%M}); nada que hacer.")
+        return 0
+    if ya_publicado(dia):
+        print("El repaso de hoy ya ha salido.")
+        return 0
+    if (ahora.hour, ahora.minute) >= (23, 0) or (not reserva and ahora.hour < 17):
+        print(f"Fuera de hora ({ahora:%H:%M}); no publico.")
         return 0
     objetivo = ahora.replace(hour=HORA[0], minute=HORA[1], second=0, microsecond=0)
     espera = (objetivo - ahora).total_seconds()
-    print(f"Espero {espera / 60:.0f} min hasta las {HORA[0]}:{HORA[1]:02d}")
-    time.sleep(max(0, espera))
-    return publicar(False)
+    if espera > 0:
+        print(f"Espero {espera / 60:.0f} min hasta las {HORA[0]}:{HORA[1]:02d}")
+        time.sleep(espera)
+    if ya_publicado(dia):
+        print("Mientras esperaba ya lo publicó otra ejecución.")
+        return 0
+    estado = publicar(False)
+    marcar(dia)  # aunque falle un canal: los otros ya salieron y no se repiten
+    return estado
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="Repaso de canales de cada domingo")
     ap.add_argument("--programado", action="store_true", help="lo usa el cron: espera a las 20:40 y publica")
+    ap.add_argument("--reserva", action="store_true", help="lo lanza el canal free si a las 20:40 no ha salido")
     ap.add_argument("--privado", action="store_true", help="las tres versiones a tu chat privado, nunca al canal")
     ap.add_argument("--canal", choices=["caza_errores", "cazachollos", "whatsapp"], help="solo este canal")
     ap.add_argument("--imagenes", help="solo generar las imágenes en esta carpeta")
     a = ap.parse_args()
-    if a.programado:
-        raise SystemExit(programado())
+    if a.programado or a.reserva:
+        raise SystemExit(programado(reserva=a.reserva))
     if a.imagenes:
         for c in ("caza_errores", "cazachollos", "whatsapp"):
             print(imagen(c, Path(a.imagenes) / f"domingo_{c}.jpg"))

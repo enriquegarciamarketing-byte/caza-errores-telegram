@@ -1,24 +1,32 @@
 name: Repaso de canales del domingo
 
 # Imagen + copy en cada canal recordando los otros dos (funnel Caza Errores → Caza Chollos → WhatsApp).
-# A mano: «privado» manda las tres versiones a tu chat con el bot (nunca al canal).
-# Programado (26/11/2026): cada domingo a las 20:40 de Madrid. Los dos crons caen hacia las 19:10 de Madrid en
-# invierno y en verano; domingo.py --programado se queda solo con el que toca y espera hasta las 20:40.
+# Cada domingo a las 20:40 de Madrid, sí o sí (26/11/2026):
+# - Seis crons repartidos entre las 18:10 y las 20:50 de Madrid (invierno y verano), por si GitHub se salta alguno.
+#   El primero que entra espera hasta las 20:40 en punto y publica; el resto ve la marca (state/domingo.json) y no
+#   repite. Si todos se retrasan, el que llegue después de las 20:40 publica en cuanto arranca.
+# - Reserva: el canal free (que corre todo el día con relevo) lanza este workflow en modo «reserva» si a partir de
+#   las 20:41 del domingo aún no hay marca.
+# A mano: «privado» manda las tres versiones a tu chat con el bot (nunca al canal); «canal» publica ya.
 on:
   schedule:
     - cron: "10 17 * * 0"
+    - cron: "40 17 * * 0"
     - cron: "10 18 * * 0"
+    - cron: "40 18 * * 0"
+    - cron: "25 19 * * 0"
+    - cron: "50 19 * * 0"
   workflow_dispatch:
     inputs:
       modo:
-        description: "privado (prueba a tu chat) · canal (publica en los tres canales)"
+        description: "privado (prueba a tu chat) · canal (publica ya en los tres) · reserva (solo si hoy no ha salido)"
         required: true
         type: choice
-        options: [privado, canal]
+        options: [privado, canal, reserva]
         default: privado
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: domingo-repaso
@@ -27,7 +35,7 @@ concurrency:
 jobs:
   repaso:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,5 +54,22 @@ jobs:
           WHATSAPP_CHANNEL_ID: ${{ secrets.WHATSAPP_CHANNEL_ID }}
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then python -u domingo.py --programado; exit; fi
-          MODO="${{ inputs.modo || 'privado' }}"
-          if [ "$MODO" = "privado" ]; then python -u domingo.py --privado; else python -u domingo.py; fi
+          case "${{ inputs.modo }}" in
+            privado) python -u domingo.py --privado ;;
+            reserva) python -u domingo.py --reserva ;;
+            *) python -u domingo.py ;;
+          esac
+      - name: Guardar la marca del domingo
+        if: always()
+        run: |
+          [ -f state/domingo.json ] || exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --mixed origin/main
+            git add state/domingo.json
+            git diff --cached --quiet && exit 0
+            git commit -qm "Repaso del domingo publicado [skip ci]"
+            git push -q origin HEAD:main && exit 0
+            sleep $((2 ** i))
+          done
