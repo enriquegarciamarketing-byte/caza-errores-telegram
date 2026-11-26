@@ -701,6 +701,8 @@
     "whatsapp_monthly_budget": 950,
     "whatsapp_ai_label": "",
     "_nota_whatsapp_button": "17/11/2026: debajo de Comprar en Amazon, en cada post del canal, un botón para unirse al canal de WhatsApp (se queda también cuando el chollo termina). Vacío = sin botón.",
+    "_nota_marco_canal": "26/11/2026: los chollos del free salen con la línea gráfica nueva (marco naranja con la pestaña de Caza Chollos, precio de antes tachado y el de hoy en la píldora). false = la foto sola sobre fondo blanco de antes.",
+    "marco_canal": true,
     "whatsapp_button": {"text": "📲 Únete a WhatsApp", "url": "https://whatsapp.com/channel/0029VbE063mEwEk5M7m9Xe17"},
     "_nota_premium_join_button": "25/11/2026: en el premium @caza_errores el botón de debajo de Comprar en Amazon lleva al canal free de Telegram (antes al de WhatsApp). En el free sigue el de WhatsApp con el mismo texto que tenía el premium.",
     "premium_join_button": {"text": "📢 Únete a Caza Chollos", "url": "https://t.me/cazachollos_com"},
