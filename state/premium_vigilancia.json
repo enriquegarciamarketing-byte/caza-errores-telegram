@@ -1,5 +1,5 @@
 {
- "ultimo": 452,
+ "ultimo": 457,
  "posts": {
   "154": {
    "tipo": "tarjeta",
@@ -72,7 +72,7 @@
    "cupon": false,
    "fecha": 1794572687,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 59.89
   },
   "172": {
@@ -194,7 +194,7 @@
    "cupon": false,
    "fecha": 1794812965,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 99.99
   },
   "191": {
@@ -241,7 +241,7 @@
    "cupon": false,
    "fecha": 1794823682,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 21.99
   },
   "198": {
@@ -276,7 +276,7 @@
    "cupon": false,
    "fecha": 1794826882,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 54.99
   },
   "204": {
@@ -401,7 +401,7 @@
    "cupon": false,
    "fecha": 1794990620,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 254.99
   },
   "228": {
@@ -496,7 +496,7 @@
    "cupon": false,
    "fecha": 1795016886,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 139.0
   },
   "250": {
@@ -645,7 +645,7 @@
    "cupon": false,
    "fecha": 1795084855,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 10.4
   },
   "273": {
@@ -662,7 +662,7 @@
    "cupon": false,
    "fecha": 1795092470,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 79.95
   },
   "276": {
@@ -712,7 +712,7 @@
    "cupon": false,
    "fecha": 1795114353,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 17.99
   },
   "287": {
@@ -723,7 +723,7 @@
    "cupon": false,
    "fecha": 1795117100,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 49.99
   },
   "291": {
@@ -773,7 +773,7 @@
    "cupon": false,
    "fecha": 1795129868,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 65.0
   },
   "299": {
@@ -871,7 +871,7 @@
    "cupon": false,
    "fecha": 1795192802,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 82.35
   },
   "315": {
@@ -894,7 +894,7 @@
    "cupon": false,
    "fecha": 1795200646,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 79.9
   },
   "318": {
@@ -923,7 +923,7 @@
    "cupon": false,
    "fecha": 1795248262,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 18.86
   },
   "324": {
@@ -946,7 +946,7 @@
    "cupon": false,
    "fecha": 1795248316,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 4.89
   },
   "326": {
@@ -999,7 +999,7 @@
    "cupon": false,
    "fecha": 1795280069,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 79.9
   },
   "332": {
@@ -1011,7 +1011,7 @@
    "segunda": false,
    "fecha": 1795286177,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 52.99
   },
   "333": {
@@ -1023,7 +1023,7 @@
    "segunda": false,
    "fecha": 1795289968,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 6.33
   },
   "334": {
@@ -1035,7 +1035,7 @@
    "segunda": true,
    "fecha": 1795295517,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 26.17
   },
   "335": {
@@ -1047,7 +1047,7 @@
    "segunda": false,
    "fecha": 1795296218,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 139.0
   },
   "336": {
@@ -1072,7 +1072,7 @@
    "segunda": true,
    "fecha": 1795298925,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 191.2
   },
   "338": {
@@ -1097,7 +1097,7 @@
    "segunda": true,
    "fecha": 1795304542,
    "estado": "vivo",
-   "comprobado": 1795652920
+   "comprobado": 1795685898
   },
   "340": {
    "tipo": "otro"
@@ -1111,7 +1111,7 @@
    "segunda": true,
    "fecha": 1795336628,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 155.99
   },
   "342": {
@@ -1136,7 +1136,7 @@
    "segunda": true,
    "fecha": 1795346671,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 15.9
   },
   "345": {
@@ -1161,7 +1161,7 @@
    "segunda": false,
    "fecha": 1795366189,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 25.25
   },
   "347": {
@@ -1199,7 +1199,7 @@
    "segunda": true,
    "fecha": 1795386329,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 63.69
   },
   "350": {
@@ -1217,7 +1217,7 @@
    "segunda": true,
    "fecha": 1795390226,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 106.89
   },
   "353": {
@@ -1232,7 +1232,7 @@
    "segunda": false,
    "fecha": 1795412420,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 4.55
   },
   "356": {
@@ -1260,7 +1260,7 @@
    "segunda": false,
    "fecha": 1795416375,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 22.5
   },
   "359": {
@@ -1272,7 +1272,7 @@
    "segunda": false,
    "fecha": 1795416381,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 23.36
   },
   "360": {
@@ -1284,7 +1284,7 @@
    "segunda": false,
    "fecha": 1795416388,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 9.47
   },
   "361": {
@@ -1299,7 +1299,7 @@
    "segunda": false,
    "fecha": 1795418671,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 20.95
   },
   "363": {
@@ -1330,7 +1330,7 @@
    "segunda": false,
    "fecha": 1795425253,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 16.74
   },
   "367": {
@@ -1342,7 +1342,7 @@
    "segunda": false,
    "fecha": 1795428593,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 4.5
   },
   "370": {
@@ -1393,7 +1393,7 @@
    "segunda": false,
    "fecha": 1795434453,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 13.91
   },
   "374": {
@@ -1405,7 +1405,7 @@
    "segunda": false,
    "fecha": 1795438753,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 8.23
   },
   "375": {
@@ -1430,7 +1430,7 @@
    "segunda": true,
    "fecha": 1795450200,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 55.0
   },
   "377": {
@@ -1458,7 +1458,7 @@
    "segunda": false,
    "fecha": 1795452623,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 2.99
   },
   "380": {
@@ -1512,7 +1512,7 @@
    "segunda": false,
    "fecha": 1795462494,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 13.2
   },
   "385": {
@@ -1537,7 +1537,7 @@
    "segunda": false,
    "fecha": 1795469294,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 6.75
   },
   "387": {
@@ -1549,7 +1549,7 @@
    "segunda": false,
    "fecha": 1795470132,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 87.15
   },
   "388": {
@@ -1587,7 +1587,7 @@
    "segunda": true,
    "fecha": 1795511528,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 23.68
   },
   "391": {
@@ -1625,7 +1625,7 @@
    "segunda": false,
    "fecha": 1795514605,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 18.81
   },
   "394": {
@@ -1637,7 +1637,7 @@
    "segunda": true,
    "fecha": 1795515487,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 29.99
   },
   "395": {
@@ -1649,7 +1649,7 @@
    "segunda": false,
    "fecha": 1795518647,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 35.95
   },
   "396": {
@@ -1674,7 +1674,7 @@
    "segunda": false,
    "fecha": 1795521728,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 69.99
   },
   "398": {
@@ -1712,7 +1712,7 @@
    "segunda": false,
    "fecha": 1795529577,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 29.95
   },
   "402": {
@@ -1740,7 +1740,7 @@
    "segunda": false,
    "fecha": 1795540979,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 9.44
   },
   "405": {
@@ -1752,7 +1752,7 @@
    "segunda": false,
    "fecha": 1795546189,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 14.23
   },
   "406": {
@@ -1779,9 +1779,10 @@
    "cupon": false,
    "segunda": true,
    "fecha": 1795556948,
-   "estado": "vivo",
-   "comprobado": 1795652920,
-   "ultimo_precio": 48.69
+   "estado": "agotado",
+   "comprobado": 1795685898,
+   "ultimo_precio": null,
+   "sellado": 1795685973
   },
   "410": {
    "tipo": "tarjeta",
@@ -1805,7 +1806,7 @@
    "segunda": true,
    "fecha": 1795585186,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 14.37
   },
   "412": {
@@ -1830,7 +1831,7 @@
    "segunda": true,
    "fecha": 1795587773,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 5.57
   },
   "414": {
@@ -1855,7 +1856,7 @@
    "segunda": true,
    "fecha": 1795591928,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 12.89
   },
   "416": {
@@ -1893,7 +1894,7 @@
    "segunda": true,
    "fecha": 1795598007,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 4.8
   },
   "419": {
@@ -1931,7 +1932,7 @@
    "segunda": false,
    "fecha": 1795599485,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 7.59
   },
   "422": {
@@ -1956,7 +1957,7 @@
    "segunda": false,
    "fecha": 1795600244,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 99.19
   },
   "424": {
@@ -1968,7 +1969,7 @@
    "segunda": true,
    "fecha": 1795600346,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 4.8
   },
   "425": {
@@ -1980,7 +1981,7 @@
    "segunda": false,
    "fecha": 1795600824,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 56.95
   },
   "426": {
@@ -1992,7 +1993,7 @@
    "segunda": true,
    "fecha": 1795601427,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 4.8
   },
   "427": {
@@ -2004,7 +2005,7 @@
    "segunda": true,
    "fecha": 1795602136,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 4.8
   },
   "428": {
@@ -2035,7 +2036,7 @@
    "segunda": false,
    "fecha": 1795606535,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 12.0
   },
   "437": {
@@ -2047,7 +2048,7 @@
    "segunda": false,
    "fecha": 1795608575,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 1493.99
   },
   "439": {
@@ -2059,7 +2060,7 @@
    "segunda": false,
    "fecha": 1795610715,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 12.62
   },
   "440": {
@@ -2083,9 +2084,10 @@
    "cupon": false,
    "segunda": true,
    "fecha": 1795624276,
-   "estado": "vivo",
-   "comprobado": 1795652920,
-   "ultimo_precio": 2.45
+   "estado": "agotado",
+   "comprobado": 1795685898,
+   "ultimo_precio": null,
+   "sellado": 1795685979
   },
   "444": {
    "tipo": "tarjeta",
@@ -2112,7 +2114,7 @@
    "segunda": false,
    "fecha": 1795639515,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 20.95
   },
   "448": {
@@ -2124,7 +2126,7 @@
    "segunda": false,
    "fecha": 1795639520,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 20.95
   },
   "450": {
@@ -2139,8 +2141,69 @@
    "segunda": true,
    "fecha": 1795650331,
    "estado": "vivo",
-   "comprobado": 1795652920,
+   "comprobado": 1795685898,
    "ultimo_precio": 24.99
+  },
+  "453": {
+   "tipo": "tarjeta",
+   "asin": "B0FDGSQRP2",
+   "precio": 14.95,
+   "titulo": "Calvin Klein 20s EU Wholesale Sportswear GRAP Pack de 1",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795676281,
+   "estado": "vivo",
+   "comprobado": 1795685898,
+   "ultimo_precio": 14.95
+  },
+  "454": {
+   "tipo": "tarjeta",
+   "asin": "B0DQM8GPR7",
+   "precio": 125.32,
+   "titulo": "GIGABYTE B850 AORUS Elite WIFI7 Placa Base AM5",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795678629,
+   "estado": "agotado",
+   "comprobado": 1795685898,
+   "ultimo_precio": null,
+   "sellado": 1795685985
+  },
+  "455": {
+   "tipo": "tarjeta",
+   "asin": "B0CJ9TVY2C",
+   "precio": 3.81,
+   "titulo": "Envío gratis",
+   "cupon": false,
+   "segunda": true,
+   "fecha": 1795679862,
+   "estado": "vivo",
+   "comprobado": 1795685898,
+   "ultimo_precio": 3.81
+  },
+  "456": {
+   "tipo": "tarjeta",
+   "asin": "B0F4DM5KHS",
+   "precio": 16.99,
+   "titulo": "Calvin Klein SS 30s Whsl SP CK Corner Graphic Pack de 1",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795682201,
+   "estado": "vivo",
+   "comprobado": 1795685898,
+   "ultimo_precio": 16.99
+  },
+  "457": {
+   "tipo": "tarjeta",
+   "asin": "B0F4DN79PQ",
+   "precio": 11.95,
+   "titulo": "Calvin Klein SS 30s Whsl SP Cknyc Graphic tee Pack de 1",
+   "cupon": false,
+   "segunda": false,
+   "fecha": 1795683241,
+   "estado": "vivo",
+   "comprobado": 1795685898,
+   "ultimo_precio": 11.95
   }
  }
 }
