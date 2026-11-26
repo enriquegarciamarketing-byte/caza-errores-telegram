@@ -36,32 +36,32 @@ def cb(user, data, mid=655, markup=None, qid="q"):
 
 
 class Botones(unittest.TestCase):
-    def test_post_nuevo_lleva_votos_debajo_de_comprar_y_encima_de_whatsapp(self):
+    def test_post_nuevo_lleva_comprar_whatsapp_y_votos_al_final(self):
         rows = canal_nube.buttons("https://x", "success", WA[0])["inline_keyboard"]
         self.assertEqual(rows[0][0]["text"], "🛒 Comprar en Amazon")
-        self.assertEqual([b["callback_data"] for b in rows[1]], [votos.UP, votos.DOWN])
-        self.assertEqual([b["text"] for b in rows[1]], ["👍", "👎"])
-        self.assertEqual(rows[2], WA)
+        self.assertEqual(rows[1], WA)
+        self.assertEqual([b["callback_data"] for b in rows[2]], [votos.UP, votos.DOWN])
+        self.assertEqual([b["text"] for b in rows[2]], ["👍", "👎"])
 
     def test_sin_votos_si_se_pide(self):
         self.assertEqual(len(canal_nube.buttons("https://x", "success", None, None)["inline_keyboard"]), 1)
 
     def test_with_votes_sustituye_la_fila_y_respeta_el_resto(self):
-        new = votos.with_votes({"inline_keyboard": [BUY, votos.row(1, 0), WA]}, 3, 1)
+        new = votos.with_votes({"inline_keyboard": [BUY, votos.row(1, 0), WA]}, 3, 1)  # post viejo
         self.assertEqual(new["inline_keyboard"][0], BUY)
-        self.assertEqual([b["text"] for b in new["inline_keyboard"][1]], ["👍 3", "👎 1"])
-        self.assertEqual(new["inline_keyboard"][2], WA)
-        ended = votos.with_votes({"inline_keyboard": [votos.row(), WA]}, 2, 0)
-        self.assertEqual(ended["inline_keyboard"][0][0]["text"], "👍 2")
-        self.assertEqual(ended["inline_keyboard"][1], WA)
+        self.assertEqual(new["inline_keyboard"][1], WA)
+        self.assertEqual([b["text"] for b in new["inline_keyboard"][2]], ["👍 3", "👎 1"])
+        ended = votos.with_votes({"inline_keyboard": [WA, votos.row()]}, 2, 0)
+        self.assertEqual(ended["inline_keyboard"][0], WA)
+        self.assertEqual(ended["inline_keyboard"][1][0]["text"], "👍 2")
 
     def test_chollo_terminado_conserva_votos_y_whatsapp_sin_amazon(self):
         rules = {"whatsapp_button": {"text": WA[0]["text"], "url": WA[0]["url"]}}
         with mock.patch.object(votos, "load_store", return_value={"votos": {
                 "@cazachollos_com:655": {"t": 1, "u": {"a": 1, "b": 1, "c": -1}}}}):
             markup = canal_nube.ended_markup(rules, {"chat": "@cazachollos_com", "message_id": 655})
-        self.assertEqual([b["text"] for b in markup["inline_keyboard"][0]], ["👍 2", "👎 1"])
-        self.assertEqual(markup["inline_keyboard"][1], WA)
+        self.assertEqual(markup["inline_keyboard"][0], WA)
+        self.assertEqual([b["text"] for b in markup["inline_keyboard"][1]], ["👍 2", "👎 1"])
         self.assertNotIn("Amazon", json.dumps(markup, ensure_ascii=False))
 
 
@@ -105,8 +105,8 @@ class Pulsaciones(unittest.TestCase):
         self.assertEqual(edits[0]["chat_id"], -1001234)
         rows = edits[0]["reply_markup"]["inline_keyboard"]
         self.assertEqual(rows[0], BUY)
-        self.assertEqual([b["text"] for b in rows[1]], ["👍 2", "👎"])
-        self.assertEqual(rows[2], WA)
+        self.assertEqual(rows[1], WA)
+        self.assertEqual([b["text"] for b in rows[2]], ["👍 2", "👎"])
 
     def test_sin_teclado_en_el_mensaje_no_lo_toca(self):
         tg, state = FakeTg(), {}
