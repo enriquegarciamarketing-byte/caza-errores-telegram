@@ -1263,17 +1263,17 @@ def buttons(url: str, style: str = "success", extra: dict | None = None,
             votes: tuple[int, int] | None = (0, 0)) -> dict:
     """Botón del post. Telegram solo admite tres colores ("success" verde, "danger" rojo, "primary" azul); no hay
     amarillo, así que va en verde, el de comprar. Cámbialo con "button_style" en config.json.
-    Debajo, la fila 👍 · 👎 de la comunidad (votos.py, 17/11/2026; votes=None la quita) y, en su propia fila,
-    `extra` (desde el 17/11/2026, el de unirse al canal de WhatsApp)."""
+    Debajo, en su propia fila, `extra` (desde el 17/11/2026, el de unirse al canal de WhatsApp) y al final la fila
+    👍 · 👎 de la comunidad (votos.py; votes=None la quita). Orden elegido por Enrique el 26/11/2026."""
     import votos
     button = {"text": "🛒 Comprar en Amazon", "url": url}
     if style:
         button["style"] = style
     rows = [[button]]
-    if votes is not None:
-        rows.append(votos.row(*votes))
     if extra:
         rows.append([extra])
+    if votes is not None:
+        rows.append(votos.row(*votes))  # 26/11/2026: los votos al final (Comprar, WhatsApp, 👍 · 👎)
     return {"inline_keyboard": rows}
 
 
@@ -1287,7 +1287,7 @@ def ended_markup(rules: dict, post: dict) -> dict:
     """Teclado de un chollo terminado: sin el botón de Amazon, pero con sus votos y el de WhatsApp."""
     import votos
     wa = whatsapp_button(rules)
-    return {"inline_keyboard": [votos.row(*vote_counts(post))] + ([[wa]] if wa else [])}
+    return {"inline_keyboard": ([[wa]] if wa else []) + [votos.row(*vote_counts(post))]}
 
 
 def whatsapp_button(rules: dict) -> dict | None:
@@ -1521,6 +1521,33 @@ def white_canvas_photo(image: str, asin: str, margin: float = 0.12, side: int = 
     return out
 
 
+def framed_photo(image: str, deal: dict, canal: str = "cazachollos") -> Path | None:
+    """Foto del producto con la línea gráfica nueva (26/11/2026): lienzo blanco con el precio de antes tachado, la
+    píldora naranja con el de hoy y «Precio a las … puede cambiar», todo dentro del marco naranja con la pestaña del
+    canal (marco_canal.py). Se activa con "marco": true en el post manual o "marco_canal": true en config.
+    Devuelve None si no se puede bajar o abrir la foto."""
+    import io
+    import marco_canal as mc
+    import photos
+    from PIL import Image
+
+    local = ROOT / image if image and not image.startswith("http") else None
+    raw = local.read_bytes() if local and local.is_file() else (photos.fetch_best(full_size(image)) if image else None)
+    if not raw:
+        return None
+    try:
+        with Image.open(io.BytesIO(raw)) as opened:
+            prod = opened.convert("RGBA")
+    except (OSError, ValueError):
+        return None
+    seen = datetime.fromtimestamp(deal.get("seen_ts") or time.time(), timezone.utc).astimezone(MADRID)
+    when = f"las {deal.get('seen_hhmm') or f'{seen:%H:%M}'}"
+    ref = float(deal["reference"]) if deal.get("reference") else None
+    lienzo = mc.lienzo_con_precio(prod, ref, float(deal["price"]), when)
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    return mc.guardar(mc.enmarcar_canal(lienzo, canal), OUTPUT / f"{deal['asin']}-marco.jpg", quality=95)
+
+
 KEEPA_GRAPH = ("https://graph.keepa.com/pricehistory.png?asin={asin}&domain=es&salesrank=0&used=0"
                "&range=90&width=1000&height=750")
 
@@ -1625,6 +1652,11 @@ def publish(tg, target, deal: dict, rules: dict, caption: str, url: str, log=pri
     if style == "foto" and image:
         # Solo la foto del producto, a todo lo ancho, con el texto y el botón (como los canales grandes).
         try:
+            if deal.get("marco") or rules.get("marco_canal"):
+                framed = framed_photo(image, deal)
+                if framed:
+                    return tg.send_photo(target, framed, caption, {"reply_markup": buttons(url, rules.get("button_style", "success"), whatsapp_button(rules))})
+                log("  No he podido preparar la imagen con el marco; sigo con la de siempre")
             if deal.get("white_canvas") or rules.get("fondo_blanco"):
                 # "fondo_blanco": true en config (todos los posts del canal) o en el post manual → la foto sobre un
                 # lienzo blanco fijo de 2560×2560, para que todas las imágenes del canal midan lo mismo.
@@ -2627,6 +2659,7 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
         "interest": 0, "interest_label": "", "ref_kind": spec.get("ref_kind") or "",
         "white_canvas": bool(spec.get("fondo_blanco")),
         "keepa": bool(spec.get("keepa")),
+        "marco": bool(spec.get("marco")),
     }
 
 

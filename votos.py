@@ -67,11 +67,10 @@ def is_vote_row(buttons: list) -> bool:
 
 
 def with_votes(markup: dict | None, up: int, down: int) -> dict:
-    """El teclado del post con la fila de votos puesta al día. Va justo debajo del botón de comprar
-    (si lo hay) y encima del de WhatsApp; el resto de botones se quedan como estaban."""
+    """El teclado del post con la fila de votos puesta al día. Desde el 26/11/2026 va siempre al final (Comprar,
+    WhatsApp, 👍 · 👎); los posts viejos con los votos en medio pasan a este orden en cuanto alguien vota."""
     rows = [r for r in ((markup or {}).get("inline_keyboard") or []) if not is_vote_row(r)]
-    at = 1 if rows and str((rows[0][0] or {}).get("text") or "").startswith("🛒") else 0
-    return {"inline_keyboard": rows[:at] + [row(up, down)] + rows[at:]}
+    return {"inline_keyboard": rows + [row(up, down)]}
 
 
 # ------------------------------------------------------------------ memoria
