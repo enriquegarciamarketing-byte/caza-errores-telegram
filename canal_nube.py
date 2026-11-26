@@ -1545,7 +1545,7 @@ def framed_photo(image: str, deal: dict, canal: str = "cazachollos") -> Path | N
     ref = float(deal["reference"]) if deal.get("reference") else None
     lienzo = mc.lienzo_con_precio(prod, ref, float(deal["price"]), when)
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    return mc.guardar(mc.enmarcar_canal(lienzo, canal), OUTPUT / f"{deal['asin']}-marco.jpg", quality=95)
+    return mc.guardar(mc.enmarcar_canal(lienzo, canal), OUTPUT / f"{deal['asin']}-marco-{canal}.jpg", quality=95)
 
 
 KEEPA_GRAPH = ("https://graph.keepa.com/pricehistory.png?asin={asin}&domain=es&salesrank=0&used=0"
@@ -1723,7 +1723,10 @@ def mirror_whatsapp(deal: dict, caption: str, rules: dict, state: dict, now: dat
             return whatsapp.publish_deal(caption, None, state, now, rules, test, manual, log)  # solo lo apunta
         image = str(deal.get("image") or "")
         photo = None
-        if image and (deal.get("white_canvas") or rules.get("fondo_blanco")):
+        if image and (deal.get("marco") or rules.get("marco_canal")):
+            # 26/11/2026: la misma línea gráfica que en Telegram, con la pestaña de WhatsApp (logo completo).
+            photo = framed_photo(image, deal, canal="whatsapp")
+        if photo is None and image and (deal.get("white_canvas") or rules.get("fondo_blanco")):
             photo = white_canvas_photo(image, deal["asin"])
         if photo is None and image:
             photo = full_size(image) if image.startswith("http") else ROOT / image
