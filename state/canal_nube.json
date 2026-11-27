@@ -10163,6 +10163,22 @@
    "title": "Smart TV Hisense 65E7S Hi-QLED 4K de 65 Pulgadas",
    "manual": true,
    "brand": "hisense"
+  },
+  {
+   "asin": "B0FLYGD4XH",
+   "jl_id": "",
+   "price": 297.99,
+   "reference": 419.0,
+   "t": 1795804918,
+   "url": "https://www.amazon.es/dp/B0FLYGD4XH?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 794,
+   "photo_message_id": null,
+   "slides": [],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Gafas Ray-Ban Meta Gen 2 Skyler con IA y Cámara de 12 MP</b>\n\n💶 PRECIO: <b>297,99€</b>\n❌ (Antes: <s>419€</s>)\n🔥 ¡Te ahorras <b>121,01€</b>! (29 % dto.)\nℹ️ Vídeo 3K y 8 h de batería\n\n🕒 Precio a las 19:40 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0FLYGD4XH?tag=cazachollos0c-21\">amazon.es/dp/B0FLYGD4XH</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Gafas Ray-Ban Meta Gen 2 Skyler con IA y Cámara de 12 MP",
+   "manual": true,
+   "brand": "ray-ban"
   }
  ],
  "seen": {
@@ -32688,7 +32704,6 @@
  "rotation": 3103,
  "backlog": [],
  "x_drafts": [
-  1794929913,
   1794931190,
   1794939995,
   1794942782,
@@ -32737,17 +32752,18 @@
   1795759263,
   1795766935,
   1795792776,
-  1795804890
+  1795804890,
+  1795804924
  ],
  "x_recent": [
-  "no-dura",
   "bot-aviso",
   "pregunta",
   "black-friday",
   "cartera",
   "cabeza",
   "rapido",
-  "chivatazo"
+  "chivatazo",
+  "regla"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 88,
@@ -242029,7 +242045,7 @@
    "2026-11-24": 5,
    "2026-11-25": 9,
    "2026-11-26": 6,
-   "2026-11-27": 7
+   "2026-11-27": 8
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
@@ -242043,8 +242059,8 @@
    "2026-11-23": 2,
    "2026-11-25": 1,
    "2026-11-26": 5,
-   "2026-11-27": 7
+   "2026-11-27": 8
   },
-  "last_deal": 1795804886
+  "last_deal": 1795804918
  }
 }
