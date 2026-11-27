@@ -73,10 +73,14 @@ def merged(asin: str, *hists: dict) -> list[list]:
     return [by_day[d] for d in sorted(by_day)]
 
 
-def summary(asin: str, now: datetime, *hists: dict) -> dict:
-    """Días vistos (sin contar hoy), mínimo, precio habitual (mediana de los mínimos diarios) y del día anterior."""
+def summary(asin: str, now: datetime, *hists: dict, antes_de: int | None = None) -> dict:
+    """Días vistos (sin contar hoy), mínimo, precio habitual (mediana de los mínimos diarios) y del día anterior.
+
+    `antes_de` (AAAAMMDD, modo evento del free): solo cuenta lo visto antes de ese día, para comparar con el
+    precio de antes de las rebajas y no con el de la propia semana de rebajas."""
     today = _day(now)
-    rows = [r for r in merged(asin, *hists) if r[0] != today and _age_days(r[0], now) <= 30]
+    rows = [r for r in merged(asin, *hists) if r[0] != today and _age_days(r[0], now) <= 30
+            and (antes_de is None or r[0] < antes_de)]
     if not rows:
         return {"days": 0}
     lows = [r[1] for r in rows]
@@ -88,7 +92,8 @@ def summary(asin: str, now: datetime, *hists: dict) -> dict:
 
 
 def check(asin: str, price: float, claimed_ref: float | None, now: datetime, *hists: dict,
-          min_drop_pct: float = 0, estable_ok: bool = False) -> tuple[float | None, str, dict]:
+          min_drop_pct: float = 0, estable_ok: bool = False,
+          antes_de: int | None = None) -> tuple[float | None, str, dict]:
     """(referencia honesta o None, motivo de descarte o "", resumen).
 
     Sin historial suficiente devuelve (None, "", resumen) y cada canal decide qué hacer.
@@ -96,8 +101,12 @@ def check(asin: str, price: float, claimed_ref: float | None, now: datetime, *hi
     `estable_ok` (free, marcas conocidas, 15/11/2026): si el precio lleva días estable en su mínimo y nunca
     lo hemos visto subir (sin el truco de subir y bajar), no se descarta por «no es ninguna bajada»: el
     historial propio solo tiene unos días y frenaba todas las ofertas que Amazon mantiene más de 3 días.
-    Devuelve (None, "", resumen) y el canal aplica sus reglas de siempre frente al PVP."""
-    info = summary(asin, now, *hists)
+    Devuelve (None, "", resumen) y el canal aplica sus reglas de siempre frente al PVP.
+
+    `antes_de` (modo evento, 27/11/2026): en Black Friday Amazon mantiene el precio rebajado toda la semana y
+    el bot lo descartaba todo por «no es ninguna bajada». Con él, la comparación es con lo visto antes de las
+    rebajas: si ahora está de verdad por debajo de su precio habitual de antes, es chollo."""
+    info = summary(asin, now, *hists, antes_de=antes_de)
     if info.get("days", 0) < MIN_DAYS:
         return None, "", info
     usual, low7 = info["usual"], info.get("min_7")

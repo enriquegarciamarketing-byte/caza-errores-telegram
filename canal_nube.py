@@ -1964,6 +1964,23 @@ def silence_alert(tg, state: dict, now: datetime, rules: dict, log=print, dry: b
         log(f"  No he podido avisarte por privado: {exc}")
 
 
+def modo_evento(rules: dict, now: datetime, log=print) -> dict:
+    """Evento de rebajas (27/11/2026, Black Friday): entre "desde" y "hasta" (días de Madrid, ambos incluidos)
+    se aplican las reglas de "reglas" (más ritmo) y el historial propio compara con lo visto antes de
+    "base_antes_de". Fuera de esas fechas no cambia nada, así que se apaga solo."""
+    ev = rules.get("evento") or {}
+    if not ev.get("enabled", True) or not ev.get("desde") or not ev.get("hasta"):
+        return rules
+    hoy = now.astimezone(MADRID).date().isoformat()
+    if not (str(ev["desde"]) <= hoy <= str(ev["hasta"])):
+        return rules
+    out = {**rules, **(ev.get("reglas") or {})}
+    base = str(ev.get("base_antes_de") or ev["desde"]).replace("-", "")
+    out["_evento_antes_de"] = int(base) if base.isdigit() else None
+    log(f"Modo evento: {ev.get('nombre') or 'rebajas'} (hasta el {ev['hasta']})")
+    return out
+
+
 def live_rules(rules: dict, test: bool) -> dict:
     """Con "album_solo_pruebas": true el álbum nuevo solo sale en las pruebas privadas; el canal sigue igual
     hasta que des el visto bueno y se quite esa línea de config.json."""
@@ -1974,7 +1991,7 @@ def live_rules(rules: dict, test: bool) -> dict:
 
 def run(args, cfg: dict, state: dict, now: datetime, tg=None, fetch=None, resolve_asin=None, log=print,
         cascade_loader=None) -> int:
-    rules = live_rules(rules_from(cfg), bool(args.test_private))
+    rules = live_rules(modo_evento(rules_from(cfg), now, log), bool(args.test_private))
     fetch = fetch or http_get
     resolve_asin = resolve_asin or asin_from_jl
     if not rules["tag"]:
@@ -2228,7 +2245,8 @@ def amazon_items(rules: dict, state: dict, now: datetime, log=print, relaxed: bo
         trusted = {fold(b) for b in rules.get("trusted_brands") or []}
         known = bool(brand) and (fold(brand) in trusted or any(fold(brand).startswith(t + " ") for t in trusted))
         honest, hwhy, info = historial.check(asin, float(price), float(was), now, hist, other,
-                                             min_drop_pct=min_saving, estable_ok=known)
+                                             min_drop_pct=min_saving, estable_ok=known,
+                                             antes_de=rules.get("_evento_antes_de"))
         if hwhy:
             log(f"  ✗ amz-{asin} {clean_title(cand.get('title') or '', 50)}: {hwhy}")
             continue
