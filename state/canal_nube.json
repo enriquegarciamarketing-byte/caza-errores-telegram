@@ -10228,6 +10228,22 @@
    "title": "Termo Stanley Classic Legendary de 1,9 L Negro Mate",
    "manual": true,
    "brand": ""
+  },
+  {
+   "asin": "B0DMTMK2Q5",
+   "jl_id": "",
+   "price": 65.9,
+   "reference": 129.9,
+   "t": 1795816351,
+   "url": "https://www.amazon.es/dp/B0DMTMK2Q5?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 797,
+   "photo_message_id": null,
+   "slides": [],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Fuente Corsair RM750e 750W Modular ATX 3.1 Gold</b>\n\n💶 PRECIO: <b>65,90€</b>\n❌ (Antes: <s>129,90€</s>)\n🔥 ¡Te ahorras <b>64€</b>! (49 % dto.)\n⚡ Oferta flash\nℹ️ Totalmente modular con cable 12V-2x6 para gráficas nuevas\n\n🕒 Precio a las 22:52 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0DMTMK2Q5?tag=cazachollos0c-21\">amazon.es/dp/B0DMTMK2Q5</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Fuente Corsair RM750e 750W Modular ATX 3.1 Gold",
+   "manual": true,
+   "brand": "corsair"
   }
  ],
  "seen": {
@@ -32788,7 +32804,6 @@
  "rotation": 3103,
  "backlog": [],
  "x_drafts": [
-  1794942782,
   1794981662,
   1794987481,
   1794996593,
@@ -32837,17 +32852,18 @@
   1795804890,
   1795804924,
   1795804971,
-  1795805009
+  1795805009,
+  1795816356
  ],
  "x_recent": [
-  "alguien",
   "no-dura",
   "bot-aviso",
   "pregunta",
   "black-friday",
   "cartera",
   "cabeza",
-  "rapido"
+  "rapido",
+  "telegram"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 160,
@@ -242462,7 +242478,7 @@
    "2026-11-24": 5,
    "2026-11-25": 9,
    "2026-11-26": 6,
-   "2026-11-27": 10
+   "2026-11-27": 11
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
@@ -242476,8 +242492,8 @@
    "2026-11-23": 2,
    "2026-11-25": 1,
    "2026-11-26": 5,
-   "2026-11-27": 10
+   "2026-11-27": 11
   },
-  "last_deal": 1795805004
+  "last_deal": 1795816351
  }
 }
