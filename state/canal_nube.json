@@ -10147,6 +10147,22 @@
    "brand": "Russell Hobbs",
    "checked": 1795794164,
    "ended": 1795794164
+  },
+  {
+   "asin": "B0GNF76F8J",
+   "jl_id": "",
+   "price": 399.0,
+   "reference": 579.0,
+   "t": 1795804886,
+   "url": "https://www.amazon.es/dp/B0GNF76F8J?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 793,
+   "photo_message_id": null,
+   "slides": [],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Smart TV Hisense 65E7S Hi-QLED 4K de 65 Pulgadas</b>\n\n💶 PRECIO: <b>399€</b>\n❌ (Antes: <s>579€</s>)\n🔥 ¡Te ahorras <b>180€</b>! (31 % dto.)\nℹ️ Dolby Vision y Atmos y modo juego Plus\n\n🕒 Precio a las 19:40 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0GNF76F8J?tag=cazachollos0c-21\">amazon.es/dp/B0GNF76F8J</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Smart TV Hisense 65E7S Hi-QLED 4K de 65 Pulgadas",
+   "manual": true,
+   "brand": "hisense"
   }
  ],
  "seen": {
@@ -32672,7 +32688,6 @@
  "rotation": 3103,
  "backlog": [],
  "x_drafts": [
-  1794929570,
   1794929913,
   1794931190,
   1794939995,
@@ -32721,17 +32736,18 @@
   1795719700,
   1795759263,
   1795766935,
-  1795792776
+  1795792776,
+  1795804890
  ],
  "x_recent": [
-  "alguien",
   "no-dura",
   "bot-aviso",
   "pregunta",
   "black-friday",
   "cartera",
   "cabeza",
-  "rapido"
+  "rapido",
+  "chivatazo"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 88,
@@ -242013,7 +242029,7 @@
    "2026-11-24": 5,
    "2026-11-25": 9,
    "2026-11-26": 6,
-   "2026-11-27": 6
+   "2026-11-27": 7
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
@@ -242027,8 +242043,8 @@
    "2026-11-23": 2,
    "2026-11-25": 1,
    "2026-11-26": 5,
-   "2026-11-27": 6
+   "2026-11-27": 7
   },
-  "last_deal": 1795792724
+  "last_deal": 1795804886
  }
 }
