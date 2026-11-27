@@ -10179,6 +10179,22 @@
    "title": "Gafas Ray-Ban Meta Gen 2 Skyler con IA y Cámara de 12 MP",
    "manual": true,
    "brand": "ray-ban"
+  },
+  {
+   "asin": "B0GQPW6PQH",
+   "jl_id": "",
+   "price": 25.99,
+   "reference": 51.99,
+   "t": 1795804965,
+   "url": "https://www.amazon.es/dp/B0GQPW6PQH?tag=cazachollos0c-21",
+   "chat": "@cazachollos_com",
+   "message_id": 795,
+   "photo_message_id": null,
+   "slides": [],
+   "caption": "💥 <b>CHOLLO EN AMAZON</b>\n\n<b>Cabezales Oral-B Pro CrossAction Pack de 12</b>\n\n💶 PRECIO: <b>25,99€</b>\n❌ (Antes: <s>51,99€</s>)\n🔥 ¡Te ahorras <b>26€</b>! (50 % dto.)\nℹ️ Salen a 2,17 € cada cabezal\n\n🕒 Precio a las 19:40 · puede cambiar\n\n🛒 <a href=\"https://www.amazon.es/dp/B0GQPW6PQH?tag=cazachollos0c-21\">amazon.es/dp/B0GQPW6PQH</a>\n\nVisto en @cazachollos_com #Publicidad #Chollo",
+   "title": "Cabezales Oral-B Pro CrossAction Pack de 12",
+   "manual": true,
+   "brand": "oral-b"
   }
  ],
  "seen": {
@@ -32704,7 +32720,6 @@
  "rotation": 3103,
  "backlog": [],
  "x_drafts": [
-  1794931190,
   1794939995,
   1794942782,
   1794981662,
@@ -32753,17 +32768,18 @@
   1795766935,
   1795792776,
   1795804890,
-  1795804924
+  1795804924,
+  1795804971
  ],
  "x_recent": [
-  "bot-aviso",
   "pregunta",
   "black-friday",
   "cartera",
   "cabeza",
   "rapido",
   "chivatazo",
-  "regla"
+  "regla",
+  "telegram"
  ],
  "jl_paused_until": 1794513122.695286,
  "amazon_search_index": 88,
@@ -242045,7 +242061,7 @@
    "2026-11-24": 5,
    "2026-11-25": 9,
    "2026-11-26": 6,
-   "2026-11-27": 8
+   "2026-11-27": 9
   },
   "channel": "120363432803344106@newsletter",
   "invite": "0029VbE063mEwEk5M7m9Xe17",
@@ -242059,8 +242075,8 @@
    "2026-11-23": 2,
    "2026-11-25": 1,
    "2026-11-26": 5,
-   "2026-11-27": 8
+   "2026-11-27": 9
   },
-  "last_deal": 1795804918
+  "last_deal": 1795804965
  }
 }
