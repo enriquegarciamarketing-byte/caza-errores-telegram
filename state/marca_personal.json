@@ -225,6 +225,11 @@
    "t": 1795803910,
    "slot": "tarde",
    "topic": "Ahorro y promos"
+  },
+  {
+   "t": 1795829837,
+   "slot": "manana",
+   "topic": "El bot por dentro"
   }
  ]
 }
