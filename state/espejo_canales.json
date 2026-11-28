@@ -3,7 +3,7 @@
   "erroresychollos": 122,
   "erroresycholloswarehouse": 29,
   "ErroresRutaYChollos": 285,
-  "erroresychollosropa": 128,
+  "erroresychollosropa": 129,
   "erroresychollosbasicos": 160
  },
  "publicados": [
@@ -774,6 +774,12 @@
    "origen": "https://t.me/erroresychollosropa/129",
    "message_id": 521,
    "t": 1795849160
+  },
+  {
+   "asin": "B01GQY7ZCO",
+   "origen": "https://t.me/ErroresRutaYChollos/286",
+   "message_id": 522,
+   "t": 1795850743
   }
  ],
  "sin_vista": [],
