@@ -735,7 +735,8 @@ class PrecioRecomendado(unittest.TestCase):
 
     def test_tarjeta_dice_pvp_recomendado(self):
         import inspect
-        self.assertIn("PVP RECOMENDADO", inspect.getsource(cn.make_card))
+        self.assertIn("REF_LABELS", inspect.getsource(cn.make_card))
+        self.assertEqual(cn.REF_LABELS["pvp"], "PVP RECOMENDADO")
 
 
 class Pendientes(unittest.TestCase):
