@@ -1166,7 +1166,7 @@ def clean_title(title: str, limit: int = 95) -> str:
 
 def real_drop(deal: dict) -> float | None:
     """Bajada frente al mínimo de 30 días cuando el porcentaje del post es contra la media de 90 días."""
-    return deal.get("drop_30") if deal.get("ref_kind") in ("media90", "pvp") else None
+    return deal.get("drop_30") if deal.get("ref_kind") in ("media90", "pvp", "vendedor") else None
 
 
 def badge_for(pct: float, rules: dict, drop_30: float | None = None) -> str:
@@ -1426,8 +1426,12 @@ def send_x_text(tg, cfg: dict, state: dict, text: str, url: str = "", log=print)
     return 0
 
 
+# 28/11/2026: "vendedor" = precio de otro vendedor de la misma ficha de Amazon (p. ej. sin stock), cuando
+# la ficha no da PVP ni mínimo de 30 días. Se dice tal cual en la tarjeta para no hacerlo pasar por PVP.
+REF_LABELS = {"media90": "MEDIA 90 DÍAS", "pvp": "PVP RECOMENDADO", "vendedor": "OTRO VENDEDOR EN AMAZON"}
 BAR_LINES = {
     "pvp": ("frente a su", "", "PVP recomendado", ""),
+    "vendedor": ("frente al precio de", "", "otro vendedor", "en Amazon"),
     "media90": ("frente a su precio medio", "de los", "90 días", "anteriores"),
 }
 
@@ -1447,7 +1451,7 @@ def make_card(deal: dict, rules: dict) -> Path:
         "price": deal["price"],
         "reference": deal["reference"],
         "badge": badge_for(deal["discount"], rules, real_drop(deal)),
-        "ref_label": {"media90": "MEDIA 90 DÍAS", "pvp": "PVP RECOMENDADO"}.get(deal.get("ref_kind") or "",
+        "ref_label": REF_LABELS.get(deal.get("ref_kind") or "",
                                                                              "MÍNIMO 30 DÍAS ANTES"),
         "bar_lines": BAR_LINES.get(deal.get("ref_kind") or ""),
         "seen_hhmm": deal.get("seen_hhmm") or f"{seen:%H:%M}",
@@ -1787,7 +1791,7 @@ def make_card_clasica(deal: dict, rules: dict) -> Path:
         "category": badge_for(deal["discount"], rules, real_drop(deal)),
         "current": deal["price"],
         "reference": deal["reference"],
-        "ref_label": {"media90": "MEDIA 90 DÍAS", "pvp": "PVP RECOMENDADO"}.get(deal.get("ref_kind") or "",
+        "ref_label": REF_LABELS.get(deal.get("ref_kind") or "",
                                                                              "MÍNIMO 30 DÍAS ANTES"),
         "logo_path": DEAL_LOGO,
         "store": "Amazon",
@@ -2667,7 +2671,7 @@ def manual_deal(spec: dict, rules: dict, resolve=None) -> dict:
     ref_kind = spec.get("ref_kind") or ""
     min_30 = float(spec["min_30"]) if spec.get("min_30") else None
     # Contra el PVP nunca es ERROR DE PRECIO por sí solo: la cabecera la decide la bajada real frente al mínimo de 30 días.
-    drop_30 = discount_pct(price, min_30) if min_30 else (0.0 if ref_kind == "pvp" else None)
+    drop_30 = discount_pct(price, min_30) if min_30 else (0.0 if ref_kind in ("pvp", "vendedor") else None)
     return {
         "min_30": min_30, "drop_30": drop_30,
         "asin": asin, "jl_id": "", "title": title, "price": price, "reference": reference,
